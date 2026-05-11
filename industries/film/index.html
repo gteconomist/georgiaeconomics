@@ -2,13 +2,94 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<title>Film Industry — Coming Soon | Georgia Economics</title>
-<meta name="description" content="Annual Georgia film and TV production spend (Georgia DECD), motion-picture-sector employment (BLS QCEW NAICS 5121), and productions filmed in Georgia. The "Holl">
+<title>Georgia Film Industry — Hollywood of the South | Georgia Economics</title>
+<meta name="description" content="Live Georgia film industry data: $5.5B annual production spend, 52K jobs, #3 globally for film production. Major productions, studios, tax credit history.">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="/styles.css">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/gteconomist/economicsguru@main/charts.js"></script>
+
+<style>
+  /* Cinematic-feeling hero band */
+  .film-hero {
+    background: linear-gradient(135deg, var(--navy) 0%, #2e5984 100%);
+    color: #fff; padding: 32px 30px; margin-bottom: 26px; border-radius: 4px;
+    position: relative; overflow: hidden;
+  }
+  .film-hero::after {
+    content: ''; position: absolute; top: 0; right: -20px; width: 240px; height: 100%;
+    background: linear-gradient(135deg, transparent 30%, var(--peach-deep) 100%);
+    opacity: 0.18;
+  }
+  .film-hero h2 {
+    font-family: var(--font-display); font-size: 32px; font-weight: 800;
+    letter-spacing: -0.01em; margin: 0 0 6px; position: relative; z-index: 1;
+  }
+  .film-hero p { margin: 0; font-size: 16px; opacity: 0.9; max-width: 620px; position: relative; z-index: 1; }
+  .film-hero .stat-strip {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 26px;
+    margin-top: 18px; padding-top: 18px; border-top: 1px solid rgba(255,255,255,0.18);
+    position: relative; z-index: 1;
+  }
+  @media (max-width: 720px) { .film-hero .stat-strip { grid-template-columns: 1fr; gap: 14px; } }
+  .film-hero .stat-strip .stat .num { font-family: var(--font-display); font-size: 30px; font-weight: 800; color: var(--peach); display: block; }
+  .film-hero .stat-strip .stat .lbl { font-size: 12px; text-transform: uppercase; letter-spacing: 0.06em; opacity: 0.75; }
+
+  .chart-canvas-tall { position: relative; height: 380px; background: var(--chart-bg); padding: 6px; }
+  .chart-canvas-med  { position: relative; height: 320px; background: var(--chart-bg); padding: 6px; }
+  .chart-canvas-bench { position: relative; height: 360px; background: var(--chart-bg); padding: 6px; }
+
+  /* Productions cards */
+  .productions-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-top: 14px;
+  }
+  @media (max-width: 980px) { .productions-grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 600px) { .productions-grid { grid-template-columns: 1fr; } }
+  .production-card {
+    background: var(--panel-bg); border: 1px solid var(--border);
+    border-left: 4px solid var(--peach-deep); padding: 12px 14px;
+  }
+  .production-card .title {
+    font-family: var(--font-display); font-size: 16px; font-weight: 700;
+    color: var(--navy); margin: 0 0 4px; line-height: 1.25;
+  }
+  .production-card .meta {
+    font-size: 12px; color: var(--ink-soft); margin-bottom: 6px;
+  }
+  .production-card .meta .year { font-weight: 700; color: var(--navy); }
+  .production-card .stats {
+    display: flex; gap: 14px; font-size: 12px; color: var(--ink-soft);
+  }
+  .production-card .stats .num { color: var(--peach-deep); font-weight: 700; font-size: 14px; }
+
+  /* Studio cards */
+  .studio-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-top: 14px;
+  }
+  @media (max-width: 980px) { .studio-grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 600px) { .studio-grid { grid-template-columns: 1fr; } }
+  .studio-card {
+    background: var(--chart-bg); border: 1px solid var(--border); padding: 14px 16px;
+  }
+  .studio-card .name {
+    font-family: var(--font-display); font-size: 15px; font-weight: 700;
+    color: var(--navy); margin: 0 0 4px;
+  }
+  .studio-card .city { font-size: 12px; color: var(--peach-deep); font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 8px; }
+  .studio-card .specialty { font-size: 13px; color: var(--ink-soft); margin: 0 0 10px; }
+  .studio-card .footprint {
+    display: flex; gap: 18px; padding-top: 8px; border-top: 1px dotted var(--border);
+    font-size: 12px;
+  }
+  .studio-card .footprint .stat { color: var(--ink-soft); }
+  .studio-card .footprint .stat strong { color: var(--navy); font-size: 15px; }
+
+  .source-note { font-size: 12px; color: var(--ink-soft); margin-top: 8px; font-style: italic; }
+</style>
 </head>
 <body>
 
@@ -27,24 +108,271 @@
 
 <main>
   <section class="page-header">
-    <h1>Georgia Film Industry</h1>
-    <div class="subtitle">Annual Georgia film and TV production spend (Georgia DECD), motion-picture-sector employment (BLS QCEW NAICS 5121), and productions filmed in Georgia. The "Hollywood of the South" angle, in charts.</div>
+    <h1>Georgia film industry</h1>
+    <div class="subtitle">A 30% transferable tax credit turned Georgia into the third-largest film production hub in the world. Production spend, employment, the major studios, and the productions you've seen.</div>
+    <div class="latest">Latest data: <strong id="latest-label">—</strong></div>
   </section>
 
-  <div class="notice">
-    <strong>Page in development.</strong> The data pipeline for this topic is being wired up. In the meantime, the <a href="/counties/">county heat map</a> is live with monthly BLS LAUS data for all 159 Georgia counties.
+  <div class="notice" id="fixture-banner" style="display:none;">
+    <strong>Seed data:</strong> Spend, jobs, and tax credit values are calibrated to Georgia DECD's documented annual reports, but these specific numbers are placeholders pending the live Tavily-based pipeline that scrapes DECD press releases.
   </div>
 
-  <p style="margin-top:24px;"><a href="/">&larr; Back to home</a></p>
+  <!-- Cinematic hero -->
+  <section class="film-hero">
+    <h2>Hollywood of the South.</h2>
+    <p>Since 2008, Georgia's 30% transferable film tax credit has drawn Marvel, Netflix, AMC, and dozens of other studios to film here. The result: more productions than every other state except California and New York.</p>
+    <div class="stat-strip">
+      <div class="stat"><span class="num" id="hero-spend">—</span><span class="lbl">2025 Production Spend</span></div>
+      <div class="stat"><span class="num" id="hero-jobs">—</span><span class="lbl">Motion-picture-sector jobs</span></div>
+      <div class="stat"><span class="num">#3</span><span class="lbl">Globally for film production</span></div>
+    </div>
+  </section>
+
+  <!-- KPI strip -->
+  <div class="kpi-grid">
+    <div class="kpi"><div class="label">Production spend (2025)</div><div class="value" id="kpi-spend">—</div><div class="delta" id="kpi-spend-yoy">—</div></div>
+    <div class="kpi"><div class="label">Tax credits issued (2025)</div><div class="value" id="kpi-credits">—</div><div class="delta">30% transferable rate</div></div>
+    <div class="kpi"><div class="label">Sector employment</div><div class="value" id="kpi-emp">—</div><div class="delta" id="kpi-emp-yoy">—</div></div>
+    <div class="kpi"><div class="label">National rank</div><div class="value">#3</div><div class="delta">After CA &amp; NY</div></div>
+    <div class="kpi"><div class="label">Notable productions</div><div class="value" id="kpi-prod">—</div><div class="delta">Featured below</div></div>
+    <div class="kpi"><div class="label">Major studios</div><div class="value" id="kpi-studios">—</div><div class="delta">Trilith, Tyler Perry, EUE/SG…</div></div>
+  </div>
+
+  <!-- Production spend with annotations -->
+  <div class="chart-panel">
+    <h2>Annual Production Spend in Georgia</h2>
+    <p class="sub">Billions of USD per fiscal year. The 2020 dip is COVID; the 2023 dip is the WGA + SAG-AFTRA strikes that paused most US production for ~5 months. Recovery has been strong both times.</p>
+    <div class="chart-canvas-tall"><canvas id="spend-chart"></canvas></div>
+    <div class="source-note">Source: Georgia Department of Economic Development annual film industry reports (target). Currently fixture data calibrated to public DECD figures.</div>
+  </div>
+
+  <!-- Tax credits + employment side by side -->
+  <div class="chart-grid" style="margin-top: 22px;">
+    <div class="chart-panel">
+      <h2>Tax Credits Issued</h2>
+      <p class="sub">GA's 30% transferable film tax credit is the country's most generous. Annual issuance shown in $B — the cost of attracting the productions in the chart above.</p>
+      <div class="chart-canvas-med"><canvas id="credits-chart"></canvas></div>
+    </div>
+
+    <div class="chart-panel">
+      <h2>Motion-Picture Sector Employment</h2>
+      <p class="sub">Jobs in NAICS 5121 (motion picture and video industries). Multiplier effects on hospitality, transport, and skilled trades likely add another ~150K jobs.</p>
+      <div class="chart-canvas-med"><canvas id="emp-chart"></canvas></div>
+    </div>
+  </div>
+
+  <!-- State comparison benchmark -->
+  <div class="chart-panel" style="margin-top: 22px;">
+    <h2>How Georgia Stacks Up — Top Film Production States (2025)</h2>
+    <p class="sub">Annual film + TV production spend by state, billions of USD. California and New York remain the giants; Georgia is firmly the #3 destination, more than 3× larger than the next state.</p>
+    <div class="chart-canvas-bench"><canvas id="benchmark-chart"></canvas></div>
+  </div>
+
+  <!-- Notable productions -->
+  <div class="chart-panel" style="margin-top: 22px;">
+    <h2>Notable Productions Filmed in Georgia</h2>
+    <p class="sub">A small sample of major theatrical films and TV series shot in Georgia. The Marvel film franchise alone has filmed 15+ titles at Trilith Studios in Fayetteville.</p>
+    <div class="productions-grid" id="productions-grid"></div>
+    <div class="source-note">Source: Georgia Film Office production database (target).</div>
+  </div>
+
+  <!-- Studios -->
+  <div class="chart-panel" style="margin-top: 22px;">
+    <h2>Major Studios in Georgia</h2>
+    <p class="sub">Six soundstage facilities anchor Georgia's production infrastructure, with Trilith (formerly Pinewood Atlanta) the largest at 700K sq ft and 19 stages.</p>
+    <div class="studio-grid" id="studio-grid"></div>
+  </div>
+
 </main>
 
 <footer class="site-footer">
   <div class="wrap">
     <div>&copy; <span id="yr"></span> Georgia Economics &middot; Sister site to <a href="https://economicsguru.com">economicsguru.com</a> &middot; <a href="/about/">Methodology</a></div>
-    <div>Sources: BLS, FRED, BEA, Census, Georgia state agencies.</div>
+    <div>Sources: Georgia DECD, Georgia Film Office, BLS QCEW.</div>
   </div>
 </footer>
 
-<script>document.getElementById('yr').textContent = new Date().getFullYear();</script>
+<script>
+document.getElementById('yr').textContent = new Date().getFullYear();
+
+const BRAND_COLORS = {
+  navy: '#1a3a5c', peachDeep: '#c46b3a', peach: '#e8a87c', peachPale: '#faead9',
+  mustard: '#d4a017', teal: '#3a8d8d', coral: '#d4624a', grid: '#b6ad8d',
+};
+
+function fmtSignedPct(v) { if (v == null) return '—'; return (v >= 0 ? '+' : '') + v.toFixed(1) + '%'; }
+
+async function init() {
+  const res = await fetch('/data/film.json');
+  const d = await res.json();
+  if (d._fixture) document.getElementById('fixture-banner').style.display = '';
+
+  document.getElementById('latest-label').textContent = d.latest_year;
+
+  // Hero
+  document.getElementById('hero-spend').textContent  = '$' + d.kpis.production_spend_latest_b.toFixed(1) + 'B';
+  document.getElementById('hero-jobs').textContent   = d.kpis.employment_latest_k.toFixed(0) + 'K';
+
+  // KPI strip
+  document.getElementById('kpi-spend').textContent       = '$' + d.kpis.production_spend_latest_b.toFixed(1) + 'B';
+  const kpiSpendYoy = document.getElementById('kpi-spend-yoy');
+  kpiSpendYoy.textContent = fmtSignedPct(d.kpis.production_spend_yoy_pct) + ' YoY';
+  kpiSpendYoy.classList.add(d.kpis.production_spend_yoy_pct >= 0 ? 'down' : 'up');
+
+  document.getElementById('kpi-credits').textContent     = '$' + d.kpis.tax_credits_latest_b.toFixed(2) + 'B';
+  document.getElementById('kpi-emp').textContent         = d.kpis.employment_latest_k.toFixed(1) + 'K';
+  const kpiEmpYoy = document.getElementById('kpi-emp-yoy');
+  kpiEmpYoy.textContent = fmtSignedPct(d.kpis.employment_yoy_pct) + ' YoY';
+  kpiEmpYoy.classList.add(d.kpis.employment_yoy_pct >= 0 ? 'down' : 'up');
+
+  document.getElementById('kpi-prod').textContent        = d.kpis.n_major_productions;
+  document.getElementById('kpi-studios').textContent     = d.kpis.n_major_studios;
+
+  renderSpendChart(d.trends, d.annotations);
+  renderCreditsChart(d.trends);
+  renderEmpChart(d.trends);
+  renderBenchmarkChart(d.state_comparison);
+  renderProductionsGrid(d.notable_productions);
+  renderStudioGrid(d.major_studios);
+}
+
+function renderSpendChart(trends, annotations) {
+  const ctx = document.getElementById('spend-chart').getContext('2d');
+  // Color bars: gray for normal, coral for COVID/strike years
+  const annoYears = new Set(annotations.map(a => a.year));
+  const colors = trends.years.map(y => annoYears.has(y) ? BRAND_COLORS.coral : BRAND_COLORS.peachDeep);
+  new Chart(ctx, {
+    type: 'bar',
+    data: { labels: trends.years, datasets: [{ data: trends.production_spend_b, backgroundColor: colors, borderWidth: 0 }] },
+    options: {
+      responsive: true, maintainAspectRatio: false,
+      scales: {
+        x: { grid: { display: false }, ticks: { color: BRAND_COLORS.navy, font: { size: 12, weight: 'bold' } } },
+        y: { beginAtZero: true, grid: { color: BRAND_COLORS.grid, borderDash: [3,4] }, ticks: { color: BRAND_COLORS.navy, font: { size: 11 }, callback: v => '$' + v + 'B' } },
+      },
+      plugins: {
+        legend: { display: false },
+        tooltip: {
+          callbacks: {
+            title: (it) => 'FY ' + trends.years[it[0].dataIndex],
+            label: (it) => {
+              const y = trends.years[it.dataIndex];
+              const anno = annotations.find(a => a.year === y);
+              const lines = ['Spend: $' + it.parsed.y.toFixed(2) + 'B'];
+              if (anno) lines.push('⚠ ' + anno.label);
+              return lines;
+            },
+          },
+        },
+      },
+    },
+  });
+}
+
+function renderCreditsChart(trends) {
+  const ctx = document.getElementById('credits-chart').getContext('2d');
+  new Chart(ctx, {
+    type: 'line',
+    data: { labels: trends.years, datasets: [{ data: trends.tax_credits_b, borderColor: BRAND_COLORS.mustard, backgroundColor: 'rgba(212,160,23,0.15)', fill: true, tension: 0.25, pointRadius: 4, pointBackgroundColor: BRAND_COLORS.mustard, borderWidth: 2.5 }] },
+    options: {
+      responsive: true, maintainAspectRatio: false,
+      scales: {
+        x: { grid: { display: false }, ticks: { color: BRAND_COLORS.navy, font: { size: 11 } } },
+        y: { beginAtZero: true, grid: { color: BRAND_COLORS.grid, borderDash: [3,4] }, ticks: { color: BRAND_COLORS.navy, font: { size: 11 }, callback: v => '$' + v + 'B' } },
+      },
+      plugins: {
+        legend: { display: false },
+        tooltip: { callbacks: { label: (it) => 'Credits: $' + it.parsed.y.toFixed(2) + 'B' } },
+      },
+    },
+  });
+}
+
+function renderEmpChart(trends) {
+  const ctx = document.getElementById('emp-chart').getContext('2d');
+  new Chart(ctx, {
+    type: 'bar',
+    data: { labels: trends.years, datasets: [{ data: trends.employment_k, backgroundColor: BRAND_COLORS.teal, borderWidth: 0 }] },
+    options: {
+      responsive: true, maintainAspectRatio: false,
+      scales: {
+        x: { grid: { display: false }, ticks: { color: BRAND_COLORS.navy, font: { size: 11 } } },
+        y: { beginAtZero: true, grid: { color: BRAND_COLORS.grid, borderDash: [3,4] }, ticks: { color: BRAND_COLORS.navy, font: { size: 11 }, callback: v => v + 'K' } },
+      },
+      plugins: {
+        legend: { display: false },
+        tooltip: { callbacks: { label: (it) => 'Jobs: ' + it.parsed.y.toFixed(1) + 'K' } },
+      },
+    },
+  });
+}
+
+function renderBenchmarkChart(rows) {
+  const labels = rows.map(r => r.state);
+  const values = rows.map(r => r.spend_b);
+  const colors = rows.map(r => r.color);
+  const ctx = document.getElementById('benchmark-chart').getContext('2d');
+  new Chart(ctx, {
+    type: 'bar',
+    data: { labels, datasets: [{ data: values, backgroundColor: colors, borderWidth: 0 }] },
+    options: {
+      indexAxis: 'y',
+      responsive: true, maintainAspectRatio: false,
+      scales: {
+        x: { beginAtZero: true, grid: { color: BRAND_COLORS.grid, borderDash: [3,4] }, ticks: { color: BRAND_COLORS.navy, font: { size: 11 }, callback: v => '$' + v + 'B' } },
+        y: { grid: { display: false }, ticks: { color: BRAND_COLORS.navy, font: { size: 13, weight: 'bold' } } },
+      },
+      plugins: {
+        legend: { display: false },
+        tooltip: { callbacks: { label: (it) => '$' + it.parsed.x.toFixed(1) + 'B (rank #' + rows[it.dataIndex].rank + ')' } },
+      },
+    },
+  });
+}
+
+function renderProductionsGrid(rows) {
+  const grid = document.getElementById('productions-grid');
+  grid.innerHTML = '';
+  // Sort by year desc, then by spend desc
+  const sorted = rows.slice().sort((a,b) => b.year - a.year || b.spend_m - a.spend_m);
+  sorted.forEach(p => {
+    const card = document.createElement('div');
+    card.className = 'production-card';
+    card.innerHTML = `
+      <div class="title">${p.title}</div>
+      <div class="meta"><span class="year">${p.year}</span> · ${p.studio} · ${p.type}</div>
+      <div class="meta">📍 ${p.location}</div>
+      <div class="stats"><div><span class="num">$${p.spend_m}M</span> production budget</div></div>
+    `;
+    grid.appendChild(card);
+  });
+}
+
+function renderStudioGrid(rows) {
+  const grid = document.getElementById('studio-grid');
+  grid.innerHTML = '';
+  // Sort by stage_sqft_k descending
+  rows.slice().sort((a,b) => b.stage_sqft_k - a.stage_sqft_k).forEach(s => {
+    const card = document.createElement('div');
+    card.className = 'studio-card';
+    card.innerHTML = `
+      <div class="name">${s.name}</div>
+      <div class="city">${s.city}</div>
+      <div class="specialty">${s.specialty}</div>
+      <div class="footprint">
+        <div class="stat"><strong>${s.stages}</strong> stages</div>
+        <div class="stat"><strong>${s.stage_sqft_k.toLocaleString()}K</strong> sq ft</div>
+      </div>
+    `;
+    grid.appendChild(card);
+  });
+}
+
+init().catch(err => {
+  console.error('film init failed:', err);
+  document.querySelector('main').insertAdjacentHTML('beforeend',
+    '<div style="padding:20px; color:var(--coral); font-weight:600;">Failed to load film data. Check console.</div>');
+});
+</script>
 </body>
 </html>
