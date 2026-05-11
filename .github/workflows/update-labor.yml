@@ -1,0 +1,45 @@
+name: Update GA labor data (BLS LAUS)
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '0 17 25 * *'
+  push:
+    branches: [main]
+    paths:
+      - 'scripts/fetch_bls_laus.py'
+      - 'scripts/_ga_counties.py'
+      - '.github/workflows/update-labor.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repo
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Run BLS LAUS fetcher
+        env:
+          BLS_API_KEY: ${{ secrets.BLS_API_KEY }}
+        run: |
+          python scripts/fetch_bls_laus.py
+
+      - name: Commit updated data
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          if ! git diff --quiet -- data/counties.json; then
+            git add data/counties.json
+            git commit -m "data: refresh GA county unemployment (BLS LAUS) [skip ci]"
+            git push
+          else
+            echo "No changes in data/counties.json — nothing to commit."
+          fi
