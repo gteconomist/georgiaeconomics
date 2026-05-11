@@ -1,0 +1,288 @@
+{
+  "_fixture": true,
+  "_note": "FIXTURE seed data \u2014 values are calibrated to reflect plausible 2025-2026 GA MSA character but are not authoritative. Replaced by scripts/fetch_msa_metrics.py once that pipeline is wired up.",
+  "source": "FIXTURE (target: BLS LAUS, BLS QCEW, Census PEP, FHFA HPI, Census BPS, BEA MSA GDP)",
+  "latest_label": "2026-Q1",
+  "metrics": [
+    {
+      "key": "unemployment_rate",
+      "label": "Unemployment rate",
+      "unit": "%",
+      "lower_is_better": true,
+      "axis_label": "Labor",
+      "source": "BLS LAUS"
+    },
+    {
+      "key": "wage_growth_yoy",
+      "label": "Avg weekly wage growth",
+      "unit": "% YoY",
+      "lower_is_better": false,
+      "axis_label": "Wages",
+      "source": "BLS QCEW"
+    },
+    {
+      "key": "pop_growth_yoy",
+      "label": "Population growth",
+      "unit": "% YoY",
+      "lower_is_better": false,
+      "axis_label": "Population",
+      "source": "Census PEP"
+    },
+    {
+      "key": "home_price_yoy",
+      "label": "Home price growth",
+      "unit": "% YoY",
+      "lower_is_better": false,
+      "axis_label": "Housing",
+      "source": "FHFA HPI"
+    },
+    {
+      "key": "permits_per_1k",
+      "label": "Building permits / 1k",
+      "unit": "/1,000",
+      "lower_is_better": false,
+      "axis_label": "Permits",
+      "source": "Census BPS"
+    },
+    {
+      "key": "gdp_per_capita",
+      "label": "GDP per capita",
+      "unit": "$",
+      "lower_is_better": false,
+      "axis_label": "Output",
+      "source": "BEA"
+    }
+  ],
+  "msas": [
+    {
+      "cbsa": "12060",
+      "short_name": "Atlanta",
+      "full_name": "Atlanta-Sandy Springs-Alpharetta, GA",
+      "population": 6307261,
+      "metrics": {
+        "unemployment_rate": 3.3,
+        "wage_growth_yoy": 4.1,
+        "pop_growth_yoy": 1.4,
+        "home_price_yoy": 5.2,
+        "permits_per_1k": 6.8,
+        "gdp_per_capita": 78400
+      }
+    },
+    {
+      "cbsa": "12260",
+      "short_name": "Augusta",
+      "full_name": "Augusta-Richmond County, GA-SC",
+      "population": 611000,
+      "metrics": {
+        "unemployment_rate": 3.6,
+        "wage_growth_yoy": 4.4,
+        "pop_growth_yoy": 1.0,
+        "home_price_yoy": 4.1,
+        "permits_per_1k": 4.6,
+        "gdp_per_capita": 58300
+      }
+    },
+    {
+      "cbsa": "42340",
+      "short_name": "Savannah",
+      "full_name": "Savannah, GA",
+      "population": 410000,
+      "metrics": {
+        "unemployment_rate": 3.1,
+        "wage_growth_yoy": 5.6,
+        "pop_growth_yoy": 2.3,
+        "home_price_yoy": 6.8,
+        "permits_per_1k": 11.2,
+        "gdp_per_capita": 64200
+      }
+    },
+    {
+      "cbsa": "17980",
+      "short_name": "Columbus",
+      "full_name": "Columbus, GA-AL",
+      "population": 329000,
+      "metrics": {
+        "unemployment_rate": 4.0,
+        "wage_growth_yoy": 3.6,
+        "pop_growth_yoy": 0.4,
+        "home_price_yoy": 3.5,
+        "permits_per_1k": 3.1,
+        "gdp_per_capita": 54800
+      }
+    },
+    {
+      "cbsa": "31420",
+      "short_name": "Macon",
+      "full_name": "Macon-Bibb County, GA",
+      "population": 232000,
+      "metrics": {
+        "unemployment_rate": 4.4,
+        "wage_growth_yoy": 3.4,
+        "pop_growth_yoy": 0.3,
+        "home_price_yoy": 3.2,
+        "permits_per_1k": 2.4,
+        "gdp_per_capita": 51900
+      }
+    },
+    {
+      "cbsa": "12020",
+      "short_name": "Athens",
+      "full_name": "Athens-Clarke County, GA",
+      "population": 217000,
+      "metrics": {
+        "unemployment_rate": 2.9,
+        "wage_growth_yoy": 3.9,
+        "pop_growth_yoy": 0.9,
+        "home_price_yoy": 5.4,
+        "permits_per_1k": 5.8,
+        "gdp_per_capita": 56700
+      }
+    },
+    {
+      "cbsa": "23580",
+      "short_name": "Gainesville",
+      "full_name": "Gainesville, GA",
+      "population": 211000,
+      "metrics": {
+        "unemployment_rate": 3.2,
+        "wage_growth_yoy": 4.7,
+        "pop_growth_yoy": 1.8,
+        "home_price_yoy": 5.9,
+        "permits_per_1k": 8.7,
+        "gdp_per_capita": 60100
+      }
+    },
+    {
+      "cbsa": "47580",
+      "short_name": "Warner Robins",
+      "full_name": "Warner Robins, GA",
+      "population": 199000,
+      "metrics": {
+        "unemployment_rate": 3.4,
+        "wage_growth_yoy": 3.8,
+        "pop_growth_yoy": 0.6,
+        "home_price_yoy": 4.0,
+        "permits_per_1k": 4.3,
+        "gdp_per_capita": 53200
+      }
+    },
+    {
+      "cbsa": "46660",
+      "short_name": "Valdosta",
+      "full_name": "Valdosta, GA",
+      "population": 148000,
+      "metrics": {
+        "unemployment_rate": 4.1,
+        "wage_growth_yoy": 3.5,
+        "pop_growth_yoy": 0.5,
+        "home_price_yoy": 3.7,
+        "permits_per_1k": 3.6,
+        "gdp_per_capita": 47600
+      }
+    },
+    {
+      "cbsa": "10500",
+      "short_name": "Albany",
+      "full_name": "Albany, GA",
+      "population": 146000,
+      "metrics": {
+        "unemployment_rate": 4.8,
+        "wage_growth_yoy": 3.0,
+        "pop_growth_yoy": -0.2,
+        "home_price_yoy": 2.6,
+        "permits_per_1k": 1.8,
+        "gdp_per_capita": 45400
+      }
+    },
+    {
+      "cbsa": "19140",
+      "short_name": "Dalton",
+      "full_name": "Dalton, GA",
+      "population": 143000,
+      "metrics": {
+        "unemployment_rate": 4.5,
+        "wage_growth_yoy": 2.9,
+        "pop_growth_yoy": 0.4,
+        "home_price_yoy": 3.3,
+        "permits_per_1k": 2.9,
+        "gdp_per_capita": 56400
+      }
+    },
+    {
+      "cbsa": "15260",
+      "short_name": "Brunswick",
+      "full_name": "Brunswick, GA",
+      "population": 120000,
+      "metrics": {
+        "unemployment_rate": 3.7,
+        "wage_growth_yoy": 4.5,
+        "pop_growth_yoy": 1.6,
+        "home_price_yoy": 5.7,
+        "permits_per_1k": 9.3,
+        "gdp_per_capita": 55800
+      }
+    },
+    {
+      "cbsa": "40660",
+      "short_name": "Rome",
+      "full_name": "Rome, GA",
+      "population": 99000,
+      "metrics": {
+        "unemployment_rate": 3.9,
+        "wage_growth_yoy": 3.6,
+        "pop_growth_yoy": 0.5,
+        "home_price_yoy": 3.9,
+        "permits_per_1k": 3.4,
+        "gdp_per_capita": 52100
+      }
+    },
+    {
+      "cbsa": "25980",
+      "short_name": "Hinesville",
+      "full_name": "Hinesville, GA",
+      "population": 78000,
+      "metrics": {
+        "unemployment_rate": 4.2,
+        "wage_growth_yoy": 3.2,
+        "pop_growth_yoy": 0.7,
+        "home_price_yoy": 4.4,
+        "permits_per_1k": 5.1,
+        "gdp_per_capita": 42800
+      }
+    }
+  ],
+  "statewide_medians": {
+    "median_unemployment": 3.8,
+    "median_wage_growth": 3.7,
+    "median_pop_growth": 0.65,
+    "median_home_price_yoy": 4.05,
+    "median_permits_per_1k": 4.45,
+    "median_gdp_per_capita": 55300.0
+  },
+  "callouts": {
+    "lowest_unemployment": {
+      "msa": "Athens",
+      "value": 2.9
+    },
+    "highest_wage_growth": {
+      "msa": "Savannah",
+      "value": 5.6
+    },
+    "fastest_growing": {
+      "msa": "Savannah",
+      "value": 2.3
+    },
+    "hottest_housing": {
+      "msa": "Savannah",
+      "value": 6.8
+    },
+    "most_building": {
+      "msa": "Savannah",
+      "value": 11.2
+    },
+    "richest": {
+      "msa": "Atlanta",
+      "value": 78400
+    }
+  }
+}

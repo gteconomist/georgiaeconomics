@@ -2,13 +2,68 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<title>Metro Comparison — Coming Soon | Georgia Economics</title>
-<meta name="description" content="Side-by-side comparison of all 14 Georgia MSAs across unemployment, wage growth, population, home prices, permits, and GDP — with a radar chart overlay you can ">
+<title>Georgia Metros Compared — Atlanta, Savannah, Augusta & 11 More | Georgia Economics</title>
+<meta name="description" content="Side-by-side comparison of all 14 Georgia MSAs across unemployment, wages, population, housing, permits, and GDP. Pick any 2-3 metros to overlay on the radar chart.">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="/styles.css">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+<!-- Chart.js for the radar -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+<!-- Shared charts.js (for BRAND palette + global defaults) -->
+<script src="https://cdn.jsdelivr.net/gh/gteconomist/economicsguru@main/charts.js"></script>
+
+<style>
+  /* MSA-page-specific tweaks */
+  .metro-pickers {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px;
+    padding: 12px 0 16px; border-bottom: 1px solid var(--border); margin-bottom: 14px;
+  }
+  @media (max-width: 720px) { .metro-pickers { grid-template-columns: 1fr; } }
+  .metro-picker label {
+    display: block; font-size: 11px; font-weight: 700; color: var(--navy);
+    text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 4px;
+  }
+  .metro-picker select {
+    width: 100%; padding: 8px 10px; font-family: var(--font-sans); font-size: 14px;
+    border: 1px solid var(--border); background: var(--panel-bg); color: var(--navy);
+    border-left-width: 4px;
+  }
+  .metro-picker.slot-1 select { border-left-color: var(--navy); }
+  .metro-picker.slot-2 select { border-left-color: var(--peach-deep); }
+  .metro-picker.slot-3 select { border-left-color: var(--teal); }
+
+  .radar-canvas { position: relative; height: 460px; background: var(--chart-bg); padding: 8px; }
+
+  /* Comparison table */
+  .msa-table-wrap { overflow-x: auto; margin-top: 22px; }
+  table.msa-table { width: 100%; border-collapse: collapse; font-size: 14px; min-width: 720px; }
+  table.msa-table thead th {
+    text-align: left; padding: 8px 10px; background: var(--chart-bg);
+    border-bottom: 2px solid var(--navy); color: var(--navy);
+    font-weight: 700; text-transform: uppercase; letter-spacing: 0.04em; font-size: 11px;
+    cursor: pointer; user-select: none; position: relative;
+  }
+  table.msa-table thead th:hover { background: var(--peach-pale); }
+  table.msa-table thead th .arrow { font-size: 10px; opacity: 0.4; margin-left: 4px; }
+  table.msa-table thead th.sorted-asc  .arrow,
+  table.msa-table thead th.sorted-desc .arrow { opacity: 1; }
+  table.msa-table thead th.numeric { text-align: right; }
+  table.msa-table tbody td { padding: 7px 10px; border-bottom: 1px dotted var(--border); }
+  table.msa-table tbody td.numeric { text-align: right; font-variant-numeric: tabular-nums; }
+  table.msa-table tbody tr:hover { background: var(--peach-pale); }
+  table.msa-table .best  { background: rgba(58, 141, 141, 0.12); font-weight: 700; }
+  table.msa-table .worst { background: rgba(212, 98, 74, 0.10); }
+  table.msa-table tbody td.msa-name { font-weight: 600; color: var(--navy); }
+  table.msa-table tbody td.msa-name .pop { display: block; font-size: 11px; color: var(--ink-soft); font-weight: 400; }
+
+  .table-legend { font-size: 12px; color: var(--ink-soft); margin-top: 10px; }
+  .table-legend .swatch { display: inline-block; width: 10px; height: 10px; vertical-align: middle; margin: 0 4px 0 8px; }
+  .table-legend .sw-best  { background: rgba(58, 141, 141, 0.5); }
+  .table-legend .sw-worst { background: rgba(212, 98, 74, 0.4); }
+</style>
 </head>
 <body>
 
@@ -18,7 +73,7 @@
     <nav>
       <a href="/">Home</a>
       <a href="/counties/">Counties</a>
-      <a href="/msa/"   class="active">Metros</a>
+      <a href="/msa/" class="active">Metros</a>
       <a href="/labor/">Labor</a>
       <a href="/about/">About</a>
     </nav>
@@ -27,24 +82,317 @@
 
 <main>
   <section class="page-header">
-    <h1>Metro Comparison Dashboard</h1>
-    <div class="subtitle">Side-by-side comparison of all 14 Georgia MSAs across unemployment, wage growth, population, home prices, permits, and GDP — with a radar chart overlay you can pick any 2-3 metros for.</div>
+    <h1>Georgia metros compared</h1>
+    <div class="subtitle">All 14 GA Metropolitan Statistical Areas across labor, wages, population, housing, building activity, and output. Pick any 2-3 to overlay on the radar.</div>
+    <div class="latest">Latest data: <strong id="latest-label">—</strong></div>
   </section>
 
-  <div class="notice">
-    <strong>Page in development.</strong> The data pipeline for this topic is being wired up. In the meantime, the <a href="/counties/">county heat map</a> is live with monthly BLS LAUS data for all 159 Georgia counties.
+  <div class="notice" id="fixture-banner" style="display:none;">
+    <strong>Seed data:</strong> This page is showing fixture values calibrated to reflect plausible GA MSA characteristics (Savannah leads on growth, Atlanta leads on output, Athens on labor) while the BLS QCEW + FHFA + Census + BEA pipelines are wired up.
   </div>
 
-  <p style="margin-top:24px;"><a href="/">&larr; Back to home</a></p>
+  <!-- Headline callouts strip -->
+  <div class="kpi-grid">
+    <div class="kpi"><div class="label">Lowest unemployment</div><div class="value" id="cl-lowest-unemp-val">—</div><div class="delta" id="cl-lowest-unemp-msa">—</div></div>
+    <div class="kpi"><div class="label">Fastest wage growth</div><div class="value" id="cl-wage-val">—</div><div class="delta" id="cl-wage-msa">—</div></div>
+    <div class="kpi"><div class="label">Fastest population growth</div><div class="value" id="cl-pop-val">—</div><div class="delta" id="cl-pop-msa">—</div></div>
+    <div class="kpi"><div class="label">Hottest housing market</div><div class="value" id="cl-home-val">—</div><div class="delta" id="cl-home-msa">—</div></div>
+    <div class="kpi"><div class="label">Most building activity</div><div class="value" id="cl-permit-val">—</div><div class="delta" id="cl-permit-msa">—</div></div>
+    <div class="kpi"><div class="label">Highest GDP / capita</div><div class="value" id="cl-gdp-val">—</div><div class="delta" id="cl-gdp-msa">—</div></div>
+  </div>
+
+  <!-- Radar comparison panel -->
+  <div class="map-panel">
+    <h2>Compare any 2-3 Metros</h2>
+    <p class="sub">
+      Radar shows each metro's relative position across all 14 GA MSAs.
+      <strong>100 = best in GA on that axis</strong>, 0 = worst. Unemployment is inverted so high score always means strong.
+    </p>
+
+    <div class="metro-pickers">
+      <div class="metro-picker slot-1">
+        <label for="msa-1">Metro 1</label>
+        <select id="msa-1"></select>
+      </div>
+      <div class="metro-picker slot-2">
+        <label for="msa-2">Metro 2</label>
+        <select id="msa-2"></select>
+      </div>
+      <div class="metro-picker slot-3">
+        <label for="msa-3">Metro 3 (optional)</label>
+        <select id="msa-3"></select>
+      </div>
+    </div>
+
+    <div class="radar-canvas"><canvas id="msa-radar"></canvas></div>
+    <div class="map-legend-note">Each axis is min-max normalized across the 14 GA MSAs to a 0-100 scale, so a "100" on Wages means highest wage growth in Georgia, not absolute level.</div>
+  </div>
+
+  <!-- Full sortable table -->
+  <div class="map-panel">
+    <h2>All 14 Georgia MSAs — sortable</h2>
+    <p class="sub">Click any column header to sort. Best in column shaded teal, worst shaded coral.</p>
+    <div class="msa-table-wrap">
+      <table class="msa-table" id="msa-table">
+        <thead><tr id="msa-table-head"></tr></thead>
+        <tbody id="msa-table-body"></tbody>
+      </table>
+    </div>
+    <div class="table-legend">
+      <span class="swatch sw-best"></span>Best in column
+      <span class="swatch sw-worst"></span>Worst in column
+    </div>
+  </div>
 </main>
 
 <footer class="site-footer">
   <div class="wrap">
     <div>&copy; <span id="yr"></span> Georgia Economics &middot; Sister site to <a href="https://economicsguru.com">economicsguru.com</a> &middot; <a href="/about/">Methodology</a></div>
-    <div>Sources: BLS, FRED, BEA, Census, Georgia state agencies.</div>
+    <div>Sources: BLS LAUS &amp; QCEW, FHFA HPI, Census PEP &amp; BPS, BEA MSA GDP.</div>
   </div>
 </footer>
 
-<script>document.getElementById('yr').textContent = new Date().getFullYear();</script>
+<script>
+document.getElementById('yr').textContent = new Date().getFullYear();
+
+/* Brand colors (mirror BRAND in charts.js, plus GA peach-deep) */
+const SLOT_COLORS = [
+  { line: '#1a3a5c', fill: 'rgba(26, 58, 92, 0.18)'  },  // navy
+  { line: '#c46b3a', fill: 'rgba(196, 107, 58, 0.18)' }, // peach-deep
+  { line: '#3a8d8d', fill: 'rgba(58, 141, 141, 0.18)' }, // teal
+];
+
+/* Format helpers */
+function fmt(value, unit) {
+  if (value == null || isNaN(value)) return '—';
+  if (unit === '%')      return value.toFixed(1) + '%';
+  if (unit === '% YoY')  return (value > 0 ? '+' : '') + value.toFixed(1) + '%';
+  if (unit === '/1,000') return value.toFixed(1);
+  if (unit === '$')      return '$' + Math.round(value).toLocaleString();
+  return value.toLocaleString();
+}
+
+/* Min-max normalize one metric across all MSAs to 0-100. Inverts when lower_is_better. */
+function normalize(values, lowerIsBetter) {
+  const lo = Math.min(...values);
+  const hi = Math.max(...values);
+  if (hi === lo) return values.map(_ => 50);
+  return values.map(v => {
+    const t = (v - lo) / (hi - lo);
+    return Math.round((lowerIsBetter ? 1 - t : t) * 100);
+  });
+}
+
+let DATA = null;
+let RADAR_CHART = null;
+
+async function init() {
+  const res = await fetch('/data/msa.json');
+  DATA = await res.json();
+  if (DATA._fixture) document.getElementById('fixture-banner').style.display = '';
+
+  document.getElementById('latest-label').textContent = DATA.latest_label;
+
+  // Callout KPI strip
+  const c = DATA.callouts;
+  const set = (id, val) => { document.getElementById(id).textContent = val; };
+  set('cl-lowest-unemp-val', fmt(c.lowest_unemployment.value, '%'));
+  set('cl-lowest-unemp-msa', c.lowest_unemployment.msa);
+  set('cl-wage-val',         fmt(c.highest_wage_growth.value, '% YoY'));
+  set('cl-wage-msa',         c.highest_wage_growth.msa);
+  set('cl-pop-val',          fmt(c.fastest_growing.value, '% YoY'));
+  set('cl-pop-msa',          c.fastest_growing.msa);
+  set('cl-home-val',         fmt(c.hottest_housing.value, '% YoY'));
+  set('cl-home-msa',         c.hottest_housing.msa);
+  set('cl-permit-val',       fmt(c.most_building.value, '/1,000'));
+  set('cl-permit-msa',       c.most_building.msa);
+  set('cl-gdp-val',          fmt(c.richest.value, '$'));
+  set('cl-gdp-msa',          c.richest.msa);
+
+  // Pre-compute normalized scores per metric
+  const normalized = {};
+  DATA.metrics.forEach(m => {
+    const vals = DATA.msas.map(r => r.metrics[m.key]);
+    normalized[m.key] = normalize(vals, m.lower_is_better);
+  });
+  DATA.msas.forEach((row, i) => {
+    row.normalized = {};
+    DATA.metrics.forEach(m => { row.normalized[m.key] = normalized[m.key][i]; });
+  });
+
+  // Populate metro picker dropdowns
+  const picker1 = document.getElementById('msa-1');
+  const picker2 = document.getElementById('msa-2');
+  const picker3 = document.getElementById('msa-3');
+  // Default selection: Atlanta + Savannah + Augusta — the storyline ones
+  const defaults = ['Atlanta', 'Savannah', 'Augusta'];
+  DATA.msas.forEach((row, i) => {
+    [picker1, picker2, picker3].forEach(sel => {
+      const opt = document.createElement('option');
+      opt.value = row.short_name;
+      opt.textContent = row.short_name + ' — pop ' + (row.population/1000).toFixed(0) + 'k';
+      sel.appendChild(opt);
+    });
+  });
+  // Slot 3 can be empty
+  const noneOpt = document.createElement('option');
+  noneOpt.value = '';
+  noneOpt.textContent = '— none —';
+  picker3.insertBefore(noneOpt, picker3.firstChild);
+  picker1.value = defaults[0];
+  picker2.value = defaults[1];
+  picker3.value = defaults[2];
+
+  [picker1, picker2, picker3].forEach(sel => sel.addEventListener('change', renderRadar));
+  renderRadar();
+  renderTable();
+}
+
+function renderRadar() {
+  const picks = ['msa-1', 'msa-2', 'msa-3'].map(id => document.getElementById(id).value).filter(v => v);
+  const labels = DATA.metrics.map(m => m.axis_label);
+
+  const datasets = picks.map((shortName, i) => {
+    const row = DATA.msas.find(r => r.short_name === shortName);
+    const data = DATA.metrics.map(m => row.normalized[m.key]);
+    return {
+      label: shortName,
+      data,
+      borderColor: SLOT_COLORS[i].line,
+      backgroundColor: SLOT_COLORS[i].fill,
+      borderWidth: 2,
+      pointBackgroundColor: SLOT_COLORS[i].line,
+      pointRadius: 4,
+      pointHoverRadius: 6,
+    };
+  });
+
+  if (RADAR_CHART) RADAR_CHART.destroy();
+  const ctx = document.getElementById('msa-radar').getContext('2d');
+  RADAR_CHART = new Chart(ctx, {
+    type: 'radar',
+    data: { labels, datasets },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      scales: {
+        r: {
+          min: 0, max: 100,
+          ticks: { stepSize: 20, color: '#6b7280', backdropColor: 'transparent', font: { size: 10 } },
+          pointLabels: { color: '#1a3a5c', font: { size: 13, weight: 'bold' } },
+          grid:        { color: '#b6ad8d' },
+          angleLines:  { color: '#b6ad8d' },
+        },
+      },
+      plugins: {
+        legend: { position: 'bottom', labels: { color: '#1a3a5c', font: { size: 13, weight: 'bold' }, padding: 14 } },
+        tooltip: {
+          callbacks: {
+            label: (ctx) => {
+              const metric = DATA.metrics[ctx.dataIndex];
+              const row = DATA.msas.find(r => r.short_name === ctx.dataset.label);
+              const raw = row.metrics[metric.key];
+              return ctx.dataset.label + ' — ' + metric.label + ': ' + fmt(raw, metric.unit) + '  (score ' + ctx.parsed.r + ')';
+            },
+          },
+        },
+      },
+    },
+  });
+}
+
+let SORT_KEY = 'population';
+let SORT_DIR = 'desc';
+
+function renderTable() {
+  const head = document.getElementById('msa-table-head');
+  const body = document.getElementById('msa-table-body');
+
+  // Header row
+  head.innerHTML = '';
+  const cols = [
+    { key: 'short_name', label: 'Metro',       numeric: false, click: 'short_name' },
+    { key: 'population', label: 'Population',  numeric: true,  click: 'population', fmt: v => v.toLocaleString() },
+  ].concat(DATA.metrics.map(m => ({
+    key: m.key, label: m.axis_label, numeric: true, click: m.key, unit: m.unit, lower_is_better: m.lower_is_better,
+  })));
+
+  cols.forEach(col => {
+    const th = document.createElement('th');
+    th.textContent = col.label;
+    if (col.numeric) th.classList.add('numeric');
+    if (col.click === SORT_KEY) th.classList.add(SORT_DIR === 'asc' ? 'sorted-asc' : 'sorted-desc');
+    const arrow = document.createElement('span');
+    arrow.className = 'arrow';
+    arrow.textContent = (col.click === SORT_KEY)
+      ? (SORT_DIR === 'asc' ? '▲' : '▼')
+      : '▾';
+    th.appendChild(arrow);
+    th.addEventListener('click', () => {
+      if (SORT_KEY === col.click) {
+        SORT_DIR = SORT_DIR === 'asc' ? 'desc' : 'asc';
+      } else {
+        SORT_KEY = col.click;
+        SORT_DIR = col.numeric ? 'desc' : 'asc';
+      }
+      renderTable();
+    });
+    head.appendChild(th);
+  });
+
+  // Compute best/worst per numeric metric
+  const bestByMetric = {}, worstByMetric = {};
+  DATA.metrics.forEach(m => {
+    const vals = DATA.msas.map(r => r.metrics[m.key]);
+    const lo = Math.min(...vals), hi = Math.max(...vals);
+    bestByMetric[m.key]  = m.lower_is_better ? lo : hi;
+    worstByMetric[m.key] = m.lower_is_better ? hi : lo;
+  });
+
+  // Body rows
+  const sorted = DATA.msas.slice().sort((a, b) => {
+    let av = SORT_KEY === 'short_name' ? a.short_name
+           : SORT_KEY === 'population' ? a.population
+           : a.metrics[SORT_KEY];
+    let bv = SORT_KEY === 'short_name' ? b.short_name
+           : SORT_KEY === 'population' ? b.population
+           : b.metrics[SORT_KEY];
+    if (typeof av === 'string') return SORT_DIR === 'asc' ? av.localeCompare(bv) : bv.localeCompare(av);
+    return SORT_DIR === 'asc' ? av - bv : bv - av;
+  });
+
+  body.innerHTML = '';
+  sorted.forEach(row => {
+    const tr = document.createElement('tr');
+    // Metro name + pop subtitle
+    const tdName = document.createElement('td');
+    tdName.classList.add('msa-name');
+    tdName.innerHTML = `${row.short_name}<span class="pop">${row.full_name}</span>`;
+    tr.appendChild(tdName);
+    // Population
+    const tdPop = document.createElement('td');
+    tdPop.classList.add('numeric');
+    tdPop.textContent = row.population.toLocaleString();
+    tr.appendChild(tdPop);
+    // Each metric
+    DATA.metrics.forEach(m => {
+      const td = document.createElement('td');
+      td.classList.add('numeric');
+      const val = row.metrics[m.key];
+      td.textContent = fmt(val, m.unit);
+      if (val === bestByMetric[m.key])  td.classList.add('best');
+      if (val === worstByMetric[m.key]) td.classList.add('worst');
+      tr.appendChild(td);
+    });
+    body.appendChild(tr);
+  });
+}
+
+init().catch(err => {
+  console.error('msa init failed:', err);
+  document.querySelector('main').insertAdjacentHTML('beforeend',
+    '<div style="padding:20px; color:var(--coral); font-weight:600;">Failed to load MSA data. Check console.</div>');
+});
+</script>
 </body>
 </html>
