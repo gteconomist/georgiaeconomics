@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Georgia Economics — Live Georgia State Economic Data</title>
+<meta name="description" content="Live Georgia state economic data: county unemployment heat maps, MSA dashboards, Port of Savannah, film industry, agriculture. Updated from BLS, FRED, BEA, and Census.">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="/styles.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <div class="brand">Georgia<span class="tag">Economics</span></div>
+    <nav>
+      <a href="/" class="active">Home</a>
+      <a href="/counties/">Counties</a>
+      <a href="/msa/">Metros</a>
+      <a href="/labor/">Labor</a>
+      <a href="/about/">About</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <span class="peach-stripe">The Peach State, by the numbers</span>
+    <h1>Live Georgia economic data, updated monthly.</h1>
+    <p>County-level heat maps, metro comparisons, port traffic, film industry, agriculture, and labor markets &mdash; sourced from BLS, FRED, BEA, Census, and Georgia state agencies. Sister site to <a href="https://economicsguru.com">economicsguru.com</a>.</p>
+  </section>
+
+  <div class="topic-grid">
+
+    <a class="topic-card feature" href="/counties/">
+      <div class="badge">Live now</div>
+      <h3>County Heat Map</h3>
+      <p>All 159 counties on one interactive map. Drag the time slider to watch unemployment ripple across the state.</p>
+    </a>
+
+    <div class="topic-card coming">
+      <div class="badge">Coming soon</div>
+      <h3>Metro Dashboard</h3>
+      <p>Side-by-side comparisons of all 14 GA MSAs &mdash; Atlanta, Savannah, Augusta, Columbus, Athens, and more.</p>
+    </div>
+
+    <div class="topic-card coming">
+      <div class="badge">Coming soon</div>
+      <h3>Labor Market</h3>
+      <p>Statewide payrolls, unemployment, wage growth, sector employment, weekly UI claims.</p>
+    </div>
+
+    <div class="topic-card coming">
+      <div class="badge">Coming soon</div>
+      <h3>Housing</h3>
+      <p>FHFA home prices by MSA, building permits by county, rent indices, mortgage delinquencies.</p>
+    </div>
+
+    <div class="topic-card coming">
+      <div class="badge">Coming soon</div>
+      <h3>Population &amp; Migration</h3>
+      <p>County growth, net domestic migration, IRS income-flow data, age structure.</p>
+    </div>
+
+    <div class="topic-card coming">
+      <div class="badge">Coming soon</div>
+      <h3>State GDP</h3>
+      <p>Georgia GDP, per-capita output, sector composition, comparisons to Southeast peers (FL/NC/SC/TN/AL).</p>
+    </div>
+
+    <div class="topic-card coming">
+      <div class="badge">Coming soon</div>
+      <h3>Inflation</h3>
+      <p>Atlanta-Sandy Springs-Roswell CPI, South region CPI, GA retail gasoline prices.</p>
+    </div>
+
+    <div class="topic-card coming">
+      <div class="badge">Coming soon</div>
+      <h3>Consumer</h3>
+      <p>Monthly GA sales tax collections, retail spending proxies, Georgia Power residential demand.</p>
+    </div>
+
+    <a class="topic-card feature" href="/trade/">
+      <div class="badge">Distinctive</div>
+      <h3>Trade &amp; Logistics</h3>
+      <p>Port of Savannah monthly TEUs, Brunswick auto throughput, Hartsfield-Jackson cargo, GA exports by country.</p>
+    </a>
+
+    <a class="topic-card feature" href="/industries/film/">
+      <div class="badge">Distinctive</div>
+      <h3>Film Industry</h3>
+      <p>Annual GA film spend, motion-picture-sector employment, productions filmed in Georgia.</p>
+    </a>
+
+    <a class="topic-card feature" href="/industries/agriculture/">
+      <div class="badge">Distinctive</div>
+      <h3>Agriculture</h3>
+      <p>Broilers (#1), peanuts (#1), pecans (#1), cotton, blueberries &mdash; USDA NASS data.</p>
+    </a>
+
+    <a class="topic-card feature" href="/industries/automotive/">
+      <div class="badge">Distinctive</div>
+      <h3>Automotive &amp; EV</h3>
+      <p>Kia West Point, Hyundai Metaplant Bryan County, supplier footprint, the "EV corridor" story.</p>
+    </a>
+
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div>&copy; <span id="yr"></span> Georgia Economics &middot; Built with public data from BLS, FRED, BEA, Census, and Georgia state agencies. <a href="/about/">Methodology</a></div>
+    <div>Sister site: <a href="https://economicsguru.com">economicsguru.com</a></div>
+  </div>
+</footer>
+
+<script>document.getElementById('yr').textContent = new Date().getFullYear();</script>
+</body>
+</html>

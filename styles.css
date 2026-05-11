@@ -1,0 +1,172 @@
+/* georgiaeconomics.com — shared styles
+ * Sister site to economicsguru.com — same typography & navy/mustard/teal palette.
+ * GA-distinctive accent: --peach (#e8a87c) used for map gradients and state callouts.
+ */
+
+:root {
+  /* Palette — kept in lockstep with economicsguru for visual continuity */
+  --navy:        #1a3a5c;
+  --navy-soft:   #2e5984;
+  --mustard:     #d4a017;
+  --khaki:       #9b8b6a;
+  --teal:        #3a8d8d;
+  --teal-light:  #5fb8b8;
+  --coral:       #d4624a;
+  --green:       #6b8e3d;
+  --silver:      #9ba3ab;
+  --black:       #1a1a1a;
+
+  /* GA-distinctive accent — Peach State */
+  --peach:       #e8a87c;
+  --peach-deep:  #c46b3a;
+  --peach-pale:  #faead9;
+
+  /* Surfaces */
+  --page-bg:     #ffffff;
+  --chart-bg:    #fbf5dc;
+  --panel-bg:    #ffffff;
+  --border:      #d9d3b8;
+  --grid:        #b6ad8d;
+  --ink:         #1a1a1a;
+  --ink-soft:    #6b7280;
+
+  /* Type */
+  --font-sans: "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+  --font-display: "Source Sans Pro", Georgia, serif;
+}
+
+* { box-sizing: border-box; }
+html, body {
+  margin: 0; padding: 0;
+  background: var(--page-bg);
+  color: var(--ink);
+  font-family: var(--font-sans);
+  font-size: 16px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+a { color: var(--navy); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+/* ---------- Page chrome ---------- */
+.site-header { border-bottom: 2px solid var(--navy); background: var(--page-bg); }
+.site-header .wrap {
+  max-width: 1200px; margin: 0 auto; padding: 18px 24px;
+  display: flex; align-items: baseline; justify-content: space-between; gap: 24px;
+}
+.site-header .brand {
+  font-family: var(--font-display);
+  font-weight: 700; font-size: 22px; letter-spacing: -0.01em;
+  color: var(--navy);
+}
+.site-header .brand .tag { color: var(--peach-deep); }
+.site-header nav a {
+  margin-left: 18px; font-size: 14px; color: var(--ink-soft);
+  text-transform: uppercase; letter-spacing: 0.06em; font-weight: 600;
+}
+.site-header nav a.active, .site-header nav a:hover { color: var(--navy); text-decoration: none; }
+
+main { max-width: 1200px; margin: 0 auto; padding: 28px 24px 48px; }
+
+.page-header { margin-bottom: 18px; }
+.page-header h1 {
+  font-family: var(--font-display); color: var(--navy);
+  font-weight: 800; font-size: 32px; letter-spacing: -0.01em;
+  margin: 0 0 4px;
+}
+.page-header .subtitle { color: var(--ink-soft); font-style: italic; font-size: 15px; }
+.page-header .latest { margin-top: 6px; font-size: 13px; color: var(--ink-soft); }
+.page-header .latest strong { color: var(--navy); font-style: normal; }
+
+/* ---------- Notice banner ---------- */
+.notice {
+  margin: 14px 0 22px; padding: 12px 16px;
+  background: var(--peach-pale); border-left: 4px solid var(--peach-deep);
+  font-size: 14px; color: #5a3a20;
+}
+
+/* ---------- KPI cards ---------- */
+.kpi-grid { display: grid; grid-template-columns: repeat(6, 1fr); gap: 12px; margin-bottom: 22px; }
+@media (max-width: 1000px) { .kpi-grid { grid-template-columns: repeat(3, 1fr); } }
+@media (max-width: 600px) { .kpi-grid { grid-template-columns: repeat(2, 1fr); } }
+.kpi {
+  border: 1px solid var(--border); border-top: 3px solid var(--navy);
+  background: var(--panel-bg); border-radius: 4px;
+  padding: 12px 14px;
+}
+.kpi .label { font-size: 11px; font-weight: 700; color: var(--navy); text-transform: uppercase; letter-spacing: 0.08em; }
+.kpi .value { font-family: var(--font-display); font-size: 26px; font-weight: 700; color: var(--navy); margin-top: 4px; line-height: 1.1; }
+.kpi .delta { font-size: 12px; margin-top: 4px; color: var(--ink-soft); font-weight: 500; }
+.kpi .delta.up   { color: var(--coral); }
+.kpi .delta.down { color: var(--teal); }
+.kpi .delta.flat { color: var(--ink-soft); }
+
+/* ---------- Chart panels ---------- */
+.chart-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+@media (max-width: 980px) { .chart-grid { grid-template-columns: 1fr; } }
+.chart-panel { background: var(--panel-bg); border: 1px solid var(--border); padding: 14px 16px 18px; }
+.chart-panel h2 { font-family: var(--font-display); color: var(--navy); font-size: 16px; font-weight: 700; margin: 0 0 4px; text-transform: uppercase; letter-spacing: 0.04em; }
+.chart-panel .sub { font-size: 12px; color: var(--ink-soft); margin: 0 0 10px; }
+.chart-canvas { position: relative; height: 320px; background: var(--chart-bg); padding: 4px; }
+
+/* ---------- Map panels (georgiaeconomics-specific) ---------- */
+.map-panel { background: var(--panel-bg); border: 1px solid var(--border); padding: 14px 16px 18px; margin-bottom: 22px; }
+.map-panel h2 { font-family: var(--font-display); color: var(--navy); font-size: 18px; font-weight: 700; margin: 0 0 4px; text-transform: uppercase; letter-spacing: 0.04em; }
+.map-panel .sub { font-size: 13px; color: var(--ink-soft); margin: 0 0 12px; }
+.map-controls {
+  display: flex; flex-wrap: wrap; gap: 12px; align-items: center;
+  padding: 10px 0 14px; border-bottom: 1px solid var(--border); margin-bottom: 14px;
+}
+.map-controls label { font-size: 12px; font-weight: 700; color: var(--navy); text-transform: uppercase; letter-spacing: 0.06em; }
+.map-controls select {
+  font-family: var(--font-sans); font-size: 14px;
+  padding: 6px 10px; border: 1px solid var(--border); background: var(--panel-bg);
+  color: var(--navy);
+}
+.map-container { position: relative; min-height: 560px; background: var(--chart-bg); padding: 6px; }
+.map-legend-note { font-size: 12px; color: var(--ink-soft); margin-top: 8px; font-style: italic; }
+
+/* Leaderboard tables next to maps */
+.leaderboard-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; margin-top: 18px; }
+@media (max-width: 880px) { .leaderboard-grid { grid-template-columns: 1fr; } }
+.leaderboard { background: var(--panel-bg); border: 1px solid var(--border); padding: 12px 14px; }
+.leaderboard h3 { font-family: var(--font-display); color: var(--navy); font-size: 14px; font-weight: 700; margin: 0 0 8px; text-transform: uppercase; letter-spacing: 0.06em; }
+.leaderboard table { width: 100%; border-collapse: collapse; font-size: 14px; }
+.leaderboard td { padding: 5px 0; border-bottom: 1px dotted var(--border); }
+.leaderboard td:last-child { text-align: right; font-variant-numeric: tabular-nums; color: var(--navy); font-weight: 600; }
+
+/* ---------- Topic grid (landing) ---------- */
+.hero { padding: 36px 0 24px; }
+.hero h1 { font-size: 40px; font-family: var(--font-display); color: var(--navy); font-weight: 800; margin: 0 0 10px; }
+.hero p  { font-size: 17px; color: var(--ink-soft); max-width: 720px; margin: 0; }
+.hero .peach-stripe {
+  display: inline-block; padding: 2px 10px; background: var(--peach-pale);
+  border-left: 3px solid var(--peach-deep); color: var(--peach-deep);
+  font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em;
+  margin-bottom: 14px;
+}
+.topic-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-top: 24px; }
+@media (max-width: 980px) { .topic-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 540px) { .topic-grid { grid-template-columns: 1fr; } }
+.topic-card {
+  background: var(--panel-bg); border: 1px solid var(--border);
+  border-top: 4px solid var(--navy); padding: 18px;
+  text-decoration: none; color: var(--ink); display: block;
+}
+.topic-card:hover { border-color: var(--navy); text-decoration: none; }
+.topic-card.coming { opacity: 0.55; cursor: not-allowed; }
+.topic-card.feature { border-top-color: var(--peach-deep); }
+.topic-card h3 { margin: 0 0 6px; font-family: var(--font-display); color: var(--navy); font-size: 20px; }
+.topic-card p { margin: 0; color: var(--ink-soft); font-size: 14px; }
+.topic-card .badge {
+  display: inline-block; margin-bottom: 8px;
+  font-size: 10px; font-weight: 700; letter-spacing: 0.08em;
+  text-transform: uppercase; color: var(--mustard);
+}
+.topic-card.feature .badge { color: var(--peach-deep); }
+.topic-card.coming .badge { color: var(--silver); }
+
+/* ---------- Footer ---------- */
+.site-footer { border-top: 1px solid var(--border); margin-top: 48px; padding: 22px 0; font-size: 13px; color: var(--ink-soft); }
+.site-footer .wrap { max-width: 1200px; margin: 0 auto; padding: 0 24px; display: flex; justify-content: space-between; gap: 18px; flex-wrap: wrap; }
