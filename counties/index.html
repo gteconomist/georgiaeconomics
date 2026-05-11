@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Georgia Counties — Unemployment Heat Map | Georgia Economics</title>
+<meta name="description" content="Interactive heat map of unemployment rates across all 159 Georgia counties. Updated monthly from BLS LAUS.">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="/styles.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+<!-- Plotly.js for choropleth -->
+<script src="https://cdn.plot.ly/plotly-2.35.2.min.js"></script>
+<!-- Chart.js for non-map charts (shared with economicsguru via jsDelivr) -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+<!-- Shared charts.js from economicsguru -->
+<script src="https://cdn.jsdelivr.net/gh/gteconomist/economicsguru@main/charts.js"></script>
+<!-- Local maps.js -->
+<script src="/maps.js"></script>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <div class="brand">Georgia<span class="tag">Economics</span></div>
+    <nav>
+      <a href="/">Home</a>
+      <a href="/counties/" class="active">Counties</a>
+      <a href="/msa/">Metros</a>
+      <a href="/labor/">Labor</a>
+      <a href="/about/">About</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="page-header">
+    <h1>Georgia counties at a glance</h1>
+    <div class="subtitle">Hover any county for its unemployment rate. Drag the time slider to watch the last 12 months ripple across all 159.</div>
+    <div class="latest">Latest data: <strong id="latest-month">—</strong> &middot; Statewide average: <strong id="state-avg">—</strong></div>
+  </section>
+
+  <div class="notice" id="fixture-banner" style="display:none;">
+    <strong>Seed data:</strong> This page is showing fixture values while the live BLS LAUS pipeline is being wired up. Color patterns reflect the rough GA distribution (metro Atlanta lower, rural southwest higher) but individual values are not yet authoritative.
+  </div>
+
+  <!-- KPI strip -->
+  <div class="kpi-grid">
+    <div class="kpi">
+      <div class="label">Statewide avg</div>
+      <div class="value" id="kpi-statewide">—</div>
+      <div class="delta">All 159 counties, unweighted</div>
+    </div>
+    <div class="kpi">
+      <div class="label">Lowest county</div>
+      <div class="value" id="kpi-lowest-val">—</div>
+      <div class="delta" id="kpi-lowest-name">—</div>
+    </div>
+    <div class="kpi">
+      <div class="label">Highest county</div>
+      <div class="value" id="kpi-highest-val">—</div>
+      <div class="delta" id="kpi-highest-name">—</div>
+    </div>
+    <div class="kpi">
+      <div class="label">Counties tracked</div>
+      <div class="value">159</div>
+      <div class="delta">BLS LAUS, monthly</div>
+    </div>
+    <div class="kpi">
+      <div class="label">Time series</div>
+      <div class="value">12 mo</div>
+      <div class="delta">Drag slider below</div>
+    </div>
+    <div class="kpi">
+      <div class="label">Data source</div>
+      <div class="value" style="font-size:14px; line-height:1.3;">BLS LAUS</div>
+      <div class="delta">Local Area Unemp Stats</div>
+    </div>
+  </div>
+
+  <!-- Time-animated choropleth -->
+  <div class="map-panel">
+    <h2>Unemployment by County — 12-Month Animation</h2>
+    <p class="sub">Each county shaded by its monthly unemployment rate. Click ▶ Play or drag the slider.</p>
+    <div class="map-controls">
+      <label for="metric-select">Metric</label>
+      <select id="metric-select">
+        <option value="unemployment_rate" selected>Unemployment rate (%)</option>
+        <option value="median_income" disabled>Median household income — coming soon</option>
+        <option value="population_change" disabled>Population change — coming soon</option>
+        <option value="poverty_rate" disabled>Poverty rate — coming soon</option>
+      </select>
+    </div>
+    <div class="map-container" id="ga-county-map"></div>
+    <div class="map-legend-note">Color scale uses a global min/max across all 12 frames so colors stay comparable as you scrub through time.</div>
+  </div>
+
+  <!-- Best & worst leaderboards -->
+  <div class="leaderboard-grid" id="county-leaderboards">
+    <div class="leaderboard" data-role="best">
+      <h3>Lowest unemployment</h3>
+      <table><tbody></tbody></table>
+    </div>
+    <div class="leaderboard" data-role="worst">
+      <h3>Highest unemployment</h3>
+      <table><tbody></tbody></table>
+    </div>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div>&copy; <span id="yr"></span> Georgia Economics &middot; Sister site to <a href="https://economicsguru.com">economicsguru.com</a> &middot; <a href="/about/">Methodology</a></div>
+    <div>Data refreshes monthly from BLS LAUS.</div>
+  </div>
+</footer>
+
+<script>
+document.getElementById('yr').textContent = new Date().getFullYear();
+
+async function init() {
+  const res  = await fetch('/data/counties.json');
+  const data = await res.json();
+
+  // Fixture banner
+  if (data._fixture) document.getElementById('fixture-banner').style.display = '';
+
+  // Header text
+  document.getElementById('latest-month').textContent = data.latest_label || '—';
+  document.getElementById('state-avg').textContent    = (data.kpis.statewide_avg_unemp ?? '—') + '%';
+
+  // KPI strip
+  document.getElementById('kpi-statewide').textContent    = data.kpis.statewide_avg_unemp + '%';
+  document.getElementById('kpi-lowest-val').textContent   = data.kpis.lowest.value  + '%';
+  document.getElementById('kpi-lowest-name').textContent  = data.kpis.lowest.county  + ' County';
+  document.getElementById('kpi-highest-val').textContent  = data.kpis.highest.value + '%';
+  document.getElementById('kpi-highest-name').textContent = data.kpis.highest.county + ' County';
+
+  // Map (animated)
+  await window.gaMaps.drawGATimeChoropleth('ga-county-map', data.frames, {
+    metricLabel: data.metric_label || 'Unemployment',
+    unit: data.unit || '%',
+    colorscale: 'sequential',
+    frameDuration: 600,
+  });
+
+  // Leaderboards from the latest frame
+  const latestPoints = data.frames[data.frames.length - 1].points;
+  window.gaMaps.renderLeaderboards('county-leaderboards', latestPoints, {
+    topN: 8,
+    unit: '%',
+    lowerIsBetter: true,
+  });
+}
+
+init().catch(err => {
+  console.error('counties page init failed:', err);
+  document.getElementById('ga-county-map').innerHTML =
+    '<div style="padding:24px; color:var(--coral); font-weight:600;">Failed to load county data. Check console.</div>';
+});
+</script>
+</body>
+</html>
