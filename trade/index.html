@@ -2,13 +2,43 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<title>Trade & Logistics — Coming Soon | Georgia Economics</title>
-<meta name="description" content="Port of Savannah monthly TEUs, Port of Brunswick auto throughput, Hartsfield-Jackson cargo tonnage, and Georgia exports by destination country. Probably the mos">
+<title>Georgia Trade & Logistics — Port of Savannah, Brunswick, Hartsfield-Jackson | Georgia Economics</title>
+<meta name="description" content="Live Georgia trade and logistics data: Port of Savannah TEU container traffic, Port of Brunswick auto throughput, Hartsfield-Jackson cargo, GA exports by country.">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="/styles.css">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+<!-- Chart.js + shared brand setup -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/gteconomist/economicsguru@main/charts.js"></script>
+
+<style>
+  .trade-grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+  @media (max-width: 980px) { .trade-grid-2 { grid-template-columns: 1fr; } }
+  .panel-canvas { position: relative; height: 320px; background: var(--chart-bg); padding: 6px; }
+  .big-canvas   { position: relative; height: 380px; background: var(--chart-bg); padding: 6px; }
+
+  /* Exports table */
+  .exports-wrap { overflow-x: auto; }
+  table.exports-table { width: 100%; border-collapse: collapse; font-size: 14px; min-width: 580px; }
+  table.exports-table thead th {
+    text-align: left; padding: 8px 10px; background: var(--chart-bg);
+    border-bottom: 2px solid var(--navy); color: var(--navy);
+    font-weight: 700; text-transform: uppercase; letter-spacing: 0.04em; font-size: 11px;
+  }
+  table.exports-table thead th.numeric { text-align: right; }
+  table.exports-table tbody td { padding: 7px 10px; border-bottom: 1px dotted var(--border); }
+  table.exports-table tbody td.numeric { text-align: right; font-variant-numeric: tabular-nums; }
+  table.exports-table tbody tr:hover { background: var(--peach-pale); }
+  table.exports-table .country { font-weight: 600; color: var(--navy); }
+  table.exports-table .iso { display: inline-block; font-size: 11px; color: var(--ink-soft); font-weight: 400; margin-left: 6px; }
+  table.exports-table .yoy-up   { color: var(--teal); font-weight: 600; }
+  table.exports-table .yoy-down { color: var(--coral); font-weight: 600; }
+
+  .source-note { font-size: 12px; color: var(--ink-soft); margin-top: 8px; font-style: italic; }
+</style>
 </head>
 <body>
 
@@ -27,24 +57,322 @@
 
 <main>
   <section class="page-header">
-    <h1>Trade & Logistics</h1>
-    <div class="subtitle">Port of Savannah monthly TEUs, Port of Brunswick auto throughput, Hartsfield-Jackson cargo tonnage, and Georgia exports by destination country. Probably the most differentiated page on this site — there's no other place that charts all four together.</div>
+    <h1>Georgia trade &amp; logistics</h1>
+    <div class="subtitle">Port of Savannah TEUs, Port of Brunswick auto throughput, Hartsfield-Jackson cargo, and GA exports by destination — the four pillars of Georgia's role as the Southeast's logistics hub.</div>
+    <div class="latest">Latest data: <strong id="latest-label">—</strong></div>
   </section>
 
-  <div class="notice">
-    <strong>Page in development.</strong> The data pipeline for this topic is being wired up. In the meantime, the <a href="/counties/">county heat map</a> is live with monthly BLS LAUS data for all 159 Georgia counties.
+  <div class="notice" id="fixture-banner" style="display:none;">
+    <strong>Seed data:</strong> Charts use fixture values calibrated to real-world GA trade scale (Savannah ~5.5M TEU/yr, Brunswick #1 US auto port, Hyundai Metaplant ramping autos in 2025-26). Live wiring via Georgia Ports Authority press releases (Tavily) and Census USA Trade Online is queued for the next iteration.
   </div>
 
-  <p style="margin-top:24px;"><a href="/">&larr; Back to home</a></p>
+  <!-- KPI strip -->
+  <div class="kpi-grid">
+    <div class="kpi">
+      <div class="label">Savannah TEU (latest)</div>
+      <div class="value" id="kpi-teu-val">—</div>
+      <div class="delta" id="kpi-teu-yoy">—</div>
+    </div>
+    <div class="kpi">
+      <div class="label">2025 Savannah total</div>
+      <div class="value" id="kpi-teu-annual">—</div>
+      <div class="delta">Full calendar year, mTEU</div>
+    </div>
+    <div class="kpi">
+      <div class="label">Brunswick autos (latest)</div>
+      <div class="value" id="kpi-autos-val">—</div>
+      <div class="delta" id="kpi-autos-yoy">—</div>
+    </div>
+    <div class="kpi">
+      <div class="label">ATL cargo (latest)</div>
+      <div class="value" id="kpi-cargo-val">—</div>
+      <div class="delta" id="kpi-cargo-yoy">—</div>
+    </div>
+    <div class="kpi">
+      <div class="label">Top export destination</div>
+      <div class="value" id="kpi-export-country">—</div>
+      <div class="delta" id="kpi-export-val">—</div>
+    </div>
+    <div class="kpi">
+      <div class="label">Top 10 export share</div>
+      <div class="value" id="kpi-top10-share">—</div>
+      <div class="delta">Of GA's total exports</div>
+    </div>
+  </div>
+
+  <!-- Big Savannah TEU chart -->
+  <div class="chart-panel">
+    <h2>Port of Savannah — Monthly Container Volume</h2>
+    <p class="sub">Twenty-foot equivalent units (TEUs), thousands. Hover any month for the value. The 2021-22 spike was pandemic-era supply-chain volume; 2023 was the normalization; 2024-26 is the rebuild.</p>
+    <div class="big-canvas"><canvas id="savannah-teu"></canvas></div>
+    <div class="source-note">Source: Georgia Ports Authority monthly press releases (target). Currently fixture data.</div>
+  </div>
+
+  <!-- Side-by-side Brunswick + ATL -->
+  <div class="trade-grid-2" style="margin-top: 22px;">
+    <div class="chart-panel">
+      <h2>Port of Brunswick — Auto Throughput</h2>
+      <p class="sub">Vehicle units, thousands. Brunswick is the busiest US port for finished autos. The recent surge tracks the Hyundai Metaplant production ramp in Bryan County.</p>
+      <div class="panel-canvas"><canvas id="brunswick-autos"></canvas></div>
+      <div class="source-note">Source: Georgia Ports Authority (target). Currently fixture data.</div>
+    </div>
+
+    <div class="chart-panel">
+      <h2>Hartsfield-Jackson — Cargo Tonnage</h2>
+      <p class="sub">Metric tons, thousands. ATL is the busiest passenger airport in the world; cargo is the smaller but still meaningful logistics story.</p>
+      <div class="panel-canvas"><canvas id="atl-cargo"></canvas></div>
+      <div class="source-note">Source: ATL airport monthly statistics (target). Currently fixture data.</div>
+    </div>
+  </div>
+
+  <!-- Top export destinations table -->
+  <div class="chart-panel" style="margin-top: 22px;">
+    <h2>Top 10 GA Export Destinations</h2>
+    <p class="sub">Annual goods exports originating in Georgia, 2025. YoY change shows which markets are growing for GA shippers.</p>
+    <div class="exports-wrap">
+      <table class="exports-table">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Country</th>
+            <th class="numeric">2025 ($M)</th>
+            <th class="numeric">YoY</th>
+            <th class="numeric">Share of top 10</th>
+          </tr>
+        </thead>
+        <tbody id="exports-body"></tbody>
+      </table>
+    </div>
+    <div class="source-note">Source: US Census Bureau, USA Trade Online — state-level exports by destination (target). Currently fixture data.</div>
+  </div>
+
+  <!-- Leading indicator chart — the highlight -->
+  <div class="chart-panel" style="margin-top: 22px;">
+    <h2>The Lead Indicator: Savannah TEUs → Atlanta T&amp;W Employment</h2>
+    <p class="sub">Cargo volumes at Savannah tend to show up 4-6 months later as employment in transportation and warehousing in metro Atlanta. Container surge in 2021 → ATL hiring spike in 2022; normalization in 2023 → employment plateau in late 2023. <strong>This relationship isn't tracked anywhere else.</strong></p>
+    <div class="big-canvas"><canvas id="lead-indicator"></canvas></div>
+    <div class="source-note">Sources: GPA monthly TEU data + BLS QCEW for ATL MSA Transportation &amp; Warehousing sector employment (NAICS 48-49). Currently fixture; the real version overlays smoothed 3-month averages.</div>
+  </div>
+
 </main>
 
 <footer class="site-footer">
   <div class="wrap">
     <div>&copy; <span id="yr"></span> Georgia Economics &middot; Sister site to <a href="https://economicsguru.com">economicsguru.com</a> &middot; <a href="/about/">Methodology</a></div>
-    <div>Sources: BLS, FRED, BEA, Census, Georgia state agencies.</div>
+    <div>Sources: Georgia Ports Authority, ATL airport, US Census, BLS QCEW.</div>
   </div>
 </footer>
 
-<script>document.getElementById('yr').textContent = new Date().getFullYear();</script>
+<script>
+document.getElementById('yr').textContent = new Date().getFullYear();
+
+const BRAND_COLORS = {
+  navy: '#1a3a5c', navySoft: '#2e5984',
+  peach: '#e8a87c', peachDeep: '#c46b3a', peachPale: '#faead9',
+  mustard: '#d4a017', teal: '#3a8d8d', coral: '#d4624a',
+  grid: '#b6ad8d', ink: '#1a1a1a', inkSoft: '#6b7280',
+};
+
+function fmtMonth(s) {
+  const [y,m] = s.split('-').map(Number);
+  return new Date(y, m-1, 1).toLocaleString('en-US', { month: 'short', year: '2-digit' });
+}
+function fmtMonthLong(s) {
+  const [y,m] = s.split('-').map(Number);
+  return new Date(y, m-1, 1).toLocaleString('en-US', { month: 'long', year: 'numeric' });
+}
+function fmtKTEU(v) { return Math.round(v).toLocaleString() + 'K'; }
+function fmtPct(v)  { return (v > 0 ? '+' : '') + v.toFixed(1) + '%'; }
+function fmtMoney(v){ return '$' + (v/1000).toFixed(2) + 'B'; }
+
+async function init() {
+  const res = await fetch('/data/trade.json');
+  const d   = await res.json();
+  if (d._fixture) document.getElementById('fixture-banner').style.display = '';
+
+  document.getElementById('latest-label').textContent = fmtMonthLong(d.latest_label);
+
+  // KPI strip
+  document.getElementById('kpi-teu-val').textContent     = d.kpis.savannah_teu_latest.toLocaleString() + 'K';
+  const teuYoyEl = document.getElementById('kpi-teu-yoy');
+  teuYoyEl.textContent = fmtPct(d.kpis.savannah_teu_yoy) + ' YoY';
+  teuYoyEl.classList.add(d.kpis.savannah_teu_yoy >= 0 ? 'down' : 'up'); // .down is teal (good), .up is coral (bad)
+
+  document.getElementById('kpi-teu-annual').textContent  = (d.kpis.savannah_2025_total_teu_k / 1000).toFixed(2) + 'M TEU';
+
+  document.getElementById('kpi-autos-val').textContent   = d.kpis.brunswick_autos_latest.toFixed(1) + 'K';
+  const autosYoyEl = document.getElementById('kpi-autos-yoy');
+  autosYoyEl.textContent = fmtPct(d.kpis.brunswick_autos_yoy) + ' YoY';
+  autosYoyEl.classList.add(d.kpis.brunswick_autos_yoy >= 0 ? 'down' : 'up');
+
+  document.getElementById('kpi-cargo-val').textContent   = d.kpis.atl_cargo_latest.toFixed(1) + 'Kt';
+  const cargoYoyEl = document.getElementById('kpi-cargo-yoy');
+  cargoYoyEl.textContent = fmtPct(d.kpis.atl_cargo_yoy) + ' YoY';
+  cargoYoyEl.classList.add(d.kpis.atl_cargo_yoy >= 0 ? 'down' : 'up');
+
+  document.getElementById('kpi-export-country').textContent = d.kpis.top_export_country;
+  document.getElementById('kpi-export-val').textContent     = fmtMoney(d.kpis.top_export_musd) + ' (2025)';
+
+  const top10share = d.ga_exports_top10_total_musd; // M USD
+  document.getElementById('kpi-top10-share').textContent = '$' + (top10share/1000).toFixed(1) + 'B';
+
+  // Render charts
+  renderSavannahTEU(d.savannah_teu_k);
+  renderBrunswick(d.brunswick_autos_k);
+  renderATLCargo(d.atl_cargo_kt);
+  renderLeadIndicator(d.savannah_teu_k, d.atl_tw_employment_k);
+  renderExportsTable(d.ga_exports_2025, d.ga_exports_top10_total_musd);
+}
+
+/* --- Chart 1: Savannah TEU (60+ months, year-shaded bars) --- */
+function renderSavannahTEU(series) {
+  const labels = series.map(r => fmtMonth(r[0]));
+  const values = series.map(r => r[1]);
+  const ctx = document.getElementById('savannah-teu').getContext('2d');
+
+  // Color bars by era
+  const colors = series.map(r => {
+    const y = parseInt(r[0].split('-')[0], 10);
+    if (y <= 2020) return BRAND_COLORS.peach;          // COVID era pre-surge
+    if (y <= 2022) return BRAND_COLORS.peachDeep;      // Surge era
+    if (y === 2023) return BRAND_COLORS.coral;         // Normalization
+    return BRAND_COLORS.navy;                          // Rebuild 2024+
+  });
+
+  new Chart(ctx, {
+    type: 'bar',
+    data: { labels, datasets: [{ label: 'TEUs (thousands)', data: values, backgroundColor: colors, borderWidth: 0 }] },
+    options: {
+      responsive: true, maintainAspectRatio: false,
+      scales: {
+        x: { grid: { display: false }, ticks: { color: BRAND_COLORS.navy, font: { size: 10 }, maxRotation: 45, autoSkip: true, maxTicksLimit: 16 } },
+        y: { beginAtZero: false, grid: { color: BRAND_COLORS.grid, borderDash: [3,4] }, ticks: { color: BRAND_COLORS.navy, font: { size: 11 }, callback: v => v + 'K' } },
+      },
+      plugins: {
+        legend: { display: false },
+        tooltip: {
+          callbacks: {
+            title: (items) => fmtMonthLong(series[items[0].dataIndex][0]),
+            label: (item) => 'TEUs: ' + Math.round(item.parsed.y).toLocaleString() + 'K',
+          },
+        },
+      },
+    },
+  });
+}
+
+/* --- Chart 2: Brunswick autos --- */
+function renderBrunswick(series) {
+  const labels = series.map(r => fmtMonth(r[0]));
+  const values = series.map(r => r[1]);
+  const ctx = document.getElementById('brunswick-autos').getContext('2d');
+  new Chart(ctx, {
+    type: 'bar',
+    data: { labels, datasets: [{ label: 'Vehicles (thousands)', data: values, backgroundColor: BRAND_COLORS.peachDeep, borderWidth: 0 }] },
+    options: {
+      responsive: true, maintainAspectRatio: false,
+      scales: {
+        x: { grid: { display: false }, ticks: { color: BRAND_COLORS.navy, font: { size: 10 }, maxRotation: 45, autoSkip: true, maxTicksLimit: 12 } },
+        y: { beginAtZero: false, grid: { color: BRAND_COLORS.grid, borderDash: [3,4] }, ticks: { color: BRAND_COLORS.navy, font: { size: 11 }, callback: v => v + 'K' } },
+      },
+      plugins: {
+        legend: { display: false },
+        tooltip: { callbacks: { title: (it) => fmtMonthLong(series[it[0].dataIndex][0]), label: (it) => it.parsed.y.toFixed(1) + 'K vehicles' } },
+      },
+    },
+  });
+}
+
+/* --- Chart 3: ATL Hartsfield cargo --- */
+function renderATLCargo(series) {
+  const labels = series.map(r => fmtMonth(r[0]));
+  const values = series.map(r => r[1]);
+  const ctx = document.getElementById('atl-cargo').getContext('2d');
+  new Chart(ctx, {
+    type: 'line',
+    data: { labels, datasets: [{ label: 'Cargo (kt)', data: values, borderColor: BRAND_COLORS.teal, backgroundColor: 'rgba(58,141,141,0.15)', fill: true, tension: 0.25, pointRadius: 0, borderWidth: 2 }] },
+    options: {
+      responsive: true, maintainAspectRatio: false,
+      scales: {
+        x: { grid: { display: false }, ticks: { color: BRAND_COLORS.navy, font: { size: 10 }, maxRotation: 45, autoSkip: true, maxTicksLimit: 12 } },
+        y: { beginAtZero: false, grid: { color: BRAND_COLORS.grid, borderDash: [3,4] }, ticks: { color: BRAND_COLORS.navy, font: { size: 11 }, callback: v => v + 'Kt' } },
+      },
+      plugins: {
+        legend: { display: false },
+        tooltip: { callbacks: { title: (it) => fmtMonthLong(series[it[0].dataIndex][0]), label: (it) => it.parsed.y.toFixed(1) + 'K metric tons' } },
+      },
+    },
+  });
+}
+
+/* --- Chart 4: leading indicator (TEU bars + TW employment line) --- */
+function renderLeadIndicator(teuSeries, empSeries) {
+  // Align labels (both have same months)
+  const labels = teuSeries.map(r => fmtMonth(r[0]));
+  const teu = teuSeries.map(r => r[1]);
+  const emp = empSeries.map(r => r[1]);
+
+  // 3-month smoothing for both
+  function smooth3(arr) {
+    return arr.map((_, i) => {
+      const lo = Math.max(0, i-1), hi = Math.min(arr.length, i+2);
+      const slice = arr.slice(lo, hi);
+      return slice.reduce((a,b) => a+b, 0) / slice.length;
+    });
+  }
+  const teuSmoothed = smooth3(teu);
+  const empSmoothed = smooth3(emp);
+
+  const ctx = document.getElementById('lead-indicator').getContext('2d');
+  new Chart(ctx, {
+    type: 'bar',
+    data: {
+      labels,
+      datasets: [
+        { type: 'bar', label: 'Savannah TEUs (3-mo avg, K, left axis)', data: teuSmoothed, backgroundColor: 'rgba(196,107,58,0.7)', borderWidth: 0, yAxisID: 'y1', order: 2 },
+        { type: 'line', label: 'ATL T&W employment (3-mo avg, K, right axis)', data: empSmoothed, borderColor: BRAND_COLORS.navy, backgroundColor: 'transparent', borderWidth: 2.5, pointRadius: 0, tension: 0.3, yAxisID: 'y2', order: 1 },
+      ],
+    },
+    options: {
+      responsive: true, maintainAspectRatio: false,
+      scales: {
+        x:  { grid: { display: false }, ticks: { color: BRAND_COLORS.navy, font: { size: 10 }, maxRotation: 45, autoSkip: true, maxTicksLimit: 16 } },
+        y1: { position: 'left',  beginAtZero: false, grid: { color: BRAND_COLORS.grid, borderDash: [3,4] }, ticks: { color: BRAND_COLORS.peachDeep, font: { size: 11 }, callback: v => v + 'K' }, title: { display: true, text: 'TEUs (K)', color: BRAND_COLORS.peachDeep, font: { weight: 'bold' } } },
+        y2: { position: 'right', beginAtZero: false, grid: { display: false }, ticks: { color: BRAND_COLORS.navy, font: { size: 11 }, callback: v => v.toFixed(0) + 'K' }, title: { display: true, text: 'T&W employment (K)', color: BRAND_COLORS.navy, font: { weight: 'bold' } } },
+      },
+      plugins: {
+        legend: { position: 'bottom', labels: { color: BRAND_COLORS.navy, font: { size: 12, weight: 'bold' }, padding: 14 } },
+        tooltip: { mode: 'index', intersect: false },
+      },
+    },
+  });
+}
+
+/* --- Exports table --- */
+function renderExportsTable(rows, top10Total) {
+  const tbody = document.getElementById('exports-body');
+  tbody.innerHTML = '';
+  rows.forEach(r => {
+    const tr = document.createElement('tr');
+    const share = (r.value_musd / top10Total * 100).toFixed(1);
+    const yoyClass = r.yoy_pct >= 0 ? 'yoy-up' : 'yoy-down';
+    const yoyText  = (r.yoy_pct > 0 ? '+' : '') + r.yoy_pct.toFixed(1) + '%';
+    tr.innerHTML = `
+      <td>${r.rank}</td>
+      <td class="country">${r.country}<span class="iso">${r.iso}</span></td>
+      <td class="numeric">$${r.value_musd.toLocaleString()}</td>
+      <td class="numeric ${yoyClass}">${yoyText}</td>
+      <td class="numeric">${share}%</td>
+    `;
+    tbody.appendChild(tr);
+  });
+}
+
+init().catch(err => {
+  console.error('trade page init failed:', err);
+  document.querySelector('main').insertAdjacentHTML('beforeend',
+    '<div style="padding:20px; color:var(--coral); font-weight:600;">Failed to load trade data. Check console.</div>');
+});
+</script>
 </body>
 </html>
