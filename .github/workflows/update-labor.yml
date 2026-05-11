@@ -1,13 +1,17 @@
-name: Update GA labor data (BLS LAUS)
+name: Update GA labor data (counties + statewide)
 
 on:
   workflow_dispatch:
   schedule:
+    # BLS LAUS county data drops mid-month for the prior month;
+    # CES state data drops a few days earlier.
+    # Run on the 25th to catch both safely.
     - cron: '0 17 25 * *'
   push:
     branches: [main]
     paths:
       - 'scripts/fetch_bls_laus.py'
+      - 'scripts/fetch_labor_state.py'
       - 'scripts/_ga_counties.py'
       - '.github/workflows/update-labor.yml'
 
@@ -26,20 +30,32 @@ jobs:
         with:
           python-version: '3.11'
 
-      - name: Run BLS LAUS fetcher
+      - name: Fetch BLS LAUS county-level data
         env:
           BLS_API_KEY: ${{ secrets.BLS_API_KEY }}
         run: |
           python scripts/fetch_bls_laus.py
 
-      - name: Commit updated data
+      - name: Fetch BLS state-level labor (LAUS UR + CES sectors)
+        env:
+          BLS_API_KEY: ${{ secrets.BLS_API_KEY }}
+        run: |
+          python scripts/fetch_labor_state.py
+
+      - name: Commit any updated data
         run: |
           git config user.name  "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          if ! git diff --quiet -- data/counties.json; then
-            git add data/counties.json
-            git commit -m "data: refresh GA county unemployment (BLS LAUS) [skip ci]"
+          changed=0
+          for f in data/counties.json data/labor.json; do
+            if ! git diff --quiet -- "$f"; then
+              git add "$f"
+              changed=1
+            fi
+          done
+          if [ $changed -eq 1 ]; then
+            git commit -m "data: refresh GA labor (BLS LAUS counties + state, BLS CES sectors) [skip ci]"
             git push
           else
-            echo "No changes in data/counties.json — nothing to commit."
+            echo "No data changes — nothing to commit."
           fi
