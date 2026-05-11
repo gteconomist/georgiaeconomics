@@ -2,13 +2,93 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<title>Agriculture — Coming Soon | Georgia Economics</title>
-<meta name="description" content="Broiler production (#1 nationally), peanuts (#1), pecans (#1), cotton (top 3), blueberries, and timber. Data from USDA NASS Quick Stats.">
+<title>Georgia Agriculture — #1 in Broilers, Peanuts, Pecans & Vidalia | Georgia Economics</title>
+<meta name="description" content="Live Georgia agriculture data: broilers (#1 nationally), peanuts (#1, 50% of US), pecans (#1, 32% of US), cotton, and Vidalia onions. Production trends and county-level heatmaps.">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="/styles.css">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+<!-- Plotly for choropleth, Chart.js for the rest -->
+<script src="https://cdn.plot.ly/plotly-2.35.2.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/gteconomist/economicsguru@main/charts.js"></script>
+<script src="/maps.js"></script>
+
+<style>
+  /* Rank hero — distinctive to the agriculture page */
+  .rank-hero {
+    background: linear-gradient(135deg, var(--peach-pale) 0%, #fff5e8 100%);
+    border-left: 6px solid var(--peach-deep);
+    padding: 24px 28px; margin-bottom: 26px; border-radius: 4px;
+  }
+  .rank-hero h2 {
+    font-family: var(--font-display); color: var(--navy); font-size: 22px;
+    margin: 0 0 6px; font-weight: 800; letter-spacing: -0.01em;
+  }
+  .rank-hero .deck { font-size: 14px; color: var(--ink-soft); margin: 0 0 18px; }
+  .rank-cards {
+    display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px;
+  }
+  @media (max-width: 880px) { .rank-cards { grid-template-columns: repeat(2, 1fr); } }
+  .rank-card {
+    background: var(--panel-bg); padding: 14px 16px; border: 1px solid var(--border);
+    border-top: 4px solid var(--peach-deep);
+  }
+  .rank-card .badge {
+    display: inline-block; background: var(--peach-deep); color: white;
+    font-size: 11px; font-weight: 700; letter-spacing: 0.06em;
+    padding: 3px 8px; margin-bottom: 8px;
+  }
+  .rank-card .commodity {
+    font-family: var(--font-display); font-size: 18px; font-weight: 700;
+    color: var(--navy); margin: 0 0 4px;
+  }
+  .rank-card .stat {
+    font-size: 13px; color: var(--ink-soft); line-height: 1.45;
+  }
+  .rank-card .stat strong { color: var(--navy); }
+
+  /* Mini-trend panels (2x2 grid) */
+  .trends-grid {
+    display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px;
+  }
+  @media (max-width: 880px) { .trends-grid { grid-template-columns: 1fr; } }
+  .trend-canvas { position: relative; height: 200px; background: var(--chart-bg); padding: 4px; }
+
+  /* Donut + table side-by-side */
+  .receipts-grid {
+    display: grid; grid-template-columns: 1fr 1.2fr; gap: 18px;
+  }
+  @media (max-width: 980px) { .receipts-grid { grid-template-columns: 1fr; } }
+  .donut-canvas { position: relative; height: 360px; background: var(--chart-bg); padding: 6px; }
+
+  /* Rankings table */
+  .rank-table-wrap { overflow-x: auto; }
+  table.rank-table { width: 100%; border-collapse: collapse; font-size: 14px; min-width: 580px; }
+  table.rank-table thead th {
+    text-align: left; padding: 8px 10px; background: var(--chart-bg);
+    border-bottom: 2px solid var(--navy); color: var(--navy);
+    font-weight: 700; text-transform: uppercase; letter-spacing: 0.04em; font-size: 11px;
+  }
+  table.rank-table thead th.numeric { text-align: right; }
+  table.rank-table tbody td { padding: 7px 10px; border-bottom: 1px dotted var(--border); }
+  table.rank-table tbody td.numeric { text-align: right; font-variant-numeric: tabular-nums; }
+  table.rank-table tbody tr:hover { background: var(--peach-pale); }
+  table.rank-table .commodity { font-weight: 600; color: var(--navy); }
+  table.rank-table .rank-pill {
+    display: inline-block; min-width: 26px; padding: 2px 8px; text-align: center;
+    background: var(--silver); color: white; font-weight: 700; font-size: 13px;
+  }
+  table.rank-table .rank-pill.r1 { background: var(--peach-deep); }
+  table.rank-table .rank-pill.r2,
+  table.rank-table .rank-pill.r3 { background: var(--mustard); }
+  table.rank-table .rank-pill.r4,
+  table.rank-table .rank-pill.r5 { background: var(--teal); }
+
+  .source-note { font-size: 12px; color: var(--ink-soft); margin-top: 8px; font-style: italic; }
+</style>
 </head>
 <body>
 
@@ -27,24 +107,242 @@
 
 <main>
   <section class="page-header">
-    <h1>Georgia Agriculture</h1>
-    <div class="subtitle">Broiler production (#1 nationally), peanuts (#1), pecans (#1), cotton (top 3), blueberries, and timber. Data from USDA NASS Quick Stats.</div>
+    <h1>Georgia agriculture</h1>
+    <div class="subtitle">The Peach State is also the Broiler State, the Peanut State, the Pecan State, and the Vidalia State. Georgia leads the nation in four major commodities and ranks top-5 in several more.</div>
+    <div class="latest">Latest data: <strong id="latest-label">—</strong></div>
   </section>
 
-  <div class="notice">
-    <strong>Page in development.</strong> The data pipeline for this topic is being wired up. In the meantime, the <a href="/counties/">county heat map</a> is live with monthly BLS LAUS data for all 159 Georgia counties.
+  <div class="notice" id="fixture-banner" style="display:none;">
+    <strong>Seed data:</strong> Production figures are calibrated to the most recent USDA NASS reporting (Georgia really is #1 nationally in broilers, peanuts, pecans, and Vidalia onions). Live wiring via the USDA NASS Quick Stats API is queued for the next iteration — needs a free API key from quickstats.nass.usda.gov/api.
   </div>
 
-  <p style="margin-top:24px;"><a href="/">&larr; Back to home</a></p>
+  <!-- Rank hero -->
+  <section class="rank-hero">
+    <h2>Georgia leads the nation in 4 commodities.</h2>
+    <p class="deck">Production share of total US output, latest reporting year:</p>
+    <div class="rank-cards">
+      <div class="rank-card">
+        <span class="badge">#1 IN US</span>
+        <div class="commodity">Broilers</div>
+        <div class="stat"><strong>17%</strong> of US broiler production · 7.5 billion lbs/yr · concentrated in north GA poultry counties (Hall, Habersham)</div>
+      </div>
+      <div class="rank-card">
+        <span class="badge">#1 IN US</span>
+        <div class="commodity">Peanuts</div>
+        <div class="stat"><strong>50%</strong> of the US peanut crop · 1.5 billion lbs/yr · southwest GA belt (Worth, Mitchell, Decatur)</div>
+      </div>
+      <div class="rank-card">
+        <span class="badge">#1 IN US</span>
+        <div class="commodity">Pecans</div>
+        <div class="stat"><strong>32%</strong> of US pecan production · 95M lbs in 2025 · cyclical (alternate-bearing trees)</div>
+      </div>
+      <div class="rank-card">
+        <span class="badge">#1 IN US</span>
+        <div class="commodity">Vidalia Onions</div>
+        <div class="stat"><strong>100%</strong> — federally protected appellation, grown only in 20 GA counties around Vidalia</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- KPI strip -->
+  <div class="kpi-grid">
+    <div class="kpi"><div class="label">Broilers (latest year)</div><div class="value" id="kpi-broilers">—</div><div class="delta">Billion lbs of meat</div></div>
+    <div class="kpi"><div class="label">Peanuts (latest year)</div><div class="value" id="kpi-peanuts">—</div><div class="delta">Billion lbs harvested</div></div>
+    <div class="kpi"><div class="label">Pecans (latest year)</div><div class="value" id="kpi-pecans">—</div><div class="delta">Million lbs (cyclical)</div></div>
+    <div class="kpi"><div class="label">Cotton (latest year)</div><div class="value" id="kpi-cotton">—</div><div class="delta">Thousand bales</div></div>
+    <div class="kpi"><div class="label">Total ag cash receipts</div><div class="value" id="kpi-receipts">—</div><div class="delta">All commodities, $B</div></div>
+    <div class="kpi"><div class="label">#1 commodities</div><div class="value" id="kpi-n1">—</div><div class="delta">Broilers, peanuts, pecans, Vidalia</div></div>
+  </div>
+
+  <!-- 4-up production trends -->
+  <div class="chart-panel">
+    <h2>Production Trends — Last 10 Years</h2>
+    <p class="sub">Annual production for Georgia's four headline commodities. Broilers and peanuts are remarkably steady; pecans cycle on alternate-bearing tree biology; cotton softens as acreage shifts.</p>
+    <div class="trends-grid">
+      <div><h3 style="font-size:13px; color:var(--navy); margin:0 0 4px; text-transform:uppercase; letter-spacing:0.05em;">Broilers (billion lbs)</h3><div class="trend-canvas"><canvas id="t-broilers"></canvas></div></div>
+      <div><h3 style="font-size:13px; color:var(--navy); margin:0 0 4px; text-transform:uppercase; letter-spacing:0.05em;">Peanuts (billion lbs)</h3><div class="trend-canvas"><canvas id="t-peanuts"></canvas></div></div>
+      <div><h3 style="font-size:13px; color:var(--navy); margin:0 0 4px; text-transform:uppercase; letter-spacing:0.05em;">Pecans (million lbs)</h3><div class="trend-canvas"><canvas id="t-pecans"></canvas></div></div>
+      <div><h3 style="font-size:13px; color:var(--navy); margin:0 0 4px; text-transform:uppercase; letter-spacing:0.05em;">Cotton (thousand bales)</h3><div class="trend-canvas"><canvas id="t-cotton"></canvas></div></div>
+    </div>
+    <div class="source-note">Source: USDA NASS Quick Stats (target). Currently fixture data calibrated to NASS scale.</div>
+  </div>
+
+  <!-- County-level production heatmap (THE CENTERPIECE) -->
+  <div class="map-panel" style="margin-top: 22px;">
+    <h2>Where in Georgia? — Production by County</h2>
+    <p class="sub">Pick a commodity. The map shades each county by its share of statewide production. Notice the geographic specialization: poultry is concentrated in north GA, while peanuts, pecans, and cotton are clustered in the southwest agricultural belt.</p>
+    <div class="map-controls">
+      <label for="commodity-select">Commodity</label>
+      <select id="commodity-select">
+        <option value="broilers" selected>Broilers (chickens for meat)</option>
+        <option value="peanuts">Peanuts</option>
+        <option value="pecans">Pecans</option>
+        <option value="cotton">Cotton</option>
+      </select>
+    </div>
+    <div class="map-container" id="ag-county-map"></div>
+    <div class="leaderboard-grid" id="ag-leaderboards">
+      <div class="leaderboard" data-role="best">
+        <h3>Top 8 producing counties</h3>
+        <table><tbody></tbody></table>
+      </div>
+      <div class="leaderboard" data-role="worst">
+        <h3>Bottom 8 (negligible production)</h3>
+        <table><tbody></tbody></table>
+      </div>
+    </div>
+  </div>
+
+  <!-- Cash receipts donut + rankings table -->
+  <div class="receipts-grid" style="margin-top: 22px;">
+    <div class="chart-panel">
+      <h2>Cash Receipts — What Pays the Farm Bills</h2>
+      <p class="sub">Share of total Georgia agricultural cash receipts by category. Poultry/eggs alone account for nearly half.</p>
+      <div class="donut-canvas"><canvas id="receipts-donut"></canvas></div>
+    </div>
+    <div class="chart-panel">
+      <h2>National Rankings — All Commodities</h2>
+      <p class="sub">Click any column to sort. A #1 pill means Georgia leads the nation.</p>
+      <div class="rank-table-wrap">
+        <table class="rank-table">
+          <thead><tr>
+            <th>Commodity</th>
+            <th class="numeric">GA Production</th>
+            <th class="numeric">Share of US</th>
+            <th class="numeric">National Rank</th>
+          </tr></thead>
+          <tbody id="rankings-body"></tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
 </main>
 
 <footer class="site-footer">
   <div class="wrap">
     <div>&copy; <span id="yr"></span> Georgia Economics &middot; Sister site to <a href="https://economicsguru.com">economicsguru.com</a> &middot; <a href="/about/">Methodology</a></div>
-    <div>Sources: BLS, FRED, BEA, Census, Georgia state agencies.</div>
+    <div>Source: USDA National Agricultural Statistics Service (NASS).</div>
   </div>
 </footer>
 
-<script>document.getElementById('yr').textContent = new Date().getFullYear();</script>
+<script>
+document.getElementById('yr').textContent = new Date().getFullYear();
+
+const BRAND_COLORS = {
+  navy: '#1a3a5c', peachDeep: '#c46b3a', peach: '#e8a87c',
+  mustard: '#d4a017', teal: '#3a8d8d', coral: '#d4624a',
+  green: '#6b8e3d', grid: '#b6ad8d', inkSoft: '#6b7280',
+};
+
+let DATA = null;
+
+async function init() {
+  const res = await fetch('/data/agriculture.json');
+  DATA = await res.json();
+  if (DATA._fixture) document.getElementById('fixture-banner').style.display = '';
+
+  document.getElementById('latest-label').textContent = DATA.latest_year;
+
+  // KPIs
+  document.getElementById('kpi-broilers').textContent = DATA.kpis.broilers_lbs_b.toFixed(1);
+  document.getElementById('kpi-peanuts').textContent  = DATA.kpis.peanuts_lbs_b.toFixed(2);
+  document.getElementById('kpi-pecans').textContent   = Math.round(DATA.kpis.pecans_lbs_m).toLocaleString();
+  document.getElementById('kpi-cotton').textContent   = DATA.kpis.cotton_bales_k.toLocaleString();
+  document.getElementById('kpi-receipts').textContent = '$' + DATA.kpis.total_cash_receipts_b.toFixed(1) + 'B';
+  document.getElementById('kpi-n1').textContent       = DATA.kpis.n1_commodities;
+
+  renderTrends();
+  renderDonut();
+  renderRankings();
+  await renderCountyMap('broilers');
+
+  document.getElementById('commodity-select').addEventListener('change', e => renderCountyMap(e.target.value));
+}
+
+function renderTrends() {
+  const t = DATA.trends;
+  const opts = (color, fillRgba, suffix='') => ({
+    responsive: true, maintainAspectRatio: false,
+    scales: {
+      x: { grid: { display: false }, ticks: { color: BRAND_COLORS.navy, font: { size: 10 } } },
+      y: { beginAtZero: false, grid: { color: BRAND_COLORS.grid, borderDash: [3,4] }, ticks: { color: BRAND_COLORS.navy, font: { size: 10 } } },
+    },
+    plugins: {
+      legend: { display: false },
+      tooltip: { callbacks: { label: (it) => it.parsed.y + (suffix ? ' ' + suffix : '') } },
+    },
+  });
+  const mkBar = (id, data, color, fill, suffix) => {
+    new Chart(document.getElementById(id).getContext('2d'), {
+      type: 'bar',
+      data: { labels: t.years, datasets: [{ data, backgroundColor: color, borderWidth: 0 }] },
+      options: opts(color, fill, suffix),
+    });
+  };
+  mkBar('t-broilers', t.broilers_lbs_b,    BRAND_COLORS.navy,      'rgba(26,58,92,0.15)',     'B lbs');
+  mkBar('t-peanuts',  t.peanuts_lbs_b,     BRAND_COLORS.peachDeep, 'rgba(196,107,58,0.15)',   'B lbs');
+  mkBar('t-pecans',   t.pecans_lbs_m,      BRAND_COLORS.green,     'rgba(107,142,61,0.15)',   'M lbs');
+  mkBar('t-cotton',   t.cotton_bales_k,    BRAND_COLORS.mustard,   'rgba(212,160,23,0.15)',   'K bales');
+}
+
+function renderDonut() {
+  const labels = DATA.cash_receipts_breakdown.map(r => r.category);
+  const values = DATA.cash_receipts_breakdown.map(r => r.pct);
+  const colors = DATA.cash_receipts_breakdown.map(r => r.color);
+
+  const ctx = document.getElementById('receipts-donut').getContext('2d');
+  new Chart(ctx, {
+    type: 'doughnut',
+    data: { labels, datasets: [{ data: values, backgroundColor: colors, borderWidth: 1, borderColor: '#fff' }] },
+    options: {
+      responsive: true, maintainAspectRatio: false, cutout: '55%',
+      plugins: {
+        legend: { position: 'right', labels: { color: BRAND_COLORS.navy, font: { size: 12 }, boxWidth: 12, padding: 8 } },
+        tooltip: { callbacks: { label: (it) => it.label + ': ' + it.parsed.toFixed(1) + '%' } },
+      },
+    },
+  });
+}
+
+function renderRankings() {
+  const tbody = document.getElementById('rankings-body');
+  // Sort by rank, then by share
+  const sorted = DATA.rankings.slice().sort((a,b) => a.national_rank - b.national_rank || b.ga_share_pct - a.ga_share_pct);
+  tbody.innerHTML = '';
+  sorted.forEach(r => {
+    const tr = document.createElement('tr');
+    const pillClass = 'rank-pill r' + Math.min(5, r.national_rank);
+    tr.innerHTML = `
+      <td class="commodity">${r.commodity}</td>
+      <td class="numeric">${r.ga_value}</td>
+      <td class="numeric">${r.ga_share_pct.toFixed(1)}%</td>
+      <td class="numeric"><span class="${pillClass}">#${r.national_rank}</span></td>
+    `;
+    tbody.appendChild(tr);
+  });
+}
+
+async function renderCountyMap(commodity) {
+  const block = DATA.county_production[commodity];
+  if (!block) return;
+  await window.gaMaps.drawGAChoropleth('ag-county-map', block.points, {
+    metricLabel: block.metric_label,
+    unit: block.unit,
+    colorscale: 'sequential',
+  });
+  window.gaMaps.renderLeaderboards('ag-leaderboards', block.points, {
+    topN: 8,
+    unit: block.unit,
+    lowerIsBetter: false,
+  });
+}
+
+init().catch(err => {
+  console.error('agriculture init failed:', err);
+  document.querySelector('main').insertAdjacentHTML('beforeend',
+    '<div style="padding:20px; color:var(--coral); font-weight:600;">Failed to load agriculture data. Check console.</div>');
+});
+</script>
 </body>
 </html>

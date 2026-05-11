@@ -1,0 +1,3418 @@
+{
+  "_fixture": true,
+  "_note": "FIXTURE seed data calibrated to real USDA NASS scale and Georgia's actual ranking in each commodity. Replaced by scripts/fetch_agriculture.py once USDA NASS Quick Stats API key is configured.",
+  "source": "FIXTURE (target: USDA NASS Quick Stats API)",
+  "latest_year": 2025,
+  "kpis": {
+    "broilers_lbs_b": 7.5,
+    "peanuts_lbs_b": 1.52,
+    "pecans_lbs_m": 95,
+    "cotton_bales_k": 2000,
+    "total_cash_receipts_b": 11.5,
+    "n1_commodities": 4
+  },
+  "trends": {
+    "years": [
+      2016,
+      2017,
+      2018,
+      2019,
+      2020,
+      2021,
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "broilers_lbs_b": [
+      7.0,
+      7.1,
+      7.3,
+      7.4,
+      7.4,
+      7.5,
+      7.5,
+      7.6,
+      7.5,
+      7.5
+    ],
+    "peanuts_lbs_b": [
+      1.31,
+      1.45,
+      1.4,
+      1.1,
+      1.55,
+      1.6,
+      1.45,
+      1.55,
+      1.5,
+      1.52
+    ],
+    "pecans_lbs_m": [
+      110,
+      90,
+      100,
+      120,
+      95,
+      100,
+      80,
+      90,
+      85,
+      95
+    ],
+    "cotton_bales_k": [
+      2700,
+      2300,
+      1850,
+      2600,
+      2200,
+      2350,
+      2100,
+      2050,
+      1950,
+      2000
+    ],
+    "cash_receipts_b": [
+      9.6,
+      9.8,
+      9.9,
+      10.2,
+      10.5,
+      10.8,
+      11.4,
+      11.1,
+      11.2,
+      11.5
+    ]
+  },
+  "rankings": [
+    {
+      "commodity": "Broilers (chickens for meat)",
+      "ga_value": "7.5 billion lbs",
+      "ga_share_pct": 17.2,
+      "national_rank": 1,
+      "trend": "stable"
+    },
+    {
+      "commodity": "Peanuts",
+      "ga_value": "1.5 billion lbs",
+      "ga_share_pct": 50.4,
+      "national_rank": 1,
+      "trend": "stable"
+    },
+    {
+      "commodity": "Pecans",
+      "ga_value": "95 million lbs",
+      "ga_share_pct": 32.0,
+      "national_rank": 1,
+      "trend": "cyclical"
+    },
+    {
+      "commodity": "Spring onions (Vidalia)",
+      "ga_value": "AOC, ~150M lbs",
+      "ga_share_pct": 100.0,
+      "national_rank": 1,
+      "trend": "stable"
+    },
+    {
+      "commodity": "Eggs",
+      "ga_value": "8.4 billion eggs",
+      "ga_share_pct": 8.1,
+      "national_rank": 5,
+      "trend": "stable"
+    },
+    {
+      "commodity": "Cotton",
+      "ga_value": "2.0 million bales",
+      "ga_share_pct": 12.4,
+      "national_rank": 3,
+      "trend": "softening"
+    },
+    {
+      "commodity": "Blueberries",
+      "ga_value": "75 million lbs",
+      "ga_share_pct": 13.0,
+      "national_rank": 4,
+      "trend": "stable"
+    },
+    {
+      "commodity": "Watermelons",
+      "ga_value": "660 million lbs",
+      "ga_share_pct": 17.8,
+      "national_rank": 2,
+      "trend": "stable"
+    },
+    {
+      "commodity": "Sweet corn",
+      "ga_value": "200K cwt",
+      "ga_share_pct": 6.9,
+      "national_rank": 4,
+      "trend": "stable"
+    },
+    {
+      "commodity": "Hay",
+      "ga_value": "2.1 million tons",
+      "ga_share_pct": 1.7,
+      "national_rank": 15,
+      "trend": "stable"
+    }
+  ],
+  "cash_receipts_breakdown": [
+    {
+      "category": "Broilers",
+      "pct": 39.2,
+      "color": "#1a3a5c"
+    },
+    {
+      "category": "Eggs",
+      "pct": 6.8,
+      "color": "#2e5984"
+    },
+    {
+      "category": "Cotton",
+      "pct": 9.1,
+      "color": "#c46b3a"
+    },
+    {
+      "category": "Peanuts",
+      "pct": 8.4,
+      "color": "#e8a87c"
+    },
+    {
+      "category": "Beef cattle",
+      "pct": 6.2,
+      "color": "#d4a017"
+    },
+    {
+      "category": "Greenhouse/nursery",
+      "pct": 5.4,
+      "color": "#9b8b6a"
+    },
+    {
+      "category": "Pecans",
+      "pct": 3.6,
+      "color": "#6b8e3d"
+    },
+    {
+      "category": "Vegetables",
+      "pct": 9.2,
+      "color": "#3a8d8d"
+    },
+    {
+      "category": "Forestry",
+      "pct": 7.3,
+      "color": "#5fb8b8"
+    },
+    {
+      "category": "Other",
+      "pct": 4.8,
+      "color": "#9ba3ab"
+    }
+  ],
+  "county_production": {
+    "broilers": {
+      "metric_label": "Broilers \u2014 share of GA production",
+      "unit": "%",
+      "points": [
+        {
+          "fips": "13001",
+          "label": "Appling",
+          "value": 0.12
+        },
+        {
+          "fips": "13003",
+          "label": "Atkinson",
+          "value": 0.33
+        },
+        {
+          "fips": "13005",
+          "label": "Bacon",
+          "value": 0.33
+        },
+        {
+          "fips": "13007",
+          "label": "Baker",
+          "value": 0.52
+        },
+        {
+          "fips": "13009",
+          "label": "Baldwin",
+          "value": 0.11
+        },
+        {
+          "fips": "13011",
+          "label": "Banks",
+          "value": 4.8
+        },
+        {
+          "fips": "13013",
+          "label": "Barrow",
+          "value": 9.8
+        },
+        {
+          "fips": "13015",
+          "label": "Bartow",
+          "value": 0.17
+        },
+        {
+          "fips": "13017",
+          "label": "Ben Hill",
+          "value": 0.38
+        },
+        {
+          "fips": "13019",
+          "label": "Berrien",
+          "value": 0.36
+        },
+        {
+          "fips": "13021",
+          "label": "Bibb",
+          "value": 0.48
+        },
+        {
+          "fips": "13023",
+          "label": "Bleckley",
+          "value": 0.35
+        },
+        {
+          "fips": "13025",
+          "label": "Brantley",
+          "value": 0.45
+        },
+        {
+          "fips": "13027",
+          "label": "Brooks",
+          "value": 0.47
+        },
+        {
+          "fips": "13029",
+          "label": "Bryan",
+          "value": 0.46
+        },
+        {
+          "fips": "13031",
+          "label": "Bulloch",
+          "value": 0.37
+        },
+        {
+          "fips": "13033",
+          "label": "Burke",
+          "value": 0.18
+        },
+        {
+          "fips": "13035",
+          "label": "Butts",
+          "value": 0.39
+        },
+        {
+          "fips": "13037",
+          "label": "Calhoun",
+          "value": 0.11
+        },
+        {
+          "fips": "13039",
+          "label": "Camden",
+          "value": 0.5
+        },
+        {
+          "fips": "13043",
+          "label": "Candler",
+          "value": 0.3
+        },
+        {
+          "fips": "13045",
+          "label": "Carroll",
+          "value": 0.5
+        },
+        {
+          "fips": "13047",
+          "label": "Catoosa",
+          "value": 0.43
+        },
+        {
+          "fips": "13049",
+          "label": "Charlton",
+          "value": 0.42
+        },
+        {
+          "fips": "13051",
+          "label": "Chatham",
+          "value": 0.17
+        },
+        {
+          "fips": "13053",
+          "label": "Chattahoochee",
+          "value": 0.19
+        },
+        {
+          "fips": "13055",
+          "label": "Chattooga",
+          "value": 0.59
+        },
+        {
+          "fips": "13057",
+          "label": "Cherokee",
+          "value": 0.56
+        },
+        {
+          "fips": "13059",
+          "label": "Clarke",
+          "value": 4.2
+        },
+        {
+          "fips": "13061",
+          "label": "Clay",
+          "value": 0.49
+        },
+        {
+          "fips": "13063",
+          "label": "Clayton",
+          "value": 0.6
+        },
+        {
+          "fips": "13065",
+          "label": "Clinch",
+          "value": 0.33
+        },
+        {
+          "fips": "13067",
+          "label": "Cobb",
+          "value": 0.09
+        },
+        {
+          "fips": "13069",
+          "label": "Coffee",
+          "value": 0.24
+        },
+        {
+          "fips": "13071",
+          "label": "Colquitt",
+          "value": 0.36
+        },
+        {
+          "fips": "13073",
+          "label": "Columbia",
+          "value": 0.21
+        },
+        {
+          "fips": "13075",
+          "label": "Cook",
+          "value": 0.3
+        },
+        {
+          "fips": "13077",
+          "label": "Coweta",
+          "value": 0.53
+        },
+        {
+          "fips": "13079",
+          "label": "Crawford",
+          "value": 0.44
+        },
+        {
+          "fips": "13081",
+          "label": "Crisp",
+          "value": 0.37
+        },
+        {
+          "fips": "13083",
+          "label": "Dade",
+          "value": 0.06
+        },
+        {
+          "fips": "13085",
+          "label": "Dawson",
+          "value": 0.44
+        },
+        {
+          "fips": "13087",
+          "label": "Decatur",
+          "value": 0.25
+        },
+        {
+          "fips": "13089",
+          "label": "DeKalb",
+          "value": 0.28
+        },
+        {
+          "fips": "13091",
+          "label": "Dodge",
+          "value": 0.27
+        },
+        {
+          "fips": "13093",
+          "label": "Dooly",
+          "value": 0.37
+        },
+        {
+          "fips": "13095",
+          "label": "Dougherty",
+          "value": 0.32
+        },
+        {
+          "fips": "13097",
+          "label": "Douglas",
+          "value": 0.11
+        },
+        {
+          "fips": "13099",
+          "label": "Early",
+          "value": 0.33
+        },
+        {
+          "fips": "13101",
+          "label": "Echols",
+          "value": 0.46
+        },
+        {
+          "fips": "13103",
+          "label": "Effingham",
+          "value": 0.38
+        },
+        {
+          "fips": "13105",
+          "label": "Elbert",
+          "value": 0.32
+        },
+        {
+          "fips": "13107",
+          "label": "Emanuel",
+          "value": 0.55
+        },
+        {
+          "fips": "13109",
+          "label": "Evans",
+          "value": 0.19
+        },
+        {
+          "fips": "13111",
+          "label": "Fannin",
+          "value": 0.28
+        },
+        {
+          "fips": "13113",
+          "label": "Fayette",
+          "value": 0.56
+        },
+        {
+          "fips": "13115",
+          "label": "Floyd",
+          "value": 0.31
+        },
+        {
+          "fips": "13117",
+          "label": "Forsyth",
+          "value": 7.6
+        },
+        {
+          "fips": "13119",
+          "label": "Franklin",
+          "value": 9.1
+        },
+        {
+          "fips": "13121",
+          "label": "Fulton",
+          "value": 0.33
+        },
+        {
+          "fips": "13123",
+          "label": "Gilmer",
+          "value": 3.9
+        },
+        {
+          "fips": "13125",
+          "label": "Glascock",
+          "value": 0.06
+        },
+        {
+          "fips": "13127",
+          "label": "Glynn",
+          "value": 0.17
+        },
+        {
+          "fips": "13129",
+          "label": "Gordon",
+          "value": 6.9
+        },
+        {
+          "fips": "13131",
+          "label": "Grady",
+          "value": 0.12
+        },
+        {
+          "fips": "13133",
+          "label": "Greene",
+          "value": 0.08
+        },
+        {
+          "fips": "13135",
+          "label": "Gwinnett",
+          "value": 2.8
+        },
+        {
+          "fips": "13137",
+          "label": "Habersham",
+          "value": 12.4
+        },
+        {
+          "fips": "13139",
+          "label": "Hall",
+          "value": 18.2
+        },
+        {
+          "fips": "13141",
+          "label": "Hancock",
+          "value": 0.44
+        },
+        {
+          "fips": "13143",
+          "label": "Haralson",
+          "value": 0.54
+        },
+        {
+          "fips": "13145",
+          "label": "Harris",
+          "value": 0.11
+        },
+        {
+          "fips": "13147",
+          "label": "Hart",
+          "value": 5.1
+        },
+        {
+          "fips": "13149",
+          "label": "Heard",
+          "value": 0.39
+        },
+        {
+          "fips": "13151",
+          "label": "Henry",
+          "value": 0.31
+        },
+        {
+          "fips": "13153",
+          "label": "Houston",
+          "value": 0.32
+        },
+        {
+          "fips": "13155",
+          "label": "Irwin",
+          "value": 0.18
+        },
+        {
+          "fips": "13157",
+          "label": "Jackson",
+          "value": 8.7
+        },
+        {
+          "fips": "13159",
+          "label": "Jasper",
+          "value": 0.54
+        },
+        {
+          "fips": "13161",
+          "label": "Jeff Davis",
+          "value": 0.39
+        },
+        {
+          "fips": "13163",
+          "label": "Jefferson",
+          "value": 0.3
+        },
+        {
+          "fips": "13165",
+          "label": "Jenkins",
+          "value": 0.31
+        },
+        {
+          "fips": "13167",
+          "label": "Johnson",
+          "value": 0.56
+        },
+        {
+          "fips": "13169",
+          "label": "Jones",
+          "value": 0.59
+        },
+        {
+          "fips": "13171",
+          "label": "Lamar",
+          "value": 0.35
+        },
+        {
+          "fips": "13173",
+          "label": "Lanier",
+          "value": 0.36
+        },
+        {
+          "fips": "13175",
+          "label": "Laurens",
+          "value": 0.42
+        },
+        {
+          "fips": "13177",
+          "label": "Lee",
+          "value": 0.22
+        },
+        {
+          "fips": "13179",
+          "label": "Liberty",
+          "value": 0.49
+        },
+        {
+          "fips": "13181",
+          "label": "Lincoln",
+          "value": 0.33
+        },
+        {
+          "fips": "13183",
+          "label": "Long",
+          "value": 0.31
+        },
+        {
+          "fips": "13185",
+          "label": "Lowndes",
+          "value": 0.54
+        },
+        {
+          "fips": "13187",
+          "label": "Lumpkin",
+          "value": 0.29
+        },
+        {
+          "fips": "13189",
+          "label": "McDuffie",
+          "value": 0.21
+        },
+        {
+          "fips": "13191",
+          "label": "McIntosh",
+          "value": 0.2
+        },
+        {
+          "fips": "13193",
+          "label": "Macon",
+          "value": 0.07
+        },
+        {
+          "fips": "13195",
+          "label": "Madison",
+          "value": 4.6
+        },
+        {
+          "fips": "13197",
+          "label": "Marion",
+          "value": 0.41
+        },
+        {
+          "fips": "13199",
+          "label": "Meriwether",
+          "value": 0.38
+        },
+        {
+          "fips": "13201",
+          "label": "Miller",
+          "value": 0.3
+        },
+        {
+          "fips": "13205",
+          "label": "Mitchell",
+          "value": 0.34
+        },
+        {
+          "fips": "13207",
+          "label": "Monroe",
+          "value": 0.32
+        },
+        {
+          "fips": "13209",
+          "label": "Montgomery",
+          "value": 0.56
+        },
+        {
+          "fips": "13211",
+          "label": "Morgan",
+          "value": 0.19
+        },
+        {
+          "fips": "13213",
+          "label": "Murray",
+          "value": 0.32
+        },
+        {
+          "fips": "13215",
+          "label": "Muscogee",
+          "value": 0.33
+        },
+        {
+          "fips": "13217",
+          "label": "Newton",
+          "value": 0.5
+        },
+        {
+          "fips": "13219",
+          "label": "Oconee",
+          "value": 0.49
+        },
+        {
+          "fips": "13221",
+          "label": "Oglethorpe",
+          "value": 0.36
+        },
+        {
+          "fips": "13223",
+          "label": "Paulding",
+          "value": 0.55
+        },
+        {
+          "fips": "13225",
+          "label": "Peach",
+          "value": 0.51
+        },
+        {
+          "fips": "13227",
+          "label": "Pickens",
+          "value": 0.22
+        },
+        {
+          "fips": "13229",
+          "label": "Pierce",
+          "value": 0.55
+        },
+        {
+          "fips": "13231",
+          "label": "Pike",
+          "value": 0.1
+        },
+        {
+          "fips": "13233",
+          "label": "Polk",
+          "value": 0.43
+        },
+        {
+          "fips": "13235",
+          "label": "Pulaski",
+          "value": 0.48
+        },
+        {
+          "fips": "13237",
+          "label": "Putnam",
+          "value": 0.33
+        },
+        {
+          "fips": "13239",
+          "label": "Quitman",
+          "value": 0.3
+        },
+        {
+          "fips": "13241",
+          "label": "Rabun",
+          "value": 0.58
+        },
+        {
+          "fips": "13243",
+          "label": "Randolph",
+          "value": 0.58
+        },
+        {
+          "fips": "13245",
+          "label": "Richmond",
+          "value": 0.51
+        },
+        {
+          "fips": "13247",
+          "label": "Rockdale",
+          "value": 0.31
+        },
+        {
+          "fips": "13249",
+          "label": "Schley",
+          "value": 0.09
+        },
+        {
+          "fips": "13251",
+          "label": "Screven",
+          "value": 0.2
+        },
+        {
+          "fips": "13253",
+          "label": "Seminole",
+          "value": 0.32
+        },
+        {
+          "fips": "13255",
+          "label": "Spalding",
+          "value": 0.1
+        },
+        {
+          "fips": "13257",
+          "label": "Stephens",
+          "value": 0.46
+        },
+        {
+          "fips": "13259",
+          "label": "Stewart",
+          "value": 0.28
+        },
+        {
+          "fips": "13261",
+          "label": "Sumter",
+          "value": 0.3
+        },
+        {
+          "fips": "13263",
+          "label": "Talbot",
+          "value": 0.06
+        },
+        {
+          "fips": "13265",
+          "label": "Taliaferro",
+          "value": 0.05
+        },
+        {
+          "fips": "13267",
+          "label": "Tattnall",
+          "value": 0.37
+        },
+        {
+          "fips": "13269",
+          "label": "Taylor",
+          "value": 0.56
+        },
+        {
+          "fips": "13271",
+          "label": "Telfair",
+          "value": 0.1
+        },
+        {
+          "fips": "13273",
+          "label": "Terrell",
+          "value": 0.49
+        },
+        {
+          "fips": "13275",
+          "label": "Thomas",
+          "value": 0.19
+        },
+        {
+          "fips": "13277",
+          "label": "Tift",
+          "value": 0.39
+        },
+        {
+          "fips": "13279",
+          "label": "Toombs",
+          "value": 0.46
+        },
+        {
+          "fips": "13281",
+          "label": "Towns",
+          "value": 0.58
+        },
+        {
+          "fips": "13283",
+          "label": "Treutlen",
+          "value": 0.42
+        },
+        {
+          "fips": "13285",
+          "label": "Troup",
+          "value": 0.4
+        },
+        {
+          "fips": "13287",
+          "label": "Turner",
+          "value": 0.14
+        },
+        {
+          "fips": "13289",
+          "label": "Twiggs",
+          "value": 0.22
+        },
+        {
+          "fips": "13291",
+          "label": "Union",
+          "value": 0.37
+        },
+        {
+          "fips": "13293",
+          "label": "Upson",
+          "value": 0.47
+        },
+        {
+          "fips": "13295",
+          "label": "Walker",
+          "value": 0.57
+        },
+        {
+          "fips": "13297",
+          "label": "Walton",
+          "value": 3.4
+        },
+        {
+          "fips": "13299",
+          "label": "Ware",
+          "value": 0.32
+        },
+        {
+          "fips": "13301",
+          "label": "Warren",
+          "value": 0.45
+        },
+        {
+          "fips": "13303",
+          "label": "Washington",
+          "value": 0.12
+        },
+        {
+          "fips": "13305",
+          "label": "Wayne",
+          "value": 0.17
+        },
+        {
+          "fips": "13307",
+          "label": "Webster",
+          "value": 0.37
+        },
+        {
+          "fips": "13309",
+          "label": "Wheeler",
+          "value": 0.58
+        },
+        {
+          "fips": "13311",
+          "label": "White",
+          "value": 0.53
+        },
+        {
+          "fips": "13313",
+          "label": "Whitfield",
+          "value": 5.4
+        },
+        {
+          "fips": "13315",
+          "label": "Wilcox",
+          "value": 0.33
+        },
+        {
+          "fips": "13317",
+          "label": "Wilkes",
+          "value": 0.1
+        },
+        {
+          "fips": "13319",
+          "label": "Wilkinson",
+          "value": 0.42
+        },
+        {
+          "fips": "13321",
+          "label": "Worth",
+          "value": 0.56
+        }
+      ]
+    },
+    "peanuts": {
+      "metric_label": "Peanuts \u2014 share of GA production",
+      "unit": "%",
+      "points": [
+        {
+          "fips": "13001",
+          "label": "Appling",
+          "value": 0.4
+        },
+        {
+          "fips": "13003",
+          "label": "Atkinson",
+          "value": 0.46
+        },
+        {
+          "fips": "13005",
+          "label": "Bacon",
+          "value": 0.17
+        },
+        {
+          "fips": "13007",
+          "label": "Baker",
+          "value": 5.8
+        },
+        {
+          "fips": "13009",
+          "label": "Baldwin",
+          "value": 0.22
+        },
+        {
+          "fips": "13011",
+          "label": "Banks",
+          "value": 0.41
+        },
+        {
+          "fips": "13013",
+          "label": "Barrow",
+          "value": 0.27
+        },
+        {
+          "fips": "13015",
+          "label": "Bartow",
+          "value": 0.11
+        },
+        {
+          "fips": "13017",
+          "label": "Ben Hill",
+          "value": 6.4
+        },
+        {
+          "fips": "13019",
+          "label": "Berrien",
+          "value": 0.03
+        },
+        {
+          "fips": "13021",
+          "label": "Bibb",
+          "value": 0.07
+        },
+        {
+          "fips": "13023",
+          "label": "Bleckley",
+          "value": 0.45
+        },
+        {
+          "fips": "13025",
+          "label": "Brantley",
+          "value": 0.04
+        },
+        {
+          "fips": "13027",
+          "label": "Brooks",
+          "value": 0.19
+        },
+        {
+          "fips": "13029",
+          "label": "Bryan",
+          "value": 0.19
+        },
+        {
+          "fips": "13031",
+          "label": "Bulloch",
+          "value": 0.39
+        },
+        {
+          "fips": "13033",
+          "label": "Burke",
+          "value": 0.03
+        },
+        {
+          "fips": "13035",
+          "label": "Butts",
+          "value": 0.26
+        },
+        {
+          "fips": "13037",
+          "label": "Calhoun",
+          "value": 12.3
+        },
+        {
+          "fips": "13039",
+          "label": "Camden",
+          "value": 0.18
+        },
+        {
+          "fips": "13043",
+          "label": "Candler",
+          "value": 0.17
+        },
+        {
+          "fips": "13045",
+          "label": "Carroll",
+          "value": 0.18
+        },
+        {
+          "fips": "13047",
+          "label": "Catoosa",
+          "value": 0.08
+        },
+        {
+          "fips": "13049",
+          "label": "Charlton",
+          "value": 0.48
+        },
+        {
+          "fips": "13051",
+          "label": "Chatham",
+          "value": 0.29
+        },
+        {
+          "fips": "13053",
+          "label": "Chattahoochee",
+          "value": 0.41
+        },
+        {
+          "fips": "13055",
+          "label": "Chattooga",
+          "value": 0.09
+        },
+        {
+          "fips": "13057",
+          "label": "Cherokee",
+          "value": 0.27
+        },
+        {
+          "fips": "13059",
+          "label": "Clarke",
+          "value": 0.23
+        },
+        {
+          "fips": "13061",
+          "label": "Clay",
+          "value": 0.18
+        },
+        {
+          "fips": "13063",
+          "label": "Clayton",
+          "value": 0.31
+        },
+        {
+          "fips": "13065",
+          "label": "Clinch",
+          "value": 0.35
+        },
+        {
+          "fips": "13067",
+          "label": "Cobb",
+          "value": 0.05
+        },
+        {
+          "fips": "13069",
+          "label": "Coffee",
+          "value": 0.21
+        },
+        {
+          "fips": "13071",
+          "label": "Colquitt",
+          "value": 0.11
+        },
+        {
+          "fips": "13073",
+          "label": "Columbia",
+          "value": 0.46
+        },
+        {
+          "fips": "13075",
+          "label": "Cook",
+          "value": 7.6
+        },
+        {
+          "fips": "13077",
+          "label": "Coweta",
+          "value": 0.04
+        },
+        {
+          "fips": "13079",
+          "label": "Crawford",
+          "value": 0.28
+        },
+        {
+          "fips": "13081",
+          "label": "Crisp",
+          "value": 5.2
+        },
+        {
+          "fips": "13083",
+          "label": "Dade",
+          "value": 0.42
+        },
+        {
+          "fips": "13085",
+          "label": "Dawson",
+          "value": 0.24
+        },
+        {
+          "fips": "13087",
+          "label": "Decatur",
+          "value": 14.8
+        },
+        {
+          "fips": "13089",
+          "label": "DeKalb",
+          "value": 0.38
+        },
+        {
+          "fips": "13091",
+          "label": "Dodge",
+          "value": 0.11
+        },
+        {
+          "fips": "13093",
+          "label": "Dooly",
+          "value": 0.36
+        },
+        {
+          "fips": "13095",
+          "label": "Dougherty",
+          "value": 9.8
+        },
+        {
+          "fips": "13097",
+          "label": "Douglas",
+          "value": 0.44
+        },
+        {
+          "fips": "13099",
+          "label": "Early",
+          "value": 11.6
+        },
+        {
+          "fips": "13101",
+          "label": "Echols",
+          "value": 0.08
+        },
+        {
+          "fips": "13103",
+          "label": "Effingham",
+          "value": 0.27
+        },
+        {
+          "fips": "13105",
+          "label": "Elbert",
+          "value": 0.4
+        },
+        {
+          "fips": "13107",
+          "label": "Emanuel",
+          "value": 0.27
+        },
+        {
+          "fips": "13109",
+          "label": "Evans",
+          "value": 0.48
+        },
+        {
+          "fips": "13111",
+          "label": "Fannin",
+          "value": 0.1
+        },
+        {
+          "fips": "13113",
+          "label": "Fayette",
+          "value": 0.43
+        },
+        {
+          "fips": "13115",
+          "label": "Floyd",
+          "value": 0.21
+        },
+        {
+          "fips": "13117",
+          "label": "Forsyth",
+          "value": 0.22
+        },
+        {
+          "fips": "13119",
+          "label": "Franklin",
+          "value": 0.22
+        },
+        {
+          "fips": "13121",
+          "label": "Fulton",
+          "value": 0.06
+        },
+        {
+          "fips": "13123",
+          "label": "Gilmer",
+          "value": 0.17
+        },
+        {
+          "fips": "13125",
+          "label": "Glascock",
+          "value": 0.19
+        },
+        {
+          "fips": "13127",
+          "label": "Glynn",
+          "value": 0.15
+        },
+        {
+          "fips": "13129",
+          "label": "Gordon",
+          "value": 0.26
+        },
+        {
+          "fips": "13131",
+          "label": "Grady",
+          "value": 0.39
+        },
+        {
+          "fips": "13133",
+          "label": "Greene",
+          "value": 0.22
+        },
+        {
+          "fips": "13135",
+          "label": "Gwinnett",
+          "value": 0.24
+        },
+        {
+          "fips": "13137",
+          "label": "Habersham",
+          "value": 0.18
+        },
+        {
+          "fips": "13139",
+          "label": "Hall",
+          "value": 0.25
+        },
+        {
+          "fips": "13141",
+          "label": "Hancock",
+          "value": 0.08
+        },
+        {
+          "fips": "13143",
+          "label": "Haralson",
+          "value": 0.4
+        },
+        {
+          "fips": "13145",
+          "label": "Harris",
+          "value": 0.4
+        },
+        {
+          "fips": "13147",
+          "label": "Hart",
+          "value": 0.41
+        },
+        {
+          "fips": "13149",
+          "label": "Heard",
+          "value": 0.43
+        },
+        {
+          "fips": "13151",
+          "label": "Henry",
+          "value": 0.13
+        },
+        {
+          "fips": "13153",
+          "label": "Houston",
+          "value": 0.48
+        },
+        {
+          "fips": "13155",
+          "label": "Irwin",
+          "value": 0.44
+        },
+        {
+          "fips": "13157",
+          "label": "Jackson",
+          "value": 0.33
+        },
+        {
+          "fips": "13159",
+          "label": "Jasper",
+          "value": 0.22
+        },
+        {
+          "fips": "13161",
+          "label": "Jeff Davis",
+          "value": 0.4
+        },
+        {
+          "fips": "13163",
+          "label": "Jefferson",
+          "value": 0.43
+        },
+        {
+          "fips": "13165",
+          "label": "Jenkins",
+          "value": 0.34
+        },
+        {
+          "fips": "13167",
+          "label": "Johnson",
+          "value": 0.48
+        },
+        {
+          "fips": "13169",
+          "label": "Jones",
+          "value": 0.19
+        },
+        {
+          "fips": "13171",
+          "label": "Lamar",
+          "value": 0.1
+        },
+        {
+          "fips": "13173",
+          "label": "Lanier",
+          "value": 0.29
+        },
+        {
+          "fips": "13175",
+          "label": "Laurens",
+          "value": 0.29
+        },
+        {
+          "fips": "13177",
+          "label": "Lee",
+          "value": 10.4
+        },
+        {
+          "fips": "13179",
+          "label": "Liberty",
+          "value": 0.28
+        },
+        {
+          "fips": "13181",
+          "label": "Lincoln",
+          "value": 0.07
+        },
+        {
+          "fips": "13183",
+          "label": "Long",
+          "value": 0.36
+        },
+        {
+          "fips": "13185",
+          "label": "Lowndes",
+          "value": 0.29
+        },
+        {
+          "fips": "13187",
+          "label": "Lumpkin",
+          "value": 0.29
+        },
+        {
+          "fips": "13189",
+          "label": "McDuffie",
+          "value": 0.12
+        },
+        {
+          "fips": "13191",
+          "label": "McIntosh",
+          "value": 0.16
+        },
+        {
+          "fips": "13193",
+          "label": "Macon",
+          "value": 0.15
+        },
+        {
+          "fips": "13195",
+          "label": "Madison",
+          "value": 0.29
+        },
+        {
+          "fips": "13197",
+          "label": "Marion",
+          "value": 0.07
+        },
+        {
+          "fips": "13199",
+          "label": "Meriwether",
+          "value": 0.15
+        },
+        {
+          "fips": "13201",
+          "label": "Miller",
+          "value": 8.7
+        },
+        {
+          "fips": "13205",
+          "label": "Mitchell",
+          "value": 16.2
+        },
+        {
+          "fips": "13207",
+          "label": "Monroe",
+          "value": 0.48
+        },
+        {
+          "fips": "13209",
+          "label": "Montgomery",
+          "value": 0.1
+        },
+        {
+          "fips": "13211",
+          "label": "Morgan",
+          "value": 0.35
+        },
+        {
+          "fips": "13213",
+          "label": "Murray",
+          "value": 0.38
+        },
+        {
+          "fips": "13215",
+          "label": "Muscogee",
+          "value": 0.37
+        },
+        {
+          "fips": "13217",
+          "label": "Newton",
+          "value": 0.11
+        },
+        {
+          "fips": "13219",
+          "label": "Oconee",
+          "value": 0.32
+        },
+        {
+          "fips": "13221",
+          "label": "Oglethorpe",
+          "value": 0.26
+        },
+        {
+          "fips": "13223",
+          "label": "Paulding",
+          "value": 0.15
+        },
+        {
+          "fips": "13225",
+          "label": "Peach",
+          "value": 0.42
+        },
+        {
+          "fips": "13227",
+          "label": "Pickens",
+          "value": 0.16
+        },
+        {
+          "fips": "13229",
+          "label": "Pierce",
+          "value": 0.17
+        },
+        {
+          "fips": "13231",
+          "label": "Pike",
+          "value": 0.15
+        },
+        {
+          "fips": "13233",
+          "label": "Polk",
+          "value": 0.05
+        },
+        {
+          "fips": "13235",
+          "label": "Pulaski",
+          "value": 0.22
+        },
+        {
+          "fips": "13237",
+          "label": "Putnam",
+          "value": 0.45
+        },
+        {
+          "fips": "13239",
+          "label": "Quitman",
+          "value": 0.39
+        },
+        {
+          "fips": "13241",
+          "label": "Rabun",
+          "value": 0.22
+        },
+        {
+          "fips": "13243",
+          "label": "Randolph",
+          "value": 6.9
+        },
+        {
+          "fips": "13245",
+          "label": "Richmond",
+          "value": 0.03
+        },
+        {
+          "fips": "13247",
+          "label": "Rockdale",
+          "value": 0.07
+        },
+        {
+          "fips": "13249",
+          "label": "Schley",
+          "value": 0.03
+        },
+        {
+          "fips": "13251",
+          "label": "Screven",
+          "value": 0.08
+        },
+        {
+          "fips": "13253",
+          "label": "Seminole",
+          "value": 0.35
+        },
+        {
+          "fips": "13255",
+          "label": "Spalding",
+          "value": 0.3
+        },
+        {
+          "fips": "13257",
+          "label": "Stephens",
+          "value": 0.47
+        },
+        {
+          "fips": "13259",
+          "label": "Stewart",
+          "value": 0.19
+        },
+        {
+          "fips": "13261",
+          "label": "Sumter",
+          "value": 8.3
+        },
+        {
+          "fips": "13263",
+          "label": "Talbot",
+          "value": 0.39
+        },
+        {
+          "fips": "13265",
+          "label": "Taliaferro",
+          "value": 0.31
+        },
+        {
+          "fips": "13267",
+          "label": "Tattnall",
+          "value": 0.33
+        },
+        {
+          "fips": "13269",
+          "label": "Taylor",
+          "value": 0.32
+        },
+        {
+          "fips": "13271",
+          "label": "Telfair",
+          "value": 0.46
+        },
+        {
+          "fips": "13273",
+          "label": "Terrell",
+          "value": 4.7
+        },
+        {
+          "fips": "13275",
+          "label": "Thomas",
+          "value": 0.17
+        },
+        {
+          "fips": "13277",
+          "label": "Tift",
+          "value": 0.12
+        },
+        {
+          "fips": "13279",
+          "label": "Toombs",
+          "value": 0.24
+        },
+        {
+          "fips": "13281",
+          "label": "Towns",
+          "value": 0.49
+        },
+        {
+          "fips": "13283",
+          "label": "Treutlen",
+          "value": 0.44
+        },
+        {
+          "fips": "13285",
+          "label": "Troup",
+          "value": 0.35
+        },
+        {
+          "fips": "13287",
+          "label": "Turner",
+          "value": 0.43
+        },
+        {
+          "fips": "13289",
+          "label": "Twiggs",
+          "value": 0.35
+        },
+        {
+          "fips": "13291",
+          "label": "Union",
+          "value": 0.46
+        },
+        {
+          "fips": "13293",
+          "label": "Upson",
+          "value": 0.21
+        },
+        {
+          "fips": "13295",
+          "label": "Walker",
+          "value": 0.47
+        },
+        {
+          "fips": "13297",
+          "label": "Walton",
+          "value": 0.19
+        },
+        {
+          "fips": "13299",
+          "label": "Ware",
+          "value": 0.37
+        },
+        {
+          "fips": "13301",
+          "label": "Warren",
+          "value": 0.23
+        },
+        {
+          "fips": "13303",
+          "label": "Washington",
+          "value": 0.03
+        },
+        {
+          "fips": "13305",
+          "label": "Wayne",
+          "value": 0.35
+        },
+        {
+          "fips": "13307",
+          "label": "Webster",
+          "value": 0.16
+        },
+        {
+          "fips": "13309",
+          "label": "Wheeler",
+          "value": 0.48
+        },
+        {
+          "fips": "13311",
+          "label": "White",
+          "value": 0.4
+        },
+        {
+          "fips": "13313",
+          "label": "Whitfield",
+          "value": 0.08
+        },
+        {
+          "fips": "13315",
+          "label": "Wilcox",
+          "value": 0.39
+        },
+        {
+          "fips": "13317",
+          "label": "Wilkes",
+          "value": 0.17
+        },
+        {
+          "fips": "13319",
+          "label": "Wilkinson",
+          "value": 0.45
+        },
+        {
+          "fips": "13321",
+          "label": "Worth",
+          "value": 18.5
+        }
+      ]
+    },
+    "pecans": {
+      "metric_label": "Pecans \u2014 share of GA production",
+      "unit": "%",
+      "points": [
+        {
+          "fips": "13001",
+          "label": "Appling",
+          "value": 0.28
+        },
+        {
+          "fips": "13003",
+          "label": "Atkinson",
+          "value": 0.18
+        },
+        {
+          "fips": "13005",
+          "label": "Bacon",
+          "value": 0.29
+        },
+        {
+          "fips": "13007",
+          "label": "Baker",
+          "value": 0.37
+        },
+        {
+          "fips": "13009",
+          "label": "Baldwin",
+          "value": 0.07
+        },
+        {
+          "fips": "13011",
+          "label": "Banks",
+          "value": 0.32
+        },
+        {
+          "fips": "13013",
+          "label": "Barrow",
+          "value": 3.2
+        },
+        {
+          "fips": "13015",
+          "label": "Bartow",
+          "value": 0.08
+        },
+        {
+          "fips": "13017",
+          "label": "Ben Hill",
+          "value": 6.8
+        },
+        {
+          "fips": "13019",
+          "label": "Berrien",
+          "value": 0.08
+        },
+        {
+          "fips": "13021",
+          "label": "Bibb",
+          "value": 0.19
+        },
+        {
+          "fips": "13023",
+          "label": "Bleckley",
+          "value": 0.33
+        },
+        {
+          "fips": "13025",
+          "label": "Brantley",
+          "value": 0.33
+        },
+        {
+          "fips": "13027",
+          "label": "Brooks",
+          "value": 0.03
+        },
+        {
+          "fips": "13029",
+          "label": "Bryan",
+          "value": 0.3
+        },
+        {
+          "fips": "13031",
+          "label": "Bulloch",
+          "value": 0.19
+        },
+        {
+          "fips": "13033",
+          "label": "Burke",
+          "value": 0.2
+        },
+        {
+          "fips": "13035",
+          "label": "Butts",
+          "value": 0.13
+        },
+        {
+          "fips": "13037",
+          "label": "Calhoun",
+          "value": 4.8
+        },
+        {
+          "fips": "13039",
+          "label": "Camden",
+          "value": 5.4
+        },
+        {
+          "fips": "13043",
+          "label": "Candler",
+          "value": 0.22
+        },
+        {
+          "fips": "13045",
+          "label": "Carroll",
+          "value": 0.13
+        },
+        {
+          "fips": "13047",
+          "label": "Catoosa",
+          "value": 0.08
+        },
+        {
+          "fips": "13049",
+          "label": "Charlton",
+          "value": 0.28
+        },
+        {
+          "fips": "13051",
+          "label": "Chatham",
+          "value": 0.34
+        },
+        {
+          "fips": "13053",
+          "label": "Chattahoochee",
+          "value": 0.47
+        },
+        {
+          "fips": "13055",
+          "label": "Chattooga",
+          "value": 0.35
+        },
+        {
+          "fips": "13057",
+          "label": "Cherokee",
+          "value": 0.21
+        },
+        {
+          "fips": "13059",
+          "label": "Clarke",
+          "value": 0.14
+        },
+        {
+          "fips": "13061",
+          "label": "Clay",
+          "value": 0.09
+        },
+        {
+          "fips": "13063",
+          "label": "Clayton",
+          "value": 0.03
+        },
+        {
+          "fips": "13065",
+          "label": "Clinch",
+          "value": 0.15
+        },
+        {
+          "fips": "13067",
+          "label": "Cobb",
+          "value": 0.25
+        },
+        {
+          "fips": "13069",
+          "label": "Coffee",
+          "value": 0.15
+        },
+        {
+          "fips": "13071",
+          "label": "Colquitt",
+          "value": 0.17
+        },
+        {
+          "fips": "13073",
+          "label": "Columbia",
+          "value": 0.47
+        },
+        {
+          "fips": "13075",
+          "label": "Cook",
+          "value": 0.3
+        },
+        {
+          "fips": "13077",
+          "label": "Coweta",
+          "value": 0.42
+        },
+        {
+          "fips": "13079",
+          "label": "Crawford",
+          "value": 0.29
+        },
+        {
+          "fips": "13081",
+          "label": "Crisp",
+          "value": 10.8
+        },
+        {
+          "fips": "13083",
+          "label": "Dade",
+          "value": 0.33
+        },
+        {
+          "fips": "13085",
+          "label": "Dawson",
+          "value": 0.48
+        },
+        {
+          "fips": "13087",
+          "label": "Decatur",
+          "value": 4.4
+        },
+        {
+          "fips": "13089",
+          "label": "DeKalb",
+          "value": 0.27
+        },
+        {
+          "fips": "13091",
+          "label": "Dodge",
+          "value": 0.15
+        },
+        {
+          "fips": "13093",
+          "label": "Dooly",
+          "value": 0.32
+        },
+        {
+          "fips": "13095",
+          "label": "Dougherty",
+          "value": 12.4
+        },
+        {
+          "fips": "13097",
+          "label": "Douglas",
+          "value": 0.38
+        },
+        {
+          "fips": "13099",
+          "label": "Early",
+          "value": 5.0
+        },
+        {
+          "fips": "13101",
+          "label": "Echols",
+          "value": 0.17
+        },
+        {
+          "fips": "13103",
+          "label": "Effingham",
+          "value": 0.34
+        },
+        {
+          "fips": "13105",
+          "label": "Elbert",
+          "value": 0.03
+        },
+        {
+          "fips": "13107",
+          "label": "Emanuel",
+          "value": 0.49
+        },
+        {
+          "fips": "13109",
+          "label": "Evans",
+          "value": 0.25
+        },
+        {
+          "fips": "13111",
+          "label": "Fannin",
+          "value": 0.49
+        },
+        {
+          "fips": "13113",
+          "label": "Fayette",
+          "value": 0.35
+        },
+        {
+          "fips": "13115",
+          "label": "Floyd",
+          "value": 0.43
+        },
+        {
+          "fips": "13117",
+          "label": "Forsyth",
+          "value": 0.47
+        },
+        {
+          "fips": "13119",
+          "label": "Franklin",
+          "value": 0.45
+        },
+        {
+          "fips": "13121",
+          "label": "Fulton",
+          "value": 0.21
+        },
+        {
+          "fips": "13123",
+          "label": "Gilmer",
+          "value": 0.49
+        },
+        {
+          "fips": "13125",
+          "label": "Glascock",
+          "value": 0.48
+        },
+        {
+          "fips": "13127",
+          "label": "Glynn",
+          "value": 0.13
+        },
+        {
+          "fips": "13129",
+          "label": "Gordon",
+          "value": 0.42
+        },
+        {
+          "fips": "13131",
+          "label": "Grady",
+          "value": 0.18
+        },
+        {
+          "fips": "13133",
+          "label": "Greene",
+          "value": 0.12
+        },
+        {
+          "fips": "13135",
+          "label": "Gwinnett",
+          "value": 0.19
+        },
+        {
+          "fips": "13137",
+          "label": "Habersham",
+          "value": 0.33
+        },
+        {
+          "fips": "13139",
+          "label": "Hall",
+          "value": 0.28
+        },
+        {
+          "fips": "13141",
+          "label": "Hancock",
+          "value": 0.25
+        },
+        {
+          "fips": "13143",
+          "label": "Haralson",
+          "value": 0.4
+        },
+        {
+          "fips": "13145",
+          "label": "Harris",
+          "value": 0.3
+        },
+        {
+          "fips": "13147",
+          "label": "Hart",
+          "value": 0.11
+        },
+        {
+          "fips": "13149",
+          "label": "Heard",
+          "value": 0.32
+        },
+        {
+          "fips": "13151",
+          "label": "Henry",
+          "value": 0.09
+        },
+        {
+          "fips": "13153",
+          "label": "Houston",
+          "value": 0.45
+        },
+        {
+          "fips": "13155",
+          "label": "Irwin",
+          "value": 0.48
+        },
+        {
+          "fips": "13157",
+          "label": "Jackson",
+          "value": 0.41
+        },
+        {
+          "fips": "13159",
+          "label": "Jasper",
+          "value": 0.42
+        },
+        {
+          "fips": "13161",
+          "label": "Jeff Davis",
+          "value": 0.36
+        },
+        {
+          "fips": "13163",
+          "label": "Jefferson",
+          "value": 0.4
+        },
+        {
+          "fips": "13165",
+          "label": "Jenkins",
+          "value": 0.33
+        },
+        {
+          "fips": "13167",
+          "label": "Johnson",
+          "value": 0.06
+        },
+        {
+          "fips": "13169",
+          "label": "Jones",
+          "value": 3.8
+        },
+        {
+          "fips": "13171",
+          "label": "Lamar",
+          "value": 0.2
+        },
+        {
+          "fips": "13173",
+          "label": "Lanier",
+          "value": 0.37
+        },
+        {
+          "fips": "13175",
+          "label": "Laurens",
+          "value": 0.09
+        },
+        {
+          "fips": "13177",
+          "label": "Lee",
+          "value": 8.4
+        },
+        {
+          "fips": "13179",
+          "label": "Liberty",
+          "value": 0.37
+        },
+        {
+          "fips": "13181",
+          "label": "Lincoln",
+          "value": 0.5
+        },
+        {
+          "fips": "13183",
+          "label": "Long",
+          "value": 0.03
+        },
+        {
+          "fips": "13185",
+          "label": "Lowndes",
+          "value": 0.12
+        },
+        {
+          "fips": "13187",
+          "label": "Lumpkin",
+          "value": 0.43
+        },
+        {
+          "fips": "13189",
+          "label": "McDuffie",
+          "value": 0.3
+        },
+        {
+          "fips": "13191",
+          "label": "McIntosh",
+          "value": 0.29
+        },
+        {
+          "fips": "13193",
+          "label": "Macon",
+          "value": 0.48
+        },
+        {
+          "fips": "13195",
+          "label": "Madison",
+          "value": 0.2
+        },
+        {
+          "fips": "13197",
+          "label": "Marion",
+          "value": 0.48
+        },
+        {
+          "fips": "13199",
+          "label": "Meriwether",
+          "value": 0.27
+        },
+        {
+          "fips": "13201",
+          "label": "Miller",
+          "value": 0.33
+        },
+        {
+          "fips": "13205",
+          "label": "Mitchell",
+          "value": 9.2
+        },
+        {
+          "fips": "13207",
+          "label": "Monroe",
+          "value": 4.2
+        },
+        {
+          "fips": "13209",
+          "label": "Montgomery",
+          "value": 0.1
+        },
+        {
+          "fips": "13211",
+          "label": "Morgan",
+          "value": 0.26
+        },
+        {
+          "fips": "13213",
+          "label": "Murray",
+          "value": 0.06
+        },
+        {
+          "fips": "13215",
+          "label": "Muscogee",
+          "value": 0.37
+        },
+        {
+          "fips": "13217",
+          "label": "Newton",
+          "value": 0.18
+        },
+        {
+          "fips": "13219",
+          "label": "Oconee",
+          "value": 0.15
+        },
+        {
+          "fips": "13221",
+          "label": "Oglethorpe",
+          "value": 0.04
+        },
+        {
+          "fips": "13223",
+          "label": "Paulding",
+          "value": 0.3
+        },
+        {
+          "fips": "13225",
+          "label": "Peach",
+          "value": 0.4
+        },
+        {
+          "fips": "13227",
+          "label": "Pickens",
+          "value": 0.1
+        },
+        {
+          "fips": "13229",
+          "label": "Pierce",
+          "value": 0.16
+        },
+        {
+          "fips": "13231",
+          "label": "Pike",
+          "value": 0.28
+        },
+        {
+          "fips": "13233",
+          "label": "Polk",
+          "value": 0.19
+        },
+        {
+          "fips": "13235",
+          "label": "Pulaski",
+          "value": 0.49
+        },
+        {
+          "fips": "13237",
+          "label": "Putnam",
+          "value": 0.11
+        },
+        {
+          "fips": "13239",
+          "label": "Quitman",
+          "value": 0.38
+        },
+        {
+          "fips": "13241",
+          "label": "Rabun",
+          "value": 0.02
+        },
+        {
+          "fips": "13243",
+          "label": "Randolph",
+          "value": 6.2
+        },
+        {
+          "fips": "13245",
+          "label": "Richmond",
+          "value": 0.31
+        },
+        {
+          "fips": "13247",
+          "label": "Rockdale",
+          "value": 0.25
+        },
+        {
+          "fips": "13249",
+          "label": "Schley",
+          "value": 0.22
+        },
+        {
+          "fips": "13251",
+          "label": "Screven",
+          "value": 0.41
+        },
+        {
+          "fips": "13253",
+          "label": "Seminole",
+          "value": 0.45
+        },
+        {
+          "fips": "13255",
+          "label": "Spalding",
+          "value": 0.49
+        },
+        {
+          "fips": "13257",
+          "label": "Stephens",
+          "value": 0.5
+        },
+        {
+          "fips": "13259",
+          "label": "Stewart",
+          "value": 0.1
+        },
+        {
+          "fips": "13261",
+          "label": "Sumter",
+          "value": 7.6
+        },
+        {
+          "fips": "13263",
+          "label": "Talbot",
+          "value": 0.27
+        },
+        {
+          "fips": "13265",
+          "label": "Taliaferro",
+          "value": 0.11
+        },
+        {
+          "fips": "13267",
+          "label": "Tattnall",
+          "value": 0.28
+        },
+        {
+          "fips": "13269",
+          "label": "Taylor",
+          "value": 0.1
+        },
+        {
+          "fips": "13271",
+          "label": "Telfair",
+          "value": 0.45
+        },
+        {
+          "fips": "13273",
+          "label": "Terrell",
+          "value": 0.27
+        },
+        {
+          "fips": "13275",
+          "label": "Thomas",
+          "value": 0.44
+        },
+        {
+          "fips": "13277",
+          "label": "Tift",
+          "value": 0.33
+        },
+        {
+          "fips": "13279",
+          "label": "Toombs",
+          "value": 0.02
+        },
+        {
+          "fips": "13281",
+          "label": "Towns",
+          "value": 0.2
+        },
+        {
+          "fips": "13283",
+          "label": "Treutlen",
+          "value": 0.2
+        },
+        {
+          "fips": "13285",
+          "label": "Troup",
+          "value": 0.12
+        },
+        {
+          "fips": "13287",
+          "label": "Turner",
+          "value": 0.09
+        },
+        {
+          "fips": "13289",
+          "label": "Twiggs",
+          "value": 0.31
+        },
+        {
+          "fips": "13291",
+          "label": "Union",
+          "value": 0.08
+        },
+        {
+          "fips": "13293",
+          "label": "Upson",
+          "value": 0.49
+        },
+        {
+          "fips": "13295",
+          "label": "Walker",
+          "value": 0.25
+        },
+        {
+          "fips": "13297",
+          "label": "Walton",
+          "value": 0.44
+        },
+        {
+          "fips": "13299",
+          "label": "Ware",
+          "value": 0.37
+        },
+        {
+          "fips": "13301",
+          "label": "Warren",
+          "value": 0.2
+        },
+        {
+          "fips": "13303",
+          "label": "Washington",
+          "value": 0.32
+        },
+        {
+          "fips": "13305",
+          "label": "Wayne",
+          "value": 0.33
+        },
+        {
+          "fips": "13307",
+          "label": "Webster",
+          "value": 0.19
+        },
+        {
+          "fips": "13309",
+          "label": "Wheeler",
+          "value": 0.46
+        },
+        {
+          "fips": "13311",
+          "label": "White",
+          "value": 0.08
+        },
+        {
+          "fips": "13313",
+          "label": "Whitfield",
+          "value": 0.27
+        },
+        {
+          "fips": "13315",
+          "label": "Wilcox",
+          "value": 0.42
+        },
+        {
+          "fips": "13317",
+          "label": "Wilkes",
+          "value": 0.35
+        },
+        {
+          "fips": "13319",
+          "label": "Wilkinson",
+          "value": 0.24
+        },
+        {
+          "fips": "13321",
+          "label": "Worth",
+          "value": 9.6
+        }
+      ]
+    },
+    "cotton": {
+      "metric_label": "Cotton \u2014 share of GA production",
+      "unit": "%",
+      "points": [
+        {
+          "fips": "13001",
+          "label": "Appling",
+          "value": 0.37
+        },
+        {
+          "fips": "13003",
+          "label": "Atkinson",
+          "value": 0.1
+        },
+        {
+          "fips": "13005",
+          "label": "Bacon",
+          "value": 0.48
+        },
+        {
+          "fips": "13007",
+          "label": "Baker",
+          "value": 0.1
+        },
+        {
+          "fips": "13009",
+          "label": "Baldwin",
+          "value": 0.32
+        },
+        {
+          "fips": "13011",
+          "label": "Banks",
+          "value": 0.22
+        },
+        {
+          "fips": "13013",
+          "label": "Barrow",
+          "value": 0.46
+        },
+        {
+          "fips": "13015",
+          "label": "Bartow",
+          "value": 0.17
+        },
+        {
+          "fips": "13017",
+          "label": "Ben Hill",
+          "value": 4.2
+        },
+        {
+          "fips": "13019",
+          "label": "Berrien",
+          "value": 0.23
+        },
+        {
+          "fips": "13021",
+          "label": "Bibb",
+          "value": 0.33
+        },
+        {
+          "fips": "13023",
+          "label": "Bleckley",
+          "value": 0.23
+        },
+        {
+          "fips": "13025",
+          "label": "Brantley",
+          "value": 0.55
+        },
+        {
+          "fips": "13027",
+          "label": "Brooks",
+          "value": 0.45
+        },
+        {
+          "fips": "13029",
+          "label": "Bryan",
+          "value": 0.52
+        },
+        {
+          "fips": "13031",
+          "label": "Bulloch",
+          "value": 0.27
+        },
+        {
+          "fips": "13033",
+          "label": "Burke",
+          "value": 14.6
+        },
+        {
+          "fips": "13035",
+          "label": "Butts",
+          "value": 0.15
+        },
+        {
+          "fips": "13037",
+          "label": "Calhoun",
+          "value": 3.8
+        },
+        {
+          "fips": "13039",
+          "label": "Camden",
+          "value": 0.49
+        },
+        {
+          "fips": "13043",
+          "label": "Candler",
+          "value": 0.17
+        },
+        {
+          "fips": "13045",
+          "label": "Carroll",
+          "value": 0.43
+        },
+        {
+          "fips": "13047",
+          "label": "Catoosa",
+          "value": 5.4
+        },
+        {
+          "fips": "13049",
+          "label": "Charlton",
+          "value": 0.24
+        },
+        {
+          "fips": "13051",
+          "label": "Chatham",
+          "value": 0.48
+        },
+        {
+          "fips": "13053",
+          "label": "Chattahoochee",
+          "value": 0.28
+        },
+        {
+          "fips": "13055",
+          "label": "Chattooga",
+          "value": 0.49
+        },
+        {
+          "fips": "13057",
+          "label": "Cherokee",
+          "value": 0.26
+        },
+        {
+          "fips": "13059",
+          "label": "Clarke",
+          "value": 0.13
+        },
+        {
+          "fips": "13061",
+          "label": "Clay",
+          "value": 0.46
+        },
+        {
+          "fips": "13063",
+          "label": "Clayton",
+          "value": 0.41
+        },
+        {
+          "fips": "13065",
+          "label": "Clinch",
+          "value": 0.12
+        },
+        {
+          "fips": "13067",
+          "label": "Cobb",
+          "value": 0.2
+        },
+        {
+          "fips": "13069",
+          "label": "Coffee",
+          "value": 0.51
+        },
+        {
+          "fips": "13071",
+          "label": "Colquitt",
+          "value": 0.23
+        },
+        {
+          "fips": "13073",
+          "label": "Columbia",
+          "value": 0.51
+        },
+        {
+          "fips": "13075",
+          "label": "Cook",
+          "value": 0.29
+        },
+        {
+          "fips": "13077",
+          "label": "Coweta",
+          "value": 0.13
+        },
+        {
+          "fips": "13079",
+          "label": "Crawford",
+          "value": 0.39
+        },
+        {
+          "fips": "13081",
+          "label": "Crisp",
+          "value": 0.18
+        },
+        {
+          "fips": "13083",
+          "label": "Dade",
+          "value": 0.58
+        },
+        {
+          "fips": "13085",
+          "label": "Dawson",
+          "value": 0.36
+        },
+        {
+          "fips": "13087",
+          "label": "Decatur",
+          "value": 11.8
+        },
+        {
+          "fips": "13089",
+          "label": "DeKalb",
+          "value": 0.12
+        },
+        {
+          "fips": "13091",
+          "label": "Dodge",
+          "value": 0.21
+        },
+        {
+          "fips": "13093",
+          "label": "Dooly",
+          "value": 0.3
+        },
+        {
+          "fips": "13095",
+          "label": "Dougherty",
+          "value": 7.9
+        },
+        {
+          "fips": "13097",
+          "label": "Douglas",
+          "value": 0.27
+        },
+        {
+          "fips": "13099",
+          "label": "Early",
+          "value": 0.06
+        },
+        {
+          "fips": "13101",
+          "label": "Echols",
+          "value": 0.44
+        },
+        {
+          "fips": "13103",
+          "label": "Effingham",
+          "value": 0.42
+        },
+        {
+          "fips": "13105",
+          "label": "Elbert",
+          "value": 0.24
+        },
+        {
+          "fips": "13107",
+          "label": "Emanuel",
+          "value": 6.8
+        },
+        {
+          "fips": "13109",
+          "label": "Evans",
+          "value": 0.42
+        },
+        {
+          "fips": "13111",
+          "label": "Fannin",
+          "value": 0.56
+        },
+        {
+          "fips": "13113",
+          "label": "Fayette",
+          "value": 0.55
+        },
+        {
+          "fips": "13115",
+          "label": "Floyd",
+          "value": 0.52
+        },
+        {
+          "fips": "13117",
+          "label": "Forsyth",
+          "value": 0.57
+        },
+        {
+          "fips": "13119",
+          "label": "Franklin",
+          "value": 0.42
+        },
+        {
+          "fips": "13121",
+          "label": "Fulton",
+          "value": 0.35
+        },
+        {
+          "fips": "13123",
+          "label": "Gilmer",
+          "value": 0.17
+        },
+        {
+          "fips": "13125",
+          "label": "Glascock",
+          "value": 0.24
+        },
+        {
+          "fips": "13127",
+          "label": "Glynn",
+          "value": 0.23
+        },
+        {
+          "fips": "13129",
+          "label": "Gordon",
+          "value": 0.56
+        },
+        {
+          "fips": "13131",
+          "label": "Grady",
+          "value": 0.45
+        },
+        {
+          "fips": "13133",
+          "label": "Greene",
+          "value": 0.06
+        },
+        {
+          "fips": "13135",
+          "label": "Gwinnett",
+          "value": 0.36
+        },
+        {
+          "fips": "13137",
+          "label": "Habersham",
+          "value": 0.19
+        },
+        {
+          "fips": "13139",
+          "label": "Hall",
+          "value": 0.23
+        },
+        {
+          "fips": "13141",
+          "label": "Hancock",
+          "value": 0.4
+        },
+        {
+          "fips": "13143",
+          "label": "Haralson",
+          "value": 0.28
+        },
+        {
+          "fips": "13145",
+          "label": "Harris",
+          "value": 0.48
+        },
+        {
+          "fips": "13147",
+          "label": "Hart",
+          "value": 0.31
+        },
+        {
+          "fips": "13149",
+          "label": "Heard",
+          "value": 0.54
+        },
+        {
+          "fips": "13151",
+          "label": "Henry",
+          "value": 0.24
+        },
+        {
+          "fips": "13153",
+          "label": "Houston",
+          "value": 5.1
+        },
+        {
+          "fips": "13155",
+          "label": "Irwin",
+          "value": 0.07
+        },
+        {
+          "fips": "13157",
+          "label": "Jackson",
+          "value": 0.17
+        },
+        {
+          "fips": "13159",
+          "label": "Jasper",
+          "value": 0.12
+        },
+        {
+          "fips": "13161",
+          "label": "Jeff Davis",
+          "value": 0.52
+        },
+        {
+          "fips": "13163",
+          "label": "Jefferson",
+          "value": 0.2
+        },
+        {
+          "fips": "13165",
+          "label": "Jenkins",
+          "value": 0.06
+        },
+        {
+          "fips": "13167",
+          "label": "Johnson",
+          "value": 0.17
+        },
+        {
+          "fips": "13169",
+          "label": "Jones",
+          "value": 4.6
+        },
+        {
+          "fips": "13171",
+          "label": "Lamar",
+          "value": 0.3
+        },
+        {
+          "fips": "13173",
+          "label": "Lanier",
+          "value": 0.2
+        },
+        {
+          "fips": "13175",
+          "label": "Laurens",
+          "value": 0.4
+        },
+        {
+          "fips": "13177",
+          "label": "Lee",
+          "value": 0.09
+        },
+        {
+          "fips": "13179",
+          "label": "Liberty",
+          "value": 0.43
+        },
+        {
+          "fips": "13181",
+          "label": "Lincoln",
+          "value": 0.35
+        },
+        {
+          "fips": "13183",
+          "label": "Long",
+          "value": 0.06
+        },
+        {
+          "fips": "13185",
+          "label": "Lowndes",
+          "value": 0.1
+        },
+        {
+          "fips": "13187",
+          "label": "Lumpkin",
+          "value": 0.23
+        },
+        {
+          "fips": "13189",
+          "label": "McDuffie",
+          "value": 8.7
+        },
+        {
+          "fips": "13191",
+          "label": "McIntosh",
+          "value": 0.17
+        },
+        {
+          "fips": "13193",
+          "label": "Macon",
+          "value": 0.3
+        },
+        {
+          "fips": "13195",
+          "label": "Madison",
+          "value": 0.38
+        },
+        {
+          "fips": "13197",
+          "label": "Marion",
+          "value": 0.14
+        },
+        {
+          "fips": "13199",
+          "label": "Meriwether",
+          "value": 0.22
+        },
+        {
+          "fips": "13201",
+          "label": "Miller",
+          "value": 0.36
+        },
+        {
+          "fips": "13205",
+          "label": "Mitchell",
+          "value": 13.2
+        },
+        {
+          "fips": "13207",
+          "label": "Monroe",
+          "value": 0.44
+        },
+        {
+          "fips": "13209",
+          "label": "Montgomery",
+          "value": 0.42
+        },
+        {
+          "fips": "13211",
+          "label": "Morgan",
+          "value": 0.36
+        },
+        {
+          "fips": "13213",
+          "label": "Murray",
+          "value": 0.11
+        },
+        {
+          "fips": "13215",
+          "label": "Muscogee",
+          "value": 0.2
+        },
+        {
+          "fips": "13217",
+          "label": "Newton",
+          "value": 0.28
+        },
+        {
+          "fips": "13219",
+          "label": "Oconee",
+          "value": 0.15
+        },
+        {
+          "fips": "13221",
+          "label": "Oglethorpe",
+          "value": 0.45
+        },
+        {
+          "fips": "13223",
+          "label": "Paulding",
+          "value": 0.59
+        },
+        {
+          "fips": "13225",
+          "label": "Peach",
+          "value": 0.59
+        },
+        {
+          "fips": "13227",
+          "label": "Pickens",
+          "value": 0.55
+        },
+        {
+          "fips": "13229",
+          "label": "Pierce",
+          "value": 0.41
+        },
+        {
+          "fips": "13231",
+          "label": "Pike",
+          "value": 0.24
+        },
+        {
+          "fips": "13233",
+          "label": "Polk",
+          "value": 0.24
+        },
+        {
+          "fips": "13235",
+          "label": "Pulaski",
+          "value": 0.38
+        },
+        {
+          "fips": "13237",
+          "label": "Putnam",
+          "value": 0.19
+        },
+        {
+          "fips": "13239",
+          "label": "Quitman",
+          "value": 0.54
+        },
+        {
+          "fips": "13241",
+          "label": "Rabun",
+          "value": 0.51
+        },
+        {
+          "fips": "13243",
+          "label": "Randolph",
+          "value": 0.07
+        },
+        {
+          "fips": "13245",
+          "label": "Richmond",
+          "value": 7.3
+        },
+        {
+          "fips": "13247",
+          "label": "Rockdale",
+          "value": 0.32
+        },
+        {
+          "fips": "13249",
+          "label": "Schley",
+          "value": 0.06
+        },
+        {
+          "fips": "13251",
+          "label": "Screven",
+          "value": 6.2
+        },
+        {
+          "fips": "13253",
+          "label": "Seminole",
+          "value": 0.49
+        },
+        {
+          "fips": "13255",
+          "label": "Spalding",
+          "value": 0.19
+        },
+        {
+          "fips": "13257",
+          "label": "Stephens",
+          "value": 0.47
+        },
+        {
+          "fips": "13259",
+          "label": "Stewart",
+          "value": 0.16
+        },
+        {
+          "fips": "13261",
+          "label": "Sumter",
+          "value": 0.2
+        },
+        {
+          "fips": "13263",
+          "label": "Talbot",
+          "value": 0.51
+        },
+        {
+          "fips": "13265",
+          "label": "Taliaferro",
+          "value": 0.27
+        },
+        {
+          "fips": "13267",
+          "label": "Tattnall",
+          "value": 0.17
+        },
+        {
+          "fips": "13269",
+          "label": "Taylor",
+          "value": 0.08
+        },
+        {
+          "fips": "13271",
+          "label": "Telfair",
+          "value": 0.28
+        },
+        {
+          "fips": "13273",
+          "label": "Terrell",
+          "value": 0.09
+        },
+        {
+          "fips": "13275",
+          "label": "Thomas",
+          "value": 0.45
+        },
+        {
+          "fips": "13277",
+          "label": "Tift",
+          "value": 10.4
+        },
+        {
+          "fips": "13279",
+          "label": "Toombs",
+          "value": 0.41
+        },
+        {
+          "fips": "13281",
+          "label": "Towns",
+          "value": 0.43
+        },
+        {
+          "fips": "13283",
+          "label": "Treutlen",
+          "value": 0.47
+        },
+        {
+          "fips": "13285",
+          "label": "Troup",
+          "value": 0.21
+        },
+        {
+          "fips": "13287",
+          "label": "Turner",
+          "value": 0.32
+        },
+        {
+          "fips": "13289",
+          "label": "Twiggs",
+          "value": 0.1
+        },
+        {
+          "fips": "13291",
+          "label": "Union",
+          "value": 0.33
+        },
+        {
+          "fips": "13293",
+          "label": "Upson",
+          "value": 0.34
+        },
+        {
+          "fips": "13295",
+          "label": "Walker",
+          "value": 0.23
+        },
+        {
+          "fips": "13297",
+          "label": "Walton",
+          "value": 0.22
+        },
+        {
+          "fips": "13299",
+          "label": "Ware",
+          "value": 0.24
+        },
+        {
+          "fips": "13301",
+          "label": "Warren",
+          "value": 0.15
+        },
+        {
+          "fips": "13303",
+          "label": "Washington",
+          "value": 0.59
+        },
+        {
+          "fips": "13305",
+          "label": "Wayne",
+          "value": 0.52
+        },
+        {
+          "fips": "13307",
+          "label": "Webster",
+          "value": 0.15
+        },
+        {
+          "fips": "13309",
+          "label": "Wheeler",
+          "value": 0.19
+        },
+        {
+          "fips": "13311",
+          "label": "White",
+          "value": 0.57
+        },
+        {
+          "fips": "13313",
+          "label": "Whitfield",
+          "value": 0.53
+        },
+        {
+          "fips": "13315",
+          "label": "Wilcox",
+          "value": 0.34
+        },
+        {
+          "fips": "13317",
+          "label": "Wilkes",
+          "value": 0.26
+        },
+        {
+          "fips": "13319",
+          "label": "Wilkinson",
+          "value": 0.11
+        },
+        {
+          "fips": "13321",
+          "label": "Worth",
+          "value": 11.2
+        }
+      ]
+    }
+  }
+}
