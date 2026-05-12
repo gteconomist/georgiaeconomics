@@ -3,25 +3,21 @@
 Outputs: data/agriculture.json (replaces fixture).
 
 What we fetch:
-  1. State-level annual PRODUCTION trends for 4 commodities (2016-latest):
-       - Broilers       — short_desc='BROILERS - PRODUCTION, MEASURED IN LB'
-       - Peanuts        — short_desc='PEANUTS - PRODUCTION, MEASURED IN LB'
-       - Pecans         — short_desc='PECANS - PRODUCTION, MEASURED IN LB'
-       - Cotton (upland)— short_desc='COTTON, UPLAND - PRODUCTION, MEASURED IN 480 LB BALES'
-  2. National production for the same 4 commodities (latest year), to compute GA share
-  3. County-level production for the same 4 commodities (latest year, all GA counties)
+  1. State-level annual PRODUCTION trends for 4 commodities (10 yrs)
+  2. National production for the same commodities (latest year) → GA share %
+  3. County-level production (latest year, all GA counties)
 
-What we leave on fixture (NASS economics is messier — separate follow-up):
+What we leave on fixture:
   - cash_receipts_breakdown
-  - rankings text/value (we update the share % for the 4 commodities we fetch)
-  - notable_productions, major_studios — unrelated, stay as is
+  - notable_productions, major_studios
 
 Env: NASS_API_KEY (free at https://quickstats.nass.usda.gov/api)
 
-NASS API quirks:
-  - "(D)" or "(Z)" Value strings = withheld for confidentiality. Filter out.
-  - Values are returned as strings with comma thousand-separators.
-  - county_code is a 3-digit string; full FIPS = state_fips_code + county_code.
+NASS conventions used here:
+  - Broilers live under commodity=CHICKENS, class=BROILERS (NOT a separate "BROILERS" commodity)
+  - Cotton has classes UPLAND and PIMA; we use UPLAND (~99% of US cotton)
+  - reference_period_desc=YEAR filters out monthly/quarterly reports
+  - Suppressed values come back as "(D)" / "(Z)" — filter those out
 """
 
 import json
@@ -36,22 +32,26 @@ from datetime import date
 
 NASS_API_KEY = os.environ.get("NASS_API_KEY", "").strip()
 if not NASS_API_KEY:
-    print("ERROR: NASS_API_KEY env var not set. Get one free at https://quickstats.nass.usda.gov/api", file=sys.stderr)
+    print("ERROR: NASS_API_KEY env var not set.", file=sys.stderr)
     sys.exit(2)
 
 NASS_URL = "https://quickstats.nass.usda.gov/api/api_GET/"
 
 TODAY = date.today()
 END_YEAR = TODAY.year
-START_YEAR = END_YEAR - 10  # 10 years of trends; NASS may not have current year yet
+START_YEAR = END_YEAR - 10
 
 sys.path.insert(0, str(Path(__file__).parent))
 from _ga_counties import GA_COUNTIES
-GA_COUNTY_NAMES = {fips[2:]: name for fips, name in GA_COUNTIES}  # 3-digit county_code → name
 
 
-def nass_query(filters, retries=3):
-    """GET against NASS Quick Stats. Returns list of records."""
+# ---------- HTTP helper ----------
+def nass_query(filters, retries=2):
+    """GET against NASS. Returns list of records, or [] on 400 (no data / bad filter combo).
+
+    400s are NEVER raised — they're logged to stderr so the run keeps going.
+    Only network failures raise after retries.
+    """
     q = {"key": NASS_API_KEY, "format": "JSON", **filters}
     url = NASS_URL + "?" + urllib.parse.urlencode(q)
     last_err = None
@@ -61,149 +61,132 @@ def nass_query(filters, retries=3):
                 payload = json.loads(resp.read().decode("utf-8"))
                 return payload.get("data", [])
         except urllib.error.HTTPError as e:
-            # NASS returns 400 with a JSON body when no records match — that's NOT a fatal error
             if e.code == 400:
+                # Soft fail. Could be no matching records OR a bad filter combo.
                 try:
-                    body = json.loads(e.read().decode("utf-8"))
-                    if "no data" in str(body).lower() or "0 record" in str(body).lower():
-                        return []
+                    body_text = e.read().decode("utf-8")[:300]
                 except Exception:
-                    pass
+                    body_text = "(no body)"
+                print(f"      [NASS 400] {filters} → {body_text}", file=sys.stderr)
+                return []
             last_err = e
-            time.sleep(2 ** attempt)
+            time.sleep(1 + attempt)
         except urllib.error.URLError as e:
             last_err = e
-            time.sleep(2 ** attempt)
-    raise RuntimeError(f"NASS query failed after {retries} retries: {last_err}\n  filters: {filters}")
+            time.sleep(1 + attempt)
+    print(f"      [NASS NETWORK FAIL] {filters} — {last_err}", file=sys.stderr)
+    return []
 
 
 def parse_value(v):
-    """Convert NASS Value string to float, or None if suppressed."""
-    if v is None:
-        return None
+    if v is None: return None
     s = str(v).strip()
-    if s in ("(D)", "(Z)", "(NA)", "(X)", ""):
-        return None
-    try:
-        return float(s.replace(",", ""))
-    except ValueError:
-        return None
+    if s in ("(D)", "(Z)", "(NA)", "(X)", ""): return None
+    try:    return float(s.replace(",", ""))
+    except ValueError: return None
 
 
-# ---------- State-level annual production ----------
+# ---------- Commodity definitions ----------
+# Each entry: (key, base_filters, page_unit_label, divisor_to_page_unit)
+# base_filters define how to pin down the right metric from NASS using multiple params
+# (more robust than depending on a single short_desc string).
+COMMODITIES = [
+    ("broilers", {
+        "commodity_desc": "CHICKENS",
+        "class_desc": "BROILERS",
+        "statisticcat_desc": "PRODUCTION",
+        "unit_desc": "LB",
+    }, "B lbs", 1e9),
 
-def fetch_state_production_annual(short_desc):
-    """Return list of (year, value_float) for GA state, sorted ascending by year.
+    ("peanuts", {
+        "commodity_desc": "PEANUTS",
+        "statisticcat_desc": "PRODUCTION",
+        "unit_desc": "LB",
+    }, "B lbs", 1e9),
 
-    Uses short_desc as the precise filter — most reliable way to pin down the
-    exact metric+unit combination NASS uses.
-    """
-    rows = nass_query({
-        "short_desc": short_desc,
-        "agg_level_desc": "STATE",
-        "state_alpha": "GA",
-        "year__GE": str(START_YEAR),
-        "year__LE": str(END_YEAR),
-        "domain_desc": "TOTAL",
-    })
-    out = []
+    ("pecans", {
+        "commodity_desc": "PECANS",
+        "statisticcat_desc": "PRODUCTION",
+        "unit_desc": "LB",
+    }, "M lbs", 1e6),
+
+    ("cotton", {
+        "commodity_desc": "COTTON",
+        "class_desc": "UPLAND",
+        "statisticcat_desc": "PRODUCTION",
+        "unit_desc": "BALES",
+    }, "K bales", 1e3),
+]
+
+
+# ---------- Annual state-level production ----------
+def fetch_state_production_annual(base_filters):
+    f = dict(base_filters,
+             agg_level_desc="STATE",
+             state_alpha="GA",
+             year__GE=str(START_YEAR),
+             year__LE=str(END_YEAR),
+             reference_period_desc="YEAR",
+             domain_desc="TOTAL")
+    rows = nass_query(f)
+    by_year = {}
     for r in rows:
         v = parse_value(r.get("Value"))
         y = r.get("year")
-        if v is None or y is None:
-            continue
+        if v is None or y is None: continue
         try: y = int(y)
         except ValueError: continue
-        out.append((y, v))
-    # NASS may have multiple records per year (e.g., monthly + annual). Keep the largest = annual.
-    by_year = {}
-    for y, v in out:
+        # Multiple records per year possible (rare, but be safe) — keep max
         by_year[y] = max(by_year.get(y, 0), v)
     return sorted(by_year.items())
 
 
-# ---------- National-level annual production (for share %) ----------
-
-def fetch_national_production_year(short_desc, year):
-    """Return single float = US total production for given year, or None."""
-    rows = nass_query({
-        "short_desc": short_desc,
-        "agg_level_desc": "NATIONAL",
-        "year": str(year),
-        "domain_desc": "TOTAL",
-    })
+def fetch_national_production_year(base_filters, year):
+    f = dict(base_filters,
+             agg_level_desc="NATIONAL",
+             year=str(year),
+             reference_period_desc="YEAR",
+             domain_desc="TOTAL")
+    rows = nass_query(f)
     vals = [parse_value(r.get("Value")) for r in rows]
     vals = [v for v in vals if v is not None]
     return max(vals) if vals else None
 
 
-# ---------- County-level production (heatmap data) ----------
-
-def fetch_county_production_latest(short_desc, year):
-    """Return list of {fips, label, value} for GA counties.
-
-    Counties with suppressed (D) data get value=0 so the map still renders them.
-    """
-    rows = nass_query({
-        "short_desc": short_desc,
-        "agg_level_desc": "COUNTY",
-        "state_alpha": "GA",
-        "year": str(year),
-        "domain_desc": "TOTAL",
-    })
+# ---------- County-level production ----------
+def fetch_county_production(base_filters, year):
+    """Returns list of {fips, label, value} for all 159 GA counties, value as % of state total."""
+    f = dict(base_filters,
+             agg_level_desc="COUNTY",
+             state_alpha="GA",
+             year=str(year),
+             reference_period_desc="YEAR",
+             domain_desc="TOTAL")
+    rows = nass_query(f)
     by_county_code = {}
     for r in rows:
         cc = r.get("county_code")
         v  = parse_value(r.get("Value"))
-        if not cc or v is None:
-            continue
-        # Some NASS records are duplicates by district/region — keep max
+        if not cc or v is None: continue
         by_county_code[cc] = max(by_county_code.get(cc, 0), v)
 
-    # Build full 159-county list — counties not in the response get 0
-    out = []
+    # Build full 159-county list
+    pts = []
     for fips, name in GA_COUNTIES:
-        cc = fips[2:]   # 3-digit county code (state prefix already stripped)
+        cc = fips[2:]
         v  = by_county_code.get(cc, 0.0)
-        out.append({"fips": fips, "label": name, "value": round(v, 2)})
+        pts.append({"fips": fips, "label": name, "value": round(v, 2)})
 
-    # Convert to share-of-state-total (%) for the heatmap to be comparable across commodities
-    total = sum(p["value"] for p in out)
+    # Normalize to share-of-state-total %
+    total = sum(p["value"] for p in pts)
     if total > 0:
-        for p in out:
+        for p in pts:
             p["value"] = round(p["value"] / total * 100, 2)
-    return out
-
-
-# ---------- Most recent year with data (NASS lags vary by commodity) ----------
-
-def latest_year_with_state_data(short_desc):
-    """Walk back from END_YEAR until we find a state-level data point."""
-    rows = nass_query({
-        "short_desc": short_desc,
-        "agg_level_desc": "STATE",
-        "state_alpha": "GA",
-        "year__GE": str(END_YEAR - 3),
-        "year__LE": str(END_YEAR),
-        "domain_desc": "TOTAL",
-    })
-    years = [int(r["year"]) for r in rows if r.get("year") and parse_value(r.get("Value")) is not None]
-    return max(years) if years else (END_YEAR - 1)
+    return pts
 
 
 # ---------- Main ----------
-
-# (display_key, NASS short_desc, page_unit, divisor_to_page_unit)
-COMMODITIES = [
-    # Broilers: NASS reports in $ for state and lbs for production. We want lbs (in billions).
-    ("broilers", "BROILERS - PRODUCTION, MEASURED IN LB",                    "B lbs",  1e9),
-    ("peanuts",  "PEANUTS - PRODUCTION, MEASURED IN LB",                     "B lbs",  1e9),
-    ("pecans",   "PECANS, IN SHELL - PRODUCTION, MEASURED IN LB",            "M lbs",  1e6),
-    ("cotton",   "COTTON, UPLAND - PRODUCTION, MEASURED IN 480 LB BALES",    "K bales", 1e3),
-]
-
 def main():
-    # Load existing fixture so we can preserve fields we don't fetch
     fixture_path = Path(__file__).parent.parent / "data" / "agriculture.json"
     if fixture_path.exists():
         with open(fixture_path) as f:
@@ -211,146 +194,157 @@ def main():
     else:
         existing = {}
 
-    print(f"Fetching NASS data — START_YEAR={START_YEAR} END_YEAR={END_YEAR}")
+    print(f"Fetching NASS data — {START_YEAR} .. {END_YEAR}")
 
-    trends = {"years": []}
-    kpis_latest = {}
-    county_production = {}
-    rankings_updates = {}  # commodity name → updated dict
+    state_series      = {}   # key → [(year, raw_value), ...]
+    failed            = []   # commodities with no data
 
-    # 1. State-level annual production trends (per commodity)
-    all_year_sets = []
-    raw_state_series = {}
-    for key, short_desc, unit, divisor in COMMODITIES:
-        print(f"  → state production: {key} ({short_desc!r})")
-        series = fetch_state_production_annual(short_desc)
+    # 1. State-level annual production trends
+    print("\n[1/3] State-level annual production:")
+    for key, base_filters, _, _ in COMMODITIES:
+        print(f"  → {key} ({base_filters.get('commodity_desc')})")
+        series = fetch_state_production_annual(base_filters)
         if not series:
-            print(f"    WARN: no data returned for {key}", file=sys.stderr)
+            print(f"      WARN: no state-level data for {key}")
+            failed.append(key)
             continue
-        # Convert to page units
-        series_in_page_units = [(y, round(v / divisor, 3)) for y, v in series]
-        raw_state_series[key] = series_in_page_units
-        all_year_sets.append({y for y, _ in series_in_page_units})
+        state_series[key] = series
+        print(f"      OK: {len(series)} years, latest {series[-1][0]}={series[-1][1]:,.0f}")
 
-    if not raw_state_series:
-        print("ERROR: NASS returned no data for any commodity. Aborting.", file=sys.stderr)
+    if not state_series:
+        print("\nFATAL: no state-level data for any commodity. Keeping fixture.", file=sys.stderr)
         sys.exit(3)
 
-    # Take the intersection of years where we have data for ALL commodities (so charts align)
-    common_years = sorted(set.intersection(*all_year_sets))
+    # Determine common years across the commodities that succeeded (so chart x-axis aligns)
+    year_sets = [{y for y, _ in s} for s in state_series.values()]
+    common_years = sorted(set.intersection(*year_sets)) if year_sets else []
     if len(common_years) > 10:
         common_years = common_years[-10:]
-    trends["years"] = common_years
-
-    for key, short_desc, unit, divisor in COMMODITIES:
-        if key not in raw_state_series:
-            trends[f"{key}_trend"] = []
-            continue
-        by_year = dict(raw_state_series[key])
-        trends[f"{key}_trend"] = [by_year.get(y) for y in common_years]
-        if common_years:
-            kpis_latest[key] = by_year.get(common_years[-1])
-
     latest_year = common_years[-1] if common_years else END_YEAR - 1
+    print(f"\n  Common years across {len(state_series)} commodities: {common_years}")
+    print(f"  Latest common year: {latest_year}")
 
-    # 2. National production for the SAME latest year (for share % calc)
-    print(f"\n  → national production for {latest_year} (share calc)")
-    for key, short_desc, unit, divisor in COMMODITIES:
-        ga_v = kpis_latest.get(key)
-        if ga_v is None:
-            continue
-        us_raw = fetch_national_production_year(short_desc, latest_year)
+    # 2. National production for the latest year (share calc)
+    print(f"\n[2/3] National production for share-of-US calc ({latest_year}):")
+    rankings_updates = {}
+    for key, base_filters, page_unit, divisor in COMMODITIES:
+        if key not in state_series: continue
+        ga_raw = dict(state_series[key]).get(latest_year)
+        if ga_raw is None: continue
+        us_raw = fetch_national_production_year(base_filters, latest_year)
         if us_raw is None:
-            print(f"    WARN: no US national value for {key} {latest_year}", file=sys.stderr)
+            print(f"  → {key}: no national data ({latest_year})")
             continue
-        us_in_page_units = us_raw / divisor
-        share_pct = round(ga_v / us_in_page_units * 100, 1) if us_in_page_units else None
+        ga_in_pu = ga_raw / divisor
+        us_in_pu = us_raw / divisor
+        share    = round(ga_in_pu / us_in_pu * 100, 1) if us_in_pu else None
         rankings_updates[key] = {
-            "ga_value_in_page_units": ga_v,
-            "us_value_in_page_units": round(us_in_page_units, 3),
-            "ga_share_pct": share_pct,
-            "page_unit": unit,
+            "ga_value_in_page_units": round(ga_in_pu, 3),
+            "us_value_in_page_units": round(us_in_pu, 3),
+            "ga_share_pct": share,
+            "page_unit": page_unit,
         }
-        print(f"    {key}: GA={ga_v} {unit}, US={us_in_page_units:.1f} {unit}, GA share={share_pct}%")
+        print(f"  → {key}: GA={ga_in_pu:,.2f} {page_unit}, US={us_in_pu:,.1f} {page_unit}, share={share}%")
 
-    # 3. County-level production (heatmaps)
-    print(f"\n  → county production for {latest_year}")
-    for key, short_desc, unit, divisor in COMMODITIES:
-        print(f"    {key}...")
-        # For broilers, NASS county data is rarely available (poultry confidentiality). Skip if empty.
-        pts = fetch_county_production_latest(short_desc, latest_year)
-        nonzero = sum(1 for p in pts if p["value"] > 0)
-        print(f"      counties with data: {nonzero}/{len(pts)}")
-        if nonzero == 0 and key in (existing.get("county_production") or {}):
-            print(f"      no NASS county data — KEEPING fixture county_production for {key}")
-            county_production[key] = existing["county_production"][key]
-        else:
-            county_production[key] = {
-                "metric_label": f"{key.title()} — share of GA production",
-                "unit": "%",
-                "points": pts,
-            }
+    # 3. County-level production
+    print(f"\n[3/3] County production for {latest_year}:")
+    county_production = {}
+    for key, base_filters, _, _ in COMMODITIES:
+        print(f"  → {key}")
+        pts = fetch_county_production(base_filters, latest_year)
+        nz  = sum(1 for p in pts if p["value"] > 0)
+        if nz == 0:
+            print(f"      no county data — keeping fixture for {key}")
+            cp_existing = (existing.get("county_production") or {}).get(key)
+            if cp_existing:
+                county_production[key] = cp_existing
+            continue
+        print(f"      {nz}/159 counties with data")
+        county_production[key] = {
+            "metric_label": f"{key.title()} — share of GA production",
+            "unit": "%",
+            "points": pts,
+        }
 
     # ---------- Assemble output ----------
-    # Map commodity key → human label for trends section
-    LABEL_BY_KEY = {"broilers": "broilers_lbs_b", "peanuts": "peanuts_lbs_b",
-                    "pecans": "pecans_lbs_m", "cotton": "cotton_bales_k"}
-
     out = dict(existing) if existing else {}
-    out["_fixture"] = False
-    out["_note"]    = "Live data: NASS Quick Stats for state production trends + share-of-US calculations + county production. Cash receipts breakdown still on fixture (separate follow-up — NASS economics taxonomy is more complex)."
-    out["source"]   = "USDA NASS Quick Stats API"
+    out["_fixture"]   = False
+    out["_note"]      = (
+        "Live data: NASS Quick Stats for state production trends + share-of-US + county production. "
+        "Cash receipts breakdown still on fixture (separate follow-up — NASS economics taxonomy is more complex). "
+        f"Commodities with NO live data this run: {failed}" if failed else
+        "Live data: NASS Quick Stats for state production trends + share-of-US + county production. "
+        "Cash receipts breakdown still on fixture (separate follow-up — NASS economics taxonomy is more complex)."
+    )
+    out["source"]     = "USDA NASS Quick Stats API"
     out["fetched_at"] = TODAY.isoformat()
-    out["latest_year"] = latest_year
-    # Update trends in the structure the page expects
+    out["latest_year"]= latest_year
+
+    # Trends — preserve existing values for any commodity that failed
+    existing_trends = (existing.get("trends") or {})
+    def trend_for(key, divisor):
+        if key in failed:
+            return existing_trends.get({"broilers":"broilers_lbs_b","peanuts":"peanuts_lbs_b",
+                                        "pecans":"pecans_lbs_m","cotton":"cotton_bales_k"}[key], [])
+        by_year = dict(state_series[key])
+        return [round(by_year[y] / divisor, 3) if y in by_year else None for y in common_years]
+
+    # Set years to common_years if we got live data, else preserve existing
     out["trends"] = {
-        "years":               common_years,
-        "broilers_lbs_b":      trends.get("broilers_trend", []),
-        "peanuts_lbs_b":       trends.get("peanuts_trend",  []),
-        "pecans_lbs_m":        trends.get("pecans_trend",   []),
-        "cotton_bales_k":      trends.get("cotton_trend",   []),
-        "cash_receipts_b":     (existing.get("trends", {}) or {}).get("cash_receipts_b", []),  # preserve fixture
-    }
-    out["kpis"] = {
-        "broilers_lbs_b":          kpis_latest.get("broilers"),
-        "peanuts_lbs_b":           kpis_latest.get("peanuts"),
-        "pecans_lbs_m":            kpis_latest.get("pecans"),
-        "cotton_bales_k":          kpis_latest.get("cotton"),
-        "total_cash_receipts_b":   (existing.get("kpis", {}) or {}).get("total_cash_receipts_b"),  # preserve
-        "n1_commodities":          (existing.get("kpis", {}) or {}).get("n1_commodities", 4),
+        "years":           common_years if state_series else existing_trends.get("years", []),
+        "broilers_lbs_b":  trend_for("broilers", 1e9),
+        "peanuts_lbs_b":   trend_for("peanuts",  1e9),
+        "pecans_lbs_m":    trend_for("pecans",   1e6),
+        "cotton_bales_k":  trend_for("cotton",   1e3),
+        "cash_receipts_b": existing_trends.get("cash_receipts_b", []),  # preserve fixture
     }
 
-    # Update rankings — patch the share_pct for the 4 commodities we have live data for
+    # KPIs
+    def kpi_for(key, divisor):
+        if key in failed: return (existing.get("kpis", {}) or {}).get({"broilers":"broilers_lbs_b","peanuts":"peanuts_lbs_b","pecans":"pecans_lbs_m","cotton":"cotton_bales_k"}[key])
+        by_year = dict(state_series[key])
+        v = by_year.get(latest_year)
+        return round(v / divisor, 3) if v is not None else None
+
+    out["kpis"] = {
+        "broilers_lbs_b":        kpi_for("broilers", 1e9),
+        "peanuts_lbs_b":         kpi_for("peanuts",  1e9),
+        "pecans_lbs_m":          kpi_for("pecans",   1e6),
+        "cotton_bales_k":        kpi_for("cotton",   1e3),
+        "total_cash_receipts_b": (existing.get("kpis", {}) or {}).get("total_cash_receipts_b"),
+        "n1_commodities":        (existing.get("kpis", {}) or {}).get("n1_commodities", 4),
+    }
+
+    # Patch rankings table — update share % and value for the commodities we got live data for
     rankings = list(existing.get("rankings", []))
     name_to_key = {
         "Broilers (chickens for meat)": "broilers",
         "Peanuts": "peanuts",
-        "Pecans": "pecans",
-        "Cotton": "cotton",
+        "Pecans":  "pecans",
+        "Cotton":  "cotton",
     }
     for r in rankings:
         k = name_to_key.get(r.get("commodity"))
         if k and k in rankings_updates:
-            r["ga_share_pct"] = rankings_updates[k]["ga_share_pct"]
-            # Also patch ga_value text with live value
-            v = rankings_updates[k]["ga_value_in_page_units"]
-            unit = rankings_updates[k]["page_unit"]
+            u = rankings_updates[k]
+            r["ga_share_pct"] = u["ga_share_pct"]
+            v = u["ga_value_in_page_units"]
+            unit = u["page_unit"]
             r["ga_value"] = f"{v:.1f} {unit}" if v is not None else r.get("ga_value")
     out["rankings"] = rankings
 
-    out["county_production"] = county_production
-    # cash_receipts_breakdown stays as fixture (preserved by dict copy above)
+    # County production — already merged with fixture fallbacks above
+    out["county_production"] = county_production or existing.get("county_production", {})
 
     with open(fixture_path, "w") as f:
         json.dump(out, f, indent=2)
 
     print(f"\nWrote {fixture_path}")
-    print(f"  Years (common across all 4): {common_years}")
-    print(f"  Latest KPIs: {kpis_latest}")
-    print(f"  Counties with data:")
-    for k, block in county_production.items():
-        nz = sum(1 for p in block['points'] if p['value'] > 0)
-        print(f"    {k:10s}: {nz}/159 counties have non-zero share")
+    print(f"  Commodities with live state data: {sorted(state_series.keys())}")
+    if failed:
+        print(f"  Commodities still on fixture:    {failed}")
+    print(f"  Latest year: {latest_year}")
+    print(f"  KPIs: {out['kpis']}")
 
 
 if __name__ == "__main__":
