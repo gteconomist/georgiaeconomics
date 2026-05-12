@@ -186,7 +186,7 @@ function fmtPct(v)  { return (v > 0 ? '+' : '') + v.toFixed(1) + '%'; }
 function fmtMoney(v){ return '$' + (v/1000).toFixed(2) + 'B'; }
 
 async function init() {
-  const res = await fetch('/data/trade.json');
+  const res = await fetch('/data/trade.json?v=' + Date.now(), { cache: 'no-store' });
   const d   = await res.json();
   if (d._fixture) document.getElementById('fixture-banner').style.display = '';
 
