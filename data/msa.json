@@ -1,7 +1,7 @@
 {
   "_fixture": false,
-  "_note": "Partial live data: ['gdp_per_capita', 'home_price_yoy', 'pop_growth_yoy', 'unemployment_rate']. Wage growth & permits-per-1k still on fixture (next iteration).",
-  "source": "Live: BLS LAUS (UR) + FRED FHFA HPI (home prices) + Census PEP (population) + BEA (GDP). Fixture: wage_growth_yoy, permits_per_1k.",
+  "_note": "Partial live data: ['gdp_per_capita', 'home_price_yoy', 'pop_growth_yoy', 'unemployment_rate', 'wage_growth_yoy']. Permits-per-1k still on fixture (next iteration).",
+  "source": "Live: BLS LAUS (UR) + FRED FHFA HPI (home prices) + Census ACS (population) + BEA (GDP, county-aggregated) + BLS QCEW (wage growth, private). Fixture: permits_per_1k.",
   "latest_label": "2026-Q1",
   "metrics": [
     {
@@ -61,7 +61,7 @@
       "population": 6307261,
       "metrics": {
         "unemployment_rate": 3.6,
-        "wage_growth_yoy": 4.1,
+        "wage_growth_yoy": -100.0,
         "pop_growth_yoy": 1.64,
         "home_price_yoy": 1.8,
         "permits_per_1k": 6.8,
@@ -75,7 +75,7 @@
       "population": 611000,
       "metrics": {
         "unemployment_rate": 4.6,
-        "wage_growth_yoy": 4.4,
+        "wage_growth_yoy": -100.0,
         "pop_growth_yoy": 1.35,
         "home_price_yoy": 5.6,
         "permits_per_1k": 4.6,
@@ -89,7 +89,7 @@
       "population": 410000,
       "metrics": {
         "unemployment_rate": 3.1,
-        "wage_growth_yoy": 5.6,
+        "wage_growth_yoy": -100.0,
         "pop_growth_yoy": 1.57,
         "home_price_yoy": 3.6,
         "permits_per_1k": 11.2,
@@ -103,7 +103,7 @@
       "population": 329000,
       "metrics": {
         "unemployment_rate": 4.2,
-        "wage_growth_yoy": 3.6,
+        "wage_growth_yoy": -100.0,
         "pop_growth_yoy": -0.26,
         "home_price_yoy": 3.4,
         "permits_per_1k": 3.1,
@@ -117,7 +117,7 @@
       "population": 232000,
       "metrics": {
         "unemployment_rate": 4.2,
-        "wage_growth_yoy": 3.4,
+        "wage_growth_yoy": -100.0,
         "pop_growth_yoy": 1.52,
         "home_price_yoy": 6.9,
         "permits_per_1k": 2.4,
@@ -131,7 +131,7 @@
       "population": 217000,
       "metrics": {
         "unemployment_rate": 3.2,
-        "wage_growth_yoy": 3.9,
+        "wage_growth_yoy": -100.0,
         "pop_growth_yoy": 0.88,
         "home_price_yoy": 2.1,
         "permits_per_1k": 5.8,
@@ -145,7 +145,7 @@
       "population": 211000,
       "metrics": {
         "unemployment_rate": 3.0,
-        "wage_growth_yoy": 4.7,
+        "wage_growth_yoy": -100.0,
         "pop_growth_yoy": 2.06,
         "home_price_yoy": 3.0,
         "permits_per_1k": 8.7,
@@ -159,7 +159,7 @@
       "population": 199000,
       "metrics": {
         "unemployment_rate": 3.4,
-        "wage_growth_yoy": 3.8,
+        "wage_growth_yoy": -100.0,
         "pop_growth_yoy": 1.66,
         "home_price_yoy": 4.0,
         "permits_per_1k": 4.3,
@@ -173,7 +173,7 @@
       "population": 148000,
       "metrics": {
         "unemployment_rate": 4.0,
-        "wage_growth_yoy": 3.5,
+        "wage_growth_yoy": -100.0,
         "pop_growth_yoy": 0.83,
         "home_price_yoy": 5.6,
         "permits_per_1k": 3.6,
@@ -187,7 +187,7 @@
       "population": 146000,
       "metrics": {
         "unemployment_rate": 4.3,
-        "wage_growth_yoy": 3.0,
+        "wage_growth_yoy": -100.0,
         "pop_growth_yoy": -0.69,
         "home_price_yoy": 7.0,
         "permits_per_1k": 1.8,
@@ -201,7 +201,7 @@
       "population": 143000,
       "metrics": {
         "unemployment_rate": 4.0,
-        "wage_growth_yoy": 2.9,
+        "wage_growth_yoy": -100.0,
         "pop_growth_yoy": 1.15,
         "home_price_yoy": 2.8,
         "permits_per_1k": 2.9,
@@ -215,7 +215,7 @@
       "population": 120000,
       "metrics": {
         "unemployment_rate": 3.3,
-        "wage_growth_yoy": 4.5,
+        "wage_growth_yoy": -100.0,
         "pop_growth_yoy": 0.86,
         "home_price_yoy": 8.0,
         "permits_per_1k": 9.3,
@@ -229,7 +229,7 @@
       "population": 99000,
       "metrics": {
         "unemployment_rate": 3.7,
-        "wage_growth_yoy": 3.6,
+        "wage_growth_yoy": -100.0,
         "pop_growth_yoy": 1.28,
         "home_price_yoy": -0.3,
         "permits_per_1k": 3.4,
@@ -243,7 +243,7 @@
       "population": 78000,
       "metrics": {
         "unemployment_rate": 4.2,
-        "wage_growth_yoy": 3.2,
+        "wage_growth_yoy": -100.0,
         "pop_growth_yoy": 1.02,
         "home_price_yoy": 8.4,
         "permits_per_1k": 5.1,
@@ -253,7 +253,7 @@
   ],
   "statewide_medians": {
     "median_unemployment": 3.85,
-    "median_wage_growth": 3.7,
+    "median_wage_growth": -100.0,
     "median_pop_growth": 1.21,
     "median_home_price_yoy": 3.8,
     "median_permits_per_1k": 4.45,
@@ -265,8 +265,8 @@
       "value": 3.0
     },
     "highest_wage_growth": {
-      "msa": "Savannah",
-      "value": 5.6
+      "msa": "Atlanta",
+      "value": -100.0
     },
     "fastest_growing": {
       "msa": "Gainesville",
