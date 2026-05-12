@@ -9,10 +9,10 @@
     "total_payrolls_k_latest": 4982.8,
     "total_payrolls_yoy_pct": 0.1,
     "labor_force_k_latest": 5455254.0,
-    "fastest_growing_sector": "Other Services",
-    "fastest_growing_sector_yoy_pct": 0.4,
-    "weakest_sector": "Professional & Business Services",
-    "weakest_sector_yoy_pct": -0.6
+    "fastest_growing_sector": "Education & Health Services",
+    "fastest_growing_sector_yoy_pct": 3.3,
+    "weakest_sector": "Construction",
+    "weakest_sector_yoy_pct": -1.2
   },
   "unemployment_rate": [
     [
@@ -914,32 +914,74 @@
   ],
   "sectors": [
     {
+      "name": "Construction",
+      "supersector": "20",
+      "latest_k": 231.3,
+      "yoy_pct": -1.2,
+      "yoy_delta_k": -2.7
+    },
+    {
+      "name": "Manufacturing",
+      "supersector": "30",
+      "latest_k": 426.9,
+      "yoy_pct": -0.3,
+      "yoy_delta_k": -1.4
+    },
+    {
+      "name": "Trade, Transportation & Utilities",
+      "supersector": "40",
+      "latest_k": 1029.1,
+      "yoy_pct": -0.8,
+      "yoy_delta_k": -7.9
+    },
+    {
       "name": "Information",
       "supersector": "50",
-      "latest_k": 4272.7,
-      "yoy_pct": 0.2,
-      "yoy_delta_k": 8.6
+      "latest_k": 113.7,
+      "yoy_pct": 0.8,
+      "yoy_delta_k": 0.9
+    },
+    {
+      "name": "Financial Activities",
+      "supersector": "55",
+      "latest_k": 281.9,
+      "yoy_pct": -0.6,
+      "yoy_delta_k": -1.7
     },
     {
       "name": "Professional & Business Services",
       "supersector": "60",
-      "latest_k": 667.6,
-      "yoy_pct": -0.6,
-      "yoy_delta_k": -4.3
+      "latest_k": 744.4,
+      "yoy_pct": -0.3,
+      "yoy_delta_k": -2.2
+    },
+    {
+      "name": "Education & Health Services",
+      "supersector": "65",
+      "latest_k": 745.3,
+      "yoy_pct": 3.3,
+      "yoy_delta_k": 23.5
     },
     {
       "name": "Leisure & Hospitality",
       "supersector": "70",
-      "latest_k": 4315.2,
-      "yoy_pct": 0.2,
-      "yoy_delta_k": 6.8
+      "latest_k": 516.3,
+      "yoy_pct": -0.3,
+      "yoy_delta_k": -1.8
     },
     {
       "name": "Other Services",
       "supersector": "80",
-      "latest_k": 3605.1,
-      "yoy_pct": 0.4,
-      "yoy_delta_k": 12.9
+      "latest_k": 174.4,
+      "yoy_pct": 1.2,
+      "yoy_delta_k": 2.1
+    },
+    {
+      "name": "Government",
+      "supersector": "90",
+      "latest_k": 710.1,
+      "yoy_pct": -0.9,
+      "yoy_delta_k": -6.1
     }
   ]
 }
