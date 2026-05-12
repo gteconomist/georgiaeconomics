@@ -1,0 +1,47 @@
+name: Update GA trade data (Census exports + BLS ATL T&W)
+
+on:
+  workflow_dispatch:
+  schedule:
+    # Census exports data updates monthly (with ~2-month lag).
+    # BLS CES MSA data updates monthly. Run on the 5th @ 18:00 UTC.
+    - cron: '0 18 5 * *'
+  push:
+    branches: [main]
+    paths:
+      - 'scripts/fetch_trade.py'
+      - '.github/workflows/update-trade.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repo
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Fetch Census exports + BLS T&W employment
+        env:
+          CENSUS_API_KEY: ${{ secrets.CENSUS_API_KEY }}
+          BLS_API_KEY:    ${{ secrets.BLS_API_KEY }}
+        run: |
+          python scripts/fetch_trade.py
+
+      - name: Commit updated data
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          if ! git diff --quiet -- data/trade.json; then
+            git add data/trade.json
+            git commit -m "data: refresh GA trade (Census exports + BLS T&W) [skip ci]"
+            git push
+          else
+            echo "No changes in data/trade.json — nothing to commit."
+          fi
