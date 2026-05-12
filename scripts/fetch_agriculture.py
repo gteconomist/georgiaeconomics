@@ -121,48 +121,67 @@ COMMODITIES = [
 
 # ---------- Annual state-level production ----------
 def fetch_state_production_annual(base_filters):
-    f = dict(base_filters,
-             agg_level_desc="STATE",
-             state_alpha="GA",
-             year__GE=str(START_YEAR),
-             year__LE=str(END_YEAR),
-             reference_period_desc="YEAR",
-             domain_desc="TOTAL")
-    rows = nass_query(f)
+    """Try SURVEY (annual) first; fall back to no source filter (which catches
+    Census-of-Agriculture-only commodities like broilers at state level)."""
+    base = dict(base_filters,
+                agg_level_desc="STATE",
+                state_alpha="GA",
+                year__GE=str(START_YEAR),
+                year__LE=str(END_YEAR),
+                reference_period_desc="YEAR")
     by_year = {}
+    # Pass 1: Survey only — annual
+    rows = nass_query(dict(base, source_desc="SURVEY"))
     for r in rows:
         v = parse_value(r.get("Value"))
         y = r.get("year")
         if v is None or y is None: continue
         try: y = int(y)
         except ValueError: continue
-        # Multiple records per year possible (rare, but be safe) — keep max
         by_year[y] = max(by_year.get(y, 0), v)
+    # Pass 2: anything (catches Census of Ag-only series, e.g. state broilers in LB)
+    rows = nass_query(base)
+    for r in rows:
+        v = parse_value(r.get("Value"))
+        y = r.get("year")
+        if v is None or y is None: continue
+        try: y = int(y)
+        except ValueError: continue
+        # Don't overwrite Survey value with Census value if Survey already has it
+        by_year.setdefault(y, v)
     return sorted(by_year.items())
 
 
 def fetch_national_production_year(base_filters, year):
-    f = dict(base_filters,
-             agg_level_desc="NATIONAL",
-             year=str(year),
-             reference_period_desc="YEAR",
-             domain_desc="TOTAL")
-    rows = nass_query(f)
-    vals = [parse_value(r.get("Value")) for r in rows]
-    vals = [v for v in vals if v is not None]
-    return max(vals) if vals else None
+    base = dict(base_filters,
+                agg_level_desc="NATIONAL",
+                year=str(year),
+                reference_period_desc="YEAR")
+    # Try Survey first, then anything
+    for f in (dict(base, source_desc="SURVEY"), base):
+        rows = nass_query(f)
+        vals = [parse_value(r.get("Value")) for r in rows]
+        vals = [v for v in vals if v is not None]
+        if vals:
+            return max(vals)
+    return None
 
 
 # ---------- County-level production ----------
 def fetch_county_production(base_filters, year):
-    """Returns list of {fips, label, value} for all 159 GA counties, value as % of state total."""
-    f = dict(base_filters,
-             agg_level_desc="COUNTY",
-             state_alpha="GA",
-             year=str(year),
-             reference_period_desc="YEAR",
-             domain_desc="TOTAL")
-    rows = nass_query(f)
+    """Returns list of {fips, label, value} for all 159 GA counties, value as % of state total.
+    Tries Survey first, falls back to any source (catches Census-of-Ag-only county data)."""
+    base = dict(base_filters,
+                agg_level_desc="COUNTY",
+                state_alpha="GA",
+                year=str(year),
+                reference_period_desc="YEAR")
+    rows = []
+    for f in (dict(base, source_desc="SURVEY"), base):
+        r = nass_query(f)
+        if r:
+            rows = r
+            break
     by_county_code = {}
     for r in rows:
         cc = r.get("county_code")
@@ -215,14 +234,20 @@ def main():
         print("\nFATAL: no state-level data for any commodity. Keeping fixture.", file=sys.stderr)
         sys.exit(3)
 
-    # Determine common years across the commodities that succeeded (so chart x-axis aligns)
+    # UNION of years (not intersection) — let each commodity show its own coverage.
+    # Some commodities (e.g. state-level broilers in LB) only appear in Census of Ag (every 5 yrs);
+    # others have annual surveys. We don't want broilers' sparseness to collapse the others' series.
     year_sets = [{y for y, _ in s} for s in state_series.values()]
-    common_years = sorted(set.intersection(*year_sets)) if year_sets else []
-    if len(common_years) > 10:
-        common_years = common_years[-10:]
-    latest_year = common_years[-1] if common_years else END_YEAR - 1
-    print(f"\n  Common years across {len(state_series)} commodities: {common_years}")
-    print(f"  Latest common year: {latest_year}")
+    year_union = sorted(set().union(*year_sets)) if year_sets else []
+    if len(year_union) > 10:
+        year_union = year_union[-10:]
+    common_years = year_union  # rename for downstream code
+    latest_year = max(year_union) if year_union else END_YEAR - 1
+    print(f"\n  Year coverage across {len(state_series)} commodities (union): {year_union}")
+    print(f"  Latest year: {latest_year}")
+    for key, series in state_series.items():
+        years_for_key = sorted({y for y, _ in series})
+        print(f"    {key}: {len(years_for_key)} years available — {years_for_key}")
 
     # 2. National production for the latest year (share calc)
     print(f"\n[2/3] National production for share-of-US calc ({latest_year}):")
