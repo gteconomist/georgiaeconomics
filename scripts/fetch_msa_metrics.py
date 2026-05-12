@@ -36,8 +36,7 @@ BEA_API_KEY    = os.environ.get("BEA_API_KEY",    "").strip()
 TODAY = date.today()
 
 sys.path.insert(0, str(Path(__file__).parent))
-from _ga_msas import GA_MSAS
-
+from _ga_msas import GA_MSAS, COUNTY_TO_MSA
 # Index: short_name -> (cbsa, full_name, population)
 MSA_BY_SHORT = {short: (cbsa, full, pop) for cbsa, short, full, pop in GA_MSAS}
 
@@ -210,79 +209,89 @@ def fetch_msa_population_growth():
     return None
 
 
-# ---------- 4. BEA MSA GDP per capita ----------
+# ---------- 4. BEA county GDP, aggregated to MSA ----------
 def fetch_msa_gdp_per_capita():
-    """Try GeoFips=MSA (all MSAs in one call) first, fall back to per-MSA queries.
+    """Sum county GDP (BEA CAGDP2 'All industry total', current dollar) within each MSA,
+    then divide by MSA population to get $/capita.
 
-    BEA Regional API: TableName=CAGDP2 (or CAGDP1) — GDP by Metropolitan Area
-    LineCode varies by table — for CAGDP2 LineCode=1 is "All industry total" (real GDP).
+    Why not just ask BEA for MSA GDP directly?
+      BEA's Regional API does NOT expose MSA-level GDP as its own table. The only
+      metropolitan tables are MAIRPD (price deflators) and MARPP (price parities).
+      All CAGDP* tables are county-only — the GeoFips parameter list contains only
+      US+states+counties, no CBSAs. FRED's NGMP/RGMP/PCRGMP MSA-GDP series were
+      discontinued 2024-12-04 with last obs 2023. County aggregation is the only
+      remaining live path.
+
+    One BEA call returns all 3,127 US counties; we filter to the 76 counties in
+    COUNTY_TO_MSA (73 GA + 2 SC border for Augusta + 1 AL border for Columbus).
+
+    Units note: CAGDP2 LineCode=1 returns "Thousands of dollars" (current dollar
+    GDP, all industry total). Multiply by 1000 to get dollars; divide by MSA pop.
     """
     if not BEA_API_KEY:
         print("  [BEA] no key, skipping GDP", file=sys.stderr); return None
+
     cbsa_to_short = {cbsa: short for cbsa, short, _, _ in GA_MSAS}
-    cbsa_to_pop   = {cbsa: pop for cbsa, _, _, pop in GA_MSAS}
+    cbsa_to_pop   = {cbsa: pop   for cbsa, _, _, pop  in GA_MSAS}
 
-    def query_bea(year, geofips, table="CAGDP2", linecode="1"):
+    def fetch_year(year):
         url = (f"https://apps.bea.gov/api/data/?UserID={BEA_API_KEY}"
-               f"&method=GetData&DataSetName=Regional&TableName={table}"
-               f"&LineCode={linecode}&GeoFips={geofips}&Year={year}&ResultFormat=JSON")
-        return http_get_json(url, timeout=45)
+               f"&method=GetData&DataSetName=Regional&TableName=CAGDP2"
+               f"&LineCode=1&GeoFips=COUNTY&Year={year}&ResultFormat=JSON")
+        return http_get_json(url, timeout=60)
 
-    def parse_rows(resp):
-        if not resp: return []
-        results = (resp.get("BEAAPI", {}) or {}).get("Results", {})
+    # Latest county GDP is typically released ~Dec. Try newest first; fall back.
+    for year in (TODAY.year - 1, TODAY.year - 2, TODAY.year - 3):
+        print(f"  [BEA CAGDP2] year={year}, all-county call ({len(COUNTY_TO_MSA)} GA-MSA counties expected)...")
+        resp = fetch_year(year)
+        if not resp:
+            print(f"    no response for {year}", file=sys.stderr); continue
+
+        results = (resp.get("BEAAPI") or {}).get("Results") or {}
         if isinstance(results, list): results = results[0] if results else {}
-        if not results: return []
-        if "Error" in results:
-            err = (results.get("Error") or {})
+        if results.get("Error"):
+            err = results.get("Error")
             if isinstance(err, list): err = err[0] if err else {}
-            print(f"    BEA error: {err.get('APIErrorDescription', err)}", file=sys.stderr)
-            return []
-        return results.get("Data", []) or []
+            print(f"    BEA error: {err.get('APIErrorDescription', err)}", file=sys.stderr); continue
+        rows = results.get("Data", []) or []
+        if not rows:
+            print(f"    no rows for {year}, trying older", file=sys.stderr); continue
+        print(f"    BEA returned {len(rows)} county rows")
 
-    # Strategy A: get all MSAs in one call (faster but less reliable for batched IDs)
-    # Strategy B: query each MSA individually
-    for year in (TODAY.year - 2, TODAY.year - 3):
-        for table, linecode in (("CAGDP2", "1"), ("CAGDP1", "1")):
-            print(f"  [BEA] year={year} table={table} (all-MSA strategy)...")
-            resp  = query_bea(year, "MSA", table=table, linecode=linecode)
-            rows  = parse_rows(resp)
-            print(f"    got {len(rows)} rows total")
+        # Sum county GDP (thousands of $) into MSAs via COUNTY_TO_MSA.
+        msa_gdp_thou = {}
+        msa_n_counties = {}
+        for row in rows:
+            fips = (row.get("GeoFips") or "").strip()
+            cbsa = COUNTY_TO_MSA.get(fips)
+            if not cbsa: continue
+            raw = (row.get("DataValue") or "").replace(",", "")
+            try: v = float(raw)
+            except ValueError:
+                # BEA suppresses some county values (e.g. "(D)" for disclosure).
+                # We continue rather than fail the MSA — usually only 1-2 small
+                # counties affected, totals stay within a percent or two.
+                print(f"    skip {fips} ({row.get('GeoName')}): DataValue={raw!r}", file=sys.stderr)
+                continue
+            msa_gdp_thou[cbsa] = msa_gdp_thou.get(cbsa, 0.0) + v
+            msa_n_counties[cbsa] = msa_n_counties.get(cbsa, 0) + 1
 
-            by_short = {}
-            for row in rows:
-                cbsa = (row.get("GeoFips", "") or "").strip()
-                short = cbsa_to_short.get(cbsa)
-                if not short: continue
-                try: gdp_millions = float((row.get("DataValue") or "0").replace(",", ""))
-                except (TypeError, ValueError): continue
-                pop = cbsa_to_pop.get(cbsa, 0)
-                if pop <= 0: continue
-                gdp_per_cap = round(gdp_millions * 1_000_000 / pop, 0)
-                by_short[short] = int(gdp_per_cap)
-                print(f"    {short}: GDP/cap ${int(gdp_per_cap):,} ({year}, GDP=${gdp_millions:,.0f}M)")
-
-            if len(by_short) >= 5:
-                return by_short
-
-        # Strategy B: per-MSA queries for this year
-        print(f"  [BEA] year={year} per-MSA strategy...")
+        # Convert to per-capita dollars.
         by_short = {}
-        for cbsa, short, _, pop in GA_MSAS:
-            resp = query_bea(year, cbsa, table="CAGDP2", linecode="1")
-            rows = parse_rows(resp)
-            if not rows: continue
-            for row in rows:
-                try: gdp_millions = float((row.get("DataValue") or "0").replace(",", ""))
-                except (TypeError, ValueError): continue
-                if pop <= 0: continue
-                gdp_per_cap = round(gdp_millions * 1_000_000 / pop, 0)
-                by_short[short] = int(gdp_per_cap)
-                print(f"    {short}: GDP/cap ${int(gdp_per_cap):,}")
-                break
+        for cbsa, gdp_thou in msa_gdp_thou.items():
+            pop = cbsa_to_pop.get(cbsa, 0)
+            short = cbsa_to_short.get(cbsa)
+            if pop <= 0 or not short: continue
+            per_cap = int(round(gdp_thou * 1000 / pop, 0))
+            by_short[short] = per_cap
+            n = msa_n_counties[cbsa]
+            print(f"    {short}: GDP/cap ${per_cap:,} "
+                  f"(${gdp_thou * 1000 / 1e9:.1f}B / {pop:,} pop, {n} counties)")
 
         if len(by_short) >= 5:
+            print(f"  [BEA CAGDP2] success: {len(by_short)} MSAs for year {year}")
             return by_short
+        print(f"    only {len(by_short)} MSAs matched for {year}, trying older", file=sys.stderr)
 
     return None
 
