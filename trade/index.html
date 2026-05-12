@@ -11,8 +11,8 @@
 <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700;800&display=swap" rel="stylesheet">
 
 <!-- Chart.js + shared brand setup -->
-<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
-<script src="https://cdn.jsdelivr.net/gh/gteconomist/economicsguru@main/charts.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/gh/gteconomist/economicsguru@main/charts.js"></script>
 
 <style>
   .trade-grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
@@ -186,7 +186,7 @@ function fmtPct(v)  { return (v > 0 ? '+' : '') + v.toFixed(1) + '%'; }
 function fmtMoney(v){ return '$' + (v/1000).toFixed(2) + 'B'; }
 
 async function init() {
-  const res = await fetch('/data/trade.json?v=' + Date.now(), { cache: 'no-store' });
+  const res = await fetch('/data/trade.json?v=' + new Date().toISOString().slice(0, 10));
   const d   = await res.json();
   if (d._fixture) document.getElementById('fixture-banner').style.display = '';
 
@@ -385,10 +385,14 @@ function renderExportsTable(rows, top10Total) {
   });
 }
 
-init().catch(err => {
-  console.error('trade page init failed:', err);
-  document.querySelector('main').insertAdjacentHTML('beforeend',
-    '<div style="padding:20px; color:var(--coral); font-weight:600;">Failed to load trade data. Check console.</div>');
+// Wait for DOMContentLoaded so deferred scripts have finished executing
+// before init() touches Chart / Plotly / window.gaMaps.
+document.addEventListener('DOMContentLoaded', () => {
+  init().catch(err => {
+    console.error('trade page init failed:', err);
+    document.querySelector('main').insertAdjacentHTML('beforeend',
+      '<div style="padding:20px; color:var(--coral); font-weight:600;">Failed to load trade data. Check console.</div>');
+  });
 });
 </script>
 </body>
