@@ -324,12 +324,15 @@ def main():
         "cash_receipts_b": existing_trends.get("cash_receipts_b", []),  # preserve fixture
     }
 
-    # KPIs
+    # KPIs — use each commodity's OWN most recent year so a single lagging commodity
+    # doesn't null out the others (which would break the page's KPI rendering).
     def kpi_for(key, divisor):
-        if key in failed: return (existing.get("kpis", {}) or {}).get({"broilers":"broilers_lbs_b","peanuts":"peanuts_lbs_b","pecans":"pecans_lbs_m","cotton":"cotton_bales_k"}[key])
-        by_year = dict(state_series[key])
-        v = by_year.get(latest_year)
-        return round(v / divisor, 3) if v is not None else None
+        if key in failed:
+            return (existing.get("kpis", {}) or {}).get({"broilers":"broilers_lbs_b","peanuts":"peanuts_lbs_b","pecans":"pecans_lbs_m","cotton":"cotton_bales_k"}[key])
+        series = state_series[key]
+        if not series: return None
+        latest_v = series[-1][1]   # series is sorted ascending — last entry is most recent
+        return round(latest_v / divisor, 3)
 
     out["kpis"] = {
         "broilers_lbs_b":        kpi_for("broilers", 1e9),
