@@ -10,8 +10,8 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700;800&display=swap" rel="stylesheet">
 
-<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
-<script src="https://cdn.jsdelivr.net/gh/gteconomist/economicsguru@main/charts.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/gh/gteconomist/economicsguru@main/assets/charts.js"></script>
 
 <style>
   .chart-canvas-tall { position: relative; height: 340px; background: var(--chart-bg); padding: 6px; }
@@ -169,7 +169,7 @@ function fmtSignedK(v)   { if (v == null) return '—'; return (v >= 0 ? '+' : '
 function fmtK(v)         { if (v == null) return '—'; return v.toLocaleString('en-US', { maximumFractionDigits: 1 }); }
 
 async function init() {
-  const res = await fetch('/data/labor.json?v=' + Date.now(), { cache: 'no-store' });
+  const res = await fetch('/data/labor.json?v=' + new Date().toISOString().slice(0, 10));
   const d   = await res.json();
 
   if (d._fixture) document.getElementById('fixture-banner').style.display = '';
@@ -291,10 +291,14 @@ function renderSectorTable(sectors) {
   });
 }
 
-init().catch(err => {
-  console.error('labor init failed:', err);
-  document.querySelector('main').insertAdjacentHTML('beforeend',
-    '<div style="padding:20px; color:var(--coral); font-weight:600;">Failed to load labor data. Check console.</div>');
+// Wait for DOMContentLoaded so deferred scripts have finished executing
+// before init() touches Chart / Plotly / window.gaMaps.
+document.addEventListener('DOMContentLoaded', () => {
+  init().catch(err => {
+    console.error('labor init failed:', err);
+    document.querySelector('main').insertAdjacentHTML('beforeend',
+      '<div style="padding:20px; color:var(--coral); font-weight:600;">Failed to load labor data. Check console.</div>');
+  });
 });
 </script>
 </body>
