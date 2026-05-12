@@ -92,50 +92,92 @@ def _is_aggregate(name):
 
 # ---------- Census USA Trade Online — GA exports by country ----------
 def fetch_ga_exports_by_country_annual(year):
-    """Sum monthly GA exports across all HS codes per country, return dict country_name -> total $.
+    """Sum monthly GA exports per country, return dict country_name -> total $.
 
-    Census API quirk: query returns one row per (HS code × country) per month.
-    To get country totals, we sum across all rows where state=GA.
-    Values are in $ (USD).
+    Strategy: try multiple Census API query shapes, since the right combination
+    of get-fields, predicates, and COMM_LVL has been finicky. Logs what each
+    attempt returns so we can debug from Actions output.
     """
     base = "https://api.census.gov/data/timeseries/intltrade/exports/statehs"
-    by_country = {}
 
-    # Census API quirk: without a COMM_LVL filter, the statehs endpoint returns
-    # only the highest-level aggregate (one row with CTY_NAME = "Total For All Countries").
-    # COMM_LVL=HS2 forces a per-(country × HS2 commodity) breakdown which we then aggregate.
-    params = {
-        "get":      "CTY_NAME,ALL_VAL_MO,I_COMMODITY",
-        "STATE":    "GA",
-        "COMM_LVL": "HS2",
-        "time":     f"from {year}-01 to {year}-12",
-        "key":      CENSUS_API_KEY,
-    }
-    url = base + "?" + urllib.parse.urlencode(params)
-    rows = http_get_json(url, timeout=90)
+    # Try several query strategies in order. Each is tagged with a name for logging.
+    # First successful query (returns >5 real countries after filter) wins.
+    strategies = [
+        ("HS6+CTY_CODE+monthly_loop", lambda y: _fetch_monthly_loop(base, y, "HS6")),
+        ("HS4+CTY_CODE+monthly_loop", lambda y: _fetch_monthly_loop(base, y, "HS4")),
+        ("HS2+range",                  lambda y: _fetch_range(base, y, "HS2")),
+        ("HS6+range",                  lambda y: _fetch_range(base, y, "HS6")),
+    ]
+
+    for name, fn in strategies:
+        print(f"      [Census strategy: {name}]", file=sys.stderr)
+        result = fn(year)
+        n_real = sum(1 for k in result if not _is_aggregate(k))
+        print(f"        → got {len(result)} country rows ({n_real} real after filter)", file=sys.stderr)
+        if n_real >= 5:
+            return {k: v for k, v in result.items() if not _is_aggregate(k)}
+
+    print(f"      All Census strategies returned <5 real countries for {year}", file=sys.stderr)
+    return {}
+
+
+def _parse_census_response(rows, by_country):
+    """Add rows to by_country dict. Returns nothing (mutates dict)."""
     if not rows or len(rows) < 2:
-        print(f"      no Census export rows for GA {year}", file=sys.stderr)
-        return {}
-
-    # rows[0] is header: e.g., ["CTY_NAME", "ALL_VAL_MO", "STATE", "time"]
+        return
     header = rows[0]
-    try:
-        cty_idx = header.index("CTY_NAME")
-        val_idx = header.index("ALL_VAL_MO")
-    except ValueError:
-        print(f"      Census header mismatch: {header}", file=sys.stderr)
-        return {}
-
+    if "CTY_NAME" not in header or "ALL_VAL_MO" not in header:
+        print(f"        ⚠ unexpected header: {header}", file=sys.stderr)
+        return
+    cty_idx = header.index("CTY_NAME")
+    val_idx = header.index("ALL_VAL_MO")
+    # Log first 3 data rows for diagnosis
+    for r in rows[1:4]:
+        print(f"        sample row: {r[:5]}", file=sys.stderr)
     for r in rows[1:]:
         if len(r) <= max(cty_idx, val_idx): continue
         cty = r[cty_idx]
         try:    v = float(r[val_idx])
         except (TypeError, ValueError): continue
-        # Skip aggregate / regional rows (Census returns these alongside real countries)
-        if not cty or _is_aggregate(cty):
-            continue
+        if not cty: continue
         by_country[cty] = by_country.get(cty, 0.0) + v
 
+
+def _fetch_range(base, year, comm_lvl):
+    """One query for the whole year with a time range. Smaller response if Census aggregates."""
+    by_country = {}
+    params = {
+        "get":      "CTY_CODE,CTY_NAME,ALL_VAL_MO",
+        "STATE":    "GA",
+        "COMM_LVL": comm_lvl,
+        "time":     f"from {year}-01 to {year}-12",
+        "key":      CENSUS_API_KEY,
+    }
+    url = base + "?" + urllib.parse.urlencode(params, quote_via=urllib.parse.quote)
+    rows = http_get_json(url, timeout=120)
+    _parse_census_response(rows, by_country)
+    return by_country
+
+
+def _fetch_monthly_loop(base, year, comm_lvl):
+    """Loop month-by-month, summing into by_country. Smaller per-call responses."""
+    by_country = {}
+    for month in range(1, 13):
+        params = {
+            "get":      "CTY_CODE,CTY_NAME,ALL_VAL_MO",
+            "STATE":    "GA",
+            "COMM_LVL": comm_lvl,
+            "time":     f"{year}-{month:02d}",
+            "key":      CENSUS_API_KEY,
+        }
+        url = base + "?" + urllib.parse.urlencode(params, quote_via=urllib.parse.quote)
+        rows = http_get_json(url, timeout=60)
+        if rows:
+            _parse_census_response(rows, by_country)
+        # If even December (the last month) has nothing, no point continuing
+        if month >= 1 and not by_country:
+            # Bail early on first empty month
+            return by_country
     return by_country
 
 
