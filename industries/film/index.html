@@ -203,7 +203,7 @@ const BRAND_COLORS = {
 function fmtSignedPct(v) { if (v == null) return '—'; return (v >= 0 ? '+' : '') + v.toFixed(1) + '%'; }
 
 async function init() {
-  const res = await fetch('/data/film.json');
+  const res = await fetch('/data/film.json?v=' + Date.now(), { cache: 'no-store' });
   const d = await res.json();
   if (d._fixture) document.getElementById('fixture-banner').style.display = '';
 
