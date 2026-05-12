@@ -11,9 +11,9 @@
 <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700;800&display=swap" rel="stylesheet">
 
 <!-- Chart.js for the radar -->
-<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
 <!-- Shared charts.js (for BRAND palette + global defaults) -->
-<script src="https://cdn.jsdelivr.net/gh/gteconomist/economicsguru@main/charts.js"></script>
+<script defer src="https://cdn.jsdelivr.net/gh/gteconomist/economicsguru@main/charts.js"></script>
 
 <style>
   /* MSA-page-specific tweaks */
@@ -187,7 +187,7 @@ let DATA = null;
 let RADAR_CHART = null;
 
 async function init() {
-  const res = await fetch('/data/msa.json?v=' + Date.now(), { cache: 'no-store' });
+  const res = await fetch('/data/msa.json?v=' + new Date().toISOString().slice(0, 10));
   DATA = await res.json();
   if (DATA._fixture) document.getElementById('fixture-banner').style.display = '';
 
@@ -388,10 +388,14 @@ function renderTable() {
   });
 }
 
-init().catch(err => {
-  console.error('msa init failed:', err);
-  document.querySelector('main').insertAdjacentHTML('beforeend',
-    '<div style="padding:20px; color:var(--coral); font-weight:600;">Failed to load MSA data. Check console.</div>');
+// Wait for DOMContentLoaded so deferred scripts have finished executing
+// before init() touches Chart / Plotly / window.gaMaps.
+document.addEventListener('DOMContentLoaded', () => {
+  init().catch(err => {
+    console.error('msa init failed:', err);
+    document.querySelector('main').insertAdjacentHTML('beforeend',
+      '<div style="padding:20px; color:var(--coral); font-weight:600;">Failed to load MSA data. Check console.</div>');
+  });
 });
 </script>
 </body>
