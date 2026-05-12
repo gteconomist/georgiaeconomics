@@ -238,7 +238,7 @@ const BRAND_COLORS = {
 let DATA = null;
 
 async function init() {
-  const res = await fetch('/data/agriculture.json');
+  const res = await fetch('/data/agriculture.json?v=' + Date.now(), { cache: 'no-store' });
   DATA = await res.json();
   if (DATA._fixture) document.getElementById('fixture-banner').style.display = '';
 
