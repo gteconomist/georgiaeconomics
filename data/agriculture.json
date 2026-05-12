@@ -2,35 +2,75 @@
   "_fixture": false,
   "_note": "Live data: NASS Quick Stats for state production trends + share-of-US + county production. Cash receipts breakdown still on fixture (separate follow-up \u2014 NASS economics taxonomy is more complex).",
   "source": "USDA NASS Quick Stats API",
-  "latest_year": 2022,
+  "latest_year": 2025,
   "kpis": {
-    "broilers_lbs_b": 7.85,
-    "peanuts_lbs_b": 2.979,
-    "pecans_lbs_m": 131.0,
-    "cotton_bales_k": 2585.054,
+    "broilers_lbs_b": 8.167,
+    "peanuts_lbs_b": 3.706,
+    "pecans_lbs_m": 111.5,
+    "cotton_bales_k": null,
     "total_cash_receipts_b": 11.5,
     "n1_commodities": 4
   },
   "trends": {
     "years": [
+      2016,
       2017,
-      2022
+      2018,
+      2019,
+      2020,
+      2021,
+      2022,
+      2023,
+      2024,
+      2025
     ],
     "broilers_lbs_b": [
+      8.066,
       8.044,
-      7.85
+      8.168,
+      8.298,
+      8.083,
+      7.923,
+      7.85,
+      8.157,
+      8.189,
+      8.167
     ],
     "peanuts_lbs_b": [
-      3.583,
-      2.979
+      2.753,
+      3.572,
+      2.875,
+      2.752,
+      3.317,
+      3.337,
+      2.863,
+      3.138,
+      3.249,
+      3.706
     ],
     "pecans_lbs_m": [
+      109.0,
       107.0,
-      131.0
+      74.0,
+      73.6,
+      147.5,
+      89.2,
+      131.0,
+      108.0,
+      102.0,
+      111.5
     ],
     "cotton_bales_k": [
-      2220.541,
-      2585.054
+      null,
+      969.948,
+      null,
+      null,
+      null,
+      null,
+      1514.908,
+      null,
+      null,
+      null
     ],
     "cash_receipts_b": [
       9.6,
@@ -48,22 +88,22 @@
   "rankings": [
     {
       "commodity": "Broilers (chickens for meat)",
-      "ga_value": "7.8 B lbs",
-      "ga_share_pct": 13.2,
+      "ga_value": "8.2 B lbs",
+      "ga_share_pct": 13.1,
       "national_rank": 1,
       "trend": "stable"
     },
     {
       "commodity": "Peanuts",
-      "ga_value": "3.0 B lbs",
-      "ga_share_pct": 52.0,
+      "ga_value": "3.7 B lbs",
+      "ga_share_pct": 51.6,
       "national_rank": 1,
       "trend": "stable"
     },
     {
       "commodity": "Pecans",
-      "ga_value": "131.0 M lbs",
-      "ga_share_pct": 45.4,
+      "ga_value": "111.5 M lbs",
+      "ga_share_pct": 39.2,
       "national_rank": 1,
       "trend": "cyclical"
     },
