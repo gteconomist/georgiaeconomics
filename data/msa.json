@@ -1,6 +1,6 @@
 {
   "_fixture": false,
-  "_note": "Partial live data: ['home_price_yoy', 'pop_growth_yoy', 'unemployment_rate']. Wage growth & permits-per-1k still on fixture (next iteration).",
+  "_note": "Partial live data: ['gdp_per_capita', 'home_price_yoy', 'pop_growth_yoy', 'unemployment_rate']. Wage growth & permits-per-1k still on fixture (next iteration).",
   "source": "Live: BLS LAUS (UR) + FRED FHFA HPI (home prices) + Census PEP (population) + BEA (GDP). Fixture: wage_growth_yoy, permits_per_1k.",
   "latest_label": "2026-Q1",
   "metrics": [
@@ -65,7 +65,7 @@
         "pop_growth_yoy": 1.64,
         "home_price_yoy": 4.2,
         "permits_per_1k": 6.8,
-        "gdp_per_capita": 78400
+        "gdp_per_capita": 95697
       }
     },
     {
@@ -79,7 +79,7 @@
         "pop_growth_yoy": 1.35,
         "home_price_yoy": 5.6,
         "permits_per_1k": 4.6,
-        "gdp_per_capita": 58300
+        "gdp_per_capita": 64307
       }
     },
     {
@@ -93,7 +93,7 @@
         "pop_growth_yoy": 1.57,
         "home_price_yoy": 3.6,
         "permits_per_1k": 11.2,
-        "gdp_per_capita": 64200
+        "gdp_per_capita": 85103
       }
     },
     {
@@ -107,7 +107,7 @@
         "pop_growth_yoy": -0.26,
         "home_price_yoy": 3.4,
         "permits_per_1k": 3.1,
-        "gdp_per_capita": 54800
+        "gdp_per_capita": 60464
       }
     },
     {
@@ -121,7 +121,7 @@
         "pop_growth_yoy": 1.52,
         "home_price_yoy": 6.9,
         "permits_per_1k": 2.4,
-        "gdp_per_capita": 51900
+        "gdp_per_capita": 60881
       }
     },
     {
@@ -135,7 +135,7 @@
         "pop_growth_yoy": 0.88,
         "home_price_yoy": 2.1,
         "permits_per_1k": 5.8,
-        "gdp_per_capita": 56700
+        "gdp_per_capita": 68161
       }
     },
     {
@@ -149,7 +149,7 @@
         "pop_growth_yoy": 2.06,
         "home_price_yoy": 3.0,
         "permits_per_1k": 8.7,
-        "gdp_per_capita": 60100
+        "gdp_per_capita": 85305
       }
     },
     {
@@ -163,7 +163,7 @@
         "pop_growth_yoy": 1.66,
         "home_price_yoy": 4.0,
         "permits_per_1k": 4.3,
-        "gdp_per_capita": 53200
+        "gdp_per_capita": 58569
       }
     },
     {
@@ -177,7 +177,7 @@
         "pop_growth_yoy": 0.83,
         "home_price_yoy": 5.6,
         "permits_per_1k": 3.6,
-        "gdp_per_capita": 47600
+        "gdp_per_capita": 54242
       }
     },
     {
@@ -191,7 +191,7 @@
         "pop_growth_yoy": -0.69,
         "home_price_yoy": 7.0,
         "permits_per_1k": 1.8,
-        "gdp_per_capita": 45400
+        "gdp_per_capita": 56485
       }
     },
     {
@@ -205,7 +205,7 @@
         "pop_growth_yoy": 1.15,
         "home_price_yoy": 2.8,
         "permits_per_1k": 2.9,
-        "gdp_per_capita": 56400
+        "gdp_per_capita": 67371
       }
     },
     {
@@ -219,7 +219,7 @@
         "pop_growth_yoy": 0.86,
         "home_price_yoy": 8.0,
         "permits_per_1k": 9.3,
-        "gdp_per_capita": 55800
+        "gdp_per_capita": 57984
       }
     },
     {
@@ -233,7 +233,7 @@
         "pop_growth_yoy": 1.28,
         "home_price_yoy": -0.3,
         "permits_per_1k": 3.4,
-        "gdp_per_capita": 52100
+        "gdp_per_capita": 57440
       }
     },
     {
@@ -247,7 +247,7 @@
         "pop_growth_yoy": 1.02,
         "home_price_yoy": 8.4,
         "permits_per_1k": 5.1,
-        "gdp_per_capita": 42800
+        "gdp_per_capita": 71767
       }
     }
   ],
@@ -257,7 +257,7 @@
     "median_pop_growth": 1.21,
     "median_home_price_yoy": 4.1,
     "median_permits_per_1k": 4.45,
-    "median_gdp_per_capita": 55300.0
+    "median_gdp_per_capita": 62594.0
   },
   "callouts": {
     "lowest_unemployment": {
@@ -282,7 +282,7 @@
     },
     "richest": {
       "msa": "Atlanta",
-      "value": 78400
+      "value": 95697
     }
   },
   "fetched_at": "2026-05-12"
