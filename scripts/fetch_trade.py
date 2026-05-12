@@ -43,24 +43,37 @@ TODAY = date.today()
 
 # ---------- HTTP helper ----------
 def http_get_json(url, retries=3, timeout=30):
+    """Robust JSON fetch — never crashes, returns None on any failure."""
     last_err = None
     for attempt in range(retries):
         try:
             with urllib.request.urlopen(url, timeout=timeout) as resp:
-                return json.loads(resp.read().decode("utf-8"))
+                body = resp.read().decode("utf-8")
+                if not body.strip():
+                    print(f"      [HTTP empty body] {url[:140]}", file=sys.stderr)
+                    return None
+                try:
+                    return json.loads(body)
+                except json.JSONDecodeError:
+                    snippet = body[:200].replace("\n", " ")
+                    print(f"      [HTTP non-JSON] {url[:140]} → body starts: {snippet!r}", file=sys.stderr)
+                    return None
         except urllib.error.HTTPError as e:
             try:
                 body = e.read().decode("utf-8")[:300]
             except Exception:
                 body = "(no body)"
-            print(f"      [HTTP {e.code}] {url[:120]} → {body}", file=sys.stderr)
-            if e.code == 400:   # bad request — soft fail
+            print(f"      [HTTP {e.code}] {url[:140]} → {body}", file=sys.stderr)
+            if e.code == 400:
                 return None
             last_err = e
         except urllib.error.URLError as e:
             last_err = e
+        except Exception as e:
+            print(f"      [HTTP unexpected error] {url[:140]} — {type(e).__name__}: {e}", file=sys.stderr)
+            return None
         time.sleep(1 + attempt)
-    print(f"      [HTTP FAIL] {url[:120]} — {last_err}", file=sys.stderr)
+    print(f"      [HTTP FAIL] {url[:140]} — {last_err}", file=sys.stderr)
     return None
 
 
@@ -103,10 +116,17 @@ def fetch_ga_exports_by_country_annual(year):
     # Try several query strategies in order. Each is tagged with a name for logging.
     # First successful query (returns >5 real countries after filter) wins.
     strategies = [
-        ("HS6+CTY_CODE+monthly_loop", lambda y: _fetch_monthly_loop(base, y, "HS6")),
-        ("HS4+CTY_CODE+monthly_loop", lambda y: _fetch_monthly_loop(base, y, "HS4")),
-        ("HS2+range",                  lambda y: _fetch_range(base, y, "HS2")),
-        ("HS6+range",                  lambda y: _fetch_range(base, y, "HS6")),
+        # STATE=13 (FIPS) variants — Census docs example queries use FIPS
+        ("FIPS+HS6+monthly", lambda y: _fetch_monthly_loop(base, y, "HS6", state="13")),
+        ("FIPS+HS4+monthly", lambda y: _fetch_monthly_loop(base, y, "HS4", state="13")),
+        ("FIPS+HS6+range",   lambda y: _fetch_range(base, y, "HS6",   state="13")),
+        ("FIPS+HS2+range",   lambda y: _fetch_range(base, y, "HS2",   state="13")),
+        # STATE=GA variants
+        ("GA+HS6+monthly",   lambda y: _fetch_monthly_loop(base, y, "HS6", state="GA")),
+        ("GA+HS6+range",     lambda y: _fetch_range(base, y, "HS6",   state="GA")),
+        # No COMM_LVL filter — Census may default to per-country aggregation if get= has CTY_CODE
+        ("FIPS+noCOMM+range",lambda y: _fetch_range(base, y, None,    state="13")),
+        ("GA+noCOMM+range",  lambda y: _fetch_range(base, y, None,    state="GA")),
     ]
 
     for name, fn in strategies:
@@ -143,40 +163,41 @@ def _parse_census_response(rows, by_country):
         by_country[cty] = by_country.get(cty, 0.0) + v
 
 
-def _fetch_range(base, year, comm_lvl):
-    """One query for the whole year with a time range. Smaller response if Census aggregates."""
+def _fetch_range(base, year, comm_lvl, state="GA"):
+    """One query for the whole year with a time range."""
     by_country = {}
     params = {
-        "get":      "CTY_CODE,CTY_NAME,ALL_VAL_MO",
-        "STATE":    "GA",
-        "COMM_LVL": comm_lvl,
-        "time":     f"from {year}-01 to {year}-12",
-        "key":      CENSUS_API_KEY,
+        "get":   "CTY_CODE,CTY_NAME,ALL_VAL_MO",
+        "STATE": state,
+        "time":  f"from {year}-01 to {year}-12",
+        "key":   CENSUS_API_KEY,
     }
+    if comm_lvl:
+        params["COMM_LVL"] = comm_lvl
     url = base + "?" + urllib.parse.urlencode(params, quote_via=urllib.parse.quote)
     rows = http_get_json(url, timeout=120)
     _parse_census_response(rows, by_country)
     return by_country
 
 
-def _fetch_monthly_loop(base, year, comm_lvl):
-    """Loop month-by-month, summing into by_country. Smaller per-call responses."""
+def _fetch_monthly_loop(base, year, comm_lvl, state="GA"):
+    """Loop month-by-month, summing into by_country."""
     by_country = {}
     for month in range(1, 13):
         params = {
-            "get":      "CTY_CODE,CTY_NAME,ALL_VAL_MO",
-            "STATE":    "GA",
-            "COMM_LVL": comm_lvl,
-            "time":     f"{year}-{month:02d}",
-            "key":      CENSUS_API_KEY,
+            "get":   "CTY_CODE,CTY_NAME,ALL_VAL_MO",
+            "STATE": state,
+            "time":  f"{year}-{month:02d}",
+            "key":   CENSUS_API_KEY,
         }
+        if comm_lvl:
+            params["COMM_LVL"] = comm_lvl
         url = base + "?" + urllib.parse.urlencode(params, quote_via=urllib.parse.quote)
         rows = http_get_json(url, timeout=60)
         if rows:
             _parse_census_response(rows, by_country)
-        # If even December (the last month) has nothing, no point continuing
-        if month >= 1 and not by_country:
-            # Bail early on first empty month
+        # Bail early if first month returns nothing — saves 11 wasted calls
+        if month == 1 and not by_country:
             return by_country
     return by_country
 
