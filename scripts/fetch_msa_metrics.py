@@ -154,105 +154,137 @@ def fetch_msa_home_price_yoy():
     return by_short or None
 
 
-# ---------- 3. Census PEP — MSA population growth YoY ----------
+# ---------- 3. Census ACS 1-year — MSA population growth YoY ----------
+# Switched from PEP (which 404'd at the URL level on every vintage we tried) to ACS 1-year.
+# ACS 1-year estimates are published annually for MSAs with >65K population — covers all 14 GA MSAs.
+# Variable B01003_001E = Total population.
 def fetch_msa_population_growth():
     if not CENSUS_API_KEY:
         print("  [Census] no key, skipping population", file=sys.stderr); return None
-    by_short = {}
-    # Census PEP — try the most recent vintage year first, walk back if not available
-    # 2024 vintage publishes 2024 + history; 2023 vintage publishes 2023 + history.
-    # The PEP endpoint shape changed multiple times — we try 2 known formats.
     cbsa_to_short = {cbsa: short for cbsa, short, _, _ in GA_MSAS}
 
-    for vintage in (TODAY.year - 1, TODAY.year - 2, TODAY.year - 3):
-        url = (f"https://api.census.gov/data/{vintage}/pep/population"
-               f"?get=NAME,POP_{vintage},POP_{vintage-1}"
+    def fetch_acs_year(year):
+        """Returns dict {cbsa: population} for given ACS year."""
+        url = (f"https://api.census.gov/data/{year}/acs/acs1"
+               f"?get=NAME,B01003_001E"
                f"&for=metropolitan%20statistical%20area/micropolitan%20statistical%20area:*"
                f"&key={CENSUS_API_KEY}")
-        print(f"  [Census PEP vintage {vintage}] fetching MSA populations...")
         resp = http_get_json(url, timeout=30)
-        if not resp or len(resp) < 2:
-            print(f"    no PEP data for vintage {vintage}", file=sys.stderr); continue
-
+        if not resp or len(resp) < 2: return {}
         header = resp[0]
         try:
-            pop_cur_idx  = header.index(f"POP_{vintage}")
-            pop_prev_idx = header.index(f"POP_{vintage-1}")
-            cbsa_idx     = header.index("metropolitan statistical area/micropolitan statistical area")
-        except ValueError:
-            print(f"    unexpected PEP header: {header}", file=sys.stderr); continue
-
-        n_matched = 0
+            pop_idx  = header.index("B01003_001E")
+            cbsa_idx = header.index("metropolitan statistical area/micropolitan statistical area")
+        except ValueError: return {}
+        out = {}
         for row in resp[1:]:
             cbsa = row[cbsa_idx]
-            short = cbsa_to_short.get(cbsa)
-            if not short: continue
-            try:
-                pop_cur  = float(row[pop_cur_idx])
-                pop_prev = float(row[pop_prev_idx])
+            try:    pop = float(row[pop_idx])
             except (TypeError, ValueError): continue
-            if pop_prev <= 0: continue
-            yoy = round((pop_cur - pop_prev) / pop_prev * 100, 2)
+            out[cbsa] = pop
+        return out
+
+    # Try recent year pairs. ACS 1-year data typically lags by ~1 year.
+    # In May 2026 we expect ACS 2024 just-released; ACS 2023 definitely available.
+    for cur_year in (TODAY.year - 1, TODAY.year - 2, TODAY.year - 3):
+        prev_year = cur_year - 1
+        print(f"  [Census ACS] trying {cur_year} vs {prev_year}...")
+        cur  = fetch_acs_year(cur_year)
+        prev = fetch_acs_year(prev_year)
+        if not cur or not prev:
+            print(f"    ACS {cur_year} or {prev_year} unavailable, trying older", file=sys.stderr); continue
+
+        by_short = {}
+        for cbsa, short in cbsa_to_short.items():
+            p_cur, p_prev = cur.get(cbsa), prev.get(cbsa)
+            if p_cur is None or p_prev is None or p_prev <= 0:
+                print(f"    {short}: no ACS pop ({cbsa})", file=sys.stderr); continue
+            yoy = round((p_cur - p_prev) / p_prev * 100, 2)
             by_short[short] = yoy
-            n_matched += 1
-            print(f"    {short}: pop growth {yoy:+.2f}% ({vintage-1}→{vintage})")
+            print(f"    {short}: pop growth {yoy:+.2f}% ({prev_year}: {int(p_prev):,} → {cur_year}: {int(p_cur):,})")
 
-        if n_matched >= 5:
+        if len(by_short) >= 5:
             return by_short
-        print(f"    matched only {n_matched} MSAs at vintage {vintage}, trying older", file=sys.stderr)
+        print(f"    matched only {len(by_short)} MSAs for {prev_year}→{cur_year}, trying older", file=sys.stderr)
 
-    return by_short or None
+    return None
 
 
 # ---------- 4. BEA MSA GDP per capita ----------
 def fetch_msa_gdp_per_capita():
+    """Try GeoFips=MSA (all MSAs in one call) first, fall back to per-MSA queries.
+
+    BEA Regional API: TableName=CAGDP2 (or CAGDP1) — GDP by Metropolitan Area
+    LineCode varies by table — for CAGDP2 LineCode=1 is "All industry total" (real GDP).
+    """
     if not BEA_API_KEY:
         print("  [BEA] no key, skipping GDP", file=sys.stderr); return None
-    by_short = {}
-    # BEA Regional API: TableName=CAGDP1 (MSA GDP, all industries)
-    # LineCode 1 = "All industry total"
-    # We try the most recent year that has data — usually current_year-2 is the latest published
     cbsa_to_short = {cbsa: short for cbsa, short, _, _ in GA_MSAS}
     cbsa_to_pop   = {cbsa: pop for cbsa, _, _, pop in GA_MSAS}
-    cbsa_csv = ",".join(cbsa for cbsa, _, _, _ in GA_MSAS)
 
-    for year in (TODAY.year - 2, TODAY.year - 3):
+    def query_bea(year, geofips, table="CAGDP2", linecode="1"):
         url = (f"https://apps.bea.gov/api/data/?UserID={BEA_API_KEY}"
-               f"&method=GetData&DataSetName=Regional&TableName=CAGDP1"
-               f"&LineCode=1&GeoFips={cbsa_csv}&Year={year}&ResultFormat=JSON")
-        print(f"  [BEA] fetching {len(GA_MSAS)} MSA GDP for {year}...")
-        resp = http_get_json(url, timeout=45)
-        if not resp:
-            print(f"    no BEA response for {year}", file=sys.stderr); continue
+               f"&method=GetData&DataSetName=Regional&TableName={table}"
+               f"&LineCode={linecode}&GeoFips={geofips}&Year={year}&ResultFormat=JSON")
+        return http_get_json(url, timeout=45)
+
+    def parse_rows(resp):
+        if not resp: return []
         results = (resp.get("BEAAPI", {}) or {}).get("Results", {})
-        if not results or "Error" in results:
-            err = results.get("Error", {}).get("APIErrorDescription", "unknown")
-            print(f"    BEA error for {year}: {err}", file=sys.stderr); continue
-        data = results.get("Data", [])
-        if not data:
-            print(f"    BEA returned 0 rows for {year}", file=sys.stderr); continue
+        if isinstance(results, list): results = results[0] if results else {}
+        if not results: return []
+        if "Error" in results:
+            err = (results.get("Error") or {})
+            if isinstance(err, list): err = err[0] if err else {}
+            print(f"    BEA error: {err.get('APIErrorDescription', err)}", file=sys.stderr)
+            return []
+        return results.get("Data", []) or []
 
-        n_matched = 0
-        for row in data:
-            cbsa = row.get("GeoFips", "").strip()
-            short = cbsa_to_short.get(cbsa)
-            if not short: continue
-            # DataValue is GDP in millions of USD (thousands for some tables — verify)
-            try:
-                gdp_millions = float((row.get("DataValue") or "0").replace(",", ""))
-            except (TypeError, ValueError): continue
-            pop = cbsa_to_pop.get(cbsa, 0)
-            if pop <= 0: continue
-            gdp_per_cap = round(gdp_millions * 1_000_000 / pop, 0)
-            by_short[short] = int(gdp_per_cap)
-            n_matched += 1
-            print(f"    {short}: GDP/cap ${int(gdp_per_cap):,} ({year}, GDP=${gdp_millions:,.0f}M, pop={pop:,})")
+    # Strategy A: get all MSAs in one call (faster but less reliable for batched IDs)
+    # Strategy B: query each MSA individually
+    for year in (TODAY.year - 2, TODAY.year - 3):
+        for table, linecode in (("CAGDP2", "1"), ("CAGDP1", "1")):
+            print(f"  [BEA] year={year} table={table} (all-MSA strategy)...")
+            resp  = query_bea(year, "MSA", table=table, linecode=linecode)
+            rows  = parse_rows(resp)
+            print(f"    got {len(rows)} rows total")
 
-        if n_matched >= 5:
+            by_short = {}
+            for row in rows:
+                cbsa = (row.get("GeoFips", "") or "").strip()
+                short = cbsa_to_short.get(cbsa)
+                if not short: continue
+                try: gdp_millions = float((row.get("DataValue") or "0").replace(",", ""))
+                except (TypeError, ValueError): continue
+                pop = cbsa_to_pop.get(cbsa, 0)
+                if pop <= 0: continue
+                gdp_per_cap = round(gdp_millions * 1_000_000 / pop, 0)
+                by_short[short] = int(gdp_per_cap)
+                print(f"    {short}: GDP/cap ${int(gdp_per_cap):,} ({year}, GDP=${gdp_millions:,.0f}M)")
+
+            if len(by_short) >= 5:
+                return by_short
+
+        # Strategy B: per-MSA queries for this year
+        print(f"  [BEA] year={year} per-MSA strategy...")
+        by_short = {}
+        for cbsa, short, _, pop in GA_MSAS:
+            resp = query_bea(year, cbsa, table="CAGDP2", linecode="1")
+            rows = parse_rows(resp)
+            if not rows: continue
+            for row in rows:
+                try: gdp_millions = float((row.get("DataValue") or "0").replace(",", ""))
+                except (TypeError, ValueError): continue
+                if pop <= 0: continue
+                gdp_per_cap = round(gdp_millions * 1_000_000 / pop, 0)
+                by_short[short] = int(gdp_per_cap)
+                print(f"    {short}: GDP/cap ${int(gdp_per_cap):,}")
+                break
+
+        if len(by_short) >= 5:
             return by_short
-        print(f"    matched {n_matched} MSAs at year {year}, trying older", file=sys.stderr)
 
-    return by_short or None
+    return None
 
 
 # ---------- Aggregate recomputation ----------
