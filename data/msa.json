@@ -1,7 +1,7 @@
 {
-  "_fixture": true,
-  "_note": "FIXTURE seed data \u2014 values are calibrated to reflect plausible 2025-2026 GA MSA character but are not authoritative. Replaced by scripts/fetch_msa_metrics.py once that pipeline is wired up.",
-  "source": "FIXTURE (target: BLS LAUS, BLS QCEW, Census PEP, FHFA HPI, Census BPS, BEA MSA GDP)",
+  "_fixture": false,
+  "_note": "Partial live data: ['home_price_yoy', 'unemployment_rate']. Wage growth & permits-per-1k still on fixture (next iteration).",
+  "source": "Live: BLS LAUS (UR) + FRED FHFA HPI (home prices) + Census PEP (population) + BEA (GDP). Fixture: wage_growth_yoy, permits_per_1k.",
   "latest_label": "2026-Q1",
   "metrics": [
     {
@@ -60,10 +60,10 @@
       "full_name": "Atlanta-Sandy Springs-Alpharetta, GA",
       "population": 6307261,
       "metrics": {
-        "unemployment_rate": 3.3,
+        "unemployment_rate": 3.6,
         "wage_growth_yoy": 4.1,
         "pop_growth_yoy": 1.4,
-        "home_price_yoy": 5.2,
+        "home_price_yoy": 4.2,
         "permits_per_1k": 6.8,
         "gdp_per_capita": 78400
       }
@@ -74,10 +74,10 @@
       "full_name": "Augusta-Richmond County, GA-SC",
       "population": 611000,
       "metrics": {
-        "unemployment_rate": 3.6,
+        "unemployment_rate": 4.6,
         "wage_growth_yoy": 4.4,
         "pop_growth_yoy": 1.0,
-        "home_price_yoy": 4.1,
+        "home_price_yoy": 5.6,
         "permits_per_1k": 4.6,
         "gdp_per_capita": 58300
       }
@@ -91,7 +91,7 @@
         "unemployment_rate": 3.1,
         "wage_growth_yoy": 5.6,
         "pop_growth_yoy": 2.3,
-        "home_price_yoy": 6.8,
+        "home_price_yoy": 3.6,
         "permits_per_1k": 11.2,
         "gdp_per_capita": 64200
       }
@@ -102,10 +102,10 @@
       "full_name": "Columbus, GA-AL",
       "population": 329000,
       "metrics": {
-        "unemployment_rate": 4.0,
+        "unemployment_rate": 4.2,
         "wage_growth_yoy": 3.6,
         "pop_growth_yoy": 0.4,
-        "home_price_yoy": 3.5,
+        "home_price_yoy": 3.4,
         "permits_per_1k": 3.1,
         "gdp_per_capita": 54800
       }
@@ -116,10 +116,10 @@
       "full_name": "Macon-Bibb County, GA",
       "population": 232000,
       "metrics": {
-        "unemployment_rate": 4.4,
+        "unemployment_rate": 4.2,
         "wage_growth_yoy": 3.4,
         "pop_growth_yoy": 0.3,
-        "home_price_yoy": 3.2,
+        "home_price_yoy": 6.9,
         "permits_per_1k": 2.4,
         "gdp_per_capita": 51900
       }
@@ -130,10 +130,10 @@
       "full_name": "Athens-Clarke County, GA",
       "population": 217000,
       "metrics": {
-        "unemployment_rate": 2.9,
+        "unemployment_rate": 3.2,
         "wage_growth_yoy": 3.9,
         "pop_growth_yoy": 0.9,
-        "home_price_yoy": 5.4,
+        "home_price_yoy": 2.1,
         "permits_per_1k": 5.8,
         "gdp_per_capita": 56700
       }
@@ -144,10 +144,10 @@
       "full_name": "Gainesville, GA",
       "population": 211000,
       "metrics": {
-        "unemployment_rate": 3.2,
+        "unemployment_rate": 3.0,
         "wage_growth_yoy": 4.7,
         "pop_growth_yoy": 1.8,
-        "home_price_yoy": 5.9,
+        "home_price_yoy": 3.0,
         "permits_per_1k": 8.7,
         "gdp_per_capita": 60100
       }
@@ -172,10 +172,10 @@
       "full_name": "Valdosta, GA",
       "population": 148000,
       "metrics": {
-        "unemployment_rate": 4.1,
+        "unemployment_rate": 4.0,
         "wage_growth_yoy": 3.5,
         "pop_growth_yoy": 0.5,
-        "home_price_yoy": 3.7,
+        "home_price_yoy": 5.6,
         "permits_per_1k": 3.6,
         "gdp_per_capita": 47600
       }
@@ -186,10 +186,10 @@
       "full_name": "Albany, GA",
       "population": 146000,
       "metrics": {
-        "unemployment_rate": 4.8,
+        "unemployment_rate": 4.3,
         "wage_growth_yoy": 3.0,
         "pop_growth_yoy": -0.2,
-        "home_price_yoy": 2.6,
+        "home_price_yoy": 7.0,
         "permits_per_1k": 1.8,
         "gdp_per_capita": 45400
       }
@@ -200,10 +200,10 @@
       "full_name": "Dalton, GA",
       "population": 143000,
       "metrics": {
-        "unemployment_rate": 4.5,
+        "unemployment_rate": 4.0,
         "wage_growth_yoy": 2.9,
         "pop_growth_yoy": 0.4,
-        "home_price_yoy": 3.3,
+        "home_price_yoy": 2.8,
         "permits_per_1k": 2.9,
         "gdp_per_capita": 56400
       }
@@ -214,10 +214,10 @@
       "full_name": "Brunswick, GA",
       "population": 120000,
       "metrics": {
-        "unemployment_rate": 3.7,
+        "unemployment_rate": 3.3,
         "wage_growth_yoy": 4.5,
         "pop_growth_yoy": 1.6,
-        "home_price_yoy": 5.7,
+        "home_price_yoy": 8.0,
         "permits_per_1k": 9.3,
         "gdp_per_capita": 55800
       }
@@ -228,10 +228,10 @@
       "full_name": "Rome, GA",
       "population": 99000,
       "metrics": {
-        "unemployment_rate": 3.9,
+        "unemployment_rate": 3.7,
         "wage_growth_yoy": 3.6,
         "pop_growth_yoy": 0.5,
-        "home_price_yoy": 3.9,
+        "home_price_yoy": -0.3,
         "permits_per_1k": 3.4,
         "gdp_per_capita": 52100
       }
@@ -245,24 +245,24 @@
         "unemployment_rate": 4.2,
         "wage_growth_yoy": 3.2,
         "pop_growth_yoy": 0.7,
-        "home_price_yoy": 4.4,
+        "home_price_yoy": 8.4,
         "permits_per_1k": 5.1,
         "gdp_per_capita": 42800
       }
     }
   ],
   "statewide_medians": {
-    "median_unemployment": 3.8,
+    "median_unemployment": 3.85,
     "median_wage_growth": 3.7,
     "median_pop_growth": 0.65,
-    "median_home_price_yoy": 4.05,
+    "median_home_price_yoy": 4.1,
     "median_permits_per_1k": 4.45,
     "median_gdp_per_capita": 55300.0
   },
   "callouts": {
     "lowest_unemployment": {
-      "msa": "Athens",
-      "value": 2.9
+      "msa": "Gainesville",
+      "value": 3.0
     },
     "highest_wage_growth": {
       "msa": "Savannah",
@@ -273,8 +273,8 @@
       "value": 2.3
     },
     "hottest_housing": {
-      "msa": "Savannah",
-      "value": 6.8
+      "msa": "Hinesville",
+      "value": 8.4
     },
     "most_building": {
       "msa": "Savannah",
@@ -284,5 +284,6 @@
       "msa": "Atlanta",
       "value": 78400
     }
-  }
+  },
+  "fetched_at": "2026-05-12"
 }
