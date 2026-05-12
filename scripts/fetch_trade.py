@@ -142,25 +142,45 @@ def fetch_ga_exports_by_country_annual(year):
 
 
 def _parse_census_response(rows, by_country):
-    """Add rows to by_country dict. Returns nothing (mutates dict)."""
+    """Add rows to by_country dict. Filters aggregates by CTY_CODE
+    (real Census country codes are >= 1000; aggregates like EU/OECD/CAFTA start with 0).
+    """
     if not rows or len(rows) < 2:
         return
     header = rows[0]
     if "CTY_NAME" not in header or "ALL_VAL_MO" not in header:
         print(f"        ⚠ unexpected header: {header}", file=sys.stderr)
         return
-    cty_idx = header.index("CTY_NAME")
-    val_idx = header.index("ALL_VAL_MO")
+    cty_name_idx = header.index("CTY_NAME")
+    val_idx      = header.index("ALL_VAL_MO")
+    cty_code_idx = header.index("CTY_CODE") if "CTY_CODE" in header else None
+
     # Log first 3 data rows for diagnosis
     for r in rows[1:4]:
         print(f"        sample row: {r[:5]}", file=sys.stderr)
+
     for r in rows[1:]:
-        if len(r) <= max(cty_idx, val_idx): continue
-        cty = r[cty_idx]
+        if len(r) <= max(cty_name_idx, val_idx): continue
+        cty_name = r[cty_name_idx]
+        cty_code = r[cty_code_idx] if cty_code_idx is not None and len(r) > cty_code_idx else None
         try:    v = float(r[val_idx])
         except (TypeError, ValueError): continue
-        if not cty: continue
-        by_country[cty] = by_country.get(cty, 0.0) + v
+        if not cty_name: continue
+
+        # Primary filter: CTY_CODE-based (most reliable).
+        # Census aggregates use CTY_CODE 0001-0999; real countries are 1000+.
+        if cty_code:
+            try:
+                if int(cty_code) < 1000:
+                    continue
+            except (TypeError, ValueError):
+                pass  # malformed code, fall through to name filter
+
+        # Backup filter: name-based (in case CTY_CODE is missing or malformed)
+        if _is_aggregate(cty_name):
+            continue
+
+        by_country[cty_name] = by_country.get(cty_name, 0.0) + v
 
 
 def _fetch_range(base, year, comm_lvl, state="GA"):
@@ -203,21 +223,38 @@ def _fetch_monthly_loop(base, year, comm_lvl, state="GA"):
 
 
 def normalize_country_name(name):
-    """Trim weird Census formatting; keep ISO-friendly case where reasonable."""
+    """Trim Census formatting; keep ISO-friendly case where reasonable."""
     if not name: return ""
     n = name.strip()
-    # Common Census names → cleaner display names
     ALIASES = {
-        "UNITED KINGDOM": "United Kingdom",
-        "UNITED STATES": "United States",
-        "KOREA, SOUTH":  "South Korea",
-        "KOREA, NORTH":  "North Korea",
-        "TAIWAN":        "Taiwan",
+        "UNITED KINGDOM":          "United Kingdom",
+        "UNITED STATES":           "United States",
+        "KOREA, SOUTH":            "South Korea",
+        "KOREA, NORTH":            "North Korea",
+        "TAIWAN":                  "Taiwan",
+        "VIETNAM":                 "Vietnam",
+        "RUSSIA":                  "Russia",
+        "RUSSIAN FEDERATION":      "Russia",
+        "DOMINICAN REPUBLIC":      "Dominican Republic",
+        "UNITED ARAB EMIRATES":    "United Arab Emirates",
+        "SAUDI ARABIA":            "Saudi Arabia",
+        "HONG KONG":               "Hong Kong",
+        "ST VINCENT AND THE GRENADINES": "St Vincent & the Grenadines",
     }
     upper = n.upper()
     if upper in ALIASES: return ALIASES[upper]
-    # Title-case for display (CANADA → Canada, GERMANY → Germany)
-    return " ".join(w.capitalize() for w in n.split())
+
+    # For multi-word names: title-case each word but preserve common short prefixes
+    SMALL_WORDS = {"and", "of", "the", "in", "on", "at"}
+    words = n.split()
+    out_words = []
+    for i, w in enumerate(words):
+        wl = w.lower()
+        if i > 0 and wl in SMALL_WORDS:
+            out_words.append(wl)
+        else:
+            out_words.append(w.capitalize())
+    return " ".join(out_words)
 
 
 # Rough country → ISO 2-letter mapping for the table icon column
