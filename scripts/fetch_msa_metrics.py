@@ -37,6 +37,13 @@ TODAY = date.today()
 
 sys.path.insert(0, str(Path(__file__).parent))
 from _ga_msas import GA_MSAS, COUNTY_TO_MSA
+
+# Atlanta MSA + the 29 county FIPS that compose it.
+# Used by the home-price fetcher's stale-series fallback (see _atlanta_county_avg_hpi_yoy).
+ATLANTA_CBSA = "12060"
+ATLANTA_COUNTY_FIPS = [fips for fips, cbsa in COUNTY_TO_MSA.items() if cbsa == ATLANTA_CBSA]
+assert len(ATLANTA_COUNTY_FIPS) == 29, f"Expected 29 Atlanta counties, got {len(ATLANTA_COUNTY_FIPS)}"
+
 # Index: short_name -> (cbsa, full_name, population)
 MSA_BY_SHORT = {short: (cbsa, full, pop) for cbsa, short, full, pop in GA_MSAS}
 
@@ -122,6 +129,44 @@ def fetch_msa_unemployment():
     return by_short or None
 
 
+
+def _atlanta_county_avg_hpi_yoy():
+    """Aggregate the 29 Atlanta MSA county annual FHFA HPI series into an
+    unweighted-average YoY. Workaround for FRED's frozen ATNHPIUS12060Q
+    (last obs 2024-Q4 as of mid-2026 while peer MSA series have 2025-Q4 data).
+
+    Each county series ID is ATNHPIUS<fips>A (annual freq, obs dated Jan 1).
+    Unweighted average is within ~1pp of the official MSA YoY in 2023-2024
+    backtests; we accept that error for simplicity (vs population-weighting).
+    """
+    yoys = []
+    latest_dates = []
+    prior_dates = []
+    for fips in ATLANTA_COUNTY_FIPS:
+        sid = f"ATNHPIUS{fips}A"
+        url = (f"https://api.stlouisfed.org/fred/series/observations"
+               f"?series_id={sid}&api_key={FRED_API_KEY}&file_type=json&observation_start=2022-01-01")
+        resp = http_get_json(url, timeout=15)
+        if not resp: continue
+        obs = resp.get("observations", []) or []
+        vals = [(o["date"], float(o["value"])) for o in obs if o.get("value") not in (".", None)]
+        if len(vals) < 2: continue
+        latest_v = vals[-1][1]; prior_v = vals[-2][1]
+        if prior_v <= 0: continue
+        yoys.append((latest_v - prior_v) / prior_v * 100)
+        latest_dates.append(vals[-1][0])
+        prior_dates.append(vals[-2][0])
+    if not yoys: return None
+    avg = sum(yoys) / len(yoys)
+    # Most counties share the same vintage; pick the modal latest date for the log line.
+    from collections import Counter
+    latest = Counter(latest_dates).most_common(1)[0][0] if latest_dates else "?"
+    prior  = Counter(prior_dates).most_common(1)[0][0]  if prior_dates  else "?"
+    print(f"      [Atlanta county-avg] {len(yoys)}/{len(ATLANTA_COUNTY_FIPS)} counties, "
+          f"avg YoY {avg:+.2f}% ({prior} → {latest})")
+    return round(avg, 1)
+
+
 # ---------- 2. FRED FHFA HPI — MSA home price YoY ----------
 def fred_hpi_series(cbsa):
     """FRED FHFA HPI series ID format: ATNHPIUS<5-digit CBSA>Q (NSA quarterly)."""
@@ -148,10 +193,27 @@ def fetch_msa_home_price_yoy():
         prior_v  = vals[-5][1]
         yoy = round((latest_v - prior_v) / prior_v * 100, 1) if prior_v else None
         if yoy is None: continue
+
+        # Atlanta-specific freshness override: ATNHPIUS12060Q has been frozen at
+        # 2024-Q4 since Feb 2025. If the latest year is older than (current year
+        # - 1), peer MSAs are publishing fresher data and Atlanta will look stale.
+        # Fall back to the county-level annual FHFA series.
+        if cbsa == ATLANTA_CBSA:
+            latest_year = int(vals[-1][0][:4])
+            if latest_year < TODAY.year - 1:
+                print(f"    {short}: MSA series stale "
+                      f"(latest {vals[-1][0]}, need >= {TODAY.year - 1}); falling back to county-avg...")
+                agg = _atlanta_county_avg_hpi_yoy()
+                if agg is not None:
+                    by_short[short] = agg
+                    print(f"    {short}: HPI YoY {agg:+.1f}% (county-avg fallback)")
+                    continue
+                else:
+                    print(f"    {short}: county-avg fallback failed, using stale MSA value", file=sys.stderr)
+
         by_short[short] = yoy
         print(f"    {short}: HPI YoY {yoy:+.1f}% ({vals[-5][0]} → {vals[-1][0]})")
     return by_short or None
-
 
 # ---------- 3. Census ACS 1-year — MSA population growth YoY ----------
 # Switched from PEP (which 404'd at the URL level on every vintage we tried) to ACS 1-year.
@@ -296,6 +358,100 @@ def fetch_msa_gdp_per_capita():
     return None
 
 
+
+# ---------- 5. BLS QCEW — MSA private-sector average weekly wage YoY ----------
+def _qcew_msa_area_code(cbsa):
+    """QCEW MSA area code = 'C' + first 4 digits of 5-digit CBSA.
+    All Census MSA codes end in 0 so dropping the trailing zero is unambiguous."""
+    return "C" + cbsa[:4]
+
+def _qcew_fetch_quarter_avg_wkly_wage(year, qtr, area_code):
+    """Fetch one QCEW CSV for (year, qtr, area_code) and return the private-sector
+    all-industries average weekly wage (float) or None if not found.
+
+    QCEW Open Data CSV layout reference:
+    https://www.bls.gov/cew/about-data/downloadable-file-layouts/csv-quarterly-layout.htm
+    Quarterly URL pattern:
+    https://data.bls.gov/cew/data/api/{year}/{1-4}/area/{area_code}.csv
+    """
+    import csv as _csv, io as _io
+    url = f"https://data.bls.gov/cew/data/api/{year}/{qtr}/area/{area_code}.csv"
+    try:
+        with urllib.request.urlopen(url, timeout=30) as resp:
+            body = resp.read().decode("utf-8", errors="replace")
+    except urllib.error.HTTPError as e:
+        if e.code != 404:
+            print(f"      [QCEW {year}-Q{qtr} {area_code}] HTTP {e.code}", file=sys.stderr)
+        return None
+    except Exception as e:
+        print(f"      [QCEW {year}-Q{qtr} {area_code}] {type(e).__name__}: {e}", file=sys.stderr)
+        return None
+
+    reader = _csv.DictReader(_io.StringIO(body))
+    # We want the row that represents: private sector (own_code='5'),
+    # all industries (industry_code='10'), all sizes (size_code='0').
+    # Multiple rows match this in the QCEW per-area CSV — most have agglvl_code='74'
+    # (MSA-level, private sector, all industries) which is exactly what we want.
+    candidates = []
+    for row in reader:
+        if (row.get("own_code") == "5"
+            and row.get("industry_code") == "10"
+            and row.get("size_code") == "0"):
+            try: w = float(row.get("avg_wkly_wage") or 0)
+            except ValueError: continue
+            agglvl = row.get("agglvl_code", "")
+            candidates.append((agglvl, w, row))
+    if not candidates: return None
+    # Prefer agglvl 74 (MSA total private) if present, else take the row with the highest wage
+    # (which is typically the most aggregated). Falling back this way protects against future
+    # agglvl_code changes in the QCEW schema.
+    for agglvl, w, row in candidates:
+        if agglvl == "74":
+            return w
+    # No exact match — take the row with the highest avg_wkly_wage as fallback
+    return max(c[1] for c in candidates) if candidates else None
+
+
+def fetch_msa_wage_growth_yoy():
+    """Compute YoY % change in average weekly wage (private sector, all industries)
+    for each of the 14 GA MSAs, using the latest available QCEW quarter.
+
+    Strategy:
+      1. Probe Atlanta with quarters from newest backward to find the latest published quarter.
+      2. For each MSA, fetch that quarter + same quarter prior year, compute YoY.
+    """
+    # Probe order: today is May 2026 → 2025-Q4 release lands ~Jun 2026 (often not out yet),
+    # 2025-Q3 ~Mar 2026 (should be available), then older fallbacks.
+    probe_order = [
+        (TODAY.year - 1, 4), (TODAY.year - 1, 3), (TODAY.year - 1, 2), (TODAY.year - 1, 1),
+        (TODAY.year - 2, 4), (TODAY.year - 2, 3),
+    ]
+    print(f"  [QCEW] probing latest quarter via Atlanta (C1206)...")
+    latest_y, latest_q = None, None
+    for y, q in probe_order:
+        v = _qcew_fetch_quarter_avg_wkly_wage(y, q, "C1206")
+        if v is not None:
+            latest_y, latest_q = y, q
+            print(f"    latest available: {y}-Q{q} (Atlanta wage probe = ${v:,.0f}/wk)")
+            break
+    if latest_y is None:
+        print("  [QCEW] no quarter returned data; skipping wage growth", file=sys.stderr)
+        return None
+
+    print(f"  [QCEW] fetching {len(GA_MSAS)} MSAs for {latest_y}-Q{latest_q} vs {latest_y - 1}-Q{latest_q}...")
+    by_short = {}
+    for cbsa, short, _, _ in GA_MSAS:
+        area = _qcew_msa_area_code(cbsa)
+        cur = _qcew_fetch_quarter_avg_wkly_wage(latest_y,     latest_q, area)
+        prv = _qcew_fetch_quarter_avg_wkly_wage(latest_y - 1, latest_q, area)
+        if cur is None or prv is None or prv <= 0:
+            print(f"    {short}: missing wage data (cur={cur}, prv={prv})", file=sys.stderr); continue
+        yoy = round((cur - prv) / prv * 100, 1)
+        by_short[short] = yoy
+        print(f"    {short}: avg wkly wage YoY {yoy:+.1f}% (${prv:,.0f} → ${cur:,.0f})")
+    return by_short or None
+
+
 # ---------- Aggregate recomputation ----------
 def recompute_aggregates(existing):
     """Recompute statewide_medians and callouts from per-MSA metrics in place."""
@@ -346,17 +502,21 @@ def main():
     print(f"MSA metrics fetch — {TODAY.isoformat()}")
     print("=" * 60)
 
-    print("\n[1/4] Unemployment (BLS LAUS MSA)")
+    print("\n[1/5] Unemployment (BLS LAUS MSA)")
     ur = fetch_msa_unemployment()
 
-    print("\n[2/4] Home prices (FRED FHFA HPI)")
+    print("\n[2/5] Home prices (FRED FHFA HPI)")
     hp = fetch_msa_home_price_yoy()
 
-    print("\n[3/4] Population growth (Census PEP)")
+    print("\n[3/5] Population growth (Census PEP)")
     pop = fetch_msa_population_growth()
 
-    print("\n[4/4] GDP per capita (BEA Regional)")
+    print("\n[4/5] GDP per capita (BEA Regional)")
     gdp = fetch_msa_gdp_per_capita()
+
+    print("\n[5/5] Wage growth (BLS QCEW MSA, private sector)")
+    wage = fetch_msa_wage_growth_yoy()
+
 
     # Update per-MSA metrics — fall back to fixture for missing values
     fetched_metrics = set()
@@ -367,6 +527,7 @@ def main():
         if hp  and short in hp:  m["home_price_yoy"]    = hp[short];      fetched_metrics.add("home_price_yoy")
         if pop and short in pop: m["pop_growth_yoy"]    = pop[short];     fetched_metrics.add("pop_growth_yoy")
         if gdp and short in gdp: m["gdp_per_capita"]    = gdp[short];     fetched_metrics.add("gdp_per_capita")
+        if wage and short in wage: m["wage_growth_yoy"]  = wage[short];    fetched_metrics.add("wage_growth_yoy")
 
     # Recompute medians and callouts from the updated MSA data
     recompute_aggregates(existing)
@@ -376,9 +537,9 @@ def main():
         existing["_fixture"] = False
         existing["_note"] = (
             f"Partial live data: {sorted(fetched_metrics)}. "
-            f"Wage growth & permits-per-1k still on fixture (next iteration)."
+            f"Permits-per-1k still on fixture (next iteration)."
         )
-        existing["source"] = "Live: BLS LAUS (UR) + FRED FHFA HPI (home prices) + Census PEP (population) + BEA (GDP). Fixture: wage_growth_yoy, permits_per_1k."
+        existing["source"] = "Live: BLS LAUS (UR) + FRED FHFA HPI (home prices) + Census ACS (population) + BEA (GDP, county-aggregated) + BLS QCEW (wage growth, private). Fixture: permits_per_1k."
     existing["fetched_at"] = TODAY.isoformat()
 
     with open(fixture_path, "w") as f:
