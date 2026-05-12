@@ -388,10 +388,18 @@ def _qcew_fetch_quarter_avg_wkly_wage(year, qtr, area_code):
         return None
 
     reader = _csv.DictReader(_io.StringIO(body))
-    # We want the row that represents: private sector (own_code='5'),
-    # all industries (industry_code='10'), all sizes (size_code='0').
-    # Multiple rows match this in the QCEW per-area CSV — most have agglvl_code='74'
-    # (MSA-level, private sector, all industries) which is exactly what we want.
+    # We want the MSA-level, private-sector, all-industries, all-sizes row. Filter on:
+    #   own_code='5'      Private
+    #   industry_code='10' Total, all industries
+    #   size_code='0'     All establishment sizes
+    # PLUS reject zero/empty wages — BLS sometimes publishes the row structure for
+    # a just-released quarter before populating the actual numbers, and those
+    # placeholder rows would produce a bogus -100% YoY against the populated prior year.
+    #
+    # The QCEW agglvl_code 40-series is for MSAs. (The 70-series is county-level
+    # and the 90-series is also county-level — earlier code mistakenly preferred
+    # agglvl='74' which never appears in an MSA CSV.)
+    MIN_PLAUSIBLE_WAGE = 100   # $/week — guard against obviously-placeholder rows
     candidates = []
     for row in reader:
         if (row.get("own_code") == "5"
@@ -399,17 +407,17 @@ def _qcew_fetch_quarter_avg_wkly_wage(year, qtr, area_code):
             and row.get("size_code") == "0"):
             try: w = float(row.get("avg_wkly_wage") or 0)
             except ValueError: continue
-            agglvl = row.get("agglvl_code", "")
-            candidates.append((agglvl, w, row))
+            if w < MIN_PLAUSIBLE_WAGE: continue   # skip placeholder/zero rows
+            candidates.append((row.get("agglvl_code", ""), w, row))
     if not candidates: return None
-    # Prefer agglvl 74 (MSA total private) if present, else take the row with the highest wage
-    # (which is typically the most aggregated). Falling back this way protects against future
-    # agglvl_code changes in the QCEW schema.
-    for agglvl, w, row in candidates:
-        if agglvl == "74":
+    # Prefer MSA-level rollups (agglvl_code in 40-49). For the
+    # private/all-industries/all-sizes filter there is typically exactly one
+    # MSA-level row per quarter per area.
+    for agglvl, w, _row in candidates:
+        if agglvl.startswith("4"):
             return w
-    # No exact match — take the row with the highest avg_wkly_wage as fallback
-    return max(c[1] for c in candidates) if candidates else None
+    # No MSA-level row — return highest-wage candidate as last resort.
+    return max(c[1] for c in candidates)
 
 
 def fetch_msa_wage_growth_yoy():
@@ -430,10 +438,14 @@ def fetch_msa_wage_growth_yoy():
     latest_y, latest_q = None, None
     for y, q in probe_order:
         v = _qcew_fetch_quarter_avg_wkly_wage(y, q, "C1206")
-        if v is not None:
+        # Require a POSITIVE wage. A 0 or None means the quarter is either not
+        # released or BLS published placeholders without the actual numbers.
+        if v is not None and v > 0:
             latest_y, latest_q = y, q
             print(f"    latest available: {y}-Q{q} (Atlanta wage probe = ${v:,.0f}/wk)")
             break
+        else:
+            print(f"    {y}-Q{q}: no usable data (probe returned {v!r})", file=sys.stderr)
     if latest_y is None:
         print("  [QCEW] no quarter returned data; skipping wage growth", file=sys.stderr)
         return None
@@ -517,6 +529,16 @@ def main():
     print("\n[5/5] Wage growth (BLS QCEW MSA, private sector)")
     wage = fetch_msa_wage_growth_yoy()
 
+    # Hygiene: any existing wage_growth_yoy outside [-30, +30]% is implausible
+    # (no real MSA has had +30% or -30% annual wage growth) and is almost certainly
+    # left over from a buggy prior run — strip it so the per-MSA update loop will
+    # either replace it with fresh QCEW data or leave it absent (page shows '—').
+    for _msa in existing.get("msas", []):
+        _m = _msa.setdefault("metrics", {})
+        _v = _m.get("wage_growth_yoy")
+        if _v is not None and (_v < -30 or _v > 30):
+            print(f"    hygiene: dropping bogus wage_growth_yoy={_v} for {_msa.get('short_name')}", file=sys.stderr)
+            _m.pop("wage_growth_yoy", None)
 
     # Update per-MSA metrics — fall back to fixture for missing values
     fetched_metrics = set()
