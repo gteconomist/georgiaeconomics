@@ -1,0 +1,50 @@
+name: Update GA MSA metrics (BLS + FRED + Census + BEA)
+
+on:
+  workflow_dispatch:
+  schedule:
+    # MSA data updates monthly (LAUS, FHFA quarterly, PEP annually, BEA annually).
+    # Run on the 7th @ 18:00 UTC to catch BLS LAUS MSA release.
+    - cron: '0 18 7 * *'
+  push:
+    branches: [main]
+    paths:
+      - 'scripts/fetch_msa_metrics.py'
+      - 'scripts/_ga_msas.py'
+      - '.github/workflows/update-msa.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repo
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Fetch MSA metrics from 4 APIs
+        env:
+          BLS_API_KEY:    ${{ secrets.BLS_API_KEY }}
+          FRED_API_KEY:   ${{ secrets.FRED_API_KEY }}
+          CENSUS_API_KEY: ${{ secrets.CENSUS_API_KEY }}
+          BEA_API_KEY:    ${{ secrets.BEA_API_KEY }}
+        run: |
+          python scripts/fetch_msa_metrics.py
+
+      - name: Commit updated data
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          if ! git diff --quiet -- data/msa.json; then
+            git add data/msa.json
+            git commit -m "data: refresh GA MSA metrics (BLS LAUS + FRED HPI + Census PEP + BEA) [skip ci]"
+            git push
+          else
+            echo "No changes in data/msa.json — nothing to commit."
+          fi
