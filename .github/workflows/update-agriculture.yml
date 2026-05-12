@@ -3,8 +3,6 @@ name: Update GA agriculture data (USDA NASS)
 on:
   workflow_dispatch:
   schedule:
-    # NASS production data is mostly annual, released gradually through the year.
-    # Run quarterly (1st of Feb, May, Aug, Nov) at 17:00 UTC to catch new releases.
     - cron: '0 17 1 2,5,8,11 *'
   push:
     branches: [main]
