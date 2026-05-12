@@ -120,7 +120,7 @@
 document.getElementById('yr').textContent = new Date().getFullYear();
 
 async function init() {
-  const res  = await fetch('/data/counties.json');
+  const res  = await fetch('/data/counties.json?v=' + Date.now(), { cache: 'no-store' });
   const data = await res.json();
 
   // Fixture banner
