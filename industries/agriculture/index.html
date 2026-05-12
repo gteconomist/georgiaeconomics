@@ -244,13 +244,15 @@ async function init() {
 
   document.getElementById('latest-label').textContent = DATA.latest_year;
 
-  // KPIs
-  document.getElementById('kpi-broilers').textContent = DATA.kpis.broilers_lbs_b.toFixed(1);
-  document.getElementById('kpi-peanuts').textContent  = DATA.kpis.peanuts_lbs_b.toFixed(2);
-  document.getElementById('kpi-pecans').textContent   = Math.round(DATA.kpis.pecans_lbs_m).toLocaleString();
-  document.getElementById('kpi-cotton').textContent   = DATA.kpis.cotton_bales_k.toLocaleString();
-  document.getElementById('kpi-receipts').textContent = '$' + DATA.kpis.total_cash_receipts_b.toFixed(1) + 'B';
-  document.getElementById('kpi-n1').textContent       = DATA.kpis.n1_commodities;
+  // KPIs — null-safe so a missing value can't kill the whole page render
+  const k = DATA.kpis;
+  const setText = (id, val) => { document.getElementById(id).textContent = val ?? '—'; };
+  setText('kpi-broilers', k.broilers_lbs_b != null ? k.broilers_lbs_b.toFixed(1) : null);
+  setText('kpi-peanuts',  k.peanuts_lbs_b  != null ? k.peanuts_lbs_b.toFixed(2)  : null);
+  setText('kpi-pecans',   k.pecans_lbs_m   != null ? Math.round(k.pecans_lbs_m).toLocaleString() : null);
+  setText('kpi-cotton',   k.cotton_bales_k != null ? k.cotton_bales_k.toLocaleString() : null);
+  setText('kpi-receipts', k.total_cash_receipts_b != null ? '$' + k.total_cash_receipts_b.toFixed(1) + 'B' : null);
+  setText('kpi-n1',       k.n1_commodities);
 
   renderTrends();
   renderDonut();
