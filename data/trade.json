@@ -11,8 +11,8 @@
     "atl_cargo_latest": 57.9,
     "atl_cargo_yoy": -3.5,
     "savannah_2025_total_teu_k": 5653,
-    "top_export_country": "Oecd",
-    "top_export_musd": 37333.0
+    "top_export_country": "Canada",
+    "top_export_musd": 6805.0
   },
   "savannah_teu_k": [
     [
@@ -1240,147 +1240,147 @@
   ],
   "ga_exports_2025": [
     {
-      "country": "Oecd",
-      "value_musd": 37333.0,
-      "yoy_pct": 14.0,
-      "iso": "",
-      "rank": 1
-    },
-    {
-      "country": "Apec",
-      "value_musd": 29865.0,
-      "yoy_pct": 3.1,
-      "iso": "",
-      "rank": 2
-    },
-    {
-      "country": "Nato",
-      "value_musd": 23589.0,
-      "yoy_pct": 13.7,
-      "iso": "",
-      "rank": 3
-    },
-    {
-      "country": "Pacific Rim Countries",
-      "value_musd": 14418.0,
-      "yoy_pct": 13.2,
-      "iso": "",
-      "rank": 4
-    },
-    {
-      "country": "Usmca (nafta)",
-      "value_musd": 13123.0,
-      "yoy_pct": -7.2,
-      "iso": "",
-      "rank": 5
-    },
-    {
-      "country": "Twenty Latin American Republics",
-      "value_musd": 11358.0,
-      "yoy_pct": 5.6,
-      "iso": "",
-      "rank": 6
-    },
-    {
-      "country": "Euro Area",
-      "value_musd": 11288.0,
-      "yoy_pct": 23.3,
-      "iso": "",
-      "rank": 7
-    },
-    {
-      "country": "Lafta",
-      "value_musd": 9712.0,
-      "yoy_pct": 7.5,
-      "iso": "",
-      "rank": 8
-    },
-    {
       "country": "Canada",
       "value_musd": 6805.0,
       "yoy_pct": -12.5,
       "iso": "CA",
-      "rank": 9
+      "rank": 1
     },
     {
       "country": "Mexico",
       "value_musd": 6317.0,
       "yoy_pct": -0.8,
       "iso": "MX",
+      "rank": 2
+    },
+    {
+      "country": "Singapore",
+      "value_musd": 3583.0,
+      "yoy_pct": 46.4,
+      "iso": "SG",
+      "rank": 3
+    },
+    {
+      "country": "Germany",
+      "value_musd": 3488.0,
+      "yoy_pct": 41.5,
+      "iso": "DE",
+      "rank": 4
+    },
+    {
+      "country": "Netherlands",
+      "value_musd": 3151.0,
+      "yoy_pct": 21.3,
+      "iso": "NL",
+      "rank": 5
+    },
+    {
+      "country": "China",
+      "value_musd": 2995.0,
+      "yoy_pct": -2.0,
+      "iso": "CN",
+      "rank": 6
+    },
+    {
+      "country": "Japan",
+      "value_musd": 2847.0,
+      "yoy_pct": 73.5,
+      "iso": "JP",
+      "rank": 7
+    },
+    {
+      "country": "Poland",
+      "value_musd": 2152.0,
+      "yoy_pct": 61.6,
+      "iso": "",
+      "rank": 8
+    },
+    {
+      "country": "United Kingdom",
+      "value_musd": 1970.0,
+      "yoy_pct": 34.1,
+      "iso": "GB",
+      "rank": 9
+    },
+    {
+      "country": "United Arab Emirates",
+      "value_musd": 1960.0,
+      "yoy_pct": 38.5,
+      "iso": "AE",
       "rank": 10
     }
   ],
-  "ga_exports_top10_total_musd": 163808.0,
+  "ga_exports_top10_total_musd": 35268.0,
   "fetched_at": "2026-05-12",
   "ga_exports_latest": [
-    {
-      "country": "Oecd",
-      "value_musd": 37333.0,
-      "yoy_pct": 14.0,
-      "iso": "",
-      "rank": 1
-    },
-    {
-      "country": "Apec",
-      "value_musd": 29865.0,
-      "yoy_pct": 3.1,
-      "iso": "",
-      "rank": 2
-    },
-    {
-      "country": "Nato",
-      "value_musd": 23589.0,
-      "yoy_pct": 13.7,
-      "iso": "",
-      "rank": 3
-    },
-    {
-      "country": "Pacific Rim Countries",
-      "value_musd": 14418.0,
-      "yoy_pct": 13.2,
-      "iso": "",
-      "rank": 4
-    },
-    {
-      "country": "Usmca (nafta)",
-      "value_musd": 13123.0,
-      "yoy_pct": -7.2,
-      "iso": "",
-      "rank": 5
-    },
-    {
-      "country": "Twenty Latin American Republics",
-      "value_musd": 11358.0,
-      "yoy_pct": 5.6,
-      "iso": "",
-      "rank": 6
-    },
-    {
-      "country": "Euro Area",
-      "value_musd": 11288.0,
-      "yoy_pct": 23.3,
-      "iso": "",
-      "rank": 7
-    },
-    {
-      "country": "Lafta",
-      "value_musd": 9712.0,
-      "yoy_pct": 7.5,
-      "iso": "",
-      "rank": 8
-    },
     {
       "country": "Canada",
       "value_musd": 6805.0,
       "yoy_pct": -12.5,
       "iso": "CA",
-      "rank": 9
+      "rank": 1
     },
     {
       "country": "Mexico",
       "value_musd": 6317.0,
       "yoy_pct": -0.8,
       "iso": "MX",
+      "rank": 2
+    },
+    {
+      "country": "Singapore",
+      "value_musd": 3583.0,
+      "yoy_pct": 46.4,
+      "iso": "SG",
+      "rank": 3
+    },
+    {
+      "country": "Germany",
+      "value_musd": 3488.0,
+      "yoy_pct": 41.5,
+      "iso": "DE",
+      "rank": 4
+    },
+    {
+      "country": "Netherlands",
+      "value_musd": 3151.0,
+      "yoy_pct": 21.3,
+      "iso": "NL",
+      "rank": 5
+    },
+    {
+      "country": "China",
+      "value_musd": 2995.0,
+      "yoy_pct": -2.0,
+      "iso": "CN",
+      "rank": 6
+    },
+    {
+      "country": "Japan",
+      "value_musd": 2847.0,
+      "yoy_pct": 73.5,
+      "iso": "JP",
+      "rank": 7
+    },
+    {
+      "country": "Poland",
+      "value_musd": 2152.0,
+      "yoy_pct": 61.6,
+      "iso": "",
+      "rank": 8
+    },
+    {
+      "country": "United Kingdom",
+      "value_musd": 1970.0,
+      "yoy_pct": 34.1,
+      "iso": "GB",
+      "rank": 9
+    },
+    {
+      "country": "United Arab Emirates",
+      "value_musd": 1960.0,
+      "yoy_pct": 38.5,
+      "iso": "AE",
       "rank": 10
     }
   ],
