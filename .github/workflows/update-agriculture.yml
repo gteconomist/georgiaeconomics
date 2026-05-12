@@ -1,0 +1,47 @@
+name: Update GA agriculture data (USDA NASS)
+
+on:
+  workflow_dispatch:
+  schedule:
+    # NASS production data is mostly annual, released gradually through the year.
+    # Run quarterly (1st of Feb, May, Aug, Nov) at 17:00 UTC to catch new releases.
+    - cron: '0 17 1 2,5,8,11 *'
+  push:
+    branches: [main]
+    paths:
+      - 'scripts/fetch_agriculture.py'
+      - 'scripts/_ga_counties.py'
+      - '.github/workflows/update-agriculture.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repo
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Fetch USDA NASS Quick Stats data
+        env:
+          NASS_API_KEY: ${{ secrets.NASS_API_KEY }}
+        run: |
+          python scripts/fetch_agriculture.py
+
+      - name: Commit updated data
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          if ! git diff --quiet -- data/agriculture.json; then
+            git add data/agriculture.json
+            git commit -m "data: refresh GA agriculture (USDA NASS) [skip ci]"
+            git push
+          else
+            echo "No changes in data/agriculture.json — nothing to commit."
+          fi
