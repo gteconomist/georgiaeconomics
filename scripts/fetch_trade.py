@@ -308,18 +308,31 @@ def build_top_exports(latest_year):
 # ---------- BLS CES — ATL MSA T&W employment ----------
 BLS_URL = "https://api.bls.gov/publicAPI/v2/timeseries/data/"
 
-# Atlanta-Sandy Springs-Alpharetta MSA = area code 12060 in BLS CES
-# Series: state(13) + area(12060) + supersector(43=Trans/Warehousing/Utilities) + industry(00000) + datatype(01=AE,K)
-ATL_TW_SERIES_NSA = "SMU131206043000000001"   # NSA, all employees, thousands
-ATL_TW_SERIES_SA  = "SMS131206043000000001"   # Seasonally adjusted version
+# BLS CES MSA series ID format (20 chars total):
+#   SM[U/S] + state_FIPS(2) + area_code(5) + industry_code(8) + datatype(2)
+# Atlanta-Sandy Springs-Alpharetta MSA = BLS area code 12060.
+# We try several supersector codes in fallback order — BLS does NOT publish every
+# supersector at every MSA, especially the more granular "Transportation, Warehousing,
+# & Utilities" (43). The combined "Trade, Transportation, & Utilities" (40) is broader
+# but reliably published.
+ATL_SERIES_TRIES = [
+    # Format: (label, series_id) — tried in order, first one with data wins
+    ("T&W+Util (43) SA",  "SMS13120604300000001"),
+    ("T&W+Util (43) NSA", "SMU13120604300000001"),
+    ("Trade+T+U (40) SA", "SMS13120604000000001"),
+    ("Trade+T+U (40) NSA","SMU13120604000000001"),
+]
 
 def fetch_bls_atl_tw_employment(months=80):
-    """Returns sorted list of [YYYY-MM, employment_thousands] for ATL MSA T&W (SA preferred)."""
+    """Returns sorted list of [YYYY-MM, employment_thousands] for ATL MSA transportation
+    sector. Tries multiple series IDs in fallback order so we use the most-specific
+    one BLS actually publishes for ATL."""
     end_year = TODAY.year
-    start_year = end_year - 7  # ~80 months max
+    start_year = end_year - 7
 
+    series_ids = [s[1] for s in ATL_SERIES_TRIES]
     payload = {
-        "seriesid": [ATL_TW_SERIES_SA, ATL_TW_SERIES_NSA],
+        "seriesid": series_ids,
         "startyear": str(start_year),
         "endyear":   str(end_year),
         "registrationkey": BLS_API_KEY,
@@ -338,10 +351,18 @@ def fetch_bls_atl_tw_employment(months=80):
         return None
 
     by_id = {s["seriesID"]: s for s in data["Results"]["series"]}
-    # Prefer SA series; fall back to NSA if SA empty
-    chosen = by_id.get(ATL_TW_SERIES_SA) or by_id.get(ATL_TW_SERIES_NSA)
-    if not chosen or not chosen.get("data"):
-        print(f"  → No BLS data for ATL T&W series", file=sys.stderr)
+    chosen = None; chosen_label = None
+    for label, sid in ATL_SERIES_TRIES:
+        s = by_id.get(sid)
+        if s and s.get("data"):
+            chosen = s; chosen_label = label
+            print(f"  → BLS T&W: using {label} ({sid}) — {len(s['data'])} obs", file=sys.stderr)
+            break
+        else:
+            print(f"  → BLS T&W: {label} ({sid}) returned no data", file=sys.stderr)
+
+    if not chosen:
+        print(f"  → No BLS data for ANY ATL T&W series tried", file=sys.stderr)
         return None
 
     out = []
