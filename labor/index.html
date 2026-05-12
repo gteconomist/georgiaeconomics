@@ -169,7 +169,7 @@ function fmtSignedK(v)   { if (v == null) return '—'; return (v >= 0 ? '+' : '
 function fmtK(v)         { if (v == null) return '—'; return v.toLocaleString('en-US', { maximumFractionDigits: 1 }); }
 
 async function init() {
-  const res = await fetch('/data/labor.json');
+  const res = await fetch('/data/labor.json?v=' + Date.now(), { cache: 'no-store' });
   const d   = await res.json();
 
   if (d._fixture) document.getElementById('fixture-banner').style.display = '';
