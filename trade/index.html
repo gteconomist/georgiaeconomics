@@ -190,38 +190,55 @@ async function init() {
   const d   = await res.json();
   if (d._fixture) document.getElementById('fixture-banner').style.display = '';
 
-  document.getElementById('latest-label').textContent = fmtMonthLong(d.latest_label);
+  document.getElementById('latest-label').textContent = d.latest_label ? fmtMonthLong(d.latest_label) : '—';
 
-  // KPI strip
-  document.getElementById('kpi-teu-val').textContent     = d.kpis.savannah_teu_latest.toLocaleString() + 'K';
+  // KPI strip — null-safe so a missing API field can't blank the page
+  const k = d.kpis || {};
+  const setText = (id, val) => { const el = document.getElementById(id); if (el) el.textContent = val ?? '—'; };
+
+  setText('kpi-teu-val',  k.savannah_teu_latest != null ? k.savannah_teu_latest.toLocaleString() + 'K' : null);
   const teuYoyEl = document.getElementById('kpi-teu-yoy');
-  teuYoyEl.textContent = fmtPct(d.kpis.savannah_teu_yoy) + ' YoY';
-  teuYoyEl.classList.add(d.kpis.savannah_teu_yoy >= 0 ? 'down' : 'up'); // .down is teal (good), .up is coral (bad)
+  if (teuYoyEl) {
+    if (k.savannah_teu_yoy != null) {
+      teuYoyEl.textContent = fmtPct(k.savannah_teu_yoy) + ' YoY';
+      teuYoyEl.classList.add(k.savannah_teu_yoy >= 0 ? 'down' : 'up');
+    } else { teuYoyEl.textContent = '—'; }
+  }
 
-  document.getElementById('kpi-teu-annual').textContent  = (d.kpis.savannah_2025_total_teu_k / 1000).toFixed(2) + 'M TEU';
+  setText('kpi-teu-annual', k.savannah_2025_total_teu_k != null ? (k.savannah_2025_total_teu_k / 1000).toFixed(2) + 'M TEU' : null);
 
-  document.getElementById('kpi-autos-val').textContent   = d.kpis.brunswick_autos_latest.toFixed(1) + 'K';
+  setText('kpi-autos-val', k.brunswick_autos_latest != null ? k.brunswick_autos_latest.toFixed(1) + 'K' : null);
   const autosYoyEl = document.getElementById('kpi-autos-yoy');
-  autosYoyEl.textContent = fmtPct(d.kpis.brunswick_autos_yoy) + ' YoY';
-  autosYoyEl.classList.add(d.kpis.brunswick_autos_yoy >= 0 ? 'down' : 'up');
+  if (autosYoyEl) {
+    if (k.brunswick_autos_yoy != null) {
+      autosYoyEl.textContent = fmtPct(k.brunswick_autos_yoy) + ' YoY';
+      autosYoyEl.classList.add(k.brunswick_autos_yoy >= 0 ? 'down' : 'up');
+    } else { autosYoyEl.textContent = '—'; }
+  }
 
-  document.getElementById('kpi-cargo-val').textContent   = d.kpis.atl_cargo_latest.toFixed(1) + 'Kt';
+  setText('kpi-cargo-val', k.atl_cargo_latest != null ? k.atl_cargo_latest.toFixed(1) + 'Kt' : null);
   const cargoYoyEl = document.getElementById('kpi-cargo-yoy');
-  cargoYoyEl.textContent = fmtPct(d.kpis.atl_cargo_yoy) + ' YoY';
-  cargoYoyEl.classList.add(d.kpis.atl_cargo_yoy >= 0 ? 'down' : 'up');
+  if (cargoYoyEl) {
+    if (k.atl_cargo_yoy != null) {
+      cargoYoyEl.textContent = fmtPct(k.atl_cargo_yoy) + ' YoY';
+      cargoYoyEl.classList.add(k.atl_cargo_yoy >= 0 ? 'down' : 'up');
+    } else { cargoYoyEl.textContent = '—'; }
+  }
 
-  document.getElementById('kpi-export-country').textContent = d.kpis.top_export_country;
-  document.getElementById('kpi-export-val').textContent     = fmtMoney(d.kpis.top_export_musd) + ' (2025)';
+  setText('kpi-export-country', k.top_export_country);
+  // Use exports_data_year if present (from live data), else fall back to a generic label
+  const exportYear = d.exports_data_year || 2025;
+  setText('kpi-export-val', k.top_export_musd != null ? fmtMoney(k.top_export_musd) + ` (${exportYear})` : null);
 
-  const top10share = d.ga_exports_top10_total_musd; // M USD
-  document.getElementById('kpi-top10-share').textContent = '$' + (top10share/1000).toFixed(1) + 'B';
+  const top10share = d.ga_exports_top10_total_musd;
+  setText('kpi-top10-share', top10share != null ? '$' + (top10share/1000).toFixed(1) + 'B' : null);
 
   // Render charts
   renderSavannahTEU(d.savannah_teu_k);
   renderBrunswick(d.brunswick_autos_k);
   renderATLCargo(d.atl_cargo_kt);
   renderLeadIndicator(d.savannah_teu_k, d.atl_tw_employment_k);
-  renderExportsTable(d.ga_exports_2025, d.ga_exports_top10_total_musd);
+  renderExportsTable(d.ga_exports_latest || d.ga_exports_2025 || [], d.ga_exports_top10_total_musd || 0);
 }
 
 /* --- Chart 1: Savannah TEU (60+ months, year-shaded bars) --- */
