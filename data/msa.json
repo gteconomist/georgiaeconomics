@@ -63,7 +63,7 @@
         "unemployment_rate": 3.6,
         "wage_growth_yoy": 4.1,
         "pop_growth_yoy": 1.64,
-        "home_price_yoy": 4.2,
+        "home_price_yoy": 1.8,
         "permits_per_1k": 6.8,
         "gdp_per_capita": 95697
       }
@@ -255,7 +255,7 @@
     "median_unemployment": 3.85,
     "median_wage_growth": 3.7,
     "median_pop_growth": 1.21,
-    "median_home_price_yoy": 4.1,
+    "median_home_price_yoy": 3.8,
     "median_permits_per_1k": 4.45,
     "median_gdp_per_capita": 62594.0
   },
