@@ -101,16 +101,18 @@ def fetch_ga_exports_by_country_annual(year):
     base = "https://api.census.gov/data/timeseries/intltrade/exports/statehs"
     by_country = {}
 
-    # Census API monthly time format: from YYYY-MM to YYYY-MM
-    # We pull the full year in one query (one HTTP call).
+    # Census API quirk: without a COMM_LVL filter, the statehs endpoint returns
+    # only the highest-level aggregate (one row with CTY_NAME = "Total For All Countries").
+    # COMM_LVL=HS2 forces a per-(country × HS2 commodity) breakdown which we then aggregate.
     params = {
-        "get":   "CTY_NAME,ALL_VAL_MO",
-        "STATE": "GA",
-        "time":  f"from {year}-01 to {year}-12",
-        "key":   CENSUS_API_KEY,
+        "get":      "CTY_NAME,ALL_VAL_MO,I_COMMODITY",
+        "STATE":    "GA",
+        "COMM_LVL": "HS2",
+        "time":     f"from {year}-01 to {year}-12",
+        "key":      CENSUS_API_KEY,
     }
     url = base + "?" + urllib.parse.urlencode(params)
-    rows = http_get_json(url, timeout=60)
+    rows = http_get_json(url, timeout=90)
     if not rows or len(rows) < 2:
         print(f"      no Census export rows for GA {year}", file=sys.stderr)
         return {}
