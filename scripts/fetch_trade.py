@@ -64,6 +64,32 @@ def http_get_json(url, retries=3, timeout=30):
     return None
 
 
+# ---------- Census aggregate-row filter ----------
+# Census USA Trade Online returns regional/grouping rows alongside actual destination
+# countries (e.g., "Total For All Countries", "European Union", "Asia"). These would
+# inflate rankings and double-count, so we filter them out by name.
+_CENSUS_AGGREGATE_NAMES = {
+    "WORLD TOTAL", "WORLD", "TOTAL", "TOTAL FOR ALL COUNTRIES",
+    "TOTAL TRADE", "TRADE TOTAL",
+    "AFRICA", "ASIA", "EUROPE", "OCEANIA", "AMERICAS",
+    "NORTH AMERICA", "SOUTH AMERICA", "CENTRAL AMERICA",
+    "SOUTH/CENTRAL AMERICA", "ASIA AND OCEANIA", "ASIA NES",
+    "EUROPEAN UNION", "EUROPEAN UNION-27", "EU-27", "EU 27",
+    "ASEAN", "OPEC", "USMCA", "NAFTA", "CAFTA-DR", "CAFTA",
+    "FREE TRADE AREAS", "FREE TRADE AGREEMENT COUNTRIES",
+    "TPP", "TPP COUNTRIES", "G7", "G20",
+}
+
+def _is_aggregate(name):
+    n = name.upper().strip()
+    if not n: return True
+    if n in _CENSUS_AGGREGATE_NAMES: return True
+    # Defensive catch-all: any "country" with TOTAL or WORLD in the name
+    if "TOTAL" in n or "WORLD" in n: return True
+    return False
+
+
+
 # ---------- Census USA Trade Online — GA exports by country ----------
 def fetch_ga_exports_by_country_annual(year):
     """Sum monthly GA exports across all HS codes per country, return dict country_name -> total $.
@@ -103,8 +129,8 @@ def fetch_ga_exports_by_country_annual(year):
         cty = r[cty_idx]
         try:    v = float(r[val_idx])
         except (TypeError, ValueError): continue
-        # Skip non-real countries
-        if not cty or cty.upper() in {"WORLD TOTAL", "WORLD", "TOTAL"}:
+        # Skip aggregate / regional rows (Census returns these alongside real countries)
+        if not cty or _is_aggregate(cty):
             continue
         by_country[cty] = by_country.get(cty, 0.0) + v
 
