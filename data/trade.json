@@ -1,6 +1,6 @@
 {
-  "_fixture": true,
-  "_note": "FIXTURE seed data (regenerated). Will be partially overwritten by scripts/fetch_trade.py with live Census USA Trade Online + BLS T&W data on next workflow run.",
+  "_fixture": false,
+  "_note": "Partial live data: Census USA Trade Online (GA exports). Port of Savannah TEU, Brunswick autos, and ATL Hartsfield cargo still on fixture (Tavily-based scrapers in next iteration).",
   "source": "FIXTURE (target: Census USA Trade Online + BLS CES + Tavily for ports)",
   "latest_label": "2026-04",
   "kpis": {
@@ -11,8 +11,8 @@
     "atl_cargo_latest": 57.9,
     "atl_cargo_yoy": -3.5,
     "savannah_2025_total_teu_k": 5653,
-    "top_export_country": "Canada",
-    "top_export_musd": 6850
+    "top_export_country": "Oecd",
+    "top_export_musd": 37333.0
   },
   "savannah_teu_k": [
     [
@@ -1240,76 +1240,149 @@
   ],
   "ga_exports_2025": [
     {
-      "rank": 1,
+      "country": "Oecd",
+      "value_musd": 37333.0,
+      "yoy_pct": 14.0,
+      "iso": "",
+      "rank": 1
+    },
+    {
+      "country": "Apec",
+      "value_musd": 29865.0,
+      "yoy_pct": 3.1,
+      "iso": "",
+      "rank": 2
+    },
+    {
+      "country": "Nato",
+      "value_musd": 23589.0,
+      "yoy_pct": 13.7,
+      "iso": "",
+      "rank": 3
+    },
+    {
+      "country": "Pacific Rim Countries",
+      "value_musd": 14418.0,
+      "yoy_pct": 13.2,
+      "iso": "",
+      "rank": 4
+    },
+    {
+      "country": "Usmca (nafta)",
+      "value_musd": 13123.0,
+      "yoy_pct": -7.2,
+      "iso": "",
+      "rank": 5
+    },
+    {
+      "country": "Twenty Latin American Republics",
+      "value_musd": 11358.0,
+      "yoy_pct": 5.6,
+      "iso": "",
+      "rank": 6
+    },
+    {
+      "country": "Euro Area",
+      "value_musd": 11288.0,
+      "yoy_pct": 23.3,
+      "iso": "",
+      "rank": 7
+    },
+    {
+      "country": "Lafta",
+      "value_musd": 9712.0,
+      "yoy_pct": 7.5,
+      "iso": "",
+      "rank": 8
+    },
+    {
       "country": "Canada",
-      "value_musd": 6850,
-      "yoy_pct": 3.2,
-      "iso": "CA"
+      "value_musd": 6805.0,
+      "yoy_pct": -12.5,
+      "iso": "CA",
+      "rank": 9
     },
     {
-      "rank": 2,
       "country": "Mexico",
-      "value_musd": 4920,
-      "yoy_pct": 5.4,
-      "iso": "MX"
-    },
-    {
-      "rank": 3,
-      "country": "China",
-      "value_musd": 3210,
-      "yoy_pct": -8.7,
-      "iso": "CN"
-    },
-    {
-      "rank": 4,
-      "country": "Germany",
-      "value_musd": 2480,
-      "yoy_pct": 1.8,
-      "iso": "DE"
-    },
-    {
-      "rank": 5,
-      "country": "Singapore",
-      "value_musd": 1840,
-      "yoy_pct": 6.1,
-      "iso": "SG"
-    },
-    {
-      "rank": 6,
-      "country": "Japan",
-      "value_musd": 1620,
-      "yoy_pct": 2.4,
-      "iso": "JP"
-    },
-    {
-      "rank": 7,
-      "country": "South Korea",
-      "value_musd": 1380,
-      "yoy_pct": 9.2,
-      "iso": "KR"
-    },
-    {
-      "rank": 8,
-      "country": "United Kingdom",
-      "value_musd": 1290,
-      "yoy_pct": 4.0,
-      "iso": "GB"
-    },
-    {
-      "rank": 9,
-      "country": "Belgium",
-      "value_musd": 1140,
-      "yoy_pct": -2.1,
-      "iso": "BE"
-    },
-    {
-      "rank": 10,
-      "country": "Brazil",
-      "value_musd": 1020,
-      "yoy_pct": 7.3,
-      "iso": "BR"
+      "value_musd": 6317.0,
+      "yoy_pct": -0.8,
+      "iso": "MX",
+      "rank": 10
     }
   ],
-  "ga_exports_top10_total_musd": 25750,
-  "fetched_at": "2026-05-12"
+  "ga_exports_top10_total_musd": 163808.0,
+  "fetched_at": "2026-05-12",
+  "ga_exports_latest": [
+    {
+      "country": "Oecd",
+      "value_musd": 37333.0,
+      "yoy_pct": 14.0,
+      "iso": "",
+      "rank": 1
+    },
+    {
+      "country": "Apec",
+      "value_musd": 29865.0,
+      "yoy_pct": 3.1,
+      "iso": "",
+      "rank": 2
+    },
+    {
+      "country": "Nato",
+      "value_musd": 23589.0,
+      "yoy_pct": 13.7,
+      "iso": "",
+      "rank": 3
+    },
+    {
+      "country": "Pacific Rim Countries",
+      "value_musd": 14418.0,
+      "yoy_pct": 13.2,
+      "iso": "",
+      "rank": 4
+    },
+    {
+      "country": "Usmca (nafta)",
+      "value_musd": 13123.0,
+      "yoy_pct": -7.2,
+      "iso": "",
+      "rank": 5
+    },
+    {
+      "country": "Twenty Latin American Republics",
+      "value_musd": 11358.0,
+      "yoy_pct": 5.6,
+      "iso": "",
+      "rank": 6
+    },
+    {
+      "country": "Euro Area",
+      "value_musd": 11288.0,
+      "yoy_pct": 23.3,
+      "iso": "",
+      "rank": 7
+    },
+    {
+      "country": "Lafta",
+      "value_musd": 9712.0,
+      "yoy_pct": 7.5,
+      "iso": "",
+      "rank": 8
+    },
+    {
+      "country": "Canada",
+      "value_musd": 6805.0,
+      "yoy_pct": -12.5,
+      "iso": "CA",
+      "rank": 9
+    },
+    {
+      "country": "Mexico",
+      "value_musd": 6317.0,
+      "yoy_pct": -0.8,
+      "iso": "MX",
+      "rank": 10
+    }
+  ],
+  "exports_data_year": 2025
 }
