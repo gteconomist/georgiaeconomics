@@ -1,9 +1,9 @@
-name: Update GA MSA metrics (BLS + FRED + Census + BEA)
+name: Update GA MSA metrics (BLS + FRED + Census + BEA + QCEW)
 
 on:
   workflow_dispatch:
   schedule:
-    # MSA data updates monthly (LAUS, FHFA quarterly, PEP annually, BEA annually).
+    # MSA data updates monthly (LAUS, FHFA quarterly, ACS annually, BEA annually, QCEW quarterly).
     # Run on the 7th @ 18:00 UTC to catch BLS LAUS MSA release.
     - cron: '0 18 7 * *'
   push:
@@ -28,7 +28,7 @@ jobs:
         with:
           python-version: '3.11'
 
-      - name: Fetch MSA metrics from 4 APIs
+      - name: Fetch MSA metrics from 5 sources
         env:
           BLS_API_KEY:    ${{ secrets.BLS_API_KEY }}
           FRED_API_KEY:   ${{ secrets.FRED_API_KEY }}
@@ -43,8 +43,21 @@ jobs:
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           if ! git diff --quiet -- data/msa.json; then
             git add data/msa.json
-            git commit -m "data: refresh GA MSA metrics (BLS LAUS + FRED HPI + Census PEP + BEA) [skip ci]"
-            git push
+            git commit -m "data: refresh GA MSA metrics (BLS LAUS + FRED HPI + Census ACS + BEA + QCEW) [skip ci]"
+            # Race-safe push: rebase on top of any commits that landed during the
+            # fetcher run (e.g. a user pushing HTML or script changes from the web UI),
+            # then push. Retry on failure — the rebase window is also racey if pushes
+            # land in quick succession.
+            for attempt in 1 2 3 4 5; do
+              if git pull --rebase origin main && git push; then
+                echo "Pushed on attempt $attempt"
+                exit 0
+              fi
+              echo "Push attempt $attempt failed, sleeping 10s and retrying..."
+              sleep 10
+            done
+            echo "All push attempts failed" >&2
+            exit 1
           else
             echo "No changes in data/msa.json — nothing to commit."
           fi
