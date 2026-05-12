@@ -10,14 +10,18 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700;800&display=swap" rel="stylesheet">
 
-<!-- Plotly.js for choropleth -->
-<script src="https://cdn.plot.ly/plotly-2.35.2.min.js"></script>
-<!-- Chart.js for non-map charts (shared with economicsguru via jsDelivr) -->
-<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
-<!-- Shared charts.js from economicsguru -->
-<script src="https://cdn.jsdelivr.net/gh/gteconomist/economicsguru@main/charts.js"></script>
-<!-- Local maps.js -->
-<script src="/maps.js"></script>
+<!--
+  Script loading notes:
+  - Plotly is the only chart library the counties page needs (the map is a Plotly choropleth).
+    Chart.js and the shared economicsguru charts.js are intentionally NOT loaded here —
+    they were dead weight on this page and were slowing first paint.
+  - Both scripts use `defer` so the browser can keep parsing the HTML while they download in parallel.
+    Defer also preserves order, so Plotly is guaranteed to be defined before maps.js runs.
+  - The inline init() at the bottom of the body is wrapped in DOMContentLoaded, which fires
+    AFTER all deferred scripts have executed — so window.gaMaps is safely defined by then.
+-->
+<script defer src="https://cdn.plot.ly/plotly-2.35.2.min.js"></script>
+<script defer src="/maps.js"></script>
 </head>
 <body>
 
@@ -120,7 +124,13 @@
 document.getElementById('yr').textContent = new Date().getFullYear();
 
 async function init() {
-  const res  = await fetch('/data/counties.json?v=' + Date.now(), { cache: 'no-store' });
+  // Cache-bust by calendar day instead of by millisecond.
+  // counties.json only changes when the monthly workflow runs, so a daily
+  // bust lets the browser AND jsDelivr/GH Pages CDNs serve cached copies
+  // for up to 24h. The old approach (?v=Date.now() + cache:'no-store') forced
+  // a fresh ~189 KB download on every single page view.
+  const day = new Date().toISOString().slice(0, 10); // e.g. "2026-05-12"
+  const res  = await fetch('/data/counties.json?v=' + day);
   const data = await res.json();
 
   // Fixture banner
@@ -154,10 +164,14 @@ async function init() {
   });
 }
 
-init().catch(err => {
-  console.error('counties page init failed:', err);
-  document.getElementById('ga-county-map').innerHTML =
-    '<div style="padding:24px; color:var(--coral); font-weight:600;">Failed to load county data. Check console.</div>';
+// Wait for DOMContentLoaded so deferred scripts (Plotly, maps.js) have finished executing —
+// that's what makes window.gaMaps safe to call below.
+document.addEventListener('DOMContentLoaded', () => {
+  init().catch(err => {
+    console.error('counties page init failed:', err);
+    document.getElementById('ga-county-map').innerHTML =
+      '<div style="padding:24px; color:var(--coral); font-weight:600;">Failed to load county data. Check console.</div>';
+  });
 });
 </script>
 </body>
