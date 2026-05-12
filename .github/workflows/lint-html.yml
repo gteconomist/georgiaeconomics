@@ -1,0 +1,44 @@
+name: Lint HTML pages
+
+# Catches known regression patterns in HTML pages before they reach the live site.
+# Cheap (~5 seconds), runs on every push and pull request.
+#
+# Patterns currently checked:
+#   1. Broken charts.js jsDelivr URL — missing the /assets/ path segment.
+#      The file lives at /assets/charts.js in the economicsguru repo. Referencing
+#      it without the prefix returns a 404 from jsDelivr, which silently delays
+#      every page load by ~28s while the browser waits for the negative lookup.
+#      (See memory: feedback_charts_js_jsdelivr_path.md)
+#
+# To add a new lint rule: copy one of the steps below and replace the grep
+# pattern and error message.
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repo
+        uses: actions/checkout@v4
+
+      - name: Lint charts.js jsDelivr URL (must include /assets/)
+        run: |
+          # Match the bad pattern: economicsguru@<anything>/charts.js
+          # NOT inside an /assets/charts.js path.
+          # Print every offending file/line so the user knows exactly what to fix.
+          BAD=$(grep -rEn 'economicsguru@[^/]+/charts\.js' --include='*.html' . || true)
+          if [ -n "$BAD" ]; then
+            echo "$BAD"
+            echo ""
+            echo "::error::charts.js URL is missing the /assets/ path segment."
+            echo "::error::Use: https://cdn.jsdelivr.net/gh/gteconomist/economicsguru@main/assets/charts.js"
+            echo "::error::Not: https://cdn.jsdelivr.net/gh/gteconomist/economicsguru@main/charts.js"
+            exit 1
+          fi
+          echo "OK: no broken charts.js URLs found"
