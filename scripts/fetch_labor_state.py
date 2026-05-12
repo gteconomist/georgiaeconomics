@@ -11,16 +11,16 @@ Series fetched:
 
   CES state-level (11):
     SMS13000000000000001 — Total nonfarm, all employees, SA
-    SMS13000000200000001 — Construction
-    SMS13000000300000001 — Manufacturing
-    SMS13000000400000001 — Trade, transportation, utilities
-    SMS13000000500000001 — Information
-    SMS13000000550000001 — Financial activities
-    SMS13000000600000001 — Professional & business services
-    SMS13000000650000001 — Education & health services
-    SMS13000000700000001 — Leisure & hospitality
-    SMS13000000800000001 — Other services
-    SMS13000000900000001 — Government
+    SMS13000002000000001 — Construction
+    SMS13000003000000001 — Manufacturing
+    SMS13000004000000001 — Trade, transportation, utilities
+    SMS13000005000000001 — Information
+    SMS13000005500000001 — Financial activities
+    SMS13000006000000001 — Professional & business services
+    SMS13000006500000001 — Education & health services
+    SMS13000007000000001 — Leisure & hospitality
+    SMS13000008000000001 — Other services
+    SMS13000009000000001 — Government
     (Mining & logging supersector 10 typically negligible in GA; skipped)
 
 We pull 6 years to give the chart 5+ full years and YoY comparisons.
@@ -55,16 +55,16 @@ LAUS_SERIES = {
 # (display name, supersector code, BLS series ID)
 SECTOR_DEFS = [
     ("Total Nonfarm",                          "00", "SMS13000000000000001"),
-    ("Construction",                           "20", "SMS13000000200000001"),
-    ("Manufacturing",                          "30", "SMS13000000300000001"),
-    ("Trade, Transportation & Utilities",      "40", "SMS13000000400000001"),
-    ("Information",                            "50", "SMS13000000500000001"),
-    ("Financial Activities",                   "55", "SMS13000000550000001"),
-    ("Professional & Business Services",       "60", "SMS13000000600000001"),
-    ("Education & Health Services",            "65", "SMS13000000650000001"),
-    ("Leisure & Hospitality",                  "70", "SMS13000000700000001"),
-    ("Other Services",                         "80", "SMS13000000800000001"),
-    ("Government",                             "90", "SMS13000000900000001"),
+    ("Construction",                           "20", "SMS13000002000000001"),
+    ("Manufacturing",                          "30", "SMS13000003000000001"),
+    ("Trade, Transportation & Utilities",      "40", "SMS13000004000000001"),
+    ("Information",                            "50", "SMS13000005000000001"),
+    ("Financial Activities",                   "55", "SMS13000005500000001"),
+    ("Professional & Business Services",       "60", "SMS13000006000000001"),
+    ("Education & Health Services",            "65", "SMS13000006500000001"),
+    ("Leisure & Hospitality",                  "70", "SMS13000007000000001"),
+    ("Other Services",                         "80", "SMS13000008000000001"),
+    ("Government",                             "90", "SMS13000009000000001"),
 ]
 
 TODAY = date.today()
