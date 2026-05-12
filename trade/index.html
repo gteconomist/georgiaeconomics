@@ -263,7 +263,7 @@ function renderSavannahTEU(series) {
       responsive: true, maintainAspectRatio: false,
       scales: {
         x: { grid: { display: false }, ticks: { color: BRAND_COLORS.navy, font: { size: 10 }, maxRotation: 45, autoSkip: true, maxTicksLimit: 16 } },
-        y: { beginAtZero: false, grid: { color: BRAND_COLORS.grid, borderDash: [3,4] }, ticks: { color: BRAND_COLORS.navy, font: { size: 11 }, callback: v => v + 'K' } },
+        y: { beginAtZero: false, grid: { color: BRAND_COLORS.grid, borderDash: [3,4] }, ticks: { color: BRAND_COLORS.navy, font: { size: 11 }, callback: v => v.toFixed(0) + 'K' } },
       },
       plugins: {
         legend: { display: false },
@@ -290,7 +290,7 @@ function renderBrunswick(series) {
       responsive: true, maintainAspectRatio: false,
       scales: {
         x: { grid: { display: false }, ticks: { color: BRAND_COLORS.navy, font: { size: 10 }, maxRotation: 45, autoSkip: true, maxTicksLimit: 12 } },
-        y: { beginAtZero: false, grid: { color: BRAND_COLORS.grid, borderDash: [3,4] }, ticks: { color: BRAND_COLORS.navy, font: { size: 11 }, callback: v => v + 'K' } },
+        y: { beginAtZero: false, grid: { color: BRAND_COLORS.grid, borderDash: [3,4] }, ticks: { color: BRAND_COLORS.navy, font: { size: 11 }, callback: v => v.toFixed(0) + 'K' } },
       },
       plugins: {
         legend: { display: false },
@@ -312,7 +312,7 @@ function renderATLCargo(series) {
       responsive: true, maintainAspectRatio: false,
       scales: {
         x: { grid: { display: false }, ticks: { color: BRAND_COLORS.navy, font: { size: 10 }, maxRotation: 45, autoSkip: true, maxTicksLimit: 12 } },
-        y: { beginAtZero: false, grid: { color: BRAND_COLORS.grid, borderDash: [3,4] }, ticks: { color: BRAND_COLORS.navy, font: { size: 11 }, callback: v => v + 'Kt' } },
+        y: { beginAtZero: false, grid: { color: BRAND_COLORS.grid, borderDash: [3,4] }, ticks: { color: BRAND_COLORS.navy, font: { size: 11 }, callback: v => v.toFixed(0) + 'Kt' } },
       },
       plugins: {
         legend: { display: false },
@@ -354,7 +354,7 @@ function renderLeadIndicator(teuSeries, empSeries) {
       responsive: true, maintainAspectRatio: false,
       scales: {
         x:  { grid: { display: false }, ticks: { color: BRAND_COLORS.navy, font: { size: 10 }, maxRotation: 45, autoSkip: true, maxTicksLimit: 16 } },
-        y1: { position: 'left',  beginAtZero: false, grid: { color: BRAND_COLORS.grid, borderDash: [3,4] }, ticks: { color: BRAND_COLORS.peachDeep, font: { size: 11 }, callback: v => v + 'K' }, title: { display: true, text: 'TEUs (K)', color: BRAND_COLORS.peachDeep, font: { weight: 'bold' } } },
+        y1: { position: 'left',  beginAtZero: false, grid: { color: BRAND_COLORS.grid, borderDash: [3,4] }, ticks: { color: BRAND_COLORS.peachDeep, font: { size: 11 }, callback: v => v.toFixed(0) + 'K' }, title: { display: true, text: 'TEUs (K)', color: BRAND_COLORS.peachDeep, font: { weight: 'bold' } } },
         y2: { position: 'right', beginAtZero: false, grid: { display: false }, ticks: { color: BRAND_COLORS.navy, font: { size: 11 }, callback: v => v.toFixed(0) + 'K' }, title: { display: true, text: 'T&W employment (K)', color: BRAND_COLORS.navy, font: { weight: 'bold' } } },
       },
       plugins: {
