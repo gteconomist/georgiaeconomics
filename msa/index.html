@@ -187,7 +187,7 @@ let DATA = null;
 let RADAR_CHART = null;
 
 async function init() {
-  const res = await fetch('/data/msa.json');
+  const res = await fetch('/data/msa.json?v=' + Date.now(), { cache: 'no-store' });
   DATA = await res.json();
   if (DATA._fixture) document.getElementById('fixture-banner').style.display = '';
 
