@@ -1,67 +1,333 @@
 {
-  "_fixture": true,
-  "_note": "FIXTURE seed data calibrated to Georgia's documented film industry trajectory — tax credit boom, COVID dip, 2023 strike impact, and recovery. Replaced by scripts/fetch_film.py once BLS QCEW + BEA + Tavily pipeline runs.",
+  "_fixture": false,
+  "_note": "FIXTURE seed data calibrated to Georgia's documented film industry trajectory \u2014 tax credit boom, COVID dip, 2023 strike impact, and recovery. Replaced by scripts/fetch_film.py once BLS QCEW + BEA + Tavily pipeline runs.",
   "source": "FIXTURE (target: BLS QCEW NAICS 5121 + BEA SAGDP2N NAICS 512 + Tavily DECD/DOAA/Film Office)",
-  "latest_year": 2025,
+  "latest_year": 2026,
   "kpis": {
     "production_spend_latest_b": 5.5,
     "production_spend_yoy_pct": 7.8,
-    "tax_credits_latest_b": 1.55,
-    "employment_latest_k": 52.5,
-    "employment_yoy_pct": 7.1,
+    "tax_credits_latest_b": 1.4,
+    "employment_latest_k": 16.6,
+    "employment_yoy_pct": 7.8,
     "national_rank": 3,
     "n_major_productions": 12,
     "n_major_studios": 6,
-    "tax_credit_pct": 30
+    "tax_credit_pct": 30,
+    "decd_production_spend_b": 2.4,
+    "decd_production_spend_fy": 2026
   },
   "trends": {
-    "years": [2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025],
-    "production_spend_b": [1.95, 2.25, 2.5, 2.65, 2.7, 2.92, 2.2, 4.0, 4.4, 4.1, 5.1, 5.5],
-    "tax_credits_b": [0.55, 0.65, 0.78, 0.83, 0.85, 0.92, 0.68, 1.18, 1.3, 1.21, 1.45, 1.55],
-    "employment_k": [14.2, 17.8, 22.5, 26.8, 30.4, 33.6, 28.0, 41.2, 46.5, 38.4, 49.0, 52.5]
+    "years": [
+      2014,
+      2015,
+      2016,
+      2017,
+      2018,
+      2019,
+      2020,
+      2021,
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "production_spend_b": [
+      1.95,
+      2.25,
+      2.5,
+      2.65,
+      2.7,
+      2.92,
+      2.2,
+      4.0,
+      4.4,
+      4.1,
+      5.1,
+      5.5
+    ],
+    "tax_credits_b": [
+      0.55,
+      0.65,
+      0.78,
+      0.83,
+      0.85,
+      0.92,
+      0.68,
+      1.18,
+      1.3,
+      1.21,
+      1.45,
+      1.55
+    ],
+    "employment_k": [
+      8.1,
+      12.3,
+      15.0,
+      19.8,
+      19.1,
+      21.1,
+      13.2,
+      21.8,
+      21.3,
+      15.4,
+      16.6
+    ],
+    "employment_k_years": [
+      2014,
+      2015,
+      2016,
+      2017,
+      2018,
+      2019,
+      2020,
+      2021,
+      2022,
+      2023,
+      2024
+    ]
   },
   "annotations": [
-    {"year": 2020, "label": "COVID-19 production shutdown"},
-    {"year": 2023, "label": "WGA + SAG-AFTRA strikes"}
+    {
+      "year": 2020,
+      "label": "COVID-19 production shutdown"
+    },
+    {
+      "year": 2023,
+      "label": "WGA + SAG-AFTRA strikes"
+    }
   ],
   "notable_productions": [
-    {"title": "Avengers: Endgame", "year": 2019, "studio": "Marvel/Disney", "type": "Film", "spend_m": 356, "location": "Pinewood Atlanta (Trilith)"},
-    {"title": "Black Panther", "year": 2018, "studio": "Marvel/Disney", "type": "Film", "spend_m": 200, "location": "Atlanta + Trilith"},
-    {"title": "Stranger Things (S5)", "year": 2024, "studio": "Netflix", "type": "TV Series", "spend_m": 270, "location": "Atlanta + Jackson"},
-    {"title": "Ozark", "year": 2022, "studio": "Netflix", "type": "TV Series", "spend_m": 185, "location": "Lake Allatoona + ATL"},
-    {"title": "The Walking Dead", "year": 2022, "studio": "AMC", "type": "TV Series", "spend_m": 145, "location": "Senoia + Atlanta"},
-    {"title": "Hunger Games: Mockingjay", "year": 2014, "studio": "Lionsgate", "type": "Film", "spend_m": 125, "location": "Atlanta"},
-    {"title": "Spider-Man: No Way Home", "year": 2021, "studio": "Sony/Marvel", "type": "Film", "spend_m": 200, "location": "Trilith"},
-    {"title": "Captain America: Brave New World", "year": 2025, "studio": "Marvel/Disney", "type": "Film", "spend_m": 270, "location": "Trilith + Atlanta"},
-    {"title": "Manifest", "year": 2023, "studio": "Netflix", "type": "TV Series", "spend_m": 110, "location": "Atlanta"},
-    {"title": "Cobra Kai", "year": 2024, "studio": "Sony Pictures TV", "type": "TV Series", "spend_m": 95, "location": "Atlanta"},
-    {"title": "Doom Patrol", "year": 2023, "studio": "DC/HBO Max", "type": "TV Series", "spend_m": 80, "location": "Atlanta"},
-    {"title": "The Color Purple (2023)", "year": 2023, "studio": "Warner Bros.", "type": "Film", "spend_m": 105, "location": "Macon + Savannah"}
+    {
+      "title": "Chad Powers",
+      "year": 2026,
+      "studio": "\u2014",
+      "type": "TV Series",
+      "spend_m": 0,
+      "location": "Georgia",
+      "_source_url": "https://variety.com/2025/tv/features/glen-powell-michael-waldron-chad-powers-finale-uga-halftime-1236562748/"
+    },
+    {
+      "title": "Avengers: Endgame",
+      "year": 2019,
+      "studio": "Marvel/Disney",
+      "type": "Film",
+      "spend_m": 356,
+      "location": "Pinewood Atlanta (Trilith)"
+    },
+    {
+      "title": "Black Panther",
+      "year": 2018,
+      "studio": "Marvel/Disney",
+      "type": "Film",
+      "spend_m": 200,
+      "location": "Atlanta + Trilith"
+    },
+    {
+      "title": "Stranger Things (S5)",
+      "year": 2024,
+      "studio": "Netflix",
+      "type": "TV Series",
+      "spend_m": 270,
+      "location": "Atlanta + Jackson"
+    },
+    {
+      "title": "Ozark",
+      "year": 2022,
+      "studio": "Netflix",
+      "type": "TV Series",
+      "spend_m": 185,
+      "location": "Lake Allatoona + ATL"
+    },
+    {
+      "title": "The Walking Dead",
+      "year": 2022,
+      "studio": "AMC",
+      "type": "TV Series",
+      "spend_m": 145,
+      "location": "Senoia + Atlanta"
+    },
+    {
+      "title": "Hunger Games: Mockingjay",
+      "year": 2014,
+      "studio": "Lionsgate",
+      "type": "Film",
+      "spend_m": 125,
+      "location": "Atlanta"
+    },
+    {
+      "title": "Spider-Man: No Way Home",
+      "year": 2021,
+      "studio": "Sony/Marvel",
+      "type": "Film",
+      "spend_m": 200,
+      "location": "Trilith"
+    },
+    {
+      "title": "Captain America: Brave New World",
+      "year": 2025,
+      "studio": "Marvel/Disney",
+      "type": "Film",
+      "spend_m": 270,
+      "location": "Trilith + Atlanta"
+    },
+    {
+      "title": "Manifest",
+      "year": 2023,
+      "studio": "Netflix",
+      "type": "TV Series",
+      "spend_m": 110,
+      "location": "Atlanta"
+    },
+    {
+      "title": "Cobra Kai",
+      "year": 2024,
+      "studio": "Sony Pictures TV",
+      "type": "TV Series",
+      "spend_m": 95,
+      "location": "Atlanta"
+    },
+    {
+      "title": "Doom Patrol",
+      "year": 2023,
+      "studio": "DC/HBO Max",
+      "type": "TV Series",
+      "spend_m": 80,
+      "location": "Atlanta"
+    }
   ],
   "state_comparison": [
-    {"state": "California", "spend_b": 31.5, "rank": 1, "color": "#1a3a5c"},
-    {"state": "New York", "spend_b": 9.2, "rank": 2, "color": "#3a8d8d"},
-    {"state": "Georgia", "spend_b": 5.5, "rank": 3, "color": "#c46b3a"},
-    {"state": "New Mexico", "spend_b": 1.8, "rank": 4, "color": "#9b8b6a"},
-    {"state": "Louisiana", "spend_b": 1.4, "rank": 5, "color": "#9b8b6a"},
-    {"state": "Illinois", "spend_b": 0.9, "rank": 6, "color": "#9b8b6a"},
-    {"state": "Texas", "spend_b": 0.7, "rank": 7, "color": "#9b8b6a"},
-    {"state": "Massachusetts", "spend_b": 0.5, "rank": 8, "color": "#9b8b6a"}
+    {
+      "state": "California",
+      "spend_b": 31.5,
+      "rank": 1,
+      "color": "#1a3a5c"
+    },
+    {
+      "state": "New York",
+      "spend_b": 9.2,
+      "rank": 2,
+      "color": "#3a8d8d"
+    },
+    {
+      "state": "Georgia",
+      "spend_b": 5.5,
+      "rank": 3,
+      "color": "#c46b3a"
+    },
+    {
+      "state": "New Mexico",
+      "spend_b": 1.8,
+      "rank": 4,
+      "color": "#9b8b6a"
+    },
+    {
+      "state": "Louisiana",
+      "spend_b": 1.4,
+      "rank": 5,
+      "color": "#9b8b6a"
+    },
+    {
+      "state": "Illinois",
+      "spend_b": 0.9,
+      "rank": 6,
+      "color": "#9b8b6a"
+    },
+    {
+      "state": "Texas",
+      "spend_b": 0.7,
+      "rank": 7,
+      "color": "#9b8b6a"
+    },
+    {
+      "state": "Massachusetts",
+      "spend_b": 0.5,
+      "rank": 8,
+      "color": "#9b8b6a"
+    }
   ],
   "major_studios": [
-    {"name": "Trilith Studios (formerly Pinewood Atlanta)", "city": "Fayetteville", "stages": 19, "stage_sqft_k": 700, "specialty": "Marvel film franchise hub"},
-    {"name": "Tyler Perry Studios", "city": "Atlanta", "stages": 12, "stage_sqft_k": 330, "specialty": "TV + films, Black-led productions"},
-    {"name": "EUE/Screen Gems Studios Atlanta", "city": "Atlanta", "stages": 8, "stage_sqft_k": 130, "specialty": "Independent film + TV"},
-    {"name": "Atlanta Metro Studios", "city": "Union City", "stages": 6, "stage_sqft_k": 90, "specialty": "Mid-budget productions"},
-    {"name": "Blackhall Studios", "city": "Atlanta", "stages": 9, "stage_sqft_k": 150, "specialty": "Horror + sci-fi specialty"},
-    {"name": "Eagle Rock Studios", "city": "Norcross", "stages": 4, "stage_sqft_k": 88, "specialty": "TV episodic"}
+    {
+      "name": "Trilith Studios (formerly Pinewood Atlanta)",
+      "city": "Fayetteville",
+      "stages": 19,
+      "stage_sqft_k": 700,
+      "specialty": "Marvel film franchise hub"
+    },
+    {
+      "name": "Tyler Perry Studios",
+      "city": "Atlanta",
+      "stages": 12,
+      "stage_sqft_k": 330,
+      "specialty": "TV + films, Black-led productions"
+    },
+    {
+      "name": "EUE/Screen Gems Studios Atlanta",
+      "city": "Atlanta",
+      "stages": 8,
+      "stage_sqft_k": 130,
+      "specialty": "Independent film + TV"
+    },
+    {
+      "name": "Atlanta Metro Studios",
+      "city": "Union City",
+      "stages": 6,
+      "stage_sqft_k": 90,
+      "specialty": "Mid-budget productions"
+    },
+    {
+      "name": "Blackhall Studios",
+      "city": "Atlanta",
+      "stages": 9,
+      "stage_sqft_k": 150,
+      "specialty": "Horror + sci-fi specialty"
+    },
+    {
+      "name": "Eagle Rock Studios",
+      "city": "Norcross",
+      "stages": 4,
+      "stage_sqft_k": 88,
+      "specialty": "TV episodic"
+    }
   ],
   "_meta": {
-    "production_spend":    {"last_updated": null, "source": null},
-    "tax_credits":         {"last_updated": null, "source": null},
-    "employment":          {"last_updated": null, "source": null},
-    "state_comparison":    {"last_updated": null, "source": null},
-    "notable_productions": {"last_updated": null, "source": null},
-    "major_studios":       {"last_updated": null, "source": null}
-  }
+    "production_spend": {
+      "last_updated": null,
+      "source": null
+    },
+    "tax_credits": {
+      "last_updated": "2026-05-18",
+      "source": "Tavily \u2192 GA DOAA FY2026 report",
+      "latest_year": 2026,
+      "latest_value_b": 1.4
+    },
+    "employment": {
+      "last_updated": "2026-05-18",
+      "source": "BLS QCEW annual averages, NAICS 5121, GA (area_fips 13000)",
+      "coverage_years": [
+        2014,
+        2024
+      ]
+    },
+    "state_comparison": {
+      "last_updated": null,
+      "source": null
+    },
+    "notable_productions": {
+      "last_updated": "2026-05-18",
+      "source": "Tavily \u2192 GA Film Office + trade press announcements",
+      "new_this_run": 1
+    },
+    "major_studios": {
+      "last_updated": null,
+      "source": null
+    },
+    "decd_headline": {
+      "last_updated": "2026-05-18",
+      "source": "Tavily \u2192 DECD FY2026 press release",
+      "value_b": 2.4,
+      "year": 2026
+    }
+  },
+  "fetched_at": "2026-05-18",
+  "source_summary": "Live sources updated 2026-05-18: tax_credits, employment, notable_productions, decd_headline. Stale or static: production_spend, state_comparison, major_studios."
 }
