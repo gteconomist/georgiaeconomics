@@ -1,0 +1,52 @@
+name: Update GA film industry data (BLS QCEW + BEA + Tavily)
+
+on:
+  workflow_dispatch:
+  schedule:
+    # Monthly on the 8th at 18:00 UTC.
+    # BEA Regional GDP refreshes in late spring/fall; BLS QCEW publishes
+    # annuals around 9 months after year-end; DECD usually publishes
+    # the annual film industry press release in mid-summer. A monthly
+    # cadence is overkill for the data but cheap insurance against
+    # missing a refresh.
+    - cron: '0 18 8 * *'
+  push:
+    branches: [main]
+    paths:
+      - 'scripts/fetch_film.py'
+      - '.github/workflows/update-film.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repo
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Fetch GA film industry data
+        env:
+          BLS_API_KEY:    ${{ secrets.BLS_API_KEY }}
+          BEA_API_KEY:    ${{ secrets.BEA_API_KEY }}
+          TAVILY_API_KEY: ${{ secrets.TAVILY_API_KEY }}
+        run: |
+          python scripts/fetch_film.py
+
+      - name: Commit any updated data
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          if ! git diff --quiet -- data/film.json; then
+            git add data/film.json
+            git commit -m "data: refresh GA film industry (QCEW + BEA + Tavily) [skip ci]"
+            git push
+          else
+            echo "No data changes — nothing to commit."
+          fi
