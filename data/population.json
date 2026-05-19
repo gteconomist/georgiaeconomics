@@ -1,0 +1,28 @@
+{
+  "_fixture": true,
+  "_meta": {
+    "state_trend":      {"last_updated": null, "source": null},
+    "components":       {"last_updated": null, "source": null},
+    "counties":         {"last_updated": null, "source": null},
+    "peer_states":      {"last_updated": null, "source": null},
+    "age_structure":    {"last_updated": null, "source": null},
+    "race_composition": {"last_updated": null, "source": null}
+  },
+  "fetched_at": null,
+  "latest_year": null,
+  "source_summary": "Seed JSON — awaiting first run of scripts/fetch_population.py via .github/workflows/update-population.yml.",
+  "kpis": {},
+  "state": {
+    "years": [],
+    "population": [],
+    "births": [], "deaths": [], "natural": [],
+    "intl_mig": [], "dom_mig": [], "net_mig": []
+  },
+  "peer_states": [],
+  "counties": [],
+  "leaderboards": {"top_growth": [], "bottom_growth": [], "top_population": []},
+  "age": {"vintage": null, "total_pop": null, "median_age": null,
+          "pct_under_18": null, "pct_18_64": null, "pct_65_plus": null,
+          "age_bands": [], "age_pyramid": []},
+  "race": {"vintage": null, "has_hispanic": false, "by_race": [], "by_origin": []}
+}
