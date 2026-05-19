@@ -1,0 +1,668 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Georgia Population &amp; Migration — Live Data | Georgia Economics</title>
+<meta name="description" content="Live Georgia population data: state totals, county-level growth, net migration (domestic + international), age structure, race/ethnicity composition, and peer-state comparison. Census PEP, refreshed monthly.">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="/styles.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+<!--
+  Script loading notes (same pattern as the film page):
+  - Chart.js for stacked bars + line charts.
+  - Shared charts.js from the economicsguru sister site (pulled via jsDelivr).
+  - Plotly for the county choropleth.
+  - maps.js (GA-specific Plotly wrappers) gives us drawGAChoropleth + renderLeaderboards.
+  - All scripts are deferred so the browser parses the body concurrently;
+    DOMContentLoaded at the bottom guarantees they've all run before init().
+-->
+<script defer src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/gh/gteconomist/economicsguru@main/assets/charts.js"></script>
+<script defer src="https://cdn.plot.ly/plotly-2.35.2.min.js"></script>
+<script defer src="/maps.js"></script>
+
+<style>
+  /* Pop-themed hero band — same shape as film-hero, GA-distinctive peach gradient on the right */
+  .pop-hero {
+    background: linear-gradient(135deg, var(--navy) 0%, #2e5984 100%);
+    color: #fff; padding: 32px 30px; margin-bottom: 26px; border-radius: 4px;
+    position: relative; overflow: hidden;
+  }
+  .pop-hero::after {
+    content: ''; position: absolute; top: 0; right: -20px; width: 260px; height: 100%;
+    background: linear-gradient(135deg, transparent 30%, var(--peach-deep) 100%);
+    opacity: 0.18;
+  }
+  .pop-hero h2 {
+    font-family: var(--font-display); font-size: 32px; font-weight: 800;
+    letter-spacing: -0.01em; margin: 0 0 6px; position: relative; z-index: 1;
+  }
+  .pop-hero p { margin: 0; font-size: 16px; opacity: 0.9; max-width: 660px; position: relative; z-index: 1; }
+  .pop-hero .stat-strip {
+    display: grid; grid-template-columns: repeat(4, 1fr); gap: 22px;
+    margin-top: 18px; padding-top: 18px; border-top: 1px solid rgba(255,255,255,0.18);
+    position: relative; z-index: 1;
+  }
+  @media (max-width: 920px) { .pop-hero .stat-strip { grid-template-columns: repeat(2, 1fr); gap: 14px; } }
+  @media (max-width: 520px) { .pop-hero .stat-strip { grid-template-columns: 1fr; } }
+  .pop-hero .stat-strip .stat .num { font-family: var(--font-display); font-size: 26px; font-weight: 800; color: var(--peach); display: block; }
+  .pop-hero .stat-strip .stat .lbl { font-size: 12px; text-transform: uppercase; letter-spacing: 0.06em; opacity: 0.75; }
+
+  .chart-canvas-tall { position: relative; height: 380px; background: var(--chart-bg); padding: 6px; }
+  .chart-canvas-med  { position: relative; height: 320px; background: var(--chart-bg); padding: 6px; }
+
+  .source-note { font-size: 12px; color: var(--ink-soft); margin-top: 8px; font-style: italic; }
+
+  /* Per-section "as of MMM YYYY" badges — same conventions as the film page */
+  .as-of {
+    display: inline-block;
+    margin-left: 8px;
+    padding: 2px 8px;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    background: var(--chart-bg);
+    border: 1px solid var(--border);
+    border-radius: 3px;
+    vertical-align: middle;
+  }
+  .as-of.stale {
+    background: rgba(196, 107, 58, 0.12);
+    color: var(--peach-deep);
+    border-color: var(--peach-deep);
+  }
+  .stale-banner {
+    margin-bottom: 22px; padding: 12px 16px;
+    background: rgba(212, 160, 23, 0.10);
+    border-left: 4px solid var(--mustard);
+    font-size: 14px; color: var(--ink);
+  }
+  .stale-banner strong { color: var(--navy); }
+
+  /* Map height tuned for GA aspect ratio (taller than the dashboard) */
+  .pop-map { min-height: 540px; }
+
+  /* Race/origin composition — horizontal stacked bar (one row total) */
+  .composition-bar {
+    display: flex; height: 36px; margin-top: 6px;
+    border: 1px solid var(--border);
+    overflow: hidden; border-radius: 3px;
+  }
+  .composition-bar .seg { display: flex; align-items: center; justify-content: center; color: #fff; font-size: 12px; font-weight: 700; }
+  .composition-legend {
+    display: flex; flex-wrap: wrap; gap: 12px; font-size: 12px; color: var(--ink-soft);
+    margin-top: 10px;
+  }
+  .composition-legend .swatch { display: inline-block; width: 12px; height: 12px; margin-right: 5px; vertical-align: middle; border: 1px solid var(--border); }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <div class="brand">Georgia<span class="tag">Economics</span></div>
+    <nav>
+      <a href="/">Home</a>
+      <a href="/counties/">Counties</a>
+      <a href="/msa/">Metros</a>
+      <a href="/labor/">Labor</a>
+      <a href="/about/">About</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="page-header">
+    <h1>Georgia population &amp; migration</h1>
+    <div class="subtitle">Census PEP totals, components of change, county-level growth, age structure, race/ethnicity composition, and Southeast peer benchmarks.</div>
+    <div class="latest">Latest data: <strong id="latest-label">—</strong></div>
+  </section>
+
+  <div class="notice" id="fixture-banner" style="display:none;">
+    <strong>Seed data:</strong> Awaiting the first run of the population data pipeline. The page structure is in place; live numbers will populate after the next GitHub Actions cycle.
+  </div>
+
+  <div class="stale-banner" id="stale-banner" style="display:none;">
+    <strong>Heads-up:</strong> <span id="stale-banner-text"></span>
+  </div>
+
+  <!-- Cinematic-style hero, same shape as the film page -->
+  <section class="pop-hero">
+    <h2>The Peach State, by the people.</h2>
+    <p>Georgia gained more than half a million residents in the last decade, driven by domestic in-migration to metro Atlanta and the I-85 corridor. Components-of-change, county-level growth, and peer-state benchmarks below &mdash; all from the U.S. Census Bureau's Population Estimates Program.</p>
+    <div class="stat-strip">
+      <div class="stat"><span class="num" id="hero-pop">&mdash;</span><span class="lbl" id="hero-pop-lbl">Resident population</span></div>
+      <div class="stat"><span class="num" id="hero-growth">&mdash;</span><span class="lbl">Cumulative growth since 2020</span></div>
+      <div class="stat"><span class="num" id="hero-netmig">&mdash;</span><span class="lbl" id="hero-netmig-lbl">Net migration (latest year)</span></div>
+      <div class="stat"><span class="num" id="hero-rank">&mdash;</span><span class="lbl" id="hero-rank-lbl">Growth rank among SE peers</span></div>
+    </div>
+  </section>
+
+  <!-- KPI strip -->
+  <div class="kpi-grid">
+    <div class="kpi"><div class="label">Resident population <span id="kpi-pop-yr"></span></div><div class="value" id="kpi-pop">&mdash;</div><div class="delta" id="kpi-pop-delta">&mdash;</div></div>
+    <div class="kpi"><div class="label">Net domestic migration <span id="kpi-dom-yr"></span></div><div class="value" id="kpi-dom">&mdash;</div><div class="delta" id="kpi-dom-note">In-movers from other U.S. states</div></div>
+    <div class="kpi"><div class="label">Net international migration <span id="kpi-intl-yr"></span></div><div class="value" id="kpi-intl">&mdash;</div><div class="delta" id="kpi-intl-note">Inflows from abroad</div></div>
+    <div class="kpi"><div class="label">Natural change <span id="kpi-natural-yr"></span></div><div class="value" id="kpi-natural">&mdash;</div><div class="delta" id="kpi-natural-note">Births minus deaths</div></div>
+    <div class="kpi"><div class="label">Median age</div><div class="value" id="kpi-median">&mdash;</div><div class="delta" id="kpi-median-note">U.S. average &asymp; 39</div></div>
+    <div class="kpi"><div class="label">% age 65+</div><div class="value" id="kpi-elderly">&mdash;</div><div class="delta" id="kpi-elderly-note">&mdash; under 18</div></div>
+  </div>
+
+  <!-- 1) GA total population trend -->
+  <div class="chart-panel">
+    <h2>Georgia resident population <span class="as-of" id="badge-state-trend"></span></h2>
+    <p class="sub">Annual estimates as of July 1 each year. The 2020 base line is the April-1 Census count; subsequent years are the Census PEP's official mid-year estimates.</p>
+    <div class="chart-canvas-tall"><canvas id="state-trend-chart"></canvas></div>
+    <div class="source-note">Source: U.S. Census Bureau, Population Estimates Program (Vintage <span id="src-state-vintage">&mdash;</span>). With each new vintage the entire 2020-onwards series is revised.</div>
+  </div>
+
+  <!-- 2) Components of change — stacked bars -->
+  <div class="chart-panel" style="margin-top: 22px;">
+    <h2>Components of population change <span class="as-of" id="badge-components"></span></h2>
+    <p class="sub">For each year, this stacks the three forces that move Georgia's population: <strong>natural change</strong> (births minus deaths), <strong>net domestic migration</strong> (movers from other states), and <strong>net international migration</strong> (arrivals from abroad). Bars above the zero line add residents; below the line are net losses.</p>
+    <div class="chart-canvas-tall"><canvas id="components-chart"></canvas></div>
+    <div class="source-note">Source: U.S. Census Bureau PEP &mdash; components of change. Note: the 2020 column covers Apr 1 &rarr; Jul 1 only and is excluded from this chart for comparability; 2021 onward are full mid-year-to-mid-year periods.</div>
+  </div>
+
+  <!-- 3) County population map + leaderboards -->
+  <div class="map-panel" style="margin-top: 22px;">
+    <h2>County population <span class="as-of" id="badge-counties"></span></h2>
+    <p class="sub">All 159 GA counties. Hover for population. Use the dropdown to switch between latest-year population, cumulative growth, and net migration.</p>
+    <div class="map-controls">
+      <label for="map-metric">View</label>
+      <select id="map-metric">
+        <option value="pop_latest" selected>Population (latest year)</option>
+        <option value="growth_pct">Cumulative growth since 2020 (%)</option>
+        <option value="dom_mig_total">Net domestic migration (cumulative)</option>
+      </select>
+    </div>
+    <div class="map-container pop-map" id="ga-county-pop-map"></div>
+    <div class="map-legend-note">Color scale uses the GA-specific peach&rarr;navy gradient for one-sided metrics and teal&harr;coral diverging for growth (teal = shrinking, coral = growing).</div>
+    <div class="leaderboard-grid" id="county-leaderboards">
+      <div class="leaderboard" data-role="best">
+        <h3 id="lb-best-title">Top 10 most populous counties</h3>
+        <table><tbody></tbody></table>
+      </div>
+      <div class="leaderboard" data-role="worst">
+        <h3 id="lb-worst-title">10 least populous counties</h3>
+        <table><tbody></tbody></table>
+      </div>
+    </div>
+  </div>
+
+  <!-- 4) Peer-state comparison + age structure side-by-side -->
+  <div class="chart-grid" style="margin-top: 22px;">
+    <div class="chart-panel">
+      <h2>Southeast peer comparison <span class="as-of" id="badge-peer-states"></span></h2>
+      <p class="sub">Cumulative population growth since 2020 for GA and six Southeast peers (FL, NC, SC, TN, TX, AL). Florida and Texas are the regional growth giants; Georgia consistently ranks in the top half.</p>
+      <div class="chart-canvas-med"><canvas id="peer-states-chart"></canvas></div>
+      <div class="source-note">Source: U.S. Census Bureau PEP &mdash; state totals.</div>
+    </div>
+
+    <div class="chart-panel">
+      <h2>Age structure (pyramid) <span class="as-of" id="badge-age"></span></h2>
+      <p class="sub">Male and female populations by 10-year age band. Bars to the left are male; right are female. Georgia skews younger than the U.S. average &mdash; driven by Atlanta's metro pull on working-age adults.</p>
+      <div class="chart-canvas-med"><canvas id="age-pyramid-chart"></canvas></div>
+      <div class="source-note">Source: U.S. Census Bureau PEP &mdash; state by single year of age + sex.</div>
+    </div>
+  </div>
+
+  <!-- 5) Race / ethnicity composition -->
+  <div class="chart-panel" style="margin-top: 22px;">
+    <h2>Race and ethnicity composition <span class="as-of" id="badge-race"></span></h2>
+    <p class="sub">Population by race (top bar) and Hispanic / Non-Hispanic origin (second bar). Race and origin are reported separately by the Census Bureau &mdash; a person of any race can be Hispanic or Non-Hispanic.</p>
+
+    <div style="margin-top: 14px;">
+      <div style="font-size:13px; font-weight:700; color:var(--navy); text-transform:uppercase; letter-spacing:0.05em;">By race</div>
+      <div class="composition-bar" id="race-bar"></div>
+      <div class="composition-legend" id="race-legend"></div>
+    </div>
+
+    <div style="margin-top: 18px;" id="origin-section">
+      <div style="font-size:13px; font-weight:700; color:var(--navy); text-transform:uppercase; letter-spacing:0.05em;">By Hispanic / Latino origin</div>
+      <div class="composition-bar" id="origin-bar"></div>
+      <div class="composition-legend" id="origin-legend"></div>
+    </div>
+    <div class="source-note">Source: U.S. Census Bureau PEP &mdash; state by race + Hispanic origin (Vintage <span id="src-race-vintage">&mdash;</span>).</div>
+  </div>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div>&copy; <span id="yr"></span> Georgia Economics &middot; Sister site to <a href="https://economicsguru.com">economicsguru.com</a> &middot; <a href="/about/">Methodology</a></div>
+    <div>Source: U.S. Census Bureau, Population Estimates Program.</div>
+  </div>
+</footer>
+
+<script>
+document.getElementById('yr').textContent = new Date().getFullYear();
+
+const BRAND = {
+  navy: '#1a3a5c', peachDeep: '#c46b3a', peach: '#e8a87c', peachPale: '#faead9',
+  mustard: '#d4a017', teal: '#3a8d8d', coral: '#d4624a',
+  khaki: '#9b8b6a', green: '#6b8e3d', silver: '#9ba3ab',
+  grid: '#b6ad8d',
+};
+
+const fmtNum = (v) => v == null ? '—' : Number(v).toLocaleString('en-US', { maximumFractionDigits: 0 });
+const fmtSigned = (v) => v == null ? '—' : (v >= 0 ? '+' : '') + Number(v).toLocaleString('en-US', { maximumFractionDigits: 0 });
+const fmtSignedPct = (v, dp) => v == null ? '—' : (v >= 0 ? '+' : '') + Number(v).toFixed(dp == null ? 2 : dp) + '%';
+const fmtPct = (v, dp) => v == null ? '—' : Number(v).toFixed(dp == null ? 1 : dp) + '%';
+
+// Pretty number with k/M suffix (for the hero stat)
+function fmtShort(v) {
+  if (v == null) return '—';
+  if (v >= 1e6) return (v / 1e6).toFixed(2) + 'M';
+  if (v >= 1e3) return (v / 1e3).toFixed(0) + 'K';
+  return v.toString();
+}
+
+const MONTH_NAMES = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+function fmtAsOf(iso) {
+  if (!iso) return '';
+  const m = /^(\d{4})-(\d{2})-(\d{2})$/.exec(iso);
+  if (!m) return '';
+  return MONTH_NAMES[+m[2] - 1] + ' ' + m[1];
+}
+function monthsAgo(iso) {
+  if (!iso) return Infinity;
+  const m = /^(\d{4})-(\d{2})-(\d{2})$/.exec(iso);
+  if (!m) return Infinity;
+  const now = new Date();
+  return (now.getFullYear() - +m[1]) * 12 + (now.getMonth() + 1 - +m[2]);
+}
+const STALE_THRESHOLD_MONTHS = 6;
+function setBadge(elId, lastUpdated) {
+  const el = document.getElementById(elId);
+  if (!el) return;
+  const label = fmtAsOf(lastUpdated);
+  if (!label) { el.style.display = 'none'; return; }
+  el.textContent = 'as of ' + label;
+  if (monthsAgo(lastUpdated) > STALE_THRESHOLD_MONTHS) el.classList.add('stale');
+}
+
+async function init() {
+  const res = await fetch('/data/population.json?v=' + new Date().toISOString().slice(0, 10));
+  const d = await res.json();
+  const meta = d._meta || {};
+  if (d._fixture) document.getElementById('fixture-banner').style.display = '';
+
+  document.getElementById('latest-label').textContent = d.latest_year || '—';
+
+  // ----- Top staleness banner -----
+  const stale = Object.entries(meta)
+    .filter(([k, v]) => v && v.last_updated && monthsAgo(v.last_updated) > STALE_THRESHOLD_MONTHS)
+    .map(([k]) => k.replace(/_/g, ' '));
+  if (stale.length) {
+    document.getElementById('stale-banner').style.display = '';
+    document.getElementById('stale-banner-text').textContent =
+      'The following section' + (stale.length > 1 ? 's are' : ' is') +
+      ' more than 6 months out of date: ' + stale.join(', ') +
+      '. The values shown remain the last successfully fetched figures.';
+  }
+
+  // ----- Per-section badges -----
+  setBadge('badge-state-trend', meta.state_trend       && meta.state_trend.last_updated);
+  setBadge('badge-components',  meta.components        && meta.components.last_updated);
+  setBadge('badge-counties',    meta.counties          && meta.counties.last_updated);
+  setBadge('badge-peer-states', meta.peer_states       && meta.peer_states.last_updated);
+  setBadge('badge-age',         meta.age_structure     && meta.age_structure.last_updated);
+  setBadge('badge-race',        meta.race_composition  && meta.race_composition.last_updated);
+
+  document.getElementById('src-state-vintage').textContent = (meta.state_trend && meta.state_trend.vintage) || '—';
+  document.getElementById('src-race-vintage').textContent  = (meta.race_composition && meta.race_composition.vintage) || '—';
+
+  const k = d.kpis || {};
+
+  // ----- Hero -----
+  if (k.population_latest != null) document.getElementById('hero-pop').textContent = fmtShort(k.population_latest);
+  if (k.latest_year != null) document.getElementById('hero-pop-lbl').textContent = 'Resident population, July ' + k.latest_year;
+  if (k.growth_pct_5yr != null) document.getElementById('hero-growth').textContent = fmtSignedPct(k.growth_pct_5yr, 1);
+  if (k.net_mig_latest != null) {
+    document.getElementById('hero-netmig').textContent = fmtSigned(k.net_mig_latest);
+    document.getElementById('hero-netmig-lbl').textContent = 'Net migration, year to July ' + (k.latest_year || '—');
+  }
+  if (k.peer_rank != null && k.peer_count != null) {
+    document.getElementById('hero-rank').textContent = '#' + k.peer_rank;
+    document.getElementById('hero-rank-lbl').textContent = 'of ' + k.peer_count + ' SE peers, 2020-' + (k.latest_year || '—') + ' growth';
+  }
+
+  // ----- KPI strip -----
+  const yrSuffix = (y) => y ? '(' + y + ')' : '';
+  document.getElementById('kpi-pop').textContent = fmtNum(k.population_latest);
+  document.getElementById('kpi-pop-yr').textContent = yrSuffix(k.latest_year);
+  if (k.growth_pct_5yr != null) {
+    const el = document.getElementById('kpi-pop-delta');
+    el.textContent = fmtSignedPct(k.growth_pct_5yr, 2) + ' since 2020';
+    el.classList.add(k.growth_pct_5yr >= 0 ? 'down' : 'up');
+  }
+
+  document.getElementById('kpi-dom').textContent = fmtSigned(k.dom_mig_latest);
+  document.getElementById('kpi-dom-yr').textContent = yrSuffix(k.latest_year);
+
+  document.getElementById('kpi-intl').textContent = fmtSigned(k.intl_mig_latest);
+  document.getElementById('kpi-intl-yr').textContent = yrSuffix(k.latest_year);
+
+  document.getElementById('kpi-natural').textContent = fmtSigned(k.natural_latest);
+  document.getElementById('kpi-natural-yr').textContent = yrSuffix(k.latest_year);
+  if (k.births_latest && k.deaths_latest) {
+    document.getElementById('kpi-natural-note').textContent =
+      fmtNum(k.births_latest) + ' births − ' + fmtNum(k.deaths_latest) + ' deaths';
+  }
+
+  document.getElementById('kpi-median').textContent = (k.median_age != null) ? k.median_age : '—';
+  document.getElementById('kpi-elderly').textContent = (k.pct_65_plus != null) ? fmtPct(k.pct_65_plus, 1) : '—';
+  if (k.pct_under_18 != null) {
+    document.getElementById('kpi-elderly-note').textContent = fmtPct(k.pct_under_18, 1) + ' under 18';
+  }
+
+  // ----- 1) State population trend -----
+  if (d.state && d.state.years && d.state.years.length) {
+    renderStateTrend(d.state);
+  }
+
+  // ----- 2) Components of change -----
+  if (d.state && d.state.years && d.state.years.length > 1) {
+    renderComponents(d.state);
+  }
+
+  // ----- 3) County map + leaderboards -----
+  if (Array.isArray(d.counties) && d.counties.length && window.gaMaps) {
+    setupCountyMap(d.counties);
+  }
+
+  // ----- 4) Peer-state comparison -----
+  if (Array.isArray(d.peer_states) && d.peer_states.length) {
+    renderPeerStates(d.peer_states);
+  }
+
+  // ----- 4b) Age pyramid -----
+  if (d.age && Array.isArray(d.age.age_pyramid) && d.age.age_pyramid.length) {
+    renderAgePyramid(d.age.age_pyramid);
+  }
+
+  // ----- 5) Race / ethnicity composition -----
+  if (d.race && Array.isArray(d.race.by_race) && d.race.by_race.length) {
+    renderRaceComposition(d.race);
+  }
+}
+
+function renderStateTrend(state) {
+  const ctx = document.getElementById('state-trend-chart').getContext('2d');
+  // Convert to millions for readability
+  const millions = state.population.map(v => v == null ? null : v / 1e6);
+  new Chart(ctx, {
+    type: 'line',
+    data: {
+      labels: state.years,
+      datasets: [{
+        label: 'Georgia resident population (millions)',
+        data: millions,
+        borderColor: BRAND.navy,
+        backgroundColor: 'rgba(26, 58, 92, 0.10)',
+        fill: true, tension: 0.25,
+        pointRadius: 5, pointBackgroundColor: BRAND.peachDeep,
+        borderWidth: 2.5,
+      }],
+    },
+    options: {
+      responsive: true, maintainAspectRatio: false,
+      scales: {
+        x: { grid: { display: false }, ticks: { color: BRAND.navy, font: { size: 12, weight: 'bold' } } },
+        y: {
+          grid: { color: BRAND.grid, borderDash: [3,4] },
+          ticks: { color: BRAND.navy, font: { size: 11 }, callback: v => v.toFixed(2) + 'M' },
+          title: { display: true, text: 'Residents (millions)', color: BRAND.navy, font: { size: 12, weight: 'bold' } },
+        },
+      },
+      plugins: {
+        legend: { display: false },
+        tooltip: {
+          callbacks: {
+            label: (it) => 'Population: ' + (state.population[it.dataIndex] || 0).toLocaleString('en-US'),
+          },
+        },
+      },
+    },
+  });
+}
+
+function renderComponents(state) {
+  // Skip 2020 (partial year). Show 2021..latest as stacked positive/negative bars.
+  const idxs = state.years.map((y, i) => y > 2020 ? i : -1).filter(i => i >= 0);
+  const labels = idxs.map(i => state.years[i]);
+  const ds = (label, data, color) => ({
+    label, data, backgroundColor: color, borderWidth: 0, stack: 'stk',
+  });
+  const ctx = document.getElementById('components-chart').getContext('2d');
+  new Chart(ctx, {
+    type: 'bar',
+    data: {
+      labels,
+      datasets: [
+        ds('Natural change (births − deaths)', idxs.map(i => state.natural[i]),  BRAND.teal),
+        ds('Net domestic migration',                idxs.map(i => state.dom_mig[i]),  BRAND.peachDeep),
+        ds('Net international migration',           idxs.map(i => state.intl_mig[i]), BRAND.mustard),
+      ],
+    },
+    options: {
+      responsive: true, maintainAspectRatio: false,
+      scales: {
+        x: { stacked: true, grid: { display: false }, ticks: { color: BRAND.navy, font: { size: 12, weight: 'bold' } } },
+        y: {
+          stacked: true,
+          grid: { color: BRAND.grid, borderDash: [3,4] },
+          ticks: { color: BRAND.navy, font: { size: 11 }, callback: v => Number(v).toLocaleString('en-US') },
+          title: { display: true, text: 'Persons per year', color: BRAND.navy, font: { size: 12, weight: 'bold' } },
+        },
+      },
+      plugins: {
+        legend: { position: 'top', labels: { color: BRAND.navy, font: { size: 12 }, boxWidth: 16 } },
+        tooltip: {
+          callbacks: {
+            label: (it) => it.dataset.label + ': ' + (it.parsed.y >= 0 ? '+' : '') + Number(it.parsed.y).toLocaleString('en-US'),
+          },
+        },
+      },
+    },
+  });
+}
+
+function setupCountyMap(counties) {
+  const select = document.getElementById('map-metric');
+  const titleBest  = document.getElementById('lb-best-title');
+  const titleWorst = document.getElementById('lb-worst-title');
+
+  function drawFor(metric) {
+    // For 'pop_latest' use sequential scale; for 'growth_pct' / 'dom_mig_total' use diverging.
+    let unit = '', scale = 'sequential', metricLabel = '';
+    if (metric === 'pop_latest')    { metricLabel = 'Population';                       scale = 'sequential'; }
+    if (metric === 'growth_pct')    { metricLabel = 'Growth since 2020';     unit='%'; scale = 'diverging'; }
+    if (metric === 'dom_mig_total') { metricLabel = 'Net domestic migration (cum.)';     scale = 'diverging'; }
+
+    const points = counties
+      .filter(c => c[metric] != null)
+      .map(c => ({ fips: c.fips, label: c.county, value: c[metric] }));
+
+    // Center diverging scale on zero for growth/migration views
+    let opts = { metricLabel, unit, colorscale: scale };
+    if (scale === 'diverging' && points.length) {
+      const vals = points.map(p => p.value);
+      const lo = Math.min(...vals), hi = Math.max(...vals);
+      const m = Math.max(Math.abs(lo), Math.abs(hi));
+      opts.zmin = -m; opts.zmax = m;
+    }
+
+    window.gaMaps.drawGAChoropleth('ga-county-pop-map', points, opts);
+
+    if (metric === 'pop_latest') {
+      titleBest.textContent  = 'Top 10 most populous counties';
+      titleWorst.textContent = '10 least populous counties';
+      window.gaMaps.renderLeaderboards('county-leaderboards', points, {
+        topN: 10, lowerIsBetter: false,
+      });
+    } else if (metric === 'growth_pct') {
+      titleBest.textContent  = 'Top 10 fastest-growing counties';
+      titleWorst.textContent = 'Top 10 fastest-shrinking counties';
+      window.gaMaps.renderLeaderboards('county-leaderboards', points, {
+        topN: 10, lowerIsBetter: false, unit: '%',
+      });
+    } else {
+      titleBest.textContent  = 'Top 10 by net domestic in-migration';
+      titleWorst.textContent = 'Top 10 by net domestic out-migration';
+      window.gaMaps.renderLeaderboards('county-leaderboards', points, {
+        topN: 10, lowerIsBetter: false,
+      });
+    }
+  }
+
+  select.addEventListener('change', () => drawFor(select.value));
+  drawFor(select.value);
+}
+
+function renderPeerStates(peers) {
+  // Horizontal bars of cumulative 5-yr growth pct, GA highlighted in peach.
+  const sorted = peers.slice().sort((a, b) => (b.growth_pct || 0) - (a.growth_pct || 0));
+  const labels = sorted.map(p => p.abbr);
+  const data   = sorted.map(p => p.growth_pct);
+  const colors = sorted.map(p => p.abbr === 'GA' ? BRAND.peachDeep : BRAND.navy);
+  const ctx = document.getElementById('peer-states-chart').getContext('2d');
+  new Chart(ctx, {
+    type: 'bar',
+    data: {
+      labels,
+      datasets: [{ data, backgroundColor: colors, borderWidth: 0 }],
+    },
+    options: {
+      indexAxis: 'y',
+      responsive: true, maintainAspectRatio: false,
+      scales: {
+        x: { beginAtZero: true, grid: { color: BRAND.grid, borderDash: [3,4] },
+             ticks: { color: BRAND.navy, font: { size: 11 }, callback: v => (v >= 0 ? '+' : '') + v.toFixed(1) + '%' } },
+        y: { grid: { display: false }, ticks: { color: BRAND.navy, font: { size: 13, weight: 'bold' } } },
+      },
+      plugins: {
+        legend: { display: false },
+        tooltip: {
+          callbacks: {
+            label: (it) => {
+              const r = sorted[it.dataIndex];
+              return r.state + ': ' + (r.growth_pct >= 0 ? '+' : '') + r.growth_pct.toFixed(2) + '% ('
+                + Number(r.latest_pop).toLocaleString('en-US') + ' residents)';
+            },
+          },
+        },
+      },
+    },
+  });
+}
+
+function renderAgePyramid(pyramid) {
+  // Bands ordered young -> old going up the y-axis (so 0-9 at the bottom)
+  const labels = pyramid.map(p => p.band);
+  // Plot male as negative values so the bar extends left, female as positive (right).
+  const males   = pyramid.map(p => -(p.male   || 0));
+  const females = pyramid.map(p =>  (p.female || 0));
+  const ctx = document.getElementById('age-pyramid-chart').getContext('2d');
+  new Chart(ctx, {
+    type: 'bar',
+    data: {
+      labels,
+      datasets: [
+        { label: 'Male',   data: males,   backgroundColor: BRAND.navy,      borderWidth: 0 },
+        { label: 'Female', data: females, backgroundColor: BRAND.peachDeep, borderWidth: 0 },
+      ],
+    },
+    options: {
+      indexAxis: 'y',
+      responsive: true, maintainAspectRatio: false,
+      scales: {
+        x: {
+          grid: { color: BRAND.grid, borderDash: [3,4] },
+          ticks: { color: BRAND.navy, font: { size: 11 }, callback: v => Math.abs(v / 1000).toFixed(0) + 'K' },
+          title: { display: true, text: 'Persons (thousands)', color: BRAND.navy, font: { size: 11, weight: 'bold' } },
+        },
+        y: { grid: { display: false }, ticks: { color: BRAND.navy, font: { size: 12, weight: 'bold' } } },
+      },
+      plugins: {
+        legend: { position: 'top', labels: { color: BRAND.navy, font: { size: 12 }, boxWidth: 16 } },
+        tooltip: {
+          callbacks: {
+            label: (it) => it.dataset.label + ': ' + Math.abs(it.parsed.x).toLocaleString('en-US'),
+          },
+        },
+      },
+    },
+  });
+}
+
+function renderRaceComposition(race) {
+  // 6 races, colored from navy -> peach -> teal palette
+  const palette = [BRAND.navy, BRAND.peachDeep, BRAND.mustard, BRAND.teal, BRAND.khaki, BRAND.coral];
+  const total = race.by_race.reduce((s, r) => s + (r.total || 0), 0);
+  const bar = document.getElementById('race-bar');
+  const legend = document.getElementById('race-legend');
+  bar.innerHTML = '';
+  legend.innerHTML = '';
+  race.by_race
+    .filter(r => (r.total || 0) > 0)
+    .sort((a, b) => (b.total || 0) - (a.total || 0))
+    .forEach((r, i) => {
+      const pct = total ? (r.total / total * 100) : 0;
+      const seg = document.createElement('div');
+      seg.className = 'seg';
+      seg.style.width = pct + '%';
+      seg.style.background = palette[i % palette.length];
+      seg.title = r.label + ': ' + r.total.toLocaleString('en-US') + ' (' + pct.toFixed(1) + '%)';
+      if (pct > 8) seg.textContent = pct.toFixed(1) + '%';
+      bar.appendChild(seg);
+
+      const lg = document.createElement('span');
+      lg.innerHTML = '<span class="swatch" style="background:' + palette[i % palette.length] + '"></span>'
+        + r.label + ' (' + pct.toFixed(1) + '%)';
+      legend.appendChild(lg);
+    });
+
+  // Origin bar (Hispanic / Non-Hispanic), only shown when has_hispanic
+  if (race.has_hispanic && race.by_origin && race.by_origin.length) {
+    const ob = document.getElementById('origin-bar');
+    const olg = document.getElementById('origin-legend');
+    const oPalette = [BRAND.navy, BRAND.peachDeep];
+    const oTotal = race.by_origin.reduce((s, r) => s + (r.pop || 0), 0);
+    ob.innerHTML = ''; olg.innerHTML = '';
+    race.by_origin.forEach((r, i) => {
+      const pct = oTotal ? (r.pop / oTotal * 100) : 0;
+      const seg = document.createElement('div');
+      seg.className = 'seg';
+      seg.style.width = pct + '%';
+      seg.style.background = oPalette[i % oPalette.length];
+      if (pct > 8) seg.textContent = pct.toFixed(1) + '%';
+      seg.title = r.label + ': ' + r.pop.toLocaleString('en-US') + ' (' + pct.toFixed(1) + '%)';
+      ob.appendChild(seg);
+
+      const lg = document.createElement('span');
+      lg.innerHTML = '<span class="swatch" style="background:' + oPalette[i % oPalette.length] + '"></span>'
+        + r.label + ' (' + pct.toFixed(1) + '%)';
+      olg.appendChild(lg);
+    });
+  } else {
+    document.getElementById('origin-section').style.display = 'none';
+  }
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  init().catch(err => {
+    console.error('population init failed:', err);
+    document.querySelector('main').insertAdjacentHTML('beforeend',
+      '<div style="padding:20px; color:var(--coral); font-weight:600;">Failed to load population data. Check console.</div>');
+  });
+});
+</script>
+</body>
+</html>
