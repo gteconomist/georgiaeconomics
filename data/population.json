@@ -1,28 +1,2498 @@
 {
-  "_fixture": true,
+  "_fixture": false,
   "_meta": {
-    "state_trend":      {"last_updated": null, "source": null},
-    "components":       {"last_updated": null, "source": null},
-    "counties":         {"last_updated": null, "source": null},
-    "peer_states":      {"last_updated": null, "source": null},
-    "age_structure":    {"last_updated": null, "source": null},
-    "race_composition": {"last_updated": null, "source": null}
+    "state_trend": {
+      "last_updated": "2026-05-20",
+      "source": "U.S. Census Bureau Population Estimates Program (PEP)",
+      "vintage": 2025,
+      "url": "https://www2.census.gov/programs-surveys/popest/datasets/2020-2025/state/totals/NST-EST2025-ALLDATA.csv"
+    },
+    "components": {
+      "last_updated": "2026-05-20",
+      "source": "U.S. Census Bureau PEP \u2014 components of change",
+      "vintage": 2025,
+      "coverage_years": [
+        2021,
+        2025
+      ]
+    },
+    "counties": {
+      "last_updated": "2026-05-20",
+      "source": "U.S. Census Bureau PEP \u2014 county totals",
+      "vintage": 2025,
+      "n_counties": 159,
+      "coverage_years": [
+        2020,
+        2025
+      ]
+    },
+    "peer_states": {
+      "last_updated": "2026-05-20",
+      "source": "U.S. Census Bureau PEP \u2014 state totals",
+      "vintage": 2025,
+      "states": [
+        "GA",
+        "FL",
+        "SC",
+        "TX",
+        "NC",
+        "TN",
+        "AL"
+      ]
+    },
+    "age_structure": {
+      "last_updated": "2026-05-20",
+      "source": "U.S. Census Bureau PEP \u2014 state by single year of age + sex",
+      "vintage": 2024
+    },
+    "race_composition": {
+      "last_updated": "2026-05-20",
+      "source": "U.S. Census Bureau PEP \u2014 state by race + Hispanic origin",
+      "vintage": 2024,
+      "has_hispanic": true
+    }
   },
-  "fetched_at": null,
-  "latest_year": null,
-  "source_summary": "Seed JSON — awaiting first run of scripts/fetch_population.py via .github/workflows/update-population.yml.",
-  "kpis": {},
+  "fetched_at": "2026-05-20",
+  "latest_year": 2025,
+  "source_summary": "Live sections updated 2026-05-20: state_trend, components, counties, peer_states, age_structure, race_composition. Stale or pending: none.",
+  "kpis": {
+    "population_latest": 11302748,
+    "population_base": 10732595,
+    "latest_year": 2025,
+    "growth_pct_5yr": 5.31,
+    "births_latest": 126446,
+    "deaths_latest": 97815,
+    "intl_mig_latest": 42579,
+    "dom_mig_latest": 27333,
+    "net_mig_latest": 69912,
+    "natural_latest": 28631,
+    "peer_rank": 6,
+    "peer_count": 7,
+    "n_counties": 159,
+    "n_growing": 121,
+    "n_shrinking": 38,
+    "county_vintage": 2025,
+    "fastest_growing": "Long",
+    "fastest_growing_pct": 32.61,
+    "fastest_shrinking": "Stewart",
+    "fastest_shrinking_pct": -12.54,
+    "median_age": 38,
+    "pct_under_18": 22.8,
+    "pct_65_plus": 15.8
+  },
   "state": {
-    "years": [],
-    "population": [],
-    "births": [], "deaths": [], "natural": [],
-    "intl_mig": [], "dom_mig": [], "net_mig": []
+    "years": [
+      2020,
+      2021,
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "population": [
+      10732595,
+      10793038,
+      10929992,
+      11063669,
+      11204208,
+      11302748
+    ],
+    "births": [
+      29838,
+      121375,
+      125747,
+      126265,
+      125708,
+      126446
+    ],
+    "deaths": [
+      24705,
+      109407,
+      110519,
+      98375,
+      97476,
+      97815
+    ],
+    "natural": [
+      5133,
+      11968,
+      15228,
+      27890,
+      28232,
+      28631
+    ],
+    "intl_mig": [
+      732,
+      10163,
+      42619,
+      52726,
+      86526,
+      42579
+    ],
+    "dom_mig": [
+      11584,
+      37079,
+      79102,
+      52348,
+      25403,
+      27333
+    ],
+    "net_mig": [
+      12316,
+      47242,
+      121721,
+      105074,
+      111929,
+      69912
+    ]
   },
-  "peer_states": [],
-  "counties": [],
-  "leaderboards": {"top_growth": [], "bottom_growth": [], "top_population": []},
-  "age": {"vintage": null, "total_pop": null, "median_age": null,
-          "pct_under_18": null, "pct_18_64": null, "pct_65_plus": null,
-          "age_bands": [], "age_pyramid": []},
-  "race": {"vintage": null, "has_hispanic": false, "by_race": [], "by_origin": []}
+  "peer_states": [
+    {
+      "abbr": "GA",
+      "state": "Georgia",
+      "fips": "13",
+      "pop": {
+        "2020": 10732595,
+        "2021": 10793038,
+        "2022": 10929992,
+        "2023": 11063669,
+        "2024": 11204208,
+        "2025": 11302748
+      },
+      "growth_pct": 5.31,
+      "latest_pop": 11302748
+    },
+    {
+      "abbr": "FL",
+      "state": "Florida",
+      "fips": "12",
+      "pop": {
+        "2020": 21591325,
+        "2021": 21836698,
+        "2022": 22413989,
+        "2023": 22929248,
+        "2024": 23265838,
+        "2025": 23462518
+      },
+      "growth_pct": 8.67,
+      "latest_pop": 23462518
+    },
+    {
+      "abbr": "SC",
+      "state": "South Carolina",
+      "fips": "45",
+      "pop": {
+        "2020": 5131992,
+        "2021": 5194346,
+        "2022": 5288957,
+        "2023": 5390798,
+        "2024": 5490316,
+        "2025": 5570274
+      },
+      "growth_pct": 8.54,
+      "latest_pop": 5570274
+    },
+    {
+      "abbr": "TX",
+      "state": "Texas",
+      "fips": "48",
+      "pop": {
+        "2020": 29237895,
+        "2021": 29572672,
+        "2022": 30118002,
+        "2023": 30719247,
+        "2024": 31318578,
+        "2025": 31709821
+      },
+      "growth_pct": 8.45,
+      "latest_pop": 31709821
+    },
+    {
+      "abbr": "NC",
+      "state": "North Carolina",
+      "fips": "37",
+      "pop": {
+        "2020": 10450215,
+        "2021": 10565503,
+        "2022": 10705768,
+        "2023": 10871849,
+        "2024": 11052061,
+        "2025": 11197968
+      },
+      "growth_pct": 7.16,
+      "latest_pop": 11197968
+    },
+    {
+      "abbr": "TN",
+      "state": "Tennessee",
+      "fips": "47",
+      "pop": {
+        "2020": 6927736,
+        "2021": 6966687,
+        "2022": 7063325,
+        "2023": 7153029,
+        "2024": 7251291,
+        "2025": 7315076
+      },
+      "growth_pct": 5.59,
+      "latest_pop": 7315076
+    },
+    {
+      "abbr": "AL",
+      "state": "Alabama",
+      "fips": "01",
+      "pop": {
+        "2020": 5032962,
+        "2021": 5050058,
+        "2022": 5076868,
+        "2023": 5117850,
+        "2024": 5163055,
+        "2025": 5193088
+      },
+      "growth_pct": 3.18,
+      "latest_pop": 5193088
+    }
+  ],
+  "counties": [
+    {
+      "fips": "13001",
+      "county": "Appling",
+      "pop_base": 18376,
+      "pop_latest": 19100,
+      "growth_abs": 724,
+      "growth_pct": 3.94,
+      "dom_mig_total": 536,
+      "intl_mig_total": 295,
+      "natural_total": -104
+    },
+    {
+      "fips": "13003",
+      "county": "Atkinson",
+      "pop_base": 8307,
+      "pop_latest": 8454,
+      "growth_abs": 147,
+      "growth_pct": 1.77,
+      "dom_mig_total": -296,
+      "intl_mig_total": 284,
+      "natural_total": 151
+    },
+    {
+      "fips": "13005",
+      "county": "Bacon",
+      "pop_base": 11113,
+      "pop_latest": 11070,
+      "growth_abs": -43,
+      "growth_pct": -0.39,
+      "dom_mig_total": 14,
+      "intl_mig_total": 5,
+      "natural_total": -70
+    },
+    {
+      "fips": "13007",
+      "county": "Baker",
+      "pop_base": 2848,
+      "pop_latest": 2725,
+      "growth_abs": -123,
+      "growth_pct": -4.32,
+      "dom_mig_total": -54,
+      "intl_mig_total": 57,
+      "natural_total": -125
+    },
+    {
+      "fips": "13009",
+      "county": "Baldwin",
+      "pop_base": 43786,
+      "pop_latest": 44029,
+      "growth_abs": 243,
+      "growth_pct": 0.55,
+      "dom_mig_total": 649,
+      "intl_mig_total": 314,
+      "natural_total": -763
+    },
+    {
+      "fips": "13011",
+      "county": "Banks",
+      "pop_base": 18129,
+      "pop_latest": 21273,
+      "growth_abs": 3144,
+      "growth_pct": 17.34,
+      "dom_mig_total": 2878,
+      "intl_mig_total": 96,
+      "natural_total": 134
+    },
+    {
+      "fips": "13013",
+      "county": "Barrow",
+      "pop_base": 84066,
+      "pop_latest": 99773,
+      "growth_abs": 15707,
+      "growth_pct": 18.68,
+      "dom_mig_total": 12339,
+      "intl_mig_total": 1170,
+      "natural_total": 2114
+    },
+    {
+      "fips": "13015",
+      "county": "Bartow",
+      "pop_base": 109283,
+      "pop_latest": 120800,
+      "growth_abs": 11517,
+      "growth_pct": 10.54,
+      "dom_mig_total": 9806,
+      "intl_mig_total": 823,
+      "natural_total": 796
+    },
+    {
+      "fips": "13017",
+      "county": "Ben Hill",
+      "pop_base": 17166,
+      "pop_latest": 17099,
+      "growth_abs": -67,
+      "growth_pct": -0.39,
+      "dom_mig_total": 112,
+      "intl_mig_total": 81,
+      "natural_total": -264
+    },
+    {
+      "fips": "13019",
+      "county": "Berrien",
+      "pop_base": 18143,
+      "pop_latest": 18932,
+      "growth_abs": 789,
+      "growth_pct": 4.35,
+      "dom_mig_total": 853,
+      "intl_mig_total": 22,
+      "natural_total": -110
+    },
+    {
+      "fips": "13021",
+      "county": "Bibb",
+      "pop_base": 157054,
+      "pop_latest": 157556,
+      "growth_abs": 502,
+      "growth_pct": 0.32,
+      "dom_mig_total": -601,
+      "intl_mig_total": 1392,
+      "natural_total": -214
+    },
+    {
+      "fips": "13023",
+      "county": "Bleckley",
+      "pop_base": 12515,
+      "pop_latest": 12866,
+      "growth_abs": 351,
+      "growth_pct": 2.8,
+      "dom_mig_total": 567,
+      "intl_mig_total": 0,
+      "natural_total": -208
+    },
+    {
+      "fips": "13025",
+      "county": "Brantley",
+      "pop_base": 18046,
+      "pop_latest": 18936,
+      "growth_abs": 890,
+      "growth_pct": 4.93,
+      "dom_mig_total": 1084,
+      "intl_mig_total": 69,
+      "natural_total": -272
+    },
+    {
+      "fips": "13027",
+      "county": "Brooks",
+      "pop_base": 16271,
+      "pop_latest": 16101,
+      "growth_abs": -170,
+      "growth_pct": -1.04,
+      "dom_mig_total": 61,
+      "intl_mig_total": 239,
+      "natural_total": -463
+    },
+    {
+      "fips": "13029",
+      "county": "Bryan",
+      "pop_base": 45048,
+      "pop_latest": 52062,
+      "growth_abs": 7014,
+      "growth_pct": 15.57,
+      "dom_mig_total": 5361,
+      "intl_mig_total": 474,
+      "natural_total": 1231
+    },
+    {
+      "fips": "13031",
+      "county": "Bulloch",
+      "pop_base": 79919,
+      "pop_latest": 86949,
+      "growth_abs": 7030,
+      "growth_pct": 8.8,
+      "dom_mig_total": 5403,
+      "intl_mig_total": 500,
+      "natural_total": 921
+    },
+    {
+      "fips": "13033",
+      "county": "Burke",
+      "pop_base": 24632,
+      "pop_latest": 24408,
+      "growth_abs": -224,
+      "growth_pct": -0.91,
+      "dom_mig_total": 3,
+      "intl_mig_total": 5,
+      "natural_total": -223
+    },
+    {
+      "fips": "13035",
+      "county": "Butts",
+      "pop_base": 25549,
+      "pop_latest": 27218,
+      "growth_abs": 1669,
+      "growth_pct": 6.53,
+      "dom_mig_total": 1864,
+      "intl_mig_total": 70,
+      "natural_total": -264
+    },
+    {
+      "fips": "13037",
+      "county": "Calhoun",
+      "pop_base": 5572,
+      "pop_latest": 5413,
+      "growth_abs": -159,
+      "growth_pct": -2.85,
+      "dom_mig_total": -76,
+      "intl_mig_total": 8,
+      "natural_total": -89
+    },
+    {
+      "fips": "13039",
+      "county": "Camden",
+      "pop_base": 54928,
+      "pop_latest": 60143,
+      "growth_abs": 5215,
+      "growth_pct": 9.49,
+      "dom_mig_total": 3813,
+      "intl_mig_total": 135,
+      "natural_total": 1197
+    },
+    {
+      "fips": "13043",
+      "county": "Candler",
+      "pop_base": 11036,
+      "pop_latest": 11275,
+      "growth_abs": 239,
+      "growth_pct": 2.17,
+      "dom_mig_total": 443,
+      "intl_mig_total": 21,
+      "natural_total": -231
+    },
+    {
+      "fips": "13045",
+      "county": "Carroll",
+      "pop_base": 119394,
+      "pop_latest": 131036,
+      "growth_abs": 11642,
+      "growth_pct": 9.75,
+      "dom_mig_total": 8933,
+      "intl_mig_total": 1566,
+      "natural_total": 950
+    },
+    {
+      "fips": "13047",
+      "county": "Catoosa",
+      "pop_base": 68034,
+      "pop_latest": 69628,
+      "growth_abs": 1594,
+      "growth_pct": 2.34,
+      "dom_mig_total": 2441,
+      "intl_mig_total": 102,
+      "natural_total": -979
+    },
+    {
+      "fips": "13049",
+      "county": "Charlton",
+      "pop_base": 12527,
+      "pop_latest": 13121,
+      "growth_abs": 594,
+      "growth_pct": 4.74,
+      "dom_mig_total": 839,
+      "intl_mig_total": -13,
+      "natural_total": -216
+    },
+    {
+      "fips": "13051",
+      "county": "Chatham",
+      "pop_base": 295113,
+      "pop_latest": 311855,
+      "growth_abs": 16742,
+      "growth_pct": 5.67,
+      "dom_mig_total": 4796,
+      "intl_mig_total": 8774,
+      "natural_total": 2767
+    },
+    {
+      "fips": "13053",
+      "county": "Chattahoochee",
+      "pop_base": 9468,
+      "pop_latest": 8465,
+      "growth_abs": -1003,
+      "growth_pct": -10.59,
+      "dom_mig_total": -1807,
+      "intl_mig_total": 160,
+      "natural_total": 648
+    },
+    {
+      "fips": "13055",
+      "county": "Chattooga",
+      "pop_base": 24927,
+      "pop_latest": 25300,
+      "growth_abs": 373,
+      "growth_pct": 1.5,
+      "dom_mig_total": 983,
+      "intl_mig_total": 202,
+      "natural_total": -830
+    },
+    {
+      "fips": "13057",
+      "county": "Cherokee",
+      "pop_base": 268142,
+      "pop_latest": 299273,
+      "growth_abs": 31131,
+      "growth_pct": 11.61,
+      "dom_mig_total": 22290,
+      "intl_mig_total": 4775,
+      "natural_total": 3981
+    },
+    {
+      "fips": "13059",
+      "county": "Clarke",
+      "pop_base": 128595,
+      "pop_latest": 129921,
+      "growth_abs": 1326,
+      "growth_pct": 1.03,
+      "dom_mig_total": -4438,
+      "intl_mig_total": 3681,
+      "natural_total": 2120
+    },
+    {
+      "fips": "13061",
+      "county": "Clay",
+      "pop_base": 2830,
+      "pop_latest": 2815,
+      "growth_abs": -15,
+      "growth_pct": -0.53,
+      "dom_mig_total": 74,
+      "intl_mig_total": 9,
+      "natural_total": -92
+    },
+    {
+      "fips": "13063",
+      "county": "Clayton",
+      "pop_base": 299345,
+      "pop_latest": 297471,
+      "growth_abs": -1874,
+      "growth_pct": -0.63,
+      "dom_mig_total": -13951,
+      "intl_mig_total": 6152,
+      "natural_total": 5803
+    },
+    {
+      "fips": "13065",
+      "county": "Clinch",
+      "pop_base": 6729,
+      "pop_latest": 6847,
+      "growth_abs": 118,
+      "growth_pct": 1.75,
+      "dom_mig_total": -11,
+      "intl_mig_total": 106,
+      "natural_total": 24
+    },
+    {
+      "fips": "13067",
+      "county": "Cobb",
+      "pop_base": 766385,
+      "pop_latest": 793345,
+      "growth_abs": 26960,
+      "growth_pct": 3.52,
+      "dom_mig_total": -18165,
+      "intl_mig_total": 27656,
+      "natural_total": 17568
+    },
+    {
+      "fips": "13069",
+      "county": "Coffee",
+      "pop_base": 43048,
+      "pop_latest": 44407,
+      "growth_abs": 1359,
+      "growth_pct": 3.16,
+      "dom_mig_total": 381,
+      "intl_mig_total": 604,
+      "natural_total": 361
+    },
+    {
+      "fips": "13071",
+      "county": "Colquitt",
+      "pop_base": 45908,
+      "pop_latest": 47438,
+      "growth_abs": 1530,
+      "growth_pct": 3.33,
+      "dom_mig_total": -273,
+      "intl_mig_total": 1710,
+      "natural_total": 98
+    },
+    {
+      "fips": "13073",
+      "county": "Columbia",
+      "pop_base": 156860,
+      "pop_latest": 169189,
+      "growth_abs": 12329,
+      "growth_pct": 7.86,
+      "dom_mig_total": 8200,
+      "intl_mig_total": 1888,
+      "natural_total": 2245
+    },
+    {
+      "fips": "13075",
+      "county": "Cook",
+      "pop_base": 17238,
+      "pop_latest": 18232,
+      "growth_abs": 994,
+      "growth_pct": 5.77,
+      "dom_mig_total": 652,
+      "intl_mig_total": 336,
+      "natural_total": -9
+    },
+    {
+      "fips": "13077",
+      "county": "Coweta",
+      "pop_base": 146746,
+      "pop_latest": 160240,
+      "growth_abs": 13494,
+      "growth_pct": 9.2,
+      "dom_mig_total": 10381,
+      "intl_mig_total": 1760,
+      "natural_total": 1318
+    },
+    {
+      "fips": "13079",
+      "county": "Crawford",
+      "pop_base": 12093,
+      "pop_latest": 12206,
+      "growth_abs": 113,
+      "growth_pct": 0.93,
+      "dom_mig_total": 609,
+      "intl_mig_total": 17,
+      "natural_total": -522
+    },
+    {
+      "fips": "13081",
+      "county": "Crisp",
+      "pop_base": 20058,
+      "pop_latest": 19237,
+      "growth_abs": -821,
+      "growth_pct": -4.09,
+      "dom_mig_total": -498,
+      "intl_mig_total": 99,
+      "natural_total": -424
+    },
+    {
+      "fips": "13083",
+      "county": "Dade",
+      "pop_base": 16233,
+      "pop_latest": 16154,
+      "growth_abs": -79,
+      "growth_pct": -0.49,
+      "dom_mig_total": 320,
+      "intl_mig_total": 10,
+      "natural_total": -401
+    },
+    {
+      "fips": "13085",
+      "county": "Dawson",
+      "pop_base": 27062,
+      "pop_latest": 35365,
+      "growth_abs": 8303,
+      "growth_pct": 30.68,
+      "dom_mig_total": 7736,
+      "intl_mig_total": 220,
+      "natural_total": 284
+    },
+    {
+      "fips": "13089",
+      "county": "DeKalb",
+      "pop_base": 764585,
+      "pop_latest": 774394,
+      "growth_abs": 9809,
+      "growth_pct": 1.28,
+      "dom_mig_total": -43273,
+      "intl_mig_total": 32545,
+      "natural_total": 21144
+    },
+    {
+      "fips": "13087",
+      "county": "Decatur",
+      "pop_base": 29436,
+      "pop_latest": 29432,
+      "growth_abs": -4,
+      "growth_pct": -0.01,
+      "dom_mig_total": 133,
+      "intl_mig_total": 108,
+      "natural_total": -237
+    },
+    {
+      "fips": "13091",
+      "county": "Dodge",
+      "pop_base": 19949,
+      "pop_latest": 19663,
+      "growth_abs": -286,
+      "growth_pct": -1.43,
+      "dom_mig_total": 111,
+      "intl_mig_total": 91,
+      "natural_total": -502
+    },
+    {
+      "fips": "13093",
+      "county": "Dooly",
+      "pop_base": 11166,
+      "pop_latest": 11156,
+      "growth_abs": -10,
+      "growth_pct": -0.09,
+      "dom_mig_total": -43,
+      "intl_mig_total": 233,
+      "natural_total": -227
+    },
+    {
+      "fips": "13095",
+      "county": "Dougherty",
+      "pop_base": 85173,
+      "pop_latest": 82616,
+      "growth_abs": -2557,
+      "growth_pct": -3.0,
+      "dom_mig_total": -3004,
+      "intl_mig_total": 641,
+      "natural_total": -3
+    },
+    {
+      "fips": "13097",
+      "county": "Douglas",
+      "pop_base": 144698,
+      "pop_latest": 154293,
+      "growth_abs": 9595,
+      "growth_pct": 6.63,
+      "dom_mig_total": 5527,
+      "intl_mig_total": 1524,
+      "natural_total": 2489
+    },
+    {
+      "fips": "13099",
+      "county": "Early",
+      "pop_base": 10793,
+      "pop_latest": 10455,
+      "growth_abs": -338,
+      "growth_pct": -3.13,
+      "dom_mig_total": -78,
+      "intl_mig_total": -1,
+      "natural_total": -242
+    },
+    {
+      "fips": "13101",
+      "county": "Echols",
+      "pop_base": 3716,
+      "pop_latest": 3685,
+      "growth_abs": -31,
+      "growth_pct": -0.83,
+      "dom_mig_total": -160,
+      "intl_mig_total": 93,
+      "natural_total": 32
+    },
+    {
+      "fips": "13103",
+      "county": "Effingham",
+      "pop_base": 65180,
+      "pop_latest": 74397,
+      "growth_abs": 9217,
+      "growth_pct": 14.14,
+      "dom_mig_total": 7632,
+      "intl_mig_total": 374,
+      "natural_total": 1105
+    },
+    {
+      "fips": "13105",
+      "county": "Elbert",
+      "pop_base": 19666,
+      "pop_latest": 20072,
+      "growth_abs": 406,
+      "growth_pct": 2.06,
+      "dom_mig_total": 818,
+      "intl_mig_total": 133,
+      "natural_total": -574
+    },
+    {
+      "fips": "13107",
+      "county": "Emanuel",
+      "pop_base": 22876,
+      "pop_latest": 23147,
+      "growth_abs": 271,
+      "growth_pct": 1.18,
+      "dom_mig_total": 366,
+      "intl_mig_total": 105,
+      "natural_total": -231
+    },
+    {
+      "fips": "13109",
+      "county": "Evans",
+      "pop_base": 10794,
+      "pop_latest": 11028,
+      "growth_abs": 234,
+      "growth_pct": 2.17,
+      "dom_mig_total": 226,
+      "intl_mig_total": 84,
+      "natural_total": -78
+    },
+    {
+      "fips": "13111",
+      "county": "Fannin",
+      "pop_base": 25451,
+      "pop_latest": 26111,
+      "growth_abs": 660,
+      "growth_pct": 2.59,
+      "dom_mig_total": 2001,
+      "intl_mig_total": 8,
+      "natural_total": -1323
+    },
+    {
+      "fips": "13113",
+      "county": "Fayette",
+      "pop_base": 119507,
+      "pop_latest": 125156,
+      "growth_abs": 5649,
+      "growth_pct": 4.73,
+      "dom_mig_total": 5002,
+      "intl_mig_total": 1718,
+      "natural_total": -981
+    },
+    {
+      "fips": "13115",
+      "county": "Floyd",
+      "pop_base": 98597,
+      "pop_latest": 101378,
+      "growth_abs": 2781,
+      "growth_pct": 2.82,
+      "dom_mig_total": 2652,
+      "intl_mig_total": 1039,
+      "natural_total": -1039
+    },
+    {
+      "fips": "13117",
+      "county": "Forsyth",
+      "pop_base": 252877,
+      "pop_latest": 282805,
+      "growth_abs": 29928,
+      "growth_pct": 11.84,
+      "dom_mig_total": 19568,
+      "intl_mig_total": 6749,
+      "natural_total": 3857
+    },
+    {
+      "fips": "13119",
+      "county": "Franklin",
+      "pop_base": 23476,
+      "pop_latest": 25948,
+      "growth_abs": 2472,
+      "growth_pct": 10.53,
+      "dom_mig_total": 2305,
+      "intl_mig_total": 192,
+      "natural_total": -94
+    },
+    {
+      "fips": "13121",
+      "county": "Fulton",
+      "pop_base": 1069457,
+      "pop_latest": 1098791,
+      "growth_abs": 29334,
+      "growth_pct": 2.74,
+      "dom_mig_total": -24038,
+      "intl_mig_total": 32224,
+      "natural_total": 21442
+    },
+    {
+      "fips": "13123",
+      "county": "Gilmer",
+      "pop_base": 31420,
+      "pop_latest": 33894,
+      "growth_abs": 2474,
+      "growth_pct": 7.87,
+      "dom_mig_total": 2859,
+      "intl_mig_total": 277,
+      "natural_total": -651
+    },
+    {
+      "fips": "13125",
+      "county": "Glascock",
+      "pop_base": 2898,
+      "pop_latest": 3141,
+      "growth_abs": 243,
+      "growth_pct": 8.39,
+      "dom_mig_total": 269,
+      "intl_mig_total": -2,
+      "natural_total": -24
+    },
+    {
+      "fips": "13127",
+      "county": "Glynn",
+      "pop_base": 84479,
+      "pop_latest": 87599,
+      "growth_abs": 3120,
+      "growth_pct": 3.69,
+      "dom_mig_total": 2880,
+      "intl_mig_total": 1239,
+      "natural_total": -1041
+    },
+    {
+      "fips": "13129",
+      "county": "Gordon",
+      "pop_base": 57730,
+      "pop_latest": 61701,
+      "growth_abs": 3971,
+      "growth_pct": 6.88,
+      "dom_mig_total": 3567,
+      "intl_mig_total": 576,
+      "natural_total": -210
+    },
+    {
+      "fips": "13131",
+      "county": "Grady",
+      "pop_base": 26213,
+      "pop_latest": 26590,
+      "growth_abs": 377,
+      "growth_pct": 1.44,
+      "dom_mig_total": 126,
+      "intl_mig_total": 365,
+      "natural_total": -96
+    },
+    {
+      "fips": "13133",
+      "county": "Greene",
+      "pop_base": 19030,
+      "pop_latest": 21367,
+      "growth_abs": 2337,
+      "growth_pct": 12.28,
+      "dom_mig_total": 2860,
+      "intl_mig_total": 109,
+      "natural_total": -661
+    },
+    {
+      "fips": "13135",
+      "county": "Gwinnett",
+      "pop_base": 958317,
+      "pop_latest": 1018099,
+      "growth_abs": 59782,
+      "growth_pct": 6.24,
+      "dom_mig_total": -20082,
+      "intl_mig_total": 52395,
+      "natural_total": 27231
+    },
+    {
+      "fips": "13137",
+      "county": "Habersham",
+      "pop_base": 46112,
+      "pop_latest": 50416,
+      "growth_abs": 4304,
+      "growth_pct": 9.33,
+      "dom_mig_total": 3751,
+      "intl_mig_total": 778,
+      "natural_total": -255
+    },
+    {
+      "fips": "13139",
+      "county": "Hall",
+      "pop_base": 203382,
+      "pop_latest": 226568,
+      "growth_abs": 23186,
+      "growth_pct": 11.4,
+      "dom_mig_total": 12509,
+      "intl_mig_total": 6336,
+      "natural_total": 4103
+    },
+    {
+      "fips": "13141",
+      "county": "Hancock",
+      "pop_base": 8711,
+      "pop_latest": 8682,
+      "growth_abs": -29,
+      "growth_pct": -0.33,
+      "dom_mig_total": 348,
+      "intl_mig_total": 8,
+      "natural_total": -403
+    },
+    {
+      "fips": "13143",
+      "county": "Haralson",
+      "pop_base": 30050,
+      "pop_latest": 33066,
+      "growth_abs": 3016,
+      "growth_pct": 10.04,
+      "dom_mig_total": 3327,
+      "intl_mig_total": 28,
+      "natural_total": -363
+    },
+    {
+      "fips": "13145",
+      "county": "Harris",
+      "pop_base": 34907,
+      "pop_latest": 37280,
+      "growth_abs": 2373,
+      "growth_pct": 6.8,
+      "dom_mig_total": 2439,
+      "intl_mig_total": 150,
+      "natural_total": -215
+    },
+    {
+      "fips": "13147",
+      "county": "Hart",
+      "pop_base": 25872,
+      "pop_latest": 28639,
+      "growth_abs": 2767,
+      "growth_pct": 10.69,
+      "dom_mig_total": 3132,
+      "intl_mig_total": 205,
+      "natural_total": -618
+    },
+    {
+      "fips": "13149",
+      "county": "Heard",
+      "pop_base": 11445,
+      "pop_latest": 12149,
+      "growth_abs": 704,
+      "growth_pct": 6.15,
+      "dom_mig_total": 918,
+      "intl_mig_total": -2,
+      "natural_total": -228
+    },
+    {
+      "fips": "13151",
+      "county": "Henry",
+      "pop_base": 241869,
+      "pop_latest": 264922,
+      "growth_abs": 23053,
+      "growth_pct": 9.53,
+      "dom_mig_total": 16861,
+      "intl_mig_total": 2480,
+      "natural_total": 3740
+    },
+    {
+      "fips": "13153",
+      "county": "Houston",
+      "pop_base": 164325,
+      "pop_latest": 178214,
+      "growth_abs": 13889,
+      "growth_pct": 8.45,
+      "dom_mig_total": 9996,
+      "intl_mig_total": 1820,
+      "natural_total": 2098
+    },
+    {
+      "fips": "13155",
+      "county": "Irwin",
+      "pop_base": 9646,
+      "pop_latest": 9020,
+      "growth_abs": -626,
+      "growth_pct": -6.49,
+      "dom_mig_total": -393,
+      "intl_mig_total": 10,
+      "natural_total": -245
+    },
+    {
+      "fips": "13157",
+      "county": "Jackson",
+      "pop_base": 76765,
+      "pop_latest": 99265,
+      "growth_abs": 22500,
+      "growth_pct": 29.31,
+      "dom_mig_total": 20027,
+      "intl_mig_total": 991,
+      "natural_total": 1400
+    },
+    {
+      "fips": "13159",
+      "county": "Jasper",
+      "pop_base": 14671,
+      "pop_latest": 17632,
+      "growth_abs": 2961,
+      "growth_pct": 20.18,
+      "dom_mig_total": 2930,
+      "intl_mig_total": 77,
+      "natural_total": -62
+    },
+    {
+      "fips": "13161",
+      "county": "Jeff Davis",
+      "pop_base": 14800,
+      "pop_latest": 15219,
+      "growth_abs": 419,
+      "growth_pct": 2.83,
+      "dom_mig_total": 472,
+      "intl_mig_total": 96,
+      "natural_total": -149
+    },
+    {
+      "fips": "13163",
+      "county": "Jefferson",
+      "pop_base": 15677,
+      "pop_latest": 15011,
+      "growth_abs": -666,
+      "growth_pct": -4.25,
+      "dom_mig_total": -326,
+      "intl_mig_total": 98,
+      "natural_total": -435
+    },
+    {
+      "fips": "13165",
+      "county": "Jenkins",
+      "pop_base": 8660,
+      "pop_latest": 8843,
+      "growth_abs": 183,
+      "growth_pct": 2.11,
+      "dom_mig_total": 333,
+      "intl_mig_total": 13,
+      "natural_total": -156
+    },
+    {
+      "fips": "13167",
+      "county": "Johnson",
+      "pop_base": 9180,
+      "pop_latest": 9310,
+      "growth_abs": 130,
+      "growth_pct": 1.42,
+      "dom_mig_total": 297,
+      "intl_mig_total": 7,
+      "natural_total": -197
+    },
+    {
+      "fips": "13169",
+      "county": "Jones",
+      "pop_base": 28368,
+      "pop_latest": 29171,
+      "growth_abs": 803,
+      "growth_pct": 2.83,
+      "dom_mig_total": 1122,
+      "intl_mig_total": 35,
+      "natural_total": -368
+    },
+    {
+      "fips": "13171",
+      "county": "Lamar",
+      "pop_base": 18555,
+      "pop_latest": 20941,
+      "growth_abs": 2386,
+      "growth_pct": 12.86,
+      "dom_mig_total": 2466,
+      "intl_mig_total": 40,
+      "natural_total": -215
+    },
+    {
+      "fips": "13173",
+      "county": "Lanier",
+      "pop_base": 9917,
+      "pop_latest": 10623,
+      "growth_abs": 706,
+      "growth_pct": 7.12,
+      "dom_mig_total": 402,
+      "intl_mig_total": 248,
+      "natural_total": 66
+    },
+    {
+      "fips": "13175",
+      "county": "Laurens",
+      "pop_base": 49543,
+      "pop_latest": 51041,
+      "growth_abs": 1498,
+      "growth_pct": 3.02,
+      "dom_mig_total": 1247,
+      "intl_mig_total": 602,
+      "natural_total": -375
+    },
+    {
+      "fips": "13177",
+      "county": "Lee",
+      "pop_base": 33211,
+      "pop_latest": 34179,
+      "growth_abs": 968,
+      "growth_pct": 2.91,
+      "dom_mig_total": 654,
+      "intl_mig_total": 218,
+      "natural_total": 92
+    },
+    {
+      "fips": "13179",
+      "county": "Liberty",
+      "pop_base": 65330,
+      "pop_latest": 70313,
+      "growth_abs": 4983,
+      "growth_pct": 7.63,
+      "dom_mig_total": 62,
+      "intl_mig_total": 722,
+      "natural_total": 4214
+    },
+    {
+      "fips": "13181",
+      "county": "Lincoln",
+      "pop_base": 7702,
+      "pop_latest": 8112,
+      "growth_abs": 410,
+      "growth_pct": 5.32,
+      "dom_mig_total": 573,
+      "intl_mig_total": 29,
+      "natural_total": -198
+    },
+    {
+      "fips": "13183",
+      "county": "Long",
+      "pop_base": 16256,
+      "pop_latest": 21557,
+      "growth_abs": 5301,
+      "growth_pct": 32.61,
+      "dom_mig_total": 4376,
+      "intl_mig_total": 128,
+      "natural_total": 742
+    },
+    {
+      "fips": "13185",
+      "county": "Lowndes",
+      "pop_base": 118436,
+      "pop_latest": 122867,
+      "growth_abs": 4431,
+      "growth_pct": 3.74,
+      "dom_mig_total": 1511,
+      "intl_mig_total": 695,
+      "natural_total": 2154
+    },
+    {
+      "fips": "13187",
+      "county": "Lumpkin",
+      "pop_base": 33640,
+      "pop_latest": 36178,
+      "growth_abs": 2538,
+      "growth_pct": 7.54,
+      "dom_mig_total": 2555,
+      "intl_mig_total": 281,
+      "natural_total": -409
+    },
+    {
+      "fips": "13193",
+      "county": "Macon",
+      "pop_base": 12018,
+      "pop_latest": 11756,
+      "growth_abs": -262,
+      "growth_pct": -2.18,
+      "dom_mig_total": -151,
+      "intl_mig_total": 129,
+      "natural_total": -237
+    },
+    {
+      "fips": "13195",
+      "county": "Madison",
+      "pop_base": 30266,
+      "pop_latest": 32919,
+      "growth_abs": 2653,
+      "growth_pct": 8.77,
+      "dom_mig_total": 2309,
+      "intl_mig_total": 208,
+      "natural_total": 111
+    },
+    {
+      "fips": "13197",
+      "county": "Marion",
+      "pop_base": 7529,
+      "pop_latest": 7676,
+      "growth_abs": 147,
+      "growth_pct": 1.95,
+      "dom_mig_total": 273,
+      "intl_mig_total": 99,
+      "natural_total": -219
+    },
+    {
+      "fips": "13189",
+      "county": "McDuffie",
+      "pop_base": 21609,
+      "pop_latest": 21640,
+      "growth_abs": 31,
+      "growth_pct": 0.14,
+      "dom_mig_total": 226,
+      "intl_mig_total": 22,
+      "natural_total": -233
+    },
+    {
+      "fips": "13191",
+      "county": "McIntosh",
+      "pop_base": 10981,
+      "pop_latest": 11989,
+      "growth_abs": 1008,
+      "growth_pct": 9.18,
+      "dom_mig_total": 1416,
+      "intl_mig_total": 7,
+      "natural_total": -433
+    },
+    {
+      "fips": "13199",
+      "county": "Meriwether",
+      "pop_base": 20610,
+      "pop_latest": 21516,
+      "growth_abs": 906,
+      "growth_pct": 4.4,
+      "dom_mig_total": 1368,
+      "intl_mig_total": 31,
+      "natural_total": -501
+    },
+    {
+      "fips": "13201",
+      "county": "Miller",
+      "pop_base": 5995,
+      "pop_latest": 5812,
+      "growth_abs": -183,
+      "growth_pct": -3.05,
+      "dom_mig_total": 66,
+      "intl_mig_total": 5,
+      "natural_total": -244
+    },
+    {
+      "fips": "13205",
+      "county": "Mitchell",
+      "pop_base": 21676,
+      "pop_latest": 20467,
+      "growth_abs": -1209,
+      "growth_pct": -5.58,
+      "dom_mig_total": -927,
+      "intl_mig_total": 67,
+      "natural_total": -344
+    },
+    {
+      "fips": "13207",
+      "county": "Monroe",
+      "pop_base": 28065,
+      "pop_latest": 32023,
+      "growth_abs": 3958,
+      "growth_pct": 14.1,
+      "dom_mig_total": 4309,
+      "intl_mig_total": 113,
+      "natural_total": -494
+    },
+    {
+      "fips": "13209",
+      "county": "Montgomery",
+      "pop_base": 8565,
+      "pop_latest": 8635,
+      "growth_abs": 70,
+      "growth_pct": 0.82,
+      "dom_mig_total": 104,
+      "intl_mig_total": 42,
+      "natural_total": -81
+    },
+    {
+      "fips": "13211",
+      "county": "Morgan",
+      "pop_base": 20202,
+      "pop_latest": 22095,
+      "growth_abs": 1893,
+      "growth_pct": 9.37,
+      "dom_mig_total": 1966,
+      "intl_mig_total": 90,
+      "natural_total": -172
+    },
+    {
+      "fips": "13213",
+      "county": "Murray",
+      "pop_base": 39996,
+      "pop_latest": 41607,
+      "growth_abs": 1611,
+      "growth_pct": 4.03,
+      "dom_mig_total": 1663,
+      "intl_mig_total": 236,
+      "natural_total": -331
+    },
+    {
+      "fips": "13215",
+      "county": "Muscogee",
+      "pop_base": 207016,
+      "pop_latest": 202171,
+      "growth_abs": -4845,
+      "growth_pct": -2.34,
+      "dom_mig_total": -8842,
+      "intl_mig_total": 2175,
+      "natural_total": 1753
+    },
+    {
+      "fips": "13217",
+      "county": "Newton",
+      "pop_base": 112902,
+      "pop_latest": 125583,
+      "growth_abs": 12681,
+      "growth_pct": 11.23,
+      "dom_mig_total": 10184,
+      "intl_mig_total": 1510,
+      "natural_total": 975
+    },
+    {
+      "fips": "13219",
+      "county": "Oconee",
+      "pop_base": 42004,
+      "pop_latest": 44893,
+      "growth_abs": 2889,
+      "growth_pct": 6.88,
+      "dom_mig_total": 2843,
+      "intl_mig_total": 275,
+      "natural_total": -165
+    },
+    {
+      "fips": "13221",
+      "county": "Oglethorpe",
+      "pop_base": 14869,
+      "pop_latest": 16415,
+      "growth_abs": 1546,
+      "growth_pct": 10.4,
+      "dom_mig_total": 1609,
+      "intl_mig_total": 89,
+      "natural_total": -151
+    },
+    {
+      "fips": "13223",
+      "county": "Paulding",
+      "pop_base": 169516,
+      "pop_latest": 190996,
+      "growth_abs": 21480,
+      "growth_pct": 12.67,
+      "dom_mig_total": 16324,
+      "intl_mig_total": 2219,
+      "natural_total": 2874
+    },
+    {
+      "fips": "13225",
+      "county": "Peach",
+      "pop_base": 28059,
+      "pop_latest": 29877,
+      "growth_abs": 1818,
+      "growth_pct": 6.48,
+      "dom_mig_total": 1679,
+      "intl_mig_total": 188,
+      "natural_total": -76
+    },
+    {
+      "fips": "13227",
+      "county": "Pickens",
+      "pop_base": 33351,
+      "pop_latest": 37167,
+      "growth_abs": 3816,
+      "growth_pct": 11.44,
+      "dom_mig_total": 4321,
+      "intl_mig_total": 106,
+      "natural_total": -682
+    },
+    {
+      "fips": "13229",
+      "county": "Pierce",
+      "pop_base": 19749,
+      "pop_latest": 20764,
+      "growth_abs": 1015,
+      "growth_pct": 5.14,
+      "dom_mig_total": 1287,
+      "intl_mig_total": -8,
+      "natural_total": -264
+    },
+    {
+      "fips": "13231",
+      "county": "Pike",
+      "pop_base": 18948,
+      "pop_latest": 20932,
+      "growth_abs": 1984,
+      "growth_pct": 10.47,
+      "dom_mig_total": 2140,
+      "intl_mig_total": 37,
+      "natural_total": -181
+    },
+    {
+      "fips": "13233",
+      "county": "Polk",
+      "pop_base": 42929,
+      "pop_latest": 45514,
+      "growth_abs": 2585,
+      "growth_pct": 6.02,
+      "dom_mig_total": 2073,
+      "intl_mig_total": 419,
+      "natural_total": 78
+    },
+    {
+      "fips": "13235",
+      "county": "Pulaski",
+      "pop_base": 9872,
+      "pop_latest": 10172,
+      "growth_abs": 300,
+      "growth_pct": 3.04,
+      "dom_mig_total": 544,
+      "intl_mig_total": 47,
+      "natural_total": -316
+    },
+    {
+      "fips": "13237",
+      "county": "Putnam",
+      "pop_base": 22163,
+      "pop_latest": 23722,
+      "growth_abs": 1559,
+      "growth_pct": 7.03,
+      "dom_mig_total": 1768,
+      "intl_mig_total": 407,
+      "natural_total": -602
+    },
+    {
+      "fips": "13239",
+      "county": "Quitman",
+      "pop_base": 2225,
+      "pop_latest": 2254,
+      "growth_abs": 29,
+      "growth_pct": 1.3,
+      "dom_mig_total": 127,
+      "intl_mig_total": 0,
+      "natural_total": -99
+    },
+    {
+      "fips": "13241",
+      "county": "Rabun",
+      "pop_base": 16926,
+      "pop_latest": 17764,
+      "growth_abs": 838,
+      "growth_pct": 4.95,
+      "dom_mig_total": 1150,
+      "intl_mig_total": 281,
+      "natural_total": -600
+    },
+    {
+      "fips": "13243",
+      "county": "Randolph",
+      "pop_base": 6366,
+      "pop_latest": 6156,
+      "growth_abs": -210,
+      "growth_pct": -3.3,
+      "dom_mig_total": -33,
+      "intl_mig_total": 17,
+      "natural_total": -202
+    },
+    {
+      "fips": "13245",
+      "county": "Richmond",
+      "pop_base": 206581,
+      "pop_latest": 206559,
+      "growth_abs": -22,
+      "growth_pct": -0.01,
+      "dom_mig_total": -3137,
+      "intl_mig_total": 1511,
+      "natural_total": 1543
+    },
+    {
+      "fips": "13247",
+      "county": "Rockdale",
+      "pop_base": 93582,
+      "pop_latest": 98416,
+      "growth_abs": 4834,
+      "growth_pct": 5.17,
+      "dom_mig_total": 3283,
+      "intl_mig_total": 1108,
+      "natural_total": 394
+    },
+    {
+      "fips": "13249",
+      "county": "Schley",
+      "pop_base": 4537,
+      "pop_latest": 4593,
+      "growth_abs": 56,
+      "growth_pct": 1.23,
+      "dom_mig_total": 58,
+      "intl_mig_total": 1,
+      "natural_total": 2
+    },
+    {
+      "fips": "13251",
+      "county": "Screven",
+      "pop_base": 14072,
+      "pop_latest": 14408,
+      "growth_abs": 336,
+      "growth_pct": 2.39,
+      "dom_mig_total": 538,
+      "intl_mig_total": 32,
+      "natural_total": -244
+    },
+    {
+      "fips": "13253",
+      "county": "Seminole",
+      "pop_base": 9129,
+      "pop_latest": 9162,
+      "growth_abs": 33,
+      "growth_pct": 0.36,
+      "dom_mig_total": 281,
+      "intl_mig_total": 21,
+      "natural_total": -270
+    },
+    {
+      "fips": "13255",
+      "county": "Spalding",
+      "pop_base": 67456,
+      "pop_latest": 70775,
+      "growth_abs": 3319,
+      "growth_pct": 4.92,
+      "dom_mig_total": 3255,
+      "intl_mig_total": 615,
+      "natural_total": -685
+    },
+    {
+      "fips": "13257",
+      "county": "Stephens",
+      "pop_base": 26827,
+      "pop_latest": 27854,
+      "growth_abs": 1027,
+      "growth_pct": 3.83,
+      "dom_mig_total": 1530,
+      "intl_mig_total": 115,
+      "natural_total": -636
+    },
+    {
+      "fips": "13259",
+      "county": "Stewart",
+      "pop_base": 5295,
+      "pop_latest": 4631,
+      "growth_abs": -664,
+      "growth_pct": -12.54,
+      "dom_mig_total": -713,
+      "intl_mig_total": 248,
+      "natural_total": -201
+    },
+    {
+      "fips": "13261",
+      "county": "Sumter",
+      "pop_base": 29518,
+      "pop_latest": 28801,
+      "growth_abs": -717,
+      "growth_pct": -2.43,
+      "dom_mig_total": -679,
+      "intl_mig_total": 206,
+      "natural_total": -200
+    },
+    {
+      "fips": "13263",
+      "county": "Talbot",
+      "pop_base": 5729,
+      "pop_latest": 5709,
+      "growth_abs": -20,
+      "growth_pct": -0.35,
+      "dom_mig_total": 250,
+      "intl_mig_total": 0,
+      "natural_total": -275
+    },
+    {
+      "fips": "13265",
+      "county": "Taliaferro",
+      "pop_base": 1558,
+      "pop_latest": 1662,
+      "growth_abs": 104,
+      "growth_pct": 6.68,
+      "dom_mig_total": 193,
+      "intl_mig_total": 0,
+      "natural_total": -90
+    },
+    {
+      "fips": "13267",
+      "county": "Tattnall",
+      "pop_base": 24328,
+      "pop_latest": 24376,
+      "growth_abs": 48,
+      "growth_pct": 0.2,
+      "dom_mig_total": 47,
+      "intl_mig_total": 81,
+      "natural_total": -71
+    },
+    {
+      "fips": "13269",
+      "county": "Taylor",
+      "pop_base": 7820,
+      "pop_latest": 7818,
+      "growth_abs": -2,
+      "growth_pct": -0.03,
+      "dom_mig_total": 103,
+      "intl_mig_total": 38,
+      "natural_total": -147
+    },
+    {
+      "fips": "13271",
+      "county": "Telfair",
+      "pop_base": 12449,
+      "pop_latest": 11195,
+      "growth_abs": -1254,
+      "growth_pct": -10.07,
+      "dom_mig_total": -1163,
+      "intl_mig_total": 54,
+      "natural_total": -219
+    },
+    {
+      "fips": "13273",
+      "county": "Terrell",
+      "pop_base": 9139,
+      "pop_latest": 8656,
+      "growth_abs": -483,
+      "growth_pct": -5.29,
+      "dom_mig_total": -300,
+      "intl_mig_total": 5,
+      "natural_total": -181
+    },
+    {
+      "fips": "13275",
+      "county": "Thomas",
+      "pop_base": 45784,
+      "pop_latest": 46368,
+      "growth_abs": 584,
+      "growth_pct": 1.28,
+      "dom_mig_total": 728,
+      "intl_mig_total": 175,
+      "natural_total": -338
+    },
+    {
+      "fips": "13277",
+      "county": "Tift",
+      "pop_base": 41382,
+      "pop_latest": 42254,
+      "growth_abs": 872,
+      "growth_pct": 2.11,
+      "dom_mig_total": 123,
+      "intl_mig_total": 403,
+      "natural_total": 334
+    },
+    {
+      "fips": "13279",
+      "county": "Toombs",
+      "pop_base": 27080,
+      "pop_latest": 27545,
+      "growth_abs": 465,
+      "growth_pct": 1.72,
+      "dom_mig_total": -17,
+      "intl_mig_total": 482,
+      "natural_total": 7
+    },
+    {
+      "fips": "13281",
+      "county": "Towns",
+      "pop_base": 12552,
+      "pop_latest": 13285,
+      "growth_abs": 733,
+      "growth_pct": 5.84,
+      "dom_mig_total": 1443,
+      "intl_mig_total": 49,
+      "natural_total": -735
+    },
+    {
+      "fips": "13283",
+      "county": "Treutlen",
+      "pop_base": 6398,
+      "pop_latest": 6466,
+      "growth_abs": 68,
+      "growth_pct": 1.06,
+      "dom_mig_total": 215,
+      "intl_mig_total": -1,
+      "natural_total": -144
+    },
+    {
+      "fips": "13285",
+      "county": "Troup",
+      "pop_base": 69385,
+      "pop_latest": 72844,
+      "growth_abs": 3459,
+      "growth_pct": 4.99,
+      "dom_mig_total": 1650,
+      "intl_mig_total": 1511,
+      "natural_total": 268
+    },
+    {
+      "fips": "13287",
+      "county": "Turner",
+      "pop_base": 8989,
+      "pop_latest": 8983,
+      "growth_abs": -6,
+      "growth_pct": -0.07,
+      "dom_mig_total": 54,
+      "intl_mig_total": 51,
+      "natural_total": -118
+    },
+    {
+      "fips": "13289",
+      "county": "Twiggs",
+      "pop_base": 8009,
+      "pop_latest": 7597,
+      "growth_abs": -412,
+      "growth_pct": -5.14,
+      "dom_mig_total": 105,
+      "intl_mig_total": -2,
+      "natural_total": -521
+    },
+    {
+      "fips": "13291",
+      "county": "Union",
+      "pop_base": 24808,
+      "pop_latest": 27859,
+      "growth_abs": 3051,
+      "growth_pct": 12.3,
+      "dom_mig_total": 4171,
+      "intl_mig_total": 121,
+      "natural_total": -1270
+    },
+    {
+      "fips": "13293",
+      "county": "Upson",
+      "pop_base": 27746,
+      "pop_latest": 28500,
+      "growth_abs": 754,
+      "growth_pct": 2.72,
+      "dom_mig_total": 1363,
+      "intl_mig_total": 16,
+      "natural_total": -678
+    },
+    {
+      "fips": "13295",
+      "county": "Walker",
+      "pop_base": 67756,
+      "pop_latest": 70250,
+      "growth_abs": 2494,
+      "growth_pct": 3.68,
+      "dom_mig_total": 3681,
+      "intl_mig_total": 127,
+      "natural_total": -1328
+    },
+    {
+      "fips": "13297",
+      "county": "Walton",
+      "pop_base": 97115,
+      "pop_latest": 112696,
+      "growth_abs": 15581,
+      "growth_pct": 16.04,
+      "dom_mig_total": 13966,
+      "intl_mig_total": 818,
+      "natural_total": 702
+    },
+    {
+      "fips": "13299",
+      "county": "Ware",
+      "pop_base": 36237,
+      "pop_latest": 36906,
+      "growth_abs": 669,
+      "growth_pct": 1.85,
+      "dom_mig_total": 705,
+      "intl_mig_total": 436,
+      "natural_total": -458
+    },
+    {
+      "fips": "13301",
+      "county": "Warren",
+      "pop_base": 5208,
+      "pop_latest": 5269,
+      "growth_abs": 61,
+      "growth_pct": 1.17,
+      "dom_mig_total": 209,
+      "intl_mig_total": 10,
+      "natural_total": -157
+    },
+    {
+      "fips": "13303",
+      "county": "Washington",
+      "pop_base": 19949,
+      "pop_latest": 19453,
+      "growth_abs": -496,
+      "growth_pct": -2.49,
+      "dom_mig_total": -26,
+      "intl_mig_total": 85,
+      "natural_total": -557
+    },
+    {
+      "fips": "13305",
+      "county": "Wayne",
+      "pop_base": 30145,
+      "pop_latest": 32481,
+      "growth_abs": 2336,
+      "growth_pct": 7.75,
+      "dom_mig_total": 2501,
+      "intl_mig_total": 294,
+      "natural_total": -528
+    },
+    {
+      "fips": "13307",
+      "county": "Webster",
+      "pop_base": 2352,
+      "pop_latest": 2369,
+      "growth_abs": 17,
+      "growth_pct": 0.72,
+      "dom_mig_total": -54,
+      "intl_mig_total": 78,
+      "natural_total": -8
+    },
+    {
+      "fips": "13309",
+      "county": "Wheeler",
+      "pop_base": 7447,
+      "pop_latest": 7570,
+      "growth_abs": 123,
+      "growth_pct": 1.65,
+      "dom_mig_total": 149,
+      "intl_mig_total": -1,
+      "natural_total": -51
+    },
+    {
+      "fips": "13311",
+      "county": "White",
+      "pop_base": 28108,
+      "pop_latest": 29802,
+      "growth_abs": 1694,
+      "growth_pct": 6.03,
+      "dom_mig_total": 2191,
+      "intl_mig_total": 133,
+      "natural_total": -660
+    },
+    {
+      "fips": "13313",
+      "county": "Whitfield",
+      "pop_base": 102790,
+      "pop_latest": 106212,
+      "growth_abs": 3422,
+      "growth_pct": 3.33,
+      "dom_mig_total": 258,
+      "intl_mig_total": 2115,
+      "natural_total": 1051
+    },
+    {
+      "fips": "13315",
+      "county": "Wilcox",
+      "pop_base": 8787,
+      "pop_latest": 8797,
+      "growth_abs": 10,
+      "growth_pct": 0.11,
+      "dom_mig_total": 310,
+      "intl_mig_total": -7,
+      "natural_total": -296
+    },
+    {
+      "fips": "13317",
+      "county": "Wilkes",
+      "pop_base": 9554,
+      "pop_latest": 9540,
+      "growth_abs": -14,
+      "growth_pct": -0.15,
+      "dom_mig_total": 287,
+      "intl_mig_total": 69,
+      "natural_total": -380
+    },
+    {
+      "fips": "13319",
+      "county": "Wilkinson",
+      "pop_base": 8832,
+      "pop_latest": 8650,
+      "growth_abs": -182,
+      "growth_pct": -2.06,
+      "dom_mig_total": 3,
+      "intl_mig_total": 8,
+      "natural_total": -196
+    },
+    {
+      "fips": "13321",
+      "county": "Worth",
+      "pop_base": 20719,
+      "pop_latest": 20059,
+      "growth_abs": -660,
+      "growth_pct": -3.19,
+      "dom_mig_total": -156,
+      "intl_mig_total": 11,
+      "natural_total": -516
+    }
+  ],
+  "leaderboards": {
+    "top_growth": [
+      {
+        "fips": "13183",
+        "county": "Long",
+        "pop_base": 16256,
+        "pop_latest": 21557,
+        "growth_abs": 5301,
+        "growth_pct": 32.61,
+        "dom_mig_total": 4376,
+        "intl_mig_total": 128,
+        "natural_total": 742
+      },
+      {
+        "fips": "13085",
+        "county": "Dawson",
+        "pop_base": 27062,
+        "pop_latest": 35365,
+        "growth_abs": 8303,
+        "growth_pct": 30.68,
+        "dom_mig_total": 7736,
+        "intl_mig_total": 220,
+        "natural_total": 284
+      },
+      {
+        "fips": "13157",
+        "county": "Jackson",
+        "pop_base": 76765,
+        "pop_latest": 99265,
+        "growth_abs": 22500,
+        "growth_pct": 29.31,
+        "dom_mig_total": 20027,
+        "intl_mig_total": 991,
+        "natural_total": 1400
+      },
+      {
+        "fips": "13159",
+        "county": "Jasper",
+        "pop_base": 14671,
+        "pop_latest": 17632,
+        "growth_abs": 2961,
+        "growth_pct": 20.18,
+        "dom_mig_total": 2930,
+        "intl_mig_total": 77,
+        "natural_total": -62
+      },
+      {
+        "fips": "13013",
+        "county": "Barrow",
+        "pop_base": 84066,
+        "pop_latest": 99773,
+        "growth_abs": 15707,
+        "growth_pct": 18.68,
+        "dom_mig_total": 12339,
+        "intl_mig_total": 1170,
+        "natural_total": 2114
+      },
+      {
+        "fips": "13011",
+        "county": "Banks",
+        "pop_base": 18129,
+        "pop_latest": 21273,
+        "growth_abs": 3144,
+        "growth_pct": 17.34,
+        "dom_mig_total": 2878,
+        "intl_mig_total": 96,
+        "natural_total": 134
+      },
+      {
+        "fips": "13297",
+        "county": "Walton",
+        "pop_base": 97115,
+        "pop_latest": 112696,
+        "growth_abs": 15581,
+        "growth_pct": 16.04,
+        "dom_mig_total": 13966,
+        "intl_mig_total": 818,
+        "natural_total": 702
+      },
+      {
+        "fips": "13029",
+        "county": "Bryan",
+        "pop_base": 45048,
+        "pop_latest": 52062,
+        "growth_abs": 7014,
+        "growth_pct": 15.57,
+        "dom_mig_total": 5361,
+        "intl_mig_total": 474,
+        "natural_total": 1231
+      },
+      {
+        "fips": "13103",
+        "county": "Effingham",
+        "pop_base": 65180,
+        "pop_latest": 74397,
+        "growth_abs": 9217,
+        "growth_pct": 14.14,
+        "dom_mig_total": 7632,
+        "intl_mig_total": 374,
+        "natural_total": 1105
+      },
+      {
+        "fips": "13207",
+        "county": "Monroe",
+        "pop_base": 28065,
+        "pop_latest": 32023,
+        "growth_abs": 3958,
+        "growth_pct": 14.1,
+        "dom_mig_total": 4309,
+        "intl_mig_total": 113,
+        "natural_total": -494
+      }
+    ],
+    "bottom_growth": [
+      {
+        "fips": "13259",
+        "county": "Stewart",
+        "pop_base": 5295,
+        "pop_latest": 4631,
+        "growth_abs": -664,
+        "growth_pct": -12.54,
+        "dom_mig_total": -713,
+        "intl_mig_total": 248,
+        "natural_total": -201
+      },
+      {
+        "fips": "13053",
+        "county": "Chattahoochee",
+        "pop_base": 9468,
+        "pop_latest": 8465,
+        "growth_abs": -1003,
+        "growth_pct": -10.59,
+        "dom_mig_total": -1807,
+        "intl_mig_total": 160,
+        "natural_total": 648
+      },
+      {
+        "fips": "13271",
+        "county": "Telfair",
+        "pop_base": 12449,
+        "pop_latest": 11195,
+        "growth_abs": -1254,
+        "growth_pct": -10.07,
+        "dom_mig_total": -1163,
+        "intl_mig_total": 54,
+        "natural_total": -219
+      },
+      {
+        "fips": "13155",
+        "county": "Irwin",
+        "pop_base": 9646,
+        "pop_latest": 9020,
+        "growth_abs": -626,
+        "growth_pct": -6.49,
+        "dom_mig_total": -393,
+        "intl_mig_total": 10,
+        "natural_total": -245
+      },
+      {
+        "fips": "13205",
+        "county": "Mitchell",
+        "pop_base": 21676,
+        "pop_latest": 20467,
+        "growth_abs": -1209,
+        "growth_pct": -5.58,
+        "dom_mig_total": -927,
+        "intl_mig_total": 67,
+        "natural_total": -344
+      },
+      {
+        "fips": "13273",
+        "county": "Terrell",
+        "pop_base": 9139,
+        "pop_latest": 8656,
+        "growth_abs": -483,
+        "growth_pct": -5.29,
+        "dom_mig_total": -300,
+        "intl_mig_total": 5,
+        "natural_total": -181
+      },
+      {
+        "fips": "13289",
+        "county": "Twiggs",
+        "pop_base": 8009,
+        "pop_latest": 7597,
+        "growth_abs": -412,
+        "growth_pct": -5.14,
+        "dom_mig_total": 105,
+        "intl_mig_total": -2,
+        "natural_total": -521
+      },
+      {
+        "fips": "13007",
+        "county": "Baker",
+        "pop_base": 2848,
+        "pop_latest": 2725,
+        "growth_abs": -123,
+        "growth_pct": -4.32,
+        "dom_mig_total": -54,
+        "intl_mig_total": 57,
+        "natural_total": -125
+      },
+      {
+        "fips": "13163",
+        "county": "Jefferson",
+        "pop_base": 15677,
+        "pop_latest": 15011,
+        "growth_abs": -666,
+        "growth_pct": -4.25,
+        "dom_mig_total": -326,
+        "intl_mig_total": 98,
+        "natural_total": -435
+      },
+      {
+        "fips": "13081",
+        "county": "Crisp",
+        "pop_base": 20058,
+        "pop_latest": 19237,
+        "growth_abs": -821,
+        "growth_pct": -4.09,
+        "dom_mig_total": -498,
+        "intl_mig_total": 99,
+        "natural_total": -424
+      }
+    ],
+    "top_population": [
+      {
+        "fips": "13121",
+        "county": "Fulton",
+        "pop_base": 1069457,
+        "pop_latest": 1098791,
+        "growth_abs": 29334,
+        "growth_pct": 2.74,
+        "dom_mig_total": -24038,
+        "intl_mig_total": 32224,
+        "natural_total": 21442
+      },
+      {
+        "fips": "13135",
+        "county": "Gwinnett",
+        "pop_base": 958317,
+        "pop_latest": 1018099,
+        "growth_abs": 59782,
+        "growth_pct": 6.24,
+        "dom_mig_total": -20082,
+        "intl_mig_total": 52395,
+        "natural_total": 27231
+      },
+      {
+        "fips": "13067",
+        "county": "Cobb",
+        "pop_base": 766385,
+        "pop_latest": 793345,
+        "growth_abs": 26960,
+        "growth_pct": 3.52,
+        "dom_mig_total": -18165,
+        "intl_mig_total": 27656,
+        "natural_total": 17568
+      },
+      {
+        "fips": "13089",
+        "county": "DeKalb",
+        "pop_base": 764585,
+        "pop_latest": 774394,
+        "growth_abs": 9809,
+        "growth_pct": 1.28,
+        "dom_mig_total": -43273,
+        "intl_mig_total": 32545,
+        "natural_total": 21144
+      },
+      {
+        "fips": "13051",
+        "county": "Chatham",
+        "pop_base": 295113,
+        "pop_latest": 311855,
+        "growth_abs": 16742,
+        "growth_pct": 5.67,
+        "dom_mig_total": 4796,
+        "intl_mig_total": 8774,
+        "natural_total": 2767
+      },
+      {
+        "fips": "13057",
+        "county": "Cherokee",
+        "pop_base": 268142,
+        "pop_latest": 299273,
+        "growth_abs": 31131,
+        "growth_pct": 11.61,
+        "dom_mig_total": 22290,
+        "intl_mig_total": 4775,
+        "natural_total": 3981
+      },
+      {
+        "fips": "13063",
+        "county": "Clayton",
+        "pop_base": 299345,
+        "pop_latest": 297471,
+        "growth_abs": -1874,
+        "growth_pct": -0.63,
+        "dom_mig_total": -13951,
+        "intl_mig_total": 6152,
+        "natural_total": 5803
+      },
+      {
+        "fips": "13117",
+        "county": "Forsyth",
+        "pop_base": 252877,
+        "pop_latest": 282805,
+        "growth_abs": 29928,
+        "growth_pct": 11.84,
+        "dom_mig_total": 19568,
+        "intl_mig_total": 6749,
+        "natural_total": 3857
+      },
+      {
+        "fips": "13151",
+        "county": "Henry",
+        "pop_base": 241869,
+        "pop_latest": 264922,
+        "growth_abs": 23053,
+        "growth_pct": 9.53,
+        "dom_mig_total": 16861,
+        "intl_mig_total": 2480,
+        "natural_total": 3740
+      },
+      {
+        "fips": "13139",
+        "county": "Hall",
+        "pop_base": 203382,
+        "pop_latest": 226568,
+        "growth_abs": 23186,
+        "growth_pct": 11.4,
+        "dom_mig_total": 12509,
+        "intl_mig_total": 6336,
+        "natural_total": 4103
+      }
+    ]
+  },
+  "age": {
+    "vintage": 2024,
+    "total_pop": 11125586,
+    "median_age": 38,
+    "pct_under_18": 22.8,
+    "pct_18_64": 61.3,
+    "pct_65_plus": 15.8,
+    "age_bands": [
+      {
+        "band": "0\u20139",
+        "total": 1333213
+      },
+      {
+        "band": "10\u201319",
+        "total": 1505641
+      },
+      {
+        "band": "20\u201329",
+        "total": 1478057
+      },
+      {
+        "band": "30\u201339",
+        "total": 1541661
+      },
+      {
+        "band": "40\u201349",
+        "total": 1434958
+      },
+      {
+        "band": "50\u201359",
+        "total": 1400970
+      },
+      {
+        "band": "60\u201369",
+        "total": 1253415
+      },
+      {
+        "band": "70\u201379",
+        "total": 814277
+      },
+      {
+        "band": "80+",
+        "total": 363394
+      }
+    ],
+    "age_pyramid": [
+      {
+        "band": "0\u20139",
+        "male": 680109,
+        "female": 653104
+      },
+      {
+        "band": "10\u201319",
+        "male": 766508,
+        "female": 739133
+      },
+      {
+        "band": "20\u201329",
+        "male": 732522,
+        "female": 745535
+      },
+      {
+        "band": "30\u201339",
+        "male": 747743,
+        "female": 793918
+      },
+      {
+        "band": "40\u201349",
+        "male": 691468,
+        "female": 743490
+      },
+      {
+        "band": "50\u201359",
+        "male": 681159,
+        "female": 719811
+      },
+      {
+        "band": "60\u201369",
+        "male": 593331,
+        "female": 660084
+      },
+      {
+        "band": "70\u201379",
+        "male": 361766,
+        "female": 452511
+      },
+      {
+        "band": "80+",
+        "male": 143578,
+        "female": 219816
+      }
+    ]
+  },
+  "race": {
+    "vintage": 2024,
+    "has_hispanic": true,
+    "by_race": [
+      {
+        "key": "white",
+        "label": "White (alone)",
+        "total": null,
+        "non_hispanic": null,
+        "hispanic": null
+      },
+      {
+        "key": "black",
+        "label": "Black (alone)",
+        "total": null,
+        "non_hispanic": null,
+        "hispanic": null
+      },
+      {
+        "key": "aian",
+        "label": "American Indian / Alaska Native (alone)",
+        "total": null,
+        "non_hispanic": null,
+        "hispanic": null
+      },
+      {
+        "key": "asian",
+        "label": "Asian (alone)",
+        "total": null,
+        "non_hispanic": null,
+        "hispanic": null
+      },
+      {
+        "key": "nhpi",
+        "label": "Native Hawaiian / Pacific Islander (alone)",
+        "total": null,
+        "non_hispanic": null,
+        "hispanic": null
+      },
+      {
+        "key": "multi",
+        "label": "Two or more races",
+        "total": null,
+        "non_hispanic": null,
+        "hispanic": null
+      }
+    ],
+    "by_origin": [
+      {
+        "key": "non_hispanic",
+        "label": "Non-Hispanic / Latino",
+        "pop": 0
+      },
+      {
+        "key": "hispanic",
+        "label": "Hispanic / Latino",
+        "pop": 0
+      }
+    ]
+  }
 }
