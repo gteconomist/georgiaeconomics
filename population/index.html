@@ -241,6 +241,15 @@
 </footer>
 
 <script>
+// Wrap everything in an IIFE so our top-level `const` declarations
+// (fmtNum, fmtPct, BRAND, etc.) don't collide with the deferred maps.js,
+// which declares `function fmtNum` and `function fmtPct` at top level.
+// Without this wrapper, maps.js fails with
+// "SyntaxError: Identifier 'fmtNum' has already been declared",
+// `window.gaMaps` never gets set, and the county choropleth silently
+// no-ops. (Same script ordering works fine on /counties/ because that
+// page doesn't define its own fmtNum.)
+(function() {
 document.getElementById('yr').textContent = new Date().getFullYear();
 
 const BRAND = {
@@ -663,6 +672,7 @@ document.addEventListener('DOMContentLoaded', () => {
       '<div style="padding:20px; color:var(--coral); font-weight:600;">Failed to load population data. Check console.</div>');
   });
 });
+})();
 </script>
 </body>
 </html>
