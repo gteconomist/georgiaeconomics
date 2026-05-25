@@ -63,6 +63,45 @@
   .table-legend .swatch { display: inline-block; width: 10px; height: 10px; vertical-align: middle; margin: 0 4px 0 8px; }
   .table-legend .sw-best  { background: rgba(58, 141, 141, 0.5); }
   .table-legend .sw-worst { background: rgba(212, 98, 74, 0.4); }
+
+  /* "View report" pill in the MSA comparison table */
+  .report-btn {
+    display: inline-block; padding: 3px 10px;
+    background: var(--peach-deep); color: #fff;
+    font-size: 11px; font-weight: 700; letter-spacing: 0.04em;
+    text-transform: uppercase; border-radius: 2px;
+    text-decoration: none;
+  }
+  .report-btn:hover { background: var(--navy); text-decoration: none; }
+  .report-btn.soon {
+    background: transparent; color: var(--ink-soft);
+    border: 1px solid var(--border); cursor: not-allowed;
+  }
+
+  /* Banner pointing to the new feature */
+  .report-banner {
+    margin: 16px 0 22px; padding: 14px 18px;
+    background: linear-gradient(90deg, var(--navy) 0%, var(--navy-soft) 100%);
+    color: #fff; border-radius: 4px;
+    display: flex; align-items: center; gap: 16px; flex-wrap: wrap;
+  }
+  .report-banner .icon {
+    font-family: var(--font-display); font-size: 26px; font-weight: 800;
+    color: var(--peach); line-height: 1;
+  }
+  .report-banner .copy { flex: 1; min-width: 260px; }
+  .report-banner h3 {
+    margin: 0 0 2px; font-family: var(--font-display); font-size: 16px;
+    text-transform: uppercase; letter-spacing: 0.04em; font-weight: 700;
+  }
+  .report-banner p { margin: 0; font-size: 13px; opacity: 0.9; }
+  .report-banner a.cta {
+    background: var(--peach); color: var(--navy);
+    padding: 8px 18px; font-size: 12px; font-weight: 700;
+    text-transform: uppercase; letter-spacing: 0.06em;
+    border-radius: 3px; text-decoration: none;
+  }
+  .report-banner a.cta:hover { background: #fff; text-decoration: none; }
 </style>
 </head>
 <body>
@@ -89,6 +128,16 @@
 
   <div class="notice" id="fixture-banner" style="display:none;">
     <strong>Seed data:</strong> This page is showing fixture values calibrated to reflect plausible GA MSA characteristics (Savannah leads on growth, Atlanta leads on output, Athens on labor) while the BLS QCEW + FHFA + Census + BEA pipelines are wired up.
+  </div>
+
+  <!-- NEW: Précis-style report CTA -->
+  <div class="report-banner">
+    <div class="icon">&#9656;</div>
+    <div class="copy">
+      <h3>New: Full Métro Economic Profile reports</h3>
+      <p>Précis-style multi-page report for each Georgia MSA — business cycle, employment, housing, demographics, exports, forecast risks. <strong>Savannah is live as the first example;</strong> the rest are scheduled to ship sequentially.</p>
+    </div>
+    <a class="cta" href="/msa/savannah/">See Savannah report &rarr;</a>
   </div>
 
   <!-- Headline callouts strip -->
@@ -317,17 +366,22 @@ function renderTable() {
     key: m.key, label: m.axis_label, numeric: true, click: m.key, unit: m.unit, lower_is_better: m.lower_is_better,
   })));
 
+  // Trailing "Report" column — non-sortable
+  cols.push({ key: '__report__', label: 'Report', numeric: false, click: null });
+
   cols.forEach(col => {
     const th = document.createElement('th');
     th.textContent = col.label;
     if (col.numeric) th.classList.add('numeric');
+    if (col.key === '__report__') { th.style.cursor = 'default'; th.style.textAlign = 'center'; }
     if (col.click === SORT_KEY) th.classList.add(SORT_DIR === 'asc' ? 'sorted-asc' : 'sorted-desc');
     const arrow = document.createElement('span');
     arrow.className = 'arrow';
     arrow.textContent = (col.click === SORT_KEY)
       ? (SORT_DIR === 'asc' ? '▲' : '▼')
       : '▾';
-    th.appendChild(arrow);
+    if (col.key !== '__report__') th.appendChild(arrow);
+    if (col.key === '__report__') { head.appendChild(th); return; }
     th.addEventListener('click', () => {
       if (SORT_KEY === col.click) {
         SORT_DIR = SORT_DIR === 'asc' ? 'desc' : 'asc';
@@ -384,6 +438,17 @@ function renderTable() {
       if (val === worstByMetric[m.key]) td.classList.add('worst');
       tr.appendChild(td);
     });
+    // Report column — link if a per-MSA page exists, otherwise "coming soon" pill
+    const REPORTS_LIVE = ['Savannah']; // expand as more reports ship
+    const tdRep = document.createElement('td');
+    tdRep.style.textAlign = 'center';
+    const slug = row.short_name.toLowerCase().replace(/\s+/g, '-');
+    if (REPORTS_LIVE.includes(row.short_name)) {
+      tdRep.innerHTML = `<a class="report-btn" href="/msa/${slug}/">View &rarr;</a>`;
+    } else {
+      tdRep.innerHTML = `<span class="report-btn soon" title="Scheduled in the report rollout">Soon</span>`;
+    }
+    tr.appendChild(tdRep);
     body.appendChild(tr);
   });
 }

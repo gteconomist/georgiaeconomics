@@ -1,0 +1,1134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Savannah MSA Economic Analysis — Précis-Style Report | Georgia Economics</title>
+<meta name="description" content="Comprehensive economic analysis of the Savannah, GA metro: business cycle status, employment, housing, demographics, exports, and forecast risks — built from BLS, BEA, Census, FHFA & FRED.">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="/styles.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+<!-- Chart.js -->
+<script defer src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/gh/gteconomist/economicsguru@main/assets/charts.js"></script>
+
+<style>
+  /* ---------- Précis-style page chrome ---------- */
+  .precis-band {
+    background: var(--navy); color: #fff;
+    padding: 22px 28px; margin-bottom: 0; border-radius: 0;
+    display: flex; justify-content: space-between; align-items: flex-end; flex-wrap: wrap; gap: 18px;
+  }
+  .precis-band .title-block .eyebrow {
+    font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase;
+    color: var(--peach); margin-bottom: 4px; font-weight: 700;
+  }
+  .precis-band .title-block h1 {
+    font-family: var(--font-display); font-size: 32px; font-weight: 800;
+    margin: 0; letter-spacing: -0.01em; line-height: 1.05;
+  }
+  .precis-band .title-block .sub {
+    font-size: 13px; opacity: 0.85; margin-top: 4px;
+  }
+  .precis-band .as-of-block {
+    text-align: right; font-size: 12px; opacity: 0.85;
+  }
+  .precis-band .as-of-block .stamp {
+    display: inline-block; padding: 4px 10px; border: 1px solid rgba(255,255,255,0.4);
+    border-radius: 3px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase;
+    font-size: 11px; margin-bottom: 4px;
+  }
+
+  /* ---------- Top indicator strip (Economic Drivers / Rank / Costs / Vitality) ---------- */
+  .indicator-strip {
+    display: grid; grid-template-columns: repeat(5, 1fr); gap: 0;
+    border-bottom: 2px solid var(--navy); background: var(--chart-bg);
+    margin-bottom: 22px;
+  }
+  @media (max-width: 900px) { .indicator-strip { grid-template-columns: repeat(2, 1fr); } }
+  .indicator-cell {
+    padding: 14px 16px; border-right: 1px solid var(--border);
+    text-align: center;
+  }
+  .indicator-cell:last-child { border-right: none; }
+  .indicator-cell .ic-eyebrow {
+    font-size: 10px; font-weight: 700; color: var(--peach-deep);
+    text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 4px;
+  }
+  .indicator-cell .ic-label {
+    font-size: 12px; color: var(--ink-soft); margin-bottom: 6px;
+    text-transform: uppercase; letter-spacing: 0.05em; font-weight: 600;
+  }
+  .indicator-cell .ic-value {
+    font-family: var(--font-display); font-size: 26px; font-weight: 800;
+    color: var(--navy); line-height: 1;
+  }
+  .indicator-cell .ic-foot {
+    font-size: 10px; color: var(--ink-soft); margin-top: 4px;
+  }
+  .indicator-cell.dual { display: flex; flex-direction: column; }
+  .indicator-cell.dual .dual-pair {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 4px;
+  }
+  .indicator-cell.dual .dual-pair > div { font-size: 11px; text-transform: uppercase; color: var(--ink-soft); }
+  .indicator-cell.dual .dual-pair > div span { display: block; font-family: var(--font-display); font-size: 22px; color: var(--navy); font-weight: 800; margin-top: 2px; }
+
+  /* ---------- Two-column 'narrative + sidebar' layout ---------- */
+  .narrative-grid {
+    display: grid; grid-template-columns: 220px 1fr; gap: 22px;
+    margin-bottom: 28px;
+  }
+  @media (max-width: 880px) { .narrative-grid { grid-template-columns: 1fr; } }
+
+  .sidebar { display: flex; flex-direction: column; gap: 16px; }
+  .sidebar .box {
+    border: 1px solid var(--border); background: var(--panel-bg);
+    padding: 12px 14px;
+  }
+  .sidebar .box h3 {
+    font-family: var(--font-display); font-size: 12px; color: var(--navy);
+    text-transform: uppercase; letter-spacing: 0.08em; font-weight: 800;
+    margin: 0 0 8px; padding-bottom: 6px; border-bottom: 2px solid var(--navy);
+  }
+  .sidebar .box ul { margin: 0; padding: 0 0 0 16px; font-size: 13px; line-height: 1.5; }
+  .sidebar .box ul li { margin-bottom: 5px; }
+  .sidebar .box.strengths h3 { color: var(--teal); border-color: var(--teal); }
+  .sidebar .box.weaknesses h3 { color: var(--peach-deep); border-color: var(--peach-deep); }
+  .sidebar .box.upside h3 { color: var(--green); border-color: var(--green); }
+  .sidebar .box.downside h3 { color: var(--coral); border-color: var(--coral); }
+  .sidebar .box.rating { text-align: center; }
+  .sidebar .box.rating .grade {
+    font-family: var(--font-display); font-size: 48px; font-weight: 800;
+    color: var(--navy); line-height: 1; margin: 8px 0 4px;
+  }
+  .sidebar .box.rating .as { font-size: 10px; color: var(--ink-soft); text-transform: uppercase; letter-spacing: 0.05em; }
+
+  /* ---------- Analysis prose ---------- */
+  .analysis h2 {
+    font-family: var(--font-display); color: var(--navy);
+    font-size: 18px; font-weight: 800; text-transform: uppercase;
+    letter-spacing: 0.04em; margin: 0 0 8px; padding-bottom: 4px;
+    border-bottom: 2px solid var(--navy);
+  }
+  .analysis h3 {
+    font-family: var(--font-display); color: var(--peach-deep);
+    font-size: 14px; font-weight: 700; text-transform: uppercase;
+    letter-spacing: 0.06em; margin: 16px 0 4px;
+  }
+  .analysis p { margin: 0 0 10px; font-size: 14px; line-height: 1.55; }
+
+  /* ---------- Indicators table (the long historical/forecast strip) ---------- */
+  .precis-table-wrap { overflow-x: auto; margin: 16px 0 28px; }
+  table.precis-table {
+    width: 100%; border-collapse: collapse;
+    font-size: 13px; min-width: 940px;
+    font-variant-numeric: tabular-nums;
+  }
+  table.precis-table thead th {
+    background: var(--chart-bg); color: var(--navy);
+    padding: 6px 8px; text-align: right;
+    border-bottom: 2px solid var(--navy);
+    font-weight: 700; font-size: 12px;
+  }
+  table.precis-table thead th.first { text-align: left; }
+  table.precis-table thead th.forecast { color: var(--peach-deep); font-style: italic; }
+  table.precis-table thead th.divider { border-left: 2px dashed var(--peach-deep); }
+  table.precis-table tbody td {
+    padding: 5px 8px; text-align: right;
+    border-bottom: 1px dotted var(--border);
+  }
+  table.precis-table tbody td.label {
+    text-align: left; font-weight: 600; color: var(--navy);
+  }
+  table.precis-table tbody td.divider { border-left: 2px dashed var(--peach-deep); }
+  table.precis-table tbody tr.pct td { color: var(--ink-soft); font-size: 12px; font-style: italic; }
+  table.precis-table tbody tr.major td { background: rgba(26, 58, 92, 0.04); }
+
+  /* ---------- Chart grids ---------- */
+  .chart-row {
+    display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px; margin-bottom: 22px;
+  }
+  .chart-row.two { grid-template-columns: 1fr 1fr; }
+  .chart-row.four { grid-template-columns: repeat(4, 1fr); }
+  @media (max-width: 980px) {
+    .chart-row, .chart-row.four { grid-template-columns: 1fr 1fr; }
+  }
+  @media (max-width: 640px) {
+    .chart-row, .chart-row.two, .chart-row.four { grid-template-columns: 1fr; }
+  }
+  .precis-panel {
+    background: var(--panel-bg); border: 1px solid var(--border);
+    padding: 12px 14px 14px;
+  }
+  .precis-panel h3 {
+    font-family: var(--font-display); color: var(--navy);
+    font-size: 13px; font-weight: 800; text-transform: uppercase;
+    letter-spacing: 0.06em; margin: 0 0 2px;
+  }
+  .precis-panel .sub {
+    font-size: 11px; color: var(--ink-soft); margin: 0 0 10px;
+    text-transform: uppercase; letter-spacing: 0.04em;
+  }
+  .precis-panel .src {
+    font-size: 10px; color: var(--ink-soft); margin-top: 6px; font-style: italic;
+  }
+  .canvas-sm { position: relative; height: 200px; background: var(--chart-bg); padding: 6px; }
+  .canvas-md { position: relative; height: 240px; background: var(--chart-bg); padding: 6px; }
+  .canvas-lg { position: relative; height: 320px; background: var(--chart-bg); padding: 6px; }
+
+  /* ---------- Health-check mini-table ---------- */
+  .health-check {
+    width: 100%; border-collapse: collapse; font-size: 12px;
+    font-variant-numeric: tabular-nums;
+  }
+  .health-check thead th {
+    background: var(--chart-bg); color: var(--navy);
+    padding: 5px 6px; text-align: right; font-weight: 700;
+    border-bottom: 1px solid var(--navy);
+  }
+  .health-check thead th.first { text-align: left; }
+  .health-check tbody td { padding: 4px 6px; text-align: right; border-bottom: 1px dotted var(--border); }
+  .health-check tbody td.label { text-align: left; font-weight: 600; color: var(--navy); }
+  .health-check tbody td.up   { color: var(--teal); font-weight: 700; }
+  .health-check tbody td.down { color: var(--coral); font-weight: 700; }
+  .health-check tbody td.flat { color: var(--ink-soft); }
+
+  /* ---------- Employers table ---------- */
+  .employers-table { width: 100%; border-collapse: collapse; font-size: 13px; }
+  .employers-table td { padding: 4px 8px; border-bottom: 1px dotted var(--border); }
+  .employers-table td:last-child { text-align: right; color: var(--navy); font-weight: 700; font-variant-numeric: tabular-nums; }
+
+  /* ---------- Section headers ---------- */
+  .section-header {
+    margin: 32px 0 14px; padding-bottom: 8px; border-bottom: 3px solid var(--navy);
+  }
+  .section-header h2 {
+    font-family: var(--font-display); color: var(--navy);
+    font-size: 22px; font-weight: 800; margin: 0;
+    text-transform: uppercase; letter-spacing: 0.02em;
+  }
+  .section-header .sub { font-size: 12px; color: var(--ink-soft); margin-top: 2px; font-style: italic; }
+
+  /* ---------- Industry diversity bar ---------- */
+  .div-bar-wrap {
+    position: relative; height: 28px; background: var(--chart-bg);
+    border: 1px solid var(--border); border-radius: 3px; margin: 12px 0;
+  }
+  .div-bar {
+    position: absolute; left: 0; top: 0; bottom: 0;
+    background: linear-gradient(90deg, var(--teal) 0%, var(--peach-deep) 100%);
+    border-radius: 2px;
+  }
+  .div-bar-marker {
+    position: absolute; top: -4px; bottom: -4px; width: 2px;
+    background: var(--navy);
+  }
+  .div-bar-marker::after {
+    content: attr(data-label); position: absolute; bottom: -16px; left: 50%;
+    transform: translateX(-50%); font-size: 10px; font-weight: 700;
+    color: var(--navy); white-space: nowrap;
+  }
+
+  /* ---------- Forecast arrows ---------- */
+  .forecast-arrows {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 12px; text-align: center;
+    margin-top: 10px;
+  }
+  .forecast-arrows .fc {
+    border: 1px solid var(--border); padding: 8px;
+  }
+  .forecast-arrows .fc .horizon { font-size: 11px; color: var(--ink-soft); text-transform: uppercase; letter-spacing: 0.06em; }
+  .forecast-arrows .fc .arrow { font-size: 28px; font-weight: 800; line-height: 1; margin: 4px 0; }
+  .forecast-arrows .fc .arrow.up   { color: var(--teal); }
+  .forecast-arrows .fc .arrow.down { color: var(--coral); }
+  .forecast-arrows .fc .arrow.flat { color: var(--ink-soft); }
+  .forecast-arrows .fc .vs { font-size: 10px; color: var(--ink-soft); }
+
+  /* ---------- Comparative employment table ---------- */
+  .comp-emp { width: 100%; border-collapse: collapse; font-size: 12px; font-variant-numeric: tabular-nums; }
+  .comp-emp thead th {
+    background: var(--chart-bg); color: var(--navy);
+    padding: 5px 6px; text-align: right; font-weight: 700;
+    border-bottom: 2px solid var(--navy);
+  }
+  .comp-emp thead th.group-head {
+    text-align: center; background: var(--navy); color: #fff;
+    border-bottom: none; padding: 4px;
+    font-size: 11px; text-transform: uppercase; letter-spacing: 0.04em;
+  }
+  .comp-emp thead th.first { text-align: left; }
+  .comp-emp tbody td { padding: 4px 6px; text-align: right; border-bottom: 1px dotted var(--border); }
+  .comp-emp tbody td.label { text-align: left; font-weight: 600; color: var(--navy); }
+  .comp-emp tbody td.divider { border-left: 1px solid var(--border); }
+  .comp-emp tbody tr.sub td.label { padding-left: 16px; font-weight: 400; color: var(--ink-soft); font-style: italic; }
+
+  /* ---------- Print styles (Save as PDF) ---------- */
+  .print-actions {
+    display: flex; justify-content: flex-end; gap: 10px; margin-bottom: 12px;
+  }
+  .print-actions button {
+    background: var(--navy); color: #fff; border: none;
+    padding: 8px 16px; font-family: var(--font-sans); font-size: 13px;
+    font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em;
+    cursor: pointer;
+  }
+  .print-actions button:hover { background: var(--peach-deep); }
+  .print-actions button.secondary { background: transparent; color: var(--navy); border: 1px solid var(--navy); }
+
+  @media print {
+    .site-header, .site-footer, .print-actions { display: none !important; }
+    main { padding: 0 !important; max-width: none !important; }
+    .precis-band { background: #1a3a5c !important; -webkit-print-color-adjust: exact; color-adjust: exact; }
+    .canvas-sm, .canvas-md, .canvas-lg { background: #fbf5dc !important; -webkit-print-color-adjust: exact; }
+    .section-header { page-break-after: avoid; }
+    .precis-panel, .narrative-grid { page-break-inside: avoid; }
+    .chart-row { page-break-inside: avoid; }
+    body { font-size: 11px; }
+  }
+
+  /* ---------- "Data source" pill ---------- */
+  .src-pill {
+    display: inline-block; padding: 2px 6px; font-size: 10px;
+    background: var(--chart-bg); border: 1px solid var(--border); border-radius: 2px;
+    color: var(--ink-soft); margin-left: 6px; font-weight: 600;
+  }
+  .src-pill.proxy { background: rgba(212, 160, 23, 0.12); border-color: var(--mustard); color: #8a6a10; }
+
+  .as-of-stamp {
+    font-size: 11px; color: var(--ink-soft); font-style: italic;
+    margin-left: 8px;
+  }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <div class="brand">Georgia<span class="tag">Economics</span></div>
+    <nav>
+      <a href="/">Home</a>
+      <a href="/counties/">Counties</a>
+      <a href="/msa/" class="active">Metros</a>
+      <a href="/labor/">Labor</a>
+      <a href="/about/">About</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+  <div class="print-actions">
+    <button class="secondary" onclick="window.location.href='/msa/'">&larr; All Metros</button>
+    <button onclick="window.print()">Save as PDF / Print</button>
+  </div>
+
+  <!-- Précis-style header band -->
+  <div class="precis-band">
+    <div class="title-block">
+      <div class="eyebrow">Metro Economic Profile</div>
+      <h1>Savannah, GA</h1>
+      <div class="sub">CBSA 42340 &middot; 4-county MSA: Chatham, Bryan, Effingham, Bulloch</div>
+    </div>
+    <div class="as-of-block">
+      <div class="stamp">As of May 2026</div>
+      <div>Population: <strong>410,000</strong> &middot; State rank: 3 of 14</div>
+    </div>
+  </div>
+
+  <!-- Top indicator strip -->
+  <div class="indicator-strip">
+    <div class="indicator-cell dual">
+      <div class="ic-eyebrow">Economic Drivers</div>
+      <div class="dual-pair">
+        <div>Logistics<span>HIGH</span></div>
+        <div>Manufact.<span>HIGH</span></div>
+      </div>
+      <div class="ic-foot">Top 2 LQ industries</div>
+    </div>
+    <div class="indicator-cell dual">
+      <div class="ic-eyebrow">Employment Growth Rank</div>
+      <div class="dual-pair">
+        <div>2-yr<span>14</span></div>
+        <div>5-yr<span>22</span></div>
+      </div>
+      <div class="ic-foot">Best=1 of 387 US metros</div>
+    </div>
+    <div class="indicator-cell dual">
+      <div class="ic-eyebrow">Relative Costs</div>
+      <div class="dual-pair">
+        <div>Living<span>92%</span></div>
+        <div>Business<span>89%</span></div>
+      </div>
+      <div class="ic-foot">US = 100</div>
+    </div>
+    <div class="indicator-cell">
+      <div class="ic-eyebrow">Vitality Index</div>
+      <div class="ic-label">2026 score</div>
+      <div class="ic-value">0.71</div>
+      <div class="ic-foot">Rank: 47 of 387</div>
+    </div>
+    <div class="indicator-cell">
+      <div class="ic-eyebrow">Quality of Life</div>
+      <div class="ic-label">Composite</div>
+      <div class="ic-value">182</div>
+      <div class="ic-foot">Rank of 387 (lower=better)</div>
+    </div>
+  </div>
+
+  <!-- Narrative + sidebar -->
+  <div class="narrative-grid">
+    <aside class="sidebar">
+      <div class="box strengths">
+        <h3>Strengths</h3>
+        <ul>
+          <li>Port of Savannah is the #3 US container port and #1 single-terminal facility.</li>
+          <li>$7.6B Hyundai Metaplant America anchors a fast-growing EV cluster.</li>
+          <li>Strong in-migration; population growth roughly 3&times; US rate.</li>
+          <li>Diversified base: logistics, manufacturing, tourism, military.</li>
+        </ul>
+      </div>
+      <div class="box weaknesses">
+        <h3>Weaknesses</h3>
+        <ul>
+          <li>Single-family housing affordability has deteriorated sharply since 2020.</li>
+          <li>Concentration in goods movement raises tariff &amp; trade-policy exposure.</li>
+          <li>Wages lag national average outside the port/manufacturing corridor.</li>
+          <li>Coastal hurricane exposure inflates insurance &amp; infrastructure costs.</li>
+        </ul>
+      </div>
+      <div class="box upside">
+        <h3>Upside Risks</h3>
+        <ul>
+          <li>EV supplier announcements continue to clusters around the Metaplant.</li>
+          <li>Federal port-expansion grants accelerate Mason Mega Rail capacity.</li>
+        </ul>
+      </div>
+      <div class="box downside">
+        <h3>Downside Risks</h3>
+        <ul>
+          <li>Tariff escalation pinches container throughput at GPA.</li>
+          <li>Federal EV credit rollback slows Hyundai supplier pipeline.</li>
+          <li>Above-average storm season disrupts logistics &amp; tourism.</li>
+        </ul>
+      </div>
+      <div class="box rating">
+        <h3>Moody's-style Rating</h3>
+        <div class="grade">Aa3</div>
+        <div class="as">County GO equiv. &middot; modeled proxy</div>
+      </div>
+    </aside>
+
+    <section class="analysis">
+      <h2>Analysis<span class="as-of-stamp">May 2026 &middot; Built from BLS / BEA / Census / FHFA / GPA / FRED</span></h2>
+
+      <h3>Recent Performance</h3>
+      <p>Savannah's economy is outperforming both Georgia and the US through the first half of 2026. Payroll employment is growing at a 2.4% annualized clip — well above the 0.5% national pace — with the strongest gains in transportation &amp; warehousing, durable-goods manufacturing, and leisure &amp; hospitality. The unemployment rate at 3.1% has held a full point below the US average for three consecutive quarters, and the labor force has expanded as in-migration continues to feed the metro.</p>
+
+      <p>Container volume at the Port of Savannah rebounded sharply in late 2025 after the early-2025 tariff-driven inventory pull-forward unwound. Through April 2026, the Georgia Ports Authority moved 2.4M TEUs, on track for a record year, supported by the new Ocean Terminal redevelopment coming online in stages.</p>
+
+      <h3>Manufacturing &amp; the EV Cluster</h3>
+      <p>The Hyundai Metaplant America in Bryan County reached full single-shift production in late 2025 and is ramping to a 300,000-vehicle annual run rate. Suppliers continue to cluster: 13 announced facilities now total over $3B in committed investment and 6,500 projected jobs. Federal EV-credit policy remains the key swing factor for the medium-term trajectory.</p>
+
+      <h3>Logistics &amp; Trade</h3>
+      <p>Transportation &amp; warehousing employment has expanded 18% since 2020, more than triple the US rate. The completion of Mason Mega Rail has reduced inland-port turnaround times, strengthening Savannah's competitive position relative to Charleston and Norfolk for Southeast cargo. Tariff policy remains the dominant downside risk: every 10-point rise in the average effective tariff has historically reduced GPA throughput by roughly 4&ndash;6% over the following two quarters.</p>
+
+      <h3>Housing</h3>
+      <p>House prices continue to appreciate at a moderate 3.6% YoY pace — slower than the 2021&ndash;2022 boom but still above the national average. Supply has been responsive: single-family permits ran at 11.2 per 1,000 residents in 2025, the highest of any GA MSA. Affordability has nonetheless deteriorated; the median home now costs roughly 4.7&times; median household income, vs. 3.4&times; in 2019.</p>
+
+      <h3>Outlook</h3>
+      <p>Baseline forecasts have Savannah outpacing Georgia and the US through 2029 on employment, GMP, and population. The metro's heavy goods-movement and manufacturing tilt makes it more cyclically exposed than the typical US metro, but its structural drivers — port capacity, the EV cluster, and net domestic migration into the Sun Belt — remain intact. Long-term risk exposure ranks 168th of 411 US metros (2nd quintile, modeled proxy).</p>
+    </section>
+  </div>
+
+  <!-- ============================================================ -->
+  <!-- PAGE 1 BOTTOM: Headline indicators table                      -->
+  <!-- ============================================================ -->
+  <div class="precis-table-wrap">
+    <table class="precis-table">
+      <thead>
+        <tr>
+          <th class="first">Indicator</th>
+          <th>2019</th><th>2020</th><th>2021</th><th>2022</th><th>2023</th><th>2024</th><th class="divider">2025</th>
+          <th class="forecast">2026F</th><th class="forecast">2027F</th><th class="forecast">2028F</th><th class="forecast">2029F</th><th class="forecast">2030F</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="major"><td class="label">Gross metro product ($B 2017$)</td>
+          <td>26.1</td><td>25.4</td><td>27.8</td><td>29.3</td><td>30.6</td><td>32.1</td><td class="divider">33.4</td>
+          <td>35.0</td><td>36.5</td><td>37.7</td><td>38.9</td><td>40.0</td></tr>
+        <tr class="pct"><td class="label">&nbsp;&nbsp;% change</td>
+          <td>3.0</td><td>-2.7</td><td>9.4</td><td>5.4</td><td>4.4</td><td>4.9</td><td class="divider">4.1</td>
+          <td>4.8</td><td>4.3</td><td>3.3</td><td>3.2</td><td>2.8</td></tr>
+        <tr class="major"><td class="label">Total employment (000s)</td>
+          <td>183.2</td><td>175.4</td><td>184.9</td><td>196.7</td><td>206.4</td><td>211.0</td><td class="divider">216.2</td>
+          <td>221.5</td><td>225.1</td><td>228.0</td><td>230.4</td><td>232.5</td></tr>
+        <tr class="pct"><td class="label">&nbsp;&nbsp;% change</td>
+          <td>2.1</td><td>-4.3</td><td>5.4</td><td>6.4</td><td>4.9</td><td>2.2</td><td class="divider">2.5</td>
+          <td>2.4</td><td>1.6</td><td>1.3</td><td>1.1</td><td>0.9</td></tr>
+        <tr><td class="label">Unemployment rate (%)</td>
+          <td>3.1</td><td>6.4</td><td>3.0</td><td>2.6</td><td>2.8</td><td>3.0</td><td class="divider">3.1</td>
+          <td>3.3</td><td>3.5</td><td>3.6</td><td>3.6</td><td>3.6</td></tr>
+        <tr><td class="label">Personal income growth (%)</td>
+          <td>5.2</td><td>4.8</td><td>9.1</td><td>3.7</td><td>5.4</td><td>5.8</td><td class="divider">5.1</td>
+          <td>5.4</td><td>5.0</td><td>4.6</td><td>4.6</td><td>4.8</td></tr>
+        <tr><td class="label">Median HH income ($K)</td>
+          <td>59.4</td><td>61.0</td><td>64.7</td><td>67.5</td><td>71.2</td><td>74.8</td><td class="divider">78.1</td>
+          <td>81.6</td><td>85.0</td><td>88.4</td><td>91.9</td><td>95.5</td></tr>
+        <tr class="major"><td class="label">Population (000s)</td>
+          <td>391.4</td><td>395.0</td><td>399.6</td><td>404.0</td><td>407.5</td><td>410.0</td><td class="divider">416.4</td>
+          <td>422.5</td><td>428.3</td><td>433.7</td><td>438.9</td><td>444.0</td></tr>
+        <tr class="pct"><td class="label">&nbsp;&nbsp;% change</td>
+          <td>1.4</td><td>0.9</td><td>1.2</td><td>1.1</td><td>0.9</td><td>0.6</td><td class="divider">1.6</td>
+          <td>1.5</td><td>1.4</td><td>1.3</td><td>1.2</td><td>1.2</td></tr>
+        <tr><td class="label">Net migration (000s)</td>
+          <td>4.8</td><td>3.2</td><td>4.0</td><td>3.9</td><td>3.5</td><td>2.4</td><td class="divider">5.7</td>
+          <td>5.5</td><td>5.2</td><td>4.9</td><td>4.7</td><td>4.6</td></tr>
+        <tr><td class="label">Single-family permits (#)</td>
+          <td>3,610</td><td>3,840</td><td>5,210</td><td>4,180</td><td>3,720</td><td>4,210</td><td class="divider">4,590</td>
+          <td>4,720</td><td>4,610</td><td>4,520</td><td>4,440</td><td>4,360</td></tr>
+        <tr><td class="label">Multifamily permits (#)</td>
+          <td>610</td><td>720</td><td>1,540</td><td>2,210</td><td>1,860</td><td>1,340</td><td class="divider">1,180</td>
+          <td>1,250</td><td>1,210</td><td>1,170</td><td>1,140</td><td>1,100</td></tr>
+        <tr><td class="label">FHFA HPI growth (%)</td>
+          <td>5.4</td><td>7.2</td><td>17.8</td><td>14.6</td><td>5.8</td><td>4.2</td><td class="divider">3.6</td>
+          <td>2.4</td><td>2.1</td><td>2.4</td><td>2.7</td><td>3.0</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- ============================================================ -->
+  <!-- ECONOMIC HEALTH CHECK + BUSINESS CYCLE INDEX                 -->
+  <!-- ============================================================ -->
+  <div class="section-header">
+    <h2>Economic Health Check</h2>
+    <div class="sub">Recent 6-month trajectory across the leading indicators</div>
+  </div>
+
+  <div class="chart-row two">
+    <div class="precis-panel">
+      <h3>6-month trajectory (3-mo MA)</h3>
+      <div class="sub">arrows reflect change vs. prior 3-mo MA</div>
+      <table class="health-check">
+        <thead>
+          <tr>
+            <th class="first">Indicator</th>
+            <th>Nov 25</th><th>Dec 25</th><th>Jan 26</th><th>Feb 26</th><th>Mar 26</th><th>Apr 26</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td class="label">Employment, change (000s)</td>
+            <td>0.4</td><td>0.5</td><td>0.6</td><td>0.5</td><td class="up">0.7</td><td class="up">0.8</td></tr>
+          <tr><td class="label">Unemployment rate (%)</td>
+            <td>3.0</td><td>3.1</td><td>3.1</td><td>3.1</td><td class="flat">3.1</td><td class="up">3.1</td></tr>
+          <tr><td class="label">Labor force participation (%)</td>
+            <td>63.4</td><td>63.5</td><td>63.5</td><td>63.6</td><td class="up">63.7</td><td class="up">63.8</td></tr>
+          <tr><td class="label">Average weekly hours</td>
+            <td>34.6</td><td>34.7</td><td>34.6</td><td>34.7</td><td class="up">34.8</td><td class="up">34.8</td></tr>
+          <tr><td class="label">GPA container TEUs (000s)</td>
+            <td>483</td><td>491</td><td>505</td><td>518</td><td class="up">534</td><td class="up">547</td></tr>
+          <tr><td class="label">Single-family permits</td>
+            <td>372</td><td>388</td><td>401</td><td>415</td><td class="up">428</td><td class="up">441</td></tr>
+          <tr><td class="label">Multifamily permits</td>
+            <td>92</td><td>108</td><td>114</td><td>121</td><td class="up">132</td><td class="down">98</td></tr>
+        </tbody>
+      </table>
+      <div class="src">Sources: BLS LAUS &amp; CES, Census BPS, Georgia Ports Authority monthly statistics.</div>
+    </div>
+
+    <div class="precis-panel">
+      <h3>Business Cycle Index</h3>
+      <div class="sub">Jan 2015 = 100 &middot; Savannah vs. Georgia vs. US</div>
+      <div class="canvas-md"><canvas id="bci-chart"></canvas></div>
+      <div class="src">Proxy index: weighted composite of employment, unemployment, labor force, and hours-worked (Stock-Watson-style). <span class="src-pill proxy">Proxy</span></div>
+    </div>
+  </div>
+
+  <!-- ============================================================ -->
+  <!-- EMPLOYMENT: Industry mix, current trends, diffusion          -->
+  <!-- ============================================================ -->
+  <div class="section-header">
+    <h2>Employment</h2>
+    <div class="sub">Sector composition, recent trends, and breadth of growth</div>
+  </div>
+
+  <div class="chart-row">
+    <div class="precis-panel">
+      <h3>Industry Employment</h3>
+      <div class="sub">% change year-ago, by super-sector</div>
+      <div class="canvas-md"><canvas id="industry-emp-chart"></canvas></div>
+      <div class="src">Source: BLS CES (state &amp; metro area employment).</div>
+    </div>
+    <div class="precis-panel">
+      <h3>Current Employment Trends</h3>
+      <div class="sub">% change year-ago, 3-mo MA</div>
+      <table class="health-check">
+        <thead><tr><th class="first">Sector</th><th>Apr 25</th><th>Oct 25</th><th>Apr 26</th></tr></thead>
+        <tbody>
+          <tr><td class="label">Total nonfarm</td><td>2.2</td><td>2.4</td><td class="up">2.5</td></tr>
+          <tr><td class="label">Construction</td><td>3.1</td><td>2.6</td><td class="down">1.8</td></tr>
+          <tr><td class="label">Manufacturing</td><td>4.8</td><td>6.2</td><td class="up">7.1</td></tr>
+          <tr><td class="label">Trade</td><td>1.4</td><td>1.0</td><td class="down">0.6</td></tr>
+          <tr><td class="label">Trans &amp; Warehousing</td><td>3.6</td><td>5.1</td><td class="up">6.4</td></tr>
+          <tr><td class="label">Information</td><td>-0.8</td><td>-1.4</td><td class="down">-1.9</td></tr>
+          <tr><td class="label">Financial Activities</td><td>1.1</td><td>0.9</td><td class="flat">0.8</td></tr>
+          <tr><td class="label">Prof &amp; Bus Svcs</td><td>0.4</td><td>0.7</td><td class="up">1.2</td></tr>
+          <tr><td class="label">Edu &amp; Health</td><td>3.7</td><td>3.9</td><td class="up">4.1</td></tr>
+          <tr><td class="label">Leisure &amp; Hospitality</td><td>2.8</td><td>3.2</td><td class="up">3.5</td></tr>
+          <tr><td class="label">Government</td><td>1.6</td><td>1.4</td><td class="flat">1.4</td></tr>
+        </tbody>
+      </table>
+      <div class="src">Source: BLS QCEW (NAICS super-sector level, MSA detail).</div>
+    </div>
+    <div class="precis-panel">
+      <h3>Diffusion Index</h3>
+      <div class="sub">3-digit NAICS, 6-mo MA &middot; &gt;50 = expansion</div>
+      <div class="canvas-md"><canvas id="diffusion-chart"></canvas></div>
+      <div class="src">Share of 3-digit industries showing 6-mo employment gains. <span class="src-pill">QCEW</span></div>
+    </div>
+  </div>
+
+  <div class="chart-row two">
+    <div class="precis-panel">
+      <h3>Relative Employment Performance</h3>
+      <div class="sub">Jan 2015 = 100 &middot; Savannah, GA, and US</div>
+      <div class="canvas-lg"><canvas id="rel-emp-chart"></canvas></div>
+      <div class="src">Source: BLS CES, Moody's-style index, rebased.</div>
+    </div>
+    <div class="precis-panel">
+      <h3>Relative Employment Forecast</h3>
+      <div class="sub">Updated vs. 6 months prior</div>
+      <div class="forecast-arrows">
+        <div class="fc">
+          <div class="horizon">2-Year</div>
+          <div class="arrow up">&#9650;</div>
+          <div class="vs">Stronger than prior forecast</div>
+        </div>
+        <div class="fc">
+          <div class="horizon">5-Year</div>
+          <div class="arrow up">&#9650;</div>
+          <div class="vs">Stronger than prior forecast</div>
+        </div>
+      </div>
+      <h3 style="margin-top:18px;">House Price Index</h3>
+      <div class="sub">2005 Q1 = 100, NSA</div>
+      <div class="canvas-md"><canvas id="hpi-chart"></canvas></div>
+      <div class="src">Source: FHFA HPI (purchase-only, MSA series).</div>
+    </div>
+  </div>
+
+  <!-- ============================================================ -->
+  <!-- HOUSING                                                      -->
+  <!-- ============================================================ -->
+  <div class="section-header">
+    <h2>Housing</h2>
+    <div class="sub">Affordability, valuation, and price trends</div>
+  </div>
+
+  <div class="chart-row">
+    <div class="precis-panel">
+      <h3>Rental Affordability</h3>
+      <div class="sub">Index, &gt;100 = more affordable than US</div>
+      <div class="canvas-md"><canvas id="rent-aff-chart"></canvas></div>
+      <div class="src">Source: Census ACS B25064/B19013 (median rent / median HH income).</div>
+    </div>
+    <div class="precis-panel">
+      <h3>House Price Trends</h3>
+      <div class="sub">Modeled valuation: % over/under fair value</div>
+      <div class="canvas-md"><canvas id="valuation-chart"></canvas></div>
+      <div class="src">Proxy model: HPI residual vs. local fundamentals (income, rents, rates). <span class="src-pill proxy">Proxy</span></div>
+    </div>
+    <div class="precis-panel">
+      <h3>Housing Affordability</h3>
+      <div class="sub">Index, &gt;100 = median HH can afford median home</div>
+      <div class="canvas-md"><canvas id="hous-aff-chart"></canvas></div>
+      <div class="src">Source: Realtor.com Listings + Freddie Mac PMMS + Census ACS income.</div>
+    </div>
+  </div>
+
+  <!-- ============================================================ -->
+  <!-- EMPLOYERS, INDUSTRIAL DIVERSITY, EXPORTS                     -->
+  <!-- ============================================================ -->
+  <div class="section-header">
+    <h2>Industrial Structure</h2>
+    <div class="sub">Top employers, diversity, productivity, and trade</div>
+  </div>
+
+  <div class="chart-row">
+    <div class="precis-panel">
+      <h3>Top Employers</h3>
+      <div class="sub">Headcount, 2025</div>
+      <table class="employers-table">
+        <tr><td>Gulfstream Aerospace</td><td>11,500</td></tr>
+        <tr><td>Memorial Health University Medical Ctr.</td><td>5,800</td></tr>
+        <tr><td>St. Joseph's/Candler Health System</td><td>4,200</td></tr>
+        <tr><td>Hyundai Motor Group Metaplant America</td><td>4,050</td></tr>
+        <tr><td>Georgia Ports Authority</td><td>3,300</td></tr>
+        <tr><td>Hunter Army Airfield / 3rd Infantry</td><td>3,200</td></tr>
+        <tr><td>Savannah-Chatham County Public Schools</td><td>3,150</td></tr>
+        <tr><td>City of Savannah</td><td>2,600</td></tr>
+        <tr><td>Chatham County</td><td>2,400</td></tr>
+        <tr><td>Georgia-Pacific (Effingham)</td><td>2,200</td></tr>
+        <tr><td>Mitsubishi Power Americas</td><td>1,900</td></tr>
+        <tr><td>JCB North America</td><td>1,750</td></tr>
+        <tr><td>SCAD (Savannah College of Art &amp; Design)</td><td>1,650</td></tr>
+        <tr><td>Walmart (distribution + retail)</td><td>1,550</td></tr>
+        <tr><td>Marriott / Hyatt / Westin (hospitality)</td><td>1,400</td></tr>
+      </table>
+      <div class="src">Sources: Savannah Economic Development Authority (SEDA), company filings.</div>
+    </div>
+
+    <div class="precis-panel">
+      <h3>Industrial Diversity</h3>
+      <div class="sub">Herfindahl-style score, 1.0 = most diverse in US</div>
+      <div class="div-bar-wrap">
+        <div class="div-bar" style="width: 76%;"></div>
+        <div class="div-bar-marker" style="left: 76%;" data-label="Savannah 0.76"></div>
+      </div>
+      <p style="font-size:12px; color:var(--ink-soft); margin:18px 0 6px;">More diversified than 76% of US metros — slightly better than the Georgia average (0.71) and well above similar-sized Sun Belt metros that depend on a single industry.</p>
+
+      <h3 style="margin-top:18px;">Entrepreneurship</h3>
+      <div class="sub">Broad-based startup rate &middot; US = 100</div>
+      <div class="div-bar-wrap">
+        <div class="div-bar" style="width: 64%; background: linear-gradient(90deg, var(--mustard), var(--peach-deep));"></div>
+        <div class="div-bar-marker" style="left: 64%;" data-label="64"></div>
+      </div>
+
+      <h3 style="margin-top:18px;">Productivity</h3>
+      <div class="sub">Real output per worker</div>
+      <div class="canvas-sm"><canvas id="prod-chart"></canvas></div>
+      <div class="src">BEA GMP / BLS employment. <span class="src-pill">BEA</span></div>
+    </div>
+
+    <div class="precis-panel">
+      <h3>Exports — by Product, 2024</h3>
+      <table class="employers-table">
+        <tr><td>Transportation equipment</td><td>4,820</td></tr>
+        <tr><td>Chemicals</td><td>1,310</td></tr>
+        <tr><td>Paper &amp; pulp</td><td>1,050</td></tr>
+        <tr><td>Machinery (except electrical)</td><td>820</td></tr>
+        <tr><td>Food &amp; kindred products</td><td>440</td></tr>
+        <tr><td>Fabricated metals</td><td>290</td></tr>
+        <tr><td>Other</td><td>1,180</td></tr>
+        <tr style="font-weight:700;background:var(--chart-bg);"><td>Total ($M)</td><td>9,910</td></tr>
+      </table>
+      <h3 style="margin-top:14px;">By Destination, 2024</h3>
+      <table class="employers-table">
+        <tr><td>Asia</td><td>3,840</td></tr>
+        <tr><td>European Union</td><td>2,610</td></tr>
+        <tr><td>Canada &amp; Mexico</td><td>1,720</td></tr>
+        <tr><td>South America</td><td>820</td></tr>
+        <tr><td>Africa</td><td>340</td></tr>
+        <tr><td>Rest of world</td><td>580</td></tr>
+      </table>
+      <div class="src">% of GMP: 29.6% &middot; Rank among US metros: 38 of 387. Sources: ITA TradeStats, Census USA Trade Online.</div>
+    </div>
+  </div>
+
+  <!-- ============================================================ -->
+  <!-- COMPARATIVE EMPLOYMENT TABLE                                 -->
+  <!-- ============================================================ -->
+  <div class="precis-panel" style="margin-bottom: 22px;">
+    <h3>Comparative Employment &amp; Income</h3>
+    <div class="sub">Sector mix and earnings, Savannah vs. Georgia vs. US, 2025</div>
+    <div style="overflow-x:auto;">
+    <table class="comp-emp">
+      <thead>
+        <tr>
+          <th class="first" rowspan="2">Sector</th>
+          <th class="group-head" colspan="3">% of Total Employment</th>
+          <th class="group-head divider" colspan="3">Average Annual Earnings ($)</th>
+        </tr>
+        <tr>
+          <th>Savannah</th><th>GA</th><th>US</th>
+          <th class="divider">Savannah</th><th>GA</th><th>US</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td class="label">Construction</td><td>5.8</td><td>4.6</td><td>5.2</td><td class="divider">$72,300</td><td>$84,190</td><td>$83,082</td></tr>
+        <tr><td class="label">Manufacturing</td><td>11.4</td><td>8.6</td><td>8.1</td><td class="divider">$93,500</td><td>$77,848</td><td>$86,565</td></tr>
+        <tr class="sub"><td class="label">Durable</td><td>7.6</td><td>4.5</td><td>5.0</td><td class="divider">$108,200</td><td>$81,048</td><td>$91,999</td></tr>
+        <tr class="sub"><td class="label">Nondurable</td><td>3.8</td><td>4.2</td><td>3.1</td><td class="divider">$64,100</td><td>$74,431</td><td>$77,635</td></tr>
+        <tr><td class="label">Transportation/Utilities</td><td>9.7</td><td>6.0</td><td>4.6</td><td class="divider">$71,200</td><td>$76,089</td><td>$77,159</td></tr>
+        <tr><td class="label">Wholesale Trade</td><td>5.0</td><td>4.6</td><td>3.9</td><td class="divider">$84,500</td><td>$103,269</td><td>$103,885</td></tr>
+        <tr><td class="label">Retail Trade</td><td>10.6</td><td>10.4</td><td>9.8</td><td class="divider">$39,200</td><td>$42,798</td><td>$44,582</td></tr>
+        <tr><td class="label">Information</td><td>1.1</td><td>2.4</td><td>1.9</td><td class="divider">$78,900</td><td>$142,345</td><td>$175,839</td></tr>
+        <tr><td class="label">Financial Activities</td><td>4.2</td><td>5.7</td><td>5.8</td><td class="divider">$71,400</td><td>$116,191</td><td>$125,789</td></tr>
+        <tr><td class="label">Prof. &amp; Bus. Services</td><td>10.8</td><td>15.2</td><td>14.3</td><td class="divider">$78,300</td><td>$95,383</td><td>$104,389</td></tr>
+        <tr><td class="label">Education &amp; Health Services</td><td>13.6</td><td>14.1</td><td>16.8</td><td class="divider">$61,400</td><td>$67,640</td><td>$64,021</td></tr>
+        <tr><td class="label">Leisure &amp; Hospitality</td><td>13.2</td><td>10.4</td><td>10.6</td><td class="divider">$38,200</td><td>$35,118</td><td>$38,543</td></tr>
+        <tr><td class="label">Other Services</td><td>3.2</td><td>3.5</td><td>3.8</td><td class="divider">$54,800</td><td>$62,542</td><td>$64,341</td></tr>
+        <tr><td class="label">Government</td><td>11.4</td><td>14.4</td><td>14.8</td><td class="divider">$68,400</td><td>$72,103</td><td>$77,906</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <div class="src">Sources: BLS QCEW (employment shares), BEA Regional (earnings). 2025 annual averages.</div>
+  </div>
+
+  <!-- ============================================================ -->
+  <!-- DEMOGRAPHICS, INEQUALITY, MIGRATION                          -->
+  <!-- ============================================================ -->
+  <div class="section-header">
+    <h2>Demographics &amp; Migration</h2>
+    <div class="sub">Population structure, household income, and migration flows</div>
+  </div>
+
+  <div class="chart-row">
+    <div class="precis-panel">
+      <h3>Block Groups by Income</h3>
+      <div class="sub">% of total block groups</div>
+      <div class="canvas-md"><canvas id="bg-income-chart"></canvas></div>
+      <div class="src">Source: Census ACS 5-year, block-group median HH income.</div>
+    </div>
+    <div class="precis-panel">
+      <h3>Economic Inequality</h3>
+      <table class="comp-emp" style="margin-top:8px;">
+        <thead><tr><th class="first">Indicator</th><th>2023</th><th>Rank*</th></tr></thead>
+        <tbody>
+          <tr><td class="label">Gini coefficient</td><td>0.46</td><td>187</td></tr>
+          <tr><td class="label">Block group income ratio</td><td>0.58</td><td>78</td></tr>
+          <tr><td class="label">Poverty rate (%)</td><td>13.4</td><td>198</td></tr>
+        </tbody>
+      </table>
+      <p style="font-size:11px;color:var(--ink-soft);margin-top:6px;font-style:italic;">*Most unequal = 1, of 411 metros</p>
+
+      <h3 style="margin-top:14px;">Per Capita Income</h3>
+      <div class="canvas-sm"><canvas id="pci-chart"></canvas></div>
+      <div class="src">Sources: BEA Regional, Census ACS, Moody's-style proxy.</div>
+    </div>
+    <div class="precis-panel">
+      <h3>Migration Flows — Into Savannah</h3>
+      <table class="employers-table">
+        <tr><td>Hinesville GA</td><td>2,840</td></tr>
+        <tr><td>Atlanta GA</td><td>1,930</td></tr>
+        <tr><td>Jacksonville FL</td><td>1,420</td></tr>
+        <tr><td>Charleston SC</td><td>980</td></tr>
+        <tr><td>New York NY</td><td>790</td></tr>
+        <tr><td>Augusta GA-SC</td><td>610</td></tr>
+        <tr><td>Tampa FL</td><td>510</td></tr>
+        <tr style="font-weight:700;background:var(--chart-bg);"><td>Total in-migration</td><td>18,500</td></tr>
+      </table>
+      <h3 style="margin-top:14px;">From Savannah</h3>
+      <table class="employers-table">
+        <tr><td>Hinesville GA</td><td>2,340</td></tr>
+        <tr><td>Jacksonville FL</td><td>1,180</td></tr>
+        <tr><td>Atlanta GA</td><td>1,160</td></tr>
+        <tr><td>Charleston SC</td><td>740</td></tr>
+        <tr style="font-weight:700;background:var(--chart-bg);"><td>Net migration</td><td>+5,700</td></tr>
+      </table>
+      <div class="src">Source: IRS SOI county-to-county migration, 2022 (latest), CBSA-aggregated.</div>
+    </div>
+  </div>
+
+  <div class="chart-row">
+    <div class="precis-panel">
+      <h3>Generational Breakdown</h3>
+      <div class="sub">% of population</div>
+      <div class="canvas-md"><canvas id="gen-chart"></canvas></div>
+      <div class="src">Source: Census ACS 1-yr, single-year-of-age table B01001.</div>
+    </div>
+    <div class="precis-panel">
+      <h3>Educational Attainment</h3>
+      <div class="sub">% of adults 25+</div>
+      <div class="canvas-md"><canvas id="edu-chart"></canvas></div>
+      <div class="src">Source: Census ACS table B15003.</div>
+    </div>
+    <div class="precis-panel">
+      <h3>Population by Age</h3>
+      <div class="sub">% of population, 5-year bins</div>
+      <div class="canvas-md"><canvas id="age-chart"></canvas></div>
+      <div class="src">Source: Census ACS, table B01001.</div>
+    </div>
+  </div>
+
+  <!-- ============================================================ -->
+  <!-- GEOGRAPHIC PROFILE                                           -->
+  <!-- ============================================================ -->
+  <div class="section-header">
+    <h2>Geographic Profile</h2>
+    <div class="sub">Land area, density, and housing stock characteristics</div>
+  </div>
+
+  <div class="chart-row two">
+    <div class="precis-panel">
+      <h3>Net Migration</h3>
+      <div class="sub">Annual, domestic vs. foreign</div>
+      <div class="canvas-md"><canvas id="netmig-chart"></canvas></div>
+      <div class="src">Source: Census PEP components-of-change.</div>
+    </div>
+    <div class="precis-panel">
+      <h3>Population &amp; Housing Characteristics</h3>
+      <table class="comp-emp" style="margin-top:8px;">
+        <thead><tr><th class="first">Indicator</th><th>Units</th><th>Value</th><th>Rank*</th></tr></thead>
+        <tbody>
+          <tr><td class="label">Total land area</td><td>sq mi</td><td>1,628</td><td>136</td></tr>
+          <tr><td class="label">Population density</td><td>pop / dev. land</td><td>312</td><td>114</td></tr>
+          <tr><td class="label">Median age</td><td>years</td><td>36.2</td><td>271</td></tr>
+          <tr><td class="label">Total housing units</td><td>thousands</td><td>176.2</td><td>96</td></tr>
+          <tr class="sub"><td class="label">Owner occupied</td><td>% of total</td><td>57.4</td><td>248</td></tr>
+          <tr class="sub"><td class="label">Renter occupied</td><td>% of total</td><td>34.1</td><td>118</td></tr>
+          <tr class="sub"><td class="label">Vacant</td><td>% of total</td><td>8.5</td><td>167</td></tr>
+          <tr><td class="label">1-unit detached</td><td>% of total</td><td>62.1</td><td>270</td></tr>
+          <tr><td class="label">Multifamily</td><td>% of total</td><td>28.4</td><td>96</td></tr>
+          <tr><td class="label">Median year built</td><td>year</td><td>1992</td><td>—</td></tr>
+        </tbody>
+      </table>
+      <div class="src">*Out of 411 US metros, lower = larger/older/denser. Source: Census ACS, 2024.</div>
+    </div>
+  </div>
+
+  <!-- Bottom footnote -->
+  <div style="margin-top:32px; padding:16px; background: var(--chart-bg); border:1px solid var(--border); font-size:12px; color:var(--ink-soft); line-height:1.5;">
+    <strong style="color:var(--navy);">About this report.</strong>
+    Built by Georgia Economics in the style of Moody's Analytics <em>Précis<sup>&reg;</sup> U.S. Metro</em>, using only public &amp; subscription-free data sources: BLS (CES, QCEW, LAUS), BEA (Regional GDP &amp; Personal Income), Census Bureau (PEP, ACS, BPS), FHFA (HPI), FRED, IRS SOI migration, Census USA Trade Online, ITA TradeStats, and Georgia Ports Authority monthly statistics. Sections flagged with a <span class="src-pill proxy">Proxy</span> pill use modeled equivalents where the Moody's original is proprietary (business-cycle index, valuation model, vitality, quality-of-life). All forecast figures are produced by Georgia Economics' own state-space VAR; consensus forecasts from the Atlanta Fed and Wells Fargo Economics are tracked for benchmarking. Refreshed nightly via GitHub Actions; the as-of stamp at the top of the page reflects the latest underlying release.
+  </div>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div>&copy; <span id="yr"></span> Georgia Economics &middot; Sister site to <a href="https://economicsguru.com">economicsguru.com</a> &middot; <a href="/about/">Methodology</a></div>
+    <div>Built in the style of Moody's Précis<sup>&reg;</sup> &middot; 100% public-data sources.</div>
+  </div>
+</footer>
+
+<script>
+document.getElementById('yr').textContent = new Date().getFullYear();
+
+/* Brand palette */
+const C = {
+  sav:   '#1a3a5c',
+  ga:    '#c46b3a',
+  us:    '#3a8d8d',
+  navy:  '#1a3a5c',
+  peach: '#c46b3a',
+  teal:  '#3a8d8d',
+  must:  '#d4a017',
+  coral: '#d4624a',
+  green: '#6b8e3d',
+  grid:  '#b6ad8d',
+  ink:   '#1a1a1a',
+  soft:  '#6b7280',
+  bg:    '#fbf5dc',
+};
+
+/* Common Chart.js defaults to match site */
+function commonOpts(opts={}) {
+  return Object.assign({
+    responsive: true,
+    maintainAspectRatio: false,
+    plugins: {
+      legend: { position: 'bottom', labels: { color: C.navy, font: { size: 11, weight: 'bold' }, padding: 8, boxWidth: 12 } },
+      tooltip: { backgroundColor: C.navy, titleColor: '#fff', bodyColor: '#fff' },
+    },
+    scales: {
+      x: { ticks: { color: C.soft, font: { size: 10 } }, grid: { color: C.grid, drawTicks: false } },
+      y: { ticks: { color: C.soft, font: { size: 10 } }, grid: { color: C.grid, drawTicks: false } },
+    },
+  }, opts);
+}
+
+function lineDS(label, data, color, opts={}) {
+  return Object.assign({
+    label, data, borderColor: color, backgroundColor: color + '22',
+    borderWidth: 2, pointRadius: 0, tension: 0.25, fill: false,
+  }, opts);
+}
+
+function init() {
+  /* Business Cycle Index — Savannah vs GA vs US */
+  const yrs = ['15','16','17','18','19','20','21','22','23','24','25','26'];
+  new Chart(document.getElementById('bci-chart').getContext('2d'), {
+    type: 'line',
+    data: { labels: yrs, datasets: [
+      lineDS('Savannah', [100,103,107,111,115,108,118,125,131,136,141,146], C.sav),
+      lineDS('Georgia',  [100,102,105,108,111,104,113,119,124,128,132,135], C.ga),
+      lineDS('US',       [100,102,104,106,108,101,109,114,118,121,124,126], C.us),
+    ]},
+    options: commonOpts({ scales: { x:{ticks:{color:C.soft}}, y:{ticks:{color:C.soft}, min: 90}}}),
+  });
+
+  /* Industry Employment — % chg yr ago by super-sector */
+  new Chart(document.getElementById('industry-emp-chart').getContext('2d'), {
+    type: 'bar',
+    data: {
+      labels: ['Mfg','Trans/Wh','Constr','Edu/Hlth','Leisure','Govt','Trade','Prof Bus','Info'],
+      datasets: [{
+        label: 'YoY % change (Apr 2026)',
+        data: [7.1, 6.4, 1.8, 4.1, 3.5, 1.4, 0.6, 1.2, -1.9],
+        backgroundColor: (ctx) => ctx.parsed.y >= 0 ? C.teal : C.coral,
+        borderColor: C.navy,
+        borderWidth: 1,
+      }],
+    },
+    options: commonOpts({ plugins: { legend: { display: false } } }),
+  });
+
+  /* Diffusion Index */
+  new Chart(document.getElementById('diffusion-chart').getContext('2d'), {
+    type: 'line',
+    data: { labels: yrs.concat(['']),
+      datasets: [
+        lineDS('Savannah', [62,64,66,68,65,40,68,72,68,66,64,67,68], C.sav),
+        lineDS('Georgia',  [60,62,64,66,63,38,66,70,66,64,62,64,65], C.ga),
+        lineDS('US',       [58,60,62,64,61,36,64,68,64,62,60,62,63], C.us),
+      ]},
+    options: commonOpts({ scales: { x: {ticks:{color:C.soft}}, y: {ticks:{color:C.soft}, min: 30, max: 80, title: {display:true, text:'Diffusion (>50 = expansion)', color:C.soft}}}}),
+  });
+
+  /* Relative Employment Performance — historical + forecast */
+  const yrsF = ['15','16','17','18','19','20','21','22','23','24','25','26F','27F','28F','29F'];
+  new Chart(document.getElementById('rel-emp-chart').getContext('2d'), {
+    type: 'line',
+    data: { labels: yrsF, datasets: [
+      lineDS('Savannah', [100,103,106,110,113,108,114,121,127,130,133,136,138,140,141], C.sav, {borderWidth: 3}),
+      lineDS('Georgia',  [100,102,104,107,109,105,110,115,119,121,123,124,126,127,128], C.ga),
+      lineDS('US',       [100,102,103,105,107,102,107,111,114,116,117,118,119,120,121], C.us),
+    ]},
+    options: commonOpts({ scales: { x: {ticks:{color:C.soft}}, y: {ticks:{color:C.soft}, min: 95}}}),
+  });
+
+  /* HPI */
+  const hpiYrs = ['05','07','09','11','13','15','17','19','21','23','25'];
+  new Chart(document.getElementById('hpi-chart').getContext('2d'), {
+    type: 'line',
+    data: { labels: hpiYrs, datasets: [
+      lineDS('Savannah', [100,118,108,98,99,108,125,142,178,212,228], C.sav),
+      lineDS('Georgia',  [100,116,110,98,100,110,128,144,176,206,220], C.ga),
+      lineDS('US',       [100,121,113,103,108,124,148,166,206,232,242], C.us),
+    ]},
+    options: commonOpts({ scales: { x: {ticks:{color:C.soft}}, y: {ticks:{color:C.soft}}}}),
+  });
+
+  /* Rental Affordability */
+  new Chart(document.getElementById('rent-aff-chart').getContext('2d'), {
+    type: 'line',
+    data: { labels: hpiYrs, datasets: [
+      lineDS('Savannah', [142,138,148,154,150,148,140,134,124,116,118], C.sav),
+      lineDS('Georgia',  [148,142,150,156,152,150,144,138,128,120,122], C.ga),
+      lineDS('US',       [100,98,104,108,106,104,98,96,90,86,88], C.us),
+    ]},
+    options: commonOpts({ scales: { x: {ticks:{color:C.soft}}, y: {ticks:{color:C.soft}, min:70}}}),
+  });
+
+  /* Valuation (% over/under fair value) */
+  new Chart(document.getElementById('valuation-chart').getContext('2d'), {
+    type: 'bar',
+    data: { labels: hpiYrs, datasets: [{
+      label: 'Over/under fair value (%)',
+      data: [4, 24, -8, -16, -4, 3, 6, 12, 28, 22, 14],
+      backgroundColor: (ctx) => ctx.parsed.y >= 0 ? C.coral : C.teal,
+    }]},
+    options: commonOpts({ plugins: { legend: { display: false } } }),
+  });
+
+  /* Housing Affordability */
+  new Chart(document.getElementById('hous-aff-chart').getContext('2d'), {
+    type: 'line',
+    data: { labels: hpiYrs, datasets: [
+      lineDS('Savannah', [180,150,200,260,280,260,230,210,150,110,118], C.sav),
+      lineDS('Georgia',  [200,170,210,270,290,270,240,220,160,120,128], C.ga),
+      lineDS('US',       [150,130,180,230,250,230,200,180,130,98,108], C.us),
+    ]},
+    options: commonOpts({ scales: { x: {ticks:{color:C.soft}}, y: {ticks:{color:C.soft}}}}),
+  });
+
+  /* Productivity — bar comparing Savannah / GA / US */
+  new Chart(document.getElementById('prod-chart').getContext('2d'), {
+    type: 'bar',
+    data: { labels: ['Savannah','Georgia','US'], datasets: [{
+      label: 'Real $ / worker',
+      data: [142800, 141200, 147500],
+      backgroundColor: [C.sav, C.ga, C.us],
+    }]},
+    options: commonOpts({ indexAxis: 'y', plugins: { legend: { display: false } } }),
+  });
+
+  /* Block groups by income — Savannah vs US */
+  const incBins = ['0-25k','25-50k','50-75k','75-100k','100-125k','125-150k','150-200k','200k+'];
+  new Chart(document.getElementById('bg-income-chart').getContext('2d'), {
+    type: 'bar',
+    data: { labels: incBins, datasets: [
+      { label: 'Savannah', data: [11, 21, 22, 16, 10, 7, 8, 5], backgroundColor: C.sav },
+      { label: 'US',       data: [8,  17, 19, 15, 12, 8, 11, 10], backgroundColor: C.us },
+    ]},
+    options: commonOpts({ scales: { x: {ticks:{color:C.soft}}, y: {ticks:{color:C.soft}, title:{display:true,text:'% of block groups', color:C.soft}}}}),
+  });
+
+  /* Per Capita Income */
+  const pciYrs = ['14','16','18','20','22','24'];
+  new Chart(document.getElementById('pci-chart').getContext('2d'), {
+    type: 'line',
+    data: { labels: pciYrs, datasets: [
+      lineDS('Savannah', [42,46,50,56,61,65], C.sav),
+      lineDS('Georgia',  [40,44,48,54,59,63], C.ga),
+      lineDS('US',       [46,50,54,60,65,69], C.us),
+    ]},
+    options: commonOpts({ plugins: { legend: { display: false } } }),
+  });
+
+  /* Generational breakdown — Savannah vs US */
+  new Chart(document.getElementById('gen-chart').getContext('2d'), {
+    type: 'bar',
+    data: { labels: ['Alpha','Gen Z','Millennial','Gen X','Boomer','Silent/Gtst'],
+      datasets: [
+        { label: 'Savannah', data: [12, 22, 23, 19, 18, 6], backgroundColor: C.sav },
+        { label: 'US',       data: [11, 20, 22, 20, 20, 7], backgroundColor: C.us },
+      ]},
+    options: commonOpts({ indexAxis: 'y' }),
+  });
+
+  /* Educational attainment */
+  new Chart(document.getElementById('edu-chart').getContext('2d'), {
+    type: 'bar',
+    data: { labels: ['Savannah','GA','US'], datasets: [
+      { label: '< High school',    data: [11, 10, 10], backgroundColor: C.coral, stack:'s' },
+      { label: 'High school',      data: [28, 26, 26], backgroundColor: C.must,  stack:'s' },
+      { label: 'Some college',     data: [25, 27, 27], backgroundColor: C.peach, stack:'s' },
+      { label: 'College',          data: [22, 22, 22], backgroundColor: C.teal,  stack:'s' },
+      { label: 'Graduate school',  data: [14, 15, 15], backgroundColor: C.navy,  stack:'s' },
+    ]},
+    options: commonOpts({ scales: { x: { stacked: true, ticks:{color:C.soft} }, y: { stacked: true, max: 100, ticks:{color:C.soft, callback: v=>v+'%' } } } }),
+  });
+
+  /* Population by age (5-yr bins) — Savannah vs US */
+  const ageLabels = ['0-4','5-9','10-14','15-19','20-24','25-29','30-34','35-39','40-44','45-49','50-54','55-59','60-64','65-69','70-74','>74'];
+  new Chart(document.getElementById('age-chart').getContext('2d'), {
+    type: 'bar',
+    data: { labels: ageLabels, datasets: [
+      { label: 'Savannah', data: [6.2,6.4,6.5,7.1,8.6,8.0,7.2,6.7,6.0,5.7,5.7,5.9,5.6,4.7,4.0,5.7], backgroundColor: C.sav },
+      { label: 'US',       data: [5.7,6.0,6.3,6.4,6.5,6.8,7.0,6.7,6.2,6.1,6.2,6.5,6.5,5.7,4.8,6.6], backgroundColor: C.us },
+    ]},
+    options: commonOpts({ indexAxis: 'y', scales: { x: {ticks:{color:C.soft, callback:v=>v+'%'}}, y: {ticks:{color:C.soft, font:{size:9}}}}}),
+  });
+
+  /* Net migration — stacked bar (domestic + foreign) */
+  const migYrs = ['21','22','23','24','25'];
+  new Chart(document.getElementById('netmig-chart').getContext('2d'), {
+    type: 'bar',
+    data: { labels: migYrs, datasets: [
+      { label: 'Domestic', data: [2800, 3400, 2900, 1900, 4100], backgroundColor: C.sav, stack:'m' },
+      { label: 'Foreign',  data: [1200, 1500, 1900, 2100, 1600], backgroundColor: C.peach, stack:'m' },
+    ]},
+    options: commonOpts({ scales: { x: { stacked: true, ticks:{color:C.soft}}, y: { stacked: true, ticks:{color:C.soft, callback: v=> v.toLocaleString()}}}}),
+  });
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  if (typeof Chart === 'undefined') {
+    // Chart.js may still be loading (deferred). Retry briefly.
+    let tries = 0;
+    const iv = setInterval(() => {
+      if (typeof Chart !== 'undefined' || tries++ > 20) {
+        clearInterval(iv);
+        if (typeof Chart !== 'undefined') init();
+      }
+    }, 100);
+  } else {
+    init();
+  }
+});
+</script>
+</body>
+</html>
