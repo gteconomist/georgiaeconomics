@@ -1,25 +1,25 @@
 {
-  "_fixture": true,
+  "_fixture": false,
   "_note": "FIXTURE seed data calibrated to Georgia's documented auto-manufacturing trajectory through 2024-2025 \u2014 Kia Georgia (West Point) opening 2009, SK On batteries (Commerce) 2022-2023, HMGMA (Bryan County) Oct 2024, HL-GA Battery (Cartersville) 2025, Rivian (Stanton Springs) paused 2024. Replaced by scripts/fetch_automotive.py once the BLS QCEW + BEA + Census + Tavily pipeline runs.",
   "source": "FIXTURE (target: BLS QCEW NAICS 3361/3362/3363 + BEA SAGDP2N motor vehicle GDP + Census CBP + Tavily plant milestones)",
   "latest_year": 2025,
   "kpis": {
     "industry_gdp_latest_b": 4.2,
     "industry_gdp_yoy_pct": 16.7,
-    "employment_latest_k": 32.0,
-    "employment_yoy_pct": 14.3,
+    "employment_latest_k": 31.8,
+    "employment_yoy_pct": 7.1,
     "national_rank": 9,
     "ev_investment_total_b": 28.0,
-    "establishments_latest": 285,
+    "establishments_latest": 225,
     "establishments_breakdown": {
-      "3361": 12,
-      "3362": 28,
-      "3363": 245
+      "3361": 10,
+      "3362": 84,
+      "3363": 131
     },
     "employment_breakdown": {
-      "3361": 11500,
-      "3362": 4200,
-      "3363": 16300
+      "3361": 4183,
+      "3362": 7994,
+      "3363": 19625
     },
     "n_plants_total": 8,
     "n_plants_operating": 6,
@@ -68,17 +68,17 @@
       2024
     ],
     "employment_k": [
-      14.2,
-      14.9,
-      15.8,
-      17.1,
-      18.0,
-      18.8,
-      17.1,
-      19.4,
-      20.3,
+      21.47,
       22.8,
-      28.0
+      25.09,
+      26.53,
+      27.3,
+      28.01,
+      24.74,
+      25.87,
+      27.75,
+      29.68,
+      31.8
     ]
   },
   "annotations": [
@@ -194,7 +194,13 @@
       "jobs": 3000,
       "product": "Telluride, Sorento, K5 (ICE + hybrid)",
       "capacity_units_k": 340,
-      "note": "Georgia's first major auto assembly plant. Production began Nov 2009."
+      "note": "Georgia's first major auto assembly plant. Production began Nov 2009.",
+      "_hint": {
+        "status_hint": "operating",
+        "jobs_hint": null,
+        "source_url": "https://www.kiageorgia.com/kia-georgia-celebrates-trio-of-major-milestones-including-start-of-production-for-2027-kia-telluride",
+        "snippet": "Kia Georgia's West Point plant started production of the 2027 Telluride in 2026, marking its 5 millionth vehicle and first hybrid electric v"
+      }
     },
     {
       "name": "HL-GA Battery Company",
@@ -206,7 +212,13 @@
       "jobs": 3500,
       "product": "EV battery cells (NCM) for IONIQ + Kia EV models",
       "capacity_gwh": 30,
-      "note": "Production began 2025. 30 GWh annual capacity \u2014 enough for ~300K EVs."
+      "note": "Production began 2025. 30 GWh annual capacity \u2014 enough for ~300K EVs.",
+      "_hint": {
+        "status_hint": "under-construction",
+        "jobs_hint": null,
+        "source_url": "https://www.wtoc.com/2025/11/14/construction-resumes-hl-ga-battery-company-two-months-after-ice-raid",
+        "snippet": "HL-GA Battery Company in Georgia is on track to start production in the first half of 2026. Construction resumed after an ICE raid, and the "
+      }
     },
     {
       "name": "SK On Commerce",
@@ -252,7 +264,13 @@
       "jobs": 7500,
       "product": "R2 / R3 EVs (announced)",
       "capacity_units_k": 400,
-      "note": "Announced Dec 2021 at $5B / 7,500 jobs. Site preparation paused in March 2024 \u2014 Rivian shifted R2 launch to its existing Illinois plant. Future of site uncertain."
+      "note": "Announced Dec 2021 at $5B / 7,500 jobs. Site preparation paused in March 2024 \u2014 Rivian shifted R2 launch to its existing Illinois plant. Future of site uncertain.",
+      "_hint": {
+        "status_hint": "under-construction",
+        "jobs_hint": 7500,
+        "source_url": "https://georgia.org/rivian",
+        "snippet": "Rivian's Georgia plant construction resumes in 2026, with production starting in 2028. The facility aims for an annual capacity of 400,000 v"
+      }
     },
     {
       "name": "Anovion Technologies",
@@ -315,8 +333,12 @@
   ],
   "_meta": {
     "employment": {
-      "last_updated": null,
-      "source": null
+      "last_updated": "2026-05-25",
+      "source": "BLS QCEW annual averages, NAICS 3361+3362+3363 (motor vehicle mfg + bodies/trailers + parts), GA (area 13000)",
+      "coverage_years": [
+        2014,
+        2024
+      ]
     },
     "industry_gdp": {
       "last_updated": null,
@@ -327,16 +349,18 @@
       "source": null
     },
     "establishments": {
-      "last_updated": null,
-      "source": null
+      "last_updated": "2026-05-25",
+      "source": "Census CBP 2023 \u2014 NAICS 3361/3362/3363, GA",
+      "year": 2023
     },
     "ev_investment": {
       "last_updated": null,
       "source": null
     },
     "plants": {
-      "last_updated": null,
-      "source": null
+      "last_updated": "2026-05-25",
+      "source": "Tavily \u2192 AJC / Reuters / state press; hints only, not status overwrites",
+      "hint_count": 3
     },
     "milestones": {
       "last_updated": null,
@@ -344,5 +368,5 @@
     }
   },
   "fetched_at": "2026-05-25",
-  "source_summary": "Live sources updated 2026-05-25: (none). Stale or static: employment, industry_gdp, state_comparison, establishments, ev_investment, plants, milestones."
+  "source_summary": "Live sources updated 2026-05-25: employment, establishments, plants. Stale or static: industry_gdp, state_comparison, ev_investment, milestones."
 }
