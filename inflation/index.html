@@ -1,0 +1,730 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Georgia Inflation — Atlanta CPI, South Region CPI, Gas Prices | Georgia Economics</title>
+<meta name="description" content="Live Georgia inflation data: Atlanta-Sandy Springs-Roswell MSA CPI, South region CPI vs U.S. headline, category breakdown (food / energy / shelter), GA retail gasoline, and real-wage tracker. BLS data, refreshed monthly.">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="/styles.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+<!--
+  Same script-loading pattern as /population/ and /industries/film/:
+  - Chart.js for the line + bar charts.
+  - Shared charts.js from the sister economicsguru.com (via jsDelivr).
+  - No Plotly here — inflation is all time-series, no county map.
+-->
+<script defer src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/gh/gteconomist/economicsguru@main/assets/charts.js"></script>
+
+<style>
+  /* CPI-themed hero — same shape as population / film hero, with a peach-deep
+     accent strip on the right. The headline is the South-region YoY figure
+     because it's the freshest reading (Atlanta MSA only publishes bi-monthly). */
+  .cpi-hero {
+    background: linear-gradient(135deg, var(--navy) 0%, #2e5984 100%);
+    color: #fff; padding: 32px 30px; margin-bottom: 26px; border-radius: 4px;
+    position: relative; overflow: hidden;
+  }
+  .cpi-hero::after {
+    content: ''; position: absolute; top: 0; right: -20px; width: 260px; height: 100%;
+    background: linear-gradient(135deg, transparent 30%, var(--peach-deep) 100%);
+    opacity: 0.18;
+  }
+  .cpi-hero h2 {
+    font-family: var(--font-display); font-size: 32px; font-weight: 800;
+    letter-spacing: -0.01em; margin: 0 0 6px; position: relative; z-index: 1;
+  }
+  .cpi-hero p { margin: 0; font-size: 16px; opacity: 0.9; max-width: 660px; position: relative; z-index: 1; }
+  .cpi-hero .stat-strip {
+    display: grid; grid-template-columns: repeat(4, 1fr); gap: 22px;
+    margin-top: 18px; padding-top: 18px; border-top: 1px solid rgba(255,255,255,0.18);
+    position: relative; z-index: 1;
+  }
+  @media (max-width: 920px) { .cpi-hero .stat-strip { grid-template-columns: repeat(2, 1fr); gap: 14px; } }
+  @media (max-width: 520px) { .cpi-hero .stat-strip { grid-template-columns: 1fr; } }
+  .cpi-hero .stat-strip .stat .num { font-family: var(--font-display); font-size: 26px; font-weight: 800; color: var(--peach); display: block; }
+  .cpi-hero .stat-strip .stat .lbl { font-size: 12px; text-transform: uppercase; letter-spacing: 0.06em; opacity: 0.75; }
+
+  .chart-canvas-tall { position: relative; height: 380px; background: var(--chart-bg); padding: 6px; }
+  .chart-canvas-med  { position: relative; height: 320px; background: var(--chart-bg); padding: 6px; }
+  .chart-canvas-short { position: relative; height: 280px; background: var(--chart-bg); padding: 6px; }
+
+  .source-note { font-size: 12px; color: var(--ink-soft); margin-top: 8px; font-style: italic; }
+
+  /* Per-section "as of MMM YYYY" badges — same conventions as the population
+     page. Stale = orange peach-deep border once a section's last successful
+     fetch is > 6 months old. */
+  .as-of {
+    display: inline-block;
+    margin-left: 8px;
+    padding: 2px 8px;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    background: var(--chart-bg);
+    border: 1px solid var(--border);
+    border-radius: 3px;
+    vertical-align: middle;
+  }
+  .as-of.stale {
+    background: rgba(196, 107, 58, 0.12);
+    color: var(--peach-deep);
+    border-color: var(--peach-deep);
+  }
+  .stale-banner {
+    margin-bottom: 22px; padding: 12px 16px;
+    background: rgba(212, 160, 23, 0.10);
+    border-left: 4px solid var(--mustard);
+    font-size: 14px; color: var(--ink);
+  }
+  .stale-banner strong { color: var(--navy); }
+
+  /* Components horizontal-bar table — borrows from population's composition-bar
+     idea but uses a per-row mini-bar so we can show both YoY and 5-yr cumulative. */
+  .component-table {
+    width: 100%; border-collapse: collapse; font-size: 14px;
+    margin-top: 4px;
+  }
+  .component-table th, .component-table td {
+    padding: 8px 6px; text-align: left; border-bottom: 1px dotted var(--border);
+    vertical-align: middle;
+  }
+  .component-table th {
+    font-size: 11px; text-transform: uppercase; letter-spacing: 0.06em;
+    color: var(--navy); font-weight: 700;
+  }
+  .component-table td.num {
+    text-align: right; font-variant-numeric: tabular-nums; font-weight: 600;
+    width: 80px;
+  }
+  .component-table td.label {
+    color: var(--navy); font-weight: 600;
+  }
+  .component-table tr.headline td { background: var(--peach-pale); font-weight: 700; }
+  .component-table tr.core td     { background: rgba(212, 160, 23, 0.08); }
+  .component-bar-wrap {
+    position: relative; height: 14px;
+    background: var(--chart-bg); border: 1px solid var(--border);
+    overflow: hidden;
+  }
+  .component-bar-wrap .axis {
+    position: absolute; top: 0; bottom: 0; width: 1px; background: var(--ink-soft);
+  }
+  .component-bar-wrap .bar {
+    position: absolute; top: 0; bottom: 0;
+  }
+  .component-bar-wrap .bar.up   { background: var(--coral); }
+  .component-bar-wrap .bar.down { background: var(--teal); }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <div class="brand">Georgia<span class="tag">Economics</span></div>
+    <nav>
+      <a href="/">Home</a>
+      <a href="/counties/">Counties</a>
+      <a href="/msa/">Metros</a>
+      <a href="/labor/">Labor</a>
+      <a href="/about/">About</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="page-header">
+    <h1>Georgia inflation</h1>
+    <div class="subtitle">South region monthly CPI, Atlanta-Sandy Springs-Roswell bi-monthly CPI, category breakdown, GA retail gasoline, and a real-wage tracker.</div>
+    <div class="latest">Latest South region reading: <strong id="latest-label">&mdash;</strong></div>
+  </section>
+
+  <div class="notice" id="fixture-banner" style="display:none;">
+    <strong>Seed data:</strong> Awaiting the first run of the inflation data pipeline. The page structure is in place; live numbers will populate after the next GitHub Actions cycle.
+  </div>
+
+  <div class="stale-banner" id="stale-banner" style="display:none;">
+    <strong>Heads-up:</strong> <span id="stale-banner-text"></span>
+  </div>
+
+  <!-- Hero -->
+  <section class="cpi-hero">
+    <h2>The Peach State, by the price tag.</h2>
+    <p>Inflation in Georgia tracks the broader U.S. South. The Atlanta-Sandy Springs-Roswell MSA has its own CPI series, published every other month. Below: how Georgia compares to the nation, what's driving prices, and whether wages are keeping up.</p>
+    <div class="stat-strip">
+      <div class="stat"><span class="num" id="hero-south-yoy">&mdash;</span><span class="lbl" id="hero-south-yoy-lbl">South region CPI YoY</span></div>
+      <div class="stat"><span class="num" id="hero-atlanta-yoy">&mdash;</span><span class="lbl" id="hero-atlanta-yoy-lbl">Atlanta MSA CPI YoY</span></div>
+      <div class="stat"><span class="num" id="hero-gas">&mdash;</span><span class="lbl" id="hero-gas-lbl">GA regular unleaded ($/gal)</span></div>
+      <div class="stat"><span class="num" id="hero-cum">&mdash;</span><span class="lbl" id="hero-cum-lbl">Cumulative prices since Jan 2020</span></div>
+    </div>
+  </section>
+
+  <!-- KPI strip -->
+  <div class="kpi-grid">
+    <div class="kpi"><div class="label">Headline CPI YoY <span id="kpi-headline-yr"></span></div><div class="value" id="kpi-headline">&mdash;</div><div class="delta" id="kpi-headline-delta">South region (NSA)</div></div>
+    <div class="kpi"><div class="label">Core CPI YoY <span id="kpi-core-yr"></span></div><div class="value" id="kpi-core">&mdash;</div><div class="delta" id="kpi-core-delta">All items less food &amp; energy</div></div>
+    <div class="kpi"><div class="label">Food YoY</div><div class="value" id="kpi-food">&mdash;</div><div class="delta" id="kpi-food-delta">Grocery + dining</div></div>
+    <div class="kpi"><div class="label">Energy YoY</div><div class="value" id="kpi-energy">&mdash;</div><div class="delta" id="kpi-energy-delta">Fuel + utilities</div></div>
+    <div class="kpi"><div class="label">Shelter YoY</div><div class="value" id="kpi-shelter">&mdash;</div><div class="delta" id="kpi-shelter-delta">Rent + owners&rsquo; equiv. rent</div></div>
+    <div class="kpi"><div class="label">GA gas ($/gal) <span id="kpi-gas-yr"></span></div><div class="value" id="kpi-gas">&mdash;</div><div class="delta" id="kpi-gas-delta">&mdash; vs year ago</div></div>
+  </div>
+
+  <!-- 1) South vs US headline CPI YoY -->
+  <div class="chart-panel">
+    <h2>South region vs U.S. headline CPI <span class="as-of" id="badge-headline"></span></h2>
+    <p class="sub">Year-over-year change in the Consumer Price Index. The South region (which includes Georgia) tracks the U.S. headline closely but is typically a touch hotter when gasoline and shelter spike, and a touch cooler when they cool.</p>
+    <div class="chart-canvas-tall"><canvas id="headline-chart"></canvas></div>
+    <div class="source-note">Source: U.S. Bureau of Labor Statistics &mdash; CPI-U, South region (CUUR0300SA0) and U.S. City Average (CUUR0000SA0), not seasonally adjusted. The Oct 2025 gap reflects the BLS lapse in appropriations during the 2025 government shutdown.</div>
+  </div>
+
+  <!-- 2) Atlanta + Components side-by-side -->
+  <div class="chart-grid" style="margin-top: 22px;">
+    <div class="chart-panel">
+      <h2>Atlanta-Sandy Springs-Roswell CPI <span class="as-of" id="badge-atlanta"></span></h2>
+      <p class="sub">BLS publishes Atlanta's CPI every <strong>other</strong> month (Feb, Apr, Jun, Aug, Oct, Dec) &mdash; one of only a handful of MSAs in the country with its own CPI series. Bars below show YoY change at each release.</p>
+      <div class="chart-canvas-med"><canvas id="atlanta-chart"></canvas></div>
+      <div class="source-note">Source: BLS CPI-U, Atlanta-Sandy Springs-Roswell GA (CUURS35CSA0), NSA. Bi-monthly cadence since 2018.</div>
+    </div>
+
+    <div class="chart-panel">
+      <h2>What&rsquo;s driving inflation <span class="as-of" id="badge-components"></span></h2>
+      <p class="sub">South-region CPI broken into spending categories. Year-over-year change at left; cumulative 5-year change at right. Bars colored coral for prices up, teal for prices down.</p>
+      <div id="components-table-wrap" style="max-height: 380px; overflow-y: auto;">
+        <table class="component-table">
+          <thead>
+            <tr><th>Category</th><th class="num">YoY</th><th>vs year ago</th><th class="num">5-yr</th></tr>
+          </thead>
+          <tbody id="components-body"></tbody>
+        </table>
+      </div>
+      <div class="source-note">Source: BLS CPI-U, South region (CUUR0300* series), NSA &mdash; latest available month.</div>
+    </div>
+  </div>
+
+  <!-- 3) Cumulative price index -->
+  <div class="chart-panel" style="margin-top: 22px;">
+    <h2>Cumulative price level <span class="as-of" id="badge-cumulative"></span></h2>
+    <p class="sub">Both series rebased to <strong id="cum-anchor-label">Jan 2020</strong> = 100. This is the "how much have prices gone up overall" view &mdash; useful for comparing today&rsquo;s prices to the pre-pandemic baseline.</p>
+    <div class="chart-canvas-tall"><canvas id="cumulative-chart"></canvas></div>
+    <div class="source-note">Source: Derived from BLS CPI-U South region + U.S. City Average headline series. A value of 120 means prices are 20% higher than the anchor month.</div>
+  </div>
+
+  <!-- 4) Gasoline + Real wages side-by-side -->
+  <div class="chart-grid" style="margin-top: 22px;">
+    <div class="chart-panel">
+      <h2>Retail gasoline, regular unleaded <span class="as-of" id="badge-gasoline"></span></h2>
+      <p class="sub">Monthly average price per gallon. The "South Urban" series is the closest BLS geography to Georgia &mdash; there's no GA-only monthly retail series. GA gas is consistently below the U.S. average thanks to lower state fuel taxes and proximity to Gulf Coast refining.</p>
+      <div class="chart-canvas-med"><canvas id="gasoline-chart"></canvas></div>
+      <div class="source-note">Source: BLS Average Price data &mdash; Gasoline, unleaded regular ($/gal). South Urban (APUS37A74714) and U.S. City Avg (APU000074714).</div>
+    </div>
+
+    <div class="chart-panel">
+      <h2>Real vs nominal wages (GA) <span class="as-of" id="badge-real-wages"></span></h2>
+      <p class="sub">GA total-private average weekly earnings, year-over-year. "Nominal" is the raw dollar change; "real" deflates by the South region CPI to show actual purchasing-power growth. When the lines cross, prices are growing faster than paychecks.</p>
+      <div class="chart-canvas-med"><canvas id="real-wages-chart"></canvas></div>
+      <div class="source-note">Source: BLS State CES &mdash; GA Total Private Avg Weekly Earnings (SMU13000000500000011, NSA), deflated by South region CPI. 3-month centered moving average applied to YoY series to smooth NSA noise.</div>
+    </div>
+  </div>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div>&copy; <span id="yr"></span> Georgia Economics &middot; Sister site to <a href="https://economicsguru.com">economicsguru.com</a> &middot; <a href="/about/">Methodology</a></div>
+    <div>Source: U.S. Bureau of Labor Statistics &mdash; CPI-U &amp; Average Price data.</div>
+  </div>
+</footer>
+
+<script>
+// IIFE wrapper to keep our top-level consts (fmtNum, fmtPct, BRAND…) from
+// colliding with the deferred shared charts.js — same pattern used in
+// /population/index.html.
+(function() {
+document.getElementById('yr').textContent = new Date().getFullYear();
+
+const BRAND = {
+  navy: '#1a3a5c', peachDeep: '#c46b3a', peach: '#e8a87c', peachPale: '#faead9',
+  mustard: '#d4a017', teal: '#3a8d8d', coral: '#d4624a',
+  khaki: '#9b8b6a', green: '#6b8e3d', silver: '#9ba3ab',
+  grid: '#b6ad8d',
+};
+
+const fmtPct  = (v, dp) => v == null ? '—' : Number(v).toFixed(dp == null ? 1 : dp) + '%';
+const fmtSignedPct = (v, dp) => v == null ? '—' : (v >= 0 ? '+' : '') + Number(v).toFixed(dp == null ? 1 : dp) + '%';
+const fmtMoney = (v, dp) => v == null ? '—' : '$' + Number(v).toFixed(dp == null ? 2 : dp);
+
+const MONTH_NAMES = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+function ymToLabel(ym) {
+  if (!ym) return '';
+  const m = /^(\d{4})-(\d{2})$/.exec(ym);
+  if (!m) return ym;
+  return MONTH_NAMES[+m[2] - 1] + ' ' + m[1];
+}
+function ymToShortLabel(ym) {
+  // "Jan '24" — compact form for crowded x-axes
+  if (!ym) return '';
+  const m = /^(\d{4})-(\d{2})$/.exec(ym);
+  if (!m) return ym;
+  return MONTH_NAMES[+m[2] - 1] + " '" + m[1].slice(2);
+}
+
+// ----- "as of" badges + stale banner ---------------------------------------
+function fmtAsOf(iso) {
+  if (!iso) return '';
+  const m = /^(\d{4})-(\d{2})-(\d{2})$/.exec(iso);
+  if (!m) return '';
+  return MONTH_NAMES[+m[2] - 1] + ' ' + m[1];
+}
+function monthsAgo(iso) {
+  if (!iso) return Infinity;
+  const m = /^(\d{4})-(\d{2})-(\d{2})$/.exec(iso);
+  if (!m) return Infinity;
+  const now = new Date();
+  return (now.getFullYear() - +m[1]) * 12 + (now.getMonth() + 1 - +m[2]);
+}
+const STALE_THRESHOLD_MONTHS = 6;
+function setBadge(elId, lastUpdated, asOf) {
+  const el = document.getElementById(elId);
+  if (!el) return;
+  // Prefer the section's "as_of" data label (e.g. "Apr 2026") over the
+  // workflow's last_updated; falls back to last_updated if absent.
+  const label = asOf || fmtAsOf(lastUpdated);
+  if (!label) { el.style.display = 'none'; return; }
+  el.textContent = 'as of ' + label;
+  if (monthsAgo(lastUpdated) > STALE_THRESHOLD_MONTHS) el.classList.add('stale');
+}
+
+// Direction class for KPI deltas. Inflation goes UP = bad (coral), DOWN = good (teal).
+function deltaDir(v) {
+  if (v == null) return 'flat';
+  if (v > 0.05) return 'up';     // rising prices
+  if (v < -0.05) return 'down';  // falling prices
+  return 'flat';
+}
+
+async function init() {
+  const res = await fetch('/data/inflation.json?v=' + new Date().toISOString().slice(0, 10));
+  const d = await res.json();
+  const meta = d._meta || {};
+  if (d._fixture) document.getElementById('fixture-banner').style.display = '';
+
+  // ----- Top staleness banner -----
+  const stale = Object.entries(meta)
+    .filter(([k, v]) => v && v.last_updated && monthsAgo(v.last_updated) > STALE_THRESHOLD_MONTHS)
+    .map(([k]) => k.replace(/_/g, ' '));
+  if (stale.length) {
+    document.getElementById('stale-banner').style.display = '';
+    document.getElementById('stale-banner-text').textContent =
+      'The following section' + (stale.length > 1 ? 's are' : ' is') +
+      ' more than 6 months out of date: ' + stale.join(', ') +
+      '. The values shown remain the last successfully fetched figures.';
+  }
+
+  // ----- Per-section badges -----
+  setBadge('badge-headline',   meta.south_headline && meta.south_headline.last_updated, meta.south_headline && meta.south_headline.as_of);
+  setBadge('badge-atlanta',    meta.atlanta_cpi    && meta.atlanta_cpi.last_updated,    meta.atlanta_cpi    && meta.atlanta_cpi.as_of);
+  setBadge('badge-components', meta.components     && meta.components.last_updated,     meta.components     && meta.components.as_of);
+  setBadge('badge-cumulative', meta.cumulative     && meta.cumulative.last_updated,     meta.cumulative     && meta.cumulative.as_of);
+  setBadge('badge-gasoline',   meta.gasoline       && meta.gasoline.last_updated,       meta.gasoline       && meta.gasoline.as_of);
+  setBadge('badge-real-wages', meta.real_wages     && meta.real_wages.last_updated,     meta.real_wages     && meta.real_wages.as_of);
+
+  const k = d.kpis || {};
+
+  // ----- Hero -----
+  if (d.south_headline && d.south_headline.latest_south_label) {
+    document.getElementById('latest-label').textContent = d.south_headline.latest_south_label;
+  }
+  if (k.headline_yoy_south != null) {
+    document.getElementById('hero-south-yoy').textContent = fmtSignedPct(k.headline_yoy_south, 1);
+    document.getElementById('hero-south-yoy-lbl').textContent = 'South CPI YoY, ' + (k.latest_month_south || '—');
+  }
+  if (k.atlanta_yoy != null) {
+    document.getElementById('hero-atlanta-yoy').textContent = fmtSignedPct(k.atlanta_yoy, 1);
+    document.getElementById('hero-atlanta-yoy-lbl').textContent = 'Atlanta MSA CPI YoY, ' + (k.atlanta_period || '—');
+  }
+  if (k.gas_latest != null) {
+    document.getElementById('hero-gas').textContent = fmtMoney(k.gas_latest, 2);
+    document.getElementById('hero-gas-lbl').textContent = 'GA regular unleaded, ' + (k.gas_period || '—');
+  }
+  if (k.cum_growth_since_2020_south != null) {
+    document.getElementById('hero-cum').textContent = fmtSignedPct(k.cum_growth_since_2020_south, 1);
+    const anchor = (d.cumulative && d.cumulative.anchor_label) || 'Jan 2020';
+    document.getElementById('hero-cum-lbl').textContent = 'South CPI cumulative since ' + ymToLabel(anchor === 'Jan 2020' ? '2020-01' : anchor);
+    // Anchor may be a YYYY-MM key or pre-formatted label; render either
+    if (!/^\d{4}-\d{2}$/.test(anchor)) {
+      document.getElementById('hero-cum-lbl').textContent = 'South CPI cumulative since ' + anchor;
+    }
+  }
+
+  // ----- KPI strip -----
+  const yrSuffix = (txt) => txt ? '(' + txt + ')' : '';
+  if (k.latest_month_south) document.getElementById('kpi-headline-yr').textContent = yrSuffix(k.latest_month_south);
+  if (k.latest_month_south) document.getElementById('kpi-core-yr').textContent     = yrSuffix(k.latest_month_south);
+  if (k.gas_period)         document.getElementById('kpi-gas-yr').textContent      = yrSuffix(k.gas_period);
+
+  setKpi('kpi-headline', 'kpi-headline-delta', k.headline_yoy_south, ' YoY · South region');
+  setKpi('kpi-core',     'kpi-core-delta',     k.core_yoy,           ' YoY · all items less food & energy');
+  setKpi('kpi-food',     'kpi-food-delta',     k.food_yoy,           ' YoY');
+  setKpi('kpi-energy',   'kpi-energy-delta',   k.energy_yoy,         ' YoY');
+  setKpi('kpi-shelter',  'kpi-shelter-delta',  k.shelter_yoy,        ' YoY');
+
+  if (k.gas_latest != null) {
+    document.getElementById('kpi-gas').textContent = fmtMoney(k.gas_latest, 2);
+  }
+  if (k.gas_yoy_pct != null) {
+    const el = document.getElementById('kpi-gas-delta');
+    el.textContent = fmtSignedPct(k.gas_yoy_pct, 1) + ' vs year ago';
+    el.classList.remove('up','down','flat');
+    el.classList.add(deltaDir(k.gas_yoy_pct));
+  }
+
+  // ----- 1) South vs US headline CPI YoY -----
+  if (d.south_headline && d.south_headline.months && d.south_headline.months.length) {
+    renderHeadlineChart(d.south_headline);
+  }
+
+  // ----- 2a) Atlanta MSA CPI YoY -----
+  if (d.atlanta_cpi && d.atlanta_cpi.periods && d.atlanta_cpi.periods.length) {
+    renderAtlantaChart(d.atlanta_cpi);
+  }
+
+  // ----- 2b) Components table -----
+  if (d.components && d.components.items && d.components.items.length) {
+    renderComponents(d.components);
+  }
+
+  // ----- 3) Cumulative price index -----
+  if (d.cumulative && d.cumulative.months && d.cumulative.months.length) {
+    renderCumulativeChart(d.cumulative);
+    if (d.cumulative.anchor_label) {
+      document.getElementById('cum-anchor-label').textContent =
+        /^\d{4}-\d{2}$/.test(d.cumulative.anchor_label)
+          ? ymToLabel(d.cumulative.anchor_label)
+          : d.cumulative.anchor_label;
+    }
+  }
+
+  // ----- 4a) Gasoline -----
+  if (d.gasoline && d.gasoline.months && d.gasoline.months.length) {
+    renderGasolineChart(d.gasoline);
+  }
+
+  // ----- 4b) Real wages -----
+  if (d.real_wages && d.real_wages.months && d.real_wages.months.length) {
+    renderRealWagesChart(d.real_wages);
+  }
+}
+
+function setKpi(valId, deltaId, value, suffix) {
+  if (value == null) return;
+  document.getElementById(valId).textContent = fmtSignedPct(value, 1);
+  const el = document.getElementById(deltaId);
+  el.textContent = (suffix || '').trimStart();
+  el.classList.remove('up','down','flat');
+  el.classList.add(deltaDir(value));
+}
+
+function renderHeadlineChart(s) {
+  const ctx = document.getElementById('headline-chart').getContext('2d');
+  // Trim leading nulls (until both series have data) for a cleaner axis
+  const firstIdx = s.months.findIndex((_, i) => s.south_yoy[i] != null && s.us_yoy[i] != null);
+  const startAt = Math.max(0, firstIdx);
+  const labels = s.months.slice(startAt).map(ymToShortLabel);
+  new Chart(ctx, {
+    type: 'line',
+    data: {
+      labels,
+      datasets: [
+        {
+          label: 'South region',
+          data: s.south_yoy.slice(startAt),
+          borderColor: BRAND.peachDeep,
+          backgroundColor: 'rgba(196, 107, 58, 0.10)',
+          borderWidth: 2.5,
+          tension: 0.25,
+          pointRadius: 0, pointHitRadius: 12,
+          spanGaps: true,
+        },
+        {
+          label: 'U.S. City Average',
+          data: s.us_yoy.slice(startAt),
+          borderColor: BRAND.navy,
+          borderDash: [4, 3],
+          borderWidth: 2,
+          tension: 0.25,
+          pointRadius: 0, pointHitRadius: 12,
+          spanGaps: true,
+        },
+      ],
+    },
+    options: {
+      responsive: true, maintainAspectRatio: false,
+      interaction: { mode: 'index', intersect: false },
+      scales: {
+        x: { grid: { display: false }, ticks: { color: BRAND.navy, font: { size: 11 }, maxRotation: 0, autoSkipPadding: 18 } },
+        y: {
+          grid: { color: BRAND.grid, borderDash: [3,4] },
+          ticks: { color: BRAND.navy, font: { size: 11 }, callback: v => (v >= 0 ? '+' : '') + v.toFixed(1) + '%' },
+          title: { display: true, text: 'Year-over-year change', color: BRAND.navy, font: { size: 12, weight: 'bold' } },
+        },
+      },
+      plugins: {
+        legend: { position: 'top', labels: { color: BRAND.navy, font: { size: 12 }, boxWidth: 16 } },
+        tooltip: {
+          callbacks: {
+            title: (items) => ymToLabel(s.months[items[0].dataIndex + startAt]),
+            label: (it) => it.dataset.label + ': ' + (it.parsed.y == null ? '—' : (it.parsed.y >= 0 ? '+' : '') + it.parsed.y.toFixed(2) + '%'),
+          },
+        },
+      },
+    },
+  });
+}
+
+function renderAtlantaChart(a) {
+  // Bi-monthly bars. Color positive = coral (inflation up), negative = teal.
+  const ctx = document.getElementById('atlanta-chart').getContext('2d');
+  const labels = a.periods.map(ymToShortLabel);
+  const data = a.yoy_pct;
+  new Chart(ctx, {
+    type: 'bar',
+    data: {
+      labels,
+      datasets: [{
+        label: 'Atlanta MSA YoY',
+        data,
+        backgroundColor: data.map(v => v == null ? BRAND.silver : (v >= 0 ? BRAND.peachDeep : BRAND.teal)),
+        borderWidth: 0,
+      }],
+    },
+    options: {
+      responsive: true, maintainAspectRatio: false,
+      scales: {
+        x: { grid: { display: false }, ticks: { color: BRAND.navy, font: { size: 10 }, maxRotation: 0, autoSkipPadding: 14 } },
+        y: {
+          grid: { color: BRAND.grid, borderDash: [3,4] },
+          ticks: { color: BRAND.navy, font: { size: 11 }, callback: v => (v >= 0 ? '+' : '') + v.toFixed(1) + '%' },
+          title: { display: true, text: 'YoY change', color: BRAND.navy, font: { size: 11, weight: 'bold' } },
+        },
+      },
+      plugins: {
+        legend: { display: false },
+        tooltip: {
+          callbacks: {
+            title: (items) => ymToLabel(a.periods[items[0].dataIndex]),
+            label: (it) => 'YoY: ' + (it.parsed.y == null ? '—' : (it.parsed.y >= 0 ? '+' : '') + it.parsed.y.toFixed(2) + '%'),
+          },
+        },
+      },
+    },
+  });
+}
+
+function renderComponents(c) {
+  const tbody = document.getElementById('components-body');
+  tbody.innerHTML = '';
+  // Find max abs YoY across categories to scale the inline bar
+  const maxAbs = Math.max(0.5, ...c.items.map(r => Math.abs(r.yoy_pct || 0)));
+  c.items.forEach(r => {
+    const tr = document.createElement('tr');
+    if (r.group === 'headline') tr.className = 'headline';
+    if (r.group === 'core')     tr.className = 'core';
+    const yoyTxt = r.yoy_pct == null ? '—' : (r.yoy_pct >= 0 ? '+' : '') + r.yoy_pct.toFixed(1) + '%';
+    const cumTxt = r.cum5_pct == null ? '—' : (r.cum5_pct >= 0 ? '+' : '') + r.cum5_pct.toFixed(0) + '%';
+    // Render the mini-bar: center at 50%, extend left/right depending on sign
+    let barHtml = '<div class="component-bar-wrap"><div class="axis" style="left:50%"></div>';
+    if (r.yoy_pct != null) {
+      const pct = Math.abs(r.yoy_pct) / maxAbs * 48; // 48 = 50% - 2% padding
+      const cls = r.yoy_pct >= 0 ? 'up' : 'down';
+      const left = r.yoy_pct >= 0 ? 50 : (50 - pct);
+      barHtml += `<div class="bar ${cls}" style="left:${left}%; width:${pct}%"></div>`;
+    }
+    barHtml += '</div>';
+    tr.innerHTML = `
+      <td class="label">${r.label}</td>
+      <td class="num">${yoyTxt}</td>
+      <td>${barHtml}</td>
+      <td class="num" title="${r.cum_label || '5-year'} cumulative">${cumTxt}</td>
+    `;
+    tbody.appendChild(tr);
+  });
+}
+
+function renderCumulativeChart(c) {
+  const ctx = document.getElementById('cumulative-chart').getContext('2d');
+  // Trim leading nulls
+  const firstIdx = c.months.findIndex((_, i) => c.south[i] != null && c.us[i] != null);
+  const startAt = Math.max(0, firstIdx);
+  const labels = c.months.slice(startAt).map(ymToShortLabel);
+  new Chart(ctx, {
+    type: 'line',
+    data: {
+      labels,
+      datasets: [
+        {
+          label: 'South region',
+          data: c.south.slice(startAt),
+          borderColor: BRAND.peachDeep,
+          backgroundColor: 'rgba(196, 107, 58, 0.10)',
+          borderWidth: 2.5, fill: true, tension: 0.2,
+          pointRadius: 0, pointHitRadius: 12,
+          spanGaps: true,
+        },
+        {
+          label: 'U.S. City Average',
+          data: c.us.slice(startAt),
+          borderColor: BRAND.navy,
+          borderDash: [4, 3],
+          borderWidth: 2, tension: 0.2,
+          pointRadius: 0, pointHitRadius: 12,
+          spanGaps: true,
+        },
+      ],
+    },
+    options: {
+      responsive: true, maintainAspectRatio: false,
+      interaction: { mode: 'index', intersect: false },
+      scales: {
+        x: { grid: { display: false }, ticks: { color: BRAND.navy, font: { size: 11 }, maxRotation: 0, autoSkipPadding: 18 } },
+        y: {
+          grid: { color: BRAND.grid, borderDash: [3,4] },
+          ticks: { color: BRAND.navy, font: { size: 11 }, callback: v => v.toFixed(0) },
+          title: { display: true, text: (c.anchor_label || 'Anchor') + ' = 100', color: BRAND.navy, font: { size: 12, weight: 'bold' } },
+        },
+      },
+      plugins: {
+        legend: { position: 'top', labels: { color: BRAND.navy, font: { size: 12 }, boxWidth: 16 } },
+        tooltip: {
+          callbacks: {
+            title: (items) => ymToLabel(c.months[items[0].dataIndex + startAt]),
+            label: (it) => it.dataset.label + ': ' + (it.parsed.y == null ? '—' : it.parsed.y.toFixed(1) + ' (' + (it.parsed.y - 100 >= 0 ? '+' : '') + (it.parsed.y - 100).toFixed(1) + '%)'),
+          },
+        },
+      },
+    },
+  });
+}
+
+function renderGasolineChart(g) {
+  const ctx = document.getElementById('gasoline-chart').getContext('2d');
+  const labels = g.months.map(ymToShortLabel);
+  new Chart(ctx, {
+    type: 'line',
+    data: {
+      labels,
+      datasets: [
+        {
+          label: 'South Urban',
+          data: g.south_price,
+          borderColor: BRAND.peachDeep,
+          backgroundColor: 'rgba(196, 107, 58, 0.08)',
+          borderWidth: 2.5, fill: false, tension: 0.2,
+          pointRadius: 0, pointHitRadius: 12,
+          spanGaps: true,
+        },
+        {
+          label: 'U.S. City Avg',
+          data: g.us_price,
+          borderColor: BRAND.navy,
+          borderDash: [4, 3],
+          borderWidth: 2, fill: false, tension: 0.2,
+          pointRadius: 0, pointHitRadius: 12,
+          spanGaps: true,
+        },
+      ],
+    },
+    options: {
+      responsive: true, maintainAspectRatio: false,
+      interaction: { mode: 'index', intersect: false },
+      scales: {
+        x: { grid: { display: false }, ticks: { color: BRAND.navy, font: { size: 11 }, maxRotation: 0, autoSkipPadding: 18 } },
+        y: {
+          grid: { color: BRAND.grid, borderDash: [3,4] },
+          ticks: { color: BRAND.navy, font: { size: 11 }, callback: v => '$' + v.toFixed(2) },
+          title: { display: true, text: 'Price ($/gal)', color: BRAND.navy, font: { size: 12, weight: 'bold' } },
+        },
+      },
+      plugins: {
+        legend: { position: 'top', labels: { color: BRAND.navy, font: { size: 12 }, boxWidth: 16 } },
+        tooltip: {
+          callbacks: {
+            title: (items) => ymToLabel(g.months[items[0].dataIndex]),
+            label: (it) => it.dataset.label + ': $' + (it.parsed.y == null ? '—' : it.parsed.y.toFixed(2)),
+          },
+        },
+      },
+    },
+  });
+}
+
+function renderRealWagesChart(rw) {
+  const ctx = document.getElementById('real-wages-chart').getContext('2d');
+  // Trim until we have valid YoY in both series
+  const firstIdx = rw.months.findIndex((_, i) => rw.real_yoy_pct[i] != null && rw.nominal_yoy_pct[i] != null);
+  const startAt = Math.max(0, firstIdx);
+  const labels = rw.months.slice(startAt).map(ymToShortLabel);
+  new Chart(ctx, {
+    type: 'line',
+    data: {
+      labels,
+      datasets: [
+        {
+          label: 'Nominal wages YoY',
+          data: rw.nominal_yoy_pct.slice(startAt),
+          borderColor: BRAND.navy,
+          backgroundColor: 'rgba(26, 58, 92, 0.08)',
+          borderWidth: 2, fill: false, tension: 0.3,
+          pointRadius: 0, pointHitRadius: 12,
+          spanGaps: true,
+        },
+        {
+          label: 'Real wages YoY (CPI-deflated)',
+          data: rw.real_yoy_pct.slice(startAt),
+          borderColor: BRAND.peachDeep,
+          backgroundColor: 'rgba(196, 107, 58, 0.10)',
+          borderWidth: 2.5, fill: true, tension: 0.3,
+          pointRadius: 0, pointHitRadius: 12,
+          spanGaps: true,
+        },
+      ],
+    },
+    options: {
+      responsive: true, maintainAspectRatio: false,
+      interaction: { mode: 'index', intersect: false },
+      scales: {
+        x: { grid: { display: false }, ticks: { color: BRAND.navy, font: { size: 11 }, maxRotation: 0, autoSkipPadding: 18 } },
+        y: {
+          grid: { color: BRAND.grid, borderDash: [3,4] },
+          ticks: { color: BRAND.navy, font: { size: 11 }, callback: v => (v >= 0 ? '+' : '') + v.toFixed(1) + '%' },
+          title: { display: true, text: 'YoY change', color: BRAND.navy, font: { size: 12, weight: 'bold' } },
+        },
+      },
+      plugins: {
+        legend: { position: 'top', labels: { color: BRAND.navy, font: { size: 12 }, boxWidth: 16 } },
+        tooltip: {
+          callbacks: {
+            title: (items) => ymToLabel(rw.months[items[0].dataIndex + startAt]),
+            label: (it) => it.dataset.label + ': ' + (it.parsed.y == null ? '—' : (it.parsed.y >= 0 ? '+' : '') + it.parsed.y.toFixed(2) + '%'),
+          },
+        },
+      },
+    },
+  });
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  init().catch(err => {
+    console.error('inflation init failed:', err);
+    document.querySelector('main').insertAdjacentHTML('beforeend',
+      '<div style="padding:20px; color:var(--coral); font-weight:600;">Failed to load inflation data. Check console.</div>');
+  });
+});
+})();
+</script>
+</body>
+</html>
