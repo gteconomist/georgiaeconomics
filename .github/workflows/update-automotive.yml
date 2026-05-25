@@ -1,0 +1,55 @@
+name: Update GA automotive & EV data (BLS QCEW + BEA + Census + Tavily)
+
+on:
+  workflow_dispatch:
+  schedule:
+    # Monthly on the 15th at 18:00 UTC. (Staggered from update-film.yml on the
+    # 8th and update-population.yml on the 12th, to spread cron-driven commits
+    # across the month.)
+    # Most data this pipeline pulls refreshes on a quarterly-or-annual cadence:
+    # BLS QCEW annuals publish ~9 months after year-end; BEA SAGDP2N updates in
+    # late spring/fall; Census CBP lags ~18 months. Monthly cadence is cheap
+    # insurance against missing a refresh + lets Tavily plant-milestone hints
+    # update more responsively.
+    - cron: '0 18 15 * *'
+  push:
+    branches: [main]
+    paths:
+      - 'scripts/fetch_automotive.py'
+      - '.github/workflows/update-automotive.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repo
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Fetch GA automotive & EV data
+        env:
+          BLS_API_KEY:    ${{ secrets.BLS_API_KEY }}
+          BEA_API_KEY:    ${{ secrets.BEA_API_KEY }}
+          CENSUS_API_KEY: ${{ secrets.CENSUS_API_KEY }}
+          TAVILY_API_KEY: ${{ secrets.TAVILY_API_KEY }}
+        run: |
+          python scripts/fetch_automotive.py
+
+      - name: Commit any updated data
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          if ! git diff --quiet -- data/automotive.json; then
+            git add data/automotive.json
+            git commit -m "data: refresh GA automotive & EV (QCEW + BEA + CBP + Tavily) [skip ci]"
+            git push
+          else
+            echo "No data changes — nothing to commit."
+          fi

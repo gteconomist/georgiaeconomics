@@ -2,13 +2,135 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<title>Automotive & EV — Coming Soon | Georgia Economics</title>
-<meta name="description" content="Kia West Point, Hyundai Metaplant Bryan County, supplier footprint, and the broader "EV corridor" story — auto-sector employment by metro with milestone markers">
+<title>Georgia Automotive & EV Corridor | Georgia Economics</title>
+<meta name="description" content="Live Georgia auto industry data: Kia Georgia, Hyundai Metaplant (HMGMA), SK On batteries, HL-GA Battery, Rivian. Employment, industry GDP, $28B+ in announced EV investment, plant-by-plant scorecard.">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="/styles.css">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+<script defer src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/gh/gteconomist/economicsguru@main/assets/charts.js"></script>
+
+<style>
+  /* Auto/EV hero — teal-to-navy gradient with peach accent (distinct from film's navy/peach) */
+  .auto-hero {
+    background: linear-gradient(135deg, #1a3a5c 0%, #3a8d8d 100%);
+    color: #fff; padding: 32px 30px; margin-bottom: 26px; border-radius: 4px;
+    position: relative; overflow: hidden;
+  }
+  .auto-hero::after {
+    content: ''; position: absolute; top: 0; right: -20px; width: 240px; height: 100%;
+    background: linear-gradient(135deg, transparent 30%, var(--peach-deep) 100%);
+    opacity: 0.22;
+  }
+  .auto-hero h2 {
+    font-family: var(--font-display); font-size: 32px; font-weight: 800;
+    letter-spacing: -0.01em; margin: 0 0 6px; position: relative; z-index: 1;
+  }
+  .auto-hero p { margin: 0; font-size: 16px; opacity: 0.92; max-width: 700px; position: relative; z-index: 1; }
+  .auto-hero .stat-strip {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 26px;
+    margin-top: 18px; padding-top: 18px; border-top: 1px solid rgba(255,255,255,0.18);
+    position: relative; z-index: 1;
+  }
+  @media (max-width: 720px) { .auto-hero .stat-strip { grid-template-columns: 1fr; gap: 14px; } }
+  .auto-hero .stat-strip .stat .num { font-family: var(--font-display); font-size: 30px; font-weight: 800; color: var(--peach); display: block; }
+  .auto-hero .stat-strip .stat .lbl { font-size: 12px; text-transform: uppercase; letter-spacing: 0.06em; opacity: 0.78; }
+
+  .chart-canvas-tall { position: relative; height: 380px; background: var(--chart-bg); padding: 6px; }
+  .chart-canvas-med  { position: relative; height: 320px; background: var(--chart-bg); padding: 6px; }
+  .chart-canvas-bench { position: relative; height: 400px; background: var(--chart-bg); padding: 6px; }
+
+  /* Plant scorecard cards */
+  .plant-grid {
+    display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; margin-top: 14px;
+  }
+  @media (max-width: 900px) { .plant-grid { grid-template-columns: 1fr; } }
+  .plant-card {
+    background: var(--panel-bg); border: 1px solid var(--border);
+    border-left: 5px solid var(--silver); padding: 14px 16px 12px;
+    display: flex; flex-direction: column;
+  }
+  .plant-card.status-operating          { border-left-color: var(--green); }
+  .plant-card.status-under-construction { border-left-color: var(--mustard); }
+  .plant-card.status-announced          { border-left-color: var(--teal); }
+  .plant-card.status-paused             { border-left-color: var(--coral); }
+  .plant-card .head { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; flex-wrap: wrap; }
+  .plant-card .name {
+    font-family: var(--font-display); font-size: 16px; font-weight: 700;
+    color: var(--navy); margin: 0; line-height: 1.25;
+  }
+  .plant-card .status-pill {
+    font-size: 10px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.08em;
+    padding: 3px 8px; border-radius: 3px; white-space: nowrap;
+    background: var(--chart-bg); color: var(--silver);
+  }
+  .plant-card.status-operating          .status-pill { background: rgba(107,142,61,0.18); color: var(--green); }
+  .plant-card.status-under-construction .status-pill { background: rgba(212,160,23,0.18); color: var(--mustard); }
+  .plant-card.status-announced          .status-pill { background: rgba(58,141,141,0.18); color: var(--teal); }
+  .plant-card.status-paused             .status-pill { background: rgba(212,98,74,0.18); color: var(--coral); }
+  .plant-card .city {
+    font-size: 12px; color: var(--peach-deep); font-weight: 700;
+    text-transform: uppercase; letter-spacing: 0.05em; margin-top: 2px;
+  }
+  .plant-card .company { font-size: 12px; color: var(--ink-soft); margin-top: 2px; }
+  .plant-card .product { font-size: 13px; color: var(--ink); margin-top: 10px; line-height: 1.4; }
+  .plant-card .footprint {
+    display: flex; flex-wrap: wrap; gap: 16px; padding: 10px 0 0;
+    margin-top: 10px; border-top: 1px dotted var(--border); font-size: 12px;
+  }
+  .plant-card .footprint .stat { color: var(--ink-soft); }
+  .plant-card .footprint .stat strong { color: var(--navy); font-size: 14px; }
+  .plant-card .note { font-size: 12px; color: var(--ink-soft); margin-top: 10px; font-style: italic; line-height: 1.4; }
+  .plant-card .hint {
+    margin-top: 8px; padding: 6px 8px;
+    background: var(--peach-pale); border-left: 3px solid var(--peach-deep);
+    font-size: 11px; color: #5a3a20;
+  }
+  .plant-card .hint a { color: var(--peach-deep); font-weight: 600; }
+
+  /* Milestone timeline */
+  .timeline { margin-top: 8px; padding-left: 0; list-style: none; }
+  .timeline li {
+    position: relative; padding: 8px 0 8px 22px; border-bottom: 1px dotted var(--border);
+  }
+  .timeline li:last-child { border-bottom: none; }
+  .timeline li::before {
+    content: ''; position: absolute; left: 4px; top: 14px;
+    width: 9px; height: 9px; background: var(--peach-deep); border-radius: 50%;
+  }
+  .timeline li.year-anchor::before { background: var(--mustard); width: 11px; height: 11px; left: 3px; top: 13px; }
+  .timeline .yr {
+    font-family: var(--font-display); font-weight: 800; color: var(--navy);
+    font-size: 15px; margin-right: 10px;
+  }
+  .timeline .lbl { font-weight: 600; color: var(--navy); }
+  .timeline .detail { display: block; margin-top: 2px; font-size: 13px; color: var(--ink-soft); line-height: 1.4; }
+
+  .source-note { font-size: 12px; color: var(--ink-soft); margin-top: 8px; font-style: italic; }
+
+  /* Per-section "as of MMM YYYY" badges */
+  .as-of {
+    display: inline-block; margin-left: 8px; padding: 2px 8px;
+    font-size: 11px; font-weight: 600; letter-spacing: 0.04em;
+    text-transform: uppercase; color: var(--ink-soft);
+    background: var(--chart-bg); border: 1px solid var(--border);
+    border-radius: 3px; vertical-align: middle;
+  }
+  .as-of.stale {
+    background: rgba(196, 107, 58, 0.12);
+    color: var(--peach-deep); border-color: var(--peach-deep);
+  }
+  .stale-banner {
+    margin-bottom: 22px; padding: 12px 16px;
+    background: rgba(212, 160, 23, 0.10);
+    border-left: 4px solid var(--mustard);
+    font-size: 14px; color: var(--ink);
+  }
+  .stale-banner strong { color: var(--navy); }
+</style>
 </head>
 <body>
 
@@ -27,24 +149,375 @@
 
 <main>
   <section class="page-header">
-    <h1>Georgia Automotive & EV Corridor</h1>
-    <div class="subtitle">Kia West Point, Hyundai Metaplant Bryan County, supplier footprint, and the broader "EV corridor" story — auto-sector employment by metro with milestone markers for major plant openings.</div>
+    <h1>Georgia automotive & EV</h1>
+    <div class="subtitle">From Kia opening the state's first auto assembly plant in 2009 to Hyundai's $7.6B Metaplant rolling out IONIQs in 2024, Georgia has become America's most concentrated EV-manufacturing buildout. Production, employment, plant-by-plant scorecard, and the milestones behind the corridor.</div>
+    <div class="latest">Latest data: <strong id="latest-label">—</strong></div>
   </section>
 
-  <div class="notice">
-    <strong>Page in development.</strong> The data pipeline for this topic is being wired up. In the meantime, the <a href="/counties/">county heat map</a> is live with monthly BLS LAUS data for all 159 Georgia counties.
+  <div class="notice" id="fixture-banner" style="display:none;">
+    <strong>Seed data:</strong> Employment, GDP, and investment values are calibrated to Georgia's documented auto trajectory through 2024-25, but these specific numbers are placeholders pending the live data pipeline.
   </div>
 
-  <p style="margin-top:24px;"><a href="/">&larr; Back to home</a></p>
+  <div class="stale-banner" id="stale-banner" style="display:none;">
+    <strong>Heads-up:</strong> <span id="stale-banner-text"></span>
+  </div>
+
+  <!-- Hero -->
+  <section class="auto-hero">
+    <h2>The new Detroit of the South.</h2>
+    <p>Since 2018, Hyundai Motor Group, SK On, LG Energy Solution, and Rivian have collectively committed more than $28B to vehicle and battery plants in Georgia — the largest cluster of EV-supply-chain investment in any U.S. state. Kia's West Point assembly plant, the original anchor since 2009, makes the Telluride, Sorento, and K5.</p>
+    <div class="stat-strip">
+      <div class="stat"><span class="num" id="hero-invest">—</span><span class="lbl">Announced EV / auto investment</span></div>
+      <div class="stat"><span class="num" id="hero-jobs">—</span><span class="lbl" id="hero-jobs-lbl">Auto-sector jobs (NAICS 3361-3363)</span></div>
+      <div class="stat"><span class="num" id="hero-rank">—</span><span class="lbl">U.S. rank, motor vehicle industry GDP</span></div>
+    </div>
+  </section>
+
+  <!-- KPI strip -->
+  <div class="kpi-grid">
+    <div class="kpi"><div class="label">EV investment announced</div><div class="value" id="kpi-invest">—</div><div class="delta">Cumulative since 2018</div></div>
+    <div class="kpi"><div class="label">Industry GDP <span id="kpi-gdp-yr"></span></div><div class="value" id="kpi-gdp">—</div><div class="delta" id="kpi-gdp-yoy">—</div></div>
+    <div class="kpi"><div class="label">Auto sector employment</div><div class="value" id="kpi-emp">—</div><div class="delta" id="kpi-emp-yoy">—</div></div>
+    <div class="kpi"><div class="label">Establishments <span id="kpi-estab-yr"></span></div><div class="value" id="kpi-estab">—</div><div class="delta">NAICS 3361 + 3362 + 3363</div></div>
+    <div class="kpi"><div class="label">National rank</div><div class="value" id="kpi-rank">—</div><div class="delta">Industry GDP (motor vehicles)</div></div>
+    <div class="kpi"><div class="label">Major plants</div><div class="value" id="kpi-plants">—</div><div class="delta" id="kpi-plants-note">Operating + announced</div></div>
+  </div>
+
+  <!-- Industry GDP trend with milestone annotations -->
+  <div class="chart-panel">
+    <h2>Motor-Vehicle Manufacturing GDP — Georgia <span class="as-of" id="badge-gdp"></span></h2>
+    <p class="sub">Industry value-added for NAICS 3361/3362/3363 (motor vehicles, bodies & trailers, and parts manufacturing) in Georgia, billions of USD per year. The 2020 dip is COVID-era plant shutdowns. The post-2022 surge reflects the Hyundai Metaplant + SK On + HL-GA Battery buildout. Major plant milestones are flagged.</p>
+    <div class="chart-canvas-tall"><canvas id="gdp-chart"></canvas></div>
+    <div class="source-note">Source: BEA Regional Economic Accounts, SAGDP2N — "Motor vehicles, bodies and trailers, and parts manufacturing" line, Georgia.</div>
+  </div>
+
+  <!-- Employment + state comparison side by side -->
+  <div class="chart-grid" style="margin-top: 22px;">
+    <div class="chart-panel">
+      <h2>Auto-Sector Employment <span class="as-of" id="badge-emp"></span></h2>
+      <p class="sub" id="emp-sub">Jobs in NAICS 3361 + 3362 + 3363 (vehicle + body + parts manufacturing), Georgia. Annual averages. Final HMGMA ramp + HL-GA Battery hiring push the 2024-25 numbers sharply higher.</p>
+      <div class="chart-canvas-med"><canvas id="emp-chart"></canvas></div>
+      <div class="source-note">Source: BLS Quarterly Census of Employment & Wages (QCEW), annual averages, GA private + government, NAICS 3361/3362/3363 summed.</div>
+    </div>
+
+    <div class="chart-panel">
+      <h2>How Georgia Stacks Up <span class="as-of" id="badge-states"></span></h2>
+      <p class="sub" id="bench-sub">Motor-vehicle manufacturing GDP by state, billions of USD. Michigan remains the giant; Georgia is climbing fast as HMGMA and the battery cluster scale up.</p>
+      <div class="chart-canvas-bench"><canvas id="benchmark-chart"></canvas></div>
+      <div class="source-note">Source: BEA Regional Economic Accounts, SAGDP2N — motor vehicles, bodies and trailers, and parts manufacturing line, state-level industry GDP (value-added).</div>
+    </div>
+  </div>
+
+  <!-- Plant scorecard -->
+  <div class="chart-panel" style="margin-top: 22px;">
+    <h2>Plant-by-Plant Scorecard <span class="as-of" id="badge-plants"></span></h2>
+    <p class="sub">The major vehicle and battery plants anchoring Georgia's auto industry. Status reflects the latest publicly reported state of each project. Color coding: <span style="color:var(--green); font-weight:700;">operating</span>, <span style="color:var(--mustard); font-weight:700;">under construction</span>, <span style="color:var(--teal); font-weight:700;">announced</span>, <span style="color:var(--coral); font-weight:700;">paused</span>.</p>
+    <div class="plant-grid" id="plant-grid"></div>
+    <div class="source-note">Investment and jobs figures are total committed (typically the latest announced figure including any expansions). Sources: Georgia Dept. of Economic Development, company press releases, and trade press; auto-refreshed via Tavily when fresh signals are detected.</div>
+  </div>
+
+  <!-- Milestone timeline -->
+  <div class="chart-panel" style="margin-top: 22px;">
+    <h2>Milestones <span class="as-of" id="badge-milestones"></span></h2>
+    <p class="sub">Major announcements and operational milestones for Georgia's auto / EV cluster, in chronological order.</p>
+    <ul class="timeline" id="timeline"></ul>
+  </div>
+
 </main>
 
 <footer class="site-footer">
   <div class="wrap">
     <div>&copy; <span id="yr"></span> Georgia Economics &middot; Sister site to <a href="https://economicsguru.com">economicsguru.com</a> &middot; <a href="/about/">Methodology</a></div>
-    <div>Sources: BLS, FRED, BEA, Census, Georgia state agencies.</div>
+    <div>Sources: BLS QCEW, BEA SAGDP2N, Census CBP, Georgia DECD.</div>
   </div>
 </footer>
 
-<script>document.getElementById('yr').textContent = new Date().getFullYear();</script>
+<script>
+document.getElementById('yr').textContent = new Date().getFullYear();
+
+const BRAND_COLORS = {
+  navy: '#1a3a5c', peachDeep: '#c46b3a', peach: '#e8a87c', peachPale: '#faead9',
+  mustard: '#d4a017', teal: '#3a8d8d', coral: '#d4624a', green: '#6b8e3d', grid: '#b6ad8d',
+};
+
+function fmtSignedPct(v) { if (v == null) return '—'; return (v >= 0 ? '+' : '') + v.toFixed(1) + '%'; }
+function fmtDollarsB(v, dp = 1) { return v == null ? '—' : '$' + Number(v).toFixed(dp) + 'B'; }
+function fmtInt(v) { return v == null ? '—' : Number(v).toLocaleString(); }
+
+const MONTH_NAMES = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+function fmtAsOf(iso) {
+  if (!iso) return '';
+  const m = /^(\d{4})-(\d{2})-(\d{2})$/.exec(iso);
+  if (!m) return '';
+  return MONTH_NAMES[+m[2] - 1] + ' ' + m[1];
+}
+function monthsAgo(iso) {
+  if (!iso) return Infinity;
+  const m = /^(\d{4})-(\d{2})-(\d{2})$/.exec(iso);
+  if (!m) return Infinity;
+  const now = new Date();
+  return (now.getFullYear() - +m[1]) * 12 + (now.getMonth() + 1 - +m[2]);
+}
+
+const STALE_THRESHOLD_MONTHS = 6;
+
+function setBadge(elId, lastUpdated) {
+  const el = document.getElementById(elId);
+  if (!el) return;
+  const label = fmtAsOf(lastUpdated);
+  if (!label) { el.style.display = 'none'; return; }
+  el.textContent = 'as of ' + label;
+  if (monthsAgo(lastUpdated) > STALE_THRESHOLD_MONTHS) {
+    el.classList.add('stale');
+  }
+}
+
+async function init() {
+  const res = await fetch('/data/automotive.json?v=' + new Date().toISOString().slice(0, 10));
+  const d = await res.json();
+  const meta = d._meta || {};
+  if (d._fixture) document.getElementById('fixture-banner').style.display = '';
+
+  document.getElementById('latest-label').textContent = d.latest_year || '—';
+
+  // ----- Top staleness banner -----
+  const stale = Object.entries(meta)
+    .filter(([k, v]) => v && v.last_updated && monthsAgo(v.last_updated) > STALE_THRESHOLD_MONTHS)
+    .map(([k]) => k.replace(/_/g, ' '));
+  if (stale.length) {
+    document.getElementById('stale-banner').style.display = '';
+    document.getElementById('stale-banner-text').textContent =
+      'The following section' + (stale.length > 1 ? 's are' : ' is') +
+      ' more than 6 months out of date: ' + stale.join(', ') +
+      '. The values shown remain the last successfully fetched figures.';
+  }
+
+  // ----- Per-section "as of" badges -----
+  setBadge('badge-gdp',        meta.industry_gdp     && meta.industry_gdp.last_updated);
+  setBadge('badge-emp',        meta.employment       && meta.employment.last_updated);
+  setBadge('badge-states',     meta.state_comparison && meta.state_comparison.last_updated);
+  setBadge('badge-plants',     meta.plants           && meta.plants.last_updated);
+  setBadge('badge-milestones', meta.milestones       && meta.milestones.last_updated);
+
+  // ----- Hero -----
+  const k = d.kpis || {};
+  if (k.ev_investment_total_b != null) {
+    document.getElementById('hero-invest').textContent = '$' + Number(k.ev_investment_total_b).toFixed(0) + 'B+';
+  }
+  if (k.employment_latest_k != null) {
+    document.getElementById('hero-jobs').textContent = k.employment_latest_k.toFixed(0) + 'K';
+  }
+  if (k.national_rank != null) {
+    document.getElementById('hero-rank').textContent = '#' + k.national_rank;
+  }
+
+  // ----- KPI strip -----
+  document.getElementById('kpi-invest').textContent = (k.ev_investment_total_b != null)
+    ? '$' + Number(k.ev_investment_total_b).toFixed(0) + 'B+' : '—';
+
+  // GDP
+  if (k.industry_gdp_latest_b != null) {
+    document.getElementById('kpi-gdp').textContent = fmtDollarsB(k.industry_gdp_latest_b);
+    const yoyEl = document.getElementById('kpi-gdp-yoy');
+    yoyEl.textContent = fmtSignedPct(k.industry_gdp_yoy_pct) + ' YoY';
+    yoyEl.classList.add((k.industry_gdp_yoy_pct ?? 0) >= 0 ? 'down' : 'up');
+    const yrLatest = (d.trends && d.trends.years && d.trends.years.length)
+      ? d.trends.years[d.trends.years.length - 1] : null;
+    document.getElementById('kpi-gdp-yr').textContent = yrLatest ? '(' + yrLatest + ')' : '';
+  }
+
+  // Employment
+  if (k.employment_latest_k != null) {
+    document.getElementById('kpi-emp').textContent = k.employment_latest_k.toFixed(1) + 'K';
+    const empYoyEl = document.getElementById('kpi-emp-yoy');
+    empYoyEl.textContent = fmtSignedPct(k.employment_yoy_pct) + ' YoY';
+    empYoyEl.classList.add((k.employment_yoy_pct ?? 0) >= 0 ? 'down' : 'up');
+  }
+
+  // Establishments
+  if (k.establishments_latest != null) {
+    document.getElementById('kpi-estab').textContent = fmtInt(k.establishments_latest);
+    const ey = (meta.establishments && meta.establishments.year);
+    document.getElementById('kpi-estab-yr').textContent = ey ? '(' + ey + ')' : '';
+  }
+
+  // National rank
+  document.getElementById('kpi-rank').textContent = (k.national_rank != null) ? '#' + k.national_rank : '—';
+
+  // Plants
+  if (k.n_plants_total != null) {
+    document.getElementById('kpi-plants').textContent = k.n_plants_total;
+    document.getElementById('kpi-plants-note').textContent =
+      (k.n_plants_operating || 0) + ' operating · ' + (k.n_plants_announced || 0) + ' announced/under construction';
+  }
+
+  // ----- Charts -----
+  if (d.trends && d.trends.years && d.trends.gdp_b) {
+    renderGdpChart(d.trends, d.annotations || []);
+  }
+  const empYears  = (d.trends && d.trends.employment_k_years) || (d.trends && d.trends.years) || [];
+  const empValues = (d.trends && d.trends.employment_k) || [];
+  if (empYears.length && empValues.length) {
+    renderEmpChart(empYears, empValues);
+  }
+  if (Array.isArray(d.state_comparison) && d.state_comparison.length) {
+    renderBenchmarkChart(d.state_comparison, meta.state_comparison);
+  }
+  renderPlantGrid(d.plants || []);
+  renderTimeline(d.milestones || []);
+}
+
+function renderGdpChart(trends, annotations) {
+  const ctx = document.getElementById('gdp-chart').getContext('2d');
+  // Highlight annotation years with coral
+  const annoYears = new Set(annotations.map(a => a.year));
+  const colors = trends.years.map(y => annoYears.has(y) ? BRAND_COLORS.coral : BRAND_COLORS.peachDeep);
+  new Chart(ctx, {
+    type: 'bar',
+    data: { labels: trends.years, datasets: [{ data: trends.gdp_b, backgroundColor: colors, borderWidth: 0 }] },
+    options: {
+      responsive: true, maintainAspectRatio: false,
+      scales: {
+        x: { grid: { display: false }, ticks: { color: BRAND_COLORS.navy, font: { size: 12, weight: 'bold' } } },
+        y: { beginAtZero: true, grid: { color: BRAND_COLORS.grid, borderDash: [3,4] }, ticks: { color: BRAND_COLORS.navy, font: { size: 11 }, callback: v => '$' + v.toFixed(1) + 'B' } },
+      },
+      plugins: {
+        legend: { display: false },
+        tooltip: {
+          callbacks: {
+            title: (it) => trends.years[it[0].dataIndex],
+            label: (it) => {
+              const y = trends.years[it.dataIndex];
+              const anno = annotations.find(a => a.year === y);
+              const lines = ['GDP: $' + it.parsed.y.toFixed(2) + 'B'];
+              if (anno) lines.push('⚑ ' + anno.label);
+              return lines;
+            },
+          },
+        },
+      },
+    },
+  });
+}
+
+function renderEmpChart(years, values) {
+  const ctx = document.getElementById('emp-chart').getContext('2d');
+  new Chart(ctx, {
+    type: 'bar',
+    data: { labels: years, datasets: [{ data: values, backgroundColor: BRAND_COLORS.teal, borderWidth: 0 }] },
+    options: {
+      responsive: true, maintainAspectRatio: false,
+      scales: {
+        x: { grid: { display: false }, ticks: { color: BRAND_COLORS.navy, font: { size: 11 } } },
+        y: { beginAtZero: true, grid: { color: BRAND_COLORS.grid, borderDash: [3,4] }, ticks: { color: BRAND_COLORS.navy, font: { size: 11 }, callback: v => v.toFixed(0) + 'K' } },
+      },
+      plugins: {
+        legend: { display: false },
+        tooltip: { callbacks: { label: (it) => 'Jobs: ' + (it.parsed.y * 1000).toLocaleString(undefined,{maximumFractionDigits:0}) } },
+      },
+    },
+  });
+}
+
+function renderBenchmarkChart(rows, stateMeta) {
+  const labels = rows.map(r => r.state);
+  const values = rows.map(r => r.gdp_b);
+  const colors = rows.map(r => r.color);
+  if (stateMeta && stateMeta.year) {
+    const sub = document.getElementById('bench-sub');
+    if (sub) sub.textContent =
+      'Motor-vehicle manufacturing GDP by state, ' + stateMeta.year + ', billions of USD. ' +
+      'Michigan remains the giant; Georgia is climbing fast as HMGMA and the battery cluster scale up.';
+  }
+  const ctx = document.getElementById('benchmark-chart').getContext('2d');
+  new Chart(ctx, {
+    type: 'bar',
+    data: { labels, datasets: [{ data: values, backgroundColor: colors, borderWidth: 0 }] },
+    options: {
+      indexAxis: 'y',
+      responsive: true, maintainAspectRatio: false,
+      scales: {
+        x: { beginAtZero: true, grid: { color: BRAND_COLORS.grid, borderDash: [3,4] }, ticks: { color: BRAND_COLORS.navy, font: { size: 11 }, callback: v => '$' + v.toFixed(1) + 'B' } },
+        y: { grid: { display: false }, ticks: { color: BRAND_COLORS.navy, font: { size: 13, weight: 'bold' } } },
+      },
+      plugins: {
+        legend: { display: false },
+        tooltip: { callbacks: { label: (it) => '$' + it.parsed.x.toFixed(2) + 'B (#' + rows[it.dataIndex].rank + ')' } },
+      },
+    },
+  });
+}
+
+// Plant scorecard cards — sorted by status weight then by investment desc
+const STATUS_ORDER = { 'operating': 0, 'under-construction': 1, 'announced': 2, 'paused': 3 };
+function renderPlantGrid(plants) {
+  const grid = document.getElementById('plant-grid');
+  grid.innerHTML = '';
+  const sorted = plants.slice().sort((a, b) => {
+    const sa = STATUS_ORDER[(a.status || '').toLowerCase()] ?? 9;
+    const sb = STATUS_ORDER[(b.status || '').toLowerCase()] ?? 9;
+    if (sa !== sb) return sa - sb;
+    return (b.investment_b || 0) - (a.investment_b || 0);
+  });
+  sorted.forEach(p => {
+    const status = (p.status || '').toLowerCase();
+    const card = document.createElement('div');
+    card.className = 'plant-card status-' + status;
+
+    const footprintBits = [];
+    if (p.investment_b != null) footprintBits.push(`<div class="stat"><strong>$${Number(p.investment_b).toFixed(2)}B</strong> investment</div>`);
+    if (p.jobs)                 footprintBits.push(`<div class="stat"><strong>${Number(p.jobs).toLocaleString()}</strong> jobs</div>`);
+    if (p.capacity_units_k)     footprintBits.push(`<div class="stat"><strong>${Number(p.capacity_units_k).toLocaleString()}K</strong> units/yr</div>`);
+    if (p.capacity_gwh)         footprintBits.push(`<div class="stat"><strong>${p.capacity_gwh}</strong> GWh capacity</div>`);
+    if (p.year_status)          footprintBits.push(`<div class="stat">since <strong>${p.year_status}</strong></div>`);
+
+    const hintHtml = p._hint ? `
+      <div class="hint">
+        Recent signal (${p._hint.status_hint}): ${p._hint.snippet || ''}
+        ${p._hint.source_url ? ` <a href="${p._hint.source_url}" target="_blank" rel="noopener">source ↗</a>` : ''}
+      </div>` : '';
+
+    const statusLabel = status ? status.replace(/-/g, ' ') : 'unknown';
+
+    card.innerHTML = `
+      <div class="head">
+        <h3 class="name">${p.name || ''}</h3>
+        <span class="status-pill">${statusLabel}</span>
+      </div>
+      <div class="city">${p.city || ''}</div>
+      <div class="company">${p.company || ''}</div>
+      <div class="product">${p.product || ''}</div>
+      <div class="footprint">${footprintBits.join('')}</div>
+      ${p.note ? `<div class="note">${p.note}</div>` : ''}
+      ${hintHtml}
+    `;
+    grid.appendChild(card);
+  });
+}
+
+function renderTimeline(events) {
+  const ul = document.getElementById('timeline');
+  ul.innerHTML = '';
+  // Chronological ascending
+  events.slice().sort((a, b) => a.year - b.year).forEach(e => {
+    const li = document.createElement('li');
+    // Highlight major anchor years
+    if ([2009, 2024, 2025].includes(e.year)) li.classList.add('year-anchor');
+    li.innerHTML = `
+      <span class="yr">${e.year}</span><span class="lbl">${e.label}</span>
+      ${e.detail ? `<span class="detail">${e.detail}</span>` : ''}
+    `;
+    ul.appendChild(li);
+  });
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  init().catch(err => {
+    console.error('automotive init failed:', err);
+    document.querySelector('main').insertAdjacentHTML('beforeend',
+      '<div style="padding:20px; color:var(--coral); font-weight:600;">Failed to load automotive data. Check console.</div>');
+  });
+});
+</script>
 </body>
 </html>
