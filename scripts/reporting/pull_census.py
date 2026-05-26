@@ -260,7 +260,7 @@ def fetch_acs_demographics(cbsa: str, year: Optional[int] = None) -> Optional[di
 
 # ----------------------------- Building permits (annual) -----------------------------
 
-def fetch_bps_permits_annual(cbsa: str, years_back: int = 7) -> Optional[dict]:
+def fetch_bps_permits_annual(cbsa: str, years_back: int = 5) -> Optional[dict]:
     """Annual single-family + multi-family residential permits for the MSA.
 
     Source: Census BPS annual MSA files at
@@ -275,13 +275,19 @@ def fetch_bps_permits_annual(cbsa: str, years_back: int = 7) -> Optional[dict]:
         - Single-family units      = Units_1_Unit
         - Multi-family units total = Units_2_Unit + Units_3_4_Unit + Units_5_or_more_Unit
 
+    Fault tolerance: each year is fetched independently with retries and a 90s
+    timeout (www2.census.gov is sometimes slow). If a single year times out or
+    404s, that year is skipped and we continue with the rest. Returns the dict
+    populated with whatever years succeeded, rather than None — so a partial
+    result is still useful.
+
     Returns:
         {
-          "years":           [2019, ..., 2025],
+          "years":           [2020, ..., 2024],
           "single_family":   [3610, ...],
           "multi_family":    [610, ...],
-          "permits_per_1k":  [10.4, ...],          # using MSA population
-          "latest_year":     2025,
+          "permits_per_1k":  [10.4, ...],
+          "latest_year":     2024,
           "latest_single":   4590,
           "latest_multi":    1180,
         }
@@ -298,16 +304,34 @@ def fetch_bps_permits_annual(cbsa: str, years_back: int = 7) -> Optional[dict]:
     for y in range(start_year, this_year):
         yy = f"{y % 100:02d}"
         url = f"https://www2.census.gov/econ/bps/Metro/ma{yy}a.txt"
-        try:
-            req = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0"})
-            with urllib.request.urlopen(req, timeout=30) as resp:
-                body = resp.read().decode("utf-8", errors="replace")
-        except urllib.error.HTTPError as e:
-            if e.code != 404:
-                print(f"  [BPS {y}] HTTP {e.code}", file=sys.stderr)
-            continue
-        except Exception as e:
-            print(f"  [BPS {y}] {type(e).__name__}: {e}", file=sys.stderr)
+
+        body = None
+        last_err = None
+        # Up to 2 retries per year — www2.census.gov frequently times out on first hit
+        for attempt in range(2):
+            try:
+                req = urllib.request.Request(url, headers={
+                    "User-Agent": "Mozilla/5.0 (compatible; EIG-MSA-reports/1.0)",
+                    "Accept-Encoding": "gzip",
+                })
+                with urllib.request.urlopen(req, timeout=90) as resp:
+                    raw = resp.read()
+                    if resp.headers.get("Content-Encoding") == "gzip":
+                        import gzip
+                        raw = gzip.decompress(raw)
+                    body = raw.decode("utf-8", errors="replace")
+                break
+            except urllib.error.HTTPError as e:
+                if e.code == 404:
+                    body = None
+                    break  # year not published yet, skip silently
+                last_err = e
+            except Exception as e:
+                last_err = e
+                time.sleep(2 + attempt * 3)
+        if body is None:
+            if last_err is not None:
+                print(f"  [BPS {y}] skip ({type(last_err).__name__}: {last_err})", file=sys.stderr)
             continue
 
         # BPS annual files: 3-line header (titles + units + sub-headers), then comma-separated rows.

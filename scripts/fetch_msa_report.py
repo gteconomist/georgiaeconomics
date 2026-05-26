@@ -217,7 +217,9 @@ def fetch_one_msa(cbsa: str, sections_filter=None, prior: Optional[dict] = None)
             print(f" CRASHED — {type(e).__name__}: {e}")
             data, status = None, "failed"
         else:
-            print(f" {status}")
+            # One-line freshness summary alongside the status
+            stamp = _freshness_stamp(data) if data else ""
+            print(f" {status}{' (' + stamp + ')' if stamp else ''}")
 
         # NEVER BLANK on failure — fall back to prior value if available.
         if status == "failed" and prior_sections.get(name) is not None:
@@ -239,6 +241,19 @@ def write_report(output: dict, out_dir: Path) -> Path:
     size_kb = path.stat().st_size / 1024
     print(f"  wrote {path}  ({size_kb:.1f} KB)")
     return path
+
+
+def _freshness_stamp(data) -> str:
+    """Best-effort one-line freshness label for a section's data dict.
+    Looks for the common 'latest_*' fields each fetcher populates."""
+    if not isinstance(data, dict):
+        return ""
+    for k in ("latest_month", "latest_quarter", "latest_year", "year",
+              "as_of_label", "year_pair_label"):
+        v = data.get(k)
+        if v:
+            return str(v)
+    return ""
 
 
 def read_prior_report(out_dir: Path, short_name: str) -> Optional[dict]:

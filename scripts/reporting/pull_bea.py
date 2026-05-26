@@ -66,7 +66,14 @@ def _bea_get(params: Dict[str, str], retries: int = 3) -> Optional[dict]:
                 err = results["Error"]
                 if isinstance(err, list):
                     err = err[0] if err else {}
-                print(f"  [BEA API error] {err.get('APIErrorDescription', err)}", file=sys.stderr)
+                desc = (err.get("APIErrorDescription") or "").strip() if isinstance(err, dict) else ""
+                # "Year not published yet" or similar — quiet: caller will try an earlier year
+                if (not desc or
+                    "not available" in desc.lower() or
+                    "no data" in desc.lower() or
+                    "invalid year" in desc.lower()):
+                    return None
+                print(f"  [BEA API error] {desc}", file=sys.stderr)
                 return None
             return results
         except urllib.error.HTTPError as e:
