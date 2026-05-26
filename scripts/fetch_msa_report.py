@@ -53,7 +53,7 @@ sys.path.insert(0, str(Path(__file__).parent))
 from _ga_msas import GA_MSAS
 
 # Per-source fetchers (each module in scripts/reporting/)
-from reporting import pull_bls, pull_fhfa, pull_census, pull_bea, pull_irs_soi
+from reporting import pull_bls, pull_fhfa, pull_census, pull_bea, pull_irs_soi, pull_ita
 
 # Lookup tables
 MSA_BY_CBSA = {cbsa: (short, full, pop) for cbsa, short, full, pop in GA_MSAS}
@@ -141,8 +141,8 @@ def run_census_bps_permits(cbsa: str):
     return data, "live"
 
 
-def run_census_trade_exports(cbsa: str):
-    data = pull_census.fetch_trade_exports(cbsa)
+def run_ita_msa_exports(cbsa: str):
+    data = pull_ita.fetch_msa_exports(cbsa)
     if data is None:
         return None, "failed"
     return data, "live"
@@ -168,7 +168,7 @@ SECTIONS = [
     ("qcew_industry_shares",    run_qcew_industry_shares),
     ("qcew_yoy_changes",        run_qcew_yoy_changes),
     ("census_bps_permits",      run_census_bps_permits),
-    ("census_trade_exports",    run_census_trade_exports),
+    ("ita_msa_exports",         run_ita_msa_exports),
     ("irs_soi_migration",       run_irs_soi_migration),
 ]
 

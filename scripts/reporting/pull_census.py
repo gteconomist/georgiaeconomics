@@ -14,13 +14,8 @@ Exposes:
       Annual residential building permits (single-family + multi-family) for the MSA.
       Pulled from the Census BPS Metro annual files at www2.census.gov/econ/bps/Metro/.
 
-  fetch_trade_exports(cbsa, year=None) -> dict
-      Annual MSA exports by product (3-digit NAICS) and destination country.
-      Pulled from ITA's Metropolitan Area Export Data static files at trade.gov.
-      NB: contrary to an earlier note in the work plan, Census USA Trade Online does
-      NOT publish MSA-level export breakdowns (state & port only). The real source
-      is ITA's annual static files. URL pattern shifts year-to-year, so this fetcher
-      tries a list of known URL templates and is tolerant of single-year failures.
+  NOTE: MSA-level export data is NOT served by Census USA Trade Online (state + port
+  only). The real source is ITA Metropolitan Area Export Data — see pull_ita.py.
 
 Census API base: https://api.census.gov/data/{year}/{dataset}
 MSA predicate:  for=metropolitan+statistical+area/micropolitan+statistical+area:{cbsa}
@@ -368,41 +363,9 @@ def fetch_bps_permits_annual(cbsa: str, years_back: int = 7) -> Optional[dict]:
     }
 
 
-# ----------------------------- Trade: MSA exports -----------------------------
-
-# ITA static URL pattern for Metropolitan Area Export Data.
-# Format has shifted over the years; we try the most recent known patterns first.
-ITA_METRO_URLS = [
-    "https://www.trade.gov/sites/default/files/{year}-{mo:02d}/MSA_Total_Exports_{year}.xlsx",
-    "https://www.trade.gov/sites/default/files/{year}/MSA_Total_Exports_{year}.xlsx",
-    "https://www.trade.gov/data-visualization/tradestats-express-export-data-metropolitan-area/MSA_Total_Exports_{year}.xlsx",
-]
-
-
-def fetch_trade_exports(cbsa: str, year: Optional[int] = None) -> Optional[dict]:
-    """Annual MSA exports by product (3-digit NAICS) and destination country.
-
-    Returns:
-        {
-          "year": Y,
-          "total_usd_millions":      9910,
-          "by_product":              [{"naics3": "336", "label": "Transportation equipment", "value_usd_mil": 4820}, ...],
-          "by_destination":          [{"country": "China", "value_usd_mil": 1240}, ...],
-          "pct_of_gmp":              29.6,
-          "rank_among_us_metros":    38,
-        }
-
-    NOTE: This is a Phase 1.5 fetcher — implemented as a stub returning None until
-    we settle on the right URL/format. The ITA metropolitan-area files are
-    Excel-based, multi-sheet, and the URL template shifts annually. To make this
-    fully robust we'll need to either:
-        (a) maintain a hand-curated registry of annual URLs, OR
-        (b) parse the trade.gov listing page each year to discover the latest URL.
-    Both add ~half a day of work. For now this slot returns None and the report
-    page falls back to its "Demo" pill for the Exports section.
-    """
-    print(f"  [Census trade] MSA exports fetcher is a Phase 1.5 stub (see module docstring)", file=sys.stderr)
-    return None
+# NOTE: MSA-level export breakdowns are NOT served by Census USA Trade Online
+# (state and port only). The real source is ITA Metropolitan Area Export Data,
+# served via api.trade.gov with the api.data.gov ITA_API_KEY. See pull_ita.py.
 
 
 # ----------------------------- CLI smoke test -----------------------------

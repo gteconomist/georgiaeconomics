@@ -766,25 +766,29 @@
     <div class="report-panel">
       <h3>Exports — by Product, 2024</h3>
       <table class="employers-table">
-        <tr><td>Transportation equipment</td><td>4,820</td></tr>
-        <tr><td>Chemicals</td><td>1,310</td></tr>
-        <tr><td>Paper &amp; pulp</td><td>1,050</td></tr>
-        <tr><td>Machinery (except electrical)</td><td>820</td></tr>
-        <tr><td>Food &amp; kindred products</td><td>440</td></tr>
-        <tr><td>Fabricated metals</td><td>290</td></tr>
-        <tr><td>Other</td><td>1,180</td></tr>
-        <tr style="font-weight:700;background:var(--chart-bg);"><td>Total ($M)</td><td>9,910</td></tr>
+        <tbody id="exports-by-product">
+          <tr><td>Transportation equipment</td><td>4,820</td></tr>
+          <tr><td>Chemicals</td><td>1,310</td></tr>
+          <tr><td>Paper &amp; pulp</td><td>1,050</td></tr>
+          <tr><td>Machinery (except electrical)</td><td>820</td></tr>
+          <tr><td>Food &amp; kindred products</td><td>440</td></tr>
+          <tr><td>Fabricated metals</td><td>290</td></tr>
+          <tr><td>Other</td><td>1,180</td></tr>
+          <tr style="font-weight:700;background:var(--chart-bg);"><td>Total ($M)</td><td>9,910</td></tr>
+        </tbody>
       </table>
       <h3 style="margin-top:14px;">By Destination, 2024</h3>
       <table class="employers-table">
-        <tr><td>Asia</td><td>3,840</td></tr>
-        <tr><td>European Union</td><td>2,610</td></tr>
-        <tr><td>Canada &amp; Mexico</td><td>1,720</td></tr>
-        <tr><td>South America</td><td>820</td></tr>
-        <tr><td>Africa</td><td>340</td></tr>
-        <tr><td>Rest of world</td><td>580</td></tr>
+        <tbody id="exports-by-destination">
+          <tr><td>Asia</td><td>3,840</td></tr>
+          <tr><td>European Union</td><td>2,610</td></tr>
+          <tr><td>Canada &amp; Mexico</td><td>1,720</td></tr>
+          <tr><td>South America</td><td>820</td></tr>
+          <tr><td>Africa</td><td>340</td></tr>
+          <tr><td>Rest of world</td><td>580</td></tr>
+        </tbody>
       </table>
-      <div class="src">% of GMP: 29.6% &middot; Rank among US metros: 38 of 387. Sources: ITA TradeStats, Census USA Trade Online. <span class="src-pill demo">Demo</span></div>
+      <div class="src" id="exports-source-line">Source: ITA Metropolitan Area Export Data via api.trade.gov. <span class="src-pill demo" id="exports-pill">Demo</span></div>
     </div>
   </div>
 
@@ -1371,6 +1375,13 @@ async function loadLiveData() {
     flipSectionPill('industry-emp-pill', 'live');
   }
 
+  // --- ITA MSA exports: replace the Exports panel tables ---
+  const ita = data.sections.ita_msa_exports;
+  if (ita && ita.by_product && ita.by_product.length) {
+    replaceExportsTables(ita);
+    flipSectionPill('exports-pill', 'live');
+  }
+
   if (liveCells.length === 0) {
     // Nothing live yet — leave strip hidden
     return;
@@ -1436,6 +1447,19 @@ function replaceComparativeEmploymentTable(q) {
   }).join('');
   const note = document.getElementById('comp-emp-source-line');
   if (note) note.innerHTML = `Sources: BLS QCEW ${q.as_of_label} (employment shares + annual wages, county-aggregated to MSA).`;
+}
+
+/** Replace the Exports panel tables with live ITA MAED data. */
+function replaceExportsTables(ita) {
+  const prodEl = document.getElementById('exports-by-product');
+  const destEl = document.getElementById('exports-by-destination');
+  if (!prodEl || !destEl) return;
+  const fmtRow = (label, v) => `<tr><td>${label}</td><td>${Math.round(v).toLocaleString()}</td></tr>`;
+  prodEl.innerHTML = ita.by_product.slice(0, 8).map(p => fmtRow(p.label, p.value_usd_mil)).join('') +
+    `<tr style="font-weight:700;background:var(--chart-bg);"><td>Total ($M)</td><td>${Math.round(ita.total_usd_millions).toLocaleString()}</td></tr>`;
+  destEl.innerHTML = ita.by_destination.slice(0, 6).map(c => fmtRow(c.label, c.value_usd_mil)).join('');
+  const note = document.getElementById('exports-source-line');
+  if (note) note.innerHTML = `Source: ITA Metropolitan Area Exports, ${ita.year} (${ita.source_endpoint || 'api.trade.gov'}).`;
 }
 
 /** Replace the Industry Employment bar chart with live QCEW YoY changes. */
