@@ -13,7 +13,7 @@ Every section maps to a free, public source (BLS / BEA / Census / FHFA / FRED / 
 | Phase | Status | Notes |
 |---|---|---|
 | **0 — Example page** | ✅ Shipped | `/msa/savannah/` live, full Précis-style layout, brand-correct |
-| **1 — Data pipeline & template** | ✅ Built, deploying | 13 of 13 section fetchers built; ~10 of 13 succeeding in CI; BPS timeout fix in this commit; ITA endpoint TBC via first CI log |
+| **1 — Data pipeline & template** | ✅ Shipped & verified in production | First production run (2026-05-26) completed cleanly: **10 of 13 sections returned `live`** with current data. The 3 failures (BPS / ITA / IRS SOI) are documented Phase 1.5 fixes — see section 4. |
 | **1.5 — Polish & loose ends** | ⏳ Backlog | See "Phase 1.5 follow-ups" below — small, do whenever |
 | **2 — Composite metrics + forecasts** | 🚧 Next session | This is the big remaining build. Brief below in section 8. |
 | **3 — LLM narrative pipeline** | ⏳ Planned | Anthropic + Tavily, generates analysis prose from JSON |
@@ -179,23 +179,34 @@ georgiaeconomics/
 
 These are loose ends from Phase 1 — not blockers, but worth cleaning up in spare moments or as part of Phase 5 polish.
 
-1. **BPS slowness** — `www2.census.gov` is unreliably slow (60+ seconds per file). Current fetcher fails fast (last 2 years only, 45s timeout, no retry). For richer history, options to investigate: (a) download Census's single all-years file if it exists, (b) cache annual fetches outside the orchestrator and only update once a year, (c) use the HUD SOCDS portal as an alternate source.
-2. **Lock in the working ITA endpoint** — `pull_ita.py` tries 3 candidate URL patterns. After the first successful CI run, prune to just the one that works.
-3. **`pull_bls.py::fetch_ces_supersector_history`** currently only returns "Total nonfarm" in CI runs — investigate why other super-sectors aren't being returned (probably a series ID format issue specific to the super-sector code position) and fix.
-4. **Census ACS 2025 lag** — fetcher already falls back to 2024 correctly when 2025 returns 404. No action needed until ACS 2025 1-year drops (~Sep 2026), at which point it'll auto-pick-up.
-5. **Top Employers** — annual hand-update. Owned by a human, not the pipeline. Recommend yearly audit.
-6. **Additional small fetchers** to fill Phase 1.5-tagged rows in the section table:
+### Confirmed Phase 1 failures (3 of 13 sections, 2026-05-26 CI run)
+
+These three section runners returned `failed` in the first production run. Each is a known/diagnosable issue, not a code bug:
+
+1. **`census_bps_permits failed`** — `www2.census.gov` is unreliably slow even with the 45s/2-year fail-fast fix. None of the per-year files came back in time. Real fix options:
+   - Switch source to the HUD SOCDS portal (https://socds.huduser.gov/permits/) — possibly faster
+   - Download the all-years single CSV if Census publishes one (e.g. `bps-history.csv`)
+   - Cache fetches outside the orchestrator and only update annually
+2. **`ita_msa_exports failed`** — `pull_ita.py` tries 3 candidate URL patterns at api.trade.gov; all returned empty body (`JSONDecodeError: Expecting value: line 1 column 1 (char 0)`). Diagnosis: none of `/v3/maed/search`, `/v3/metropolitan_exports/search`, or the query-string-key variant exist on api.trade.gov today. Real fix: look up the actual current MAED endpoint at https://developer.trade.gov — the dataset definitely exists, the URL just doesn't match what I guessed. Once known, prune `CANDIDATE_ENDPOINTS` in `pull_ita.py` to that one URL.
+3. **`irs_soi_migration failed`** — most likely the ZIP URL pattern `https://www.irs.gov/pub/irs-soi/{YY}_to_{YZ}_county_data.zip` no longer matches the IRS's current hosting layout. Real fix: visit https://www.irs.gov/statistics/soi-tax-stats-migration-data, find the current download URL for the latest county migration ZIP, and update `_discover_latest_year()` in `pull_irs_soi.py`.
+
+### Other follow-ups
+4. **`pull_bls.py::fetch_ces_supersector_history`** currently only returns "Total nonfarm" in CI runs — investigate why other super-sectors aren't being returned (probably a series ID format issue specific to the super-sector code position) and fix.
+5. **BEA "Unknown error" cosmetic noise** — first year tried (2026) returns empty Error object; fetcher falls back to 2024 successfully. Already silenced for "not available"/"no data" messages; the "Unknown error" string slips through because BEA returns an Error key with no description. Trivially fixable by also silencing when `desc == ""`.
+6. **Census ACS 2025 lag** — fetcher already falls back to 2024 correctly when 2025 returns 404. No action needed until ACS 2025 1-year drops (~Sep 2026), at which point it'll auto-pick-up.
+7. **Top Employers** — annual hand-update. Owned by a human, not the pipeline. Recommend yearly audit.
+8. **Additional small fetchers** to fill Phase 1.5-tagged rows in the section table:
    - Census BFS (Business Formation Statistics) for entrepreneurship — row 26
    - Census LEHD LODES for commuter flows — row 38
    - Census PEP components-of-change for net-migration domestic/foreign split — row 39
    - Realtor.com + Freddie Mac PMMS join for housing affordability index — row 23
    - QCEW high-tech NAICS subset + public-sector ownership splits — rows 28, 31
-7. **Derive-from-existing-data sections** (no new fetcher needed, just JS):
+9. **Derive-from-existing-data sections** (no new fetcher needed, just JS):
    - Industrial diversity Herfindahl from `qcew_industry_shares` — row 25
    - Rental affordability from existing ACS B25064/B19013 — row 21
    - Productivity = `bea_gmp.gmp_billions_usd / ces_employment.latest_value` — row 29
    - Generational breakdown + Population by age from ACS B01001 — rows 40, 42
-8. **Atlanta CBSA HPI fallback** — FRED's `ATNHPIUS12060Q` series has been frozen for years; existing `scripts/fetch_msa_metrics.py` has the county-aggregate workaround. Port that fallback into `pull_fhfa.py`.
+10. **Atlanta CBSA HPI fallback** — FRED's `ATNHPIUS12060Q` series has been frozen for years; existing `scripts/fetch_msa_metrics.py` has the county-aggregate workaround. Port that fallback into `pull_fhfa.py`.
 
 ---
 
