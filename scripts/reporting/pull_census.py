@@ -260,6 +260,75 @@ def fetch_acs_demographics(cbsa: str, year: Optional[int] = None) -> Optional[di
 
 # ----------------------------- Building permits (annual) -----------------------------
 
+def _bps_fetch_one_year(y: int, cbsa: str, timeout: int = 90) -> Optional[tuple]:
+    """Fetch one year's BPS Metro annual file and extract this MSA's row.
+
+    Returns (year, sf_units, mf_units) on success, None on any failure.
+    Tries the canonical URL then one mirror; retries once on timeout/5xx.
+    """
+    yy = f"{y % 100:02d}"
+    urls = [
+        f"https://www2.census.gov/econ/bps/Metro/ma{yy}a.txt",
+        # Fallback to programs-surveys path (same content, sometimes faster):
+        f"https://www2.census.gov/programs-surveys/bps/tables/{y}/ma{yy}a.txt",
+    ]
+
+    last_err = None
+    for url in urls:
+        for attempt in range(2):
+            try:
+                req = urllib.request.Request(url, headers={
+                    "User-Agent": "Mozilla/5.0 (compatible; EIG-MSA-reports/1.0)",
+                    "Accept-Encoding": "gzip",
+                })
+                with urllib.request.urlopen(req, timeout=timeout) as resp:
+                    raw = resp.read()
+                    if resp.headers.get("Content-Encoding") == "gzip":
+                        import gzip
+                        raw = gzip.decompress(raw)
+                    body = raw.decode("utf-8", errors="replace")
+                break  # got body, leave both inner loops below
+            except urllib.error.HTTPError as e:
+                if e.code == 404:
+                    body = None
+                    last_err = e
+                    break  # try next URL
+                last_err = e
+                body = None
+                continue  # retry same URL
+            except Exception as e:
+                last_err = e
+                body = None
+                continue  # retry same URL
+        if body:
+            break
+    if not body:
+        if last_err:
+            print(f"  [BPS {y}] {type(last_err).__name__}: {str(last_err)[:80]}", file=sys.stderr)
+        return None
+
+    # BPS annual files: 3-line header (titles + units + sub-headers), then CSV rows.
+    # Column layout (post-2010):
+    #   CSA, CBSA, Name, Bldgs_1u, Units_1u, Cost_1u,
+    #                    Bldgs_2u, Units_2u, Cost_2u,
+    #                    Bldgs_3to4u, Units_3to4u, Cost_3to4u,
+    #                    Bldgs_5plus, Units_5plus, Cost_5plus
+    for line in body.splitlines()[3:]:
+        cells = [c.strip() for c in line.split(",")]
+        if len(cells) < 15:
+            continue
+        row_cbsa = cells[1].strip().lstrip("0").zfill(5)
+        if row_cbsa != cbsa:
+            continue
+        try:
+            sf_y = int(cells[4])                       # Units_1_Unit
+            mf_y = int(cells[7]) + int(cells[10]) + int(cells[13])  # 2u + 3-4u + 5+
+            return (y, sf_y, mf_y)
+        except (ValueError, IndexError):
+            return None
+    return None
+
+
 def fetch_bps_permits_annual(cbsa: str, years_back: int = 2) -> Optional[dict]:
     """Annual single-family + multi-family residential permits for the MSA.
 
@@ -274,75 +343,38 @@ def fetch_bps_permits_annual(cbsa: str, years_back: int = 2) -> Optional[dict]:
         - Single-family units      = Units_1_Unit
         - Multi-family units total = Units_2_Unit + Units_3_4_Unit + Units_5_or_more_Unit
 
-    FAIL-FAST DESIGN: www2.census.gov is unreliably slow (often 60+ s per file
-    for a ~3MB CSV). To prevent the orchestrator from hanging:
-      * Only fetches the last `years_back` years (default 2 — current + prior).
-      * Single attempt per year, 45 s timeout, no retries.
-      * Returns partial results if some years succeed.
-      * Returns None silently if all years time out.
+    RESILIENT DESIGN: www2.census.gov is unreliably slow (3MB files, 60+ s
+    typical, sometimes timing out). Strategy:
+      * Fetch the last `years_back` years (default 2 — current + prior).
+      * Parallelize year fetches via ThreadPoolExecutor (max 4 workers).
+      * Per-year timeout 90s, with one retry on transient failure.
+      * Try canonical URL first, then the programs-surveys path as mirror.
+      * Returns partial results when some years succeed.
+      * Returns None silently if all years fail.
 
-    Historical years (>2 back) are expected to come from the prior cached JSON
-    via the orchestrator's never-blank-on-failure logic.
+    Historical years (>2 back) come from the prior cached JSON via the
+    orchestrator's never-blank-on-failure logic.
     """
+    from concurrent.futures import ThreadPoolExecutor, as_completed
+
     this_year = date.today().year
     start_year = this_year - years_back
 
-    years: List[int] = []
-    sf: List[int] = []
-    mf: List[int] = []
+    target_years = list(range(start_year, this_year))
+    results: List[tuple] = []
+    with ThreadPoolExecutor(max_workers=min(4, len(target_years))) as ex:
+        futs = {ex.submit(_bps_fetch_one_year, y, cbsa): y for y in target_years}
+        for fut in as_completed(futs):
+            r = fut.result()
+            if r is not None:
+                results.append(r)
 
-    for y in range(start_year, this_year):
-        yy = f"{y % 100:02d}"
-        url = f"https://www2.census.gov/econ/bps/Metro/ma{yy}a.txt"
-
-        body = None
-        try:
-            req = urllib.request.Request(url, headers={
-                "User-Agent": "Mozilla/5.0 (compatible; EIG-MSA-reports/1.0)",
-                "Accept-Encoding": "gzip",
-            })
-            with urllib.request.urlopen(req, timeout=45) as resp:
-                raw = resp.read()
-                if resp.headers.get("Content-Encoding") == "gzip":
-                    import gzip
-                    raw = gzip.decompress(raw)
-                body = raw.decode("utf-8", errors="replace")
-        except urllib.error.HTTPError as e:
-            if e.code != 404:
-                print(f"  [BPS {y}] HTTP {e.code}, skip", file=sys.stderr)
-            continue
-        except Exception as e:
-            print(f"  [BPS {y}] skip ({type(e).__name__}: {str(e)[:80]})", file=sys.stderr)
-            continue
-        if body is None:
-            continue
-
-        # BPS annual files: 3-line header (titles + units + sub-headers), then comma-separated rows.
-        # Column layout (post-2010):
-        #   CSA, CBSA, Name, Bldgs_1u, Units_1u, Cost_1u,
-        #                    Bldgs_2u, Units_2u, Cost_2u,
-        #                    Bldgs_3to4u, Units_3to4u, Cost_3to4u,
-        #                    Bldgs_5plus, Units_5plus, Cost_5plus
-        sf_y = mf_y = None
-        for line in body.splitlines()[3:]:
-            cells = [c.strip() for c in line.split(",")]
-            if len(cells) < 15:
-                continue
-            row_cbsa = cells[1].strip().lstrip("0").zfill(5)
-            if row_cbsa != cbsa:
-                continue
-            try:
-                sf_y = int(cells[4])                       # Units_1_Unit
-                mf_y = int(cells[7]) + int(cells[10]) + int(cells[13])  # Units 2u + 3-4u + 5+
-            except (ValueError, IndexError):
-                pass
-            break
-
-        if sf_y is None:
-            continue
-        years.append(y)
-        sf.append(sf_y)
-        mf.append(mf_y)
+    if not results:
+        return None
+    results.sort(key=lambda t: t[0])
+    years = [r[0] for r in results]
+    sf = [r[1] for r in results]
+    mf = [r[2] for r in results]
 
     if not years:
         return None

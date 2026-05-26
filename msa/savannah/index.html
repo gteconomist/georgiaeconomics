@@ -601,9 +601,9 @@
 
     <div class="report-panel">
       <h3>Business Cycle Index</h3>
-      <div class="sub">Jan 2015 = 100 &middot; Savannah vs. Georgia vs. US</div>
+      <div class="sub" id="bci-sub">Jan 2015 = 100 &middot; Savannah vs. Georgia vs. US</div>
       <div class="canvas-md"><canvas id="bci-chart"></canvas></div>
-      <div class="src">EIG composite: weighted index of employment, unemployment, labor force, and hours worked (Stock-Watson-style). <span class="src-pill proxy">EIG composite</span> <span class="src-pill demo">Demo</span></div>
+      <div class="src">EIG composite: Stock-Watson-style coincident index combining BLS CES employment and LAUS unemployment for the MSA. <span class="src-pill proxy">EIG composite</span> <span class="src-pill demo" id="bci-pill">Demo</span></div>
     </div>
   </div>
 
@@ -1375,6 +1375,18 @@ async function loadLiveData() {
     flipSectionPill('industry-emp-pill', 'live');
   }
 
+  // --- Business Cycle Index: replace the BCI chart with EIG composite series ---
+  const bci = data.sections.business_cycle_index;
+  if (bci && bci.months && bci.values && bci.values.length > 12) {
+    replaceBciChart(bci);
+    flipSectionPill('bci-pill', 'live');
+    const subEl = document.getElementById('bci-sub');
+    if (subEl) {
+      subEl.textContent =
+        `${bci.rebase_month} = 100 · Stock-Watson composite (CES employment + LAUS unemployment)`;
+    }
+  }
+
   // --- ITA MSA exports: replace the Exports panel tables ---
   const ita = data.sections.ita_msa_exports;
   if (ita && ita.by_product && ita.by_product.length) {
@@ -1562,6 +1574,37 @@ function replaceEducationChart(acs) {
   chart.data.datasets[2].data[0] = pct(someCollege);
   chart.data.datasets[3].data[0] = pct(v.edu_bachelors || 0);
   chart.data.datasets[4].data[0] = pct(grad);
+  chart.update();
+}
+
+/** Replace the Business Cycle Index chart with the EIG composite series.
+ *  Drops the comparison lines (GA / US peer indices not computed yet) and
+ *  rebases the X-axis to the actual months from the composite. */
+function replaceBciChart(bci) {
+  const canvas = document.getElementById('bci-chart');
+  if (!canvas) return;
+  const chart = Chart.getChart(canvas);
+  if (!chart) return;
+
+  // Show year labels only (Jan of each year) to keep the X-axis legible
+  const labels = bci.months.map((m) => m.endsWith('-01') ? m.slice(0, 4) : '');
+
+  chart.data.labels = labels;
+  chart.data.datasets = [{
+    label: 'Savannah BCI',
+    data: bci.values,
+    borderColor: C.sav,
+    backgroundColor: C.sav + '22',
+    borderWidth: 2,
+    pointRadius: 0,
+    tension: 0.25,
+    fill: false,
+  }];
+  // Tighten Y-axis to ~10pts below trough, ~10pts above peak
+  const yMin = Math.floor(Math.min(...bci.values) - 5);
+  if (chart.options && chart.options.scales && chart.options.scales.y) {
+    chart.options.scales.y.min = yMin;
+  }
   chart.update();
 }
 

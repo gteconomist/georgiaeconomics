@@ -203,43 +203,67 @@ def fetch_ces_employment_history(cbsa: str, years_back: int = 7) -> Optional[dic
 def fetch_ces_supersector_history(cbsa: str, years_back: int = 2) -> Optional[dict]:
     """Monthly employment by super-sector, last N years.
 
-    Returns: {"sectors": {<label>: {"months":[...], "values":[...], "yoy_pct":[...], "latest_yoy": float}}}
-    """
-    series_map = {}
-    series_ids = []
-    for ss_code, label in CES_SUPERSECTORS.items():
-        sid = _ces_series_id(cbsa, supersector=ss_code)
-        series_map[sid] = (ss_code, label)
-        series_ids.append(sid)
+    Strategy: For smaller MSAs, BLS only publishes seasonally-adjusted (SMS)
+    series for "Total nonfarm" — most other supersectors are NSA-only (SMU).
+    We request BOTH the SA and NSA variant for each supersector in a single
+    BLS call (32 series), then prefer the SA series where it returned data,
+    falling back to NSA otherwise. This recovers all 15-16 sectors for any
+    MSA, regardless of disclosure rules.
 
-    # BLS API allows up to 50 series per request — we have 16, so a single call is fine.
+    Returns: {"sectors": {<label>: {"months":[...], "values":[...], "yoy_pct":[...], "latest_yoy": float, "adjustment": "SA"|"NSA"}}}
+    """
+    series_map = {}  # series_id -> (ss_code, label, sa_flag)
+    sa_series_ids = []
+    nsa_series_ids = []
+    for ss_code, label in CES_SUPERSECTORS.items():
+        sa_sid = _ces_series_id(cbsa, supersector=ss_code, sa=True)
+        nsa_sid = _ces_series_id(cbsa, supersector=ss_code, sa=False)
+        series_map[sa_sid] = (ss_code, label, True)
+        series_map[nsa_sid] = (ss_code, label, False)
+        sa_series_ids.append(sa_sid)
+        nsa_series_ids.append(nsa_sid)
+
+    # BLS API allows up to 50 series per request — we have 32, single call is fine.
     end_year = date.today().year
     start_year = end_year - years_back
 
-    data = _bls_request(series_ids, start_year, end_year)
+    data = _bls_request(sa_series_ids + nsa_series_ids, start_year, end_year)
     if not data or not data.get("Results", {}).get("series"):
         return None
 
-    sectors = {}
+    # First pass: collect all series with data, keyed by (ss_code, sa_flag)
+    parsed: Dict[tuple, dict] = {}
     for series in data["Results"]["series"]:
         sid = series["seriesID"]
         if sid not in series_map:
             continue
-        ss_code, label = series_map[sid]
+        ss_code, label, sa_flag = series_map[sid]
         obs = _flatten_observations(series)
         if not obs:
             continue
         months = [o["ym"] for o in obs]
         values = [o["value"] for o in obs]
         yoy = _yoy_pct(values)
-        sectors[label] = {
+        parsed[(ss_code, sa_flag)] = {
             "supersector_code": ss_code,
-            "series_id": sid,
-            "months": months,
-            "values": values,
-            "yoy_pct": yoy,
-            "latest_yoy": yoy[-1] if yoy else None,
+            "label":           label,
+            "series_id":       sid,
+            "months":          months,
+            "values":          values,
+            "yoy_pct":         yoy,
+            "latest_yoy":      yoy[-1] if yoy else None,
+            "adjustment":      "SA" if sa_flag else "NSA",
         }
+
+    # Second pass: prefer SA, fall back to NSA per supersector
+    sectors: Dict[str, dict] = {}
+    for ss_code, label in CES_SUPERSECTORS.items():
+        rec = parsed.get((ss_code, True)) or parsed.get((ss_code, False))
+        if rec is None:
+            continue
+        # Pop the helper field so the JSON keys match the prior schema
+        rec_out = {k: v for k, v in rec.items() if k != "label"}
+        sectors[label] = rec_out
 
     if not sectors:
         return None

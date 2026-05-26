@@ -66,12 +66,18 @@ def _bea_get(params: Dict[str, str], retries: int = 3) -> Optional[dict]:
                 err = results["Error"]
                 if isinstance(err, list):
                     err = err[0] if err else {}
-                desc = (err.get("APIErrorDescription") or "").strip() if isinstance(err, dict) else ""
-                # "Year not published yet" or similar — quiet: caller will try an earlier year
+                if isinstance(err, dict):
+                    desc = (err.get("APIErrorDescription") or err.get("ErrorDescription") or "").strip()
+                else:
+                    desc = str(err).strip()
+                # "Year not published yet" or similar — quiet: caller will try an earlier year.
+                # Also silence empty Error objects (BEA's "Unknown error" cosmetic noise) and
+                # the explicit string "unknown error".
                 if (not desc or
                     "not available" in desc.lower() or
                     "no data" in desc.lower() or
-                    "invalid year" in desc.lower()):
+                    "invalid year" in desc.lower() or
+                    "unknown error" in desc.lower()):
                     return None
                 print(f"  [BEA API error] {desc}", file=sys.stderr)
                 return None

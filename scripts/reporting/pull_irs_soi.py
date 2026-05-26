@@ -5,8 +5,16 @@ IRS publishes annual county-to-county migration data based on filed tax returns
 (prior county -> current county). Outflow file lists every flow OUT of a county.
 
 Source: https://www.irs.gov/statistics/soi-tax-stats-migration-data
-Latest available is usually two filing years behind today. Files are CSV inside ZIPs:
-    https://www.irs.gov/pub/irs-soi/{YY}_to_{YZ}_county_data.zip   (e.g. 22_to_23)
+
+Modern (post-2011) hosting layout: direct CSVs, NOT ZIPs. Pattern verified
+2026-05 against irs.gov:
+    https://www.irs.gov/pub/irs-soi/countyinflow{YY}{YZ}.csv
+    https://www.irs.gov/pub/irs-soi/countyoutflow{YY}{YZ}.csv
+where YY/YZ are 2-digit "from year" / "to year" (e.g. 2122 = 2021->2022).
+
+The pre-2011 ZIP layout (e.g. 22_to_23_county_data.zip) was a guess that turned
+out to be wrong. The legacy `countyinflow1011.dat` files exist for tax years
+2004-2011 only; modern files use the CSV pattern above.
 
 We aggregate the county-level flows up to MSAs using _ga_msas.COUNTY_TO_MSA.
 
@@ -15,7 +23,7 @@ Exposes:
 
 Returns:
     {
-      "year": "2022→2023",
+      "year": "2021→2022",
       "total_in":  18500,
       "total_out": 12800,
       "net":       5700,
@@ -34,7 +42,6 @@ import os
 import sys
 import urllib.request
 import urllib.error
-import zipfile
 from datetime import date
 from pathlib import Path
 from typing import Optional, Dict, List, Tuple
@@ -45,37 +52,61 @@ from _ga_msas import GA_MSAS, COUNTY_TO_MSA  # noqa: E402
 # Build inverse + label maps
 CBSA_TO_SHORT: Dict[str, str] = {cbsa: short for cbsa, short, _, _ in GA_MSAS}
 
-# Cache the ZIP between calls within a single orchestrator run
-_ZIP_CACHE: Dict[str, bytes] = {}
+# Cache the CSV bodies between calls within a single orchestrator run
+_CSV_CACHE: Dict[str, bytes] = {}
 
 
-def _fetch_zip(url: str) -> Optional[bytes]:
-    if url in _ZIP_CACHE:
-        return _ZIP_CACHE[url]
+def _fetch_csv(url: str, timeout: int = 60) -> Optional[bytes]:
+    """Fetch one CSV. Caches by URL. Returns None silently on 404 / network error."""
+    if url in _CSV_CACHE:
+        return _CSV_CACHE[url]
     try:
-        req = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0"})
-        with urllib.request.urlopen(req, timeout=60) as resp:
+        req = urllib.request.Request(url, headers={
+            "User-Agent": "Mozilla/5.0 (compatible; EIG-MSA-reports/1.0)",
+            "Accept": "text/csv,*/*",
+        })
+        with urllib.request.urlopen(req, timeout=timeout) as resp:
             body = resp.read()
-        _ZIP_CACHE[url] = body
+        if not body or len(body) < 1000:
+            # IRS sometimes serves an HTML "not found" page with 200; sanity-check size.
+            return None
+        _CSV_CACHE[url] = body
         return body
     except urllib.error.HTTPError as e:
         if e.code != 404:
             print(f"  [IRS SOI] HTTP {e.code} for {url}", file=sys.stderr)
         return None
     except Exception as e:
-        print(f"  [IRS SOI] {type(e).__name__}: {e}", file=sys.stderr)
+        print(f"  [IRS SOI] {type(e).__name__}: {str(e)[:100]}", file=sys.stderr)
         return None
 
 
+def _build_urls(yy: int, yz: int) -> Tuple[str, str]:
+    """Return the (inflow_url, outflow_url) pair for tax-year pair (yy -> yz)."""
+    yyt = f"{yy % 100:02d}"
+    yzt = f"{yz % 100:02d}"
+    base = "https://www.irs.gov/pub/irs-soi"
+    return (
+        f"{base}/countyinflow{yyt}{yzt}.csv",
+        f"{base}/countyoutflow{yyt}{yzt}.csv",
+    )
+
+
 def _discover_latest_year() -> Optional[Tuple[int, int]]:
-    """Find the most recent (from_year, to_year) IRS SOI migration ZIP that exists."""
+    """Find the most recent (from_year, to_year) IRS SOI migration CSV pair that exists.
+
+    Probes newest first. Returns the first year-pair where the INFLOW file
+    downloads cleanly — the matching outflow is assumed present (IRS publishes
+    them together).
+    """
     today_y = date.today().year
-    # IRS typically publishes data ~18-24 months after the tax year ends.
-    # Try newest first.
-    for yz in range(today_y - 1, today_y - 6, -1):
+    # IRS publishes data ~18-24 months after the tax year ends.
+    # In 2026 the latest expected pair is 2023->2024 or 2022->2023.
+    for yz in range(today_y - 1, today_y - 7, -1):
         yy = yz - 1
-        url = f"https://www.irs.gov/pub/irs-soi/{yy % 100:02d}_to_{yz % 100:02d}_county_data.zip"
-        if _fetch_zip(url) is not None:
+        inflow_url, _ = _build_urls(yy, yz)
+        body = _fetch_csv(inflow_url)
+        if body is not None:
             return (yy, yz)
     return None
 
@@ -83,7 +114,7 @@ def _discover_latest_year() -> Optional[Tuple[int, int]]:
 def _parse_migration_csv(csv_bytes: bytes, direction: str) -> List[dict]:
     """Parse a single IRS SOI county-migration CSV.
 
-    Each row has:
+    Modern column layout (post-2011):
         y1_statefips, y1_countyfips, y2_statefips, y2_countyfips,
         y1_state, y2_state, y1_state_name, y2_state_name,
         n1 (number of returns), n2 (number of individuals), AGI
@@ -95,15 +126,30 @@ def _parse_migration_csv(csv_bytes: bytes, direction: str) -> List[dict]:
     out: List[dict] = []
     reader = csv.DictReader(io.StringIO(text))
     for row in reader:
+        # Skip aggregate rows (county FIPS == 000) and "Foreign" / "US Total" pseudo-rows
         try:
-            y1_fips = f"{int(row['y1_statefips']):02d}{int(row['y1_countyfips']):03d}"
-            y2_fips = f"{int(row['y2_statefips']):02d}{int(row['y2_countyfips']):03d}"
-            n_returns = int(row.get("n1", 0) or 0)
-        except (ValueError, KeyError, TypeError):
+            y1_state = int(row.get("y1_statefips") or 0)
+            y1_county = int(row.get("y1_countyfips") or 0)
+            y2_state = int(row.get("y2_statefips") or 0)
+            y2_county = int(row.get("y2_countyfips") or 0)
+        except (ValueError, TypeError):
             continue
+        # Skip rows where the "other" side is an aggregate or special code.
+        # County code 0 is the state-level "all counties" row; we only want real flows.
+        if direction == "in":
+            # destination = y2 (must be a real county), origin = y1 (allow aggregate)
+            if y2_county == 0 or y2_state == 0:
+                continue
+        else:
+            if y1_county == 0 or y1_state == 0:
+                continue
+        try:
+            n_returns = int(float(row.get("n1") or 0))
+        except (ValueError, TypeError):
+            n_returns = 0
         out.append({
-            "from_fips": y1_fips,
-            "to_fips":   y2_fips,
+            "from_fips": f"{y1_state:02d}{y1_county:03d}",
+            "to_fips":   f"{y2_state:02d}{y2_county:03d}",
             "n_returns": n_returns,
             "direction": direction,
         })
@@ -116,26 +162,16 @@ def fetch_migration_flows(cbsa: str, year: Optional[int] = None) -> Optional[dic
     if pair is None:
         return None
     yy, yz = pair
-    zip_url = f"https://www.irs.gov/pub/irs-soi/{yy % 100:02d}_to_{yz % 100:02d}_county_data.zip"
-    zip_bytes = _fetch_zip(zip_url)
-    if zip_bytes is None:
+    inflow_url, outflow_url = _build_urls(yy, yz)
+
+    inflow_bytes = _fetch_csv(inflow_url)
+    outflow_bytes = _fetch_csv(outflow_url)
+    if not inflow_bytes or not outflow_bytes:
+        print(f"  [IRS SOI] one of inflow/outflow missing for {yy}-{yz}", file=sys.stderr)
         return None
 
-    # The ZIP contains two CSVs: ...inflow.csv and ...outflow.csv
-    inflows: List[dict] = []
-    outflows: List[dict] = []
-    try:
-        with zipfile.ZipFile(io.BytesIO(zip_bytes)) as zf:
-            for name in zf.namelist():
-                low = name.lower()
-                if "inflow" in low and low.endswith(".csv"):
-                    inflows = _parse_migration_csv(zf.read(name), "in")
-                elif "outflow" in low and low.endswith(".csv"):
-                    outflows = _parse_migration_csv(zf.read(name), "out")
-    except zipfile.BadZipFile:
-        print(f"  [IRS SOI] {zip_url} not a valid ZIP", file=sys.stderr)
-        return None
-
+    inflows = _parse_migration_csv(inflow_bytes, "in")
+    outflows = _parse_migration_csv(outflow_bytes, "out")
     if not inflows or not outflows:
         return None
 
@@ -144,7 +180,7 @@ def fetch_migration_flows(cbsa: str, year: Optional[int] = None) -> Optional[dic
     if not target_counties:
         return None
 
-    # Inflow rows: keep where TO (y2) is in target MSA. Aggregate by source MSA (or county+state for non-MSA origins).
+    # Inflow rows: keep where TO (y2) is in target MSA. Aggregate by source MSA.
     in_by_origin_msa: Dict[str, int] = {}
     total_in = 0
     for r in inflows:
@@ -188,7 +224,7 @@ def fetch_migration_flows(cbsa: str, year: Optional[int] = None) -> Optional[dic
         "net":             total_in - total_out,
         "top_in":          top_in,
         "top_out":         top_out,
-        "source":          f"IRS SOI county-to-county migration (https://www.irs.gov/pub/irs-soi/{yy % 100:02d}_to_{yz % 100:02d}_county_data.zip)",
+        "source":          f"IRS SOI county-to-county migration ({inflow_url})",
     }
 
 
@@ -206,3 +242,8 @@ if __name__ == "__main__":
         print(f"  Top inbound MSAs:")
         for r in d['top_in'][:5]:
             print(f"    {r['origin_msa']:30s}  {r['n_returns']:,}")
+        print(f"  Top outbound MSAs:")
+        for r in d['top_out'][:5]:
+            print(f"    {r['dest_msa']:30s}  {r['n_returns']:,}")
+    else:
+        print("  (no data)", file=sys.stderr)

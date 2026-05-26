@@ -55,6 +55,9 @@ from _ga_msas import GA_MSAS
 # Per-source fetchers (each module in scripts/reporting/)
 from reporting import pull_bls, pull_fhfa, pull_census, pull_bea, pull_irs_soi, pull_ita
 
+# Phase 2 composite/forecast models (each module in scripts/modeling/)
+from modeling import business_cycle_index
+
 # Lookup tables
 MSA_BY_CBSA = {cbsa: (short, full, pop) for cbsa, short, full, pop in GA_MSAS}
 MSA_BY_SLUG = {short.lower().replace(" ", "-"): (cbsa, short, full, pop) for cbsa, short, full, pop in GA_MSAS}
@@ -155,7 +158,9 @@ def run_irs_soi_migration(cbsa: str):
     return data, "live"
 
 
-# Section registry — order is the order we run them
+# Section registry — order is the order we run them. Data fetches first; modeling
+# sections (Phase 2 composites/forecasts) run after, with access to the in-progress
+# output dict so they can read freshly-fetched data as their inputs.
 SECTIONS = [
     ("ces_employment",          run_ces_employment),
     ("ces_by_supersector",      run_ces_by_supersector),
@@ -170,6 +175,23 @@ SECTIONS = [
     ("census_bps_permits",      run_census_bps_permits),
     ("ita_msa_exports",         run_ita_msa_exports),
     ("irs_soi_migration",       run_irs_soi_migration),
+]
+
+
+# ----------------------------- Modeling runners (Phase 2) -----------------------------
+# These run AFTER the data fetchers and receive the in-progress output dict.
+# Each returns (data_or_None, status_string).
+
+def run_business_cycle_index(cbsa: str, output_so_far: dict):
+    data = business_cycle_index.compute(cbsa, output_so_far)
+    if data is None:
+        return None, "failed"
+    return data, "live"
+
+
+# Modeling section registry — runner signature is (cbsa, output_so_far)
+MODELING_SECTIONS = [
+    ("business_cycle_index", run_business_cycle_index),
 ]
 
 
@@ -222,6 +244,31 @@ def fetch_one_msa(cbsa: str, sections_filter=None, prior: Optional[dict] = None)
             print(f" {status}{' (' + stamp + ')' if stamp else ''}")
 
         # NEVER BLANK on failure — fall back to prior value if available.
+        if status == "failed" and prior_sections.get(name) is not None:
+            output["sections"][name] = prior_sections[name]
+            output["section_status"][name] = "stale"
+            print(f"     ↳ kept prior value, status=stale")
+        else:
+            output["sections"][name] = data
+            output["section_status"][name] = status
+
+    # Phase 2 modeling pass — runs after the data fetches so models can read
+    # freshly-fetched inputs (plus any stale-fallback values) from output["sections"].
+    for name, runner in MODELING_SECTIONS:
+        if sections_filter and name not in sections_filter:
+            output["sections"][name] = prior_sections.get(name)
+            output["section_status"][name] = prior_status.get(name, "pending")
+            continue
+        print(f"  [{name:24s}] computing ...", end="", flush=True)
+        try:
+            data, status = runner(cbsa, output)
+        except Exception as e:
+            print(f" CRASHED — {type(e).__name__}: {e}")
+            data, status = None, "failed"
+        else:
+            stamp = _freshness_stamp(data) if data else ""
+            print(f" {status}{' (' + stamp + ')' if stamp else ''}")
+
         if status == "failed" and prior_sections.get(name) is not None:
             output["sections"][name] = prior_sections[name]
             output["section_status"][name] = "stale"
