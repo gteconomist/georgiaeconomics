@@ -1,0 +1,59 @@
+name: Update MSA Reports
+
+# Nightly refresh of /data/msa_reports/*.json from public APIs.
+# Touches one section at a time; never blanks data on transient errors
+# (failed pulls fall back to "pending" in section_status).
+
+on:
+  schedule:
+    - cron: '0 9 * * *'   # 09:00 UTC = 04:00 ET — after the previous day's BLS release window
+  workflow_dispatch:
+    inputs:
+      target:
+        description: 'Single CBSA or short_name (leave blank for all 14)'
+        required: false
+        default: ''
+      sections:
+        description: 'Comma-separated section names (leave blank for all)'
+        required: false
+        default: ''
+
+permissions:
+  contents: write
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Run orchestrator
+        env:
+          BLS_API_KEY:    ${{ secrets.BLS_API_KEY }}
+          FRED_API_KEY:   ${{ secrets.FRED_API_KEY }}
+          CENSUS_API_KEY: ${{ secrets.CENSUS_API_KEY }}
+          BEA_API_KEY:    ${{ secrets.BEA_API_KEY }}
+          ITA_API_KEY:    ${{ secrets.ITA_API_KEY }}
+        run: |
+          TARGET="${{ github.event.inputs.target }}"
+          SECTIONS="${{ github.event.inputs.sections }}"
+          ARGS=""
+          if [ -z "$TARGET" ]; then ARGS="--all"; else ARGS="$TARGET"; fi
+          if [ -n "$SECTIONS" ]; then ARGS="$ARGS --sections $SECTIONS"; fi
+          python3 scripts/fetch_msa_report.py $ARGS
+
+      - name: Commit refreshed JSON
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/msa_reports/
+          if git diff --cached --quiet; then
+            echo "No changes to commit."
+          else
+            git commit -m "chore(msa-reports): nightly data refresh $(date -u +%F)"
+            git push
+          fi
