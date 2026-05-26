@@ -138,7 +138,11 @@ def run_qcew_yoy_changes(cbsa: str):
 
 
 def run_census_bps_permits(cbsa: str):
-    data = pull_census.fetch_bps_permits_annual(cbsa, years_back=7)
+    # BPS is fetched with years_back=2 to keep worst-case wall time bounded.
+    # Census BPS Metro files are 3MB each and frequently slow/timeout; the
+    # orchestrator's never-blank-on-failure logic preserves older years from
+    # the prior cached JSON across runs, so we only refresh the recent window.
+    data = pull_census.fetch_bps_permits_annual(cbsa, years_back=2)
     if data is None:
         return None, "failed"
     return data, "live"

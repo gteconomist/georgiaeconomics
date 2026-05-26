@@ -1,14 +1,30 @@
 """Census Bureau pulls for Metro Economic Profile reports.
 
+We use ACS **5-year** estimates throughout (not 1-year):
+  * Available for every MSA regardless of size (1-year requires 65K+ pop —
+    most GA MSAs qualify, but 5-year future-proofs against pop changes).
+  * Smoother / less noisy on income, education, housing, and demographic
+    fields where year-to-year variability is mostly sampling noise.
+  * Newest vintage is published reliably in early December each year, so
+    we don't hit "not yet released" 404s the way 1-year did mid-year.
+  * Each vintage labels the END of the 5-year window — vintage 2024 covers
+    2020-2024 ACS data, published December 2025.
+
+Trade-off: 5-year estimates lag actual conditions by ~2.5 years (the
+midpoint of the rolling window). For things that change fast (employment),
+we rely on BLS/BEA monthly series instead — ACS feeds the slower-moving
+report sections (demographics, income, housing characteristics).
+
 Exposes:
   fetch_pep_population_history(cbsa, years_back=7) -> dict
-      Annual MSA population estimates from the Population Estimates Program.
-      Falls back to ACS 1-year if PEP series isn't published yet for the latest vintage.
+      Annual MSA population estimates from ACS 5-year B01003.
+      (Named "pep_" historically; actually uses ACS for consistency with
+      the rest of the demographic pulls.)
 
   fetch_acs_demographics(cbsa, year=None) -> dict
-      One-shot ACS 1-year pull for demographics, education, income, and housing.
-      Covers everything needed for the Demographics & Migration and Geographic Profile
-      sections of the report.
+      One-shot ACS 5-year pull for demographics, education, income, and housing.
+      Covers everything needed for the Demographics & Migration and Geographic
+      Profile sections of the report.
 
   fetch_bps_permits_annual(cbsa, years_back=7) -> dict
       Annual residential building permits (single-family + multi-family) for the MSA.
@@ -73,31 +89,38 @@ def _msa_predicate(cbsa: str) -> str:
 def fetch_pep_population_history(cbsa: str, years_back: int = 7) -> Optional[dict]:
     """Annual MSA population estimates back N years.
 
-    PEP vintages: api.census.gov/data/{vintage_year}/pep/population
-                  variables: POP_<year> for each year covered.
+    Source: ACS 5-year B01003 (table = "Total population"). Each ACS 5-year
+    vintage is labelled by the END year of its window — vintage 2024 covers
+    2020-2024 data. Consecutive vintages overlap by 4 years, so "YoY" change
+    reflects mostly the rolling window's new and dropped years, not a single
+    calendar-year delta.
 
-    Falls back to ACS 1-year (table B01003) when PEP isn't available for the most
-    recent vintage.
+    Note on naming: this function is named `fetch_pep_population_history`
+    for historical reasons (the report sections were originally designed
+    around PEP). It actually uses ACS 5-year because PEP MSA endpoints have
+    been inconsistent and 1-year is noisier than 5-year for this purpose.
 
     Returns:
-        {"years": [2019, 2020, ..., 2025], "population": [...], "yoy_pct": [...]}
+        {"years": [2018, ..., 2024], "population": [...], "yoy_pct": [...]}
     """
     if not CENSUS_API_KEY:
-        print("  [Census PEP] no API key in env", file=sys.stderr)
+        print("  [Census ACS5] no API key in env", file=sys.stderr)
         return None
 
     this_year = date.today().year
     start_year = this_year - years_back
 
-    # ACS 1-year is the most reliable annual MSA population source going back ~10 years.
-    # PEP MSA endpoints have been inconsistent (some vintages 404 at the URL level).
+    # ACS 5-year vintages are released in early December each year (so the
+    # latest available now is vintage = this_year - 1 in most cases, vintage
+    # = this_year - 2 if we're before December). Probe both, the _census_get
+    # 404 path handles the not-yet-released case quietly.
     years = list(range(start_year, this_year))
     pops: List[Optional[int]] = []
     out_years: List[int] = []
 
     for y in years:
         url = (
-            f"{CENSUS_BASE}/{y}/acs/acs1"
+            f"{CENSUS_BASE}/{y}/acs/acs5"
             f"?get=B01003_001E"
             f"&for={urllib.parse.quote(_msa_predicate(cbsa), safe=':/+')}"
             f"&key={CENSUS_API_KEY}"
@@ -125,7 +148,7 @@ def fetch_pep_population_history(cbsa: str, years_back: int = 7) -> Optional[dic
             yoy.append(None)
 
     return {
-        "source":           "Census ACS 1-year B01003",
+        "source":           "Census ACS 5-year B01003",
         "years":            out_years,
         "population":       pops,
         "yoy_pct":          yoy,
@@ -176,14 +199,17 @@ ACS_VARIABLES: Dict[str, str] = {
 
 
 def fetch_acs_demographics(cbsa: str, year: Optional[int] = None) -> Optional[dict]:
-    """One-shot ACS 1-year pull for the MSA.
+    """One-shot ACS 5-year pull for the MSA.
 
-    If `year` is None, try the most recent year going backward until something returns.
+    If `year` is None, probe the most recent vintage backward until one
+    returns. ACS 5-year vintages are published reliably in December each
+    year for the previous calendar year (vintage 2024 = 2020-2024 average,
+    released December 2025), so we usually find data on the first probe.
 
     Returns: {"year": 2024, "values": {<key>: number, ...}, "derived": {<key>: number, ...}}
     """
     if not CENSUS_API_KEY:
-        print("  [Census ACS] no API key", file=sys.stderr)
+        print("  [Census ACS5] no API key", file=sys.stderr)
         return None
 
     candidate_years = [year] if year else list(range(date.today().year - 1, date.today().year - 5, -1))
@@ -192,7 +218,7 @@ def fetch_acs_demographics(cbsa: str, year: Optional[int] = None) -> Optional[di
 
     for y in candidate_years:
         url = (
-            f"{CENSUS_BASE}/{y}/acs/acs1"
+            f"{CENSUS_BASE}/{y}/acs/acs5"
             f"?get={vars_str}"
             f"&for={urllib.parse.quote(_msa_predicate(cbsa), safe=':/+')}"
             f"&key={CENSUS_API_KEY}"
@@ -249,8 +275,9 @@ def fetch_acs_demographics(cbsa: str, year: Optional[int] = None) -> Optional[di
             )
 
         return {
-            "source": f"Census ACS 1-year, {y} vintage",
+            "source": f"Census ACS 5-year, {y} vintage (covers {y-4}-{y})",
             "year": y,
+            "vintage_window": f"{y-4}-{y}",
             "values": values,
             "derived": derived,
         }
@@ -260,11 +287,15 @@ def fetch_acs_demographics(cbsa: str, year: Optional[int] = None) -> Optional[di
 
 # ----------------------------- Building permits (annual) -----------------------------
 
-def _bps_fetch_one_year(y: int, cbsa: str, timeout: int = 90) -> Optional[tuple]:
+def _bps_fetch_one_year(y: int, cbsa: str, timeout: int = 60) -> Optional[tuple]:
     """Fetch one year's BPS Metro annual file and extract this MSA's row.
 
     Returns (year, sf_units, mf_units) on success, None on any failure.
-    Tries the canonical URL then one mirror; retries once on timeout/5xx.
+    Tries the canonical URL then one mirror. Single attempt per URL —
+    no inner retry — to keep wall time bounded under the orchestrator.
+
+    Worst case per year: 2 URLs × 60s = 120s. With 2 years parallelized
+    in fetch_bps_permits_annual, total wall time ≤ 120s when both fail.
     """
     yy = f"{y % 100:02d}"
     urls = [
@@ -273,35 +304,24 @@ def _bps_fetch_one_year(y: int, cbsa: str, timeout: int = 90) -> Optional[tuple]
         f"https://www2.census.gov/programs-surveys/bps/tables/{y}/ma{yy}a.txt",
     ]
 
+    body = None
     last_err = None
     for url in urls:
-        for attempt in range(2):
-            try:
-                req = urllib.request.Request(url, headers={
-                    "User-Agent": "Mozilla/5.0 (compatible; EIG-MSA-reports/1.0)",
-                    "Accept-Encoding": "gzip",
-                })
-                with urllib.request.urlopen(req, timeout=timeout) as resp:
-                    raw = resp.read()
-                    if resp.headers.get("Content-Encoding") == "gzip":
-                        import gzip
-                        raw = gzip.decompress(raw)
-                    body = raw.decode("utf-8", errors="replace")
-                break  # got body, leave both inner loops below
-            except urllib.error.HTTPError as e:
-                if e.code == 404:
-                    body = None
-                    last_err = e
-                    break  # try next URL
-                last_err = e
-                body = None
-                continue  # retry same URL
-            except Exception as e:
-                last_err = e
-                body = None
-                continue  # retry same URL
-        if body:
-            break
+        try:
+            req = urllib.request.Request(url, headers={
+                "User-Agent": "Mozilla/5.0 (compatible; EIG-MSA-reports/1.0)",
+                "Accept-Encoding": "gzip",
+            })
+            with urllib.request.urlopen(req, timeout=timeout) as resp:
+                raw = resp.read()
+                if resp.headers.get("Content-Encoding") == "gzip":
+                    import gzip
+                    raw = gzip.decompress(raw)
+                body = raw.decode("utf-8", errors="replace")
+            break  # got body, no need to try mirror
+        except Exception as e:
+            last_err = e
+            continue  # try next URL
     if not body:
         if last_err:
             print(f"  [BPS {y}] {type(last_err).__name__}: {str(last_err)[:80]}", file=sys.stderr)

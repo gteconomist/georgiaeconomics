@@ -215,9 +215,13 @@ def fetch_msa_home_price_yoy():
         print(f"    {short}: HPI YoY {yoy:+.1f}% ({vals[-5][0]} → {vals[-1][0]})")
     return by_short or None
 
-# ---------- 3. Census ACS 1-year — MSA population growth YoY ----------
-# Switched from PEP (which 404'd at the URL level on every vintage we tried) to ACS 1-year.
-# ACS 1-year estimates are published annually for MSAs with >65K population — covers all 14 GA MSAs.
+# ---------- 3. Census ACS 5-year — MSA population growth YoY ----------
+# Uses ACS 5-year (smoother, available for all geographies) rather than 1-year.
+# Each ACS 5-year vintage is labelled by the END year of its 5-year window:
+# vintage 2024 = 2020-2024 data, released December 2025.
+# Consecutive vintages overlap by 4 years, so "YoY" reflects the rolling
+# window's new + dropped years rather than a clean single-year delta —
+# good enough for the report's MSA comparison panel.
 # Variable B01003_001E = Total population.
 def fetch_msa_population_growth():
     if not CENSUS_API_KEY:
@@ -225,8 +229,8 @@ def fetch_msa_population_growth():
     cbsa_to_short = {cbsa: short for cbsa, short, _, _ in GA_MSAS}
 
     def fetch_acs_year(year):
-        """Returns dict {cbsa: population} for given ACS year."""
-        url = (f"https://api.census.gov/data/{year}/acs/acs1"
+        """Returns dict {cbsa: population} for given ACS 5-year vintage."""
+        url = (f"https://api.census.gov/data/{year}/acs/acs5"
                f"?get=NAME,B01003_001E"
                f"&for=metropolitan%20statistical%20area/micropolitan%20statistical%20area:*"
                f"&key={CENSUS_API_KEY}")
@@ -245,8 +249,8 @@ def fetch_msa_population_growth():
             out[cbsa] = pop
         return out
 
-    # Try recent year pairs. ACS 1-year data typically lags by ~1 year.
-    # In May 2026 we expect ACS 2024 just-released; ACS 2023 definitely available.
+    # Try recent vintage pairs. ACS 5-year typically releases for vintage Y
+    # in December of year Y+1. In May 2026, vintage 2024 should be live.
     for cur_year in (TODAY.year - 1, TODAY.year - 2, TODAY.year - 3):
         prev_year = cur_year - 1
         print(f"  [Census ACS] trying {cur_year} vs {prev_year}...")
