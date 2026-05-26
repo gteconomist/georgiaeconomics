@@ -179,22 +179,23 @@ georgiaeconomics/
 
 These are loose ends from Phase 1 — not blockers, but worth cleaning up in spare moments or as part of Phase 5 polish.
 
-1. **Lock in the working ITA endpoint** — `pull_ita.py` tries 3 candidate URL patterns. After the first successful CI run, prune to just the one that works.
-2. **`pull_bls.py::fetch_ces_supersector_history`** currently only returns "Total nonfarm" in CI runs — investigate why other super-sectors aren't being returned (probably a series ID format issue specific to the super-sector code position) and fix.
-3. **Census ACS 2025 lag** — fetcher already falls back to 2024 correctly when 2025 returns 404. No action needed until ACS 2025 1-year drops (~Sep 2026), at which point it'll auto-pick-up.
-4. **Top Employers** — annual hand-update. Owned by a human, not the pipeline. Recommend yearly audit.
-5. **Additional small fetchers** to fill Phase 1.5-tagged rows in the section table:
+1. **BPS slowness** — `www2.census.gov` is unreliably slow (60+ seconds per file). Current fetcher fails fast (last 2 years only, 45s timeout, no retry). For richer history, options to investigate: (a) download Census's single all-years file if it exists, (b) cache annual fetches outside the orchestrator and only update once a year, (c) use the HUD SOCDS portal as an alternate source.
+2. **Lock in the working ITA endpoint** — `pull_ita.py` tries 3 candidate URL patterns. After the first successful CI run, prune to just the one that works.
+3. **`pull_bls.py::fetch_ces_supersector_history`** currently only returns "Total nonfarm" in CI runs — investigate why other super-sectors aren't being returned (probably a series ID format issue specific to the super-sector code position) and fix.
+4. **Census ACS 2025 lag** — fetcher already falls back to 2024 correctly when 2025 returns 404. No action needed until ACS 2025 1-year drops (~Sep 2026), at which point it'll auto-pick-up.
+5. **Top Employers** — annual hand-update. Owned by a human, not the pipeline. Recommend yearly audit.
+6. **Additional small fetchers** to fill Phase 1.5-tagged rows in the section table:
    - Census BFS (Business Formation Statistics) for entrepreneurship — row 26
    - Census LEHD LODES for commuter flows — row 38
    - Census PEP components-of-change for net-migration domestic/foreign split — row 39
    - Realtor.com + Freddie Mac PMMS join for housing affordability index — row 23
    - QCEW high-tech NAICS subset + public-sector ownership splits — rows 28, 31
-6. **Derive-from-existing-data sections** (no new fetcher needed, just JS):
+7. **Derive-from-existing-data sections** (no new fetcher needed, just JS):
    - Industrial diversity Herfindahl from `qcew_industry_shares` — row 25
    - Rental affordability from existing ACS B25064/B19013 — row 21
    - Productivity = `bea_gmp.gmp_billions_usd / ces_employment.latest_value` — row 29
    - Generational breakdown + Population by age from ACS B01001 — rows 40, 42
-7. **Atlanta CBSA HPI fallback** — FRED's `ATNHPIUS12060Q` series has been frozen for years; existing `scripts/fetch_msa_metrics.py` has the county-aggregate workaround. Port that fallback into `pull_fhfa.py`.
+8. **Atlanta CBSA HPI fallback** — FRED's `ATNHPIUS12060Q` series has been frozen for years; existing `scripts/fetch_msa_metrics.py` has the county-aggregate workaround. Port that fallback into `pull_fhfa.py`.
 
 ---
 
