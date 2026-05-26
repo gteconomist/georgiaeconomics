@@ -1,25 +1,27 @@
-# GA MSA Précis-Style Reports — Work Plan
+# Georgia MSA Metro Economic Profile — Work Plan
 
-**Goal:** A Moody's Précis-style "Metro Economic Profile" for each of the 14 Georgia MSAs, served as a live HTML page at `/msa/<slug>/` and downloadable as a PDF via the browser's print dialog. The example for Savannah is live at `/msa/savannah/`.
+**A product of Economic Impact Group, LLC**
 
-Because we won't have Moody's data going forward, every section maps to a free, public source (BLS / BEA / Census / FHFA / IRS SOI / Census USA Trade Online / FRED / GPA). Proprietary metrics get a clearly-labelled in-house proxy.
+**Goal:** Build a full "Metro Economic Profile" report for each of the 14 Georgia MSAs, served as a live HTML page at `/msa/<slug>/` and downloadable as a PDF via the browser's print dialog. The example for Savannah is live at `/msa/savannah/`.
+
+Every section maps to a free, public source (BLS / BEA / Census / FHFA / IRS SOI / Census USA Trade Online / FRED / GPA). Where a section needs a composite or modelled measure, Economic Impact Group will publish its own methodology rather than rely on any third-party proprietary index.
 
 ---
 
 ## 1. Section-by-section data mapping
 
-| # | Précis section | Public-data source | Cadence | Proxy needed? |
+| # | Report section | Public-data source | Cadence | Composite needed? |
 |---|---|---|---|---|
 | 1 | Header: CBSA code, counties, pop | OMB delineation file + Census PEP | Annual | No |
 | 2 | Economic drivers (top 2 LQ industries) | BLS QCEW location quotients | Quarterly | No |
 | 3 | Employment-growth rank (2-yr & 5-yr) | BLS CES MSA employment | Monthly | No — compute rank vs. 387 metros |
 | 4 | Relative costs of living / business | BLS Regional Price Parities (RPP) | Annual | Partial — business cost is a weighted RPP |
 | 5 | Vitality index | BLS LAUS LFPR + employment + earnings | Quarterly | **Proxy** — z-score composite |
-| 6 | Quality-of-life composite | Census ACS + EPA + FBI UCR + commute | Annual | **Proxy** — replicate Moody's weighting |
+| 6 | Quality-of-life composite | Census ACS + EPA + FBI UCR + commute | Annual | **EIG composite** — published weighting |
 | 7 | Business cycle status (chart) | BLS CES + LAUS | Monthly | **Proxy** — Stock-Watson coincident-index |
 | 8 | Strengths / weaknesses bullets | Derived from data + LLM | On data refresh | Hybrid — LLM with templated guardrails |
 | 9 | Forecast risks (upside / downside) | Derived + Tavily news scrape | Weekly | Hybrid — LLM, surfaced from local news + national |
-| 10 | Moody's rating (credit) | Public county/MSA bond filings (EMMA) | As-issued | Direct lookup |
+| 10 | EIG credit score | Public county/MSA bond filings (EMMA) + EIG composite | As-issued / quarterly | **EIG composite** |
 | 11 | Recent-performance prose | Composed by LLM from latest data | Monthly | Hybrid |
 | 12 | Headline indicators table (history + forecast) | BEA GMP, BLS CES & LAUS, BEA personal income, Census PEP, Census BPS, FHFA HPI | Quarterly | Forecast: our own state-space VAR |
 | 13 | Economic health check (6-month grid) | BLS CES + LAUS + BPS + GPA monthly | Monthly | No |
@@ -55,7 +57,7 @@ Because we won't have Moody's data going forward, every section maps to a free, 
 | 43 | Geographic profile maps (density, income, commute) | TIGER/Line + ACS, rendered with Plotly choropleth | Annual | No |
 | 44 | Population & housing characteristics table | Census ACS DP04 + DP02 + DP05 | Annual | No |
 
-**Bottom line:** of the 44 sections, 35 are direct pulls from public APIs, 7 are computed metrics needing simple math, and 7 require a documented proxy methodology (vitality, QoL, business-cycle index, valuation model, forecast vintage, business costs, rating). Every section already maps to a free source — no Moody's dependency.
+**Bottom line:** of the 44 sections, 35 are direct pulls from public APIs, 7 are computed metrics needing simple math, and 7 require a documented Economic Impact Group composite (vitality, QoL, business cycle index, valuation model, forecast vintage, business costs, credit score). Every section maps to a free, public source — no third-party subscription dependency.
 
 ---
 
@@ -119,18 +121,19 @@ If a stored PDF artifact is later desired (for email distribution / archival), a
 
 ---
 
-## 4. Proprietary-metric proxies
+## 4. Economic Impact Group composite metrics
 
-| Metric | Moody's approach | Our proxy |
+| Metric | What it measures | EIG approach |
 |---|---|---|
-| **Business cycle index** | Proprietary coincident-index based on monthly indicators | Stock-Watson coincident-index using BLS CES employment, LAUS unemployment & LFP, BEA real wages, BLS hours-worked. Open-source methodology, peer-reviewed. |
-| **Vitality** | Multi-factor (LFPR + earnings growth + young-adult share + net migration) | Z-score average of the same four variables vs. the 387-metro distribution. Document the recipe in `/about/methodology/`. |
-| **Quality of life** | Composite of weather, crime, schools, commute, air quality | ACS commute + EPA AQI + FBI UCR (county-aggregated) + Census-NCES school spending. Same scaling. |
-| **Housing valuation (over/under)** | Proprietary model | VAR residual: regress FHFA HPI on local income, rents, mortgage rate, population growth; residual = % over/under fundamentals. |
-| **Long-term risk exposure** | Proprietary scenario forecast | Conditional value-at-risk on our VAR's 5-year forecast distribution. |
-| **Business costs index** | Composite | BLS RPP + Tax Foundation state-local burden + commercial rent from local broker reports. |
+| **Business cycle index** | Coincident snapshot of local economic momentum | Stock-Watson coincident-index using BLS CES employment, LAUS unemployment & LFP, BEA real wages, BLS hours-worked. Open-source methodology, peer-reviewed. |
+| **Vitality** | LFPR + earnings growth + young-adult share + net migration | Z-score average of the four variables vs. the 387-metro distribution. Documented in `/about/methodology/`. |
+| **Quality of life** | Commute, crime, schools, air quality | ACS commute + EPA AQI + FBI UCR (county-aggregated) + Census-NCES school spending, scaled 0-300. |
+| **Housing valuation (over/under)** | % over/under local fundamentals | VAR residual: regress FHFA HPI on local income, rents, mortgage rate, population growth; residual is the published value. |
+| **Long-term risk exposure** | 5-year downside scenario | Conditional value-at-risk on the EIG forecast distribution. |
+| **Business costs index** | Cost of operating relative to US | BLS RPP + Tax Foundation state-local burden + commercial rent from local broker reports. |
+| **EIG credit score** | County GO-equivalent risk grade | Mapping of EMMA bond filings + EIG fiscal-strength composite onto a published 1-21 letter scale. |
 
-Each proxy gets a "Methodology" link on the page and a `<span class="src-pill proxy">Proxy</span>` label in the source line, so users always know which numbers are direct pulls vs. modeled.
+Every composite metric gets a "Methodology" link on the page and a `<span class="src-pill proxy">EIG composite</span>` label in the source line, so users always know which numbers are direct pulls vs. modelled.
 
 ---
 
@@ -164,6 +167,6 @@ Already in repo (per existing workflows): `BLS_API_KEY`, `FRED_API_KEY`, `CENSUS
 ## 7. Open questions to nail down before Phase 1
 
 1. **Forecast methodology:** do you want a true state-space VAR (more accurate, harder to maintain) or simpler ARIMA + judgment overlay? Recommend ARIMA + Atlanta Fed consensus blend for the first cut.
-2. **Rating column:** do we want to attempt to publish actual current ratings from EMMA, or drop the row? Moody's rating for the MSA itself isn't a thing — they rated the county. Recommend dropping or replacing with our own composite score.
+2. **Credit-score column:** credit ratings are issued at the county and bond-issuer level, not the MSA level. Options: (a) publish the EIG composite credit score only; (b) publish the EIG score *and* show the most recent county GO rating from EMMA as a reference; (c) drop the row entirely. Recommend (b) so users can sanity-check the EIG composite against issued ratings.
 3. **Top-employers refresh:** SEDA-style lists need an annual hand-update. Plan to do this once a year as part of an annual data audit, or hand to a junior analyst.
 4. **PDF distribution:** are you planning to email these PDFs to anyone, or is "Save as PDF from the browser" enough? Affects whether Phase 6 is in scope.

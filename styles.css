@@ -22,13 +22,15 @@
   --peach-pale:  #faead9;
 
   /* Surfaces */
-  --page-bg:     #ffffff;
+  --page-bg:     #eceef1;   /* light cool gray — lets white cards pop */
+  --surface:     #ffffff;   /* header / footer / opaque chrome */
   --chart-bg:    #fbf5dc;
   --panel-bg:    #ffffff;
   --border:      #d9d3b8;
   --grid:        #b6ad8d;
   --ink:         #1a1a1a;
   --ink-soft:    #6b7280;
+  --card-shadow: 0 1px 2px rgba(15, 23, 42, 0.04), 0 4px 12px rgba(15, 23, 42, 0.06);
 
   /* Type */
   --font-sans: "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
@@ -50,10 +52,14 @@ a { color: var(--navy); text-decoration: none; }
 a:hover { text-decoration: underline; }
 
 /* ---------- Page chrome ---------- */
-.site-header { border-bottom: 2px solid var(--navy); background: var(--page-bg); }
+.site-header {
+  border-bottom: 2px solid var(--navy);
+  background: var(--surface);
+  box-shadow: 0 1px 0 rgba(15, 23, 42, 0.04);
+}
 .site-header .wrap {
   max-width: 1200px; margin: 0 auto; padding: 18px 24px;
-  display: flex; align-items: baseline; justify-content: space-between; gap: 24px;
+  display: flex; align-items: center; justify-content: space-between; gap: 24px;
 }
 .site-header .brand {
   font-family: var(--font-display);
@@ -94,6 +100,7 @@ main { max-width: 1200px; margin: 0 auto; padding: 28px 24px 48px; }
   border: 1px solid var(--border); border-top: 3px solid var(--navy);
   background: var(--panel-bg); border-radius: 4px;
   padding: 12px 14px;
+  box-shadow: var(--card-shadow);
 }
 .kpi .label { font-size: 11px; font-weight: 700; color: var(--navy); text-transform: uppercase; letter-spacing: 0.08em; }
 .kpi .value { font-family: var(--font-display); font-size: 26px; font-weight: 700; color: var(--navy); margin-top: 4px; line-height: 1.1; }
@@ -105,13 +112,13 @@ main { max-width: 1200px; margin: 0 auto; padding: 28px 24px 48px; }
 /* ---------- Chart panels ---------- */
 .chart-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
 @media (max-width: 980px) { .chart-grid { grid-template-columns: 1fr; } }
-.chart-panel { background: var(--panel-bg); border: 1px solid var(--border); padding: 14px 16px 18px; }
+.chart-panel { background: var(--panel-bg); border: 1px solid var(--border); padding: 14px 16px 18px; box-shadow: var(--card-shadow); }
 .chart-panel h2 { font-family: var(--font-display); color: var(--navy); font-size: 16px; font-weight: 700; margin: 0 0 4px; text-transform: uppercase; letter-spacing: 0.04em; }
 .chart-panel .sub { font-size: 12px; color: var(--ink-soft); margin: 0 0 10px; }
 .chart-canvas { position: relative; height: 320px; background: var(--chart-bg); padding: 4px; }
 
 /* ---------- Map panels (georgiaeconomics-specific) ---------- */
-.map-panel { background: var(--panel-bg); border: 1px solid var(--border); padding: 14px 16px 18px; margin-bottom: 22px; }
+.map-panel { background: var(--panel-bg); border: 1px solid var(--border); padding: 14px 16px 18px; margin-bottom: 22px; box-shadow: var(--card-shadow); }
 .map-panel h2 { font-family: var(--font-display); color: var(--navy); font-size: 18px; font-weight: 700; margin: 0 0 4px; text-transform: uppercase; letter-spacing: 0.04em; }
 .map-panel .sub { font-size: 13px; color: var(--ink-soft); margin: 0 0 12px; }
 .map-controls {
@@ -130,7 +137,7 @@ main { max-width: 1200px; margin: 0 auto; padding: 28px 24px 48px; }
 /* Leaderboard tables next to maps */
 .leaderboard-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; margin-top: 18px; }
 @media (max-width: 880px) { .leaderboard-grid { grid-template-columns: 1fr; } }
-.leaderboard { background: var(--panel-bg); border: 1px solid var(--border); padding: 12px 14px; }
+.leaderboard { background: var(--panel-bg); border: 1px solid var(--border); padding: 12px 14px; box-shadow: var(--card-shadow); }
 .leaderboard h3 { font-family: var(--font-display); color: var(--navy); font-size: 14px; font-weight: 700; margin: 0 0 8px; text-transform: uppercase; letter-spacing: 0.06em; }
 .leaderboard table { width: 100%; border-collapse: collapse; font-size: 14px; }
 .leaderboard td { padding: 5px 0; border-bottom: 1px dotted var(--border); }
@@ -153,8 +160,14 @@ main { max-width: 1200px; margin: 0 auto; padding: 28px 24px 48px; }
   background: var(--panel-bg); border: 1px solid var(--border);
   border-top: 4px solid var(--navy); padding: 18px;
   text-decoration: none; color: var(--ink); display: block;
+  box-shadow: var(--card-shadow);
+  transition: transform 120ms ease, box-shadow 120ms ease, border-color 120ms ease;
 }
-.topic-card:hover { border-color: var(--navy); text-decoration: none; }
+.topic-card:hover {
+  border-color: var(--navy); text-decoration: none;
+  transform: translateY(-1px);
+  box-shadow: 0 2px 4px rgba(15, 23, 42, 0.06), 0 8px 20px rgba(15, 23, 42, 0.08);
+}
 .topic-card.coming { opacity: 0.55; cursor: not-allowed; }
 .topic-card.feature { border-top-color: var(--peach-deep); }
 .topic-card h3 { margin: 0 0 6px; font-family: var(--font-display); color: var(--navy); font-size: 20px; }
@@ -168,5 +181,33 @@ main { max-width: 1200px; margin: 0 auto; padding: 28px 24px 48px; }
 .topic-card.coming .badge { color: var(--silver); }
 
 /* ---------- Footer ---------- */
-.site-footer { border-top: 1px solid var(--border); margin-top: 48px; padding: 22px 0; font-size: 13px; color: var(--ink-soft); }
+.site-footer {
+  border-top: 1px solid var(--border);
+  background: var(--surface);
+  margin-top: 48px; padding: 22px 0;
+  font-size: 13px; color: var(--ink-soft);
+}
 .site-footer .wrap { max-width: 1200px; margin: 0 auto; padding: 0 24px; display: flex; justify-content: space-between; gap: 18px; flex-wrap: wrap; }
+.site-footer .eig {
+  width: 100%;
+  display: flex; align-items: center; gap: 12px;
+  padding-top: 14px; margin-top: 8px;
+  border-top: 1px dotted var(--border);
+  font-size: 12px;
+}
+.site-footer .eig img { height: 34px; width: auto; display: block; }
+.site-footer .eig a { color: var(--navy); font-weight: 600; }
+.site-footer .eig .product-of { color: var(--ink-soft); }
+
+/* ---------- Hero EIG ribbon (homepage) ---------- */
+.eig-ribbon {
+  display: flex; align-items: center; gap: 14px;
+  padding: 14px 18px; margin: 18px 0 0;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  box-shadow: var(--card-shadow);
+}
+.eig-ribbon img { height: 44px; width: auto; display: block; }
+.eig-ribbon .label { font-size: 12px; color: var(--ink-soft); text-transform: uppercase; letter-spacing: 0.08em; font-weight: 700; }
+.eig-ribbon .org   { font-family: var(--font-display); color: var(--navy); font-weight: 700; font-size: 16px; }
+.eig-ribbon a:hover { text-decoration: none; }
