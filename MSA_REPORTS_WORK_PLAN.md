@@ -38,7 +38,7 @@ Every section maps to a free, public source (BLS / BEA / Census / FHFA / IRS SOI
 | 24 | Top employers list | Local development authority filings + LinkedIn + state job-creation grant data | Annual | Manual cache, validated yearly |
 | 25 | Industrial diversity (Herfindahl) | BLS QCEW employment shares | Annual | No — compute directly |
 | 26 | Entrepreneurship (broad-based startup rate) | Census Business Formation Statistics (BFS) | Monthly | No |
-| 27 | Exports (by product & destination) | Census USA Trade Online (port + MSA) | Annual | No |
+| 27 | Exports (by product & destination) | Census USA Trade Online (api.census.gov/data/timeseries/intltrade, MSA-level) | Annual | No |
 | 28 | Public sector employment (Fed/State/Local) | BLS QCEW ownership splits | Quarterly | No |
 | 29 | Productivity ($ output / worker) | BEA GMP ÷ BLS employment | Annual | No |
 | 30 | Business costs (U.S.=100) | BLS RPP + commercial rent (CoStar OSM scrape) + state tax (Tax Foundation) | Annual | Partial proxy |
@@ -159,8 +159,9 @@ Already in repo (per existing workflows): `BLS_API_KEY`, `FRED_API_KEY`, `CENSUS
 
 - `ANTHROPIC_API_KEY` — for narrative generation (already used elsewhere)
 - `TAVILY_API_KEY` — for the news scrape feeding the narrative (already used on the film page per memory)
-- `ITA_API_KEY` — International Trade Administration TradeStats API (free, instant signup)
 - `IRS_SOI` — no key needed, but pin a curl-able URL for the latest county-to-county migration ZIP (annual release)
+
+**No API key needed for:** FHFA HPI (public CSV download), Census USA Trade Online (uses existing `CENSUS_API_KEY`), api.data.gov ITA datasets (skipped — Census USA Trade Online covers MSA-level export statistics with better granularity).
 
 ---
 

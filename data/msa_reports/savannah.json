@@ -4,41 +4,46 @@
   "full_name": "Savannah, GA",
   "population": 410000,
   "as_of": "2026-05-26",
-  "_seed_note": "Seed file. Live data will replace this on the first nightly run of update-msa-reports.yml with BLS_API_KEY set in repo secrets. The April 2026 CES datapoint below was confirmed against the live BLS API.",
   "sections": {
     "ces_employment": {
       "series_id": "SMS13423400000000001",
-      "months": ["2026-04"],
-      "values": [216.4],
-      "yoy_pct": [0.09],
+      "months": [
+        "2026-04"
+      ],
+      "values": [
+        216.4
+      ],
+      "yoy_pct": [
+        0.09
+      ],
       "latest_month": "2026-04",
       "latest_value": 216.4,
       "latest_yoy": 0.09
     },
     "ces_by_supersector": null,
     "laus_unemployment": null,
-    "qcew_industry": null,
     "fhfa_hpi": null,
-    "bea_gmp": null,
     "census_pep": null,
     "census_acs_demographics": null,
-    "census_acs_housing": null,
-    "census_bps": null,
-    "ita_exports": null,
+    "bea_gmp": null,
+    "bea_personal_income": null,
+    "qcew_industry": null,
+    "census_bps_permits": null,
+    "census_trade_exports": null,
     "irs_soi_migration": null
   },
   "section_status": {
     "ces_employment": "seed",
     "ces_by_supersector": "pending",
     "laus_unemployment": "pending",
-    "qcew_industry": "pending",
     "fhfa_hpi": "pending",
-    "bea_gmp": "pending",
     "census_pep": "pending",
     "census_acs_demographics": "pending",
-    "census_acs_housing": "pending",
-    "census_bps": "pending",
-    "ita_exports": "pending",
+    "bea_gmp": "pending",
+    "bea_personal_income": "pending",
+    "qcew_industry": "pending",
+    "census_bps_permits": "pending",
+    "census_trade_exports": "pending",
     "irs_soi_migration": "pending"
   }
 }

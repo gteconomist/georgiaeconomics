@@ -47,12 +47,13 @@ import json
 import sys
 from datetime import date
 from pathlib import Path
+from typing import Optional
 
 sys.path.insert(0, str(Path(__file__).parent))
 from _ga_msas import GA_MSAS
 
 # Per-source fetchers (each module in scripts/reporting/)
-from reporting import pull_bls
+from reporting import pull_bls, pull_fhfa, pull_census, pull_bea
 
 # Lookup tables
 MSA_BY_CBSA = {cbsa: (short, full, pop) for cbsa, short, full, pop in GA_MSAS}
@@ -84,29 +85,73 @@ def run_laus_unemployment(cbsa: str):
     return data, "live"
 
 
+def run_fhfa_hpi(cbsa: str):
+    data = pull_fhfa.fetch_hpi_quarterly_history(cbsa, years_back=10)
+    if data is None:
+        return None, "failed"
+    return data, "live"
+
+
+def run_census_pep(cbsa: str):
+    data = pull_census.fetch_pep_population_history(cbsa, years_back=7)
+    if data is None:
+        return None, "failed"
+    return data, "live"
+
+
+def run_census_acs_demographics(cbsa: str):
+    data = pull_census.fetch_acs_demographics(cbsa)
+    if data is None:
+        return None, "failed"
+    return data, "live"
+
+
+def run_bea_gmp(cbsa: str):
+    data = pull_bea.fetch_gmp_history(cbsa, years_back=7)
+    if data is None:
+        return None, "failed"
+    return data, "live"
+
+
+def run_bea_personal_income(cbsa: str):
+    data = pull_bea.fetch_personal_income_history(cbsa, years_back=7)
+    if data is None:
+        return None, "failed"
+    return data, "live"
+
+
 # Section registry — order is the order we run them
 SECTIONS = [
-    ("ces_employment",       run_ces_employment),
-    ("ces_by_supersector",   run_ces_by_supersector),
-    ("laus_unemployment",    run_laus_unemployment),
+    ("ces_employment",          run_ces_employment),
+    ("ces_by_supersector",      run_ces_by_supersector),
+    ("laus_unemployment",       run_laus_unemployment),
+    ("fhfa_hpi",                run_fhfa_hpi),
+    ("census_pep",              run_census_pep),
+    ("census_acs_demographics", run_census_acs_demographics),
+    ("bea_gmp",                 run_bea_gmp),
+    ("bea_personal_income",     run_bea_personal_income),
     # Future runners (return null until built)
-    ("qcew_industry",        None),
-    ("fhfa_hpi",             None),
-    ("bea_gmp",              None),
-    ("census_pep",           None),
-    ("census_acs_demographics", None),
-    ("census_acs_housing",   None),
-    ("census_bps",           None),
-    ("ita_exports",          None),
-    ("irs_soi_migration",    None),
+    ("qcew_industry",           None),
+    ("census_bps_permits",      None),
+    ("census_trade_exports",    None),
+    ("irs_soi_migration",       None),
 ]
 
 
-def fetch_one_msa(cbsa: str, sections_filter=None) -> dict:
-    """Pull every (or selected) section for one MSA. Returns the full output dict."""
+def fetch_one_msa(cbsa: str, sections_filter=None, prior: Optional[dict] = None) -> dict:
+    """Pull every (or selected) section for one MSA. Returns the full output dict.
+
+    NEVER BLANKS DATA: if a section fails and `prior` contains a previously-good
+    value, we keep the prior value and mark status as "stale" (per the
+    feedback_full_automation memory rule: never propose manual updates, never
+    blank live data on transient errors).
+    """
     if cbsa not in MSA_BY_CBSA:
         raise SystemExit(f"Unknown CBSA {cbsa}")
     short, full, pop = MSA_BY_CBSA[cbsa]
+
+    prior_sections = (prior or {}).get("sections", {}) if prior else {}
+    prior_status   = (prior or {}).get("section_status", {}) if prior else {}
 
     output = {
         "cbsa": cbsa,
@@ -120,9 +165,13 @@ def fetch_one_msa(cbsa: str, sections_filter=None) -> dict:
 
     for name, runner in SECTIONS:
         if sections_filter and name not in sections_filter:
+            # Carry prior values for sections not in this filter
+            output["sections"][name] = prior_sections.get(name)
+            output["section_status"][name] = prior_status.get(name, "pending")
             continue
         if runner is None:
-            output["sections"][name] = None
+            # No runner built yet: keep prior if present, else pending
+            output["sections"][name] = prior_sections.get(name)
             output["section_status"][name] = "pending"
             print(f"  [{name:24s}] pending (no runner yet)")
             continue
@@ -134,8 +183,15 @@ def fetch_one_msa(cbsa: str, sections_filter=None) -> dict:
             data, status = None, "failed"
         else:
             print(f" {status}")
-        output["sections"][name] = data
-        output["section_status"][name] = status
+
+        # NEVER BLANK on failure — fall back to prior value if available.
+        if status == "failed" and prior_sections.get(name) is not None:
+            output["sections"][name] = prior_sections[name]
+            output["section_status"][name] = "stale"
+            print(f"     ↳ kept prior value, status=stale")
+        else:
+            output["sections"][name] = data
+            output["section_status"][name] = status
 
     return output
 
@@ -148,6 +204,19 @@ def write_report(output: dict, out_dir: Path) -> Path:
     size_kb = path.stat().st_size / 1024
     print(f"  wrote {path}  ({size_kb:.1f} KB)")
     return path
+
+
+def read_prior_report(out_dir: Path, short_name: str) -> Optional[dict]:
+    """Load the previous run's JSON if it exists, for stale-fallback."""
+    slug = short_name.lower().replace(" ", "-")
+    path = out_dir / f"{slug}.json"
+    if not path.exists():
+        return None
+    try:
+        return json.loads(path.read_text())
+    except Exception as e:
+        print(f"  [prior load] {path} unreadable: {e}", file=sys.stderr)
+        return None
 
 
 def main():
@@ -183,15 +252,18 @@ def main():
     for cbsa in targets:
         short = MSA_BY_CBSA[cbsa][0]
         print(f"\n=== {short} (CBSA {cbsa}) ===")
-        output = fetch_one_msa(cbsa, sections_filter)
+        prior = read_prior_report(args.out, short)
+        output = fetch_one_msa(cbsa, sections_filter, prior=prior)
         write_report(output, args.out)
 
         # Summary
         statuses = output["section_status"]
-        live = sum(1 for v in statuses.values() if v == "live")
+        live    = sum(1 for v in statuses.values() if v == "live")
+        seed    = sum(1 for v in statuses.values() if v == "seed")
+        stale   = sum(1 for v in statuses.values() if v == "stale")
         pending = sum(1 for v in statuses.values() if v == "pending")
-        failed = sum(1 for v in statuses.values() if v == "failed")
-        print(f"  summary: {live} live, {pending} pending, {failed} failed (of {len(statuses)})")
+        failed  = sum(1 for v in statuses.values() if v == "failed")
+        print(f"  summary: {live} live, {seed} seed, {stale} stale (kept prior), {pending} pending, {failed} failed (of {len(statuses)})")
 
 
 if __name__ == "__main__":
