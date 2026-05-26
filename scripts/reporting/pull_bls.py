@@ -274,6 +274,222 @@ def fetch_laus_unemployment_history(cbsa: str, years_back: int = 7) -> Optional[
     }
 
 
+# ----------------------------- QCEW: industry shares + wages -----------------------------
+# QCEW Open Data API: https://data.bls.gov/cew/data/api/{year}/{quarter}/area/{area_code}.csv
+# MSA area code = "C" + first 4 digits of CBSA (Census MSA codes all end in 0).
+# State area code = state FIPS + 2 zeros (e.g. Georgia = "13000").
+# National = "US000".
+
+# Super-sector groupings used in the Comparative Employment & Income table.
+# Each value is a list of 2-digit NAICS codes (as strings) that roll up to that supersector.
+QCEW_SUPERSECTORS = [
+    ("Mining",                          ["21"]),
+    ("Construction",                    ["23"]),
+    ("Manufacturing — Durable",         ["31", "33"]),
+    ("Manufacturing — Nondurable",      ["32"]),
+    ("Transportation/Utilities",        ["22", "48", "49"]),
+    ("Wholesale Trade",                 ["42"]),
+    ("Retail Trade",                    ["44", "45"]),
+    ("Information",                     ["51"]),
+    ("Financial Activities",            ["52", "53"]),
+    ("Prof. & Bus. Services",           ["54", "55", "56"]),
+    ("Education & Health Services",     ["61", "62"]),
+    ("Leisure & Hospitality",           ["71", "72"]),
+    ("Other Services",                  ["81"]),
+]
+
+
+def _qcew_msa_area_code(cbsa: str) -> str:
+    """QCEW MSA area code = 'C' + first 4 digits of 5-digit CBSA (the trailing 0 is dropped).
+    Verified against the existing scripts/fetch_msa_metrics.py."""
+    return "C" + cbsa[:4]
+
+
+def _qcew_fetch_csv(year: int, quarter: int, area_code: str):
+    """GET one QCEW CSV. Returns a list of dict rows, or None on failure."""
+    import csv as _csv
+    import io as _io
+    url = f"https://data.bls.gov/cew/data/api/{year}/{quarter}/area/{area_code}.csv"
+    try:
+        with urllib.request.urlopen(url, timeout=45) as resp:
+            body = resp.read().decode("utf-8", errors="replace")
+    except urllib.error.HTTPError as e:
+        if e.code != 404:
+            print(f"  [QCEW {year}-Q{quarter} {area_code}] HTTP {e.code}", file=sys.stderr)
+        return None
+    except Exception as e:
+        print(f"  [QCEW {year}-Q{quarter} {area_code}] {type(e).__name__}: {e}", file=sys.stderr)
+        return None
+    return list(_csv.DictReader(_io.StringIO(body)))
+
+
+def _qcew_latest_quarter(probe_area: str = "C1206") -> Optional[tuple]:
+    """Find the latest published QCEW quarter by probing Atlanta backward from today."""
+    today = date.today()
+    cur_q = (today.month - 1) // 3 + 1
+    for back in range(0, 6):
+        y = today.year
+        q = cur_q - back
+        while q < 1:
+            q += 4
+            y -= 1
+        rows = _qcew_fetch_csv(y, q, probe_area)
+        if rows:
+            return (y, q)
+    return None
+
+
+def _qcew_aggregate_sectors(rows: list, own_codes: tuple = ("5",)) -> Dict[str, dict]:
+    """Aggregate QCEW rows up into our standard super-sectors.
+
+    own_codes: tuple of QCEW ownership codes to include.
+        '5' = Private (default)
+        '1','2','3' = Federal/State/Local (use ("1","2","3") for government)
+
+    Returns: {sector_label: {"employment": int, "weekly_wage_weighted": float, "annual_wage_avg": int}}
+    """
+    out: Dict[str, dict] = {}
+    for sector_label, naics_prefixes in QCEW_SUPERSECTORS:
+        out[sector_label] = {"employment": 0, "wage_total": 0.0, "n": 0}
+
+    for row in rows:
+        if row.get("own_code") not in own_codes:
+            continue
+        # Only 2-digit industry rows (NAICS supersector level in QCEW data)
+        ic = (row.get("industry_code") or "").strip()
+        if len(ic) != 2:
+            continue
+        # Aggregation level — we want county/MSA totals, not establishment-class breakdowns
+        if row.get("size_code") != "0":
+            continue
+        # MSA-level rows: agglvl_code starts with "4" for MSAs.
+        # County rows use 70-series. We accept both because some calls use state.
+        try:
+            emp = int(float(row.get("annual_avg_emplvl") or 0))
+            wage = float(row.get("avg_wkly_wage") or 0)
+        except ValueError:
+            continue
+        if emp <= 0 or wage <= 0:
+            continue
+        for sector_label, naics_prefixes in QCEW_SUPERSECTORS:
+            if ic in naics_prefixes:
+                out[sector_label]["employment"] += emp
+                out[sector_label]["wage_total"] += wage * emp  # employment-weighted
+                out[sector_label]["n"] += 1
+                break
+
+    # Finalize: annual wage = average weekly × 52
+    finalized = {}
+    for sector, agg in out.items():
+        emp = agg["employment"]
+        if emp == 0:
+            continue
+        avg_weekly = agg["wage_total"] / emp
+        finalized[sector] = {
+            "employment":      emp,
+            "avg_annual_wage": int(round(avg_weekly * 52)),
+        }
+    return finalized
+
+
+def fetch_qcew_industry_shares(cbsa: str) -> Optional[dict]:
+    """Snapshot of QCEW employment shares + average annual wages for the MSA, GA, and US.
+
+    Powers the 'Comparative Employment & Income' table.
+
+    Returns:
+        {
+          "year": 2025, "quarter": 4,
+          "msa": {<sector>: {"employment": N, "share_pct": X.X, "avg_annual_wage": $}},
+          "ga":  {<sector>: {...}},   # state of GA total
+          "us":  {<sector>: {...}},
+          "totals": {"msa": N, "ga": N, "us": N}
+        }
+    """
+    latest = _qcew_latest_quarter()
+    if not latest:
+        print("  [QCEW] could not determine latest quarter", file=sys.stderr)
+        return None
+    year, quarter = latest
+
+    msa_area = _qcew_msa_area_code(cbsa)
+    state_area = DEFAULT_STATE_FIPS + "000"
+    us_area = "US000"
+
+    msa_rows = _qcew_fetch_csv(year, quarter, msa_area)
+    ga_rows  = _qcew_fetch_csv(year, quarter, state_area)
+    us_rows  = _qcew_fetch_csv(year, quarter, us_area)
+    if not (msa_rows and ga_rows and us_rows):
+        return None
+
+    def aggregate_and_share(rows):
+        # Combine private + government for total employment denominator.
+        private = _qcew_aggregate_sectors(rows, ("5",))
+        gov     = _qcew_aggregate_sectors(rows, ("1", "2", "3"))
+        # Tack Government on as an extra sector entry
+        gov_emp = sum(s["employment"] for s in gov.values())
+        gov_wage = (sum(s["avg_annual_wage"] * s["employment"] for s in gov.values()) // gov_emp) if gov_emp else 0
+        combined = dict(private)
+        if gov_emp > 0:
+            combined["Government"] = {"employment": gov_emp, "avg_annual_wage": gov_wage}
+        total = sum(s["employment"] for s in combined.values())
+        # Compute share %
+        for s in combined.values():
+            s["share_pct"] = round(100 * s["employment"] / total, 2) if total else 0
+        return combined, total
+
+    msa_data, msa_tot = aggregate_and_share(msa_rows)
+    ga_data,  ga_tot  = aggregate_and_share(ga_rows)
+    us_data,  us_tot  = aggregate_and_share(us_rows)
+
+    return {
+        "year": year,
+        "quarter": quarter,
+        "as_of_label": f"{year} Q{quarter}",
+        "msa": msa_data,
+        "ga": ga_data,
+        "us": us_data,
+        "totals": {"msa": msa_tot, "ga": ga_tot, "us": us_tot},
+    }
+
+
+def fetch_qcew_yoy_changes(cbsa: str) -> Optional[dict]:
+    """Year-over-year % change in total employment by super-sector for the MSA.
+
+    Powers the 'Industry Employment' bar chart.
+
+    Returns: {"year": Y, "quarter": Q, "sectors": {<label>: {"yoy_pct": float, "employment": int}}}
+    """
+    latest = _qcew_latest_quarter()
+    if not latest:
+        return None
+    year_now, qtr = latest
+
+    msa_area = _qcew_msa_area_code(cbsa)
+    cur = _qcew_fetch_csv(year_now, qtr, msa_area)
+    prv = _qcew_fetch_csv(year_now - 1, qtr, msa_area)
+    if not (cur and prv):
+        return None
+
+    cur_agg = _qcew_aggregate_sectors(cur, ("5",))
+    prv_agg = _qcew_aggregate_sectors(prv, ("5",))
+
+    out = {}
+    for sector, c in cur_agg.items():
+        p = prv_agg.get(sector)
+        if not p or p["employment"] == 0:
+            continue
+        yoy = round(100 * (c["employment"] - p["employment"]) / p["employment"], 2)
+        out[sector] = {"yoy_pct": yoy, "employment": c["employment"]}
+
+    return {
+        "year": year_now,
+        "quarter": qtr,
+        "as_of_label": f"{year_now} Q{qtr}",
+        "sectors": out,
+    }
+
+
 # ----------------------------- CLI for quick smoke tests -----------------------------
 
 if __name__ == "__main__":

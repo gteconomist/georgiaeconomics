@@ -281,6 +281,7 @@
       "latest_value": 216.4,
       "latest_yoy": 0.09
     },
+<<<<<<< HEAD
     "ces_by_supersector": {
       "sectors": {
         "Total nonfarm": {
@@ -842,11 +843,23 @@
       "latest_per_capita_income": 64775
     },
     "qcew_industry": null,
+=======
+    "ces_by_supersector": null,
+    "laus_unemployment": null,
+    "fhfa_hpi": null,
+    "census_pep": null,
+    "census_acs_demographics": null,
+    "bea_gmp": null,
+    "bea_personal_income": null,
+    "qcew_industry_shares": null,
+    "qcew_yoy_changes": null,
+>>>>>>> 01fc136 (Phase 1 complete: QCEW + BPS + IRS SOI fetchers, all 13 sections wired, chart series read from JSON)
     "census_bps_permits": null,
     "census_trade_exports": null,
     "irs_soi_migration": null
   },
   "section_status": {
+<<<<<<< HEAD
     "ces_employment": "live",
     "ces_by_supersector": "live",
     "laus_unemployment": "live",
@@ -856,6 +869,18 @@
     "bea_gmp": "live",
     "bea_personal_income": "live",
     "qcew_industry": "pending",
+=======
+    "ces_employment": "seed",
+    "ces_by_supersector": "pending",
+    "laus_unemployment": "pending",
+    "fhfa_hpi": "pending",
+    "census_pep": "pending",
+    "census_acs_demographics": "pending",
+    "bea_gmp": "pending",
+    "bea_personal_income": "pending",
+    "qcew_industry_shares": "pending",
+    "qcew_yoy_changes": "pending",
+>>>>>>> 01fc136 (Phase 1 complete: QCEW + BPS + IRS SOI fetchers, all 13 sections wired, chart series read from JSON)
     "census_bps_permits": "pending",
     "census_trade_exports": "pending",
     "irs_soi_migration": "pending"

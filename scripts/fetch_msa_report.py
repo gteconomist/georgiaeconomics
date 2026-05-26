@@ -53,7 +53,7 @@ sys.path.insert(0, str(Path(__file__).parent))
 from _ga_msas import GA_MSAS
 
 # Per-source fetchers (each module in scripts/reporting/)
-from reporting import pull_bls, pull_fhfa, pull_census, pull_bea
+from reporting import pull_bls, pull_fhfa, pull_census, pull_bea, pull_irs_soi
 
 # Lookup tables
 MSA_BY_CBSA = {cbsa: (short, full, pop) for cbsa, short, full, pop in GA_MSAS}
@@ -120,6 +120,41 @@ def run_bea_personal_income(cbsa: str):
     return data, "live"
 
 
+def run_qcew_industry_shares(cbsa: str):
+    data = pull_bls.fetch_qcew_industry_shares(cbsa)
+    if data is None:
+        return None, "failed"
+    return data, "live"
+
+
+def run_qcew_yoy_changes(cbsa: str):
+    data = pull_bls.fetch_qcew_yoy_changes(cbsa)
+    if data is None:
+        return None, "failed"
+    return data, "live"
+
+
+def run_census_bps_permits(cbsa: str):
+    data = pull_census.fetch_bps_permits_annual(cbsa, years_back=7)
+    if data is None:
+        return None, "failed"
+    return data, "live"
+
+
+def run_census_trade_exports(cbsa: str):
+    data = pull_census.fetch_trade_exports(cbsa)
+    if data is None:
+        return None, "failed"
+    return data, "live"
+
+
+def run_irs_soi_migration(cbsa: str):
+    data = pull_irs_soi.fetch_migration_flows(cbsa)
+    if data is None:
+        return None, "failed"
+    return data, "live"
+
+
 # Section registry — order is the order we run them
 SECTIONS = [
     ("ces_employment",          run_ces_employment),
@@ -130,11 +165,11 @@ SECTIONS = [
     ("census_acs_demographics", run_census_acs_demographics),
     ("bea_gmp",                 run_bea_gmp),
     ("bea_personal_income",     run_bea_personal_income),
-    # Future runners (return null until built)
-    ("qcew_industry",           None),
-    ("census_bps_permits",      None),
-    ("census_trade_exports",    None),
-    ("irs_soi_migration",       None),
+    ("qcew_industry_shares",    run_qcew_industry_shares),
+    ("qcew_yoy_changes",        run_qcew_yoy_changes),
+    ("census_bps_permits",      run_census_bps_permits),
+    ("census_trade_exports",    run_census_trade_exports),
+    ("irs_soi_migration",       run_irs_soi_migration),
 ]
 
 

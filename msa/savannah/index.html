@@ -548,10 +548,10 @@
           <td>4.8</td><td>3.2</td><td>4.0</td><td>3.9</td><td>3.5</td><td>2.4</td><td class="divider">5.7</td>
           <td>—</td><td>—</td><td>—</td><td>—</td><td>—</td></tr>
         <tr><td class="label">Single-family permits (#)</td>
-          <td>3,610</td><td>3,840</td><td>5,210</td><td>4,180</td><td>3,720</td><td>4,210</td><td class="divider">4,590</td>
+          <td>3,610</td><td>3,840</td><td>5,210</td><td>4,180</td><td>3,720</td><td>4,210</td><td class="divider" data-live-cell="sf_permits_2025">4,590</td>
           <td>—</td><td>—</td><td>—</td><td>—</td><td>—</td></tr>
         <tr><td class="label">Multifamily permits (#)</td>
-          <td>610</td><td>720</td><td>1,540</td><td>2,210</td><td>1,860</td><td>1,340</td><td class="divider">1,180</td>
+          <td>610</td><td>720</td><td>1,540</td><td>2,210</td><td>1,860</td><td>1,340</td><td class="divider" data-live-cell="mf_permits_2025">1,180</td>
           <td>—</td><td>—</td><td>—</td><td>—</td><td>—</td></tr>
         <tr><td class="label">FHFA HPI growth (%)</td>
           <td>5.4</td><td>7.2</td><td>17.8</td><td>14.6</td><td>5.8</td><td>4.2</td><td class="divider" data-live-cell="hpi_yoy_2025">3.6</td>
@@ -620,7 +620,7 @@
       <h3>Industry Employment</h3>
       <div class="sub">% change year-ago, by super-sector</div>
       <div class="canvas-md"><canvas id="industry-emp-chart"></canvas></div>
-      <div class="src">Source: BLS CES (state &amp; metro area employment). <span class="src-pill demo">Demo</span></div>
+      <div class="src">Source: BLS QCEW year-over-year employment change by super-sector. <span class="src-pill demo" id="industry-emp-pill">Demo</span></div>
     </div>
     <div class="report-panel">
       <h3>Current Employment Trends</h3>
@@ -807,7 +807,7 @@
           <th class="divider">Savannah</th><th>GA</th><th>US</th>
         </tr>
       </thead>
-      <tbody>
+      <tbody id="comp-emp-tbody">
         <tr><td class="label">Construction</td><td>5.8</td><td>4.6</td><td>5.2</td><td class="divider">$72,300</td><td>$84,190</td><td>$83,082</td></tr>
         <tr><td class="label">Manufacturing</td><td>11.4</td><td>8.6</td><td>8.1</td><td class="divider">$93,500</td><td>$77,848</td><td>$86,565</td></tr>
         <tr class="sub"><td class="label">Durable</td><td>7.6</td><td>4.5</td><td>5.0</td><td class="divider">$108,200</td><td>$81,048</td><td>$91,999</td></tr>
@@ -825,7 +825,7 @@
       </tbody>
     </table>
     </div>
-    <div class="src">Sources: BLS QCEW (employment shares), BEA Regional (earnings). 2025 annual averages. <span class="src-pill demo">Demo</span></div>
+    <div class="src" id="comp-emp-source-line">Sources: BLS QCEW (employment shares + annual wages, county-aggregated to MSA). <span class="src-pill demo" id="comp-emp-pill">Demo</span></div>
   </div>
 
   <!-- ============================================================ -->
@@ -862,24 +862,28 @@
     <div class="report-panel">
       <h3>Migration Flows — Into Savannah</h3>
       <table class="employers-table">
-        <tr><td>Hinesville GA</td><td>2,840</td></tr>
-        <tr><td>Atlanta GA</td><td>1,930</td></tr>
-        <tr><td>Jacksonville FL</td><td>1,420</td></tr>
-        <tr><td>Charleston SC</td><td>980</td></tr>
-        <tr><td>New York NY</td><td>790</td></tr>
-        <tr><td>Augusta GA-SC</td><td>610</td></tr>
-        <tr><td>Tampa FL</td><td>510</td></tr>
-        <tr style="font-weight:700;background:var(--chart-bg);"><td>Total in-migration</td><td>18,500</td></tr>
+        <tbody id="migration-in-table">
+          <tr><td>Hinesville GA</td><td>2,840</td></tr>
+          <tr><td>Atlanta GA</td><td>1,930</td></tr>
+          <tr><td>Jacksonville FL</td><td>1,420</td></tr>
+          <tr><td>Charleston SC</td><td>980</td></tr>
+          <tr><td>New York NY</td><td>790</td></tr>
+          <tr><td>Augusta GA-SC</td><td>610</td></tr>
+          <tr><td>Tampa FL</td><td>510</td></tr>
+          <tr style="font-weight:700;background:var(--chart-bg);"><td>Total in-migration</td><td>18,500</td></tr>
+        </tbody>
       </table>
       <h3 style="margin-top:14px;">From Savannah</h3>
       <table class="employers-table">
-        <tr><td>Hinesville GA</td><td>2,340</td></tr>
-        <tr><td>Jacksonville FL</td><td>1,180</td></tr>
-        <tr><td>Atlanta GA</td><td>1,160</td></tr>
-        <tr><td>Charleston SC</td><td>740</td></tr>
-        <tr style="font-weight:700;background:var(--chart-bg);"><td>Net migration</td><td>+5,700</td></tr>
+        <tbody id="migration-out-table">
+          <tr><td>Hinesville GA</td><td>2,340</td></tr>
+          <tr><td>Jacksonville FL</td><td>1,180</td></tr>
+          <tr><td>Atlanta GA</td><td>1,160</td></tr>
+          <tr><td>Charleston SC</td><td>740</td></tr>
+          <tr style="font-weight:700;background:var(--chart-bg);"><td>Net migration</td><td>+5,700</td></tr>
+        </tbody>
       </table>
-      <div class="src">Source: IRS SOI county-to-county migration, 2022 (latest), CBSA-aggregated. <span class="src-pill demo">Demo</span></div>
+      <div class="src" id="migration-source-line">Source: IRS SOI county-to-county migration, 2022 (latest), CBSA-aggregated. <span class="src-pill demo" id="migration-flows-pill">Demo</span></div>
     </div>
   </div>
 
@@ -1339,6 +1343,34 @@ async function loadLiveData() {
     overwriteTableCell('personal_income_yoy_2025', pi.latest_yoy != null ? pi.latest_yoy.toFixed(1) : '—');
   }
 
+  // --- BPS Permits ---
+  const bps = data.sections.census_bps_permits;
+  if (bps && bps.latest_year) {
+    overwriteTableCell('sf_permits_2025',    bps.latest_single != null ? bps.latest_single.toLocaleString() : '—');
+    overwriteTableCell('mf_permits_2025',    bps.latest_multi  != null ? bps.latest_multi.toLocaleString()  : '—');
+  }
+
+  // --- IRS SOI migration: replace the migration-flow tables with live data ---
+  const mig = data.sections.irs_soi_migration;
+  if (mig && mig.top_in && mig.top_in.length) {
+    replaceMigrationTables(mig);
+    flipSectionPill('migration-flows-pill', 'live');
+  }
+
+  // --- QCEW industry shares: replace the Comparative Employment table ---
+  const qShares = data.sections.qcew_industry_shares;
+  if (qShares && qShares.msa && Object.keys(qShares.msa).length) {
+    replaceComparativeEmploymentTable(qShares);
+    flipSectionPill('comp-emp-pill', 'live');
+  }
+
+  // --- QCEW YoY changes: replace the Industry Employment bar chart ---
+  const qYoY = data.sections.qcew_yoy_changes;
+  if (qYoY && qYoY.sectors && Object.keys(qYoY.sectors).length) {
+    replaceIndustryEmploymentChart(qYoY);
+    flipSectionPill('industry-emp-pill', 'live');
+  }
+
   if (liveCells.length === 0) {
     // Nothing live yet — leave strip hidden
     return;
@@ -1356,7 +1388,85 @@ function overwriteTableCell(id, newValue) {
   cell.textContent = newValue;
   cell.style.background = 'rgba(58, 141, 141, 0.12)';
   cell.style.fontWeight = '700';
-  cell.title = 'Live value from BLS CES (replaces demo data)';
+  cell.title = 'Live value from the public-data pipeline (replaces demo data)';
+}
+
+/** Flip a pill placeholder (marked with id="<id>") to a Live state. */
+function flipSectionPill(id, status) {
+  const el = document.getElementById(id);
+  if (!el) return;
+  el.className = 'src-pill ' + status;
+  el.textContent = status === 'live' ? 'Live' : status;
+}
+
+/** Replace the Migration Flows panel tables with live IRS SOI top-in/top-out lists. */
+function replaceMigrationTables(mig) {
+  const inEl  = document.getElementById('migration-in-table');
+  const outEl = document.getElementById('migration-out-table');
+  if (!inEl || !outEl) return;
+  const fmtRow = (label, n) => `<tr><td>${label}</td><td>${n.toLocaleString()}</td></tr>`;
+  inEl.innerHTML = mig.top_in.slice(0, 10).map(r => fmtRow(r.origin_msa, r.n_returns)).join('') +
+    `<tr style="font-weight:700; background: var(--chart-bg);"><td>Total in-migration</td><td>${mig.total_in.toLocaleString()}</td></tr>`;
+  outEl.innerHTML = mig.top_out.slice(0, 10).map(r => fmtRow(r.dest_msa, r.n_returns)).join('') +
+    `<tr style="font-weight:700; background: var(--chart-bg);"><td>Net migration</td><td>${(mig.net >= 0 ? '+' : '') + mig.net.toLocaleString()}</td></tr>`;
+  const note = document.getElementById('migration-source-line');
+  if (note) note.innerHTML = `Source: IRS SOI county-to-county migration, ${mig.year_pair_label}, CBSA-aggregated.`;
+}
+
+/** Replace the Comparative Employment & Income table with live QCEW data. */
+function replaceComparativeEmploymentTable(q) {
+  const tbody = document.getElementById('comp-emp-tbody');
+  if (!tbody) return;
+  // Sectors in display order — must match the original table rows
+  const order = [
+    "Mining","Construction","Manufacturing — Durable","Manufacturing — Nondurable",
+    "Transportation/Utilities","Wholesale Trade","Retail Trade","Information",
+    "Financial Activities","Prof. & Bus. Services","Education & Health Services",
+    "Leisure & Hospitality","Other Services","Government"
+  ];
+  const fmtPct = (v) => v == null ? '—' : v.toFixed(1);
+  const fmtUsd = (v) => v == null ? '—' : '$' + Math.round(v).toLocaleString();
+  const cell = (msa, ga, us, accessor) =>
+    `<td>${fmtPct(accessor(msa))}</td><td>${fmtPct(accessor(ga))}</td><td>${fmtPct(accessor(us))}</td>`;
+  const wageCell = (msa, ga, us, accessor) =>
+    `<td class="divider">${fmtUsd(accessor(msa))}</td><td>${fmtUsd(accessor(ga))}</td><td>${fmtUsd(accessor(us))}</td>`;
+  tbody.innerHTML = order.map(sec => {
+    const m = q.msa[sec] || {}; const g = q.ga[sec] || {}; const u = q.us[sec] || {};
+    return `<tr><td class="label">${sec.replace('Manufacturing — ','')}</td>${cell(m,g,u, x => x.share_pct)}${wageCell(m,g,u, x => x.avg_annual_wage)}</tr>`;
+  }).join('');
+  const note = document.getElementById('comp-emp-source-line');
+  if (note) note.innerHTML = `Sources: BLS QCEW ${q.as_of_label} (employment shares + annual wages, county-aggregated to MSA).`;
+}
+
+/** Replace the Industry Employment bar chart with live QCEW YoY changes. */
+function replaceIndustryEmploymentChart(q) {
+  // Order sectors by YoY descending and label them concisely
+  const entries = Object.entries(q.sectors)
+    .filter(([, d]) => d.yoy_pct != null)
+    .sort((a, b) => b[1].yoy_pct - a[1].yoy_pct);
+  if (!entries.length) return;
+  const labels = entries.map(([label]) => label
+    .replace('Manufacturing — Durable',    'Mfg-Dur')
+    .replace('Manufacturing — Nondurable', 'Mfg-NonD')
+    .replace('Transportation/Utilities',   'Trans/Util')
+    .replace('Wholesale Trade',            'Wholesale')
+    .replace('Retail Trade',               'Retail')
+    .replace('Prof. & Bus. Services',      'Prof Bus')
+    .replace('Education & Health Services','Edu/Hlth')
+    .replace('Financial Activities',       'Financial')
+    .replace('Leisure & Hospitality',      'Leisure')
+    .replace('Other Services',             'Other')
+  );
+  const values = entries.map(([, d]) => d.yoy_pct);
+  // Find the existing chart and update its data
+  const canvas = document.getElementById('industry-emp-chart');
+  if (!canvas) return;
+  const chart = Chart.getChart(canvas);
+  if (!chart) return;
+  chart.data.labels = labels;
+  chart.data.datasets[0].data = values;
+  chart.data.datasets[0].label = `YoY % change (${q.as_of_label})`;
+  chart.update();
 }
 
 document.addEventListener('DOMContentLoaded', () => {

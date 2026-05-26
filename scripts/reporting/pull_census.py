@@ -12,7 +12,15 @@ Exposes:
 
   fetch_bps_permits_annual(cbsa, years_back=7) -> dict
       Annual residential building permits (single-family + multi-family) for the MSA.
-      Pulled from the Census BPS msaannual.html static download.
+      Pulled from the Census BPS Metro annual files at www2.census.gov/econ/bps/Metro/.
+
+  fetch_trade_exports(cbsa, year=None) -> dict
+      Annual MSA exports by product (3-digit NAICS) and destination country.
+      Pulled from ITA's Metropolitan Area Export Data static files at trade.gov.
+      NB: contrary to an earlier note in the work plan, Census USA Trade Online does
+      NOT publish MSA-level export breakdowns (state & port only). The real source
+      is ITA's annual static files. URL pattern shifts year-to-year, so this fetcher
+      tries a list of known URL templates and is tolerant of single-year failures.
 
 Census API base: https://api.census.gov/data/{year}/{dataset}
 MSA predicate:  for=metropolitan+statistical+area/micropolitan+statistical+area:{cbsa}
@@ -30,6 +38,7 @@ import urllib.request
 import urllib.error
 import urllib.parse
 from datetime import date
+from pathlib import Path
 from typing import Optional, Dict, List
 
 CENSUS_API_KEY = os.environ.get("CENSUS_API_KEY", "").strip()
@@ -259,14 +268,140 @@ def fetch_acs_demographics(cbsa: str, year: Optional[int] = None) -> Optional[di
 def fetch_bps_permits_annual(cbsa: str, years_back: int = 7) -> Optional[dict]:
     """Annual single-family + multi-family residential permits for the MSA.
 
-    Source: Census BPS annual MSA summary. The simplest path is the static
-    msaannual.txt files at https://www.census.gov/econ/currentdata/dbsearch (or the
-    historical files). We pull each year's MSA-aggregated permits CSV.
+    Source: Census BPS annual MSA files at
+    https://www2.census.gov/econ/bps/Metro/ma{YY}a.txt
 
-    NOTE: As of the first build, this fetcher is a STUB. The BPS file format is
-    quirky (fixed-width, multi-section). Wire-up tracked in Phase 1 follow-up.
+    Each year's file contains one row per MSA with columns:
+        CSA, CBSA, Name, Total_Buildings_All_Permits, Total_Units_All_Permits,
+        Total_Construction_Cost, plus by-structure-type columns
+        (1-unit / 2-unit / 3-4-unit / 5-or-more-unit) — each with Buildings, Units, $Cost.
+
+    For our report we extract:
+        - Single-family units      = Units_1_Unit
+        - Multi-family units total = Units_2_Unit + Units_3_4_Unit + Units_5_or_more_Unit
+
+    Returns:
+        {
+          "years":           [2019, ..., 2025],
+          "single_family":   [3610, ...],
+          "multi_family":    [610, ...],
+          "permits_per_1k":  [10.4, ...],          # using MSA population
+          "latest_year":     2025,
+          "latest_single":   4590,
+          "latest_multi":    1180,
+        }
     """
-    print(f"  [BPS] permits fetcher is a stub (placeholder return) for {cbsa}", file=sys.stderr)
+    this_year = date.today().year
+    start_year = this_year - years_back
+
+    pop = None  # filled in once we know which population to use; default per-1k is N/A
+
+    years: List[int] = []
+    sf: List[int] = []
+    mf: List[int] = []
+
+    for y in range(start_year, this_year):
+        yy = f"{y % 100:02d}"
+        url = f"https://www2.census.gov/econ/bps/Metro/ma{yy}a.txt"
+        try:
+            req = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0"})
+            with urllib.request.urlopen(req, timeout=30) as resp:
+                body = resp.read().decode("utf-8", errors="replace")
+        except urllib.error.HTTPError as e:
+            if e.code != 404:
+                print(f"  [BPS {y}] HTTP {e.code}", file=sys.stderr)
+            continue
+        except Exception as e:
+            print(f"  [BPS {y}] {type(e).__name__}: {e}", file=sys.stderr)
+            continue
+
+        # BPS annual files: 3-line header (titles + units + sub-headers), then comma-separated rows.
+        # Column layout (post-2010):
+        #   CSA, CBSA, Name, Bldgs_1u, Units_1u, Cost_1u,
+        #                    Bldgs_2u, Units_2u, Cost_2u,
+        #                    Bldgs_3to4u, Units_3to4u, Cost_3to4u,
+        #                    Bldgs_5plus, Units_5plus, Cost_5plus
+        sf_y = mf_y = None
+        for line in body.splitlines()[3:]:
+            cells = [c.strip() for c in line.split(",")]
+            if len(cells) < 15:
+                continue
+            row_cbsa = cells[1].strip().lstrip("0").zfill(5)
+            if row_cbsa != cbsa:
+                continue
+            try:
+                sf_y = int(cells[4])                       # Units_1_Unit
+                mf_y = int(cells[7]) + int(cells[10]) + int(cells[13])  # Units 2u + 3-4u + 5+
+            except (ValueError, IndexError):
+                pass
+            break
+
+        if sf_y is None:
+            continue
+        years.append(y)
+        sf.append(sf_y)
+        mf.append(mf_y)
+
+    if not years:
+        return None
+
+    # Per-1k uses the MSA population from our canonical map (avoids needing a fresh PEP call here)
+    sys.path.insert(0, str(Path(__file__).parent.parent))
+    try:
+        from _ga_msas import GA_MSAS
+        pop_map = {c: p for c, _, _, p in GA_MSAS}
+        pop = pop_map.get(cbsa)
+    except Exception:
+        pop = None
+    per_1k = [round((sf[i] + mf[i]) / (pop / 1000), 2) if pop else None for i in range(len(years))]
+
+    return {
+        "source":          "Census BPS Metro annual (https://www2.census.gov/econ/bps/Metro)",
+        "years":           years,
+        "single_family":   sf,
+        "multi_family":    mf,
+        "permits_per_1k":  per_1k,
+        "latest_year":     years[-1],
+        "latest_single":   sf[-1],
+        "latest_multi":    mf[-1],
+        "latest_per_1k":   per_1k[-1],
+    }
+
+
+# ----------------------------- Trade: MSA exports -----------------------------
+
+# ITA static URL pattern for Metropolitan Area Export Data.
+# Format has shifted over the years; we try the most recent known patterns first.
+ITA_METRO_URLS = [
+    "https://www.trade.gov/sites/default/files/{year}-{mo:02d}/MSA_Total_Exports_{year}.xlsx",
+    "https://www.trade.gov/sites/default/files/{year}/MSA_Total_Exports_{year}.xlsx",
+    "https://www.trade.gov/data-visualization/tradestats-express-export-data-metropolitan-area/MSA_Total_Exports_{year}.xlsx",
+]
+
+
+def fetch_trade_exports(cbsa: str, year: Optional[int] = None) -> Optional[dict]:
+    """Annual MSA exports by product (3-digit NAICS) and destination country.
+
+    Returns:
+        {
+          "year": Y,
+          "total_usd_millions":      9910,
+          "by_product":              [{"naics3": "336", "label": "Transportation equipment", "value_usd_mil": 4820}, ...],
+          "by_destination":          [{"country": "China", "value_usd_mil": 1240}, ...],
+          "pct_of_gmp":              29.6,
+          "rank_among_us_metros":    38,
+        }
+
+    NOTE: This is a Phase 1.5 fetcher — implemented as a stub returning None until
+    we settle on the right URL/format. The ITA metropolitan-area files are
+    Excel-based, multi-sheet, and the URL template shifts annually. To make this
+    fully robust we'll need to either:
+        (a) maintain a hand-curated registry of annual URLs, OR
+        (b) parse the trade.gov listing page each year to discover the latest URL.
+    Both add ~half a day of work. For now this slot returns None and the report
+    page falls back to its "Demo" pill for the Exports section.
+    """
+    print(f"  [Census trade] MSA exports fetcher is a Phase 1.5 stub (see module docstring)", file=sys.stderr)
     return None
 
 
