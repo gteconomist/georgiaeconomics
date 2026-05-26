@@ -656,7 +656,7 @@
       <h3>Relative Employment Performance</h3>
       <div class="sub">Jan 2015 = 100 &middot; Savannah, GA, and US</div>
       <div class="canvas-lg"><canvas id="rel-emp-chart"></canvas></div>
-      <div class="src">Source: BLS CES, rebased Jan 2015 = 100. <span class="src-pill demo">Demo</span></div>
+      <div class="src">Source: BLS CES, rebased to start of series = 100. <span class="src-pill demo" id="rel-emp-pill">Demo</span></div>
     </div>
     <div class="report-panel">
       <h3>Relative Employment Forecast</h3>
@@ -676,7 +676,7 @@
       <h3 style="margin-top:18px;">House Price Index</h3>
       <div class="sub">2005 Q1 = 100, NSA</div>
       <div class="canvas-md"><canvas id="hpi-chart"></canvas></div>
-      <div class="src">Source: FHFA HPI (purchase-only, MSA series). <span class="src-pill demo">Demo</span></div>
+      <div class="src">Source: FHFA HPI (purchase-only, MSA series). <span class="src-pill demo" id="hpi-chart-pill">Demo</span></div>
     </div>
   </div>
 
@@ -861,7 +861,7 @@
 
       <h3 style="margin-top:14px;">Per Capita Income</h3>
       <div class="canvas-sm"><canvas id="pci-chart"></canvas></div>
-      <div class="src">Sources: BEA Regional, Census ACS. <span class="src-pill demo">Demo</span></div>
+      <div class="src">Sources: BEA Regional CAINC1 (per-capita personal income). <span class="src-pill demo" id="pci-chart-pill">Demo</span></div>
     </div>
     <div class="report-panel">
       <h3>Migration Flows — Into Savannah</h3>
@@ -902,7 +902,7 @@
       <h3>Educational Attainment</h3>
       <div class="sub">% of adults 25+</div>
       <div class="canvas-md"><canvas id="edu-chart"></canvas></div>
-      <div class="src">Source: Census ACS table B15003. <span class="src-pill demo">Demo</span></div>
+      <div class="src">Source: Census ACS table B15003. <span class="src-pill demo" id="edu-chart-pill">Demo</span></div>
     </div>
     <div class="report-panel">
       <h3>Population by Age</h3>
@@ -1382,6 +1382,30 @@ async function loadLiveData() {
     flipSectionPill('exports-pill', 'live');
   }
 
+  // --- FHFA HPI: rebuild the House Price Index line chart ---
+  if (hpi && hpi.quarters && hpi.values) {
+    replaceHpiChart(hpi);
+    flipSectionPill('hpi-chart-pill', 'live');
+  }
+
+  // --- Relative Employment Performance: rebase CES to Jan 2015 = 100 ---
+  if (ces && ces.values && ces.values.length > 12) {
+    replaceRelativeEmploymentChart(ces);
+    flipSectionPill('rel-emp-pill', 'live');
+  }
+
+  // --- BEA Per Capita Income: rebuild the PCI chart ---
+  if (pi && pi.years && pi.per_capita_income) {
+    replacePerCapitaIncomeChart(pi);
+    flipSectionPill('pci-chart-pill', 'live');
+  }
+
+  // --- ACS Educational Attainment: rebuild the stacked-bar ---
+  if (acs && acs.values && acs.derived) {
+    replaceEducationChart(acs);
+    flipSectionPill('edu-chart-pill', 'live');
+  }
+
   if (liveCells.length === 0) {
     // Nothing live yet — leave strip hidden
     return;
@@ -1460,6 +1484,85 @@ function replaceExportsTables(ita) {
   destEl.innerHTML = ita.by_destination.slice(0, 6).map(c => fmtRow(c.label, c.value_usd_mil)).join('');
   const note = document.getElementById('exports-source-line');
   if (note) note.innerHTML = `Source: ITA Metropolitan Area Exports, ${ita.year} (${ita.source_endpoint || 'api.trade.gov'}).`;
+}
+
+/** Rebuild the House Price Index line chart from live FHFA HPI data. */
+function replaceHpiChart(hpi) {
+  const canvas = document.getElementById('hpi-chart');
+  if (!canvas) return;
+  const chart = Chart.getChart(canvas);
+  if (!chart) return;
+  // Show last ~10 years of quarters as labels; values are the index level.
+  const labels = hpi.quarters.map(q => q.replace('-Q', ' Q'));
+  chart.data.labels = labels;
+  // Replace just the first dataset (Savannah); leave GA/US lines as demo for now.
+  chart.data.datasets[0].label = 'Savannah';
+  chart.data.datasets[0].data = hpi.values;
+  // Drop the GA/US demo lines since we only have live Savannah data
+  chart.data.datasets = [chart.data.datasets[0]];
+  chart.update();
+}
+
+/** Rebuild the Relative Employment Performance chart from CES rebased to Jan 2015 = 100. */
+function replaceRelativeEmploymentChart(ces) {
+  const canvas = document.getElementById('rel-emp-chart');
+  if (!canvas) return;
+  const chart = Chart.getChart(canvas);
+  if (!chart) return;
+  // Find the Jan 2015 baseline (or use first available month if we don't have 2015)
+  // Our CES history starts 2019, so rebase to Jan 2019 = 100 instead.
+  const baseline = ces.values[0];
+  if (!baseline) return;
+  const rebased = ces.values.map(v => +(100 * v / baseline).toFixed(2));
+  // Reduce x-axis to annual labels (every 12th month) for readability
+  const labels = ces.months.map(m => m.split('-')[0]);
+  chart.data.labels = labels;
+  chart.data.datasets[0].label = 'Savannah';
+  chart.data.datasets[0].data = rebased;
+  chart.data.datasets = [chart.data.datasets[0]];
+  chart.update();
+}
+
+/** Rebuild the Per Capita Income chart from BEA Personal Income / population. */
+function replacePerCapitaIncomeChart(pi) {
+  const canvas = document.getElementById('pci-chart');
+  if (!canvas) return;
+  const chart = Chart.getChart(canvas);
+  if (!chart) return;
+  chart.data.labels = pi.years.map(String);
+  // PCI in $ thousands for cleaner axis
+  chart.data.datasets[0].label = 'Savannah';
+  chart.data.datasets[0].data = pi.per_capita_income.map(v => Math.round(v / 1000));
+  chart.data.datasets = [chart.data.datasets[0]];
+  chart.update();
+}
+
+/** Rebuild the Educational Attainment stacked bar from ACS B15003 values. */
+function replaceEducationChart(acs) {
+  const canvas = document.getElementById('edu-chart');
+  if (!canvas) return;
+  const chart = Chart.getChart(canvas);
+  if (!chart) return;
+  const v = acs.values, d = acs.derived;
+  const tot = v.edu_total_25plus;
+  if (!tot) return;
+  // Build category percentages: <HS, HS, Some College/Assoc, Bachelors, Graduate+
+  const lessHS = Math.max(0, tot - (
+    (v.edu_high_school_grad || 0) + (v.edu_ged_alt || 0) +
+    (v.edu_some_college_lt1yr || 0) + (v.edu_some_college_gt1yr || 0) +
+    (v.edu_associates || 0) + (v.edu_bachelors || 0) +
+    (v.edu_masters || 0) + (v.edu_professional || 0) + (v.edu_doctorate || 0)
+  ));
+  const pct = (x) => +(100 * x / tot).toFixed(1);
+  const someCollege = (v.edu_some_college_lt1yr || 0) + (v.edu_some_college_gt1yr || 0) + (v.edu_associates || 0);
+  const grad = (v.edu_masters || 0) + (v.edu_professional || 0) + (v.edu_doctorate || 0);
+  // Only update the Savannah column (first data point); leave GA/US as illustrative for now
+  chart.data.datasets[0].data[0] = pct(lessHS);
+  chart.data.datasets[1].data[0] = pct((v.edu_high_school_grad || 0) + (v.edu_ged_alt || 0));
+  chart.data.datasets[2].data[0] = pct(someCollege);
+  chart.data.datasets[3].data[0] = pct(v.edu_bachelors || 0);
+  chart.data.datasets[4].data[0] = pct(grad);
+  chart.update();
 }
 
 /** Replace the Industry Employment bar chart with live QCEW YoY changes. */
