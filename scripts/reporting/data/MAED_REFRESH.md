@@ -6,7 +6,8 @@ This file lives next to the CSV cache for that reason — when you come back in 
 
 ## When to refresh
 
-**Mid-to-late November each year**, after ITA publishes the new annual data. Confirm by checking [trade.gov/ita-metropolitan-export-series](https://www.trade.gov/ita-metropolitan-export-series) — the page footer reads e.g. "Last updated: November 2025 with 2024 annual data". Refresh once that footer year ticks over.
+**Mid-to-late November each year**, after ITA publishes the new annual data. Confirm by checking [git pull --rebase origin main
+git push) — the page footer reads e.g. "Last updated: November 2025 with 2024 annual data". Refresh once that footer year ticks over.
 
 The MSA reports gracefully degrade when the cache is missing or stale (the orchestrator's never-blank-on-failure logic renders prior-run values), so missing a month isn't a blocker.
 
