@@ -91,10 +91,11 @@ def _time_limit(seconds: int):
         signal.signal(signal.SIGALRM, old)
 
 # Per-source fetchers (each module in scripts/reporting/)
-from reporting import pull_bls, pull_fhfa, pull_census, pull_bea, pull_irs_soi, pull_ita, pull_bps
+from reporting import (pull_bls, pull_fhfa, pull_census, pull_bea, pull_irs_soi,
+                       pull_ita, pull_bps, pull_epa, pull_schoolfin)
 
 # Phase 2 composite/forecast models (each module in scripts/modeling/)
-from modeling import business_cycle_index, forecast_arima
+from modeling import business_cycle_index, forecast_arima, vitality, quality_of_life
 
 # Lookup tables
 MSA_BY_CBSA = {cbsa: (short, full, pop) for cbsa, short, full, pop in GA_MSAS}
@@ -200,6 +201,20 @@ def run_irs_soi_migration(cbsa: str):
     return data, "live"
 
 
+def run_epa_air_quality(cbsa: str):
+    data = pull_epa.fetch_cbsa_air_quality(cbsa)
+    if data is None:
+        return None, "failed"
+    return data, "live"
+
+
+def run_school_finance(cbsa: str):
+    data = pull_schoolfin.fetch_school_finance(cbsa)
+    if data is None:
+        return None, "failed"
+    return data, "live"
+
+
 # Section registry — order is the order we run them. Data fetches first; modeling
 # sections (Phase 2 composites/forecasts) run after, with access to the in-progress
 # output dict so they can read freshly-fetched data as their inputs.
@@ -217,6 +232,8 @@ SECTIONS = [
     ("census_bps_permits",      run_census_bps_permits),
     ("ita_msa_exports",         run_ita_msa_exports),
     ("irs_soi_migration",       run_irs_soi_migration),
+    ("epa_air_quality",         run_epa_air_quality),
+    ("school_finance",          run_school_finance),
 ]
 
 
@@ -238,10 +255,26 @@ def run_forecast_arima(cbsa: str, output_so_far: dict):
     return data, "live"
 
 
+def run_vitality(cbsa: str, output_so_far: dict):
+    data = vitality.compute(cbsa, output_so_far)
+    if data is None:
+        return None, "failed"
+    return data, "live"
+
+
+def run_quality_of_life(cbsa: str, output_so_far: dict):
+    data = quality_of_life.compute(cbsa, output_so_far)
+    if data is None:
+        return None, "failed"
+    return data, "live"
+
+
 # Modeling section registry — runner signature is (cbsa, output_so_far)
 MODELING_SECTIONS = [
     ("business_cycle_index", run_business_cycle_index),
     ("forecast_arima", run_forecast_arima),
+    ("vitality", run_vitality),
+    ("quality_of_life", run_quality_of_life),
 ]
 
 

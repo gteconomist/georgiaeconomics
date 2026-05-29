@@ -204,6 +204,14 @@ ACS_VARIABLES: Dict[str, str] = {
     "B08303_013E": "commute_60_plus_min",
     # Inequality (Gini)
     "B19083_001E": "gini_coefficient",
+    # Labor-force participation (population 16+), table B23025
+    "B23025_001E": "lf_universe_16plus",
+    "B23025_002E": "lf_in_labor_force",
+    # Young-adult share (25-34), sex-by-age table B01001
+    "B01001_011E": "age_m_25_29",
+    "B01001_012E": "age_m_30_34",
+    "B01001_035E": "age_f_25_29",
+    "B01001_036E": "age_f_30_34",
 }
 
 
@@ -285,6 +293,15 @@ def fetch_acs_demographics(cbsa: str, year: Optional[int] = None) -> Optional[di
             derived["price_to_income_ratio"] = round(
                 values["median_home_value"] / values["median_household_income"], 2
             )
+        if values.get("lf_universe_16plus"):
+            derived["labor_force_participation_pct"] = round(
+                100 * (values.get("lf_in_labor_force") or 0) / values["lf_universe_16plus"], 2
+            )
+        if values.get("total_population"):
+            young = sum((values.get(k) or 0) for k in [
+                "age_m_25_29", "age_m_30_34", "age_f_25_29", "age_f_30_34"
+            ])
+            derived["young_adult_25_34_pct"] = round(100 * young / values["total_population"], 2)
 
         return {
             "source": f"Census ACS 5-year, {y} vintage (covers {y-4}-{y})",
