@@ -2117,7 +2117,68 @@
       "sectors": {}
     },
     "census_bps_permits": null,
-    "ita_msa_exports": null,
+    "ita_msa_exports": {
+      "year": 2024,
+      "total_usd_millions": 8378.2,
+      "by_product": [
+        {
+          "label": "336--Transportation Equipment",
+          "value_usd_mil": 2458.1
+        },
+        {
+          "label": "322--Paper",
+          "value_usd_mil": 1323.3
+        },
+        {
+          "label": "325--Chemicals",
+          "value_usd_mil": 1128.5
+        },
+        {
+          "label": "111--Agricultural Products",
+          "value_usd_mil": 524.6
+        }
+      ],
+      "by_destination": [
+        {
+          "label": "Asia",
+          "value_usd_mil": 3492.6
+        },
+        {
+          "label": "APEC",
+          "value_usd_mil": 2763.5
+        },
+        {
+          "label": "FTA Partners",
+          "value_usd_mil": 1900.4
+        },
+        {
+          "label": "EU",
+          "value_usd_mil": 1848.4
+        },
+        {
+          "label": "USMCA",
+          "value_usd_mil": 882.2
+        },
+        {
+          "label": "ASEAN",
+          "value_usd_mil": 534.3
+        },
+        {
+          "label": "S. America",
+          "value_usd_mil": 366.4
+        },
+        {
+          "label": "Africa",
+          "value_usd_mil": 333.2
+        },
+        {
+          "label": "CAFTA-DR",
+          "value_usd_mil": 200.6
+        }
+      ],
+      "source_endpoint": "reporting/data/maed_2024.csv",
+      "source": "ITA Metropolitan Area Exports (annual CSV refresh \u2014 maed_2024.csv)"
+    },
     "irs_soi_migration": {
       "year_pair_label": "2022\u21922023",
       "from_year": 2022,
@@ -2424,7 +2485,7 @@
     "qcew_industry_shares": "live",
     "qcew_yoy_changes": "live",
     "census_bps_permits": "failed",
-    "ita_msa_exports": "failed",
+    "ita_msa_exports": "live",
     "irs_soi_migration": "live",
     "business_cycle_index": "live"
   }
