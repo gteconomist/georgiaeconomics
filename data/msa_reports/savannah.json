@@ -2006,7 +2006,13 @@
         "median_home_value": 302000.0,
         "commute_universe": 179944.0,
         "commute_60_plus_min": 2818.0,
-        "gini_coefficient": 0.4565
+        "gini_coefficient": 0.4565,
+        "lf_universe_16plus": 334313.0,
+        "lf_in_labor_force": 217631.0,
+        "age_m_25_29": 15097.0,
+        "age_m_30_34": 15692.0,
+        "age_f_25_29": 15330.0,
+        "age_f_30_34": 16299.0
       },
       "derived": {
         "pct_bachelors_or_higher": 35.83,
@@ -2016,7 +2022,9 @@
         "pct_renter_occupied": 33.63,
         "pct_vacant": 11.11,
         "pct_commute_60_plus": 1.57,
-        "price_to_income_ratio": 3.91
+        "price_to_income_ratio": 3.91,
+        "labor_force_participation_pct": 65.1,
+        "young_adult_25_34_pct": 14.92
       }
     },
     "bea_gmp": {
@@ -2272,6 +2280,18 @@
       ],
       "source": "IRS SOI county-to-county migration (https://www.irs.gov/pub/irs-soi/countyinflow2223.csv)"
     },
+    "epa_air_quality": {
+      "year": 2025,
+      "median_aqi": 44.0,
+      "max_aqi": 90.0,
+      "p90_aqi": 59.0,
+      "days_with_aqi": 273,
+      "good_days": 182,
+      "pct_good_days": 66.7,
+      "unhealthy_or_worse_days": 0,
+      "source": "EPA AirData annual AQI by CBSA, 2025 (https://aqs.epa.gov/aqsweb/airdata/annual_aqi_by_cbsa_2025.zip)"
+    },
+    "school_finance": null,
     "business_cycle_index": {
       "method": "Stock-Watson coincident (2-input PCA, first principal component (positive co-movement, equal-weight loadings))",
       "components": [
@@ -2579,6 +2599,71 @@
         "hpi_yoy"
       ],
       "source": "EIG forecast composite \u2014 computed from BLS/BEA/Census/FHFA actuals"
+    },
+    "vitality": {
+      "value": 0.77,
+      "rank_estimate": 89,
+      "n_metros": 387,
+      "mean_z": 0.742,
+      "components": {
+        "labor_force_participation": {
+          "value": 65.1,
+          "z": 0.467,
+          "weight": 1.0
+        },
+        "income_growth_yoy": {
+          "value": 6.65,
+          "z": 0.825,
+          "weight": 1.0
+        },
+        "young_adult_share": {
+          "value": 14.92,
+          "z": 0.9,
+          "weight": 0.8
+        },
+        "net_migration_rate": {
+          "value": 1.255,
+          "z": 0.796,
+          "weight": 1.2
+        }
+      },
+      "method": "EIG composite: weighted average of z-scores for LFP, income growth, young-adult share and net-migration rate vs. approximate U.S.-metro benchmarks; score = normal CDF of the mean z.",
+      "note": "Rank is an estimate from the composite's normal percentile against reference benchmarks, not a live ranking of all metros.",
+      "source": "EIG composite \u2014 computed from ACS, BEA and IRS SOI inputs"
+    },
+    "quality_of_life": {
+      "value": 174,
+      "rank_estimate": 122,
+      "n_metros": 387,
+      "mean_z": 0.478,
+      "components": {
+        "median_aqi": {
+          "value": 44.0,
+          "z": 0.071,
+          "weight": 1.0
+        },
+        "commute_60_plus_pct": {
+          "value": 1.57,
+          "z": 1.857,
+          "weight": 0.8
+        },
+        "price_to_income": {
+          "value": 3.91,
+          "z": 0.069,
+          "weight": 1.0
+        },
+        "poverty_rate_pct": {
+          "value": 12.15,
+          "z": 0.189,
+          "weight": 1.0
+        }
+      },
+      "excluded": [
+        "crime"
+      ],
+      "method": "EIG composite: weighted average of sign-adjusted z-scores for air quality, commute, affordability, poverty and school spending vs. approximate U.S.-metro benchmarks; scaled to 0-300 (150 = average).",
+      "note": "Crime excluded \u2014 no clean automated current MSA-level source exists (FBI API is agency/state only; the FBI by-MSA table ended in 2019). Rank is an estimate from the composite's normal percentile.",
+      "source": "EIG composite \u2014 computed from EPA, ACS and Census F-33 inputs"
     }
   },
   "section_status": {
@@ -2595,7 +2680,11 @@
     "census_bps_permits": "failed",
     "ita_msa_exports": "live",
     "irs_soi_migration": "live",
+    "epa_air_quality": "live",
+    "school_finance": "failed",
     "business_cycle_index": "live",
-    "forecast_arima": "live"
+    "forecast_arima": "live",
+    "vitality": "live",
+    "quality_of_life": "live"
   }
 }
