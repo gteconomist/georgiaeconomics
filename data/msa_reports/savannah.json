@@ -2291,7 +2291,18 @@
       "unhealthy_or_worse_days": 0,
       "source": "EPA AirData annual AQI by CBSA, 2025 (https://aqs.epa.gov/aqsweb/airdata/annual_aqi_by_cbsa_2025.zip)"
     },
-    "school_finance": null,
+    "school_finance": {
+      "year": 2024,
+      "per_pupil_current": 20347,
+      "total_enrollment": 60675,
+      "districts": [
+        "BRYAN CO SCH DIST",
+        "SAVANNAH-CHATHAM COUNTY PUBLIC SCHOOL SYSTEM",
+        "EFFINGHAM CO SCH DIST"
+      ],
+      "match_mode": "county-fips",
+      "source": "Census Annual Survey of School System Finances (F-33), FY2024"
+    },
     "business_cycle_index": {
       "method": "Stock-Watson coincident (2-input PCA, first principal component (positive co-movement, equal-weight loadings))",
       "components": [
@@ -2632,10 +2643,10 @@
       "source": "EIG composite \u2014 computed from ACS, BEA and IRS SOI inputs"
     },
     "quality_of_life": {
-      "value": 174,
-      "rank_estimate": 122,
+      "value": 183,
+      "rank_estimate": 98,
       "n_metros": 387,
-      "mean_z": 0.478,
+      "mean_z": 0.66,
       "components": {
         "median_aqi": {
           "value": 44.0,
@@ -2656,6 +2667,11 @@
           "value": 12.15,
           "z": 0.189,
           "weight": 1.0
+        },
+        "per_pupil_spending": {
+          "value": 20347,
+          "z": 1.528,
+          "weight": 0.8
         }
       },
       "excluded": [
@@ -2681,7 +2697,7 @@
     "ita_msa_exports": "live",
     "irs_soi_migration": "live",
     "epa_air_quality": "live",
-    "school_finance": "failed",
+    "school_finance": "live",
     "business_cycle_index": "live",
     "forecast_arima": "live",
     "vitality": "live",
