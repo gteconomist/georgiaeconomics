@@ -502,7 +502,7 @@
   <!-- ============================================================ -->
   <!-- PAGE 1 BOTTOM: Headline indicators table                      -->
   <!-- ============================================================ -->
-  <div style="margin: 8px 0 6px; padding: 10px 14px; background: rgba(212, 160, 23, 0.10); border-left: 4px solid var(--mustard); font-size: 12px; color: var(--ink);">
+  <div id="forecast-banner" style="margin: 8px 0 6px; padding: 10px 14px; background: rgba(212, 160, 23, 0.10); border-left: 4px solid var(--mustard); font-size: 12px; color: var(--ink);">
     <strong style="color: var(--navy);">Forecast model pending &middot; Historical columns are demo data.</strong>
     <span class="src-pill demo" style="margin-left:6px;">Demo</span>
     Historical columns are illustrative trajectories that look plausible for a Sun Belt port metro; the 2025 column shows a handful of values pulled live from the existing <code>data/msa.json</code> feed (BLS LAUS unemployment, FHFA HPI, Census PEP population growth, BEA GDP per capita). Forecast columns are intentionally blank until Phase 2 of the rollout, when the Economic Impact Group ARIMA + Atlanta Fed consensus blend goes live.
@@ -1200,7 +1200,7 @@ function init() {
 async function loadLiveData() {
   let data;
   try {
-    const resp = await fetch('/data/msa_reports/savannah.json?v=' + new Date().toISOString().slice(0,10));
+    const resp = await fetch('/data/msa_reports/savannah.json?t=' + Date.now(), { cache: 'no-store' });
     if (!resp.ok) throw new Error('HTTP ' + resp.status);
     data = await resp.json();
   } catch (err) {
@@ -1418,6 +1418,12 @@ async function loadLiveData() {
     flipSectionPill('edu-chart-pill', 'live');
   }
 
+  // --- Forecast columns (2026F-2030F): runs last so it chains off the live 2025 cells ---
+  const fc = data.sections.forecast_arima;
+  if (fc && fc.years) {
+    replaceForecastColumns(fc);
+  }
+
   if (liveCells.length === 0) {
     // Nothing live yet — leave strip hidden
     return;
@@ -1496,6 +1502,57 @@ function replaceExportsTables(ita) {
   destEl.innerHTML = ita.by_destination.slice(0, 6).map(c => fmtRow(c.label, c.value_usd_mil)).join('');
   const note = document.getElementById('exports-source-line');
   if (note) note.innerHTML = `Source: ITA Metropolitan Area Exports, ${ita.year} (${ita.source_endpoint || 'api.trade.gov'}).`;
+}
+
+/** Populate the 2026F-2030F columns of the headline indicators table.
+ *  Each forecast row is identified by its live 2025 cell (data-live-cell="<metric>_2025").
+ *  % rows write the forecast yoy directly; level rows chain the forecast yoy onto the
+ *  value already shown in the 2025 column, so the projection stays visually continuous
+ *  regardless of the historical column's base. */
+function replaceForecastColumns(fc) {
+  const table = document.querySelector('.report-table');
+  if (!table || !fc) return;
+  const fmt = (metric, v) =>
+    (metric === 'sf_permits' || metric === 'mf_permits')
+      ? Math.round(v).toLocaleString()
+      : v.toFixed(1);
+  let filledAny = false;
+  table.querySelectorAll('tbody tr').forEach(tr => {
+    const baseCell = tr.querySelector('[data-live-cell]');
+    if (!baseCell) return;
+    const metric = baseCell.dataset.liveCell.replace(/_2025$/, '');
+    const cells = Array.from(tr.children);
+    const fcCells = cells.slice(-5);
+    if (fcCells.length !== 5) return;
+
+    if (metric.endsWith('_yoy')) {
+      if (!fc[metric]) return;
+      fc[metric].forEach((v, i) => { fcCells[i].textContent = (v >= 0 ? '+' : '') + v.toFixed(1); });
+    } else if (fc[metric + '_yoy']) {
+      const base = parseFloat(String(baseCell.textContent).replace(/[,$\s]/g, ''));
+      if (isNaN(base)) return;
+      let v = base;
+      fc[metric + '_yoy'].forEach((g, i) => { v = v * (1 + g / 100); fcCells[i].textContent = fmt(metric, v); });
+    } else if (fc[metric]) {
+      fc[metric].forEach((v, i) => { fcCells[i].textContent = fmt(metric, v); });
+    } else {
+      return;
+    }
+    fcCells.forEach(c => { c.style.color = 'var(--peach-deep)'; c.style.fontStyle = 'italic'; });
+    filledAny = true;
+  });
+
+  if (filledAny) {
+    const banner = document.getElementById('forecast-banner');
+    if (banner) {
+      banner.innerHTML =
+        '<strong style="color: var(--navy);">Forecast columns live.</strong> ' +
+        '<span class="src-pill proxy">EIG composite</span> ' +
+        '<span class="src-pill live" id="forecast-pill">Live</span> ' +
+        '2026&ndash;2030 projections from a damped-trend (Holt / ARIMA-family) model fit on BLS, BEA, ' +
+        'Census and FHFA actuals. Historical 2019&ndash;2024 columns remain illustrative; the 2025 column is live.';
+    }
+  }
 }
 
 /** Rebuild the House Price Index line chart from live FHFA HPI data. */

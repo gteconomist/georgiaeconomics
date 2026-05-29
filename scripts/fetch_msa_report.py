@@ -53,10 +53,10 @@ sys.path.insert(0, str(Path(__file__).parent))
 from _ga_msas import GA_MSAS
 
 # Per-source fetchers (each module in scripts/reporting/)
-from reporting import pull_bls, pull_fhfa, pull_census, pull_bea, pull_irs_soi, pull_ita
+from reporting import pull_bls, pull_fhfa, pull_census, pull_bea, pull_irs_soi, pull_ita, pull_bps
 
 # Phase 2 composite/forecast models (each module in scripts/modeling/)
-from modeling import business_cycle_index
+from modeling import business_cycle_index, forecast_arima
 
 # Lookup tables
 MSA_BY_CBSA = {cbsa: (short, full, pop) for cbsa, short, full, pop in GA_MSAS}
@@ -138,11 +138,11 @@ def run_qcew_yoy_changes(cbsa: str):
 
 
 def run_census_bps_permits(cbsa: str):
-    # BPS is fetched with years_back=2 to keep worst-case wall time bounded.
-    # Census BPS Metro files are 3MB each and frequently slow/timeout; the
-    # orchestrator's never-blank-on-failure logic preserves older years from
-    # the prior cached JSON across runs, so we only refresh the recent window.
-    data = pull_census.fetch_bps_permits_annual(cbsa, years_back=2)
+    # Building permits now come from FRED (Census BPS mirror) rather than the
+    # slow www2.census.gov flat files. FRED gives the proper SF/MF unit split
+    # via {GEO}BP1FH (1-unit) and {GEO}BPPRIV (total). On failure the
+    # orchestrator's never-blank-on-failure logic preserves prior cached values.
+    data = pull_bps.fetch_bps_permits_annual(cbsa, years_back=6)
     if data is None:
         return None, "failed"
     return data, "live"
@@ -193,9 +193,17 @@ def run_business_cycle_index(cbsa: str, output_so_far: dict):
     return data, "live"
 
 
+def run_forecast_arima(cbsa: str, output_so_far: dict):
+    data = forecast_arima.compute(cbsa, output_so_far)
+    if data is None:
+        return None, "failed"
+    return data, "live"
+
+
 # Modeling section registry — runner signature is (cbsa, output_so_far)
 MODELING_SECTIONS = [
     ("business_cycle_index", run_business_cycle_index),
+    ("forecast_arima", run_forecast_arima),
 ]
 
 
