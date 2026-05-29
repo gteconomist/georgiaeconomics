@@ -3,7 +3,7 @@
   "short_name": "Hinesville",
   "full_name": "Hinesville, GA",
   "population": 78000,
-  "as_of": "2026-05-28",
+  "as_of": "2026-05-29",
   "sections": {
     "ces_employment": {
       "series_id": "SMS13259800000000001",
@@ -1061,7 +1061,56 @@
       "sectors": {}
     },
     "census_bps_permits": null,
-    "ita_msa_exports": null,
+    "ita_msa_exports": {
+      "year": 2024,
+      "total_usd_millions": 265.9,
+      "by_product": [
+        {
+          "label": "325--Chemicals",
+          "value_usd_mil": 176.6
+        },
+        {
+          "label": "322--Paper",
+          "value_usd_mil": 14.4
+        }
+      ],
+      "by_destination": [
+        {
+          "label": "FTA Partners",
+          "value_usd_mil": 163.1
+        },
+        {
+          "label": "APEC",
+          "value_usd_mil": 158.2
+        },
+        {
+          "label": "USMCA",
+          "value_usd_mil": 142.5
+        },
+        {
+          "label": "EU",
+          "value_usd_mil": 44.6
+        },
+        {
+          "label": "Asia",
+          "value_usd_mil": 13.3
+        },
+        {
+          "label": "CAFTA-DR",
+          "value_usd_mil": 6.9
+        },
+        {
+          "label": "ASEAN",
+          "value_usd_mil": 0.7
+        },
+        {
+          "label": "Africa",
+          "value_usd_mil": 0.2
+        }
+      ],
+      "source_endpoint": "reporting/data/maed_2024.csv",
+      "source": "ITA Metropolitan Area Exports (annual CSV refresh \u2014 maed_2024.csv)"
+    },
     "irs_soi_migration": {
       "year_pair_label": "2022\u21922023",
       "from_year": 2022,
@@ -1354,6 +1403,114 @@
       "trough_value": 58.08,
       "n_months": 86,
       "source": "EIG composite \u2014 computed from BLS CES + LAUS"
+    },
+    "forecast_arima": {
+      "gmp": [
+        6.2,
+        6.5,
+        6.9,
+        7.2,
+        7.6
+      ],
+      "gmp_yoy": [
+        5.5,
+        5.4,
+        5.3,
+        5.2,
+        5.0
+      ],
+      "total_employment": [
+        22.2,
+        22.2,
+        22.3,
+        22.3,
+        22.3
+      ],
+      "total_employment_yoy": [
+        0.4,
+        0.3,
+        0.2,
+        0.2,
+        0.1
+      ],
+      "unemployment": [
+        3.8,
+        3.8,
+        3.8,
+        3.8,
+        3.8
+      ],
+      "personal_income_yoy": [
+        5.8,
+        5.5,
+        5.2,
+        5.0,
+        4.7
+      ],
+      "median_hh_income": [
+        65.3,
+        68.9,
+        72.5,
+        76.1,
+        79.7
+      ],
+      "median_hh_income_yoy": [
+        5.8,
+        5.5,
+        5.2,
+        5.0,
+        4.7
+      ],
+      "population": [
+        87.0,
+        87.9,
+        88.8,
+        89.6,
+        90.3
+      ],
+      "population_yoy": [
+        1.1,
+        1.0,
+        1.0,
+        0.9,
+        0.9
+      ],
+      "hpi_yoy": [
+        9.1,
+        8.5,
+        8.4,
+        8.2,
+        8.0
+      ],
+      "method": "Damped-trend Holt smoothing (ARIMA(1,1,2) family), per-series grid-fit on annual actuals; level series modeled in log space",
+      "horizon": [
+        2026,
+        2027,
+        2028,
+        2029,
+        2030
+      ],
+      "years": [
+        2026,
+        2027,
+        2028,
+        2029,
+        2030
+      ],
+      "metrics": [
+        "gmp",
+        "gmp_yoy",
+        "total_employment",
+        "total_employment_yoy",
+        "unemployment",
+        "personal_income_yoy",
+        "median_hh_income",
+        "median_hh_income_yoy",
+        "population",
+        "population_yoy",
+        "hpi_yoy"
+      ],
+      "source": "EIG forecast composite \u2014 computed from BLS/BEA/Census/FHFA actuals"
     }
   },
   "section_status": {
@@ -1368,8 +1525,9 @@
     "qcew_industry_shares": "live",
     "qcew_yoy_changes": "live",
     "census_bps_permits": "failed",
-    "ita_msa_exports": "failed",
+    "ita_msa_exports": "live",
     "irs_soi_migration": "live",
-    "business_cycle_index": "live"
+    "business_cycle_index": "live",
+    "forecast_arima": "live"
   }
 }

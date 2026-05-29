@@ -3,7 +3,7 @@
   "short_name": "Warner Robins",
   "full_name": "Warner Robins, GA",
   "population": 199000,
-  "as_of": "2026-05-28",
+  "as_of": "2026-05-29",
   "sections": {
     "ces_employment": {
       "series_id": "SMS13475800000000001",
@@ -1253,7 +1253,60 @@
       "sectors": {}
     },
     "census_bps_permits": null,
-    "ita_msa_exports": null,
+    "ita_msa_exports": {
+      "year": 2024,
+      "total_usd_millions": 223.6,
+      "by_product": [
+        {
+          "label": "336--Transportation Equipment",
+          "value_usd_mil": 121.0
+        },
+        {
+          "label": "333--Machinery",
+          "value_usd_mil": 21.4
+        },
+        {
+          "label": "334--Computer & Electronic Products",
+          "value_usd_mil": 13.5
+        }
+      ],
+      "by_destination": [
+        {
+          "label": "FTA Partners",
+          "value_usd_mil": 192.3
+        },
+        {
+          "label": "APEC",
+          "value_usd_mil": 190.2
+        },
+        {
+          "label": "USMCA",
+          "value_usd_mil": 164.4
+        },
+        {
+          "label": "Asia",
+          "value_usd_mil": 26.6
+        },
+        {
+          "label": "EU",
+          "value_usd_mil": 12.7
+        },
+        {
+          "label": "ASEAN",
+          "value_usd_mil": 10.5
+        },
+        {
+          "label": "CAFTA-DR",
+          "value_usd_mil": 2.2
+        },
+        {
+          "label": "Africa",
+          "value_usd_mil": 0.8
+        }
+      ],
+      "source_endpoint": "reporting/data/maed_2024.csv",
+      "source": "ITA Metropolitan Area Exports (annual CSV refresh \u2014 maed_2024.csv)"
+    },
     "irs_soi_migration": {
       "year_pair_label": "2022\u21922023",
       "from_year": 2022,
@@ -1546,6 +1599,114 @@
       "trough_value": 60.43,
       "n_months": 86,
       "source": "EIG composite \u2014 computed from BLS CES + LAUS"
+    },
+    "forecast_arima": {
+      "gmp": [
+        12.9,
+        13.6,
+        14.3,
+        15.0,
+        15.8
+      ],
+      "gmp_yoy": [
+        5.4,
+        5.3,
+        5.2,
+        5.0,
+        4.9
+      ],
+      "total_employment": [
+        79.4,
+        79.6,
+        79.8,
+        80.0,
+        80.2
+      ],
+      "total_employment_yoy": [
+        0.6,
+        0.3,
+        0.3,
+        0.2,
+        0.2
+      ],
+      "unemployment": [
+        3.1,
+        3.1,
+        3.1,
+        3.1,
+        3.1
+      ],
+      "personal_income_yoy": [
+        3.9,
+        3.5,
+        3.1,
+        2.8,
+        2.5
+      ],
+      "median_hh_income": [
+        82.4,
+        85.3,
+        88.0,
+        90.4,
+        92.7
+      ],
+      "median_hh_income_yoy": [
+        3.9,
+        3.5,
+        3.1,
+        2.8,
+        2.5
+      ],
+      "population": [
+        204.6,
+        207.8,
+        211.0,
+        214.1,
+        217.2
+      ],
+      "population_yoy": [
+        1.6,
+        1.5,
+        1.5,
+        1.5,
+        1.5
+      ],
+      "hpi_yoy": [
+        8.9,
+        7.5,
+        7.4,
+        7.2,
+        7.1
+      ],
+      "method": "Damped-trend Holt smoothing (ARIMA(1,1,2) family), per-series grid-fit on annual actuals; level series modeled in log space",
+      "horizon": [
+        2026,
+        2027,
+        2028,
+        2029,
+        2030
+      ],
+      "years": [
+        2026,
+        2027,
+        2028,
+        2029,
+        2030
+      ],
+      "metrics": [
+        "gmp",
+        "gmp_yoy",
+        "total_employment",
+        "total_employment_yoy",
+        "unemployment",
+        "personal_income_yoy",
+        "median_hh_income",
+        "median_hh_income_yoy",
+        "population",
+        "population_yoy",
+        "hpi_yoy"
+      ],
+      "source": "EIG forecast composite \u2014 computed from BLS/BEA/Census/FHFA actuals"
     }
   },
   "section_status": {
@@ -1560,8 +1721,9 @@
     "qcew_industry_shares": "live",
     "qcew_yoy_changes": "live",
     "census_bps_permits": "failed",
-    "ita_msa_exports": "failed",
+    "ita_msa_exports": "live",
     "irs_soi_migration": "live",
-    "business_cycle_index": "live"
+    "business_cycle_index": "live",
+    "forecast_arima": "live"
   }
 }

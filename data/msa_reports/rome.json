@@ -3,7 +3,7 @@
   "short_name": "Rome",
   "full_name": "Rome, GA",
   "population": 99000,
-  "as_of": "2026-05-28",
+  "as_of": "2026-05-29",
   "sections": {
     "ces_employment": {
       "series_id": "SMS13406600000000001",
@@ -1444,8 +1444,107 @@
       "as_of_label": "2025 Q3",
       "sectors": {}
     },
-    "census_bps_permits": null,
-    "ita_msa_exports": null,
+    "census_bps_permits": {
+      "source": "Census Building Permits Survey via FRED (ROME613BP1FH + ROME613BPPRIV)",
+      "years": [
+        2020,
+        2021,
+        2022,
+        2023,
+        2024,
+        2025
+      ],
+      "single_family": [
+        282,
+        204,
+        310,
+        327,
+        355,
+        330
+      ],
+      "multi_family": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "permits_per_1k": [
+        2.85,
+        2.06,
+        3.13,
+        3.3,
+        3.59,
+        3.33
+      ],
+      "latest_year": 2025,
+      "latest_single": 330,
+      "latest_multi": 0,
+      "latest_per_1k": 3.33
+    },
+    "ita_msa_exports": {
+      "year": 2024,
+      "total_usd_millions": 118.8,
+      "by_product": [
+        {
+          "label": "333--Machinery",
+          "value_usd_mil": 38.4
+        },
+        {
+          "label": "311--Processed Foods",
+          "value_usd_mil": 22.6
+        },
+        {
+          "label": "336--Transportation Equipment",
+          "value_usd_mil": 18.3
+        },
+        {
+          "label": "RESI--Residual - Not in Top 5",
+          "value_usd_mil": 16.8
+        },
+        {
+          "label": "326--Plastics & Rubber Products",
+          "value_usd_mil": 13.0
+        },
+        {
+          "label": "332--Fabricated metal products",
+          "value_usd_mil": 9.7
+        }
+      ],
+      "by_destination": [
+        {
+          "label": "FTA Partners",
+          "value_usd_mil": 91.4
+        },
+        {
+          "label": "APEC",
+          "value_usd_mil": 89.0
+        },
+        {
+          "label": "USMCA",
+          "value_usd_mil": 83.3
+        },
+        {
+          "label": "Asia",
+          "value_usd_mil": 15.1
+        },
+        {
+          "label": "EU",
+          "value_usd_mil": 11.8
+        },
+        {
+          "label": "ASEAN",
+          "value_usd_mil": 2.1
+        },
+        {
+          "label": "S. America",
+          "value_usd_mil": 1.8
+        }
+      ],
+      "source_endpoint": "reporting/data/maed_2024.csv",
+      "source": "ITA Metropolitan Area Exports (annual CSV refresh \u2014 maed_2024.csv)"
+    },
     "irs_soi_migration": {
       "year_pair_label": "2022\u21922023",
       "from_year": 2022,
@@ -1734,7 +1833,8 @@
       "trough_value": 62.47,
       "n_months": 86,
       "source": "EIG composite \u2014 computed from BLS CES + LAUS"
-    }
+    },
+    "forecast_arima": null
   },
   "section_status": {
     "ces_employment": "live",
@@ -1747,9 +1847,10 @@
     "bea_personal_income": "live",
     "qcew_industry_shares": "live",
     "qcew_yoy_changes": "live",
-    "census_bps_permits": "failed",
-    "ita_msa_exports": "failed",
+    "census_bps_permits": "live",
+    "ita_msa_exports": "live",
     "irs_soi_migration": "live",
-    "business_cycle_index": "live"
+    "business_cycle_index": "live",
+    "forecast_arima": "failed"
   }
 }

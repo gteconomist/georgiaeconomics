@@ -3,7 +3,7 @@
   "short_name": "Athens",
   "full_name": "Athens-Clarke County, GA",
   "population": 217000,
-  "as_of": "2026-05-28",
+  "as_of": "2026-05-29",
   "sections": {
     "ces_employment": {
       "series_id": "SMS13120200000000001",
@@ -2117,7 +2117,68 @@
       "sectors": {}
     },
     "census_bps_permits": null,
-    "ita_msa_exports": null,
+    "ita_msa_exports": {
+      "year": 2024,
+      "total_usd_millions": 430.4,
+      "by_product": [
+        {
+          "label": "333--Machinery",
+          "value_usd_mil": 149.7
+        },
+        {
+          "label": "325--Chemicals",
+          "value_usd_mil": 146.8
+        },
+        {
+          "label": "RESI--Residual - Not in Top 5",
+          "value_usd_mil": 53.1
+        },
+        {
+          "label": "313--Textiles & Fabrics",
+          "value_usd_mil": 10.9
+        }
+      ],
+      "by_destination": [
+        {
+          "label": "APEC",
+          "value_usd_mil": 239.5
+        },
+        {
+          "label": "FTA Partners",
+          "value_usd_mil": 211.5
+        },
+        {
+          "label": "USMCA",
+          "value_usd_mil": 185.0
+        },
+        {
+          "label": "EU",
+          "value_usd_mil": 96.5
+        },
+        {
+          "label": "Asia",
+          "value_usd_mil": 55.5
+        },
+        {
+          "label": "S. America",
+          "value_usd_mil": 43.1
+        },
+        {
+          "label": "ASEAN",
+          "value_usd_mil": 19.6
+        },
+        {
+          "label": "Africa",
+          "value_usd_mil": 12.9
+        },
+        {
+          "label": "CAFTA-DR",
+          "value_usd_mil": 5.6
+        }
+      ],
+      "source_endpoint": "reporting/data/maed_2024.csv",
+      "source": "ITA Metropolitan Area Exports (annual CSV refresh \u2014 maed_2024.csv)"
+    },
     "irs_soi_migration": {
       "year_pair_label": "2022\u21922023",
       "from_year": 2022,
@@ -2410,6 +2471,114 @@
       "trough_value": 57.79,
       "n_months": 86,
       "source": "EIG composite \u2014 computed from BLS CES + LAUS"
+    },
+    "forecast_arima": {
+      "gmp": [
+        16.0,
+        16.7,
+        17.2,
+        17.8,
+        18.3
+      ],
+      "gmp_yoy": [
+        4.2,
+        3.8,
+        3.4,
+        3.1,
+        2.8
+      ],
+      "total_employment": [
+        107.5,
+        108.5,
+        109.3,
+        110.0,
+        110.5
+      ],
+      "total_employment_yoy": [
+        0.9,
+        0.9,
+        0.8,
+        0.6,
+        0.5
+      ],
+      "unemployment": [
+        3.2,
+        3.2,
+        3.2,
+        3.2,
+        3.2
+      ],
+      "personal_income_yoy": [
+        6.6,
+        6.5,
+        6.3,
+        6.2,
+        6.1
+      ],
+      "median_hh_income": [
+        69.9,
+        74.5,
+        79.2,
+        84.1,
+        89.2
+      ],
+      "median_hh_income_yoy": [
+        6.6,
+        6.5,
+        6.3,
+        6.2,
+        6.1
+      ],
+      "population": [
+        224.7,
+        226.8,
+        229.0,
+        231.1,
+        233.2
+      ],
+      "population_yoy": [
+        1.0,
+        1.0,
+        0.9,
+        0.9,
+        0.9
+      ],
+      "hpi_yoy": [
+        9.8,
+        8.4,
+        8.2,
+        8.0,
+        7.9
+      ],
+      "method": "Damped-trend Holt smoothing (ARIMA(1,1,2) family), per-series grid-fit on annual actuals; level series modeled in log space",
+      "horizon": [
+        2026,
+        2027,
+        2028,
+        2029,
+        2030
+      ],
+      "years": [
+        2026,
+        2027,
+        2028,
+        2029,
+        2030
+      ],
+      "metrics": [
+        "gmp",
+        "gmp_yoy",
+        "total_employment",
+        "total_employment_yoy",
+        "unemployment",
+        "personal_income_yoy",
+        "median_hh_income",
+        "median_hh_income_yoy",
+        "population",
+        "population_yoy",
+        "hpi_yoy"
+      ],
+      "source": "EIG forecast composite \u2014 computed from BLS/BEA/Census/FHFA actuals"
     }
   },
   "section_status": {
@@ -2424,8 +2593,9 @@
     "qcew_industry_shares": "live",
     "qcew_yoy_changes": "live",
     "census_bps_permits": "failed",
-    "ita_msa_exports": "failed",
+    "ita_msa_exports": "live",
     "irs_soi_migration": "live",
-    "business_cycle_index": "live"
+    "business_cycle_index": "live",
+    "forecast_arima": "live"
   }
 }

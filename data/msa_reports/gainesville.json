@@ -3,7 +3,7 @@
   "short_name": "Gainesville",
   "full_name": "Gainesville, GA",
   "population": 211000,
-  "as_of": "2026-05-28",
+  "as_of": "2026-05-29",
   "sections": {
     "ces_employment": {
       "series_id": "SMS13235800000000001",
@@ -2117,7 +2117,76 @@
       "sectors": {}
     },
     "census_bps_permits": null,
-    "ita_msa_exports": null,
+    "ita_msa_exports": {
+      "year": 2024,
+      "total_usd_millions": 980.2,
+      "by_product": [
+        {
+          "label": "333--Machinery",
+          "value_usd_mil": 287.0
+        },
+        {
+          "label": "RESI--Residual - Not in Top 5",
+          "value_usd_mil": 208.4
+        },
+        {
+          "label": "311--Processed Foods",
+          "value_usd_mil": 181.9
+        },
+        {
+          "label": "336--Transportation Equipment",
+          "value_usd_mil": 170.5
+        },
+        {
+          "label": "325--Chemicals",
+          "value_usd_mil": 73.7
+        },
+        {
+          "label": "112--Livestock & Livestock Products",
+          "value_usd_mil": 58.7
+        }
+      ],
+      "by_destination": [
+        {
+          "label": "APEC",
+          "value_usd_mil": 675.7
+        },
+        {
+          "label": "FTA Partners",
+          "value_usd_mil": 656.6
+        },
+        {
+          "label": "USMCA",
+          "value_usd_mil": 463.7
+        },
+        {
+          "label": "Asia",
+          "value_usd_mil": 132.0
+        },
+        {
+          "label": "CAFTA-DR",
+          "value_usd_mil": 67.1
+        },
+        {
+          "label": "S. America",
+          "value_usd_mil": 61.1
+        },
+        {
+          "label": "EU",
+          "value_usd_mil": 56.3
+        },
+        {
+          "label": "ASEAN",
+          "value_usd_mil": 39.4
+        },
+        {
+          "label": "Africa",
+          "value_usd_mil": 6.3
+        }
+      ],
+      "source_endpoint": "reporting/data/maed_2024.csv",
+      "source": "ITA Metropolitan Area Exports (annual CSV refresh \u2014 maed_2024.csv)"
+    },
     "irs_soi_migration": {
       "year_pair_label": "2022\u21922023",
       "from_year": 2022,
@@ -2410,6 +2479,114 @@
       "trough_value": 65.2,
       "n_months": 86,
       "source": "EIG composite \u2014 computed from BLS CES + LAUS"
+    },
+    "forecast_arima": {
+      "gmp": [
+        20.9,
+        22.5,
+        24.1,
+        25.8,
+        27.6
+      ],
+      "gmp_yoy": [
+        7.6,
+        7.4,
+        7.3,
+        7.1,
+        7.0
+      ],
+      "total_employment": [
+        110.9,
+        111.9,
+        112.7,
+        113.3,
+        113.9
+      ],
+      "total_employment_yoy": [
+        1.5,
+        0.9,
+        0.7,
+        0.6,
+        0.5
+      ],
+      "unemployment": [
+        2.8,
+        2.8,
+        2.8,
+        2.9,
+        2.9
+      ],
+      "personal_income_yoy": [
+        6.6,
+        6.5,
+        6.4,
+        6.2,
+        6.1
+      ],
+      "median_hh_income": [
+        86.2,
+        91.8,
+        97.7,
+        103.8,
+        110.1
+      ],
+      "median_hh_income_yoy": [
+        6.6,
+        6.5,
+        6.4,
+        6.2,
+        6.1
+      ],
+      "population": [
+        216.6,
+        219.1,
+        221.7,
+        224.2,
+        226.6
+      ],
+      "population_yoy": [
+        1.2,
+        1.2,
+        1.2,
+        1.1,
+        1.1
+      ],
+      "hpi_yoy": [
+        9.5,
+        8.1,
+        7.9,
+        7.8,
+        7.6
+      ],
+      "method": "Damped-trend Holt smoothing (ARIMA(1,1,2) family), per-series grid-fit on annual actuals; level series modeled in log space",
+      "horizon": [
+        2026,
+        2027,
+        2028,
+        2029,
+        2030
+      ],
+      "years": [
+        2026,
+        2027,
+        2028,
+        2029,
+        2030
+      ],
+      "metrics": [
+        "gmp",
+        "gmp_yoy",
+        "total_employment",
+        "total_employment_yoy",
+        "unemployment",
+        "personal_income_yoy",
+        "median_hh_income",
+        "median_hh_income_yoy",
+        "population",
+        "population_yoy",
+        "hpi_yoy"
+      ],
+      "source": "EIG forecast composite \u2014 computed from BLS/BEA/Census/FHFA actuals"
     }
   },
   "section_status": {
@@ -2424,8 +2601,9 @@
     "qcew_industry_shares": "live",
     "qcew_yoy_changes": "live",
     "census_bps_permits": "failed",
-    "ita_msa_exports": "failed",
+    "ita_msa_exports": "live",
     "irs_soi_migration": "live",
-    "business_cycle_index": "live"
+    "business_cycle_index": "live",
+    "forecast_arima": "live"
   }
 }

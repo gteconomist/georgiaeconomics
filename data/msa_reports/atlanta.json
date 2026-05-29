@@ -3,7 +3,7 @@
   "short_name": "Atlanta",
   "full_name": "Atlanta-Sandy Springs-Alpharetta, GA",
   "population": 6307261,
-  "as_of": "2026-05-28",
+  "as_of": "2026-05-29",
   "sections": {
     "ces_employment": {
       "series_id": "SMS13120600000000001",
@@ -2293,8 +2293,115 @@
       "as_of_label": "2025 Q3",
       "sectors": {}
     },
-    "census_bps_permits": null,
-    "ita_msa_exports": null,
+    "census_bps_permits": {
+      "source": "Census Building Permits Survey via FRED (ATLA013BP1FH + ATLA013BPPRIV)",
+      "years": [
+        2020,
+        2021,
+        2022,
+        2023,
+        2024,
+        2025
+      ],
+      "single_family": [
+        27522,
+        31589,
+        25961,
+        24514,
+        25964,
+        22356
+      ],
+      "multi_family": [
+        4029,
+        7342,
+        19084,
+        14534,
+        13224,
+        10535
+      ],
+      "permits_per_1k": [
+        5.0,
+        6.17,
+        7.14,
+        6.19,
+        6.21,
+        5.21
+      ],
+      "latest_year": 2025,
+      "latest_single": 22356,
+      "latest_multi": 10535,
+      "latest_per_1k": 5.21
+    },
+    "ita_msa_exports": {
+      "year": 2024,
+      "total_usd_millions": 33393.3,
+      "by_product": [
+        {
+          "label": "RESI--Residual - Not in Top 5",
+          "value_usd_mil": 9069.1
+        },
+        {
+          "label": "336--Transportation Equipment",
+          "value_usd_mil": 9042.7
+        },
+        {
+          "label": "334--Computer & Electronic Products",
+          "value_usd_mil": 6555.1
+        },
+        {
+          "label": "333--Machinery",
+          "value_usd_mil": 4817.9
+        },
+        {
+          "label": "339--Miscellaneous manufactures",
+          "value_usd_mil": 2097.9
+        },
+        {
+          "label": "311--Processed Foods",
+          "value_usd_mil": 1810.7
+        }
+      ],
+      "by_destination": [
+        {
+          "label": "APEC",
+          "value_usd_mil": 20182.9
+        },
+        {
+          "label": "FTA Partners",
+          "value_usd_mil": 15416.9
+        },
+        {
+          "label": "USMCA",
+          "value_usd_mil": 10133.5
+        },
+        {
+          "label": "Asia",
+          "value_usd_mil": 10095.5
+        },
+        {
+          "label": "EU",
+          "value_usd_mil": 7069.7
+        },
+        {
+          "label": "ASEAN",
+          "value_usd_mil": 3388.8
+        },
+        {
+          "label": "S. America",
+          "value_usd_mil": 1673.0
+        },
+        {
+          "label": "CAFTA-DR",
+          "value_usd_mil": 735.2
+        },
+        {
+          "label": "Africa",
+          "value_usd_mil": 714.4
+        }
+      ],
+      "source_endpoint": "reporting/data/maed_2024.csv",
+      "source": "ITA Metropolitan Area Exports (annual CSV refresh \u2014 maed_2024.csv)"
+    },
     "irs_soi_migration": {
       "year_pair_label": "2022\u21922023",
       "from_year": 2022,
@@ -2587,6 +2694,146 @@
       "trough_value": 56.41,
       "n_months": 86,
       "source": "EIG composite \u2014 computed from BLS CES + LAUS"
+    },
+    "forecast_arima": {
+      "gmp": [
+        637.8,
+        651.7,
+        663.0,
+        672.2,
+        679.7
+      ],
+      "gmp_yoy": [
+        2.7,
+        2.2,
+        1.7,
+        1.4,
+        1.1
+      ],
+      "total_employment": [
+        3138.3,
+        3155.9,
+        3170.1,
+        3181.5,
+        3190.7
+      ],
+      "total_employment_yoy": [
+        0.8,
+        0.6,
+        0.4,
+        0.4,
+        0.3
+      ],
+      "unemployment": [
+        3.4,
+        3.4,
+        3.4,
+        3.4,
+        3.4
+      ],
+      "personal_income_yoy": [
+        5.7,
+        5.6,
+        5.5,
+        5.4,
+        5.3
+      ],
+      "median_hh_income": [
+        94.8,
+        100.1,
+        105.7,
+        111.4,
+        117.3
+      ],
+      "median_hh_income_yoy": [
+        5.7,
+        5.6,
+        5.5,
+        5.4,
+        5.3
+      ],
+      "population": [
+        6413.1,
+        6490.6,
+        6567.4,
+        6643.5,
+        6719.0
+      ],
+      "population_yoy": [
+        1.2,
+        1.2,
+        1.2,
+        1.2,
+        1.1
+      ],
+      "hpi_yoy": [
+        8.6,
+        8.4,
+        8.2,
+        8.1,
+        7.9
+      ],
+      "sf_permits": [
+        22382.0,
+        21900.0,
+        21523.0,
+        21226.0,
+        20991.0
+      ],
+      "sf_permits_yoy": [
+        0.1,
+        -2.2,
+        -1.7,
+        -1.4,
+        -1.1
+      ],
+      "mf_permits": [
+        13277.0,
+        14749.0,
+        16044.0,
+        17161.0,
+        18110.0
+      ],
+      "mf_permits_yoy": [
+        26.0,
+        11.1,
+        8.8,
+        7.0,
+        5.5
+      ],
+      "method": "Damped-trend Holt smoothing (ARIMA(1,1,2) family), per-series grid-fit on annual actuals; level series modeled in log space",
+      "horizon": [
+        2026,
+        2027,
+        2028,
+        2029,
+        2030
+      ],
+      "years": [
+        2026,
+        2027,
+        2028,
+        2029,
+        2030
+      ],
+      "metrics": [
+        "gmp",
+        "gmp_yoy",
+        "total_employment",
+        "total_employment_yoy",
+        "unemployment",
+        "personal_income_yoy",
+        "median_hh_income",
+        "median_hh_income_yoy",
+        "population",
+        "population_yoy",
+        "hpi_yoy",
+        "sf_permits",
+        "sf_permits_yoy",
+        "mf_permits",
+        "mf_permits_yoy"
+      ],
+      "source": "EIG forecast composite \u2014 computed from BLS/BEA/Census/FHFA actuals"
     }
   },
   "section_status": {
@@ -2600,9 +2847,10 @@
     "bea_personal_income": "live",
     "qcew_industry_shares": "live",
     "qcew_yoy_changes": "live",
-    "census_bps_permits": "failed",
-    "ita_msa_exports": "failed",
+    "census_bps_permits": "live",
+    "ita_msa_exports": "live",
     "irs_soi_migration": "live",
-    "business_cycle_index": "live"
+    "business_cycle_index": "live",
+    "forecast_arima": "live"
   }
 }

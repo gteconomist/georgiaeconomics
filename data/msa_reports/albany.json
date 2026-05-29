@@ -3,7 +3,7 @@
   "short_name": "Albany",
   "full_name": "Albany, GA",
   "population": 146000,
-  "as_of": "2026-05-28",
+  "as_of": "2026-05-29",
   "sections": {
     "ces_employment": {
       "series_id": "SMS13105000000000001",
@@ -1253,7 +1253,64 @@
       "sectors": {}
     },
     "census_bps_permits": null,
-    "ita_msa_exports": null,
+    "ita_msa_exports": {
+      "year": 2024,
+      "total_usd_millions": 250.7,
+      "by_product": [
+        {
+          "label": "311--Processed Foods",
+          "value_usd_mil": 49.6
+        },
+        {
+          "label": "RESI--Residual - Not in Top 5",
+          "value_usd_mil": 39.1
+        },
+        {
+          "label": "336--Transportation Equipment",
+          "value_usd_mil": 35.1
+        },
+        {
+          "label": "325--Chemicals",
+          "value_usd_mil": 29.0
+        }
+      ],
+      "by_destination": [
+        {
+          "label": "FTA Partners",
+          "value_usd_mil": 129.6
+        },
+        {
+          "label": "APEC",
+          "value_usd_mil": 102.6
+        },
+        {
+          "label": "S. America",
+          "value_usd_mil": 66.3
+        },
+        {
+          "label": "USMCA",
+          "value_usd_mil": 53.7
+        },
+        {
+          "label": "EU",
+          "value_usd_mil": 46.9
+        },
+        {
+          "label": "Asia",
+          "value_usd_mil": 20.2
+        },
+        {
+          "label": "ASEAN",
+          "value_usd_mil": 5.2
+        },
+        {
+          "label": "Africa",
+          "value_usd_mil": 4.2
+        }
+      ],
+      "source_endpoint": "reporting/data/maed_2024.csv",
+      "source": "ITA Metropolitan Area Exports (annual CSV refresh \u2014 maed_2024.csv)"
+    },
     "irs_soi_migration": {
       "year_pair_label": "2022\u21922023",
       "from_year": 2022,
@@ -1546,6 +1603,114 @@
       "trough_value": 52.88,
       "n_months": 86,
       "source": "EIG composite \u2014 computed from BLS CES + LAUS"
+    },
+    "forecast_arima": {
+      "gmp": [
+        9.1,
+        9.5,
+        10.0,
+        10.4,
+        10.9
+      ],
+      "gmp_yoy": [
+        4.9,
+        4.8,
+        4.7,
+        4.6,
+        4.5
+      ],
+      "total_employment": [
+        60.5,
+        60.3,
+        60.1,
+        60.0,
+        59.9
+      ],
+      "total_employment_yoy": [
+        -0.0,
+        -0.3,
+        -0.3,
+        -0.2,
+        -0.2
+      ],
+      "unemployment": [
+        4.1,
+        4.1,
+        4.1,
+        4.1,
+        4.1
+      ],
+      "personal_income_yoy": [
+        2.1,
+        1.6,
+        1.3,
+        1.0,
+        0.8
+      ],
+      "median_hh_income": [
+        58.1,
+        59.0,
+        59.8,
+        60.4,
+        60.9
+      ],
+      "median_hh_income_yoy": [
+        2.1,
+        1.6,
+        1.3,
+        1.0,
+        0.8
+      ],
+      "population": [
+        145.9,
+        145.7,
+        145.6,
+        145.5,
+        145.4
+      ],
+      "population_yoy": [
+        -0.1,
+        -0.1,
+        -0.1,
+        -0.1,
+        -0.1
+      ],
+      "hpi_yoy": [
+        7.1,
+        6.9,
+        6.7,
+        6.6,
+        6.4
+      ],
+      "method": "Damped-trend Holt smoothing (ARIMA(1,1,2) family), per-series grid-fit on annual actuals; level series modeled in log space",
+      "horizon": [
+        2026,
+        2027,
+        2028,
+        2029,
+        2030
+      ],
+      "years": [
+        2026,
+        2027,
+        2028,
+        2029,
+        2030
+      ],
+      "metrics": [
+        "gmp",
+        "gmp_yoy",
+        "total_employment",
+        "total_employment_yoy",
+        "unemployment",
+        "personal_income_yoy",
+        "median_hh_income",
+        "median_hh_income_yoy",
+        "population",
+        "population_yoy",
+        "hpi_yoy"
+      ],
+      "source": "EIG forecast composite \u2014 computed from BLS/BEA/Census/FHFA actuals"
     }
   },
   "section_status": {
@@ -1560,8 +1725,9 @@
     "qcew_industry_shares": "live",
     "qcew_yoy_changes": "live",
     "census_bps_permits": "failed",
-    "ita_msa_exports": "failed",
+    "ita_msa_exports": "live",
     "irs_soi_migration": "live",
-    "business_cycle_index": "live"
+    "business_cycle_index": "live",
+    "forecast_arima": "live"
   }
 }
