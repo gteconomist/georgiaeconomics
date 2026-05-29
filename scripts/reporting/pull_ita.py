@@ -31,6 +31,7 @@ Exposes:
 from __future__ import annotations
 
 import csv
+import io
 import sys
 from pathlib import Path
 from typing import Dict, List, Optional, Tuple
@@ -89,12 +90,42 @@ def _find_latest_maed_csv() -> Optional[Path]:
     return candidates[-1] if candidates else None
 
 
+def _open_tableau_export(path: Path) -> Tuple[io.StringIO, str]:
+    """Open a Tableau crosstab export, returning (text_stream, delimiter).
+
+    Tableau exports its "Crosstab" downloads as **UTF-16 LE with BOM and
+    tab delimiters**, even though the file extension is `.csv`. Users
+    can also re-save them in other tools (forcing UTF-8 or comma), so we
+    sniff the BOM and the delimiter rather than hard-coding.
+    """
+    raw = path.read_bytes()
+    if raw[:2] == b"\xff\xfe":
+        text = raw[2:].decode("utf-16-le", errors="replace")
+    elif raw[:2] == b"\xfe\xff":
+        text = raw[2:].decode("utf-16-be", errors="replace")
+    elif raw[:3] == b"\xef\xbb\xbf":
+        text = raw[3:].decode("utf-8", errors="replace")
+    else:
+        # No BOM — try UTF-8 first, fall back to latin-1 if that explodes
+        try:
+            text = raw.decode("utf-8")
+        except UnicodeDecodeError:
+            text = raw.decode("latin-1", errors="replace")
+    # Pick delimiter by whichever is more common on the first non-empty line
+    first_line = next((ln for ln in text.splitlines() if ln.strip()), "")
+    delim = "\t" if first_line.count("\t") > first_line.count(",") else ","
+    return io.StringIO(text), delim
+
+
 def _as_float(cell: Optional[str]) -> Optional[float]:
     """Parse a MAED cell value. None, empty, or 'D' (suppressed) → None.
-    Strips commas/quotes that Tableau crosstab CSVs often include."""
+    Strips quotes, commas, dollar signs, and surrounding whitespace. Tableau
+    crosstabs commonly render values like '$8,378.2' for "millions of USD"
+    columns; we want the float 8378.2.
+    """
     if cell is None:
         return None
-    s = cell.strip().strip('"').replace(",", "")
+    s = cell.strip().strip('"').lstrip("$").replace(",", "")
     if not s or s.upper() == SUPPRESSED_MARKER:
         return None
     try:
@@ -159,25 +190,27 @@ def fetch_msa_exports(cbsa: str, year: Optional[int] = None) -> Optional[dict]:
         return None
 
     # Stream the CSV (it's 30-60MB). DictReader gives us name-keyed rows.
+    # Tableau exports are UTF-16 LE BOM + tab-delimited; _open_tableau_export
+    # sniffs both so we can also accept UTF-8 CSV reformats.
     msa_rows: List[dict] = []
     header: List[str] = []
     try:
-        with csv_path.open("r", encoding="utf-8-sig", newline="") as f:
-            reader = csv.DictReader(f)
-            header = list(reader.fieldnames or [])
-            # Sanity-check the headers we depend on
-            required = {"Dataset", "MSA Full Name", "NAICS Sector", "Destination"}
-            missing = required - set(header)
-            if missing:
-                print(
-                    f"  [ITA] CSV {csv_path.name} missing columns {missing}; "
-                    "schema may have shifted — refresh and review MAED_REFRESH.md",
-                    file=sys.stderr,
-                )
-                return None
-            for row in reader:
-                if (row.get("MSA Full Name") or "").strip() == msa_name:
-                    msa_rows.append(row)
+        stream, delim = _open_tableau_export(csv_path)
+        reader = csv.DictReader(stream, delimiter=delim)
+        header = list(reader.fieldnames or [])
+        # Sanity-check the headers we depend on
+        required = {"Dataset", "MSA Full Name", "NAICS Sector", "Destination"}
+        missing = required - set(header)
+        if missing:
+            print(
+                f"  [ITA] CSV {csv_path.name} missing columns {missing}; "
+                "schema may have shifted — refresh and review MAED_REFRESH.md",
+                file=sys.stderr,
+            )
+            return None
+        for row in reader:
+            if (row.get("MSA Full Name") or "").strip() == msa_name:
+                msa_rows.append(row)
     except Exception as e:
         print(f"  [ITA] failed to read {csv_path.name}: {type(e).__name__}: {e}",
               file=sys.stderr)
