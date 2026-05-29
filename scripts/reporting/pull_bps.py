@@ -43,8 +43,12 @@ GEO_OVERRIDES: Dict[str, str] = {
     "12060": "ATLA013",  # Atlanta-Sandy Springs-Alpharetta, GA
 }
 
-# A metro 1-Unit series id looks like "ATLA013BP1FH": 4 letters + 3 digits + BP1FH.
-_GEO_FROM_BP1FH = re.compile(r"^([A-Z]{4}\d{3})BP1FH$")
+# Metro 1-Unit series ids end in "BP1FH" with a FRED area prefix that varies in
+# shape: "ATLA013" (Atlanta), "MPH" (Memphis), "COLU139" (Columbus OH). So match
+# any 3+ char alphanumeric prefix. The {3,} minimum auto-excludes the 2-letter
+# STATE series (e.g. "GABP1FH" = Georgia), which we don't want. The trailing
+# "BP1FH$" excludes the seasonally-adjusted "...BP1FHSA" variant.
+_GEO_FROM_BP1FH = re.compile(r"^([A-Z0-9]{3,})BP1FH$")
 
 
 def _fred_get(url: str, params: dict) -> Optional[dict]:
@@ -82,25 +86,32 @@ def _resolve_geo(cbsa: str, full_name: str) -> Optional[str]:
     city = _msa_search_term(full_name)
     data = _fred_get(FRED_SEARCH, {
         "search_text": f"{city} 1-unit structures building permits",
-        "limit": 50,
+        "limit": 1000,
     })
     if not data:
         return None
 
     city_lc = city.lower()
+    candidates = []  # (prefers_msa, geo) — collect then pick the best
     for s in data.get("seriess", []):
         m = _GEO_FROM_BP1FH.match(s.get("id", ""))
         if not m:
             continue
         title = s.get("title", "").lower()
-        # Must be the MSA-level series for this city, not a same-named metro elsewhere.
-        if city_lc in title and "(msa)" in title:
-            geo = m.group(1)
-            print(f"  [BPS/FRED] resolved {full_name} -> {geo} (add to GEO_OVERRIDES)",
-                  file=sys.stderr)
-            return geo
-    print(f"  [BPS/FRED] no MSA 1-unit series found for {full_name}", file=sys.stderr)
-    return None
+        # Tie the series to THIS city so we don't grab a same-named metro elsewhere.
+        if city_lc not in title:
+            continue
+        candidates.append(("(msa)" in title, m.group(1)))
+
+    if not candidates:
+        print(f"  [BPS/FRED] no metro 1-unit series found for {full_name}", file=sys.stderr)
+        return None
+    # Prefer a title explicitly flagged "(MSA)"; otherwise take the first city match.
+    candidates.sort(key=lambda c: (not c[0],))
+    geo = candidates[0][1]
+    print(f"  [BPS/FRED] resolved {full_name} -> {geo} (add to GEO_OVERRIDES to skip search)",
+          file=sys.stderr)
+    return geo
 
 
 def _annual_by_year(series_id: str, start_year: int) -> Dict[int, int]:
