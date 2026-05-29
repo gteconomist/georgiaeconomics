@@ -24,6 +24,9 @@ permissions:
 jobs:
   update:
     runs-on: ubuntu-latest
+    # Backstop so a pathological run can't burn the 6-hour default. Per-section
+    # SIGALRM caps in the orchestrator are the primary guard; this is belt-and-braces.
+    timeout-minutes: 60
     steps:
       - uses: actions/checkout@v4
 

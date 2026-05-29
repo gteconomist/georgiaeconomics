@@ -44,13 +44,51 @@ from __future__ import annotations
 
 import argparse
 import json
+import signal
 import sys
+from contextlib import contextmanager
 from datetime import date
 from pathlib import Path
 from typing import Optional
 
 sys.path.insert(0, str(Path(__file__).parent))
 from _ga_msas import GA_MSAS
+
+# Hard wall-clock caps per section. A section that *raises* is already handled by
+# the never-blank-on-failure logic, but a section that *hangs* (e.g. a Census/BEA
+# socket that stalls past its own timeout) would otherwise block the entire job
+# until GitHub's 6-hour default kills it with SIGTERM (exit 143) — and the commit
+# step never runs, so nothing gets refreshed. These caps convert a hang into a
+# catchable failure so the rest of the run still completes and commits.
+SECTION_TIMEOUT_S = 150   # data fetchers (network)
+MODEL_TIMEOUT_S = 60      # pure-compute modeling modules
+
+
+class _SectionTimeout(Exception):
+    pass
+
+
+@contextmanager
+def _time_limit(seconds: int):
+    """Raise _SectionTimeout if the block runs longer than `seconds`.
+
+    POSIX SIGALRM, main-thread only (the orchestrator loop is single-threaded).
+    No-op on platforms without SIGALRM (e.g. Windows); CI is ubuntu-latest.
+    """
+    if not hasattr(signal, "SIGALRM"):
+        yield
+        return
+
+    def _handler(signum, frame):
+        raise _SectionTimeout(f"exceeded {seconds}s")
+
+    old = signal.signal(signal.SIGALRM, _handler)
+    signal.alarm(seconds)
+    try:
+        yield
+    finally:
+        signal.alarm(0)
+        signal.signal(signal.SIGALRM, old)
 
 # Per-source fetchers (each module in scripts/reporting/)
 from reporting import pull_bls, pull_fhfa, pull_census, pull_bea, pull_irs_soi, pull_ita, pull_bps
@@ -246,7 +284,11 @@ def fetch_one_msa(cbsa: str, sections_filter=None, prior: Optional[dict] = None)
             continue
         print(f"  [{name:24s}] pulling ...", end="", flush=True)
         try:
-            data, status = runner(cbsa)
+            with _time_limit(SECTION_TIMEOUT_S):
+                data, status = runner(cbsa)
+        except _SectionTimeout as e:
+            print(f" TIMEOUT — {e}; treating as failed")
+            data, status = None, "failed"
         except Exception as e:
             print(f" CRASHED — {type(e).__name__}: {e}")
             data, status = None, "failed"
@@ -273,7 +315,11 @@ def fetch_one_msa(cbsa: str, sections_filter=None, prior: Optional[dict] = None)
             continue
         print(f"  [{name:24s}] computing ...", end="", flush=True)
         try:
-            data, status = runner(cbsa, output)
+            with _time_limit(MODEL_TIMEOUT_S):
+                data, status = runner(cbsa, output)
+        except _SectionTimeout as e:
+            print(f" TIMEOUT — {e}; treating as failed")
+            data, status = None, "failed"
         except Exception as e:
             print(f" CRASHED — {type(e).__name__}: {e}")
             data, status = None, "failed"
