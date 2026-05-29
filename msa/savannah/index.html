@@ -1418,7 +1418,11 @@ async function loadLiveData() {
     flipSectionPill('edu-chart-pill', 'live');
   }
 
-  // --- Forecast columns (2026F-2030F): runs last so it chains off the live 2025 cells ---
+  // --- Historical columns (2019-2025): fill from annual series in the JSON.
+  //     Runs after the per-cell handlers above so it owns the whole row's vintages. ---
+  replaceHistoricalColumns(data);
+
+  // --- Forecast columns (2026F-2030F): runs last, after historical is in place ---
   const fc = data.sections.forecast_arima;
   if (fc && fc.years) {
     replaceForecastColumns(fc);
@@ -1504,6 +1508,80 @@ function replaceExportsTables(ita) {
   if (note) note.innerHTML = `Source: ITA Metropolitan Area Exports, ${ita.year} (${ita.source_endpoint || 'api.trade.gov'}).`;
 }
 
+/** Fill the historical columns (2019-2024, plus a true 2025 where the year is
+ *  complete) of the headline table from the annual series already in the JSON.
+ *  Rows keyed by their 2025 cell's data-live-cell="<metric>_2025". Lagging-annual
+ *  sources (GMP, personal income, population end at 2024) get '—' for 2025 rather
+ *  than the prior code's mislabelled latest value. Rows without multi-year history
+ *  (median income, net migration, permits) are left untouched/illustrative. */
+function replaceHistoricalColumns(data) {
+  const table = document.querySelector('.report-table');
+  if (!table || !data || !data.sections) return;
+  const s = data.sections;
+
+  const annualMean = (keys, vals, minN) => {
+    const by = {};
+    (keys || []).forEach((k, i) => {
+      const v = vals[i];
+      if (v == null) return;
+      const y = +String(k).slice(0, 4);
+      (by[y] = by[y] || []).push(v);
+    });
+    const out = {};
+    Object.keys(by).forEach(y => { if (by[y].length >= minN) out[y] = by[y].reduce((a, b) => a + b, 0) / by[y].length; });
+    return out;
+  };
+  const yoyMap = (annual) => {
+    const ys = Object.keys(annual).map(Number).sort((a, b) => a - b);
+    const out = {};
+    for (let i = 1; i < ys.length; i++) { const p = annual[ys[i - 1]], c = annual[ys[i]]; if (p) out[ys[i]] = 100 * (c - p) / p; }
+    return out;
+  };
+  const zipMap = (years, vals) => {
+    const out = {};
+    (years || []).forEach((y, i) => { if (vals[i] != null) out[y] = vals[i]; });
+    return out;
+  };
+
+  const gmp = s.bea_gmp || {}, ces = s.ces_employment || {}, laus = s.laus_unemployment || {},
+        pep = s.census_pep || {}, pi = s.bea_personal_income || {}, hpi = s.fhfa_hpi || {};
+
+  const gmpA = zipMap(gmp.years, gmp.gmp_billions_usd || []);
+  const empA = annualMean(ces.months, ces.values || [], 6);
+  const unA  = annualMean(laus.months, laus.values || [], 6);
+  const popA = {}; (pep.years || []).forEach((y, i) => { if (pep.population[i] != null) popA[y] = pep.population[i] / 1000; });
+  const hpiA = annualMean(hpi.quarters, hpi.values || [], 2);
+
+  const fillers = {
+    gmp:                  (y) => gmpA[y],
+    gmp_yoy:              (y) => zipMap(gmp.years, gmp.yoy_pct || [])[y],
+    total_employment:     (y) => empA[y],
+    total_employment_yoy: (y) => yoyMap(empA)[y],
+    unemployment:         (y) => unA[y],
+    personal_income_yoy:  (y) => zipMap(pi.years, pi.yoy_pct || [])[y],
+    population:           (y) => popA[y],
+    population_yoy:       (y) => zipMap(pep.years, pep.yoy_pct || [])[y],
+    hpi_yoy:              (y) => yoyMap(hpiA)[y],
+  };
+  const fmt = (metric, v) => metric.endsWith('_yoy') ? v.toFixed(1) : v.toFixed(1);
+
+  table.querySelectorAll('tbody tr').forEach(tr => {
+    const baseCell = tr.querySelector('[data-live-cell]');
+    if (!baseCell) return;
+    const metric = baseCell.dataset.liveCell.replace(/_2025$/, '');
+    const filler = fillers[metric];
+    if (!filler) return;                       // leave illustrative rows alone
+    const cells = Array.from(tr.children);
+    // cells: [label, 2019..2024 (idx 1-6), 2025 (idx 7), 2026F..2030F]
+    for (let yr = 2019; yr <= 2025; yr++) {
+      const cell = cells[yr - 2018];
+      if (!cell) continue;
+      const v = filler(yr);
+      cell.textContent = (v == null || isNaN(v)) ? '—' : fmt(metric, v);
+    }
+  });
+}
+
 /** Populate the 2026F-2030F columns of the headline indicators table.
  *  Each forecast row is identified by its live 2025 cell (data-live-cell="<metric>_2025").
  *  % rows write the forecast yoy directly; level rows chain the forecast yoy onto the
@@ -1525,18 +1603,13 @@ function replaceForecastColumns(fc) {
     const fcCells = cells.slice(-5);
     if (fcCells.length !== 5) return;
 
+    // Now that the historical columns are real, the model's absolute forecasts
+    // are already continuous with history — write them directly.
+    if (!fc[metric]) return;
     if (metric.endsWith('_yoy')) {
-      if (!fc[metric]) return;
       fc[metric].forEach((v, i) => { fcCells[i].textContent = (v >= 0 ? '+' : '') + v.toFixed(1); });
-    } else if (fc[metric + '_yoy']) {
-      const base = parseFloat(String(baseCell.textContent).replace(/[,$\s]/g, ''));
-      if (isNaN(base)) return;
-      let v = base;
-      fc[metric + '_yoy'].forEach((g, i) => { v = v * (1 + g / 100); fcCells[i].textContent = fmt(metric, v); });
-    } else if (fc[metric]) {
-      fc[metric].forEach((v, i) => { fcCells[i].textContent = fmt(metric, v); });
     } else {
-      return;
+      fc[metric].forEach((v, i) => { fcCells[i].textContent = fmt(metric, v); });
     }
     fcCells.forEach(c => { c.style.color = 'var(--peach-deep)'; c.style.fontStyle = 'italic'; });
     filledAny = true;
@@ -1546,11 +1619,12 @@ function replaceForecastColumns(fc) {
     const banner = document.getElementById('forecast-banner');
     if (banner) {
       banner.innerHTML =
-        '<strong style="color: var(--navy);">Forecast columns live.</strong> ' +
-        '<span class="src-pill proxy">EIG composite</span> ' +
+        '<strong style="color: var(--navy);">Table is live.</strong> ' +
         '<span class="src-pill live" id="forecast-pill">Live</span> ' +
-        '2026&ndash;2030 projections from a damped-trend (Holt / ARIMA-family) model fit on BLS, BEA, ' +
-        'Census and FHFA actuals. Historical 2019&ndash;2024 columns remain illustrative; the 2025 column is live.';
+        'Historical columns are actuals from BLS, BEA, Census and FHFA. ' +
+        'Forecast columns (2026&ndash;2030, <span class="src-pill proxy">EIG composite</span>) ' +
+        'are damped-trend (Holt / ARIMA-family) projections fit on those actuals. ' +
+        'Median income, net migration and permits rows remain illustrative pending data sources.';
     }
   }
 }
