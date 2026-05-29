@@ -56,8 +56,13 @@ CENSUS_API_KEY = os.environ.get("CENSUS_API_KEY", "").strip()
 CENSUS_BASE = "https://api.census.gov/data"
 
 
-def _census_get(url: str, retries: int = 3) -> Optional[list]:
-    """Fetch a Census API URL and parse the JSON 2-D array. None on failure."""
+def _census_get(url: str, retries: int = 3, quiet_404: bool = False) -> Optional[list]:
+    """Fetch a Census API URL and parse the JSON 2-D array. None on failure.
+
+    Set `quiet_404=True` when 404 is the expected "vintage not released yet"
+    signal from a newest-first probing loop — keeps the orchestrator log clean.
+    Real 400s (bad query) still print; non-404/400 errors still retry.
+    """
     last_err = None
     for attempt in range(retries):
         try:
@@ -67,7 +72,8 @@ def _census_get(url: str, retries: int = 3) -> Optional[list]:
                     return None
                 return json.loads(body)
         except urllib.error.HTTPError as e:
-            print(f"  [Census HTTP {e.code}] {url[:160]}", file=sys.stderr)
+            if not (e.code == 404 and quiet_404):
+                print(f"  [Census HTTP {e.code}] {url[:160]}", file=sys.stderr)
             if e.code in (400, 404):
                 return None
             last_err = e
@@ -125,7 +131,10 @@ def fetch_pep_population_history(cbsa: str, years_back: int = 7) -> Optional[dic
             f"&for={urllib.parse.quote(_msa_predicate(cbsa), safe=':/+')}"
             f"&key={CENSUS_API_KEY}"
         )
-        data = _census_get(url)
+        # ACS5 vintage `y` is released in early Dec of year y+1. So vintage
+        # `this_year - 1` may or may not be out yet depending on month —
+        # quiet its 404 (the loop falls back to `this_year - 2` cleanly).
+        data = _census_get(url, quiet_404=(y == this_year - 1))
         if not data or len(data) < 2:
             continue
         try:
@@ -212,7 +221,8 @@ def fetch_acs_demographics(cbsa: str, year: Optional[int] = None) -> Optional[di
         print("  [Census ACS5] no API key", file=sys.stderr)
         return None
 
-    candidate_years = [year] if year else list(range(date.today().year - 1, date.today().year - 5, -1))
+    this_year = date.today().year
+    candidate_years = [year] if year else list(range(this_year - 1, this_year - 5, -1))
 
     vars_str = ",".join(ACS_VARIABLES.keys())
 
@@ -223,7 +233,9 @@ def fetch_acs_demographics(cbsa: str, year: Optional[int] = None) -> Optional[di
             f"&for={urllib.parse.quote(_msa_predicate(cbsa), safe=':/+')}"
             f"&key={CENSUS_API_KEY}"
         )
-        data = _census_get(url)
+        # Quiet expected 404 on the newest vintage (released only in
+        # early Dec of year y+1) — falls back to y-1 cleanly.
+        data = _census_get(url, quiet_404=(y == this_year - 1))
         if not data or len(data) < 2:
             continue
 

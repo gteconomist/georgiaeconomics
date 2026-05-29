@@ -1,171 +1,262 @@
-"""ITA (International Trade Administration) Metropolitan Area Exports pulls.
+"""ITA (International Trade Administration) Metropolitan Area Exports reader.
 
-The ITA publishes annual MSA-level export totals by product (3-digit NAICS) and
-by destination country. Historically this lived on TradeStats Express; today the
-data is served through api.trade.gov under several possible endpoint shapes —
-exact URL depends on the dataset version.
+MAED has **no public REST API**. The only access path is the Tableau dashboard
+at https://tsereports.trade.gov/views/MetroBulkDownload/MetropolitanAreaExports
+which serves the data via an annual "Download Data → Crosstab" CSV. Building a
+programmatic scraper for that Tableau server requires a ~300-line stateful
+session+commands handshake, brittle against ITA's Tableau version bumps. The
+data updates once a year (November), so we use a manual annual CSV refresh
+instead and read from disk here.
 
-This module is *defensive*: it tries the most likely endpoint patterns in
-priority order and returns the first one that yields data. Production CI logs
-will reveal which endpoint is currently live; once confirmed we can prune the
-fallback list.
+Refresh procedure: see scripts/reporting/data/MAED_REFRESH.md (≈ 5 min once a
+year). The orchestrator's never-blank-on-failure logic handles a stale or
+missing cache gracefully — `ita_msa_exports` just shows the prior run's values
+until the cache is refreshed.
 
 Exposes:
-    fetch_msa_exports(cbsa, year=None) -> dict
+    fetch_msa_exports(cbsa, year=None) -> dict | None
         Returns:
             {
               "year":                 2024,
-              "total_usd_millions":   9910,
-              "by_product":           [{"naics3":"336", "label":"Transportation equipment", "value_usd_mil":4820}, ...],
-              "by_destination":       [{"country":"China", "value_usd_mil":1240}, ...],
-              "source_endpoint":      "https://api.trade.gov/v3/...",
+              "total_usd_millions":   9910.0,
+              "by_product":           [{"label": "Transportation equipment", "value_usd_mil": 4820.0}, ...],
+              "by_destination":       [{"label": "EU",      "value_usd_mil": 1240.0}, ...],
+              "source_endpoint":      "scripts/reporting/data/maed_2024.csv",
+              "source":               "ITA Metropolitan Area Exports (annual CSV refresh)",
             }
-
-Env: ITA_API_KEY (api.data.gov key — get one at https://api.data.gov/signup/).
+        or None if the cache is missing, the MSA isn't in the data, or the
+        CSV's schema has drifted past what we can parse.
 """
 
 from __future__ import annotations
 
-import json
-import os
+import csv
 import sys
-import time
-import urllib.request
-import urllib.error
-import urllib.parse
-from datetime import date
-from typing import Optional, List, Dict
+from pathlib import Path
+from typing import Dict, List, Optional, Tuple
 
-ITA_API_KEY = os.environ.get("ITA_API_KEY", "").strip()
+DATA_DIR = Path(__file__).parent / "data"
 
 
-# Candidate endpoint templates. Tried in order; first one to return non-empty
-# data wins. Add new patterns to the front of the list as ITA updates the API.
-#
-# v3 documented endpoints (api.trade.gov):
-#   /v3/maed/                      Metropolitan Area Export Data
-#   /v3/ita_exports/               Industry & Country exports (state-level)
-#   /v3/metropolitan_exports/      (legacy, sometimes redirects to v3/maed)
-#
-# Each template gets {cbsa} and {year} interpolated.
-CANDIDATE_ENDPOINTS = [
-    {
-        "name": "v3/maed by product",
-        "url":  "https://api.trade.gov/v3/maed/search?cbsa_code={cbsa}&year={year}&size=200",
-        "auth": "header",   # X-Api-Key header
-    },
-    {
-        "name": "v3/metropolitan_exports by product",
-        "url":  "https://api.trade.gov/v3/metropolitan_exports/search?cbsa_code={cbsa}&year={year}&size=200",
-        "auth": "header",
-    },
-    {
-        "name": "v3/maed (query-string key)",
-        "url":  "https://api.trade.gov/v3/maed/search?cbsa_code={cbsa}&year={year}&size=200&api_key={key}",
-        "auth": "query",
-    },
-]
+# CBSA → MSA Full Name as it appears in the MAED Tableau dashboard.
+# Most Georgia MSAs use the same name Census does; the two exceptions:
+#  * Atlanta uses the pre-2023 OMB name in MAED ("Sandy Springs-Roswell"
+#    rather than current "Sandy Springs-Alpharetta").
+#  * Brunswick is published with the "-St. Simons" suffix in MAED.
+# All other GA MSAs match _ga_msas.GA_MSAS verbatim, so we override only
+# the mismatches here; everything else falls back to the GA_MSAS full_name.
+MAED_NAME_OVERRIDES: Dict[str, str] = {
+    "12060": "Atlanta-Sandy Springs-Roswell, GA",
+    "15260": "Brunswick-St. Simons, GA",
+}
+
+# Dataset values inside the MAED CSV's "Dataset" column. These are exact
+# strings — keep them aligned with whatever ITA publishes. If ITA renames a
+# dataset, the corresponding section silently returns empty; fix here.
+DATASET_TOTAL_TO_WORLD     = "All MSAs - Exports to World"
+DATASET_BY_REGION_GROUP    = "All MSAs - Exports to Select Regions/Trading Groups"
+DATASET_TOP_NAICS3_SECTORS = "All MSAs - Top 5 Exported Sectors (NAICS-3)"
+
+SUPPRESSED_MARKER = "D"  # Census disclosure-suppression marker per MAED methodology
 
 
-def _try_endpoint(template: dict, cbsa: str, year: int) -> Optional[list]:
-    """Attempt one candidate endpoint. Returns the JSON 'results' list or None."""
-    if not ITA_API_KEY:
-        return None
-    url = template["url"].format(cbsa=cbsa, year=year, key=ITA_API_KEY)
-    headers = {"User-Agent": "Mozilla/5.0", "Accept": "application/json"}
-    if template["auth"] == "header":
-        headers["X-Api-Key"] = ITA_API_KEY
-
-    req = urllib.request.Request(url, headers=headers)
+def _msa_full_name_for(cbsa: str) -> Optional[str]:
+    """Resolve a CBSA code to its MAED-style MSA Full Name."""
+    if cbsa in MAED_NAME_OVERRIDES:
+        return MAED_NAME_OVERRIDES[cbsa]
+    # Fall back to the canonical name in _ga_msas
     try:
-        with urllib.request.urlopen(req, timeout=30) as resp:
-            data = json.loads(resp.read().decode("utf-8"))
-    except urllib.error.HTTPError as e:
-        if e.code in (401, 403):
-            print(f"  [ITA {template['name']}] HTTP {e.code} — auth issue with ITA_API_KEY", file=sys.stderr)
-        elif e.code != 404:
-            print(f"  [ITA {template['name']}] HTTP {e.code}", file=sys.stderr)
+        sys.path.insert(0, str(Path(__file__).parent.parent))
+        from _ga_msas import GA_MSAS  # type: ignore
+    except Exception:
         return None
-    except Exception as e:
-        print(f"  [ITA {template['name']}] {type(e).__name__}: {e}", file=sys.stderr)
-        return None
-
-    # api.trade.gov v3 wraps results in {"total": N, "results": [...]}
-    results = data.get("results") or data.get("hits") or []
-    if not results:
-        return None
-    print(f"  [ITA] {template['name']} returned {len(results)} rows", file=sys.stderr)
-    return results
+    for code, _short, full, _pop in GA_MSAS:
+        if code == cbsa:
+            return full
+    return None
 
 
-def _rollup_by_field(rows: list, field: str, value_field: str = "all_origins_value") -> List[dict]:
-    """Aggregate a list of api.trade.gov MAED row dicts by a single field."""
+def _find_latest_maed_csv() -> Optional[Path]:
+    """Return the newest maed_*.csv in the data directory (by filename year).
+
+    File naming: maed_{YEAR}.csv where YEAR matches the latest annual data
+    vintage published (per the dashboard footer). We sort lexicographically
+    by stem so maed_2025 wins over maed_2024.
+    """
+    if not DATA_DIR.is_dir():
+        return None
+    candidates = sorted(DATA_DIR.glob("maed_*.csv"))
+    return candidates[-1] if candidates else None
+
+
+def _as_float(cell: Optional[str]) -> Optional[float]:
+    """Parse a MAED cell value. None, empty, or 'D' (suppressed) → None.
+    Strips commas/quotes that Tableau crosstab CSVs often include."""
+    if cell is None:
+        return None
+    s = cell.strip().strip('"').replace(",", "")
+    if not s or s.upper() == SUPPRESSED_MARKER:
+        return None
+    try:
+        return float(s)
+    except ValueError:
+        return None
+
+
+def _year_columns(header: List[str]) -> List[Tuple[str, int]]:
+    """Identify which header columns are 4-digit years, return [(colname, year), ...]."""
+    out: List[Tuple[str, int]] = []
+    for col in header:
+        c = col.strip()
+        if len(c) == 4 and c.isdigit() and 1990 <= int(c) <= 2100:
+            out.append((col, int(c)))
+    return out
+
+
+def _rollup_by_field(
+    rows: List[dict], field: str, year_col: str
+) -> List[dict]:
+    """Sum the year_col across rows grouped by `field`, return top-down sorted list."""
     bucket: Dict[str, float] = {}
     for r in rows:
-        key = r.get(field) or r.get(field + "_name") or "Other"
-        try:
-            v = float(r.get(value_field) or r.get("export_value") or 0) / 1e6  # to $M
-        except (ValueError, TypeError):
+        key = (r.get(field) or "").strip()
+        if not key or key.lower() == "world":  # exclude "World" itself from destination rollups
             continue
-        bucket[key] = bucket.get(key, 0) + v
-    out = sorted(
-        ({"label": k, "value_usd_mil": round(v, 1)} for k, v in bucket.items()),
-        key=lambda x: -x["value_usd_mil"],
-    )
+        v = _as_float(r.get(year_col))
+        if v is None:
+            continue
+        bucket[key] = bucket.get(key, 0.0) + v
+    out = [{"label": k, "value_usd_mil": round(v, 1)} for k, v in bucket.items()]
+    out.sort(key=lambda x: -x["value_usd_mil"])
     return out
 
 
 def fetch_msa_exports(cbsa: str, year: Optional[int] = None) -> Optional[dict]:
-    """Pull MSA-level export totals by product (NAICS3) and destination country.
+    """Read the cached MAED CSV and return aggregated exports for `cbsa`.
 
-    Strategy: try the most-recent ITA endpoint shapes in order. Production CI
-    logs will indicate which pattern is currently live; we prune the list once
-    confirmed.
+    Strategy:
+      1. Look up the MSA's name as published by MAED.
+      2. Find the newest cached maed_*.csv.
+      3. Stream the CSV, keeping only rows for this MSA.
+      4. Use the rightmost numeric year column (or `year` if specified) for
+         the snapshot. Aggregate per Dataset.
+
+    Returns None if any of: name lookup fails, no cache file, MSA absent
+    from the CSV, or CSV header doesn't include any year columns.
     """
-    if not ITA_API_KEY:
-        print("  [ITA] no ITA_API_KEY in env", file=sys.stderr)
+    msa_name = _msa_full_name_for(cbsa)
+    if not msa_name:
+        print(f"  [ITA] no MSA name mapping for CBSA {cbsa}", file=sys.stderr)
         return None
 
-    # ITA MAED is published annually with ~12-month lag. Probe newest first.
-    candidate_years = [year] if year else list(range(date.today().year - 1, date.today().year - 5, -1))
+    csv_path = _find_latest_maed_csv()
+    if not csv_path:
+        print(
+            f"  [ITA] no maed_*.csv in {DATA_DIR} — see MAED_REFRESH.md for "
+            "the annual refresh procedure",
+            file=sys.stderr,
+        )
+        return None
 
-    for y in candidate_years:
-        for template in CANDIDATE_ENDPOINTS:
-            rows = _try_endpoint(template, cbsa, y)
-            if not rows:
-                continue
-            # Build product + destination rollups from the rows.
-            # Field names from current api.trade.gov MAED docs:
-            #   commodity         = NAICS3 description
-            #   commodity_id      = NAICS3 code
-            #   country           = destination country
-            #   all_origins_value = export value (USD)
-            by_product = _rollup_by_field(rows, "commodity")
-            by_dest    = _rollup_by_field(rows, "country")
-            total = round(sum(p["value_usd_mil"] for p in by_product), 1)
-            return {
-                "year":               y,
-                "total_usd_millions": total,
-                "by_product":         by_product[:10],     # top 10
-                "by_destination":     by_dest[:10],
-                "source_endpoint":    template["url"].split("?")[0],
-                "source":             f"ITA Metropolitan Area Exports via {template['name']}",
-            }
+    # Stream the CSV (it's 30-60MB). DictReader gives us name-keyed rows.
+    msa_rows: List[dict] = []
+    header: List[str] = []
+    try:
+        with csv_path.open("r", encoding="utf-8-sig", newline="") as f:
+            reader = csv.DictReader(f)
+            header = list(reader.fieldnames or [])
+            # Sanity-check the headers we depend on
+            required = {"Dataset", "MSA Full Name", "NAICS Sector", "Destination"}
+            missing = required - set(header)
+            if missing:
+                print(
+                    f"  [ITA] CSV {csv_path.name} missing columns {missing}; "
+                    "schema may have shifted — refresh and review MAED_REFRESH.md",
+                    file=sys.stderr,
+                )
+                return None
+            for row in reader:
+                if (row.get("MSA Full Name") or "").strip() == msa_name:
+                    msa_rows.append(row)
+    except Exception as e:
+        print(f"  [ITA] failed to read {csv_path.name}: {type(e).__name__}: {e}",
+              file=sys.stderr)
+        return None
 
-    print("  [ITA] no candidate endpoint returned data for any of the probed years", file=sys.stderr)
-    return None
+    if not msa_rows:
+        print(f"  [ITA] CSV has no rows for MSA '{msa_name}' (CBSA {cbsa})",
+              file=sys.stderr)
+        return None
 
+    # Pick the target year column
+    year_cols = _year_columns(header)
+    if not year_cols:
+        print(f"  [ITA] no 4-digit year columns in CSV header", file=sys.stderr)
+        return None
+    if year is None:
+        year_col, year = year_cols[-1]  # rightmost = latest
+    else:
+        match = [(c, y) for c, y in year_cols if y == year]
+        if not match:
+            print(f"  [ITA] requested year {year} not in CSV", file=sys.stderr)
+            return None
+        year_col = match[0][0]
+
+    # --- Total: "Exports to World" dataset × Destination=World, summed over NAICS sectors
+    world_rows = [
+        r for r in msa_rows
+        if (r.get("Dataset") or "").strip() == DATASET_TOTAL_TO_WORLD
+        and (r.get("Destination") or "").strip() == "World"
+    ]
+    total_vals = [_as_float(r.get(year_col)) for r in world_rows]
+    total = round(sum(v for v in total_vals if v is not None), 1)
+
+    # --- by_destination: "Exports to Select Regions/Trading Groups"
+    region_rows = [
+        r for r in msa_rows
+        if (r.get("Dataset") or "").strip() == DATASET_BY_REGION_GROUP
+    ]
+    by_destination = _rollup_by_field(region_rows, "Destination", year_col)[:10]
+
+    # --- by_product: "Top 5 Exported Sectors (NAICS-3)"
+    sector_rows = [
+        r for r in msa_rows
+        if (r.get("Dataset") or "").strip() == DATASET_TOP_NAICS3_SECTORS
+    ]
+    by_product = _rollup_by_field(sector_rows, "NAICS Sector", year_col)[:10]
+
+    # If absolutely nothing came back, signal failure rather than empty success
+    if total == 0 and not by_destination and not by_product:
+        print(f"  [ITA] all three aggregates empty for {msa_name} in year {year}",
+              file=sys.stderr)
+        return None
+
+    return {
+        "year":               year,
+        "total_usd_millions": total,
+        "by_product":         by_product,
+        "by_destination":     by_destination,
+        "source_endpoint":    str(csv_path.relative_to(csv_path.parent.parent.parent))
+                              if csv_path.is_absolute() else str(csv_path),
+        "source":             f"ITA Metropolitan Area Exports (annual CSV refresh — {csv_path.name})",
+    }
+
+
+# ----------------------------- CLI smoke test -----------------------------
 
 if __name__ == "__main__":
     cbsa = sys.argv[1] if len(sys.argv) > 1 else "42340"
-    print(f"Fetching ITA exports for CBSA {cbsa} ...", file=sys.stderr)
+    print(f"Fetching MAED for CBSA {cbsa} ...", file=sys.stderr)
     d = fetch_msa_exports(cbsa)
-    if d:
-        print(f"  Year:  {d['year']}")
-        print(f"  Total: ${d['total_usd_millions']:,}M")
-        print(f"  Top products:")
-        for p in d["by_product"][:5]:
-            print(f"    {p['label']:50s}  ${p['value_usd_mil']:,.0f}M")
-        print(f"  Top destinations:")
-        for c in d["by_destination"][:5]:
-            print(f"    {c['label']:30s}  ${c['value_usd_mil']:,.0f}M")
+    if not d:
+        print("  → None (see stderr above for reason)")
+        sys.exit(1)
+    print(f"  Year:  {d['year']}")
+    print(f"  Total: ${d['total_usd_millions']:,}M")
+    print(f"  Top products:")
+    for p in d["by_product"][:5]:
+        print(f"    {p['label']:50s}  ${p['value_usd_mil']:>10,.0f}M")
+    print(f"  Top destinations:")
+    for c in d["by_destination"][:5]:
+        print(f"    {c['label']:30s}  ${c['value_usd_mil']:>10,.0f}M")
+    print(f"  Source: {d['source']}")
