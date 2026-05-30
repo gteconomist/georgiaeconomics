@@ -4,7 +4,7 @@
 **Pilot page:** `/msa/savannah/` (CBSA 42340). This tracker is the source of truth for what is real, what is modeled, what is still demo, and what cannot be obtained at the MSA level.
 
 **Last updated:** 2026-05-30
-**Data layer: 30 live / 0 failed of 30 (confirmed 2026-05-30).** Every section with an automatable source is live. Remaining DEMO (page sections without a wired live source): Economic Inequality table (ACS data present — wiring only), Diffusion Index (needs 3-digit QCEW), Housing Affordability chart (needs mortgage-rate fetcher), Top Employers (no public API). The Comparative Employment manufacturing durable/nondurable split also awaits a 3-digit QCEW pull.
+**Data layer: 30 live / 0 failed of 30 confirmed; +1 new section (`qcew_3digit`) wired, live-pending next dispatch.** Every section with an automatable source is live. Phase-2 close-out (2026-05-30) wired three previously-DEMO page items: **Economic Inequality** (live ACS Gini B19083 + poverty B17001 — page wiring only), **Economic Drivers strip cell** (top-2 industries by QCEW location quotient — page wiring only, no new fetcher), and **Diffusion Index + manufacturing durable/nondurable split** (new `qcew_3digit` fetcher). Remaining DEMO: Housing Affordability chart (needs mortgage-rate fetcher — deferred), Employment Growth Rank strip cell (no automatable national-ranking source), Top Employers (no public API). **Savannah county definition reconciled:** the MSA is correctly **3-county** (Bryan/Chatham/Effingham); Bulloch/Statesboro is a separate micropolitan area joined only in the broader CSA — page header corrected from the erroneous "4-county".
 
 ---
 
@@ -45,13 +45,13 @@ Two-stage pipeline, and the stages refresh on different clocks:
 ### Top indicator strip (5 grey cells)
 | Cell | Source | Status |
 |---|---|---|
-| Economic Drivers (top-2 LQ industries) | QCEW location quotients | DEMO — **buildable** |
-| Employment Growth Rank (2-yr / 5-yr) | national ranking | DEMO — rank not computed live |
+| Economic Drivers (top-2 LQ industries) | QCEW location quotients (MSA share ÷ US share, from `qcew_industry_shares`) | **LIVE** (wired 2026-05-30; *displays next refresh*) |
+| Employment Growth Rank (2-yr / 5-yr) | national ranking | DEMO — **NO SOURCE** (no automatable national-metro ranking) |
 | Relative Costs (Living / Business) | `business_costs.py` | **MODEL** — *displays next refresh* |
 | Vitality Index | `vitality.py` | **MODEL** (live) |
 | Quality of Life | `quality_of_life.py` | **MODEL** (live) |
 
-> Note: the `strip-note` caption still says "all 5 / other 3 cells Demo" — update its wording once `business_costs` lands so it doesn't contradict the live Relative Costs cell.
+> Note: the `strip-note` caption is now **generated dynamically** by `replaceIndicatorStrip()` — it names whichever cells are live (Economic Drivers / Relative Costs / Vitality / Quality of Life) and flags Employment Growth Rank as the one remaining Demo. No longer a hardcoded contradiction.
 
 ### Scorecard sidebar
 | Element | Source | Status |
@@ -81,7 +81,7 @@ DEMO prose, tagged "Partial." Template is final; paragraphs are hand-written, no
 |---|---|---|
 | Industry Employment (YoY by sector) | QCEW | **LIVE** (confirmed 2026-05-30) |
 | Current Employment Trends table | BLS CES by supersector | **LIVE** |
-| Diffusion Index | needs 3-digit NAICS QCEW over time | DEMO — **buildable** |
+| Diffusion Index | `qcew_3digit` — share of 3-digit NAICS MSA industries growing YoY: (growing + 0.5·flat)/total | **LIVE** (wired 2026-05-30; *displays next refresh*). MSA-only series (GA/US 3-digit comparison dropped — no cheap source). |
 | Relative Employment Performance | BLS CES (rebased) | **LIVE** |
 | Relative Employment Forecast (arrows) | `forecast_arima.py` | **MODEL** |
 | House Price Index chart | FHFA via FRED | **LIVE** |
@@ -103,13 +103,13 @@ DEMO prose, tagged "Partial." Template is final; paragraphs are hand-written, no
 | Exports (by product / destination) | ITA | **LIVE** |
 
 ### Comparative Employment & Income
-QCEW shares + average annual wages vs GA/US. **LIVE** (confirmed 2026-05-30); reads one quarter behind the headline total by design (agglvl-44 sector lag). Manufacturing is a **single row** until a 3-digit pull enables the durable/nondurable split (shared need with Diffusion Index).
+QCEW shares + average annual wages vs GA/US. **LIVE** (confirmed 2026-05-30); reads one quarter behind the headline total by design (agglvl-44 sector lag). Manufacturing now splits into **Durable / Nondurable goods** sub-rows from `qcew_3digit` (NAICS 311–339 grouped to the standard durable/nondurable convention; shares use the same total-covered denominator as the parent row). *Displays next refresh.*
 
 ### Demographics & Migration
 | Element | Source | Status |
 |---|---|---|
 | Block Groups by Income | ACS B19013 block-group pull (`acs_block_group_income`) | **LIVE** (confirmed 2026-05-30) — Savannah series live; US comparison left illustrative (national block-group distribution not pulled). |
-| Economic Inequality (Gini, poverty) | data is in live ACS section | DEMO — **buildable** (wiring only; national *rank* would be MODEL) |
+| Economic Inequality (Gini, poverty) | ACS B19083 (Gini) + B17001 (poverty) + B19013 block-group low-income share | **LIVE** (wired 2026-05-30; *displays next refresh*). National-rank column dropped (no automatable MSA ranking); narrative de-ranked to match. |
 | Per Capita Income | BEA | **LIVE** |
 | Migration Flows (in/out) | IRS SOI | **LIVE** |
 | Generational Breakdown | ACS age structure | **LIVE** |
@@ -177,13 +177,13 @@ The monthly 6-month trajectory table cannot be sourced at MSA level. **Quarterly
 
 1. ~~QCEW fix + quarterly Health Check~~ — DONE & confirmed live (2026-05-30).
 2. ~~`business_costs` + `credit_score` display~~ — DONE & confirmed live.
-3. `census_bps_permits` fix (needs keyed run) — **only remaining failure (1 of 26).**
-5. Wire the **buildable** DEMO items: Industrial Diversity (QCEW HHI), Entrepreneurship (Census BFS), Economic Inequality + Pop/Housing tables (ACS, already fetched), Economic Drivers strip cell (QCEW LQ).
-6. 3-digit NAICS QCEW pull → Diffusion Index + manufacturing durable/nondurable split.
-7. Block Groups by Income (ACS block-group); Housing Affordability (Freddie PMMS + ACS).
+3. ~~`census_bps_permits` fix~~ — DONE & confirmed live (2026-05-30, county-sum).
+5. ~~Wire the **buildable** DEMO items~~ — DONE: Industrial Diversity, Entrepreneurship, Pop/Housing, Block Groups, **Economic Inequality** (ACS Gini+poverty), **Economic Drivers** strip cell (QCEW LQ). All live/live-pending.
+6. ~~3-digit NAICS QCEW pull → Diffusion Index + manufacturing durable/nondurable split~~ — DONE (`qcew_3digit` fetcher, 2026-05-30; live-pending next dispatch).
+7. **Remaining (deferred):** Housing Affordability (Freddie PMMS mortgage-rate fetcher + ACS) — the last buildable DEMO item. Employment Growth Rank + Top Employers have no automatable source.
 
-## Open data-accuracy item
-**Savannah MSA county count:** `_ga_msas.COUNTY_TO_MSA` maps CBSA 42340 to **3 counties** (Chatham, Bryan, Effingham), but the page header and OMB's recent delineation describe a **4-county** MSA (adds Bulloch / Statesboro). Anything county-aggregated (migration totals, Gazetteer land area, density) currently reflects the 3-county definition; the ACS CBSA-level calls use whatever Census currently defines 42340 as. Reconcile `_ga_msas` to the current OMB delineation so all county-summed metrics agree. Affects: migration, land area/density, any future county rollups.
+## Open data-accuracy item — ✅ RESOLVED 2026-05-30
+**Savannah MSA county count:** confirmed against the OMB 2023 delineation (effective July 2023): CBSA 42340 is a **3-county MSA** (Bryan, Chatham, Effingham). Bulloch County / Statesboro is the **Statesboro micropolitan area (44340)** and joins Savannah only in the broader **Savannah–Hinesville–Statesboro Combined Statistical Area (CSA)** — *not* the MSA. So `_ga_msas.COUNTY_TO_MSA` (3 counties) was already correct; the page header's "4-county MSA … Bulloch" was the error and has been corrected to "3-county MSA: Chatham, Bryan, Effingham." All county-aggregated metrics (migration, land area/density) were already on the right 3-county basis. No code change to `_ga_msas` needed.
 
 ## Cannot replicate from Précis at MSA level
 Authoritative **Top Employers** (proprietary), **current MSA crime** (FBI by-MSA table ended 2019), **monthly** high-frequency series, and **average weekly hours** by MSA.

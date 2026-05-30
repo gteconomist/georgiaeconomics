@@ -515,6 +515,217 @@ def fetch_qcew_industry_shares(cbsa: str) -> Optional[dict]:
     }
 
 
+# ----------------------------- QCEW: 3-digit NAICS subsectors -----------------------------
+# Powers (a) the manufacturing durable/nondurable split in the Comparative Employment
+# table and (b) the Diffusion Index (breadth of growth across 3-digit industries).
+#
+# Standard durable/nondurable goods grouping of NAICS 3-digit manufacturing subsectors
+# (BLS/Census convention):
+QCEW_MFG_DURABLE = {
+    "321",  # Wood products
+    "327",  # Nonmetallic mineral products
+    "331",  # Primary metals
+    "332",  # Fabricated metal products
+    "333",  # Machinery
+    "334",  # Computer & electronic products
+    "335",  # Electrical equipment & appliances
+    "336",  # Transportation equipment
+    "337",  # Furniture & related products
+    "339",  # Miscellaneous manufacturing
+}
+QCEW_MFG_NONDURABLE = {
+    "311",  # Food
+    "312",  # Beverage & tobacco
+    "313",  # Textile mills
+    "314",  # Textile product mills
+    "315",  # Apparel
+    "316",  # Leather & allied products
+    "322",  # Paper
+    "323",  # Printing & related
+    "324",  # Petroleum & coal products
+    "325",  # Chemicals
+    "326",  # Plastics & rubber products
+}
+
+
+def _qcew_3digit_employment(rows: list, own_codes: tuple = ("5",)) -> Dict[str, dict]:
+    """Extract {naics3: {"employment": int, "avg_wkly_wage": float}} for every
+    private 3-digit NAICS subsector row (size_code 0) in a by-area QCEW CSV.
+
+    3-digit codes are plain digits ("311", "336", "484") — distinct from the
+    2-digit sector rows (and their hyphenated forms "31-33"/"44-45"/"48-49"),
+    so a len()==3 & isdigit() filter selects exactly the subsector level with no
+    double-counting against the sector rows the shares fetcher already reads.
+    """
+    out: Dict[str, dict] = {}
+    for row in rows:
+        if row.get("own_code") not in own_codes:
+            continue
+        ic = (row.get("industry_code") or "").strip()
+        if len(ic) != 3 or not ic.isdigit():
+            continue
+        if row.get("size_code") != "0":
+            continue
+        emp = 0
+        for fld in ("month3_emplvl", "month2_emplvl", "month1_emplvl", "annual_avg_emplvl"):
+            raw = row.get(fld)
+            if raw not in (None, "", "0"):
+                try:
+                    emp = int(float(raw))
+                except ValueError:
+                    emp = 0
+                break
+        if emp <= 0:
+            continue
+        out[ic] = {"employment": emp, "avg_wkly_wage": float(row.get("avg_wkly_wage") or 0)}
+    return out
+
+
+def _mfg_split(emp3: Dict[str, dict]) -> Optional[dict]:
+    """Aggregate a 3-digit employment dict into durable / nondurable manufacturing."""
+    def agg(codes):
+        emp = 0
+        wtot = 0.0
+        for c in codes:
+            d = emp3.get(c)
+            if d:
+                emp += d["employment"]
+                wtot += d["avg_wkly_wage"] * d["employment"]
+        wage = int(round((wtot / emp) * 52)) if emp else 0
+        return {"employment": emp, "avg_annual_wage": wage}
+
+    dur = agg(QCEW_MFG_DURABLE)
+    non = agg(QCEW_MFG_NONDURABLE)
+    total = dur["employment"] + non["employment"]
+    if total <= 0:
+        return None
+    dur["share_pct_of_mfg"] = round(100 * dur["employment"] / total, 1)
+    non["share_pct_of_mfg"] = round(100 * non["employment"] / total, 1)
+    return {"durable": dur, "nondurable": non, "total_employment": total}
+
+
+def fetch_qcew_3digit(cbsa: str, diffusion_quarters: int = 4) -> Optional[dict]:
+    """3-digit NAICS QCEW pull for one MSA.
+
+    Returns:
+        {
+          "year": Y, "quarter": Q, "as_of_label": "Y Qn",
+          "manufacturing_split": {
+              "msa": {"durable": {...}, "nondurable": {...}, "total_employment": N},
+              "ga":  {...},     # may be None if the state pull is empty
+              "us":  {...},
+          },
+          "diffusion": {
+              "points": [{"label": "Y Qn", "value": 0-100, "n": N,
+                          "growing": N, "shrinking": N, "flat": N}, ...],
+              "latest": float,
+          }
+        }
+
+    Diffusion = share of 3-digit MSA industries with higher employment than the
+    same quarter a year earlier: (growing + 0.5*flat) / total * 100. Computed for
+    the most recent `diffusion_quarters` quarters that have populated detail.
+    """
+    msa_area = _qcew_msa_area_code(cbsa)
+    state_area = DEFAULT_STATE_FIPS + "000"
+    us_area = "US000"
+
+    latest = _qcew_latest_quarter()
+    if not latest:
+        return None
+
+    cache: Dict[tuple, Dict[str, dict]] = {}
+
+    def get_msa(y: int, q: int) -> Dict[str, dict]:
+        key = (y, q)
+        if key in cache:
+            return cache[key]
+        rows = _qcew_fetch_csv(y, q, msa_area)
+        d = _qcew_3digit_employment(rows) if rows else {}
+        cache[key] = d
+        return d
+
+    def step_back(y: int, q: int, n: int = 1):
+        for _ in range(n):
+            q -= 1
+            if q < 1:
+                q = 4
+                y -= 1
+        return y, q
+
+    # Anchor on the most recent quarter whose MSA 3-digit detail is populated
+    # (the subsector detail lags the headline total, same as agglvl-44).
+    ay, aq = latest
+    anchor = None
+    for _ in range(5):
+        if get_msa(ay, aq):
+            anchor = (ay, aq)
+            break
+        print(f"  [QCEW-3d] {ay} Q{aq} 3-digit detail not populated — stepping back", file=sys.stderr)
+        ay, aq = step_back(ay, aq)
+    if not anchor:
+        print("  [QCEW-3d] no quarter with populated 3-digit detail — treating as failed", file=sys.stderr)
+        return None
+    ay, aq = anchor
+
+    # Manufacturing durable/nondurable split for MSA / GA / US at the anchor quarter.
+    msa_split = _mfg_split(get_msa(ay, aq))
+
+    def split_for_area(area: str) -> Optional[dict]:
+        rows = _qcew_fetch_csv(ay, aq, area)
+        if not rows:
+            return None
+        return _mfg_split(_qcew_3digit_employment(rows))
+
+    ga_split = split_for_area(state_area)
+    us_split = split_for_area(us_area)
+    manufacturing_split = None
+    if msa_split:
+        manufacturing_split = {"msa": msa_split, "ga": ga_split, "us": us_split}
+
+    # Diffusion series: for each recent quarter, compare to the same quarter a year ago.
+    points = []
+    cy, cq = ay, aq
+    for _ in range(diffusion_quarters):
+        py, pq = cy - 1, cq  # year-ago quarter
+        cur = get_msa(cy, cq)
+        prev = get_msa(py, pq)
+        if cur and prev:
+            grow = flat = shrink = 0
+            for code, d in cur.items():
+                p = prev.get(code)
+                if not p:
+                    continue
+                if d["employment"] > p["employment"]:
+                    grow += 1
+                elif d["employment"] < p["employment"]:
+                    shrink += 1
+                else:
+                    flat += 1
+            n = grow + flat + shrink
+            if n > 0:
+                points.append({
+                    "label": f"{cy} Q{cq}",
+                    "value": round(100 * (grow + 0.5 * flat) / n, 1),
+                    "n": n, "growing": grow, "shrinking": shrink, "flat": flat,
+                })
+        cy, cq = step_back(cy, cq)
+    points.reverse()  # chronological order
+
+    diffusion = {"points": points, "latest": points[-1]["value"]} if points else None
+
+    if not manufacturing_split and not diffusion:
+        return None
+
+    return {
+        "year": ay,
+        "quarter": aq,
+        "as_of_label": f"{ay} Q{aq}",
+        "manufacturing_split": manufacturing_split,
+        "diffusion": diffusion,
+    }
+
+
 def fetch_qcew_yoy_changes(cbsa: str) -> Optional[dict]:
     """Year-over-year % change in total employment by super-sector for the MSA.
 

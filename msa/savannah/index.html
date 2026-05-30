@@ -350,7 +350,7 @@
     <div class="title-block">
       <div class="eyebrow">Metro Economic Profile &middot; A Product of Economic Impact Group, LLC</div>
       <h1>Savannah, GA</h1>
-      <div class="sub">CBSA 42340 &middot; 4-county MSA: Chatham, Bryan, Effingham, Bulloch</div>
+      <div class="sub">CBSA 42340 &middot; 3-county MSA: Chatham, Bryan, Effingham</div>
     </div>
     <div class="as-of-block">
       <div class="stamp">As of May 2026</div>
@@ -392,10 +392,10 @@
     <div class="indicator-cell dual">
       <div class="ic-eyebrow">Economic Drivers</div>
       <div class="dual-pair">
-        <div>Logistics<span>HIGH</span></div>
-        <div>Manufact.<span>HIGH</span></div>
+        <div id="driver-1">Logistics<span>HIGH</span></div>
+        <div id="driver-2">Manufact.<span>HIGH</span></div>
       </div>
-      <div class="ic-foot">Top 2 LQ industries</div>
+      <div class="ic-foot" id="drivers-foot">Top 2 LQ industries</div>
     </div>
     <div class="indicator-cell dual">
       <div class="ic-eyebrow">Employment Growth Rank</div>
@@ -492,7 +492,7 @@
       <p>Population reached <strong>410,000</strong> in 2024 and grew <strong>1.6% in 2025</strong> &mdash; roughly 3&times; the US rate. Net migration has stepped up sharply: +5,700 in 2025 vs. +2,400 in 2024, the highest pace since 2019. Domestic migration is the larger of the two components and rose 116% YoY. The metro is younger than the US average (median age 36.2 vs. 38.5 national; Geographic Profile), with a higher share of Gen Z and Millennials (45% combined vs. 42% US). Educational attainment is comparable to the US average overall, but the metro skews toward "some college, no degree" rather than 4-year-and-above completion.</p>
 
       <h3>Inequality &amp; Structural Position</h3>
-      <p>Gini coefficient of <strong>0.46</strong> places Savannah at rank 187 of 411 metros &mdash; close to the US median (Inequality table). The block-group income ratio is more concerning at rank 78, indicating real geographic separation of income within the MSA. Poverty rate at 13.4% is slightly above the US average. The industrial diversity score (0.76) is above the GA average (0.71), so the metro is structurally less monocultural than its goods-movement tilt would suggest.</p>
+      <p>Gini coefficient of <strong>0.46</strong> sits modestly below the US average (~0.48), pointing to broadly middling income inequality (Inequality table). Within the metro, roughly a fifth of neighborhoods report a median household income under $50k &mdash; evidence of real geographic separation of income across the MSA. The poverty rate of about 12% runs near the US average. The industrial diversity score (0.76) is above the GA average (0.71), so the metro is structurally less monocultural than its goods-movement tilt would suggest.</p>
 
       <h3>Synthesis</h3>
       <p>Savannah's near-term momentum is unambiguous: tightening labor market, broad-based job growth, record net migration, and continued manufacturing acceleration. Structural risks center on three areas: (1) trade-policy sensitivity given the export share, (2) housing affordability erosion despite responsive supply, and (3) underdevelopment in higher-paying white-collar sectors (information, finance, professional services) that elsewhere drive earnings convergence with the national average. Forecast figures are not published here pending the Phase 2 model rollout.</p>
@@ -641,9 +641,9 @@
     </div>
     <div class="report-panel">
       <h3>Diffusion Index</h3>
-      <div class="sub">3-digit NAICS, 6-mo MA &middot; &gt;50 = expansion</div>
+      <div class="sub">3-digit NAICS &middot; YoY &middot; &gt;50 = broad expansion</div>
       <div class="canvas-md"><canvas id="diffusion-chart"></canvas></div>
-      <div class="src">Share of 3-digit industries showing 6-mo employment gains. Source: BLS QCEW. <span class="src-pill demo">Demo</span></div>
+      <div class="src">Share of 3-digit industries with higher employment than a year ago. Source: BLS QCEW. <span class="src-pill demo" id="diffusion-pill">Demo</span></div>
     </div>
   </div>
 
@@ -848,14 +848,15 @@
     <div class="report-panel">
       <h3>Economic Inequality</h3>
       <table class="comp-emp" style="margin-top:8px;">
-        <thead><tr><th class="first">Indicator</th><th>2023</th><th>Rank*</th></tr></thead>
+        <thead><tr><th class="first">Indicator</th><th>Value</th></tr></thead>
         <tbody>
-          <tr><td class="label">Gini coefficient</td><td>0.46</td><td>187</td></tr>
-          <tr><td class="label">Block group income ratio</td><td>0.58</td><td>78</td></tr>
-          <tr><td class="label">Poverty rate (%)</td><td>13.4</td><td>198</td></tr>
+          <tr><td class="label">Gini coefficient</td><td id="ineq-gini">0.46</td></tr>
+          <tr><td class="label">Poverty rate (%)</td><td id="ineq-poverty">13.4</td></tr>
+          <tr><td class="label">Neighborhoods under $50k median (%)</td><td id="ineq-bg-low">22.4</td></tr>
         </tbody>
       </table>
-      <p style="font-size:11px;color:var(--ink-soft);margin-top:6px;font-style:italic;">*Most unequal = 1, of 411 metros</p>
+      <div class="src">Sources: Census ACS 5-yr &mdash; Gini (B19083), poverty (B17001), block-group median HH income (B19013). <span class="src-pill demo" id="inequality-pill">Demo</span></div>
+      <p style="font-size:11px;color:var(--ink-soft);margin-top:6px;font-style:italic;">National metro rank omitted &mdash; no automatable MSA-level ranking source.</p>
 
       <h3 style="margin-top:14px;">Per Capita Income</h3>
       <div class="canvas-sm"><canvas id="pci-chart"></canvas></div>
@@ -1366,6 +1367,18 @@ async function loadLiveData() {
     flipSectionPill('comp-emp-pill', 'live');
   }
 
+  // --- Economic Drivers strip cell: top-2 industries by location quotient ---
+  if (qShares && qShares.msa && qShares.us) replaceEconomicDrivers(qShares);
+
+  // --- 3-digit QCEW: Diffusion Index + manufacturing durable/nondurable split ---
+  const q3 = data.sections.qcew_3digit;
+  if (q3 && q3.diffusion && q3.diffusion.points && q3.diffusion.points.length) {
+    if (replaceDiffusionChart(q3.diffusion)) flipSectionPill('diffusion-pill', 'live');
+  }
+  if (q3 && q3.manufacturing_split && qShares && qShares.totals) {
+    replaceManufacturingSplit(q3.manufacturing_split, qShares.totals);
+  }
+
   // --- QCEW YoY changes: replace the Industry Employment bar chart ---
   const qYoY = data.sections.qcew_yoy_changes;
   if (qYoY && qYoY.sectors && Object.keys(qYoY.sectors).length) {
@@ -1439,6 +1452,9 @@ async function loadLiveData() {
   if (bg && bg.pct && bg.pct.length) {
     if (replaceBlockGroupsChart(bg)) flipSectionPill('bg-income-pill', 'live');
   }
+
+  // --- Economic Inequality: ACS Gini (B19083) + poverty (B17001) + block-group low-income share ---
+  if (replaceInequalityTable(acs, bg)) flipSectionPill('inequality-pill', 'live');
 
   // --- Entrepreneurship: BFS business-application rate indexed to US=100 ---
   const ent = data.sections.entrepreneurship;
@@ -1573,6 +1589,54 @@ function replaceComparativeEmploymentTable(q) {
   if (note) note.innerHTML = `Sources: BLS QCEW ${q.as_of_label} (employment shares + annual wages, county-aggregated to MSA).`;
 }
 
+/** Rebuild the Diffusion Index chart from live 3-digit QCEW breadth-of-growth
+ *  points. Drops the GA/US demo lines (no cheap 3-digit comparison series). */
+function replaceDiffusionChart(diff) {
+  const canvas = document.getElementById('diffusion-chart');
+  if (!canvas) return false;
+  const chart = Chart.getChart(canvas);
+  if (!chart) return false;
+  chart.data.labels = diff.points.map(p => p.label);
+  chart.data.datasets = [chart.data.datasets[0]];
+  chart.data.datasets[0].label = 'Savannah (3-digit NAICS)';
+  chart.data.datasets[0].data = diff.points.map(p => p.value);
+  if (chart.options.scales && chart.options.scales.y) {
+    chart.options.scales.y.min = 0;
+    chart.options.scales.y.max = 100;
+  }
+  chart.update();
+  return true;
+}
+
+/** Insert durable / nondurable manufacturing sub-rows under the Manufacturing row
+ *  of the Comparative Employment table. Shares are of total covered employment
+ *  (same denominator as the parent row), using the QCEW totals already in the JSON.
+ *  Idempotent: removes any prior sub-rows before inserting. */
+function replaceManufacturingSplit(split, totals) {
+  const tbody = document.getElementById('comp-emp-tbody');
+  if (!tbody || !split || !split.msa) return false;
+  let mfgRow = null;
+  tbody.querySelectorAll('tr').forEach(tr => {
+    const lab = tr.querySelector('td.label');
+    if (lab && lab.textContent.trim() === 'Manufacturing') mfgRow = tr;
+  });
+  if (!mfgRow) return false;
+  const pct = (emp, tot) => (tot ? (100 * emp / tot).toFixed(1) : '—');
+  const usd = (v) => (v ? '$' + Math.round(v).toLocaleString() : '—');
+  const row = (label, key) => {
+    const m = split.msa[key];
+    const g = split.ga && split.ga[key];
+    const u = split.us && split.us[key];
+    if (!m) return '';
+    return `<tr class="mfg-sub"><td class="label" style="padding-left:18px;font-style:italic;color:var(--ink-soft);">${label}</td>`
+      + `<td>${pct(m.employment, totals.msa)}</td><td>${g ? pct(g.employment, totals.ga) : '—'}</td><td>${u ? pct(u.employment, totals.us) : '—'}</td>`
+      + `<td class="divider">${usd(m.avg_annual_wage)}</td><td>${g ? usd(g.avg_annual_wage) : '—'}</td><td>${u ? usd(u.avg_annual_wage) : '—'}</td></tr>`;
+  };
+  tbody.querySelectorAll('tr.mfg-sub').forEach(r => r.remove());
+  mfgRow.insertAdjacentHTML('afterend', row('— Durable goods', 'durable') + row('— Nondurable goods', 'nondurable'));
+  return true;
+}
+
 /** Replace the Exports panel tables with live ITA MAED data. */
 function replaceExportsTables(ita) {
   const prodEl = document.getElementById('exports-by-product');
@@ -1584,6 +1648,74 @@ function replaceExportsTables(ita) {
   destEl.innerHTML = ita.by_destination.slice(0, 6).map(c => fmtRow(c.label, c.value_usd_mil)).join('');
   const note = document.getElementById('exports-source-line');
   if (note) note.innerHTML = `Source: ITA Metropolitan Area Exports, ${ita.year} (${ita.source_endpoint || 'api.trade.gov'}).`;
+}
+
+/** Short labels for the indicator-strip Economic Drivers cell (full QCEW sector
+ *  names are too wide for the small dual cell). */
+const SECTOR_SHORT = {
+  "Transportation/Utilities": "Transp/Util",
+  "Manufacturing": "Manufact.",
+  "Leisure & Hospitality": "Leisure/Hosp",
+  "Retail Trade": "Retail",
+  "Other Services": "Other Svc",
+  "Education & Health Services": "Ed & Health",
+  "Wholesale Trade": "Wholesale",
+  "Construction": "Construction",
+  "Financial Activities": "Financial",
+  "Prof. & Bus. Services": "Prof/Bus Svc",
+  "Information": "Information",
+  "Mining": "Mining",
+  "Government": "Government",
+};
+
+/** Fill the Economic Drivers strip cell with the MSA's top-2 industries by
+ *  location quotient (local employment share ÷ national share, from QCEW).
+ *  LQ > 1 means the sector is more concentrated locally than nationally. */
+function replaceEconomicDrivers(q) {
+  if (!q || !q.msa || !q.us) return false;
+  const lqs = [];
+  for (const sec in q.msa) {
+    const ms = q.msa[sec] && q.msa[sec].share_pct;
+    const us = q.us[sec] && q.us[sec].share_pct;
+    if (ms && us) lqs.push([sec, ms / us]);
+  }
+  if (lqs.length < 2) return false;
+  lqs.sort((a, b) => b[1] - a[1]);
+  const slot = (id, sec, lq) => {
+    const el = document.getElementById(id);
+    if (el) el.innerHTML = `${SECTOR_SHORT[sec] || sec}<span>${lq.toFixed(1)}&times;</span>`;
+  };
+  slot('driver-1', lqs[0][0], lqs[0][1]);
+  slot('driver-2', lqs[1][0], lqs[1][1]);
+  const foot = document.getElementById('drivers-foot');
+  if (foot) foot.textContent = `Top 2 by LQ · QCEW ${q.as_of_label}`;
+  return true;
+}
+
+/** Fill the Economic Inequality table from live ACS: Gini (B19083), poverty
+ *  (B17001 derived), and the block-group low-income share (B19013). Returns true
+ *  once the Gini value is populated. National metro rank is intentionally absent
+ *  (no automatable MSA-level ranking source). */
+function replaceInequalityTable(acs, bg) {
+  if (!acs || !acs.values || acs.values.gini_coefficient == null) return false;
+  const set = (id, val) => {
+    const el = document.getElementById(id);
+    if (el && val != null) {
+      el.textContent = val;
+      el.style.background = 'rgba(58, 141, 141, 0.12)';
+      el.style.fontWeight = '700';
+      el.title = 'Live value from the public-data pipeline (replaces demo data)';
+    }
+  };
+  set('ineq-gini', acs.values.gini_coefficient.toFixed(2));
+  const pov = acs.derived && acs.derived.poverty_rate_pct;
+  if (pov != null) set('ineq-poverty', pov.toFixed(1));
+  // Block-group low-income share = % of block groups whose median HH income is
+  // under $50k (first two ACS B19013 bins). A live within-MSA dispersion proxy.
+  if (bg && bg.pct && bg.pct.length >= 2) {
+    set('ineq-bg-low', ((bg.pct[0] || 0) + (bg.pct[1] || 0)).toFixed(1));
+  }
+  return true;
 }
 
 /** Fill the Vitality + Quality-of-Life cells in the top indicator strip from the
@@ -1607,11 +1739,21 @@ function replaceIndicatorStrip(data) {
     if (qf) qf.textContent = `Rank ~${q.rank_estimate} of ${q.n_metros} (lower=better)`;
     filled++;
   }
-  if (filled) {
-    const note = document.getElementById('strip-note');
-    if (note) note.innerHTML =
-      'Indicator strip: Vitality &amp; Quality of Life are <span class="src-pill proxy">EIG composite</span> ' +
-      '<span class="src-pill live">Live</span>; the other 3 cells remain <span class="src-pill demo">Demo</span>.';
+  const note = document.getElementById('strip-note');
+  if (note) {
+    const driversLive = !!(s.qcew_industry_shares && s.qcew_industry_shares.msa && s.qcew_industry_shares.us);
+    const costsLive   = !!(s.business_costs && s.business_costs.cost_of_living_index != null);
+    const parts = [];
+    if (driversLive) parts.push('Economic Drivers is <span class="src-pill live">Live</span> (QCEW location quotients)');
+    const composites = [];
+    if (costsLive) composites.push('Relative Costs');
+    if (filled) composites.push('Vitality &amp; Quality of Life');
+    if (composites.length) parts.push(composites.join(', ') +
+      ' are <span class="src-pill proxy">EIG composite</span> <span class="src-pill live">Live</span>');
+    if (parts.length) {
+      note.innerHTML = 'Indicator strip: ' + parts.join('; ') +
+        '; Employment Growth Rank remains <span class="src-pill demo">Demo</span> (no automatable national-ranking source).';
+    }
   }
 }
 

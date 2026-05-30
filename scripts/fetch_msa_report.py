@@ -198,6 +198,13 @@ def run_qcew_yoy_changes(cbsa: str):
     return data, "live"
 
 
+def run_qcew_3digit(cbsa: str):
+    data = pull_bls.fetch_qcew_3digit(cbsa)
+    if data is None:
+        return None, "failed"
+    return data, "live"
+
+
 def run_health_check(cbsa: str):
     data = pull_bls.fetch_health_check_quarterly(cbsa)
     if data is None:
@@ -279,6 +286,7 @@ SECTIONS = [
     ("bea_personal_income",     run_bea_personal_income),
     ("qcew_industry_shares",    run_qcew_industry_shares),
     ("qcew_yoy_changes",        run_qcew_yoy_changes),
+    ("qcew_3digit",             run_qcew_3digit),
     ("health_check",            run_health_check),
     ("census_bps_permits",      run_census_bps_permits),
     ("ita_msa_exports",         run_ita_msa_exports),
