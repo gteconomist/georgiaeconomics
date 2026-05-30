@@ -162,20 +162,22 @@ def _county_permits_annual(cbsa: str, full_name: str, start_year: int) -> Option
     if not counties:
         return None
 
+    # FRED county permit series prepend a leading "0" to the 5-digit FIPS, e.g.
+    # Chatham 13051 -> BPPRIV013051 (confirmed), NC 37037 -> BPPRIV037037.
     total_by_year: Dict[int, int] = {}
     sf_by_year: Dict[int, int] = {}
     sf_counties_ok = True
     for fips in counties:
-        tot = _annual_by_year(f"BPPRIV{fips}", start_year)
+        tot = _annual_by_year(f"BPPRIV0{fips}", start_year)
         for y, v in tot.items():
             total_by_year[y] = total_by_year.get(y, 0) + v
-        sf = _annual_by_year(f"BP1FH{fips}", start_year)
+        sf = _annual_by_year(f"BP1FH0{fips}", start_year)
         if sf:
             for y, v in sf.items():
                 sf_by_year[y] = sf_by_year.get(y, 0) + v
         else:
             sf_counties_ok = False
-        print(f"  [BPS/FRED county] {fips}: total_yrs={len(tot)} sf_yrs={len(sf)}", file=sys.stderr)
+        print(f"  [BPS/FRED county] BPPRIV0{fips}: total_yrs={len(tot)} sf_yrs={len(sf)}", file=sys.stderr)
 
     if not total_by_year:
         return None

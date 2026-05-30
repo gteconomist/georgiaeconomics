@@ -473,6 +473,10 @@ def _bfs_annual_ba(geo_for: str, geo_in: Optional[str], y: int) -> Optional[floa
         url += f"&in={geo_in}"
     url += f"&key={CENSUS_API_KEY}"
     data = _census_get(url, quiet_404=True)
+    # TEMP DIAGNOSTIC — reveal the BFS response shape (remove once confirmed).
+    print(f"  [BFS DIAG] for={geo_for} in={geo_in} time={y} -> "
+          f"{'rows=' + str(len(data)) if data else 'None'}; "
+          f"sample={str(data[:2]) if data else ''}"[:240], file=sys.stderr)
     if not data or len(data) < 2:
         return None
     try:

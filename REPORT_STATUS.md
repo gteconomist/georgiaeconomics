@@ -4,7 +4,7 @@
 **Pilot page:** `/msa/savannah/` (CBSA 42340). This tracker is the source of truth for what is real, what is modeled, what is still demo, and what cannot be obtained at the MSA level.
 
 **Last updated:** 2026-05-30
-**Data layer:** core sections live (only `census_bps_permits` failing). 8 modeling modules (added industrial_diversity). New sections built & pending next dispatch: Population & Housing Characteristics, Block Groups by Income, Industrial Diversity. Remaining demo: Entrepreneurship (needs Census BFS fetcher), Economic Inequality + Diffusion Index wiring, Housing Affordability chart, Top Employers.
+**Data layer:** 28 live / 2 failed of 30 (confirmed 2026-05-30). Live now incl. Population & Housing Characteristics, Block Groups by Income, Industrial Diversity (8 modeling modules). **2 failing:** `census_bps_permits` (county-sum leading-zero fix applied, pending dispatch) and `entrepreneurship` (BFS call returned empty; diagnostic added, pending dispatch). Remaining demo: Economic Inequality + Diffusion Index wiring, Housing Affordability chart, Top Employers.
 
 ---
 
@@ -97,7 +97,7 @@ DEMO prose, tagged "Partial." Template is final; paragraphs are hand-written, no
 | Element | Source | Status |
 |---|---|---|
 | Top Employers | — | DEMO / **NO MSA SOURCE** (no public API; Précis uses proprietary D&B-type data). Best alternative = Tavily hints, non-authoritative. |
-| Industrial Diversity score | `industrial_diversity.py` (Hachman index from QCEW shares) | **MODEL** (built 2026-05-30, pending dispatch) |
+| Industrial Diversity score | `industrial_diversity.py` (Hachman index from QCEW shares) | **MODEL** (confirmed live 2026-05-30) |
 | Entrepreneurship | Census BFS business applications (`entrepreneurship`) | **LIVE** (built 2026-05-30, pending dispatch) — per-capita rate indexed US=100; tries MSA geography, falls back to county-sum. |
 | Productivity | BEA GMP ÷ CES employment | **LIVE / MODEL** |
 | Exports (by product / destination) | ITA | **LIVE** |
@@ -108,7 +108,7 @@ QCEW shares + average annual wages vs GA/US. **LIVE** (confirmed 2026-05-30); re
 ### Demographics & Migration
 | Element | Source | Status |
 |---|---|---|
-| Block Groups by Income | ACS B19013 block-group pull (`acs_block_group_income`) | **LIVE** (built 2026-05-30, pending dispatch) — Savannah series live; US comparison left illustrative (national block-group distribution not pulled). |
+| Block Groups by Income | ACS B19013 block-group pull (`acs_block_group_income`) | **LIVE** (confirmed 2026-05-30) — Savannah series live; US comparison left illustrative (national block-group distribution not pulled). |
 | Economic Inequality (Gini, poverty) | data is in live ACS section | DEMO — **buildable** (wiring only; national *rank* would be MODEL) |
 | Per Capita Income | BEA | **LIVE** |
 | Migration Flows (in/out) | IRS SOI | **LIVE** |
@@ -120,7 +120,7 @@ QCEW shares + average annual wages vs GA/US. **LIVE** (confirmed 2026-05-30); re
 | Element | Source | Status |
 |---|---|---|
 | Net Migration | Census PEP components | **LIVE** |
-| Population & Housing Characteristics table | ACS B25024/B25035 + tenure/age + Census Gazetteer land area (`acs_housing_characteristics`) | **LIVE** (built 2026-05-30, pending dispatch). Rank column dropped (no national source). Density = ACS pop ÷ Gazetteer land. |
+| Population & Housing Characteristics table | ACS B25024/B25035 + tenure/age + Census Gazetteer land area (`acs_housing_characteristics`) | **LIVE** (confirmed 2026-05-30). Rank column dropped (no national source). Density = ACS pop ÷ Gazetteer land. |
 
 ---
 
