@@ -60,7 +60,7 @@ Two-stage pipeline, and the stages refresh on different clocks:
 | EIG Credit Score | `credit_score.py` | **MODEL** — AA / 84 / Positive; *displays next refresh* |
 
 ### Analysis narrative (Labor, Sector Mix, Trade, Housing, Demographics, Inequality, Synthesis)
-DEMO prose, tagged "Partial." Template is final; paragraphs are hand-written, not auto-generated. Housing paragraph rewritten to match the live valuation model.
+Hand-written prose, **reconciled to the live JSON 2026-05-30** (all 7 paragraphs + the Strengths/Weaknesses/Upside/Downside scorecard). Replaced the demo figures that had drifted/contradicted live data — e.g. unemployment 2.9% (was 3.1%), employment ~flat +0.1% YoY (was "+2.5% broad-based"), diffusion 47 (was "upper-60s"), manufacturing share 16.7% (was 11.4%), exports $8.4B ≈24% of GMP (was $9.9B/29.6%), median age 36.9, diversity 0.86 (was 0.76), net migration +3,200 (was +5,700). Removed unsourced claims (affordability 280→118 index, durable-goods earnings, "lowest unemployment of any GA MSA" — actually 2nd behind Gainesville, "38th of 387" rank). Narrative now reads Savannah as tight-but-cooling. Prose is reviewed periodically and may lag the very latest refresh by design. **A `<span class="src-pill">Disclaimer</span>` was added to the report footer** (informational-only, data not independently validated by EIG — consult original sources).
 
 ### Headline indicators table ("long indicators table")
 | Part | Source | Status |
