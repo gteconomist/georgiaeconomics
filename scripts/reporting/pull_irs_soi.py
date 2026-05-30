@@ -52,6 +52,23 @@ from _ga_msas import GA_MSAS, COUNTY_TO_MSA  # noqa: E402
 # Build inverse + label maps
 CBSA_TO_SHORT: Dict[str, str] = {cbsa: short for cbsa, short, _, _ in GA_MSAS}
 
+# State FIPS -> name. IRS migration files identify the far side only by FIPS (no usable
+# state-name column), so we translate deterministically here rather than trusting a header.
+STATE_FIPS_TO_NAME: Dict[int, str] = {
+    1: "Alabama", 2: "Alaska", 4: "Arizona", 5: "Arkansas", 6: "California",
+    8: "Colorado", 9: "Connecticut", 10: "Delaware", 11: "District of Columbia",
+    12: "Florida", 13: "Georgia", 15: "Hawaii", 16: "Idaho", 17: "Illinois",
+    18: "Indiana", 19: "Iowa", 20: "Kansas", 21: "Kentucky", 22: "Louisiana",
+    23: "Maine", 24: "Maryland", 25: "Massachusetts", 26: "Michigan", 27: "Minnesota",
+    28: "Mississippi", 29: "Missouri", 30: "Montana", 31: "Nebraska", 32: "Nevada",
+    33: "New Hampshire", 34: "New Jersey", 35: "New Mexico", 36: "New York",
+    37: "North Carolina", 38: "North Dakota", 39: "Ohio", 40: "Oklahoma", 41: "Oregon",
+    42: "Pennsylvania", 44: "Rhode Island", 45: "South Carolina", 46: "South Dakota",
+    47: "Tennessee", 48: "Texas", 49: "Utah", 50: "Vermont", 51: "Virginia",
+    53: "Washington", 54: "West Virginia", 55: "Wisconsin", 56: "Wyoming",
+    72: "Puerto Rico",
+}
+
 # Cache the CSV bodies between calls within a single orchestrator run
 _CSV_CACHE: Dict[str, bytes] = {}
 
@@ -194,16 +211,15 @@ def fetch_migration_flows(cbsa: str, year: Optional[int] = None) -> Optional[dic
     if not target_counties:
         return None
 
-    def place_label(other_fips: str, other_cbsa: Optional[str], other_name: str) -> str:
-        """Label a flow's far side: tracked MSA name if known, else the state name
-        (rolling up all of that state's non-metro/out-of-MSA counties), else a FIPS
-        fallback. Never emits the IRS aggregate pseudo-codes."""
+    def place_label(other_cbsa: Optional[str], other_state: int) -> str:
+        """Label a flow's far side: tracked MSA name if the county is in one, else the
+        state name (rolling up that state's non-metro / out-of-MSA counties). Never emits
+        the IRS aggregate pseudo-codes (filtered upstream via is_aggregate)."""
         short = CBSA_TO_SHORT.get(other_cbsa)
         if short:
             return short
-        if other_name:
-            return f"{other_name} (other)"
-        return f"FIPS {other_fips[:2]}"
+        name = STATE_FIPS_TO_NAME.get(other_state)
+        return f"{name} (other)" if name else f"FIPS {other_state:02d}"
 
     # Inflow rows: keep where TO (y2) is in target MSA. Aggregate by source MSA / state.
     in_by_origin: Dict[str, int] = {}
@@ -214,7 +230,7 @@ def fetch_migration_flows(cbsa: str, year: Optional[int] = None) -> Optional[dic
         origin_cbsa = COUNTY_TO_MSA.get(r["from_fips"])
         if origin_cbsa == cbsa:
             continue  # within-MSA churn
-        label = place_label(r["from_fips"], origin_cbsa, r["other_name"])
+        label = place_label(origin_cbsa, r["other_state"])
         in_by_origin[label] = in_by_origin.get(label, 0) + r["n_returns"]
         total_in += r["n_returns"]
 
@@ -226,7 +242,7 @@ def fetch_migration_flows(cbsa: str, year: Optional[int] = None) -> Optional[dic
         dest_cbsa = COUNTY_TO_MSA.get(r["to_fips"])
         if dest_cbsa == cbsa:
             continue
-        label = place_label(r["to_fips"], dest_cbsa, r["other_name"])
+        label = place_label(dest_cbsa, r["other_state"])
         out_by_dest[label] = out_by_dest.get(label, 0) + r["n_returns"]
         total_out += r["n_returns"]
 
