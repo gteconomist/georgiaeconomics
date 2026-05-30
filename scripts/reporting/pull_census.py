@@ -697,6 +697,25 @@ def _acs_rent_income(geo_predicate: str, y: int) -> Optional[tuple]:
         return None
 
 
+def fetch_acs_median_home_value(cbsa: str, year: int) -> Optional[float]:
+    """ACS B25077 median value of owner-occupied housing units ($) for one vintage.
+    Used as the dollar price anchor for the Housing Affordability index."""
+    pred = _msa_predicate(cbsa)
+    url = (
+        f"{CENSUS_BASE}/{year}/acs/acs5?get=B25077_001E"
+        f"&for={urllib.parse.quote(pred, safe=':/+')}"
+        f"&key={CENSUS_API_KEY}"
+    )
+    data = _census_get(url, quiet_404=True)
+    if not data or len(data) < 2:
+        return None
+    try:
+        v = float(data[1][0])
+        return v if v > 0 else None
+    except (ValueError, TypeError, IndexError):
+        return None
+
+
 def fetch_acs_affordability_history(cbsa: str, years_back: int = 6) -> Optional[dict]:
     """Rental affordability indexed to US = 100 across recent ACS 5-year vintages.
 

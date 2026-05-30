@@ -96,7 +96,8 @@ from reporting import (pull_bls, pull_fhfa, pull_census, pull_bea, pull_irs_soi,
 
 # Phase 2 composite/forecast models (each module in scripts/modeling/)
 from modeling import (business_cycle_index, forecast_arima, vitality, quality_of_life,
-                      housing_valuation, business_costs, credit_score, industrial_diversity)
+                      housing_valuation, business_costs, credit_score, industrial_diversity,
+                      housing_affordability)
 
 # Lookup tables
 MSA_BY_CBSA = {cbsa: (short, full, pop) for cbsa, short, full, pop in GA_MSAS}
@@ -355,6 +356,13 @@ def run_industrial_diversity(cbsa: str, output_so_far: dict):
     return data, "live"
 
 
+def run_housing_affordability(cbsa: str, output_so_far: dict):
+    data = housing_affordability.compute(cbsa, output_so_far)
+    if data is None:
+        return None, "failed"
+    return data, "live"
+
+
 def run_credit_score(cbsa: str, output_so_far: dict):
     data = credit_score.compute(cbsa, output_so_far)
     if data is None:
@@ -372,6 +380,7 @@ MODELING_SECTIONS = [
     ("housing_valuation", run_housing_valuation),
     ("business_costs", run_business_costs),
     ("industrial_diversity", run_industrial_diversity),
+    ("housing_affordability", run_housing_affordability),
     ("credit_score", run_credit_score),
 ]
 

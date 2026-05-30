@@ -43,7 +43,7 @@
 
   /* ---------- Top indicator strip (Economic Drivers / Rank / Costs / Vitality) ---------- */
   .indicator-strip {
-    display: grid; grid-template-columns: repeat(5, 1fr); gap: 0;
+    display: grid; grid-template-columns: repeat(4, 1fr); gap: 0;
     border-bottom: 2px solid var(--navy); background: var(--chart-bg);
     margin-bottom: 22px;
   }
@@ -354,7 +354,7 @@
     </div>
     <div class="as-of-block">
       <div class="stamp">As of May 2026</div>
-      <div>Population: <strong>410,000</strong> &middot; State rank: 3 of 14</div>
+      <div>Population: <strong>418,000</strong> &middot; State rank: 3 of 14</div>
     </div>
   </div>
 
@@ -372,21 +372,21 @@
     </div>
   </div>
 
-  <!-- Layout preview banner — replace once all sections are wired live -->
+  <!-- Data-status legend -->
   <div class="preview-banner">
-    <strong>LAYOUT PREVIEW.</strong>
-    This page demonstrates the finished Metro Economic Profile layout. Some sections already read from live public-data feeds; most are populated with illustrative numbers so the structure can be reviewed end-to-end. Every chart and table is tagged below with its current data status. Production launch ships when all sections are <span class="src-pill live">Live</span>.
+    <strong>Data status.</strong>
+    Each chart and table below carries a pill showing where its numbers come from. Figures refresh nightly from public statistical APIs; the as-of stamp above reflects the latest release.
     <div class="legend">
       <span><span class="src-pill live">Live</span> &mdash; pulled from a public API on each refresh</span>
-      <span><span class="src-pill partial">Partial</span> &mdash; some fields live, others pending</span>
-      <span><span class="src-pill demo">Demo</span> &mdash; illustrative; pipeline pending</span>
-      <span><span class="src-pill proxy">EIG composite</span> &mdash; methodology in development</span>
+      <span><span class="src-pill proxy">EIG composite</span> &mdash; Economic Impact Group model from live inputs</span>
+      <span><span class="src-pill partial">Partial</span> &mdash; representative; not a live feed</span>
+      <span><span class="src-pill demo">Demo</span> &mdash; illustrative; live source pending</span>
     </div>
   </div>
 
   <!-- Top indicator strip -->
   <div id="strip-note" style="text-align: right; font-size: 11px; color: var(--ink-soft); margin: 0 0 4px; font-style: italic;">
-    Indicator strip: all 5 cells are <span class="src-pill demo">Demo</span> &middot; methodologies in Phase 2 of the rollout
+    Indicator strip: Economic Drivers (QCEW) live; Relative Costs, Vitality &amp; Quality of Life are EIG composites &middot; values load from the live data pipeline
   </div>
   <div class="indicator-strip">
     <div class="indicator-cell dual">
@@ -396,14 +396,6 @@
         <div id="driver-2">Manufact.<span>HIGH</span></div>
       </div>
       <div class="ic-foot" id="drivers-foot">Top 2 LQ industries</div>
-    </div>
-    <div class="indicator-cell dual">
-      <div class="ic-eyebrow">Employment Growth Rank</div>
-      <div class="dual-pair">
-        <div>2-yr<span>14</span></div>
-        <div>5-yr<span>22</span></div>
-      </div>
-      <div class="ic-foot">Best=1 of 387 US metros</div>
     </div>
     <div class="indicator-cell dual">
       <div class="ic-eyebrow">Relative Costs</div>
@@ -486,7 +478,7 @@
       <p>Goods exports totaled <strong>$8.4B in 2024</strong> (Exports), about <strong>24% of gross metro product</strong> &mdash; a high trade intensity that tracks the metro's port-and-factory base. Transportation equipment (<strong>$2.5B</strong>), paper (<strong>$1.3B</strong>) and chemicals (<strong>$1.1B</strong>) lead the basket, and Asia (<strong>$3.5B</strong>) is the largest destination market. That concentration cuts both ways: it has powered the manufacturing expansion but leaves the metro more exposed to tariffs and global-demand swings than the typical US metro.</p>
 
       <h3>Housing</h3>
-      <p>House-price growth has cooled to <strong>+0.6% YoY</strong> (House Price Index) from a double-digit pandemic pace. The EIG valuation model places Savannah <strong>right on its income-implied fair value</strong> (0% deviation in 2024): prices have tracked local income fundamentals rather than running ahead of them, so there is little sign of a speculative premium. Homebuilding stayed active, with roughly <strong>3,900 single-family and 1,400 multifamily permits</strong> authorized in 2025 (headline table). Affordability nonetheless remains a watch item as income-paced appreciation meets higher mortgage rates &mdash; a live metro affordability index is not yet wired.</p>
+      <p>House-price growth has cooled to <strong>+0.6% YoY</strong> (House Price Index) from a double-digit pandemic pace. The EIG valuation model places Savannah <strong>right on its income-implied fair value</strong> (0% deviation in 2024): prices have tracked local income fundamentals rather than running ahead of them, so there is little sign of a speculative premium. Homebuilding stayed active, with roughly <strong>3,900 single-family and 1,400 multifamily permits</strong> authorized in 2025 (headline table). Affordability has nonetheless eroded as higher mortgage rates compound the price gains &mdash; the EIG affordability index (Housing Affordability chart) traces that squeeze since the low-rate 2020&ndash;21 window.</p>
 
       <h3>Demographics &amp; Migration</h3>
       <p>Population reached about <strong>418,000</strong> (2024) and grew <strong>1.5%</strong> into 2025 (Geographic Profile) &mdash; roughly 2&ndash;3&times; the US pace &mdash; with <strong>net migration of +3,200</strong> the main driver. The metro skews young: median age <strong>36.9</strong> versus roughly 39 nationally, with Gen Z and Millennials a combined <strong>~42%</strong> of residents (Population by Age). Educational attainment is near the US average, with <strong>35.8%</strong> of adults holding a bachelor's degree or higher, though the distribution leans toward "some college" over four-year completion.</p>
@@ -701,7 +693,7 @@
       <h3>Housing Affordability</h3>
       <div class="sub">Index, &gt;100 = median HH can afford median home</div>
       <div class="canvas-md"><canvas id="hous-aff-chart"></canvas></div>
-      <div class="src">Source: Realtor.com Listings + Freddie Mac PMMS + Census ACS income. <span class="src-pill demo">Demo</span></div>
+      <div class="src">EIG composite: ACS income (B19013) vs. income needed for the median home (ACS B25077 &times; FHFA HPI; Freddie Mac PMMS 30-yr rate). <span class="src-pill proxy">EIG composite</span> <span class="src-pill demo" id="hous-aff-pill">Demo</span></div>
     </div>
   </div>
 
@@ -715,36 +707,36 @@
 
   <div class="chart-row">
     <div class="report-panel">
-      <h3>Top Employers</h3>
-      <div class="sub">Headcount, 2025</div>
+      <h3>Major Employers</h3>
+      <div class="sub">Largest employers, ranked by approximate size</div>
       <table class="employers-table">
-        <tr><td>Gulfstream Aerospace</td><td>11,500</td></tr>
-        <tr><td>Memorial Health University Medical Ctr.</td><td>5,800</td></tr>
-        <tr><td>St. Joseph's/Candler Health System</td><td>4,200</td></tr>
-        <tr><td>Hyundai Motor Group Metaplant America</td><td>4,050</td></tr>
-        <tr><td>Georgia Ports Authority</td><td>3,300</td></tr>
-        <tr><td>Hunter Army Airfield / 3rd Infantry</td><td>3,200</td></tr>
-        <tr><td>Savannah-Chatham County Public Schools</td><td>3,150</td></tr>
-        <tr><td>City of Savannah</td><td>2,600</td></tr>
-        <tr><td>Chatham County</td><td>2,400</td></tr>
-        <tr><td>Georgia-Pacific (Effingham)</td><td>2,200</td></tr>
-        <tr><td>Mitsubishi Power Americas</td><td>1,900</td></tr>
-        <tr><td>JCB North America</td><td>1,750</td></tr>
-        <tr><td>SCAD (Savannah College of Art &amp; Design)</td><td>1,650</td></tr>
-        <tr><td>Walmart (distribution + retail)</td><td>1,550</td></tr>
-        <tr><td>Marriott / Hyatt / Westin (hospitality)</td><td>1,400</td></tr>
+        <tr><td>Gulfstream Aerospace</td></tr>
+        <tr><td>Memorial Health University Medical Ctr.</td></tr>
+        <tr><td>St. Joseph's/Candler Health System</td></tr>
+        <tr><td>Hyundai Motor Group Metaplant America</td></tr>
+        <tr><td>Georgia Ports Authority</td></tr>
+        <tr><td>Hunter Army Airfield / 3rd Infantry Division</td></tr>
+        <tr><td>Savannah-Chatham County Public Schools</td></tr>
+        <tr><td>City of Savannah</td></tr>
+        <tr><td>Chatham County</td></tr>
+        <tr><td>Georgia-Pacific (Effingham)</td></tr>
+        <tr><td>Mitsubishi Power Americas</td></tr>
+        <tr><td>JCB North America</td></tr>
+        <tr><td>SCAD (Savannah College of Art &amp; Design)</td></tr>
+        <tr><td>Walmart (distribution + retail)</td></tr>
+        <tr><td>Marriott / Hyatt / Westin (hospitality)</td></tr>
       </table>
-      <div class="src">Sources: Savannah Economic Development Authority (SEDA), company filings. Names are real Savannah employers; headcounts are placeholder until each is verified. <span class="src-pill partial">Partial</span></div>
+      <div class="src">Representative major employers compiled from the Savannah Economic Development Authority and public company announcements. Ordering approximates relative size; exact headcounts are not published at the metro level. <span class="src-pill partial">Representative</span></div>
     </div>
 
     <div class="report-panel">
       <h3>Industrial Diversity</h3>
       <div class="sub">Hachman index, 1.0 = mix identical to the US (most diversified)</div>
       <div class="div-bar-wrap">
-        <div class="div-bar" id="diversity-bar" style="width: 76%;"></div>
-        <div class="div-bar-marker" id="diversity-marker" style="left: 76%;" data-label="Savannah 0.76"></div>
+        <div class="div-bar" id="diversity-bar" style="width: 86%;"></div>
+        <div class="div-bar-marker" id="diversity-marker" style="left: 86%;" data-label="Savannah 0.86"></div>
       </div>
-      <p id="diversity-prose" style="font-size:12px; color:var(--ink-soft); margin:18px 0 6px;">More diversified than 76% of US metros — slightly better than the Georgia average (0.71) and well above similar-sized Sun Belt metros that depend on a single industry.</p>
+      <p id="diversity-prose" style="font-size:12px; color:var(--ink-soft); margin:18px 0 6px;">Hachman index of 0.86 — closer to 1.0 means an industrial mix more like the U.S. overall. Savannah is more diversified than the Georgia average.</p>
       <div class="src">EIG composite: Hachman index from QCEW employment shares (MSA vs US). <span class="src-pill proxy">EIG composite</span> <span class="src-pill demo" id="diversity-pill">Demo</span></div>
 
       <h3 style="margin-top:18px;">Entrepreneurship</h3>
@@ -1374,6 +1366,12 @@ async function loadLiveData() {
   // --- Economic Drivers strip cell: top-2 industries by location quotient ---
   if (qShares && qShares.msa && qShares.us) replaceEconomicDrivers(qShares);
 
+  // --- Housing Affordability: NAR-style index (ACS income vs median-home payment) ---
+  const aff2 = data.sections.housing_affordability;
+  if (aff2 && aff2.years && aff2.affordability_index && aff2.affordability_index.length) {
+    if (replaceHousingAffordabilityChart(aff2)) flipSectionPill('hous-aff-pill', 'live');
+  }
+
   // --- 3-digit QCEW: Diffusion Index + manufacturing durable/nondurable split ---
   const q3 = data.sections.qcew_3digit;
   if (q3 && q3.diffusion && q3.diffusion.points && q3.diffusion.points.length) {
@@ -1595,6 +1593,21 @@ function replaceComparativeEmploymentTable(q) {
   if (note) note.innerHTML = `Sources: BLS QCEW ${q.as_of_label} (employment shares + annual wages, county-aggregated to MSA).`;
 }
 
+/** Rebuild the Housing Affordability chart from the live NAR-style index.
+ *  Drops the GA/US demo lines (the model currently runs MSA-only). */
+function replaceHousingAffordabilityChart(aff) {
+  const canvas = document.getElementById('hous-aff-chart');
+  if (!canvas) return false;
+  const chart = Chart.getChart(canvas);
+  if (!chart) return false;
+  chart.data.labels = aff.years.map(String);
+  chart.data.datasets = [chart.data.datasets[0]];
+  chart.data.datasets[0].label = 'Savannah';
+  chart.data.datasets[0].data = aff.affordability_index;
+  chart.update();
+  return true;
+}
+
 /** Rebuild the Diffusion Index chart from live 3-digit QCEW breadth-of-growth
  *  points. Drops the GA/US demo lines (no cheap 3-digit comparison series). */
 function replaceDiffusionChart(diff) {
@@ -1757,8 +1770,7 @@ function replaceIndicatorStrip(data) {
     if (composites.length) parts.push(composites.join(', ') +
       ' are <span class="src-pill proxy">EIG composite</span> <span class="src-pill live">Live</span>');
     if (parts.length) {
-      note.innerHTML = 'Indicator strip: ' + parts.join('; ') +
-        '; Employment Growth Rank remains <span class="src-pill demo">Demo</span> (no automatable national-ranking source).';
+      note.innerHTML = 'Indicator strip: ' + parts.join('; ') + '.';
     }
   }
 }

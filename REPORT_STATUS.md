@@ -4,7 +4,7 @@
 **Pilot page:** `/msa/savannah/` (CBSA 42340). This tracker is the source of truth for what is real, what is modeled, what is still demo, and what cannot be obtained at the MSA level.
 
 **Last updated:** 2026-05-30
-**Data layer: 30 live / 0 failed of 30 confirmed; +1 new section (`qcew_3digit`) wired, live-pending next dispatch.** Every section with an automatable source is live. Phase-2 close-out (2026-05-30) wired three previously-DEMO page items: **Economic Inequality** (live ACS Gini B19083 + poverty B17001 — page wiring only), **Economic Drivers strip cell** (top-2 industries by QCEW location quotient — page wiring only, no new fetcher), and **Diffusion Index** (new `qcew_3digit` fetcher; confirmed live via dispatch, 2025 Q2, values 42–53 across 32–34 subsectors). The **manufacturing durable/nondurable split** from the same fetcher renders only where MSA 3-digit coverage ≥80%; for Savannah it's suppressed (NAICS 336 / Gulfstream → 13% coverage) so the Manufacturing row stays single — caught in verification, see defect below. Remaining DEMO: Housing Affordability chart (needs mortgage-rate fetcher — deferred), Employment Growth Rank strip cell (no automatable national-ranking source), Top Employers (no public API). **Savannah county definition reconciled:** the MSA is correctly **3-county** (Bryan/Chatham/Effingham); Bulloch/Statesboro is a separate micropolitan area joined only in the broader CSA — page header corrected from the erroneous "4-county".
+**Data layer: 30 live / 0 failed of 30 confirmed; +1 new section (`qcew_3digit`) wired, live-pending next dispatch.** Every section with an automatable source is live. Phase-2 close-out (2026-05-30) wired three previously-DEMO page items: **Economic Inequality** (live ACS Gini B19083 + poverty B17001 — page wiring only), **Economic Drivers strip cell** (top-2 industries by QCEW location quotient — page wiring only, no new fetcher), and **Diffusion Index** (new `qcew_3digit` fetcher; confirmed live via dispatch, 2025 Q2, values 42–53 across 32–34 subsectors). The **manufacturing durable/nondurable split** from the same fetcher renders only where MSA 3-digit coverage ≥80%; for Savannah it's suppressed (NAICS 336 / Gulfstream → 13% coverage) so the Manufacturing row stays single — caught in verification, see defect below. **Production cleanup (2026-05-30, later):** removed the Employment Growth Rank strip cell (no ranking source; strip now 4 cells); reworked Top Employers → "Major Employers" representative list (no headcounts); replaced the "LAYOUT PREVIEW" banner with a data-status legend; corrected the static header population (418k); **built the Housing Affordability index** (`housing_affordability.py` — the last buildable DEMO item). Remaining non-buildable: Top Employers headcounts (proprietary), MSA crime (FBI table ended 2019), monthly high-frequency series, avg weekly hours. **Savannah county definition reconciled:** the MSA is correctly **3-county** (Bryan/Chatham/Effingham); Bulloch/Statesboro is a separate micropolitan area joined only in the broader CSA — page header corrected from the erroneous "4-county".
 
 ---
 
@@ -46,7 +46,7 @@ Two-stage pipeline, and the stages refresh on different clocks:
 | Cell | Source | Status |
 |---|---|---|
 | Economic Drivers (top-2 LQ industries) | QCEW location quotients (MSA share ÷ US share, from `qcew_industry_shares`) | **LIVE** (wired 2026-05-30; *displays next refresh*) |
-| Employment Growth Rank (2-yr / 5-yr) | national ranking | DEMO — **NO SOURCE** (no automatable national-metro ranking) |
+| ~~Employment Growth Rank~~ | national ranking | **REMOVED 2026-05-30** — no automatable national-metro ranking; strip cut from 5 cells to 4 (Alfie's call). |
 | Relative Costs (Living / Business) | `business_costs.py` | **MODEL** — *displays next refresh* |
 | Vitality Index | `vitality.py` | **MODEL** (live) |
 | Quality of Life | `quality_of_life.py` | **MODEL** (live) |
@@ -91,12 +91,12 @@ Hand-written prose, **reconciled to the live JSON 2026-05-30** (all 7 paragraphs
 |---|---|---|
 | Rental Affordability | Census ACS (`acs_affordability`) | **LIVE** |
 | House Price Trends (valuation) | `housing_valuation.py` | **MODEL** (live) |
-| Housing Affordability index | Freddie PMMS (public) + Realtor (scrape) + ACS | DEMO — **partly buildable** |
+| Housing Affordability index | `housing_affordability.py` — NAR-style HAI: ACS income (B19013) vs. income needed for the median home (ACS B25077 × FHFA HPI; Freddie Mac PMMS 30-yr rate via FRED MORTGAGE30US) | **LIVE / MODEL** (built 2026-05-30; *displays next refresh*). MSA-only series; >100 = median HH can afford median home. |
 
 ### Industrial Structure
 | Element | Source | Status |
 |---|---|---|
-| Top Employers | — | DEMO / **NO MSA SOURCE** (no public API; Précis uses proprietary D&B-type data). Best alternative = Tavily hints, non-authoritative. |
+| Top Employers → **Major Employers** | SEDA + public announcements (no headcount API) | **SHIPPED as representative list 2026-05-30** — headcount column dropped; real employers ordered by approximate size; "Representative" pill. Exact metro headcounts aren't published (Précis uses proprietary D&B data). |
 | Industrial Diversity score | `industrial_diversity.py` (Hachman index from QCEW shares) | **MODEL** (confirmed live 2026-05-30) |
 | Entrepreneurship | Census **BDS** establishment entry rate (`entrepreneurship`) | **LIVE** (confirmed 2026-05-30, 2022 vintage). BFS has no sub-national API (eits/bfs is US-only); BDS `ESTABS_ENTRY_RATE` indexed US=100. |
 | Productivity | BEA GMP ÷ CES employment | **LIVE / MODEL** |
@@ -124,7 +124,7 @@ QCEW shares + average annual wages vs GA/US. **LIVE** (confirmed 2026-05-30); re
 
 ---
 
-## Modeling modules (EIG composites) — 7 of 7 built
+## Modeling modules (EIG composites) — 9 of 9 built
 
 | Module | Powers | Status |
 |---|---|---|
@@ -133,8 +133,10 @@ QCEW shares + average annual wages vs GA/US. **LIVE** (confirmed 2026-05-30); re
 | `vitality` | Vitality strip cell | live |
 | `quality_of_life` | QoL strip cell | live |
 | `housing_valuation` | House Price Trends (valuation) | live |
-| `business_costs` | Relative Costs cell | built — displays next refresh |
-| `credit_score` | scorecard grade | built — displays next refresh (must run **last** — reads other models) |
+| `business_costs` | Relative Costs cell | live |
+| `industrial_diversity` | Hachman index (Industrial Diversity) | live |
+| `housing_affordability` | Housing Affordability chart | built 2026-05-30 — displays next refresh |
+| `credit_score` | scorecard grade | live (must run **last** — reads other models) |
 
 ---
 
@@ -183,7 +185,7 @@ The monthly 6-month trajectory table cannot be sourced at MSA level. **Quarterly
 3. ~~`census_bps_permits` fix~~ — DONE & confirmed live (2026-05-30, county-sum).
 5. ~~Wire the **buildable** DEMO items~~ — DONE: Industrial Diversity, Entrepreneurship, Pop/Housing, Block Groups, **Economic Inequality** (ACS Gini+poverty), **Economic Drivers** strip cell (QCEW LQ). All live/live-pending.
 6. ~~3-digit NAICS QCEW pull → Diffusion Index + manufacturing durable/nondurable split~~ — DONE (`qcew_3digit` fetcher, 2026-05-30; live-pending next dispatch).
-7. **Remaining (deferred):** Housing Affordability (Freddie PMMS mortgage-rate fetcher + ACS) — the last buildable DEMO item. Employment Growth Rank + Top Employers have no automatable source.
+7. ~~Housing Affordability (Freddie PMMS + ACS)~~ — DONE (`housing_affordability.py`, 2026-05-30; live-pending next dispatch). Employment Growth Rank removed; Top Employers shipped as a representative list. **No buildable DEMO items remain.**
 
 ## Open data-accuracy item — ✅ RESOLVED 2026-05-30
 **Savannah MSA county count:** confirmed against the OMB 2023 delineation (effective July 2023): CBSA 42340 is a **3-county MSA** (Bryan, Chatham, Effingham). Bulloch County / Statesboro is the **Statesboro micropolitan area (44340)** and joins Savannah only in the broader **Savannah–Hinesville–Statesboro Combined Statistical Area (CSA)** — *not* the MSA. So `_ga_msas.COUNTY_TO_MSA` (3 counties) was already correct; the page header's "4-county MSA … Bulloch" was the error and has been corrected to "3-county MSA: Chatham, Bryan, Effingham." All county-aggregated metrics (migration, land area/density) were already on the right 3-county basis. No code change to `_ga_msas` needed.
