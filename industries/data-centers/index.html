@@ -13,6 +13,10 @@
 <script defer src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
 <script defer src="https://cdn.jsdelivr.net/gh/gteconomist/economicsguru@main/assets/charts.js"></script>
 
+<!-- Leaflet for the facility map (Section B). Loaded synchronously so we can init in the main script. -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
+<script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+
 <style>
   /* Data-center hero — navy-to-coral gradient (heat/cooling theme) */
   .dc-hero {
@@ -44,6 +48,66 @@
   .chart-canvas-med  { position: relative; height: 320px; background: var(--chart-bg); padding: 6px; }
   .chart-canvas-bench{ position: relative; height: 400px; background: var(--chart-bg); padding: 6px; }
   .chart-canvas-counties { position: relative; height: 480px; background: var(--chart-bg); padding: 6px; }
+
+  /* Facility map (Leaflet) */
+  .dc-map-wrap {
+    position: relative; height: 540px; background: var(--chart-bg);
+    border: 1px solid var(--border); padding: 0; margin-top: 6px;
+  }
+  #dc-map { width: 100%; height: 100%; background: var(--chart-bg); }
+  .dc-map-legend {
+    background: rgba(255, 255, 255, 0.96); border: 1px solid var(--border);
+    padding: 10px 14px; font-size: 12px; line-height: 1.6; color: var(--ink);
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08); border-radius: 3px;
+  }
+  .dc-map-legend h4 {
+    font-family: var(--font-display); font-size: 11px; font-weight: 800;
+    color: var(--navy); text-transform: uppercase; letter-spacing: 0.06em;
+    margin: 0 0 6px;
+  }
+  .dc-map-legend .row { display: flex; align-items: center; gap: 8px; }
+  .dc-map-legend .swatch {
+    display: inline-block; width: 12px; height: 12px; border-radius: 50%;
+    border: 2px solid #fff; box-shadow: 0 0 0 1px rgba(0,0,0,0.15);
+  }
+  .dc-map-legend .size-note { font-size: 11px; color: var(--ink-soft); margin-top: 6px; font-style: italic; }
+  .dc-map-popup {
+    font-family: var(--font-body); font-size: 13px; line-height: 1.45; color: var(--ink);
+    min-width: 220px;
+  }
+  .dc-map-popup .pop-name {
+    font-family: var(--font-display); font-weight: 700; color: var(--navy); font-size: 14px;
+  }
+  .dc-map-popup .pop-status {
+    display: inline-block; font-size: 10px; font-weight: 800; letter-spacing: 0.06em;
+    text-transform: uppercase; padding: 2px 6px; border-radius: 2px; margin-top: 4px;
+  }
+  .dc-map-popup .pop-status.operating          { background: rgba(107,142,61,0.18); color: var(--green); }
+  .dc-map-popup .pop-status.under-construction { background: rgba(212,160,23,0.18); color: var(--mustard); }
+  .dc-map-popup .pop-status.announced          { background: rgba(58,141,141,0.18); color: var(--teal); }
+  .dc-map-popup .pop-status.deferred           { background: rgba(212,98,74,0.18);  color: var(--coral); }
+  .dc-map-popup .pop-meta { color: var(--ink-soft); margin-top: 6px; font-size: 12px; }
+  .dc-map-popup .pop-stats {
+    margin-top: 8px; padding-top: 8px; border-top: 1px dotted var(--border);
+    display: flex; flex-wrap: wrap; gap: 10px; font-size: 12px;
+  }
+  .dc-map-popup .pop-stats strong { color: var(--navy); }
+
+  /* Layer toggle row above the map */
+  .dc-map-controls {
+    display: flex; gap: 14px; align-items: center; flex-wrap: wrap;
+    padding: 8px 12px; background: var(--chart-bg); border: 1px solid var(--border);
+    border-bottom: none; font-size: 13px;
+  }
+  .dc-map-controls label {
+    display: flex; align-items: center; gap: 6px; cursor: pointer;
+    color: var(--ink); font-weight: 600;
+  }
+  .dc-map-controls .swatch {
+    display: inline-block; width: 11px; height: 11px; border-radius: 50%;
+    border: 1.5px solid #fff; box-shadow: 0 0 0 1px rgba(0,0,0,0.15);
+  }
+  .dc-map-controls .count { margin-left: auto; font-size: 12px; color: var(--ink-soft); }
 
   /* Section heading + Costar freshness badge */
   .costar-badge {
@@ -312,9 +376,24 @@
   <!-- =========================== SECTION B — COUNTY =========================== -->
   <div class="chart-panel" style="margin-top: 22px;">
     <h2>Where the Data Centers Are <span class="costar-badge" id="costar-badge-b"></span></h2>
-    <p class="sub">Operating and pipeline capacity by county, in megawatts. Douglas County (Lithia Springs corridor) carries the largest operating fleet; Bartow and Walton lead the active pipeline. The tracked facilities cluster in ~19 counties, with metro Atlanta accounting for the overwhelming majority.</p>
+    <p class="sub">Every tracked facility, mapped. Pin color shows status; pin size scales with utility-power capacity. Use the toggles to filter by status, or click any pin for facility details. Most sites cluster in Douglas County's Lithia Springs corridor, central Fulton, and the Bartow/Walton/Newton band along the I-20/I-75 exurbs.</p>
+
+    <div class="dc-map-controls">
+      <label><input type="checkbox" id="layer-operating" checked> <span class="swatch" style="background: #6b8e3d;"></span> Operating</label>
+      <label><input type="checkbox" id="layer-under-construction" checked> <span class="swatch" style="background: #d4a017;"></span> Under construction</label>
+      <label><input type="checkbox" id="layer-announced" checked> <span class="swatch" style="background: #3a8d8d;"></span> Announced</label>
+      <label><input type="checkbox" id="layer-deferred" checked> <span class="swatch" style="background: #d4624a;"></span> Deferred</label>
+      <span class="count" id="map-count">—</span>
+    </div>
+    <div class="dc-map-wrap"><div id="dc-map"></div></div>
+    <div class="source-note">Facility locations from our internal facility database. Map tiles &copy; <a href="https://carto.com/attributions" target="_blank" rel="noopener">CARTO</a>, &copy; <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap</a> contributors. Coverage skews toward commercially marketed sites; smaller enterprise rooms are likely undercounted.</div>
+  </div>
+
+  <div class="chart-panel" style="margin-top: 22px;">
+    <h2>Capacity by County <span class="costar-badge" id="costar-badge-bcap"></span></h2>
+    <p class="sub">Operating and pipeline capacity by county, in megawatts. Douglas County carries the largest operating fleet; Bartow and Walton lead the active pipeline.</p>
     <div class="chart-canvas-counties"><canvas id="counties-chart"></canvas></div>
-    <div class="source-note">Source: Georgia Economics internal facility database. Coverage skews toward commercially marketed sites; smaller enterprise rooms are likely undercounted.</div>
+    <div class="source-note">Source: Georgia Economics internal facility database, aggregated from the facility list above.</div>
   </div>
 
   <div class="chart-panel" style="margin-top: 22px;">
@@ -609,6 +688,9 @@ async function init() {
     renderCountiesChart(d.counties.slice(0, 15));
     renderCountyTable(d.counties);
   }
+  if (Array.isArray(d.facilities)) renderFacilityMap(d.facilities);
+  // Costar freshness badge added for the new "Capacity by County" subsection too
+  setCostarBadge('costar-badge-bcap', costarDate);
   if (d.load_forecast) {
     renderLoadChart(d.load_forecast);
     renderShareChart(d.load_forecast);
@@ -780,6 +862,133 @@ function renderCountyTable(counties) {
     `;
     tbody.appendChild(tr);
   });
+}
+
+// ---------- Leaflet facility map ----------
+const STATUS_COLORS = {
+  'operating':          '#6b8e3d',
+  'under-construction': '#d4a017',
+  'announced':          '#3a8d8d',
+  'deferred':           '#d4624a',
+};
+
+// Module-level cache so layer toggles can re-filter without re-creating the map
+let _dcMap = null;
+let _dcMarkerLayer = null;
+let _dcAllFacilities = [];
+
+function renderFacilityMap(facilities) {
+  if (typeof L === 'undefined') {
+    console.warn('Leaflet not loaded; skipping facility map.');
+    return;
+  }
+  _dcAllFacilities = facilities.filter(f => typeof f.lat === 'number' && typeof f.lng === 'number');
+
+  // Map centered on GA — viewport sized to fit the facility bounding box
+  _dcMap = L.map('dc-map', {
+    zoomControl: true,
+    scrollWheelZoom: false,        // require shift+scroll, common UX
+    minZoom: 6, maxZoom: 16,
+  }).setView([33.75, -83.9], 7);
+
+  L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
+    subdomains: 'abcd',
+    attribution: '&copy; OpenStreetMap, &copy; CARTO',
+    maxZoom: 19,
+  }).addTo(_dcMap);
+
+  _dcMarkerLayer = L.layerGroup().addTo(_dcMap);
+
+  // Initial render — all statuses
+  refreshMapMarkers();
+
+  // Fit bounds to the facility set
+  const lats = _dcAllFacilities.map(f => f.lat);
+  const lngs = _dcAllFacilities.map(f => f.lng);
+  if (lats.length) {
+    _dcMap.fitBounds([
+      [Math.min(...lats) - 0.1, Math.min(...lngs) - 0.1],
+      [Math.max(...lats) + 0.1, Math.max(...lngs) + 0.1],
+    ], { padding: [20, 20] });
+  }
+
+  // Legend
+  const legend = L.control({ position: 'bottomright' });
+  legend.onAdd = function() {
+    const div = L.DomUtil.create('div', 'dc-map-legend');
+    div.innerHTML = `
+      <h4>Status</h4>
+      <div class="row"><span class="swatch" style="background:${STATUS_COLORS['operating']}"></span> Operating</div>
+      <div class="row"><span class="swatch" style="background:${STATUS_COLORS['under-construction']}"></span> Under construction</div>
+      <div class="row"><span class="swatch" style="background:${STATUS_COLORS['announced']}"></span> Announced</div>
+      <div class="row"><span class="swatch" style="background:${STATUS_COLORS['deferred']}"></span> Deferred</div>
+      <div class="size-note">Pin size scales with utility kW capacity.</div>`;
+    return div;
+  };
+  legend.addTo(_dcMap);
+
+  // Layer toggle wiring
+  ['operating', 'under-construction', 'announced', 'deferred'].forEach(s => {
+    const cb = document.getElementById('layer-' + s);
+    if (cb) cb.addEventListener('change', refreshMapMarkers);
+  });
+}
+
+function refreshMapMarkers() {
+  if (!_dcMarkerLayer) return;
+  _dcMarkerLayer.clearLayers();
+  const enabled = new Set(
+    ['operating', 'under-construction', 'announced', 'deferred']
+      .filter(s => {
+        const cb = document.getElementById('layer-' + s);
+        return !cb || cb.checked;
+      })
+  );
+  let rendered = 0;
+  _dcAllFacilities.forEach(f => {
+    if (!enabled.has(f.status)) return;
+    rendered++;
+    const color = STATUS_COLORS[f.status] || '#9b8b6a';
+    // Radius: sqrt(kW/1000) * 2, clamped 4..18 — so a 1 MW site is ~4px and 200 MW is ~18px
+    const kW = f.capacity_total_utility_kw || f.capacity_critical_it_kw || 0;
+    const mw = kW / 1000;
+    const r = Math.max(4, Math.min(18, Math.sqrt(mw) * 2));
+    const marker = L.circleMarker([f.lat, f.lng], {
+      radius: r,
+      fillColor: color,
+      color: '#fff',
+      weight: 1.5,
+      opacity: 1,
+      fillOpacity: 0.85,
+    });
+    marker.bindPopup(buildFacilityPopup(f), { maxWidth: 320 });
+    marker.addTo(_dcMarkerLayer);
+  });
+  const countEl = document.getElementById('map-count');
+  if (countEl) countEl.textContent = rendered + ' facilities shown';
+}
+
+function buildFacilityPopup(f) {
+  const name = f.operator || f.property_name || f.address || 'Unnamed facility';
+  const stats = [];
+  if (f.capacity_total_utility_kw) stats.push(`<span><strong>${(f.capacity_total_utility_kw/1000).toFixed(1)}</strong> MW utility</span>`);
+  if (f.capacity_critical_it_kw)   stats.push(`<span><strong>${(f.capacity_critical_it_kw/1000).toFixed(1)}</strong> MW IT</span>`);
+  if (f.rba_sf)                    stats.push(`<span><strong>${(f.rba_sf/1000).toFixed(0)}K</strong> sq ft</span>`);
+  if (f.year_built)                stats.push(`<span>built <strong>${f.year_built}</strong></span>`);
+  const typeBits = [];
+  if (f.type) typeBits.push(f.type.charAt(0).toUpperCase() + f.type.slice(1));
+  if (f.tier) typeBits.push('Tier ' + f.tier);
+  return `
+    <div class="dc-map-popup">
+      <div class="pop-name">${escape(name)}</div>
+      <span class="pop-status ${f.status || ''}">${(f.status || 'unknown').replace(/-/g, ' ')}</span>
+      <div class="pop-meta">
+        ${escape(f.address || '')}<br>
+        ${escape(f.city || '')}, ${escape(f.county || '')} County
+        ${typeBits.length ? ' · ' + escape(typeBits.join(' · ')) : ''}
+      </div>
+      ${stats.length ? `<div class="pop-stats">${stats.join('')}</div>` : ''}
+    </div>`;
 }
 
 function renderLoadChart(lf) {
