@@ -925,22 +925,22 @@
     </div>
     <div class="report-panel">
       <h3>Population &amp; Housing Characteristics</h3>
-      <table class="comp-emp" style="margin-top:8px;">
-        <thead><tr><th class="first">Indicator</th><th>Units</th><th>Value</th><th>Rank*</th></tr></thead>
-        <tbody>
-          <tr><td class="label">Total land area</td><td>sq mi</td><td>1,628</td><td>136</td></tr>
-          <tr><td class="label">Population density</td><td>pop / dev. land</td><td>312</td><td>114</td></tr>
-          <tr><td class="label">Median age</td><td>years</td><td>36.2</td><td>271</td></tr>
-          <tr><td class="label">Total housing units</td><td>thousands</td><td>176.2</td><td>96</td></tr>
-          <tr class="sub"><td class="label">Owner occupied</td><td>% of total</td><td>57.4</td><td>248</td></tr>
-          <tr class="sub"><td class="label">Renter occupied</td><td>% of total</td><td>34.1</td><td>118</td></tr>
-          <tr class="sub"><td class="label">Vacant</td><td>% of total</td><td>8.5</td><td>167</td></tr>
-          <tr><td class="label">1-unit detached</td><td>% of total</td><td>62.1</td><td>270</td></tr>
-          <tr><td class="label">Multifamily</td><td>% of total</td><td>28.4</td><td>96</td></tr>
-          <tr><td class="label">Median year built</td><td>year</td><td>1992</td><td>—</td></tr>
+      <table class="comp-emp" style="margin-top:8px;" id="pop-housing-table">
+        <thead><tr><th class="first">Indicator</th><th>Units</th><th>Value</th></tr></thead>
+        <tbody id="pop-housing-tbody">
+          <tr><td class="label">Total land area</td><td>sq mi</td><td>1,628</td></tr>
+          <tr><td class="label">Population density</td><td>pop / sq mi</td><td>312</td></tr>
+          <tr><td class="label">Median age</td><td>years</td><td>36.2</td></tr>
+          <tr><td class="label">Total housing units</td><td>thousands</td><td>176.2</td></tr>
+          <tr class="sub"><td class="label">Owner occupied</td><td>% of total</td><td>57.4</td></tr>
+          <tr class="sub"><td class="label">Renter occupied</td><td>% of total</td><td>34.1</td></tr>
+          <tr class="sub"><td class="label">Vacant</td><td>% of total</td><td>8.5</td></tr>
+          <tr><td class="label">1-unit detached</td><td>% of total</td><td>62.1</td></tr>
+          <tr><td class="label">Multifamily</td><td>% of total</td><td>28.4</td></tr>
+          <tr><td class="label">Median year built</td><td>year</td><td>1992</td></tr>
         </tbody>
       </table>
-      <div class="src">*Out of 411 US metros, lower = larger/older/denser. Source: Census ACS, 2024. <span class="src-pill demo">Demo</span></div>
+      <div class="src">Source: Census ACS 5-year (structure, tenure, age) + Census Gazetteer (land area). <span class="src-pill demo" id="pop-housing-pill">Demo</span></div>
     </div>
   </div>
 
@@ -1420,6 +1420,12 @@ async function loadLiveData() {
     if (replaceHealthCheck(hc)) flipSectionPill('health-check-pill', 'live');
   }
 
+  // --- Population & Housing Characteristics: ACS structure/tenure + Gazetteer land area ---
+  const ph = data.sections.acs_housing_characteristics;
+  if (ph && (ph.values || ph.derived)) {
+    if (replacePopHousingTable(ph)) flipSectionPill('pop-housing-pill', 'live');
+  }
+
   // --- BEA Per Capita Income: rebuild the PCI chart ---
   if (pi && pi.years && pi.per_capita_income) {
     replacePerCapitaIncomeChart(pi);
@@ -1779,6 +1785,38 @@ function replaceHealthCheck(hc) {
     rowFor('Unemployment rate (%)', hc.unemployment_rate, 'dec'),
     rowFor('Labor force (000s)',    hc.labor_force_000s,  'dec'),
   ].join('');
+  return true;
+}
+
+/** Rebuild the Population & Housing Characteristics table from ACS + Gazetteer data.
+ *  Values come from the acs_housing_characteristics section (values + derived). Rows
+ *  with no value render "—". The Rank column was intentionally dropped (no national
+ *  source wired). */
+function replacePopHousingTable(ph) {
+  const tbody = document.getElementById('pop-housing-tbody');
+  if (!tbody) return false;
+  const v = ph.values || {};
+  const d = ph.derived || {};
+  const num = (x, dec) => (x == null ? '—'
+    : (+x).toLocaleString(undefined, { minimumFractionDigits: dec, maximumFractionDigits: dec }));
+  const yr = (x) => (x == null ? '—' : String(Math.round(+x)));
+  const rows = [
+    ['Total land area',     'sq mi',        num(d.land_area_sqmi, 0),     false],
+    ['Population density',  'pop / sq mi',  num(d.population_density, 0),  false],
+    ['Median age',          'years',        num(v.median_age, 1),         false],
+    ['Total housing units', 'thousands',    v.total_housing_units == null ? '—' : num(v.total_housing_units / 1000, 1), false],
+    ['Owner occupied',      '% of total',   num(d.pct_owner_occupied, 1),  true],
+    ['Renter occupied',     '% of total',   num(d.pct_renter_occupied, 1), true],
+    ['Vacant',              '% of total',   num(d.pct_vacant, 1),          true],
+    ['1-unit detached',     '% of total',   num(d.pct_1unit_detached, 1),  false],
+    ['Multifamily',         '% of total',   num(d.pct_multifamily, 1),     false],
+    ['Median year built',   'year',         yr(v.median_year_built),       false],
+  ];
+  // Only flip to live if we actually have at least the core ACS values.
+  if (v.median_age == null && v.total_housing_units == null) return false;
+  tbody.innerHTML = rows.map(([label, units, val, sub]) =>
+    `<tr${sub ? ' class="sub"' : ''}><td class="label">${label}</td><td>${units}</td><td>${val}</td></tr>`
+  ).join('');
   return true;
 }
 

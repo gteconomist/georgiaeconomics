@@ -120,7 +120,7 @@ QCEW shares + average annual wages vs GA/US. **LIVE** (confirmed 2026-05-30); re
 | Element | Source | Status |
 |---|---|---|
 | Net Migration | Census PEP components | **LIVE** |
-| Population & Housing Characteristics table | data is in live ACS section | DEMO — **buildable** (wiring only) |
+| Population & Housing Characteristics table | ACS B25024/B25035 + tenure/age + Census Gazetteer land area (`acs_housing_characteristics`) | **LIVE** (built 2026-05-30, pending dispatch). Rank column dropped (no national source). Density = ACS pop ÷ Gazetteer land. |
 
 ---
 
@@ -181,6 +181,9 @@ The monthly 6-month trajectory table cannot be sourced at MSA level. **Quarterly
 5. Wire the **buildable** DEMO items: Industrial Diversity (QCEW HHI), Entrepreneurship (Census BFS), Economic Inequality + Pop/Housing tables (ACS, already fetched), Economic Drivers strip cell (QCEW LQ).
 6. 3-digit NAICS QCEW pull → Diffusion Index + manufacturing durable/nondurable split.
 7. Block Groups by Income (ACS block-group); Housing Affordability (Freddie PMMS + ACS).
+
+## Open data-accuracy item
+**Savannah MSA county count:** `_ga_msas.COUNTY_TO_MSA` maps CBSA 42340 to **3 counties** (Chatham, Bryan, Effingham), but the page header and OMB's recent delineation describe a **4-county** MSA (adds Bulloch / Statesboro). Anything county-aggregated (migration totals, Gazetteer land area, density) currently reflects the 3-county definition; the ACS CBSA-level calls use whatever Census currently defines 42340 as. Reconcile `_ga_msas` to the current OMB delineation so all county-summed metrics agree. Affects: migration, land area/density, any future county rollups.
 
 ## Cannot replicate from Précis at MSA level
 Authoritative **Top Employers** (proprietary), **current MSA crime** (FBI by-MSA table ended 2019), **monthly** high-frequency series, and **average weekly hours** by MSA.

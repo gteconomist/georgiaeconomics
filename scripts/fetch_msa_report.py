@@ -149,6 +149,13 @@ def run_census_acs_demographics(cbsa: str):
     return data, "live"
 
 
+def run_acs_housing_characteristics(cbsa: str):
+    data = pull_census.fetch_housing_characteristics(cbsa)
+    if data is None:
+        return None, "failed"
+    return data, "live"
+
+
 def run_bea_gmp(cbsa: str):
     data = pull_bea.fetch_gmp_history(cbsa, years_back=7)
     if data is None:
@@ -267,6 +274,7 @@ SECTIONS = [
     ("acs_age_structure",       run_acs_age_structure),
     ("acs_affordability",       run_acs_affordability),
     ("census_net_migration",    run_census_net_migration),
+    ("acs_housing_characteristics", run_acs_housing_characteristics),
 ]
 
 

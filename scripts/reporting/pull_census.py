@@ -43,6 +43,8 @@ from __future__ import annotations
 
 import os
 import sys
+import csv
+import io
 import json
 import time
 import urllib.request
@@ -51,6 +53,9 @@ import urllib.parse
 from datetime import date
 from pathlib import Path
 from typing import Optional, Dict, List
+
+sys.path.insert(0, str(Path(__file__).parent.parent))
+from _ga_msas import COUNTY_TO_MSA  # noqa: E402
 
 CENSUS_API_KEY = os.environ.get("CENSUS_API_KEY", "").strip()
 CENSUS_BASE = "https://api.census.gov/data"
@@ -305,6 +310,145 @@ def fetch_acs_demographics(cbsa: str, year: Optional[int] = None) -> Optional[di
 
         return {
             "source": f"Census ACS 5-year, {y} vintage (covers {y-4}-{y})",
+            "year": y,
+            "vintage_window": f"{y-4}-{y}",
+            "values": values,
+            "derived": derived,
+        }
+
+    return None
+
+
+# ----------------------------- Population & Housing Characteristics -----------------------------
+# Self-contained ACS pull (kept separate from the main demographics call to stay under the
+# Census ~50-var/request cap) + Census Gazetteer land area for density.
+HOUSING_CHAR_VARS = {
+    "B01002_001E": "median_age",
+    "B01003_001E": "population",
+    "B25001_001E": "total_housing_units",
+    "B25003_002E": "owner_occupied",
+    "B25003_003E": "renter_occupied",
+    "B25002_003E": "vacant_housing_units",
+    "B25024_001E": "struct_total",
+    "B25024_002E": "struct_1unit_detached",
+    "B25024_004E": "struct_2",
+    "B25024_005E": "struct_3_4",
+    "B25024_006E": "struct_5_9",
+    "B25024_007E": "struct_10_19",
+    "B25024_008E": "struct_20_49",
+    "B25024_009E": "struct_50plus",
+    "B25035_001E": "median_year_built",
+}
+_MULTIFAMILY_KEYS = ["struct_2", "struct_3_4", "struct_5_9", "struct_10_19", "struct_20_49", "struct_50plus"]
+
+
+def _gazetteer_land_area_sqmi(cbsa: str) -> Optional[float]:
+    """Total land area (sq mi) for the MSA = sum of ALAND_SQMI over its counties, from the
+    Census Gazetteer counties file. Land area is effectively static, so any recent vintage
+    works; we probe the two most recent. Returns None on failure (sandbox proxy blocks
+    www2.census.gov — validates only in a real Actions run)."""
+    counties = {fips for fips, c in COUNTY_TO_MSA.items() if c == cbsa}
+    if not counties:
+        return None
+    yr = date.today().year
+    for gy in (yr - 1, yr - 2, yr - 3):
+        url = (f"https://www2.census.gov/geo/docs/maps-data/data/gazetteer/"
+               f"{gy}_Gazetteer/{gy}_Gaz_counties_national.txt")
+        try:
+            req = urllib.request.Request(url, headers={
+                "User-Agent": "Mozilla/5.0 (compatible; EIG-MSA-reports/1.0)",
+                "Accept": "text/plain,*/*",
+            })
+            with urllib.request.urlopen(req, timeout=60) as resp:
+                raw = resp.read().decode("latin-1", errors="replace")
+        except Exception:
+            continue
+        reader = csv.reader(io.StringIO(raw), delimiter="\t")
+        try:
+            header = [h.strip() for h in next(reader)]
+            gi = header.index("GEOID")
+            ai = header.index("ALAND_SQMI")
+        except (StopIteration, ValueError):
+            continue
+        total, hits = 0.0, 0
+        for row in reader:
+            if len(row) <= max(gi, ai):
+                continue
+            if row[gi].strip() in counties:
+                try:
+                    total += float(row[ai].strip())
+                    hits += 1
+                except ValueError:
+                    pass
+        if hits:
+            return round(total)
+    return None
+
+
+def fetch_housing_characteristics(cbsa: str, year: Optional[int] = None) -> Optional[dict]:
+    """ACS 5-year housing-structure + age/tenure pull for the Population & Housing
+    Characteristics table, plus Gazetteer land area and derived density.
+
+    Returns {"year", "vintage_window", "values", "derived", "source"} or None.
+    """
+    if not CENSUS_API_KEY:
+        print("  [Census ACS5 housing] no API key", file=sys.stderr)
+        return None
+
+    this_year = date.today().year
+    candidate_years = [year] if year else list(range(this_year - 1, this_year - 5, -1))
+    vars_str = ",".join(HOUSING_CHAR_VARS.keys())
+
+    for y in candidate_years:
+        url = (
+            f"{CENSUS_BASE}/{y}/acs/acs5"
+            f"?get={vars_str}"
+            f"&for={urllib.parse.quote(_msa_predicate(cbsa), safe=':/+')}"
+            f"&key={CENSUS_API_KEY}"
+        )
+        data = _census_get(url, quiet_404=(y == this_year - 1))
+        if not data or len(data) < 2:
+            continue
+
+        header, row = data[0], data[1]
+        values: Dict[str, Optional[float]] = {}
+        for i, code in enumerate(header):
+            if code not in HOUSING_CHAR_VARS:
+                continue
+            key = HOUSING_CHAR_VARS[code]
+            raw = row[i]
+            try:
+                values[key] = float(raw) if raw not in (None, "-", "", "null") else None
+            except (ValueError, TypeError):
+                values[key] = None
+
+        derived: Dict[str, Optional[float]] = {}
+        tot_units = values.get("total_housing_units") or 0
+        if tot_units:
+            for dk, sk in [("pct_owner_occupied", "owner_occupied"),
+                           ("pct_renter_occupied", "renter_occupied"),
+                           ("pct_vacant", "vacant_housing_units")]:
+                v = values.get(sk)
+                if v is not None:
+                    derived[dk] = round(100 * v / tot_units, 1)
+        struct_tot = values.get("struct_total") or 0
+        if struct_tot:
+            d1 = values.get("struct_1unit_detached")
+            if d1 is not None:
+                derived["pct_1unit_detached"] = round(100 * d1 / struct_tot, 1)
+            mf = sum((values.get(k) or 0) for k in _MULTIFAMILY_KEYS)
+            derived["pct_multifamily"] = round(100 * mf / struct_tot, 1)
+
+        land = _gazetteer_land_area_sqmi(cbsa)
+        pop = values.get("population")
+        if land:
+            derived["land_area_sqmi"] = land
+            if pop:
+                derived["population_density"] = round(pop / land)
+
+        return {
+            "source": f"Census ACS 5-year, {y} vintage (B25024 structure, B25035 year built) "
+                      f"+ Census Gazetteer land area",
             "year": y,
             "vintage_window": f"{y-4}-{y}",
             "values": values,
