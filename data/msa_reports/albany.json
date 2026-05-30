@@ -3,7 +3,7 @@
   "short_name": "Albany",
   "full_name": "Albany, GA",
   "population": 146000,
-  "as_of": "2026-05-29",
+  "as_of": "2026-05-30",
   "sections": {
     "ces_employment": {
       "series_id": "SMS13105000000000001",
@@ -1142,7 +1142,13 @@
         "median_home_value": 157300.0,
         "commute_universe": 54645.0,
         "commute_60_plus_min": 1219.0,
-        "gini_coefficient": 0.4588
+        "gini_coefficient": 0.4588,
+        "lf_universe_16plus": 115114.0,
+        "lf_in_labor_force": 65894.0,
+        "age_m_25_29": 4333.0,
+        "age_m_30_34": 4309.0,
+        "age_f_25_29": 4751.0,
+        "age_f_30_34": 5195.0
       },
       "derived": {
         "pct_bachelors_or_higher": 23.08,
@@ -1152,7 +1158,9 @@
         "pct_renter_occupied": 37.55,
         "pct_vacant": 14.21,
         "pct_commute_60_plus": 2.23,
-        "price_to_income_ratio": 2.76
+        "price_to_income_ratio": 2.76,
+        "labor_force_participation_pct": 57.24,
+        "young_adult_25_34_pct": 12.73
       }
     },
     "bea_gmp": {
@@ -1404,6 +1412,108 @@
       ],
       "source": "IRS SOI county-to-county migration (https://www.irs.gov/pub/irs-soi/countyinflow2223.csv)"
     },
+    "epa_air_quality": {
+      "year": 2025,
+      "median_aqi": 46.0,
+      "max_aqi": 115.0,
+      "p90_aqi": 67.0,
+      "days_with_aqi": 243,
+      "good_days": 135,
+      "pct_good_days": 55.6,
+      "unhealthy_or_worse_days": 1,
+      "source": "EPA AirData annual AQI by CBSA, 2025 (https://aqs.epa.gov/aqsweb/airdata/annual_aqi_by_cbsa_2025.zip)"
+    },
+    "school_finance": null,
+    "acs_age_structure": {
+      "source": "Census ACS 5-year B01001, 2024 vintage (covers 2020-2024)",
+      "year": 2024,
+      "total_population": 146018,
+      "age_bins": {
+        "0-4": 6.14,
+        "5-9": 6.74,
+        "10-14": 6.87,
+        "15-19": 7.15,
+        "20-24": 6.54,
+        "25-29": 6.22,
+        "30-34": 6.51,
+        "35-39": 6.39,
+        "40-44": 5.93,
+        "45-49": 5.78,
+        "50-54": 6.07,
+        "55-59": 6.11,
+        "60-64": 6.35,
+        "65-69": 5.67,
+        "70-74": 4.79,
+        ">74": 6.74
+      },
+      "bin_order": [
+        "0-4",
+        "5-9",
+        "10-14",
+        "15-19",
+        "20-24",
+        "25-29",
+        "30-34",
+        "35-39",
+        "40-44",
+        "45-49",
+        "50-54",
+        "55-59",
+        "60-64",
+        "65-69",
+        "70-74",
+        ">74"
+      ],
+      "generations": {
+        "Alpha": 19.75,
+        "Gen Z": 19.91,
+        "Millennial": 18.83,
+        "Gen X": 17.96,
+        "Boomer": 16.81,
+        "Silent/Gtst": 6.74
+      },
+      "generation_order": [
+        "Alpha",
+        "Gen Z",
+        "Millennial",
+        "Gen X",
+        "Boomer",
+        "Silent/Gtst"
+      ]
+    },
+    "acs_affordability": {
+      "source": "Census ACS 5-year B25064 (median gross rent) / B19013 (median HH income), MSA vs US",
+      "years": [
+        2020,
+        2021,
+        2022,
+        2023,
+        2024
+      ],
+      "affordability_index": [
+        100.3,
+        101.0,
+        98.4,
+        100.9,
+        104.8
+      ],
+      "msa_rent_burden_pct": [
+        20.2,
+        20.0,
+        20.6,
+        20.4,
+        20.0
+      ],
+      "us_rent_burden_pct": [
+        20.2,
+        20.2,
+        20.2,
+        20.6,
+        21.0
+      ],
+      "latest_index": 104.8
+    },
+    "census_net_migration": null,
     "business_cycle_index": {
       "method": "Stock-Watson coincident (2-input PCA, first principal component (positive co-movement, equal-weight loadings))",
       "components": [
@@ -1711,6 +1821,180 @@
         "hpi_yoy"
       ],
       "source": "EIG forecast composite \u2014 computed from BLS/BEA/Census/FHFA actuals"
+    },
+    "vitality": {
+      "value": 0.24,
+      "rank_estimate": 296,
+      "n_metros": 387,
+      "mean_z": -0.719,
+      "components": {
+        "labor_force_participation": {
+          "value": 57.24,
+          "z": -1.28,
+          "weight": 1.0
+        },
+        "income_growth_yoy": {
+          "value": 4.68,
+          "z": -0.16,
+          "weight": 1.0
+        },
+        "young_adult_share": {
+          "value": 12.73,
+          "z": -0.317,
+          "weight": 0.8
+        },
+        "net_migration_rate": {
+          "value": -0.883,
+          "z": -0.986,
+          "weight": 1.2
+        }
+      },
+      "method": "EIG composite: weighted average of z-scores for LFP, income growth, young-adult share and net-migration rate vs. approximate U.S.-metro benchmarks; score = normal CDF of the mean z.",
+      "note": "Rank is an estimate from the composite's normal percentile against reference benchmarks, not a live ranking of all metros.",
+      "source": "EIG composite \u2014 computed from ACS, BEA and IRS SOI inputs"
+    },
+    "quality_of_life": {
+      "value": 156,
+      "rank_estimate": 174,
+      "n_metros": 387,
+      "mean_z": 0.124,
+      "components": {
+        "median_aqi": {
+          "value": 46.0,
+          "z": -0.071,
+          "weight": 1.0
+        },
+        "commute_60_plus_pct": {
+          "value": 2.23,
+          "z": 1.692,
+          "weight": 0.8
+        },
+        "price_to_income": {
+          "value": 2.76,
+          "z": 0.954,
+          "weight": 1.0
+        },
+        "poverty_rate_pct": {
+          "value": 20.94,
+          "z": -1.764,
+          "weight": 1.0
+        }
+      },
+      "excluded": [
+        "crime"
+      ],
+      "method": "EIG composite: weighted average of sign-adjusted z-scores for air quality, commute, affordability, poverty and school spending vs. approximate U.S.-metro benchmarks; scaled to 0-300 (150 = average).",
+      "note": "Crime excluded \u2014 no clean automated current MSA-level source exists (FBI API is agency/state only; the FBI by-MSA table ended in 2019). Rank is an estimate from the composite's normal percentile.",
+      "source": "EIG composite \u2014 computed from EPA, ACS and Census F-33 inputs"
+    },
+    "housing_valuation": {
+      "years": [
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024
+      ],
+      "valuation_pct": [
+        5.5,
+        -6.8,
+        -9.6,
+        4.4,
+        4.2,
+        3.5
+      ],
+      "hpi_index": [
+        158.97,
+        164.62,
+        184.94,
+        212.61,
+        223.73,
+        239.77
+      ],
+      "fair_value_index": [
+        150.68,
+        176.72,
+        204.68,
+        203.55,
+        214.75,
+        231.68
+      ],
+      "latest_year": 2024,
+      "latest_valuation_pct": 3.5,
+      "income_elasticity": 1.658,
+      "r_squared": 0.839,
+      "n_obs": 6,
+      "price_to_income_ratio": 2.76,
+      "price_to_rent_ratio": 13.8,
+      "method": "Log-log fair-value regression (Dallas Fed / IMF house-price-gap method): log(FHFA HPI) on log(per-capita income) by OLS over overlapping years; valuation = % deviation of actual HPI from the income-implied fair value.",
+      "note": "Fitted on 6 overlapping years (2019-2024); residuals are mean-zero over this window, so values read relative to the local income trend. Price-to-income / price-to-rent are current ACS-vintage cross-checks, not part of the fitted series.",
+      "source": "EIG valuation model \u2014 FHFA HPI vs. BEA per-capita income (log-log OLS)"
+    },
+    "business_costs": {
+      "cost_of_living_index": 79,
+      "business_cost_index": 75,
+      "rent_ratio": 0.6786,
+      "wage_ratio": 0.6961,
+      "components": {
+        "cost_of_living": {
+          "rent_ratio": 0.6786,
+          "goods_ratio": 1.0,
+          "services_ratio": 0.8177,
+          "weights": {
+            "rent": 0.36,
+            "goods": 0.15,
+            "services": 0.49
+          }
+        },
+        "business_cost": {
+          "labor_ratio": 0.6961,
+          "occupancy_ratio": 0.6786,
+          "tax_other_ratio": 1.0,
+          "weights": {
+            "labor": 0.62,
+            "occupancy": 0.2,
+            "tax_other": 0.18
+          }
+        }
+      },
+      "method": "EIG composite (BEA Regional-Price-Parity logic): cost of living = expenditure-weighted blend of rents (0.36), tradable goods (0.15, ~national) and wage-elastic services (0.49); cost of doing business = labor (0.62, wage proxy), occupancy (0.20, rent) and tax/other (0.18, ~national). US = 100.",
+      "note": "Wage proxy is per-capita income (QCEW average annual wage will replace it once that section populates). US benchmarks are ACS 5-year national approximations: median gross rent $1,400, per-capita income $43,000.",
+      "source": "EIG composite \u2014 computed from ACS rent + income vs. national benchmarks"
+    },
+    "credit_score": {
+      "score": 41,
+      "grade": "BB+",
+      "outlook": "Stable",
+      "components": {
+        "vitality": {
+          "score": 0.24,
+          "weight": 0.25
+        },
+        "business_cycle": {
+          "score": 0.196,
+          "weight": 0.2
+        },
+        "labor_market": {
+          "score": 0.5,
+          "weight": 0.2
+        },
+        "quality_of_life": {
+          "score": 0.549,
+          "weight": 0.15
+        },
+        "income_growth": {
+          "score": 0.436,
+          "weight": 0.1
+        },
+        "valuation_stability": {
+          "score": 0.883,
+          "weight": 0.1
+        }
+      },
+      "method": "EIG composite credit rating: weighted mean of normalized sub-scores for vitality (0.25), business-cycle position (0.20), labor market (0.20), quality of life (0.15), income growth (0.10) and valuation stability (0.10); scaled 0-100 and mapped to a muni-bond-style letter grade. Outlook from business-cycle momentum and income growth.",
+      "note": "A relative creditworthiness signal for the metro economy, not a household FICO score and not a rated municipal obligation. Sub-scores are percentile positions vs. approximate US-metro reference points.",
+      "source": "EIG composite \u2014 synthesized from vitality, BCI, QoL, BLS, BEA and valuation"
     }
   },
   "section_status": {
@@ -1727,7 +2011,17 @@
     "census_bps_permits": "failed",
     "ita_msa_exports": "live",
     "irs_soi_migration": "live",
+    "epa_air_quality": "live",
+    "school_finance": "failed",
+    "acs_age_structure": "live",
+    "acs_affordability": "live",
+    "census_net_migration": "failed",
     "business_cycle_index": "live",
-    "forecast_arima": "live"
+    "forecast_arima": "live",
+    "vitality": "live",
+    "quality_of_life": "live",
+    "housing_valuation": "live",
+    "business_costs": "live",
+    "credit_score": "live"
   }
 }
