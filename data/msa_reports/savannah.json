@@ -2776,10 +2776,17 @@
         20.6,
         21.0
       ],
+      "msa_median_income": [
+        60851,
+        64703,
+        70705,
+        74632,
+        77180
+      ],
       "latest_index": 92.9
     },
     "census_net_migration": {
-      "source": "Census PEP components of change (CO-EST2025), Savannah MSA counties",
+      "source": "Census PEP components of change (CO-EST2025), MSA counties",
       "years": [
         2021,
         2022,
@@ -2809,9 +2816,9 @@
         3185
       ],
       "counties": [
-        "Bryan County",
-        "Chatham County",
-        "Effingham County"
+        "13029",
+        "13051",
+        "13103"
       ]
     },
     "acs_housing_characteristics": {

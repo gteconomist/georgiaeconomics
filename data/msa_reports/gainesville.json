@@ -2770,9 +2770,49 @@
         20.6,
         21.0
       ],
+      "msa_median_income": [
+        63651,
+        67571,
+        74153,
+        77430,
+        80901
+      ],
       "latest_index": 105.6
     },
-    "census_net_migration": null,
+    "census_net_migration": {
+      "source": "Census PEP components of change (CO-EST2025), MSA counties",
+      "years": [
+        2021,
+        2022,
+        2023,
+        2024,
+        2025
+      ],
+      "domestic_migration": [
+        3125,
+        4147,
+        2968,
+        1220,
+        1049
+      ],
+      "international_migration": [
+        120,
+        1141,
+        1453,
+        2746,
+        876
+      ],
+      "net_migration": [
+        3245,
+        5288,
+        4421,
+        3966,
+        1925
+      ],
+      "counties": [
+        "13139"
+      ]
+    },
     "acs_housing_characteristics": {
       "source": "Census ACS 5-year, 2024 vintage (B25024 structure, B25035 year built) + Census Gazetteer land area",
       "year": 2024,
@@ -3404,7 +3444,7 @@
     "school_finance": "failed",
     "acs_age_structure": "live",
     "acs_affordability": "live",
-    "census_net_migration": "failed",
+    "census_net_migration": "live",
     "acs_housing_characteristics": "live",
     "acs_block_group_income": "live",
     "entrepreneurship": "live",
