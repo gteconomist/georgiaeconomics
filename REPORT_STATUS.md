@@ -4,7 +4,7 @@
 **Pilot page:** `/msa/savannah/` (CBSA 42340). This tracker is the source of truth for what is real, what is modeled, what is still demo, and what cannot be obtained at the MSA level.
 
 **Last updated:** 2026-05-30
-**Data layer:** 29 live / 1 of 30 confirmed (2026-05-30); `census_bps_permits` now live via county-sum. Last pending: `entrepreneurship` switched from BFS (no sub-national API) to BDS establishment entry rate — pending one dispatch. Remaining demo: Economic Inequality + Diffusion Index wiring, Housing Affordability chart, Top Employers.
+**Data layer: 30 live / 0 failed of 30 (confirmed 2026-05-30).** Every section with an automatable source is live. Remaining DEMO (page sections without a wired live source): Economic Inequality table (ACS data present — wiring only), Diffusion Index (needs 3-digit QCEW), Housing Affordability chart (needs mortgage-rate fetcher), Top Employers (no public API). The Comparative Employment manufacturing durable/nondurable split also awaits a 3-digit QCEW pull.
 
 ---
 
@@ -98,7 +98,7 @@ DEMO prose, tagged "Partial." Template is final; paragraphs are hand-written, no
 |---|---|---|
 | Top Employers | — | DEMO / **NO MSA SOURCE** (no public API; Précis uses proprietary D&B-type data). Best alternative = Tavily hints, non-authoritative. |
 | Industrial Diversity score | `industrial_diversity.py` (Hachman index from QCEW shares) | **MODEL** (confirmed live 2026-05-30) |
-| Entrepreneurship | Census **BDS** establishment entry rate (`entrepreneurship`) | Built 2026-05-30, pending dispatch. NOTE: BFS has **no** sub-national API (eits/bfs is US-only); switched to BDS `ESTABS_ENTRY_RATE` (MSA supported), indexed US=100. |
+| Entrepreneurship | Census **BDS** establishment entry rate (`entrepreneurship`) | **LIVE** (confirmed 2026-05-30, 2022 vintage). BFS has no sub-national API (eits/bfs is US-only); BDS `ESTABS_ENTRY_RATE` indexed US=100. |
 | Productivity | BEA GMP ÷ CES employment | **LIVE / MODEL** |
 | Exports (by product / destination) | ITA | **LIVE** |
 
