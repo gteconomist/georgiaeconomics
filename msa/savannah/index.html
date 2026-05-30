@@ -625,7 +625,7 @@
     <div class="report-panel">
       <h3>Current Employment Trends</h3>
       <div class="sub">% change year-ago, 3-mo MA</div>
-      <table class="health-check">
+      <table class="health-check" id="cur-emp-table">
         <thead><tr><th class="first">Sector</th><th>Apr 25</th><th>Oct 25</th><th>Apr 26</th></tr></thead>
         <tbody>
           <tr><td class="label">Total nonfarm</td><td>2.2</td><td>2.4</td><td class="up">2.5</td></tr>
@@ -641,7 +641,7 @@
           <tr><td class="label">Government</td><td>1.6</td><td>1.4</td><td class="flat">1.4</td></tr>
         </tbody>
       </table>
-      <div class="src">Source: BLS QCEW (NAICS super-sector level, MSA detail). <span class="src-pill demo">Demo</span></div>
+      <div class="src">Source: BLS CES (NAICS super-sector level, MSA detail). <span class="src-pill demo" id="cur-emp-pill">Demo</span></div>
     </div>
     <div class="report-panel">
       <h3>Diffusion Index</h3>
@@ -664,13 +664,13 @@
       <div class="forecast-arrows">
         <div class="fc">
           <div class="horizon">2-Year</div>
-          <div class="arrow flat">—</div>
-          <div class="vs">Pending Phase 2 model</div>
+          <div class="arrow flat" id="fc-emp-2yr-arrow">—</div>
+          <div class="vs" id="fc-emp-2yr-vs">Pending Phase 2 model</div>
         </div>
         <div class="fc">
           <div class="horizon">5-Year</div>
-          <div class="arrow flat">—</div>
-          <div class="vs">Pending Phase 2 model</div>
+          <div class="arrow flat" id="fc-emp-5yr-arrow">—</div>
+          <div class="vs" id="fc-emp-5yr-vs">Pending Phase 2 model</div>
         </div>
       </div>
       <h3 style="margin-top:18px;">House Price Index</h3>
@@ -760,7 +760,7 @@
       <h3 style="margin-top:18px;">Productivity</h3>
       <div class="sub">Real output per worker</div>
       <div class="canvas-sm"><canvas id="prod-chart"></canvas></div>
-      <div class="src">BEA GMP / BLS employment. <span class="src-pill demo">Demo</span></div>
+      <div class="src">BEA GMP &divide; BLS employment (Savannah live; GA/US illustrative). <span class="src-pill demo" id="prod-pill">Demo</span></div>
     </div>
 
     <div class="report-panel">
@@ -1428,6 +1428,22 @@ async function loadLiveData() {
     replaceForecastColumns(fc);
   }
 
+  // --- Productivity: Savannah bar from BEA GMP ÷ CES annual-avg employment ---
+  if (gmp && gmp.latest_year && ces && ces.months) {
+    if (replaceProductivityChart(gmp, ces) != null) flipSectionPill('prod-pill', 'live');
+  }
+
+  // --- Current Employment Trends table: live CES super-sector YoY (3-mo MA) ---
+  const ssWrap = data.sections.ces_by_supersector;
+  if (ssWrap && ssWrap.sectors) {
+    if (replaceCurrentEmploymentTable(ssWrap)) flipSectionPill('cur-emp-pill', 'live');
+  }
+
+  // --- Relative Employment Forecast arrows from forecast_arima ---
+  if (fc && fc.total_employment_yoy) {
+    replaceEmploymentForecastArrows(fc);
+  }
+
   // --- Top indicator strip: Vitality + Quality of Life cells ---
   replaceIndicatorStrip(data);
 
@@ -1800,6 +1816,100 @@ function replaceIndustryEmploymentChart(q) {
   chart.data.datasets[0].data = values;
   chart.data.datasets[0].label = `YoY % change (${q.as_of_label})`;
   chart.update();
+}
+
+/** Update the Productivity bar — Savannah = live GMP per worker (BEA GMP for the
+ *  latest complete year ÷ that year's CES annual-average employment). GA/US bars
+ *  stay illustrative (no live cross-geo productivity series in the pipeline).
+ *  Returns the computed $/worker, or null if it couldn't compute. */
+function replaceProductivityChart(gmp, ces) {
+  const canvas = document.getElementById('prod-chart');
+  if (!canvas || !gmp || !ces) return null;
+  const chart = Chart.getChart(canvas);
+  if (!chart) return null;
+  const year = gmp.latest_year;
+  const idx = (gmp.years || []).indexOf(year);
+  const gmpB = idx >= 0 ? gmp.gmp_billions_usd[idx] : gmp.latest_gmp_billions_usd;
+  if (gmpB == null) return null;
+  const emp = [];
+  (ces.months || []).forEach((m, i) => { if (m.startsWith(String(year))) emp.push(ces.values[i]); });
+  if (!emp.length) return null;
+  const avgEmp = emp.reduce((a, b) => a + b, 0) / emp.length;     // thousands of jobs
+  const perWorker = Math.round((gmpB * 1e9) / (avgEmp * 1e3));    // $ of GMP per job
+  chart.data.datasets[0].data[0] = perWorker;                     // Savannah bar only
+  chart.data.datasets[0].label = `Real $ / worker (Savannah ${year})`;
+  chart.update();
+  return perWorker;
+}
+
+/** Rebuild the Current Employment Trends table from live CES super-sector series.
+ *  Each cell is the YoY % change of the 3-month moving average at three reference
+ *  months (latest-12, latest-6, latest); column headers are set from the data so
+ *  the table self-dates. Returns true if it rendered at least one row. */
+function replaceCurrentEmploymentTable(ssWrap) {
+  const table = document.getElementById('cur-emp-table');
+  const sectors = (ssWrap && ssWrap.sectors) || null;
+  if (!table || !sectors) return false;
+  const total = sectors['Total nonfarm'];
+  if (!total || !total.months || total.months.length < 18) return false;
+  const months = total.months, N = months.length;
+  const iL = N - 1, i6 = iL - 6, i12 = iL - 12;
+  if (i12 - 12 < 0) return false;            // need a 12-mo-prior base for the earliest ref
+  const refs = [i12, i6, iL];
+  const ma3 = (arr, i) => (i < 2 ? null : (arr[i] + arr[i - 1] + arr[i - 2]) / 3);
+  const yoy = (arr, i) => { const a = ma3(arr, i), b = ma3(arr, i - 12); return (a != null && b) ? 100 * (a / b - 1) : null; };
+  const MON = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+  const fmtMon = (ym) => { const [y, m] = ym.split('-'); return MON[+m - 1] + ' ' + y.slice(2); };
+  // Display label -> first super-sector name containing the keyword.
+  const wanted = [
+    ['Total nonfarm',           'total nonfarm'],
+    ['Manufacturing',           'manufacturing'],
+    ['Trade, Transport & Util', 'trade, transportation'],
+    ['Transport & Warehousing', 'transportation, warehousing'],
+    ['Information',             'information'],
+    ['Financial Activities',    'financial activities'],
+    ['Prof & Bus Services',     'professional and business'],
+    ['Education & Health',      'education and health'],
+    ['Leisure & Hospitality',   'leisure and hospitality'],
+    ['Government',              'government'],
+  ];
+  const keys = Object.keys(sectors);
+  const cls = (v) => v == null ? '' : (v > 0.15 ? 'up' : (v < -0.15 ? 'down' : 'flat'));
+  const cell = (v, withClass) => v == null ? '<td>—</td>'
+    : `<td${withClass ? ` class="${cls(v)}"` : ''}>${v.toFixed(1)}</td>`;
+  let body = '';
+  wanted.forEach(([label, kw]) => {
+    const key = keys.find(k => k.toLowerCase().includes(kw));
+    const s = key && sectors[key];
+    if (!s || !s.values) return;
+    const vals = refs.map(i => yoy(s.values, i));
+    if (vals.every(v => v == null)) return;
+    body += `<tr><td class="label">${label}</td>${cell(vals[0], false)}${cell(vals[1], false)}${cell(vals[2], true)}</tr>`;
+  });
+  if (!body) return false;
+  const thead = table.querySelector('thead tr');
+  if (thead) thead.innerHTML = `<th class="first">Sector</th><th>${fmtMon(months[i12])}</th><th>${fmtMon(months[i6])}</th><th>${fmtMon(months[iL])}</th>`;
+  table.querySelector('tbody').innerHTML = body;
+  return true;
+}
+
+/** Fill the Relative Employment Forecast arrows from forecast_arima's total-
+ *  employment path: compounded growth over the 2-year and full (~5-year) horizon. */
+function replaceEmploymentForecastArrows(fc) {
+  const yoy = fc && fc.total_employment_yoy;
+  if (!Array.isArray(yoy) || !yoy.length) return false;
+  const cum = (n) => { let g = 1; for (let i = 0; i < Math.min(n, yoy.length); i++) g *= (1 + yoy[i] / 100); return 100 * (g - 1); };
+  const set = (arrowId, vsId, pct, horizonYrs) => {
+    const a = document.getElementById(arrowId), v = document.getElementById(vsId);
+    if (!a || !v) return;
+    const dir = pct > 0.3 ? 'up' : (pct < -0.3 ? 'down' : 'flat');
+    a.className = 'arrow ' + dir;
+    a.textContent = dir === 'up' ? '↑' : (dir === 'down' ? '↓' : '—');
+    v.textContent = `${pct >= 0 ? '+' : ''}${pct.toFixed(1)}% jobs over ${horizonYrs} yrs (forecast)`;
+  };
+  set('fc-emp-2yr-arrow', 'fc-emp-2yr-vs', cum(2), 2);
+  set('fc-emp-5yr-arrow', 'fc-emp-5yr-vs', cum(yoy.length), yoy.length);
+  return true;
 }
 
 document.addEventListener('DOMContentLoaded', () => {
