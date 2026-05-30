@@ -2346,7 +2346,9 @@
             "avg_annual_wage": 97738,
             "share_pct_of_mfg": 40.1
           },
-          "total_employment": 3305
+          "total_employment": 3305,
+          "sector_total": 24773,
+          "coverage_pct": 13.3
         },
         "ga": {
           "durable": {
@@ -2359,7 +2361,9 @@
             "avg_annual_wage": 65550,
             "share_pct_of_mfg": 48.0
           },
-          "total_employment": 427575
+          "total_employment": 427575,
+          "sector_total": 427575,
+          "coverage_pct": 100.0
         },
         "us": {
           "durable": {
@@ -2372,8 +2376,11 @@
             "avg_annual_wage": 74995,
             "share_pct_of_mfg": 38.0
           },
-          "total_employment": 12650979
-        }
+          "total_employment": 12650979,
+          "sector_total": 12650979,
+          "coverage_pct": 100.0
+        },
+        "msa_reliable": false
       },
       "diffusion": {
         "points": [
@@ -3362,6 +3369,32 @@
       "method": "Hachman index = 1 / \u03a3(local_share\u00b2 / US_share) over QCEW super-sectors; 1.0 = industrial mix identical to the U.S. (most balanced/diversified), lower = more concentrated.",
       "source": "EIG composite \u2014 computed from QCEW employment shares (MSA & GA vs. US)"
     },
+    "housing_affordability": {
+      "years": [
+        2021,
+        2022,
+        2023,
+        2024
+      ],
+      "affordability_index": [
+        222.2,
+        147.7,
+        118.1,
+        115.3
+      ],
+      "latest_index": 115.3,
+      "latest_year": 2024,
+      "anchor": {
+        "year": 2024,
+        "median_home_value": 302000
+      },
+      "assumptions": {
+        "down_payment_pct": 20,
+        "front_end_dti_pct": 28,
+        "term_years": 30
+      },
+      "source": "EIG composite \u2014 NAR-style affordability: ACS median household income (B19013) vs. income needed for the median home (ACS B25077 value scaled by FHFA HPI; Freddie Mac PMMS 30-yr rate via FRED). >100 = median household can afford the median home."
+    },
     "credit_score": {
       "score": 81,
       "grade": "AA",
@@ -3428,6 +3461,7 @@
     "housing_valuation": "live",
     "business_costs": "live",
     "industrial_diversity": "live",
+    "housing_affordability": "live",
     "credit_score": "live"
   }
 }
