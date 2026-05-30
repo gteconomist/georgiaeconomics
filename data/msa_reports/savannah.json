@@ -2741,6 +2741,7 @@
       "n_block_groups": 281,
       "source": "Census ACS 5-year 2024 block-group median HH income (B19013), MSA counties"
     },
+    "entrepreneurship": null,
     "business_cycle_index": {
       "method": "Stock-Watson coincident (2-input PCA, first principal component (positive co-movement, equal-weight loadings))",
       "components": [
@@ -3259,6 +3260,7 @@
     "census_net_migration": "live",
     "acs_housing_characteristics": "live",
     "acs_block_group_income": "live",
+    "entrepreneurship": "failed",
     "business_cycle_index": "live",
     "forecast_arima": "live",
     "vitality": "live",
