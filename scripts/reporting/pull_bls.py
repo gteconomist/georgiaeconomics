@@ -460,6 +460,26 @@ def fetch_qcew_industry_shares(cbsa: str) -> Optional[dict]:
     if not (msa_rows and ga_rows and us_rows):
         return None
 
+    # --- TEMP DIAGNOSTIC (remove once the sector filter is confirmed) -------------
+    # The total-covered row parses fine but the sector filter matched nothing; log the
+    # real structure of the MSA file so we can see what own/agglvl/industry codes exist.
+    try:
+        owns = sorted({(r.get("own_code") or "") for r in msa_rows})
+        aggs = sorted({(r.get("agglvl_code") or "") for r in msa_rows})
+        ics  = sorted({(r.get("industry_code") or "").strip() for r in msa_rows})
+        print(f"  [QCEW DIAG] msa_rows={len(msa_rows)} own_codes={owns} agglvl_codes={aggs}", file=sys.stderr)
+        print(f"  [QCEW DIAG] industry_codes({len(ics)}): {ics[:60]}", file=sys.stderr)
+        # show how our target sector codes appear (own_code + agglvl per code)
+        for r in msa_rows:
+            ic = (r.get("industry_code") or "").strip()
+            if ic in QCEW_SECTOR_CODES:
+                print(f"  [QCEW DIAG] sector hit ic={ic} own={r.get('own_code')} "
+                      f"agglvl={r.get('agglvl_code')} size={r.get('size_code')} "
+                      f"m3={r.get('month3_emplvl')}", file=sys.stderr)
+    except Exception as _e:
+        print(f"  [QCEW DIAG] failed: {_e}", file=sys.stderr)
+    # --- END DIAGNOSTIC -----------------------------------------------------------
+
     def aggregate_and_share(rows):
         # Combine private + government for total employment denominator.
         private = _qcew_aggregate_sectors(rows, ("5",))
