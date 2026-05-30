@@ -669,19 +669,44 @@ def fetch_qcew_3digit(cbsa: str, diffusion_quarters: int = 4) -> Optional[dict]:
     ay, aq = anchor
 
     # Manufacturing durable/nondurable split for MSA / GA / US at the anchor quarter.
-    msa_split = _mfg_split(get_msa(ay, aq))
+    #
+    # IMPORTANT — QCEW disclosure suppression: at the MSA level, 3-digit manufacturing
+    # subsectors dominated by one or two large employers (e.g. NAICS 336 in Savannah,
+    # where Gulfstream/Hyundai sit) are suppressed for confidentiality, so the summed
+    # 3-digit detail can fall far below the published 2-digit ("31-33") sector total.
+    # We therefore compute a coverage ratio (3-digit sum ÷ 2-digit sector total) per
+    # geography and flag the MSA split as reliable only when coverage is adequate.
+    # GA/US (large geographies) are effectively fully covered.
+    MIN_COVERAGE_PCT = 80.0
 
-    def split_for_area(area: str) -> Optional[dict]:
-        rows = _qcew_fetch_csv(ay, aq, area)
+    def split_for_area(area: str, rows: Optional[list] = None) -> Optional[dict]:
+        if rows is None:
+            rows = _qcew_fetch_csv(ay, aq, area)
         if not rows:
             return None
-        return _mfg_split(_qcew_3digit_employment(rows))
+        split = _mfg_split(_qcew_3digit_employment(rows))
+        if not split:
+            return None
+        sectors = _qcew_aggregate_sectors(rows, ("5",))
+        sector_total = sectors.get("Manufacturing", {}).get("employment", 0)
+        if sector_total > 0:
+            split["sector_total"] = sector_total
+            split["coverage_pct"] = round(100 * split["total_employment"] / sector_total, 1)
+        return split
 
+    msa_rows_anchor = _qcew_fetch_csv(ay, aq, msa_area)
+    msa_split = split_for_area(msa_area, msa_rows_anchor)
     ga_split = split_for_area(state_area)
     us_split = split_for_area(us_area)
     manufacturing_split = None
     if msa_split:
-        manufacturing_split = {"msa": msa_split, "ga": ga_split, "us": us_split}
+        manufacturing_split = {
+            "msa": msa_split,
+            "ga": ga_split,
+            "us": us_split,
+            # Reliable only when the MSA 3-digit detail covers most of the 2-digit total.
+            "msa_reliable": msa_split.get("coverage_pct", 0) >= MIN_COVERAGE_PCT,
+        }
 
     # Diffusion series: for each recent quarter, compare to the same quarter a year ago.
     points = []

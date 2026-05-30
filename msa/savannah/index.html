@@ -1375,7 +1375,9 @@ async function loadLiveData() {
   if (q3 && q3.diffusion && q3.diffusion.points && q3.diffusion.points.length) {
     if (replaceDiffusionChart(q3.diffusion)) flipSectionPill('diffusion-pill', 'live');
   }
-  if (q3 && q3.manufacturing_split && qShares && qShares.totals) {
+  // Manufacturing durable/nondurable sub-rows only render where the MSA 3-digit
+  // detail is not heavily disclosure-suppressed (see fetcher coverage guard).
+  if (q3 && q3.manufacturing_split && q3.manufacturing_split.msa_reliable && qShares && qShares.totals) {
     replaceManufacturingSplit(q3.manufacturing_split, qShares.totals);
   }
 
