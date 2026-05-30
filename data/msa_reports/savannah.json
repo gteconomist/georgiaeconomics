@@ -2449,40 +2449,24 @@
       "year_pair_label": "2022\u21922023",
       "from_year": 2022,
       "to_year": 2023,
-      "total_in": 66288,
-      "total_out": 61038,
-      "net": 5250,
+      "total_in": 5876,
+      "total_out": 5587,
+      "net": 289,
       "top_in": [
-        {
-          "origin_msa": "Other (97)",
-          "n_returns": 31350
-        },
-        {
-          "origin_msa": "Other (96)",
-          "n_returns": 15840
-        },
-        {
-          "origin_msa": "Other (59)",
-          "n_returns": 11722
-        },
-        {
-          "origin_msa": "Other (58)",
-          "n_returns": 1171
-        },
         {
           "origin_msa": "Atlanta",
           "n_returns": 863
         },
         {
-          "origin_msa": "Other (12)",
+          "origin_msa": "FIPS 12",
           "n_returns": 836
         },
         {
-          "origin_msa": "Other (45)",
+          "origin_msa": "FIPS 45",
           "n_returns": 818
         },
         {
-          "origin_msa": "Other (13)",
+          "origin_msa": "FIPS 13",
           "n_returns": 532
         },
         {
@@ -2490,29 +2474,29 @@
           "n_returns": 526
         },
         {
-          "origin_msa": "Other (37)",
+          "origin_msa": "FIPS 37",
           "n_returns": 276
+        },
+        {
+          "origin_msa": "FIPS 48",
+          "n_returns": 215
+        },
+        {
+          "origin_msa": "FIPS 36",
+          "n_returns": 192
+        },
+        {
+          "origin_msa": "FIPS 06",
+          "n_returns": 176
+        },
+        {
+          "origin_msa": "FIPS 47",
+          "n_returns": 154
         }
       ],
       "top_out": [
         {
-          "dest_msa": "Other (97)",
-          "n_returns": 29122
-        },
-        {
-          "dest_msa": "Other (96)",
-          "n_returns": 14731
-        },
-        {
-          "dest_msa": "Other (59)",
-          "n_returns": 10104
-        },
-        {
-          "dest_msa": "Other (58)",
-          "n_returns": 1155
-        },
-        {
-          "dest_msa": "Other (13)",
+          "dest_msa": "FIPS 13",
           "n_returns": 910
         },
         {
@@ -2524,16 +2508,32 @@
           "n_returns": 743
         },
         {
-          "dest_msa": "Other (45)",
+          "dest_msa": "FIPS 45",
           "n_returns": 690
         },
         {
-          "dest_msa": "Other (12)",
+          "dest_msa": "FIPS 12",
           "n_returns": 658
         },
         {
-          "dest_msa": "Other (48)",
+          "dest_msa": "FIPS 48",
           "n_returns": 286
+        },
+        {
+          "dest_msa": "FIPS 37",
+          "n_returns": 217
+        },
+        {
+          "dest_msa": "Augusta",
+          "n_returns": 133
+        },
+        {
+          "dest_msa": "Brunswick",
+          "n_returns": 117
+        },
+        {
+          "dest_msa": "FIPS 06",
+          "n_returns": 111
         }
       ],
       "source": "IRS SOI county-to-county migration (https://www.irs.gov/pub/irs-soi/countyinflow2223.csv)"
@@ -2995,10 +2995,10 @@
       "source": "EIG forecast composite \u2014 computed from BLS/BEA/Census/FHFA actuals"
     },
     "vitality": {
-      "value": 0.77,
-      "rank_estimate": 89,
+      "value": 0.67,
+      "rank_estimate": 127,
       "n_metros": 387,
-      "mean_z": 0.742,
+      "mean_z": 0.445,
       "components": {
         "labor_force_participation": {
           "value": 65.1,
@@ -3016,8 +3016,8 @@
           "weight": 0.8
         },
         "net_migration_rate": {
-          "value": 1.255,
-          "z": 0.796,
+          "value": 0.069,
+          "z": -0.193,
           "weight": 1.2
         }
       },
@@ -3140,12 +3140,12 @@
       "source": "EIG composite \u2014 computed from ACS rent + income vs. national benchmarks"
     },
     "credit_score": {
-      "score": 84,
+      "score": 81,
       "grade": "AA",
       "outlook": "Positive",
       "components": {
         "vitality": {
-          "score": 0.77,
+          "score": 0.67,
           "weight": 0.25
         },
         "business_cycle": {
