@@ -171,14 +171,17 @@ def fetch_qcew_dc_employment_and_wages(start_year, end_year):
 
         try:
             emp = float(dc_row.get("annual_avg_emplvl", "0"))
-            wkw_dc = float(dc_row.get("avg_wkly_wage", "0"))
+            # Annual area CSV uses `annual_avg_wkly_wage`, NOT `avg_wkly_wage`
+            # (the latter is a quarterly-file field). Earlier draft had the wrong
+            # name and silently returned 0 for every year — chart rendered flat.
+            wkw_dc = float(dc_row.get("annual_avg_wkly_wage", "0"))
         except (TypeError, ValueError):
             continue
 
         wkw_ap = None
         if ap_row:
             try:
-                wkw_ap = float(ap_row.get("avg_wkly_wage", "0"))
+                wkw_ap = float(ap_row.get("annual_avg_wkly_wage", "0"))
             except (TypeError, ValueError):
                 pass
 
@@ -797,14 +800,14 @@ def main():
                 out["kpis"]["top_county_pipeline"] = max(counties_list, key=lambda c: c["mw_pipeline"])["name"]
             meta["facilities"] = {
                 "last_updated": fac_meta.get("exported_at"),
-                "source": "Costar export (manual re-upload by editor)",
+                "source": "Georgia Economics internal facility database (manual refresh)",
                 "exported_at": fac_meta.get("exported_at"),
                 "n_records": fac_meta.get("n_records"),
                 "source_file": fac_meta.get("source_file"),
             }
             meta["counties"] = {
                 "last_updated": fac_meta.get("exported_at"),
-                "source": "Derived from Costar export",
+                "source": "Derived from internal facility database",
             }
             print(f"      OK: {len(fac)} facilities, {len(counties_list)} counties, "
                   f"{mw_existing} MW existing / {mw_pipeline} MW pipeline")
