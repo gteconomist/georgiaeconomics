@@ -4,7 +4,7 @@
 **Pilot page:** `/msa/savannah/` (CBSA 42340). This tracker is the source of truth for what is real, what is modeled, what is still demo, and what cannot be obtained at the MSA level.
 
 **Last updated:** 2026-05-30
-**Data layer:** 28 live / 2 failed of 30 (confirmed 2026-05-30). Live now incl. Population & Housing Characteristics, Block Groups by Income, Industrial Diversity (8 modeling modules). **2 failing:** `census_bps_permits` (county-sum leading-zero fix applied, pending dispatch) and `entrepreneurship` (BFS call returned empty; diagnostic added, pending dispatch). Remaining demo: Economic Inequality + Diffusion Index wiring, Housing Affordability chart, Top Employers.
+**Data layer:** 29 live / 1 of 30 confirmed (2026-05-30); `census_bps_permits` now live via county-sum. Last pending: `entrepreneurship` switched from BFS (no sub-national API) to BDS establishment entry rate — pending one dispatch. Remaining demo: Economic Inequality + Diffusion Index wiring, Housing Affordability chart, Top Employers.
 
 ---
 
@@ -98,7 +98,7 @@ DEMO prose, tagged "Partial." Template is final; paragraphs are hand-written, no
 |---|---|---|
 | Top Employers | — | DEMO / **NO MSA SOURCE** (no public API; Précis uses proprietary D&B-type data). Best alternative = Tavily hints, non-authoritative. |
 | Industrial Diversity score | `industrial_diversity.py` (Hachman index from QCEW shares) | **MODEL** (confirmed live 2026-05-30) |
-| Entrepreneurship | Census BFS business applications (`entrepreneurship`) | **LIVE** (built 2026-05-30, pending dispatch) — per-capita rate indexed US=100; tries MSA geography, falls back to county-sum. |
+| Entrepreneurship | Census **BDS** establishment entry rate (`entrepreneurship`) | Built 2026-05-30, pending dispatch. NOTE: BFS has **no** sub-national API (eits/bfs is US-only); switched to BDS `ESTABS_ENTRY_RATE` (MSA supported), indexed US=100. |
 | Productivity | BEA GMP ÷ CES employment | **LIVE / MODEL** |
 | Exports (by product / destination) | ITA | **LIVE** |
 
@@ -148,9 +148,8 @@ QCEW shares + average annual wages vs GA/US. **LIVE** (confirmed 2026-05-30); re
 Plus a false-live guard: return `None` when nothing aggregates, so status is honestly `failed`/stale instead of an empty "live" payload.
 **Status:** ✅ RESOLVED 2026-05-30 — dispatch confirmed both `qcew_industry_shares` and `qcew_yoy_changes` live (2025 Q2, stepped back from the unpopulated Q3). Report now 25 live / 1 failed of 26. The Comparative table reads one quarter behind the headline total by design (sector-detail lag).
 
-### `census_bps_permits` — county-sum fallback added (pending dispatch confirm)
-**Root cause:** FRED has **no MSA-level** permit series for Savannah (only county-level, e.g. `BPPRIV013051` for Chatham). The resolver searched MSA titles, found none, and failed. (Not a prefix-typo — the MSA series doesn't exist.)
-**Fix:** `_county_permits_annual` sums the MSA's counties — `BPPRIV{fips}` for the total (confirmed to exist) and `BP1FH{fips}` for 1-unit; if county 1-unit series are absent, the SF/MF split is estimated from the GA state 1-unit share. Same series semantics as the working Atlanta MSA path. A per-county diagnostic logs `total_yrs`/`sf_yrs` so one dispatch reveals whether county 1-unit exists (and thus whether the split is direct or state-share-estimated).
+### `census_bps_permits` — ✅ RESOLVED 2026-05-30 (county-sum)
+FRED has **no MSA-level** permit series for Savannah — only county-level (`BPPRIV013051` etc.; note the leading `0` before the 5-digit FIPS). `_county_permits_annual` sums `BPPRIV0{fips}` over the MSA's counties for the total. County 1-unit series (`BP1FH0{fips}`) don't exist, so the SF/MF split is estimated from the GA state 1-unit share (GABP1FH/GABPPRIV). Confirmed live (2025) via dispatch.
 
 ---
 
