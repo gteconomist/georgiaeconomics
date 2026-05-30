@@ -1814,8 +1814,15 @@ function replaceRelativeEmploymentChart(ces) {
   const baseline = ces.values[0];
   if (!baseline) return;
   const rebased = ces.values.map(v => +(100 * v / baseline).toFixed(2));
-  // Reduce x-axis to annual labels (every 12th month) for readability
-  const labels = ces.months.map(m => m.split('-')[0]);
+  // Auto-fit the y-axis to the live range (the demo chart hardcodes min:95, which
+  // clips the 2020 COVID dip). Pad a couple points below the low and above the high.
+  if (chart.options.scales && chart.options.scales.y) {
+    chart.options.scales.y.min = Math.floor(Math.min(...rebased) - 2);
+    chart.options.scales.y.max = Math.ceil(Math.max(...rebased) + 2);
+  }
+  // Show the year only at each January; blank for other months so the x-axis has one
+  // tick per year instead of the year repeated 12 times.
+  const labels = ces.months.map(m => m.endsWith('-01') ? m.slice(0, 4) : '');
   chart.data.labels = labels;
   chart.data.datasets[0].label = 'Savannah';
   chart.data.datasets[0].data = rebased;
