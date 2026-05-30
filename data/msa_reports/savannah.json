@@ -2458,15 +2458,15 @@
           "n_returns": 863
         },
         {
-          "origin_msa": "FIPS 12",
+          "origin_msa": "Florida (other)",
           "n_returns": 836
         },
         {
-          "origin_msa": "FIPS 45",
+          "origin_msa": "South Carolina (other)",
           "n_returns": 818
         },
         {
-          "origin_msa": "FIPS 13",
+          "origin_msa": "Georgia (other)",
           "n_returns": 532
         },
         {
@@ -2474,29 +2474,29 @@
           "n_returns": 526
         },
         {
-          "origin_msa": "FIPS 37",
+          "origin_msa": "North Carolina (other)",
           "n_returns": 276
         },
         {
-          "origin_msa": "FIPS 48",
+          "origin_msa": "Texas (other)",
           "n_returns": 215
         },
         {
-          "origin_msa": "FIPS 36",
+          "origin_msa": "New York (other)",
           "n_returns": 192
         },
         {
-          "origin_msa": "FIPS 06",
+          "origin_msa": "California (other)",
           "n_returns": 176
         },
         {
-          "origin_msa": "FIPS 47",
+          "origin_msa": "Tennessee (other)",
           "n_returns": 154
         }
       ],
       "top_out": [
         {
-          "dest_msa": "FIPS 13",
+          "dest_msa": "Georgia (other)",
           "n_returns": 910
         },
         {
@@ -2508,19 +2508,19 @@
           "n_returns": 743
         },
         {
-          "dest_msa": "FIPS 45",
+          "dest_msa": "South Carolina (other)",
           "n_returns": 690
         },
         {
-          "dest_msa": "FIPS 12",
+          "dest_msa": "Florida (other)",
           "n_returns": 658
         },
         {
-          "dest_msa": "FIPS 48",
+          "dest_msa": "Texas (other)",
           "n_returns": 286
         },
         {
-          "dest_msa": "FIPS 37",
+          "dest_msa": "North Carolina (other)",
           "n_returns": 217
         },
         {
@@ -2532,7 +2532,7 @@
           "n_returns": 117
         },
         {
-          "dest_msa": "FIPS 06",
+          "dest_msa": "California (other)",
           "n_returns": 111
         }
       ],
