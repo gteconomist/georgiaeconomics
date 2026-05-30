@@ -2330,6 +2330,89 @@
         }
       }
     },
+    "qcew_3digit": {
+      "year": 2025,
+      "quarter": 2,
+      "as_of_label": "2025 Q2",
+      "manufacturing_split": {
+        "msa": {
+          "durable": {
+            "employment": 1979,
+            "avg_annual_wage": 81946,
+            "share_pct_of_mfg": 59.9
+          },
+          "nondurable": {
+            "employment": 1326,
+            "avg_annual_wage": 97738,
+            "share_pct_of_mfg": 40.1
+          },
+          "total_employment": 3305
+        },
+        "ga": {
+          "durable": {
+            "employment": 222477,
+            "avg_annual_wage": 79397,
+            "share_pct_of_mfg": 52.0
+          },
+          "nondurable": {
+            "employment": 205098,
+            "avg_annual_wage": 65550,
+            "share_pct_of_mfg": 48.0
+          },
+          "total_employment": 427575
+        },
+        "us": {
+          "durable": {
+            "employment": 7845342,
+            "avg_annual_wage": 91649,
+            "share_pct_of_mfg": 62.0
+          },
+          "nondurable": {
+            "employment": 4805637,
+            "avg_annual_wage": 74995,
+            "share_pct_of_mfg": 38.0
+          },
+          "total_employment": 12650979
+        }
+      },
+      "diffusion": {
+        "points": [
+          {
+            "label": "2024 Q3",
+            "value": 53.1,
+            "n": 32,
+            "growing": 17,
+            "shrinking": 15,
+            "flat": 0
+          },
+          {
+            "label": "2024 Q4",
+            "value": 44.8,
+            "n": 29,
+            "growing": 13,
+            "shrinking": 16,
+            "flat": 0
+          },
+          {
+            "label": "2025 Q1",
+            "value": 42.2,
+            "n": 32,
+            "growing": 13,
+            "shrinking": 18,
+            "flat": 1
+          },
+          {
+            "label": "2025 Q2",
+            "value": 47.1,
+            "n": 34,
+            "growing": 16,
+            "shrinking": 18,
+            "flat": 0
+          }
+        ],
+        "latest": 47.1
+      }
+    },
     "health_check": {
       "quarters": [
         "2024 Q2",
@@ -3325,6 +3408,7 @@
     "bea_personal_income": "live",
     "qcew_industry_shares": "live",
     "qcew_yoy_changes": "live",
+    "qcew_3digit": "live",
     "health_check": "live",
     "census_bps_permits": "live",
     "ita_msa_exports": "live",
