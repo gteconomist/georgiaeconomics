@@ -2686,6 +2686,35 @@
         "Effingham County"
       ]
     },
+    "acs_housing_characteristics": {
+      "source": "Census ACS 5-year, 2024 vintage (B25024 structure, B25035 year built) + Census Gazetteer land area",
+      "year": 2024,
+      "vintage_window": "2020-2024",
+      "values": {
+        "median_age": 36.9,
+        "population": 418285.0,
+        "total_housing_units": 181432.0,
+        "owner_occupied": 100253.0,
+        "renter_occupied": 61020.0,
+        "vacant_housing_units": 20159.0,
+        "struct_total": 181432.0,
+        "struct_1unit_detached": 117421.0,
+        "struct_2": 5871.0,
+        "struct_3_4": 8811.0,
+        "struct_5_9": 10346.0,
+        "struct_10_19": 7559.0,
+        "struct_20_49": 5572.0,
+        "struct_50plus": 6134.0,
+        "median_year_built": 1992.0
+      },
+      "derived": {
+        "pct_owner_occupied": 55.3,
+        "pct_renter_occupied": 33.6,
+        "pct_vacant": 11.1,
+        "pct_1unit_detached": 64.7,
+        "pct_multifamily": 24.4
+      }
+    },
     "business_cycle_index": {
       "method": "Stock-Watson coincident (2-input PCA, first principal component (positive co-movement, equal-weight loadings))",
       "components": [
@@ -3194,6 +3223,7 @@
     "acs_age_structure": "live",
     "acs_affordability": "live",
     "census_net_migration": "live",
+    "acs_housing_characteristics": "live",
     "business_cycle_index": "live",
     "forecast_arima": "live",
     "vitality": "live",
