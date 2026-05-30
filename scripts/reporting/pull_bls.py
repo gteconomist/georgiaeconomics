@@ -305,15 +305,18 @@ def fetch_laus_unemployment_history(cbsa: str, years_back: int = 7) -> Optional[
 # National = "US000".
 
 # Super-sector groupings used in the Comparative Employment & Income table.
-# Each value is a list of 2-digit NAICS codes (as strings) that roll up to that supersector.
+# Codes are QCEW NAICS *sector* codes as they actually appear in the by-area CSV:
+# manufacturing, retail, and transportation are emitted as HYPHENATED sector rows
+# ("31-33", "44-45", "48-49"), not as bare 2-digit codes. Manufacturing cannot be
+# split into durable/nondurable at the sector level — that needs a 3-digit subsector
+# pull (a future enhancement, shared with the Diffusion Index).
 QCEW_SUPERSECTORS = [
     ("Mining",                          ["21"]),
     ("Construction",                    ["23"]),
-    ("Manufacturing — Durable",         ["31", "33"]),
-    ("Manufacturing — Nondurable",      ["32"]),
-    ("Transportation/Utilities",        ["22", "48", "49"]),
+    ("Manufacturing",                   ["31-33"]),
+    ("Transportation/Utilities",        ["22", "48-49"]),
     ("Wholesale Trade",                 ["42"]),
-    ("Retail Trade",                    ["44", "45"]),
+    ("Retail Trade",                    ["44-45"]),
     ("Information",                     ["51"]),
     ("Financial Activities",            ["52", "53"]),
     ("Prof. & Bus. Services",           ["54", "55", "56"]),
@@ -321,6 +324,9 @@ QCEW_SUPERSECTORS = [
     ("Leisure & Hospitality",           ["71", "72"]),
     ("Other Services",                  ["81"]),
 ]
+# Flattened set of every code we recognize — used to filter QCEW rows to the
+# sector level (skips total "10", domain "101", and 3-digit subsector rows).
+QCEW_SECTOR_CODES = {c for _, codes in QCEW_SUPERSECTORS for c in codes}
 
 
 def _qcew_msa_area_code(cbsa: str) -> str:
@@ -379,17 +385,25 @@ def _qcew_aggregate_sectors(rows: list, own_codes: tuple = ("5",)) -> Dict[str, 
     for row in rows:
         if row.get("own_code") not in own_codes:
             continue
-        # Only 2-digit industry rows (NAICS supersector level in QCEW data)
+        # Keep only the NAICS sector-level rows we recognize. QCEW emits manufacturing,
+        # retail and transportation as hyphenated codes ("31-33", "44-45", "48-49"),
+        # so a len()==2 test silently dropped them — match the explicit code set instead.
         ic = (row.get("industry_code") or "").strip()
-        if len(ic) != 2:
+        if ic not in QCEW_SECTOR_CODES:
             continue
-        # Aggregation level — we want county/MSA totals, not establishment-class breakdowns
+        # Total size only (size breakdowns live in separate Q1 size files).
         if row.get("size_code") != "0":
             continue
-        # MSA-level rows: agglvl_code starts with "4" for MSAs.
-        # County rows use 70-series. We accept both because some calls use state.
+        # Quarterly by-area CSVs have NO annual_avg_emplvl field — employment is in
+        # month{1,2,3}_emplvl. Use the third (quarter-end) month, with fallbacks so the
+        # same code still works against annual files if ever pointed at one.
         try:
-            emp = int(float(row.get("annual_avg_emplvl") or 0))
+            emp = 0
+            for fld in ("month3_emplvl", "month2_emplvl", "month1_emplvl", "annual_avg_emplvl"):
+                raw = row.get(fld)
+                if raw not in (None, "", "0"):
+                    emp = int(float(raw))
+                    break
             wage = float(row.get("avg_wkly_wage") or 0)
         except ValueError:
             continue
@@ -466,6 +480,13 @@ def fetch_qcew_industry_shares(cbsa: str) -> Optional[dict]:
     ga_data,  ga_tot  = aggregate_and_share(ga_rows)
     us_data,  us_tot  = aggregate_and_share(us_rows)
 
+    # Guard against a "false-live" payload: if nothing aggregated (e.g. a schema
+    # change or a wrong employment field) the orchestrator would otherwise mark an
+    # empty {} as "live" and the page would silently stay on demo data.
+    if not msa_data or msa_tot <= 0:
+        print("  [QCEW] aggregation produced no MSA sectors — treating as failed", file=sys.stderr)
+        return None
+
     return {
         "year": year,
         "quarter": quarter,
@@ -505,6 +526,10 @@ def fetch_qcew_yoy_changes(cbsa: str) -> Optional[dict]:
             continue
         yoy = round(100 * (c["employment"] - p["employment"]) / p["employment"], 2)
         out[sector] = {"yoy_pct": yoy, "employment": c["employment"]}
+
+    if not out:
+        print("  [QCEW] no YoY sectors computed — treating as failed", file=sys.stderr)
+        return None
 
     return {
         "year": year_now,
