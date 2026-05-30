@@ -2107,22 +2107,228 @@
     },
     "qcew_industry_shares": {
       "year": 2025,
-      "quarter": 3,
-      "as_of_label": "2025 Q3",
-      "msa": {},
-      "ga": {},
-      "us": {},
+      "quarter": 2,
+      "as_of_label": "2025 Q2",
+      "msa": {
+        "Manufacturing": {
+          "employment": 24773,
+          "avg_annual_wage": 93756,
+          "share_pct": 16.71
+        },
+        "Transportation/Utilities": {
+          "employment": 17538,
+          "avg_annual_wage": 69264,
+          "share_pct": 11.83
+        },
+        "Retail Trade": {
+          "employment": 23347,
+          "avg_annual_wage": 41288,
+          "share_pct": 15.74
+        },
+        "Financial Activities": {
+          "employment": 6499,
+          "avg_annual_wage": 77942,
+          "share_pct": 4.38
+        },
+        "Prof. & Bus. Services": {
+          "employment": 13886,
+          "avg_annual_wage": 42588,
+          "share_pct": 9.36
+        },
+        "Education & Health Services": {
+          "employment": 27904,
+          "avg_annual_wage": 65132,
+          "share_pct": 18.82
+        },
+        "Leisure & Hospitality": {
+          "employment": 28206,
+          "avg_annual_wage": 30300,
+          "share_pct": 19.02
+        },
+        "Other Services": {
+          "employment": 6137,
+          "avg_annual_wage": 48880,
+          "share_pct": 4.14
+        }
+      },
+      "ga": {
+        "Mining": {
+          "employment": 5955,
+          "avg_annual_wage": 83980,
+          "share_pct": 0.13
+        },
+        "Construction": {
+          "employment": 235865,
+          "avg_annual_wage": 79196,
+          "share_pct": 5.14
+        },
+        "Manufacturing": {
+          "employment": 427575,
+          "avg_annual_wage": 72748,
+          "share_pct": 9.33
+        },
+        "Transportation/Utilities": {
+          "employment": 281846,
+          "avg_annual_wage": 73053,
+          "share_pct": 6.15
+        },
+        "Wholesale Trade": {
+          "employment": 227032,
+          "avg_annual_wage": 97552,
+          "share_pct": 4.95
+        },
+        "Retail Trade": {
+          "employment": 507397,
+          "avg_annual_wage": 40820,
+          "share_pct": 11.07
+        },
+        "Information": {
+          "employment": 114527,
+          "avg_annual_wage": 131664,
+          "share_pct": 2.5
+        },
+        "Financial Activities": {
+          "employment": 276205,
+          "avg_annual_wage": 97630,
+          "share_pct": 6.02
+        },
+        "Prof. & Bus. Services": {
+          "employment": 741944,
+          "avg_annual_wage": 91165,
+          "share_pct": 16.18
+        },
+        "Education & Health Services": {
+          "employment": 695619,
+          "avg_annual_wage": 68481,
+          "share_pct": 15.17
+        },
+        "Leisure & Hospitality": {
+          "employment": 530061,
+          "avg_annual_wage": 30255,
+          "share_pct": 11.56
+        },
+        "Other Services": {
+          "employment": 122973,
+          "avg_annual_wage": 51688,
+          "share_pct": 2.68
+        },
+        "Government": {
+          "employment": 418097,
+          "avg_annual_wage": 61134,
+          "share_pct": 9.12
+        }
+      },
+      "us": {
+        "Mining": {
+          "employment": 575408,
+          "avg_annual_wage": 120588,
+          "share_pct": 0.39
+        },
+        "Construction": {
+          "employment": 8424182,
+          "avg_annual_wage": 80860,
+          "share_pct": 5.73
+        },
+        "Manufacturing": {
+          "employment": 12650979,
+          "avg_annual_wage": 85332,
+          "share_pct": 8.61
+        },
+        "Transportation/Utilities": {
+          "employment": 7127668,
+          "avg_annual_wage": 73299,
+          "share_pct": 4.85
+        },
+        "Wholesale Trade": {
+          "employment": 6060837,
+          "avg_annual_wage": 99684,
+          "share_pct": 4.13
+        },
+        "Retail Trade": {
+          "employment": 15371782,
+          "avg_annual_wage": 42536,
+          "share_pct": 10.46
+        },
+        "Information": {
+          "employment": 2852537,
+          "avg_annual_wage": 174772,
+          "share_pct": 1.94
+        },
+        "Financial Activities": {
+          "employment": 8762192,
+          "avg_annual_wage": 112293,
+          "share_pct": 5.96
+        },
+        "Prof. & Bus. Services": {
+          "employment": 22399565,
+          "avg_annual_wage": 101525,
+          "share_pct": 15.25
+        },
+        "Education & Health Services": {
+          "employment": 26031284,
+          "avg_annual_wage": 64740,
+          "share_pct": 17.72
+        },
+        "Leisure & Hospitality": {
+          "employment": 17402633,
+          "avg_annual_wage": 33326,
+          "share_pct": 11.85
+        },
+        "Other Services": {
+          "employment": 4740568,
+          "avg_annual_wage": 53196,
+          "share_pct": 3.23
+        },
+        "Government": {
+          "employment": 14519344,
+          "avg_annual_wage": 71182,
+          "share_pct": 9.88
+        }
+      },
       "totals": {
-        "msa": 0,
-        "ga": 0,
-        "us": 0
+        "msa": 148290,
+        "ga": 4585096,
+        "us": 146918979
       }
     },
     "qcew_yoy_changes": {
       "year": 2025,
-      "quarter": 3,
-      "as_of_label": "2025 Q3",
-      "sectors": {}
+      "quarter": 2,
+      "as_of_label": "2025 Q2",
+      "sectors": {
+        "Manufacturing": {
+          "yoy_pct": 4.02,
+          "employment": 24773
+        },
+        "Transportation/Utilities": {
+          "yoy_pct": 2.23,
+          "employment": 17538
+        },
+        "Retail Trade": {
+          "yoy_pct": 1.03,
+          "employment": 23347
+        },
+        "Financial Activities": {
+          "yoy_pct": -2.39,
+          "employment": 6499
+        },
+        "Prof. & Bus. Services": {
+          "yoy_pct": -4.62,
+          "employment": 13886
+        },
+        "Education & Health Services": {
+          "yoy_pct": 2.13,
+          "employment": 27904
+        },
+        "Leisure & Hospitality": {
+          "yoy_pct": 0.35,
+          "employment": 28206
+        },
+        "Other Services": {
+          "yoy_pct": 1.02,
+          "employment": 6137
+        }
+      }
     },
     "health_check": {
       "quarters": [
@@ -2977,8 +3183,8 @@
     "census_acs_demographics": "live",
     "bea_gmp": "live",
     "bea_personal_income": "live",
-    "qcew_industry_shares": "stale",
-    "qcew_yoy_changes": "stale",
+    "qcew_industry_shares": "live",
+    "qcew_yoy_changes": "live",
     "health_check": "live",
     "census_bps_permits": "failed",
     "ita_msa_exports": "live",
