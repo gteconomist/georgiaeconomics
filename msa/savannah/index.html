@@ -408,8 +408,8 @@
     <div class="indicator-cell dual">
       <div class="ic-eyebrow">Relative Costs</div>
       <div class="dual-pair">
-        <div>Living<span>92%</span></div>
-        <div>Business<span>89%</span></div>
+        <div>Living<span id="col-index">92%</span></div>
+        <div>Business<span id="biz-cost-index">89%</span></div>
       </div>
       <div class="ic-foot">US = 100</div>
     </div>
@@ -466,8 +466,8 @@
       </div>
       <div class="box rating">
         <h3>EIG Credit Score</h3>
-        <div class="grade">—</div>
-        <div class="as">Model pending &middot; Phase 2</div>
+        <div class="grade" id="credit-grade">—</div>
+        <div class="as" id="credit-sub">Model pending &middot; Phase 2</div>
       </div>
     </aside>
 
@@ -1412,6 +1412,12 @@ async function loadLiveData() {
     if (replaceValuationChart(val)) flipSectionPill('valuation-pill', 'live');
   }
 
+  // --- EIG Relative Costs: cost of living + cost of doing business (US = 100) ---
+  replaceRelativeCosts(data.sections.business_costs);
+
+  // --- EIG Credit Score: scorecard grade + outlook ---
+  replaceCreditScore(data.sections.credit_score);
+
   // --- BEA Per Capita Income: rebuild the PCI chart ---
   if (pi && pi.years && pi.per_capita_income) {
     replacePerCapitaIncomeChart(pi);
@@ -1731,6 +1737,27 @@ function replaceValuationChart(val) {
   chart.data.labels = val.years.map(y => String(y).slice(-2));
   chart.data.datasets[0].data = val.valuation_pct;
   chart.update();
+  return true;
+}
+
+/** Fill the Relative Costs cell (Living / Business, US = 100) from the EIG model. */
+function replaceRelativeCosts(bc) {
+  if (!bc) return false;
+  let any = false;
+  const col = document.getElementById('col-index');
+  if (col && bc.cost_of_living_index != null) { col.textContent = bc.cost_of_living_index + '%'; any = true; }
+  const biz = document.getElementById('biz-cost-index');
+  if (biz && bc.business_cost_index != null) { biz.textContent = bc.business_cost_index + '%'; any = true; }
+  return any;
+}
+
+/** Fill the EIG Credit Score scorecard box with grade + score/outlook subtext. */
+function replaceCreditScore(cs) {
+  if (!cs || cs.grade == null) return false;
+  const g = document.getElementById('credit-grade');
+  const sub = document.getElementById('credit-sub');
+  if (g) g.textContent = cs.grade;
+  if (sub) sub.textContent = `Score ${cs.score}/100 · Outlook: ${cs.outlook}`;
   return true;
 }
 
