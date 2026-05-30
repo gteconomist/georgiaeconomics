@@ -2124,6 +2124,58 @@
       "as_of_label": "2025 Q3",
       "sectors": {}
     },
+    "health_check": {
+      "quarters": [
+        "2024 Q2",
+        "2024 Q3",
+        "2024 Q4",
+        "2025 Q1",
+        "2025 Q2",
+        "2025 Q3"
+      ],
+      "employment_000s": [
+        197.7,
+        195.9,
+        199.1,
+        197.9,
+        200.0,
+        202.3
+      ],
+      "avg_weekly_wage": [
+        1135,
+        1145,
+        1221,
+        1210,
+        1183,
+        1197
+      ],
+      "establishments": [
+        12993,
+        13089,
+        13306,
+        13305,
+        13325,
+        13387
+      ],
+      "unemployment_rate": [
+        2.9,
+        3.2,
+        2.7,
+        2.9,
+        2.8,
+        3.0
+      ],
+      "labor_force_000s": [
+        215.6,
+        215.2,
+        215.2,
+        216.3,
+        217.5,
+        217.3
+      ],
+      "as_of_label": "2025 Q3",
+      "source": "BLS QCEW (MSA totals) + LAUS (quarterly-averaged); EIG-assembled"
+    },
     "census_bps_permits": null,
     "ita_msa_exports": {
       "year": 2024,
@@ -2927,6 +2979,7 @@
     "bea_personal_income": "live",
     "qcew_industry_shares": "stale",
     "qcew_yoy_changes": "stale",
+    "health_check": "live",
     "census_bps_permits": "failed",
     "ita_msa_exports": "live",
     "irs_soi_migration": "live",
