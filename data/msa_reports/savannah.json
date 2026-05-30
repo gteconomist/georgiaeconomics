@@ -2382,7 +2382,45 @@
       "as_of_label": "2025 Q3",
       "source": "BLS QCEW (MSA totals) + LAUS (quarterly-averaged); EIG-assembled"
     },
-    "census_bps_permits": null,
+    "census_bps_permits": {
+      "source": "Census Building Permits Survey via FRED (county sum over 13029,13051,13103; SF/MF split estimated from GA state 1-unit share (county 1-unit unavailable))",
+      "years": [
+        2020,
+        2021,
+        2022,
+        2023,
+        2024,
+        2025
+      ],
+      "single_family": [
+        2585,
+        2583,
+        2002,
+        2353,
+        2904,
+        3932
+      ],
+      "multi_family": [
+        441,
+        644,
+        1192,
+        1035,
+        1133,
+        1439
+      ],
+      "permits_per_1k": [
+        7.38,
+        7.87,
+        7.79,
+        8.26,
+        9.85,
+        13.1
+      ],
+      "latest_year": 2025,
+      "latest_single": 3932,
+      "latest_multi": 1439,
+      "latest_per_1k": 13.1
+    },
     "ita_msa_exports": {
       "year": 2024,
       "total_usd_millions": 8378.2,
@@ -3020,6 +3058,34 @@
         8.3,
         8.1
       ],
+      "sf_permits": [
+        4054.0,
+        4367.0,
+        4634.0,
+        4860.0,
+        5048.0
+      ],
+      "sf_permits_yoy": [
+        3.1,
+        7.7,
+        6.1,
+        4.9,
+        3.9
+      ],
+      "mf_permits": [
+        1547.0,
+        1685.0,
+        1804.0,
+        1905.0,
+        1990.0
+      ],
+      "mf_permits_yoy": [
+        7.5,
+        8.9,
+        7.1,
+        5.6,
+        4.5
+      ],
       "method": "Damped-trend Holt smoothing (ARIMA(1,1,2) family), per-series grid-fit on annual actuals; level series modeled in log space",
       "horizon": [
         2026,
@@ -3046,7 +3112,11 @@
         "median_hh_income_yoy",
         "population",
         "population_yoy",
-        "hpi_yoy"
+        "hpi_yoy",
+        "sf_permits",
+        "sf_permits_yoy",
+        "mf_permits",
+        "mf_permits_yoy"
       ],
       "source": "EIG forecast composite \u2014 computed from BLS/BEA/Census/FHFA actuals"
     },
@@ -3250,7 +3320,7 @@
     "qcew_industry_shares": "live",
     "qcew_yoy_changes": "live",
     "health_check": "live",
-    "census_bps_permits": "failed",
+    "census_bps_permits": "live",
     "ita_msa_exports": "live",
     "irs_soi_migration": "live",
     "epa_air_quality": "live",
