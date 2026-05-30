@@ -96,7 +96,7 @@ from reporting import (pull_bls, pull_fhfa, pull_census, pull_bea, pull_irs_soi,
 
 # Phase 2 composite/forecast models (each module in scripts/modeling/)
 from modeling import (business_cycle_index, forecast_arima, vitality, quality_of_life,
-                      housing_valuation, business_costs, credit_score)
+                      housing_valuation, business_costs, credit_score, industrial_diversity)
 
 # Lookup tables
 MSA_BY_CBSA = {cbsa: (short, full, pop) for cbsa, short, full, pop in GA_MSAS}
@@ -151,6 +151,13 @@ def run_census_acs_demographics(cbsa: str):
 
 def run_acs_housing_characteristics(cbsa: str):
     data = pull_census.fetch_housing_characteristics(cbsa)
+    if data is None:
+        return None, "failed"
+    return data, "live"
+
+
+def run_acs_block_group_income(cbsa: str):
+    data = pull_census.fetch_block_groups_by_income(cbsa)
     if data is None:
         return None, "failed"
     return data, "live"
@@ -275,6 +282,7 @@ SECTIONS = [
     ("acs_affordability",       run_acs_affordability),
     ("census_net_migration",    run_census_net_migration),
     ("acs_housing_characteristics", run_acs_housing_characteristics),
+    ("acs_block_group_income",  run_acs_block_group_income),
 ]
 
 
@@ -324,6 +332,13 @@ def run_business_costs(cbsa: str, output_so_far: dict):
     return data, "live"
 
 
+def run_industrial_diversity(cbsa: str, output_so_far: dict):
+    data = industrial_diversity.compute(cbsa, output_so_far)
+    if data is None:
+        return None, "failed"
+    return data, "live"
+
+
 def run_credit_score(cbsa: str, output_so_far: dict):
     data = credit_score.compute(cbsa, output_so_far)
     if data is None:
@@ -340,6 +355,7 @@ MODELING_SECTIONS = [
     ("quality_of_life", run_quality_of_life),
     ("housing_valuation", run_housing_valuation),
     ("business_costs", run_business_costs),
+    ("industrial_diversity", run_industrial_diversity),
     ("credit_score", run_credit_score),
 ]
 

@@ -4,7 +4,7 @@
 **Pilot page:** `/msa/savannah/` (CBSA 42340). This tracker is the source of truth for what is real, what is modeled, what is still demo, and what cannot be obtained at the MSA level.
 
 **Last updated:** 2026-05-30
-**Data layer:** 25 live / 1 failed of 26 sections (only `census_bps_permits` failing). All 7 modeling modules live. Remaining work is wiring buildable demo sections, not data plumbing.
+**Data layer:** core sections live (only `census_bps_permits` failing). 8 modeling modules (added industrial_diversity). New sections built & pending next dispatch: Population & Housing Characteristics, Block Groups by Income, Industrial Diversity. Remaining demo: Entrepreneurship (needs Census BFS fetcher), Economic Inequality + Diffusion Index wiring, Housing Affordability chart, Top Employers.
 
 ---
 
@@ -97,8 +97,8 @@ DEMO prose, tagged "Partial." Template is final; paragraphs are hand-written, no
 | Element | Source | Status |
 |---|---|---|
 | Top Employers | — | DEMO / **NO MSA SOURCE** (no public API; Précis uses proprietary D&B-type data). Best alternative = Tavily hints, non-authoritative. |
-| Industrial Diversity score | QCEW (Hachman/HHI) | DEMO — **buildable** |
-| Entrepreneurship | Census Business Formation Statistics (MSA-level exists) | DEMO — **buildable** |
+| Industrial Diversity score | `industrial_diversity.py` (Hachman index from QCEW shares) | **MODEL** (built 2026-05-30, pending dispatch) |
+| Entrepreneurship | Census Business Formation Statistics (MSA-level exists) | DEMO — **buildable** (needs a new BFS fetcher; next up) |
 | Productivity | BEA GMP ÷ CES employment | **LIVE / MODEL** |
 | Exports (by product / destination) | ITA | **LIVE** |
 
@@ -108,7 +108,7 @@ QCEW shares + average annual wages vs GA/US. **LIVE** (confirmed 2026-05-30); re
 ### Demographics & Migration
 | Element | Source | Status |
 |---|---|---|
-| Block Groups by Income | ACS block-group pull | DEMO — **buildable** |
+| Block Groups by Income | ACS B19013 block-group pull (`acs_block_group_income`) | **LIVE** (built 2026-05-30, pending dispatch) — Savannah series live; US comparison left illustrative (national block-group distribution not pulled). |
 | Economic Inequality (Gini, poverty) | data is in live ACS section | DEMO — **buildable** (wiring only; national *rank* would be MODEL) |
 | Per Capita Income | BEA | **LIVE** |
 | Migration Flows (in/out) | IRS SOI | **LIVE** |

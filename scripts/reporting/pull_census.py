@@ -458,6 +458,78 @@ def fetch_housing_characteristics(cbsa: str, year: Optional[int] = None) -> Opti
     return None
 
 
+# ----------------------------- Block groups by income (B19013) -----------------------------
+# Distribution of the MSA's census block groups by median household income. Block-group
+# geographies can't be wildcarded across states, so we query per county (state+county).
+_BG_INCOME_BINS = [
+    (0, 25000, "0-25k"), (25000, 50000, "25-50k"), (50000, 75000, "50-75k"),
+    (75000, 100000, "75-100k"), (100000, 125000, "100-125k"), (125000, 150000, "125-150k"),
+    (150000, 200000, "150-200k"), (200000, 10**12, "200k+"),
+]
+
+
+def fetch_block_groups_by_income(cbsa: str, year: Optional[int] = None) -> Optional[dict]:
+    """Share of the MSA's block groups falling in each median-HH-income band (B19013).
+
+    Returns {"year","vintage_window","bins":[...],"pct":[...],"n_block_groups":N,"source"}.
+    The US comparison series is left illustrative on the page (computing it would require
+    pulling all ~240k US block groups). Suppressed median income (-666666666) is skipped.
+    Returns None if no county resolves. Pure stdlib.
+    """
+    if not CENSUS_API_KEY:
+        print("  [Census ACS5 block-groups] no API key", file=sys.stderr)
+        return None
+    counties = {fips for fips, c in COUNTY_TO_MSA.items() if c == cbsa}
+    if not counties:
+        return None
+
+    this_year = date.today().year
+    candidate_years = [year] if year else list(range(this_year - 1, this_year - 5, -1))
+    labels = [b[2] for b in _BG_INCOME_BINS]
+
+    for y in candidate_years:
+        counts = [0] * len(_BG_INCOME_BINS)
+        total = 0
+        any_county = False
+        for fips in sorted(counties):
+            st, co = fips[:2], fips[2:]
+            url = (
+                f"{CENSUS_BASE}/{y}/acs/acs5?get=B19013_001E"
+                f"&for=block%20group:*&in=state:{st}%20county:{co}"
+                f"&key={CENSUS_API_KEY}"
+            )
+            data = _census_get(url, quiet_404=(y == this_year - 1))
+            if not data or len(data) < 2:
+                continue
+            any_county = True
+            try:
+                idx = data[0].index("B19013_001E")
+            except ValueError:
+                continue
+            for row in data[1:]:
+                try:
+                    inc = float(row[idx])
+                except (ValueError, TypeError, IndexError):
+                    continue
+                if inc < 0:  # -666666666 = suppressed / not computable
+                    continue
+                for bi, (lo, hi, _) in enumerate(_BG_INCOME_BINS):
+                    if lo <= inc < hi:
+                        counts[bi] += 1
+                        total += 1
+                        break
+        if any_county and total > 0:
+            return {
+                "year": y,
+                "vintage_window": f"{y-4}-{y}",
+                "bins": labels,
+                "pct": [round(100 * c / total, 1) for c in counts],
+                "n_block_groups": total,
+                "source": f"Census ACS 5-year {y} block-group median HH income (B19013), MSA counties",
+            }
+    return None
+
+
 # ----------------------------- ACS age structure (B01001) -----------------------------
 # B01001 is sex-by-age. Male age groups are suffixes 3..25; the female counterpart of
 # male suffix s is s+24 (e.g. male 25-29 = _011E, female 25-29 = _035E). Requesting all

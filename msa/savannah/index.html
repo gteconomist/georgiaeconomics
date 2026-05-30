@@ -739,12 +739,13 @@
 
     <div class="report-panel">
       <h3>Industrial Diversity</h3>
-      <div class="sub">Herfindahl-style score, 1.0 = most diverse in US</div>
+      <div class="sub">Hachman index, 1.0 = mix identical to the US (most diversified)</div>
       <div class="div-bar-wrap">
-        <div class="div-bar" style="width: 76%;"></div>
-        <div class="div-bar-marker" style="left: 76%;" data-label="Savannah 0.76"></div>
+        <div class="div-bar" id="diversity-bar" style="width: 76%;"></div>
+        <div class="div-bar-marker" id="diversity-marker" style="left: 76%;" data-label="Savannah 0.76"></div>
       </div>
-      <p style="font-size:12px; color:var(--ink-soft); margin:18px 0 6px;">More diversified than 76% of US metros — slightly better than the Georgia average (0.71) and well above similar-sized Sun Belt metros that depend on a single industry.</p>
+      <p id="diversity-prose" style="font-size:12px; color:var(--ink-soft); margin:18px 0 6px;">More diversified than 76% of US metros — slightly better than the Georgia average (0.71) and well above similar-sized Sun Belt metros that depend on a single industry.</p>
+      <div class="src">EIG composite: Hachman index from QCEW employment shares (MSA vs US). <span class="src-pill proxy">EIG composite</span> <span class="src-pill demo" id="diversity-pill">Demo</span></div>
 
       <h3 style="margin-top:18px;">Entrepreneurship</h3>
       <div class="sub">Broad-based startup rate &middot; US = 100</div>
@@ -841,7 +842,7 @@
       <h3>Block Groups by Income</h3>
       <div class="sub">% of total block groups</div>
       <div class="canvas-md"><canvas id="bg-income-chart"></canvas></div>
-      <div class="src">Source: Census ACS 5-year, block-group median HH income. <span class="src-pill demo">Demo</span></div>
+      <div class="src">Source: Census ACS 5-year, block-group median HH income (Savannah live; US illustrative). <span class="src-pill demo" id="bg-income-pill">Demo</span></div>
     </div>
     <div class="report-panel">
       <h3>Economic Inequality</h3>
@@ -1426,6 +1427,18 @@ async function loadLiveData() {
     if (replacePopHousingTable(ph)) flipSectionPill('pop-housing-pill', 'live');
   }
 
+  // --- Industrial Diversity: Hachman index from QCEW shares ---
+  const idv = data.sections.industrial_diversity;
+  if (idv && idv.score != null) {
+    if (replaceIndustrialDiversity(idv)) flipSectionPill('diversity-pill', 'live');
+  }
+
+  // --- Block Groups by Income: ACS block-group distribution (Savannah series) ---
+  const bg = data.sections.acs_block_group_income;
+  if (bg && bg.pct && bg.pct.length) {
+    if (replaceBlockGroupsChart(bg)) flipSectionPill('bg-income-pill', 'live');
+  }
+
   // --- BEA Per Capita Income: rebuild the PCI chart ---
   if (pi && pi.years && pi.per_capita_income) {
     replacePerCapitaIncomeChart(pi);
@@ -1785,6 +1798,43 @@ function replaceHealthCheck(hc) {
     rowFor('Unemployment rate (%)', hc.unemployment_rate, 'dec'),
     rowFor('Labor force (000s)',    hc.labor_force_000s,  'dec'),
   ].join('');
+  return true;
+}
+
+/** Set the Industrial Diversity bar/marker + prose from the Hachman index.
+ *  score and ga_score are 0-1 (1.0 = mix identical to the US). */
+function replaceIndustrialDiversity(d) {
+  const bar = document.getElementById('diversity-bar');
+  const marker = document.getElementById('diversity-marker');
+  if (!bar || !marker || d.score == null) return false;
+  const pct = Math.max(0, Math.min(100, +(d.score * 100).toFixed(1)));
+  bar.style.width = pct + '%';
+  marker.style.left = pct + '%';
+  marker.setAttribute('data-label', `Savannah ${d.score.toFixed(2)}`);
+  const prose = document.getElementById('diversity-prose');
+  if (prose) {
+    let txt = `Hachman index of ${d.score.toFixed(2)} — closer to 1.0 means an industrial ` +
+              `mix more like the U.S. overall; lower means more concentrated.`;
+    if (d.ga_score != null) {
+      const rel = d.score > d.ga_score ? 'more' : (d.score < d.ga_score ? 'less' : 'as');
+      txt += ` Savannah is ${rel} diversified than the Georgia average (${d.ga_score.toFixed(2)}).`;
+    }
+    prose.textContent = txt;
+  }
+  return true;
+}
+
+/** Rebuild the Block Groups by Income chart's Savannah series from the ACS distribution.
+ *  Leaves the US comparison bars illustrative (page precedent). */
+function replaceBlockGroupsChart(bg) {
+  const canvas = document.getElementById('bg-income-chart');
+  if (!canvas) return false;
+  const chart = Chart.getChart(canvas);
+  if (!chart || !bg.pct || !bg.pct.length) return false;
+  if (bg.bins && bg.bins.length === bg.pct.length) chart.data.labels = bg.bins;
+  // Dataset 0 = Savannah (per the chart definition); update it, keep US illustrative.
+  chart.data.datasets[0].data = bg.pct;
+  chart.update();
   return true;
 }
 
