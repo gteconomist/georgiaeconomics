@@ -4,6 +4,7 @@
 **Pilot page:** `/msa/savannah/` (CBSA 42340). This tracker is the source of truth for what is real, what is modeled, what is still demo, and what cannot be obtained at the MSA level.
 
 **Last updated:** 2026-05-30
+**Data layer:** 25 live / 1 failed of 26 sections (only `census_bps_permits` failing). All 7 modeling modules live. Remaining work is wiring buildable demo sections, not data plumbing.
 
 ---
 
@@ -78,7 +79,7 @@ DEMO prose, tagged "Partial." Template is final; paragraphs are hand-written, no
 ### Employment
 | Element | Source | Status |
 |---|---|---|
-| Industry Employment (YoY by sector) | QCEW | **LIVE** *(QCEW fix pending CI validation — see defect below)* |
+| Industry Employment (YoY by sector) | QCEW | **LIVE** (confirmed 2026-05-30) |
 | Current Employment Trends table | BLS CES by supersector | **LIVE** |
 | Diffusion Index | needs 3-digit NAICS QCEW over time | DEMO — **buildable** |
 | Relative Employment Performance | BLS CES (rebased) | **LIVE** |
@@ -102,7 +103,7 @@ DEMO prose, tagged "Partial." Template is final; paragraphs are hand-written, no
 | Exports (by product / destination) | ITA | **LIVE** |
 
 ### Comparative Employment & Income
-QCEW shares + average annual wages vs GA/US. **LIVE** *(QCEW fix pending CI validation)*. GA/US comparison bars on some other charts remain illustrative by page precedent. Manufacturing is a **single row** until a 3-digit pull enables the durable/nondurable split (shared need with Diffusion Index).
+QCEW shares + average annual wages vs GA/US. **LIVE** (confirmed 2026-05-30); reads one quarter behind the headline total by design (agglvl-44 sector lag). Manufacturing is a **single row** until a 3-digit pull enables the durable/nondurable split (shared need with Diffusion Index).
 
 ### Demographics & Migration
 | Element | Source | Status |
@@ -145,7 +146,7 @@ QCEW shares + average annual wages vs GA/US. **LIVE** *(QCEW fix pending CI vali
 2. Manufacturing/retail/transportation are **hyphenated sector codes** (`31-33`, `44-45`, `48-49`); a `len()==2` filter dropped them. → match an explicit sector-code set. (Durable/nondurable manufacturing split needs a 3-digit pull; collapsed to one row for now.)
 3. **Agglvl-44 ("MSA, Private, by NAICS Sector") detail lags the agglvl-40 total** — the newest published quarter carries all-zero sector employment while the total covered is populated. → step back to the most recent quarter whose sector aggregation is non-empty (`_qcew_latest_sector_quarter`).
 Plus a false-live guard: return `None` when nothing aggregates, so status is honestly `failed`/stale instead of an empty "live" payload.
-**Status:** committed + unit-tested with synthetic rows reproducing the all-zero-latest-quarter symptom; **pending one more CI dispatch** to confirm the two pills flip to Live. The Comparative table will read one quarter behind the headline total by design (sector-detail lag).
+**Status:** ✅ RESOLVED 2026-05-30 — dispatch confirmed both `qcew_industry_shares` and `qcew_yoy_changes` live (2025 Q2, stepped back from the unpopulated Q3). Report now 25 live / 1 failed of 26. The Comparative table reads one quarter behind the headline total by design (sector-detail lag).
 
 ### `census_bps_permits` — only hard-failed section
 FRED area-prefix for Savannah unresolved. Needs a keyed run to read the resolved prefix into `GEO_OVERRIDES`.
@@ -174,10 +175,9 @@ The monthly 6-month trajectory table cannot be sourced at MSA level. **Quarterly
 
 ## Roadmap (priority order)
 
-1. Validate the QCEW fix + new quarterly Health Check (dispatch) → Industry Employment, Comparative Employment, and Health Check go live.
-2. Trigger a refresh so `business_costs` + `credit_score` display.
-3. ~~Health Check quarterly rebuild~~ — DONE (built; validate via dispatch).
-4. `census_bps_permits` fix (needs keyed run).
+1. ~~QCEW fix + quarterly Health Check~~ — DONE & confirmed live (2026-05-30).
+2. ~~`business_costs` + `credit_score` display~~ — DONE & confirmed live.
+3. `census_bps_permits` fix (needs keyed run) — **only remaining failure (1 of 26).**
 5. Wire the **buildable** DEMO items: Industrial Diversity (QCEW HHI), Entrepreneurship (Census BFS), Economic Inequality + Pop/Housing tables (ACS, already fetched), Economic Drivers strip cell (QCEW LQ).
 6. 3-digit NAICS QCEW pull → Diffusion Index + manufacturing durable/nondurable split.
 7. Block Groups by Income (ACS block-group); Housing Affordability (Freddie PMMS + ACS).

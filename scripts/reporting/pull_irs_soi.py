@@ -126,7 +126,6 @@ def _parse_migration_csv(csv_bytes: bytes, direction: str) -> List[dict]:
     out: List[dict] = []
     reader = csv.DictReader(io.StringIO(text))
     for row in reader:
-        # Skip aggregate rows (county FIPS == 000) and "Foreign" / "US Total" pseudo-rows
         try:
             y1_state = int(row.get("y1_statefips") or 0)
             y1_county = int(row.get("y1_countyfips") or 0)
@@ -134,22 +133,37 @@ def _parse_migration_csv(csv_bytes: bytes, direction: str) -> List[dict]:
             y2_county = int(row.get("y2_countyfips") or 0)
         except (ValueError, TypeError):
             continue
-        # Skip rows where the "other" side is an aggregate or special code.
-        # County code 0 is the state-level "all counties" row; we only want real flows.
+
+        # IRS SOI files mix real county-to-county flows with AGGREGATE summary rows that
+        # are NOT places: state FIPS 96/97/98 = "Total Migration US&Foreign / US / Foreign"
+        # and 57/58/59 = region/same-state/different-state totals (also non-migrant rows).
+        # The "other" side (origin for inflows, destination for outflows) must be a REAL
+        # state (1-56) with a REAL county (!= 0), or the totals blow up and the top list
+        # fills with pseudo-rows like "Other (97)".
         if direction == "in":
-            # destination = y2 (must be a real county), origin = y1 (allow aggregate)
-            if y2_county == 0 or y2_state == 0:
+            if not (1 <= y2_state <= 56 and y2_county != 0):   # our target county side
                 continue
+            o_state, o_county = y1_state, y1_county            # origin = "other" side
+            o_name = (row.get("y1_state_name") or "").strip()
         else:
-            if y1_county == 0 or y1_state == 0:
+            if not (1 <= y1_state <= 56 and y1_county != 0):
                 continue
+            o_state, o_county = y2_state, y2_county            # destination = "other" side
+            o_name = (row.get("y2_state_name") or "").strip()
+
+        is_aggregate = not (1 <= o_state <= 56 and o_county != 0)
+
         try:
             n_returns = int(float(row.get("n1") or 0))
         except (ValueError, TypeError):
             n_returns = 0
+
         out.append({
             "from_fips": f"{y1_state:02d}{y1_county:03d}",
             "to_fips":   f"{y2_state:02d}{y2_county:03d}",
+            "other_state": o_state,
+            "other_name": o_name,
+            "is_aggregate": is_aggregate,
             "n_returns": n_returns,
             "direction": direction,
         })
@@ -180,38 +194,48 @@ def fetch_migration_flows(cbsa: str, year: Optional[int] = None) -> Optional[dic
     if not target_counties:
         return None
 
-    # Inflow rows: keep where TO (y2) is in target MSA. Aggregate by source MSA.
-    in_by_origin_msa: Dict[str, int] = {}
+    def place_label(other_fips: str, other_cbsa: Optional[str], other_name: str) -> str:
+        """Label a flow's far side: tracked MSA name if known, else the state name
+        (rolling up all of that state's non-metro/out-of-MSA counties), else a FIPS
+        fallback. Never emits the IRS aggregate pseudo-codes."""
+        short = CBSA_TO_SHORT.get(other_cbsa)
+        if short:
+            return short
+        if other_name:
+            return f"{other_name} (other)"
+        return f"FIPS {other_fips[:2]}"
+
+    # Inflow rows: keep where TO (y2) is in target MSA. Aggregate by source MSA / state.
+    in_by_origin: Dict[str, int] = {}
     total_in = 0
     for r in inflows:
-        if r["to_fips"] not in target_counties:
+        if r["to_fips"] not in target_counties or r["is_aggregate"]:
             continue
         origin_cbsa = COUNTY_TO_MSA.get(r["from_fips"])
-        origin_label = CBSA_TO_SHORT.get(origin_cbsa) or f"Other ({r['from_fips'][:2]})"
         if origin_cbsa == cbsa:
-            # Within-MSA churn — skip
-            continue
-        in_by_origin_msa[origin_label] = in_by_origin_msa.get(origin_label, 0) + r["n_returns"]
+            continue  # within-MSA churn
+        label = place_label(r["from_fips"], origin_cbsa, r["other_name"])
+        in_by_origin[label] = in_by_origin.get(label, 0) + r["n_returns"]
         total_in += r["n_returns"]
 
-    out_by_dest_msa: Dict[str, int] = {}
+    out_by_dest: Dict[str, int] = {}
     total_out = 0
     for r in outflows:
-        if r["from_fips"] not in target_counties:
+        if r["from_fips"] not in target_counties or r["is_aggregate"]:
             continue
         dest_cbsa = COUNTY_TO_MSA.get(r["to_fips"])
-        dest_label = CBSA_TO_SHORT.get(dest_cbsa) or f"Other ({r['to_fips'][:2]})"
         if dest_cbsa == cbsa:
             continue
-        out_by_dest_msa[dest_label] = out_by_dest_msa.get(dest_label, 0) + r["n_returns"]
+        label = place_label(r["to_fips"], dest_cbsa, r["other_name"])
+        out_by_dest[label] = out_by_dest.get(label, 0) + r["n_returns"]
         total_out += r["n_returns"]
 
     top_in = sorted(
-        ({"origin_msa": k, "n_returns": v} for k, v in in_by_origin_msa.items()),
+        ({"origin_msa": k, "n_returns": v} for k, v in in_by_origin.items()),
         key=lambda x: -x["n_returns"],
     )[:10]
     top_out = sorted(
-        ({"dest_msa": k, "n_returns": v} for k, v in out_by_dest_msa.items()),
+        ({"dest_msa": k, "n_returns": v} for k, v in out_by_dest.items()),
         key=lambda x: -x["n_returns"],
     )[:10]
 
