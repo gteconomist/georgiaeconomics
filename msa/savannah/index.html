@@ -565,38 +565,34 @@
   <!-- ============================================================ -->
   <div class="section-header">
     <h2>Economic Health Check</h2>
-    <div class="sub">Recent 6-month trajectory across the leading indicators</div>
+    <div class="sub">Recent-quarters trajectory across the leading indicators</div>
   </div>
 
   <div class="chart-row two">
     <div class="report-panel">
-      <h3>6-month trajectory (3-mo MA)</h3>
-      <div class="sub">arrows reflect change vs. prior 3-mo MA</div>
-      <table class="health-check">
+      <h3>Recent-quarters trajectory</h3>
+      <div class="sub">arrows reflect change vs. prior quarter</div>
+      <table class="health-check" id="health-check-table">
         <thead>
           <tr>
             <th class="first">Indicator</th>
-            <th>Nov 25</th><th>Dec 25</th><th>Jan 26</th><th>Feb 26</th><th>Mar 26</th><th>Apr 26</th>
+            <th>Q2 24</th><th>Q3 24</th><th>Q4 24</th><th>Q1 25</th><th>Q2 25</th><th>Q3 25</th>
           </tr>
         </thead>
         <tbody>
-          <tr><td class="label">Employment, change (000s)</td>
-            <td>0.4</td><td>0.5</td><td>0.6</td><td>0.5</td><td class="up">0.7</td><td class="up">0.8</td></tr>
+          <tr><td class="label">Employment (000s)</td>
+            <td>196.1</td><td>197.0</td><td>198.2</td><td>199.0</td><td class="up">200.1</td><td class="up">201.3</td></tr>
+          <tr><td class="label">Avg weekly wage ($)</td>
+            <td>1,180</td><td>1,192</td><td>1,205</td><td>1,221</td><td class="up">1,238</td><td class="up">1,254</td></tr>
+          <tr><td class="label">Establishments</td>
+            <td>14,820</td><td>14,910</td><td>15,005</td><td>15,120</td><td class="up">15,240</td><td class="up">15,360</td></tr>
           <tr><td class="label">Unemployment rate (%)</td>
-            <td>3.0</td><td>3.1</td><td>3.1</td><td>3.1</td><td class="flat">3.1</td><td class="up">3.1</td></tr>
-          <tr><td class="label">Labor force participation (%)</td>
-            <td>63.4</td><td>63.5</td><td>63.5</td><td>63.6</td><td class="up">63.7</td><td class="up">63.8</td></tr>
-          <tr><td class="label">Average weekly hours</td>
-            <td>34.6</td><td>34.7</td><td>34.6</td><td>34.7</td><td class="up">34.8</td><td class="up">34.8</td></tr>
-          <tr><td class="label">GPA container TEUs (000s)</td>
-            <td>483</td><td>491</td><td>505</td><td>518</td><td class="up">534</td><td class="up">547</td></tr>
-          <tr><td class="label">Single-family permits</td>
-            <td>372</td><td>388</td><td>401</td><td>415</td><td class="up">428</td><td class="up">441</td></tr>
-          <tr><td class="label">Multifamily permits</td>
-            <td>92</td><td>108</td><td>114</td><td>121</td><td class="up">132</td><td class="down">98</td></tr>
+            <td>3.2</td><td>3.1</td><td>3.0</td><td>3.0</td><td class="down">2.9</td><td class="down">2.9</td></tr>
+          <tr><td class="label">Labor force (000s)</td>
+            <td>205.3</td><td>206.1</td><td>207.0</td><td>208.2</td><td class="up">209.4</td><td class="up">210.6</td></tr>
         </tbody>
       </table>
-      <div class="src">Sources: BLS LAUS &amp; CES, Census BPS, Georgia Ports Authority monthly statistics. <span class="src-pill demo">Demo</span></div>
+      <div class="src">Sources: BLS QCEW (MSA totals: employment, avg weekly wage, establishments) + LAUS (unemployment rate, labor force), quarterly. <span class="src-pill proxy">EIG-assembled</span> <span class="src-pill demo" id="health-check-pill">Demo</span></div>
     </div>
 
     <div class="report-panel">
@@ -1418,6 +1414,12 @@ async function loadLiveData() {
   // --- EIG Credit Score: scorecard grade + outlook ---
   replaceCreditScore(data.sections.credit_score);
 
+  // --- Economic Health Check: quarterly trajectory (QCEW totals + LAUS) ---
+  const hc = data.sections.health_check;
+  if (hc && hc.quarters && hc.quarters.length) {
+    if (replaceHealthCheck(hc)) flipSectionPill('health-check-pill', 'live');
+  }
+
   // --- BEA Per Capita Income: rebuild the PCI chart ---
   if (pi && pi.years && pi.per_capita_income) {
     replacePerCapitaIncomeChart(pi);
@@ -1737,6 +1739,46 @@ function replaceValuationChart(val) {
   chart.data.labels = val.years.map(y => String(y).slice(-2));
   chart.data.datasets[0].data = val.valuation_pct;
   chart.update();
+  return true;
+}
+
+/** Rebuild the Economic Health Check quarterly table from the health_check section.
+ *  Rebuilds the header (quarter labels) and 5 metric rows; arrows mark change vs the
+ *  prior quarter (up = higher value; for unemployment, "up" coloring is still applied
+ *  to the raw direction since the table just shows trajectory). */
+function replaceHealthCheck(hc) {
+  const table = document.getElementById('health-check-table');
+  if (!table || !hc.quarters || !hc.quarters.length) return false;
+  const thead = table.querySelector('thead tr');
+  const tbody = table.querySelector('tbody');
+  if (!thead || !tbody) return false;
+
+  thead.innerHTML = '<th class="first">Indicator</th>' +
+    hc.quarters.map(q => `<th>${q}</th>`).join('');
+
+  const fmt = (v, kind) => {
+    if (v == null) return '—';
+    if (kind === 'int') return Math.round(v).toLocaleString();
+    return (+v).toLocaleString(undefined, { minimumFractionDigits: 1, maximumFractionDigits: 1 });
+  };
+  const rowFor = (label, series, kind) => {
+    const cells = series.map((v, i) => {
+      let cls = '';
+      if (i > 0 && v != null && series[i - 1] != null) {
+        cls = v > series[i - 1] ? 'up' : (v < series[i - 1] ? 'down' : 'flat');
+      }
+      return `<td${cls ? ` class="${cls}"` : ''}>${fmt(v, kind)}</td>`;
+    }).join('');
+    return `<tr><td class="label">${label}</td>${cells}</tr>`;
+  };
+
+  tbody.innerHTML = [
+    rowFor('Employment (000s)',     hc.employment_000s,   'dec'),
+    rowFor('Avg weekly wage ($)',   hc.avg_weekly_wage,   'int'),
+    rowFor('Establishments',        hc.establishments,    'int'),
+    rowFor('Unemployment rate (%)', hc.unemployment_rate, 'dec'),
+    rowFor('Labor force (000s)',    hc.labor_force_000s,  'dec'),
+  ].join('');
   return true;
 }
 

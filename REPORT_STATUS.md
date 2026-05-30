@@ -72,7 +72,7 @@ DEMO prose, tagged "Partial." Template is final; paragraphs are hand-written, no
 ### Economic Health Check
 | Element | Source | Status |
 |---|---|---|
-| 6-month trajectory table (LFP, avg weekly hours, container TEUs, SF/MF permits monthly) | — | DEMO — mostly **NO MSA SOURCE** at monthly frequency. **See "Health Check rebuild" below — moving to QUARTERLY via QCEW+LAUS.** |
+| Recent-quarters trajectory table (employment, avg weekly wage, establishments, unemployment, labor force) | QCEW MSA totals + LAUS (`health_check`) | **LIVE** — *fix pending CI validation*. Rebuilt quarterly; dropped participation + weekly hours (no MSA source). |
 | Business Cycle Index chart | `business_cycle_index.py` | **MODEL** (live) |
 
 ### Employment
@@ -170,9 +170,9 @@ The monthly 6-month trajectory table cannot be sourced at MSA level. **Quarterly
 
 ## Roadmap (priority order)
 
-1. Validate the QCEW fix (dispatch) → Industry Employment + Comparative Employment go live.
+1. Validate the QCEW fix + new quarterly Health Check (dispatch) → Industry Employment, Comparative Employment, and Health Check go live.
 2. Trigger a refresh so `business_costs` + `credit_score` display.
-3. Health Check: decide quarterly metric set, then build (or drop the section).
+3. ~~Health Check quarterly rebuild~~ — DONE (built; validate via dispatch).
 4. `census_bps_permits` fix (needs keyed run).
 5. Wire the **buildable** DEMO items: Industrial Diversity (QCEW HHI), Entrepreneurship (Census BFS), Economic Inequality + Pop/Housing tables (ACS, already fetched), Economic Drivers strip cell (QCEW LQ).
 6. 3-digit NAICS QCEW pull → Diffusion Index + manufacturing durable/nondurable split.

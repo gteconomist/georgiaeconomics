@@ -539,6 +539,98 @@ def fetch_qcew_yoy_changes(cbsa: str) -> Optional[dict]:
     }
 
 
+# ----------------------------- Economic Health Check (quarterly) -----------------------------
+
+def _quarter_of_month(ym: str):
+    """'2026-03' -> (2026, 1)."""
+    return (int(ym[:4]), (int(ym[5:7]) - 1) // 3 + 1)
+
+
+def fetch_health_check_quarterly(cbsa: str, n_quarters: int = 6) -> Optional[dict]:
+    """Recent-quarters trajectory table for the Economic Health Check.
+
+    QCEW MSA totals (total covered, all industries): employment, average weekly wage,
+    establishment count — plus LAUS unemployment rate and labor force, averaged from
+    monthly to quarterly. Columns are anchored to QCEW's available quarters (the slower-
+    releasing source) so every row is fully populated rather than ragged.
+
+    Participation rate and average weekly hours are intentionally omitted — neither has a
+    clean quarterly MSA-level source (participation needs a working-age denominator that
+    only ACS publishes annually; CES weekly hours are national/state only).
+
+    Returns:
+        {
+          "quarters": ["2024 Q2", ...],
+          "employment_000s": [...], "avg_weekly_wage": [...], "establishments": [...],
+          "unemployment_rate": [...], "labor_force_000s": [...],
+          "as_of_label": "2025 Q3", "source": "..."
+        }
+    Returns None if QCEW totals can't be built. Pure stdlib.
+    """
+    latest = _qcew_latest_quarter()
+    if not latest:
+        return None
+    msa_area = _qcew_msa_area_code(cbsa)
+
+    # --- QCEW total-covered, all-industries row for the last n_quarters+1 quarters ---
+    qcew: Dict[tuple, dict] = {}
+    yy, qq = latest
+    for _ in range(n_quarters + 1):
+        rows = _qcew_fetch_csv(yy, qq, msa_area)
+        if rows:
+            for r in rows:
+                ic = (r.get("industry_code") or "").strip()
+                if r.get("own_code") == "0" and ic == "10" and r.get("size_code") == "0":
+                    try:
+                        emp = int(float(r.get("month3_emplvl") or 0))
+                        wage = int(float(r.get("avg_wkly_wage") or 0))
+                        est = int(float(r.get("qtrly_estabs") or 0))
+                    except ValueError:
+                        break
+                    if emp > 0:
+                        qcew[(yy, qq)] = {"emp": emp, "wage": wage, "estabs": est}
+                    break
+        qq -= 1
+        if qq < 1:
+            qq = 4
+            yy -= 1
+    if not qcew:
+        print("  [HealthCheck] no QCEW totals — treating as failed", file=sys.stderr)
+        return None
+
+    # --- LAUS monthly rate (03) + labor force (06), averaged by quarter ---
+    end_year = date.today().year
+    start_year = end_year - 3
+    rate_sid = _laus_series_id(cbsa, "03")
+    lf_sid = _laus_series_id(cbsa, "06")
+    rate_q: Dict[tuple, float] = {}
+    lf_q: Dict[tuple, float] = {}
+    laus = _bls_request([rate_sid, lf_sid], start_year, end_year)
+    if laus and laus.get("Results", {}).get("series"):
+        for s in laus["Results"]["series"]:
+            bucket: Dict[tuple, list] = {}
+            for o in _flatten_observations(s):
+                bucket.setdefault(_quarter_of_month(o["ym"]), []).append(o["value"])
+            avg = {k: sum(v) / len(v) for k, v in bucket.items()}
+            if s["seriesID"] == rate_sid:
+                rate_q = avg
+            elif s["seriesID"] == lf_sid:
+                lf_q = avg
+
+    quarters = sorted(qcew.keys())[-n_quarters:]
+    labels = [f"{y} Q{q}" for (y, q) in quarters]
+    return {
+        "quarters": labels,
+        "employment_000s":   [round(qcew[k]["emp"] / 1000, 1) for k in quarters],
+        "avg_weekly_wage":   [qcew[k]["wage"] for k in quarters],
+        "establishments":    [qcew[k]["estabs"] for k in quarters],
+        "unemployment_rate": [round(rate_q[k], 1) if k in rate_q else None for k in quarters],
+        "labor_force_000s":  [round(lf_q[k] / 1000, 1) if k in lf_q else None for k in quarters],
+        "as_of_label": labels[-1],
+        "source": "BLS QCEW (MSA totals) + LAUS (quarterly-averaged); EIG-assembled",
+    }
+
+
 # ----------------------------- CLI for quick smoke tests -----------------------------
 
 if __name__ == "__main__":
