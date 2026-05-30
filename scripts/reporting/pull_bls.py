@@ -430,6 +430,31 @@ def _qcew_aggregate_sectors(rows: list, own_codes: tuple = ("5",)) -> Dict[str, 
     return finalized
 
 
+def _qcew_latest_sector_quarter(msa_area: str, aggregate_and_share, max_back: int = 5):
+    """Find the most recent quarter whose MSA private-by-sector detail (agglvl 44) is
+    populated. Returns (year, quarter, msa_data, msa_total) or None.
+
+    The agglvl-44 sector rows lag the agglvl-40 total, so the newest quarter often has
+    all-zero sector employment; we step back until the aggregation is non-empty.
+    """
+    latest = _qcew_latest_quarter()
+    if not latest:
+        return None
+    y, q = latest
+    for _ in range(max_back):
+        rows = _qcew_fetch_csv(y, q, msa_area)
+        if rows:
+            data, tot = aggregate_and_share(rows)
+            if data and tot > 0:
+                return (y, q, data, tot)
+            print(f"  [QCEW] {y} Q{q} MSA sector detail not yet populated — stepping back", file=sys.stderr)
+        q -= 1
+        if q < 1:
+            q = 4
+            y -= 1
+    return None
+
+
 def fetch_qcew_industry_shares(cbsa: str) -> Optional[dict]:
     """Snapshot of QCEW employment shares + average annual wages for the MSA, GA, and US.
 
@@ -444,41 +469,9 @@ def fetch_qcew_industry_shares(cbsa: str) -> Optional[dict]:
           "totals": {"msa": N, "ga": N, "us": N}
         }
     """
-    latest = _qcew_latest_quarter()
-    if not latest:
-        print("  [QCEW] could not determine latest quarter", file=sys.stderr)
-        return None
-    year, quarter = latest
-
     msa_area = _qcew_msa_area_code(cbsa)
     state_area = DEFAULT_STATE_FIPS + "000"
     us_area = "US000"
-
-    msa_rows = _qcew_fetch_csv(year, quarter, msa_area)
-    ga_rows  = _qcew_fetch_csv(year, quarter, state_area)
-    us_rows  = _qcew_fetch_csv(year, quarter, us_area)
-    if not (msa_rows and ga_rows and us_rows):
-        return None
-
-    # --- TEMP DIAGNOSTIC (remove once the sector filter is confirmed) -------------
-    # The total-covered row parses fine but the sector filter matched nothing; log the
-    # real structure of the MSA file so we can see what own/agglvl/industry codes exist.
-    try:
-        owns = sorted({(r.get("own_code") or "") for r in msa_rows})
-        aggs = sorted({(r.get("agglvl_code") or "") for r in msa_rows})
-        ics  = sorted({(r.get("industry_code") or "").strip() for r in msa_rows})
-        print(f"  [QCEW DIAG] msa_rows={len(msa_rows)} own_codes={owns} agglvl_codes={aggs}", file=sys.stderr)
-        print(f"  [QCEW DIAG] industry_codes({len(ics)}): {ics[:60]}", file=sys.stderr)
-        # show how our target sector codes appear (own_code + agglvl per code)
-        for r in msa_rows:
-            ic = (r.get("industry_code") or "").strip()
-            if ic in QCEW_SECTOR_CODES:
-                print(f"  [QCEW DIAG] sector hit ic={ic} own={r.get('own_code')} "
-                      f"agglvl={r.get('agglvl_code')} size={r.get('size_code')} "
-                      f"m3={r.get('month3_emplvl')}", file=sys.stderr)
-    except Exception as _e:
-        print(f"  [QCEW DIAG] failed: {_e}", file=sys.stderr)
-    # --- END DIAGNOSTIC -----------------------------------------------------------
 
     def aggregate_and_share(rows):
         # Combine private + government for total employment denominator.
@@ -496,16 +489,20 @@ def fetch_qcew_industry_shares(cbsa: str) -> Optional[dict]:
             s["share_pct"] = round(100 * s["employment"] / total, 2) if total else 0
         return combined, total
 
-    msa_data, msa_tot = aggregate_and_share(msa_rows)
-    ga_data,  ga_tot  = aggregate_and_share(ga_rows)
-    us_data,  us_tot  = aggregate_and_share(us_rows)
-
-    # Guard against a "false-live" payload: if nothing aggregated (e.g. a schema
-    # change or a wrong employment field) the orchestrator would otherwise mark an
-    # empty {} as "live" and the page would silently stay on demo data.
-    if not msa_data or msa_tot <= 0:
-        print("  [QCEW] aggregation produced no MSA sectors — treating as failed", file=sys.stderr)
+    # MSA by-sector detail lives at agglvl 44 ("MSA, Private, by NAICS Sector"). That
+    # detail LAGS the agglvl-40 total: the newest published quarter routinely carries
+    # all-zero sector employment while the total covered is already populated. Step back
+    # to the most recent quarter whose MSA sector aggregation is actually populated.
+    found = _qcew_latest_sector_quarter(msa_area, aggregate_and_share)
+    if not found:
+        print("  [QCEW] no quarter with populated MSA sector detail — treating as failed", file=sys.stderr)
         return None
+    year, quarter, msa_data, msa_tot = found
+
+    ga_rows = _qcew_fetch_csv(year, quarter, state_area)
+    us_rows = _qcew_fetch_csv(year, quarter, us_area)
+    ga_data, ga_tot = aggregate_and_share(ga_rows) if ga_rows else ({}, 0)
+    us_data, us_tot = aggregate_and_share(us_rows) if us_rows else ({}, 0)
 
     return {
         "year": year,
@@ -525,18 +522,23 @@ def fetch_qcew_yoy_changes(cbsa: str) -> Optional[dict]:
 
     Returns: {"year": Y, "quarter": Q, "sectors": {<label>: {"yoy_pct": float, "employment": int}}}
     """
-    latest = _qcew_latest_quarter()
-    if not latest:
-        return None
-    year_now, qtr = latest
-
     msa_area = _qcew_msa_area_code(cbsa)
-    cur = _qcew_fetch_csv(year_now, qtr, msa_area)
-    prv = _qcew_fetch_csv(year_now - 1, qtr, msa_area)
-    if not (cur and prv):
-        return None
 
-    cur_agg = _qcew_aggregate_sectors(cur, ("5",))
+    # Anchor to the most recent quarter with populated private-sector detail (agglvl 44
+    # lags the total), then compare to the same quarter one year earlier.
+    anchor = _qcew_latest_sector_quarter(
+        msa_area,
+        lambda rows: (lambda a: (a, sum(s["employment"] for s in a.values())))
+                     (_qcew_aggregate_sectors(rows, ("5",))),
+    )
+    if not anchor:
+        print("  [QCEW] no quarter with populated MSA sector detail (YoY) — treating as failed", file=sys.stderr)
+        return None
+    year_now, qtr, cur_agg, _ = anchor
+
+    prv = _qcew_fetch_csv(year_now - 1, qtr, msa_area)
+    if not prv:
+        return None
     prv_agg = _qcew_aggregate_sectors(prv, ("5",))
 
     out = {}

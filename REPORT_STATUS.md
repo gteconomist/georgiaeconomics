@@ -140,8 +140,12 @@ QCEW shares + average annual wages vs GA/US. **LIVE** *(QCEW fix pending CI vali
 ## Known defects
 
 ### QCEW "false-live" (Industry Employment + Comparative Employment showed Demo)
-**Root cause:** the QCEW quarterly by-area CSV has **no `annual_avg_emplvl` field** (employment is in `month1/2/3_emplvl`), and manufacturing/retail/transportation are emitted as **hyphenated sector codes** (`31-33`, `44-45`, `48-49`) that a `len()==2` filter dropped. Every row was skipped → empty payload → orchestrator still labeled it `live` → page stayed on Demo.
-**Fix (committed, pending CI validation):** read `month3_emplvl` (with fallbacks); match an explicit QCEW sector-code set; return `None` when nothing aggregates so the status is honestly `failed` instead of false-live. Manufacturing collapsed to one sector (durable/nondurable split needs a 3-digit pull). Validate with a dispatch and confirm the two pills flip to Live.
+**Three stacked bugs, all confirmed via dispatch diagnostics + the official BLS layouts:**
+1. Quarterly by-area CSV has **no `annual_avg_emplvl`** (employment is `month1/2/3_emplvl`). → read `month3_emplvl` w/ fallbacks.
+2. Manufacturing/retail/transportation are **hyphenated sector codes** (`31-33`, `44-45`, `48-49`); a `len()==2` filter dropped them. → match an explicit sector-code set. (Durable/nondurable manufacturing split needs a 3-digit pull; collapsed to one row for now.)
+3. **Agglvl-44 ("MSA, Private, by NAICS Sector") detail lags the agglvl-40 total** — the newest published quarter carries all-zero sector employment while the total covered is populated. → step back to the most recent quarter whose sector aggregation is non-empty (`_qcew_latest_sector_quarter`).
+Plus a false-live guard: return `None` when nothing aggregates, so status is honestly `failed`/stale instead of an empty "live" payload.
+**Status:** committed + unit-tested with synthetic rows reproducing the all-zero-latest-quarter symptom; **pending one more CI dispatch** to confirm the two pills flip to Live. The Comparative table will read one quarter behind the headline total by design (sector-detail lag).
 
 ### `census_bps_permits` — only hard-failed section
 FRED area-prefix for Savannah unresolved. Needs a keyed run to read the resolved prefix into `GEO_OVERRIDES`.
