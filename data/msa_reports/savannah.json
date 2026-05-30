@@ -2849,6 +2849,71 @@
       "method": "Log-log fair-value regression (Dallas Fed / IMF house-price-gap method): log(FHFA HPI) on log(per-capita income) by OLS over overlapping years; valuation = % deviation of actual HPI from the income-implied fair value.",
       "note": "Fitted on 6 overlapping years (2019-2024); residuals are mean-zero over this window, so values read relative to the local income trend. Price-to-income / price-to-rent are current ACS-vintage cross-checks, not part of the fitted series.",
       "source": "EIG valuation model \u2014 FHFA HPI vs. BEA per-capita income (log-log OLS)"
+    },
+    "business_costs": {
+      "cost_of_living_index": 100,
+      "business_cost_index": 97,
+      "rent_ratio": 1.0386,
+      "wage_ratio": 0.9452,
+      "components": {
+        "cost_of_living": {
+          "rent_ratio": 1.0386,
+          "goods_ratio": 1.0,
+          "services_ratio": 0.9671,
+          "weights": {
+            "rent": 0.36,
+            "goods": 0.15,
+            "services": 0.49
+          }
+        },
+        "business_cost": {
+          "labor_ratio": 0.9452,
+          "occupancy_ratio": 1.0386,
+          "tax_other_ratio": 1.0,
+          "weights": {
+            "labor": 0.62,
+            "occupancy": 0.2,
+            "tax_other": 0.18
+          }
+        }
+      },
+      "method": "EIG composite (BEA Regional-Price-Parity logic): cost of living = expenditure-weighted blend of rents (0.36), tradable goods (0.15, ~national) and wage-elastic services (0.49); cost of doing business = labor (0.62, wage proxy), occupancy (0.20, rent) and tax/other (0.18, ~national). US = 100.",
+      "note": "Wage proxy is per-capita income (QCEW average annual wage will replace it once that section populates). US benchmarks are ACS 5-year national approximations: median gross rent $1,400, per-capita income $43,000.",
+      "source": "EIG composite \u2014 computed from ACS rent + income vs. national benchmarks"
+    },
+    "credit_score": {
+      "score": 84,
+      "grade": "AA",
+      "outlook": "Positive",
+      "components": {
+        "vitality": {
+          "score": 0.77,
+          "weight": 0.25
+        },
+        "business_cycle": {
+          "score": 0.961,
+          "weight": 0.2
+        },
+        "labor_market": {
+          "score": 0.801,
+          "weight": 0.2
+        },
+        "quality_of_life": {
+          "score": 0.745,
+          "weight": 0.15
+        },
+        "income_growth": {
+          "score": 0.795,
+          "weight": 0.1
+        },
+        "valuation_stability": {
+          "score": 1.0,
+          "weight": 0.1
+        }
+      },
+      "method": "EIG composite credit rating: weighted mean of normalized sub-scores for vitality (0.25), business-cycle position (0.20), labor market (0.20), quality of life (0.15), income growth (0.10) and valuation stability (0.10); scaled 0-100 and mapped to a muni-bond-style letter grade. Outlook from business-cycle momentum and income growth.",
+      "note": "A relative creditworthiness signal for the metro economy, not a household FICO score and not a rated municipal obligation. Sub-scores are percentile positions vs. approximate US-metro reference points.",
+      "source": "EIG composite \u2014 synthesized from vitality, BCI, QoL, BLS, BEA and valuation"
     }
   },
   "section_status": {
@@ -2874,6 +2939,8 @@
     "forecast_arima": "live",
     "vitality": "live",
     "quality_of_life": "live",
-    "housing_valuation": "live"
+    "housing_valuation": "live",
+    "business_costs": "live",
+    "credit_score": "live"
   }
 }
