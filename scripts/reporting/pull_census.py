@@ -458,6 +458,109 @@ def fetch_housing_characteristics(cbsa: str, year: Optional[int] = None) -> Opti
     return None
 
 
+# ----------------------------- Entrepreneurship (Business Formation Statistics) -----------------------------
+# Census BFS business-application counts, turned into a per-capita rate indexed to US=100.
+# BFS supports MSA and county geography (timeseries/bfs/bfs). We try the MSA directly and
+# fall back to summing the MSA's counties if the MSA geography doesn't resolve.
+BFS_BASE = "https://api.census.gov/data/timeseries/bfs/bfs"
+
+
+def _bfs_annual_ba(geo_for: str, geo_in: Optional[str], y: int) -> Optional[float]:
+    """Sum BA_BA (business applications) across all periods returned for year `y` and
+    the given geography. Returns the annual total, or None."""
+    url = f"{BFS_BASE}?get=BA_BA&for={geo_for}&time={y}"
+    if geo_in:
+        url += f"&in={geo_in}"
+    url += f"&key={CENSUS_API_KEY}"
+    data = _census_get(url, quiet_404=True)
+    if not data or len(data) < 2:
+        return None
+    try:
+        idx = data[0].index("BA_BA")
+    except ValueError:
+        return None
+    total, n = 0.0, 0
+    for row in data[1:]:
+        try:
+            total += float(row[idx])
+            n += 1
+        except (ValueError, TypeError, IndexError):
+            continue
+    return total if n else None
+
+
+def _bfs_msa_or_county_ba(cbsa: str, y: int) -> Optional[float]:
+    """Annual business applications for the MSA: try the MSA geography, else sum counties."""
+    v = _bfs_annual_ba(urllib.parse.quote(_msa_predicate(cbsa), safe=':/+'), None, y)
+    if v:
+        return v
+    counties = {fips for fips, c in COUNTY_TO_MSA.items() if c == cbsa}
+    if not counties:
+        return None
+    total, got = 0.0, False
+    for fips in sorted(counties):
+        cv = _bfs_annual_ba(f"county:{fips[2:]}", f"state:{fips[:2]}", y)
+        if cv:
+            total += cv
+            got = True
+    return total if got else None
+
+
+def _acs_population(geo_for: str, geo_in: Optional[str], y: int) -> Optional[float]:
+    """ACS5 total population (B01003_001E) for a geography, probing back from year y."""
+    for yy in range(y, y - 4, -1):
+        url = f"{CENSUS_BASE}/{yy}/acs/acs5?get=B01003_001E&for={geo_for}"
+        if geo_in:
+            url += f"&in={geo_in}"
+        url += f"&key={CENSUS_API_KEY}"
+        data = _census_get(url, quiet_404=True)
+        if data and len(data) >= 2:
+            try:
+                return float(data[1][data[0].index("B01003_001E")])
+            except (ValueError, TypeError, IndexError):
+                continue
+    return None
+
+
+def fetch_entrepreneurship(cbsa: str, year: Optional[int] = None) -> Optional[dict]:
+    """Broad-based startup rate: BFS business applications per 1,000 residents for the
+    MSA vs the U.S., indexed to US=100.
+
+    Returns {"year","index_us_100","applications","applications_per_1k_msa",
+    "applications_per_1k_us","source"} or None. Pure stdlib.
+    """
+    if not CENSUS_API_KEY:
+        print("  [BFS] no Census API key", file=sys.stderr)
+        return None
+
+    this_year = date.today().year
+    candidate_years = [year] if year else list(range(this_year - 1, this_year - 6, -1))
+
+    for y in candidate_years:
+        ba_msa = _bfs_msa_or_county_ba(cbsa, y)
+        ba_us = _bfs_annual_ba("us:1", None, y)
+        if not ba_msa or not ba_us:
+            continue
+        pop_msa = _acs_population(urllib.parse.quote(_msa_predicate(cbsa), safe=':/+'), None, min(y, this_year - 1))
+        pop_us = _acs_population("us:1", None, min(y, this_year - 1))
+        if not pop_msa or not pop_us:
+            continue
+        rate_msa = ba_msa / pop_msa
+        rate_us = ba_us / pop_us
+        if rate_us <= 0:
+            continue
+        return {
+            "year": y,
+            "index_us_100": round(100 * rate_msa / rate_us),
+            "applications": int(ba_msa),
+            "applications_per_1k_msa": round(1000 * rate_msa, 2),
+            "applications_per_1k_us": round(1000 * rate_us, 2),
+            "source": (f"Census Business Formation Statistics (business applications, {y}); "
+                       f"per-capita rate indexed to US=100"),
+        }
+    return None
+
+
 # ----------------------------- Block groups by income (B19013) -----------------------------
 # Distribution of the MSA's census block groups by median household income. Block-group
 # geographies can't be wildcarded across states, so we query per county (state+county).

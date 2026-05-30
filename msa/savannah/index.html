@@ -750,9 +750,10 @@
       <h3 style="margin-top:18px;">Entrepreneurship</h3>
       <div class="sub">Broad-based startup rate &middot; US = 100</div>
       <div class="div-bar-wrap">
-        <div class="div-bar" style="width: 64%; background: linear-gradient(90deg, var(--mustard), var(--peach-deep));"></div>
-        <div class="div-bar-marker" style="left: 64%;" data-label="64"></div>
+        <div class="div-bar" id="entrep-bar" style="width: 64%; background: linear-gradient(90deg, var(--mustard), var(--peach-deep));"></div>
+        <div class="div-bar-marker" id="entrep-marker" style="left: 64%;" data-label="64"></div>
       </div>
+      <div class="src">Source: Census Business Formation Statistics (business applications per capita, indexed US=100). <span class="src-pill demo" id="entrep-pill">Demo</span></div>
 
       <h3 style="margin-top:18px;">Productivity</h3>
       <div class="sub">Real output per worker</div>
@@ -1439,6 +1440,12 @@ async function loadLiveData() {
     if (replaceBlockGroupsChart(bg)) flipSectionPill('bg-income-pill', 'live');
   }
 
+  // --- Entrepreneurship: BFS business-application rate indexed to US=100 ---
+  const ent = data.sections.entrepreneurship;
+  if (ent && ent.index_us_100 != null) {
+    if (replaceEntrepreneurship(ent)) flipSectionPill('entrep-pill', 'live');
+  }
+
   // --- BEA Per Capita Income: rebuild the PCI chart ---
   if (pi && pi.years && pi.per_capita_income) {
     replacePerCapitaIncomeChart(pi);
@@ -1798,6 +1805,21 @@ function replaceHealthCheck(hc) {
     rowFor('Unemployment rate (%)', hc.unemployment_rate, 'dec'),
     rowFor('Labor force (000s)',    hc.labor_force_000s,  'dec'),
   ].join('');
+  return true;
+}
+
+/** Set the Entrepreneurship bar/marker from the BFS index (US=100). The bar fills to
+ *  100% at the US level; values above 100 are capped in width but labeled with the true
+ *  index so an above-average metro still reads correctly. */
+function replaceEntrepreneurship(ent) {
+  const bar = document.getElementById('entrep-bar');
+  const marker = document.getElementById('entrep-marker');
+  if (!bar || !marker || ent.index_us_100 == null) return false;
+  const idx = ent.index_us_100;
+  const pct = Math.max(0, Math.min(100, idx));
+  bar.style.width = pct + '%';
+  marker.style.left = pct + '%';
+  marker.setAttribute('data-label', String(idx));
   return true;
 }
 

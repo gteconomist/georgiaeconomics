@@ -163,6 +163,13 @@ def run_acs_block_group_income(cbsa: str):
     return data, "live"
 
 
+def run_entrepreneurship(cbsa: str):
+    data = pull_census.fetch_entrepreneurship(cbsa)
+    if data is None:
+        return None, "failed"
+    return data, "live"
+
+
 def run_bea_gmp(cbsa: str):
     data = pull_bea.fetch_gmp_history(cbsa, years_back=7)
     if data is None:
@@ -283,6 +290,7 @@ SECTIONS = [
     ("census_net_migration",    run_census_net_migration),
     ("acs_housing_characteristics", run_acs_housing_characteristics),
     ("acs_block_group_income",  run_acs_block_group_income),
+    ("entrepreneurship",        run_entrepreneurship),
 ]
 
 

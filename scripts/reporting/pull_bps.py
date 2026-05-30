@@ -29,8 +29,11 @@ import urllib.request
 import urllib.error
 import urllib.parse
 from pathlib import Path
-from typing import Optional, List, Dict
+from typing import Optional, List, Dict, Tuple
 from datetime import date
+
+sys.path.insert(0, str(Path(__file__).parent.parent))
+from _ga_msas import COUNTY_TO_MSA  # noqa: E402
 
 FRED_API_KEY = os.environ.get("FRED_API_KEY", "").strip()
 FRED_SEARCH = "https://api.stlouisfed.org/fred/series/search"
@@ -140,6 +143,90 @@ def _annual_by_year(series_id: str, start_year: int) -> Dict[int, int]:
     return out
 
 
+def _state_abbrev(full_name: str) -> Optional[str]:
+    """'Savannah, GA' -> 'GA'; 'Augusta-Richmond County, GA-SC' -> 'GA' (first state)."""
+    if "," not in full_name:
+        return None
+    tail = full_name.split(",")[-1].strip()
+    return tail.split("-")[0].strip()[:2].upper() or None
+
+
+def _county_permits_annual(cbsa: str, full_name: str, start_year: int) -> Optional[dict]:
+    """Fallback for MSAs FRED carries only at county level (no {GEO}BP1FH MSA series, e.g.
+    Savannah). Sums county series over the MSA's counties:
+        total  = Σ BPPRIV{fips}    (confirmed to exist, e.g. BPPRIV013051 = Chatham)
+        single = Σ BP1FH{fips}     (county 1-unit; if absent, split via the state share)
+    Same series semantics as the MSA path, so it stays consistent with the Atlanta logic.
+    """
+    counties = sorted(fips for fips, c in COUNTY_TO_MSA.items() if c == cbsa)
+    if not counties:
+        return None
+
+    total_by_year: Dict[int, int] = {}
+    sf_by_year: Dict[int, int] = {}
+    sf_counties_ok = True
+    for fips in counties:
+        tot = _annual_by_year(f"BPPRIV{fips}", start_year)
+        for y, v in tot.items():
+            total_by_year[y] = total_by_year.get(y, 0) + v
+        sf = _annual_by_year(f"BP1FH{fips}", start_year)
+        if sf:
+            for y, v in sf.items():
+                sf_by_year[y] = sf_by_year.get(y, 0) + v
+        else:
+            sf_counties_ok = False
+        print(f"  [BPS/FRED county] {fips}: total_yrs={len(tot)} sf_yrs={len(sf)}", file=sys.stderr)
+
+    if not total_by_year:
+        return None
+
+    split_note = "county 1-unit (BP1FH) summed directly"
+    if not sf_by_year or not sf_counties_ok:
+        # Estimate the SF share from the state 1-unit ratio (GABP1FH / GABPPRIV) per year.
+        st = _state_abbrev(full_name)
+        st_sf = _annual_by_year(f"{st}BP1FH", start_year) if st else {}
+        st_tot = _annual_by_year(f"{st}BPPRIV", start_year) if st else {}
+        sf_by_year = {}
+        for y, tv in total_by_year.items():
+            share = (st_sf.get(y, 0) / st_tot[y]) if st_tot.get(y) else None
+            if share is not None:
+                sf_by_year[y] = int(round(tv * share))
+        split_note = f"SF/MF split estimated from {st} state 1-unit share (county 1-unit unavailable)"
+        if not sf_by_year:
+            return None
+
+    years = sorted(set(total_by_year) & set(sf_by_year))
+    if not years:
+        return None
+    sf = [sf_by_year[y] for y in years]
+    mf = [max(total_by_year[y] - sf_by_year[y], 0) for y in years]
+
+    pop = {c: p for c, _s, _nm, p in _ga_msas_list()}.get(cbsa)
+    per_1k = [round((sf[i] + mf[i]) / (pop / 1000), 2) if pop else None for i in range(len(years))]
+
+    print(f"  [BPS/FRED county] {full_name}: county-sum over {counties}; {split_note}", file=sys.stderr)
+    return {
+        "source": f"Census Building Permits Survey via FRED (county sum over {','.join(counties)}; {split_note})",
+        "years": years,
+        "single_family": sf,
+        "multi_family": mf,
+        "permits_per_1k": per_1k,
+        "latest_year": years[-1],
+        "latest_single": sf[-1],
+        "latest_multi": mf[-1],
+        "latest_per_1k": per_1k[-1],
+    }
+
+
+def _ga_msas_list():
+    try:
+        sys.path.insert(0, str(Path(__file__).parent.parent))
+        from _ga_msas import GA_MSAS
+        return GA_MSAS
+    except Exception:
+        return []
+
+
 def fetch_bps_permits_annual(cbsa: str, full_name: str = "", years_back: int = 6) -> Optional[dict]:
     """Annual single-family + multi-family residential permits for the MSA, via FRED.
 
@@ -160,9 +247,12 @@ def fetch_bps_permits_annual(cbsa: str, full_name: str = "", years_back: int = 6
         except Exception:
             full_name = ""
 
+    start_year_cty = date.today().year - years_back
     geo = _resolve_geo(cbsa, full_name)
     if not geo:
-        return None
+        # No MSA-level FRED series (e.g. Savannah) — fall back to summing the counties.
+        print(f"  [BPS/FRED] no MSA series for {full_name}; trying county-level sum", file=sys.stderr)
+        return _county_permits_annual(cbsa, full_name, start_year_cty)
 
     sf_id = f"{geo}BP1FH"
     total_id = f"{geo}BPPRIV"
