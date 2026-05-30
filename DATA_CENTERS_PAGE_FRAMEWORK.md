@@ -4,6 +4,8 @@
 **Proposed URL:** `/industries/data-centers/`
 **Pattern reference:** mirrors `/industries/film/` and `/industries/automotive/` (live BLS + BEA + Tavily pipelines, monthly cron, `_meta` staleness badges).
 
+**Seed-data status (updated 2026-05-30):** No longer blocked. Alfie supplied a Costar export of 138 Georgia data centers (74 existing, 19 under construction, 41 proposed, 3 final planning, 1 deferred), saved at `data/seeds/costar_data_centers_ga_2026-05-27.xlsx`. The MW-sourcing problem that previously paused this page is resolved by a layered approach: Costar as base, DECD press releases + Tavily for new announcements, EPD water permits as cross-check for private/enterprise facilities Costar misses. See §6.
+
 ---
 
 ## 1. Why this page belongs on the site
@@ -140,39 +142,46 @@ This is exactly the kind of page economicsguru.com readers expect from us: state
 
 ---
 
-## 6. The hard part: MW data
+## 6. MW & facilities data — the layered source approach
 
-This is where I want explicit agreement before I build. The MW data is the most distinctive thing on the page — without it, this is just another industry page. With it, this is a genuinely useful resource. But the data is:
+Previously the blocker for this page. Resolved by combining four sources, each filling a specific gap:
 
-- Not a clean public API (unlike BLS/BEA)
-- Held by private commercial brokerages (CBRE, JLL, Cushman & Wakefield)
-- Usually summarized in quarterly press releases (which Tavily can scrape)
-- Sometimes wrong, sometimes stale, sometimes contradictory across brokerages
+**Layer 1 — Costar export (base inventory).** 138 records at `data/seeds/costar_data_centers_ga_2026-05-27.xlsx`. Pulled 2026-05-27. Strengths: 100% RBA (sq ft), 97% year built, county + lat/long, building status, operator names where applicable, ~31% have utility-capacity kW, ~18% have critical IT kW. Weaknesses: commercial real-estate dataset only (misses private enterprise rooms), 3–6 month lag on greenfield announcements, no automated refresh — Alfie has to re-export when Costar updates.
 
-**My recommended approach:**
-1. **Seed manually** with a hand-curated list of 15–20 known Georgia data center facilities (operator, county, MW, status). I'd compile this from public press releases for the initial build. Same pattern as the automotive plant list — 8 plants seeded, Tavily provides hints but never silently overwrites.
-2. **Tavily augments** with status hints: "is this facility still operating?", "did the announced MW change?". Surfaced as a peach call-out card, not silently merged.
-3. **Topline market MW** (Atlanta-wide operating + under-construction) pulled from the most recent CBRE/JLL press release Tavily can find, with sanity bounds and last-good-value fallback.
-4. **Human spot-check quarterly** — I add a `_meta.facilities.last_human_review` field that you bump when you've eyeballed the list.
+**Layer 2 — DECD press releases via Tavily.** Catches the 3–6 month Costar announcement lag. Tavily search against `gov.georgia.gov` + `decd.georgia.gov` + AJC, deduplicated against Costar by address/operator. Same automation pattern as the [[project_automotive_page_deployed]] plant-hint logic — surface as advisory until confirmed, never silently overwrite the Costar record.
 
-The alternative is to skip MW entirely and make this a pure jobs/GDP page, but that would be a worse page than what's already on the site for film and auto.
+**Layer 3 — Georgia EPD water-withdrawal permits.** One-time scrape (and periodic refresh) of EPD's permit database to find enterprise/private facilities Costar doesn't track (universities, hospitals, state agencies, banks). Bonus: gives us actual water-use data instead of modeled estimates for Section C.
+
+**Layer 4 — Georgia PSC docket filings.** Georgia Power's IRP and certificate filings name specific large-load data center customers when not redacted. Free at psc.ga.gov. Anchors the credibility of Section C's load-growth chart.
+
+**Refresh cadence:**
+- Costar re-export: when Alfie does it (probably 1–2x/yr). Manual.
+- DECD/Tavily: monthly, in the same cron as everything else
+- EPD permits: quarterly Tavily run
+- PSC filings: monthly Tavily run, but mostly idle (filings are irregular)
+
+**Reconciliation logic** (worth getting right in the fetcher): when Tavily/DECD finds an announcement that isn't in Costar, it goes into a `_pending` bucket in `data/data_centers.json` with `source: "decd-press"` and a confidence flag, not directly into the canonical facility list. Human (Alfie) promotes it on the next pass. This keeps Costar's authority intact while surfacing newer info.
+
+**Costar re-export reminder:** the data has a freshness stamp embedded in the filename (`_2026-05-27`). The fetcher checks this date and flips the `_meta.facilities` source badge to orange if it's >9 months old. That nudges Alfie to re-export without breaking anything.
 
 ---
 
 ## 7. Open questions for you
 
+(Question 2 about a manual seed list is now resolved — Costar export at `data/seeds/costar_data_centers_ga_2026-05-27.xlsx` is the seed.)
+
 1. **Page name / nav slot.** "Data Centers" under Industries? Or does this warrant its own top-level nav like Population and Inflation got? (My take: under Industries — it's a sector, not a cross-cutting topic.)
 
-2. **Manual seed list.** Want me to pull together a draft 15-facility seed list before scaffolding, so we can argue about what's in/out before any code is written?
-
-3. **Policy section depth.** Section E is the most editorial part of the page. Two options:
+2. **Policy section depth.** Section E is the most editorial part of the page. Two options:
    - Light: just track exemption status + bill list + dollar amount.
    - Heavy: include a short interpretive paragraph that gets updated when the legislative status changes.
    I'd default to light — the data points speak for themselves and we avoid having to update prose.
 
-4. **Water section.** Modeled, not measured. Worth including with a clear methodology disclosure? Or risky given the political sensitivity? (My take: include with a "modeled estimate" badge — readers will appreciate the honesty, and it's the most-asked question about Georgia data centers.)
+3. **Water section.** With EPD permit data now available (Layer 3 in §6), we can probably do measured-not-modeled for the facilities that have permits, plus a modeled estimate for the rest. Want both, or just measured?
 
-5. **Tavily budget.** This page would add ~6–10 more Tavily calls per monthly run on top of film + automotive. Want to consolidate into a single `update-industries.yml` workflow to control cost, or keep one workflow per page?
+4. **Tavily budget.** This page would add ~6–10 more Tavily calls per monthly run on top of film + automotive. Want to consolidate into a single `update-industries.yml` workflow to control cost, or keep one workflow per page?
+
+5. **Costar refresh ownership.** Costar requires manual re-export. Do you want the page to show a visible "Costar data as of [date]" badge so readers know the inventory date, or keep it implicit?
 
 ---
 

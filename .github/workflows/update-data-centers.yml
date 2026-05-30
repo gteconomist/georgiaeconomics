@@ -1,0 +1,56 @@
+name: Update GA data-center data (BLS QCEW + BEA + Census + Costar + Tavily)
+
+on:
+  workflow_dispatch:
+  schedule:
+    # Monthly on the 22nd at 18:00 UTC. (Staggered from update-film.yml on the 8th,
+    # update-population.yml on the 12th, and update-automotive.yml on the 15th —
+    # spreads cron-driven commits across the month.)
+    # BLS QCEW annuals publish ~9 months after year-end; BEA SAGDP2N updates in
+    # late spring/fall; Census CBP lags ~18 months. Monthly cadence keeps the
+    # Tavily DECD/EPD/PSC/legislation scrapes fresh while not over-spending
+    # on Tavily calls. The Costar facility list is updated only when Alfie
+    # manually re-uploads to data/seeds/ — this fetcher will never modify it.
+    - cron: '0 18 22 * *'
+  push:
+    branches: [main]
+    paths:
+      - 'scripts/fetch_data_centers.py'
+      - '.github/workflows/update-data-centers.yml'
+      - 'data/seeds/costar_data_centers_ga_parsed.json'
+
+permissions:
+  contents: write
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repo
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Fetch GA data-center data
+        env:
+          BLS_API_KEY:    ${{ secrets.BLS_API_KEY }}
+          BEA_API_KEY:    ${{ secrets.BEA_API_KEY }}
+          CENSUS_API_KEY: ${{ secrets.CENSUS_API_KEY }}
+          TAVILY_API_KEY: ${{ secrets.TAVILY_API_KEY }}
+        run: |
+          python scripts/fetch_data_centers.py
+
+      - name: Commit any updated data
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          if ! git diff --quiet -- data/data_centers.json; then
+            git add data/data_centers.json
+            git commit -m "data: refresh GA data-center metrics (QCEW + BEA + CBP + Tavily) [skip ci]"
+            git push
+          else
+            echo "No data changes — nothing to commit."
+          fi
