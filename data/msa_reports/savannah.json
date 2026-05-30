@@ -2715,6 +2715,32 @@
         "pct_multifamily": 24.4
       }
     },
+    "acs_block_group_income": {
+      "year": 2024,
+      "vintage_window": "2020-2024",
+      "bins": [
+        "0-25k",
+        "25-50k",
+        "50-75k",
+        "75-100k",
+        "100-125k",
+        "125-150k",
+        "150-200k",
+        "200k+"
+      ],
+      "pct": [
+        2.5,
+        19.9,
+        26.3,
+        24.9,
+        13.2,
+        6.8,
+        5.3,
+        1.1
+      ],
+      "n_block_groups": 281,
+      "source": "Census ACS 5-year 2024 block-group median HH income (B19013), MSA counties"
+    },
     "business_cycle_index": {
       "method": "Stock-Watson coincident (2-input PCA, first principal component (positive co-movement, equal-weight loadings))",
       "components": [
@@ -3168,6 +3194,14 @@
       "note": "Wage proxy is per-capita income (QCEW average annual wage will replace it once that section populates). US benchmarks are ACS 5-year national approximations: median gross rent $1,400, per-capita income $43,000.",
       "source": "EIG composite \u2014 computed from ACS rent + income vs. national benchmarks"
     },
+    "industrial_diversity": {
+      "score": 0.857,
+      "ga_score": 0.984,
+      "n_sectors": 8,
+      "as_of_label": "2025 Q2",
+      "method": "Hachman index = 1 / \u03a3(local_share\u00b2 / US_share) over QCEW super-sectors; 1.0 = industrial mix identical to the U.S. (most balanced/diversified), lower = more concentrated.",
+      "source": "EIG composite \u2014 computed from QCEW employment shares (MSA & GA vs. US)"
+    },
     "credit_score": {
       "score": 81,
       "grade": "AA",
@@ -3224,12 +3258,14 @@
     "acs_affordability": "live",
     "census_net_migration": "live",
     "acs_housing_characteristics": "live",
+    "acs_block_group_income": "live",
     "business_cycle_index": "live",
     "forecast_arima": "live",
     "vitality": "live",
     "quality_of_life": "live",
     "housing_valuation": "live",
     "business_costs": "live",
+    "industrial_diversity": "live",
     "credit_score": "live"
   }
 }
