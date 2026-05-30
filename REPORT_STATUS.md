@@ -119,7 +119,7 @@ QCEW shares + average annual wages vs GA/US. **LIVE** (confirmed 2026-05-30); re
 ### Geographic Profile
 | Element | Source | Status |
 |---|---|---|
-| Net Migration | Census PEP components | **LIVE** |
+| Net Migration | Census PEP components | **LIVE** — generalized to all 14 MSAs 2026-05-30 (was Savannah-only; cross-state Augusta/Columbus counties supported); national CSV cached so an `--all` run downloads it once, not per metro. |
 | Population & Housing Characteristics table | ACS B25024/B25035 + tenure/age + Census Gazetteer land area (`acs_housing_characteristics`) | **LIVE** (confirmed 2026-05-30). Rank column dropped (no national source). Density = ACS pop ÷ Gazetteer land. |
 
 ---

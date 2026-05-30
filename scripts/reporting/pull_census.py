@@ -731,6 +731,7 @@ def fetch_acs_affordability_history(cbsa: str, years_back: int = 6) -> Optional[
     idx_vals: List[float] = []
     msa_burden: List[float] = []
     us_burden: List[float] = []
+    msa_income: List[int] = []
     for y in range(this_year - years_back, this_year):
         msa = _acs_rent_income(_msa_predicate(cbsa), y)
         us = _acs_rent_income("us:1", y)
@@ -744,6 +745,7 @@ def fetch_acs_affordability_history(cbsa: str, years_back: int = 6) -> Optional[
         msa_burden.append(round(100 * mb, 1))
         us_burden.append(round(100 * ub, 1))
         idx_vals.append(round(100 * ub / mb, 1))
+        msa_income.append(round(msa[1]))  # median HH income, reused by housing_affordability
     if not years:
         return None
     return {
@@ -752,6 +754,7 @@ def fetch_acs_affordability_history(cbsa: str, years_back: int = 6) -> Optional[
         "affordability_index": idx_vals,
         "msa_rent_burden_pct": msa_burden,
         "us_rent_burden_pct": us_burden,
+        "msa_median_income": msa_income,
         "latest_index": idx_vals[-1],
     }
 
@@ -760,7 +763,6 @@ def fetch_acs_affordability_history(cbsa: str, years_back: int = 6) -> Optional[
 # Census PEP publishes county-level components-of-change as keyless CSVs. We sum the
 # MSA's member counties to get domestic + international + net migration per year. Same
 # file/parse pattern as scripts/fetch_population.py's county pull.
-SAVANNAH_MSA_COUNTY_CODES = {"051", "103", "029"}  # Chatham, Effingham, Bryan (state FIPS 13)
 _PEP_COUNTY_VINTAGES = [2025, 2024]
 
 
@@ -785,57 +787,95 @@ def _download_text(url: str, timeout: int = 60) -> Optional[str]:
         return None
 
 
+# Module-level cache: the national PEP components CSV is the SAME file for every
+# MSA, so on an --all run we download + parse each vintage at most once and slice
+# all 14 metros from it. Without this, a multi-MSA run re-downloaded a ~3,200-row
+# national CSV per metro (or, when Savannah-gated, failed slowly on the other 13).
+_PEP_CC_CACHE: Dict[int, Optional[dict]] = {}
+
+
+def _load_pep_components(v: int) -> Optional[dict]:
+    """Download + parse the national PEP county components-of-change CSV for vintage
+    `v`, once per process. Returns {"years": [...], "by_fips": {fips5: {year: (dom,
+    intl, net)}}} or None. Cached (incl. None) so an --all run hits the network once
+    per vintage."""
+    if v in _PEP_CC_CACHE:
+        return _PEP_CC_CACHE[v]
+    urls = [
+        f"https://www2.census.gov/programs-surveys/popest/datasets/2020-{v}/counties/totals/co-est{v}-alldata.csv",
+        f"https://www2.census.gov/programs-surveys/popest/datasets/2020-{v}/counties/totals/CO-EST{v}-ALLDATA.csv",
+    ]
+    parsed = None
+    for url in urls:
+        text = _download_text(url)
+        if not text:
+            continue
+        rows = list(csv.DictReader(io.StringIO(text)))
+        if not rows:
+            continue
+        years = list(range(2021, v + 1))  # base year 2020 has no flow estimate
+        by_fips: Dict[str, dict] = {}
+        for r in rows:
+            st = (r.get("STATE") or "").strip().zfill(2)
+            co = (r.get("COUNTY") or "").strip().zfill(3)
+            if co == "000":  # state-total row, not a county
+                continue
+            by_fips[st + co] = {
+                y: (_safe_int(r.get(f"DOMESTICMIG{y}")),
+                    _safe_int(r.get(f"INTERNATIONALMIG{y}")),
+                    _safe_int(r.get(f"NETMIG{y}")))
+                for y in years
+            }
+        if by_fips:
+            parsed = {"years": years, "by_fips": by_fips}
+            break
+    _PEP_CC_CACHE[v] = parsed
+    return parsed
+
+
 def fetch_msa_net_migration(cbsa: str) -> Optional[dict]:
     """Annual domestic / international / net migration for the MSA, summed across its
-    counties from the Census PEP county components-of-change CSV (keyless).
+    member counties from the Census PEP county components-of-change CSV (keyless).
 
-    Only Savannah (42340) is wired today; other MSAs return None until their county
-    sets are added. Fail-soft: returns None on any download/parse miss.
+    Works for any GA MSA via COUNTY_TO_MSA, including the cross-state counties of
+    Augusta (GA-SC) and Columbus (GA-AL) since the match is on full 5-digit FIPS.
+    The national CSV is downloaded once per run and cached, so an --all pass slices
+    all 14 metros from a single fetch. Fail-soft: returns None on any miss.
     """
-    if cbsa != "42340":
+    counties = {fips for fips, c in COUNTY_TO_MSA.items() if c == cbsa}
+    if not counties:
         return None
-    import csv as _csv
-    import io as _io
     for v in _PEP_COUNTY_VINTAGES:
-        urls = [
-            f"https://www2.census.gov/programs-surveys/popest/datasets/2020-{v}/counties/totals/co-est{v}-alldata.csv",
-            f"https://www2.census.gov/programs-surveys/popest/datasets/2020-{v}/counties/totals/CO-EST{v}-ALLDATA.csv",
-        ]
-        for url in urls:
-            text = _download_text(url)
-            if not text:
+        data = _load_pep_components(v)
+        if not data:
+            continue
+        years = data["years"]
+        by_fips = data["by_fips"]
+        dom = {y: 0 for y in years}
+        intl = {y: 0 for y in years}
+        net = {y: 0 for y in years}
+        matched = []
+        for fips in counties:
+            rec = by_fips.get(fips)
+            if not rec:
                 continue
-            rows = list(_csv.DictReader(_io.StringIO(text)))
-            if not rows:
-                continue
-            years = list(range(2021, v + 1))  # base year 2020 has no flow estimate
-            dom = {y: 0 for y in years}
-            intl = {y: 0 for y in years}
-            net = {y: 0 for y in years}
-            matched = []
-            for r in rows:
-                if (r.get("STATE") or "").strip() != "13":
-                    continue
-                cc = (r.get("COUNTY") or "").strip().zfill(3)
-                if cc not in SAVANNAH_MSA_COUNTY_CODES:
-                    continue
-                matched.append((r.get("CTYNAME") or "").strip())
-                for y in years:
-                    dom[y] += _safe_int(r.get(f"DOMESTICMIG{y}"))
-                    intl[y] += _safe_int(r.get(f"INTERNATIONALMIG{y}"))
-                    net[y] += _safe_int(r.get(f"NETMIG{y}"))
-            if not matched:
-                print(f"  [PEP-CC {v}] no Savannah counties matched", file=sys.stderr)
-                continue
-            print(f"  [PEP-CC {v}] matched counties: {matched}", file=sys.stderr)
-            return {
-                "source": f"Census PEP components of change (CO-EST{v}), Savannah MSA counties",
-                "years": years,
-                "domestic_migration": [dom[y] for y in years],
-                "international_migration": [intl[y] for y in years],
-                "net_migration": [net[y] for y in years],
-                "counties": matched,
-            }
+            matched.append(fips)
+            for y in years:
+                d, i, n = rec[y]
+                dom[y] += d
+                intl[y] += i
+                net[y] += n
+        if not matched:
+            print(f"  [PEP-CC {v}] no counties matched for CBSA {cbsa}", file=sys.stderr)
+            continue
+        return {
+            "source": f"Census PEP components of change (CO-EST{v}), MSA counties",
+            "years": years,
+            "domestic_migration": [dom[y] for y in years],
+            "international_migration": [intl[y] for y in years],
+            "net_migration": [net[y] for y in years],
+            "counties": sorted(matched),
+        }
     return None
 
 

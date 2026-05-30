@@ -32,6 +32,12 @@ FRED_BASE = "https://api.stlouisfed.org/fred/series/observations"
 ATLANTA_CBSA = "12060"
 
 
+# FRED caps at 120 requests/minute/key (HTTP 429 over that). Pace calls to ~109/min
+# and back off hard on any 429 so a multi-MSA --all run doesn't get rate-limited.
+_FRED_MIN_INTERVAL = 0.55
+_last_fred = [0.0]
+
+
 def _fred_observations(series_id: str, start_date: str = "2010-01-01") -> Optional[List[dict]]:
     """Fetch a FRED series and return its observations list. None on failure."""
     if not FRED_API_KEY:
@@ -46,12 +52,21 @@ def _fred_observations(series_id: str, start_date: str = "2010-01-01") -> Option
     })
     url = f"{FRED_BASE}?{params}"
 
-    for attempt in range(3):
+    for attempt in range(4):
+        gap = time.monotonic() - _last_fred[0]
+        if gap < _FRED_MIN_INTERVAL:
+            time.sleep(_FRED_MIN_INTERVAL - gap)
+        _last_fred[0] = time.monotonic()
         try:
             with urllib.request.urlopen(url, timeout=30) as resp:
                 data = json.loads(resp.read().decode("utf-8"))
             return data.get("observations", [])
         except urllib.error.HTTPError as e:
+            if e.code == 429:
+                back = 5 * (attempt + 1)
+                print(f"  [FRED 429] rate limit on {series_id} — backing off {back}s", file=sys.stderr)
+                time.sleep(back)
+                continue
             print(f"  [FRED HTTP {e.code}] {series_id}", file=sys.stderr)
             if e.code in (400, 404):
                 return None

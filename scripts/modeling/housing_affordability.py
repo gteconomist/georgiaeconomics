@@ -51,8 +51,17 @@ def _annual_hpi(fhfa: dict) -> dict:
     return {y: sum(vals) / len(vals) for y, vals in by.items()}
 
 
+# The 30-yr mortgage rate is a single national series — identical for every MSA —
+# so cache it module-level. An --all run then hits FRED once instead of 14 times.
+_RATE_CACHE: dict = {}
+
+
 def _annual_mortgage_rate() -> dict:
-    """{year: avg 30-yr fixed rate %} from FRED MORTGAGE30US (weekly Freddie PMMS)."""
+    """{year: avg 30-yr fixed rate %} from FRED MORTGAGE30US (weekly Freddie PMMS).
+    Cached on first success so a multi-MSA run only calls FRED once."""
+    global _RATE_CACHE
+    if _RATE_CACHE:
+        return _RATE_CACHE
     obs = pull_fhfa._fred_observations("MORTGAGE30US", start_date="2014-01-01")
     if not obs:
         return {}
@@ -68,7 +77,10 @@ def _annual_mortgage_rate() -> dict:
         y = int(str(o.get("date", ""))[:4])
         if y:
             by.setdefault(y, []).append(rate)
-    return {y: sum(vals) / len(vals) for y, vals in by.items()}
+    result = {y: sum(vals) / len(vals) for y, vals in by.items()}
+    if result:
+        _RATE_CACHE = result  # cache only on success (transient FRED 429s retry)
+    return result
 
 
 def _monthly_pi(principal: float, annual_rate_pct: float) -> float:
@@ -105,15 +117,24 @@ def compute(cbsa: str, output_so_far: dict) -> Optional[dict]:
         return None
 
     pred = pull_census._msa_predicate(cbsa)
+    # Reuse the median household income the acs_affordability section already pulled
+    # this run (avoids 6 fresh ACS calls per metro). Fall back to a direct fetch only
+    # for years it didn't cover.
+    aff = sections.get("acs_affordability") or {}
+    income_by_year = {y: v for y, v in zip(aff.get("years") or [],
+                                           aff.get("msa_median_income") or []) if v}
+
     # Years we can actually compute: have HPI and a mortgage rate, capped to recent.
     candidate_years = sorted(y for y in hpi if y in rates)[-MAX_YEARS:]
 
     years, index = [], []
     for y in candidate_years:
-        ri = pull_census._acs_rent_income(pred, y)  # (rent, income); income is [1]
-        if not ri:
-            continue
-        income = ri[1]
+        income = income_by_year.get(y)
+        if income is None:
+            ri = pull_census._acs_rent_income(pred, y)  # (rent, income); income is [1]
+            if not ri:
+                continue
+            income = ri[1]
         price = anchor_value * (hpi[y] / hpi[anchor_year])
         loan = price * (1 - DOWN_PAYMENT)
         pi = _monthly_pi(loan, rates[y])

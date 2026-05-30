@@ -53,10 +53,25 @@ MSA_BY_SHORT = {short: (cbsa, full, pop) for cbsa, short, full, pop in GA_MSAS}
 
 
 # ---------- HTTP helpers ----------
-def http_get_json(url, retries=3, timeout=30):
-    """Robust JSON fetch — never crashes, returns None on any failure."""
+# FRED enforces 120 requests/minute/key (HTTP 429 over that). The county-HPI
+# fallback fires one call per county, so an --all run easily bursts past the cap.
+# Pace FRED calls to ~110/min proactively and back off hard on any 429 that slips
+# through. Non-FRED URLs are unthrottled.
+_FRED_MIN_INTERVAL = 0.55  # seconds between FRED calls (~109/min, under the 120 cap)
+_last_fred_call = [0.0]
+
+
+def http_get_json(url, retries=4, timeout=30):
+    """Robust JSON fetch — never crashes, returns None on any failure.
+    FRED (stlouisfed.org) URLs are rate-limited to stay under 120 req/min."""
+    is_fred = "stlouisfed.org" in url
     last_err = None
     for attempt in range(retries):
+        if is_fred:
+            gap = time.monotonic() - _last_fred_call[0]
+            if gap < _FRED_MIN_INTERVAL:
+                time.sleep(_FRED_MIN_INTERVAL - gap)
+            _last_fred_call[0] = time.monotonic()
         try:
             with urllib.request.urlopen(url, timeout=timeout) as resp:
                 body = resp.read().decode("utf-8")
@@ -66,6 +81,12 @@ def http_get_json(url, retries=3, timeout=30):
                     print(f"      [non-JSON] {url[:140]} → {body[:160]!r}", file=sys.stderr)
                     return None
         except urllib.error.HTTPError as e:
+            if e.code == 429:
+                back = 5 * (attempt + 1)  # 5, 10, 15, 20s — let the per-minute window reset
+                print(f"      [HTTP 429] FRED rate limit — backing off {back}s "
+                      f"(attempt {attempt + 1}/{retries})", file=sys.stderr)
+                time.sleep(back)
+                continue
             try:    body = e.read().decode("utf-8")[:200]
             except: body = "?"
             print(f"      [HTTP {e.code}] {url[:140]} → {body}", file=sys.stderr)

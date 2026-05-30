@@ -54,6 +54,12 @@ GEO_OVERRIDES: Dict[str, str] = {
 _GEO_FROM_BP1FH = re.compile(r"^([A-Z0-9]{3,})BP1FH$")
 
 
+# FRED caps at 120 requests/minute/key (HTTP 429 over that). The permit pull fires
+# many county series, so pace calls to ~109/min and back off hard on any 429.
+_FRED_MIN_INTERVAL = 0.55
+_last_fred = [0.0]
+
+
 def _fred_get(url: str, params: dict) -> Optional[dict]:
     """GET a FRED JSON endpoint. Returns parsed dict, or None on failure."""
     if not FRED_API_KEY:
@@ -62,11 +68,20 @@ def _fred_get(url: str, params: dict) -> Optional[dict]:
     q = dict(params)
     q.update({"api_key": FRED_API_KEY, "file_type": "json"})
     full = f"{url}?{urllib.parse.urlencode(q)}"
-    for attempt in range(3):
+    for attempt in range(4):
+        gap = time.monotonic() - _last_fred[0]
+        if gap < _FRED_MIN_INTERVAL:
+            time.sleep(_FRED_MIN_INTERVAL - gap)
+        _last_fred[0] = time.monotonic()
         try:
             with urllib.request.urlopen(full, timeout=30) as resp:
                 return json.loads(resp.read().decode("utf-8"))
         except urllib.error.HTTPError as e:
+            if e.code == 429:
+                back = 5 * (attempt + 1)
+                print(f"  [BPS/FRED 429] rate limit — backing off {back}s", file=sys.stderr)
+                time.sleep(back)
+                continue
             print(f"  [BPS/FRED HTTP {e.code}] {url.rsplit('/', 1)[-1]}", file=sys.stderr)
             if e.code in (400, 404):
                 return None
