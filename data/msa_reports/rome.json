@@ -1435,22 +1435,397 @@
     },
     "qcew_industry_shares": {
       "year": 2025,
-      "quarter": 3,
-      "as_of_label": "2025 Q3",
-      "msa": {},
-      "ga": {},
-      "us": {},
+      "quarter": 2,
+      "as_of_label": "2025 Q2",
+      "msa": {
+        "Construction": {
+          "employment": 852,
+          "avg_annual_wage": 56732,
+          "share_pct": 2.26
+        },
+        "Manufacturing": {
+          "employment": 6185,
+          "avg_annual_wage": 71864,
+          "share_pct": 16.44
+        },
+        "Transportation/Utilities": {
+          "employment": 958,
+          "avg_annual_wage": 70869,
+          "share_pct": 2.55
+        },
+        "Wholesale Trade": {
+          "employment": 1073,
+          "avg_annual_wage": 68536,
+          "share_pct": 2.85
+        },
+        "Retail Trade": {
+          "employment": 4830,
+          "avg_annual_wage": 34632,
+          "share_pct": 12.84
+        },
+        "Information": {
+          "employment": 234,
+          "avg_annual_wage": 71656,
+          "share_pct": 0.62
+        },
+        "Financial Activities": {
+          "employment": 1123,
+          "avg_annual_wage": 80705,
+          "share_pct": 2.98
+        },
+        "Prof. & Bus. Services": {
+          "employment": 6329,
+          "avg_annual_wage": 19708,
+          "share_pct": 16.82
+        },
+        "Education & Health Services": {
+          "employment": 10323,
+          "avg_annual_wage": 65201,
+          "share_pct": 27.44
+        },
+        "Leisure & Hospitality": {
+          "employment": 4907,
+          "avg_annual_wage": 25955,
+          "share_pct": 13.04
+        },
+        "Other Services": {
+          "employment": 810,
+          "avg_annual_wage": 41028,
+          "share_pct": 2.15
+        }
+      },
+      "ga": {
+        "Mining": {
+          "employment": 5955,
+          "avg_annual_wage": 83980,
+          "share_pct": 0.13
+        },
+        "Construction": {
+          "employment": 235865,
+          "avg_annual_wage": 79196,
+          "share_pct": 5.14
+        },
+        "Manufacturing": {
+          "employment": 427575,
+          "avg_annual_wage": 72748,
+          "share_pct": 9.33
+        },
+        "Transportation/Utilities": {
+          "employment": 281846,
+          "avg_annual_wage": 73053,
+          "share_pct": 6.15
+        },
+        "Wholesale Trade": {
+          "employment": 227032,
+          "avg_annual_wage": 97552,
+          "share_pct": 4.95
+        },
+        "Retail Trade": {
+          "employment": 507397,
+          "avg_annual_wage": 40820,
+          "share_pct": 11.07
+        },
+        "Information": {
+          "employment": 114527,
+          "avg_annual_wage": 131664,
+          "share_pct": 2.5
+        },
+        "Financial Activities": {
+          "employment": 276205,
+          "avg_annual_wage": 97630,
+          "share_pct": 6.02
+        },
+        "Prof. & Bus. Services": {
+          "employment": 741944,
+          "avg_annual_wage": 91165,
+          "share_pct": 16.18
+        },
+        "Education & Health Services": {
+          "employment": 695619,
+          "avg_annual_wage": 68481,
+          "share_pct": 15.17
+        },
+        "Leisure & Hospitality": {
+          "employment": 530061,
+          "avg_annual_wage": 30255,
+          "share_pct": 11.56
+        },
+        "Other Services": {
+          "employment": 122973,
+          "avg_annual_wage": 51688,
+          "share_pct": 2.68
+        },
+        "Government": {
+          "employment": 418097,
+          "avg_annual_wage": 61134,
+          "share_pct": 9.12
+        }
+      },
+      "us": {
+        "Mining": {
+          "employment": 575408,
+          "avg_annual_wage": 120588,
+          "share_pct": 0.39
+        },
+        "Construction": {
+          "employment": 8424182,
+          "avg_annual_wage": 80860,
+          "share_pct": 5.73
+        },
+        "Manufacturing": {
+          "employment": 12650979,
+          "avg_annual_wage": 85332,
+          "share_pct": 8.61
+        },
+        "Transportation/Utilities": {
+          "employment": 7127668,
+          "avg_annual_wage": 73299,
+          "share_pct": 4.85
+        },
+        "Wholesale Trade": {
+          "employment": 6060837,
+          "avg_annual_wage": 99684,
+          "share_pct": 4.13
+        },
+        "Retail Trade": {
+          "employment": 15371782,
+          "avg_annual_wage": 42536,
+          "share_pct": 10.46
+        },
+        "Information": {
+          "employment": 2852537,
+          "avg_annual_wage": 174772,
+          "share_pct": 1.94
+        },
+        "Financial Activities": {
+          "employment": 8762192,
+          "avg_annual_wage": 112293,
+          "share_pct": 5.96
+        },
+        "Prof. & Bus. Services": {
+          "employment": 22399565,
+          "avg_annual_wage": 101525,
+          "share_pct": 15.25
+        },
+        "Education & Health Services": {
+          "employment": 26031284,
+          "avg_annual_wage": 64740,
+          "share_pct": 17.72
+        },
+        "Leisure & Hospitality": {
+          "employment": 17402633,
+          "avg_annual_wage": 33326,
+          "share_pct": 11.85
+        },
+        "Other Services": {
+          "employment": 4740568,
+          "avg_annual_wage": 53196,
+          "share_pct": 3.23
+        },
+        "Government": {
+          "employment": 14519344,
+          "avg_annual_wage": 71182,
+          "share_pct": 9.88
+        }
+      },
       "totals": {
-        "msa": 0,
-        "ga": 0,
-        "us": 0
+        "msa": 37624,
+        "ga": 4585096,
+        "us": 146918979
       }
     },
     "qcew_yoy_changes": {
       "year": 2025,
-      "quarter": 3,
+      "quarter": 2,
+      "as_of_label": "2025 Q2",
+      "sectors": {
+        "Construction": {
+          "yoy_pct": -0.7,
+          "employment": 852
+        },
+        "Manufacturing": {
+          "yoy_pct": -2.35,
+          "employment": 6185
+        },
+        "Transportation/Utilities": {
+          "yoy_pct": -40.39,
+          "employment": 958
+        },
+        "Wholesale Trade": {
+          "yoy_pct": -11.47,
+          "employment": 1073
+        },
+        "Retail Trade": {
+          "yoy_pct": 11.11,
+          "employment": 4830
+        },
+        "Information": {
+          "yoy_pct": -2.5,
+          "employment": 234
+        },
+        "Financial Activities": {
+          "yoy_pct": 18.09,
+          "employment": 1123
+        },
+        "Prof. & Bus. Services": {
+          "yoy_pct": 19.55,
+          "employment": 6329
+        },
+        "Education & Health Services": {
+          "yoy_pct": 3.97,
+          "employment": 10323
+        },
+        "Leisure & Hospitality": {
+          "yoy_pct": -1.98,
+          "employment": 4907
+        },
+        "Other Services": {
+          "yoy_pct": -0.37,
+          "employment": 810
+        }
+      }
+    },
+    "qcew_3digit": {
+      "year": 2025,
+      "quarter": 2,
+      "as_of_label": "2025 Q2",
+      "manufacturing_split": {
+        "msa": {
+          "durable": {
+            "employment": 2926,
+            "avg_annual_wage": 64670,
+            "share_pct_of_mfg": 54.4
+          },
+          "nondurable": {
+            "employment": 2454,
+            "avg_annual_wage": 75295,
+            "share_pct_of_mfg": 45.6
+          },
+          "total_employment": 5380,
+          "sector_total": 6185,
+          "coverage_pct": 87.0
+        },
+        "ga": {
+          "durable": {
+            "employment": 222477,
+            "avg_annual_wage": 79397,
+            "share_pct_of_mfg": 52.0
+          },
+          "nondurable": {
+            "employment": 205098,
+            "avg_annual_wage": 65550,
+            "share_pct_of_mfg": 48.0
+          },
+          "total_employment": 427575,
+          "sector_total": 427575,
+          "coverage_pct": 100.0
+        },
+        "us": {
+          "durable": {
+            "employment": 7845342,
+            "avg_annual_wage": 91649,
+            "share_pct_of_mfg": 62.0
+          },
+          "nondurable": {
+            "employment": 4805637,
+            "avg_annual_wage": 74995,
+            "share_pct_of_mfg": 38.0
+          },
+          "total_employment": 12650979,
+          "sector_total": 12650979,
+          "coverage_pct": 100.0
+        },
+        "msa_reliable": true
+      },
+      "diffusion": {
+        "points": [
+          {
+            "label": "2024 Q3",
+            "value": 34.3,
+            "n": 54,
+            "growing": 18,
+            "shrinking": 35,
+            "flat": 1
+          },
+          {
+            "label": "2024 Q4",
+            "value": 42.6,
+            "n": 54,
+            "growing": 23,
+            "shrinking": 31,
+            "flat": 0
+          },
+          {
+            "label": "2025 Q1",
+            "value": 43.0,
+            "n": 50,
+            "growing": 21,
+            "shrinking": 28,
+            "flat": 1
+          },
+          {
+            "label": "2025 Q2",
+            "value": 49.1,
+            "n": 54,
+            "growing": 26,
+            "shrinking": 27,
+            "flat": 1
+          }
+        ],
+        "latest": 49.1
+      }
+    },
+    "health_check": {
+      "quarters": [
+        "2024 Q2",
+        "2024 Q3",
+        "2024 Q4",
+        "2025 Q1",
+        "2025 Q2",
+        "2025 Q3"
+      ],
+      "employment_000s": [
+        43.1,
+        44.3,
+        45.4,
+        44.5,
+        44.1,
+        43.9
+      ],
+      "avg_weekly_wage": [
+        931,
+        953,
+        978,
+        1018,
+        971,
+        1015
+      ],
+      "establishments": [
+        2433,
+        2437,
+        2459,
+        2413,
+        2426,
+        2431
+      ],
+      "unemployment_rate": [
+        3.5,
+        3.7,
+        3.2,
+        3.4,
+        3.4,
+        3.7
+      ],
+      "labor_force_000s": [
+        47.6,
+        47.7,
+        48.2,
+        48.3,
+        48.2,
+        47.5
+      ],
       "as_of_label": "2025 Q3",
-      "sectors": {}
+      "source": "BLS QCEW (MSA totals) + LAUS (quarterly-averaged); EIG-assembled"
     },
     "census_bps_permits": {
       "source": "Census Building Permits Survey via FRED (ROME613BP1FH + ROME613BPPRIV)",
@@ -1557,87 +1932,47 @@
       "year_pair_label": "2022\u21922023",
       "from_year": 2022,
       "to_year": 2023,
-      "total_in": 9824,
-      "total_out": 9289,
-      "net": 535,
+      "total_in": 1353,
+      "total_out": 1169,
+      "net": 184,
       "top_in": [
-        {
-          "origin_msa": "Other (97)",
-          "n_returns": 4558
-        },
-        {
-          "origin_msa": "Other (96)",
-          "n_returns": 2279
-        },
-        {
-          "origin_msa": "Other (59)",
-          "n_returns": 1418
-        },
         {
           "origin_msa": "Atlanta",
           "n_returns": 786
         },
         {
-          "origin_msa": "Other (13)",
+          "origin_msa": "Georgia (other)",
           "n_returns": 491
         },
         {
-          "origin_msa": "Other (58)",
-          "n_returns": 217
-        },
-        {
-          "origin_msa": "Other (01)",
+          "origin_msa": "Alabama (other)",
           "n_returns": 55
         },
         {
           "origin_msa": "Dalton",
           "n_returns": 21
-        },
-        {
-          "origin_msa": "Other (57)",
-          "n_returns": -1
         }
       ],
       "top_out": [
-        {
-          "dest_msa": "Other (97)",
-          "n_returns": 4276
-        },
-        {
-          "dest_msa": "Other (96)",
-          "n_returns": 2138
-        },
-        {
-          "dest_msa": "Other (59)",
-          "n_returns": 1476
-        },
         {
           "dest_msa": "Atlanta",
           "n_returns": 572
         },
         {
-          "dest_msa": "Other (13)",
+          "dest_msa": "Georgia (other)",
           "n_returns": 428
         },
         {
-          "dest_msa": "Other (58)",
-          "n_returns": 231
-        },
-        {
-          "dest_msa": "Other (01)",
+          "dest_msa": "Alabama (other)",
           "n_returns": 108
         },
         {
-          "dest_msa": "Other (47)",
+          "dest_msa": "Tennessee (other)",
           "n_returns": 39
         },
         {
           "dest_msa": "Dalton",
           "n_returns": 22
-        },
-        {
-          "dest_msa": "Other (57)",
-          "n_returns": -1
         }
       ],
       "source": "IRS SOI county-to-county migration (https://www.irs.gov/pub/irs-soi/countyinflow2223.csv)"
@@ -1744,6 +2079,68 @@
       "latest_index": 113.2
     },
     "census_net_migration": null,
+    "acs_housing_characteristics": {
+      "source": "Census ACS 5-year, 2024 vintage (B25024 structure, B25035 year built) + Census Gazetteer land area",
+      "year": 2024,
+      "vintage_window": "2020-2024",
+      "values": {
+        "median_age": 38.2,
+        "population": 99693.0,
+        "total_housing_units": 40918.0,
+        "owner_occupied": 23434.0,
+        "renter_occupied": 13422.0,
+        "vacant_housing_units": 4062.0,
+        "struct_total": 40918.0,
+        "struct_1unit_detached": 30033.0,
+        "struct_2": 2330.0,
+        "struct_3_4": 1153.0,
+        "struct_5_9": 937.0,
+        "struct_10_19": 1071.0,
+        "struct_20_49": 544.0,
+        "struct_50plus": 1271.0,
+        "median_year_built": 1978.0
+      },
+      "derived": {
+        "pct_owner_occupied": 57.3,
+        "pct_renter_occupied": 32.8,
+        "pct_vacant": 9.9,
+        "pct_1unit_detached": 73.4,
+        "pct_multifamily": 17.9
+      }
+    },
+    "acs_block_group_income": {
+      "year": 2024,
+      "vintage_window": "2020-2024",
+      "bins": [
+        "0-25k",
+        "25-50k",
+        "50-75k",
+        "75-100k",
+        "100-125k",
+        "125-150k",
+        "150-200k",
+        "200k+"
+      ],
+      "pct": [
+        1.4,
+        22.5,
+        33.8,
+        22.5,
+        14.1,
+        2.8,
+        2.8,
+        0.0
+      ],
+      "n_block_groups": 71,
+      "source": "Census ACS 5-year 2024 block-group median HH income (B19013), MSA counties"
+    },
+    "entrepreneurship": {
+      "year": 2022,
+      "index_us_100": 89,
+      "entry_rate_msa": 10.36,
+      "entry_rate_us": 11.65,
+      "source": "Census Business Dynamics Statistics (establishment entry rate, 2022); metro rate indexed to US=100"
+    },
     "business_cycle_index": {
       "method": "Stock-Watson coincident (2-input PCA, first principal component (positive co-movement, equal-weight loadings))",
       "components": [
@@ -1946,10 +2343,10 @@
     },
     "forecast_arima": null,
     "vitality": {
-      "value": 0.38,
-      "rank_estimate": 238,
+      "value": 0.35,
+      "rank_estimate": 251,
       "n_metros": 387,
-      "mean_z": -0.295,
+      "mean_z": -0.383,
       "components": {
         "labor_force_participation": {
           "value": 58.94,
@@ -1967,8 +2364,8 @@
           "weight": 0.8
         },
         "net_migration_rate": {
-          "value": 0.537,
-          "z": 0.198,
+          "value": 0.185,
+          "z": -0.096,
           "weight": 1.2
         }
       },
@@ -2085,13 +2482,47 @@
       "note": "Wage proxy is per-capita income (QCEW average annual wage will replace it once that section populates). US benchmarks are ACS 5-year national approximations: median gross rent $1,400, per-capita income $43,000.",
       "source": "EIG composite \u2014 computed from ACS rent + income vs. national benchmarks"
     },
+    "industrial_diversity": {
+      "score": 0.858,
+      "ga_score": 0.984,
+      "n_sectors": 11,
+      "as_of_label": "2025 Q2",
+      "method": "Hachman index = 1 / \u03a3(local_share\u00b2 / US_share) over QCEW super-sectors; 1.0 = industrial mix identical to the U.S. (most balanced/diversified), lower = more concentrated.",
+      "source": "EIG composite \u2014 computed from QCEW employment shares (MSA & GA vs. US)"
+    },
+    "housing_affordability": {
+      "years": [
+        2021,
+        2022,
+        2023,
+        2024
+      ],
+      "affordability_index": [
+        236.2,
+        163.3,
+        140.3,
+        135.7
+      ],
+      "latest_index": 135.7,
+      "latest_year": 2024,
+      "anchor": {
+        "year": 2024,
+        "median_home_value": 217900
+      },
+      "assumptions": {
+        "down_payment_pct": 20,
+        "front_end_dti_pct": 28,
+        "term_years": 30
+      },
+      "source": "EIG composite \u2014 NAR-style affordability: ACS median household income (B19013) vs. income needed for the median home (ACS B25077 value scaled by FHFA HPI; Freddie Mac PMMS 30-yr rate via FRED). >100 = median household can afford the median home."
+    },
     "credit_score": {
-      "score": 67,
+      "score": 66,
       "grade": "A",
       "outlook": "Stable",
       "components": {
         "vitality": {
-          "score": 0.38,
+          "score": 0.35,
           "weight": 0.25
         },
         "business_cycle": {
@@ -2131,6 +2562,8 @@
     "bea_personal_income": "live",
     "qcew_industry_shares": "live",
     "qcew_yoy_changes": "live",
+    "qcew_3digit": "live",
+    "health_check": "live",
     "census_bps_permits": "live",
     "ita_msa_exports": "live",
     "irs_soi_migration": "live",
@@ -2139,12 +2572,17 @@
     "acs_age_structure": "live",
     "acs_affordability": "live",
     "census_net_migration": "failed",
+    "acs_housing_characteristics": "live",
+    "acs_block_group_income": "live",
+    "entrepreneurship": "live",
     "business_cycle_index": "live",
     "forecast_arima": "failed",
     "vitality": "live",
     "quality_of_life": "live",
     "housing_valuation": "live",
     "business_costs": "live",
+    "industrial_diversity": "live",
+    "housing_affordability": "live",
     "credit_score": "live"
   }
 }
