@@ -461,7 +461,7 @@
         <ul>
           <li>Information employment is contracting (-1.9% YoY) and accelerating downward.</li>
           <li>Construction growth slowing (3.1% &rarr; 1.8% over the past year).</li>
-          <li>House price valuation model flags +14% above local fundamentals.</li>
+          <li>Affordability has deteriorated sharply even as prices track local income fundamentals.</li>
         </ul>
       </div>
       <div class="box rating">
@@ -486,7 +486,7 @@
       <p>Exports total <strong>$9.9B</strong>, equivalent to <strong>29.6% of GMP</strong> (Exports section), ranking Savannah 38th among 387 US metros for trade intensity. Transportation equipment ($4.8B) and chemicals ($1.3B) lead, and Asia ($3.8B) and the EU ($2.6B) are the two largest destinations. This mix raises tariff and global-demand sensitivity well above the typical US metro &mdash; one of the few clear structural weaknesses in the local picture.</p>
 
       <h3>Housing</h3>
-      <p>FHFA house-price growth is moderating to <strong>3.6% YoY</strong> (long indicators table) from a 17.8% peak in 2021. Supply has responded: single-family permits ran at <strong>11.2 per 1,000 residents</strong> in 2025, the highest rate of any Georgia MSA. Affordability has still deteriorated meaningfully &mdash; the Housing Affordability index has fallen from a 2019 peak of 280 to 118 today, an indication that the median household just barely qualifies for the median home. The EIG valuation model places Savannah at <strong>+14% above local fundamentals</strong>, well off the 2022 peak of +28% but still elevated.</p>
+      <p>FHFA house-price growth is moderating to <strong>3.6% YoY</strong> (long indicators table) from a 17.8% peak in 2021. Supply has responded: single-family permits ran at <strong>11.2 per 1,000 residents</strong> in 2025, the highest rate of any Georgia MSA. Affordability has still deteriorated meaningfully &mdash; the Housing Affordability index has fallen from a 2019 peak of 280 to 118 today, an indication that the median household just barely qualifies for the median home. The EIG valuation model places Savannah <strong>broadly in line with local income fundamentals</strong>: prices have stayed within roughly &plusmn;6% of their income-implied fair value across 2019&ndash;2024, so the affordability squeeze reflects rapid income-paced appreciation rather than a speculative premium.</p>
 
       <h3>Demographics &amp; Migration</h3>
       <p>Population reached <strong>410,000</strong> in 2024 and grew <strong>1.6% in 2025</strong> &mdash; roughly 3&times; the US rate. Net migration has stepped up sharply: +5,700 in 2025 vs. +2,400 in 2024, the highest pace since 2019. Domestic migration is the larger of the two components and rose 116% YoY. The metro is younger than the US average (median age 36.2 vs. 38.5 national; Geographic Profile), with a higher share of Gen Z and Millennials (45% combined vs. 42% US). Educational attainment is comparable to the US average overall, but the metro skews toward "some college, no degree" rather than 4-year-and-above completion.</p>
@@ -699,7 +699,7 @@
       <h3>House Price Trends</h3>
       <div class="sub">Modeled valuation: % over/under fair value</div>
       <div class="canvas-md"><canvas id="valuation-chart"></canvas></div>
-      <div class="src">EIG composite: HPI residual vs. local fundamentals (income, rents, rates). <span class="src-pill proxy">EIG composite</span> <span class="src-pill demo">Demo</span></div>
+      <div class="src">EIG composite: HPI residual vs. local fundamentals (income, rents, rates). <span class="src-pill proxy">EIG composite</span> <span class="src-pill demo" id="valuation-pill">Demo</span></div>
     </div>
     <div class="report-panel">
       <h3>Housing Affordability</h3>
@@ -1406,6 +1406,12 @@ async function loadLiveData() {
     flipSectionPill('rel-emp-pill', 'live');
   }
 
+  // --- EIG Housing Valuation: % over/under income-implied fair value ---
+  const val = data.sections.housing_valuation;
+  if (val && val.years && val.valuation_pct) {
+    if (replaceValuationChart(val)) flipSectionPill('valuation-pill', 'live');
+  }
+
   // --- BEA Per Capita Income: rebuild the PCI chart ---
   if (pi && pi.years && pi.per_capita_income) {
     replacePerCapitaIncomeChart(pi);
@@ -1711,6 +1717,21 @@ function replaceHpiChart(hpi) {
   // Drop the GA/US demo lines since we only have live Savannah data
   chart.data.datasets = [chart.data.datasets[0]];
   chart.update();
+}
+
+/** Rebuild the Housing Valuation bar chart from the EIG fair-value model.
+ *  data = housing_valuation section: {years:[...], valuation_pct:[...]}.
+ *  Bars are % over/under the income-implied fair value (coral = over, teal = under). */
+function replaceValuationChart(val) {
+  const canvas = document.getElementById('valuation-chart');
+  if (!canvas) return false;
+  const chart = Chart.getChart(canvas);
+  if (!chart) return false;
+  if (!val.years || !val.valuation_pct || !val.valuation_pct.length) return false;
+  chart.data.labels = val.years.map(y => String(y).slice(-2));
+  chart.data.datasets[0].data = val.valuation_pct;
+  chart.update();
+  return true;
 }
 
 /** Rebuild the Relative Employment Performance chart from CES rebased to Jan 2015 = 100. */

@@ -95,7 +95,7 @@ from reporting import (pull_bls, pull_fhfa, pull_census, pull_bea, pull_irs_soi,
                        pull_ita, pull_bps, pull_epa, pull_schoolfin)
 
 # Phase 2 composite/forecast models (each module in scripts/modeling/)
-from modeling import business_cycle_index, forecast_arima, vitality, quality_of_life
+from modeling import business_cycle_index, forecast_arima, vitality, quality_of_life, housing_valuation
 
 # Lookup tables
 MSA_BY_CBSA = {cbsa: (short, full, pop) for cbsa, short, full, pop in GA_MSAS}
@@ -293,12 +293,20 @@ def run_quality_of_life(cbsa: str, output_so_far: dict):
     return data, "live"
 
 
+def run_housing_valuation(cbsa: str, output_so_far: dict):
+    data = housing_valuation.compute(cbsa, output_so_far)
+    if data is None:
+        return None, "failed"
+    return data, "live"
+
+
 # Modeling section registry — runner signature is (cbsa, output_so_far)
 MODELING_SECTIONS = [
     ("business_cycle_index", run_business_cycle_index),
     ("forecast_arima", run_forecast_arima),
     ("vitality", run_vitality),
     ("quality_of_life", run_quality_of_life),
+    ("housing_valuation", run_housing_valuation),
 ]
 
 
