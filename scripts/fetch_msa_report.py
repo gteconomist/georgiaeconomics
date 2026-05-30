@@ -215,6 +215,27 @@ def run_school_finance(cbsa: str):
     return data, "live"
 
 
+def run_acs_age_structure(cbsa: str):
+    data = pull_census.fetch_acs_age_structure(cbsa)
+    if data is None:
+        return None, "failed"
+    return data, "live"
+
+
+def run_acs_affordability(cbsa: str):
+    data = pull_census.fetch_acs_affordability_history(cbsa)
+    if data is None:
+        return None, "failed"
+    return data, "live"
+
+
+def run_census_net_migration(cbsa: str):
+    data = pull_census.fetch_msa_net_migration(cbsa)
+    if data is None:
+        return None, "failed"
+    return data, "live"
+
+
 # Section registry — order is the order we run them. Data fetches first; modeling
 # sections (Phase 2 composites/forecasts) run after, with access to the in-progress
 # output dict so they can read freshly-fetched data as their inputs.
@@ -234,6 +255,9 @@ SECTIONS = [
     ("irs_soi_migration",       run_irs_soi_migration),
     ("epa_air_quality",         run_epa_air_quality),
     ("school_finance",          run_school_finance),
+    ("acs_age_structure",       run_acs_age_structure),
+    ("acs_affordability",       run_acs_affordability),
+    ("census_net_migration",    run_census_net_migration),
 ]
 
 

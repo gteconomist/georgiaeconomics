@@ -314,6 +314,236 @@ def fetch_acs_demographics(cbsa: str, year: Optional[int] = None) -> Optional[di
     return None
 
 
+# ----------------------------- ACS age structure (B01001) -----------------------------
+# B01001 is sex-by-age. Male age groups are suffixes 3..25; the female counterpart of
+# male suffix s is s+24 (e.g. male 25-29 = _011E, female 25-29 = _035E). Requesting all
+# of these (47 vars incl. the _001E total) is its own call to stay under the Census API's
+# ~50-variable-per-request limit (the main demographics call is already near it).
+_B01001_MALE_SUFFIXES = list(range(3, 26))  # 3..25 inclusive
+
+# 16 display bins -> the MALE suffixes composing each (the female counterpart s+24 is
+# summed automatically). Census splits some 5-yr spans into finer groups, so a few bins
+# combine multiple suffixes (e.g. 15-19 = 15-17 + 18-19).
+_AGE_BINS = [
+    ("0-4", [3]), ("5-9", [4]), ("10-14", [5]), ("15-19", [6, 7]),
+    ("20-24", [8, 9, 10]), ("25-29", [11]), ("30-34", [12]), ("35-39", [13]),
+    ("40-44", [14]), ("45-49", [15]), ("50-54", [16]), ("55-59", [17]),
+    ("60-64", [18, 19]), ("65-69", [20, 21]), ("70-74", [22]), (">74", [23, 24, 25]),
+]
+# Generation groups, approximate — grouped by 15-yr age bands as of the ACS vintage year
+# (generation boundaries are fuzzy at 5-yr-bin granularity; this is labelled approximate).
+_GENERATIONS = [
+    ("Alpha",       [3, 4, 5]),
+    ("Gen Z",       [6, 7, 8, 9, 10, 11]),
+    ("Millennial",  [12, 13, 14]),
+    ("Gen X",       [15, 16, 17]),
+    ("Boomer",      [18, 19, 20, 21, 22]),
+    ("Silent/Gtst", [23, 24, 25]),
+]
+
+
+def _b01001_var_codes() -> List[str]:
+    codes = ["B01001_001E"]
+    for s in _B01001_MALE_SUFFIXES:
+        codes.append(f"B01001_{s:03d}E")       # male
+        codes.append(f"B01001_{s + 24:03d}E")  # female counterpart
+    return codes
+
+
+def fetch_acs_age_structure(cbsa: str, year: Optional[int] = None) -> Optional[dict]:
+    """ACS 5-year sex-by-age (B01001) -> 16 five-year bins (% of pop) + generation groups.
+
+    Single most-recent vintage (a current snapshot, like the demographics pull).
+    Returns None if no vintage resolves. Powers the Population-by-Age and Generational
+    Breakdown charts.
+    """
+    if not CENSUS_API_KEY:
+        print("  [Census ACS5 age] no API key", file=sys.stderr)
+        return None
+    this_year = date.today().year
+    candidate_years = [year] if year else list(range(this_year - 1, this_year - 5, -1))
+    vars_str = ",".join(_b01001_var_codes())
+
+    for y in candidate_years:
+        url = (
+            f"{CENSUS_BASE}/{y}/acs/acs5?get={vars_str}"
+            f"&for={urllib.parse.quote(_msa_predicate(cbsa), safe=':/+')}"
+            f"&key={CENSUS_API_KEY}"
+        )
+        data = _census_get(url, quiet_404=(y == this_year - 1))
+        if not data or len(data) < 2:
+            continue
+        header, row = data[0], data[1]
+        vals: Dict[str, float] = {}
+        for i, code in enumerate(header):
+            if code.startswith("B01001_"):
+                try:
+                    vals[code] = float(row[i]) if row[i] not in (None, "", "-", "null") else 0.0
+                except (ValueError, TypeError):
+                    vals[code] = 0.0
+        total = vals.get("B01001_001E") or 0
+        if not total:
+            continue
+
+        def grp_pct(suffixes):
+            s = sum((vals.get(f"B01001_{m:03d}E") or 0) + (vals.get(f"B01001_{m + 24:03d}E") or 0)
+                    for m in suffixes)
+            return round(100 * s / total, 2)
+
+        return {
+            "source": f"Census ACS 5-year B01001, {y} vintage (covers {y-4}-{y})",
+            "year": y,
+            "total_population": int(total),
+            "age_bins": {lbl: grp_pct(sfx) for lbl, sfx in _AGE_BINS},
+            "bin_order": [lbl for lbl, _ in _AGE_BINS],
+            "generations": {lbl: grp_pct(sfx) for lbl, sfx in _GENERATIONS},
+            "generation_order": [lbl for lbl, _ in _GENERATIONS],
+        }
+    return None
+
+
+# ----------------------------- ACS rental affordability history -----------------------------
+
+def _acs_rent_income(geo_predicate: str, y: int) -> Optional[tuple]:
+    """(median_gross_rent, median_hh_income) for a geo+vintage, or None."""
+    url = (
+        f"{CENSUS_BASE}/{y}/acs/acs5?get=B25064_001E,B19013_001E"
+        f"&for={urllib.parse.quote(geo_predicate, safe=':/+')}"
+        f"&key={CENSUS_API_KEY}"
+    )
+    data = _census_get(url, quiet_404=True)
+    if not data or len(data) < 2:
+        return None
+    try:
+        rent, inc = float(data[1][0]), float(data[1][1])
+        return (rent, inc) if (rent > 0 and inc > 0) else None
+    except (ValueError, TypeError, IndexError):
+        return None
+
+
+def fetch_acs_affordability_history(cbsa: str, years_back: int = 6) -> Optional[dict]:
+    """Rental affordability indexed to US = 100 across recent ACS 5-year vintages.
+
+    Burden = annual gross rent / median household income. The index is
+    (US burden / MSA burden) * 100, so a value > 100 means the MSA spends a
+    *smaller* share of income on rent than the US (i.e. more affordable).
+    """
+    if not CENSUS_API_KEY:
+        print("  [Census ACS5 afford] no API key", file=sys.stderr)
+        return None
+    this_year = date.today().year
+    years: List[int] = []
+    idx_vals: List[float] = []
+    msa_burden: List[float] = []
+    us_burden: List[float] = []
+    for y in range(this_year - years_back, this_year):
+        msa = _acs_rent_income(_msa_predicate(cbsa), y)
+        us = _acs_rent_income("us:1", y)
+        if not (msa and us):
+            continue
+        mb = (msa[0] * 12) / msa[1]
+        ub = (us[0] * 12) / us[1]
+        if mb <= 0:
+            continue
+        years.append(y)
+        msa_burden.append(round(100 * mb, 1))
+        us_burden.append(round(100 * ub, 1))
+        idx_vals.append(round(100 * ub / mb, 1))
+    if not years:
+        return None
+    return {
+        "source": "Census ACS 5-year B25064 (median gross rent) / B19013 (median HH income), MSA vs US",
+        "years": years,
+        "affordability_index": idx_vals,
+        "msa_rent_burden_pct": msa_burden,
+        "us_rent_burden_pct": us_burden,
+        "latest_index": idx_vals[-1],
+    }
+
+
+# ----------------------------- MSA net migration (PEP components CSV) -----------------------------
+# Census PEP publishes county-level components-of-change as keyless CSVs. We sum the
+# MSA's member counties to get domestic + international + net migration per year. Same
+# file/parse pattern as scripts/fetch_population.py's county pull.
+SAVANNAH_MSA_COUNTY_CODES = {"051", "103", "029"}  # Chatham, Effingham, Bryan (state FIPS 13)
+_PEP_COUNTY_VINTAGES = [2025, 2024]
+
+
+def _safe_int(x) -> int:
+    try:
+        return int(float(x))
+    except (ValueError, TypeError):
+        return 0
+
+
+def _download_text(url: str, timeout: int = 60) -> Optional[str]:
+    try:
+        req = urllib.request.Request(url, headers={"User-Agent": "EIG-MSA-reports/1.0"})
+        with urllib.request.urlopen(req, timeout=timeout) as resp:
+            return resp.read().decode("latin-1", errors="replace")
+    except urllib.error.HTTPError as e:
+        if e.code != 404:
+            print(f"  [PEP-CC HTTP {e.code}] {url[:120]}", file=sys.stderr)
+        return None
+    except Exception as e:
+        print(f"  [PEP-CC err] {type(e).__name__}: {str(e)[:80]}", file=sys.stderr)
+        return None
+
+
+def fetch_msa_net_migration(cbsa: str) -> Optional[dict]:
+    """Annual domestic / international / net migration for the MSA, summed across its
+    counties from the Census PEP county components-of-change CSV (keyless).
+
+    Only Savannah (42340) is wired today; other MSAs return None until their county
+    sets are added. Fail-soft: returns None on any download/parse miss.
+    """
+    if cbsa != "42340":
+        return None
+    import csv as _csv
+    import io as _io
+    for v in _PEP_COUNTY_VINTAGES:
+        urls = [
+            f"https://www2.census.gov/programs-surveys/popest/datasets/2020-{v}/counties/totals/co-est{v}-alldata.csv",
+            f"https://www2.census.gov/programs-surveys/popest/datasets/2020-{v}/counties/totals/CO-EST{v}-ALLDATA.csv",
+        ]
+        for url in urls:
+            text = _download_text(url)
+            if not text:
+                continue
+            rows = list(_csv.DictReader(_io.StringIO(text)))
+            if not rows:
+                continue
+            years = list(range(2021, v + 1))  # base year 2020 has no flow estimate
+            dom = {y: 0 for y in years}
+            intl = {y: 0 for y in years}
+            net = {y: 0 for y in years}
+            matched = []
+            for r in rows:
+                if (r.get("STATE") or "").strip() != "13":
+                    continue
+                cc = (r.get("COUNTY") or "").strip().zfill(3)
+                if cc not in SAVANNAH_MSA_COUNTY_CODES:
+                    continue
+                matched.append((r.get("CTYNAME") or "").strip())
+                for y in years:
+                    dom[y] += _safe_int(r.get(f"DOMESTICMIG{y}"))
+                    intl[y] += _safe_int(r.get(f"INTERNATIONALMIG{y}"))
+                    net[y] += _safe_int(r.get(f"NETMIG{y}"))
+            if not matched:
+                print(f"  [PEP-CC {v}] no Savannah counties matched", file=sys.stderr)
+                continue
+            print(f"  [PEP-CC {v}] matched counties: {matched}", file=sys.stderr)
+            return {
+                "source": f"Census PEP components of change (CO-EST{v}), Savannah MSA counties",
+                "years": years,
+                "domestic_migration": [dom[y] for y in years],
+                "international_migration": [intl[y] for y in years],
+                "net_migration": [net[y] for y in years],
+                "counties": matched,
+            }
+    return None
+
+
 # ----------------------------- Building permits (annual) -----------------------------
 
 def _bps_fetch_one_year(y: int, cbsa: str, timeout: int = 60) -> Optional[tuple]:

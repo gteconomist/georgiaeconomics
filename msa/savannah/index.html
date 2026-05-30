@@ -693,7 +693,7 @@
       <h3>Rental Affordability</h3>
       <div class="sub">Index, &gt;100 = more affordable than US</div>
       <div class="canvas-md"><canvas id="rent-aff-chart"></canvas></div>
-      <div class="src">Source: Census ACS B25064/B19013 (median rent / median HH income). <span class="src-pill demo">Demo</span></div>
+      <div class="src">Source: Census ACS B25064/B19013 (median rent / median HH income), indexed to US=100. <span class="src-pill demo" id="rent-aff-pill">Demo</span></div>
     </div>
     <div class="report-panel">
       <h3>House Price Trends</h3>
@@ -896,7 +896,7 @@
       <h3>Generational Breakdown</h3>
       <div class="sub">% of population</div>
       <div class="canvas-md"><canvas id="gen-chart"></canvas></div>
-      <div class="src">Source: Census ACS 1-yr, single-year-of-age table B01001. <span class="src-pill demo">Demo</span></div>
+      <div class="src">Source: Census ACS 5-yr, sex-by-age table B01001 (generations grouped by approximate 15-yr age bands). <span class="src-pill demo" id="gen-pill">Demo</span></div>
     </div>
     <div class="report-panel">
       <h3>Educational Attainment</h3>
@@ -908,7 +908,7 @@
       <h3>Population by Age</h3>
       <div class="sub">% of population, 5-year bins</div>
       <div class="canvas-md"><canvas id="age-chart"></canvas></div>
-      <div class="src">Source: Census ACS, table B01001. <span class="src-pill demo">Demo</span></div>
+      <div class="src">Source: Census ACS 5-yr, table B01001 (Savannah live; US illustrative). <span class="src-pill demo" id="age-pill">Demo</span></div>
     </div>
   </div>
 
@@ -925,7 +925,7 @@
       <h3>Net Migration</h3>
       <div class="sub">Annual, domestic vs. foreign</div>
       <div class="canvas-md"><canvas id="netmig-chart"></canvas></div>
-      <div class="src">Source: Census PEP components-of-change. <span class="src-pill demo">Demo</span></div>
+      <div class="src">Source: Census PEP county components-of-change, MSA-aggregated. <span class="src-pill demo" id="netmig-pill">Demo</span></div>
     </div>
     <div class="report-panel">
       <h3>Population &amp; Housing Characteristics</h3>
@@ -1444,6 +1444,25 @@ async function loadLiveData() {
     replaceEmploymentForecastArrows(fc);
   }
 
+  // --- ACS age structure: Population by Age + Generational Breakdown ---
+  const ageS = data.sections.acs_age_structure;
+  if (ageS && ageS.age_bins) {
+    if (replacePopulationAgeChart(ageS)) flipSectionPill('age-pill', 'live');
+    if (replaceGenerationChart(ageS)) flipSectionPill('gen-pill', 'live');
+  }
+
+  // --- ACS rental affordability index (MSA vs US) ---
+  const aff = data.sections.acs_affordability;
+  if (aff && aff.years) {
+    if (replaceRentAffordabilityChart(aff)) flipSectionPill('rent-aff-pill', 'live');
+  }
+
+  // --- PEP net migration components (domestic + international) ---
+  const nm = data.sections.census_net_migration;
+  if (nm && nm.years) {
+    if (replaceNetMigrationChart(nm)) flipSectionPill('netmig-pill', 'live');
+  }
+
   // --- Top indicator strip: Vitality + Quality of Life cells ---
   replaceIndicatorStrip(data);
 
@@ -1909,6 +1928,69 @@ function replaceEmploymentForecastArrows(fc) {
   };
   set('fc-emp-2yr-arrow', 'fc-emp-2yr-vs', cum(2), 2);
   set('fc-emp-5yr-arrow', 'fc-emp-5yr-vs', cum(yoy.length), yoy.length);
+  return true;
+}
+
+/** Rebuild the Rental Affordability line from ACS rent/income indexed to US=100.
+ *  Shows the Savannah index plus a flat US=100 reference line. */
+function replaceRentAffordabilityChart(aff) {
+  const canvas = document.getElementById('rent-aff-chart');
+  if (!canvas || !aff || !aff.years || !aff.affordability_index) return false;
+  const chart = Chart.getChart(canvas);
+  if (!chart) return false;
+  chart.data.labels = aff.years.map(String);
+  const sav = chart.data.datasets[0];
+  sav.label = 'Savannah (US=100)';
+  sav.data = aff.affordability_index;
+  chart.data.datasets = [sav, {
+    label: 'US', data: aff.years.map(() => 100),
+    borderColor: C.us, borderDash: [5, 4], borderWidth: 1.5, pointRadius: 0, fill: false, tension: 0,
+  }];
+  chart.update();
+  return true;
+}
+
+/** Update the Population-by-Age chart's Savannah series from ACS B01001 five-year
+ *  bins. US series stays illustrative (page precedent for cross-geo comparisons). */
+function replacePopulationAgeChart(age) {
+  const canvas = document.getElementById('age-chart');
+  if (!canvas || !age || !age.age_bins) return false;
+  const chart = Chart.getChart(canvas);
+  if (!chart) return false;
+  const order = age.bin_order || Object.keys(age.age_bins);
+  chart.data.labels = order;
+  chart.data.datasets[0].label = 'Savannah';
+  chart.data.datasets[0].data = order.map(b => age.age_bins[b]);
+  chart.update();
+  return true;
+}
+
+/** Update the Generational Breakdown chart's Savannah series from ACS B01001
+ *  generation groups. US series stays illustrative. */
+function replaceGenerationChart(age) {
+  const canvas = document.getElementById('gen-chart');
+  if (!canvas || !age || !age.generations) return false;
+  const chart = Chart.getChart(canvas);
+  if (!chart) return false;
+  const order = age.generation_order || Object.keys(age.generations);
+  chart.data.labels = order;
+  chart.data.datasets[0].label = 'Savannah';
+  chart.data.datasets[0].data = order.map(g => age.generations[g]);
+  chart.update();
+  return true;
+}
+
+/** Rebuild the Net Migration stacked bar from PEP county components-of-change
+ *  (domestic + international), MSA-aggregated, per year. */
+function replaceNetMigrationChart(nm) {
+  const canvas = document.getElementById('netmig-chart');
+  if (!canvas || !nm || !nm.years) return false;
+  const chart = Chart.getChart(canvas);
+  if (!chart) return false;
+  chart.data.labels = nm.years.map(y => String(y).slice(2));
+  chart.data.datasets[0].data = nm.domestic_migration;        // Domestic
+  chart.data.datasets[1].data = nm.international_migration;    // Foreign
+  chart.update();
   return true;
 }
 
