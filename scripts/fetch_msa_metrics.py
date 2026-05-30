@@ -2,15 +2,15 @@
 
 Outputs: data/msa.json (replaces fixture for the fields we can fetch, preserves others).
 
-What we fetch this iteration:
+What we fetch (all six page metrics are now live):
   1. Unemployment rate           — BLS LAUS MSA (UR, NSA latest month)
   2. Home price growth YoY (%)   — FRED FHFA HPI by MSA (quarterly, latest vs 4Q ago)
   3. Population growth YoY (%)   — Census PEP MSA estimates (annual)
   4. GDP per capita ($)          — BEA Regional MSA GDP / latest population
+  5. Avg weekly wage growth (%)  — BLS QCEW MSA (private, all industries, latest qtr YoY)
+  6. Building permits / 1k       — Census BPS via FRED (reporting.pull_bps), latest annual
 
-What stays on fixture (deferred to next iteration):
-  - wage_growth_yoy   (BLS QCEW is a separate API; complex)
-  - permits_per_1k    (Census BPS monthly aggregation)
+Per-MSA per-metric fallback to the prior cached value is automatic — never blanks data.
 
 Each fetcher returns a dict {msa_short_name: value} or None on failure.
 Per-MSA per-metric fallback to fixture is automatic — never blanks data.
@@ -37,6 +37,10 @@ TODAY = date.today()
 
 sys.path.insert(0, str(Path(__file__).parent))
 from _ga_msas import GA_MSAS, COUNTY_TO_MSA
+
+# Reuse the building-permit fetcher built for the MSA reports (Census BPS via FRED).
+# Same package import pattern as scripts/fetch_msa_report.py.
+from reporting import pull_bps
 
 # Atlanta MSA + the 29 county FIPS that compose it.
 # Used by the home-price fetcher's stale-series fallback (see _atlanta_county_avg_hpi_yoy).
@@ -468,6 +472,42 @@ def fetch_msa_wage_growth_yoy():
     return by_short or None
 
 
+# ---------- 6. Census BPS (via FRED) — building permits per 1,000 residents ----------
+def fetch_msa_permits_per_1k():
+    """Latest annual building permits per 1,000 residents for each GA MSA.
+
+    Delegates to reporting.pull_bps.fetch_bps_permits_annual (the same Census
+    Building Permits Survey-via-FRED pull used by the MSA reports), which returns
+    an annual block including latest_per_1k computed against the canonical MSA
+    population. Returns {short_name: latest_per_1k} or None if nothing resolved.
+
+    Per-MSA failures fall through silently — the main() update loop preserves the
+    prior cached value for any MSA missing here, so the page never blanks.
+
+    Env: FRED_API_KEY (required by pull_bps).
+    """
+    if not FRED_API_KEY:
+        print("  [BPS/FRED] no FRED_API_KEY, skipping permits", file=sys.stderr); return None
+    print(f"  [BPS/FRED] fetching permits for {len(GA_MSAS)} MSAs...")
+    by_short = {}
+    for cbsa, short, full, _pop in GA_MSAS:
+        try:
+            data = pull_bps.fetch_bps_permits_annual(cbsa, full_name=full, years_back=6)
+        except Exception as e:
+            print(f"    {short}: permits fetch error — {type(e).__name__}: {e}", file=sys.stderr); continue
+        if not data:
+            print(f"    {short}: no permit data", file=sys.stderr); continue
+        per_1k = data.get("latest_per_1k")
+        # Guard against null / non-positive — a 0 or None means the pull didn't
+        # actually populate, and would otherwise overwrite a good fixture/cached
+        # value with a misleading zero.
+        if per_1k is None or per_1k <= 0:
+            print(f"    {short}: permits per-1k not usable ({per_1k!r})", file=sys.stderr); continue
+        by_short[short] = round(float(per_1k), 1)
+        print(f"    {short}: {by_short[short]} permits/1k ({data.get('latest_year','?')})")
+    return by_short or None
+
+
 # ---------- Aggregate recomputation ----------
 def recompute_aggregates(existing):
     """Recompute statewide_medians and callouts from per-MSA metrics in place."""
@@ -518,20 +558,23 @@ def main():
     print(f"MSA metrics fetch — {TODAY.isoformat()}")
     print("=" * 60)
 
-    print("\n[1/5] Unemployment (BLS LAUS MSA)")
+    print("\n[1/6] Unemployment (BLS LAUS MSA)")
     ur = fetch_msa_unemployment()
 
-    print("\n[2/5] Home prices (FRED FHFA HPI)")
+    print("\n[2/6] Home prices (FRED FHFA HPI)")
     hp = fetch_msa_home_price_yoy()
 
-    print("\n[3/5] Population growth (Census PEP)")
+    print("\n[3/6] Population growth (Census PEP)")
     pop = fetch_msa_population_growth()
 
-    print("\n[4/5] GDP per capita (BEA Regional)")
+    print("\n[4/6] GDP per capita (BEA Regional)")
     gdp = fetch_msa_gdp_per_capita()
 
-    print("\n[5/5] Wage growth (BLS QCEW MSA, private sector)")
+    print("\n[5/6] Wage growth (BLS QCEW MSA, private sector)")
     wage = fetch_msa_wage_growth_yoy()
+
+    print("\n[6/6] Building permits per 1k (Census BPS via FRED)")
+    permits = fetch_msa_permits_per_1k()
 
     # Hygiene: any existing wage_growth_yoy outside [-30, +30]% is implausible
     # (no real MSA has had +30% or -30% annual wage growth) and is almost certainly
@@ -554,18 +597,31 @@ def main():
         if pop and short in pop: m["pop_growth_yoy"]    = pop[short];     fetched_metrics.add("pop_growth_yoy")
         if gdp and short in gdp: m["gdp_per_capita"]    = gdp[short];     fetched_metrics.add("gdp_per_capita")
         if wage and short in wage: m["wage_growth_yoy"]  = wage[short];    fetched_metrics.add("wage_growth_yoy")
+        if permits and short in permits: m["permits_per_1k"] = permits[short]; fetched_metrics.add("permits_per_1k")
 
     # Recompute medians and callouts from the updated MSA data
     recompute_aggregates(existing)
 
     # Mark partial-live
+    ALL_METRIC_KEYS = {
+        "unemployment_rate", "home_price_yoy", "pop_growth_yoy",
+        "gdp_per_capita", "wage_growth_yoy", "permits_per_1k",
+    }
     if fetched_metrics:
         existing["_fixture"] = False
-        existing["_note"] = (
-            f"Partial live data: {sorted(fetched_metrics)}. "
-            f"Permits-per-1k still on fixture (next iteration)."
-        )
-        existing["source"] = "Live: BLS LAUS (UR) + FRED FHFA HPI (home prices) + Census ACS (population) + BEA (GDP, county-aggregated) + BLS QCEW (wage growth, private). Fixture: permits_per_1k."
+        still_fixture = sorted(ALL_METRIC_KEYS - fetched_metrics)
+        note = f"Partial live data: {sorted(fetched_metrics)}."
+        if still_fixture:
+            note += f" Still on fixture: {still_fixture}."
+        else:
+            note += " All six metrics live."
+        existing["_note"] = note
+        base_src = ("Live: BLS LAUS (UR) + FRED FHFA HPI (home prices) + "
+                    "Census ACS (population) + BEA (GDP, county-aggregated) + "
+                    "BLS QCEW (wage growth, private) + Census BPS via FRED (building permits).")
+        if still_fixture:
+            base_src += f" Fixture: {', '.join(still_fixture)}."
+        existing["source"] = base_src
     existing["fetched_at"] = TODAY.isoformat()
 
     with open(fixture_path, "w") as f:
