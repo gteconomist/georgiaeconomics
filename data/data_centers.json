@@ -35,14 +35,14 @@
     },
     "facilities": {
       "last_updated": "2026-05-30",
-      "source": "Costar export (manual re-upload by editor)",
+      "source": "Georgia Economics internal facility database (manual refresh)",
       "exported_at": "2026-05-30",
       "n_records": 138,
       "source_file": "Costar export 2026-05-27 (Export052726 sheet)"
     },
     "counties": {
       "last_updated": "2026-05-30",
-      "source": "Derived from Costar export"
+      "source": "Derived from internal facility database"
     },
     "load_forecast": {
       "last_updated": "2026-05-30",
@@ -73,8 +73,8 @@
     "employment_yoy_pct": -0.8,
     "industry_gdp_latest_b": 33.1,
     "industry_gdp_yoy_pct": 8.5,
-    "avg_weekly_wage": 0,
-    "wage_vs_private_ratio": 1.97,
+    "avg_weekly_wage": 3152,
+    "wage_vs_private_ratio": 2.29,
     "establishments_latest": 567,
     "national_rank_information": 12,
     "national_rank_mw": 5,
@@ -139,30 +139,30 @@
       33.1
     ],
     "wages_weekly": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
+      1880,
+      1898,
+      2030,
+      2256,
+      2280,
+      2490,
+      2476,
+      2671,
+      2765,
+      2884,
+      3152
     ],
     "wages_weekly_allprivate": [
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null
+      939,
+      966,
+      988,
+      1017,
+      1042,
+      1077,
+      1150,
+      1215,
+      1281,
+      1318,
+      1377
     ]
   },
   "annotations": [
@@ -4944,25 +4944,20 @@
       23.0
     ],
     "headline": {
-      "text": "The 2025 Integrated Resource Plan, approved by the Georgia Public Service Commission, projects roughly 8,500\u202fMW of total load growth over the next six years, with about 2,600\u202fMW of that increase expected by the end of 2030; for the 2025\u20112026 winter period the risk\u2011adjusted forecast adds roughly 1,200\u202fMW of load, driven largely by large\u2011load customers such as data centers, which are anticipated to contribute about 3\u202fGW of new demand by 2026, and Georgia Power has already filed more than 3\u202fGW of new large\u2011load contracts, many tied to data\u2011center projects, underscoring the significance of data\u2011ce",
+      "text": "Georgia Power\u2019s 2025 Integrated Resource Plan projects roughly\u202f8,500\u202fMW of total load growth over the next six years, with an estimated\u202f8,448\u202fMW of additional demand expected between the 2025/2026 winter and the 2030/2031 winter, and the company\u2019s risk\u2011adjusted forecasts indicate that large\u2011load customers\u2014particularly data centers\u2014will contribute several gigawatts of that growth, reflected in more than\u202f3\u202fGW of new data\u2011center contracts already filed and additional gigawatt\u2011scale demand pending from other large\u2011load projects.",
       "source_url": "https://www.georgiapower.com/news-hub/press-releases/georgia-power-requests-certification-of-approximately-9900-mw-of-new-resources-from-the-georgia-psc.html"
     }
   },
   "water": {
-    "permitted_facility_count": 2,
-    "permitted_mgd": 2.32,
-    "modeled_remainder_mgd": 6.83,
-    "total_estimated_mgd": 9.15,
+    "permitted_facility_count": 1,
+    "permitted_mgd": 2.0,
+    "modeled_remainder_mgd": 6.95,
+    "total_estimated_mgd": 8.95,
     "permit_sources": [
       {
         "url": "https://epd.georgia.gov/document/document/025-0069-notice-draft-permitpdf/download",
         "mgd": 2.0,
         "snippet": "Jeffrey W. Cown, Director Watershed Protection Branch 2 Martin Luther King, Jr. Drive Suite 1470A, East Tower Atlanta, Georgia 30334 404-463-1511 Notice of Draf"
-      },
-      {
-        "url": "https://epd.georgia.gov/document/document/public-notice-sec-401-water-quality-certification-stevens-creek-hydroelectric/download",
-        "mgd": 0.32,
-        "snippet": "In addition, DESC has a NPDES10 permit (No. GA0003786) for the Stevens Creek Project from the Georgia Department of Natural Resources, Environmental Protection "
       }
     ],
     "methodology_note": "Measured: GA EPD water-withdrawal permits (Tavily-extracted). Modeled remainder: operating MW not associated with permits, at 50% utilization \u00d7 industry-standard 0.5 gallons cooling water per kWh. Estimate, not measurement."
@@ -5010,8 +5005,16 @@
       "title": "Georgia Power\u2019s data center build-out raises fears of eminent domain",
       "url": "https://www.ajc.com/business/2026/05/the-data-center-boom-is-transforming-georgia-some-residents-could-lose-their-land",
       "source_domain": "www.ajc.com",
-      "snippet": "The Yates Power Plant in Newnan has caught the attention of developers who want to build a large data center nearby, covering 4.9 million square feet. This proposed site is close to a wooded area, and some residents have shared their worrie",
-      "mw_hint": 200.0,
+      "snippet": "The QTS Data Center can be seen behind the Howell Station neighborhood in Atlanta on April 30, 2025. (Daniel Varnado for the AJC 2025)\n\not esoht eht s\u2019taht dias ytimixorp rewop fo wen ,dedeen gnitagitim stimil erutcurtsarfni .stcilfnoc tnuo",
+      "mw_hint": 300.0,
+      "investment_m_hint": null
+    },
+    {
+      "title": "Opinion: Georgia data center boom requires strategy, not just hoping for the best",
+      "url": "https://www.ajc.com/opinion/2026/05/georgias-data-center-boom-requires-a-strategy-not-just-hoping-for-the-best",
+      "source_domain": "www.ajc.com",
+      "snippet": "Opinion\n\n# Georgia\u2019s data center boom requires a strategy, not just hoping for the best\n\nPeach State deserves rigor when deciding how - and how fast - to build the infrastructure shaping its future.\n\nTwo Georgia Tech assistant professors sa",
+      "mw_hint": 300.0,
       "investment_m_hint": null
     },
     {
@@ -5019,56 +5022,48 @@
       "url": "https://www.datacenterdynamics.com/en/news?tag=tennessee",
       "source_domain": "www.datacenterdynamics.com",
       "snippet": "Screenshot 2026-02-05 113109\n\n# Tennessee utility TVA projects data center load to double across service area by 2030\n\nUtility aims to construct 6.2GW of new generation assets to meet increased demand\n\nFranklin_Exchange_Building.jpg\n\n# H5 a",
-      "mw_hint": 200.0,
-      "investment_m_hint": null
-    },
-    {
-      "title": "Opinion: Georgia data center boom requires strategy, not just hoping for the best",
-      "url": "https://www.ajc.com/opinion/2026/05/georgias-data-center-boom-requires-a-strategy-not-just-hoping-for-the-best",
-      "source_domain": "www.ajc.com",
-      "snippet": "esohw ohw ,yroeht eht .smetsys ,smetsys elbaniatsus gnisnes elbalacs sehcraeser hcraeser rosseforp rosseforp no fo fo skrowten elacs\u2011egral si si tnettimretni .erutcurtsarfni gnidulcni ni noitatnemelpmi sesucof tneiciffe\u2011ygrene ,ngised retne",
-      "mw_hint": 200.0,
+      "mw_hint": 300.0,
       "investment_m_hint": null
     },
     {
       "title": "2026 Trends and Outlooks: Workloads and workload placement - DCD",
       "url": "https://www.datacenterdynamics.com/en/dcd-broadcasts/dcdmanagement-operations/2025/2026-trends-and-outlooks-workloads-and-workload-placement",
       "source_domain": "www.datacenterdynamics.com",
-      "snippet": "12 Aug 2025, 10:00\n\u2013 \n10:30\n\nEDT\n\n### Critical careers: Young people in digital infrastructure\n\n09 Sep 2025, 09:00\n\u2013 \n10:00\n\nEDT\n\n### Tech Showcase: DCIM to UIIM - KPI strategy for next-gen infrastructure\n\n11 Nov 2025, 10:30\n\u2013 \n11:00\n\nEST\n\n",
-      "mw_hint": 200.0,
+      "snippet": "EST\n\n### The data center operations toolbox of choice\n\n08 Apr 2024, 09:00\n\u2013 \n10:00\n\nEDT\n\n### Preparing for the unique requirements of AI workloads\n\n28 May 2025, 10:00\n\u2013 \n11:00\n\nEDT\n\n### Reaching the full potential of a digital twin\n\n12 Aug ",
+      "mw_hint": 300.0,
       "investment_m_hint": null
     },
     {
-      "title": "Nebius, Lambda, and CoreWeave unlikely to buy Google TPUs any time soon - DCD",
+      "title": "Nebius, Lambda, and CoreWeave unlikely to buy Google TPUs any ...",
       "url": "https://www.datacenterdynamics.com/en/news/nebius-lambda-and-coreweave-unlikely-to-buy-google-tpus-any-time-soon",
       "source_domain": "www.datacenterdynamics.com",
       "snippet": "Microsoft Fairwater\n\n# Microsoft CEO says Fairwater data center site is \"going live ahead of schedule\"\n\n## More in AI & Analytics\n\nDCD Survey Report Janitza\n\n# DCD>Survey Report: Mission Critical Power\n\nLatitude.sh\n\n# Latitude.sh signs $25.",
-      "mw_hint": 200.0,
+      "mw_hint": 300.0,
       "investment_m_hint": null
     },
     {
-      "title": "Opinion: A top state for talent needs a nation-leading data system for its students",
-      "url": "https://www.ajc.com/education/2026/05/a-top-state-for-talent-needs-a-nation-leading-data-system-for-its-students",
+      "title": "News  DC Blox  - DCD",
+      "url": "https://www.datacenterdynamics.com/en/news?tag=dc-blox",
+      "source_domain": "www.datacenterdynamics.com",
+      "snippet": "DC BLOX\n\n# DC Blox building three data centers in southeastern US, cans site in Richmond, Virginia\n\nNew Edge developments for unnamed hyperscale client\n\nAWS Ashton Avenue\n\n# Prince William County supervisors shelve Amazon data center propos",
+      "mw_hint": 216.0,
+      "investment_m_hint": null
+    },
+    {
+      "title": "Opinion: Atlanta Technical College is opening new doors to opportunity",
+      "url": "https://www.ajc.com/education/2026/05/opening-new-doors-to-opportunity-from-hidden-figures-to-visible-futures",
       "source_domain": "www.ajc.com",
-      "snippet": "Get Schooled\n\n# A top state for talent needs a nation-leading data system for its students\n\nDeveloping better, more comprehensive data systems will play a major role in Georgia reducing the gap between preparation and workforce readiness.\n\n",
-      "mw_hint": null,
-      "investment_m_hint": 125.0
+      "snippet": "Also in the early 1960s, Atlanta Technical College opened its doors. Today, as those same doors open to one of Georgia\u2019s first data center academies, we stand at the forefront of another defining moment that will shape the future of the wor",
+      "mw_hint": 216.0,
+      "investment_m_hint": null
     },
     {
       "title": "Stack tops out first building at 1GW data center campus in Stafford County, Virginia - DCD",
       "url": "https://www.datacenterdynamics.com/en/news/stack-tops-out-first-building-at-1gw-data-center-campus-in-stafford-county-virginia",
       "source_domain": "www.datacenterdynamics.com",
       "snippet": "# Fossefall targets data center in Harpefoss, Norway\n\nBuilding AI-ready, sustainable data centers for the next compute era\n\n# Episode Building AI-ready, sustainable data centers for the next compute era\n\n## More in North America\n\nScreenshot",
-      "mw_hint": null,
-      "investment_m_hint": 125.0
-    },
-    {
-      "title": "Wyoming governor Mark Gordon on the state's AI data center boom - DCD",
-      "url": "https://www.datacenterdynamics.com/en/analysis/data-centers-in-the-land-of-coal-and-cowboys",
-      "source_domain": "www.datacenterdynamics.com",
-      "snippet": "Issue 60 - quantum of promise\n\n# Issue 60 - Quantum of promise\n\nBuilding the chips to power quantum computers\n\nBut Wyoming is starting to grab the attention of the hyperscalers. Microsoft is building a data center in Cheyenne, which could c",
-      "mw_hint": null,
-      "investment_m_hint": 125.0
+      "mw_hint": 216.0,
+      "investment_m_hint": null
     }
   ]
 }
