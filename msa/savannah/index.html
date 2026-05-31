@@ -1678,10 +1678,10 @@ function replaceDiffusionChartCES(ces) {
   let count = 0;
   for (const key of CES_CHART_SECTORS) {
     const e = ces.sectors[key];
-    if (!e || !e.months || !e.yoy) continue;
+    if (!e || !e.months || !e.yoy_pct) continue;
     count++;
     e.months.forEach((m, i) => {
-      const y = e.yoy[i];
+      const y = e.yoy_pct[i];
       if (y == null) return;
       const a = agg[m] || (agg[m] = { pos: 0, n: 0 });
       a.n += 1;
