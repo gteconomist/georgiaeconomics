@@ -335,10 +335,23 @@ def _qcew_msa_area_code(cbsa: str) -> str:
     return "C" + cbsa[:4]
 
 
+# Per-process cache of parsed QCEW area CSVs, keyed (year, quarter, area_code).
+# A multi-MSA --all run otherwise re-downloads the SAME files many times: every
+# QCEW section (industry_shares, yoy, 3-digit, health_check) re-probes Atlanta
+# (C1206) to find the latest quarter, and the national (US000) + Georgia (13000)
+# files are identical for all 14 metros. Caching collapses hundreds of redundant
+# downloads to one each. Cache lives only for the run, so data can't go stale.
+# None is cached too, so a 404 probe isn't retried across metros.
+_QCEW_CSV_CACHE: Dict[tuple, Optional[list]] = {}
+
+
 def _qcew_fetch_csv(year: int, quarter: int, area_code: str):
-    """GET one QCEW CSV. Returns a list of dict rows, or None on failure."""
+    """GET one QCEW CSV (cached per run). Returns a list of dict rows, or None."""
     import csv as _csv
     import io as _io
+    key = (year, quarter, area_code)
+    if key in _QCEW_CSV_CACHE:
+        return _QCEW_CSV_CACHE[key]
     url = f"https://data.bls.gov/cew/data/api/{year}/{quarter}/area/{area_code}.csv"
     try:
         with urllib.request.urlopen(url, timeout=45) as resp:
@@ -346,11 +359,15 @@ def _qcew_fetch_csv(year: int, quarter: int, area_code: str):
     except urllib.error.HTTPError as e:
         if e.code != 404:
             print(f"  [QCEW {year}-Q{quarter} {area_code}] HTTP {e.code}", file=sys.stderr)
+        _QCEW_CSV_CACHE[key] = None
         return None
     except Exception as e:
         print(f"  [QCEW {year}-Q{quarter} {area_code}] {type(e).__name__}: {e}", file=sys.stderr)
+        # Transient (timeout etc.) — don't cache, allow a later retry.
         return None
-    return list(_csv.DictReader(_io.StringIO(body)))
+    rows = list(_csv.DictReader(_io.StringIO(body)))
+    _QCEW_CSV_CACHE[key] = rows
+    return rows
 
 
 def _qcew_latest_quarter(probe_area: str = "C1206") -> Optional[tuple]:

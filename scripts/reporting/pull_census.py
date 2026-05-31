@@ -680,8 +680,17 @@ def fetch_acs_age_structure(cbsa: str, year: Optional[int] = None) -> Optional[d
 
 # ----------------------------- ACS rental affordability history -----------------------------
 
+# Per-run cache keyed (geo_predicate, year). The US baseline ("us:1") is requested
+# once per year by every metro's affordability pull — 14× redundant — so caching
+# collapses it (and any within-metro repeat) to one call each.
+_ACS_RENT_INCOME_CACHE: Dict[tuple, Optional[tuple]] = {}
+
+
 def _acs_rent_income(geo_predicate: str, y: int) -> Optional[tuple]:
-    """(median_gross_rent, median_hh_income) for a geo+vintage, or None."""
+    """(median_gross_rent, median_hh_income) for a geo+vintage, or None. Cached per run."""
+    key = (geo_predicate, y)
+    if key in _ACS_RENT_INCOME_CACHE:
+        return _ACS_RENT_INCOME_CACHE[key]
     url = (
         f"{CENSUS_BASE}/{y}/acs/acs5?get=B25064_001E,B19013_001E"
         f"&for={urllib.parse.quote(geo_predicate, safe=':/+')}"
@@ -689,12 +698,14 @@ def _acs_rent_income(geo_predicate: str, y: int) -> Optional[tuple]:
     )
     data = _census_get(url, quiet_404=True)
     if not data or len(data) < 2:
-        return None
+        return None  # transient/empty — don't cache, allow retry
     try:
         rent, inc = float(data[1][0]), float(data[1][1])
-        return (rent, inc) if (rent > 0 and inc > 0) else None
+        result = (rent, inc) if (rent > 0 and inc > 0) else None
     except (ValueError, TypeError, IndexError):
-        return None
+        result = None
+    _ACS_RENT_INCOME_CACHE[key] = result
+    return result
 
 
 def fetch_acs_median_home_value(cbsa: str, year: int) -> Optional[float]:
