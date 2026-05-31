@@ -489,7 +489,7 @@
           <td>1.4</td><td>0.9</td><td>1.2</td><td>1.1</td><td>0.9</td><td>0.6</td><td class="divider" data-live-cell="population_yoy_2025">1.6</td>
           <td>—</td><td>—</td><td>—</td><td>—</td><td>—</td></tr>
         <tr><td class="label">Net migration (000s)</td>
-          <td>4.8</td><td>3.2</td><td>4.0</td><td>3.9</td><td>3.5</td><td>2.4</td><td class="divider">5.7</td>
+          <td>4.8</td><td>3.2</td><td>4.0</td><td>3.9</td><td>3.5</td><td>2.4</td><td class="divider" data-live-cell="net_migration_2025">5.7</td>
           <td>—</td><td>—</td><td>—</td><td>—</td><td>—</td></tr>
         <tr><td class="label">Single-family permits (#)</td>
           <td>3,610</td><td>3,840</td><td>5,210</td><td>4,180</td><td>3,720</td><td>4,210</td><td class="divider" data-live-cell="sf_permits_2025">4,590</td>
@@ -1750,13 +1750,21 @@ function replaceHistoricalColumns(data) {
   };
 
   const gmp = s.bea_gmp || {}, ces = s.ces_employment || {}, laus = s.laus_unemployment || {},
-        pep = s.census_pep || {}, pi = s.bea_personal_income || {}, hpi = s.fhfa_hpi || {};
+        pep = s.census_pep || {}, pi = s.bea_personal_income || {}, hpi = s.fhfa_hpi || {},
+        nm = s.census_net_migration || {}, bps = s.census_bps_permits || {}, aff = s.acs_affordability || {};
 
   const gmpA = zipMap(gmp.years, gmp.gmp_billions_usd || []);
   const empA = annualMean(ces.months, ces.values || [], 6);
   const unA  = annualMean(laus.months, laus.values || [], 6);
   const popA = {}; (pep.years || []).forEach((y, i) => { if (pep.population[i] != null) popA[y] = pep.population[i] / 1000; });
   const hpiA = annualMean(hpi.quarters, hpi.values || [], 2);
+  const nmA  = zipMap(nm.years, (nm.net_migration || []).map(v => v == null ? null : v / 1000));   // persons -> (000s)
+  const sfA  = zipMap(bps.years, bps.single_family || []);
+  const mfA  = zipMap(bps.years, bps.multi_family || []);
+  const incA = zipMap(aff.years, (aff.msa_median_income || []).map(v => v == null ? null : v / 1000)); // $ -> $K
+  // ACS income lags ~1 yr (latest vintage = 2024); carry the latest into the 2025 column so it isn't blanked.
+  const incYears = Object.keys(incA).map(Number);
+  if (incYears.length) incA[2025] = incA[Math.max(...incYears)];
 
   const fillers = {
     gmp:                  (y) => gmpA[y],
@@ -1768,8 +1776,13 @@ function replaceHistoricalColumns(data) {
     population:           (y) => popA[y],
     population_yoy:       (y) => zipMap(pep.years, pep.yoy_pct || [])[y],
     hpi_yoy:              (y) => yoyMap(hpiA)[y],
+    median_hh_income:     (y) => incA[y],
+    net_migration:        (y) => nmA[y],
+    sf_permits:           (y) => sfA[y],
+    mf_permits:           (y) => mfA[y],
   };
-  const fmt = (metric, v) => metric.endsWith('_yoy') ? v.toFixed(1) : v.toFixed(1);
+  const fmt = (metric, v) =>
+    (metric === 'sf_permits' || metric === 'mf_permits') ? Math.round(v).toLocaleString() : v.toFixed(1);
 
   table.querySelectorAll('tbody tr').forEach(tr => {
     const baseCell = tr.querySelector('[data-live-cell]');

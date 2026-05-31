@@ -68,7 +68,7 @@ Hand-written prose, **reconciled to the live JSON 2026-05-30** (all 7 paragraphs
 | Historical columns 2019–2024 | annual BLS/BEA/Census/FHFA series | **LIVE** |
 | 2025 column | live where the year is complete | **LIVE** (partial) |
 | Forecast 2026F–2030F | `forecast_arima.py` | **MODEL** |
-| Median-income / net-migration / permits history rows | — | DEMO (illustrative) |
+| Median-income / net-migration / permits history rows | ACS B19013 (`acs_affordability.msa_median_income`), PEP components (`census_net_migration`), Census BPS (`census_bps_permits`) | **LIVE** — wired 2026-05-30 into `replaceHistoricalColumns`. (Previously static Savannah demo numbers that leaked onto generated metro pages.) Years without data (e.g. pre-2020/2021) show "—"; income 2025 column carries the latest ACS vintage forward. |
 
 ### Economic Health Check
 | Element | Source | Status |
