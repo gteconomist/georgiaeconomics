@@ -346,28 +346,49 @@ _QCEW_CSV_CACHE: Dict[tuple, Optional[list]] = {}
 
 
 def _qcew_fetch_csv(year: int, quarter: int, area_code: str):
-    """GET one QCEW CSV (cached per run). Returns a list of dict rows, or None."""
+    """GET one QCEW CSV (cached per run). Returns a list of dict rows, or None.
+
+    Robust to TRUNCATED downloads of large area files (e.g. Atlanta C1206): the
+    server occasionally closes the connection early, leaving only the top rows —
+    which silently dropped most sectors and made big metros look like they had only
+    2–3 industries. We verify the byte count against Content-Length and retry on a
+    short read; a truncated result is never cached. Larger timeout for big files.
+    """
     import csv as _csv
     import io as _io
     key = (year, quarter, area_code)
     if key in _QCEW_CSV_CACHE:
         return _QCEW_CSV_CACHE[key]
     url = f"https://data.bls.gov/cew/data/api/{year}/{quarter}/area/{area_code}.csv"
-    try:
-        with urllib.request.urlopen(url, timeout=45) as resp:
-            body = resp.read().decode("utf-8", errors="replace")
-    except urllib.error.HTTPError as e:
-        if e.code != 404:
+    for attempt in range(3):
+        try:
+            with urllib.request.urlopen(url, timeout=120) as resp:
+                clen = resp.headers.get("Content-Length")
+                raw = resp.read()
+        except urllib.error.HTTPError as e:
+            if e.code == 404:
+                _QCEW_CSV_CACHE[key] = None  # genuinely absent — don't re-probe
+                return None
             print(f"  [QCEW {year}-Q{quarter} {area_code}] HTTP {e.code}", file=sys.stderr)
-        _QCEW_CSV_CACHE[key] = None
-        return None
-    except Exception as e:
-        print(f"  [QCEW {year}-Q{quarter} {area_code}] {type(e).__name__}: {e}", file=sys.stderr)
-        # Transient (timeout etc.) — don't cache, allow a later retry.
-        return None
-    rows = list(_csv.DictReader(_io.StringIO(body)))
-    _QCEW_CSV_CACHE[key] = rows
-    return rows
+            return None  # transient — don't cache
+        except Exception as e:
+            print(f"  [QCEW {year}-Q{quarter} {area_code}] {type(e).__name__}: {e}", file=sys.stderr)
+            continue  # transient (timeout etc.) — retry
+        # Truncation guard: if the server advertised a length and we got less, retry.
+        if clen is not None and len(raw) < int(clen):
+            print(f"  [QCEW {year}-Q{quarter} {area_code}] TRUNCATED download "
+                  f"{len(raw):,}/{int(clen):,} bytes (attempt {attempt + 1}/3) — retrying",
+                  file=sys.stderr)
+            continue
+        rows = list(_csv.DictReader(_io.StringIO(raw.decode("utf-8", errors="replace"))))
+        # Diagnostic: surface the file size + row count so a still-sparse large metro
+        # is distinguishable (full file, sectors genuinely absent) from a short read.
+        print(f"  [QCEW {year}-Q{quarter} {area_code}] {len(raw):,} bytes, {len(rows):,} rows"
+              f"{' (Content-Length ' + clen + ')' if clen else ' (no Content-Length)'}",
+              file=sys.stderr)
+        _QCEW_CSV_CACHE[key] = rows
+        return rows
+    return None  # all attempts truncated/failed — don't cache, allow a later run to retry
 
 
 def _qcew_latest_quarter(probe_area: str = "C1206") -> Optional[tuple]:
