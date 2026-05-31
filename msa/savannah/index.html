@@ -612,7 +612,7 @@
       <h3>Industry Employment</h3>
       <div class="sub">% change year-ago, by super-sector</div>
       <div class="canvas-md"><canvas id="industry-emp-chart"></canvas></div>
-      <div class="src">Source: BLS QCEW year-over-year employment change by super-sector. <span class="src-pill demo" id="industry-emp-pill">Demo</span></div>
+      <div class="src">Source: BLS CES year-over-year employment change by super-sector (latest month). <span class="src-pill demo" id="industry-emp-pill">Demo</span></div>
     </div>
     <div class="report-panel">
       <h3>Current Employment Trends</h3>
@@ -1363,15 +1363,19 @@ async function loadLiveData() {
     flipSectionPill('migration-flows-pill', 'live');
   }
 
-  // --- QCEW industry shares: replace the Comparative Employment table ---
+  // --- Comparative Employment table: MSA shares from CES (reliable for big metros),
+  //     GA/US shares + wages from QCEW. ---
   const qShares = data.sections.qcew_industry_shares;
-  if (qShares && qShares.msa && Object.keys(qShares.msa).length) {
-    replaceComparativeEmploymentTable(qShares);
+  const cesSS = data.sections.ces_by_supersector;
+  if ((qShares && (qShares.ga || qShares.us)) || (cesSS && cesSS.sectors)) {
+    replaceComparativeEmploymentTable(qShares, cesSS);
     flipSectionPill('comp-emp-pill', 'live');
   }
 
-  // --- Economic Drivers strip cell: top-2 industries by location quotient ---
-  if (qShares && qShares.msa && qShares.us) replaceEconomicDrivers(qShares);
+  // --- Economic Drivers strip cell: top-2 by LQ (CES MSA share ÷ QCEW US share) ---
+  if ((cesSS && cesSS.sectors || (qShares && qShares.msa)) && qShares && qShares.us) {
+    replaceEconomicDrivers(qShares, cesSS);
+  }
 
   // --- Housing Affordability: NAR-style index (ACS income vs median-home payment) ---
   const aff2 = data.sections.housing_affordability;
@@ -1390,11 +1394,10 @@ async function loadLiveData() {
     replaceManufacturingSplit(q3.manufacturing_split, qShares.totals);
   }
 
-  // --- QCEW YoY changes: replace the Industry Employment bar chart ---
-  const qYoY = data.sections.qcew_yoy_changes;
-  if (qYoY && qYoY.sectors && Object.keys(qYoY.sectors).length) {
-    replaceIndustryEmploymentChart(qYoY);
-    flipSectionPill('industry-emp-pill', 'live');
+  // --- Industry Employment chart from CES by-supersector YoY (reliable for big metros;
+  //     QCEW MSA sector detail is suppressed for metros like Atlanta). ---
+  if (cesSS && cesSS.sectors) {
+    if (replaceIndustryEmploymentChartCES(cesSS)) flipSectionPill('industry-emp-pill', 'live');
   }
 
   // --- Business Cycle Index: replace the BCI chart with EIG composite series ---
@@ -1576,9 +1579,51 @@ function replaceMigrationTables(mig) {
 }
 
 /** Replace the Comparative Employment & Income table with live QCEW data. */
-function replaceComparativeEmploymentTable(q) {
+/** Map the Comparative table's sector labels -> CES supersector key names.
+ *  QCEW MSA sector detail is unreliable for large metros (disclosure suppression),
+ *  so MSA employment shares come from CES (model-based, no suppression). */
+const CES_SECTOR_MAP = {
+  "Mining": "Mining and logging",
+  "Construction": "Construction",
+  "Manufacturing": "Manufacturing",
+  "Transportation/Utilities": "Transportation, warehousing and utilities",
+  "Wholesale Trade": "Wholesale trade",
+  "Retail Trade": "Retail trade",
+  "Information": "Information",
+  "Financial Activities": "Financial activities",
+  "Prof. & Bus. Services": "Professional and business services",
+  "Education & Health Services": "Education and health services",
+  "Leisure & Hospitality": "Leisure and hospitality",
+  "Other Services": "Other services",
+  "Government": "Government",
+};
+
+/** Latest non-null employment value (000s) for a CES sector entry. */
+function cesLatest(entry) {
+  if (!entry) return null;
+  if (entry.latest_value != null) return entry.latest_value;
+  const v = entry.values || [];
+  for (let i = v.length - 1; i >= 0; i--) if (v[i] != null) return v[i];
+  return null;
+}
+
+/** MSA sector employment shares (% of total nonfarm) from CES by-supersector. */
+function cesMsaShares(ces) {
+  if (!ces || !ces.sectors) return null;
+  const total = cesLatest(ces.sectors["Total nonfarm"]);
+  if (!total) return null;
+  const out = {};
+  for (const sec in CES_SECTOR_MAP) {
+    const emp = cesLatest(ces.sectors[CES_SECTOR_MAP[sec]]);
+    if (emp != null) out[sec] = 100 * emp / total;
+  }
+  return out;
+}
+
+function replaceComparativeEmploymentTable(q, ces) {
   const tbody = document.getElementById('comp-emp-tbody');
   if (!tbody) return;
+  q = q || {};
   // Sectors in display order — must match the original table rows
   const order = [
     "Mining","Construction","Manufacturing",
@@ -1586,18 +1631,23 @@ function replaceComparativeEmploymentTable(q) {
     "Financial Activities","Prof. & Bus. Services","Education & Health Services",
     "Leisure & Hospitality","Other Services","Government"
   ];
+  const msaShares = cesMsaShares(ces);   // CES-based MSA shares (reliable for every metro)
+  const qmsa = q.msa || {}, qga = q.ga || {}, qus = q.us || {};
   const fmtPct = (v) => v == null ? '—' : v.toFixed(1);
   const fmtUsd = (v) => v == null ? '—' : '$' + Math.round(v).toLocaleString();
-  const cell = (msa, ga, us, accessor) =>
-    `<td>${fmtPct(accessor(msa))}</td><td>${fmtPct(accessor(ga))}</td><td>${fmtPct(accessor(us))}</td>`;
-  const wageCell = (msa, ga, us, accessor) =>
-    `<td class="divider">${fmtUsd(accessor(msa))}</td><td>${fmtUsd(accessor(ga))}</td><td>${fmtUsd(accessor(us))}</td>`;
   tbody.innerHTML = order.map(sec => {
-    const m = q.msa[sec] || {}; const g = q.ga[sec] || {}; const u = q.us[sec] || {};
-    return `<tr><td class="label">${sec.replace('Manufacturing — ','')}</td>${cell(m,g,u, x => x.share_pct)}${wageCell(m,g,u, x => x.avg_annual_wage)}</tr>`;
+    const g = qga[sec] || {}; const u = qus[sec] || {};
+    // MSA share from CES; if CES unavailable, fall back to QCEW MSA share.
+    const mShare = msaShares ? msaShares[sec] : (qmsa[sec] || {}).share_pct;
+    const mWage = (qmsa[sec] || {}).avg_annual_wage;   // QCEW MSA wage where disclosed
+    return `<tr><td class="label">${sec.replace('Manufacturing — ','')}</td>`
+      + `<td>${fmtPct(mShare)}</td><td>${fmtPct(g.share_pct)}</td><td>${fmtPct(u.share_pct)}</td>`
+      + `<td class="divider">${fmtUsd(mWage)}</td><td>${fmtUsd(g.avg_annual_wage)}</td><td>${fmtUsd(u.avg_annual_wage)}</td></tr>`;
   }).join('');
   const note = document.getElementById('comp-emp-source-line');
-  if (note) note.innerHTML = `Sources: BLS QCEW ${q.as_of_label} (employment shares + annual wages, county-aggregated to MSA).`;
+  if (note) note.innerHTML = msaShares
+    ? `Sources: MSA employment shares from BLS CES (by supersector, latest month); GA/US shares + average annual wages from BLS QCEW${q.as_of_label ? ' ' + q.as_of_label : ''}. MSA wages shown where QCEW discloses them.`
+    : `Sources: BLS QCEW ${q.as_of_label || ''} (employment shares + annual wages, county-aggregated to MSA).`;
 }
 
 /** Rebuild the Housing Affordability chart from the live NAR-style index.
@@ -1697,11 +1747,13 @@ const SECTOR_SHORT = {
 /** Fill the Economic Drivers strip cell with the MSA's top-2 industries by
  *  location quotient (local employment share ÷ national share, from QCEW).
  *  LQ > 1 means the sector is more concentrated locally than nationally. */
-function replaceEconomicDrivers(q) {
-  if (!q || !q.msa || !q.us) return false;
+function replaceEconomicDrivers(q, ces) {
+  if (!q || !q.us) return false;
+  const msaShares = cesMsaShares(ces);   // prefer CES MSA shares (reliable for big metros)
   const lqs = [];
-  for (const sec in q.msa) {
-    const ms = q.msa[sec] && q.msa[sec].share_pct;
+  const secs = msaShares ? Object.keys(msaShares) : Object.keys(q.msa || {});
+  for (const sec of secs) {
+    const ms = msaShares ? msaShares[sec] : (q.msa[sec] && q.msa[sec].share_pct);
     const us = q.us[sec] && q.us[sec].share_pct;
     if (ms && us) lqs.push([sec, ms / us]);
   }
@@ -1767,10 +1819,12 @@ function replaceIndicatorStrip(data) {
   }
   const note = document.getElementById('strip-note');
   if (note) {
-    const driversLive = !!(s.qcew_industry_shares && s.qcew_industry_shares.msa && s.qcew_industry_shares.us);
+    const msaSharesAvail = (s.ces_by_supersector && s.ces_by_supersector.sectors) ||
+                           (s.qcew_industry_shares && s.qcew_industry_shares.msa);
+    const driversLive = !!(msaSharesAvail && s.qcew_industry_shares && s.qcew_industry_shares.us);
     const costsLive   = !!(s.business_costs && s.business_costs.cost_of_living_index != null);
     const parts = [];
-    if (driversLive) parts.push('Economic Drivers is <span class="src-pill live">Live</span> (QCEW location quotients)');
+    if (driversLive) parts.push('Economic Drivers is <span class="src-pill live">Live</span> (location quotients)');
     const composites = [];
     if (costsLive) composites.push('Relative Costs');
     if (filled) composites.push('Vitality &amp; Quality of Life');
@@ -2194,6 +2248,42 @@ function replaceBciChart(bci) {
 }
 
 /** Replace the Industry Employment bar chart with live QCEW YoY changes. */
+/** Industry Employment chart from CES by-supersector YoY (model-based, reliable for
+ *  every metro — replaces QCEW, whose MSA sector detail is suppressed for big metros). */
+const CES_CHART_SECTORS = [
+  "Mining and logging", "Construction", "Manufacturing", "Wholesale trade", "Retail trade",
+  "Transportation, warehousing and utilities", "Information", "Financial activities",
+  "Professional and business services", "Education and health services",
+  "Leisure and hospitality", "Other services", "Government"
+];
+const CES_CHART_SHORT = {
+  "Mining and logging": "Mining", "Construction": "Construction", "Manufacturing": "Manufact.",
+  "Wholesale trade": "Wholesale", "Retail trade": "Retail",
+  "Transportation, warehousing and utilities": "Trans/Util", "Information": "Information",
+  "Financial activities": "Financial", "Professional and business services": "Prof Bus",
+  "Education and health services": "Edu/Hlth", "Leisure and hospitality": "Leisure",
+  "Other services": "Other Svc", "Government": "Govt"
+};
+function replaceIndustryEmploymentChartCES(ces) {
+  if (!ces || !ces.sectors) return false;
+  const entries = [];
+  for (const key of CES_CHART_SECTORS) {
+    const e = ces.sectors[key];
+    if (e && e.latest_yoy != null) entries.push([CES_CHART_SHORT[key] || key, e.latest_yoy]);
+  }
+  if (entries.length < 3) return false;
+  entries.sort((a, b) => b[1] - a[1]);
+  const canvas = document.getElementById('industry-emp-chart');
+  if (!canvas) return false;
+  const chart = Chart.getChart(canvas);
+  if (!chart) return false;
+  chart.data.labels = entries.map(e => e[0]);
+  chart.data.datasets[0].data = entries.map(e => e[1]);
+  chart.data.datasets[0].label = 'YoY % change (BLS CES, latest month)';
+  chart.update();
+  return true;
+}
+
 function replaceIndustryEmploymentChart(q) {
   // Order sectors by YoY descending and label them concisely
   const entries = Object.entries(q.sectors)

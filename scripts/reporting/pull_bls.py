@@ -577,15 +577,29 @@ def fetch_qcew_industry_shares(cbsa: str) -> Optional[dict]:
     # all-zero sector employment while the total covered is already populated. Step back
     # to the most recent quarter whose MSA sector aggregation is actually populated.
     found = _qcew_latest_sector_quarter(msa_area, aggregate_and_share)
-    if not found:
-        print("  [QCEW] no quarter with populated MSA sector detail — treating as failed", file=sys.stderr)
-        return None
-    year, quarter, msa_data, msa_tot = found
+    if found:
+        year, quarter, msa_data, msa_tot = found
+    else:
+        # MSA by-sector detail is incomplete (large-metro disclosure suppression — e.g.
+        # Atlanta publishes only ~3 sectors). GA/US files ARE complete, and the page now
+        # sources MSA *shares* from CES, so don't fail the whole section: anchor GA/US on
+        # GA's own complete quarter and return whatever partial MSA wages QCEW discloses.
+        ga_found = _qcew_latest_sector_quarter(state_area, aggregate_and_share)
+        if not ga_found:
+            print("  [QCEW] no complete MSA or GA sector quarter — treating as failed", file=sys.stderr)
+            return None
+        year, quarter, _, _ = ga_found
+        msa_rows = _qcew_fetch_csv(year, quarter, msa_area)
+        msa_data, msa_tot = aggregate_and_share(msa_rows) if msa_rows else ({}, 0)
+        print(f"  [QCEW] MSA sector detail incomplete for {cbsa}; returning GA/US + partial MSA "
+              f"wages ({year} Q{quarter}); MSA shares come from CES on the page", file=sys.stderr)
 
     ga_rows = _qcew_fetch_csv(year, quarter, state_area)
     us_rows = _qcew_fetch_csv(year, quarter, us_area)
     ga_data, ga_tot = aggregate_and_share(ga_rows) if ga_rows else ({}, 0)
     us_data, us_tot = aggregate_and_share(us_rows) if us_rows else ({}, 0)
+    if not ga_data and not us_data:
+        return None  # nothing usable
 
     return {
         "year": year,

@@ -79,7 +79,7 @@ Hand-written prose, **reconciled to the live JSON 2026-05-30** (all 7 paragraphs
 ### Employment
 | Element | Source | Status |
 |---|---|---|
-| Industry Employment (YoY by sector) | QCEW | **LIVE** (confirmed 2026-05-30) |
+| Industry Employment (YoY by sector) | **BLS CES** by-supersector (latest-month YoY) | **LIVE** — switched from QCEW to CES 2026-05-30 (QCEW MSA sector detail is suppressed for big metros like Atlanta; CES is model-based, no suppression, reliable for all 14). |
 | Current Employment Trends table | BLS CES by supersector | **LIVE** |
 | Diffusion Index | `qcew_3digit` — share of 3-digit NAICS MSA industries growing YoY: (growing + 0.5·flat)/total | **LIVE** (wired 2026-05-30; *displays next refresh*). MSA-only series (GA/US 3-digit comparison dropped — no cheap source). |
 | Relative Employment Performance | BLS CES (rebased) | **LIVE** |
@@ -103,7 +103,7 @@ Hand-written prose, **reconciled to the live JSON 2026-05-30** (all 7 paragraphs
 | Exports (by product / destination) | ITA | **LIVE** |
 
 ### Comparative Employment & Income
-QCEW shares + average annual wages vs GA/US. **LIVE** (confirmed 2026-05-30); reads one quarter behind the headline total by design (agglvl-44 sector lag). Manufacturing **durable/nondurable split** built from `qcew_3digit` (NAICS 311–339, standard durable/nondurable grouping). **Renders only where the MSA 3-digit detail is adequately covered (≥80% of the 2-digit sector total).** For Savannah it does **not** render: QCEW disclosure suppression hides NAICS 336 (Gulfstream/Hyundai), so the unsuppressed 3-digit detail covers just **13%** of the 24,773-job manufacturing sector — an honest split is not recoverable, so the Manufacturing row stays single. GA/US are 100%-covered (the fetcher still emits their splits + a `coverage_pct`/`msa_reliable` flag). See "QCEW 3-digit suppression" defect below.
+**MSA employment shares now come from BLS CES** (by-supersector, latest month) — reliable for every metro; GA/US shares + average annual wages still from QCEW (those national/state files are complete), and MSA wages shown where QCEW discloses them. Switched 2026-05-30 after confirming Atlanta's QCEW MSA sector detail is genuinely incomplete (~22% coverage, complete download — disclosure suppression at the metro level, NOT truncation). `fetch_qcew_industry_shares` now returns GA/US even when MSA detail is incomplete (anchors on GA's complete quarter). Economic Drivers LQ cell also uses CES MSA shares ÷ QCEW US shares. Manufacturing **durable/nondurable split** built from `qcew_3digit` (NAICS 311–339, standard durable/nondurable grouping). **Renders only where the MSA 3-digit detail is adequately covered (≥80% of the 2-digit sector total).** For Savannah it does **not** render: QCEW disclosure suppression hides NAICS 336 (Gulfstream/Hyundai), so the unsuppressed 3-digit detail covers just **13%** of the 24,773-job manufacturing sector — an honest split is not recoverable, so the Manufacturing row stays single. GA/US are 100%-covered (the fetcher still emits their splits + a `coverage_pct`/`msa_reliable` flag). See "QCEW 3-digit suppression" defect below.
 
 ### Demographics & Migration
 | Element | Source | Status |
