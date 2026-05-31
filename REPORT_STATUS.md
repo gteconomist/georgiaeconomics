@@ -81,7 +81,7 @@ Hand-written prose, **reconciled to the live JSON 2026-05-30** (all 7 paragraphs
 |---|---|---|
 | Industry Employment (YoY by sector) | **BLS CES** by-supersector (latest-month YoY) | **LIVE** — switched from QCEW to CES 2026-05-30 (QCEW MSA sector detail is suppressed for big metros like Atlanta; CES is model-based, no suppression, reliable for all 14). |
 | Current Employment Trends table | BLS CES by supersector | **LIVE** |
-| Diffusion Index | `qcew_3digit` — share of 3-digit NAICS MSA industries growing YoY: (growing + 0.5·flat)/total | **LIVE** (wired 2026-05-30; *displays next refresh*). MSA-only series (GA/US 3-digit comparison dropped — no cheap source). |
+| Diffusion Index | **BLS CES by-supersector** — monthly share of the ~13 supersectors with higher employment than a year ago: (growing + 0.5·flat)/n | **LIVE** — switched from QCEW 3-digit to CES 2026-05-30. Atlanta's 3-digit QCEW was suppressed to only 3–4 industries (flat 100s); CES gives a reliable n=13 breadth for every metro. Coarser than 3-digit but consistent. (`qcew_3digit` still computes a 3-digit diffusion in the JSON but the page no longer uses it.) |
 | Relative Employment Performance | BLS CES (rebased) | **LIVE** |
 | Relative Employment Forecast (arrows) | `forecast_arima.py` | **MODEL** |
 | House Price Index chart | FHFA via FRED | **LIVE** |
