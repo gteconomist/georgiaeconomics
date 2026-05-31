@@ -447,12 +447,49 @@ def _qcew_aggregate_sectors(rows: list, own_codes: tuple = ("5",)) -> Dict[str, 
     return finalized
 
 
-def _qcew_latest_sector_quarter(msa_area: str, aggregate_and_share, max_back: int = 5):
-    """Find the most recent quarter whose MSA private-by-sector detail (agglvl 44) is
-    populated. Returns (year, quarter, msa_data, msa_total) or None.
+# A quarter's sector detail is "complete enough" only if the summed sectors cover
+# most of the headline total-covered employment. Large metros (e.g. Atlanta) publish
+# agglvl-44 sector detail in stages: the newest quarter may carry only a handful of
+# sectors (all-zero for the rest) while the agglvl-40 total is already full. Accepting
+# such a quarter produced garbage shares (Manufacturing "27% of Atlanta"). 0.70 cleanly
+# separates a partial quarter (~0.2–0.3 coverage) from a complete one (private alone is
+# ~0.85 of total covered; private+gov ~0.97).
+_QCEW_MIN_SECTOR_COVERAGE = 0.70
+
+
+def _qcew_total_covered_emp(rows: list) -> int:
+    """Headline total-covered employment for the area: the agglvl-40 industry '10' row.
+    Prefers ownership 'Total Covered' (own_code 0); falls back to summing private +
+    government ownership rows. 0 if not found."""
+    by_own: Dict[str, int] = {}
+    for r in rows:
+        if (r.get("industry_code") or "").strip() != "10":
+            continue
+        if r.get("size_code") != "0":
+            continue
+        emp = 0
+        for fld in ("month3_emplvl", "month2_emplvl", "month1_emplvl", "annual_avg_emplvl"):
+            v = r.get(fld)
+            if v not in (None, "", "0"):
+                try:
+                    emp = int(float(v))
+                except ValueError:
+                    emp = 0
+                break
+        if emp:
+            by_own[r.get("own_code")] = emp
+    if by_own.get("0"):
+        return by_own["0"]
+    return sum(by_own.get(o, 0) for o in ("5", "1", "2", "3"))
+
+
+def _qcew_latest_sector_quarter(msa_area: str, aggregate_and_share, max_back: int = 7):
+    """Find the most recent quarter whose MSA by-sector detail (agglvl 44) is populated
+    AND reasonably complete. Returns (year, quarter, msa_data, msa_total) or None.
 
     The agglvl-44 sector rows lag the agglvl-40 total, so the newest quarter often has
-    all-zero sector employment; we step back until the aggregation is non-empty.
+    all-zero (or only partially-published) sector employment; we step back until the
+    summed sectors cover most of the headline total (see _QCEW_MIN_SECTOR_COVERAGE).
     """
     latest = _qcew_latest_quarter()
     if not latest:
@@ -462,9 +499,17 @@ def _qcew_latest_sector_quarter(msa_area: str, aggregate_and_share, max_back: in
         rows = _qcew_fetch_csv(y, q, msa_area)
         if rows:
             data, tot = aggregate_and_share(rows)
-            if data and tot > 0:
+            total_covered = _qcew_total_covered_emp(rows)
+            complete = total_covered == 0 or tot >= _QCEW_MIN_SECTOR_COVERAGE * total_covered
+            if data and tot > 0 and complete:
                 return (y, q, data, tot)
-            print(f"  [QCEW] {y} Q{q} MSA sector detail not yet populated — stepping back", file=sys.stderr)
+            if data and tot > 0 and not complete:
+                print(f"  [QCEW] {y} Q{q} MSA sector detail incomplete "
+                      f"(sectors {tot:,} vs total covered {total_covered:,}) — stepping back",
+                      file=sys.stderr)
+            else:
+                print(f"  [QCEW] {y} Q{q} MSA sector detail not yet populated — stepping back",
+                      file=sys.stderr)
         q -= 1
         if q < 1:
             q = 4
