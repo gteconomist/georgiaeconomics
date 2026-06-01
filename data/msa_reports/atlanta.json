@@ -2971,6 +2971,78 @@
       "entry_rate_us": 11.65,
       "source": "Census Business Dynamics Statistics (establishment entry rate, 2022); metro rate indexed to US=100"
     },
+    "major_employers": {
+      "as_of": "2026-06-01",
+      "employers": [
+        {
+          "name": "Georgia Power",
+          "source_url": "https://en.wikipedia.org/wiki/Metro_Atlanta"
+        },
+        {
+          "name": "Southern Company",
+          "source_url": "https://en.wikipedia.org/wiki/Metro_Atlanta"
+        },
+        {
+          "name": "Cola Company",
+          "source_url": null
+        },
+        {
+          "name": "Mohawk Industries",
+          "source_url": "https://www.selectgeorgia.com/discover-georgia/industries/fortune-500-list"
+        },
+        {
+          "name": "State Farm Insurance",
+          "source_url": "https://www.selectgeorgia.com/discover-georgia/industries/contact-centers-georgia"
+        },
+        {
+          "name": "Asbury Automotive Group",
+          "source_url": "https://en.wikipedia.org/wiki/Metro_Atlanta"
+        },
+        {
+          "name": "Healthcare",
+          "source_url": "https://services.selectgeorgia.com/data/documents/Atlanta_Federal_OZ_Prospectus.pdf"
+        },
+        {
+          "name": "Aerospace",
+          "source_url": "https://www.selectgeorgia.com/discover-georgia/industries/fortune-500-list"
+        },
+        {
+          "name": "VXI Global Solutions",
+          "source_url": "https://www.selectgeorgia.com/discover-georgia/industries/contact-centers-georgia"
+        },
+        {
+          "name": "Cornerstone Christian Academy's",
+          "source_url": "https://www.ajc.com/top-workplaces"
+        },
+        {
+          "name": "Emory University",
+          "source_url": "https://en.wikipedia.org/wiki/Economy_of_Atlanta"
+        },
+        {
+          "name": "Grady Health System",
+          "source_url": "https://en.wikipedia.org/wiki/Economy_of_Atlanta"
+        },
+        {
+          "name": "Northside Hospital",
+          "source_url": "https://en.wikipedia.org/wiki/Economy_of_Atlanta"
+        },
+        {
+          "name": "Wellstar Health System",
+          "source_url": "https://en.wikipedia.org/wiki/Economy_of_Atlanta"
+        }
+      ],
+      "sources": [
+        "https://en.wikipedia.org/wiki/Metro_Atlanta",
+        "https://www.selectgeorgia.com/discover-georgia/industries/why-atlanta/top-companies",
+        "https://www.selectgeorgia.com/discover-georgia/industries/fortune-500-list",
+        "https://www.selectgeorgia.com/discover-georgia/industries/contact-centers-georgia",
+        "https://georgia.org",
+        "https://georgia.org/business-support/small-business",
+        "https://en.wikipedia.org/wiki/Economy_of_Atlanta",
+        "https://services.selectgeorgia.com/data/documents/Atlanta_Federal_OZ_Prospectus.pdf"
+      ],
+      "method": "Representative list auto-discovered via Tavily web search across chamber-of-commerce, development-authority and local-news sources. Not exhaustive; ordering approximates source frequency, not headcount."
+    },
     "business_cycle_index": {
       "method": "Stock-Watson coincident (2-input PCA, first principal component (positive co-movement, equal-weight loadings))",
       "components": [
@@ -3548,6 +3620,7 @@
     "acs_housing_characteristics": "live",
     "acs_block_group_income": "live",
     "entrepreneurship": "live",
+    "major_employers": "partial",
     "business_cycle_index": "live",
     "forecast_arima": "live",
     "vitality": "live",

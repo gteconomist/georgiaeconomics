@@ -2181,6 +2181,78 @@
       "entry_rate_us": 11.65,
       "source": "Census Business Dynamics Statistics (establishment entry rate, 2022); metro rate indexed to US=100"
     },
+    "major_employers": {
+      "as_of": "2026-06-01",
+      "employers": [
+        {
+          "name": "Atrium Health Floyd",
+          "source_url": "https://en.wikipedia.org/wiki/Atrium_Health_Floyd"
+        },
+        {
+          "name": "Floyd Medical Center",
+          "source_url": "https://en.wikipedia.org/wiki/Rome,_Georgia"
+        },
+        {
+          "name": "Harbin Clinic",
+          "source_url": "https://en.wikipedia.org/wiki/Rome,_Georgia"
+        },
+        {
+          "name": "Kerry Group",
+          "source_url": "https://en.wikipedia.org/wiki/Rome,_Georgia"
+        },
+        {
+          "name": "State Mutual Insurance Company",
+          "source_url": "https://en.wikipedia.org/wiki/Rome,_Georgia"
+        },
+        {
+          "name": "Suzuki Manufacturing of America",
+          "source_url": "https://en.wikipedia.org/wiki/Rome,_Georgia"
+        },
+        {
+          "name": "Ball Corporation",
+          "source_url": "https://www.northwestgeorgianews.com/rome/business/rome-and-floyd-county-industrial-expansion-gains-make-site-selection-magazine-top-10-list/article_49657e1e-79f8-11eb-808a-07dd0a6bfb11.html"
+        },
+        {
+          "name": "Georgia Power",
+          "source_url": "https://www.northwestgeorgianews.com/rome/news/local/getting-down-to-business-chamber-hosts-annual-meeting-at-forum/article_2c292d95-89c6-4cb2-8950-81f981fc7218.html"
+        },
+        {
+          "name": "Greater Rome Existing Industries Association",
+          "source_url": "https://www.northwestgeorgianews.com/rome/business/rome-floyd-chamber-celebrates-rome-industries/article_34aae01c-d8ff-11ef-b2a8-a38613426472.html"
+        },
+        {
+          "name": "Redmond Regional Medical Center",
+          "source_url": "https://en.wikipedia.org/wiki/Rome,_Georgia"
+        },
+        {
+          "name": "Lowe's Distribution Center",
+          "source_url": "https://georgia.org/sites/default/files/2023-01/lowes_4.pdf"
+        },
+        {
+          "name": "Summit Hill Foods",
+          "source_url": "https://www.northwestgeorgianews.com/rome/business/rome-floyd-chamber-celebrates-rome-industries/article_34aae01c-d8ff-11ef-b2a8-a38613426472.html"
+        },
+        {
+          "name": "VT Industries",
+          "source_url": "https://www.northwestgeorgianews.com/rome/business/rome-floyd-chamber-celebrates-rome-industries/article_34aae01c-d8ff-11ef-b2a8-a38613426472.html"
+        },
+        {
+          "name": "Berry College",
+          "source_url": "https://www.northwestgeorgianews.com/job-growth-praised-but-caution-urged-at-business-outlook-conferenc-local-new/article_d0916735-968a-5a8d-ab9e-1b0e8986db25.html"
+        }
+      ],
+      "sources": [
+        "https://en.wikipedia.org/wiki/Rome,_Georgia",
+        "https://www.northwestgeorgianews.com/rome/business/rome-and-floyd-county-industrial-expansion-gains-make-site-selection-magazine-top-10-list/article_49657e1e-79f8-11eb-808a-07dd0a6bfb11.html",
+        "https://en.wikipedia.org/wiki/Atrium_Health_Floyd",
+        "https://www.ajc.com/business/lowe-bringing-600-jobs-rome/V7ylHfF7WKPOa2Zbe5IWKK",
+        "https://www.northwestgeorgianews.com/job-growth-praised-but-caution-urged-at-business-outlook-conferenc-local-new/article_d0916735-968a-5a8d-ab9e-1b0e8986db25.html",
+        "https://georgia.org/sites/default/files/2023-01/lowes_4.pdf",
+        "https://www.northwestgeorgianews.com/rome/news/local/getting-down-to-business-chamber-hosts-annual-meeting-at-forum/article_2c292d95-89c6-4cb2-8950-81f981fc7218.html",
+        "https://www.northwestgeorgianews.com/rome/business/rome-floyd-chamber-celebrates-rome-industries/article_34aae01c-d8ff-11ef-b2a8-a38613426472.html"
+      ],
+      "method": "Representative list auto-discovered via Tavily web search across chamber-of-commerce, development-authority and local-news sources. Not exhaustive; ordering approximates source frequency, not headcount."
+    },
     "business_cycle_index": {
       "method": "Stock-Watson coincident (2-input PCA, first principal component (positive co-movement, equal-weight loadings))",
       "components": [
@@ -2615,6 +2687,7 @@
     "acs_housing_characteristics": "live",
     "acs_block_group_income": "live",
     "entrepreneurship": "live",
+    "major_employers": "partial",
     "business_cycle_index": "live",
     "forecast_arima": "failed",
     "vitality": "live",

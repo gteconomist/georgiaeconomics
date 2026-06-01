@@ -1935,6 +1935,76 @@
       "entry_rate_us": 11.65,
       "source": "Census Business Dynamics Statistics (establishment entry rate, 2022); metro rate indexed to US=100"
     },
+    "major_employers": {
+      "as_of": "2026-06-01",
+      "employers": [
+        {
+          "name": "Marine Corps Logistics Base Albany",
+          "source_url": "https://en.wikipedia.org/wiki/Albany,_Georgia"
+        },
+        {
+          "name": "Albany State University",
+          "source_url": null
+        },
+        {
+          "name": "Florida Railway",
+          "source_url": "https://en.wikipedia.org/wiki/Albany,_Georgia"
+        },
+        {
+          "name": "Health",
+          "source_url": "https://en.wikipedia.org/wiki/Albany,_Georgia"
+        },
+        {
+          "name": "Knolls Atomic Power Laboratory",
+          "source_url": "https://www.bizjournals.com/albany/subscriber-only/2025/10/17/albanys-330-largest-employers.html"
+        },
+        {
+          "name": "Albany Medical Center",
+          "source_url": null
+        },
+        {
+          "name": "Dougherty County Public Schools",
+          "source_url": null
+        },
+        {
+          "name": "Dougherty County School System",
+          "source_url": null
+        },
+        {
+          "name": "Fluor Marine Propulsion LLC",
+          "source_url": "https://www.bizjournals.com/albany/subscriber-only/2023/07/14/albany-areas-largest-private-sector-employers.html"
+        },
+        {
+          "name": "Manufacturing",
+          "source_url": "https://en.wikipedia.org/wiki/Albany,_Georgia"
+        },
+        {
+          "name": "Phoebe Putney Memorial Hospital",
+          "source_url": null
+        },
+        {
+          "name": "Southwest Georgia Regional Hospital",
+          "source_url": null
+        },
+        {
+          "name": "Georgia Southwestern Railroad",
+          "source_url": "https://en.wikipedia.org/wiki/Albany,_Georgia"
+        },
+        {
+          "name": "Industries",
+          "source_url": "https://georgia.org/business-support/small-business"
+        }
+      ],
+      "sources": [
+        "https://en.wikipedia.org/wiki/Albany,_Georgia",
+        "https://albanyherald.com/wp-content/uploads/2025/04/042925-ABH-A01-A12.pdf",
+        "https://georgia.org/business-support/small-business",
+        "https://www.bizjournals.com/albany/news/2023/07/14/albany-region-largest-private-sector-employers.html",
+        "https://www.bizjournals.com/albany/subscriber-only/2023/07/14/albany-areas-largest-private-sector-employers.html",
+        "https://www.bizjournals.com/albany/subscriber-only/2025/10/17/albanys-330-largest-employers.html"
+      ],
+      "method": "Representative list auto-discovered via Tavily web search across chamber-of-commerce, development-authority and local-news sources. Not exhaustive; ordering approximates source frequency, not headcount."
+    },
     "business_cycle_index": {
       "method": "Stock-Watson coincident (2-input PCA, first principal component (positive co-movement, equal-weight loadings))",
       "components": [
@@ -2508,6 +2578,7 @@
     "acs_housing_characteristics": "live",
     "acs_block_group_income": "live",
     "entrepreneurship": "live",
+    "major_employers": "partial",
     "business_cycle_index": "live",
     "forecast_arima": "live",
     "vitality": "live",

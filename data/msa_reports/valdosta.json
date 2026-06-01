@@ -1938,6 +1938,78 @@
       "entry_rate_us": 11.65,
       "source": "Census Business Dynamics Statistics (establishment entry rate, 2022); metro rate indexed to US=100"
     },
+    "major_employers": {
+      "as_of": "2026-06-01",
+      "employers": [
+        {
+          "name": "Valdosta State University",
+          "source_url": "https://en.wikipedia.org/wiki/Valdosta,_Georgia"
+        },
+        {
+          "name": "Georgia Power",
+          "source_url": "https://georgia.org/sites/default/files/2025-05/coil_technology_ecosystem_report_2025.pdf"
+        },
+        {
+          "name": "South Georgia Medical Center",
+          "source_url": null
+        },
+        {
+          "name": "ACE Electric",
+          "source_url": "https://www.selectgeorgia.com/blog/rural-transformation/one-valdosta-lowndes-interview"
+        },
+        {
+          "name": "Berry Global Manufacturing",
+          "source_url": "https://www.selectgeorgia.com/blog/rural-transformation/one-valdosta-lowndes-interview"
+        },
+        {
+          "name": "SGMC Health",
+          "source_url": "https://www.selectgeorgia.com/blog/rural-transformation/one-valdosta-lowndes-interview"
+        },
+        {
+          "name": "Stratas Foods",
+          "source_url": "https://www.selectgeorgia.com/blog/rural-transformation/one-valdosta-lowndes-interview"
+        },
+        {
+          "name": "Cisco Systems Dematic Flexport Sources",
+          "source_url": "https://georgia.org/sites/default/files/2025-05/coil_technology_ecosystem_report_2025.pdf"
+        },
+        {
+          "name": "Quarterly Unemployment Insurance Match Data",
+          "source_url": "https://georgia.org/sites/default/files/2025-05/coil_technology_ecosystem_report_2025.pdf"
+        },
+        {
+          "name": "Valdosta-Lowndes County Development Authority",
+          "source_url": "https://www.selectgeorgia.com/blog/rural-transformation/one-valdosta-lowndes-interview"
+        },
+        {
+          "name": "Blue Ops Inc",
+          "source_url": null
+        },
+        {
+          "name": "Computer Systems Analysts",
+          "source_url": "https://georgia.org/sites/default/files/2025-05/coil_technology_ecosystem_report_2025.pdf"
+        },
+        {
+          "name": "Georgia Southern University",
+          "source_url": "https://georgia.org/sites/default/files/2021-04/logistics_education_report.pdf"
+        },
+        {
+          "name": "Logistics TOP",
+          "source_url": "https://georgia.org/sites/default/files/2025-05/coil_technology_ecosystem_report_2025.pdf"
+        }
+      ],
+      "sources": [
+        "https://georgia.org/sites/default/files/2025-05/coil_technology_ecosystem_report_2025.pdf",
+        "https://georgia.org/sites/default/files/2022-02/2021-11-3_gdecd_board_meeting_minutes.pdf",
+        "https://en.wikipedia.org/wiki/Valdosta,_Georgia",
+        "https://www.selectgeorgia.com/blog/rural-transformation/one-valdosta-lowndes-interview",
+        "https://georgia.org/sites/default/files/2021-04/logistics_education_report.pdf",
+        "https://valdostadailytimes.com/wp-content/uploads/sites/3/2026/03/2026-VDT-Best-of-SGA-Winners.pdf",
+        "https://www.selectgeorgia.com/blog/community-spotlight-meghan-barwick-valdosta-georgia",
+        "https://valdostadailytimes.com/2026/02/23/gary-wisenbaker-data-centers-whats-good-for-the-goose-is-good-for-the-gander"
+      ],
+      "method": "Representative list auto-discovered via Tavily web search across chamber-of-commerce, development-authority and local-news sources. Not exhaustive; ordering approximates source frequency, not headcount."
+    },
     "business_cycle_index": {
       "method": "Stock-Watson coincident (2-input PCA, first principal component (positive co-movement, equal-weight loadings))",
       "components": [
@@ -2511,6 +2583,7 @@
     "acs_housing_characteristics": "live",
     "acs_block_group_income": "live",
     "entrepreneurship": "live",
+    "major_employers": "partial",
     "business_cycle_index": "live",
     "forecast_arima": "live",
     "vitality": "live",

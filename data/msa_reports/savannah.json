@@ -2883,6 +2883,78 @@
       "entry_rate_us": 11.65,
       "source": "Census Business Dynamics Statistics (establishment entry rate, 2022); metro rate indexed to US=100"
     },
+    "major_employers": {
+      "as_of": "2026-06-01",
+      "employers": [
+        {
+          "name": "Children's Healthcare of Atlanta",
+          "source_url": "https://www.savannahnow.com/story/news/2026/02/24/forbes-ranked-2-georgia-businesses-among-top-50-large-employers-in-us/88828522007"
+        },
+        {
+          "name": "Aerospace",
+          "source_url": "https://www.selectgeorgia.com/discover-georgia/industries/fortune-500-list"
+        },
+        {
+          "name": "Memorial Health University Medical Center",
+          "source_url": null
+        },
+        {
+          "name": "Savannah Economic Development Authority",
+          "source_url": "https://www.augustachronicle.com/story/news/2021/07/27/incentives-help-georgia-secure-economic-development-deals-jobs-wayfair-rockingham-farms-savannah-ga/7955302002"
+        },
+        {
+          "name": "Savannah State University",
+          "source_url": null
+        },
+        {
+          "name": "Southern Company",
+          "source_url": "https://www.selectgeorgia.com/discover-georgia/industries/fortune-500-list"
+        },
+        {
+          "name": "Hyundai Motor Group Metaplant America",
+          "source_url": "https://www.savannahnow.com/story/news/local/2024/03/01/savannah-chamber-president-bridges-business-growth-quality-of-life/72790391007"
+        },
+        {
+          "name": "Asbury Automotive",
+          "source_url": "https://www.selectgeorgia.com/discover-georgia/industries/fortune-500-list"
+        },
+        {
+          "name": "Chatham County Public Schools",
+          "source_url": null
+        },
+        {
+          "name": "Chemical Manufacturing",
+          "source_url": "https://www.selectgeorgia.com/discover-georgia/industries/fortune-500-list"
+        },
+        {
+          "name": "Establish First U.S. Manufacturing Facility",
+          "source_url": "https://georgia.org"
+        },
+        {
+          "name": "Georgia Logistics Summit",
+          "source_url": "https://georgia.org"
+        },
+        {
+          "name": "Georgia Ports Authority",
+          "source_url": null
+        },
+        {
+          "name": "Georgia Power Economic Development",
+          "source_url": "https://www.selectgeorgia.com/discover-georgia/industries/fortune-500-list"
+        }
+      ],
+      "sources": [
+        "https://en.wikipedia.org/wiki/Savannah,_Georgia",
+        "https://www.savannahnow.com/story/news/2026/02/24/forbes-ranked-2-georgia-businesses-among-top-50-large-employers-in-us/88828522007",
+        "https://www.augustachronicle.com/story/news/2021/07/27/incentives-help-georgia-secure-economic-development-deals-jobs-wayfair-rockingham-farms-savannah-ga/7955302002",
+        "https://www.selectgeorgia.com/discover-georgia/industries/fortune-500-list",
+        "https://georgia.org/business-support/small-business",
+        "https://www.savannahnow.com/story/news/2016/07/08/garden-city-police-department-savannah-firms-make-best-places-work-georgia-list/13921419007",
+        "https://georgia.org/sites/default/files/2023-01/nine-line-case-study.pdf",
+        "https://www.savannahnow.com/story/business/2012/10/30/business-savannah-business-roundup/13816314007"
+      ],
+      "method": "Representative list auto-discovered via Tavily web search across chamber-of-commerce, development-authority and local-news sources. Not exhaustive; ordering approximates source frequency, not headcount."
+    },
     "business_cycle_index": {
       "method": "Stock-Watson coincident (2-input PCA, first principal component (positive co-movement, equal-weight loadings))",
       "components": [
@@ -3461,6 +3533,7 @@
     "acs_housing_characteristics": "live",
     "acs_block_group_income": "live",
     "entrepreneurship": "live",
+    "major_employers": "partial",
     "business_cycle_index": "live",
     "forecast_arima": "live",
     "vitality": "live",

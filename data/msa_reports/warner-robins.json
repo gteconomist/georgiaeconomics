@@ -1959,6 +1959,78 @@
       "entry_rate_us": 11.65,
       "source": "Census Business Dynamics Statistics (establishment entry rate, 2022); metro rate indexed to US=100"
     },
+    "major_employers": {
+      "as_of": "2026-06-01",
+      "employers": [
+        {
+          "name": "New Manufacturing",
+          "source_url": "https://www.selectgeorgia.com/georgiagrowth"
+        },
+        {
+          "name": "Blue Bird Body Co",
+          "source_url": "https://www.macon.com/news/business/article258547393.html"
+        },
+        {
+          "name": "Houston Healthcare Complex",
+          "source_url": "https://www.macon.com/news/business/article258547393.html"
+        },
+        {
+          "name": "Perdue Foods",
+          "source_url": "https://www.macon.com/news/business/article258547393.html"
+        },
+        {
+          "name": "Atrium Health Navicent The Medical Center",
+          "source_url": "https://www.macon.com/news/business/article258547393.html"
+        },
+        {
+          "name": "Robins International Industrial Park",
+          "source_url": "https://www.macon.com/news/local/community/houston-peach/article315207803.html"
+        },
+        {
+          "name": "Joint Development Authority of Peach County",
+          "source_url": "https://www.macon.com/news/local/community/houston-peach/article315207803.html"
+        },
+        {
+          "name": "Blue Bird Corp",
+          "source_url": "https://en.wikipedia.org/wiki/Central_Georgia"
+        },
+        {
+          "name": "Chief Manufacturing",
+          "source_url": "https://en.wikipedia.org/wiki/Central_Georgia"
+        },
+        {
+          "name": "Coliseum Health System",
+          "source_url": "https://en.wikipedia.org/wiki/Central_Georgia"
+        },
+        {
+          "name": "Criterion Technologies",
+          "source_url": "https://en.wikipedia.org/wiki/Central_Georgia"
+        },
+        {
+          "name": "Food Processing Expansion",
+          "source_url": "https://www.selectgeorgia.com/georgiagrowth"
+        },
+        {
+          "name": "Medical Center of Central Georgia",
+          "source_url": "https://en.wikipedia.org/wiki/Central_Georgia"
+        },
+        {
+          "name": "Mercer University",
+          "source_url": "https://www.macon.com/news/business/article258547393.html"
+        }
+      ],
+      "sources": [
+        "https://en.wikipedia.org/wiki/Robins_Air_Force_Base",
+        "https://www.macon.com/news/business/article258547393.html",
+        "https://en.wikipedia.org/wiki/Central_Georgia",
+        "https://www.macon.com/news/local/community/houston-peach/article315207803.html",
+        "https://georgia.org/sites/default/files/2019-08/gdecd_board_book_q2_feb.pdf",
+        "https://georgia.org/sites/default/files/2021-02/fy21_q2_board_book.pdf",
+        "https://www.macon.com/news/local/article314229310.html",
+        "https://www.selectgeorgia.com/georgiagrowth"
+      ],
+      "method": "Representative list auto-discovered via Tavily web search across chamber-of-commerce, development-authority and local-news sources. Not exhaustive; ordering approximates source frequency, not headcount."
+    },
     "business_cycle_index": {
       "method": "Stock-Watson coincident (2-input PCA, first principal component (positive co-movement, equal-weight loadings))",
       "components": [
@@ -2532,6 +2604,7 @@
     "acs_housing_characteristics": "live",
     "acs_block_group_income": "live",
     "entrepreneurship": "live",
+    "major_employers": "partial",
     "business_cycle_index": "live",
     "forecast_arima": "live",
     "vitality": "live",

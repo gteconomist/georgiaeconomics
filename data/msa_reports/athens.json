@@ -2812,6 +2812,78 @@
       "entry_rate_us": 11.65,
       "source": "Census Business Dynamics Statistics (establishment entry rate, 2022); metro rate indexed to US=100"
     },
+    "major_employers": {
+      "as_of": "2026-06-01",
+      "employers": [
+        {
+          "name": "University of Georgia",
+          "source_url": "https://en.wikipedia.org/wiki/Athens,_Georgia"
+        },
+        {
+          "name": "RWDC Industries",
+          "source_url": "https://en.wikipedia.org/wiki/Athens,_Georgia"
+        },
+        {
+          "name": "Clarke County School District",
+          "source_url": null
+        },
+        {
+          "name": "Janssen Pharmaceuticals",
+          "source_url": "https://en.wikipedia.org/wiki/Athens,_Georgia"
+        },
+        {
+          "name": "Children's Healthcare of Atlanta",
+          "source_url": "https://www.onlineathens.com/story/news/2026/03/04/georgias-best-employers-are-these-2-big-businesses-forbes-says/88982542007"
+        },
+        {
+          "name": "Athens Technical College",
+          "source_url": "https://en.wikipedia.org/wiki/Athens,_Georgia"
+        },
+        {
+          "name": "Peachtree Medical Billing",
+          "source_url": "https://en.wikipedia.org/wiki/Athens,_Georgia"
+        },
+        {
+          "name": "Piedmont Athens Regional Medical Center",
+          "source_url": null
+        },
+        {
+          "name": "Aerospace",
+          "source_url": "https://georgia.org/sites/default/files/2022-05/2022-2-23_gdecd_board_meeting_minutes.pdf"
+        },
+        {
+          "name": "Co-Chairman of OneTrust",
+          "source_url": "https://www.selectgeorgia.com/landing-pages/san-fran-to-atl/world-class-talent-calls-atlanta-home"
+        },
+        {
+          "name": "Georgia Power Economic Development",
+          "source_url": "https://www.selectgeorgia.com/landing-pages/san-fran-to-atl/world-class-talent-calls-atlanta-home"
+        },
+        {
+          "name": "AU College of Nursing",
+          "source_url": "https://en.wikipedia.org/wiki/Athens,_Georgia"
+        },
+        {
+          "name": "Agricultural College",
+          "source_url": "https://georgia.org/sites/default/files/2021-04/logistics_education_report.pdf"
+        },
+        {
+          "name": "Albany State University Albany Technical College",
+          "source_url": "https://georgia.org/sites/default/files/2021-04/logistics_education_report.pdf"
+        }
+      ],
+      "sources": [
+        "https://en.wikipedia.org/wiki/Athens,_Georgia",
+        "https://www.onlineathens.com/story/news/2026/03/04/georgias-best-employers-are-these-2-big-businesses-forbes-says/88982542007",
+        "https://www.augustachronicle.com/story/news/2025/06/04/fortune-500s-list-of-the-biggest-corporations-includes-17-in-georgia/84010835007",
+        "https://en.wikipedia.org/wiki/Metro_Atlanta",
+        "https://www.onlineathens.com/story/news/state/2019/05/24/athens-entrepreneurs-get-business-help-at-state-chamber-event/5073147007",
+        "https://georgia.org/sites/default/files/2022-05/2022-2-23_gdecd_board_meeting_minutes.pdf",
+        "https://georgia.org",
+        "https://www.selectgeorgia.com/landing-pages/san-fran-to-atl/world-class-talent-calls-atlanta-home"
+      ],
+      "method": "Representative list auto-discovered via Tavily web search across chamber-of-commerce, development-authority and local-news sources. Not exhaustive; ordering approximates source frequency, not headcount."
+    },
     "business_cycle_index": {
       "method": "Stock-Watson coincident (2-input PCA, first principal component (positive co-movement, equal-weight loadings))",
       "components": [
@@ -3385,6 +3457,7 @@
     "acs_housing_characteristics": "live",
     "acs_block_group_income": "live",
     "entrepreneurship": "live",
+    "major_employers": "partial",
     "business_cycle_index": "live",
     "forecast_arima": "live",
     "vitality": "live",

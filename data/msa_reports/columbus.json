@@ -2801,6 +2801,78 @@
       "entry_rate_us": 11.65,
       "source": "Census Business Dynamics Statistics (establishment entry rate, 2022); metro rate indexed to US=100"
     },
+    "major_employers": {
+      "as_of": "2026-06-01",
+      "employers": [
+        {
+          "name": "Health Care",
+          "source_url": "https://en.wikipedia.org/wiki/List_of_largest_Central_Ohio_employers"
+        },
+        {
+          "name": "Columbus Regional Healthcare System",
+          "source_url": "https://en.wikipedia.org/wiki/Columbus,_Georgia"
+        },
+        {
+          "name": "Muscogee County School District",
+          "source_url": "https://en.wikipedia.org/wiki/Columbus,_Georgia"
+        },
+        {
+          "name": "St. Francis Hospital",
+          "source_url": "https://en.wikipedia.org/wiki/Columbus,_Georgia"
+        },
+        {
+          "name": "Financial Activities",
+          "source_url": "https://en.wikipedia.org/wiki/List_of_largest_Central_Ohio_employers"
+        },
+        {
+          "name": "Nationwide Children's Hospital",
+          "source_url": "https://en.wikipedia.org/wiki/List_of_largest_Central_Ohio_employers"
+        },
+        {
+          "name": "Corp. Mgt",
+          "source_url": "https://en.wikipedia.org/wiki/List_of_largest_Central_Ohio_employers"
+        },
+        {
+          "name": "Georgia Power",
+          "source_url": "https://georgia.org/sites/default/files/2025-05/coil_technology_ecosystem_report_2025.pdf"
+        },
+        {
+          "name": "Honda of America Manufacturing",
+          "source_url": "https://en.wikipedia.org/wiki/List_of_largest_Central_Ohio_employers"
+        },
+        {
+          "name": "Mount Carmel Health System",
+          "source_url": "https://en.wikipedia.org/wiki/List_of_largest_Central_Ohio_employers"
+        },
+        {
+          "name": "Ohio State University",
+          "source_url": "https://en.wikipedia.org/wiki/List_of_largest_Central_Ohio_employers"
+        },
+        {
+          "name": "Aerospace",
+          "source_url": "https://georgia.org"
+        },
+        {
+          "name": "Columbus Public Schools",
+          "source_url": "https://en.wikipedia.org/wiki/List_of_largest_Central_Ohio_employers"
+        },
+        {
+          "name": "Kroger Company",
+          "source_url": "https://en.wikipedia.org/wiki/List_of_largest_Central_Ohio_employers"
+        }
+      ],
+      "sources": [
+        "https://en.wikipedia.org/wiki/Columbus,_Georgia",
+        "https://georgia.org/sites/default/files/2025-05/coil_technology_ecosystem_report_2025.pdf",
+        "https://georgia.org",
+        "https://georgia.org/business-support/small-business",
+        "https://georgia.org/sites/default/files/2021-04/logistics_education_report.pdf",
+        "https://georgia.org/sites/default/files/2018-11/gdecd_board_book_-_5-23-18.pdf",
+        "https://georgia.org/sites/default/files/2023-01/emia_report_-_22mcie121_12-2022.pdf",
+        "https://www.ledger-enquirer.com"
+      ],
+      "method": "Representative list auto-discovered via Tavily web search across chamber-of-commerce, development-authority and local-news sources. Not exhaustive; ordering approximates source frequency, not headcount."
+    },
     "business_cycle_index": {
       "method": "Stock-Watson coincident (2-input PCA, first principal component (positive co-movement, equal-weight loadings))",
       "components": [
@@ -3374,6 +3446,7 @@
     "acs_housing_characteristics": "live",
     "acs_block_group_income": "live",
     "entrepreneurship": "live",
+    "major_employers": "partial",
     "business_cycle_index": "live",
     "forecast_arima": "live",
     "vitality": "live",

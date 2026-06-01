@@ -2784,6 +2784,78 @@
       "entry_rate_us": 11.65,
       "source": "Census Business Dynamics Statistics (establishment entry rate, 2022); metro rate indexed to US=100"
     },
+    "major_employers": {
+      "as_of": "2026-06-01",
+      "employers": [
+        {
+          "name": "Augusta University",
+          "source_url": "https://en.wikipedia.org/wiki/Augusta,_Georgia"
+        },
+        {
+          "name": "Children's Healthcare of Atlanta",
+          "source_url": "https://www.augustachronicle.com/story/business/2024/08/27/georgia-top-companies-forbes-best-employers-by-state-list/74968857007"
+        },
+        {
+          "name": "Medical District",
+          "source_url": "https://en.wikipedia.org/wiki/Augusta,_Georgia"
+        },
+        {
+          "name": "Olin Corporation",
+          "source_url": "https://en.wikipedia.org/wiki/Augusta,_Georgia"
+        },
+        {
+          "name": "Richmond County School System",
+          "source_url": "https://en.wikipedia.org/wiki/Augusta,_Georgia"
+        },
+        {
+          "name": "Solo Cup Company",
+          "source_url": "https://en.wikipedia.org/wiki/Augusta,_Georgia"
+        },
+        {
+          "name": "Cardinal Health",
+          "source_url": "https://en.wikipedia.org/wiki/Augusta,_Georgia"
+        },
+        {
+          "name": "Department of Energy",
+          "source_url": null
+        },
+        {
+          "name": "Doctors Hospital",
+          "source_url": "https://en.wikipedia.org/wiki/Augusta,_Georgia"
+        },
+        {
+          "name": "FPL Food",
+          "source_url": "https://en.wikipedia.org/wiki/Augusta,_Georgia"
+        },
+        {
+          "name": "Southern Company",
+          "source_url": "https://www.augustachronicle.com/story/news/2025/06/04/fortune-500s-list-of-the-biggest-corporations-includes-17-in-georgia/84010835007"
+        },
+        {
+          "name": "Augusta Economic Development Authority",
+          "source_url": "https://en.wikipedia.org/wiki/Augusta,_Georgia"
+        },
+        {
+          "name": "Charlie Norwood VA Medical Center",
+          "source_url": "https://en.wikipedia.org/wiki/Augusta,_Georgia"
+        },
+        {
+          "name": "East Central Regional Hospital",
+          "source_url": "https://en.wikipedia.org/wiki/Augusta,_Georgia"
+        }
+      ],
+      "sources": [
+        "https://en.wikipedia.org/wiki/Augusta,_Georgia",
+        "https://en.wikipedia.org/wiki/Augusta_metropolitan_area",
+        "https://www.augustachronicle.com/story/news/2025/06/04/fortune-500s-list-of-the-biggest-corporations-includes-17-in-georgia/84010835007",
+        "https://www.augustachronicle.com/story/business/2024/08/27/georgia-top-companies-forbes-best-employers-by-state-list/74968857007",
+        "https://www.selectgeorgia.com/discover-georgia/industries/contact-centers-georgia",
+        "https://www.selectgeorgia.com/discover-georgia/industries/fortune-500-list",
+        "https://georgia.org/sites/default/files/2018-12/gdecd_board_book_august_2018.pdf",
+        "https://georgia.org/sites/default/files/2020-09/fy20_q4_board_book.pdf"
+      ],
+      "method": "Representative list auto-discovered via Tavily web search across chamber-of-commerce, development-authority and local-news sources. Not exhaustive; ordering approximates source frequency, not headcount."
+    },
     "business_cycle_index": {
       "method": "Stock-Watson coincident (2-input PCA, first principal component (positive co-movement, equal-weight loadings))",
       "components": [
@@ -3357,6 +3429,7 @@
     "acs_housing_characteristics": "live",
     "acs_block_group_income": "live",
     "entrepreneurship": "live",
+    "major_employers": "partial",
     "business_cycle_index": "live",
     "forecast_arima": "live",
     "vitality": "live",
