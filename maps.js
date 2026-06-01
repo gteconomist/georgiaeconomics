@@ -108,7 +108,10 @@ async function drawGAChoropleth(elId, dataPoints, opts) {
   const locations = dataPoints.map(d => d.fips);
   const z         = dataPoints.map(d => d.value);
   const labels    = dataPoints.map(d => d.label || '');
-  const text      = dataPoints.map(d => `<b>${d.label || d.fips} County</b><br>${opts.metricLabel || 'Value'}: ${fmt(d.value)}`);
+  // A dataPoint may supply its own `hoverText` (used e.g. when counties are
+  // shaded by an MSA-level value, where "<name> County" would be wrong).
+  const text      = dataPoints.map(d => d.hoverText
+    || `<b>${d.label || d.fips} County</b><br>${opts.metricLabel || 'Value'}: ${fmt(d.value)}`);
 
   const trace = {
     type: 'choropleth',

@@ -419,6 +419,16 @@
     </div>
   </div>
 
+  <!-- GA-relative rankings (populated from /data/msa.json by loadGARankings()) -->
+  <div id="ga-rank-panel" style="display:none; margin:0 0 18px; padding:12px 16px; background:rgba(26,58,92,0.05); border:1px solid var(--border); border-left:5px solid var(--navy); border-radius:3px;">
+    <div style="display:flex; justify-content:space-between; align-items:baseline; flex-wrap:wrap; gap:8px;">
+      <strong style="color:var(--navy); font-size:13px;">Where this metro ranks among Georgia's 14 MSAs</strong>
+      <span style="font-size:11px; color:var(--ink-soft); font-style:italic;">1 = best in Georgia on each metric <span class="src-pill live" style="margin-left:4px;">Live</span></span>
+    </div>
+    <div id="ga-rank-cells" style="display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr)); gap:12px; margin-top:10px;"></div>
+    <div class="src" style="margin-top:8px;">Source: Georgia Economics MSA comparison dataset (BLS LAUS &amp; QCEW, FHFA, Census, BEA) &mdash; the same data behind the <a href="/msa/">all-metros comparison</a>. Ranks computed across all 14 GA metros.</div>
+  </div>
+
   <!-- Narrative + sidebar -->
   <div class="narrative-grid">
     <aside class="sidebar">
@@ -465,7 +475,11 @@
 
       <p style="font-size: 12px; color: var(--ink-soft); font-style: italic; margin-bottom: 14px;">Every claim in this section is derived from a specific indicator displayed elsewhere on this page; section names in parentheses point to the source. This narrative is generated deterministically from the live data refresh shown in the as-of stamp &mdash; figures update on each refresh.</p>
 
+<<<<<<< Updated upstream
       <p>Augusta's unemployment rate is <strong>3.9%</strong> (Mar 2026) &mdash; yet total nonfarm employment is essentially <strong>flat year-over-year</strong> (<strong>&minus;0.2%</strong>, Current Employment Trends). Breadth has turned down: the diffusion index reads <strong>36</strong> (Diffusion Index), with most major industries below year-ago employment. The movement is sectoral &mdash; education &amp; health (+4.9%) and other services (+1.9%) are still adding jobs, while information (&minus;5.9%) and transportation &amp; utilities (&minus;4.1%) are contracting (Industry Employment).</p>
+=======
+      <p>Augusta's unemployment rate is <strong>3.9%</strong> (Mar 2026) &mdash; the 9th-lowest of Georgia's 14 metros &mdash; yet total nonfarm employment is essentially <strong>flat year-over-year</strong> (<strong>&minus;0.2%</strong>, Current Employment Trends). Breadth has turned down: the diffusion index reads <strong>36</strong> (Diffusion Index), with most major industries below year-ago employment. The movement is sectoral &mdash; education &amp; health (+4.9%) and other services (+1.9%) are still adding jobs, while information (&minus;5.9%) and transportation &amp; utilities (&minus;4.1%) are contracting (Industry Employment).</p>
+>>>>>>> Stashed changes
       <p>The metro's base is tilted toward government: government is <strong>17.5% of employment</strong> versus 10.1% nationally (Comparative Employment) &mdash; location quotients of 1.7, the metro's defining industries (Economic Drivers). The largest sectors by headcount are <strong>government (17.5%)</strong> and <strong>education &amp; health (16.1%)</strong>. The thinner spots are white-collar: financial activities is <strong>3.1%</strong> of jobs (vs. 5.9% US).</p>
       <p>Goods exports totaled <strong>$1.0B</strong> in 2024 (Exports), about <strong>3% of gross metro product</strong> &mdash; a modest trade intensity. Chemicals (<strong>$0.3B</strong>), transportation equipment (<strong>$0.2B</strong>) and machinery (<strong>$0.1B</strong>) lead the basket; USMCA is the largest single destination market.</p>
       <p>House-price growth has cooled to <strong>+3.8% YoY</strong> (House Price Index). The EIG valuation model places Augusta <strong>on its income-implied fair value</strong> (-1% deviation), so prices track local income fundamentals rather than running ahead of them. Builders authorized roughly <strong>3,031 single-family and 1,110 multifamily permits</strong> in 2025 (headline table). Affordability sits above breakeven: the EIG affordability index reads <strong>138</strong> (Housing Affordability) &mdash; a reading over 100 means the median household can qualify for the median home.</p>
@@ -2481,6 +2495,62 @@ function replaceNetMigrationChart(nm) {
   return true;
 }
 
+/** GA-relative rankings panel: fetch the all-metros comparison dataset, compute
+ *  this metro's rank on each metric across the 14 GA MSAs, and render the cells.
+ *  Independent of the per-MSA report JSON; degrades silently if msa.json is absent. */
+async function loadGARankings() {
+  const panel = document.getElementById('ga-rank-panel');
+  const cells = document.getElementById('ga-rank-cells');
+  if (!panel || !cells) return;
+  const MSA_NAME = document.documentElement.dataset.msaName || 'Augusta';
+  let data;
+  try {
+    const res = await fetch('/data/msa.json?v=' + new Date().toISOString().slice(0, 10));
+    if (!res.ok) throw new Error('HTTP ' + res.status);
+    data = await res.json();
+  } catch (err) {
+    console.warn('GA rankings fetch failed:', err);
+    return;  // panel stays hidden
+  }
+  const me = (data.msas || []).find(r => r.short_name === MSA_NAME);
+  if (!me) { console.warn('GA rankings: metro not found in msa.json:', MSA_NAME); return; }
+
+  const n = data.msas.length;
+  const ordinal = (k) => {
+    const s = ['th', 'st', 'nd', 'rd'], v = k % 100;
+    return k + (s[(v - 20) % 10] || s[v] || s[0]);
+  };
+  const fmtVal = (v, unit) => {
+    if (v == null || isNaN(v)) return '—';
+    if (unit === '%')      return v.toFixed(1) + '%';
+    if (unit === '% YoY')  return (v > 0 ? '+' : '') + v.toFixed(1) + '%';
+    if (unit === '/1,000') return v.toFixed(1);
+    if (unit === '$')      return '$' + Math.round(v).toLocaleString();
+    return v.toLocaleString();
+  };
+
+  const html = [];
+  (data.metrics || []).forEach(m => {
+    const mine = me.metrics[m.key];
+    if (mine == null || isNaN(mine)) return;  // skip metrics this metro lacks
+    const vals = data.msas.map(r => r.metrics[m.key]).filter(v => v != null && !isNaN(v));
+    // Rank = (# of metros strictly better than this one) + 1.
+    const better = vals.filter(v => m.lower_is_better ? v < mine : v > mine).length;
+    const rank = better + 1;
+    const denom = vals.length;
+    const color = rank <= 3 ? 'var(--teal)' : (rank > denom - 3 ? 'var(--coral)' : 'var(--navy)');
+    html.push(`
+      <div style="border-left:3px solid ${color}; padding-left:10px;">
+        <div style="font-size:10px; color:var(--ink-soft); text-transform:uppercase; letter-spacing:0.06em; font-weight:700;">${m.label}</div>
+        <div style="font-size:20px; font-weight:800; color:${color}; line-height:1.1; margin:2px 0;">${ordinal(rank)}<span style="font-size:12px; font-weight:600; color:var(--ink-soft);"> of ${denom}</span></div>
+        <div style="font-size:12px; color:var(--ink-soft);">${fmtVal(mine, m.unit)}</div>
+      </div>`);
+  });
+  if (!html.length) return;
+  cells.innerHTML = html.join('');
+  panel.style.display = '';
+}
+
 document.addEventListener('DOMContentLoaded', () => {
   if (typeof Chart === 'undefined') {
     // Chart.js may still be loading (deferred). Retry briefly.
@@ -2496,6 +2566,8 @@ document.addEventListener('DOMContentLoaded', () => {
   }
   // Live-data loader runs independently of chart init
   loadLiveData();
+  // GA-relative rankings (independent of the per-MSA report JSON)
+  loadGARankings();
 });
 </script>
 </body>

@@ -22,6 +22,10 @@ Public API:
 
 from __future__ import annotations
 
+import functools
+import json as _json
+from pathlib import Path as _Path
+
 MONTHS = ["", "January", "February", "March", "April", "May", "June",
           "July", "August", "September", "October", "November", "December"]
 
@@ -223,13 +227,85 @@ def _clean_trade_label(label):
 
 
 # --------------------------------------------------------------------------- #
+# cross-MSA ranks (built from all sibling report JSONs for narrative callouts)
+# --------------------------------------------------------------------------- #
+def _rank_unemployment(d):
+    laus = _sec(d, "laus_unemployment")
+    if laus.get("latest_value") is not None:
+        return laus["latest_value"]
+    return _last(_sec(d, "health_check").get("unemployment_rate"))
+
+
+def _rank_pop_growth(d):
+    return _sec(d, "census_pep").get("latest_yoy")
+
+
+def _rank_job_growth(d):
+    v = _sec(d, "ces_employment").get("latest_yoy")
+    if v is None:
+        v = (_sec(d, "ces_by_supersector").get("sectors", {}).get("Total nonfarm", {}) or {}).get("latest_yoy")
+    return v
+
+
+# metric -> (extractor, lower_is_better)
+_RANK_METRICS = {
+    "unemployment": (_rank_unemployment, True),
+    "pop_growth": (_rank_pop_growth, False),
+    "job_growth": (_rank_job_growth, False),
+}
+
+
+def _ordinal(k):
+    if 10 <= k % 100 <= 20:
+        suf = "th"
+    else:
+        suf = {1: "st", 2: "nd", 3: "rd"}.get(k % 10, "th")
+    return f"{k}{suf}"
+
+
+@functools.lru_cache(maxsize=4)
+def _all_metro_values(json_dir):
+    """{metric: {cbsa: value}} across every report JSON in json_dir. Cached per dir."""
+    out = {m: {} for m in _RANK_METRICS}
+    for path in _Path(json_dir).glob("*.json"):
+        try:
+            d = _json.loads(path.read_text())
+        except Exception:
+            continue
+        cbsa = d.get("cbsa")
+        if not cbsa:
+            continue
+        for metric, (extract, _lb) in _RANK_METRICS.items():
+            v = extract(d)
+            if v is not None:
+                out[metric][cbsa] = v
+    return out
+
+
+def metro_ranks(json_dir, cbsa):
+    """{metric: (rank, n)} for one metro across all GA metros. rank=1 is best."""
+    allv = _all_metro_values(str(json_dir))
+    ranks = {}
+    for metric, (_extract, lower_is_better) in _RANK_METRICS.items():
+        vals = allv[metric]
+        if cbsa not in vals:
+            continue
+        mine = vals[cbsa]
+        better = sum(1 for v in vals.values()
+                     if (v < mine if lower_is_better else v > mine))
+        ranks[metric] = (better + 1, len(vals))
+    return ranks
+
+
+# --------------------------------------------------------------------------- #
 # narrative
 # --------------------------------------------------------------------------- #
 def _p(html):
     return f"      <p>{html}</p>"
 
 
-def build_narrative(data):
+def build_narrative(data, ranks=None):
+    ranks = ranks or {}
     short = data.get("short_name", "the metro")
     secs = data.get("sections") or {}
     as_of = str(data.get("as_of", ""))
@@ -252,7 +328,17 @@ def build_narrative(data):
     rate, when = _unemployment(data)
     if rate is not None:
         whentxt = f" ({when})" if when else ""
-        labor.append(f"{short}'s unemployment rate is <strong>{rate:.1f}%</strong>{whentxt}")
+        clause = f"{short}'s unemployment rate is <strong>{rate:.1f}%</strong>{whentxt}"
+        ur = ranks.get("unemployment")
+        if ur:
+            r, n = ur
+            if r == 1:
+                clause += f" &mdash; the lowest of Georgia's {n} metros"
+            elif r >= n - 1:
+                clause += f" &mdash; among the highest of Georgia's {n} metros ({_ordinal(r)}-lowest)"
+            else:
+                clause += f" &mdash; the {_ordinal(r)}-lowest of Georgia's {n} metros"
+        labor.append(clause)
     yoy_total = (_sec(data, "ces_employment").get("latest_yoy"))
     if yoy_total is None:
         yoy_total = (secs.get("ces_by_supersector", {}).get("sectors", {})
@@ -478,6 +564,13 @@ def build_narrative(data):
             elif pop_yoy <= 0:
                 mult = " &mdash; below the US pace"
             s += f" and grew <strong>{_pct_unsigned(pop_yoy)}</strong> into the latest year (Geographic Profile){mult}"
+            pr = ranks.get("pop_growth")
+            if pr:
+                r, n = pr
+                if r == 1:
+                    s += f", the fastest population growth of Georgia's {n} metros"
+                elif r <= 5:
+                    s += f", the {_ordinal(r)}-fastest population growth among Georgia's {n} metros"
         nm = _last(_sec(data, "census_net_migration").get("net_migration"))
         if nm is not None:
             s += f", with <strong>net migration of {'+' if nm >= 0 else '&minus;'}{abs(int(nm)):,}</strong> the main driver"

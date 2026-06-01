@@ -14,6 +14,9 @@
 <script defer src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
 <!-- Shared charts.js (for BRAND palette + global defaults) -->
 <script defer src="https://cdn.jsdelivr.net/gh/gteconomist/economicsguru@main/assets/charts.js"></script>
+<!-- Plotly + maps.js for the GA MSA choropleth (county polygons shaded by metro) -->
+<script defer src="https://cdn.plot.ly/plotly-2.35.2.min.js"></script>
+<script defer src="/maps.js"></script>
 
 <style>
   /* MSA-page-specific tweaks */
@@ -134,8 +137,8 @@
   <div class="report-banner">
     <div class="icon">&#9656;</div>
     <div class="copy">
-      <h3>New: Metro Economic Profile reports</h3>
-      <p>Full multi-page report for each Georgia MSA — business cycle, employment, housing, demographics, exports, migration. Prepared by <strong>Economic Impact Group, LLC</strong>. <strong>Savannah is live as the first example;</strong> the other 13 are scheduled to ship sequentially.</p>
+      <h3>Metro Economic Profile reports — all 14 live</h3>
+      <p>Full multi-page report for every Georgia MSA — business cycle, employment, housing, demographics, exports, migration. Prepared by <strong>Economic Impact Group, LLC</strong> and refreshed nightly. Click any metro's <strong>View &rarr;</strong> in the table below, or start with the flagship Savannah profile.</p>
     </div>
     <a class="cta" href="/msa/savannah/">See Savannah report &rarr;</a>
   </div>
@@ -148,6 +151,21 @@
     <div class="kpi"><div class="label">Hottest housing market</div><div class="value" id="cl-home-val">—</div><div class="delta" id="cl-home-msa">—</div></div>
     <div class="kpi"><div class="label">Most building activity</div><div class="value" id="cl-permit-val">—</div><div class="delta" id="cl-permit-msa">—</div></div>
     <div class="kpi"><div class="label">Highest GDP / capita</div><div class="value" id="cl-gdp-val">—</div><div class="delta" id="cl-gdp-msa">—</div></div>
+  </div>
+
+  <!-- GA MSA choropleth: each metro's counties shaded by its MSA-level metric -->
+  <div class="map-panel">
+    <h2>Georgia metros, mapped</h2>
+    <p class="sub">
+      Each metro's counties are shaded by its MSA-wide value. Non-metro counties are left blank.
+      Pick a metric to recolor the map.
+    </p>
+    <div class="metro-picker slot-1" style="max-width:320px; margin-bottom:12px;">
+      <label for="choro-metric">Metric</label>
+      <select id="choro-metric"></select>
+    </div>
+    <div id="msa-choropleth" style="height:520px; background:var(--chart-bg);"></div>
+    <div class="map-legend-note">Counties are colored by the value for the metro they belong to (MSA-level data has no sub-county detail). Cross-state metros (Augusta GA-SC, Columbus GA-AL) include their border counties.</div>
   </div>
 
   <!-- Radar comparison panel -->
@@ -301,6 +319,66 @@ async function init() {
   [picker1, picker2, picker3].forEach(sel => sel.addEventListener('change', renderRadar));
   renderRadar();
   renderTable();
+
+  // Choropleth metric picker + initial draw
+  const choroSel = document.getElementById('choro-metric');
+  if (choroSel) {
+    choroSel.innerHTML = '';
+    DATA.metrics.forEach(m => {
+      const opt = document.createElement('option');
+      opt.value = m.key;
+      opt.textContent = m.label;
+      choroSel.appendChild(opt);
+    });
+    choroSel.value = 'unemployment_rate';
+    choroSel.addEventListener('change', () => drawMsaChoropleth(choroSel.value));
+    drawMsaChoropleth(choroSel.value);
+  }
+}
+
+/* ---- GA MSA choropleth: shade each metro's counties by its MSA-level value ---- */
+let COUNTY_INDEX = null;  // fips -> { cbsa, short }
+async function loadCountyIndex() {
+  if (COUNTY_INDEX) return COUNTY_INDEX;
+  const res = await fetch('/data/ga_msa_counties.json');
+  const j = await res.json();
+  COUNTY_INDEX = {};
+  for (const cbsa in j.msas) {
+    const m = j.msas[cbsa];
+    m.counties.forEach(f => { COUNTY_INDEX[f] = { cbsa, short: m.short_name }; });
+  }
+  return COUNTY_INDEX;
+}
+
+async function drawMsaChoropleth(metricKey) {
+  if (!window.gaMaps || !DATA) return;
+  let idx;
+  try { idx = await loadCountyIndex(); }
+  catch (err) { console.warn('county index fetch failed:', err); return; }
+  const metric = DATA.metrics.find(m => m.key === metricKey) || DATA.metrics[0];
+  const byShort = {};
+  DATA.msas.forEach(r => { byShort[r.short_name] = r.metrics[metric.key]; });
+  // Colorbar unit: maps.js understands '%' and '$'; permits + YoY render as plain/percent.
+  const cbUnit = metric.unit === '$' ? '$' : (metric.unit === '/1,000' ? '' : '%');
+  const points = [];
+  for (const fips in idx) {
+    const val = byShort[idx[fips].short];
+    if (val == null) continue;
+    points.push({
+      fips,
+      value: val,
+      hoverText: `<b>${idx[fips].short} metro</b><br>${metric.label}: ${fmt(val, metric.unit)}`,
+    });
+  }
+  try {
+    await window.gaMaps.drawGAChoropleth('msa-choropleth', points, {
+      metricLabel: metric.label,
+      unit: cbUnit,
+      colorscale: metric.lower_is_better ? 'inverse' : 'sequential',
+    });
+  } catch (err) {
+    console.warn('choropleth draw failed:', err);
+  }
 }
 
 function renderRadar() {
@@ -444,16 +522,11 @@ function renderTable() {
       if (val === worstByMetric[m.key]) td.classList.add('worst');
       tr.appendChild(td);
     });
-    // Report column — link if a per-MSA page exists, otherwise "coming soon" pill
-    const REPORTS_LIVE = ['Savannah']; // expand as more reports ship
+    // Report column — every GA MSA now has a live Metro Economic Profile.
     const tdRep = document.createElement('td');
     tdRep.style.textAlign = 'center';
     const slug = row.short_name.toLowerCase().replace(/\s+/g, '-');
-    if (REPORTS_LIVE.includes(row.short_name)) {
-      tdRep.innerHTML = `<a class="report-btn" href="/msa/${slug}/">View &rarr;</a>`;
-    } else {
-      tdRep.innerHTML = `<span class="report-btn soon" title="Scheduled in the report rollout">Soon</span>`;
-    }
+    tdRep.innerHTML = `<a class="report-btn" href="/msa/${slug}/">View &rarr;</a>`;
     tr.appendChild(tdRep);
     body.appendChild(tr);
   });

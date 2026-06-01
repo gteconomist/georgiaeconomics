@@ -31,7 +31,7 @@ from pathlib import Path
 ROOT = Path(__file__).parent.parent
 sys.path.insert(0, str(Path(__file__).parent))
 from _ga_msas import GA_MSAS, COUNTY_TO_MSA  # noqa: E402
-from _msa_narrative import build_narrative, build_scorecard, footer_has_school  # noqa: E402
+from _msa_narrative import build_narrative, build_scorecard, footer_has_school, metro_ranks  # noqa: E402
 
 TEMPLATE = ROOT / "msa" / "savannah" / "index.html"
 JSON_DIR = ROOT / "data" / "msa_reports"
@@ -150,7 +150,8 @@ def generate(target: str) -> Path:
 
     # --- qualitative regions: data-driven narrative + scorecard (Milestone 2) -
     if data:
-        html = _replace_region(html, "NARRATIVE", build_narrative(data))
+        ranks = metro_ranks(JSON_DIR, cbsa)
+        html = _replace_region(html, "NARRATIVE", build_narrative(data, ranks))
         html = _replace_region(html, "SCORECARD", build_scorecard(data))
     else:
         html = _replace_region(html, "NARRATIVE", f"""<!-- GEN:NARRATIVE -->

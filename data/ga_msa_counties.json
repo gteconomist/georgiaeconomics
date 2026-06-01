@@ -1,0 +1,165 @@
+{
+ "_note": "County FIPS per GA MSA (OMB 2023 delineation). Generated from scripts/_ga_msas.py. Used by /msa/ choropleth to shade each metro's counties by its MSA-level metric.",
+ "msas": {
+  "12060": {
+   "short_name": "Atlanta",
+   "full_name": "Atlanta-Sandy Springs-Alpharetta, GA",
+   "counties": [
+    "13013",
+    "13015",
+    "13035",
+    "13045",
+    "13057",
+    "13063",
+    "13067",
+    "13077",
+    "13085",
+    "13089",
+    "13097",
+    "13113",
+    "13117",
+    "13121",
+    "13135",
+    "13143",
+    "13149",
+    "13151",
+    "13159",
+    "13171",
+    "13199",
+    "13211",
+    "13217",
+    "13223",
+    "13227",
+    "13231",
+    "13247",
+    "13255",
+    "13297"
+   ]
+  },
+  "12260": {
+   "short_name": "Augusta",
+   "full_name": "Augusta-Richmond County, GA-SC",
+   "counties": [
+    "13033",
+    "13073",
+    "13181",
+    "13189",
+    "13245",
+    "45003",
+    "45037"
+   ]
+  },
+  "42340": {
+   "short_name": "Savannah",
+   "full_name": "Savannah, GA",
+   "counties": [
+    "13029",
+    "13051",
+    "13103"
+   ]
+  },
+  "17980": {
+   "short_name": "Columbus",
+   "full_name": "Columbus, GA-AL",
+   "counties": [
+    "01113",
+    "13053",
+    "13145",
+    "13197",
+    "13215",
+    "13259",
+    "13263"
+   ]
+  },
+  "31420": {
+   "short_name": "Macon",
+   "full_name": "Macon-Bibb County, GA",
+   "counties": [
+    "13021",
+    "13079",
+    "13169",
+    "13207",
+    "13289"
+   ]
+  },
+  "12020": {
+   "short_name": "Athens",
+   "full_name": "Athens-Clarke County, GA",
+   "counties": [
+    "13059",
+    "13195",
+    "13219",
+    "13221"
+   ]
+  },
+  "23580": {
+   "short_name": "Gainesville",
+   "full_name": "Gainesville, GA",
+   "counties": [
+    "13139"
+   ]
+  },
+  "47580": {
+   "short_name": "Warner Robins",
+   "full_name": "Warner Robins, GA",
+   "counties": [
+    "13153",
+    "13225",
+    "13235"
+   ]
+  },
+  "46660": {
+   "short_name": "Valdosta",
+   "full_name": "Valdosta, GA",
+   "counties": [
+    "13027",
+    "13101",
+    "13173",
+    "13185"
+   ]
+  },
+  "10500": {
+   "short_name": "Albany",
+   "full_name": "Albany, GA",
+   "counties": [
+    "13007",
+    "13095",
+    "13177",
+    "13273",
+    "13321"
+   ]
+  },
+  "19140": {
+   "short_name": "Dalton",
+   "full_name": "Dalton, GA",
+   "counties": [
+    "13213",
+    "13313"
+   ]
+  },
+  "15260": {
+   "short_name": "Brunswick",
+   "full_name": "Brunswick, GA",
+   "counties": [
+    "13025",
+    "13127",
+    "13191"
+   ]
+  },
+  "40660": {
+   "short_name": "Rome",
+   "full_name": "Rome, GA",
+   "counties": [
+    "13115"
+   ]
+  },
+  "25980": {
+   "short_name": "Hinesville",
+   "full_name": "Hinesville, GA",
+   "counties": [
+    "13179",
+    "13183"
+   ]
+  }
+ }
+}

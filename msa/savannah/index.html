@@ -419,6 +419,16 @@
     </div>
   </div>
 
+  <!-- GA-relative rankings (populated from /data/msa.json by loadGARankings()) -->
+  <div id="ga-rank-panel" style="display:none; margin:0 0 18px; padding:12px 16px; background:rgba(26,58,92,0.05); border:1px solid var(--border); border-left:5px solid var(--navy); border-radius:3px;">
+    <div style="display:flex; justify-content:space-between; align-items:baseline; flex-wrap:wrap; gap:8px;">
+      <strong style="color:var(--navy); font-size:13px;">Where this metro ranks among Georgia's 14 MSAs</strong>
+      <span style="font-size:11px; color:var(--ink-soft); font-style:italic;">1 = best in Georgia on each metric <span class="src-pill live" style="margin-left:4px;">Live</span></span>
+    </div>
+    <div id="ga-rank-cells" style="display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr)); gap:12px; margin-top:10px;"></div>
+    <div class="src" style="margin-top:8px;">Source: Georgia Economics MSA comparison dataset (BLS LAUS &amp; QCEW, FHFA, Census, BEA) &mdash; the same data behind the <a href="/msa/">all-metros comparison</a>. Ranks computed across all 14 GA metros.</div>
+  </div>
+
   <!-- Narrative + sidebar -->
   <div class="narrative-grid">
     <aside class="sidebar">
@@ -2516,6 +2526,62 @@ function replaceNetMigrationChart(nm) {
   return true;
 }
 
+/** GA-relative rankings panel: fetch the all-metros comparison dataset, compute
+ *  this metro's rank on each metric across the 14 GA MSAs, and render the cells.
+ *  Independent of the per-MSA report JSON; degrades silently if msa.json is absent. */
+async function loadGARankings() {
+  const panel = document.getElementById('ga-rank-panel');
+  const cells = document.getElementById('ga-rank-cells');
+  if (!panel || !cells) return;
+  const MSA_NAME = document.documentElement.dataset.msaName || 'Savannah';
+  let data;
+  try {
+    const res = await fetch('/data/msa.json?v=' + new Date().toISOString().slice(0, 10));
+    if (!res.ok) throw new Error('HTTP ' + res.status);
+    data = await res.json();
+  } catch (err) {
+    console.warn('GA rankings fetch failed:', err);
+    return;  // panel stays hidden
+  }
+  const me = (data.msas || []).find(r => r.short_name === MSA_NAME);
+  if (!me) { console.warn('GA rankings: metro not found in msa.json:', MSA_NAME); return; }
+
+  const n = data.msas.length;
+  const ordinal = (k) => {
+    const s = ['th', 'st', 'nd', 'rd'], v = k % 100;
+    return k + (s[(v - 20) % 10] || s[v] || s[0]);
+  };
+  const fmtVal = (v, unit) => {
+    if (v == null || isNaN(v)) return '—';
+    if (unit === '%')      return v.toFixed(1) + '%';
+    if (unit === '% YoY')  return (v > 0 ? '+' : '') + v.toFixed(1) + '%';
+    if (unit === '/1,000') return v.toFixed(1);
+    if (unit === '$')      return '$' + Math.round(v).toLocaleString();
+    return v.toLocaleString();
+  };
+
+  const html = [];
+  (data.metrics || []).forEach(m => {
+    const mine = me.metrics[m.key];
+    if (mine == null || isNaN(mine)) return;  // skip metrics this metro lacks
+    const vals = data.msas.map(r => r.metrics[m.key]).filter(v => v != null && !isNaN(v));
+    // Rank = (# of metros strictly better than this one) + 1.
+    const better = vals.filter(v => m.lower_is_better ? v < mine : v > mine).length;
+    const rank = better + 1;
+    const denom = vals.length;
+    const color = rank <= 3 ? 'var(--teal)' : (rank > denom - 3 ? 'var(--coral)' : 'var(--navy)');
+    html.push(`
+      <div style="border-left:3px solid ${color}; padding-left:10px;">
+        <div style="font-size:10px; color:var(--ink-soft); text-transform:uppercase; letter-spacing:0.06em; font-weight:700;">${m.label}</div>
+        <div style="font-size:20px; font-weight:800; color:${color}; line-height:1.1; margin:2px 0;">${ordinal(rank)}<span style="font-size:12px; font-weight:600; color:var(--ink-soft);"> of ${denom}</span></div>
+        <div style="font-size:12px; color:var(--ink-soft);">${fmtVal(mine, m.unit)}</div>
+      </div>`);
+  });
+  if (!html.length) return;
+  cells.innerHTML = html.join('');
+  panel.style.display = '';
+}
+
 document.addEventListener('DOMContentLoaded', () => {
   if (typeof Chart === 'undefined') {
     // Chart.js may still be loading (deferred). Retry briefly.
@@ -2531,6 +2597,8 @@ document.addEventListener('DOMContentLoaded', () => {
   }
   // Live-data loader runs independently of chart init
   loadLiveData();
+  // GA-relative rankings (independent of the per-MSA report JSON)
+  loadGARankings();
 });
 </script>
 </body>
