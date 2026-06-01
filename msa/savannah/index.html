@@ -1545,6 +1545,9 @@ async function loadLiveData() {
     if (replaceNetMigrationChart(nm)) flipSectionPill('netmig-pill', 'live');
   }
 
+  // --- Major employers (representative, auto-discovered) ---
+  renderEmployers(data.sections.major_employers);
+
   // --- Top indicator strip: Vitality + Quality of Life cells ---
   replaceIndicatorStrip(data);
 
@@ -1556,6 +1559,29 @@ async function loadLiveData() {
   cells.innerHTML = liveCells.join('');
   asof.textContent = 'Data refreshed: ' + (data.as_of || 'unknown');
   strip.style.display = 'block';
+}
+
+/** Render the auto-discovered major-employer list into #employers-list (present
+ *  on generated metro pages). No-ops when the table isn't present (the Savannah
+ *  template keeps its hand-curated static table) or when discovery returned too
+ *  few names (the "pending" placeholder stays). */
+function renderEmployers(me) {
+  const tbody = document.getElementById('employers-list');
+  if (!tbody) return;
+  if (!me || !Array.isArray(me.employers) || me.employers.length < 3) return;
+  const esc = (s) => String(s).replace(/[&<>"]/g,
+    c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+  tbody.innerHTML = me.employers.slice(0, 14)
+    .map(e => `<tr><td>${esc(e.name)}</td></tr>`).join('');
+  const src = document.getElementById('employers-src');
+  if (src) {
+    const asof = me.as_of ? ' &middot; as of ' + esc(me.as_of) : '';
+    const links = (me.sources || []).slice(0, 4)
+      .map((u, i) => `<a href="${esc(u)}" target="_blank" rel="noopener">[${i + 1}]</a>`).join(' ');
+    src.innerHTML = `Representative list auto-discovered from public sources `
+      + `(chambers, development authorities, local news)${asof}. Ordering approximates `
+      + `source frequency, not headcount. ${links} <span class="src-pill partial">Representative</span>`;
+  }
 }
 
 /** Replace a cell in the indicators table marked with data-live-cell="<id>". */

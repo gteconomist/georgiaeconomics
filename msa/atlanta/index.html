@@ -468,12 +468,19 @@
 
       <p style="font-size: 12px; color: var(--ink-soft); font-style: italic; margin-bottom: 14px;">Every claim in this section is derived from a specific indicator displayed elsewhere on this page; section names in parentheses point to the source. This narrative is generated deterministically from the live data refresh shown in the as-of stamp &mdash; figures update on each refresh.</p>
 
+      <h3>Labor Market</h3>
       <p>Atlanta's unemployment rate is <strong>3.3%</strong> (Mar 2026) &mdash; the 6th-lowest of Georgia's 14 metros &mdash; yet total nonfarm employment is essentially <strong>flat year-over-year</strong> (<strong>+0.3%</strong>, Current Employment Trends). Breadth is positive but narrowing: the diffusion index reads <strong>50</strong> (Diffusion Index). The movement is sectoral &mdash; education &amp; health (+4.2%) and wholesale trade (+0.9%) are still adding jobs, while information (&minus;1.9%) and transportation &amp; utilities (&minus;1.8%) are contracting (Industry Employment).</p>
+      <h3>Sector Mix</h3>
       <p>The largest sectors by headcount are <strong>professional &amp; business services (18.2%)</strong> and <strong>education &amp; health (15.3%)</strong>.</p>
+      <h3>Trade Exposure</h3>
       <p>Goods exports totaled <strong>$33.4B</strong> in 2024 (Exports), about <strong>6% of gross metro product</strong> &mdash; a modest trade intensity. Transportation equipment (<strong>$9.0B</strong>), computer & electronic products (<strong>$6.6B</strong>) and machinery (<strong>$4.8B</strong>) lead the basket; USMCA is the largest single destination market.</p>
+      <h3>Housing</h3>
       <p>House-price growth has cooled to <strong>+4.2% YoY</strong> (House Price Index). The EIG valuation model places Atlanta <strong>modestly below</strong> income-implied fair value (&minus;3%). Builders authorized roughly <strong>22,356 single-family and 10,535 multifamily permits</strong> in 2025 (headline table). Affordability sits above breakeven: the EIG affordability index reads <strong>110</strong> (Housing Affordability) &mdash; a reading over 100 means the median household can qualify for the median home.</p>
+      <h3>Demographics &amp; Migration</h3>
       <p>Population reached about <strong>6,256,377</strong> (2024) and grew <strong>1.3%</strong> into the latest year (Geographic Profile) &mdash; roughly 2&ndash;3&times; the US pace, the 5th-fastest population growth among Georgia's 14 metros, with <strong>net migration of +36,444</strong> the main driver. The metro's age profile shows median age <strong>37.2</strong>, younger than the US (~39), with Gen Z and Millennials a combined <strong>~42%</strong> of residents (Population by Age). Educational attainment is above the US average, with <strong>42.2%</strong> of adults holding a bachelor's degree or higher.</p>
+      <h3>Inequality &amp; Structural Position</h3>
       <p>A Gini coefficient of <strong>0.47</strong> sits below the US average (~0.48), pointing to broadly middling income inequality (Inequality table). Within the metro, roughly a tenth of neighborhoods report a median household income under $50k; the poverty rate of about <strong>11%</strong> runs below the US average; the industrial diversity score (<strong>0.98</strong>, Industrial Structure) is near the Georgia average.</p>
+      <h3>Synthesis</h3>
       <p>Atlanta pairs real strengths &mdash; a 3.3% unemployment rate, positive in-migration, an EIG credit score of AA- (positive outlook) &mdash; with employment growth slowing (+0.3% YoY).</p>
     </section>
     <!-- /GEN:NARRATIVE -->
@@ -697,9 +704,11 @@
     <div class="report-panel">
       <h3>Major Employers</h3>
       <!-- GEN:EMPLOYERS -->
-      <div class="sub">Largest employers, ranked by approximate size</div>
-      <p style="font-size:12px;color:var(--ink-soft);padding:8px 0;">A representative major-employer list for Atlanta is pending curation (Phase&nbsp;3).</p>
-      <div class="src"><span class="src-pill partial">Pending</span></div>
+      <div class="sub">Largest employers, auto-discovered from public sources</div>
+      <table class="employers-table"><tbody id="employers-list">
+        <tr><td style="color:var(--ink-soft);font-style:italic;">A representative major-employer list for Atlanta is compiled automatically on each data refresh. If none appears here yet, discovery is pending for this metro.</td></tr>
+      </tbody></table>
+      <div class="src" id="employers-src"><span class="src-pill partial">Representative</span></div>
       <!-- /GEN:EMPLOYERS -->
     </div>
 
@@ -1503,6 +1512,9 @@ async function loadLiveData() {
     if (replaceNetMigrationChart(nm)) flipSectionPill('netmig-pill', 'live');
   }
 
+  // --- Major employers (representative, auto-discovered) ---
+  renderEmployers(data.sections.major_employers);
+
   // --- Top indicator strip: Vitality + Quality of Life cells ---
   replaceIndicatorStrip(data);
 
@@ -1514,6 +1526,29 @@ async function loadLiveData() {
   cells.innerHTML = liveCells.join('');
   asof.textContent = 'Data refreshed: ' + (data.as_of || 'unknown');
   strip.style.display = 'block';
+}
+
+/** Render the auto-discovered major-employer list into #employers-list (present
+ *  on generated metro pages). No-ops when the table isn't present (the Atlanta
+ *  template keeps its hand-curated static table) or when discovery returned too
+ *  few names (the "pending" placeholder stays). */
+function renderEmployers(me) {
+  const tbody = document.getElementById('employers-list');
+  if (!tbody) return;
+  if (!me || !Array.isArray(me.employers) || me.employers.length < 3) return;
+  const esc = (s) => String(s).replace(/[&<>"]/g,
+    c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+  tbody.innerHTML = me.employers.slice(0, 14)
+    .map(e => `<tr><td>${esc(e.name)}</td></tr>`).join('');
+  const src = document.getElementById('employers-src');
+  if (src) {
+    const asof = me.as_of ? ' &middot; as of ' + esc(me.as_of) : '';
+    const links = (me.sources || []).slice(0, 4)
+      .map((u, i) => `<a href="${esc(u)}" target="_blank" rel="noopener">[${i + 1}]</a>`).join(' ');
+    src.innerHTML = `Representative list auto-discovered from public sources `
+      + `(chambers, development authorities, local news)${asof}. Ordering approximates `
+      + `source frequency, not headcount. ${links} <span class="src-pill partial">Representative</span>`;
+  }
 }
 
 /** Replace a cell in the indicators table marked with data-live-cell="<id>". */

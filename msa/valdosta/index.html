@@ -460,16 +460,19 @@
 
       <p style="font-size: 12px; color: var(--ink-soft); font-style: italic; margin-bottom: 14px;">Every claim in this section is derived from a specific indicator displayed elsewhere on this page; section names in parentheses point to the source. This narrative is generated deterministically from the live data refresh shown in the as-of stamp &mdash; figures update on each refresh.</p>
 
-<<<<<<< Updated upstream
-      <p>Valdosta's unemployment rate is <strong>3.6%</strong> (Mar 2026) &mdash; yet total nonfarm employment is growing modestly (<strong>+0.5%</strong> YoY, Current Employment Trends). The movement is sectoral &mdash; government (+2.4%) is still adding jobs (Industry Employment).</p>
-=======
+      <h3>Labor Market</h3>
       <p>Valdosta's unemployment rate is <strong>3.6%</strong> (Mar 2026) &mdash; the 8th-lowest of Georgia's 14 metros &mdash; yet total nonfarm employment is growing modestly (<strong>+0.5%</strong> YoY, Current Employment Trends). The movement is sectoral &mdash; government (+2.4%) is still adding jobs (Industry Employment).</p>
->>>>>>> Stashed changes
+      <h3>Sector Mix</h3>
       <p>The metro's base is tilted toward government: government is <strong>22.7% of employment</strong> versus 10.1% nationally (Comparative Employment) &mdash; location quotients of 2.2, the metro's defining industries (Economic Drivers). The largest sectors by headcount are <strong>government (22.7%)</strong> and <strong>retail trade (12.5%)</strong>.</p>
+      <h3>Trade Exposure</h3>
       <p>Goods exports totaled <strong>$0.3B</strong> in 2024 (Exports), about <strong>4% of gross metro product</strong> &mdash; a modest trade intensity. Chemicals (<strong>$0.1B</strong>) leads the basket; USMCA is the largest single destination market.</p>
+      <h3>Housing</h3>
       <p>House prices are still rising briskly (<strong>+6.6% YoY</strong>, House Price Index). The EIG valuation model places Valdosta <strong>on its income-implied fair value</strong> (2% deviation), so prices track local income fundamentals rather than running ahead of them. Builders authorized roughly <strong>663 single-family and 242 multifamily permits</strong> in 2025 (headline table). Affordability sits above breakeven: the EIG affordability index reads <strong>128</strong> (Housing Affordability) &mdash; a reading over 100 means the median household can qualify for the median home.</p>
+      <h3>Demographics &amp; Migration</h3>
       <p>Population reached about <strong>150,188</strong> (2024) and grew <strong>0.7%</strong> into the latest year (Geographic Profile), with <strong>net migration of +94</strong> the main driver. The metro's age profile shows median age <strong>33.2</strong>, younger than the US (~39), with Gen Z and Millennials a combined <strong>~45%</strong> of residents (Population by Age). Educational attainment is below the US average, with <strong>25.5%</strong> of adults holding a bachelor's degree or higher.</p>
+      <h3>Inequality &amp; Structural Position</h3>
       <p>A Gini coefficient of <strong>0.49</strong> sits above the US average (~0.48), pointing to broadly middling income inequality (Inequality table). Within the metro, roughly a third of neighborhoods report a median household income under $50k; the poverty rate of about <strong>20%</strong> runs above the US average; the industrial diversity score (<strong>0.70</strong>, Industrial Structure) is below the Georgia average.</p>
+      <h3>Synthesis</h3>
       <p>Valdosta pairs real strengths &mdash; positive in-migration, on-trend home valuations, an EIG credit score of BBB+ (stable outlook) &mdash; with employment growth slowing (+0.5% YoY).</p>
     </section>
     <!-- /GEN:NARRATIVE -->
@@ -693,9 +696,11 @@
     <div class="report-panel">
       <h3>Major Employers</h3>
       <!-- GEN:EMPLOYERS -->
-      <div class="sub">Largest employers, ranked by approximate size</div>
-      <p style="font-size:12px;color:var(--ink-soft);padding:8px 0;">A representative major-employer list for Valdosta is pending curation (Phase&nbsp;3).</p>
-      <div class="src"><span class="src-pill partial">Pending</span></div>
+      <div class="sub">Largest employers, auto-discovered from public sources</div>
+      <table class="employers-table"><tbody id="employers-list">
+        <tr><td style="color:var(--ink-soft);font-style:italic;">A representative major-employer list for Valdosta is compiled automatically on each data refresh. If none appears here yet, discovery is pending for this metro.</td></tr>
+      </tbody></table>
+      <div class="src" id="employers-src"><span class="src-pill partial">Representative</span></div>
       <!-- /GEN:EMPLOYERS -->
     </div>
 
@@ -1499,6 +1504,9 @@ async function loadLiveData() {
     if (replaceNetMigrationChart(nm)) flipSectionPill('netmig-pill', 'live');
   }
 
+  // --- Major employers (representative, auto-discovered) ---
+  renderEmployers(data.sections.major_employers);
+
   // --- Top indicator strip: Vitality + Quality of Life cells ---
   replaceIndicatorStrip(data);
 
@@ -1510,6 +1518,29 @@ async function loadLiveData() {
   cells.innerHTML = liveCells.join('');
   asof.textContent = 'Data refreshed: ' + (data.as_of || 'unknown');
   strip.style.display = 'block';
+}
+
+/** Render the auto-discovered major-employer list into #employers-list (present
+ *  on generated metro pages). No-ops when the table isn't present (the Valdosta
+ *  template keeps its hand-curated static table) or when discovery returned too
+ *  few names (the "pending" placeholder stays). */
+function renderEmployers(me) {
+  const tbody = document.getElementById('employers-list');
+  if (!tbody) return;
+  if (!me || !Array.isArray(me.employers) || me.employers.length < 3) return;
+  const esc = (s) => String(s).replace(/[&<>"]/g,
+    c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+  tbody.innerHTML = me.employers.slice(0, 14)
+    .map(e => `<tr><td>${esc(e.name)}</td></tr>`).join('');
+  const src = document.getElementById('employers-src');
+  if (src) {
+    const asof = me.as_of ? ' &middot; as of ' + esc(me.as_of) : '';
+    const links = (me.sources || []).slice(0, 4)
+      .map((u, i) => `<a href="${esc(u)}" target="_blank" rel="noopener">[${i + 1}]</a>`).join(' ');
+    src.innerHTML = `Representative list auto-discovered from public sources `
+      + `(chambers, development authorities, local news)${asof}. Ordering approximates `
+      + `source frequency, not headcount. ${links} <span class="src-pill partial">Representative</span>`;
+  }
 }
 
 /** Replace a cell in the indicators table marked with data-live-cell="<id>". */

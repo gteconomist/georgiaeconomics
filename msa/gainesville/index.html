@@ -470,12 +470,19 @@
 
       <p style="font-size: 12px; color: var(--ink-soft); font-style: italic; margin-bottom: 14px;">Every claim in this section is derived from a specific indicator displayed elsewhere on this page; section names in parentheses point to the source. This narrative is generated deterministically from the live data refresh shown in the as-of stamp &mdash; figures update on each refresh.</p>
 
+      <h3>Labor Market</h3>
       <p>Gainesville's unemployment rate is <strong>2.8%</strong> (Mar 2026) &mdash; the lowest of Georgia's 14 metros &mdash; yet total nonfarm employment is growing modestly (<strong>+0.6%</strong> YoY, Current Employment Trends). Breadth is broad: the diffusion index reads <strong>64</strong> (Diffusion Index), so most major industries are adding jobs. The movement is sectoral &mdash; retail trade (+6.1%) and leisure &amp; hospitality (+4.5%) are still adding jobs, while manufacturing (&minus;2.4%) and wholesale trade (&minus;1.9%) are contracting (Industry Employment).</p>
+      <h3>Sector Mix</h3>
       <p>The metro's base is tilted toward manufacturing: manufacturing is <strong>22.5% of employment</strong> versus 8.6% nationally (Comparative Employment) &mdash; location quotients of 2.6, the metro's defining industries (Economic Drivers). The largest sectors by headcount are <strong>manufacturing (22.5%)</strong> and <strong>education &amp; health (17.5%)</strong>. The thinner spots are white-collar: professional &amp; business services is <strong>10.0%</strong> of jobs (vs. 15.2% US) and financial activities is <strong>3.1%</strong> of jobs (vs. 6.0% US). On pay, professional-services pay averages <strong>$78,105</strong> a year against $101,525 nationally while manufacturing averages <strong>$59,332</strong> (QCEW, where disclosed).</p>
+      <h3>Trade Exposure</h3>
       <p>Goods exports totaled <strong>$1.0B</strong> in 2024 (Exports), about <strong>5% of gross metro product</strong> &mdash; a modest trade intensity. Machinery (<strong>$0.3B</strong>), processed foods (<strong>$0.2B</strong>) and transportation equipment (<strong>$0.2B</strong>) lead the basket; USMCA is the largest single destination market.</p>
+      <h3>Housing</h3>
       <p>House-price growth has cooled to <strong>+3.7% YoY</strong> (House Price Index). The EIG valuation model places Gainesville <strong>on its income-implied fair value</strong> (-1% deviation), so prices track local income fundamentals rather than running ahead of them. Builders authorized roughly <strong>1,461 single-family and 535 multifamily permits</strong> in 2025 (headline table). Affordability sits above breakeven: the EIG affordability index reads <strong>104</strong> (Housing Affordability) &mdash; a reading over 100 means the median household can qualify for the median home.</p>
+      <h3>Demographics &amp; Migration</h3>
       <p>Population reached about <strong>212,705</strong> (2024) and grew <strong>2.1%</strong> into the latest year (Geographic Profile) &mdash; roughly 2&ndash;3&times; the US pace, the fastest population growth of Georgia's 14 metros, with <strong>net migration of +1,925</strong> the main driver. The metro's age profile shows median age <strong>38.4</strong>, younger than the US (~39), with Gen Z and Millennials a combined <strong>~39%</strong> of residents (Population by Age). Educational attainment is below the US average, with <strong>27.3%</strong> of adults holding a bachelor's degree or higher.</p>
+      <h3>Inequality &amp; Structural Position</h3>
       <p>A Gini coefficient of <strong>0.45</strong> sits below the US average (~0.48), pointing to broadly middling income inequality (Inequality table). Within the metro, roughly a tenth of neighborhoods report a median household income under $50k; the poverty rate of about <strong>12%</strong> runs near the US average; the industrial diversity score (<strong>0.71</strong>, Industrial Structure) is below the Georgia average.</p>
+      <h3>Synthesis</h3>
       <p>Gainesville pairs real strengths &mdash; a 2.8% unemployment rate, positive in-migration, on-trend home valuations, an EIG credit score of AA- (stable outlook) &mdash; with employment growth slowing (+0.6% YoY).</p>
     </section>
     <!-- /GEN:NARRATIVE -->
@@ -699,9 +706,11 @@
     <div class="report-panel">
       <h3>Major Employers</h3>
       <!-- GEN:EMPLOYERS -->
-      <div class="sub">Largest employers, ranked by approximate size</div>
-      <p style="font-size:12px;color:var(--ink-soft);padding:8px 0;">A representative major-employer list for Gainesville is pending curation (Phase&nbsp;3).</p>
-      <div class="src"><span class="src-pill partial">Pending</span></div>
+      <div class="sub">Largest employers, auto-discovered from public sources</div>
+      <table class="employers-table"><tbody id="employers-list">
+        <tr><td style="color:var(--ink-soft);font-style:italic;">A representative major-employer list for Gainesville is compiled automatically on each data refresh. If none appears here yet, discovery is pending for this metro.</td></tr>
+      </tbody></table>
+      <div class="src" id="employers-src"><span class="src-pill partial">Representative</span></div>
       <!-- /GEN:EMPLOYERS -->
     </div>
 
@@ -1505,6 +1514,9 @@ async function loadLiveData() {
     if (replaceNetMigrationChart(nm)) flipSectionPill('netmig-pill', 'live');
   }
 
+  // --- Major employers (representative, auto-discovered) ---
+  renderEmployers(data.sections.major_employers);
+
   // --- Top indicator strip: Vitality + Quality of Life cells ---
   replaceIndicatorStrip(data);
 
@@ -1516,6 +1528,29 @@ async function loadLiveData() {
   cells.innerHTML = liveCells.join('');
   asof.textContent = 'Data refreshed: ' + (data.as_of || 'unknown');
   strip.style.display = 'block';
+}
+
+/** Render the auto-discovered major-employer list into #employers-list (present
+ *  on generated metro pages). No-ops when the table isn't present (the Gainesville
+ *  template keeps its hand-curated static table) or when discovery returned too
+ *  few names (the "pending" placeholder stays). */
+function renderEmployers(me) {
+  const tbody = document.getElementById('employers-list');
+  if (!tbody) return;
+  if (!me || !Array.isArray(me.employers) || me.employers.length < 3) return;
+  const esc = (s) => String(s).replace(/[&<>"]/g,
+    c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+  tbody.innerHTML = me.employers.slice(0, 14)
+    .map(e => `<tr><td>${esc(e.name)}</td></tr>`).join('');
+  const src = document.getElementById('employers-src');
+  if (src) {
+    const asof = me.as_of ? ' &middot; as of ' + esc(me.as_of) : '';
+    const links = (me.sources || []).slice(0, 4)
+      .map((u, i) => `<a href="${esc(u)}" target="_blank" rel="noopener">[${i + 1}]</a>`).join(' ');
+    src.innerHTML = `Representative list auto-discovered from public sources `
+      + `(chambers, development authorities, local news)${asof}. Ordering approximates `
+      + `source frequency, not headcount. ${links} <span class="src-pill partial">Representative</span>`;
+  }
 }
 
 /** Replace a cell in the indicators table marked with data-live-cell="<id>". */

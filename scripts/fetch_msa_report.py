@@ -92,7 +92,7 @@ def _time_limit(seconds: int):
 
 # Per-source fetchers (each module in scripts/reporting/)
 from reporting import (pull_bls, pull_fhfa, pull_census, pull_bea, pull_irs_soi,
-                       pull_ita, pull_bps, pull_epa, pull_schoolfin)
+                       pull_ita, pull_bps, pull_epa, pull_schoolfin, pull_employers)
 
 # Phase 2 composite/forecast models (each module in scripts/modeling/)
 from modeling import (business_cycle_index, forecast_arima, vitality, quality_of_life,
@@ -252,6 +252,14 @@ def run_school_finance(cbsa: str):
     return data, "live"
 
 
+def run_major_employers(cbsa: str):
+    short, full, _pop = MSA_BY_CBSA[cbsa]
+    data = pull_employers.fetch(cbsa, short, full)
+    if data is None:
+        return None, "failed"   # orchestrator keeps any prior list (status -> stale)
+    return data, "partial"      # representative, not an authoritative feed
+
+
 def run_acs_age_structure(cbsa: str):
     data = pull_census.fetch_acs_age_structure(cbsa)
     if data is None:
@@ -300,6 +308,7 @@ SECTIONS = [
     ("acs_housing_characteristics", run_acs_housing_characteristics),
     ("acs_block_group_income",  run_acs_block_group_income),
     ("entrepreneurship",        run_entrepreneurship),
+    ("major_employers",         run_major_employers),
 ]
 
 

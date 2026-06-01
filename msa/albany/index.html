@@ -461,16 +461,19 @@
 
       <p style="font-size: 12px; color: var(--ink-soft); font-style: italic; margin-bottom: 14px;">Every claim in this section is derived from a specific indicator displayed elsewhere on this page; section names in parentheses point to the source. This narrative is generated deterministically from the live data refresh shown in the as-of stamp &mdash; figures update on each refresh.</p>
 
-<<<<<<< Updated upstream
-      <p>Albany's unemployment rate is <strong>4.0%</strong> (Mar 2026) &mdash; yet total nonfarm employment is <strong>contracting</strong> (&minus;2.8% YoY, Current Employment Trends). The movement is sectoral &mdash; retail trade (&minus;2.7%) is contracting (Industry Employment).</p>
-=======
+      <h3>Labor Market</h3>
       <p>Albany's unemployment rate is <strong>4.0%</strong> (Mar 2026) &mdash; the 12th-lowest of Georgia's 14 metros &mdash; yet total nonfarm employment is <strong>contracting</strong> (&minus;2.8% YoY, Current Employment Trends). The movement is sectoral &mdash; retail trade (&minus;2.7%) is contracting (Industry Employment).</p>
->>>>>>> Stashed changes
+      <h3>Sector Mix</h3>
       <p>The metro's base is tilted toward government: government is <strong>18.7% of employment</strong> versus 10.1% nationally (Comparative Employment) &mdash; location quotients of 1.8, the metro's defining industries (Economic Drivers). The largest sectors by headcount are <strong>government (18.7%)</strong> and <strong>retail trade (11.9%)</strong>.</p>
+      <h3>Trade Exposure</h3>
       <p>Goods exports totaled <strong>$0.3B</strong> in 2024 (Exports), about <strong>3% of gross metro product</strong> &mdash; a modest trade intensity. S. America is the largest single destination market.</p>
+      <h3>Housing</h3>
       <p>House-price growth has cooled to <strong>+4.4% YoY</strong> (House Price Index). The EIG valuation model places Albany <strong>modestly above</strong> income-implied fair value (+4%). Builders authorized roughly <strong>141 single-family and 51 multifamily permits</strong> in 2025 (headline table). Affordability sits above breakeven: the EIG affordability index reads <strong>163</strong> (Housing Affordability) &mdash; a reading over 100 means the median household can qualify for the median home.</p>
+      <h3>Demographics &amp; Migration</h3>
       <p>Population reached about <strong>146,018</strong> (2024) and grew <strong>-0.5%</strong> into the latest year (Geographic Profile) &mdash; below the US pace, with <strong>net migration of &minus;150</strong> the main driver. The metro's age profile shows median age <strong>38.1</strong>, younger than the US (~39), with Gen Z and Millennials a combined <strong>~39%</strong> of residents (Population by Age). Educational attainment is below the US average, with <strong>23.1%</strong> of adults holding a bachelor's degree or higher.</p>
+      <h3>Inequality &amp; Structural Position</h3>
       <p>A Gini coefficient of <strong>0.46</strong> sits below the US average (~0.48), pointing to broadly middling income inequality (Inequality table). Within the metro, roughly a third of neighborhoods report a median household income under $50k; the poverty rate of about <strong>21%</strong> runs above the US average; the industrial diversity score (<strong>0.87</strong>, Industrial Structure) is below the Georgia average.</p>
+      <h3>Synthesis</h3>
       <p>Albany pairs real strengths &mdash; an EIG credit score of BB+ (stable outlook) &mdash; with employment growth slowing (&minus;2.8% YoY).</p>
     </section>
     <!-- /GEN:NARRATIVE -->
@@ -694,9 +697,11 @@
     <div class="report-panel">
       <h3>Major Employers</h3>
       <!-- GEN:EMPLOYERS -->
-      <div class="sub">Largest employers, ranked by approximate size</div>
-      <p style="font-size:12px;color:var(--ink-soft);padding:8px 0;">A representative major-employer list for Albany is pending curation (Phase&nbsp;3).</p>
-      <div class="src"><span class="src-pill partial">Pending</span></div>
+      <div class="sub">Largest employers, auto-discovered from public sources</div>
+      <table class="employers-table"><tbody id="employers-list">
+        <tr><td style="color:var(--ink-soft);font-style:italic;">A representative major-employer list for Albany is compiled automatically on each data refresh. If none appears here yet, discovery is pending for this metro.</td></tr>
+      </tbody></table>
+      <div class="src" id="employers-src"><span class="src-pill partial">Representative</span></div>
       <!-- /GEN:EMPLOYERS -->
     </div>
 
@@ -1500,6 +1505,9 @@ async function loadLiveData() {
     if (replaceNetMigrationChart(nm)) flipSectionPill('netmig-pill', 'live');
   }
 
+  // --- Major employers (representative, auto-discovered) ---
+  renderEmployers(data.sections.major_employers);
+
   // --- Top indicator strip: Vitality + Quality of Life cells ---
   replaceIndicatorStrip(data);
 
@@ -1511,6 +1519,29 @@ async function loadLiveData() {
   cells.innerHTML = liveCells.join('');
   asof.textContent = 'Data refreshed: ' + (data.as_of || 'unknown');
   strip.style.display = 'block';
+}
+
+/** Render the auto-discovered major-employer list into #employers-list (present
+ *  on generated metro pages). No-ops when the table isn't present (the Albany
+ *  template keeps its hand-curated static table) or when discovery returned too
+ *  few names (the "pending" placeholder stays). */
+function renderEmployers(me) {
+  const tbody = document.getElementById('employers-list');
+  if (!tbody) return;
+  if (!me || !Array.isArray(me.employers) || me.employers.length < 3) return;
+  const esc = (s) => String(s).replace(/[&<>"]/g,
+    c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+  tbody.innerHTML = me.employers.slice(0, 14)
+    .map(e => `<tr><td>${esc(e.name)}</td></tr>`).join('');
+  const src = document.getElementById('employers-src');
+  if (src) {
+    const asof = me.as_of ? ' &middot; as of ' + esc(me.as_of) : '';
+    const links = (me.sources || []).slice(0, 4)
+      .map((u, i) => `<a href="${esc(u)}" target="_blank" rel="noopener">[${i + 1}]</a>`).join(' ');
+    src.innerHTML = `Representative list auto-discovered from public sources `
+      + `(chambers, development authorities, local news)${asof}. Ordering approximates `
+      + `source frequency, not headcount. ${links} <span class="src-pill partial">Representative</span>`;
+  }
 }
 
 /** Replace a cell in the indicators table marked with data-live-cell="<id>". */

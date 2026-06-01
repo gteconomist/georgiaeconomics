@@ -304,6 +304,12 @@ def _p(html):
     return f"      <p>{html}</p>"
 
 
+def _section(title, html):
+    """A narrative subsection: <h3> header + paragraph. Emitted only when the
+    paragraph has content, so metros missing a whole topic simply skip it."""
+    return f"      <h3>{title}</h3>\n      <p>{html}</p>"
+
+
 def build_narrative(data, ranks=None):
     ranks = ranks or {}
     short = data.get("short_name", "the metro")
@@ -394,7 +400,7 @@ def build_narrative(data, ranks=None):
             if parts:
                 sent += (" The movement is sectoral &mdash; " + ", while ".join(parts)
                          + " (Industry Employment).")
-        out.append(_p(sent))
+        out.append(_section("Labor Market", sent))
 
     # ---- Sector Mix --------------------------------------------------------
     if shares:
@@ -446,7 +452,7 @@ def build_narrative(data, ranks=None):
         if wage_bits:
             mix.append("On pay, " + " while ".join(wage_bits) + " (QCEW, where disclosed).")
         if mix:
-            out.append(_p(" ".join(mix)))
+            out.append(_section("Sector Mix", " ".join(mix)))
 
     # ---- Trade Exposure ----------------------------------------------------
     ex = _sec(data, "ita_msa_exports")
@@ -498,7 +504,7 @@ def build_narrative(data, ranks=None):
         if tail:
             s = "; ".join(tail) + "."
             trade.append(s[0].upper() + s[1:])
-        out.append(_p(" ".join(trade)))
+        out.append(_section("Trade Exposure", " ".join(trade)))
 
     # ---- Housing -----------------------------------------------------------
     house = []
@@ -545,7 +551,7 @@ def build_narrative(data, ranks=None):
             house.append(f"Affordability sits below breakeven: the EIG affordability index reads <strong>{aff:.0f}</strong> "
                          "(Housing Affordability) &mdash; a reading under 100 means the median household falls short of qualifying for the median home")
     if house:
-        out.append(_p(". ".join(house) + "."))
+        out.append(_section("Housing", ". ".join(house) + "."))
 
     # ---- Demographics & Migration -----------------------------------------
     pep = _sec(data, "census_pep")
@@ -593,7 +599,7 @@ def build_narrative(data, ranks=None):
         demo.append(f"Educational attainment is {rel} the US average, with <strong>{edu:.1f}%</strong> "
                     "of adults holding a bachelor's degree or higher.")
     if demo:
-        out.append(_p(" ".join(demo)))
+        out.append(_section("Demographics &amp; Migration", " ".join(demo)))
 
     # ---- Inequality & Structural Position ----------------------------------
     vals = _sec(data, "census_acs_demographics").get("values") or {}
@@ -631,7 +637,7 @@ def build_narrative(data, ranks=None):
         if rest:
             rest[0] = rest[0][0].upper() + rest[0][1:]
             s += "; ".join(rest) + "."
-        out.append(_p(s.strip()))
+        out.append(_section("Inequality &amp; Structural Position", s.strip()))
 
     # ---- Synthesis ---------------------------------------------------------
     synth_strengths = []
@@ -668,7 +674,7 @@ def build_narrative(data, ranks=None):
         else:
             synth.append(f"{short}'s economy enters the latest reading {tail}")
     if synth:
-        out.append(_p("".join(synth)))
+        out.append(_section("Synthesis", "".join(synth)))
 
     body = "\n".join(out) if out else (
         f'      <p style="font-size:13px;color:var(--ink-soft);font-style:italic;">'

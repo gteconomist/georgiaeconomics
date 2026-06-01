@@ -179,9 +179,11 @@ def generate(target: str) -> Path:
             "Chatham/Effingham/Bryan districts)", "")
 
     html = _replace_region(html, "EMPLOYERS", f"""<!-- GEN:EMPLOYERS -->
-      <div class="sub">Largest employers, ranked by approximate size</div>
-      <p style="font-size:12px;color:var(--ink-soft);padding:8px 0;">A representative major-employer list for {short} is pending curation (Phase&nbsp;3).</p>
-      <div class="src"><span class="src-pill partial">Pending</span></div>
+      <div class="sub">Largest employers, auto-discovered from public sources</div>
+      <table class="employers-table"><tbody id="employers-list">
+        <tr><td style="color:var(--ink-soft);font-style:italic;">A representative major-employer list for {short} is compiled automatically on each data refresh. If none appears here yet, discovery is pending for this metro.</td></tr>
+      </tbody></table>
+      <div class="src" id="employers-src"><span class="src-pill partial">Representative</span></div>
       <!-- /GEN:EMPLOYERS -->""")
 
     out_path = OUT_DIR / slug / "index.html"
