@@ -31,6 +31,7 @@ from pathlib import Path
 ROOT = Path(__file__).parent.parent
 sys.path.insert(0, str(Path(__file__).parent))
 from _ga_msas import GA_MSAS, COUNTY_TO_MSA  # noqa: E402
+from _msa_narrative import build_narrative, build_scorecard, footer_has_school  # noqa: E402
 
 TEMPLATE = ROOT / "msa" / "savannah" / "index.html"
 JSON_DIR = ROOT / "data" / "msa_reports"
@@ -108,6 +109,10 @@ def generate(target: str) -> Path:
     as_of = _as_of_label(slug)
     month_year = as_of.replace("As of ", "")
 
+    # Load the metro's JSON once for the data-driven qualitative regions.
+    json_path = JSON_DIR / f"{slug}.json"
+    data = json.loads(json_path.read_text()) if json_path.exists() else {}
+
     html = TEMPLATE.read_text()
 
     # --- shell: <html> attributes -------------------------------------------
@@ -143,20 +148,34 @@ def generate(target: str) -> Path:
     # default) is left untouched.
     html = re.sub(r"\bSavannah\b", short, html)
 
-    # --- qualitative regions: stub until Milestone 2 -------------------------
-    html = _replace_region(html, "NARRATIVE", f"""<!-- GEN:NARRATIVE -->
+    # --- qualitative regions: data-driven narrative + scorecard (Milestone 2) -
+    if data:
+        html = _replace_region(html, "NARRATIVE", build_narrative(data))
+        html = _replace_region(html, "SCORECARD", build_scorecard(data))
+    else:
+        html = _replace_region(html, "NARRATIVE", f"""<!-- GEN:NARRATIVE -->
     <section class="analysis">
       <h2>Analysis<span class="as-of-stamp">{month_year} &middot; Economic Impact Group, LLC</span></h2>
-      <p style="font-size:13px;color:var(--ink-soft);font-style:italic;padding:8px 0;">Metro-specific written analysis for {short} is generated from this page's live indicators in a later build step (Phase&nbsp;3, Milestone&nbsp;2). The charts and tables on this page are live for {short}; this narrative is a placeholder.</p>
+      <p style="font-size:13px;color:var(--ink-soft);font-style:italic;padding:8px 0;">No data file is available for {short}; the written analysis cannot be generated.</p>
     </section>
     <!-- /GEN:NARRATIVE -->""")
-
-    html = _replace_region(html, "SCORECARD", f"""<!-- GEN:SCORECARD -->
+        html = _replace_region(html, "SCORECARD", f"""<!-- GEN:SCORECARD -->
       <div class="box strengths">
         <h3>Scorecard</h3>
-        <p style="font-size:12px;color:var(--ink-soft);">Strengths, weaknesses and risk factors for {short} are generated from live data in Phase&nbsp;3 (Milestone&nbsp;2).</p>
+        <p style="font-size:12px;color:var(--ink-soft);">No data file is available for {short}.</p>
       </div>
       <!-- /GEN:SCORECARD -->""")
+
+    # Footer methodology: the QoL school-spending clause only applies to metros
+    # with F-33 data (Savannah today). Drop it elsewhere so we don't name
+    # Savannah's Chatham/Effingham/Bryan districts on other metros' pages.
+    if not (data and footer_has_school(data)):
+        html = html.replace(
+            ", and enrollment-weighted per-pupil school spending (Census F-33, "
+            "Chatham/Effingham/Bryan districts)", "")
+        html = html.replace(
+            " and enrollment-weighted per-pupil school spending (Census F-33, "
+            "Chatham/Effingham/Bryan districts)", "")
 
     html = _replace_region(html, "EMPLOYERS", f"""<!-- GEN:EMPLOYERS -->
       <div class="sub">Largest employers, ranked by approximate size</div>
