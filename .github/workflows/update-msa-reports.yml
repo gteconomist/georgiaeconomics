@@ -49,14 +49,32 @@ jobs:
           if [ -n "$SECTIONS" ]; then ARGS="$ARGS --sections $SECTIONS"; fi
           python3 scripts/fetch_msa_report.py $ARGS
 
-      - name: Commit refreshed JSON
+      - name: Generate report pages
+        # Rebuild the static HTML pages from the freshly-fetched JSON so the
+        # narrative + scorecard prose always matches the latest data. Output is
+        # deterministic, so unchanged pages produce no git diff. Savannah is the
+        # canonical hand-maintained template and is never regenerated.
+        run: |
+          TARGET="${{ github.event.inputs.target }}"
+          if [ -z "$TARGET" ]; then
+            python3 scripts/generate_msa_pages.py --all
+          else
+            LC=$(echo "$TARGET" | tr '[:upper:]' '[:lower:]')
+            if [ "$LC" = "savannah" ] || [ "$LC" = "42340" ]; then
+              echo "Savannah is the canonical template; skipping page generation."
+            else
+              python3 scripts/generate_msa_pages.py "$TARGET"
+            fi
+          fi
+
+      - name: Commit refreshed JSON + pages
         run: |
           git config user.name  "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/msa_reports/
+          git add data/msa_reports/ msa/
           if git diff --cached --quiet; then
             echo "No changes to commit."
           else
-            git commit -m "chore(msa-reports): nightly data refresh $(date -u +%F)"
+            git commit -m "chore(msa-reports): nightly data + page refresh $(date -u +%F)"
             git push
           fi
