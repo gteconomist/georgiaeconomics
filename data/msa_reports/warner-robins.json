@@ -3,7 +3,7 @@
   "short_name": "Warner Robins",
   "full_name": "Warner Robins, GA",
   "population": 199000,
-  "as_of": "2026-05-31",
+  "as_of": "2026-06-01",
   "sections": {
     "ces_employment": {
       "series_id": "SMS13475800000000001",
@@ -1243,193 +1243,147 @@
     },
     "qcew_industry_shares": {
       "year": 2025,
-      "quarter": 2,
-      "as_of_label": "2025 Q2",
-      "msa": {
-        "Construction": {
-          "employment": 2632,
-          "avg_annual_wage": 71968,
-          "share_pct": 5.65
-        },
-        "Manufacturing": {
-          "employment": 8712,
-          "avg_annual_wage": 65988,
-          "share_pct": 18.69
-        },
-        "Retail Trade": {
-          "employment": 9233,
-          "avg_annual_wage": 35828,
-          "share_pct": 19.81
-        },
-        "Information": {
-          "employment": 360,
-          "avg_annual_wage": 76024,
-          "share_pct": 0.77
-        },
-        "Financial Activities": {
-          "employment": 1729,
-          "avg_annual_wage": 66111,
-          "share_pct": 3.71
-        },
-        "Prof. & Bus. Services": {
-          "employment": 6423,
-          "avg_annual_wage": 74929,
-          "share_pct": 13.78
-        },
-        "Education & Health Services": {
-          "employment": 6173,
-          "avg_annual_wage": 48216,
-          "share_pct": 13.25
-        },
-        "Leisure & Hospitality": {
-          "employment": 9740,
-          "avg_annual_wage": 20345,
-          "share_pct": 20.9
-        },
-        "Other Services": {
-          "employment": 1601,
-          "avg_annual_wage": 44668,
-          "share_pct": 3.44
-        }
-      },
+      "quarter": 3,
+      "as_of_label": "2025 Q3",
+      "msa": {},
       "ga": {
         "Mining": {
-          "employment": 5955,
-          "avg_annual_wage": 83980,
+          "employment": 5845,
+          "avg_annual_wage": 80288,
           "share_pct": 0.13
         },
         "Construction": {
-          "employment": 235865,
-          "avg_annual_wage": 79196,
-          "share_pct": 5.14
+          "employment": 236212,
+          "avg_annual_wage": 79716,
+          "share_pct": 5.16
         },
         "Manufacturing": {
-          "employment": 427575,
+          "employment": 423757,
           "avg_annual_wage": 72748,
-          "share_pct": 9.33
+          "share_pct": 9.25
         },
         "Transportation/Utilities": {
-          "employment": 281846,
-          "avg_annual_wage": 73053,
-          "share_pct": 6.15
+          "employment": 285036,
+          "avg_annual_wage": 69434,
+          "share_pct": 6.23
         },
         "Wholesale Trade": {
-          "employment": 227032,
-          "avg_annual_wage": 97552,
-          "share_pct": 4.95
+          "employment": 225007,
+          "avg_annual_wage": 95940,
+          "share_pct": 4.91
         },
         "Retail Trade": {
-          "employment": 507397,
+          "employment": 505802,
           "avg_annual_wage": 40820,
-          "share_pct": 11.07
+          "share_pct": 11.05
         },
         "Information": {
-          "employment": 114527,
-          "avg_annual_wage": 131664,
-          "share_pct": 2.5
+          "employment": 108957,
+          "avg_annual_wage": 138476,
+          "share_pct": 2.38
         },
         "Financial Activities": {
-          "employment": 276205,
-          "avg_annual_wage": 97630,
-          "share_pct": 6.02
+          "employment": 274866,
+          "avg_annual_wage": 98438,
+          "share_pct": 6.0
         },
         "Prof. & Bus. Services": {
-          "employment": 741944,
-          "avg_annual_wage": 91165,
+          "employment": 740969,
+          "avg_annual_wage": 90742,
           "share_pct": 16.18
         },
         "Education & Health Services": {
-          "employment": 695619,
-          "avg_annual_wage": 68481,
-          "share_pct": 15.17
+          "employment": 707112,
+          "avg_annual_wage": 70167,
+          "share_pct": 15.44
         },
         "Leisure & Hospitality": {
-          "employment": 530061,
-          "avg_annual_wage": 30255,
-          "share_pct": 11.56
+          "employment": 514029,
+          "avg_annual_wage": 30263,
+          "share_pct": 11.23
         },
         "Other Services": {
-          "employment": 122973,
-          "avg_annual_wage": 51688,
-          "share_pct": 2.68
+          "employment": 119223,
+          "avg_annual_wage": 51480,
+          "share_pct": 2.6
         },
         "Government": {
-          "employment": 418097,
-          "avg_annual_wage": 61134,
-          "share_pct": 9.12
+          "employment": 431897,
+          "avg_annual_wage": 63443,
+          "share_pct": 9.43
         }
       },
       "us": {
         "Mining": {
-          "employment": 575408,
-          "avg_annual_wage": 120588,
+          "employment": 568572,
+          "avg_annual_wage": 120640,
           "share_pct": 0.39
         },
         "Construction": {
-          "employment": 8424182,
-          "avg_annual_wage": 80860,
+          "employment": 8379475,
+          "avg_annual_wage": 82576,
           "share_pct": 5.73
         },
         "Manufacturing": {
-          "employment": 12650979,
-          "avg_annual_wage": 85332,
-          "share_pct": 8.61
+          "employment": 12523207,
+          "avg_annual_wage": 85644,
+          "share_pct": 8.57
         },
         "Transportation/Utilities": {
-          "employment": 7127668,
-          "avg_annual_wage": 73299,
-          "share_pct": 4.85
+          "employment": 7172181,
+          "avg_annual_wage": 73133,
+          "share_pct": 4.91
         },
         "Wholesale Trade": {
-          "employment": 6060837,
-          "avg_annual_wage": 99684,
-          "share_pct": 4.13
+          "employment": 6007650,
+          "avg_annual_wage": 101972,
+          "share_pct": 4.11
         },
         "Retail Trade": {
-          "employment": 15371782,
-          "avg_annual_wage": 42536,
-          "share_pct": 10.46
+          "employment": 15250524,
+          "avg_annual_wage": 42952,
+          "share_pct": 10.43
         },
         "Information": {
-          "employment": 2852537,
-          "avg_annual_wage": 174772,
-          "share_pct": 1.94
+          "employment": 2816179,
+          "avg_annual_wage": 191880,
+          "share_pct": 1.93
         },
         "Financial Activities": {
-          "employment": 8762192,
-          "avg_annual_wage": 112293,
-          "share_pct": 5.96
+          "employment": 8691469,
+          "avg_annual_wage": 111843,
+          "share_pct": 5.94
         },
         "Prof. & Bus. Services": {
-          "employment": 22399565,
-          "avg_annual_wage": 101525,
-          "share_pct": 15.25
+          "employment": 22317523,
+          "avg_annual_wage": 101906,
+          "share_pct": 15.27
         },
         "Education & Health Services": {
-          "employment": 26031284,
-          "avg_annual_wage": 64740,
-          "share_pct": 17.72
+          "employment": 26205920,
+          "avg_annual_wage": 66497,
+          "share_pct": 17.92
         },
         "Leisure & Hospitality": {
-          "employment": 17402633,
-          "avg_annual_wage": 33326,
-          "share_pct": 11.85
+          "employment": 16828402,
+          "avg_annual_wage": 33772,
+          "share_pct": 11.51
         },
         "Other Services": {
-          "employment": 4740568,
-          "avg_annual_wage": 53196,
-          "share_pct": 3.23
+          "employment": 4628376,
+          "avg_annual_wage": 53768,
+          "share_pct": 3.17
         },
         "Government": {
-          "employment": 14519344,
-          "avg_annual_wage": 71182,
-          "share_pct": 9.88
+          "employment": 14810242,
+          "avg_annual_wage": 70415,
+          "share_pct": 10.13
         }
       },
       "totals": {
-        "msa": 46603,
-        "ga": 4585096,
-        "us": 146918979
+        "msa": 0,
+        "ga": 4578712,
+        "us": 146199720
       }
     },
     "qcew_yoy_changes": {
@@ -2564,7 +2518,7 @@
     "bea_gmp": "live",
     "bea_personal_income": "live",
     "qcew_industry_shares": "live",
-    "qcew_yoy_changes": "live",
+    "qcew_yoy_changes": "stale",
     "qcew_3digit": "live",
     "health_check": "live",
     "census_bps_permits": "live",
@@ -2584,7 +2538,7 @@
     "quality_of_life": "live",
     "housing_valuation": "live",
     "business_costs": "live",
-    "industrial_diversity": "live",
+    "industrial_diversity": "stale",
     "housing_affordability": "live",
     "credit_score": "live"
   }
