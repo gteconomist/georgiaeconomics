@@ -4927,12 +4927,12 @@
       "as_of": "2026-06-02",
       "employers": [
         {
-          "name": "Atrium Health Navicent The Medical Center",
-          "source_url": "https://www.macon.com/news/business/article258547393.html"
+          "name": "Mercer University",
+          "source_url": "https://en.wikipedia.org/wiki/Macon,_Georgia"
         },
         {
-          "name": "Mercer University",
-          "source_url": "https://www.macon.com/news/local/article280753115.html"
+          "name": "Atrium Health Navicent The Medical Center",
+          "source_url": "https://www.macon.com/news/business/article258547393.html"
         },
         {
           "name": "Coliseum Health Systems",
@@ -4940,26 +4940,26 @@
         },
         {
           "name": "Healthcare of Atlanta",
-          "source_url": "https://www.macon.com/living/article300278809.html"
-        },
-        {
-          "name": "Norfolk Southern Railway",
-          "source_url": null
+          "source_url": "https://www.macon.com/news/local/article312115475.html"
         },
         {
           "name": "Armstrong World Industries",
           "source_url": "https://www.macon.com/news/local/article235905642.html"
         },
         {
-          "name": "Beasley Flooring Products",
+          "name": "Distribution Company of Georgia",
           "source_url": "https://www.macon.com/news/local/article235905642.html"
         },
         {
-          "name": "Blue Bird Corp",
-          "source_url": "https://en.wikipedia.org/wiki/Central_Georgia"
+          "name": "Navicent Health",
+          "source_url": "https://www.macon.com/news/local/article235905642.html"
         },
         {
-          "name": "Distribution Company of Georgia",
+          "name": "Norfolk Southern Railway",
+          "source_url": null
+        },
+        {
+          "name": "Tractor Supply Company",
           "source_url": "https://www.macon.com/news/local/article235905642.html"
         },
         {
@@ -4967,31 +4967,31 @@
           "source_url": "https://www.macon.com/news/local/article312115475.html"
         },
         {
-          "name": "Navicent Health",
-          "source_url": "https://www.macon.com/news/local/article235905642.html"
+          "name": "Medical Center of Central Georgia",
+          "source_url": "https://en.wikipedia.org/wiki/Central_Georgia"
+        },
+        {
+          "name": "Perdue Foods",
+          "source_url": "https://www.macon.com/news/business/article258547393.html"
+        },
+        {
+          "name": "Piedmont Healthcare Macon",
+          "source_url": "https://en.wikipedia.org/wiki/Macon,_Georgia"
         },
         {
           "name": "Southwest Airlines",
           "source_url": "https://www.macon.com/news/local/article312115475.html"
-        },
-        {
-          "name": "Tractor Supply Company",
-          "source_url": "https://www.macon.com/news/local/article235905642.html"
-        },
-        {
-          "name": "Cobb County School District",
-          "source_url": "https://www.macon.com/living/article300278809.html"
         }
       ],
       "sources": [
-        "https://www.macon.com/living/article300278809.html",
-        "https://www.macon.com/news/local/article280753115.html",
         "https://en.wikipedia.org/wiki/Macon,_Georgia",
         "https://www.macon.com/news/business/article258547393.html",
-        "https://www.macon.com/news/local/article312115475.html",
         "https://en.wikipedia.org/wiki/Central_Georgia",
+        "https://www.macon.com/news/local/article312115475.html",
+        "https://www.macon.com/living/article300278809.html",
         "https://www.macon.com/news/local/article235905642.html",
-        "https://www.bizjournals.com/atlanta/news/2019/12/15/health-care-companies-expand-in-macon-market.html"
+        "http://www.bizjournals.com/atlanta/search/results?q=Kay+Pippin",
+        "https://www.macon.com/news/local/article307535776.html"
       ],
       "method": "Representative list auto-discovered via Tavily web search across chamber-of-commerce, development-authority and local-news sources. Not exhaustive; ordering approximates source frequency, not headcount."
     },

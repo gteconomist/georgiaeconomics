@@ -5099,39 +5099,35 @@
           "source_url": "https://en.wikipedia.org/wiki/Economy_of_Atlanta"
         },
         {
-          "name": "Emory Healthcare",
-          "source_url": "https://en.wikipedia.org/wiki/Economy_of_Atlanta"
-        },
-        {
-          "name": "Emory University",
-          "source_url": "https://www.selectgeorgia.com/landing-pages/san-fran-to-atl/world-class-talent-calls-atlanta-home"
-        },
-        {
           "name": "Georgia Power",
           "source_url": "https://en.wikipedia.org/wiki/Metro_Atlanta"
         },
         {
-          "name": "Cola Company",
-          "source_url": null
+          "name": "Cornerstone Christian Academy",
+          "source_url": "https://www.ajc.com/top-workplaces"
+        },
+        {
+          "name": "Emory Healthcare",
+          "source_url": "https://en.wikipedia.org/wiki/Economy_of_Atlanta"
+        },
+        {
+          "name": "The Coca-Cola Company",
+          "source_url": "https://en.wikipedia.org/wiki/Economy_of_Atlanta"
         },
         {
           "name": "Foundation Financial Group",
           "source_url": "https://en.wikipedia.org/wiki/Economy_of_Atlanta"
         },
         {
-          "name": "Asbury Automotive",
-          "source_url": "https://www.selectgeorgia.com/discover-georgia/industries/fortune-500-list"
-        },
-        {
-          "name": "Mohawk Industries",
-          "source_url": "https://www.selectgeorgia.com/discover-georgia/industries/fortune-500-list"
-        },
-        {
           "name": "Aerospace",
           "source_url": "https://www.selectgeorgia.com/discover-georgia/industries/fortune-500-list"
         },
         {
-          "name": "Gentiva Health Services",
+          "name": "Automotive",
+          "source_url": "https://en.wikipedia.org/wiki/Metro_Atlanta"
+        },
+        {
+          "name": "Emory University",
           "source_url": "https://en.wikipedia.org/wiki/Economy_of_Atlanta"
         },
         {
@@ -5143,12 +5139,16 @@
           "source_url": "https://en.wikipedia.org/wiki/Economy_of_Atlanta"
         },
         {
-          "name": "Oxford Industries",
+          "name": "Piedmont Healthcare",
           "source_url": "https://en.wikipedia.org/wiki/Economy_of_Atlanta"
         },
         {
-          "name": "Piedmont Healthcare",
+          "name": "Wellstar Health System",
           "source_url": "https://en.wikipedia.org/wiki/Economy_of_Atlanta"
+        },
+        {
+          "name": "Co-Chairman of OneTrust",
+          "source_url": "https://www.selectgeorgia.com/landing-pages/san-fran-to-atl/world-class-talent-calls-atlanta-home"
         }
       ],
       "sources": [
@@ -5158,8 +5158,8 @@
         "https://www.selectgeorgia.com/discover-georgia/industries/why-atlanta/top-companies",
         "https://www.selectgeorgia.com/discover-georgia/industries/fortune-500-list",
         "https://www.selectgeorgia.com/landing-pages/san-fran-to-atl/world-class-talent-calls-atlanta-home",
-        "https://www.selectgeorgia.com/sxsw/top-growth-leader",
-        "https://georgia.org"
+        "https://georgia.org",
+        "https://georgia.org/business-support/small-business"
       ],
       "method": "Representative list auto-discovered via Tavily web search across chamber-of-commerce, development-authority and local-news sources. Not exhaustive; ordering approximates source frequency, not headcount."
     },

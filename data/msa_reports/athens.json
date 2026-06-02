@@ -4940,67 +4940,67 @@
           "source_url": "https://en.wikipedia.org/wiki/Athens,_Georgia"
         },
         {
-          "name": "Clarke County School District",
-          "source_url": null
-        },
-        {
           "name": "Children's Healthcare of Atlanta",
           "source_url": "https://www.onlineathens.com/story/news/2026/03/04/georgias-best-employers-are-these-2-big-businesses-forbes-says/88982542007"
         },
         {
-          "name": "Georgia Power",
-          "source_url": "https://www.onlineathens.com/story/news/2025/03/18/georgia-companies-named-most-trustworthy-in-u-s-coca-cola-home-depot/82513468007"
+          "name": "Athens Technical College",
+          "source_url": "https://en.wikipedia.org/wiki/Athens,_Georgia"
+        },
+        {
+          "name": "Clarke County School District",
+          "source_url": null
         },
         {
           "name": "Piedmont Athens Regional Medical Center",
           "source_url": null
         },
         {
-          "name": "Trinity Health",
+          "name": "RWDC Industries",
           "source_url": "https://en.wikipedia.org/wiki/Athens,_Georgia"
         },
         {
-          "name": "Health Care System",
+          "name": "Georgia Power",
+          "source_url": "https://www.onlineathens.com/story/news/2025/03/18/georgia-companies-named-most-trustworthy-in-u-s-coca-cola-home-depot/82513468007"
+        },
+        {
+          "name": "Janssen Pharmaceuticals",
+          "source_url": "https://en.wikipedia.org/wiki/Athens,_Georgia"
+        },
+        {
+          "name": "Clarke County School System",
           "source_url": null
         },
         {
-          "name": "Port of Savannah",
-          "source_url": "https://www.onlineathens.com/story/news/state/2015/08/28/forecast-stock-market-roller-coaster-wont-dampen-athens-economy/15484730007"
+          "name": "Southern Company",
+          "source_url": "https://www.augustachronicle.com/story/news/2025/06/04/fortune-500s-list-of-the-biggest-corporations-includes-17-in-georgia/84010835007"
         },
         {
-          "name": "St. Mary's Hospital",
+          "name": "UGA Health",
+          "source_url": null
+        },
+        {
+          "name": "AU College of Nursing",
           "source_url": "https://en.wikipedia.org/wiki/Athens,_Georgia"
         },
         {
           "name": "Aerospace",
-          "source_url": "https://georgia.org"
+          "source_url": "https://www.onlineathens.com/story/news/state/2015/07/03/report-provides-insights-athens-clarke-countys-economic-development-process/15490087007"
         },
         {
-          "name": "Athena Industrial Park",
-          "source_url": "https://www.onlineathens.com/story/business/2013/01/05/brodrick-remarkable-year-athens/15586276007"
-        },
-        {
-          "name": "Athens First Bank",
-          "source_url": "https://www.onlineathens.com/story/news/state/2017/02/11/athens-area-chamber-commerce-chairman-s-message-fostering-spirit-service/15436553007"
-        },
-        {
-          "name": "Co-Chairman of OneTrust",
-          "source_url": "https://www.selectgeorgia.com/discover-georgia/industries/why-atlanta/world-class-talent-calls-atlanta-home"
-        },
-        {
-          "name": "Establish First U.S. Manufacturing Facility",
-          "source_url": "https://georgia.org"
+          "name": "Agricultural College",
+          "source_url": "https://georgia.org/sites/default/files/2021-04/logistics_education_report.pdf"
         }
       ],
       "sources": [
-        "https://www.onlineathens.com/story/news/state/2015/08/28/forecast-stock-market-roller-coaster-wont-dampen-athens-economy/15484730007",
         "https://en.wikipedia.org/wiki/Athens,_Georgia",
-        "https://georgia.org",
         "https://www.onlineathens.com/story/news/2026/03/04/georgias-best-employers-are-these-2-big-businesses-forbes-says/88982542007",
-        "https://www.ajc.com/top-workplaces/rounding-out-the-top-5-large-businesses/5FF7QFEAMRGF3PLDXYSC4NOFWQ",
+        "https://www.augustachronicle.com/story/news/2025/06/04/fortune-500s-list-of-the-biggest-corporations-includes-17-in-georgia/84010835007",
+        "https://www.onlineathens.com/story/news/2025/03/18/georgia-companies-named-most-trustworthy-in-u-s-coca-cola-home-depot/82513468007",
+        "https://www.onlineathens.com/story/news/state/2015/07/03/report-provides-insights-athens-clarke-countys-economic-development-process/15490087007",
+        "https://www.onlineathens.com/story/business/2023/08/09/the-georgia-chamber-of-commerce-hold-congressional-luncheon-in-athens/70553954007",
         "https://www.onlineathens.com/story/business/2013/01/05/brodrick-remarkable-year-athens/15586276007",
-        "https://www.onlineathens.com/story/news/state/2019/05/24/athens-entrepreneurs-get-business-help-at-state-chamber-event/5073147007",
-        "https://www.onlineathens.com/story/news/2025/03/18/georgia-companies-named-most-trustworthy-in-u-s-coca-cola-home-depot/82513468007"
+        "https://www.onlineathens.com/story/news/state/2019/05/24/athens-entrepreneurs-get-business-help-at-state-chamber-event/5073147007"
       ],
       "method": "Representative list auto-discovered via Tavily web search across chamber-of-commerce, development-authority and local-news sources. Not exhaustive; ordering approximates source frequency, not headcount."
     },

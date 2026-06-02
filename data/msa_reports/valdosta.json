@@ -4063,27 +4063,27 @@
       "employers": [
         {
           "name": "Valdosta State University",
-          "source_url": "https://valdostadailytimes.com/2026/02/23/gary-wisenbaker-data-centers-whats-good-for-the-goose-is-good-for-the-gander"
+          "source_url": "https://valdostadailytimes.com/2015/09/13/finding-the-competitive-edge"
         },
         {
           "name": "South Georgia Medical Center",
           "source_url": "https://valdostadailytimes.com/2005/12/06/area-leaders-make-predictions-for-the-upcoming-year"
         },
         {
-          "name": "Rayonier Inc",
-          "source_url": "https://jobs.valdostadailytimes.com/employers"
+          "name": "Firstline Corporation",
+          "source_url": "https://valdostadailytimes.com/2005/12/06/area-leaders-make-predictions-for-the-upcoming-year"
         },
         {
           "name": "Lowndes County Schools",
           "source_url": "https://valdostadailytimes.com/2018/05/24/summit-seeks-matching-jobs-with-workers"
         },
         {
-          "name": "Mercer Hughes Real Estate Group",
-          "source_url": "https://valdostadailytimes.com/2019/12/01/business-briefs-165"
+          "name": "Valdosta-Lowndes County Development Authority",
+          "source_url": "https://valdostadailytimes.com/2026/04/20/sea-drone-company-to-bring-hundreds-of-jobs"
         },
         {
-          "name": "Lowndes County School Districts",
-          "source_url": null
+          "name": "Wiregrass Georgia Technical College",
+          "source_url": "https://valdostadailytimes.com/2015/09/13/finding-the-competitive-edge"
         },
         {
           "name": "Lowndes County School System",
@@ -4094,39 +4094,39 @@
           "source_url": "https://valdostadailytimes.com/2019/09/29/business-briefs-155"
         },
         {
-          "name": "Wiregrass Technical College",
-          "source_url": "https://valdostadailytimes.com/2026/02/23/gary-wisenbaker-data-centers-whats-good-for-the-goose-is-good-for-the-gander"
+          "name": "REIT Rayonier Inc",
+          "source_url": null
         },
         {
-          "name": "Cisco Systems Dematic Flexport Sources",
-          "source_url": "https://georgia.org/sites/default/files/2025-05/coil_technology_ecosystem_report_2025.pdf"
+          "name": "Sunset Farm Foods",
+          "source_url": "https://valdostadailytimes.com/2021/03/05/chamber-presents-annual-awards"
         },
         {
-          "name": "Company",
-          "source_url": "https://valdostadailytimes.com/2025/09/15/georgia-maintains-momentum-with-company-expansions"
+          "name": "The Herndon Company",
+          "source_url": "https://valdostadailytimes.com/2019/09/29/business-briefs-155"
         },
         {
-          "name": "Computer Systems Analysts",
-          "source_url": "https://georgia.org/sites/default/files/2025-05/coil_technology_ecosystem_report_2025.pdf"
+          "name": "Utility Plastics LLC",
+          "source_url": null
         },
         {
-          "name": "Daechang Seat Corp",
-          "source_url": "https://www.selectgeorgia.com/blog/locations-and-expansions/georgia-2023-growth"
+          "name": "Valdosta Technical College",
+          "source_url": "https://valdostadailytimes.com/2005/12/06/area-leaders-make-predictions-for-the-upcoming-year"
         },
         {
-          "name": "Electric Transportation",
-          "source_url": "https://www.selectgeorgia.com/blog/locations-and-expansions/georgia-2023-growth"
+          "name": "CJB Industries",
+          "source_url": "https://valdostadailytimes.com/2021/03/05/chamber-presents-annual-awards"
         }
       ],
       "sources": [
         "https://valdostadailytimes.com/2019/09/29/business-briefs-155",
-        "https://valdostadailytimes.com/2026/02/23/gary-wisenbaker-data-centers-whats-good-for-the-goose-is-good-for-the-gander",
         "https://valdostadailytimes.com/2015/09/13/finding-the-competitive-edge",
-        "https://valdostadailytimes.com/2025/09/15/georgia-maintains-momentum-with-company-expansions",
-        "https://valdostadailytimes.com/2005/12/06/area-leaders-make-predictions-for-the-upcoming-year",
-        "https://valdostadailytimes.com/2017/06/18/business-briefs-53",
+        "https://valdostadailytimes.com/2026/02/23/gary-wisenbaker-data-centers-whats-good-for-the-goose-is-good-for-the-gander",
         "https://georgia.org/sites/default/files/2025-05/coil_technology_ecosystem_report_2025.pdf",
-        "https://valdostadailytimes.com/2019/12/01/business-briefs-165"
+        "https://valdostadailytimes.com/2005/12/06/area-leaders-make-predictions-for-the-upcoming-year",
+        "https://valdostadailytimes.com/2021/03/05/chamber-presents-annual-awards",
+        "https://valdostadailytimes.com/2018/05/24/summit-seeks-matching-jobs-with-workers",
+        "https://valdostadailytimes.com/2017/06/18/business-briefs-53"
       ],
       "method": "Representative list auto-discovered via Tavily web search across chamber-of-commerce, development-authority and local-news sources. Not exhaustive; ordering approximates source frequency, not headcount."
     },

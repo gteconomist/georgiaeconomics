@@ -5003,12 +5003,16 @@
           "source_url": "https://en.wikipedia.org/wiki/Gainesville,_Florida"
         },
         {
-          "name": "Kubota Manufacturing of America",
-          "source_url": "https://www.gainesvilletimes.com/news/business-archived/chamber-honors-3-companies-as-the-years-best-in-hall"
+          "name": "Northeast Georgia Health System",
+          "source_url": "https://www.ajc.com/pulse/6-health-care-systems-among-forbes-best-employers-in-georgia/ZHJC3IV7UBFOHH423Y4NIDQDPI"
         },
         {
           "name": "Alachua County School Board",
           "source_url": "https://en.wikipedia.org/wiki/Gainesville,_Florida"
+        },
+        {
+          "name": "Gold Creek Foods",
+          "source_url": "https://www.bizjournals.com/atlanta/related_content.html?topic=Kubota+Industrial+Equipment+Corp"
         },
         {
           "name": "North Florida Regional Medical Center",
@@ -5019,10 +5023,6 @@
           "source_url": "https://en.wikipedia.org/wiki/Gainesville,_Florida"
         },
         {
-          "name": "The Jaeger Co",
-          "source_url": "https://www.gainesvilletimes.com/news/simpson-jaeger-companies-win-hall-chambers-top-awards"
-        },
-        {
           "name": "UF Health Shands Hospital",
           "source_url": "https://en.wikipedia.org/wiki/Gainesville,_Florida"
         },
@@ -5031,37 +5031,37 @@
           "source_url": "https://www.gainesvilletimes.com/news/business-archived/chamber-honors-3-companies-as-the-years-best-in-hall"
         },
         {
-          "name": "Gold Creek Foods",
-          "source_url": "https://www.bizjournals.com/atlanta/related_content.html?topic=Kubota+Industrial+Equipment+Corp"
+          "name": "Elan Drug Technologies",
+          "source_url": "https://www.gainesvilletimes.com/news/business-archived/chamber-honors-3-companies-as-the-years-best-in-hall"
+        },
+        {
+          "name": "Kubota Manufacturing of America",
+          "source_url": "https://www.gainesvilletimes.com/news/business-archived/chamber-honors-3-companies-as-the-years-best-in-hall"
         },
         {
           "name": "Wrigley Manufacturing",
           "source_url": "https://www.gainesvilletimes.com/news/business-archived/chamber-honors-3-companies-as-the-years-best-in-hall"
         },
         {
+          "name": "Aerospace",
+          "source_url": "https://www.selectgeorgia.com/discover-georgia/industries/fortune-500-list"
+        },
+        {
           "name": "Annual Comprehensive Financial Report",
           "source_url": "https://en.wikipedia.org/wiki/Gainesville,_Florida"
         },
         {
-          "name": "Cola Bottling Co. of Gainesville",
-          "source_url": null
-        },
-        {
-          "name": "Gainesville High School",
-          "source_url": "https://www.augustachronicle.com/story/news/2025/05/14/hgtv-up-and-coming-small-cities-why-this-georgia-town-made-the-list-gainesville-ga/83602820007"
-        },
-        {
-          "name": "Hall County School District",
-          "source_url": null
+          "name": "Augusta University",
+          "source_url": "https://georgia.org/sites/default/files/2020-09/fy20_q4_board_book.pdf"
         }
       ],
       "sources": [
         "https://www.bizjournals.com/atlanta/related_content.html?topic=Kubota+Industrial+Equipment+Corp",
+        "https://www.ajc.com/top-workplaces/2025/08/15-newcomers-join-ranks-of-atlantas-top-large-workplaces",
         "https://en.wikipedia.org/wiki/Gainesville,_Florida",
         "https://www.augustachronicle.com/story/news/2025/05/14/hgtv-up-and-coming-small-cities-why-this-georgia-town-made-the-list-gainesville-ga/83602820007",
-        "https://en.wikipedia.org/wiki/Metro_Atlanta",
+        "https://www.selectgeorgia.com/discover-georgia/industries/fortune-500-list",
         "https://www.gainesvilletimes.com/news/business-archived/chamber-honors-3-companies-as-the-years-best-in-hall",
-        "https://www.gainesvilletimes.com/news/business-archived/gainesville-approves-5m-bond-for-ims-gear-georgia",
         "https://www.gainesvilletimes.com/news/business-archived/hall-chamber-of-commerce-honors-2-local-businesses",
         "https://www.gainesvilletimes.com/news/simpson-jaeger-companies-win-hall-chambers-top-awards"
       ],

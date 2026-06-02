@@ -4083,15 +4083,15 @@
       "as_of": "2026-06-02",
       "employers": [
         {
+          "name": "Houston Healthcare Complex",
+          "source_url": "https://www.macon.com/news/business/article258547393.html"
+        },
+        {
           "name": "Blue Bird Body Co",
           "source_url": "https://www.macon.com/news/business/article258547393.html"
         },
         {
-          "name": "Atrium Health Navicent The Medical Center",
-          "source_url": "https://www.macon.com/news/business/article258547393.html"
-        },
-        {
-          "name": "Houston Healthcare Complex",
+          "name": "Perdue Foods",
           "source_url": "https://www.macon.com/news/business/article258547393.html"
         },
         {
@@ -4099,7 +4099,11 @@
           "source_url": "https://www.macon.com/news/business/article279055784.html"
         },
         {
-          "name": "Perdue Foods",
+          "name": "Atrium Health Navicent The Medical Center",
+          "source_url": "https://www.macon.com/news/business/article258547393.html"
+        },
+        {
+          "name": "Coliseum Health Systems",
           "source_url": "https://www.macon.com/news/business/article258547393.html"
         },
         {
@@ -4107,20 +4111,8 @@
           "source_url": "https://www.macon.com/news/business/article279055784.html"
         },
         {
-          "name": "Company",
-          "source_url": "https://lensa.com/company/biggest-companies-in-warner-robins-ga"
-        },
-        {
-          "name": "Robins International Industrial Park",
-          "source_url": "https://www.georgiatrend.com/2023/02/28/economy-warner-robins-advantages"
-        },
-        {
-          "name": "Central Georgia Technical College",
-          "source_url": "https://houstoncountyga.net/industries/top-employers"
-        },
-        {
-          "name": "Coliseum Health Systems",
-          "source_url": "https://www.macon.com/news/business/article258547393.html"
+          "name": "Medical Center of Central Georgia",
+          "source_url": "https://en.wikipedia.org/wiki/Central_Georgia"
         },
         {
           "name": "Food Manufacturing",
@@ -4135,6 +4127,14 @@
           "source_url": "https://www.macon.com/news/business/article258547393.html"
         },
         {
+          "name": "Professional Schools",
+          "source_url": "https://www.metroatlantachamber.com/wp-content/uploads/2023/08/Top-Employer-Final.pdf"
+        },
+        {
+          "name": "Aerospace Industry Committee",
+          "source_url": "https://www.macon.com/news/local/military/article214843570.html"
+        },
+        {
           "name": "Anchor Glass Container Corp",
           "source_url": "https://houstoncountyga.net/industries/top-employers"
         }
@@ -4142,10 +4142,10 @@
       "sources": [
         "https://www.georgiatrend.com/2023/02/28/economy-warner-robins-advantages",
         "https://www.macon.com/news/business/article258547393.html",
-        "https://lensa.com/company/biggest-companies-in-warner-robins-ga",
         "https://www.wrga.gov/article/2351392",
         "https://houstoncountyga.net/industries/top-employers",
         "https://en.wikipedia.org/wiki/Central_Georgia",
+        "https://www.metroatlantachamber.com/wp-content/uploads/2023/08/Top-Employer-Final.pdf",
         "https://www.macon.com/news/local/community/houston-peach/article248306705.html",
         "https://www.macon.com/news/local/military/article214843570.html"
       ],

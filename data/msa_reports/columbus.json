@@ -4925,71 +4925,71 @@
       "as_of": "2026-06-02",
       "employers": [
         {
+          "name": "Health Care",
+          "source_url": "https://en.wikipedia.org/wiki/List_of_largest_Central_Ohio_employers"
+        },
+        {
+          "name": "Muscogee County School District",
+          "source_url": "https://en.wikipedia.org/wiki/Columbus,_Georgia"
+        },
+        {
+          "name": "Financial Activities",
+          "source_url": "https://en.wikipedia.org/wiki/List_of_largest_Central_Ohio_employers"
+        },
+        {
+          "name": "Nationwide Children's Hospital",
+          "source_url": "https://en.wikipedia.org/wiki/List_of_largest_Central_Ohio_employers"
+        },
+        {
+          "name": "Ohio State University",
+          "source_url": "https://en.wikipedia.org/wiki/List_of_largest_Central_Ohio_employers"
+        },
+        {
           "name": "Bradley Co",
           "source_url": "https://www.ledger-enquirer.com/news/politics-government/article311841650.html"
         },
         {
-          "name": "Georgia Power",
-          "source_url": "https://www.ledger-enquirer.com/news/local/article256825042.html"
+          "name": "Columbus City Schools",
+          "source_url": "https://en.wikipedia.org/wiki/List_of_largest_Central_Ohio_employers"
         },
         {
-          "name": "Columbus State University",
-          "source_url": "https://www.ledger-enquirer.com/news/business/article300077799.html"
+          "name": "Corp. Mgt",
+          "source_url": "https://en.wikipedia.org/wiki/List_of_largest_Central_Ohio_employers"
         },
         {
-          "name": "Aflac Inc",
-          "source_url": null
+          "name": "Honda of America Manufacturing",
+          "source_url": "https://en.wikipedia.org/wiki/List_of_largest_Central_Ohio_employers"
         },
         {
-          "name": "Baptist Health System",
-          "source_url": null
+          "name": "Columbus Regional Healthcare System",
+          "source_url": "https://en.wikipedia.org/wiki/Columbus,_Georgia"
         },
         {
-          "name": "Cardinal Health",
-          "source_url": null
-        },
-        {
-          "name": "Columbus Bank",
-          "source_url": "https://www.selectgeorgia.com/blog/columbus-georgia-a-home-for-headquarters"
-        },
-        {
-          "name": "Mercer Medical School",
-          "source_url": "https://georgia.org/sites/default/files/2023-01/2022-8-24_gdecd_board_meeting_minutes.pdf"
+          "name": "Kroger Company",
+          "source_url": "https://en.wikipedia.org/wiki/List_of_largest_Central_Ohio_employers"
         },
         {
           "name": "Nationwide Insurance",
-          "source_url": null
+          "source_url": "https://en.wikipedia.org/wiki/Economy_of_Columbus,_Ohio"
         },
         {
-          "name": "OSU Wexner Medical Center",
-          "source_url": "https://www.bizjournals.com/columbus/news/2025/10/31/central-ohio-most-in-demand-jobs-2025.html"
+          "name": "St. Francis Hospital",
+          "source_url": "https://en.wikipedia.org/wiki/Columbus,_Georgia"
         },
         {
-          "name": "Synovus Financial Corp",
-          "source_url": null
-        },
-        {
-          "name": "The Ohio State University",
-          "source_url": null
-        },
-        {
-          "name": "Academy Sports",
-          "source_url": "https://www.ledger-enquirer.com/news/business/article223441075.html"
-        },
-        {
-          "name": "Advanced Manufacturing",
-          "source_url": "https://georgia.org/sites/default/files/2023-01/2022-8-24_gdecd_board_meeting_minutes.pdf"
+          "name": "American Electric Power",
+          "source_url": "https://en.wikipedia.org/wiki/List_of_largest_Central_Ohio_employers"
         }
       ],
       "sources": [
         "https://www.selectgeorgia.com/blog/columbus-georgia-a-home-for-headquarters",
-        "https://en.wikipedia.org/wiki/List_of_largest_companies_in_the_United_States_by_revenue",
+        "https://www.ledger-enquirer.com/news/state/georgia/article312697701.html",
+        "https://en.wikipedia.org/wiki/Columbus,_Georgia",
         "https://www.ledger-enquirer.com/news/business/article223441075.html",
-        "https://www.ledger-enquirer.com/news/business/article300077799.html",
+        "https://www.ledger-enquirer.com/living/living-here-guide/article29130475.html",
         "https://www.ledger-enquirer.com/news/business/article289530136.html",
         "https://georgia.org/sites/default/files/2023-01/2022-8-24_gdecd_board_meeting_minutes.pdf",
-        "https://www.ledger-enquirer.com/news/politics-government/article311841650.html",
-        "https://www.selectgeorgia.com/about-us/our-team/regional-development/andrew-camp-west"
+        "https://www.ledger-enquirer.com/news/politics-government/article311841650.html"
       ],
       "method": "Representative list auto-discovered via Tavily web search across chamber-of-commerce, development-authority and local-news sources. Not exhaustive; ordering approximates source frequency, not headcount."
     },
