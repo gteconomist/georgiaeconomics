@@ -1,14 +1,14 @@
 {
-  "fetched_at": "2026-05-30",
+  "fetched_at": "2026-06-02",
   "latest_year": 2024,
   "_fixture": false,
   "_meta": {
     "employment": {
-      "last_updated": "2026-05-30",
+      "last_updated": "2026-06-02",
       "source": "BLS QCEW annual averages, NAICS 518210 (Data Processing, Hosting), GA (area 13000)",
       "coverage_years": [
         2014,
-        2024
+        2025
       ]
     },
     "industry_gdp": {
@@ -16,11 +16,11 @@
       "source": "BEA Regional SAGDP2N \u2014 Information sector, GA (caveat: broader than data centers)"
     },
     "wages": {
-      "last_updated": "2026-05-30",
+      "last_updated": "2026-06-02",
       "source": "BLS QCEW avg weekly wage, NAICS 518210 vs all-private GA"
     },
     "establishments": {
-      "last_updated": "2026-05-30",
+      "last_updated": "2026-06-02",
       "source": "Census CBP 2023 \u2014 NAICS 518210, GA",
       "year": 2023
     },
@@ -45,20 +45,20 @@
       "source": "Derived from internal facility database"
     },
     "load_forecast": {
-      "last_updated": "2026-05-30",
+      "last_updated": "2026-06-02",
       "source": "GA PSC docket filings (Tavily) + Georgia Power 2023 IRP + 2025 update (seeded curve)",
-      "psc_headline_source": "https://www.georgiapower.com/news-hub/press-releases/georgia-power-requests-certification-of-approximately-9900-mw-of-new-resources-from-the-georgia-psc.html"
+      "psc_headline_source": "https://www.georgiapower.com/news-hub/press-releases/georgia-public-service-commission-approves-plan-to-meet-the-energy-needs-of-a-growing-georgia.html"
     },
     "water": {
-      "last_updated": "2026-05-30",
+      "last_updated": "2026-06-02",
       "source": "GA EPD water-withdrawal permits + MW-based modeled remainder"
     },
     "policy": {
-      "last_updated": "2026-05-30",
+      "last_updated": "2026-06-02",
       "source": "GA legis.ga.gov + AJC + Georgia Recorder (Tavily); exemption timeline curated."
     },
     "pending_announcements": {
-      "last_updated": "2026-05-30",
+      "last_updated": "2026-06-02",
       "source": "Tavily \u2192 DECD / gov.georgia.gov / AJC / DCD / DCF; advisory hints",
       "count": 8
     }
@@ -69,12 +69,12 @@
     "n_facilities_existing": 74,
     "n_facilities_pipeline": 63,
     "n_facilities_total": 138,
-    "employment_latest_k": 24.53,
-    "employment_yoy_pct": -0.8,
+    "employment_latest_k": 24.62,
+    "employment_yoy_pct": 0.4,
     "industry_gdp_latest_b": 33.1,
     "industry_gdp_yoy_pct": 8.5,
-    "avg_weekly_wage": 3152,
-    "wage_vs_private_ratio": 2.29,
+    "avg_weekly_wage": 3304,
+    "wage_vs_private_ratio": 2.32,
     "establishments_latest": 567,
     "national_rank_information": 12,
     "national_rank_mw": 5,
@@ -109,7 +109,8 @@
       19.3,
       23.11,
       24.73,
-      24.53
+      24.53,
+      24.62
     ],
     "employment_k_years": [
       2014,
@@ -122,7 +123,8 @@
       2021,
       2022,
       2023,
-      2024
+      2024,
+      2025
     ],
     "gdp_b": [
       18.2,
@@ -149,7 +151,8 @@
       2671,
       2765,
       2884,
-      3152
+      3152,
+      3304
     ],
     "wages_weekly_allprivate": [
       939,
@@ -162,7 +165,8 @@
       1215,
       1281,
       1318,
-      1377
+      1377,
+      1426
     ]
   },
   "annotations": [
@@ -4944,22 +4948,16 @@
       23.0
     ],
     "headline": {
-      "text": "Georgia Power\u2019s 2025 Integrated Resource Plan projects roughly\u202f8,500\u202fMW of total load growth over the next six years, with an estimated\u202f8,448\u202fMW of additional demand expected between the 2025/2026 winter and the 2030/2031 winter, and the company\u2019s risk\u2011adjusted forecasts indicate that large\u2011load customers\u2014particularly data centers\u2014will contribute several gigawatts of that growth, reflected in more than\u202f3\u202fGW of new data\u2011center contracts already filed and additional gigawatt\u2011scale demand pending from other large\u2011load projects.",
-      "source_url": "https://www.georgiapower.com/news-hub/press-releases/georgia-power-requests-certification-of-approximately-9900-mw-of-new-resources-from-the-georgia-psc.html"
+      "text": "Georgia Power\u2019s 2025 Integrated Resource Plan projects roughly 8.5\u202fGW of total electric\u2011load growth through the 2030 horizon, with data\u2011center development accounting for about 90\u202f% of that increase\u2014approximately 7.6\u202fGW of new demand. The plan\u2019s load\u2011forecast updates indicate that the bulk of the growth will materialize in the early years, so the 2025 forecast includes about 1.3\u202fGW of added load for that year and the 2026 forecast adds another roughly 1.3\u202fGW, bringing the cumulative data\u2011center\u2011driven load to around 2.6\u202fGW by the end of 2026.",
+      "source_url": "https://www.georgiapower.com/news-hub/press-releases/georgia-public-service-commission-approves-plan-to-meet-the-energy-needs-of-a-growing-georgia.html"
     }
   },
   "water": {
-    "permitted_facility_count": 1,
-    "permitted_mgd": 2.0,
-    "modeled_remainder_mgd": 6.95,
-    "total_estimated_mgd": 8.95,
-    "permit_sources": [
-      {
-        "url": "https://epd.georgia.gov/document/document/025-0069-notice-draft-permitpdf/download",
-        "mgd": 2.0,
-        "snippet": "Jeffrey W. Cown, Director Watershed Protection Branch 2 Martin Luther King, Jr. Drive Suite 1470A, East Tower Atlanta, Georgia 30334 404-463-1511 Notice of Draf"
-      }
-    ],
+    "permitted_facility_count": 0,
+    "permitted_mgd": 0.0,
+    "modeled_remainder_mgd": 7.07,
+    "total_estimated_mgd": 7.07,
+    "permit_sources": [],
     "methodology_note": "Measured: GA EPD water-withdrawal permits (Tavily-extracted). Modeled remainder: operating MW not associated with permits, at 50% utilization \u00d7 industry-standard 0.5 gallons cooling water per kWh. Estimate, not measurement."
   },
   "policy": {
@@ -4994,35 +4992,43 @@
         "status": "Introduced",
         "session": "2025-26",
         "summary": "Would mandate annual public reporting of withdrawal and consumption by facilities >5 MW critical IT load."
+      },
+      {
+        "bill": "HB 134",
+        "title": "How an affordable housing bill became a tax break for the Georgia forestry industry",
+        "status": "See source",
+        "session": "2025-2026",
+        "summary": "Legislature\n\n# How an affordable housing bill became a tax break for the Georgia forestry industry\n\n\u2018Gut and replace\u2019 is standard procedure under the Gold Dome.\n\n(Photo Illustration: Broly Su / AJC | Source: Getty)\n\nBy David Wickert\n\nMay 5,",
+        "url": "https://www.ajc.com/politics/2026/05/how-an-affordable-housing-bill-became-a-tax-break-for-the-georgia-forestry-industry"
       }
     ],
     "exemption_forgone_revenue_m": 215.0,
     "exemption_forgone_revenue_year": 2024
   },
-  "source_summary": "Live sources updated 2026-05-30: employment, wages, establishments, facilities, counties, load_forecast, water, policy, pending_announcements. Stale or static: industry_gdp, state_comparison, mw_peer_states.",
+  "source_summary": "Live sources updated 2026-06-02: employment, wages, establishments, load_forecast, water, policy, pending_announcements. Stale or static: industry_gdp, state_comparison, mw_peer_states, facilities, counties.",
   "pending_announcements": [
     {
       "title": "Georgia Power\u2019s data center build-out raises fears of eminent domain",
       "url": "https://www.ajc.com/business/2026/05/the-data-center-boom-is-transforming-georgia-some-residents-could-lose-their-land",
       "source_domain": "www.ajc.com",
       "snippet": "The QTS Data Center can be seen behind the Howell Station neighborhood in Atlanta on April 30, 2025. (Daniel Varnado for the AJC 2025)\n\not esoht eht s\u2019taht dias ytimixorp rewop fo wen ,dedeen gnitagitim stimil erutcurtsarfni .stcilfnoc tnuo",
-      "mw_hint": 300.0,
-      "investment_m_hint": null
-    },
-    {
-      "title": "Opinion: Georgia data center boom requires strategy, not just hoping for the best",
-      "url": "https://www.ajc.com/opinion/2026/05/georgias-data-center-boom-requires-a-strategy-not-just-hoping-for-the-best",
-      "source_domain": "www.ajc.com",
-      "snippet": "Opinion\n\n# Georgia\u2019s data center boom requires a strategy, not just hoping for the best\n\nPeach State deserves rigor when deciding how - and how fast - to build the infrastructure shaping its future.\n\nTwo Georgia Tech assistant professors sa",
-      "mw_hint": 300.0,
+      "mw_hint": null,
       "investment_m_hint": null
     },
     {
       "title": "News  Tennessee  - DCD",
       "url": "https://www.datacenterdynamics.com/en/news?tag=tennessee",
       "source_domain": "www.datacenterdynamics.com",
-      "snippet": "Screenshot 2026-02-05 113109\n\n# Tennessee utility TVA projects data center load to double across service area by 2030\n\nUtility aims to construct 6.2GW of new generation assets to meet increased demand\n\nFranklin_Exchange_Building.jpg\n\n# H5 a",
-      "mw_hint": 300.0,
+      "snippet": "New platform gains 53MW across Illinois, Georgia, Arizona, California, Texas, and more\n\nfisk uni\n\n# Fisk University looks to build data center in Nashville, Tennessee\n\nUni looking for partner on 30MW project\n\nAnthropic's Claude logo on a sh",
+      "mw_hint": 53.0,
+      "investment_m_hint": null
+    },
+    {
+      "title": "Generac signs back up generator supply deal with undisclosed hyperscale data center - DCD",
+      "url": "https://www.datacenterdynamics.com/en/news/generac-signs-back-up-generator-supply-deal-with-undisclosed-hyperscale-data-center",
+      "source_domain": "www.datacenterdynamics.com",
+      "snippet": "## More in Rack Level\n\nRetrofitting for density\n\n# Retrofitting for density\n\nTim H_CEO_1\n\n# Sponsored AI has a power delivery problem. Superconductivity offers a path forward\n\nTech showcase A simpler path to reliable DC switchgear power for",
+      "mw_hint": null,
       "investment_m_hint": null
     },
     {
@@ -5030,23 +5036,23 @@
       "url": "https://www.datacenterdynamics.com/en/dcd-broadcasts/dcdmanagement-operations/2025/2026-trends-and-outlooks-workloads-and-workload-placement",
       "source_domain": "www.datacenterdynamics.com",
       "snippet": "EST\n\n### The data center operations toolbox of choice\n\n08 Apr 2024, 09:00\n\u2013 \n10:00\n\nEDT\n\n### Preparing for the unique requirements of AI workloads\n\n28 May 2025, 10:00\n\u2013 \n11:00\n\nEDT\n\n### Reaching the full potential of a digital twin\n\n12 Aug ",
-      "mw_hint": 300.0,
+      "mw_hint": null,
       "investment_m_hint": null
     },
     {
-      "title": "Nebius, Lambda, and CoreWeave unlikely to buy Google TPUs any ...",
-      "url": "https://www.datacenterdynamics.com/en/news/nebius-lambda-and-coreweave-unlikely-to-buy-google-tpus-any-time-soon",
+      "title": "Haber-Bosch to hyperscale: Ammonia-to-power in the data center - DCD",
+      "url": "https://www.datacenterdynamics.com/en/analysis/haber-bosch-to-hyperscale",
       "source_domain": "www.datacenterdynamics.com",
-      "snippet": "Microsoft Fairwater\n\n# Microsoft CEO says Fairwater data center site is \"going live ahead of schedule\"\n\n## More in AI & Analytics\n\nDCD Survey Report Janitza\n\n# DCD>Survey Report: Mission Critical Power\n\nLatitude.sh\n\n# Latitude.sh signs $25.",
-      "mw_hint": 300.0,
+      "snippet": "This backing, says Woo, has spurred a highly aggressive strategy for the company, expecting to deploy multi-megawatt commercial pilots in 2026\u20132027 and scale to tens of megawatts by 2028\u20132029. Long-term, Woo claims, the technology could sca",
+      "mw_hint": null,
       "investment_m_hint": null
     },
     {
-      "title": "News  DC Blox  - DCD",
-      "url": "https://www.datacenterdynamics.com/en/news?tag=dc-blox",
+      "title": "Nebius breaks ground on 400-acre data center campus in Independence, Missouri - DCD",
+      "url": "https://www.datacenterdynamics.com/en/news/nebius-breaks-ground-on-400-acre-data-center-campus-in-independence-missouri",
       "source_domain": "www.datacenterdynamics.com",
-      "snippet": "DC BLOX\n\n# DC Blox building three data centers in southeastern US, cans site in Richmond, Virginia\n\nNew Edge developments for unnamed hyperscale client\n\nAWS Ashton Avenue\n\n# Prince William County supervisors shelve Amazon data center propos",
-      "mw_hint": 216.0,
+      "snippet": "Cover - T&I Blog3_FINAL - Tim Hazlehurst_page-0001\n\n# Accelerating hyperscale deployments in the AI era\n\noxide-hero-rack\n\n# Oxide Computer Company secures $200m in funding\n\nVNG data center Vietnam\n\n# Vietnam's VNG merges AI infrastructure a",
+      "mw_hint": 200.0,
       "investment_m_hint": null
     },
     {
@@ -5054,15 +5060,15 @@
       "url": "https://www.ajc.com/education/2026/05/opening-new-doors-to-opportunity-from-hidden-figures-to-visible-futures",
       "source_domain": "www.ajc.com",
       "snippet": "Also in the early 1960s, Atlanta Technical College opened its doors. Today, as those same doors open to one of Georgia\u2019s first data center academies, we stand at the forefront of another defining moment that will shape the future of the wor",
-      "mw_hint": 216.0,
+      "mw_hint": 200.0,
       "investment_m_hint": null
     },
     {
-      "title": "Stack tops out first building at 1GW data center campus in Stafford County, Virginia - DCD",
-      "url": "https://www.datacenterdynamics.com/en/news/stack-tops-out-first-building-at-1gw-data-center-campus-in-stafford-county-virginia",
+      "title": "Oracle and OpenAI start construction on Stargate data center ...",
+      "url": "https://www.datacenterdynamics.com/en/news/oracle-and-openai-start-construction-on-stargate-data-center-campus-in-saline-township-michigan",
       "source_domain": "www.datacenterdynamics.com",
-      "snippet": "# Fossefall targets data center in Harpefoss, Norway\n\nBuilding AI-ready, sustainable data centers for the next compute era\n\n# Episode Building AI-ready, sustainable data centers for the next compute era\n\n## More in North America\n\nScreenshot",
-      "mw_hint": 216.0,
+      "snippet": "OpenAI and Oracle have an existing Stargate campus operating in Abilene, Texas. In March 2026, the companies said they were no longer planning to expand the site.\n\nAt the start of 2026, OpenAI pledged to pay for its own energy to prevent it",
+      "mw_hint": 200.0,
       "investment_m_hint": null
     }
   ]
