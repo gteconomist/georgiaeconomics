@@ -1018,22 +1018,22 @@
         {
           "fips": "13001",
           "label": "Appling",
-          "value": 2.04
+          "value": 0.0
         },
         {
           "fips": "13003",
           "label": "Atkinson",
-          "value": 1.7
+          "value": 2.43
         },
         {
           "fips": "13005",
           "label": "Bacon",
-          "value": 0.74
+          "value": 0.0
         },
         {
           "fips": "13007",
           "label": "Baker",
-          "value": 2.91
+          "value": 4.17
         },
         {
           "fips": "13009",
@@ -1058,12 +1058,12 @@
         {
           "fips": "13017",
           "label": "Ben Hill",
-          "value": 1.18
+          "value": 0.0
         },
         {
           "fips": "13019",
           "label": "Berrien",
-          "value": 2.98
+          "value": 3.6
         },
         {
           "fips": "13021",
@@ -1073,17 +1073,17 @@
         {
           "fips": "13023",
           "label": "Bleckley",
-          "value": 0.8
+          "value": 0.83
         },
         {
           "fips": "13025",
           "label": "Brantley",
-          "value": 0.01
+          "value": 0.0
         },
         {
           "fips": "13027",
           "label": "Brooks",
-          "value": 2.32
+          "value": 2.82
         },
         {
           "fips": "13029",
@@ -1093,12 +1093,12 @@
         {
           "fips": "13031",
           "label": "Bulloch",
-          "value": 4.16
+          "value": 3.94
         },
         {
           "fips": "13033",
           "label": "Burke",
-          "value": 2.38
+          "value": 2.89
         },
         {
           "fips": "13035",
@@ -1108,7 +1108,7 @@
         {
           "fips": "13037",
           "label": "Calhoun",
-          "value": 2.82
+          "value": 2.64
         },
         {
           "fips": "13039",
@@ -1118,7 +1118,7 @@
         {
           "fips": "13043",
           "label": "Candler",
-          "value": 0.45
+          "value": 0.0
         },
         {
           "fips": "13045",
@@ -1163,7 +1163,7 @@
         {
           "fips": "13061",
           "label": "Clay",
-          "value": 0.89
+          "value": 0.0
         },
         {
           "fips": "13063",
@@ -1183,12 +1183,12 @@
         {
           "fips": "13069",
           "label": "Coffee",
-          "value": 2.78
+          "value": 4.35
         },
         {
           "fips": "13071",
           "label": "Colquitt",
-          "value": 4.43
+          "value": 5.85
         },
         {
           "fips": "13073",
@@ -1198,7 +1198,7 @@
         {
           "fips": "13075",
           "label": "Cook",
-          "value": 1.47
+          "value": 2.01
         },
         {
           "fips": "13077",
@@ -1213,7 +1213,7 @@
         {
           "fips": "13081",
           "label": "Crisp",
-          "value": 1.62
+          "value": 0.0
         },
         {
           "fips": "13083",
@@ -1228,7 +1228,7 @@
         {
           "fips": "13087",
           "label": "Decatur",
-          "value": 4.88
+          "value": 6.94
         },
         {
           "fips": "13089",
@@ -1238,17 +1238,17 @@
         {
           "fips": "13091",
           "label": "Dodge",
-          "value": 0.6
+          "value": 0.97
         },
         {
           "fips": "13093",
           "label": "Dooly",
-          "value": 2.46
+          "value": 0.0
         },
         {
           "fips": "13095",
           "label": "Dougherty",
-          "value": 0.0
+          "value": 0.85
         },
         {
           "fips": "13097",
@@ -1258,17 +1258,17 @@
         {
           "fips": "13099",
           "label": "Early",
-          "value": 3.85
+          "value": 5.68
         },
         {
           "fips": "13101",
           "label": "Echols",
-          "value": 0.19
+          "value": 0.0
         },
         {
           "fips": "13103",
           "label": "Effingham",
-          "value": 0.51
+          "value": 0.0
         },
         {
           "fips": "13105",
@@ -1278,12 +1278,12 @@
         {
           "fips": "13107",
           "label": "Emanuel",
-          "value": 0.78
+          "value": 1.23
         },
         {
           "fips": "13109",
           "label": "Evans",
-          "value": 0.35
+          "value": 0.0
         },
         {
           "fips": "13111",
@@ -1338,7 +1338,7 @@
         {
           "fips": "13131",
           "label": "Grady",
-          "value": 1.53
+          "value": 2.28
         },
         {
           "fips": "13133",
@@ -1378,7 +1378,7 @@
         {
           "fips": "13147",
           "label": "Hart",
-          "value": 0.14
+          "value": 0.0
         },
         {
           "fips": "13149",
@@ -1393,12 +1393,12 @@
         {
           "fips": "13153",
           "label": "Houston",
-          "value": 0.1
+          "value": 0.0
         },
         {
           "fips": "13155",
           "label": "Irwin",
-          "value": 3.16
+          "value": 0.0
         },
         {
           "fips": "13157",
@@ -1413,22 +1413,22 @@
         {
           "fips": "13161",
           "label": "Jeff Davis",
-          "value": 1.43
+          "value": 2.3
         },
         {
           "fips": "13163",
           "label": "Jefferson",
-          "value": 1.23
+          "value": 1.62
         },
         {
           "fips": "13165",
           "label": "Jenkins",
-          "value": 0.81
+          "value": 0.0
         },
         {
           "fips": "13167",
           "label": "Johnson",
-          "value": 0.35
+          "value": 0.0
         },
         {
           "fips": "13169",
@@ -1443,17 +1443,17 @@
         {
           "fips": "13173",
           "label": "Lanier",
-          "value": 0.95
+          "value": 0.75
         },
         {
           "fips": "13175",
           "label": "Laurens",
-          "value": 0.64
+          "value": 0.78
         },
         {
           "fips": "13177",
           "label": "Lee",
-          "value": 1.03
+          "value": 0.0
         },
         {
           "fips": "13179",
@@ -1468,12 +1468,12 @@
         {
           "fips": "13183",
           "label": "Long",
-          "value": 0.04
+          "value": 0.0
         },
         {
           "fips": "13185",
           "label": "Lowndes",
-          "value": 0.79
+          "value": 0.71
         },
         {
           "fips": "13187",
@@ -1493,7 +1493,7 @@
         {
           "fips": "13193",
           "label": "Macon",
-          "value": 1.39
+          "value": 0.0
         },
         {
           "fips": "13195",
@@ -1503,7 +1503,7 @@
         {
           "fips": "13197",
           "label": "Marion",
-          "value": 0.14
+          "value": 0.15
         },
         {
           "fips": "13199",
@@ -1513,12 +1513,12 @@
         {
           "fips": "13201",
           "label": "Miller",
-          "value": 4.23
+          "value": 5.19
         },
         {
           "fips": "13205",
           "label": "Mitchell",
-          "value": 5.56
+          "value": 7.94
         },
         {
           "fips": "13207",
@@ -1528,7 +1528,7 @@
         {
           "fips": "13209",
           "label": "Montgomery",
-          "value": 0.21
+          "value": 0.65
         },
         {
           "fips": "13211",
@@ -1578,7 +1578,7 @@
         {
           "fips": "13229",
           "label": "Pierce",
-          "value": 1.19
+          "value": 1.85
         },
         {
           "fips": "13231",
@@ -1593,7 +1593,7 @@
         {
           "fips": "13235",
           "label": "Pulaski",
-          "value": 1.12
+          "value": 1.58
         },
         {
           "fips": "13237",
@@ -1613,7 +1613,7 @@
         {
           "fips": "13243",
           "label": "Randolph",
-          "value": 1.14
+          "value": 1.51
         },
         {
           "fips": "13245",
@@ -1633,12 +1633,12 @@
         {
           "fips": "13251",
           "label": "Screven",
-          "value": 1.84
+          "value": 2.42
         },
         {
           "fips": "13253",
           "label": "Seminole",
-          "value": 2.35
+          "value": 0.0
         },
         {
           "fips": "13255",
@@ -1653,12 +1653,12 @@
         {
           "fips": "13259",
           "label": "Stewart",
-          "value": 0.33
+          "value": 0.0
         },
         {
           "fips": "13261",
           "label": "Sumter",
-          "value": 1.05
+          "value": 1.24
         },
         {
           "fips": "13263",
@@ -1673,7 +1673,7 @@
         {
           "fips": "13267",
           "label": "Tattnall",
-          "value": 1.03
+          "value": 0.0
         },
         {
           "fips": "13269",
@@ -1683,27 +1683,27 @@
         {
           "fips": "13271",
           "label": "Telfair",
-          "value": 0.51
+          "value": 0.0
         },
         {
           "fips": "13273",
           "label": "Terrell",
-          "value": 1.8
+          "value": 1.64
         },
         {
           "fips": "13275",
           "label": "Thomas",
-          "value": 2.23
+          "value": 2.73
         },
         {
           "fips": "13277",
           "label": "Tift",
-          "value": 1.66
+          "value": 2.1
         },
         {
           "fips": "13279",
           "label": "Toombs",
-          "value": 0.34
+          "value": 0.74
         },
         {
           "fips": "13281",
@@ -1713,7 +1713,7 @@
         {
           "fips": "13283",
           "label": "Treutlen",
-          "value": 0.29
+          "value": 0.0
         },
         {
           "fips": "13285",
@@ -1723,12 +1723,12 @@
         {
           "fips": "13287",
           "label": "Turner",
-          "value": 1.78
+          "value": 2.95
         },
         {
           "fips": "13289",
           "label": "Twiggs",
-          "value": 0.64
+          "value": 0.0
         },
         {
           "fips": "13291",
@@ -1753,7 +1753,7 @@
         {
           "fips": "13299",
           "label": "Ware",
-          "value": 0.2
+          "value": 0.0
         },
         {
           "fips": "13301",
@@ -1763,17 +1763,17 @@
         {
           "fips": "13303",
           "label": "Washington",
-          "value": 0.4
+          "value": 0.0
         },
         {
           "fips": "13305",
           "label": "Wayne",
-          "value": 0.46
+          "value": 0.0
         },
         {
           "fips": "13307",
           "label": "Webster",
-          "value": 1.23
+          "value": 0.0
         },
         {
           "fips": "13309",
@@ -1793,7 +1793,7 @@
         {
           "fips": "13315",
           "label": "Wilcox",
-          "value": 1.37
+          "value": 2.26
         },
         {
           "fips": "13317",
@@ -1808,7 +1808,7 @@
         {
           "fips": "13321",
           "label": "Worth",
-          "value": 4.0
+          "value": 5.41
         }
       ]
     },
@@ -3415,5 +3415,5 @@
       ]
     }
   },
-  "fetched_at": "2026-05-20"
+  "fetched_at": "2026-06-02"
 }
