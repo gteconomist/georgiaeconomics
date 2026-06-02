@@ -3878,19 +3878,23 @@
           "source_url": "https://www.savannahnow.com/exchange/2014-08-23/business-savannah-brief"
         },
         {
-          "name": "Georgia Regional Hospital",
+          "name": "B&K Group",
           "source_url": null
         },
         {
-          "name": "Hinesville Medical Center",
+          "name": "Georgia Southern Innovation Group",
+          "source_url": "https://www.selectgeorgia.com/blog/georgia-southern-innovation-group"
+        },
+        {
+          "name": "Hinesville Hospital",
           "source_url": null
         },
         {
-          "name": "Hinesville Regional Hospital",
+          "name": "Liberty Regional Medical Center",
           "source_url": null
         },
         {
-          "name": "Memorial Health System",
+          "name": "Southeast Georgia Health System",
           "source_url": null
         },
         {
@@ -3898,43 +3902,39 @@
           "source_url": "https://georgia.org/sites/default/files/2018-11/gdecd_board_book_-_5-23-18.pdf"
         },
         {
-          "name": "Arts Academy Fitness",
-          "source_url": "https://georgia.org/sites/default/files/2020-09/georgia_safety_promise-9-14.pdf"
+          "name": "Annual Red Carpet Tour",
+          "source_url": "https://georgia.org/sites/default/files/2018-12/gdecd_board_book_august_2018.pdf"
         },
         {
           "name": "Automotive",
           "source_url": "https://georgia.org/sites/default/files/2018-11/gdecd_board_book_-_5-23-18.pdf"
         },
         {
-          "name": "Aviation",
-          "source_url": "https://georgia.org/sites/default/files/2018-11/gdecd_board_book_-_5-23-18.pdf"
-        },
-        {
-          "name": "Bermuda Lane Flowery Branch Wesco Distribution",
+          "name": "Ave Guyton Mahgniffe LLC Food",
           "source_url": "https://georgia.org/sites/default/files/2020-09/georgia_safety_promise-9-14.pdf"
         },
         {
-          "name": "COI Logistics",
-          "source_url": "https://georgia.org/sites/default/files/2018-11/gdecd_board_book_-_5-23-18.pdf"
-        },
-        {
-          "name": "Co Shopping",
+          "name": "Barnes Mill Rd Hamilton Harris County",
           "source_url": "https://georgia.org/sites/default/files/2020-09/georgia_safety_promise-9-14.pdf"
         },
         {
-          "name": "DBA Englewood Electric Wholesale",
-          "source_url": "https://georgia.org/sites/default/files/2020-09/georgia_safety_promise-9-14.pdf"
+          "name": "Bill Lattimore of The Lattimore Company",
+          "source_url": "https://www.savannahnow.com/story/news/2007/04/20/keys-future-0/13805381007"
+        },
+        {
+          "name": "Business Innovation Group",
+          "source_url": "https://www.selectgeorgia.com/blog/georgia-southern-innovation-group"
         }
       ],
       "sources": [
-        "https://en.wikipedia.org/wiki/Savannah,_Georgia",
         "https://www.savannahnow.com/exchange/2014-08-23/business-savannah-brief",
-        "https://www.savannahnow.com/story/business/2013/05/27/business-savannah-news-summary/13612244007",
+        "https://www.selectgeorgia.com/blog/georgia-southern-innovation-group",
+        "https://en.wikipedia.org/wiki/Savannah,_Georgia",
         "https://georgia.org/sites/default/files/2020-09/georgia_safety_promise-9-14.pdf",
         "https://georgia.org/sites/default/files/2018-11/gdecd_board_book_-_5-23-18.pdf",
-        "https://www.augustachronicle.com/story/business/2010/11/21/working-our-way-augusta-area-sees-job-growth/14571763007",
-        "https://www.savannahnow.com/story/news/2008/09/11/savannah-best-performing-cities-list-jobs/13766785007",
-        "https://www.ajc.com/business/jobs-return-atlanta-2014-report-says/YObTdIp5oXUhYvGBtU5F3K"
+        "https://georgia.org/sites/default/files/2018-12/gdecd_board_book_august_2018.pdf",
+        "https://www.savannahnow.com/story/news/2007/04/20/keys-future-0/13805381007",
+        "https://www.augustachronicle.com/story/business/2010/11/21/working-our-way-augusta-area-sees-job-growth/14571763007"
       ],
       "method": "Representative list auto-discovered via Tavily web search across chamber-of-commerce, development-authority and local-news sources. Not exhaustive; ordering approximates source frequency, not headcount."
     },

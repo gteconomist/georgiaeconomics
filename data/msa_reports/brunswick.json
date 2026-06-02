@@ -4021,63 +4021,62 @@
           "source_url": "https://en.wikipedia.org/wiki/Brunswick,_Georgia"
         },
         {
-          "name": "Georgia Power Economic Development",
-          "source_url": "https://www.selectgeorgia.com/blog/wtc-sav-prosperity"
-        },
-        {
           "name": "Georgia Ports Authority",
           "source_url": "https://en.wikipedia.org/wiki/Brunswick,_Georgia"
         },
         {
-          "name": "Sea Island Company",
-          "source_url": "https://en.wikipedia.org/wiki/Golden_Isles_of_Georgia"
+          "name": "Georgia Power Economic Development",
+          "source_url": "https://www.selectgeorgia.com/blog/wtc-sav-prosperity"
         },
         {
           "name": "The Port of Brunswick",
           "source_url": "https://en.wikipedia.org/wiki/Brunswick,_Georgia"
         },
         {
+          "name": "Aviation Academy",
+          "source_url": "https://georgia.org/sites/default/files/2018-12/GABusClimRkgs_1.pdf"
+        },
+        {
           "name": "General Motors",
           "source_url": "https://en.wikipedia.org/wiki/Brunswick,_Georgia"
         },
         {
-          "name": "Georgia Port Authority",
-          "source_url": "https://www.ajc.com/business/2026/01/heavy-equipment-lifting-business-at-crucial-time-for-brunswick-port"
+          "name": "Georgia Power Regional Economic Development Manager",
+          "source_url": "https://www.selectgeorgia.com/blog/wtc-sav-prosperity"
+        },
+        {
+          "name": "Georgia Power Team",
+          "source_url": "https://www.selectgeorgia.com/blog/wtc-sav-prosperity"
         },
         {
           "name": "Marine Port",
           "source_url": "https://en.wikipedia.org/wiki/Brunswick,_Georgia"
         },
         {
-          "name": "ABKO Properties Guardian Industries Flint Hills",
-          "source_url": "https://en.wikipedia.org/wiki/Georgia-Pacific"
+          "name": "Ports of Savannah",
+          "source_url": "https://www.selectgeorgia.com/blog/wtc-sav-prosperity"
         },
         {
-          "name": "AT&T Mobility Atlanta Bread Company",
-          "source_url": "https://en.wikipedia.org/wiki/Georgia-Pacific"
+          "name": "St. Thomas University",
+          "source_url": "https://en.wikipedia.org/wiki/New_Brunswick"
         },
         {
-          "name": "Aviation Academy",
-          "source_url": "https://georgia.org/sites/default/files/2018-12/GABusClimRkgs_1.pdf"
+          "name": "Aerospace Exports",
+          "source_url": "https://georgia.org"
         },
         {
-          "name": "Baan Corporation",
-          "source_url": "https://en.wikipedia.org/wiki/Georgia-Pacific"
-        },
-        {
-          "name": "Beyond Health Group",
-          "source_url": "https://www.selectgeorgia.com/services/support-for-communities/small-business-resources"
+          "name": "College",
+          "source_url": "https://en.wikipedia.org/wiki/New_Brunswick"
         }
       ],
       "sources": [
         "https://en.wikipedia.org/wiki/Brunswick,_Georgia",
         "https://www.selectgeorgia.com/blog/wtc-sav-prosperity",
-        "https://www.ajc.com/business/2026/01/heavy-equipment-lifting-business-at-crucial-time-for-brunswick-port",
-        "https://en.wikipedia.org/wiki/Georgia-Pacific",
-        "https://www.savannahnow.com/story/news/2016/07/08/garden-city-police-department-savannah-firms-make-best-places-work-georgia-list/13921419007",
+        "https://georgia.org/sites/default/files/2018-12/GABusClimRkgs_1.pdf",
+        "https://georgia.org",
         "https://en.wikipedia.org/wiki/Golden_Isles_of_Georgia",
-        "https://www.selectgeorgia.com/services/support-for-communities/small-business-resources",
-        "https://georgia.org/sites/default/files/2018-12/GABusClimRkgs_1.pdf"
+        "https://www.savannahnow.com/story/news/2013/09/29/education-tax-reform-and-3-georgias/13493143007",
+        "https://en.wikipedia.org/wiki/New_Brunswick"
       ],
       "method": "Representative list auto-discovered via Tavily web search across chamber-of-commerce, development-authority and local-news sources. Not exhaustive; ordering approximates source frequency, not headcount."
     },
