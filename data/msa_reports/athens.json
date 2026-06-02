@@ -4940,15 +4940,7 @@
           "source_url": "https://en.wikipedia.org/wiki/Athens,_Georgia"
         },
         {
-          "name": "RWDC Industries",
-          "source_url": "https://en.wikipedia.org/wiki/Athens,_Georgia"
-        },
-        {
           "name": "Janssen Pharmaceuticals",
-          "source_url": "https://en.wikipedia.org/wiki/Athens,_Georgia"
-        },
-        {
-          "name": "Peachtree Medical Billing",
           "source_url": "https://en.wikipedia.org/wiki/Athens,_Georgia"
         },
         {
@@ -4956,15 +4948,27 @@
           "source_url": "https://www.onlineathens.com/story/news/2026/03/04/georgias-best-employers-are-these-2-big-businesses-forbes-says/88982542007"
         },
         {
+          "name": "RWDC Industries",
+          "source_url": "https://en.wikipedia.org/wiki/Athens,_Georgia"
+        },
+        {
           "name": "Clarke County School District",
           "source_url": null
         },
         {
-          "name": "Blue Bird Corporation",
-          "source_url": null
+          "name": "Peachtree Medical Billing",
+          "source_url": "https://en.wikipedia.org/wiki/Athens,_Georgia"
         },
         {
           "name": "Piedmont Athens Regional Medical Center",
+          "source_url": null
+        },
+        {
+          "name": "Georgia Power",
+          "source_url": "https://www.onlineathens.com/story/news/2025/03/18/georgia-companies-named-most-trustworthy-in-u-s-coca-cola-home-depot/82513468007"
+        },
+        {
+          "name": "Clarke County School System",
           "source_url": null
         },
         {
@@ -4972,12 +4976,8 @@
           "source_url": "https://www.onlineathens.com/story/news/state/2015/08/28/forecast-stock-market-roller-coaster-wont-dampen-athens-economy/15484730007"
         },
         {
-          "name": "Turned Into Recording Academy",
-          "source_url": "https://en.wikipedia.org/wiki/Athens,_Georgia"
-        },
-        {
-          "name": "UGA Health Care",
-          "source_url": null
+          "name": "Southern Company",
+          "source_url": "https://www.onlineathens.com/story/news/2025/03/18/georgia-companies-named-most-trustworthy-in-u-s-coca-cola-home-depot/82513468007"
         },
         {
           "name": "AU College of Nursing",
@@ -4996,11 +4996,11 @@
         "https://en.wikipedia.org/wiki/Athens,_Georgia",
         "https://www.onlineathens.com/story/news/state/2015/08/28/forecast-stock-market-roller-coaster-wont-dampen-athens-economy/15484730007",
         "https://www.onlineathens.com/story/news/2026/03/04/georgias-best-employers-are-these-2-big-businesses-forbes-says/88982542007",
+        "https://www.onlineathens.com/story/news/2025/03/18/georgia-companies-named-most-trustworthy-in-u-s-coca-cola-home-depot/82513468007",
         "https://www.augustachronicle.com/story/news/2025/06/04/fortune-500s-list-of-the-biggest-corporations-includes-17-in-georgia/84010835007",
-        "https://en.wikipedia.org/wiki/Metro_Atlanta",
+        "https://www.ajc.com/top-workplaces/rounding-out-the-top-5-large-businesses/5FF7QFEAMRGF3PLDXYSC4NOFWQ",
         "https://www.onlineathens.com/story/business/2013/01/05/brodrick-remarkable-year-athens/15586276007",
-        "https://www.onlineathens.com/story/business/2014/07/26/terrell-athens-chamber-focusing-members-and-partnerships-2014/15524196007",
-        "https://www.onlineathens.com/story/business/2021/09/02/jobs-athens-abundant-employers-experience-labor-shortage/5647514001"
+        "https://www.onlineathens.com/story/news/state/2019/05/24/athens-entrepreneurs-get-business-help-at-state-chamber-event/5073147007"
       ],
       "method": "Representative list auto-discovered via Tavily web search across chamber-of-commerce, development-authority and local-news sources. Not exhaustive; ordering approximates source frequency, not headcount."
     },

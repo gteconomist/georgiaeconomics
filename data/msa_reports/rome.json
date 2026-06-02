@@ -4325,20 +4325,24 @@
           "source_url": "https://en.wikipedia.org/wiki/Rome,_Georgia"
         },
         {
-          "name": "Mills Fitzner",
-          "source_url": "https://www.northwestgeorgianews.com/rome/news/local/getting-down-to-business-chamber-hosts-annual-meeting-at-forum/article_2c292d95-89c6-4cb2-8950-81f981fc7218.html"
-        },
-        {
           "name": "Atrium Health Floyd",
           "source_url": "https://en.wikipedia.org/wiki/Atrium_Health_Floyd"
         },
         {
-          "name": "Ball Corporation",
-          "source_url": "https://www.northwestgeorgianews.com/rome/business/rome-and-floyd-county-industrial-expansion-gains-make-site-selection-magazine-top-10-list/article_49657e1e-79f8-11eb-808a-07dd0a6bfb11.html"
+          "name": "Summit Hill Foods",
+          "source_url": "https://www.northwestgeorgianews.com/rome/business/rome-floyd-chamber-celebrates-rome-industries/article_34aae01c-d8ff-11ef-b2a8-a38613426472.html"
         },
         {
-          "name": "Kerry Group",
-          "source_url": "https://en.wikipedia.org/wiki/Rome,_Georgia"
+          "name": "Georgia Northwestern Technical College",
+          "source_url": "https://www.northwestgeorgianews.com/jill-fisher/article_59879411-06d9-44c3-9def-274e326ae1e7.html"
+        },
+        {
+          "name": "Greater Rome Existing Industries Association",
+          "source_url": "https://www.northwestgeorgianews.com/jill-fisher/article_59879411-06d9-44c3-9def-274e326ae1e7.html"
+        },
+        {
+          "name": "Lewis Chemical Co",
+          "source_url": "https://www.northwestgeorgianews.com/rome/business/lewis-chemical-named-small-business-of-the-year-larry-alford-of-service-master-by-twins/article_130f8d6a-8486-11e3-b983-001a4bcf6878.html"
         },
         {
           "name": "Lowe's Distribution Center",
@@ -4355,21 +4359,17 @@
         {
           "name": "Georgia Health Sciences University",
           "source_url": "https://en.wikipedia.org/wiki/Rome,_Georgia"
-        },
-        {
-          "name": "Georgia Northwestern Technical College",
-          "source_url": "https://www.northwestgeorgianews.com/jill-fisher/article_59879411-06d9-44c3-9def-274e326ae1e7.html"
         }
       ],
       "sources": [
         "https://en.wikipedia.org/wiki/Rome,_Georgia",
         "https://en.wikipedia.org/wiki/Atrium_Health_Floyd",
         "https://www.selectgeorgia.com/blog/team-researchers-provide-clear-employment-overview-community-partners",
-        "https://www.northwestgeorgianews.com/rome/business/rome-and-floyd-county-industrial-expansion-gains-make-site-selection-magazine-top-10-list/article_49657e1e-79f8-11eb-808a-07dd0a6bfb11.html",
         "https://www.ajc.com/business/lowe-bringing-600-jobs-rome/V7ylHfF7WKPOa2Zbe5IWKK",
         "https://georgia.org/sites/default/files/2023-01/lowes_4.pdf",
         "https://www.northwestgeorgianews.com/jill-fisher/article_59879411-06d9-44c3-9def-274e326ae1e7.html",
-        "https://www.northwestgeorgianews.com/rome/news/local/getting-down-to-business-chamber-hosts-annual-meeting-at-forum/article_2c292d95-89c6-4cb2-8950-81f981fc7218.html"
+        "https://www.northwestgeorgianews.com/rome/business/lewis-chemical-named-small-business-of-the-year-larry-alford-of-service-master-by-twins/article_130f8d6a-8486-11e3-b983-001a4bcf6878.html",
+        "https://www.northwestgeorgianews.com/county-loses-last-major-link-to-textile-local-new/article_5a94708d-ed20-549f-b911-9afae62f1842.html"
       ],
       "method": "Representative list auto-discovered via Tavily web search across chamber-of-commerce, development-authority and local-news sources. Not exhaustive; ordering approximates source frequency, not headcount."
     },

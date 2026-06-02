@@ -4083,24 +4083,20 @@
       "as_of": "2026-06-02",
       "employers": [
         {
-          "name": "Pratt Industries",
-          "source_url": "https://www.macon.com/news/business/article279055784.html"
+          "name": "Blue Bird Body Co",
+          "source_url": "https://www.macon.com/news/business/article258547393.html"
         },
         {
-          "name": "Robins Industrial Park",
-          "source_url": "https://www.macon.com/news/business/article279055784.html"
+          "name": "Houston Healthcare Complex",
+          "source_url": "https://www.macon.com/news/business/article258547393.html"
         },
         {
           "name": "Atrium Health Navicent The Medical Center",
           "source_url": "https://www.macon.com/news/business/article258547393.html"
         },
         {
-          "name": "Coliseum Health Systems",
-          "source_url": "https://www.macon.com/news/business/article258547393.html"
-        },
-        {
-          "name": "Houston Healthcare Complex",
-          "source_url": "https://www.macon.com/news/business/article258547393.html"
+          "name": "Pratt Industries",
+          "source_url": "https://www.macon.com/news/business/article279055784.html"
         },
         {
           "name": "Medical Center of Central Georgia",
@@ -4111,19 +4107,19 @@
           "source_url": "https://www.macon.com/news/business/article258547393.html"
         },
         {
-          "name": "Blue Bird Body Co",
-          "source_url": "https://www.macon.com/news/business/article258547393.html"
+          "name": "Robins Industrial Park",
+          "source_url": "https://www.macon.com/news/business/article279055784.html"
         },
         {
           "name": "Blue Bird Corp",
           "source_url": "https://en.wikipedia.org/wiki/Central_Georgia"
         },
         {
-          "name": "Mercer University",
-          "source_url": "https://www.macon.com/news/business/article258547393.html"
+          "name": "Chief Manufacturing",
+          "source_url": "https://en.wikipedia.org/wiki/Central_Georgia"
         },
         {
-          "name": "Chief Manufacturing",
+          "name": "Coliseum Health System",
           "source_url": "https://en.wikipedia.org/wiki/Central_Georgia"
         },
         {
@@ -4131,23 +4127,27 @@
           "source_url": "https://en.wikipedia.org/wiki/Central_Georgia"
         },
         {
-          "name": "Primary Industries",
+          "name": "Food Manufacturing",
+          "source_url": "https://www.wrga.gov/article/2351392"
+        },
+        {
+          "name": "Mercer University",
           "source_url": "https://www.macon.com/news/business/article258547393.html"
         },
         {
-          "name": "Solutions Pest",
-          "source_url": "https://en.wikipedia.org/wiki/Central_Georgia"
+          "name": "Primary Industries",
+          "source_url": "https://www.macon.com/news/business/article258547393.html"
         }
       ],
       "sources": [
+        "https://www.georgiatrend.com/2023/02/28/economy-warner-robins-advantages",
         "https://www.macon.com/news/business/article258547393.html",
+        "https://www.wrga.gov/article/2351392",
+        "https://houstoncountyga.net/industries/top-employers",
         "https://en.wikipedia.org/wiki/Central_Georgia",
-        "https://en.wikipedia.org/wiki/Robins_Air_Force_Base",
-        "https://www.macon.com/news/business/article279055784.html",
-        "https://www.macon.com/news/local/military/article214843570.html",
+        "https://www.metroatlantachamber.com/wp-content/uploads/2023/08/Top-Employer-Final.pdf",
         "https://www.macon.com/news/local/community/houston-peach/article248306705.html",
-        "https://www.macon.com/news/local/community/houston-peach/the-sun-news/article123960724.html",
-        "https://georgia.org/sites/default/files/2021-02/fy21_q2_board_book.pdf"
+        "https://www.macon.com/news/local/military/article214843570.html"
       ],
       "method": "Representative list auto-discovered via Tavily web search across chamber-of-commerce, development-authority and local-news sources. Not exhaustive; ordering approximates source frequency, not headcount."
     },

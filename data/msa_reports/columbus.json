@@ -4961,6 +4961,10 @@
           "source_url": "https://en.wikipedia.org/wiki/List_of_largest_Central_Ohio_employers"
         },
         {
+          "name": "Nationwide Insurance",
+          "source_url": "https://en.wikipedia.org/wiki/Economy_of_Columbus,_Ohio"
+        },
+        {
           "name": "St. Francis Hospital",
           "source_url": "https://en.wikipedia.org/wiki/Columbus,_Georgia"
         },
@@ -4975,21 +4979,17 @@
         {
           "name": "Mercer Medical School",
           "source_url": "https://georgia.org/sites/default/files/2023-01/2022-8-24_gdecd_board_meeting_minutes.pdf"
-        },
-        {
-          "name": "Mount Carmel Health System",
-          "source_url": "https://en.wikipedia.org/wiki/List_of_largest_Central_Ohio_employers"
         }
       ],
       "sources": [
-        "https://www.selectgeorgia.com/blog/columbus-georgia-a-home-for-headquarters",
         "https://www.ledger-enquirer.com/news/state/georgia/article312697701.html",
+        "https://www.selectgeorgia.com/blog/columbus-georgia-a-home-for-headquarters",
         "https://en.wikipedia.org/wiki/Columbus,_Georgia",
+        "https://en.wikipedia.org/wiki/List_of_largest_companies_in_the_United_States_by_revenue",
+        "https://www.ledger-enquirer.com/news/business/article223441075.html",
         "https://www.ledger-enquirer.com/living/living-here-guide/article29130475.html",
         "https://www.ledger-enquirer.com/news/business/article289530136.html",
-        "https://georgia.org/sites/default/files/2023-01/2022-8-24_gdecd_board_meeting_minutes.pdf",
-        "https://www.selectgeorgia.com/about-us/our-team/regional-development/andrew-camp-west",
-        "https://www.ledger-enquirer.com/news/business/article283415023.html"
+        "https://georgia.org/sites/default/files/2023-01/2022-8-24_gdecd_board_meeting_minutes.pdf"
       ],
       "method": "Representative list auto-discovered via Tavily web search across chamber-of-commerce, development-authority and local-news sources. Not exhaustive; ordering approximates source frequency, not headcount."
     },

@@ -5003,6 +5003,10 @@
           "source_url": "https://en.wikipedia.org/wiki/Gainesville,_Florida"
         },
         {
+          "name": "Kubota Manufacturing of America",
+          "source_url": "https://www.gainesvilletimes.com/news/business-archived/chamber-honors-3-companies-as-the-years-best-in-hall"
+        },
+        {
           "name": "Aerospace",
           "source_url": "https://www.selectgeorgia.com/discover-georgia/industries/fortune-500-list"
         },
@@ -5023,12 +5027,20 @@
           "source_url": "https://en.wikipedia.org/wiki/Gainesville,_Florida"
         },
         {
-          "name": "Koch Foods",
-          "source_url": "https://en.wikipedia.org/wiki/Gainesville,_Georgia"
+          "name": "Distribution",
+          "source_url": "https://www.gainesvilletimes.com/news/business-archived/chamber-honors-3-companies-as-the-years-best-in-hall"
         },
         {
-          "name": "Kubota Manufacturing of America",
+          "name": "Elan Drug Technologies",
           "source_url": "https://www.gainesvilletimes.com/news/business-archived/chamber-honors-3-companies-as-the-years-best-in-hall"
+        },
+        {
+          "name": "Gold Creek Foods",
+          "source_url": "https://www.bizjournals.com/atlanta/related_content.html?topic=Kubota+Industrial+Equipment+Corp"
+        },
+        {
+          "name": "Koch Foods",
+          "source_url": "https://en.wikipedia.org/wiki/Gainesville,_Georgia"
         },
         {
           "name": "Northeast Georgia Health System",
@@ -5041,29 +5053,17 @@
         {
           "name": "Wrigley Manufacturing",
           "source_url": "https://www.gainesvilletimes.com/news/business-archived/chamber-honors-3-companies-as-the-years-best-in-hall"
-        },
-        {
-          "name": "Annual Comprehensive Financial Report",
-          "source_url": "https://en.wikipedia.org/wiki/Gainesville,_Florida"
-        },
-        {
-          "name": "Asbury Automotive",
-          "source_url": "https://www.selectgeorgia.com/discover-georgia/industries/fortune-500-list"
-        },
-        {
-          "name": "Chemical Manufacturing",
-          "source_url": "https://www.selectgeorgia.com/discover-georgia/industries/fortune-500-list"
         }
       ],
       "sources": [
-        "https://www.ajc.com/top-workplaces/2025/08/15-newcomers-join-ranks-of-atlantas-top-large-workplaces",
+        "https://www.bizjournals.com/atlanta/related_content.html?topic=Kubota+Industrial+Equipment+Corp",
         "https://en.wikipedia.org/wiki/Gainesville,_Florida",
         "https://www.augustachronicle.com/story/news/2025/05/14/hgtv-up-and-coming-small-cities-why-this-georgia-town-made-the-list-gainesville-ga/83602820007",
-        "https://www.selectgeorgia.com/discover-georgia/industries/fortune-500-list",
-        "https://en.wikipedia.org/wiki/Augusta,_Georgia",
+        "https://en.wikipedia.org/wiki/Metro_Atlanta",
+        "https://www.ajc.com/top-workplaces/2025/08/15-newcomers-join-ranks-of-atlantas-top-large-workplaces",
         "https://www.gainesvilletimes.com/news/business-archived/chamber-honors-3-companies-as-the-years-best-in-hall",
-        "https://www.gainesvilletimes.com/news/business-archived/gainesville-approves-5m-bond-for-ims-gear-georgia",
-        "https://en.wikipedia.org/wiki/Gainesville,_Georgia"
+        "https://en.wikipedia.org/wiki/Gainesville,_Georgia",
+        "https://www.selectgeorgia.com/discover-georgia/industries/fortune-500-list"
       ],
       "method": "Representative list auto-discovered via Tavily web search across chamber-of-commerce, development-authority and local-news sources. Not exhaustive; ordering approximates source frequency, not headcount."
     },

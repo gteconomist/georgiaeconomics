@@ -1,5 +1,5 @@
 {
- "fetched_at": "2026-06-02T13:02:48Z",
+ "fetched_at": "2026-06-02T13:45:57Z",
  "schema": "migration/v1",
  "metros": [
   {
@@ -1168,34 +1168,373 @@
   "note": "Aggregate of the 86 GA counties outside the 14 MSAs.",
   "source": "Census PEP components of change (county)"
  },
+ "state_flows": {
+  "year_pair_label": "2022\u21922023",
+  "from_year": 2022,
+  "to_year": 2023,
+  "total_in": 63802,
+  "total_out": 55484,
+  "net": 8318,
+  "top_in": [
+   {
+    "state": "Florida",
+    "n_returns": 15478
+   },
+   {
+    "state": "New York",
+    "n_returns": 5396
+   },
+   {
+    "state": "California",
+    "n_returns": 4848
+   },
+   {
+    "state": "Texas",
+    "n_returns": 4386
+   },
+   {
+    "state": "Tennessee",
+    "n_returns": 3919
+   },
+   {
+    "state": "Alabama",
+    "n_returns": 3895
+   },
+   {
+    "state": "South Carolina",
+    "n_returns": 3810
+   },
+   {
+    "state": "North Carolina",
+    "n_returns": 3172
+   },
+   {
+    "state": "Illinois",
+    "n_returns": 2052
+   },
+   {
+    "state": "New Jersey",
+    "n_returns": 1539
+   }
+  ],
+  "top_out": [
+   {
+    "state": "Florida",
+    "n_returns": 12104
+   },
+   {
+    "state": "Texas",
+    "n_returns": 5755
+   },
+   {
+    "state": "South Carolina",
+    "n_returns": 4488
+   },
+   {
+    "state": "Tennessee",
+    "n_returns": 4031
+   },
+   {
+    "state": "Alabama",
+    "n_returns": 3996
+   },
+   {
+    "state": "California",
+    "n_returns": 3732
+   },
+   {
+    "state": "North Carolina",
+    "n_returns": 3446
+   },
+   {
+    "state": "New York",
+    "n_returns": 3245
+   },
+   {
+    "state": "Illinois",
+    "n_returns": 1519
+   },
+   {
+    "state": "Colorado",
+    "n_returns": 1414
+   }
+  ],
+  "net_by_state": [
+   {
+    "state": "Florida",
+    "in": 15478,
+    "out": 12104,
+    "net": 3374
+   },
+   {
+    "state": "New York",
+    "in": 5396,
+    "out": 3245,
+    "net": 2151
+   },
+   {
+    "state": "California",
+    "in": 4848,
+    "out": 3732,
+    "net": 1116
+   },
+   {
+    "state": "New Jersey",
+    "in": 1539,
+    "out": 619,
+    "net": 920
+   },
+   {
+    "state": "Illinois",
+    "in": 2052,
+    "out": 1519,
+    "net": 533
+   },
+   {
+    "state": "Ohio",
+    "in": 1216,
+    "out": 696,
+    "net": 520
+   },
+   {
+    "state": "Pennsylvania",
+    "in": 1178,
+    "out": 661,
+    "net": 517
+   },
+   {
+    "state": "Michigan",
+    "in": 983,
+    "out": 575,
+    "net": 408
+   },
+   {
+    "state": "Maryland",
+    "in": 1407,
+    "out": 1068,
+    "net": 339
+   },
+   {
+    "state": "Virginia",
+    "in": 1409,
+    "out": 1113,
+    "net": 296
+   },
+   {
+    "state": "Connecticut",
+    "in": 537,
+    "out": 263,
+    "net": 274
+   },
+   {
+    "state": "Arizona",
+    "in": 1095,
+    "out": 872,
+    "net": 223
+   },
+   {
+    "state": "Louisiana",
+    "in": 639,
+    "out": 467,
+    "net": 172
+   },
+   {
+    "state": "Indiana",
+    "in": 424,
+    "out": 278,
+    "net": 146
+   },
+   {
+    "state": "Mississippi",
+    "in": 189,
+    "out": 68,
+    "net": 121
+   },
+   {
+    "state": "Minnesota",
+    "in": 301,
+    "out": 186,
+    "net": 115
+   },
+   {
+    "state": "Massachusetts",
+    "in": 787,
+    "out": 675,
+    "net": 112
+   },
+   {
+    "state": "Missouri",
+    "in": 392,
+    "out": 300,
+    "net": 92
+   },
+   {
+    "state": "Kentucky",
+    "in": 353,
+    "out": 287,
+    "net": 66
+   },
+   {
+    "state": "Arkansas",
+    "in": 104,
+    "out": 46,
+    "net": 58
+   },
+   {
+    "state": "Alaska",
+    "in": 79,
+    "out": 21,
+    "net": 58
+   },
+   {
+    "state": "Nebraska",
+    "in": 56,
+    "out": 0,
+    "net": 56
+   },
+   {
+    "state": "Rhode Island",
+    "in": 102,
+    "out": 46,
+    "net": 56
+   },
+   {
+    "state": "New Mexico",
+    "in": 47,
+    "out": 0,
+    "net": 47
+   },
+   {
+    "state": "Oklahoma",
+    "in": 99,
+    "out": 76,
+    "net": 23
+   },
+   {
+    "state": "Wisconsin",
+    "in": 266,
+    "out": 246,
+    "net": 20
+   },
+   {
+    "state": "Hawaii",
+    "in": 347,
+    "out": 338,
+    "net": 9
+   },
+   {
+    "state": "Kansas",
+    "in": 119,
+    "out": 118,
+    "net": 1
+   },
+   {
+    "state": "Delaware",
+    "in": 85,
+    "out": 86,
+    "net": -1
+   },
+   {
+    "state": "Oregon",
+    "in": 123,
+    "out": 155,
+    "net": -32
+   },
+   {
+    "state": "Utah",
+    "in": 158,
+    "out": 211,
+    "net": -53
+   },
+   {
+    "state": "Washington",
+    "in": 1010,
+    "out": 1104,
+    "net": -94
+   },
+   {
+    "state": "Alabama",
+    "in": 3895,
+    "out": 3996,
+    "net": -101
+   },
+   {
+    "state": "Tennessee",
+    "in": 3919,
+    "out": 4031,
+    "net": -112
+   },
+   {
+    "state": "Nevada",
+    "in": 489,
+    "out": 609,
+    "net": -120
+   },
+   {
+    "state": "District of Columbia",
+    "in": 397,
+    "out": 570,
+    "net": -173
+   },
+   {
+    "state": "North Carolina",
+    "in": 3172,
+    "out": 3446,
+    "net": -274
+   },
+   {
+    "state": "Colorado",
+    "in": 916,
+    "out": 1414,
+    "net": -498
+   },
+   {
+    "state": "South Carolina",
+    "in": 3810,
+    "out": 4488,
+    "net": -678
+   },
+   {
+    "state": "Texas",
+    "in": 4386,
+    "out": 5755,
+    "net": -1369
+   }
+  ],
+  "source": "IRS SOI county-to-county migration, GA statewide (https://www.irs.gov/pub/irs-soi/countyinflow2223.csv)"
+ },
  "kpis": {
   "net_domestic": 27333,
   "net_international": 42579,
-  "top_origin_state": null,
-  "top_dest_state": null,
-  "net_soi": null,
+  "top_origin_state": "Florida",
+  "top_dest_state": "Florida",
+  "net_soi": 8318,
   "non_metro_county_count": 86
  },
  "_meta": {
   "metro_rollup": {
-   "last_updated": "2026-06-02T13:02:48Z",
+   "last_updated": "2026-06-02T13:45:57Z",
    "n_metros": 14,
    "stale": false
   },
   "components": {
-   "last_updated": "2026-06-02T13:02:48Z",
+   "last_updated": "2026-06-02T13:45:57Z",
    "stale": false
   },
   "counties": {
-   "last_updated": "2026-06-02T13:02:48Z",
+   "last_updated": "2026-06-02T13:45:57Z",
    "stale": false
   },
   "non_metro": {
-   "last_updated": "2026-06-02T13:02:48Z",
+   "last_updated": "2026-06-02T13:45:57Z",
+   "stale": false
+  },
+  "state_flows": {
+   "last_updated": "2026-06-02T13:45:59Z",
    "stale": false
   }
  },
- "latest_label": "2025",
+ "latest_label": "2022\u21922023",
  "coverage_note": "Components and the 159-county map cover 100% of Georgia (Census PEP). State-to-state flows are IRS SOI (tax-return based, ~1.5-year lag). The Non-Metro aggregate covers the 86 counties outside the 14 MSAs.",
  "source_summary": {
   "state_flows": "IRS SOI county-to-county migration, aggregated to GA statewide",

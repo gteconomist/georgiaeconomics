@@ -4029,32 +4029,12 @@
           "source_url": "https://en.wikipedia.org/wiki/Brunswick,_Georgia"
         },
         {
-          "name": "Glynn County Public Schools",
-          "source_url": "https://www.savannahnow.com/story/news/2021/10/20/ahmaud-arbery-murder-trial-brunswick-mcmichaels-bryan-business-demographics/5899609001"
-        },
-        {
-          "name": "Pharmaceutical",
-          "source_url": "https://en.wikipedia.org/wiki/List_of_largest_companies_in_the_United_States_by_revenue"
-        },
-        {
-          "name": "Ports of Brunswick",
-          "source_url": "https://www.savannahnow.com/story/news/2021/10/20/ahmaud-arbery-murder-trial-brunswick-mcmichaels-bryan-business-demographics/5899609001"
+          "name": "Aviation Academy",
+          "source_url": "https://georgia.org/sites/default/files/2018-12/GABusClimRkgs_1.pdf"
         },
         {
           "name": "General Motors",
           "source_url": "https://en.wikipedia.org/wiki/Brunswick,_Georgia"
-        },
-        {
-          "name": "Georgia Power Regional Economic Development Manager",
-          "source_url": "https://www.selectgeorgia.com/blog/wtc-sav-prosperity"
-        },
-        {
-          "name": "Georgia Power Team",
-          "source_url": "https://www.selectgeorgia.com/blog/wtc-sav-prosperity"
-        },
-        {
-          "name": "Insurance",
-          "source_url": "https://en.wikipedia.org/wiki/List_of_largest_companies_in_the_United_States_by_revenue"
         },
         {
           "name": "Marine Port",
@@ -4065,19 +4045,37 @@
           "source_url": null
         },
         {
-          "name": "Ports of Savannah",
+          "name": "Te Port of Savannah",
+          "source_url": "https://georgia.org/sites/default/files/2018-12/GABusClimRkgs_1.pdf"
+        },
+        {
+          "name": "Beyond Health Group",
+          "source_url": "https://www.selectgeorgia.com/services/support-for-communities/small-business-resources"
+        },
+        {
+          "name": "Canon Inc",
+          "source_url": "https://en.wikipedia.org/wiki/South_Brunswick,_New_Jersey"
+        },
+        {
+          "name": "Company",
+          "source_url": "https://en.wikipedia.org/wiki/South_Brunswick,_New_Jersey"
+        },
+        {
+          "name": "Freeze Division-Central Mills",
+          "source_url": "https://en.wikipedia.org/wiki/South_Brunswick,_New_Jersey"
+        },
+        {
+          "name": "Georgia Power Regional Economic Development Manager",
           "source_url": "https://www.selectgeorgia.com/blog/wtc-sav-prosperity"
         }
       ],
       "sources": [
         "https://en.wikipedia.org/wiki/Brunswick,_Georgia",
-        "https://www.savannahnow.com/story/news/2021/10/20/ahmaud-arbery-murder-trial-brunswick-mcmichaels-bryan-business-demographics/5899609001",
         "https://www.selectgeorgia.com/blog/wtc-sav-prosperity",
-        "https://en.wikipedia.org/wiki/List_of_largest_companies_in_the_United_States_by_revenue",
         "https://georgia.org/sites/default/files/2018-12/GABusClimRkgs_1.pdf",
+        "https://www.savannahnow.com/story/news/2016/07/08/garden-city-police-department-savannah-firms-make-best-places-work-georgia-list/13921419007",
         "https://www.selectgeorgia.com/services/support-for-communities/small-business-resources",
-        "https://en.wikipedia.org/wiki/New_Brunswick",
-        "https://www.ajc.com/business/jobs-return-atlanta-2014-report-says/YObTdIp5oXUhYvGBtU5F3K"
+        "https://en.wikipedia.org/wiki/South_Brunswick,_New_Jersey"
       ],
       "method": "Representative list auto-discovered via Tavily web search across chamber-of-commerce, development-authority and local-news sources. Not exhaustive; ordering approximates source frequency, not headcount."
     },

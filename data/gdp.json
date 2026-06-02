@@ -1,5 +1,5 @@
 {
- "fetched_at": "2026-06-02T12:51:38Z",
+ "fetched_at": "2026-06-02T13:45:55Z",
  "schema": "gdp/v1",
  "metros": [
   {
@@ -423,18 +423,836 @@
    "per_capita_income": 55775
   }
  ],
+ "county_gdp": {
+  "year": 2024,
+  "counties": {
+   "13001": {
+    "gdp_bn": 2.181,
+    "gdp_per_capita": 114212,
+    "name": "Appling"
+   },
+   "13003": {
+    "gdp_bn": 0.362,
+    "gdp_per_capita": 42856,
+    "name": "Atkinson"
+   },
+   "13005": {
+    "gdp_bn": 0.508,
+    "gdp_per_capita": 45911,
+    "name": "Bacon"
+   },
+   "13007": {
+    "gdp_bn": 0.088,
+    "gdp_per_capita": 32378,
+    "name": "Baker"
+   },
+   "13009": {
+    "gdp_bn": 1.99,
+    "gdp_per_capita": 45196,
+    "name": "Baldwin"
+   },
+   "13011": {
+    "gdp_bn": 0.69,
+    "gdp_per_capita": 32434,
+    "name": "Banks"
+   },
+   "13013": {
+    "gdp_bn": 3.796,
+    "gdp_per_capita": 38046,
+    "name": "Barrow"
+   },
+   "13015": {
+    "gdp_bn": 8.646,
+    "gdp_per_capita": 71576,
+    "name": "Bartow"
+   },
+   "13017": {
+    "gdp_bn": 0.821,
+    "gdp_per_capita": 48002,
+    "name": "Ben Hill"
+   },
+   "13019": {
+    "gdp_bn": 0.553,
+    "gdp_per_capita": 29221,
+    "name": "Berrien"
+   },
+   "13021": {
+    "gdp_bn": 11.079,
+    "gdp_per_capita": 70316,
+    "name": "Bibb"
+   },
+   "13023": {
+    "gdp_bn": 0.367,
+    "gdp_per_capita": 28531,
+    "name": "Bleckley"
+   },
+   "13025": {
+    "gdp_bn": 0.372,
+    "gdp_per_capita": 19633,
+    "name": "Brantley"
+   },
+   "13027": {
+    "gdp_bn": 0.645,
+    "gdp_per_capita": 40039,
+    "name": "Brooks"
+   },
+   "13029": {
+    "gdp_bn": 3.405,
+    "gdp_per_capita": 65394,
+    "name": "Bryan"
+   },
+   "13031": {
+    "gdp_bn": 3.815,
+    "gdp_per_capita": 43875,
+    "name": "Bulloch"
+   },
+   "13033": {
+    "gdp_bn": 3.939,
+    "gdp_per_capita": 161392,
+    "name": "Burke"
+   },
+   "13035": {
+    "gdp_bn": 1.058,
+    "gdp_per_capita": 38866,
+    "name": "Butts"
+   },
+   "13037": {
+    "gdp_bn": 0.152,
+    "gdp_per_capita": 28108,
+    "name": "Calhoun"
+   },
+   "13039": {
+    "gdp_bn": 2.762,
+    "gdp_per_capita": 45928,
+    "name": "Camden"
+   },
+   "13043": {
+    "gdp_bn": 0.406,
+    "gdp_per_capita": 35967,
+    "name": "Candler"
+   },
+   "13045": {
+    "gdp_bn": 7.906,
+    "gdp_per_capita": 60332,
+    "name": "Carroll"
+   },
+   "13047": {
+    "gdp_bn": 2.269,
+    "gdp_per_capita": 32583,
+    "name": "Catoosa"
+   },
+   "13049": {
+    "gdp_bn": 0.289,
+    "gdp_per_capita": 21999,
+    "name": "Charlton"
+   },
+   "13051": {
+    "gdp_bn": 28.463,
+    "gdp_per_capita": 91269,
+    "name": "Chatham"
+   },
+   "13053": {
+    "gdp_bn": 2.189,
+    "gdp_per_capita": 258614,
+    "name": "Chattahoochee"
+   },
+   "13055": {
+    "gdp_bn": 0.736,
+    "gdp_per_capita": 29078,
+    "name": "Chattooga"
+   },
+   "13057": {
+    "gdp_bn": 13.257,
+    "gdp_per_capita": 44296,
+    "name": "Cherokee"
+   },
+   "13059": {
+    "gdp_bn": 10.824,
+    "gdp_per_capita": 83313,
+    "name": "Clarke"
+   },
+   "13061": {
+    "gdp_bn": 0.074,
+    "gdp_per_capita": 26390,
+    "name": "Clay"
+   },
+   "13063": {
+    "gdp_bn": 26.282,
+    "gdp_per_capita": 88350,
+    "name": "Clayton"
+   },
+   "13065": {
+    "gdp_bn": 0.316,
+    "gdp_per_capita": 46119,
+    "name": "Clinch"
+   },
+   "13067": {
+    "gdp_bn": 81.869,
+    "gdp_per_capita": 103194,
+    "name": "Cobb"
+   },
+   "13069": {
+    "gdp_bn": 2.276,
+    "gdp_per_capita": 51247,
+    "name": "Coffee"
+   },
+   "13071": {
+    "gdp_bn": 2.121,
+    "gdp_per_capita": 44712,
+    "name": "Colquitt"
+   },
+   "13073": {
+    "gdp_bn": 6.219,
+    "gdp_per_capita": 36757,
+    "name": "Columbia"
+   },
+   "13075": {
+    "gdp_bn": 0.536,
+    "gdp_per_capita": 29390,
+    "name": "Cook"
+   },
+   "13077": {
+    "gdp_bn": 7.675,
+    "gdp_per_capita": 47899,
+    "name": "Coweta"
+   },
+   "13079": {
+    "gdp_bn": 0.233,
+    "gdp_per_capita": 19095,
+    "name": "Crawford"
+   },
+   "13081": {
+    "gdp_bn": 1.377,
+    "gdp_per_capita": 71579,
+    "name": "Crisp"
+   },
+   "13083": {
+    "gdp_bn": 0.65,
+    "gdp_per_capita": 40260,
+    "name": "Dade"
+   },
+   "13085": {
+    "gdp_bn": 1.551,
+    "gdp_per_capita": 43858,
+    "name": "Dawson"
+   },
+   "13087": {
+    "gdp_bn": 1.428,
+    "gdp_per_capita": 48509,
+    "name": "Decatur"
+   },
+   "13089": {
+    "gdp_bn": 59.344,
+    "gdp_per_capita": 76633,
+    "name": "DeKalb"
+   },
+   "13091": {
+    "gdp_bn": 0.585,
+    "gdp_per_capita": 29753,
+    "name": "Dodge"
+   },
+   "13093": {
+    "gdp_bn": 0.413,
+    "gdp_per_capita": 37058,
+    "name": "Dooly"
+   },
+   "13095": {
+    "gdp_bn": 6.291,
+    "gdp_per_capita": 76151,
+    "name": "Dougherty"
+   },
+   "13097": {
+    "gdp_bn": 8.179,
+    "gdp_per_capita": 53012,
+    "name": "Douglas"
+   },
+   "13099": {
+    "gdp_bn": 0.657,
+    "gdp_per_capita": 62809,
+    "name": "Early"
+   },
+   "13101": {
+    "gdp_bn": 0.054,
+    "gdp_per_capita": 14623,
+    "name": "Echols"
+   },
+   "13103": {
+    "gdp_bn": 3.025,
+    "gdp_per_capita": 40664,
+    "name": "Effingham"
+   },
+   "13105": {
+    "gdp_bn": 0.998,
+    "gdp_per_capita": 49732,
+    "name": "Elbert"
+   },
+   "13107": {
+    "gdp_bn": 0.996,
+    "gdp_per_capita": 43019,
+    "name": "Emanuel"
+   },
+   "13109": {
+    "gdp_bn": 0.548,
+    "gdp_per_capita": 49723,
+    "name": "Evans"
+   },
+   "13111": {
+    "gdp_bn": 1.298,
+    "gdp_per_capita": 49729,
+    "name": "Fannin"
+   },
+   "13113": {
+    "gdp_bn": 8.271,
+    "gdp_per_capita": 66086,
+    "name": "Fayette"
+   },
+   "13115": {
+    "gdp_bn": 5.687,
+    "gdp_per_capita": 56092,
+    "name": "Floyd"
+   },
+   "13117": {
+    "gdp_bn": 16.277,
+    "gdp_per_capita": 57556,
+    "name": "Forsyth"
+   },
+   "13119": {
+    "gdp_bn": 1.502,
+    "gdp_per_capita": 57902,
+    "name": "Franklin"
+   },
+   "13121": {
+    "gdp_bn": 243.563,
+    "gdp_per_capita": 221664,
+    "name": "Fulton"
+   },
+   "13123": {
+    "gdp_bn": 1.439,
+    "gdp_per_capita": 42467,
+    "name": "Gilmer"
+   },
+   "13125": {
+    "gdp_bn": 0.041,
+    "gdp_per_capita": 13134,
+    "name": "Glascock"
+   },
+   "13127": {
+    "gdp_bn": 6.274,
+    "gdp_per_capita": 71619,
+    "name": "Glynn"
+   },
+   "13129": {
+    "gdp_bn": 3.382,
+    "gdp_per_capita": 54805,
+    "name": "Gordon"
+   },
+   "13131": {
+    "gdp_bn": 0.874,
+    "gdp_per_capita": 32864,
+    "name": "Grady"
+   },
+   "13133": {
+    "gdp_bn": 1.242,
+    "gdp_per_capita": 58119,
+    "name": "Greene"
+   },
+   "13135": {
+    "gdp_bn": 72.408,
+    "gdp_per_capita": 71121,
+    "name": "Gwinnett"
+   },
+   "13137": {
+    "gdp_bn": 2.106,
+    "gdp_per_capita": 41773,
+    "name": "Habersham"
+   },
+   "13139": {
+    "gdp_bn": 17.999,
+    "gdp_per_capita": 79444,
+    "name": "Hall"
+   },
+   "13141": {
+    "gdp_bn": 0.202,
+    "gdp_per_capita": 23275,
+    "name": "Hancock"
+   },
+   "13143": {
+    "gdp_bn": 1.403,
+    "gdp_per_capita": 42416,
+    "name": "Haralson"
+   },
+   "13145": {
+    "gdp_bn": 0.865,
+    "gdp_per_capita": 23216,
+    "name": "Harris"
+   },
+   "13147": {
+    "gdp_bn": 1.27,
+    "gdp_per_capita": 44361,
+    "name": "Hart"
+   },
+   "13149": {
+    "gdp_bn": 1.504,
+    "gdp_per_capita": 123810,
+    "name": "Heard"
+   },
+   "13151": {
+    "gdp_bn": 11.851,
+    "gdp_per_capita": 44735,
+    "name": "Henry"
+   },
+   "13153": {
+    "gdp_bn": 9.931,
+    "gdp_per_capita": 55724,
+    "name": "Houston"
+   },
+   "13155": {
+    "gdp_bn": 0.293,
+    "gdp_per_capita": 32499,
+    "name": "Irwin"
+   },
+   "13157": {
+    "gdp_bn": 6.518,
+    "gdp_per_capita": 65659,
+    "name": "Jackson"
+   },
+   "13159": {
+    "gdp_bn": 0.433,
+    "gdp_per_capita": 24579,
+    "name": "Jasper"
+   },
+   "13161": {
+    "gdp_bn": 0.694,
+    "gdp_per_capita": 45580,
+    "name": "Jeff Davis"
+   },
+   "13163": {
+    "gdp_bn": 0.729,
+    "gdp_per_capita": 48558,
+    "name": "Jefferson"
+   },
+   "13165": {
+    "gdp_bn": 0.214,
+    "gdp_per_capita": 24225,
+    "name": "Jenkins"
+   },
+   "13167": {
+    "gdp_bn": 0.171,
+    "gdp_per_capita": 18333,
+    "name": "Johnson"
+   },
+   "13169": {
+    "gdp_bn": 0.651,
+    "gdp_per_capita": 22333,
+    "name": "Jones"
+   },
+   "13171": {
+    "gdp_bn": 0.668,
+    "gdp_per_capita": 31919,
+    "name": "Lamar"
+   },
+   "13173": {
+    "gdp_bn": 0.194,
+    "gdp_per_capita": 18278,
+    "name": "Lanier"
+   },
+   "13175": {
+    "gdp_bn": 2.704,
+    "gdp_per_capita": 52974,
+    "name": "Laurens"
+   },
+   "13177": {
+    "gdp_bn": 1.099,
+    "gdp_per_capita": 32158,
+    "name": "Lee"
+   },
+   "13179": {
+    "gdp_bn": 5.289,
+    "gdp_per_capita": 75225,
+    "name": "Liberty"
+   },
+   "13181": {
+    "gdp_bn": 0.183,
+    "gdp_per_capita": 22520,
+    "name": "Lincoln"
+   },
+   "13183": {
+    "gdp_bn": 0.309,
+    "gdp_per_capita": 14311,
+    "name": "Long"
+   },
+   "13185": {
+    "gdp_bn": 7.135,
+    "gdp_per_capita": 58072,
+    "name": "Lowndes"
+   },
+   "13187": {
+    "gdp_bn": 1.363,
+    "gdp_per_capita": 37687,
+    "name": "Lumpkin"
+   },
+   "13189": {
+    "gdp_bn": 0.875,
+    "gdp_per_capita": 40448,
+    "name": "McDuffie"
+   },
+   "13191": {
+    "gdp_bn": 0.312,
+    "gdp_per_capita": 26065,
+    "name": "McIntosh"
+   },
+   "13193": {
+    "gdp_bn": 0.616,
+    "gdp_per_capita": 52360,
+    "name": "Macon"
+   },
+   "13195": {
+    "gdp_bn": 0.885,
+    "gdp_per_capita": 26879,
+    "name": "Madison"
+   },
+   "13197": {
+    "gdp_bn": 0.149,
+    "gdp_per_capita": 19391,
+    "name": "Marion"
+   },
+   "13199": {
+    "gdp_bn": 0.913,
+    "gdp_per_capita": 42438,
+    "name": "Meriwether"
+   },
+   "13201": {
+    "gdp_bn": 0.277,
+    "gdp_per_capita": 47731,
+    "name": "Miller"
+   },
+   "13205": {
+    "gdp_bn": 1.044,
+    "gdp_per_capita": 51005,
+    "name": "Mitchell"
+   },
+   "13207": {
+    "gdp_bn": 1.83,
+    "gdp_per_capita": 57134,
+    "name": "Monroe"
+   },
+   "13209": {
+    "gdp_bn": 0.214,
+    "gdp_per_capita": 24824,
+    "name": "Montgomery"
+   },
+   "13211": {
+    "gdp_bn": 1.518,
+    "gdp_per_capita": 68695,
+    "name": "Morgan"
+   },
+   "13213": {
+    "gdp_bn": 1.888,
+    "gdp_per_capita": 45368,
+    "name": "Murray"
+   },
+   "13215": {
+    "gdp_bn": 13.842,
+    "gdp_per_capita": 68468,
+    "name": "Muscogee"
+   },
+   "13217": {
+    "gdp_bn": 4.592,
+    "gdp_per_capita": 36567,
+    "name": "Newton"
+   },
+   "13219": {
+    "gdp_bn": 2.564,
+    "gdp_per_capita": 57124,
+    "name": "Oconee"
+   },
+   "13221": {
+    "gdp_bn": 0.518,
+    "gdp_per_capita": 31534,
+    "name": "Oglethorpe"
+   },
+   "13223": {
+    "gdp_bn": 5.183,
+    "gdp_per_capita": 27135,
+    "name": "Paulding"
+   },
+   "13225": {
+    "gdp_bn": 1.35,
+    "gdp_per_capita": 45170,
+    "name": "Peach"
+   },
+   "13227": {
+    "gdp_bn": 1.588,
+    "gdp_per_capita": 42726,
+    "name": "Pickens"
+   },
+   "13229": {
+    "gdp_bn": 0.659,
+    "gdp_per_capita": 31748,
+    "name": "Pierce"
+   },
+   "13231": {
+    "gdp_bn": 0.51,
+    "gdp_per_capita": 24380,
+    "name": "Pike"
+   },
+   "13233": {
+    "gdp_bn": 1.74,
+    "gdp_per_capita": 38237,
+    "name": "Polk"
+   },
+   "13235": {
+    "gdp_bn": 0.375,
+    "gdp_per_capita": 36851,
+    "name": "Pulaski"
+   },
+   "13237": {
+    "gdp_bn": 0.906,
+    "gdp_per_capita": 38194,
+    "name": "Putnam"
+   },
+   "13239": {
+    "gdp_bn": 0.047,
+    "gdp_per_capita": 20695,
+    "name": "Quitman"
+   },
+   "13241": {
+    "gdp_bn": 0.852,
+    "gdp_per_capita": 47957,
+    "name": "Rabun"
+   },
+   "13243": {
+    "gdp_bn": 0.228,
+    "gdp_per_capita": 37012,
+    "name": "Randolph"
+   },
+   "13245": {
+    "gdp_bn": 16.817,
+    "gdp_per_capita": 81413,
+    "name": "Richmond"
+   },
+   "13247": {
+    "gdp_bn": 5.909,
+    "gdp_per_capita": 60045,
+    "name": "Rockdale"
+   },
+   "13249": {
+    "gdp_bn": 0.155,
+    "gdp_per_capita": 33796,
+    "name": "Schley"
+   },
+   "13251": {
+    "gdp_bn": 0.427,
+    "gdp_per_capita": 29639,
+    "name": "Screven"
+   },
+   "13253": {
+    "gdp_bn": 0.411,
+    "gdp_per_capita": 44865,
+    "name": "Seminole"
+   },
+   "13255": {
+    "gdp_bn": 3.094,
+    "gdp_per_capita": 43716,
+    "name": "Spalding"
+   },
+   "13257": {
+    "gdp_bn": 1.44,
+    "gdp_per_capita": 51709,
+    "name": "Stephens"
+   },
+   "13259": {
+    "gdp_bn": 0.199,
+    "gdp_per_capita": 42941,
+    "name": "Stewart"
+   },
+   "13261": {
+    "gdp_bn": 1.264,
+    "gdp_per_capita": 43874,
+    "name": "Sumter"
+   },
+   "13263": {
+    "gdp_bn": 0.336,
+    "gdp_per_capita": 58784,
+    "name": "Talbot"
+   },
+   "13265": {
+    "gdp_bn": 0.045,
+    "gdp_per_capita": 27039,
+    "name": "Taliaferro"
+   },
+   "13267": {
+    "gdp_bn": 0.92,
+    "gdp_per_capita": 37759,
+    "name": "Tattnall"
+   },
+   "13269": {
+    "gdp_bn": 0.278,
+    "gdp_per_capita": 35504,
+    "name": "Taylor"
+   },
+   "13271": {
+    "gdp_bn": 0.415,
+    "gdp_per_capita": 37065,
+    "name": "Telfair"
+   },
+   "13273": {
+    "gdp_bn": 0.317,
+    "gdp_per_capita": 36583,
+    "name": "Terrell"
+   },
+   "13275": {
+    "gdp_bn": 3.166,
+    "gdp_per_capita": 68273,
+    "name": "Thomas"
+   },
+   "13277": {
+    "gdp_bn": 2.776,
+    "gdp_per_capita": 65689,
+    "name": "Tift"
+   },
+   "13279": {
+    "gdp_bn": 1.517,
+    "gdp_per_capita": 55063,
+    "name": "Toombs"
+   },
+   "13281": {
+    "gdp_bn": 0.601,
+    "gdp_per_capita": 45215,
+    "name": "Towns"
+   },
+   "13283": {
+    "gdp_bn": 0.153,
+    "gdp_per_capita": 23733,
+    "name": "Treutlen"
+   },
+   "13285": {
+    "gdp_bn": 5.276,
+    "gdp_per_capita": 72435,
+    "name": "Troup"
+   },
+   "13287": {
+    "gdp_bn": 0.281,
+    "gdp_per_capita": 31321,
+    "name": "Turner"
+   },
+   "13289": {
+    "gdp_bn": 0.331,
+    "gdp_per_capita": 43632,
+    "name": "Twiggs"
+   },
+   "13291": {
+    "gdp_bn": 1.258,
+    "gdp_per_capita": 45159,
+    "name": "Union"
+   },
+   "13293": {
+    "gdp_bn": 0.976,
+    "gdp_per_capita": 34259,
+    "name": "Upson"
+   },
+   "13295": {
+    "gdp_bn": 2.268,
+    "gdp_per_capita": 32286,
+    "name": "Walker"
+   },
+   "13297": {
+    "gdp_bn": 4.338,
+    "gdp_per_capita": 38495,
+    "name": "Walton"
+   },
+   "13299": {
+    "gdp_bn": 1.906,
+    "gdp_per_capita": 51648,
+    "name": "Ware"
+   },
+   "13301": {
+    "gdp_bn": 0.284,
+    "gdp_per_capita": 53833,
+    "name": "Warren"
+   },
+   "13303": {
+    "gdp_bn": 0.867,
+    "gdp_per_capita": 44559,
+    "name": "Washington"
+   },
+   "13305": {
+    "gdp_bn": 1.651,
+    "gdp_per_capita": 50824,
+    "name": "Wayne"
+   },
+   "13307": {
+    "gdp_bn": 0.084,
+    "gdp_per_capita": 35649,
+    "name": "Webster"
+   },
+   "13309": {
+    "gdp_bn": 0.16,
+    "gdp_per_capita": 21083,
+    "name": "Wheeler"
+   },
+   "13311": {
+    "gdp_bn": 1.291,
+    "gdp_per_capita": 43307,
+    "name": "White"
+   },
+   "13313": {
+    "gdp_bn": 7.746,
+    "gdp_per_capita": 72934,
+    "name": "Whitfield"
+   },
+   "13315": {
+    "gdp_bn": 0.219,
+    "gdp_per_capita": 24853,
+    "name": "Wilcox"
+   },
+   "13317": {
+    "gdp_bn": 0.501,
+    "gdp_per_capita": 52473,
+    "name": "Wilkes"
+   },
+   "13319": {
+    "gdp_bn": 0.604,
+    "gdp_per_capita": 69778,
+    "name": "Wilkinson"
+   },
+   "13321": {
+    "gdp_bn": 0.451,
+    "gdp_per_capita": 22506,
+    "name": "Worth"
+   }
+  },
+  "source": "BEA CAGDP2 (county GDP, LineCode 1, current $)"
+ },
+ "non_metro": {
+  "county_count": 86,
+  "gdp_bn": 94.69,
+  "population": 2033015.0,
+  "gdp_per_capita_wt": 46576,
+  "year": 2024,
+  "note": "Aggregate of the 86 GA counties outside the 14 MSAs.",
+  "source": "BEA CAGDP2 (county GDP, LineCode 1, current $)"
+ },
  "kpis": {
   "ga_nominal_gdp_bn": null,
   "ga_real_gdp_yoy": null,
   "ga_gdp_per_capita": null,
   "largest_sector": null,
   "metro_count": 14,
-  "non_metro_county_count": null
+  "non_metro_county_count": 86
  },
  "_meta": {
   "metro_rollup": {
-   "last_updated": "2026-06-02T12:51:38Z",
+   "last_updated": "2026-06-02T13:45:55Z",
    "n_metros": 14,
+   "stale": false
+  },
+  "county_gdp": {
+   "last_updated": "2026-06-02T13:45:57Z",
+   "stale": false
+  },
+  "non_metro": {
+   "last_updated": "2026-06-02T13:45:57Z",
    "stale": false
   }
  },
