@@ -160,12 +160,11 @@ def bea_get(params: dict, retries: int = 3) -> Optional[dict]:
                           f"geo={params.get('GeoFips')} lc={params.get('LineCode')} "
                           f"yr={params.get('Year')}: {err}", file=sys.stderr)
                 return None
-            # TEMP DIAG: log row counts for state-level calls so we can see empty-vs-data.
-            if tn.startswith("SAGDP"):
-                rows = results.get("Data") if isinstance(results, dict) else None
-                n = len(rows) if isinstance(rows, list) else ("dict" if isinstance(rows, dict) else "none")
-                print(f"  [gdp/BEA diag] {tn} geo={params.get('GeoFips')} "
-                      f"lc={params.get('LineCode')} yr={params.get('Year')}: rows={n}", file=sys.stderr)
+            # TEMP DIAG: dump the raw BEA response for state-level GetData calls.
+            if tn.startswith("SAGDP") and str(params.get("method")) == "GetData":
+                rkeys = list(results.keys()) if isinstance(results, dict) else type(results).__name__
+                print(f"  [gdp/BEA diag] {tn} geo={params.get('GeoFips')} yr={params.get('Year')} "
+                      f"Resultkeys={rkeys} raw={str(j)[:400]}", file=sys.stderr)
             return results
         except Exception as e:
             print(f"  [gdp/BEA err] {type(e).__name__}: {str(e)[:80]}", file=sys.stderr)
