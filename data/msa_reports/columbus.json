@@ -4227,147 +4227,147 @@
     },
     "qcew_industry_shares": {
       "year": 2025,
-      "quarter": 3,
-      "as_of_label": "2025 Q3",
+      "quarter": 4,
+      "as_of_label": "2025 Q4",
       "msa": {},
       "ga": {
         "Mining": {
-          "employment": 5845,
-          "avg_annual_wage": 80288,
+          "employment": 5897,
+          "avg_annual_wage": 89388,
           "share_pct": 0.13
         },
         "Construction": {
-          "employment": 236212,
-          "avg_annual_wage": 79716,
-          "share_pct": 5.16
+          "employment": 235673,
+          "avg_annual_wage": 95524,
+          "share_pct": 5.09
         },
         "Manufacturing": {
-          "employment": 423757,
-          "avg_annual_wage": 72748,
-          "share_pct": 9.25
+          "employment": 421886,
+          "avg_annual_wage": 77532,
+          "share_pct": 9.11
         },
         "Transportation/Utilities": {
-          "employment": 285036,
-          "avg_annual_wage": 69434,
-          "share_pct": 6.23
+          "employment": 300155,
+          "avg_annual_wage": 73371,
+          "share_pct": 6.48
         },
         "Wholesale Trade": {
-          "employment": 225007,
-          "avg_annual_wage": 95940,
+          "employment": 227428,
+          "avg_annual_wage": 105196,
           "share_pct": 4.91
         },
         "Retail Trade": {
-          "employment": 505802,
-          "avg_annual_wage": 40820,
-          "share_pct": 11.05
+          "employment": 518512,
+          "avg_annual_wage": 43160,
+          "share_pct": 11.2
         },
         "Information": {
-          "employment": 108957,
-          "avg_annual_wage": 138476,
-          "share_pct": 2.38
+          "employment": 110687,
+          "avg_annual_wage": 139620,
+          "share_pct": 2.39
         },
         "Financial Activities": {
-          "employment": 274866,
-          "avg_annual_wage": 98438,
-          "share_pct": 6.0
+          "employment": 276973,
+          "avg_annual_wage": 109768,
+          "share_pct": 5.98
         },
         "Prof. & Bus. Services": {
-          "employment": 740969,
-          "avg_annual_wage": 90742,
+          "employment": 748863,
+          "avg_annual_wage": 98838,
           "share_pct": 16.18
         },
         "Education & Health Services": {
-          "employment": 707112,
-          "avg_annual_wage": 70167,
-          "share_pct": 15.44
+          "employment": 715634,
+          "avg_annual_wage": 73995,
+          "share_pct": 15.46
         },
         "Leisure & Hospitality": {
-          "employment": 514029,
-          "avg_annual_wage": 30263,
-          "share_pct": 11.23
+          "employment": 515473,
+          "avg_annual_wage": 31523,
+          "share_pct": 11.14
         },
         "Other Services": {
-          "employment": 119223,
-          "avg_annual_wage": 51480,
-          "share_pct": 2.6
+          "employment": 119741,
+          "avg_annual_wage": 55744,
+          "share_pct": 2.59
         },
         "Government": {
-          "employment": 431897,
-          "avg_annual_wage": 63443,
-          "share_pct": 9.43
+          "employment": 432209,
+          "avg_annual_wage": 62206,
+          "share_pct": 9.34
         }
       },
       "us": {
         "Mining": {
-          "employment": 568572,
-          "avg_annual_wage": 120640,
-          "share_pct": 0.39
+          "employment": 559557,
+          "avg_annual_wage": 133068,
+          "share_pct": 0.38
         },
         "Construction": {
-          "employment": 8379475,
-          "avg_annual_wage": 82576,
-          "share_pct": 5.73
+          "employment": 8195199,
+          "avg_annual_wage": 94380,
+          "share_pct": 5.56
         },
         "Manufacturing": {
-          "employment": 12523207,
-          "avg_annual_wage": 85644,
-          "share_pct": 8.57
+          "employment": 12519036,
+          "avg_annual_wage": 93028,
+          "share_pct": 8.49
         },
         "Transportation/Utilities": {
-          "employment": 7172181,
-          "avg_annual_wage": 73133,
-          "share_pct": 4.91
+          "employment": 7605115,
+          "avg_annual_wage": 74996,
+          "share_pct": 5.16
         },
         "Wholesale Trade": {
-          "employment": 6007650,
-          "avg_annual_wage": 101972,
-          "share_pct": 4.11
+          "employment": 6030633,
+          "avg_annual_wage": 109408,
+          "share_pct": 4.09
         },
         "Retail Trade": {
-          "employment": 15250524,
-          "avg_annual_wage": 42952,
-          "share_pct": 10.43
+          "employment": 15718954,
+          "avg_annual_wage": 44980,
+          "share_pct": 10.66
         },
         "Information": {
-          "employment": 2816179,
-          "avg_annual_wage": 191880,
-          "share_pct": 1.93
+          "employment": 2827730,
+          "avg_annual_wage": 190008,
+          "share_pct": 1.92
         },
         "Financial Activities": {
-          "employment": 8691469,
-          "avg_annual_wage": 111843,
+          "employment": 8757711,
+          "avg_annual_wage": 131461,
           "share_pct": 5.94
         },
         "Prof. & Bus. Services": {
-          "employment": 22317523,
-          "avg_annual_wage": 101906,
-          "share_pct": 15.27
+          "employment": 22439680,
+          "avg_annual_wage": 115411,
+          "share_pct": 15.21
         },
         "Education & Health Services": {
-          "employment": 26205920,
-          "avg_annual_wage": 66497,
-          "share_pct": 17.92
+          "employment": 26609707,
+          "avg_annual_wage": 69292,
+          "share_pct": 18.04
         },
         "Leisure & Hospitality": {
-          "employment": 16828402,
-          "avg_annual_wage": 33772,
-          "share_pct": 11.51
+          "employment": 16530726,
+          "avg_annual_wage": 36480,
+          "share_pct": 11.21
         },
         "Other Services": {
-          "employment": 4628376,
-          "avg_annual_wage": 53768,
-          "share_pct": 3.17
+          "employment": 4654611,
+          "avg_annual_wage": 57096,
+          "share_pct": 3.16
         },
         "Government": {
-          "employment": 14810242,
-          "avg_annual_wage": 70415,
-          "share_pct": 10.13
+          "employment": 15059212,
+          "avg_annual_wage": 70987,
+          "share_pct": 10.21
         }
       },
       "totals": {
         "msa": 0,
-        "ga": 4578712,
-        "us": 146199720
+        "ga": 4629131,
+        "us": 147507871
       }
     },
     "qcew_yoy_changes": {
@@ -4405,32 +4405,32 @@
         },
         "ga": {
           "durable": {
-            "employment": 222477,
-            "avg_annual_wage": 79397,
-            "share_pct_of_mfg": 52.0
+            "employment": 222712,
+            "avg_annual_wage": 79363,
+            "share_pct_of_mfg": 52.1
           },
           "nondurable": {
-            "employment": 205098,
+            "employment": 205110,
             "avg_annual_wage": 65550,
-            "share_pct_of_mfg": 48.0
+            "share_pct_of_mfg": 47.9
           },
-          "total_employment": 427575,
-          "sector_total": 427575,
+          "total_employment": 427822,
+          "sector_total": 427822,
           "coverage_pct": 100.0
         },
         "us": {
           "durable": {
-            "employment": 7845342,
-            "avg_annual_wage": 91649,
+            "employment": 7846804,
+            "avg_annual_wage": 91639,
             "share_pct_of_mfg": 62.0
           },
           "nondurable": {
-            "employment": 4805637,
-            "avg_annual_wage": 74995,
+            "employment": 4809364,
+            "avg_annual_wage": 74976,
             "share_pct_of_mfg": 38.0
           },
-          "total_employment": 12650979,
-          "sector_total": 12650979,
+          "total_employment": 12656168,
+          "sector_total": 12656168,
           "coverage_pct": 100.0
         },
         "msa_reliable": false
@@ -4475,54 +4475,54 @@
     },
     "health_check": {
       "quarters": [
-        "2024 Q2",
         "2024 Q3",
         "2024 Q4",
         "2025 Q1",
         "2025 Q2",
-        "2025 Q3"
+        "2025 Q3",
+        "2025 Q4"
       ],
       "employment_000s": [
-        116.3,
         115.3,
         116.4,
-        116.0,
+        115.9,
         116.6,
-        115.8
+        115.8,
+        116.1
       ],
       "avg_weekly_wage": [
-        978,
         1001,
         1051,
         1108,
         1008,
-        1045
+        1046,
+        1084
       ],
       "establishments": [
-        7606,
         7629,
         7686,
-        7632,
-        7661,
-        7703
+        7627,
+        7654,
+        7693,
+        7720
       ],
       "unemployment_rate": [
-        3.8,
         4.1,
         3.8,
         4.0,
         3.7,
-        4.1
+        4.1,
+        3.9
       ],
       "labor_force_000s": [
-        129.5,
         129.5,
         128.9,
         129.9,
         129.7,
-        129.5
+        129.5,
+        129.7
       ],
-      "as_of_label": "2025 Q3",
+      "as_of_label": "2025 Q4",
       "source": "BLS QCEW (MSA totals) + LAUS (quarterly-averaged); EIG-assembled"
     },
     "census_bps_permits": {
@@ -4926,11 +4926,7 @@
       "employers": [
         {
           "name": "Health Care",
-          "source_url": "https://en.wikipedia.org/wiki/List_of_largest_Central_Ohio_employers"
-        },
-        {
-          "name": "Muscogee County School District",
-          "source_url": "https://en.wikipedia.org/wiki/Columbus,_Georgia"
+          "source_url": "https://www.ledger-enquirer.com/news/business/article293959859.html"
         },
         {
           "name": "Financial Activities",
@@ -4945,7 +4941,15 @@
           "source_url": "https://en.wikipedia.org/wiki/List_of_largest_Central_Ohio_employers"
         },
         {
+          "name": "Muscogee County School District",
+          "source_url": "https://en.wikipedia.org/wiki/Columbus,_Georgia"
+        },
+        {
           "name": "Nationwide Children's Hospital",
+          "source_url": "https://en.wikipedia.org/wiki/List_of_largest_Central_Ohio_employers"
+        },
+        {
+          "name": "Ohio State University",
           "source_url": "https://en.wikipedia.org/wiki/List_of_largest_Central_Ohio_employers"
         },
         {
@@ -4961,35 +4965,31 @@
           "source_url": "https://en.wikipedia.org/wiki/List_of_largest_Central_Ohio_employers"
         },
         {
-          "name": "Nationwide Insurance",
-          "source_url": "https://en.wikipedia.org/wiki/Economy_of_Columbus,_Ohio"
-        },
-        {
           "name": "St. Francis Hospital",
           "source_url": "https://en.wikipedia.org/wiki/Columbus,_Georgia"
         },
         {
-          "name": "The Ohio State University",
-          "source_url": "https://en.wikipedia.org/wiki/Economy_of_Columbus,_Ohio"
+          "name": "Synovus Financial Corp",
+          "source_url": "https://www.ledger-enquirer.com/living/living-here-guide/article29130475.html"
         },
         {
           "name": "American Electric Power",
           "source_url": "https://en.wikipedia.org/wiki/List_of_largest_Central_Ohio_employers"
         },
         {
-          "name": "Mercer Medical School",
-          "source_url": "https://georgia.org/sites/default/files/2023-01/2022-8-24_gdecd_board_meeting_minutes.pdf"
+          "name": "Delta Airlines",
+          "source_url": "https://www.ledger-enquirer.com/news/business/article293959859.html"
         }
       ],
       "sources": [
+        "https://en.wikipedia.org/wiki/Columbus,_Georgia",
+        "https://www.ledger-enquirer.com/news/business/article293959859.html",
         "https://www.ledger-enquirer.com/news/state/georgia/article312697701.html",
         "https://www.selectgeorgia.com/blog/columbus-georgia-a-home-for-headquarters",
-        "https://en.wikipedia.org/wiki/Columbus,_Georgia",
-        "https://en.wikipedia.org/wiki/List_of_largest_companies_in_the_United_States_by_revenue",
         "https://www.ledger-enquirer.com/news/business/article223441075.html",
-        "https://www.ledger-enquirer.com/living/living-here-guide/article29130475.html",
-        "https://www.ledger-enquirer.com/news/business/article289530136.html",
-        "https://georgia.org/sites/default/files/2023-01/2022-8-24_gdecd_board_meeting_minutes.pdf"
+        "https://www.ledger-enquirer.com/news/business/article300077799.html",
+        "https://www.selectgeorgia.com/about-us/our-team/regional-development/andrew-camp-west",
+        "https://www.ledger-enquirer.com/living/living-here-guide/article29130475.html"
       ],
       "method": "Representative list auto-discovered via Tavily web search across chamber-of-commerce, development-authority and local-news sources. Not exhaustive; ordering approximates source frequency, not headcount."
     },

@@ -4231,9 +4231,9 @@
       "as_of_label": "2025 Q2",
       "msa": {
         "Manufacturing": {
-          "employment": 25027,
+          "employment": 25030,
           "avg_annual_wage": 59332,
-          "share_pct": 29.31
+          "share_pct": 29.32
         },
         "Transportation/Utilities": {
           "employment": 5111,
@@ -4251,9 +4251,9 @@
           "share_pct": 11.35
         },
         "Financial Activities": {
-          "employment": 2789,
-          "avg_annual_wage": 79809,
-          "share_pct": 3.27
+          "employment": 2786,
+          "avg_annual_wage": 79797,
+          "share_pct": 3.26
         },
         "Prof. & Bus. Services": {
           "employment": 9729,
@@ -4261,9 +4261,9 @@
           "share_pct": 11.4
         },
         "Education & Health Services": {
-          "employment": 17472,
+          "employment": 17473,
           "avg_annual_wage": 75786,
-          "share_pct": 20.46
+          "share_pct": 20.47
         },
         "Leisure & Hospitality": {
           "employment": 9073,
@@ -4271,9 +4271,9 @@
           "share_pct": 10.63
         },
         "Other Services": {
-          "employment": 1900,
-          "avg_annual_wage": 46592,
-          "share_pct": 2.23
+          "employment": 1890,
+          "avg_annual_wage": 46696,
+          "share_pct": 2.21
         }
       },
       "ga": {
@@ -4283,137 +4283,137 @@
           "share_pct": 0.13
         },
         "Construction": {
-          "employment": 235865,
+          "employment": 235860,
           "avg_annual_wage": 79196,
           "share_pct": 5.14
         },
         "Manufacturing": {
-          "employment": 427575,
+          "employment": 427822,
           "avg_annual_wage": 72748,
           "share_pct": 9.33
         },
         "Transportation/Utilities": {
-          "employment": 281846,
-          "avg_annual_wage": 73053,
-          "share_pct": 6.15
+          "employment": 281789,
+          "avg_annual_wage": 73101,
+          "share_pct": 6.14
         },
         "Wholesale Trade": {
-          "employment": 227032,
+          "employment": 227048,
           "avg_annual_wage": 97552,
           "share_pct": 4.95
         },
         "Retail Trade": {
-          "employment": 507397,
+          "employment": 507448,
           "avg_annual_wage": 40820,
           "share_pct": 11.07
         },
         "Information": {
-          "employment": 114527,
+          "employment": 114560,
           "avg_annual_wage": 131664,
           "share_pct": 2.5
         },
         "Financial Activities": {
-          "employment": 276205,
-          "avg_annual_wage": 97630,
-          "share_pct": 6.02
+          "employment": 275795,
+          "avg_annual_wage": 97636,
+          "share_pct": 6.01
         },
         "Prof. & Bus. Services": {
-          "employment": 741944,
-          "avg_annual_wage": 91165,
-          "share_pct": 16.18
+          "employment": 742768,
+          "avg_annual_wage": 91122,
+          "share_pct": 16.2
         },
         "Education & Health Services": {
-          "employment": 695619,
-          "avg_annual_wage": 68481,
+          "employment": 695684,
+          "avg_annual_wage": 68475,
           "share_pct": 15.17
         },
         "Leisure & Hospitality": {
-          "employment": 530061,
-          "avg_annual_wage": 30255,
+          "employment": 530178,
+          "avg_annual_wage": 30254,
           "share_pct": 11.56
         },
         "Other Services": {
-          "employment": 122973,
+          "employment": 123018,
           "avg_annual_wage": 51688,
           "share_pct": 2.68
         },
         "Government": {
           "employment": 418097,
-          "avg_annual_wage": 61134,
+          "avg_annual_wage": 61103,
           "share_pct": 9.12
         }
       },
       "us": {
         "Mining": {
-          "employment": 575408,
+          "employment": 575509,
           "avg_annual_wage": 120588,
           "share_pct": 0.39
         },
         "Construction": {
-          "employment": 8424182,
+          "employment": 8425912,
           "avg_annual_wage": 80860,
           "share_pct": 5.73
         },
         "Manufacturing": {
-          "employment": 12650979,
+          "employment": 12656168,
           "avg_annual_wage": 85332,
           "share_pct": 8.61
         },
         "Transportation/Utilities": {
-          "employment": 7127668,
-          "avg_annual_wage": 73299,
+          "employment": 7124807,
+          "avg_annual_wage": 73254,
           "share_pct": 4.85
         },
         "Wholesale Trade": {
-          "employment": 6060837,
-          "avg_annual_wage": 99684,
-          "share_pct": 4.13
+          "employment": 6059358,
+          "avg_annual_wage": 99736,
+          "share_pct": 4.12
         },
         "Retail Trade": {
-          "employment": 15371782,
+          "employment": 15369955,
           "avg_annual_wage": 42536,
           "share_pct": 10.46
         },
         "Information": {
-          "employment": 2852537,
-          "avg_annual_wage": 174772,
+          "employment": 2854786,
+          "avg_annual_wage": 174720,
           "share_pct": 1.94
         },
         "Financial Activities": {
-          "employment": 8762192,
-          "avg_annual_wage": 112293,
+          "employment": 8763972,
+          "avg_annual_wage": 112344,
           "share_pct": 5.96
         },
         "Prof. & Bus. Services": {
-          "employment": 22399565,
+          "employment": 22412054,
           "avg_annual_wage": 101525,
           "share_pct": 15.25
         },
         "Education & Health Services": {
-          "employment": 26031284,
-          "avg_annual_wage": 64740,
+          "employment": 26041154,
+          "avg_annual_wage": 64752,
           "share_pct": 17.72
         },
         "Leisure & Hospitality": {
-          "employment": 17402633,
-          "avg_annual_wage": 33326,
+          "employment": 17410040,
+          "avg_annual_wage": 33283,
           "share_pct": 11.85
         },
         "Other Services": {
-          "employment": 4740568,
+          "employment": 4743484,
           "avg_annual_wage": 53196,
           "share_pct": 3.23
         },
         "Government": {
-          "employment": 14519344,
-          "avg_annual_wage": 71182,
+          "employment": 14521507,
+          "avg_annual_wage": 71178,
           "share_pct": 9.88
         }
       },
       "totals": {
-        "msa": 85379,
-        "ga": 4585096,
-        "us": 146918979
+        "msa": 85370,
+        "ga": 4586022,
+        "us": 146958706
       }
     },
     "qcew_yoy_changes": {
@@ -4422,8 +4422,8 @@
       "as_of_label": "2025 Q2",
       "sectors": {
         "Manufacturing": {
-          "yoy_pct": -0.33,
-          "employment": 25027
+          "yoy_pct": -0.32,
+          "employment": 25030
         },
         "Transportation/Utilities": {
           "yoy_pct": 24.66,
@@ -4438,24 +4438,24 @@
           "employment": 9690
         },
         "Financial Activities": {
-          "yoy_pct": 1.46,
-          "employment": 2789
+          "yoy_pct": 1.35,
+          "employment": 2786
         },
         "Prof. & Bus. Services": {
           "yoy_pct": -5.38,
           "employment": 9729
         },
         "Education & Health Services": {
-          "yoy_pct": 3.13,
-          "employment": 17472
+          "yoy_pct": 3.14,
+          "employment": 17473
         },
         "Leisure & Hospitality": {
           "yoy_pct": 1.33,
           "employment": 9073
         },
         "Other Services": {
-          "yoy_pct": -4.86,
-          "employment": 1900
+          "yoy_pct": -5.36,
+          "employment": 1890
         }
       }
     },
@@ -4466,8 +4466,8 @@
       "manufacturing_split": {
         "msa": {
           "durable": {
-            "employment": 8385,
-            "avg_annual_wage": 69906,
+            "employment": 8388,
+            "avg_annual_wage": 69902,
             "share_pct_of_mfg": 34.1
           },
           "nondurable": {
@@ -4475,38 +4475,38 @@
             "avg_annual_wage": 53800,
             "share_pct_of_mfg": 65.9
           },
-          "total_employment": 24591,
-          "sector_total": 25027,
+          "total_employment": 24594,
+          "sector_total": 25030,
           "coverage_pct": 98.3
         },
         "ga": {
           "durable": {
-            "employment": 222477,
-            "avg_annual_wage": 79397,
-            "share_pct_of_mfg": 52.0
+            "employment": 222712,
+            "avg_annual_wage": 79363,
+            "share_pct_of_mfg": 52.1
           },
           "nondurable": {
-            "employment": 205098,
+            "employment": 205110,
             "avg_annual_wage": 65550,
-            "share_pct_of_mfg": 48.0
+            "share_pct_of_mfg": 47.9
           },
-          "total_employment": 427575,
-          "sector_total": 427575,
+          "total_employment": 427822,
+          "sector_total": 427822,
           "coverage_pct": 100.0
         },
         "us": {
           "durable": {
-            "employment": 7845342,
-            "avg_annual_wage": 91649,
+            "employment": 7846804,
+            "avg_annual_wage": 91639,
             "share_pct_of_mfg": 62.0
           },
           "nondurable": {
-            "employment": 4805637,
-            "avg_annual_wage": 74995,
+            "employment": 4809364,
+            "avg_annual_wage": 74976,
             "share_pct_of_mfg": 38.0
           },
-          "total_employment": 12650979,
-          "sector_total": 12650979,
+          "total_employment": 12656168,
+          "sector_total": 12656168,
           "coverage_pct": 100.0
         },
         "msa_reliable": true
@@ -4551,54 +4551,54 @@
     },
     "health_check": {
       "quarters": [
-        "2024 Q2",
         "2024 Q3",
         "2024 Q4",
         "2025 Q1",
         "2025 Q2",
-        "2025 Q3"
+        "2025 Q3",
+        "2025 Q4"
       ],
       "employment_000s": [
-        101.9,
         102.5,
         102.8,
         102.4,
-        103.2,
-        103.5
+        103.1,
+        103.7,
+        104.1
       ],
       "avg_weekly_wage": [
-        1163,
         1213,
         1323,
         1261,
         1230,
-        1231
+        1231,
+        1357
       ],
       "establishments": [
-        5895,
         5938,
         6014,
-        6008,
-        6063,
-        6090
+        6002,
+        6055,
+        6085,
+        6086
       ],
       "unemployment_rate": [
-        2.8,
         3.0,
         2.6,
         2.8,
         2.7,
-        2.9
+        2.9,
+        2.8
       ],
       "labor_force_000s": [
-        110.2,
         111.0,
         110.2,
         109.9,
         109.9,
-        110.2
+        110.2,
+        111.0
       ],
-      "as_of_label": "2025 Q3",
+      "as_of_label": "2025 Q4",
       "source": "BLS QCEW (MSA totals) + LAUS (quarterly-averaged); EIG-assembled"
     },
     "census_bps_permits": {
@@ -5007,10 +5007,6 @@
           "source_url": "https://www.gainesvilletimes.com/news/business-archived/chamber-honors-3-companies-as-the-years-best-in-hall"
         },
         {
-          "name": "Aerospace",
-          "source_url": "https://www.selectgeorgia.com/discover-georgia/industries/fortune-500-list"
-        },
-        {
           "name": "Alachua County School Board",
           "source_url": "https://en.wikipedia.org/wiki/Gainesville,_Florida"
         },
@@ -5023,6 +5019,10 @@
           "source_url": "https://en.wikipedia.org/wiki/Gainesville,_Florida"
         },
         {
+          "name": "The Jaeger Co",
+          "source_url": "https://www.gainesvilletimes.com/news/simpson-jaeger-companies-win-hall-chambers-top-awards"
+        },
+        {
           "name": "UF Health Shands Hospital",
           "source_url": "https://en.wikipedia.org/wiki/Gainesville,_Florida"
         },
@@ -5031,28 +5031,28 @@
           "source_url": "https://www.gainesvilletimes.com/news/business-archived/chamber-honors-3-companies-as-the-years-best-in-hall"
         },
         {
-          "name": "Elan Drug Technologies",
-          "source_url": "https://www.gainesvilletimes.com/news/business-archived/chamber-honors-3-companies-as-the-years-best-in-hall"
-        },
-        {
           "name": "Gold Creek Foods",
           "source_url": "https://www.bizjournals.com/atlanta/related_content.html?topic=Kubota+Industrial+Equipment+Corp"
         },
         {
-          "name": "Koch Foods",
-          "source_url": "https://en.wikipedia.org/wiki/Gainesville,_Georgia"
-        },
-        {
-          "name": "Northeast Georgia Health System",
-          "source_url": "https://en.wikipedia.org/wiki/Gainesville,_Georgia"
-        },
-        {
-          "name": "The Longstreet Clinic",
-          "source_url": "https://en.wikipedia.org/wiki/Gainesville,_Georgia"
-        },
-        {
           "name": "Wrigley Manufacturing",
           "source_url": "https://www.gainesvilletimes.com/news/business-archived/chamber-honors-3-companies-as-the-years-best-in-hall"
+        },
+        {
+          "name": "Annual Comprehensive Financial Report",
+          "source_url": "https://en.wikipedia.org/wiki/Gainesville,_Florida"
+        },
+        {
+          "name": "Gainesville High School",
+          "source_url": "https://www.augustachronicle.com/story/news/2025/05/14/hgtv-up-and-coming-small-cities-why-this-georgia-town-made-the-list-gainesville-ga/83602820007"
+        },
+        {
+          "name": "Gainesville Medical Center",
+          "source_url": null
+        },
+        {
+          "name": "Hall County School System",
+          "source_url": null
         }
       ],
       "sources": [
@@ -5060,10 +5060,10 @@
         "https://en.wikipedia.org/wiki/Gainesville,_Florida",
         "https://www.augustachronicle.com/story/news/2025/05/14/hgtv-up-and-coming-small-cities-why-this-georgia-town-made-the-list-gainesville-ga/83602820007",
         "https://en.wikipedia.org/wiki/Metro_Atlanta",
-        "https://www.ajc.com/top-workplaces/2025/08/15-newcomers-join-ranks-of-atlantas-top-large-workplaces",
         "https://www.gainesvilletimes.com/news/business-archived/chamber-honors-3-companies-as-the-years-best-in-hall",
-        "https://en.wikipedia.org/wiki/Gainesville,_Georgia",
-        "https://www.selectgeorgia.com/discover-georgia/industries/fortune-500-list"
+        "https://www.gainesvilletimes.com/news/business-archived/hall-chamber-of-commerce-honors-2-local-businesses",
+        "https://www.gainesvilletimes.com/news/simpson-jaeger-companies-win-hall-chambers-top-awards",
+        "https://www.gainesvilletimes.com/news/business-archived/gainesville-approves-5m-bond-for-ims-gear-georgia"
       ],
       "method": "Representative list auto-discovered via Tavily web search across chamber-of-commerce, development-authority and local-news sources. Not exhaustive; ordering approximates source frequency, not headcount."
     },
@@ -5548,7 +5548,7 @@
       "source": "EIG composite \u2014 computed from ACS rent + income vs. national benchmarks"
     },
     "industrial_diversity": {
-      "score": 0.711,
+      "score": 0.71,
       "ga_score": 0.984,
       "n_sectors": 9,
       "as_of_label": "2025 Q2",

@@ -4231,9 +4231,9 @@
       "as_of_label": "2025 Q2",
       "msa": {
         "Manufacturing": {
-          "employment": 24773,
+          "employment": 24776,
           "avg_annual_wage": 93756,
-          "share_pct": 16.71
+          "share_pct": 16.72
         },
         "Transportation/Utilities": {
           "employment": 17538,
@@ -4241,29 +4241,29 @@
           "share_pct": 11.83
         },
         "Retail Trade": {
-          "employment": 23347,
+          "employment": 23350,
           "avg_annual_wage": 41288,
-          "share_pct": 15.74
+          "share_pct": 15.76
         },
         "Financial Activities": {
-          "employment": 6499,
-          "avg_annual_wage": 77942,
-          "share_pct": 4.38
+          "employment": 6500,
+          "avg_annual_wage": 77271,
+          "share_pct": 4.39
         },
         "Prof. & Bus. Services": {
-          "employment": 13886,
-          "avg_annual_wage": 42588,
-          "share_pct": 9.36
+          "employment": 13784,
+          "avg_annual_wage": 42692,
+          "share_pct": 9.3
         },
         "Education & Health Services": {
-          "employment": 27904,
-          "avg_annual_wage": 65132,
+          "employment": 27891,
+          "avg_annual_wage": 65133,
           "share_pct": 18.82
         },
         "Leisure & Hospitality": {
-          "employment": 28206,
+          "employment": 28216,
           "avg_annual_wage": 30300,
-          "share_pct": 19.02
+          "share_pct": 19.04
         },
         "Other Services": {
           "employment": 6137,
@@ -4278,137 +4278,137 @@
           "share_pct": 0.13
         },
         "Construction": {
-          "employment": 235865,
+          "employment": 235860,
           "avg_annual_wage": 79196,
           "share_pct": 5.14
         },
         "Manufacturing": {
-          "employment": 427575,
+          "employment": 427822,
           "avg_annual_wage": 72748,
           "share_pct": 9.33
         },
         "Transportation/Utilities": {
-          "employment": 281846,
-          "avg_annual_wage": 73053,
-          "share_pct": 6.15
+          "employment": 281789,
+          "avg_annual_wage": 73101,
+          "share_pct": 6.14
         },
         "Wholesale Trade": {
-          "employment": 227032,
+          "employment": 227048,
           "avg_annual_wage": 97552,
           "share_pct": 4.95
         },
         "Retail Trade": {
-          "employment": 507397,
+          "employment": 507448,
           "avg_annual_wage": 40820,
           "share_pct": 11.07
         },
         "Information": {
-          "employment": 114527,
+          "employment": 114560,
           "avg_annual_wage": 131664,
           "share_pct": 2.5
         },
         "Financial Activities": {
-          "employment": 276205,
-          "avg_annual_wage": 97630,
-          "share_pct": 6.02
+          "employment": 275795,
+          "avg_annual_wage": 97636,
+          "share_pct": 6.01
         },
         "Prof. & Bus. Services": {
-          "employment": 741944,
-          "avg_annual_wage": 91165,
-          "share_pct": 16.18
+          "employment": 742768,
+          "avg_annual_wage": 91122,
+          "share_pct": 16.2
         },
         "Education & Health Services": {
-          "employment": 695619,
-          "avg_annual_wage": 68481,
+          "employment": 695684,
+          "avg_annual_wage": 68475,
           "share_pct": 15.17
         },
         "Leisure & Hospitality": {
-          "employment": 530061,
-          "avg_annual_wage": 30255,
+          "employment": 530178,
+          "avg_annual_wage": 30254,
           "share_pct": 11.56
         },
         "Other Services": {
-          "employment": 122973,
+          "employment": 123018,
           "avg_annual_wage": 51688,
           "share_pct": 2.68
         },
         "Government": {
           "employment": 418097,
-          "avg_annual_wage": 61134,
+          "avg_annual_wage": 61103,
           "share_pct": 9.12
         }
       },
       "us": {
         "Mining": {
-          "employment": 575408,
+          "employment": 575509,
           "avg_annual_wage": 120588,
           "share_pct": 0.39
         },
         "Construction": {
-          "employment": 8424182,
+          "employment": 8425912,
           "avg_annual_wage": 80860,
           "share_pct": 5.73
         },
         "Manufacturing": {
-          "employment": 12650979,
+          "employment": 12656168,
           "avg_annual_wage": 85332,
           "share_pct": 8.61
         },
         "Transportation/Utilities": {
-          "employment": 7127668,
-          "avg_annual_wage": 73299,
+          "employment": 7124807,
+          "avg_annual_wage": 73254,
           "share_pct": 4.85
         },
         "Wholesale Trade": {
-          "employment": 6060837,
-          "avg_annual_wage": 99684,
-          "share_pct": 4.13
+          "employment": 6059358,
+          "avg_annual_wage": 99736,
+          "share_pct": 4.12
         },
         "Retail Trade": {
-          "employment": 15371782,
+          "employment": 15369955,
           "avg_annual_wage": 42536,
           "share_pct": 10.46
         },
         "Information": {
-          "employment": 2852537,
-          "avg_annual_wage": 174772,
+          "employment": 2854786,
+          "avg_annual_wage": 174720,
           "share_pct": 1.94
         },
         "Financial Activities": {
-          "employment": 8762192,
-          "avg_annual_wage": 112293,
+          "employment": 8763972,
+          "avg_annual_wage": 112344,
           "share_pct": 5.96
         },
         "Prof. & Bus. Services": {
-          "employment": 22399565,
+          "employment": 22412054,
           "avg_annual_wage": 101525,
           "share_pct": 15.25
         },
         "Education & Health Services": {
-          "employment": 26031284,
-          "avg_annual_wage": 64740,
+          "employment": 26041154,
+          "avg_annual_wage": 64752,
           "share_pct": 17.72
         },
         "Leisure & Hospitality": {
-          "employment": 17402633,
-          "avg_annual_wage": 33326,
+          "employment": 17410040,
+          "avg_annual_wage": 33283,
           "share_pct": 11.85
         },
         "Other Services": {
-          "employment": 4740568,
+          "employment": 4743484,
           "avg_annual_wage": 53196,
           "share_pct": 3.23
         },
         "Government": {
-          "employment": 14519344,
-          "avg_annual_wage": 71182,
+          "employment": 14521507,
+          "avg_annual_wage": 71178,
           "share_pct": 9.88
         }
       },
       "totals": {
-        "msa": 148290,
-        "ga": 4585096,
-        "us": 146918979
+        "msa": 148192,
+        "ga": 4586022,
+        "us": 146958706
       }
     },
     "qcew_yoy_changes": {
@@ -4417,32 +4417,32 @@
       "as_of_label": "2025 Q2",
       "sectors": {
         "Manufacturing": {
-          "yoy_pct": 4.02,
-          "employment": 24773
+          "yoy_pct": 4.03,
+          "employment": 24776
         },
         "Transportation/Utilities": {
           "yoy_pct": 2.23,
           "employment": 17538
         },
         "Retail Trade": {
-          "yoy_pct": 1.03,
-          "employment": 23347
+          "yoy_pct": 1.04,
+          "employment": 23350
         },
         "Financial Activities": {
-          "yoy_pct": -2.39,
-          "employment": 6499
+          "yoy_pct": -2.37,
+          "employment": 6500
         },
         "Prof. & Bus. Services": {
-          "yoy_pct": -4.62,
-          "employment": 13886
+          "yoy_pct": -5.32,
+          "employment": 13784
         },
         "Education & Health Services": {
-          "yoy_pct": 2.13,
-          "employment": 27904
+          "yoy_pct": 2.09,
+          "employment": 27891
         },
         "Leisure & Hospitality": {
-          "yoy_pct": 0.35,
-          "employment": 28206
+          "yoy_pct": 0.39,
+          "employment": 28216
         },
         "Other Services": {
           "yoy_pct": 1.02,
@@ -4457,8 +4457,8 @@
       "manufacturing_split": {
         "msa": {
           "durable": {
-            "employment": 1979,
-            "avg_annual_wage": 81946,
+            "employment": 1981,
+            "avg_annual_wage": 81945,
             "share_pct_of_mfg": 59.9
           },
           "nondurable": {
@@ -4466,38 +4466,38 @@
             "avg_annual_wage": 97738,
             "share_pct_of_mfg": 40.1
           },
-          "total_employment": 3305,
-          "sector_total": 24773,
+          "total_employment": 3307,
+          "sector_total": 24776,
           "coverage_pct": 13.3
         },
         "ga": {
           "durable": {
-            "employment": 222477,
-            "avg_annual_wage": 79397,
-            "share_pct_of_mfg": 52.0
+            "employment": 222712,
+            "avg_annual_wage": 79363,
+            "share_pct_of_mfg": 52.1
           },
           "nondurable": {
-            "employment": 205098,
+            "employment": 205110,
             "avg_annual_wage": 65550,
-            "share_pct_of_mfg": 48.0
+            "share_pct_of_mfg": 47.9
           },
-          "total_employment": 427575,
-          "sector_total": 427575,
+          "total_employment": 427822,
+          "sector_total": 427822,
           "coverage_pct": 100.0
         },
         "us": {
           "durable": {
-            "employment": 7845342,
-            "avg_annual_wage": 91649,
+            "employment": 7846804,
+            "avg_annual_wage": 91639,
             "share_pct_of_mfg": 62.0
           },
           "nondurable": {
-            "employment": 4805637,
-            "avg_annual_wage": 74995,
+            "employment": 4809364,
+            "avg_annual_wage": 74976,
             "share_pct_of_mfg": 38.0
           },
-          "total_employment": 12650979,
-          "sector_total": 12650979,
+          "total_employment": 12656168,
+          "sector_total": 12656168,
           "coverage_pct": 100.0
         },
         "msa_reliable": false
@@ -4542,54 +4542,54 @@
     },
     "health_check": {
       "quarters": [
-        "2024 Q2",
         "2024 Q3",
         "2024 Q4",
         "2025 Q1",
         "2025 Q2",
-        "2025 Q3"
+        "2025 Q3",
+        "2025 Q4"
       ],
       "employment_000s": [
-        197.7,
         195.9,
         199.1,
         197.9,
-        200.0,
-        202.3
+        199.8,
+        202.1,
+        202.9
       ],
       "avg_weekly_wage": [
-        1135,
         1145,
         1221,
-        1210,
+        1209,
         1183,
-        1197
+        1202,
+        1280
       ],
       "establishments": [
-        12993,
         13089,
         13306,
-        13305,
-        13325,
-        13387
+        13287,
+        13308,
+        13377,
+        13454
       ],
       "unemployment_rate": [
-        2.9,
         3.2,
         2.7,
         2.9,
         2.8,
-        3.0
+        3.0,
+        2.9
       ],
       "labor_force_000s": [
-        215.6,
         215.2,
         215.2,
         216.3,
         217.5,
-        217.3
+        217.3,
+        218.8
       ],
-      "as_of_label": "2025 Q3",
+      "as_of_label": "2025 Q4",
       "source": "BLS QCEW (MSA totals) + LAUS (quarterly-averaged); EIG-assembled"
     },
     "census_bps_permits": {
@@ -5012,66 +5012,66 @@
         },
         {
           "name": "Gulfstream Aerospace",
-          "source_url": "https://www.savannahnow.com/story/business/2013/02/19/understanding-purpose-savannah-chamber/13655438007"
-        },
-        {
-          "name": "Georgia Ports Authority",
-          "source_url": "https://www.savannahnow.com/story/news/local/2026/05/10/savannahs-state-of-small-business-shows-growth-opportunities/89997038007"
-        },
-        {
-          "name": "Georgia Power",
-          "source_url": "https://www.selectgeorgia.com/blog/welcome-seapoint-industrial-site-savannah-ga"
-        },
-        {
-          "name": "Port of Savannah",
-          "source_url": "https://www.savannahnow.com/story/business/2021/03/10/savannah-nations-top-location-new-industry-and-other-job-creating-development-according-economic-dev/6941326002"
-        },
-        {
-          "name": "Southern Company",
-          "source_url": "https://www.savannahnow.com/story/news/2026/02/24/forbes-ranked-2-georgia-businesses-among-top-50-large-employers-in-us/88828522007"
+          "source_url": "https://www.selectgeorgia.com/yourgeorgia/why-savannah-HQ/innovation-resources"
         },
         {
           "name": "Forsyth County School District",
           "source_url": "https://www.savannahnow.com/story/news/2026/02/24/forbes-ranked-2-georgia-businesses-among-top-50-large-employers-in-us/88828522007"
         },
         {
+          "name": "Savannah State University",
+          "source_url": "https://www.selectgeorgia.com/yourgeorgia/why-savannah-HQ/innovation-resources"
+        },
+        {
+          "name": "Southern Company",
+          "source_url": "https://www.savannahnow.com/story/news/2026/02/24/forbes-ranked-2-georgia-businesses-among-top-50-large-employers-in-us/88828522007"
+        },
+        {
+          "name": "Georgia Power",
+          "source_url": "https://www.savannahnow.com/story/news/2026/02/24/forbes-ranked-2-georgia-businesses-among-top-50-large-employers-in-us/88828522007"
+        },
+        {
           "name": "Georgia Southern University",
-          "source_url": "https://www.selectgeorgia.com/blog/welcome-seapoint-industrial-site-savannah-ga"
+          "source_url": "https://www.savannahnow.com/story/news/2026/02/24/forbes-ranked-2-georgia-businesses-among-top-50-large-employers-in-us/88828522007"
         },
         {
-          "name": "Hyundai Motor Group",
-          "source_url": "https://www.savannahnow.com/story/news/local/2026/05/10/savannahs-state-of-small-business-shows-growth-opportunities/89997038007"
+          "name": "General Motors",
+          "source_url": "https://www.savannahnow.com/story/news/2025/09/05/forbes-ranked-georgias-best-employers-highlighting-these-companies/85987718007"
         },
         {
-          "name": "Metaplant America",
-          "source_url": "https://www.savannahnow.com/story/news/local/2026/05/10/savannahs-state-of-small-business-shows-growth-opportunities/89997038007"
+          "name": "Port of Savannah",
+          "source_url": "https://www.savannahnow.com/story/business/2021/03/10/savannah-nations-top-location-new-industry-and-other-job-creating-development-according-economic-dev/6941326002"
         },
         {
-          "name": "Chatham County School District",
+          "name": "Savannah College of Art",
+          "source_url": "https://www.selectgeorgia.com/yourgeorgia/why-savannah-HQ/innovation-resources"
+        },
+        {
+          "name": "Savannah Technical College",
+          "source_url": "https://www.savannahnow.com/story/business/2013/02/19/understanding-purpose-savannah-chamber/13655438007"
+        },
+        {
+          "name": "University of Notre Dame",
+          "source_url": "https://www.savannahnow.com/story/news/2025/09/05/forbes-ranked-georgias-best-employers-highlighting-these-companies/85987718007"
+        },
+        {
+          "name": "Coastal Georgia Regional Hospital",
           "source_url": null
         },
         {
           "name": "Colony Bank",
           "source_url": "https://www.savannahnow.com/story/business/2013/02/19/understanding-purpose-savannah-chamber/13655438007"
-        },
-        {
-          "name": "General Motors",
-          "source_url": "https://www.savannahnow.com/story/news/2025/10/13/best-employers-in-georgia-forbes-ranks-delta-lockheed-martin-and-more/86668731007"
-        },
-        {
-          "name": "Hyundai Motor Company",
-          "source_url": null
         }
       ],
       "sources": [
         "https://en.wikipedia.org/wiki/Savannah,_Georgia",
-        "https://www.selectgeorgia.com/blog/welcome-seapoint-industrial-site-savannah-ga",
         "https://www.savannahnow.com/story/news/2026/02/24/forbes-ranked-2-georgia-businesses-among-top-50-large-employers-in-us/88828522007",
-        "https://www.onlineathens.com/story/news/2026/03/04/georgias-best-employers-are-these-2-big-businesses-forbes-says/88982542007",
+        "https://www.selectgeorgia.com/yourgeorgia/why-savannah-HQ/innovation-resources",
+        "https://www.augustachronicle.com/story/news/2021/07/27/incentives-help-georgia-secure-economic-development-deals-jobs-wayfair-rockingham-farms-savannah-ga/7955302002",
         "https://www.selectgeorgia.com/yourgeorgia/why-savannah-HQ",
-        "https://www.selectgeorgia.com/discover-georgia/industries/fortune-500-list",
-        "https://www.savannahnow.com/story/business/2012/10/30/business-savannah-business-roundup/13816314007",
-        "https://www.savannahnow.com/story/news/2016/07/08/garden-city-police-department-savannah-firms-make-best-places-work-georgia-list/13921419007"
+        "https://www.savannahnow.com/story/business/2013/02/19/understanding-purpose-savannah-chamber/13655438007",
+        "https://www.savannahnow.com/story/business/employment/2025/10/10/savannah-area-workforce-leaders-come-together-for-updates-at-downtown-business-association-luncheon/86563396007",
+        "https://www.savannahnow.com/story/news/2025/09/05/forbes-ranked-georgias-best-employers-highlighting-these-companies/85987718007"
       ],
       "method": "Representative list auto-discovered via Tavily web search across chamber-of-commerce, development-authority and local-news sources. Not exhaustive; ordering approximates source frequency, not headcount."
     },
@@ -5561,7 +5561,7 @@
       "source": "EIG composite \u2014 computed from ACS rent + income vs. national benchmarks"
     },
     "industrial_diversity": {
-      "score": 0.857,
+      "score": 0.856,
       "ga_score": 0.984,
       "n_sectors": 8,
       "as_of_label": "2025 Q2",

@@ -3599,19 +3599,19 @@
           "share_pct": 16.82
         },
         "Education & Health Services": {
-          "employment": 10323,
+          "employment": 10325,
           "avg_annual_wage": 65201,
           "share_pct": 27.44
         },
         "Leisure & Hospitality": {
-          "employment": 4907,
+          "employment": 4908,
           "avg_annual_wage": 25955,
           "share_pct": 13.04
         },
         "Other Services": {
-          "employment": 810,
-          "avg_annual_wage": 41028,
-          "share_pct": 2.15
+          "employment": 811,
+          "avg_annual_wage": 40976,
+          "share_pct": 2.16
         }
       },
       "ga": {
@@ -3621,137 +3621,137 @@
           "share_pct": 0.13
         },
         "Construction": {
-          "employment": 235865,
+          "employment": 235860,
           "avg_annual_wage": 79196,
           "share_pct": 5.14
         },
         "Manufacturing": {
-          "employment": 427575,
+          "employment": 427822,
           "avg_annual_wage": 72748,
           "share_pct": 9.33
         },
         "Transportation/Utilities": {
-          "employment": 281846,
-          "avg_annual_wage": 73053,
-          "share_pct": 6.15
+          "employment": 281789,
+          "avg_annual_wage": 73101,
+          "share_pct": 6.14
         },
         "Wholesale Trade": {
-          "employment": 227032,
+          "employment": 227048,
           "avg_annual_wage": 97552,
           "share_pct": 4.95
         },
         "Retail Trade": {
-          "employment": 507397,
+          "employment": 507448,
           "avg_annual_wage": 40820,
           "share_pct": 11.07
         },
         "Information": {
-          "employment": 114527,
+          "employment": 114560,
           "avg_annual_wage": 131664,
           "share_pct": 2.5
         },
         "Financial Activities": {
-          "employment": 276205,
-          "avg_annual_wage": 97630,
-          "share_pct": 6.02
+          "employment": 275795,
+          "avg_annual_wage": 97636,
+          "share_pct": 6.01
         },
         "Prof. & Bus. Services": {
-          "employment": 741944,
-          "avg_annual_wage": 91165,
-          "share_pct": 16.18
+          "employment": 742768,
+          "avg_annual_wage": 91122,
+          "share_pct": 16.2
         },
         "Education & Health Services": {
-          "employment": 695619,
-          "avg_annual_wage": 68481,
+          "employment": 695684,
+          "avg_annual_wage": 68475,
           "share_pct": 15.17
         },
         "Leisure & Hospitality": {
-          "employment": 530061,
-          "avg_annual_wage": 30255,
+          "employment": 530178,
+          "avg_annual_wage": 30254,
           "share_pct": 11.56
         },
         "Other Services": {
-          "employment": 122973,
+          "employment": 123018,
           "avg_annual_wage": 51688,
           "share_pct": 2.68
         },
         "Government": {
           "employment": 418097,
-          "avg_annual_wage": 61134,
+          "avg_annual_wage": 61103,
           "share_pct": 9.12
         }
       },
       "us": {
         "Mining": {
-          "employment": 575408,
+          "employment": 575509,
           "avg_annual_wage": 120588,
           "share_pct": 0.39
         },
         "Construction": {
-          "employment": 8424182,
+          "employment": 8425912,
           "avg_annual_wage": 80860,
           "share_pct": 5.73
         },
         "Manufacturing": {
-          "employment": 12650979,
+          "employment": 12656168,
           "avg_annual_wage": 85332,
           "share_pct": 8.61
         },
         "Transportation/Utilities": {
-          "employment": 7127668,
-          "avg_annual_wage": 73299,
+          "employment": 7124807,
+          "avg_annual_wage": 73254,
           "share_pct": 4.85
         },
         "Wholesale Trade": {
-          "employment": 6060837,
-          "avg_annual_wage": 99684,
-          "share_pct": 4.13
+          "employment": 6059358,
+          "avg_annual_wage": 99736,
+          "share_pct": 4.12
         },
         "Retail Trade": {
-          "employment": 15371782,
+          "employment": 15369955,
           "avg_annual_wage": 42536,
           "share_pct": 10.46
         },
         "Information": {
-          "employment": 2852537,
-          "avg_annual_wage": 174772,
+          "employment": 2854786,
+          "avg_annual_wage": 174720,
           "share_pct": 1.94
         },
         "Financial Activities": {
-          "employment": 8762192,
-          "avg_annual_wage": 112293,
+          "employment": 8763972,
+          "avg_annual_wage": 112344,
           "share_pct": 5.96
         },
         "Prof. & Bus. Services": {
-          "employment": 22399565,
+          "employment": 22412054,
           "avg_annual_wage": 101525,
           "share_pct": 15.25
         },
         "Education & Health Services": {
-          "employment": 26031284,
-          "avg_annual_wage": 64740,
+          "employment": 26041154,
+          "avg_annual_wage": 64752,
           "share_pct": 17.72
         },
         "Leisure & Hospitality": {
-          "employment": 17402633,
-          "avg_annual_wage": 33326,
+          "employment": 17410040,
+          "avg_annual_wage": 33283,
           "share_pct": 11.85
         },
         "Other Services": {
-          "employment": 4740568,
+          "employment": 4743484,
           "avg_annual_wage": 53196,
           "share_pct": 3.23
         },
         "Government": {
-          "employment": 14519344,
-          "avg_annual_wage": 71182,
+          "employment": 14521507,
+          "avg_annual_wage": 71178,
           "share_pct": 9.88
         }
       },
       "totals": {
-        "msa": 37624,
-        "ga": 4585096,
-        "us": 146918979
+        "msa": 37628,
+        "ga": 4586022,
+        "us": 146958706
       }
     },
     "qcew_yoy_changes": {
@@ -3792,16 +3792,16 @@
           "employment": 6329
         },
         "Education & Health Services": {
-          "yoy_pct": 3.97,
-          "employment": 10323
+          "yoy_pct": 3.99,
+          "employment": 10325
         },
         "Leisure & Hospitality": {
-          "yoy_pct": -1.98,
-          "employment": 4907
+          "yoy_pct": -1.96,
+          "employment": 4908
         },
         "Other Services": {
-          "yoy_pct": -0.37,
-          "employment": 810
+          "yoy_pct": -0.25,
+          "employment": 811
         }
       }
     },
@@ -3827,32 +3827,32 @@
         },
         "ga": {
           "durable": {
-            "employment": 222477,
-            "avg_annual_wage": 79397,
-            "share_pct_of_mfg": 52.0
+            "employment": 222712,
+            "avg_annual_wage": 79363,
+            "share_pct_of_mfg": 52.1
           },
           "nondurable": {
-            "employment": 205098,
+            "employment": 205110,
             "avg_annual_wage": 65550,
-            "share_pct_of_mfg": 48.0
+            "share_pct_of_mfg": 47.9
           },
-          "total_employment": 427575,
-          "sector_total": 427575,
+          "total_employment": 427822,
+          "sector_total": 427822,
           "coverage_pct": 100.0
         },
         "us": {
           "durable": {
-            "employment": 7845342,
-            "avg_annual_wage": 91649,
+            "employment": 7846804,
+            "avg_annual_wage": 91639,
             "share_pct_of_mfg": 62.0
           },
           "nondurable": {
-            "employment": 4805637,
-            "avg_annual_wage": 74995,
+            "employment": 4809364,
+            "avg_annual_wage": 74976,
             "share_pct_of_mfg": 38.0
           },
-          "total_employment": 12650979,
-          "sector_total": 12650979,
+          "total_employment": 12656168,
+          "sector_total": 12656168,
           "coverage_pct": 100.0
         },
         "msa_reliable": true
@@ -3885,66 +3885,66 @@
           },
           {
             "label": "2025 Q2",
-            "value": 49.1,
+            "value": 50.0,
             "n": 54,
             "growing": 26,
-            "shrinking": 27,
-            "flat": 1
+            "shrinking": 26,
+            "flat": 2
           }
         ],
-        "latest": 49.1
+        "latest": 50.0
       }
     },
     "health_check": {
       "quarters": [
-        "2024 Q2",
         "2024 Q3",
         "2024 Q4",
         "2025 Q1",
         "2025 Q2",
-        "2025 Q3"
+        "2025 Q3",
+        "2025 Q4"
       ],
       "employment_000s": [
-        43.1,
         44.3,
         45.4,
         44.5,
         44.1,
-        43.9
+        44.0,
+        45.2
       ],
       "avg_weekly_wage": [
-        931,
         953,
         978,
         1018,
         971,
+        1015,
         1015
       ],
       "establishments": [
-        2433,
         2437,
         2459,
-        2413,
-        2426,
-        2431
+        2407,
+        2418,
+        2421,
+        2427
       ],
       "unemployment_rate": [
-        3.5,
         3.7,
         3.2,
         3.4,
         3.4,
-        3.7
+        3.7,
+        3.5
       ],
       "labor_force_000s": [
-        47.6,
         47.7,
         48.2,
         48.3,
         48.2,
-        47.5
+        47.5,
+        48.3
       ],
-      "as_of_label": "2025 Q3",
+      "as_of_label": "2025 Q4",
       "source": "BLS QCEW (MSA totals) + LAUS (quarterly-averaged); EIG-assembled"
     },
     "census_bps_permits": {
@@ -4305,40 +4305,36 @@
       "as_of": "2026-06-02",
       "employers": [
         {
-          "name": "Floyd Medical Center",
-          "source_url": "https://en.wikipedia.org/wiki/Rome,_Georgia"
-        },
-        {
-          "name": "Harbin Clinic",
-          "source_url": "https://en.wikipedia.org/wiki/Rome,_Georgia"
-        },
-        {
-          "name": "Redmond Regional Medical Center",
-          "source_url": "https://en.wikipedia.org/wiki/Rome,_Georgia"
-        },
-        {
-          "name": "State Mutual Insurance Company",
-          "source_url": "https://en.wikipedia.org/wiki/Rome,_Georgia"
-        },
-        {
-          "name": "Suzuki Manufacturing of America",
-          "source_url": "https://en.wikipedia.org/wiki/Rome,_Georgia"
-        },
-        {
           "name": "Atrium Health Floyd",
           "source_url": "https://en.wikipedia.org/wiki/Atrium_Health_Floyd"
+        },
+        {
+          "name": "Mills Fitzner",
+          "source_url": "https://www.northwestgeorgianews.com/rome/news/local/getting-down-to-business-chamber-hosts-annual-meeting-at-forum/article_2c292d95-89c6-4cb2-8950-81f981fc7218.html"
+        },
+        {
+          "name": "Georgia Power",
+          "source_url": "https://www.selectgeorgia.com/blog/team-researchers-provide-clear-employment-overview-community-partners"
         },
         {
           "name": "Summit Hill Foods",
           "source_url": "https://www.northwestgeorgianews.com/rome/business/rome-floyd-chamber-celebrates-rome-industries/article_34aae01c-d8ff-11ef-b2a8-a38613426472.html"
         },
         {
+          "name": "Berry College",
+          "source_url": "https://en.wikipedia.org/wiki/Atrium_Health_Floyd"
+        },
+        {
+          "name": "DR Horton Inc",
+          "source_url": "https://www.northwestgeorgianews.com/rome/business/rome-floyd-chamber-celebrates-rome-industries/article_34aae01c-d8ff-11ef-b2a8-a38613426472.html"
+        },
+        {
           "name": "Georgia Northwestern Technical College",
-          "source_url": "https://www.northwestgeorgianews.com/jill-fisher/article_59879411-06d9-44c3-9def-274e326ae1e7.html"
+          "source_url": "https://www.northwestgeorgianews.com/rome/business/lewis-chemical-named-small-business-of-the-year-larry-alford-of-service-master-by-twins/article_130f8d6a-8486-11e3-b983-001a4bcf6878.html"
         },
         {
           "name": "Greater Rome Existing Industries Association",
-          "source_url": "https://www.northwestgeorgianews.com/jill-fisher/article_59879411-06d9-44c3-9def-274e326ae1e7.html"
+          "source_url": "https://www.northwestgeorgianews.com/rome/business/rome-floyd-chamber-celebrates-rome-industries/article_34aae01c-d8ff-11ef-b2a8-a38613426472.html"
         },
         {
           "name": "Lewis Chemical Co",
@@ -4349,27 +4345,31 @@
           "source_url": "https://georgia.org/sites/default/files/2023-01/lowes_4.pdf"
         },
         {
-          "name": "Berry College",
-          "source_url": "https://www.northwestgeorgianews.com/jill-fisher/article_59879411-06d9-44c3-9def-274e326ae1e7.html"
+          "name": "Rome City School District",
+          "source_url": "https://en.wikipedia.org/wiki/Atrium_Health_Floyd"
+        },
+        {
+          "name": "VTI of Georgia Inc",
+          "source_url": "https://www.northwestgeorgianews.com/rome/business/rome-floyd-chamber-celebrates-rome-industries/article_34aae01c-d8ff-11ef-b2a8-a38613426472.html"
+        },
+        {
+          "name": "Floyd County School District",
+          "source_url": null
         },
         {
           "name": "Floyd Healthcare Management",
           "source_url": "https://www.northwestgeorgianews.com/primary-issue-for-local-employers-right-now-is-growth-of-the-workforce/article_27902aa4-f2f3-11eb-b2a1-6bb1c539a9f7.html"
-        },
-        {
-          "name": "Georgia Health Sciences University",
-          "source_url": "https://en.wikipedia.org/wiki/Rome,_Georgia"
         }
       ],
       "sources": [
-        "https://en.wikipedia.org/wiki/Rome,_Georgia",
         "https://en.wikipedia.org/wiki/Atrium_Health_Floyd",
+        "https://www.northwestgeorgianews.com/rome/business/rome-and-floyd-county-industrial-expansion-gains-make-site-selection-magazine-top-10-list/article_49657e1e-79f8-11eb-808a-07dd0a6bfb11.html",
         "https://www.selectgeorgia.com/blog/team-researchers-provide-clear-employment-overview-community-partners",
-        "https://www.ajc.com/business/lowe-bringing-600-jobs-rome/V7ylHfF7WKPOa2Zbe5IWKK",
         "https://georgia.org/sites/default/files/2023-01/lowes_4.pdf",
-        "https://www.northwestgeorgianews.com/jill-fisher/article_59879411-06d9-44c3-9def-274e326ae1e7.html",
+        "https://www.northwestgeorgianews.com/county-loses-last-major-link-to-textile-local-new/article_5a94708d-ed20-549f-b911-9afae62f1842.html",
         "https://www.northwestgeorgianews.com/rome/business/lewis-chemical-named-small-business-of-the-year-larry-alford-of-service-master-by-twins/article_130f8d6a-8486-11e3-b983-001a4bcf6878.html",
-        "https://www.northwestgeorgianews.com/county-loses-last-major-link-to-textile-local-new/article_5a94708d-ed20-549f-b911-9afae62f1842.html"
+        "https://www.northwestgeorgianews.com/rome/business/rome-floyd-chamber-celebrates-rome-industries/article_34aae01c-d8ff-11ef-b2a8-a38613426472.html",
+        "https://www.northwestgeorgianews.com/jill-fisher/article_59879411-06d9-44c3-9def-274e326ae1e7.html"
       ],
       "method": "Representative list auto-discovered via Tavily web search across chamber-of-commerce, development-authority and local-news sources. Not exhaustive; ordering approximates source frequency, not headcount."
     },

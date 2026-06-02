@@ -1,5 +1,5 @@
 {
- "fetched_at": "2026-06-02T13:45:55Z",
+ "fetched_at": "2026-06-02T16:38:03Z",
  "schema": "gdp/v1",
  "metros": [
   {
@@ -1243,16 +1243,16 @@
  },
  "_meta": {
   "metro_rollup": {
-   "last_updated": "2026-06-02T13:45:55Z",
+   "last_updated": "2026-06-02T16:38:03Z",
    "n_metros": 14,
    "stale": false
   },
   "county_gdp": {
-   "last_updated": "2026-06-02T13:45:57Z",
+   "last_updated": "2026-06-02T16:38:03Z",
    "stale": false
   },
   "non_metro": {
-   "last_updated": "2026-06-02T13:45:57Z",
+   "last_updated": "2026-06-02T16:38:03Z",
    "stale": false
   }
  },

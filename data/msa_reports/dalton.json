@@ -3904,42 +3904,42 @@
             "share_pct_of_mfg": 4.5
           },
           "nondurable": {
-            "employment": 18569,
-            "avg_annual_wage": 53596,
+            "employment": 18537,
+            "avg_annual_wage": 53584,
             "share_pct_of_mfg": 95.5
           },
-          "total_employment": 19437,
-          "sector_total": 20934,
+          "total_employment": 19405,
+          "sector_total": 20902,
           "coverage_pct": 92.8
         },
         "ga": {
           "durable": {
-            "employment": 222477,
-            "avg_annual_wage": 79397,
-            "share_pct_of_mfg": 52.0
+            "employment": 222712,
+            "avg_annual_wage": 79363,
+            "share_pct_of_mfg": 52.1
           },
           "nondurable": {
-            "employment": 205098,
+            "employment": 205110,
             "avg_annual_wage": 65550,
-            "share_pct_of_mfg": 48.0
+            "share_pct_of_mfg": 47.9
           },
-          "total_employment": 427575,
-          "sector_total": 427575,
+          "total_employment": 427822,
+          "sector_total": 427822,
           "coverage_pct": 100.0
         },
         "us": {
           "durable": {
-            "employment": 7845342,
-            "avg_annual_wage": 91649,
+            "employment": 7846804,
+            "avg_annual_wage": 91639,
             "share_pct_of_mfg": 62.0
           },
           "nondurable": {
-            "employment": 4805637,
-            "avg_annual_wage": 74995,
+            "employment": 4809364,
+            "avg_annual_wage": 74976,
             "share_pct_of_mfg": 38.0
           },
-          "total_employment": 12650979,
-          "sector_total": 12650979,
+          "total_employment": 12656168,
+          "sector_total": 12656168,
           "coverage_pct": 100.0
         },
         "msa_reliable": true
@@ -3984,54 +3984,54 @@
     },
     "health_check": {
       "quarters": [
-        "2024 Q2",
         "2024 Q3",
         "2024 Q4",
         "2025 Q1",
         "2025 Q2",
-        "2025 Q3"
+        "2025 Q3",
+        "2025 Q4"
       ],
       "employment_000s": [
-        65.8,
         66.4,
         66.5,
-        64.5,
-        64.0,
-        63.6
+        64.7,
+        64.2,
+        63.9,
+        63.8
       ],
       "avg_weekly_wage": [
-        994,
         1011,
         1068,
-        1074,
-        1019,
-        1041
+        1076,
+        1021,
+        1044,
+        1117
       ],
       "establishments": [
-        3258,
         3271,
         3286,
-        3262,
-        3278,
-        3273
+        3264,
+        3279,
+        3271,
+        3263
       ],
       "unemployment_rate": [
-        3.6,
         4.0,
         4.4,
         3.8,
         3.3,
-        4.5
+        4.5,
+        3.8
       ],
       "labor_force_000s": [
-        67.3,
         67.5,
         67.6,
         66.6,
         65.3,
-        65.3
+        65.3,
+        66.1
       ],
-      "as_of_label": "2025 Q3",
+      "as_of_label": "2025 Q4",
       "source": "BLS QCEW (MSA totals) + LAUS (quarterly-averaged); EIG-assembled"
     },
     "census_bps_permits": {
@@ -4397,20 +4397,24 @@
       "as_of": "2026-06-02",
       "employers": [
         {
+          "name": "Carpet Capital",
+          "source_url": "https://en.wikipedia.org/wiki/Dalton,_Georgia"
+        },
+        {
           "name": "Beaulieu Group",
           "source_url": "https://valdostadailytimes.com/2018/01/01/engineered-floors-growth-varnell-drama-among-top-stories-in-dalton-area-in-2017"
         },
         {
-          "name": "Carpet Capital",
-          "source_url": "https://en.wikipedia.org/wiki/Dalton,_Georgia"
+          "name": "Shaw Industries",
+          "source_url": "https://valdostadailytimes.com/2017/09/11/questions-and-answers-with-shaw-industries-ceo-vance-bell"
         },
         {
           "name": "Mohawk Industries",
           "source_url": "https://georgia.org/sites/default/files/2021-04/logistics_education_report.pdf"
         },
         {
-          "name": "Shaw Industries",
-          "source_url": "https://www.ajc.com/business/employment/slow-carpet-sales-leads-dalton-plant-closing/i6IWYuTMhqDpy2SltAagkM"
+          "name": "Dalton Public Schools",
+          "source_url": "https://www.ledger-enquirer.com/news/business/article29444089.html"
         },
         {
           "name": "Hamilton Health Care System",
@@ -4421,20 +4425,20 @@
           "source_url": "https://georgia.org/sites/default/files/2021-04/logistics_education_report.pdf"
         },
         {
-          "name": "Company",
-          "source_url": "https://www.ajc.com/business/dalton-augusta-worst-for-job-losses-lately/qWPbpKazCnZFJtn1Kel1RM"
-        },
-        {
-          "name": "Dalton Public Schools",
-          "source_url": "https://www.ledger-enquirer.com/news/business/article29444089.html"
-        },
-        {
-          "name": "J&J Flooring",
-          "source_url": "https://www.ledger-enquirer.com/news/business/article29444089.html"
-        },
-        {
           "name": "Dalton State College",
-          "source_url": "https://georgia.org/sites/default/files/2021-04/logistics_education_report.pdf"
+          "source_url": "https://valdostadailytimes.com/2017/09/11/questions-and-answers-with-shaw-industries-ceo-vance-bell"
+        },
+        {
+          "name": "Flooring",
+          "source_url": "https://georgia.org/sites/default/files/2023-01/engineered_floors.pdf"
+        },
+        {
+          "name": "Whitfield County Schools",
+          "source_url": "https://www.ledger-enquirer.com/news/business/article29444089.html"
+        },
+        {
+          "name": "Dalton Regional Medical Center",
+          "source_url": null
         },
         {
           "name": "Albany State University",
@@ -4447,21 +4451,17 @@
         {
           "name": "Clayton State University",
           "source_url": "https://georgia.org/sites/default/files/2021-04/logistics_education_report.pdf"
-        },
-        {
-          "name": "Coca-Cola Co",
-          "source_url": "https://www.ajc.com/business/more-people-get-the-job-done-from-home/vwIkigj3QcDuHrFIiuj8ZI"
         }
       ],
       "sources": [
         "https://en.wikipedia.org/wiki/Dalton,_Georgia",
         "https://www.ajc.com/business/dalton-augusta-worst-for-job-losses-lately/qWPbpKazCnZFJtn1Kel1RM",
-        "https://www.ajc.com/business/employment/slow-carpet-sales-leads-dalton-plant-closing/i6IWYuTMhqDpy2SltAagkM",
-        "https://www.ajc.com/business/more-people-get-the-job-done-from-home/vwIkigj3QcDuHrFIiuj8ZI",
+        "https://valdostadailytimes.com/2017/09/11/questions-and-answers-with-shaw-industries-ceo-vance-bell",
+        "https://georgia.org/sites/default/files/2023-01/engineered_floors.pdf",
+        "https://www.ajc.com/video/news/2026/05/one-industry-polluted-this-town-now-the-city-is-betting-on-ai",
         "https://georgia.org/sites/default/files/2021-04/logistics_education_report.pdf",
         "https://georgia.org/sites/default/files/2021-02/fy21_q2_board_book.pdf",
-        "https://valdostadailytimes.com/2018/01/01/engineered-floors-growth-varnell-drama-among-top-stories-in-dalton-area-in-2017",
-        "https://georgia.org/sites/default/files/2023-01/engineered_floors.pdf"
+        "https://valdostadailytimes.com/2018/01/01/engineered-floors-growth-varnell-drama-among-top-stories-in-dalton-area-in-2017"
       ],
       "method": "Representative list auto-discovered via Tavily web search across chamber-of-commerce, development-authority and local-news sources. Not exhaustive; ordering approximates source frequency, not headcount."
     },
