@@ -188,6 +188,7 @@
 </footer>
 
 <script>
+(function(){  /*iife*/
 document.getElementById('yr').textContent = new Date().getFullYear();
 
 const BRAND = {
@@ -389,6 +390,7 @@ document.addEventListener('DOMContentLoaded', () => {
       '<div style="padding:20px; color:var(--coral); font-weight:600;">Failed to load outlook data. Check console.</div>');
   });
 });
+})();  /*iife*/
 </script>
 </body>
 </html>

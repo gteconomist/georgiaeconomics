@@ -145,9 +145,14 @@ def bea_get(params: dict, retries: int = 3) -> Optional[dict]:
                     err = err[0] if err else {}
                 desc = (err.get("APIErrorDescription") or err.get("ErrorDescription") or "") \
                     if isinstance(err, dict) else str(err)
+                code = str(err.get("APIErrorCode") or "") if isinstance(err, dict) else ""
                 low = str(desc).lower()
-                # year-not-yet-published is expected; the caller falls back to an earlier year
-                if not any(s in low for s in ("not available", "no data", "invalid year")):
+                # APIErrorCode 101 ("Unknown error") is BEA's response when there is simply
+                # no data for the requested params (e.g. a year not published yet) — expected
+                # while probing, so don't treat it as a hard error or print noise.
+                expected = (code == "101"
+                            or any(s in low for s in ("not available", "no data", "invalid year")))
+                if not expected:
                     print(f"  [gdp/BEA error] {params.get('TableName')} "
                           f"geo={params.get('GeoFips')} lc={params.get('LineCode')} "
                           f"yr={params.get('Year')}: {err}", file=sys.stderr)
@@ -217,12 +222,14 @@ def attach_state_share(metros: List[dict], ga_nominal_bn_latest: Optional[float]
 # all states); comma-joined GeoFips lists and LineCode="ALL" are NOT supported and
 # return nothing. These helpers mirror the proven scripts/fetch_film.py pattern.
 
-def _bea_series(table: str, geofips: str, years: List[int], line_code: str = "1") -> Dict[int, float]:
-    """{year: value_millions} for one table / single GeoFips / linecode across years."""
+def _bea_series(table: str, geofips: str, years: Optional[List[int]], line_code: str = "1") -> Dict[int, float]:
+    """{year: value_millions} for one table / single GeoFips / linecode.
+    Pass years=None to request Year='ALL' (all published years) — preferred for
+    timeseries, since requesting a not-yet-published year makes BEA 101 the whole call."""
     res = bea_get({
         "method": "GetData", "DataSetName": "Regional", "TableName": table,
         "LineCode": line_code, "GeoFips": geofips,
-        "Year": ",".join(str(y) for y in years),
+        "Year": "ALL" if years is None else ",".join(str(y) for y in years),
     })
     out: Dict[int, float] = {}
     for row in _rows(res):
@@ -264,14 +271,14 @@ def _bea_linecodes(table: str) -> List[dict]:
 
 
 def fetch_ga_gdp(years_back: int = 13) -> Optional[dict]:
-    this_year = date.today().year
-    years = list(range(this_year - years_back, this_year))
-    ga_real = _bea_series("SAGDP9N", GA_FIPS, years)   # real, chained $
-    us_real = _bea_series("SAGDP9N", US_FIPS, years)
-    ga_nom = _bea_series("SAGDP2N", GA_FIPS, years)     # nominal, current $
+    # Request ALL published years (avoids 101 on the not-yet-published latest year),
+    # then keep the most recent `years_back` for the chart.
+    ga_real = _bea_series("SAGDP9N", GA_FIPS, None)   # real, chained $
+    us_real = _bea_series("SAGDP9N", US_FIPS, None)
+    ga_nom = _bea_series("SAGDP2N", GA_FIPS, None)     # nominal, current $
     if not ga_real and not ga_nom:
         return None
-    yrs = sorted(set(ga_real) | set(ga_nom))
+    yrs = sorted(set(ga_real) | set(ga_nom))[-years_back:]
     pop = _state_pop_by_year()
     real_bn = [round(ga_real[y] / 1000, 2) if y in ga_real else None for y in yrs]
     nom_bn = [round(ga_nom[y] / 1000, 2) if y in ga_nom else None for y in yrs]
@@ -362,10 +369,9 @@ _SECTOR_DESC_PREFIXES = [
 
 
 def fetch_sectors(year: Optional[int] = None) -> Optional[dict]:
-    this_year = date.today().year
-    # Request a small window (the requested year may not be published yet) and
-    # use the latest year actually returned for each line code.
-    yrs = [year] if year else [this_year - 3, this_year - 2, this_year - 1]
+    # Request ALL published years (a single not-yet-published year would 101 the
+    # whole call) and use the latest year actually returned for each line code.
+    yrs = [year] if year else None
     codes = _bea_linecodes("SAGDP2N")
     if not codes:
         return None
