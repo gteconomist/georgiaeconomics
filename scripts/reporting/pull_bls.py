@@ -271,6 +271,115 @@ def fetch_ces_supersector_history(cbsa: str, years_back: int = 2) -> Optional[di
     return {"sectors": sectors}
 
 
+# Canonical supersector basket for the Diffusion Index breadth comparison.
+# Shared across MSA / GA / US so all three lines are computed identically. Uses
+# the aggregate "Trade, transportation, and utilities" (40) rather than the
+# wholesale/retail/transport split, because the split's national CES industry
+# codes don't follow the simple supersector pattern. Total nonfarm / Total
+# private are excluded (they're aggregates, not industries).
+CES_DIFFUSION_SUPERSECTORS: Dict[str, str] = {
+    "10": "Mining and logging",
+    "20": "Construction",
+    "30": "Manufacturing",
+    "40": "Trade, transportation, and utilities",
+    "50": "Information",
+    "55": "Financial activities",
+    "60": "Professional and business services",
+    "65": "Education and health services",
+    "70": "Leisure and hospitality",
+    "80": "Other services",
+    "90": "Government",
+}
+
+_GA_US_BREADTH_CACHE: Optional[dict] = None
+
+
+def _us_ces_series_id(supersector: str, sa: bool = True) -> str:
+    """National CES series ID: CE + S/U + supersector(2) + industry(6) + datatype(2)."""
+    prefix = "CES" if sa else "CEU"
+    return f"{prefix}{supersector}00000001"
+
+
+def fetch_ces_breadth_ga_us(years_back: int = 2) -> Optional[dict]:
+    """GA-statewide + US-national CES supersector employment for the canonical
+    diffusion basket. Shared across all metros (the GA/US breadth lines are the
+    same on every report), so the result is cached module-level and fetched once
+    per process.
+
+    Returns: {"ga": {"sectors": {label: {months,values,yoy_pct,latest_yoy,adjustment}}},
+              "us": {"sectors": {...}}}  — same shape as fetch_ces_supersector_history.
+    None on total failure (the diffusion chart then falls back to MSA-only).
+    """
+    global _GA_US_BREADTH_CACHE
+    if _GA_US_BREADTH_CACHE is not None:
+        return _GA_US_BREADTH_CACHE
+
+    end_year = date.today().year
+    start_year = end_year - years_back
+
+    # GA statewide: SA + NSA variants (state-level SA is usually published, but
+    # request both and prefer SA). US national: SA only (reliable).
+    series_map = {}  # sid -> (scope, ss_code, label, sa_flag)
+    ids = []
+    for ss, label in CES_DIFFUSION_SUPERSECTORS.items():
+        ga_sa = _ces_series_id("00000", supersector=ss, sa=True)
+        ga_nsa = _ces_series_id("00000", supersector=ss, sa=False)
+        us_sa = _us_ces_series_id(ss, sa=True)
+        series_map[ga_sa] = ("ga", ss, label, True)
+        series_map[ga_nsa] = ("ga", ss, label, False)
+        series_map[us_sa] = ("us", ss, label, True)
+        ids += [ga_sa, ga_nsa, us_sa]
+
+    # The BLS API returns at most 25 series per request without a registration
+    # key (50 with one). We have 33, so batch in chunks of 25 to stay complete
+    # regardless of whether BLS_API_KEY is set.
+    all_series = []
+    for i in range(0, len(ids), 25):
+        chunk = ids[i:i + 25]
+        data = _bls_request(chunk, start_year, end_year)
+        if data and data.get("Results", {}).get("series"):
+            all_series.extend(data["Results"]["series"])
+    if not all_series:
+        print("  [CES GA/US breadth] request failed", file=sys.stderr)
+        return None
+
+    parsed: Dict[tuple, dict] = {}  # (scope, ss, sa) -> record
+    for series in all_series:
+        sid = series.get("seriesID")
+        if sid not in series_map:
+            continue
+        scope, ss, label, sa_flag = series_map[sid]
+        obs = _flatten_observations(series)
+        if not obs:
+            continue
+        values = [o["value"] for o in obs]
+        yoy = _yoy_pct(values)
+        parsed[(scope, ss, sa_flag)] = {
+            "supersector_code": ss,
+            "series_id": sid,
+            "months": [o["ym"] for o in obs],
+            "values": values,
+            "yoy_pct": yoy,
+            "latest_yoy": yoy[-1] if yoy else None,
+            "adjustment": "SA" if sa_flag else "NSA",
+        }
+
+    out = {}
+    for scope in ("ga", "us"):
+        sectors = {}
+        for ss, label in CES_DIFFUSION_SUPERSECTORS.items():
+            rec = parsed.get((scope, ss, True)) or parsed.get((scope, ss, False))
+            if rec is not None:
+                sectors[label] = rec
+        if sectors:
+            out[scope] = {"sectors": sectors}
+
+    if not out:
+        return None
+    _GA_US_BREADTH_CACHE = out
+    return out
+
+
 def fetch_laus_unemployment_history(cbsa: str, years_back: int = 7) -> Optional[dict]:
     """Monthly LAUS unemployment rate (%), last N years."""
     series_id = _laus_series_id(cbsa)

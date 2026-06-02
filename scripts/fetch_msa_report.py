@@ -119,6 +119,17 @@ def run_ces_by_supersector(cbsa: str):
     data = pull_bls.fetch_ces_supersector_history(cbsa, years_back=2)
     if data is None:
         return None, "failed"
+    # Attach GA-statewide + US-national supersector breadth (shared across all
+    # metros, fetched once per run) so the Diffusion Index can plot 3 lines.
+    try:
+        gu = pull_bls.fetch_ces_breadth_ga_us(years_back=2)
+        if gu:
+            if gu.get("ga"):
+                data["ga"] = gu["ga"]
+            if gu.get("us"):
+                data["us"] = gu["us"]
+    except Exception as e:
+        print(f"     ↳ GA/US breadth skipped: {type(e).__name__}: {str(e)[:80]}")
     return data, "live"
 
 

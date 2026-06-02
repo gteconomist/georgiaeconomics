@@ -47,13 +47,25 @@ CES_SECTOR_MAP = {
     "Government": "Government",
 }
 
-# Supersectors used for the diffusion-index breadth count (matches the page).
+# Supersectors used for per-sector YoY callouts (growers/decliners) — the
+# 13-sector split, matching the page's Industry Employment chart.
 CES_CHART_SECTORS = [
     "Mining and logging", "Construction", "Manufacturing", "Wholesale trade",
     "Retail trade", "Transportation, warehousing and utilities", "Information",
     "Financial activities", "Professional and business services",
     "Education and health services", "Leisure and hospitality", "Other services",
     "Government",
+]
+
+# Canonical basket for the Diffusion Index breadth — the 11-sector set shared by
+# the page's MSA/GA/US diffusion lines (aggregate trade-transport-utilities, no
+# wholesale/retail/transport split). Keep in sync with CES_DIFFUSION_SECTORS in
+# the page JS so the narrative's diffusion number matches the chart.
+CES_DIFFUSION_SECTORS = [
+    "Mining and logging", "Construction", "Manufacturing",
+    "Trade, transportation, and utilities", "Information", "Financial activities",
+    "Professional and business services", "Education and health services",
+    "Leisure and hospitality", "Other services", "Government",
 ]
 
 # Prose names keyed by the comparative-table sector label.
@@ -173,7 +185,7 @@ def diffusion_latest(data):
         return None
     agg = {}  # "YYYY-MM" -> [pos, n]
     count = 0
-    for key in CES_CHART_SECTORS:
+    for key in CES_DIFFUSION_SECTORS:
         e = ces.get(key)
         if not e or not e.get("months") or not e.get("yoy_pct"):
             continue
