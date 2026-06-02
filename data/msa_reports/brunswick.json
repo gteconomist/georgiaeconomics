@@ -4029,55 +4029,55 @@
           "source_url": "https://en.wikipedia.org/wiki/Brunswick,_Georgia"
         },
         {
-          "name": "The Port of Brunswick",
+          "name": "Sea Island Company",
           "source_url": "https://en.wikipedia.org/wiki/Golden_Isles_of_Georgia"
         },
         {
-          "name": "Aviation Academy",
-          "source_url": "https://georgia.org/sites/default/files/2018-12/GABusClimRkgs_1.pdf"
+          "name": "The Port of Brunswick",
+          "source_url": "https://en.wikipedia.org/wiki/Brunswick,_Georgia"
         },
         {
           "name": "General Motors",
           "source_url": "https://en.wikipedia.org/wiki/Brunswick,_Georgia"
         },
         {
-          "name": "Healthcare",
-          "source_url": "https://en.wikipedia.org/wiki/Golden_Isles_of_Georgia"
+          "name": "Georgia Port Authority",
+          "source_url": "https://www.ajc.com/business/2026/01/heavy-equipment-lifting-business-at-crucial-time-for-brunswick-port"
         },
         {
           "name": "Marine Port",
           "source_url": "https://en.wikipedia.org/wiki/Brunswick,_Georgia"
         },
         {
-          "name": "Port of Brunswick Authority",
-          "source_url": null
+          "name": "ABKO Properties Guardian Industries Flint Hills",
+          "source_url": "https://en.wikipedia.org/wiki/Georgia-Pacific"
+        },
+        {
+          "name": "AT&T Mobility Atlanta Bread Company",
+          "source_url": "https://en.wikipedia.org/wiki/Georgia-Pacific"
+        },
+        {
+          "name": "Aviation Academy",
+          "source_url": "https://georgia.org/sites/default/files/2018-12/GABusClimRkgs_1.pdf"
+        },
+        {
+          "name": "Baan Corporation",
+          "source_url": "https://en.wikipedia.org/wiki/Georgia-Pacific"
         },
         {
           "name": "Beyond Health Group",
           "source_url": "https://www.selectgeorgia.com/services/support-for-communities/small-business-resources"
-        },
-        {
-          "name": "College Avenue Community Church",
-          "source_url": "https://en.wikipedia.org/wiki/New_Brunswick,_New_Jersey"
-        },
-        {
-          "name": "Food",
-          "source_url": "https://www.bizjournals.com/triangle/news/2025/02/07/brunswick-county-retirees-population-growth-jobs.html"
-        },
-        {
-          "name": "Georgia Power Regional Economic Development Manager",
-          "source_url": "https://www.selectgeorgia.com/blog/wtc-sav-prosperity"
         }
       ],
       "sources": [
         "https://en.wikipedia.org/wiki/Brunswick,_Georgia",
         "https://www.selectgeorgia.com/blog/wtc-sav-prosperity",
-        "https://www.ajc.com/things-to-do/georgias-largest-buc-ees-to-bring-more-than-200-jobs-to-brunswick/N4HBINRUZJDEBAUSUZGL6QUOYA",
-        "https://en.wikipedia.org/wiki/Golden_Isles_of_Georgia",
-        "https://georgia.org/sites/default/files/2018-12/GABusClimRkgs_1.pdf",
+        "https://www.ajc.com/business/2026/01/heavy-equipment-lifting-business-at-crucial-time-for-brunswick-port",
+        "https://en.wikipedia.org/wiki/Georgia-Pacific",
         "https://www.savannahnow.com/story/news/2016/07/08/garden-city-police-department-savannah-firms-make-best-places-work-georgia-list/13921419007",
+        "https://en.wikipedia.org/wiki/Golden_Isles_of_Georgia",
         "https://www.selectgeorgia.com/services/support-for-communities/small-business-resources",
-        "https://georgia.org/sites/default/files/2021-05/georgia_japan_connection_2021.pdf"
+        "https://georgia.org/sites/default/files/2018-12/GABusClimRkgs_1.pdf"
       ],
       "method": "Representative list auto-discovered via Tavily web search across chamber-of-commerce, development-authority and local-news sources. Not exhaustive; ordering approximates source frequency, not headcount."
     },

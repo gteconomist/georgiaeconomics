@@ -1,5 +1,5 @@
 {
- "fetched_at": "2026-06-02T20:11:42Z",
+ "fetched_at": "2026-06-02T20:29:28Z",
  "schema": "gdp/v1",
  "metros": [
   {
@@ -1226,9 +1226,9 @@
  },
  "non_metro": {
   "county_count": 86,
-  "gdp_bn": 94.7,
+  "gdp_bn": 94.69,
   "population": 2033015.0,
-  "gdp_per_capita_wt": 46581,
+  "gdp_per_capita_wt": 46576,
   "year": 2024,
   "note": "Aggregate of the 86 GA counties outside the 14 MSAs.",
   "source": "BEA CAGDP2 (county GDP, LineCode 1, current $)"
@@ -1243,16 +1243,16 @@
  },
  "_meta": {
   "metro_rollup": {
-   "last_updated": "2026-06-02T20:11:42Z",
+   "last_updated": "2026-06-02T20:29:28Z",
    "n_metros": 14,
    "stale": false
   },
   "county_gdp": {
-   "last_updated": "2026-06-02T17:04:28Z",
+   "last_updated": "2026-06-02T20:29:31Z",
    "stale": false
   },
   "non_metro": {
-   "last_updated": "2026-06-02T20:11:42Z",
+   "last_updated": "2026-06-02T20:29:31Z",
    "stale": false
   }
  },

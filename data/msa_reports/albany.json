@@ -4059,6 +4059,10 @@
       "as_of": "2026-06-02",
       "employers": [
         {
+          "name": "Albany State University",
+          "source_url": "https://en.wikipedia.org/wiki/Albany_State_University"
+        },
+        {
           "name": "Marine Corps Logistics Base Albany",
           "source_url": "https://en.wikipedia.org/wiki/Albany,_Georgia"
         },
@@ -4067,12 +4071,16 @@
           "source_url": "https://www.selectgeorgia.com/discover-georgia/industries/fortune-500-list"
         },
         {
-          "name": "Albany State University",
+          "name": "Phoebe Putney Memorial Hospital",
           "source_url": null
         },
         {
-          "name": "Phoebe Putney Memorial Hospital",
-          "source_url": null
+          "name": "Plug Power",
+          "source_url": "https://www.bizjournals.com/albany/news/2022/10/20/albany-region-jobs-growth-move-here-now.html"
+        },
+        {
+          "name": "Georgia Power",
+          "source_url": "https://georgia.org/sites/default/files/2025-05/coil_technology_ecosystem_report_2025.pdf"
         },
         {
           "name": "Health",
@@ -4083,24 +4091,16 @@
           "source_url": "https://georgia.org/business-support/small-business"
         },
         {
-          "name": "Knolls Atomic Power Laboratory",
-          "source_url": "https://www.bizjournals.com/albany/subscriber-only/2025/10/17/albanys-330-largest-employers.html"
-        },
-        {
           "name": "Manufacturing",
           "source_url": "https://en.wikipedia.org/wiki/Albany,_Georgia"
         },
         {
-          "name": "Northeast Grocery Inc",
-          "source_url": "https://www.bizjournals.com/albany/subscriber-only/2023/07/14/albany-areas-largest-private-sector-employers.html"
+          "name": "Port of Albany",
+          "source_url": "https://www.bizjournals.com/albany/news/2022/10/20/albany-region-jobs-growth-move-here-now.html"
         },
         {
           "name": "Southern Company",
           "source_url": "https://www.selectgeorgia.com/discover-georgia/industries/fortune-500-list"
-        },
-        {
-          "name": "Albany School System",
-          "source_url": null
         },
         {
           "name": "Albany Technical College",
@@ -4111,19 +4111,19 @@
           "source_url": "https://www.selectgeorgia.com/discover-georgia/industries/fortune-500-list"
         },
         {
-          "name": "Georgia Power Economic Development",
-          "source_url": "https://www.selectgeorgia.com/discover-georgia/industries/fortune-500-list"
+          "name": "Dougherty County School District",
+          "source_url": null
         }
       ],
       "sources": [
         "https://en.wikipedia.org/wiki/Albany,_Georgia",
         "https://www.selectgeorgia.com/discover-georgia/industries/fortune-500-list",
         "https://georgia.org/business-support/small-business",
-        "https://www.bizjournals.com/albany/subscriber-only/2025/10/17/albanys-330-largest-employers.html",
-        "https://www.bizjournals.com/albany/subscriber-only/2023/07/14/albany-areas-largest-private-sector-employers.html",
+        "https://georgia.org/sites/default/files/2025-05/coil_technology_ecosystem_report_2025.pdf",
+        "https://en.wikipedia.org/wiki/Albany_State_University",
         "https://www.bizjournals.com/albany/news/2023/07/14/albany-region-largest-private-sector-employers.html",
-        "https://www.bizjournals.com/albany/best-places-to-work",
-        "https://www.bizjournals.com/albany/datacenter/lists/employers-and-whos-who"
+        "https://www.bizjournals.com/albany/subscriber-only/2025/10/17/albanys-330-largest-employers.html",
+        "https://www.bizjournals.com/albany/subscriber-only/2023/07/14/albany-areas-largest-private-sector-employers.html"
       ],
       "method": "Representative list auto-discovered via Tavily web search across chamber-of-commerce, development-authority and local-news sources. Not exhaustive; ordering approximates source frequency, not headcount."
     },

@@ -4932,11 +4932,19 @@
         },
         {
           "name": "Mercer University",
-          "source_url": "https://en.wikipedia.org/wiki/Macon,_Georgia"
+          "source_url": "https://www.macon.com/news/local/article280753115.html"
         },
         {
           "name": "Coliseum Health Systems",
           "source_url": "https://www.macon.com/news/business/article258547393.html"
+        },
+        {
+          "name": "Healthcare of Atlanta",
+          "source_url": "https://www.macon.com/living/article300278809.html"
+        },
+        {
+          "name": "Norfolk Southern Railway",
+          "source_url": null
         },
         {
           "name": "Armstrong World Industries",
@@ -4947,51 +4955,43 @@
           "source_url": "https://www.macon.com/news/local/article235905642.html"
         },
         {
-          "name": "Coliseum Medical Hospital",
-          "source_url": "https://www.macon.com/news/local/article235905642.html"
-        },
-        {
-          "name": "Coliseum Northside Hospital",
-          "source_url": "https://www.macon.com/news/local/article235905642.html"
+          "name": "Blue Bird Corp",
+          "source_url": "https://en.wikipedia.org/wiki/Central_Georgia"
         },
         {
           "name": "Distribution Company of Georgia",
           "source_url": "https://www.macon.com/news/local/article235905642.html"
         },
         {
+          "name": "General Motors",
+          "source_url": "https://www.macon.com/news/local/article312115475.html"
+        },
+        {
           "name": "Navicent Health",
           "source_url": "https://www.macon.com/news/local/article235905642.html"
         },
         {
-          "name": "Tile Company",
-          "source_url": "https://www.macon.com/news/local/article235905642.html"
+          "name": "Southwest Airlines",
+          "source_url": "https://www.macon.com/news/local/article312115475.html"
         },
         {
           "name": "Tractor Supply Company",
           "source_url": "https://www.macon.com/news/local/article235905642.html"
         },
         {
-          "name": "YKK Corporation of America",
-          "source_url": "https://www.macon.com/news/local/article235905642.html"
-        },
-        {
-          "name": "Healthcare of Atlanta",
+          "name": "Cobb County School District",
           "source_url": "https://www.macon.com/living/article300278809.html"
-        },
-        {
-          "name": "Aerospace",
-          "source_url": "https://www.selectgeorgia.com/discover-georgia/industries/fortune-500-list"
         }
       ],
       "sources": [
         "https://www.macon.com/living/article300278809.html",
+        "https://www.macon.com/news/local/article280753115.html",
         "https://en.wikipedia.org/wiki/Macon,_Georgia",
         "https://www.macon.com/news/business/article258547393.html",
-        "https://en.wikipedia.org/wiki/Central_Georgia",
         "https://www.macon.com/news/local/article312115475.html",
+        "https://en.wikipedia.org/wiki/Central_Georgia",
         "https://www.macon.com/news/local/article235905642.html",
-        "https://www.macon.com/news/local/article314229310.html",
-        "https://www.selectgeorgia.com/discover-georgia/industries/fortune-500-list"
+        "https://www.bizjournals.com/atlanta/news/2019/12/15/health-care-companies-expand-in-macon-market.html"
       ],
       "method": "Representative list auto-discovered via Tavily web search across chamber-of-commerce, development-authority and local-news sources. Not exhaustive; ordering approximates source frequency, not headcount."
     },

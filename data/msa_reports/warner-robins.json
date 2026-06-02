@@ -4083,15 +4083,7 @@
       "as_of": "2026-06-02",
       "employers": [
         {
-          "name": "Pratt Industries",
-          "source_url": "https://www.macon.com/news/business/article279055784.html"
-        },
-        {
-          "name": "Robins Industrial Park",
-          "source_url": "https://www.macon.com/news/business/article279055784.html"
-        },
-        {
-          "name": "Perdue Foods",
+          "name": "Blue Bird Body Co",
           "source_url": "https://www.macon.com/news/business/article258547393.html"
         },
         {
@@ -4099,20 +4091,40 @@
           "source_url": "https://www.macon.com/news/business/article258547393.html"
         },
         {
-          "name": "Blue Bird Body Co",
+          "name": "Houston Healthcare Complex",
           "source_url": "https://www.macon.com/news/business/article258547393.html"
         },
         {
-          "name": "Houston Healthcare Complex",
+          "name": "Pratt Industries",
+          "source_url": "https://www.macon.com/news/business/article279055784.html"
+        },
+        {
+          "name": "Perdue Foods",
           "source_url": "https://www.macon.com/news/business/article258547393.html"
+        },
+        {
+          "name": "Robins Industrial Park",
+          "source_url": "https://www.macon.com/news/business/article279055784.html"
+        },
+        {
+          "name": "Company",
+          "source_url": "https://lensa.com/company/biggest-companies-in-warner-robins-ga"
+        },
+        {
+          "name": "Robins International Industrial Park",
+          "source_url": "https://www.georgiatrend.com/2023/02/28/economy-warner-robins-advantages"
+        },
+        {
+          "name": "Central Georgia Technical College",
+          "source_url": "https://houstoncountyga.net/industries/top-employers"
         },
         {
           "name": "Coliseum Health Systems",
           "source_url": "https://www.macon.com/news/business/article258547393.html"
         },
         {
-          "name": "Medical Center of Central Georgia",
-          "source_url": "https://en.wikipedia.org/wiki/Central_Georgia"
+          "name": "Food Manufacturing",
+          "source_url": "https://www.wrga.gov/article/2351392"
         },
         {
           "name": "Mercer University",
@@ -4123,31 +4135,19 @@
           "source_url": "https://www.macon.com/news/business/article258547393.html"
         },
         {
-          "name": "Aerospace Industry Committee",
-          "source_url": "https://www.macon.com/news/local/military/article214843570.html"
-        },
-        {
-          "name": "Atrium Health Navicent Medical Center",
-          "source_url": null
-        },
-        {
-          "name": "Blue Bird Corp",
-          "source_url": "https://en.wikipedia.org/wiki/Central_Georgia"
-        },
-        {
-          "name": "Chief Manufacturing",
-          "source_url": "https://en.wikipedia.org/wiki/Central_Georgia"
+          "name": "Anchor Glass Container Corp",
+          "source_url": "https://houstoncountyga.net/industries/top-employers"
         }
       ],
       "sources": [
+        "https://www.georgiatrend.com/2023/02/28/economy-warner-robins-advantages",
         "https://www.macon.com/news/business/article258547393.html",
+        "https://lensa.com/company/biggest-companies-in-warner-robins-ga",
+        "https://www.wrga.gov/article/2351392",
+        "https://houstoncountyga.net/industries/top-employers",
         "https://en.wikipedia.org/wiki/Central_Georgia",
-        "https://en.wikipedia.org/wiki/Robins_Air_Force_Base",
-        "https://www.macon.com/news/business/article279055784.html",
-        "https://www.macon.com/news/local/community/houston-peach/article315207803.html",
         "https://www.macon.com/news/local/community/houston-peach/article248306705.html",
-        "https://www.macon.com/news/local/military/article214843570.html",
-        "https://www.macon.com/news/local/community/houston-peach/the-sun-news/article123960724.html"
+        "https://www.macon.com/news/local/military/article214843570.html"
       ],
       "method": "Representative list auto-discovered via Tavily web search across chamber-of-commerce, development-authority and local-news sources. Not exhaustive; ordering approximates source frequency, not headcount."
     },

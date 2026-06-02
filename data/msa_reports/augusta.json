@@ -4924,16 +4924,24 @@
           "source_url": "https://en.wikipedia.org/wiki/Augusta,_Georgia"
         },
         {
+          "name": "Georgia Power",
+          "source_url": "https://www.augustachronicle.com/story/business/2020/01/04/scuttlebiz-metro-area-economic-growth-outpaced-national-average-in-2018/1954353007"
+        },
+        {
+          "name": "Southern Company",
+          "source_url": "https://www.augustachronicle.com/story/business/2024/08/27/georgia-top-companies-forbes-best-employers-by-state-list/74968857007"
+        },
+        {
           "name": "Cardinal Health",
           "source_url": "https://en.wikipedia.org/wiki/Augusta,_Georgia"
         },
         {
-          "name": "Doctors Hospital",
-          "source_url": "https://en.wikipedia.org/wiki/Augusta,_Georgia"
+          "name": "Department of Energy",
+          "source_url": null
         },
         {
-          "name": "Plant Vogtle",
-          "source_url": "https://www.augustachronicle.com/story/business/2020/01/04/scuttlebiz-metro-area-economic-growth-outpaced-national-average-in-2018/1954353007"
+          "name": "Doctors Hospital",
+          "source_url": "https://en.wikipedia.org/wiki/Augusta,_Georgia"
         },
         {
           "name": "Augusta Economic Development Authority",
@@ -4948,31 +4956,23 @@
           "source_url": "https://en.wikipedia.org/wiki/Augusta,_Georgia"
         },
         {
-          "name": "Georgia Power",
-          "source_url": "https://www.augustachronicle.com/story/business/2020/01/04/scuttlebiz-metro-area-economic-growth-outpaced-national-average-in-2018/1954353007"
-        },
-        {
           "name": "KSB Company",
           "source_url": "https://en.wikipedia.org/wiki/Augusta,_Georgia"
         },
         {
           "name": "Kimberly Clark Corporation",
           "source_url": "https://en.wikipedia.org/wiki/Augusta,_Georgia"
-        },
-        {
-          "name": "Olin Corporation",
-          "source_url": "https://en.wikipedia.org/wiki/Augusta,_Georgia"
         }
       ],
       "sources": [
         "https://en.wikipedia.org/wiki/Augusta,_Georgia",
-        "https://www.augustachronicle.com/story/news/politics/government/2024/09/12/who-are-augustas-highest-paid-employees-and-what-do-they-do/75175950007",
         "https://www.augustachronicle.com/story/business/2020/01/04/scuttlebiz-metro-area-economic-growth-outpaced-national-average-in-2018/1954353007",
         "https://www.augustachronicle.com/story/business/2024/08/27/georgia-top-companies-forbes-best-employers-by-state-list/74968857007",
         "https://www.augustachronicle.com/story/news/2025/06/04/fortune-500s-list-of-the-biggest-corporations-includes-17-in-georgia/84010835007",
-        "https://www.augustachronicle.com/story/business/2017/06/03/chamber-corner/14258946007",
-        "https://georgia.org/sites/default/files/2018-12/gdecd_board_book_august_2018.pdf",
-        "https://georgia.org/sites/default/files/2020-09/fy20_q4_board_book.pdf"
+        "https://www.augustachronicle.com/story/business/2022/11/01/chambers-programs-augusta-georgia-helps-black-businesses-grow-survive/10654466002",
+        "https://georgia.org/sites/default/files/2020-09/fy20_q4_board_book.pdf",
+        "https://www.savannahnow.com/story/business/2012/10/30/business-savannah-business-roundup/13816314007",
+        "https://www.augustachronicle.com/story/business/2022/04/05/augusta-area-job-numbers-still-short-pre-covid-pandemic-levels/7245773001"
       ],
       "method": "Representative list auto-discovered via Tavily web search across chamber-of-commerce, development-authority and local-news sources. Not exhaustive; ordering approximates source frequency, not headcount."
     },
