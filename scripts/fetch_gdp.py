@@ -139,6 +139,7 @@ def bea_get(params: dict, retries: int = 3) -> Optional[dict]:
             results = (j.get("BEAAPI") or {}).get("Results") or {}
             if isinstance(results, list):
                 results = results[0] if results else {}
+            tn = str(params.get("TableName") or "")
             err = results.get("Error") if isinstance(results, dict) else None
             if err:
                 if isinstance(err, list):
@@ -152,11 +153,19 @@ def bea_get(params: dict, retries: int = 3) -> Optional[dict]:
                 # while probing, so don't treat it as a hard error or print noise.
                 expected = (code == "101"
                             or any(s in low for s in ("not available", "no data", "invalid year")))
-                if not expected:
-                    print(f"  [gdp/BEA error] {params.get('TableName')} "
+                # TEMP DIAG: always surface state-level (SAGDP*) errors in full while we
+                # stabilise the statewide GDP pulls.
+                if tn.startswith("SAGDP") or not expected:
+                    print(f"  [gdp/BEA error] {tn} "
                           f"geo={params.get('GeoFips')} lc={params.get('LineCode')} "
                           f"yr={params.get('Year')}: {err}", file=sys.stderr)
                 return None
+            # TEMP DIAG: log row counts for state-level calls so we can see empty-vs-data.
+            if tn.startswith("SAGDP"):
+                rows = results.get("Data") if isinstance(results, dict) else None
+                n = len(rows) if isinstance(rows, list) else ("dict" if isinstance(rows, dict) else "none")
+                print(f"  [gdp/BEA diag] {tn} geo={params.get('GeoFips')} "
+                      f"lc={params.get('LineCode')} yr={params.get('Year')}: rows={n}", file=sys.stderr)
             return results
         except Exception as e:
             print(f"  [gdp/BEA err] {type(e).__name__}: {str(e)[:80]}", file=sys.stderr)
