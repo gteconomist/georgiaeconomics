@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Georgia State GDP — Output, Per-Capita, Sectors & Southeast Peers | Georgia Economics</title>
+<meta name="description" content="Live Georgia GDP data: real and nominal state output, per-capita GDP, GDP by industry, a Southeast-peer comparison (FL/NC/SC/TN/AL), a 159-county output map, and a non-metro Georgia aggregate. From BEA SAGDP and CAGDP2.">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="/styles.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+<script defer src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/gh/gteconomist/economicsguru@main/assets/charts.js"></script>
+<!-- Plotly + maps.js for the 159-county output choropleth -->
+<script defer src="https://cdn.plot.ly/plotly-2.35.2.min.js"></script>
+<script defer src="/maps.js"></script>
+
+<style>
+  .chart-canvas-tall { position: relative; height: 340px; background: var(--chart-bg); padding: 6px; }
+  .chart-canvas-med  { position: relative; height: 380px; background: var(--chart-bg); padding: 6px; }
+
+  .panel-controls { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin: 4px 0 12px; }
+  .panel-controls label { font-size: 12px; color: var(--ink-soft); font-weight: 600; text-transform: uppercase; letter-spacing: 0.04em; }
+  .toggle-group { display: inline-flex; border: 1px solid var(--border); border-radius: 6px; overflow: hidden; }
+  .toggle-group button {
+    font-family: inherit; font-size: 13px; padding: 5px 11px; border: 0; background: #fff;
+    color: var(--navy); font-weight: 600; cursor: pointer; border-right: 1px solid var(--border);
+  }
+  .toggle-group button:last-child { border-right: 0; }
+  .toggle-group button.active { background: var(--navy); color: #fff; }
+
+  #county-map { height: 520px; background: var(--chart-bg); }
+
+  .pending {
+    background: var(--peach-pale); border: 1px dashed var(--peach, #e8a87c);
+    border-radius: 8px; padding: 14px 16px; color: var(--ink-soft); font-size: 13px;
+  }
+  .pending strong { color: var(--peachDeep, #c46b3a); }
+
+  .nonmetro-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 14px; margin-top: 6px; }
+  .nonmetro-stat { background: var(--chart-bg); border-radius: 8px; padding: 12px 14px; }
+  .nonmetro-stat .label { font-size: 11px; text-transform: uppercase; letter-spacing: 0.04em; color: var(--ink-soft); font-weight: 700; }
+  .nonmetro-stat .value { font-size: 22px; font-weight: 800; color: var(--navy); margin-top: 2px; font-variant-numeric: tabular-nums; }
+
+  .data-table-wrap { overflow-x: auto; }
+  table.data-table { width: 100%; border-collapse: collapse; font-size: 14px; min-width: 560px; }
+  table.data-table thead th {
+    text-align: left; padding: 8px 10px; background: var(--chart-bg);
+    border-bottom: 2px solid var(--navy); color: var(--navy);
+    font-weight: 700; text-transform: uppercase; letter-spacing: 0.04em; font-size: 11px; cursor: pointer;
+  }
+  table.data-table thead th.numeric { text-align: right; }
+  table.data-table tbody td { padding: 7px 10px; border-bottom: 1px dotted var(--border); }
+  table.data-table tbody td.numeric { text-align: right; font-variant-numeric: tabular-nums; }
+  table.data-table tbody tr:hover { background: var(--peach-pale); }
+  table.data-table .metro-name { font-weight: 600; color: var(--navy); }
+
+  .stale-badge { display:inline-block; font-size:11px; font-weight:700; color:var(--peachDeep,#c46b3a); background:var(--peach-pale); border-radius:4px; padding:1px 6px; margin-left:8px; vertical-align:middle; }
+  .source-note { font-size: 12px; color: var(--ink-soft); margin-top: 8px; font-style: italic; }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <div class="brand">Georgia<span class="tag">Economics</span></div>
+    <nav>
+      <a href="/">Home</a>
+      <a href="/counties/">Counties</a>
+      <a href="/msa/">Metros</a>
+      <a href="/labor/">Labor</a>
+      <a href="/housing/">Housing</a>
+      <a href="/about/">About</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="page-header">
+    <h1>Georgia state GDP</h1>
+    <div class="subtitle">Real and nominal output, per-capita GDP, industry composition, a Southeast-peer comparison, a 159-county output map, and a non-metro Georgia aggregate. Sources: BEA SAGDP (state) and CAGDP2 (county).</div>
+    <div class="latest">Latest data: <strong id="latest-label">&mdash;</strong></div>
+  </section>
+
+  <div class="notice" id="coverage-note" style="display:none;"></div>
+
+  <!-- KPI strip -->
+  <div class="kpi-grid">
+    <div class="kpi">
+      <div class="label">Georgia GDP</div>
+      <div class="value" id="kpi-gdp">&mdash;</div>
+      <div class="delta">Nominal, current $</div>
+    </div>
+    <div class="kpi">
+      <div class="label">Real GDP growth</div>
+      <div class="value" id="kpi-growth">&mdash;</div>
+      <div class="delta">Latest year, YoY</div>
+    </div>
+    <div class="kpi">
+      <div class="label">GDP per capita</div>
+      <div class="value" id="kpi-percap">&mdash;</div>
+      <div class="delta">Nominal &divide; population</div>
+    </div>
+    <div class="kpi">
+      <div class="label">Largest sector</div>
+      <div class="value" id="kpi-sector" style="font-size:18px;">&mdash;</div>
+      <div class="delta">By share of output</div>
+    </div>
+    <div class="kpi">
+      <div class="label">Metros tracked</div>
+      <div class="value" id="kpi-metros">14</div>
+      <div class="delta">~82% of population</div>
+    </div>
+    <div class="kpi">
+      <div class="label">Non-metro counties</div>
+      <div class="value" id="kpi-nonmetro">86</div>
+      <div class="delta">Outside the 14 MSAs</div>
+    </div>
+  </div>
+
+  <!-- GDP over time -->
+  <div class="chart-panel" style="margin-top: 22px;">
+    <h2>Georgia GDP Over Time <span id="gdp-stale" class="stale-badge" style="display:none;">stale</span></h2>
+    <p class="sub">BEA state GDP. Real GDP (chained dollars) is the right basis for growth; toggle to nominal for the dollar level. The US line is real GDP, scaled on the right.</p>
+    <div class="panel-controls">
+      <div class="toggle-group" id="gdp-basis-toggle">
+        <button data-basis="real" class="active">Real</button>
+        <button data-basis="nominal">Nominal</button>
+      </div>
+    </div>
+    <div id="gdp-pending" class="pending" style="display:none;"><strong>Statewide series pending:</strong> the metro roll-up below is live now; the BEA SAGDP state series populates on the first data-refresh run after deploy. Refresh after the workflow completes.</div>
+    <div class="chart-canvas-tall"><canvas id="gdp-chart"></canvas></div>
+  </div>
+
+  <!-- Southeast peers -->
+  <div class="chart-panel" style="margin-top: 22px;">
+    <h2>Georgia vs. Southeast Peers <span id="peers-stale" class="stale-badge" style="display:none;">stale</span></h2>
+    <p class="sub">Georgia against Florida, North Carolina, South Carolina, Tennessee, and Alabama (plus the US). Toggle between real GDP growth and per-capita real GDP.</p>
+    <div class="panel-controls">
+      <div class="toggle-group" id="peer-metric-toggle">
+        <button data-metric="real_yoy" class="active">Real GDP growth</button>
+        <button data-metric="per_capita">Per-capita GDP</button>
+      </div>
+    </div>
+    <div id="peers-pending" class="pending" style="display:none;"><strong>Peer comparison pending:</strong> populates on the first data-refresh run after deploy.</div>
+    <div class="chart-canvas-med"><canvas id="peers-chart"></canvas></div>
+  </div>
+
+  <!-- Sector composition -->
+  <div class="chart-panel" style="margin-top: 22px;">
+    <h2>What Makes Up Georgia's Output <span id="sectors-stale" class="stale-badge" style="display:none;">stale</span></h2>
+    <p class="sub">GDP by industry, share of the state total. BEA SAGDP2N.</p>
+    <div id="sectors-pending" class="pending" style="display:none;"><strong>Sector breakdown pending:</strong> populates on the first data-refresh run after deploy.</div>
+    <div class="chart-canvas-med"><canvas id="sectors-chart"></canvas></div>
+  </div>
+
+  <!-- County output map -->
+  <div class="chart-panel" style="margin-top: 22px;">
+    <h2>Output by County <span id="county-stale" class="stale-badge" style="display:none;">stale</span></h2>
+    <p class="sub">All 159 counties &mdash; the 86 outside any metro included. BEA CAGDP2 county GDP.</p>
+    <div class="panel-controls">
+      <div class="toggle-group" id="county-metric-toggle">
+        <button data-metric="gdp_per_capita" class="active">GDP per capita</button>
+        <button data-metric="gdp_bn">Total GDP</button>
+      </div>
+    </div>
+    <div id="county-pending" class="pending" style="display:none;"><strong>County map pending:</strong> the all-159-county BEA layer populates on the first data-refresh run after deploy (needs the BEA API key from repo secrets). Refresh after the workflow completes.</div>
+    <div id="county-map"></div>
+    <div class="source-note">Source: BEA CAGDP2 (county GDP, all-industry total, current $). Per-capita derived from Census population.</div>
+  </div>
+
+  <!-- Non-metro Georgia -->
+  <div class="chart-panel" style="margin-top: 22px;">
+    <h2>Non-Metro Georgia <span id="nonmetro-stale" class="stale-badge" style="display:none;">stale</span></h2>
+    <p class="sub">The 86 counties outside the 14 MSAs, aggregated so rural output isn't invisible.</p>
+    <div id="nonmetro-pending" class="pending" style="display:none;"><strong>Aggregate pending:</strong> derives from the county GDP layer and populates on the first data-refresh run after deploy.</div>
+    <div class="nonmetro-grid" id="nonmetro-grid" style="display:none;"></div>
+  </div>
+
+  <!-- Metro roll-up -->
+  <div class="chart-panel" style="margin-top: 22px;">
+    <h2>Output by Metro</h2>
+    <p class="sub">The 14 metros by GDP, GDP per capita, and share of state output. Click a column header to sort.</p>
+    <div class="data-table-wrap">
+      <table class="data-table">
+        <thead><tr>
+          <th data-sort="short_name">Metro</th>
+          <th class="numeric" data-sort="gmp_bn">GDP ($bn)</th>
+          <th class="numeric" data-sort="gmp_yoy">GDP YoY</th>
+          <th class="numeric" data-sort="gdp_per_capita">GDP / capita</th>
+          <th class="numeric" data-sort="share_of_state_pct">Share of state</th>
+        </tr></thead>
+        <tbody id="metro-body"></tbody>
+      </table>
+    </div>
+    <div class="source-note">Source: roll-up of the 14 metro reports (BEA CAGDP2 county aggregation). Share of state uses the BEA SAGDP nominal total.</div>
+  </div>
+
+  <!-- Methodology -->
+  <div class="chart-panel" style="margin-top: 22px;">
+    <h2>About this data</h2>
+    <p class="sub" style="font-size:14px; line-height:1.6;">
+      State output uses the BEA SAGDP tables &mdash; real GDP in chained dollars (SAGDP9N) for growth and nominal GDP in current dollars (SAGDP2N) for the dollar level and per-capita figures. Per-capita GDP divides nominal output by Census population. Metro figures roll up from the 14 individual <a href="/msa/">metro reports</a>, which aggregate BEA county GDP. The 159-county map and the Non-Metro Georgia aggregate use BEA CAGDP2 county GDP, covering every county including the 86 outside any metro. The Southeast-peer set is Florida, North Carolina, South Carolina, Tennessee, and Alabama. BEA state and county GDP are annual; sections show a <span class="stale-badge">stale</span> badge when the underlying release is more than a year old.
+    </p>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div>&copy; <span id="yr"></span> Georgia Economics &middot; Sister site to <a href="https://economicsguru.com">economicsguru.com</a> &middot; <a href="/about/">Methodology</a></div>
+    <div>Data refreshes from BEA SAGDP and CAGDP2.</div>
+    <div class="eig">
+      <a href="https://www.economicimpact.com" target="_blank" rel="noopener" aria-label="Economic Impact Group">
+        <img src="/assets/ei_logo_NEW_200pxw.png" alt="Economic Impact Group">
+      </a>
+      <span class="product-of">A product of <a href="https://www.economicimpact.com" target="_blank" rel="noopener">Economic Impact Group, LLC</a>.</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+document.getElementById('yr').textContent = new Date().getFullYear();
+
+const BRAND = {
+  navy: '#1a3a5c', peachDeep: '#c46b3a', peach: '#e8a87c',
+  mustard: '#d4a017', teal: '#3a8d8d', coral: '#d4624a',
+  green: '#6b8e3d', grid: '#b6ad8d', inkSoft: '#6b7280',
+};
+
+const fmtBn = v => v == null ? '—' : '$' + Number(v).toLocaleString('en-US', { maximumFractionDigits: 1 }) + 'bn';
+const fmtUSD0 = v => v == null ? '—' : '$' + Math.round(v).toLocaleString();
+const fmtNum1 = v => v == null ? '—' : Number(v).toLocaleString('en-US', { maximumFractionDigits: 1 });
+const fmtPct1 = v => v == null ? '—' : Number(v).toFixed(1) + '%';
+const fmtSignedPct = v => v == null ? '—' : (v >= 0 ? '+' : '') + Number(v).toFixed(1) + '%';
+
+let DATA = null;
+
+async function init() {
+  const res = await fetch('/data/gdp.json?v=' + new Date().toISOString().slice(0, 10));
+  DATA = await res.json();
+
+  if (DATA.coverage_note) {
+    const el = document.getElementById('coverage-note');
+    el.textContent = DATA.coverage_note; el.style.display = '';
+  }
+  document.getElementById('latest-label').textContent = DATA.latest_label || '—';
+
+  const meta = DATA._meta || {};
+  const stale = n => !meta[n] || meta[n].stale;
+
+  renderKpis();
+  renderGdp(stale('ga_gdp'));
+  renderPeers(stale('peers'));
+  renderSectors(stale('sectors'));
+  renderCounty(stale('county_gdp'));
+  renderNonMetro(stale('non_metro'));
+  renderMetroTable();
+}
+
+function renderKpis() {
+  const k = DATA.kpis || {};
+  document.getElementById('kpi-gdp').textContent    = k.ga_nominal_gdp_bn == null ? '—' : fmtBn(k.ga_nominal_gdp_bn);
+  document.getElementById('kpi-growth').textContent = fmtSignedPct(k.ga_real_gdp_yoy);
+  document.getElementById('kpi-percap').textContent = fmtUSD0(k.ga_gdp_per_capita);
+  document.getElementById('kpi-sector').textContent = k.largest_sector || '—';
+  if (k.metro_count) document.getElementById('kpi-metros').textContent = k.metro_count;
+  if (k.non_metro_county_count) document.getElementById('kpi-nonmetro').textContent = k.non_metro_county_count;
+}
+
+/* ---- GDP over time, real/nominal toggle ---- */
+let gdpBasis = 'real', gdpChart = null;
+function renderGdp(isStale) {
+  const g = DATA.ga_gdp;
+  if (!g) { document.getElementById('gdp-pending').style.display = ''; return; }
+  if (isStale) document.getElementById('gdp-stale').style.display = '';
+  document.querySelectorAll('#gdp-basis-toggle button').forEach(b => b.addEventListener('click', () => {
+    document.querySelectorAll('#gdp-basis-toggle button').forEach(x => x.classList.remove('active'));
+    b.classList.add('active'); gdpBasis = b.dataset.basis; drawGdp();
+  }));
+  drawGdp();
+}
+function drawGdp() {
+  const g = DATA.ga_gdp; if (!g) return;
+  const gaData = gdpBasis === 'real' ? g.real_bn : g.nominal_bn;
+  const datasets = [{
+    label: 'Georgia ' + (gdpBasis === 'real' ? 'real GDP' : 'nominal GDP'),
+    data: gaData, borderColor: BRAND.navy, backgroundColor: 'rgba(26,58,92,0.10)',
+    fill: true, tension: 0.25, pointRadius: 0, borderWidth: 2.5, yAxisID: 'y',
+  }];
+  if (g.us_real_bn) datasets.push({
+    label: 'US real GDP (right)', data: g.us_real_bn, borderColor: BRAND.inkSoft,
+    borderDash: [5,4], fill: false, tension: 0.25, pointRadius: 0, borderWidth: 1.8, yAxisID: 'y2',
+  });
+  const ctx = document.getElementById('gdp-chart').getContext('2d');
+  if (gdpChart) gdpChart.destroy();
+  gdpChart = new Chart(ctx, {
+    type: 'line',
+    data: { labels: g.years, datasets },
+    options: {
+      responsive: true, maintainAspectRatio: false, interaction: { mode: 'index', intersect: false },
+      scales: {
+        x: { grid: { display: false }, ticks: { color: BRAND.navy, font: { size: 11 } } },
+        y: { position: 'left', grid: { color: BRAND.grid, borderDash: [3,4] }, ticks: { color: BRAND.navy, font: { size: 11 }, callback: v => '$' + v + 'bn' } },
+        y2: { position: 'right', grid: { display: false }, ticks: { color: BRAND.inkSoft, font: { size: 11 }, callback: v => '$' + (v/1000).toFixed(0) + 'tn' } },
+      },
+      plugins: {
+        legend: { display: true, labels: { color: BRAND.navy, font: { size: 12 }, boxWidth: 18 } },
+        tooltip: { callbacks: { label: it => it.dataset.label + ': ' + fmtBn(it.parsed.y) } },
+      },
+    },
+  });
+}
+
+/* ---- Southeast peers ---- */
+let peerMetric = 'real_yoy', peersChart = null;
+function renderPeers(isStale) {
+  const p = DATA.peers;
+  if (!p || !p.length) { document.getElementById('peers-pending').style.display = ''; return; }
+  if (isStale) document.getElementById('peers-stale').style.display = '';
+  document.querySelectorAll('#peer-metric-toggle button').forEach(b => b.addEventListener('click', () => {
+    document.querySelectorAll('#peer-metric-toggle button').forEach(x => x.classList.remove('active'));
+    b.classList.add('active'); peerMetric = b.dataset.metric; drawPeers();
+  }));
+  drawPeers();
+}
+function drawPeers() {
+  const p = (DATA.peers || []).slice();
+  const rows = p.filter(r => r[peerMetric] != null).sort((a, b) => b[peerMetric] - a[peerMetric]);
+  if (!rows.length) return;
+  const colors = rows.map(r => r.state === 'Georgia' ? BRAND.peachDeep : (r.state === 'United States' ? BRAND.inkSoft : BRAND.navy));
+  const ctx = document.getElementById('peers-chart').getContext('2d');
+  if (peersChart) peersChart.destroy();
+  const isPct = peerMetric === 'real_yoy';
+  peersChart = new Chart(ctx, {
+    type: 'bar',
+    data: { labels: rows.map(r => r.state), datasets: [{ data: rows.map(r => r[peerMetric]), backgroundColor: colors, borderWidth: 0 }] },
+    options: {
+      indexAxis: 'y', responsive: true, maintainAspectRatio: false,
+      scales: {
+        x: { grid: { color: BRAND.grid, borderDash: [3,4] }, ticks: { color: BRAND.navy, font: { size: 11 }, callback: v => isPct ? (v > 0 ? '+' : '') + v + '%' : '$' + (v/1000).toFixed(0) + 'k' } },
+        y: { grid: { display: false }, ticks: { color: BRAND.navy, font: { size: 12, weight: 'bold' } } },
+      },
+      plugins: {
+        legend: { display: false },
+        tooltip: { callbacks: { label: it => isPct ? 'Real GDP YoY: ' + fmtSignedPct(it.parsed.x) : 'Per-capita: ' + fmtUSD0(it.parsed.x) } },
+      },
+    },
+  });
+}
+
+/* ---- Sector composition ---- */
+function renderSectors(isStale) {
+  const s = DATA.sectors;
+  if (!s || !s.sectors || !s.sectors.length) { document.getElementById('sectors-pending').style.display = ''; return; }
+  if (isStale) document.getElementById('sectors-stale').style.display = '';
+  const top = s.sectors.slice(0, 12);
+  const ctx = document.getElementById('sectors-chart').getContext('2d');
+  new Chart(ctx, {
+    type: 'bar',
+    data: { labels: top.map(x => x.name), datasets: [{ data: top.map(x => x.share_pct), backgroundColor: BRAND.teal, borderWidth: 0 }] },
+    options: {
+      indexAxis: 'y', responsive: true, maintainAspectRatio: false,
+      scales: {
+        x: { grid: { color: BRAND.grid, borderDash: [3,4] }, ticks: { color: BRAND.navy, font: { size: 11 }, callback: v => v + '%' } },
+        y: { grid: { display: false }, ticks: { color: BRAND.navy, font: { size: 11, weight: 'bold' } } },
+      },
+      plugins: {
+        legend: { display: false },
+        tooltip: { callbacks: { label: it => { const d = top[it.dataIndex]; return `${fmtPct1(d.share_pct)} of GDP (${fmtBn(d.gdp_bn)})`; } } },
+      },
+    },
+  });
+}
+
+/* ---- County choropleth ---- */
+let countyMetric = 'gdp_per_capita';
+function renderCounty(isStale) {
+  const cg = DATA.county_gdp;
+  if (!cg || !cg.counties) { document.getElementById('county-pending').style.display = ''; return; }
+  if (isStale) document.getElementById('county-stale').style.display = '';
+  document.querySelectorAll('#county-metric-toggle button').forEach(btn => btn.addEventListener('click', () => {
+    document.querySelectorAll('#county-metric-toggle button').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active'); countyMetric = btn.dataset.metric; drawCounty();
+  }));
+  drawCounty();
+}
+function drawCounty() {
+  const cg = DATA.county_gdp;
+  if (!cg || !window.gaMaps) return;
+  const isPercap = countyMetric === 'gdp_per_capita';
+  const points = Object.entries(cg.counties).map(([fips, r]) => ({ fips, value: r[countyMetric], label: r.name })).filter(p => p.value != null);
+  window.gaMaps.drawGAChoropleth('county-map', points, {
+    metricLabel: isPercap ? 'GDP per capita' : 'GDP ($bn)',
+    unit: isPercap ? '$' : '',
+    valueFormatter: isPercap ? (v => fmtUSD0(v)) : (v => '$' + fmtNum1(v) + 'bn'),
+    colorscale: 'sequential',
+  }).catch(err => console.warn('county map draw failed:', err));
+}
+
+/* ---- Non-metro ---- */
+function renderNonMetro(isStale) {
+  const nm = DATA.non_metro;
+  if (!nm) { document.getElementById('nonmetro-pending').style.display = ''; return; }
+  if (isStale) document.getElementById('nonmetro-stale').style.display = '';
+  const grid = document.getElementById('nonmetro-grid');
+  const stats = [
+    ['Counties', nm.county_count],
+    ['Population', nm.population == null ? null : Math.round(nm.population).toLocaleString()],
+    ['Total GDP', fmtBn(nm.gdp_bn)],
+    ['GDP per capita', fmtUSD0(nm.gdp_per_capita_wt)],
+  ];
+  grid.innerHTML = stats.map(([l, v]) => `<div class="nonmetro-stat"><div class="label">${l}</div><div class="value">${v == null ? '—' : v}</div></div>`).join('');
+  grid.style.display = '';
+}
+
+/* ---- Metro table ---- */
+let metroSort = { key: 'gmp_bn', dir: -1 };
+function renderMetroTable() {
+  const tbody = document.getElementById('metro-body');
+  const draw = () => {
+    const rows = (DATA.metros || []).slice().sort((a, b) => {
+      const av = a[metroSort.key], bv = b[metroSort.key];
+      if (typeof av === 'string') return metroSort.dir * av.localeCompare(bv);
+      return metroSort.dir * ((av || 0) - (bv || 0));
+    });
+    tbody.innerHTML = rows.map(r => `
+      <tr>
+        <td class="metro-name">${r.short_name}</td>
+        <td class="numeric">${r.gmp_bn == null ? '—' : fmtNum1(r.gmp_bn)}</td>
+        <td class="numeric">${fmtSignedPct(r.gmp_yoy)}</td>
+        <td class="numeric">${fmtUSD0(r.gdp_per_capita)}</td>
+        <td class="numeric">${r.share_of_state_pct == null ? '—' : fmtPct1(r.share_of_state_pct)}</td>
+      </tr>`).join('');
+  };
+  document.querySelectorAll('.data-table thead th').forEach(th => th.addEventListener('click', () => {
+    const key = th.dataset.sort;
+    metroSort = { key, dir: (metroSort.key === key ? -metroSort.dir : -1) };
+    draw();
+  }));
+  draw();
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  init().catch(err => {
+    console.error('gdp init failed:', err);
+    document.querySelector('main').insertAdjacentHTML('beforeend',
+      '<div style="padding:20px; color:var(--coral); font-weight:600;">Failed to load GDP data. Check console.</div>');
+  });
+});
+</script>
+</body>
+</html>

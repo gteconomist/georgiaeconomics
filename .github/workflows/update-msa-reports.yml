@@ -81,11 +81,20 @@ jobs:
           CENSUS_API_KEY: ${{ secrets.CENSUS_API_KEY }}
         run: python3 scripts/fetch_housing.py
 
+      - name: Build statewide GDP roll-up
+        # Rolls the regenerated metro reports up into data/gdp.json, adds the
+        # statewide BEA SAGDP series (real + nominal, GA + US + SE peers + sectors)
+        # and the all-159-county CAGDP2 layer + non-metro aggregate. Runs AFTER
+        # the metro JSONs regenerate; each section degrades gracefully.
+        env:
+          BEA_API_KEY: ${{ secrets.BEA_API_KEY }}
+        run: python3 scripts/fetch_gdp.py
+
       - name: Commit refreshed JSON + pages
         run: |
           git config user.name  "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/msa_reports/ msa/ data/ga_msa_counties.json data/housing.json REPORT_STATUS_MATRIX.md
+          git add data/msa_reports/ msa/ data/ga_msa_counties.json data/housing.json data/gdp.json REPORT_STATUS_MATRIX.md
           if git diff --cached --quiet; then
             echo "No changes to commit."
           else

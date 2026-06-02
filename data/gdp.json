@@ -1,0 +1,450 @@
+{
+ "fetched_at": "2026-06-02T12:51:38Z",
+ "schema": "gdp/v1",
+ "metros": [
+  {
+   "slug": "albany",
+   "short_name": "Albany",
+   "full_name": "Albany, GA",
+   "cbsa": "10500",
+   "population": 146000,
+   "gmp_bn": 8.25,
+   "gmp_yoy": 4.91,
+   "gdp_per_capita": 56485,
+   "gmp_series": {
+    "years": [
+     2019,
+     2020,
+     2021,
+     2022,
+     2023,
+     2024
+    ],
+    "gmp_billions_usd": [
+     6.17,
+     6.22,
+     6.88,
+     7.48,
+     7.86,
+     8.25
+    ]
+   },
+   "pi_bn": 7.51,
+   "per_capita_income": 51419
+  },
+  {
+   "slug": "athens",
+   "short_name": "Athens",
+   "full_name": "Athens-Clarke County, GA",
+   "cbsa": "12020",
+   "population": 217000,
+   "gmp_bn": 14.79,
+   "gmp_yoy": 6.64,
+   "gdp_per_capita": 68161,
+   "gmp_series": {
+    "years": [
+     2019,
+     2020,
+     2021,
+     2022,
+     2023,
+     2024
+    ],
+    "gmp_billions_usd": [
+     10.75,
+     10.56,
+     11.6,
+     13.04,
+     13.87,
+     14.79
+    ]
+   },
+   "pi_bn": 12.66,
+   "per_capita_income": 58346
+  },
+  {
+   "slug": "atlanta",
+   "short_name": "Atlanta",
+   "full_name": "Atlanta-Sandy Springs-Alpharetta, GA",
+   "cbsa": "12060",
+   "population": 6307261,
+   "gmp_bn": 603.59,
+   "gmp_yoy": 5.37,
+   "gdp_per_capita": 95697,
+   "gmp_series": {
+    "years": [
+     2019,
+     2020,
+     2021,
+     2022,
+     2023,
+     2024
+    ],
+    "gmp_billions_usd": [
+     446.66,
+     437.83,
+     483.98,
+     538.95,
+     572.8,
+     603.59
+    ]
+   },
+   "pi_bn": 456.65,
+   "per_capita_income": 72400
+  },
+  {
+   "slug": "augusta",
+   "short_name": "Augusta",
+   "full_name": "Augusta-Richmond County, GA-SC",
+   "cbsa": "12260",
+   "population": 611000,
+   "gmp_bn": 39.29,
+   "gmp_yoy": 5.9,
+   "gdp_per_capita": 64307,
+   "gmp_series": {
+    "years": [
+     2019,
+     2020,
+     2021,
+     2022,
+     2023,
+     2024
+    ],
+    "gmp_billions_usd": [
+     29.41,
+     29.9,
+     32.15,
+     35.04,
+     37.1,
+     39.29
+    ]
+   },
+   "pi_bn": 34.45,
+   "per_capita_income": 56387
+  },
+  {
+   "slug": "brunswick",
+   "short_name": "Brunswick",
+   "full_name": "Brunswick, GA",
+   "cbsa": "15260",
+   "population": 120000,
+   "gmp_bn": 6.96,
+   "gmp_yoy": 6.71,
+   "gdp_per_capita": 57984,
+   "gmp_series": {
+    "years": [
+     2019,
+     2020,
+     2021,
+     2022,
+     2023,
+     2024
+    ],
+    "gmp_billions_usd": [
+     4.85,
+     4.84,
+     5.45,
+     6.11,
+     6.52,
+     6.96
+    ]
+   },
+   "pi_bn": 7.21,
+   "per_capita_income": 60092
+  },
+  {
+   "slug": "columbus",
+   "short_name": "Columbus",
+   "full_name": "Columbus, GA-AL",
+   "cbsa": "17980",
+   "population": 329000,
+   "gmp_bn": 19.89,
+   "gmp_yoy": 6.29,
+   "gdp_per_capita": 60464,
+   "gmp_series": {
+    "years": [
+     2019,
+     2020,
+     2021,
+     2022,
+     2023,
+     2024
+    ],
+    "gmp_billions_usd": [
+     15.65,
+     15.74,
+     16.61,
+     17.38,
+     18.72,
+     19.89
+    ]
+   },
+   "pi_bn": 17.29,
+   "per_capita_income": 52558
+  },
+  {
+   "slug": "dalton",
+   "short_name": "Dalton",
+   "full_name": "Dalton, GA",
+   "cbsa": "19140",
+   "population": 143000,
+   "gmp_bn": 9.63,
+   "gmp_yoy": 5.78,
+   "gdp_per_capita": 67371,
+   "gmp_series": {
+    "years": [
+     2019,
+     2020,
+     2021,
+     2022,
+     2023,
+     2024
+    ],
+    "gmp_billions_usd": [
+     7.15,
+     7.03,
+     7.91,
+     8.88,
+     9.11,
+     9.63
+    ]
+   },
+   "pi_bn": 6.92,
+   "per_capita_income": 48417
+  },
+  {
+   "slug": "gainesville",
+   "short_name": "Gainesville",
+   "full_name": "Gainesville, GA",
+   "cbsa": "23580",
+   "population": 211000,
+   "gmp_bn": 18.0,
+   "gmp_yoy": 5.74,
+   "gdp_per_capita": 85305,
+   "gmp_series": {
+    "years": [
+     2019,
+     2020,
+     2021,
+     2022,
+     2023,
+     2024
+    ],
+    "gmp_billions_usd": [
+     11.82,
+     12.26,
+     13.46,
+     15.66,
+     17.02,
+     18.0
+    ]
+   },
+   "pi_bn": 13.82,
+   "per_capita_income": 65490
+  },
+  {
+   "slug": "hinesville",
+   "short_name": "Hinesville",
+   "full_name": "Hinesville, GA",
+   "cbsa": "25980",
+   "population": 78000,
+   "gmp_bn": 5.6,
+   "gmp_yoy": 7.47,
+   "gdp_per_capita": 71767,
+   "gmp_series": {
+    "years": [
+     2019,
+     2020,
+     2021,
+     2022,
+     2023,
+     2024
+    ],
+    "gmp_billions_usd": [
+     4.06,
+     4.04,
+     4.59,
+     4.9,
+     5.21,
+     5.6
+    ]
+   },
+   "pi_bn": 3.99,
+   "per_capita_income": 51118
+  },
+  {
+   "slug": "macon",
+   "short_name": "Macon",
+   "full_name": "Macon-Bibb County, GA",
+   "cbsa": "31420",
+   "population": 232000,
+   "gmp_bn": 14.12,
+   "gmp_yoy": 4.32,
+   "gdp_per_capita": 60881,
+   "gmp_series": {
+    "years": [
+     2019,
+     2020,
+     2021,
+     2022,
+     2023,
+     2024
+    ],
+    "gmp_billions_usd": [
+     11.33,
+     10.78,
+     11.99,
+     13.01,
+     13.54,
+     14.12
+    ]
+   },
+   "pi_bn": 12.18,
+   "per_capita_income": 52491
+  },
+  {
+   "slug": "rome",
+   "short_name": "Rome",
+   "full_name": "Rome, GA",
+   "cbsa": "40660",
+   "population": 99000,
+   "gmp_bn": 5.69,
+   "gmp_yoy": 4.05,
+   "gdp_per_capita": 57440,
+   "gmp_series": {
+    "years": [
+     2019,
+     2020,
+     2021,
+     2022,
+     2023,
+     2024
+    ],
+    "gmp_billions_usd": [
+     4.25,
+     4.17,
+     4.63,
+     5.06,
+     5.47,
+     5.69
+    ]
+   },
+   "pi_bn": 4.9,
+   "per_capita_income": 49527
+  },
+  {
+   "slug": "savannah",
+   "short_name": "Savannah",
+   "full_name": "Savannah, GA",
+   "cbsa": "42340",
+   "population": 410000,
+   "gmp_bn": 34.89,
+   "gmp_yoy": 4.78,
+   "gdp_per_capita": 85103,
+   "gmp_series": {
+    "years": [
+     2019,
+     2020,
+     2021,
+     2022,
+     2023,
+     2024
+    ],
+    "gmp_billions_usd": [
+     23.44,
+     23.64,
+     26.91,
+     29.75,
+     33.3,
+     34.89
+    ]
+   },
+   "pi_bn": 26.56,
+   "per_capita_income": 64775
+  },
+  {
+   "slug": "valdosta",
+   "short_name": "Valdosta",
+   "full_name": "Valdosta, GA",
+   "cbsa": "46660",
+   "population": 148000,
+   "gmp_bn": 8.03,
+   "gmp_yoy": 5.5,
+   "gdp_per_capita": 54242,
+   "gmp_series": {
+    "years": [
+     2019,
+     2020,
+     2021,
+     2022,
+     2023,
+     2024
+    ],
+    "gmp_billions_usd": [
+     5.99,
+     6.14,
+     6.73,
+     7.26,
+     7.61,
+     8.03
+    ]
+   },
+   "pi_bn": 7.05,
+   "per_capita_income": 47629
+  },
+  {
+   "slug": "warner-robins",
+   "short_name": "Warner Robins",
+   "full_name": "Warner Robins, GA",
+   "cbsa": "47580",
+   "population": 199000,
+   "gmp_bn": 11.66,
+   "gmp_yoy": 5.62,
+   "gdp_per_capita": 58569,
+   "gmp_series": {
+    "years": [
+     2019,
+     2020,
+     2021,
+     2022,
+     2023,
+     2024
+    ],
+    "gmp_billions_usd": [
+     8.67,
+     8.8,
+     9.5,
+     10.26,
+     11.04,
+     11.66
+    ]
+   },
+   "pi_bn": 11.1,
+   "per_capita_income": 55775
+  }
+ ],
+ "kpis": {
+  "ga_nominal_gdp_bn": null,
+  "ga_real_gdp_yoy": null,
+  "ga_gdp_per_capita": null,
+  "largest_sector": null,
+  "metro_count": 14,
+  "non_metro_county_count": null
+ },
+ "_meta": {
+  "metro_rollup": {
+   "last_updated": "2026-06-02T12:51:38Z",
+   "n_metros": 14,
+   "stale": false
+  }
+ },
+ "latest_label": "2025",
+ "coverage_note": "Statewide GDP (BEA SAGDP) covers 100% of Georgia. The 159-county BEA CAGDP2 layer and the Non-Metro Georgia aggregate cover the 86 counties outside the 14 MSAs.",
+ "source_summary": {
+  "ga_gdp": "BEA SAGDP9N (real) + SAGDP2N (nominal), GA + US",
+  "peers": "BEA SAGDP9N + SAGDP1 (per-capita), SE states",
+  "sectors": "BEA SAGDP2N by industry",
+  "metros": "Roll-up of data/msa_reports/*.json (bea_gmp + bea_personal_income)",
+  "county_gdp": "BEA CAGDP2 (all 159 counties)"
+ }
+}
