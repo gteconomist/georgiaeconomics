@@ -268,6 +268,84 @@ def fetch_migration_flows(cbsa: str, year: Optional[int] = None) -> Optional[dic
     }
 
 
+def fetch_state_flows(year: Optional[int] = None) -> Optional[dict]:
+    """Georgia statewide IRS SOI migration: inflows by ORIGIN state, outflows by
+    DESTINATION state, and net by state. Reuses the same download + parse helpers
+    as fetch_migration_flows; aggregates over the whole state (FIPS 13) and drops
+    intrastate (GA->GA) flows so this is purely Georgia's exchange with OTHER states.
+
+    Returns:
+        {"year_pair_label": "2022→2023", "from_year": 2022, "to_year": 2023,
+         "total_in": ..., "total_out": ..., "net": ...,
+         "top_in":  [{"state": "Florida", "n_returns": ...}, ...],
+         "top_out": [{"state": "Florida", "n_returns": ...}, ...],
+         "net_by_state": [{"state": ..., "in": ..., "out": ..., "net": ...}, ...]}
+    """
+    pair = _discover_latest_year() if year is None else None
+    if pair is None:
+        return None
+    yy, yz = pair
+    inflow_url, outflow_url = _build_urls(yy, yz)
+    inflow_bytes = _fetch_csv(inflow_url)
+    outflow_bytes = _fetch_csv(outflow_url)
+    if not inflow_bytes or not outflow_bytes:
+        print(f"  [IRS SOI] one of inflow/outflow missing for {yy}-{yz}", file=sys.stderr)
+        return None
+
+    inflows = _parse_migration_csv(inflow_bytes, "in")
+    outflows = _parse_migration_csv(outflow_bytes, "out")
+    if not inflows or not outflows:
+        return None
+
+    in_by_state: Dict[str, int] = {}
+    total_in = 0
+    for r in inflows:
+        # destination must be in Georgia; origin must be a real, non-GA state
+        if not r["to_fips"].startswith("13") or r["is_aggregate"]:
+            continue
+        if r["other_state"] == 13:
+            continue  # intrastate churn — excluded from state-to-state view
+        name = STATE_FIPS_TO_NAME.get(r["other_state"])
+        if not name:
+            continue
+        in_by_state[name] = in_by_state.get(name, 0) + r["n_returns"]
+        total_in += r["n_returns"]
+
+    out_by_state: Dict[str, int] = {}
+    total_out = 0
+    for r in outflows:
+        if not r["from_fips"].startswith("13") or r["is_aggregate"]:
+            continue
+        if r["other_state"] == 13:
+            continue
+        name = STATE_FIPS_TO_NAME.get(r["other_state"])
+        if not name:
+            continue
+        out_by_state[name] = out_by_state.get(name, 0) + r["n_returns"]
+        total_out += r["n_returns"]
+
+    if not in_by_state and not out_by_state:
+        return None
+
+    states = set(in_by_state) | set(out_by_state)
+    net_by_state = sorted(
+        ({"state": s, "in": in_by_state.get(s, 0), "out": out_by_state.get(s, 0),
+          "net": in_by_state.get(s, 0) - out_by_state.get(s, 0)} for s in states),
+        key=lambda x: x["net"], reverse=True,
+    )
+    top_in = sorted(({"state": k, "n_returns": v} for k, v in in_by_state.items()),
+                    key=lambda x: -x["n_returns"])[:10]
+    top_out = sorted(({"state": k, "n_returns": v} for k, v in out_by_state.items()),
+                     key=lambda x: -x["n_returns"])[:10]
+
+    return {
+        "year_pair_label": f"{yy}→{yz}", "from_year": yy, "to_year": yz,
+        "total_in": total_in, "total_out": total_out, "net": total_in - total_out,
+        "top_in": top_in, "top_out": top_out, "net_by_state": net_by_state,
+        "source": f"IRS SOI county-to-county migration, GA statewide ({inflow_url})",
+    }
+
+
 # ----------------------------- CLI smoke test -----------------------------
 
 if __name__ == "__main__":

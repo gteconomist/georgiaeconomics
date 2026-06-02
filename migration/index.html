@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Georgia Migration — Who Moves To & From the State, by County & Metro | Georgia Economics</title>
+<meta name="description" content="Live Georgia migration data: state-to-state flows (where movers come from and go to), a 159-county net-migration map, domestic vs international vs natural change over time, metro attraction, and a non-metro aggregate. From IRS SOI and Census PEP.">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="/styles.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+<script defer src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/gh/gteconomist/economicsguru@main/assets/charts.js"></script>
+<!-- Plotly + maps.js for the 159-county net-migration choropleth -->
+<script defer src="https://cdn.plot.ly/plotly-2.35.2.min.js"></script>
+<script defer src="/maps.js"></script>
+
+<style>
+  .chart-canvas-tall { position: relative; height: 340px; background: var(--chart-bg); padding: 6px; }
+  .chart-canvas-med  { position: relative; height: 380px; background: var(--chart-bg); padding: 6px; }
+
+  .panel-controls { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin: 4px 0 12px; }
+  .toggle-group { display: inline-flex; border: 1px solid var(--border); border-radius: 6px; overflow: hidden; }
+  .toggle-group button {
+    font-family: inherit; font-size: 13px; padding: 5px 11px; border: 0; background: #fff;
+    color: var(--navy); font-weight: 600; cursor: pointer; border-right: 1px solid var(--border);
+  }
+  .toggle-group button:last-child { border-right: 0; }
+  .toggle-group button.active { background: var(--navy); color: #fff; }
+
+  #county-map { height: 520px; background: var(--chart-bg); }
+
+  .pending {
+    background: var(--peach-pale); border: 1px dashed var(--peach, #e8a87c);
+    border-radius: 8px; padding: 14px 16px; color: var(--ink-soft); font-size: 13px;
+  }
+  .pending strong { color: var(--peachDeep, #c46b3a); }
+
+  .nonmetro-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 14px; margin-top: 6px; }
+  .nonmetro-stat { background: var(--chart-bg); border-radius: 8px; padding: 12px 14px; }
+  .nonmetro-stat .label { font-size: 11px; text-transform: uppercase; letter-spacing: 0.04em; color: var(--ink-soft); font-weight: 700; }
+  .nonmetro-stat .value { font-size: 22px; font-weight: 800; color: var(--navy); margin-top: 2px; font-variant-numeric: tabular-nums; }
+
+  .data-table-wrap { overflow-x: auto; }
+  table.data-table { width: 100%; border-collapse: collapse; font-size: 14px; min-width: 560px; }
+  table.data-table thead th {
+    text-align: left; padding: 8px 10px; background: var(--chart-bg);
+    border-bottom: 2px solid var(--navy); color: var(--navy);
+    font-weight: 700; text-transform: uppercase; letter-spacing: 0.04em; font-size: 11px; cursor: pointer;
+  }
+  table.data-table thead th.numeric { text-align: right; }
+  table.data-table tbody td { padding: 7px 10px; border-bottom: 1px dotted var(--border); }
+  table.data-table tbody td.numeric { text-align: right; font-variant-numeric: tabular-nums; }
+  table.data-table tbody tr:hover { background: var(--peach-pale); }
+  table.data-table .metro-name { font-weight: 600; color: var(--navy); }
+  .pos { color: var(--teal); font-weight: 600; }
+  .neg { color: var(--coral); font-weight: 600; }
+
+  .flows-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+  @media (max-width: 720px) { .flows-grid { grid-template-columns: 1fr; } }
+
+  .stale-badge { display:inline-block; font-size:11px; font-weight:700; color:var(--peachDeep,#c46b3a); background:var(--peach-pale); border-radius:4px; padding:1px 6px; margin-left:8px; vertical-align:middle; }
+  .source-note { font-size: 12px; color: var(--ink-soft); margin-top: 8px; font-style: italic; }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <div class="brand">Georgia<span class="tag">Economics</span></div>
+    <nav>
+      <a href="/">Home</a>
+      <a href="/counties/">Counties</a>
+      <a href="/msa/">Metros</a>
+      <a href="/labor/">Labor</a>
+      <a href="/housing/">Housing</a>
+      <a href="/about/">About</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="page-header">
+    <h1>Georgia migration</h1>
+    <div class="subtitle">Where people move to and from Georgia, a county-by-county net-migration map, and the domestic / international / natural split over time. Sources: IRS SOI county-to-county migration and Census PEP. See also <a href="/population/">Population &amp; Growth</a>.</div>
+    <div class="latest">Latest data: <strong id="latest-label">&mdash;</strong></div>
+  </section>
+
+  <div class="notice" id="coverage-note" style="display:none;"></div>
+
+  <!-- KPI strip -->
+  <div class="kpi-grid">
+    <div class="kpi">
+      <div class="label">Net domestic migration</div>
+      <div class="value" id="kpi-dom">&mdash;</div>
+      <div class="delta">Latest year (PEP)</div>
+    </div>
+    <div class="kpi">
+      <div class="label">Net international migration</div>
+      <div class="value" id="kpi-intl">&mdash;</div>
+      <div class="delta">Latest year (PEP)</div>
+    </div>
+    <div class="kpi">
+      <div class="label">Top origin state</div>
+      <div class="value" id="kpi-origin" style="font-size:18px;">&mdash;</div>
+      <div class="delta">Most movers into GA (IRS)</div>
+    </div>
+    <div class="kpi">
+      <div class="label">Top destination state</div>
+      <div class="value" id="kpi-dest" style="font-size:18px;">&mdash;</div>
+      <div class="delta">Most movers out of GA (IRS)</div>
+    </div>
+    <div class="kpi">
+      <div class="label">Net IRS exchange</div>
+      <div class="value" id="kpi-soi">&mdash;</div>
+      <div class="delta">Out-of-state in &minus; out</div>
+    </div>
+    <div class="kpi">
+      <div class="label">Non-metro counties</div>
+      <div class="value" id="kpi-nonmetro">86</div>
+      <div class="delta">Outside the 14 MSAs</div>
+    </div>
+  </div>
+
+  <!-- State-to-state flows (marquee) -->
+  <div class="chart-panel" style="margin-top: 22px;">
+    <h2>Where Georgians Move To &amp; From <span id="flows-stale" class="stale-badge" style="display:none;">stale</span></h2>
+    <p class="sub">Out-of-state moves by tax returns (IRS SOI). Left: top states sending people <em>into</em> Georgia. Right: top states Georgians move <em>to</em>. Intrastate moves excluded.</p>
+    <div id="flows-pending" class="pending" style="display:none;"><strong>State-to-state flows pending:</strong> the rest of this page is live now; the IRS SOI flow data populates on the first data-refresh run after deploy. Refresh after the workflow completes.</div>
+    <div class="flows-grid">
+      <div class="chart-canvas-med"><canvas id="inflow-chart"></canvas></div>
+      <div class="chart-canvas-med"><canvas id="outflow-chart"></canvas></div>
+    </div>
+    <div class="source-note" id="flows-source"></div>
+  </div>
+
+  <!-- Net exchange by state -->
+  <div class="chart-panel" style="margin-top: 22px;">
+    <h2>Net Exchange by State <span id="net-stale" class="stale-badge" style="display:none;">stale</span></h2>
+    <p class="sub">In minus out, by state. Teal = Georgia gains from that state; coral = Georgia loses to it. The states where the balance tips are the real story.</p>
+    <div id="net-pending" class="pending" style="display:none;"><strong>Pending:</strong> populates with the IRS flow data on the first refresh after deploy.</div>
+    <div class="chart-canvas-med"><canvas id="net-chart"></canvas></div>
+  </div>
+
+  <!-- Components trend -->
+  <div class="chart-panel" style="margin-top: 22px;">
+    <h2>Migration vs. Natural Change <span id="comp-stale" class="stale-badge" style="display:none;">stale</span></h2>
+    <p class="sub">Annual components of Georgia's population change: domestic migration, international migration, and natural change (births minus deaths), plus total net migration. Census PEP.</p>
+    <div class="chart-canvas-tall"><canvas id="comp-chart"></canvas></div>
+  </div>
+
+  <!-- County choropleth -->
+  <div class="chart-panel" style="margin-top: 22px;">
+    <h2>Net Migration by County <span id="county-stale" class="stale-badge" style="display:none;">stale</span></h2>
+    <p class="sub" id="county-sub">All 159 counties &mdash; the 86 outside any metro included. Net domestic migration, cumulative over the period. Census PEP.</p>
+    <div class="panel-controls">
+      <div class="toggle-group" id="county-metric-toggle">
+        <button data-metric="per_1k" class="active">Per 1,000 residents</button>
+        <button data-metric="net_domestic">Total (count)</button>
+      </div>
+    </div>
+    <div id="county-map"></div>
+    <div class="source-note">Source: Census PEP components of change, county domestic migration over the estimate window. Teal = net in-migration, coral = net out-migration.</div>
+  </div>
+
+  <!-- Non-metro -->
+  <div class="chart-panel" style="margin-top: 22px;">
+    <h2>Non-Metro Georgia</h2>
+    <p class="sub">The 86 counties outside the 14 MSAs, aggregated. Net migration over the estimate window.</p>
+    <div class="nonmetro-grid" id="nonmetro-grid" style="display:none;"></div>
+  </div>
+
+  <!-- Metro attraction -->
+  <div class="chart-panel" style="margin-top: 22px;">
+    <h2>Which Metros Attract Movers</h2>
+    <p class="sub">Net migration by metro &mdash; IRS SOI net exchange (latest year-pair) and Census PEP net migration (latest year). Click a header to sort.</p>
+    <div class="data-table-wrap">
+      <table class="data-table">
+        <thead><tr>
+          <th data-sort="short_name">Metro</th>
+          <th class="numeric" data-sort="pep_net">PEP net migration</th>
+          <th class="numeric" data-sort="pep_domestic">PEP domestic</th>
+          <th class="numeric" data-sort="pep_international">PEP international</th>
+          <th class="numeric" data-sort="soi_net">IRS net exchange</th>
+        </tr></thead>
+        <tbody id="metro-body"></tbody>
+      </table>
+    </div>
+    <div class="source-note">Source: roll-up of the 14 metro reports (IRS SOI + Census PEP). IRS net = out-of-MSA in minus out.</div>
+  </div>
+
+  <!-- Methodology -->
+  <div class="chart-panel" style="margin-top: 22px;">
+    <h2>About this data</h2>
+    <p class="sub" style="font-size:14px; line-height:1.6;">
+      Two complementary sources. <strong>Census PEP</strong> components of change give annual domestic, international, and natural change for the state and a cumulative net-migration figure for every one of the 159 counties &mdash; used for the trend chart, the county map, and the non-metro aggregate. <strong>IRS SOI</strong> county-to-county migration, based on the addresses on filed tax returns, identifies <em>where</em> movers come from and go to; we aggregate it to Georgia statewide for the state-to-state flows and roll the metro figures up from the 14 <a href="/msa/">metro reports</a>. IRS data lags about 18 months and counts tax returns (roughly households), so its totals differ from PEP's person counts. The state components and county map cover 100% of Georgia, including the 86 non-metro counties. Sections show a <span class="stale-badge">stale</span> badge when their source is more than ~14 months old.
+    </p>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div>&copy; <span id="yr"></span> Georgia Economics &middot; Sister site to <a href="https://economicsguru.com">economicsguru.com</a> &middot; <a href="/about/">Methodology</a></div>
+    <div>Data refreshes from IRS SOI and Census PEP.</div>
+    <div class="eig">
+      <a href="https://www.economicimpact.com" target="_blank" rel="noopener" aria-label="Economic Impact Group">
+        <img src="/assets/ei_logo_NEW_200pxw.png" alt="Economic Impact Group">
+      </a>
+      <span class="product-of">A product of <a href="https://www.economicimpact.com" target="_blank" rel="noopener">Economic Impact Group, LLC</a>.</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+document.getElementById('yr').textContent = new Date().getFullYear();
+
+const BRAND = {
+  navy: '#1a3a5c', peachDeep: '#c46b3a', peach: '#e8a87c',
+  mustard: '#d4a017', teal: '#3a8d8d', coral: '#d4624a',
+  green: '#6b8e3d', grid: '#b6ad8d', inkSoft: '#6b7280',
+};
+
+const fmtNum = v => v == null ? '—' : Math.round(v).toLocaleString();
+const fmtSigned = v => v == null ? '—' : (v >= 0 ? '+' : '') + Math.round(v).toLocaleString();
+const fmtSigned1 = v => v == null ? '—' : (v >= 0 ? '+' : '') + Number(v).toFixed(1);
+
+let DATA = null;
+
+async function init() {
+  const res = await fetch('/data/migration.json?v=' + new Date().toISOString().slice(0, 10));
+  DATA = await res.json();
+
+  if (DATA.coverage_note) {
+    const el = document.getElementById('coverage-note');
+    el.textContent = DATA.coverage_note; el.style.display = '';
+  }
+  document.getElementById('latest-label').textContent = DATA.latest_label || '—';
+
+  const meta = DATA._meta || {};
+  const stale = n => !meta[n] || meta[n].stale;
+
+  renderKpis();
+  renderFlows(stale('state_flows'));
+  renderComponents(stale('components'));
+  renderCounty(stale('counties'));
+  renderNonMetro();
+  renderMetroTable();
+}
+
+function renderKpis() {
+  const k = DATA.kpis || {};
+  document.getElementById('kpi-dom').textContent    = fmtSigned(k.net_domestic);
+  document.getElementById('kpi-intl').textContent   = fmtSigned(k.net_international);
+  document.getElementById('kpi-origin').textContent = k.top_origin_state || '—';
+  document.getElementById('kpi-dest').textContent   = k.top_dest_state || '—';
+  document.getElementById('kpi-soi').textContent    = fmtSigned(k.net_soi);
+  if (k.non_metro_county_count) document.getElementById('kpi-nonmetro').textContent = k.non_metro_county_count;
+}
+
+/* ---- State-to-state flows (marquee) + net exchange ---- */
+function renderFlows(isStale) {
+  const sf = DATA.state_flows;
+  if (!sf) {
+    document.getElementById('flows-pending').style.display = '';
+    document.getElementById('net-pending').style.display = '';
+    return;
+  }
+  if (isStale) {
+    document.getElementById('flows-stale').style.display = '';
+    document.getElementById('net-stale').style.display = '';
+  }
+  document.getElementById('flows-source').textContent = sf.source || '';
+
+  hbar('inflow-chart', (sf.top_in || []).map(r => r.state), (sf.top_in || []).map(r => r.n_returns),
+       BRAND.teal, 'Into GA', v => fmtNum(v) + ' returns', 'Top origin states (inflow)');
+  hbar('outflow-chart', (sf.top_out || []).map(r => r.state), (sf.top_out || []).map(r => r.n_returns),
+       BRAND.coral, 'Out of GA', v => fmtNum(v) + ' returns', 'Top destination states (outflow)');
+
+  // Net exchange: show the most positive and most negative
+  const nb = (sf.net_by_state || []).slice();
+  const top = nb.slice(0, 8), bottom = nb.slice(-8);
+  const rows = top.concat(bottom.filter(b => !top.includes(b))).sort((a, b) => b.net - a.net);
+  const labels = rows.map(r => r.state);
+  const vals = rows.map(r => r.net);
+  const colors = vals.map(v => v >= 0 ? BRAND.teal : BRAND.coral);
+  const ctx = document.getElementById('net-chart').getContext('2d');
+  new Chart(ctx, {
+    type: 'bar',
+    data: { labels, datasets: [{ data: vals, backgroundColor: colors, borderWidth: 0 }] },
+    options: {
+      indexAxis: 'y', responsive: true, maintainAspectRatio: false,
+      scales: {
+        x: { grid: { color: BRAND.grid, borderDash: [3,4] }, ticks: { color: BRAND.navy, font: { size: 11 }, callback: v => fmtSigned(v) } },
+        y: { grid: { display: false }, ticks: { color: BRAND.navy, font: { size: 11, weight: 'bold' } } },
+      },
+      plugins: { legend: { display: false }, tooltip: { callbacks: { label: it => 'Net: ' + fmtSigned(it.parsed.x) + ' returns' } } },
+    },
+  });
+}
+
+function hbar(elId, labels, values, color, _lbl, fmt, title) {
+  const ctx = document.getElementById(elId).getContext('2d');
+  new Chart(ctx, {
+    type: 'bar',
+    data: { labels, datasets: [{ data: values, backgroundColor: color, borderWidth: 0 }] },
+    options: {
+      indexAxis: 'y', responsive: true, maintainAspectRatio: false,
+      scales: {
+        x: { grid: { color: BRAND.grid, borderDash: [3,4] }, ticks: { color: BRAND.navy, font: { size: 11 }, callback: v => fmtNum(v) } },
+        y: { grid: { display: false }, ticks: { color: BRAND.navy, font: { size: 11, weight: 'bold' } } },
+      },
+      plugins: {
+        legend: { display: false },
+        title: { display: true, text: title, color: BRAND.navy, font: { size: 13 } },
+        tooltip: { callbacks: { label: it => fmt(it.parsed.x) } },
+      },
+    },
+  });
+}
+
+/* ---- Components trend ---- */
+function renderComponents(isStale) {
+  const c = DATA.components;
+  if (!c || !c.years) return;
+  if (isStale) document.getElementById('comp-stale').style.display = '';
+  // label the county map period from the components window
+  if (c.years.length) {
+    document.getElementById('county-sub').textContent =
+      `All 159 counties — the 86 outside any metro included. Net domestic migration, cumulative ${c.years[0]}–${c.years[c.years.length-1]}. Census PEP.`;
+  }
+  const ds = [
+    { label: 'Domestic migration', data: c.domestic, borderColor: BRAND.navy, backgroundColor: 'rgba(26,58,92,0.08)', tension: 0.25, borderWidth: 2.5, pointRadius: 2 },
+    { label: 'International migration', data: c.international, borderColor: BRAND.teal, tension: 0.25, borderWidth: 2.2, pointRadius: 2, fill: false },
+    { label: 'Natural change', data: c.natural, borderColor: BRAND.mustard, tension: 0.25, borderWidth: 2.2, pointRadius: 2, fill: false },
+    { label: 'Net migration', data: c.net, borderColor: BRAND.peachDeep, borderDash: [5,4], tension: 0.25, borderWidth: 2, pointRadius: 0, fill: false },
+  ];
+  const ctx = document.getElementById('comp-chart').getContext('2d');
+  new Chart(ctx, {
+    type: 'line',
+    data: { labels: c.years, datasets: ds },
+    options: {
+      responsive: true, maintainAspectRatio: false, interaction: { mode: 'index', intersect: false },
+      scales: {
+        x: { grid: { display: false }, ticks: { color: BRAND.navy, font: { size: 11 } } },
+        y: { grid: { color: BRAND.grid, borderDash: [3,4] }, ticks: { color: BRAND.navy, font: { size: 11 }, callback: v => fmtSigned(v) } },
+      },
+      plugins: {
+        legend: { display: true, labels: { color: BRAND.navy, font: { size: 12 }, boxWidth: 16 } },
+        tooltip: { callbacks: { label: it => it.dataset.label + ': ' + fmtSigned(it.parsed.y) } },
+      },
+    },
+  });
+}
+
+/* ---- County choropleth (diverging) ---- */
+let countyMetric = 'per_1k';
+function renderCounty(isStale) {
+  const cl = DATA.counties;
+  if (!cl || !cl.counties) return;
+  if (isStale) document.getElementById('county-stale').style.display = '';
+  document.querySelectorAll('#county-metric-toggle button').forEach(btn => btn.addEventListener('click', () => {
+    document.querySelectorAll('#county-metric-toggle button').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active'); countyMetric = btn.dataset.metric; drawCounty();
+  }));
+  drawCounty();
+}
+function drawCounty() {
+  const cl = DATA.counties;
+  if (!cl || !window.gaMaps) return;
+  const isRate = countyMetric === 'per_1k';
+  const points = Object.entries(cl.counties).map(([fips, r]) => ({ fips, value: r[countyMetric], label: r.name })).filter(p => p.value != null);
+  window.gaMaps.drawGAChoropleth('county-map', points, {
+    metricLabel: isRate ? 'Net migration / 1k' : 'Net domestic migration',
+    colorscale: 'diverging',
+    valueFormatter: isRate ? (v => fmtSigned1(v)) : (v => fmtSigned(v)),
+  }).catch(err => console.warn('county map draw failed:', err));
+}
+
+/* ---- Non-metro ---- */
+function renderNonMetro() {
+  const nm = DATA.non_metro;
+  if (!nm) return;
+  const grid = document.getElementById('nonmetro-grid');
+  const stats = [
+    ['Counties', nm.county_count],
+    ['Population', nm.population == null ? null : Math.round(nm.population).toLocaleString()],
+    ['Net domestic migration', fmtSigned(nm.net_domestic)],
+    ['Per 1,000 residents', fmtSigned1(nm.per_1k)],
+    ['Net international migration', fmtSigned(nm.net_international)],
+  ];
+  grid.innerHTML = stats.map(([l, v]) => `<div class="nonmetro-stat"><div class="label">${l}</div><div class="value">${v == null ? '—' : v}</div></div>`).join('');
+  grid.style.display = '';
+}
+
+/* ---- Metro table ---- */
+let metroSort = { key: 'pep_net', dir: -1 };
+function renderMetroTable() {
+  const tbody = document.getElementById('metro-body');
+  const cell = v => `<td class="numeric"><span class="${v == null ? '' : (v >= 0 ? 'pos' : 'neg')}">${fmtSigned(v)}</span></td>`;
+  const draw = () => {
+    const rows = (DATA.metros || []).slice().sort((a, b) => {
+      const av = a[metroSort.key], bv = b[metroSort.key];
+      if (typeof av === 'string') return metroSort.dir * av.localeCompare(bv);
+      return metroSort.dir * ((av || 0) - (bv || 0));
+    });
+    tbody.innerHTML = rows.map(r => `
+      <tr>
+        <td class="metro-name">${r.short_name}</td>
+        ${cell(r.pep_net)}${cell(r.pep_domestic)}${cell(r.pep_international)}${cell(r.soi_net)}
+      </tr>`).join('');
+  };
+  document.querySelectorAll('.data-table thead th').forEach(th => th.addEventListener('click', () => {
+    const key = th.dataset.sort;
+    metroSort = { key, dir: (metroSort.key === key ? -metroSort.dir : -1) };
+    draw();
+  }));
+  draw();
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  init().catch(err => {
+    console.error('migration init failed:', err);
+    document.querySelector('main').insertAdjacentHTML('beforeend',
+      '<div style="padding:20px; color:var(--coral); font-weight:600;">Failed to load migration data. Check console.</div>');
+  });
+});
+</script>
+</body>
+</html>

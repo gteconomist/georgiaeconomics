@@ -1,0 +1,1206 @@
+{
+ "fetched_at": "2026-06-02T13:02:48Z",
+ "schema": "migration/v1",
+ "metros": [
+  {
+   "slug": "albany",
+   "short_name": "Albany",
+   "population": 146000,
+   "total_in": 897,
+   "total_out": 944,
+   "soi_net": -47,
+   "pep_net": -150,
+   "pep_domestic": -350,
+   "pep_international": 200
+  },
+  {
+   "slug": "athens",
+   "short_name": "Athens",
+   "population": 217000,
+   "total_in": 2878,
+   "total_out": 3116,
+   "soi_net": -238,
+   "pep_net": -424,
+   "pep_domestic": -1346,
+   "pep_international": 922
+  },
+  {
+   "slug": "atlanta",
+   "short_name": "Atlanta",
+   "population": 6307261,
+   "total_in": 61263,
+   "total_out": 59067,
+   "soi_net": 2196,
+   "pep_net": 36444,
+   "pep_domestic": 3082,
+   "pep_international": 33362
+  },
+  {
+   "slug": "augusta",
+   "short_name": "Augusta",
+   "population": 611000,
+   "total_in": 4521,
+   "total_out": 4161,
+   "soi_net": 360,
+   "pep_net": 4514,
+   "pep_domestic": 3658,
+   "pep_international": 856
+  },
+  {
+   "slug": "brunswick",
+   "short_name": "Brunswick",
+   "population": 120000,
+   "total_in": 775,
+   "total_out": 796,
+   "soi_net": -21,
+   "pep_net": 1223,
+   "pep_domestic": 1094,
+   "pep_international": 129
+  },
+  {
+   "slug": "columbus",
+   "short_name": "Columbus",
+   "population": 329000,
+   "total_in": 3629,
+   "total_out": 3739,
+   "soi_net": -110,
+   "pep_net": 280,
+   "pep_domestic": -111,
+   "pep_international": 391
+  },
+  {
+   "slug": "dalton",
+   "short_name": "Dalton",
+   "population": 143000,
+   "total_in": 963,
+   "total_out": 907,
+   "soi_net": 56,
+   "pep_net": 582,
+   "pep_domestic": 262,
+   "pep_international": 320
+  },
+  {
+   "slug": "gainesville",
+   "short_name": "Gainesville",
+   "population": 211000,
+   "total_in": 4777,
+   "total_out": 4086,
+   "soi_net": 691,
+   "pep_net": 1925,
+   "pep_domestic": 1049,
+   "pep_international": 876
+  },
+  {
+   "slug": "hinesville",
+   "short_name": "Hinesville",
+   "population": 78000,
+   "total_in": 2264,
+   "total_out": 1941,
+   "soi_net": 323,
+   "pep_net": 819,
+   "pep_domestic": 646,
+   "pep_international": 173
+  },
+  {
+   "slug": "macon",
+   "short_name": "Macon",
+   "population": 232000,
+   "total_in": 2708,
+   "total_out": 2526,
+   "soi_net": 182,
+   "pep_net": 883,
+   "pep_domestic": 614,
+   "pep_international": 269
+  },
+  {
+   "slug": "rome",
+   "short_name": "Rome",
+   "population": 99000,
+   "total_in": 1353,
+   "total_out": 1169,
+   "soi_net": 184,
+   "pep_net": 279,
+   "pep_domestic": 166,
+   "pep_international": 113
+  },
+  {
+   "slug": "savannah",
+   "short_name": "Savannah",
+   "population": 410000,
+   "total_in": 5876,
+   "total_out": 5587,
+   "soi_net": 289,
+   "pep_net": 3185,
+   "pep_domestic": 1451,
+   "pep_international": 1734
+  },
+  {
+   "slug": "valdosta",
+   "short_name": "Valdosta",
+   "population": 148000,
+   "total_in": 1713,
+   "total_out": 1469,
+   "soi_net": 244,
+   "pep_net": 94,
+   "pep_domestic": -142,
+   "pep_international": 236
+  },
+  {
+   "slug": "warner-robins",
+   "short_name": "Warner Robins",
+   "population": 199000,
+   "total_in": 2804,
+   "total_out": 2380,
+   "soi_net": 424,
+   "pep_net": 3237,
+   "pep_domestic": 2823,
+   "pep_international": 414
+  }
+ ],
+ "components": {
+  "years": [
+   2020,
+   2021,
+   2022,
+   2023,
+   2024,
+   2025
+  ],
+  "domestic": [
+   11584,
+   37079,
+   79102,
+   52348,
+   25403,
+   27333
+  ],
+  "international": [
+   732,
+   10163,
+   42619,
+   52726,
+   86526,
+   42579
+  ],
+  "natural": [
+   5133,
+   11968,
+   15228,
+   27890,
+   28232,
+   28631
+  ],
+  "net": [
+   12316,
+   47242,
+   121721,
+   105074,
+   111929,
+   69912
+  ],
+  "source": "Census PEP components of change (state)"
+ },
+ "counties": {
+  "counties": {
+   "13001": {
+    "net_domestic": 536,
+    "net_international": 295,
+    "per_1k": 28.1,
+    "name": "Appling"
+   },
+   "13003": {
+    "net_domestic": -296,
+    "net_international": 284,
+    "per_1k": -35.0,
+    "name": "Atkinson"
+   },
+   "13005": {
+    "net_domestic": 14,
+    "net_international": 5,
+    "per_1k": 1.3,
+    "name": "Bacon"
+   },
+   "13007": {
+    "net_domestic": -54,
+    "net_international": 57,
+    "per_1k": -19.8,
+    "name": "Baker"
+   },
+   "13009": {
+    "net_domestic": 649,
+    "net_international": 314,
+    "per_1k": 14.7,
+    "name": "Baldwin"
+   },
+   "13011": {
+    "net_domestic": 2878,
+    "net_international": 96,
+    "per_1k": 135.3,
+    "name": "Banks"
+   },
+   "13013": {
+    "net_domestic": 12339,
+    "net_international": 1170,
+    "per_1k": 123.7,
+    "name": "Barrow"
+   },
+   "13015": {
+    "net_domestic": 9806,
+    "net_international": 823,
+    "per_1k": 81.2,
+    "name": "Bartow"
+   },
+   "13017": {
+    "net_domestic": 112,
+    "net_international": 81,
+    "per_1k": 6.6,
+    "name": "Ben Hill"
+   },
+   "13019": {
+    "net_domestic": 853,
+    "net_international": 22,
+    "per_1k": 45.1,
+    "name": "Berrien"
+   },
+   "13021": {
+    "net_domestic": -601,
+    "net_international": 1392,
+    "per_1k": -3.8,
+    "name": "Bibb"
+   },
+   "13023": {
+    "net_domestic": 567,
+    "net_international": 0,
+    "per_1k": 44.1,
+    "name": "Bleckley"
+   },
+   "13025": {
+    "net_domestic": 1084,
+    "net_international": 69,
+    "per_1k": 57.2,
+    "name": "Brantley"
+   },
+   "13027": {
+    "net_domestic": 61,
+    "net_international": 239,
+    "per_1k": 3.8,
+    "name": "Brooks"
+   },
+   "13029": {
+    "net_domestic": 5361,
+    "net_international": 474,
+    "per_1k": 103.0,
+    "name": "Bryan"
+   },
+   "13031": {
+    "net_domestic": 5403,
+    "net_international": 500,
+    "per_1k": 62.1,
+    "name": "Bulloch"
+   },
+   "13033": {
+    "net_domestic": 3,
+    "net_international": 5,
+    "per_1k": 0.1,
+    "name": "Burke"
+   },
+   "13035": {
+    "net_domestic": 1864,
+    "net_international": 70,
+    "per_1k": 68.5,
+    "name": "Butts"
+   },
+   "13037": {
+    "net_domestic": -76,
+    "net_international": 8,
+    "per_1k": -14.0,
+    "name": "Calhoun"
+   },
+   "13039": {
+    "net_domestic": 3813,
+    "net_international": 135,
+    "per_1k": 63.4,
+    "name": "Camden"
+   },
+   "13043": {
+    "net_domestic": 443,
+    "net_international": 21,
+    "per_1k": 39.3,
+    "name": "Candler"
+   },
+   "13045": {
+    "net_domestic": 8933,
+    "net_international": 1566,
+    "per_1k": 68.2,
+    "name": "Carroll"
+   },
+   "13047": {
+    "net_domestic": 2441,
+    "net_international": 102,
+    "per_1k": 35.1,
+    "name": "Catoosa"
+   },
+   "13049": {
+    "net_domestic": 839,
+    "net_international": -13,
+    "per_1k": 63.9,
+    "name": "Charlton"
+   },
+   "13051": {
+    "net_domestic": 4796,
+    "net_international": 8774,
+    "per_1k": 15.4,
+    "name": "Chatham"
+   },
+   "13053": {
+    "net_domestic": -1807,
+    "net_international": 160,
+    "per_1k": -213.5,
+    "name": "Chattahoochee"
+   },
+   "13055": {
+    "net_domestic": 983,
+    "net_international": 202,
+    "per_1k": 38.9,
+    "name": "Chattooga"
+   },
+   "13057": {
+    "net_domestic": 22290,
+    "net_international": 4775,
+    "per_1k": 74.5,
+    "name": "Cherokee"
+   },
+   "13059": {
+    "net_domestic": -4438,
+    "net_international": 3681,
+    "per_1k": -34.2,
+    "name": "Clarke"
+   },
+   "13061": {
+    "net_domestic": 74,
+    "net_international": 9,
+    "per_1k": 26.3,
+    "name": "Clay"
+   },
+   "13063": {
+    "net_domestic": -13951,
+    "net_international": 6152,
+    "per_1k": -46.9,
+    "name": "Clayton"
+   },
+   "13065": {
+    "net_domestic": -11,
+    "net_international": 106,
+    "per_1k": -1.6,
+    "name": "Clinch"
+   },
+   "13067": {
+    "net_domestic": -18165,
+    "net_international": 27656,
+    "per_1k": -22.9,
+    "name": "Cobb"
+   },
+   "13069": {
+    "net_domestic": 381,
+    "net_international": 604,
+    "per_1k": 8.6,
+    "name": "Coffee"
+   },
+   "13071": {
+    "net_domestic": -273,
+    "net_international": 1710,
+    "per_1k": -5.8,
+    "name": "Colquitt"
+   },
+   "13073": {
+    "net_domestic": 8200,
+    "net_international": 1888,
+    "per_1k": 48.5,
+    "name": "Columbia"
+   },
+   "13075": {
+    "net_domestic": 652,
+    "net_international": 336,
+    "per_1k": 35.8,
+    "name": "Cook"
+   },
+   "13077": {
+    "net_domestic": 10381,
+    "net_international": 1760,
+    "per_1k": 64.8,
+    "name": "Coweta"
+   },
+   "13079": {
+    "net_domestic": 609,
+    "net_international": 17,
+    "per_1k": 49.9,
+    "name": "Crawford"
+   },
+   "13081": {
+    "net_domestic": -498,
+    "net_international": 99,
+    "per_1k": -25.9,
+    "name": "Crisp"
+   },
+   "13083": {
+    "net_domestic": 320,
+    "net_international": 10,
+    "per_1k": 19.8,
+    "name": "Dade"
+   },
+   "13085": {
+    "net_domestic": 7736,
+    "net_international": 220,
+    "per_1k": 218.7,
+    "name": "Dawson"
+   },
+   "13089": {
+    "net_domestic": -43273,
+    "net_international": 32545,
+    "per_1k": -55.9,
+    "name": "DeKalb"
+   },
+   "13087": {
+    "net_domestic": 133,
+    "net_international": 108,
+    "per_1k": 4.5,
+    "name": "Decatur"
+   },
+   "13091": {
+    "net_domestic": 111,
+    "net_international": 91,
+    "per_1k": 5.6,
+    "name": "Dodge"
+   },
+   "13093": {
+    "net_domestic": -43,
+    "net_international": 233,
+    "per_1k": -3.9,
+    "name": "Dooly"
+   },
+   "13095": {
+    "net_domestic": -3004,
+    "net_international": 641,
+    "per_1k": -36.4,
+    "name": "Dougherty"
+   },
+   "13097": {
+    "net_domestic": 5527,
+    "net_international": 1524,
+    "per_1k": 35.8,
+    "name": "Douglas"
+   },
+   "13099": {
+    "net_domestic": -78,
+    "net_international": -1,
+    "per_1k": -7.5,
+    "name": "Early"
+   },
+   "13101": {
+    "net_domestic": -160,
+    "net_international": 93,
+    "per_1k": -43.4,
+    "name": "Echols"
+   },
+   "13103": {
+    "net_domestic": 7632,
+    "net_international": 374,
+    "per_1k": 102.6,
+    "name": "Effingham"
+   },
+   "13105": {
+    "net_domestic": 818,
+    "net_international": 133,
+    "per_1k": 40.8,
+    "name": "Elbert"
+   },
+   "13107": {
+    "net_domestic": 366,
+    "net_international": 105,
+    "per_1k": 15.8,
+    "name": "Emanuel"
+   },
+   "13109": {
+    "net_domestic": 226,
+    "net_international": 84,
+    "per_1k": 20.5,
+    "name": "Evans"
+   },
+   "13111": {
+    "net_domestic": 2001,
+    "net_international": 8,
+    "per_1k": 76.6,
+    "name": "Fannin"
+   },
+   "13113": {
+    "net_domestic": 5002,
+    "net_international": 1718,
+    "per_1k": 40.0,
+    "name": "Fayette"
+   },
+   "13115": {
+    "net_domestic": 2652,
+    "net_international": 1039,
+    "per_1k": 26.2,
+    "name": "Floyd"
+   },
+   "13117": {
+    "net_domestic": 19568,
+    "net_international": 6749,
+    "per_1k": 69.2,
+    "name": "Forsyth"
+   },
+   "13119": {
+    "net_domestic": 2305,
+    "net_international": 192,
+    "per_1k": 88.8,
+    "name": "Franklin"
+   },
+   "13121": {
+    "net_domestic": -24038,
+    "net_international": 32224,
+    "per_1k": -21.9,
+    "name": "Fulton"
+   },
+   "13123": {
+    "net_domestic": 2859,
+    "net_international": 277,
+    "per_1k": 84.4,
+    "name": "Gilmer"
+   },
+   "13125": {
+    "net_domestic": 269,
+    "net_international": -2,
+    "per_1k": 85.6,
+    "name": "Glascock"
+   },
+   "13127": {
+    "net_domestic": 2880,
+    "net_international": 1239,
+    "per_1k": 32.9,
+    "name": "Glynn"
+   },
+   "13129": {
+    "net_domestic": 3567,
+    "net_international": 576,
+    "per_1k": 57.8,
+    "name": "Gordon"
+   },
+   "13131": {
+    "net_domestic": 126,
+    "net_international": 365,
+    "per_1k": 4.7,
+    "name": "Grady"
+   },
+   "13133": {
+    "net_domestic": 2860,
+    "net_international": 109,
+    "per_1k": 133.9,
+    "name": "Greene"
+   },
+   "13135": {
+    "net_domestic": -20082,
+    "net_international": 52395,
+    "per_1k": -19.7,
+    "name": "Gwinnett"
+   },
+   "13137": {
+    "net_domestic": 3751,
+    "net_international": 778,
+    "per_1k": 74.4,
+    "name": "Habersham"
+   },
+   "13139": {
+    "net_domestic": 12509,
+    "net_international": 6336,
+    "per_1k": 55.2,
+    "name": "Hall"
+   },
+   "13141": {
+    "net_domestic": 348,
+    "net_international": 8,
+    "per_1k": 40.1,
+    "name": "Hancock"
+   },
+   "13143": {
+    "net_domestic": 3327,
+    "net_international": 28,
+    "per_1k": 100.6,
+    "name": "Haralson"
+   },
+   "13145": {
+    "net_domestic": 2439,
+    "net_international": 150,
+    "per_1k": 65.4,
+    "name": "Harris"
+   },
+   "13147": {
+    "net_domestic": 3132,
+    "net_international": 205,
+    "per_1k": 109.4,
+    "name": "Hart"
+   },
+   "13149": {
+    "net_domestic": 918,
+    "net_international": -2,
+    "per_1k": 75.6,
+    "name": "Heard"
+   },
+   "13151": {
+    "net_domestic": 16861,
+    "net_international": 2480,
+    "per_1k": 63.6,
+    "name": "Henry"
+   },
+   "13153": {
+    "net_domestic": 9996,
+    "net_international": 1820,
+    "per_1k": 56.1,
+    "name": "Houston"
+   },
+   "13155": {
+    "net_domestic": -393,
+    "net_international": 10,
+    "per_1k": -43.6,
+    "name": "Irwin"
+   },
+   "13157": {
+    "net_domestic": 20027,
+    "net_international": 991,
+    "per_1k": 201.8,
+    "name": "Jackson"
+   },
+   "13159": {
+    "net_domestic": 2930,
+    "net_international": 77,
+    "per_1k": 166.2,
+    "name": "Jasper"
+   },
+   "13161": {
+    "net_domestic": 472,
+    "net_international": 96,
+    "per_1k": 31.0,
+    "name": "Jeff Davis"
+   },
+   "13163": {
+    "net_domestic": -326,
+    "net_international": 98,
+    "per_1k": -21.7,
+    "name": "Jefferson"
+   },
+   "13165": {
+    "net_domestic": 333,
+    "net_international": 13,
+    "per_1k": 37.7,
+    "name": "Jenkins"
+   },
+   "13167": {
+    "net_domestic": 297,
+    "net_international": 7,
+    "per_1k": 31.9,
+    "name": "Johnson"
+   },
+   "13169": {
+    "net_domestic": 1122,
+    "net_international": 35,
+    "per_1k": 38.5,
+    "name": "Jones"
+   },
+   "13171": {
+    "net_domestic": 2466,
+    "net_international": 40,
+    "per_1k": 117.8,
+    "name": "Lamar"
+   },
+   "13173": {
+    "net_domestic": 402,
+    "net_international": 248,
+    "per_1k": 37.8,
+    "name": "Lanier"
+   },
+   "13175": {
+    "net_domestic": 1247,
+    "net_international": 602,
+    "per_1k": 24.4,
+    "name": "Laurens"
+   },
+   "13177": {
+    "net_domestic": 654,
+    "net_international": 218,
+    "per_1k": 19.1,
+    "name": "Lee"
+   },
+   "13179": {
+    "net_domestic": 62,
+    "net_international": 722,
+    "per_1k": 0.9,
+    "name": "Liberty"
+   },
+   "13181": {
+    "net_domestic": 573,
+    "net_international": 29,
+    "per_1k": 70.6,
+    "name": "Lincoln"
+   },
+   "13183": {
+    "net_domestic": 4376,
+    "net_international": 128,
+    "per_1k": 203.0,
+    "name": "Long"
+   },
+   "13185": {
+    "net_domestic": 1511,
+    "net_international": 695,
+    "per_1k": 12.3,
+    "name": "Lowndes"
+   },
+   "13187": {
+    "net_domestic": 2555,
+    "net_international": 281,
+    "per_1k": 70.6,
+    "name": "Lumpkin"
+   },
+   "13193": {
+    "net_domestic": -151,
+    "net_international": 129,
+    "per_1k": -12.8,
+    "name": "Macon"
+   },
+   "13195": {
+    "net_domestic": 2309,
+    "net_international": 208,
+    "per_1k": 70.1,
+    "name": "Madison"
+   },
+   "13197": {
+    "net_domestic": 273,
+    "net_international": 99,
+    "per_1k": 35.6,
+    "name": "Marion"
+   },
+   "13189": {
+    "net_domestic": 226,
+    "net_international": 22,
+    "per_1k": 10.4,
+    "name": "McDuffie"
+   },
+   "13191": {
+    "net_domestic": 1416,
+    "net_international": 7,
+    "per_1k": 118.1,
+    "name": "McIntosh"
+   },
+   "13199": {
+    "net_domestic": 1368,
+    "net_international": 31,
+    "per_1k": 63.6,
+    "name": "Meriwether"
+   },
+   "13201": {
+    "net_domestic": 66,
+    "net_international": 5,
+    "per_1k": 11.4,
+    "name": "Miller"
+   },
+   "13205": {
+    "net_domestic": -927,
+    "net_international": 67,
+    "per_1k": -45.3,
+    "name": "Mitchell"
+   },
+   "13207": {
+    "net_domestic": 4309,
+    "net_international": 113,
+    "per_1k": 134.6,
+    "name": "Monroe"
+   },
+   "13209": {
+    "net_domestic": 104,
+    "net_international": 42,
+    "per_1k": 12.0,
+    "name": "Montgomery"
+   },
+   "13211": {
+    "net_domestic": 1966,
+    "net_international": 90,
+    "per_1k": 89.0,
+    "name": "Morgan"
+   },
+   "13213": {
+    "net_domestic": 1663,
+    "net_international": 236,
+    "per_1k": 40.0,
+    "name": "Murray"
+   },
+   "13215": {
+    "net_domestic": -8842,
+    "net_international": 2175,
+    "per_1k": -43.7,
+    "name": "Muscogee"
+   },
+   "13217": {
+    "net_domestic": 10184,
+    "net_international": 1510,
+    "per_1k": 81.1,
+    "name": "Newton"
+   },
+   "13219": {
+    "net_domestic": 2843,
+    "net_international": 275,
+    "per_1k": 63.3,
+    "name": "Oconee"
+   },
+   "13221": {
+    "net_domestic": 1609,
+    "net_international": 89,
+    "per_1k": 98.0,
+    "name": "Oglethorpe"
+   },
+   "13223": {
+    "net_domestic": 16324,
+    "net_international": 2219,
+    "per_1k": 85.5,
+    "name": "Paulding"
+   },
+   "13225": {
+    "net_domestic": 1679,
+    "net_international": 188,
+    "per_1k": 56.2,
+    "name": "Peach"
+   },
+   "13227": {
+    "net_domestic": 4321,
+    "net_international": 106,
+    "per_1k": 116.3,
+    "name": "Pickens"
+   },
+   "13229": {
+    "net_domestic": 1287,
+    "net_international": -8,
+    "per_1k": 62.0,
+    "name": "Pierce"
+   },
+   "13231": {
+    "net_domestic": 2140,
+    "net_international": 37,
+    "per_1k": 102.2,
+    "name": "Pike"
+   },
+   "13233": {
+    "net_domestic": 2073,
+    "net_international": 419,
+    "per_1k": 45.5,
+    "name": "Polk"
+   },
+   "13235": {
+    "net_domestic": 544,
+    "net_international": 47,
+    "per_1k": 53.5,
+    "name": "Pulaski"
+   },
+   "13237": {
+    "net_domestic": 1768,
+    "net_international": 407,
+    "per_1k": 74.5,
+    "name": "Putnam"
+   },
+   "13239": {
+    "net_domestic": 127,
+    "net_international": 0,
+    "per_1k": 56.3,
+    "name": "Quitman"
+   },
+   "13241": {
+    "net_domestic": 1150,
+    "net_international": 281,
+    "per_1k": 64.7,
+    "name": "Rabun"
+   },
+   "13243": {
+    "net_domestic": -33,
+    "net_international": 17,
+    "per_1k": -5.4,
+    "name": "Randolph"
+   },
+   "13245": {
+    "net_domestic": -3137,
+    "net_international": 1511,
+    "per_1k": -15.2,
+    "name": "Richmond"
+   },
+   "13247": {
+    "net_domestic": 3283,
+    "net_international": 1108,
+    "per_1k": 33.4,
+    "name": "Rockdale"
+   },
+   "13249": {
+    "net_domestic": 58,
+    "net_international": 1,
+    "per_1k": 12.6,
+    "name": "Schley"
+   },
+   "13251": {
+    "net_domestic": 538,
+    "net_international": 32,
+    "per_1k": 37.3,
+    "name": "Screven"
+   },
+   "13253": {
+    "net_domestic": 281,
+    "net_international": 21,
+    "per_1k": 30.7,
+    "name": "Seminole"
+   },
+   "13255": {
+    "net_domestic": 3255,
+    "net_international": 615,
+    "per_1k": 46.0,
+    "name": "Spalding"
+   },
+   "13257": {
+    "net_domestic": 1530,
+    "net_international": 115,
+    "per_1k": 54.9,
+    "name": "Stephens"
+   },
+   "13259": {
+    "net_domestic": -713,
+    "net_international": 248,
+    "per_1k": -154.0,
+    "name": "Stewart"
+   },
+   "13261": {
+    "net_domestic": -679,
+    "net_international": 206,
+    "per_1k": -23.6,
+    "name": "Sumter"
+   },
+   "13263": {
+    "net_domestic": 250,
+    "net_international": 0,
+    "per_1k": 43.8,
+    "name": "Talbot"
+   },
+   "13265": {
+    "net_domestic": 193,
+    "net_international": 0,
+    "per_1k": 116.1,
+    "name": "Taliaferro"
+   },
+   "13267": {
+    "net_domestic": 47,
+    "net_international": 81,
+    "per_1k": 1.9,
+    "name": "Tattnall"
+   },
+   "13269": {
+    "net_domestic": 103,
+    "net_international": 38,
+    "per_1k": 13.2,
+    "name": "Taylor"
+   },
+   "13271": {
+    "net_domestic": -1163,
+    "net_international": 54,
+    "per_1k": -103.9,
+    "name": "Telfair"
+   },
+   "13273": {
+    "net_domestic": -300,
+    "net_international": 5,
+    "per_1k": -34.7,
+    "name": "Terrell"
+   },
+   "13275": {
+    "net_domestic": 728,
+    "net_international": 175,
+    "per_1k": 15.7,
+    "name": "Thomas"
+   },
+   "13277": {
+    "net_domestic": 123,
+    "net_international": 403,
+    "per_1k": 2.9,
+    "name": "Tift"
+   },
+   "13279": {
+    "net_domestic": -17,
+    "net_international": 482,
+    "per_1k": -0.6,
+    "name": "Toombs"
+   },
+   "13281": {
+    "net_domestic": 1443,
+    "net_international": 49,
+    "per_1k": 108.6,
+    "name": "Towns"
+   },
+   "13283": {
+    "net_domestic": 215,
+    "net_international": -1,
+    "per_1k": 33.3,
+    "name": "Treutlen"
+   },
+   "13285": {
+    "net_domestic": 1650,
+    "net_international": 1511,
+    "per_1k": 22.7,
+    "name": "Troup"
+   },
+   "13287": {
+    "net_domestic": 54,
+    "net_international": 51,
+    "per_1k": 6.0,
+    "name": "Turner"
+   },
+   "13289": {
+    "net_domestic": 105,
+    "net_international": -2,
+    "per_1k": 13.8,
+    "name": "Twiggs"
+   },
+   "13291": {
+    "net_domestic": 4171,
+    "net_international": 121,
+    "per_1k": 149.7,
+    "name": "Union"
+   },
+   "13293": {
+    "net_domestic": 1363,
+    "net_international": 16,
+    "per_1k": 47.8,
+    "name": "Upson"
+   },
+   "13295": {
+    "net_domestic": 3681,
+    "net_international": 127,
+    "per_1k": 52.4,
+    "name": "Walker"
+   },
+   "13297": {
+    "net_domestic": 13966,
+    "net_international": 818,
+    "per_1k": 123.9,
+    "name": "Walton"
+   },
+   "13299": {
+    "net_domestic": 705,
+    "net_international": 436,
+    "per_1k": 19.1,
+    "name": "Ware"
+   },
+   "13301": {
+    "net_domestic": 209,
+    "net_international": 10,
+    "per_1k": 39.7,
+    "name": "Warren"
+   },
+   "13303": {
+    "net_domestic": -26,
+    "net_international": 85,
+    "per_1k": -1.3,
+    "name": "Washington"
+   },
+   "13305": {
+    "net_domestic": 2501,
+    "net_international": 294,
+    "per_1k": 77.0,
+    "name": "Wayne"
+   },
+   "13307": {
+    "net_domestic": -54,
+    "net_international": 78,
+    "per_1k": -22.8,
+    "name": "Webster"
+   },
+   "13309": {
+    "net_domestic": 149,
+    "net_international": -1,
+    "per_1k": 19.7,
+    "name": "Wheeler"
+   },
+   "13311": {
+    "net_domestic": 2191,
+    "net_international": 133,
+    "per_1k": 73.5,
+    "name": "White"
+   },
+   "13313": {
+    "net_domestic": 258,
+    "net_international": 2115,
+    "per_1k": 2.4,
+    "name": "Whitfield"
+   },
+   "13315": {
+    "net_domestic": 310,
+    "net_international": -7,
+    "per_1k": 35.2,
+    "name": "Wilcox"
+   },
+   "13317": {
+    "net_domestic": 287,
+    "net_international": 69,
+    "per_1k": 30.1,
+    "name": "Wilkes"
+   },
+   "13319": {
+    "net_domestic": 3,
+    "net_international": 8,
+    "per_1k": 0.3,
+    "name": "Wilkinson"
+   },
+   "13321": {
+    "net_domestic": -156,
+    "net_international": 11,
+    "per_1k": -7.8,
+    "name": "Worth"
+   }
+  },
+  "source": "Census PEP components of change (county), data/population.json"
+ },
+ "non_metro": {
+  "county_count": 86,
+  "net_domestic": 92825,
+  "net_international": 16239,
+  "population": 2033015,
+  "per_1k": 45.7,
+  "note": "Aggregate of the 86 GA counties outside the 14 MSAs.",
+  "source": "Census PEP components of change (county)"
+ },
+ "kpis": {
+  "net_domestic": 27333,
+  "net_international": 42579,
+  "top_origin_state": null,
+  "top_dest_state": null,
+  "net_soi": null,
+  "non_metro_county_count": 86
+ },
+ "_meta": {
+  "metro_rollup": {
+   "last_updated": "2026-06-02T13:02:48Z",
+   "n_metros": 14,
+   "stale": false
+  },
+  "components": {
+   "last_updated": "2026-06-02T13:02:48Z",
+   "stale": false
+  },
+  "counties": {
+   "last_updated": "2026-06-02T13:02:48Z",
+   "stale": false
+  },
+  "non_metro": {
+   "last_updated": "2026-06-02T13:02:48Z",
+   "stale": false
+  }
+ },
+ "latest_label": "2025",
+ "coverage_note": "Components and the 159-county map cover 100% of Georgia (Census PEP). State-to-state flows are IRS SOI (tax-return based, ~1.5-year lag). The Non-Metro aggregate covers the 86 counties outside the 14 MSAs.",
+ "source_summary": {
+  "state_flows": "IRS SOI county-to-county migration, aggregated to GA statewide",
+  "components": "Census PEP components of change (state)",
+  "counties": "Census PEP components of change (county)",
+  "metros": "Roll-up of msa_reports/*.json (irs_soi_migration + census_net_migration)"
+ }
+}
