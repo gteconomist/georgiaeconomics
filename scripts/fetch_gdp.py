@@ -126,14 +126,31 @@ def bea_get(params: dict, retries: int = 3) -> Optional[dict]:
     p = dict(params)
     p["UserID"] = BEA_API_KEY
     p["ResultFormat"] = "JSON"
-    url = BEA_URL + "?" + urllib.parse.urlencode(p)
+    # BEA does NOT accept percent-encoded values — urlencoding the commas in a
+    # multi-year `Year=2013,2014,...` list breaks the request with APIErrorCode
+    # 101 ("Unknown error"). Build the query string with RAW values, matching the
+    # proven scripts/reporting/pull_bea.py path (the county CAGDP2 call works that way).
+    qs = "&".join(f"{k}={v}" for k, v in p.items())
+    url = BEA_URL + "?" + qs
     for attempt in range(retries):
         try:
             with urllib.request.urlopen(url, timeout=60) as r:
                 j = json.loads(r.read().decode("utf-8"))
-            results = j.get("BEAAPI", {}).get("Results", {})
-            if isinstance(results, dict) and results.get("Error"):
-                print(f"  [gdp/BEA error] {str(results['Error'])[:100]}", file=sys.stderr)
+            results = (j.get("BEAAPI") or {}).get("Results") or {}
+            if isinstance(results, list):
+                results = results[0] if results else {}
+            err = results.get("Error") if isinstance(results, dict) else None
+            if err:
+                if isinstance(err, list):
+                    err = err[0] if err else {}
+                desc = (err.get("APIErrorDescription") or err.get("ErrorDescription") or "") \
+                    if isinstance(err, dict) else str(err)
+                low = str(desc).lower()
+                # year-not-yet-published is expected; the caller falls back to an earlier year
+                if not any(s in low for s in ("not available", "no data", "invalid year")):
+                    print(f"  [gdp/BEA error] {params.get('TableName')} "
+                          f"geo={params.get('GeoFips')} lc={params.get('LineCode')} "
+                          f"yr={params.get('Year')}: {err}", file=sys.stderr)
                 return None
             return results
         except Exception as e:
@@ -282,8 +299,9 @@ def fetch_ga_gdp(years_back: int = 13) -> Optional[dict]:
 # --------------------------------------------------------------------------- #
 def fetch_peers() -> Optional[List[dict]]:
     this_year = date.today().year
-    # SAGDP is annual and lags ~1 year; probe newest pair, fall back one year.
-    for y_latest in (this_year - 1, this_year - 2, this_year - 3):
+    # SAGDP annual GDP lags ~1.5 yrs, so the latest published year is ~this_year-2.
+    # Probe from there (newest first) and fall back if a year isn't out yet.
+    for y_latest in (this_year - 2, this_year - 1, this_year - 3, this_year - 4):
         cur = _bea_all_states("SAGDP9N", "1", y_latest)
         if cur:
             break
@@ -292,7 +310,10 @@ def fetch_peers() -> Optional[List[dict]]:
     prev = _bea_all_states("SAGDP9N", "1", y_latest - 1)
     us_cur = _bea_series("SAGDP9N", US_FIPS, [y_latest])          # US not in 'STATE'
     us_prev = _bea_series("SAGDP9N", US_FIPS, [y_latest - 1])
-    pcap = _per_capita_real_by_state(y_latest)
+    try:
+        pcap = _per_capita_real_by_state(y_latest)
+    except Exception:
+        pcap = {}
     out = []
     for fips, name in PEERS + [(US_FIPS, "United States")]:
         if fips == US_FIPS:
@@ -341,7 +362,10 @@ _SECTOR_DESC_PREFIXES = [
 
 
 def fetch_sectors(year: Optional[int] = None) -> Optional[dict]:
-    y = year or (date.today().year - 1)
+    this_year = date.today().year
+    # Request a small window (the requested year may not be published yet) and
+    # use the latest year actually returned for each line code.
+    yrs = [year] if year else [this_year - 3, this_year - 2, this_year - 1]
     codes = _bea_linecodes("SAGDP2N")
     if not codes:
         return None
@@ -358,12 +382,14 @@ def fetch_sectors(year: Optional[int] = None) -> Optional[dict]:
         return None
     sectors: List[dict] = []
     total = 0.0
+    used_year = None
     for lc, desc in wanted.values():
-        s = _bea_series("SAGDP2N", GA_FIPS, [y], line_code=lc)
-        # the requested year may not be out yet — accept the latest available
-        v = s.get(y) or (s[max(s)] if s else None)
-        if v is None:
+        s = _bea_series("SAGDP2N", GA_FIPS, yrs, line_code=lc)
+        if not s:
             continue
+        yy = max(s)                      # latest year actually returned
+        v = s[yy]
+        used_year = yy if used_year is None else max(used_year, yy)
         sectors.append({"name": desc, "gdp_bn": round(v / 1000, 2), "_v": v})
         total += v
     if not sectors or total <= 0:
@@ -372,7 +398,7 @@ def fetch_sectors(year: Optional[int] = None) -> Optional[dict]:
         s["share_pct"] = round(100 * s.pop("_v") / total, 1)
     sectors.sort(key=lambda s: s["gdp_bn"], reverse=True)
     return {
-        "year": y, "total_bn": round(total / 1000, 2), "sectors": sectors,
+        "year": used_year, "total_bn": round(total / 1000, 2), "sectors": sectors,
         "source": "BEA SAGDP2N by industry (current $)",
     }
 
