@@ -6,10 +6,10 @@
   "kpis": {
     "industry_gdp_latest_b": 4.2,
     "industry_gdp_yoy_pct": 16.7,
-    "employment_latest_k": 31.8,
-    "employment_yoy_pct": 7.1,
+    "employment_latest_k": 32.59,
+    "employment_yoy_pct": 2.5,
     "national_rank": 9,
-    "ev_investment_total_b": 28.0,
+    "ev_investment_total_b": 15.1,
     "establishments_latest": 225,
     "establishments_breakdown": {
       "3361": 10,
@@ -17,9 +17,9 @@
       "3363": 131
     },
     "employment_breakdown": {
-      "3361": 4183,
-      "3362": 7994,
-      "3363": 19625
+      "3361": 4420,
+      "3362": 7733,
+      "3363": 20439
     },
     "n_plants_total": 8,
     "n_plants_operating": 6,
@@ -65,7 +65,8 @@
       2021,
       2022,
       2023,
-      2024
+      2024,
+      2025
     ],
     "employment_k": [
       21.47,
@@ -78,7 +79,8 @@
       25.87,
       27.75,
       29.68,
-      31.8
+      31.8,
+      32.59
     ]
   },
   "annotations": [
@@ -199,7 +201,7 @@
         "status_hint": "operating",
         "jobs_hint": null,
         "source_url": "https://www.kiageorgia.com/kia-georgia-celebrates-trio-of-major-milestones-including-start-of-production-for-2027-kia-telluride",
-        "snippet": "Kia Georgia's West Point plant started production of the 2027 Telluride in 2026, marking its 5 millionth vehicle and first hybrid electric v"
+        "snippet": "Kia Georgia's West Point plant started production of the 2027 Telluride in 2026 and reached its 5 millionth vehicle milestone. Production te"
       }
     },
     {
@@ -215,9 +217,9 @@
       "note": "Production began 2025. 30 GWh annual capacity \u2014 enough for ~300K EVs.",
       "_hint": {
         "status_hint": "under-construction",
-        "jobs_hint": null,
+        "jobs_hint": 1000,
         "source_url": "https://www.wtoc.com/2025/11/14/construction-resumes-hl-ga-battery-company-two-months-after-ice-raid",
-        "snippet": "HL-GA Battery Company in Georgia is on track to start production in the first half of 2026. Construction resumed after an ICE raid, and the "
+        "snippet": "HL-GA Battery Company in Georgia resumed construction in 2025 and aims to start production in the first half of 2026. Hyundai's Georgia plan"
       }
     },
     {
@@ -241,7 +243,13 @@
       "investment_b": 0.93,
       "jobs": 1500,
       "product": "EV battery system modules (PE Modules) for HMGMA",
-      "note": "Co-located with HMGMA; supplies battery packs directly to assembly line."
+      "note": "Co-located with HMGMA; supplies battery packs directly to assembly line.",
+      "_hint": {
+        "status_hint": "operating",
+        "jobs_hint": 2600,
+        "source_url": "https://www.autoweek.com/news/a71122214/hyundai-billion-dollar-georgia-metaplant",
+        "snippet": "Hyundai Mobis' Ellabell, Georgia plant began full production in 2024 and plans to expand output to 500,000 vehicles by 2026. The plant produ"
+      }
     },
     {
       "name": "Aspen Aerogels Plant 2",
@@ -252,7 +260,13 @@
       "investment_b": 0.33,
       "jobs": 250,
       "product": "PyroThin\u00ae thermal barriers (EV battery fire protection)",
-      "note": "Announced 2022; opened 2025. Sole-source supplier to GM \u2014 also serves Toyota and Stellantis."
+      "note": "Announced 2022; opened 2025. Sole-source supplier to GM \u2014 also serves Toyota and Stellantis.",
+      "_hint": {
+        "status_hint": "paused",
+        "jobs_hint": null,
+        "source_url": "https://pbn.com/aspen-aerogels-lists-georgia-site-for-sale",
+        "snippet": "Aspen Aerogels abandoned plans for Plant 2 in Statesboro, Georgia, and listed the site for sale in 2025. Production remains halted. The comp"
+      }
     },
     {
       "name": "Rivian \u2014 Stanton Springs",
@@ -267,9 +281,9 @@
       "note": "Announced Dec 2021 at $5B / 7,500 jobs. Site preparation paused in March 2024 \u2014 Rivian shifted R2 launch to its existing Illinois plant. Future of site uncertain.",
       "_hint": {
         "status_hint": "under-construction",
-        "jobs_hint": 7500,
+        "jobs_hint": null,
         "source_url": "https://georgia.org/rivian",
-        "snippet": "Rivian's Georgia plant construction resumes in 2026, with production starting in 2028. The facility aims for an annual capacity of 400,000 v"
+        "snippet": "Rivian's Georgia plant construction resumes in 2026, with production starting in 2028. The facility aims for an annual capacity of 300,000 v"
       }
     },
     {
@@ -281,7 +295,13 @@
       "investment_b": 0.8,
       "jobs": 400,
       "product": "Synthetic graphite anode material for EV batteries",
-      "note": "$117M DOE grant in 2022. Phase 1 construction underway; commercial production targeted late 2026."
+      "note": "$117M DOE grant in 2022. Phase 1 construction underway; commercial production targeted late 2026.",
+      "_hint": {
+        "status_hint": "under-construction",
+        "jobs_hint": null,
+        "source_url": "https://thepostsearchlight.com/2025/07/16/anovion-still-aiming-for-2026-construction",
+        "snippet": "Anovion Technologies' auto plant in Bainbridge, Georgia, is still in fundraising mode for construction, with no confirmed start date. Full p"
+      }
     }
   ],
   "milestones": [
@@ -333,11 +353,11 @@
   ],
   "_meta": {
     "employment": {
-      "last_updated": "2026-05-25",
+      "last_updated": "2026-06-02",
       "source": "BLS QCEW annual averages, NAICS 3361+3362+3363 (motor vehicle mfg + bodies/trailers + parts), GA (area 13000)",
       "coverage_years": [
         2014,
-        2024
+        2025
       ]
     },
     "industry_gdp": {
@@ -349,24 +369,26 @@
       "source": null
     },
     "establishments": {
-      "last_updated": "2026-05-25",
+      "last_updated": "2026-06-02",
       "source": "Census CBP 2023 \u2014 NAICS 3361/3362/3363, GA",
       "year": 2023
     },
     "ev_investment": {
-      "last_updated": null,
-      "source": null
+      "last_updated": "2026-06-02",
+      "source": "Tavily \u2192 DECD / Gov. office / AJC cumulative EV investment figure",
+      "value_b": 15.1,
+      "source_url": "https://www.ajc.com/politics/2025/09/how-a-raid-turned-hyundai-kemps-biggest-jobs-push-into-a-political-thicket"
     },
     "plants": {
-      "last_updated": "2026-05-25",
+      "last_updated": "2026-06-02",
       "source": "Tavily \u2192 AJC / Reuters / state press; hints only, not status overwrites",
-      "hint_count": 3
+      "hint_count": 6
     },
     "milestones": {
       "last_updated": null,
       "source": null
     }
   },
-  "fetched_at": "2026-05-25",
-  "source_summary": "Live sources updated 2026-05-25: employment, establishments, plants. Stale or static: industry_gdp, state_comparison, ev_investment, milestones."
+  "fetched_at": "2026-06-02",
+  "source_summary": "Live sources updated 2026-06-02: employment, establishments, ev_investment, plants. Stale or static: industry_gdp, state_comparison, milestones."
 }
