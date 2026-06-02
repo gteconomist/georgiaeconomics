@@ -113,6 +113,20 @@ async function drawGAChoropleth(elId, dataPoints, opts) {
   const text      = dataPoints.map(d => d.hoverText
     || `<b>${d.label || d.fips} County</b><br>${opts.metricLabel || 'Value'}: ${fmt(d.value)}`);
 
+  // Color range. For a diverging scale over signed data (e.g. net migration),
+  // default to an explicit range centered on zero so 0 maps to the scale's
+  // midpoint and negative/positive read symmetrically. Plotly's auto-range can
+  // render nothing for a custom diverging scale spanning negatives, so set it.
+  let zmin = opts.zmin, zmax = opts.zmax;
+  if (opts.colorscale === 'diverging' && (zmin == null || zmax == null)) {
+    const finite = z.filter(v => typeof v === 'number' && isFinite(v));
+    const m = finite.length ? Math.max.apply(null, finite.map(Math.abs)) : 0;
+    if (m > 0) {
+      if (zmin == null) zmin = -m;
+      if (zmax == null) zmax = m;
+    }
+  }
+
   const trace = {
     type: 'choropleth',
     locationmode: 'geojson-id',
@@ -123,8 +137,8 @@ async function drawGAChoropleth(elId, dataPoints, opts) {
     text,
     hovertemplate: '%{text}<extra></extra>',
     colorscale: scale,
-    zmin: opts.zmin,
-    zmax: opts.zmax,
+    zmin: zmin,
+    zmax: zmax,
     marker: { line: { width: 0.4, color: '#ffffff' } },
     colorbar: {
       thickness: 12, len: 0.8, x: 1.02,
