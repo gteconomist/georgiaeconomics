@@ -1,8 +1,8 @@
 {
-  "fetched_at": "2026-05-25",
+  "fetched_at": "2026-06-02",
   "_meta": {
     "south_headline": {
-      "last_updated": "2026-05-25",
+      "last_updated": "2026-06-02",
       "source": "BLS CPI-U, South region (CUUR0300SA0) + US City Avg (CUUR0000SA0), NSA",
       "as_of": "Apr 2026",
       "coverage_months": [
@@ -11,7 +11,7 @@
       ]
     },
     "atlanta_cpi": {
-      "last_updated": "2026-05-25",
+      "last_updated": "2026-06-02",
       "source": "BLS CPI-U, Atlanta-Sandy Springs-Roswell GA (CUURS35CSA0), NSA",
       "as_of": "Apr 2026",
       "cadence_note": "Bi-monthly since 2018: published for Feb, Apr, Jun, Aug, Oct, Dec.",
@@ -21,24 +21,24 @@
       ]
     },
     "components": {
-      "last_updated": "2026-05-25",
+      "last_updated": "2026-06-02",
       "source": "BLS CPI-U, South region (CUUR0300* series), NSA \u2014 latest month YoY",
       "as_of": "Apr 2026"
     },
     "cumulative": {
-      "last_updated": "2026-05-25",
+      "last_updated": "2026-06-02",
       "source": "Derived from headline CPI series \u2014 rebased to anchor month = 100.",
       "as_of": "Apr 2026",
       "anchor_label": "Jan 2020"
     },
     "gasoline": {
-      "last_updated": "2026-05-25",
+      "last_updated": "2026-06-02",
       "source": "BLS Average Price data \u2014 Gasoline, unleaded regular ($/gal). South Urban (APUS37A74714) + US City Avg (APU000074714).",
       "as_of": "Apr 2026",
       "note": "South Urban region is the closest BLS geography to Georgia \u2014 no GA-only monthly retail series."
     },
     "real_wages": {
-      "last_updated": "2026-05-25",
+      "last_updated": "2026-06-02",
       "source": "BLS State CES, GA Total Private Avg Weekly Earnings (SMU13000000500000011, NSA), deflated by South region CPI (CUUR0300SA0). 3-mo centered MA applied to YoY series.",
       "as_of": "Apr 2026",
       "base_note": "Real wages expressed in Jan 2020 dollars."
