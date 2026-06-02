@@ -4021,63 +4021,63 @@
           "source_url": "https://en.wikipedia.org/wiki/Brunswick,_Georgia"
         },
         {
-          "name": "General Motors",
-          "source_url": "https://en.wikipedia.org/wiki/Brunswick,_Georgia"
+          "name": "Georgia Power Economic Development",
+          "source_url": "https://www.selectgeorgia.com/blog/wtc-sav-prosperity"
         },
         {
           "name": "Georgia Ports Authority",
           "source_url": "https://en.wikipedia.org/wiki/Brunswick,_Georgia"
         },
         {
-          "name": "Georgia Power Economic Development",
+          "name": "Glynn County Public Schools",
+          "source_url": "https://www.savannahnow.com/story/news/2021/10/20/ahmaud-arbery-murder-trial-brunswick-mcmichaels-bryan-business-demographics/5899609001"
+        },
+        {
+          "name": "Pharmaceutical",
+          "source_url": "https://en.wikipedia.org/wiki/List_of_largest_companies_in_the_United_States_by_revenue"
+        },
+        {
+          "name": "Ports of Brunswick",
+          "source_url": "https://www.savannahnow.com/story/news/2021/10/20/ahmaud-arbery-murder-trial-brunswick-mcmichaels-bryan-business-demographics/5899609001"
+        },
+        {
+          "name": "General Motors",
+          "source_url": "https://en.wikipedia.org/wiki/Brunswick,_Georgia"
+        },
+        {
+          "name": "Georgia Power Regional Economic Development Manager",
           "source_url": "https://www.selectgeorgia.com/blog/wtc-sav-prosperity"
         },
         {
-          "name": "The Port of Brunswick",
-          "source_url": "https://en.wikipedia.org/wiki/Brunswick,_Georgia"
+          "name": "Georgia Power Team",
+          "source_url": "https://www.selectgeorgia.com/blog/wtc-sav-prosperity"
+        },
+        {
+          "name": "Insurance",
+          "source_url": "https://en.wikipedia.org/wiki/List_of_largest_companies_in_the_United_States_by_revenue"
         },
         {
           "name": "Marine Port",
           "source_url": "https://en.wikipedia.org/wiki/Brunswick,_Georgia"
         },
         {
-          "name": "Aviation",
-          "source_url": "https://en.wikipedia.org/wiki/List_of_companies_in_the_Chicago_metropolitan_area"
+          "name": "Port of Brunswick",
+          "source_url": null
         },
         {
-          "name": "Beyond Health Group",
-          "source_url": "https://www.selectgeorgia.com/services/support-for-communities/small-business-resources"
-        },
-        {
-          "name": "Co. Brunswick Corporation Calamos Career Education",
-          "source_url": "https://en.wikipedia.org/wiki/List_of_companies_in_the_Chicago_metropolitan_area"
-        },
-        {
-          "name": "Corporation Century Aluminum CF Industries Cboe",
-          "source_url": "https://en.wikipedia.org/wiki/List_of_companies_in_the_Chicago_metropolitan_area"
-        },
-        {
-          "name": "Corporation of America Pactiv",
-          "source_url": "https://en.wikipedia.org/wiki/List_of_companies_in_the_Chicago_metropolitan_area"
-        },
-        {
-          "name": "Data Systems Titan International TransUnion Tribune",
-          "source_url": "https://en.wikipedia.org/wiki/List_of_companies_in_the_Chicago_metropolitan_area"
-        },
-        {
-          "name": "Distribution",
-          "source_url": "https://en.wikipedia.org/wiki/List_of_companies_in_the_Chicago_metropolitan_area"
+          "name": "Ports of Savannah",
+          "source_url": "https://www.selectgeorgia.com/blog/wtc-sav-prosperity"
         }
       ],
       "sources": [
         "https://en.wikipedia.org/wiki/Brunswick,_Georgia",
+        "https://www.savannahnow.com/story/news/2021/10/20/ahmaud-arbery-murder-trial-brunswick-mcmichaels-bryan-business-demographics/5899609001",
         "https://www.selectgeorgia.com/blog/wtc-sav-prosperity",
-        "https://en.wikipedia.org/wiki/List_of_companies_in_the_Chicago_metropolitan_area",
-        "https://www.savannahnow.com/story/news/2016/07/08/garden-city-police-department-savannah-firms-make-best-places-work-georgia-list/13921419007",
-        "https://www.selectgeorgia.com/services/support-for-communities/small-business-resources",
+        "https://en.wikipedia.org/wiki/List_of_largest_companies_in_the_United_States_by_revenue",
         "https://georgia.org/sites/default/files/2018-12/GABusClimRkgs_1.pdf",
-        "https://georgia.org/sites/default/files/2021-05/georgia_japan_connection_2021.pdf",
-        "https://www.ajc.com/things-to-do/georgias-largest-buc-ees-to-bring-more-than-200-jobs-to-brunswick/N4HBINRUZJDEBAUSUZGL6QUOYA"
+        "https://www.selectgeorgia.com/services/support-for-communities/small-business-resources",
+        "https://en.wikipedia.org/wiki/New_Brunswick",
+        "https://www.ajc.com/business/jobs-return-atlanta-2014-report-says/YObTdIp5oXUhYvGBtU5F3K"
       ],
       "method": "Representative list auto-discovered via Tavily web search across chamber-of-commerce, development-authority and local-news sources. Not exhaustive; ordering approximates source frequency, not headcount."
     },

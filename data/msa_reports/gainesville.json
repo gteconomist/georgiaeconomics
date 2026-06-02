@@ -5003,6 +5003,10 @@
           "source_url": "https://en.wikipedia.org/wiki/Gainesville,_Florida"
         },
         {
+          "name": "Aerospace",
+          "source_url": "https://www.selectgeorgia.com/discover-georgia/industries/fortune-500-list"
+        },
+        {
           "name": "Alachua County School Board",
           "source_url": "https://en.wikipedia.org/wiki/Gainesville,_Florida"
         },
@@ -5015,20 +5019,8 @@
           "source_url": "https://en.wikipedia.org/wiki/Gainesville,_Florida"
         },
         {
-          "name": "The Jaeger Co",
-          "source_url": "https://www.gainesvilletimes.com/news/simpson-jaeger-companies-win-hall-chambers-top-awards"
-        },
-        {
           "name": "UF Health Shands Hospital",
           "source_url": "https://en.wikipedia.org/wiki/Gainesville,_Florida"
-        },
-        {
-          "name": "Distribution",
-          "source_url": "https://www.gainesvilletimes.com/news/business-archived/chamber-honors-3-companies-as-the-years-best-in-hall"
-        },
-        {
-          "name": "Elan Drug Technologies",
-          "source_url": "https://www.gainesvilletimes.com/news/business-archived/chamber-honors-3-companies-as-the-years-best-in-hall"
         },
         {
           "name": "Koch Foods",
@@ -5053,17 +5045,25 @@
         {
           "name": "Annual Comprehensive Financial Report",
           "source_url": "https://en.wikipedia.org/wiki/Gainesville,_Florida"
+        },
+        {
+          "name": "Asbury Automotive",
+          "source_url": "https://www.selectgeorgia.com/discover-georgia/industries/fortune-500-list"
+        },
+        {
+          "name": "Chemical Manufacturing",
+          "source_url": "https://www.selectgeorgia.com/discover-georgia/industries/fortune-500-list"
         }
       ],
       "sources": [
-        "https://en.wikipedia.org/wiki/Gainesville,_Georgia",
         "https://www.ajc.com/top-workplaces/2025/08/15-newcomers-join-ranks-of-atlantas-top-large-workplaces",
         "https://en.wikipedia.org/wiki/Gainesville,_Florida",
         "https://www.augustachronicle.com/story/news/2025/05/14/hgtv-up-and-coming-small-cities-why-this-georgia-town-made-the-list-gainesville-ga/83602820007",
+        "https://www.selectgeorgia.com/discover-georgia/industries/fortune-500-list",
+        "https://en.wikipedia.org/wiki/Augusta,_Georgia",
         "https://www.gainesvilletimes.com/news/business-archived/chamber-honors-3-companies-as-the-years-best-in-hall",
         "https://www.gainesvilletimes.com/news/business-archived/gainesville-approves-5m-bond-for-ims-gear-georgia",
-        "https://www.gainesvilletimes.com/news/business-archived/hall-chamber-of-commerce-honors-2-local-businesses",
-        "https://www.gainesvilletimes.com/news/simpson-jaeger-companies-win-hall-chambers-top-awards"
+        "https://en.wikipedia.org/wiki/Gainesville,_Georgia"
       ],
       "method": "Representative list auto-discovered via Tavily web search across chamber-of-commerce, development-authority and local-news sources. Not exhaustive; ordering approximates source frequency, not headcount."
     },

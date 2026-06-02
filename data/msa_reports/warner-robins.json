@@ -4083,11 +4083,19 @@
       "as_of": "2026-06-02",
       "employers": [
         {
+          "name": "Pratt Industries",
+          "source_url": "https://www.macon.com/news/business/article279055784.html"
+        },
+        {
+          "name": "Robins Industrial Park",
+          "source_url": "https://www.macon.com/news/business/article279055784.html"
+        },
+        {
           "name": "Atrium Health Navicent The Medical Center",
           "source_url": "https://www.macon.com/news/business/article258547393.html"
         },
         {
-          "name": "Blue Bird Body Co",
+          "name": "Coliseum Health Systems",
           "source_url": "https://www.macon.com/news/business/article258547393.html"
         },
         {
@@ -4095,40 +4103,24 @@
           "source_url": "https://www.macon.com/news/business/article258547393.html"
         },
         {
-          "name": "Pratt Industries",
-          "source_url": "https://www.macon.com/news/business/article279055784.html"
-        },
-        {
-          "name": "Professional Schools",
-          "source_url": "https://www.metroatlantachamber.com/wp-content/uploads/2023/08/Top-Employer-Final.pdf"
-        },
-        {
-          "name": "New Manufacturing",
-          "source_url": "https://www.selectgeorgia.com/georgiagrowth"
-        },
-        {
-          "name": "Coliseum Health Systems",
-          "source_url": "https://www.macon.com/news/business/article258547393.html"
-        },
-        {
-          "name": "Mercer University",
-          "source_url": "https://www.macon.com/news/business/article258547393.html"
+          "name": "Medical Center of Central Georgia",
+          "source_url": "https://en.wikipedia.org/wiki/Central_Georgia"
         },
         {
           "name": "Perdue Foods",
           "source_url": "https://www.macon.com/news/business/article258547393.html"
         },
         {
-          "name": "Robins Industrial Park",
-          "source_url": "https://www.macon.com/news/business/article279055784.html"
+          "name": "Blue Bird Body Co",
+          "source_url": "https://www.macon.com/news/business/article258547393.html"
         },
         {
           "name": "Blue Bird Corp",
           "source_url": "https://en.wikipedia.org/wiki/Central_Georgia"
         },
         {
-          "name": "Central Georgia Technical College",
-          "source_url": "https://houstoncountyga.net/industries/top-employers"
+          "name": "Mercer University",
+          "source_url": "https://www.macon.com/news/business/article258547393.html"
         },
         {
           "name": "Chief Manufacturing",
@@ -4137,17 +4129,25 @@
         {
           "name": "Criterion Technologies",
           "source_url": "https://en.wikipedia.org/wiki/Central_Georgia"
+        },
+        {
+          "name": "Primary Industries",
+          "source_url": "https://www.macon.com/news/business/article258547393.html"
+        },
+        {
+          "name": "Solutions Pest",
+          "source_url": "https://en.wikipedia.org/wiki/Central_Georgia"
         }
       ],
       "sources": [
         "https://www.macon.com/news/business/article258547393.html",
-        "https://houstoncountyga.net/industries/top-employers",
         "https://en.wikipedia.org/wiki/Central_Georgia",
-        "https://www.metroatlantachamber.com/wp-content/uploads/2023/08/Top-Employer-Final.pdf",
-        "https://metroatlantachamber.com/wp-content/uploads/2025/03/2025-Top-Employers-Survey.pdf",
-        "https://www.macon.com/news/local/community/houston-peach/article315207803.html",
+        "https://en.wikipedia.org/wiki/Robins_Air_Force_Base",
+        "https://www.macon.com/news/business/article279055784.html",
+        "https://www.macon.com/news/local/military/article214843570.html",
         "https://www.macon.com/news/local/community/houston-peach/article248306705.html",
-        "https://www.macon.com/news/local/military/article214843570.html"
+        "https://www.macon.com/news/local/community/houston-peach/the-sun-news/article123960724.html",
+        "https://georgia.org/sites/default/files/2021-02/fy21_q2_board_book.pdf"
       ],
       "method": "Representative list auto-discovered via Tavily web search across chamber-of-commerce, development-authority and local-news sources. Not exhaustive; ordering approximates source frequency, not headcount."
     },

@@ -1,5 +1,5 @@
 {
- "fetched_at": "2026-06-02T12:14:26Z",
+ "fetched_at": "2026-06-02T12:32:18Z",
  "schema": "housing/v1",
  "metros": [
   {
@@ -4551,22 +4551,2497 @@
    "valuation_pct": 1.3
   }
  ],
+ "ga_hpi": {
+  "series_id": "GASTHPI",
+  "us_series_id": "USSTHPI",
+  "index_type": "all-transactions",
+  "quarters": [
+   "2014-Q1",
+   "2014-Q2",
+   "2014-Q3",
+   "2014-Q4",
+   "2015-Q1",
+   "2015-Q2",
+   "2015-Q3",
+   "2015-Q4",
+   "2016-Q1",
+   "2016-Q2",
+   "2016-Q3",
+   "2016-Q4",
+   "2017-Q1",
+   "2017-Q2",
+   "2017-Q3",
+   "2017-Q4",
+   "2018-Q1",
+   "2018-Q2",
+   "2018-Q3",
+   "2018-Q4",
+   "2019-Q1",
+   "2019-Q2",
+   "2019-Q3",
+   "2019-Q4",
+   "2020-Q1",
+   "2020-Q2",
+   "2020-Q3",
+   "2020-Q4",
+   "2021-Q1",
+   "2021-Q2",
+   "2021-Q3",
+   "2021-Q4",
+   "2022-Q1",
+   "2022-Q2",
+   "2022-Q3",
+   "2022-Q4",
+   "2023-Q1",
+   "2023-Q2",
+   "2023-Q3",
+   "2023-Q4",
+   "2024-Q1",
+   "2024-Q2",
+   "2024-Q3",
+   "2024-Q4",
+   "2025-Q1",
+   "2025-Q2",
+   "2025-Q3",
+   "2025-Q4",
+   "2026-Q1"
+  ],
+  "values": [
+   270.05,
+   276.72,
+   281.88,
+   283.94,
+   288.1,
+   294.99,
+   298.59,
+   301.14,
+   303.89,
+   312.14,
+   318.14,
+   320.78,
+   322.79,
+   331.44,
+   336.41,
+   339.82,
+   347.48,
+   355.64,
+   361.62,
+   363.68,
+   369.01,
+   376.6,
+   382.01,
+   385.83,
+   391.77,
+   395.91,
+   403.7,
+   412.1,
+   424.33,
+   448.73,
+   475.64,
+   499.79,
+   524.49,
+   560.64,
+   576.7,
+   576.5,
+   581.69,
+   597.54,
+   607.71,
+   609.97,
+   619.07,
+   630.28,
+   637.49,
+   639.47,
+   646.26,
+   651.0,
+   655.21,
+   658.47,
+   662.12
+  ],
+  "us_values": [
+   330.93,
+   337.35,
+   342.2,
+   344.98,
+   348.79,
+   354.43,
+   359.45,
+   362.31,
+   365.66,
+   372.47,
+   379.12,
+   382.04,
+   384.73,
+   393.32,
+   399.38,
+   402.68,
+   408.32,
+   415.81,
+   420.9,
+   422.31,
+   427.06,
+   434.2,
+   439.75,
+   443.65,
+   448.8,
+   453.33,
+   461.34,
+   471.44,
+   482.86,
+   509.67,
+   538.02,
+   556.37,
+   576.63,
+   613.81,
+   623.29,
+   616.71,
+   620.31,
+   638.5,
+   649.07,
+   649.37,
+   658.64,
+   674.27,
+   681.12,
+   684.87,
+   689.94,
+   700.24,
+   704.26,
+   708.31,
+   713.09
+  ],
+  "yoy_pct": [
+   null,
+   null,
+   null,
+   null,
+   6.68,
+   6.6,
+   5.93,
+   6.06,
+   5.48,
+   5.81,
+   6.55,
+   6.52,
+   6.22,
+   6.18,
+   5.74,
+   5.94,
+   7.65,
+   7.3,
+   7.49,
+   7.02,
+   6.2,
+   5.89,
+   5.64,
+   6.09,
+   6.17,
+   5.13,
+   5.68,
+   6.81,
+   8.31,
+   13.34,
+   17.82,
+   21.28,
+   23.6,
+   24.94,
+   21.25,
+   15.35,
+   10.91,
+   6.58,
+   5.38,
+   5.81,
+   6.43,
+   5.48,
+   4.9,
+   4.84,
+   4.39,
+   3.29,
+   2.78,
+   2.97,
+   2.45
+  ],
+  "latest_quarter": "2026-Q1",
+  "latest_value": 662.12,
+  "latest_yoy": 2.45,
+  "source": "FHFA House Price Index (all-transactions), GA + US, via FRED"
+ },
+ "county_acs": {
+  "year": 2024,
+  "vintage_window": "2020-2024",
+  "variables": [
+   "median_home_value",
+   "median_gross_rent",
+   "median_household_income",
+   "occupied_units",
+   "owner_occupied",
+   "population"
+  ],
+  "counties": {
+   "13001": {
+    "median_home_value": 76700.0,
+    "median_gross_rent": 739.0,
+    "median_household_income": 46651.0,
+    "occupied_units": 7178.0,
+    "owner_occupied": 5205.0,
+    "population": 18493.0,
+    "pct_owner_occupied": 72.5,
+    "name": "Appling"
+   },
+   "13003": {
+    "median_home_value": 79000.0,
+    "median_gross_rent": 657.0,
+    "median_household_income": 42347.0,
+    "occupied_units": 3222.0,
+    "owner_occupied": 1994.0,
+    "population": 8337.0,
+    "pct_owner_occupied": 61.9,
+    "name": "Atkinson"
+   },
+   "13005": {
+    "median_home_value": 101400.0,
+    "median_gross_rent": 743.0,
+    "median_household_income": 44694.0,
+    "occupied_units": 4204.0,
+    "owner_occupied": 2886.0,
+    "population": 11109.0,
+    "pct_owner_occupied": 68.6,
+    "name": "Bacon"
+   },
+   "13007": {
+    "median_home_value": 119500.0,
+    "median_gross_rent": 631.0,
+    "median_household_income": 46012.0,
+    "occupied_units": 1108.0,
+    "owner_occupied": 850.0,
+    "population": 2790.0,
+    "pct_owner_occupied": 76.7,
+    "name": "Baker"
+   },
+   "13009": {
+    "median_home_value": 181900.0,
+    "median_gross_rent": 923.0,
+    "median_household_income": 54403.0,
+    "occupied_units": 16582.0,
+    "owner_occupied": 10125.0,
+    "population": 43642.0,
+    "pct_owner_occupied": 61.1,
+    "name": "Baldwin"
+   },
+   "13011": {
+    "median_home_value": 278100.0,
+    "median_gross_rent": 827.0,
+    "median_household_income": 77063.0,
+    "occupied_units": 6856.0,
+    "owner_occupied": 5397.0,
+    "population": 19264.0,
+    "pct_owner_occupied": 78.7,
+    "name": "Banks"
+   },
+   "13013": {
+    "median_home_value": 294700.0,
+    "median_gross_rent": 1318.0,
+    "median_household_income": 80653.0,
+    "occupied_units": 30789.0,
+    "owner_occupied": 24170.0,
+    "population": 89886.0,
+    "pct_owner_occupied": 78.5,
+    "name": "Barrow"
+   },
+   "13015": {
+    "median_home_value": 289000.0,
+    "median_gross_rent": 1268.0,
+    "median_household_income": 82243.0,
+    "occupied_units": 40819.0,
+    "owner_occupied": 29735.0,
+    "population": 113113.0,
+    "pct_owner_occupied": 72.8,
+    "name": "Bartow"
+   },
+   "13017": {
+    "median_home_value": 112700.0,
+    "median_gross_rent": 688.0,
+    "median_household_income": 41758.0,
+    "occupied_units": 7082.0,
+    "owner_occupied": 4481.0,
+    "population": 17089.0,
+    "pct_owner_occupied": 63.3,
+    "name": "Ben Hill"
+   },
+   "13019": {
+    "median_home_value": 131600.0,
+    "median_gross_rent": 782.0,
+    "median_household_income": 52876.0,
+    "occupied_units": 7045.0,
+    "owner_occupied": 4999.0,
+    "population": 18352.0,
+    "pct_owner_occupied": 71.0,
+    "name": "Berrien"
+   },
+   "13021": {
+    "median_home_value": 174500.0,
+    "median_gross_rent": 1066.0,
+    "median_household_income": 51234.0,
+    "occupied_units": 59921.0,
+    "owner_occupied": 30802.0,
+    "population": 156578.0,
+    "pct_owner_occupied": 51.4,
+    "name": "Bibb"
+   },
+   "13023": {
+    "median_home_value": 149600.0,
+    "median_gross_rent": 799.0,
+    "median_household_income": 62008.0,
+    "occupied_units": 4465.0,
+    "owner_occupied": 3257.0,
+    "population": 12430.0,
+    "pct_owner_occupied": 72.9,
+    "name": "Bleckley"
+   },
+   "13025": {
+    "median_home_value": 99600.0,
+    "median_gross_rent": 755.0,
+    "median_household_income": 58239.0,
+    "occupied_units": 6599.0,
+    "owner_occupied": 5272.0,
+    "population": 18315.0,
+    "pct_owner_occupied": 79.9,
+    "name": "Brantley"
+   },
+   "13027": {
+    "median_home_value": 139200.0,
+    "median_gross_rent": 809.0,
+    "median_household_income": 46807.0,
+    "occupied_units": 6052.0,
+    "owner_occupied": 4340.0,
+    "population": 16293.0,
+    "pct_owner_occupied": 71.7,
+    "name": "Brooks"
+   },
+   "13029": {
+    "median_home_value": 343200.0,
+    "median_gross_rent": 1618.0,
+    "median_household_income": 103408.0,
+    "occupied_units": 16603.0,
+    "owner_occupied": 12904.0,
+    "population": 48263.0,
+    "pct_owner_occupied": 77.7,
+    "name": "Bryan"
+   },
+   "13031": {
+    "median_home_value": 222500.0,
+    "median_gross_rent": 995.0,
+    "median_household_income": 58810.0,
+    "occupied_units": 30856.0,
+    "owner_occupied": 16389.0,
+    "population": 82683.0,
+    "pct_owner_occupied": 53.1,
+    "name": "Bulloch"
+   },
+   "13033": {
+    "median_home_value": 151600.0,
+    "median_gross_rent": 758.0,
+    "median_household_income": 53014.0,
+    "occupied_units": 9184.0,
+    "owner_occupied": 6429.0,
+    "population": 24470.0,
+    "pct_owner_occupied": 70.0,
+    "name": "Burke"
+   },
+   "13035": {
+    "median_home_value": 240600.0,
+    "median_gross_rent": 941.0,
+    "median_household_income": 69241.0,
+    "occupied_units": 8941.0,
+    "owner_occupied": 6642.0,
+    "population": 26496.0,
+    "pct_owner_occupied": 74.3,
+    "name": "Butts"
+   },
+   "13037": {
+    "median_home_value": 81000.0,
+    "median_gross_rent": 546.0,
+    "median_household_income": 46940.0,
+    "occupied_units": 1593.0,
+    "owner_occupied": 947.0,
+    "population": 5498.0,
+    "pct_owner_occupied": 59.4,
+    "name": "Calhoun"
+   },
+   "13039": {
+    "median_home_value": 261400.0,
+    "median_gross_rent": 1235.0,
+    "median_household_income": 74378.0,
+    "occupied_units": 21693.0,
+    "owner_occupied": 14706.0,
+    "population": 56970.0,
+    "pct_owner_occupied": 67.8,
+    "name": "Camden"
+   },
+   "13043": {
+    "median_home_value": 159200.0,
+    "median_gross_rent": 715.0,
+    "median_household_income": 49581.0,
+    "occupied_units": 4152.0,
+    "owner_occupied": 2576.0,
+    "population": 11043.0,
+    "pct_owner_occupied": 62.0,
+    "name": "Candler"
+   },
+   "13045": {
+    "median_home_value": 255100.0,
+    "median_gross_rent": 1153.0,
+    "median_household_income": 73714.0,
+    "occupied_units": 44106.0,
+    "owner_occupied": 31438.0,
+    "population": 124569.0,
+    "pct_owner_occupied": 71.3,
+    "name": "Carroll"
+   },
+   "13047": {
+    "median_home_value": 240900.0,
+    "median_gross_rent": 993.0,
+    "median_household_income": 74639.0,
+    "occupied_units": 26653.0,
+    "owner_occupied": 19789.0,
+    "population": 68634.0,
+    "pct_owner_occupied": 74.2,
+    "name": "Catoosa"
+   },
+   "13049": {
+    "median_home_value": 142800.0,
+    "median_gross_rent": 540.0,
+    "median_household_income": 61276.0,
+    "occupied_units": 4215.0,
+    "owner_occupied": 3378.0,
+    "population": 12818.0,
+    "pct_owner_occupied": 80.1,
+    "name": "Charlton"
+   },
+   "13051": {
+    "median_home_value": 302700.0,
+    "median_gross_rent": 1471.0,
+    "median_household_income": 71097.0,
+    "occupied_units": 120383.0,
+    "owner_occupied": 68319.0,
+    "population": 300879.0,
+    "pct_owner_occupied": 56.8,
+    "name": "Chatham"
+   },
+   "13053": {
+    "median_home_value": 102700.0,
+    "median_gross_rent": 1348.0,
+    "median_household_income": 61042.0,
+    "occupied_units": 1866.0,
+    "owner_occupied": 733.0,
+    "population": 8887.0,
+    "pct_owner_occupied": 39.3,
+    "name": "Chattahoochee"
+   },
+   "13055": {
+    "median_home_value": 115600.0,
+    "median_gross_rent": 790.0,
+    "median_household_income": 50285.0,
+    "occupied_units": 9154.0,
+    "owner_occupied": 6114.0,
+    "population": 25036.0,
+    "pct_owner_occupied": 66.8,
+    "name": "Chattooga"
+   },
+   "13057": {
+    "median_home_value": 435100.0,
+    "median_gross_rent": 1799.0,
+    "median_household_income": 108115.0,
+    "occupied_units": 101514.0,
+    "owner_occupied": 78464.0,
+    "population": 281032.0,
+    "pct_owner_occupied": 77.3,
+    "name": "Cherokee"
+   },
+   "13059": {
+    "median_home_value": 298900.0,
+    "median_gross_rent": 1219.0,
+    "median_household_income": 53625.0,
+    "occupied_units": 54454.0,
+    "owner_occupied": 22563.0,
+    "population": 129609.0,
+    "pct_owner_occupied": 41.4,
+    "name": "Clarke"
+   },
+   "13061": {
+    "median_home_value": 94400.0,
+    "median_gross_rent": 536.0,
+    "median_household_income": 49147.0,
+    "occupied_units": 1231.0,
+    "owner_occupied": 964.0,
+    "population": 2850.0,
+    "pct_owner_occupied": 78.3,
+    "name": "Clay"
+   },
+   "13063": {
+    "median_home_value": 222300.0,
+    "median_gross_rent": 1433.0,
+    "median_household_income": 59806.0,
+    "occupied_units": 105941.0,
+    "owner_occupied": 57782.0,
+    "population": 298924.0,
+    "pct_owner_occupied": 54.5,
+    "name": "Clayton"
+   },
+   "13065": {
+    "median_home_value": 84400.0,
+    "median_gross_rent": 509.0,
+    "median_household_income": 45847.0,
+    "occupied_units": 2428.0,
+    "owner_occupied": 1720.0,
+    "population": 6759.0,
+    "pct_owner_occupied": 70.8,
+    "name": "Clinch"
+   },
+   "13067": {
+    "median_home_value": 407200.0,
+    "median_gross_rent": 1730.0,
+    "median_household_income": 102738.0,
+    "occupied_units": 295714.0,
+    "owner_occupied": 198190.0,
+    "population": 775208.0,
+    "pct_owner_occupied": 67.0,
+    "name": "Cobb"
+   },
+   "13069": {
+    "median_home_value": 128900.0,
+    "median_gross_rent": 710.0,
+    "median_household_income": 50683.0,
+    "occupied_units": 15349.0,
+    "owner_occupied": 9925.0,
+    "population": 43347.0,
+    "pct_owner_occupied": 64.7,
+    "name": "Coffee"
+   },
+   "13071": {
+    "median_home_value": 121400.0,
+    "median_gross_rent": 818.0,
+    "median_household_income": 49341.0,
+    "occupied_units": 16803.0,
+    "owner_occupied": 10708.0,
+    "population": 46224.0,
+    "pct_owner_occupied": 63.7,
+    "name": "Colquitt"
+   },
+   "13073": {
+    "median_home_value": 305300.0,
+    "median_gross_rent": 1409.0,
+    "median_household_income": 95592.0,
+    "occupied_units": 55149.0,
+    "owner_occupied": 43093.0,
+    "population": 162434.0,
+    "pct_owner_occupied": 78.1,
+    "name": "Columbia"
+   },
+   "13075": {
+    "median_home_value": 157500.0,
+    "median_gross_rent": 956.0,
+    "median_household_income": 53651.0,
+    "occupied_units": 6304.0,
+    "owner_occupied": 4162.0,
+    "population": 17532.0,
+    "pct_owner_occupied": 66.0,
+    "name": "Cook"
+   },
+   "13077": {
+    "median_home_value": 357500.0,
+    "median_gross_rent": 1488.0,
+    "median_household_income": 95548.0,
+    "occupied_units": 56275.0,
+    "owner_occupied": 44124.0,
+    "population": 152852.0,
+    "pct_owner_occupied": 78.4,
+    "name": "Coweta"
+   },
+   "13079": {
+    "median_home_value": 164100.0,
+    "median_gross_rent": 914.0,
+    "median_household_income": 67116.0,
+    "occupied_units": 4441.0,
+    "owner_occupied": 3614.0,
+    "population": 12225.0,
+    "pct_owner_occupied": 81.4,
+    "name": "Crawford"
+   },
+   "13081": {
+    "median_home_value": 140200.0,
+    "median_gross_rent": 778.0,
+    "median_household_income": 45105.0,
+    "occupied_units": 7908.0,
+    "owner_occupied": 4389.0,
+    "population": 19790.0,
+    "pct_owner_occupied": 55.5,
+    "name": "Crisp"
+   },
+   "13083": {
+    "median_home_value": 198500.0,
+    "median_gross_rent": 829.0,
+    "median_household_income": 64568.0,
+    "occupied_units": 6083.0,
+    "owner_occupied": 4864.0,
+    "population": 16165.0,
+    "pct_owner_occupied": 80.0,
+    "name": "Dade"
+   },
+   "13085": {
+    "median_home_value": 406700.0,
+    "median_gross_rent": 1626.0,
+    "median_household_income": 92991.0,
+    "occupied_units": 11573.0,
+    "owner_occupied": 9103.0,
+    "population": 30242.0,
+    "pct_owner_occupied": 78.7,
+    "name": "Dawson"
+   },
+   "13087": {
+    "median_home_value": 158800.0,
+    "median_gross_rent": 838.0,
+    "median_household_income": 53317.0,
+    "occupied_units": 10621.0,
+    "owner_occupied": 6598.0,
+    "population": 29195.0,
+    "pct_owner_occupied": 62.1,
+    "name": "Decatur"
+   },
+   "13089": {
+    "median_home_value": 357800.0,
+    "median_gross_rent": 1692.0,
+    "median_household_income": 80644.0,
+    "occupied_units": 287239.0,
+    "owner_occupied": 168868.0,
+    "population": 765351.0,
+    "pct_owner_occupied": 58.8,
+    "name": "DeKalb"
+   },
+   "13091": {
+    "median_home_value": 118100.0,
+    "median_gross_rent": 723.0,
+    "median_household_income": 51587.0,
+    "occupied_units": 6881.0,
+    "owner_occupied": 4855.0,
+    "population": 19805.0,
+    "pct_owner_occupied": 70.6,
+    "name": "Dodge"
+   },
+   "13093": {
+    "median_home_value": 107400.0,
+    "median_gross_rent": 758.0,
+    "median_household_income": 60987.0,
+    "occupied_units": 4031.0,
+    "owner_occupied": 2608.0,
+    "population": 10984.0,
+    "pct_owner_occupied": 64.7,
+    "name": "Dooly"
+   },
+   "13095": {
+    "median_home_value": 134400.0,
+    "median_gross_rent": 935.0,
+    "median_household_income": 49044.0,
+    "occupied_units": 34280.0,
+    "owner_occupied": 15538.0,
+    "population": 83091.0,
+    "pct_owner_occupied": 45.3,
+    "name": "Dougherty"
+   },
+   "13097": {
+    "median_home_value": 296900.0,
+    "median_gross_rent": 1570.0,
+    "median_household_income": 82984.0,
+    "occupied_units": 52079.0,
+    "owner_occupied": 34849.0,
+    "population": 147888.0,
+    "pct_owner_occupied": 66.9,
+    "name": "Douglas"
+   },
+   "13099": {
+    "median_home_value": 131300.0,
+    "median_gross_rent": 791.0,
+    "median_household_income": 54083.0,
+    "occupied_units": 4114.0,
+    "owner_occupied": 2741.0,
+    "population": 10603.0,
+    "pct_owner_occupied": 66.6,
+    "name": "Early"
+   },
+   "13101": {
+    "median_home_value": 124100.0,
+    "median_gross_rent": 1017.0,
+    "median_household_income": 59489.0,
+    "occupied_units": 1145.0,
+    "owner_occupied": 869.0,
+    "population": 3709.0,
+    "pct_owner_occupied": 75.9,
+    "name": "Echols"
+   },
+   "13103": {
+    "median_home_value": 276000.0,
+    "median_gross_rent": 1147.0,
+    "median_household_income": 88438.0,
+    "occupied_units": 24287.0,
+    "owner_occupied": 19030.0,
+    "population": 69143.0,
+    "pct_owner_occupied": 78.4,
+    "name": "Effingham"
+   },
+   "13105": {
+    "median_home_value": 142000.0,
+    "median_gross_rent": 844.0,
+    "median_household_income": 58450.0,
+    "occupied_units": 8376.0,
+    "owner_occupied": 5941.0,
+    "population": 19849.0,
+    "pct_owner_occupied": 70.9,
+    "name": "Elbert"
+   },
+   "13107": {
+    "median_home_value": 94700.0,
+    "median_gross_rent": 783.0,
+    "median_household_income": 52772.0,
+    "occupied_units": 8312.0,
+    "owner_occupied": 5052.0,
+    "population": 23026.0,
+    "pct_owner_occupied": 60.8,
+    "name": "Emanuel"
+   },
+   "13109": {
+    "median_home_value": 138200.0,
+    "median_gross_rent": 719.0,
+    "median_household_income": 53259.0,
+    "occupied_units": 4077.0,
+    "owner_occupied": 2666.0,
+    "population": 10757.0,
+    "pct_owner_occupied": 65.4,
+    "name": "Evans"
+   },
+   "13111": {
+    "median_home_value": 306600.0,
+    "median_gross_rent": 900.0,
+    "median_household_income": 57073.0,
+    "occupied_units": 11890.0,
+    "owner_occupied": 9342.0,
+    "population": 25742.0,
+    "pct_owner_occupied": 78.6,
+    "name": "Fannin"
+   },
+   "13113": {
+    "median_home_value": 436400.0,
+    "median_gross_rent": 1898.0,
+    "median_household_income": 111978.0,
+    "occupied_units": 44581.0,
+    "owner_occupied": 35714.0,
+    "population": 122244.0,
+    "pct_owner_occupied": 80.1,
+    "name": "Fayette"
+   },
+   "13115": {
+    "median_home_value": 217900.0,
+    "median_gross_rent": 1014.0,
+    "median_household_income": 65565.0,
+    "occupied_units": 36856.0,
+    "owner_occupied": 23434.0,
+    "population": 99693.0,
+    "pct_owner_occupied": 63.6,
+    "name": "Floyd"
+   },
+   "13117": {
+    "median_home_value": 550400.0,
+    "median_gross_rent": 2090.0,
+    "median_household_income": 143784.0,
+    "occupied_units": 89030.0,
+    "owner_occupied": 75167.0,
+    "population": 267287.0,
+    "pct_owner_occupied": 84.4,
+    "name": "Forsyth"
+   },
+   "13119": {
+    "median_home_value": 179000.0,
+    "median_gross_rent": 844.0,
+    "median_household_income": 53046.0,
+    "occupied_units": 8994.0,
+    "owner_occupied": 6939.0,
+    "population": 24234.0,
+    "pct_owner_occupied": 77.2,
+    "name": "Franklin"
+   },
+   "13121": {
+    "median_home_value": 458800.0,
+    "median_gross_rent": 1732.0,
+    "median_household_income": 95292.0,
+    "occupied_units": 462481.0,
+    "owner_occupied": 251193.0,
+    "population": 1076561.0,
+    "pct_owner_occupied": 54.3,
+    "name": "Fulton"
+   },
+   "13123": {
+    "median_home_value": 314000.0,
+    "median_gross_rent": 998.0,
+    "median_household_income": 74499.0,
+    "occupied_units": 13015.0,
+    "owner_occupied": 10506.0,
+    "population": 32426.0,
+    "pct_owner_occupied": 80.7,
+    "name": "Gilmer"
+   },
+   "13125": {
+    "median_home_value": 123800.0,
+    "median_gross_rent": 642.0,
+    "median_household_income": 54934.0,
+    "occupied_units": 1036.0,
+    "owner_occupied": 700.0,
+    "population": 2932.0,
+    "pct_owner_occupied": 67.6,
+    "name": "Glascock"
+   },
+   "13127": {
+    "median_home_value": 301300.0,
+    "median_gross_rent": 1135.0,
+    "median_household_income": 69799.0,
+    "occupied_units": 35543.0,
+    "owner_occupied": 23695.0,
+    "population": 85447.0,
+    "pct_owner_occupied": 66.7,
+    "name": "Glynn"
+   },
+   "13129": {
+    "median_home_value": 222900.0,
+    "median_gross_rent": 937.0,
+    "median_household_income": 63650.0,
+    "occupied_units": 21348.0,
+    "owner_occupied": 15776.0,
+    "population": 59100.0,
+    "pct_owner_occupied": 73.9,
+    "name": "Gordon"
+   },
+   "13131": {
+    "median_home_value": 152400.0,
+    "median_gross_rent": 779.0,
+    "median_household_income": 58980.0,
+    "occupied_units": 10108.0,
+    "owner_occupied": 6682.0,
+    "population": 26108.0,
+    "pct_owner_occupied": 66.1,
+    "name": "Grady"
+   },
+   "13133": {
+    "median_home_value": 394800.0,
+    "median_gross_rent": 924.0,
+    "median_household_income": 86272.0,
+    "occupied_units": 8198.0,
+    "owner_occupied": 6390.0,
+    "population": 20109.0,
+    "pct_owner_occupied": 77.9,
+    "name": "Greene"
+   },
+   "13135": {
+    "median_home_value": 380900.0,
+    "median_gross_rent": 1810.0,
+    "median_household_income": 87890.0,
+    "occupied_units": 327043.0,
+    "owner_occupied": 216729.0,
+    "population": 979864.0,
+    "pct_owner_occupied": 66.3,
+    "name": "Gwinnett"
+   },
+   "13137": {
+    "median_home_value": 238300.0,
+    "median_gross_rent": 974.0,
+    "median_household_income": 67309.0,
+    "occupied_units": 16753.0,
+    "owner_occupied": 12197.0,
+    "population": 47793.0,
+    "pct_owner_occupied": 72.8,
+    "name": "Habersham"
+   },
+   "13139": {
+    "median_home_value": 350400.0,
+    "median_gross_rent": 1341.0,
+    "median_household_income": 80901.0,
+    "occupied_units": 73551.0,
+    "owner_occupied": 50421.0,
+    "population": 212705.0,
+    "pct_owner_occupied": 68.6,
+    "name": "Hall"
+   },
+   "13141": {
+    "median_home_value": 88600.0,
+    "median_gross_rent": 938.0,
+    "median_household_income": 40082.0,
+    "occupied_units": 2922.0,
+    "owner_occupied": 2316.0,
+    "population": 8650.0,
+    "pct_owner_occupied": 79.3,
+    "name": "Hancock"
+   },
+   "13143": {
+    "median_home_value": 227500.0,
+    "median_gross_rent": 923.0,
+    "median_household_income": 72127.0,
+    "occupied_units": 11747.0,
+    "owner_occupied": 8412.0,
+    "population": 31285.0,
+    "pct_owner_occupied": 71.6,
+    "name": "Haralson"
+   },
+   "13145": {
+    "median_home_value": 302800.0,
+    "median_gross_rent": 1048.0,
+    "median_household_income": 97302.0,
+    "occupied_units": 13027.0,
+    "owner_occupied": 11571.0,
+    "population": 36086.0,
+    "pct_owner_occupied": 88.8,
+    "name": "Harris"
+   },
+   "13147": {
+    "median_home_value": 215100.0,
+    "median_gross_rent": 844.0,
+    "median_household_income": 59385.0,
+    "occupied_units": 11034.0,
+    "owner_occupied": 8581.0,
+    "population": 26939.0,
+    "pct_owner_occupied": 77.8,
+    "name": "Hart"
+   },
+   "13149": {
+    "median_home_value": 186800.0,
+    "median_gross_rent": 917.0,
+    "median_household_income": 65868.0,
+    "occupied_units": 4309.0,
+    "owner_occupied": 3115.0,
+    "population": 11773.0,
+    "pct_owner_occupied": 72.3,
+    "name": "Heard"
+   },
+   "13151": {
+    "median_home_value": 313900.0,
+    "median_gross_rent": 1674.0,
+    "median_household_income": 83146.0,
+    "occupied_units": 86704.0,
+    "owner_occupied": 64904.0,
+    "population": 249960.0,
+    "pct_owner_occupied": 74.9,
+    "name": "Henry"
+   },
+   "13153": {
+    "median_home_value": 219800.0,
+    "median_gross_rent": 1208.0,
+    "median_household_income": 80698.0,
+    "occupied_units": 63851.0,
+    "owner_occupied": 42738.0,
+    "population": 169649.0,
+    "pct_owner_occupied": 66.9,
+    "name": "Houston"
+   },
+   "13155": {
+    "median_home_value": 105600.0,
+    "median_gross_rent": 865.0,
+    "median_household_income": 51384.0,
+    "occupied_units": 3589.0,
+    "owner_occupied": 2528.0,
+    "population": 9285.0,
+    "pct_owner_occupied": 70.4,
+    "name": "Irwin"
+   },
+   "13157": {
+    "median_home_value": 345000.0,
+    "median_gross_rent": 1126.0,
+    "median_household_income": 89544.0,
+    "occupied_units": 28402.0,
+    "owner_occupied": 22532.0,
+    "population": 84757.0,
+    "pct_owner_occupied": 79.3,
+    "name": "Jackson"
+   },
+   "13159": {
+    "median_home_value": 243400.0,
+    "median_gross_rent": 970.0,
+    "median_household_income": 60134.0,
+    "occupied_units": 5965.0,
+    "owner_occupied": 5106.0,
+    "population": 15929.0,
+    "pct_owner_occupied": 85.6,
+    "name": "Jasper"
+   },
+   "13161": {
+    "median_home_value": 118300.0,
+    "median_gross_rent": 650.0,
+    "median_household_income": 40283.0,
+    "occupied_units": 5484.0,
+    "owner_occupied": 3911.0,
+    "population": 14924.0,
+    "pct_owner_occupied": 71.3,
+    "name": "Jeff Davis"
+   },
+   "13163": {
+    "median_home_value": 105400.0,
+    "median_gross_rent": 731.0,
+    "median_household_income": 53014.0,
+    "occupied_units": 5751.0,
+    "owner_occupied": 3919.0,
+    "population": 15341.0,
+    "pct_owner_occupied": 68.1,
+    "name": "Jefferson"
+   },
+   "13165": {
+    "median_home_value": 92900.0,
+    "median_gross_rent": 535.0,
+    "median_household_income": 44389.0,
+    "occupied_units": 3216.0,
+    "owner_occupied": 2645.0,
+    "population": 8711.0,
+    "pct_owner_occupied": 82.2,
+    "name": "Jenkins"
+   },
+   "13167": {
+    "median_home_value": 94900.0,
+    "median_gross_rent": 647.0,
+    "median_household_income": 51028.0,
+    "occupied_units": 3217.0,
+    "owner_occupied": 2443.0,
+    "population": 9190.0,
+    "pct_owner_occupied": 75.9,
+    "name": "Johnson"
+   },
+   "13169": {
+    "median_home_value": 194500.0,
+    "median_gross_rent": 964.0,
+    "median_household_income": 75500.0,
+    "occupied_units": 10786.0,
+    "owner_occupied": 9013.0,
+    "population": 28673.0,
+    "pct_owner_occupied": 83.6,
+    "name": "Jones"
+   },
+   "13171": {
+    "median_home_value": 216500.0,
+    "median_gross_rent": 878.0,
+    "median_household_income": 67062.0,
+    "occupied_units": 7133.0,
+    "owner_occupied": 5397.0,
+    "population": 19571.0,
+    "pct_owner_occupied": 75.7,
+    "name": "Lamar"
+   },
+   "13173": {
+    "median_home_value": 162300.0,
+    "median_gross_rent": 913.0,
+    "median_household_income": 47186.0,
+    "occupied_units": 3483.0,
+    "owner_occupied": 2550.0,
+    "population": 10221.0,
+    "pct_owner_occupied": 73.2,
+    "name": "Lanier"
+   },
+   "13175": {
+    "median_home_value": 154500.0,
+    "median_gross_rent": 863.0,
+    "median_household_income": 55010.0,
+    "occupied_units": 18592.0,
+    "owner_occupied": 11949.0,
+    "population": 49798.0,
+    "pct_owner_occupied": 64.3,
+    "name": "Laurens"
+   },
+   "13177": {
+    "median_home_value": 231800.0,
+    "median_gross_rent": 1184.0,
+    "median_household_income": 89168.0,
+    "occupied_units": 12287.0,
+    "owner_occupied": 9112.0,
+    "population": 33626.0,
+    "pct_owner_occupied": 74.2,
+    "name": "Lee"
+   },
+   "13179": {
+    "median_home_value": 201500.0,
+    "median_gross_rent": 1246.0,
+    "median_household_income": 60456.0,
+    "occupied_units": 23998.0,
+    "owner_occupied": 12206.0,
+    "population": 67397.0,
+    "pct_owner_occupied": 50.9,
+    "name": "Liberty"
+   },
+   "13181": {
+    "median_home_value": 165900.0,
+    "median_gross_rent": 786.0,
+    "median_household_income": 56907.0,
+    "occupied_units": 2997.0,
+    "owner_occupied": 2295.0,
+    "population": 7854.0,
+    "pct_owner_occupied": 76.6,
+    "name": "Lincoln"
+   },
+   "13183": {
+    "median_home_value": 218300.0,
+    "median_gross_rent": 976.0,
+    "median_household_income": 68808.0,
+    "occupied_units": 6162.0,
+    "owner_occupied": 4017.0,
+    "population": 18374.0,
+    "pct_owner_occupied": 65.2,
+    "name": "Long"
+   },
+   "13185": {
+    "median_home_value": 215600.0,
+    "median_gross_rent": 1052.0,
+    "median_household_income": 58541.0,
+    "occupied_units": 46106.0,
+    "owner_occupied": 26222.0,
+    "population": 119965.0,
+    "pct_owner_occupied": 56.9,
+    "name": "Lowndes"
+   },
+   "13187": {
+    "median_home_value": 307900.0,
+    "median_gross_rent": 1142.0,
+    "median_household_income": 77448.0,
+    "occupied_units": 11669.0,
+    "owner_occupied": 8908.0,
+    "population": 34505.0,
+    "pct_owner_occupied": 76.3,
+    "name": "Lumpkin"
+   },
+   "13189": {
+    "median_home_value": 170200.0,
+    "median_gross_rent": 792.0,
+    "median_household_income": 56733.0,
+    "occupied_units": 8149.0,
+    "owner_occupied": 5299.0,
+    "population": 21718.0,
+    "pct_owner_occupied": 65.0,
+    "name": "McDuffie"
+   },
+   "13191": {
+    "median_home_value": 182700.0,
+    "median_gross_rent": 800.0,
+    "median_household_income": 50273.0,
+    "occupied_units": 5067.0,
+    "owner_occupied": 4055.0,
+    "population": 11312.0,
+    "pct_owner_occupied": 80.0,
+    "name": "McIntosh"
+   },
+   "13193": {
+    "median_home_value": 97300.0,
+    "median_gross_rent": 655.0,
+    "median_household_income": 41031.0,
+    "occupied_units": 4142.0,
+    "owner_occupied": 2708.0,
+    "population": 11864.0,
+    "pct_owner_occupied": 65.4,
+    "name": "Macon"
+   },
+   "13195": {
+    "median_home_value": 219700.0,
+    "median_gross_rent": 972.0,
+    "median_household_income": 61963.0,
+    "occupied_units": 11242.0,
+    "owner_occupied": 8649.0,
+    "population": 31528.0,
+    "pct_owner_occupied": 76.9,
+    "name": "Madison"
+   },
+   "13197": {
+    "median_home_value": 154100.0,
+    "median_gross_rent": 710.0,
+    "median_household_income": 51667.0,
+    "occupied_units": 2966.0,
+    "owner_occupied": 2339.0,
+    "population": 7509.0,
+    "pct_owner_occupied": 78.9,
+    "name": "Marion"
+   },
+   "13199": {
+    "median_home_value": 168800.0,
+    "median_gross_rent": 920.0,
+    "median_household_income": 57340.0,
+    "occupied_units": 8391.0,
+    "owner_occupied": 6127.0,
+    "population": 20929.0,
+    "pct_owner_occupied": 73.0,
+    "name": "Meriwether"
+   },
+   "13201": {
+    "median_home_value": 124000.0,
+    "median_gross_rent": 810.0,
+    "median_household_income": 51425.0,
+    "occupied_units": 2573.0,
+    "owner_occupied": 1813.0,
+    "population": 5850.0,
+    "pct_owner_occupied": 70.5,
+    "name": "Miller"
+   },
+   "13205": {
+    "median_home_value": 106000.0,
+    "median_gross_rent": 797.0,
+    "median_household_income": 57613.0,
+    "occupied_units": 7813.0,
+    "owner_occupied": 5092.0,
+    "population": 21058.0,
+    "pct_owner_occupied": 65.2,
+    "name": "Mitchell"
+   },
+   "13207": {
+    "median_home_value": 271200.0,
+    "median_gross_rent": 943.0,
+    "median_household_income": 83183.0,
+    "occupied_units": 10554.0,
+    "owner_occupied": 8841.0,
+    "population": 29664.0,
+    "pct_owner_occupied": 83.8,
+    "name": "Monroe"
+   },
+   "13209": {
+    "median_home_value": 115500.0,
+    "median_gross_rent": 760.0,
+    "median_household_income": 51941.0,
+    "occupied_units": 3143.0,
+    "owner_occupied": 2395.0,
+    "population": 8640.0,
+    "pct_owner_occupied": 76.2,
+    "name": "Montgomery"
+   },
+   "13211": {
+    "median_home_value": 342300.0,
+    "median_gross_rent": 1108.0,
+    "median_household_income": 78111.0,
+    "occupied_units": 8120.0,
+    "owner_occupied": 6352.0,
+    "population": 21078.0,
+    "pct_owner_occupied": 78.2,
+    "name": "Morgan"
+   },
+   "13213": {
+    "median_home_value": 180700.0,
+    "median_gross_rent": 857.0,
+    "median_household_income": 69253.0,
+    "occupied_units": 15246.0,
+    "owner_occupied": 11256.0,
+    "population": 40562.0,
+    "pct_owner_occupied": 73.8,
+    "name": "Murray"
+   },
+   "13215": {
+    "median_home_value": 193900.0,
+    "median_gross_rent": 1106.0,
+    "median_household_income": 58073.0,
+    "occupied_units": 81415.0,
+    "owner_occupied": 41390.0,
+    "population": 203711.0,
+    "pct_owner_occupied": 50.8,
+    "name": "Muscogee"
+   },
+   "13217": {
+    "median_home_value": 265000.0,
+    "median_gross_rent": 1439.0,
+    "median_household_income": 77179.0,
+    "occupied_units": 41203.0,
+    "owner_occupied": 30395.0,
+    "population": 118152.0,
+    "pct_owner_occupied": 73.8,
+    "name": "Newton"
+   },
+   "13219": {
+    "median_home_value": 461600.0,
+    "median_gross_rent": 1462.0,
+    "median_household_income": 121217.0,
+    "occupied_units": 14994.0,
+    "owner_occupied": 12186.0,
+    "population": 43551.0,
+    "pct_owner_occupied": 81.3,
+    "name": "Oconee"
+   },
+   "13221": {
+    "median_home_value": 231600.0,
+    "median_gross_rent": 913.0,
+    "median_household_income": 75034.0,
+    "occupied_units": 5411.0,
+    "owner_occupied": 4536.0,
+    "population": 15509.0,
+    "pct_owner_occupied": 83.8,
+    "name": "Oglethorpe"
+   },
+   "13223": {
+    "median_home_value": 326300.0,
+    "median_gross_rent": 1772.0,
+    "median_household_income": 98031.0,
+    "occupied_units": 60008.0,
+    "owner_occupied": 48470.0,
+    "population": 178909.0,
+    "pct_owner_occupied": 80.8,
+    "name": "Paulding"
+   },
+   "13225": {
+    "median_home_value": 207800.0,
+    "median_gross_rent": 940.0,
+    "median_household_income": 71293.0,
+    "occupied_units": 10598.0,
+    "owner_occupied": 7372.0,
+    "population": 28560.0,
+    "pct_owner_occupied": 69.6,
+    "name": "Peach"
+   },
+   "13227": {
+    "median_home_value": 332700.0,
+    "median_gross_rent": 1136.0,
+    "median_household_income": 78930.0,
+    "occupied_units": 13430.0,
+    "owner_occupied": 10906.0,
+    "population": 34951.0,
+    "pct_owner_occupied": 81.2,
+    "name": "Pickens"
+   },
+   "13229": {
+    "median_home_value": 153300.0,
+    "median_gross_rent": 799.0,
+    "median_household_income": 60517.0,
+    "occupied_units": 7605.0,
+    "owner_occupied": 5815.0,
+    "population": 20202.0,
+    "pct_owner_occupied": 76.5,
+    "name": "Pierce"
+   },
+   "13231": {
+    "median_home_value": 305600.0,
+    "median_gross_rent": 993.0,
+    "median_household_income": 86719.0,
+    "occupied_units": 6721.0,
+    "owner_occupied": 5689.0,
+    "population": 19903.0,
+    "pct_owner_occupied": 84.6,
+    "name": "Pike"
+   },
+   "13233": {
+    "median_home_value": 187600.0,
+    "median_gross_rent": 918.0,
+    "median_household_income": 58515.0,
+    "occupied_units": 15901.0,
+    "owner_occupied": 10500.0,
+    "population": 43785.0,
+    "pct_owner_occupied": 66.0,
+    "name": "Polk"
+   },
+   "13235": {
+    "median_home_value": 157600.0,
+    "median_gross_rent": 883.0,
+    "median_household_income": 50406.0,
+    "occupied_units": 3575.0,
+    "owner_occupied": 2530.0,
+    "population": 9939.0,
+    "pct_owner_occupied": 70.8,
+    "name": "Pulaski"
+   },
+   "13237": {
+    "median_home_value": 249300.0,
+    "median_gross_rent": 1002.0,
+    "median_household_income": 72096.0,
+    "occupied_units": 10435.0,
+    "owner_occupied": 8444.0,
+    "population": 22855.0,
+    "pct_owner_occupied": 80.9,
+    "name": "Putnam"
+   },
+   "13239": {
+    "median_home_value": 104600.0,
+    "median_gross_rent": 918.0,
+    "median_household_income": 40179.0,
+    "occupied_units": 1067.0,
+    "owner_occupied": 899.0,
+    "population": 2264.0,
+    "pct_owner_occupied": 84.3,
+    "name": "Quitman"
+   },
+   "13241": {
+    "median_home_value": 295200.0,
+    "median_gross_rent": 1047.0,
+    "median_household_income": 67493.0,
+    "occupied_units": 7615.0,
+    "owner_occupied": 5873.0,
+    "population": 17312.0,
+    "pct_owner_occupied": 77.1,
+    "name": "Rabun"
+   },
+   "13243": {
+    "median_home_value": 90200.0,
+    "median_gross_rent": 606.0,
+    "median_household_income": 28380.0,
+    "occupied_units": 2688.0,
+    "owner_occupied": 1385.0,
+    "population": 6196.0,
+    "pct_owner_occupied": 51.5,
+    "name": "Randolph"
+   },
+   "13245": {
+    "median_home_value": 178500.0,
+    "median_gross_rent": 1141.0,
+    "median_household_income": 55637.0,
+    "occupied_units": 76694.0,
+    "owner_occupied": 39285.0,
+    "population": 206069.0,
+    "pct_owner_occupied": 51.2,
+    "name": "Richmond"
+   },
+   "13247": {
+    "median_home_value": 292900.0,
+    "median_gross_rent": 1525.0,
+    "median_household_income": 77247.0,
+    "occupied_units": 34437.0,
+    "owner_occupied": 23964.0,
+    "population": 95281.0,
+    "pct_owner_occupied": 69.6,
+    "name": "Rockdale"
+   },
+   "13249": {
+    "median_home_value": 143900.0,
+    "median_gross_rent": 816.0,
+    "median_household_income": 56875.0,
+    "occupied_units": 1639.0,
+    "owner_occupied": 1312.0,
+    "population": 4513.0,
+    "pct_owner_occupied": 80.0,
+    "name": "Schley"
+   },
+   "13251": {
+    "median_home_value": 124300.0,
+    "median_gross_rent": 679.0,
+    "median_household_income": 52792.0,
+    "occupied_units": 4932.0,
+    "owner_occupied": 3445.0,
+    "population": 14130.0,
+    "pct_owner_occupied": 69.8,
+    "name": "Screven"
+   },
+   "13253": {
+    "median_home_value": 121900.0,
+    "median_gross_rent": 879.0,
+    "median_household_income": 49495.0,
+    "occupied_units": 3767.0,
+    "owner_occupied": 3021.0,
+    "population": 9156.0,
+    "pct_owner_occupied": 80.2,
+    "name": "Seminole"
+   },
+   "13255": {
+    "median_home_value": 228700.0,
+    "median_gross_rent": 1113.0,
+    "median_household_income": 62071.0,
+    "occupied_units": 26471.0,
+    "owner_occupied": 16610.0,
+    "population": 68892.0,
+    "pct_owner_occupied": 62.7,
+    "name": "Spalding"
+   },
+   "13257": {
+    "median_home_value": 175300.0,
+    "median_gross_rent": 820.0,
+    "median_household_income": 54754.0,
+    "occupied_units": 10524.0,
+    "owner_occupied": 7748.0,
+    "population": 27012.0,
+    "pct_owner_occupied": 73.6,
+    "name": "Stephens"
+   },
+   "13259": {
+    "median_home_value": 65100.0,
+    "median_gross_rent": 607.0,
+    "median_household_income": 33250.0,
+    "occupied_units": 1771.0,
+    "owner_occupied": 1044.0,
+    "population": 4869.0,
+    "pct_owner_occupied": 58.9,
+    "name": "Stewart"
+   },
+   "13261": {
+    "median_home_value": 120200.0,
+    "median_gross_rent": 857.0,
+    "median_household_income": 42653.0,
+    "occupied_units": 10986.0,
+    "owner_occupied": 6220.0,
+    "population": 29061.0,
+    "pct_owner_occupied": 56.6,
+    "name": "Sumter"
+   },
+   "13263": {
+    "median_home_value": 117100.0,
+    "median_gross_rent": 816.0,
+    "median_household_income": 41597.0,
+    "occupied_units": 2529.0,
+    "owner_occupied": 2012.0,
+    "population": 5742.0,
+    "pct_owner_occupied": 79.6,
+    "name": "Talbot"
+   },
+   "13265": {
+    "median_home_value": 68900.0,
+    "median_gross_rent": 638.0,
+    "median_household_income": 52500.0,
+    "occupied_units": 588.0,
+    "owner_occupied": 483.0,
+    "population": 1558.0,
+    "pct_owner_occupied": 82.1,
+    "name": "Taliaferro"
+   },
+   "13267": {
+    "median_home_value": 140000.0,
+    "median_gross_rent": 699.0,
+    "median_household_income": 50747.0,
+    "occupied_units": 7630.0,
+    "owner_occupied": 5419.0,
+    "population": 24208.0,
+    "pct_owner_occupied": 71.0,
+    "name": "Tattnall"
+   },
+   "13269": {
+    "median_home_value": 87700.0,
+    "median_gross_rent": 630.0,
+    "median_household_income": 41788.0,
+    "occupied_units": 3179.0,
+    "owner_occupied": 1999.0,
+    "population": 7786.0,
+    "pct_owner_occupied": 62.9,
+    "name": "Taylor"
+   },
+   "13271": {
+    "median_home_value": 113300.0,
+    "median_gross_rent": 712.0,
+    "median_household_income": 50929.0,
+    "occupied_units": 3351.0,
+    "owner_occupied": 2176.0,
+    "population": 11831.0,
+    "pct_owner_occupied": 64.9,
+    "name": "Telfair"
+   },
+   "13273": {
+    "median_home_value": 118400.0,
+    "median_gross_rent": 745.0,
+    "median_household_income": 46171.0,
+    "occupied_units": 3383.0,
+    "owner_occupied": 2084.0,
+    "population": 8850.0,
+    "pct_owner_occupied": 61.6,
+    "name": "Terrell"
+   },
+   "13275": {
+    "median_home_value": 196700.0,
+    "median_gross_rent": 1018.0,
+    "median_household_income": 60736.0,
+    "occupied_units": 18684.0,
+    "owner_occupied": 11915.0,
+    "population": 45777.0,
+    "pct_owner_occupied": 63.8,
+    "name": "Thomas"
+   },
+   "13277": {
+    "median_home_value": 165200.0,
+    "median_gross_rent": 777.0,
+    "median_household_income": 53255.0,
+    "occupied_units": 15640.0,
+    "owner_occupied": 9547.0,
+    "population": 41438.0,
+    "pct_owner_occupied": 61.0,
+    "name": "Tift"
+   },
+   "13279": {
+    "median_home_value": 137000.0,
+    "median_gross_rent": 768.0,
+    "median_household_income": 52621.0,
+    "occupied_units": 10409.0,
+    "owner_occupied": 6299.0,
+    "population": 27102.0,
+    "pct_owner_occupied": 60.5,
+    "name": "Toombs"
+   },
+   "13281": {
+    "median_home_value": 316100.0,
+    "median_gross_rent": 808.0,
+    "median_household_income": 59135.0,
+    "occupied_units": 5924.0,
+    "owner_occupied": 4875.0,
+    "population": 12913.0,
+    "pct_owner_occupied": 82.3,
+    "name": "Towns"
+   },
+   "13283": {
+    "median_home_value": 100100.0,
+    "median_gross_rent": 733.0,
+    "median_household_income": 55518.0,
+    "occupied_units": 2261.0,
+    "owner_occupied": 1477.0,
+    "population": 6376.0,
+    "pct_owner_occupied": 65.3,
+    "name": "Treutlen"
+   },
+   "13285": {
+    "median_home_value": 217200.0,
+    "median_gross_rent": 1087.0,
+    "median_household_income": 56776.0,
+    "occupied_units": 26904.0,
+    "owner_occupied": 16298.0,
+    "population": 70330.0,
+    "pct_owner_occupied": 60.6,
+    "name": "Troup"
+   },
+   "13287": {
+    "median_home_value": 97300.0,
+    "median_gross_rent": 679.0,
+    "median_household_income": 36799.0,
+    "occupied_units": 3295.0,
+    "owner_occupied": 2102.0,
+    "population": 8939.0,
+    "pct_owner_occupied": 63.8,
+    "name": "Turner"
+   },
+   "13289": {
+    "median_home_value": 111300.0,
+    "median_gross_rent": 808.0,
+    "median_household_income": 56324.0,
+    "occupied_units": 2888.0,
+    "owner_occupied": 2546.0,
+    "population": 7803.0,
+    "pct_owner_occupied": 88.2,
+    "name": "Twiggs"
+   },
+   "13291": {
+    "median_home_value": 307400.0,
+    "median_gross_rent": 808.0,
+    "median_household_income": 66176.0,
+    "occupied_units": 11490.0,
+    "owner_occupied": 9697.0,
+    "population": 26304.0,
+    "pct_owner_occupied": 84.4,
+    "name": "Union"
+   },
+   "13293": {
+    "median_home_value": 168700.0,
+    "median_gross_rent": 849.0,
+    "median_household_income": 55429.0,
+    "occupied_units": 10595.0,
+    "owner_occupied": 6462.0,
+    "population": 28029.0,
+    "pct_owner_occupied": 61.0,
+    "name": "Upson"
+   },
+   "13295": {
+    "median_home_value": 197100.0,
+    "median_gross_rent": 940.0,
+    "median_household_income": 59469.0,
+    "occupied_units": 26355.0,
+    "owner_occupied": 20337.0,
+    "population": 68762.0,
+    "pct_owner_occupied": 77.2,
+    "name": "Walker"
+   },
+   "13297": {
+    "median_home_value": 339500.0,
+    "median_gross_rent": 1175.0,
+    "median_household_income": 84945.0,
+    "occupied_units": 35755.0,
+    "owner_occupied": 28343.0,
+    "population": 103313.0,
+    "pct_owner_occupied": 79.3,
+    "name": "Walton"
+   },
+   "13299": {
+    "median_home_value": 109500.0,
+    "median_gross_rent": 789.0,
+    "median_household_income": 47448.0,
+    "occupied_units": 12957.0,
+    "owner_occupied": 8172.0,
+    "population": 35976.0,
+    "pct_owner_occupied": 63.1,
+    "name": "Ware"
+   },
+   "13301": {
+    "median_home_value": 67100.0,
+    "median_gross_rent": 690.0,
+    "median_household_income": 44289.0,
+    "occupied_units": 2097.0,
+    "owner_occupied": 1514.0,
+    "population": 5170.0,
+    "pct_owner_occupied": 72.2,
+    "name": "Warren"
+   },
+   "13303": {
+    "median_home_value": 112500.0,
+    "median_gross_rent": 858.0,
+    "median_household_income": 46023.0,
+    "occupied_units": 7330.0,
+    "owner_occupied": 4728.0,
+    "population": 19849.0,
+    "pct_owner_occupied": 64.5,
+    "name": "Washington"
+   },
+   "13305": {
+    "median_home_value": 162800.0,
+    "median_gross_rent": 846.0,
+    "median_household_income": 53427.0,
+    "occupied_units": 11061.0,
+    "owner_occupied": 7447.0,
+    "population": 30949.0,
+    "pct_owner_occupied": 67.3,
+    "name": "Wayne"
+   },
+   "13307": {
+    "median_home_value": 82600.0,
+    "median_gross_rent": 658.0,
+    "median_household_income": 46792.0,
+    "occupied_units": 843.0,
+    "owner_occupied": 649.0,
+    "population": 2381.0,
+    "pct_owner_occupied": 77.0,
+    "name": "Webster"
+   },
+   "13309": {
+    "median_home_value": 88200.0,
+    "median_gross_rent": 581.0,
+    "median_household_income": 40539.0,
+    "occupied_units": 1615.0,
+    "owner_occupied": 1059.0,
+    "population": 7335.0,
+    "pct_owner_occupied": 65.6,
+    "name": "Wheeler"
+   },
+   "13311": {
+    "median_home_value": 278900.0,
+    "median_gross_rent": 1032.0,
+    "median_household_income": 70666.0,
+    "occupied_units": 10729.0,
+    "owner_occupied": 8457.0,
+    "population": 28810.0,
+    "pct_owner_occupied": 78.8,
+    "name": "White"
+   },
+   "13313": {
+    "median_home_value": 218000.0,
+    "median_gross_rent": 971.0,
+    "median_household_income": 67070.0,
+    "occupied_units": 36834.0,
+    "owner_occupied": 24680.0,
+    "population": 103598.0,
+    "pct_owner_occupied": 67.0,
+    "name": "Whitfield"
+   },
+   "13315": {
+    "median_home_value": 87600.0,
+    "median_gross_rent": 610.0,
+    "median_household_income": 54138.0,
+    "occupied_units": 2614.0,
+    "owner_occupied": 1952.0,
+    "population": 8798.0,
+    "pct_owner_occupied": 74.7,
+    "name": "Wilcox"
+   },
+   "13317": {
+    "median_home_value": 122700.0,
+    "median_gross_rent": 786.0,
+    "median_household_income": 52043.0,
+    "occupied_units": 4133.0,
+    "owner_occupied": 2731.0,
+    "population": 9549.0,
+    "pct_owner_occupied": 66.1,
+    "name": "Wilkes"
+   },
+   "13319": {
+    "median_home_value": 86300.0,
+    "median_gross_rent": 825.0,
+    "median_household_income": 45465.0,
+    "occupied_units": 3473.0,
+    "owner_occupied": 2796.0,
+    "population": 8747.0,
+    "pct_owner_occupied": 80.5,
+    "name": "Wilkinson"
+   },
+   "13321": {
+    "median_home_value": 104900.0,
+    "median_gross_rent": 864.0,
+    "median_household_income": 58694.0,
+    "occupied_units": 7739.0,
+    "owner_occupied": 5704.0,
+    "population": 20451.0,
+    "pct_owner_occupied": 73.7,
+    "name": "Worth"
+   }
+  },
+  "source": "Census ACS 5-year 2024 (B25077 value, B25064 rent, B19013 income, B25003 tenure)"
+ },
+ "county_permits": {
+  "year": 2025,
+  "counties": {
+   "13001": {
+    "single_family": 17,
+    "multi_family": 4
+   },
+   "13003": {
+    "single_family": 18,
+    "multi_family": 0
+   },
+   "13005": {
+    "single_family": 14,
+    "multi_family": 0
+   },
+   "13007": {
+    "single_family": 0,
+    "multi_family": 0
+   },
+   "13009": {
+    "single_family": 79,
+    "multi_family": 16
+   },
+   "13011": {
+    "single_family": 109,
+    "multi_family": 0
+   },
+   "13013": {
+    "single_family": 1300,
+    "multi_family": 284
+   },
+   "13015": {
+    "single_family": 795,
+    "multi_family": 235
+   },
+   "13017": {
+    "single_family": 13,
+    "multi_family": 4
+   },
+   "13019": {
+    "single_family": 80,
+    "multi_family": 35
+   },
+   "13021": {
+    "single_family": 143,
+    "multi_family": 0
+   },
+   "13023": {
+    "single_family": 86,
+    "multi_family": 0
+   },
+   "13025": {
+    "single_family": 45,
+    "multi_family": 32
+   },
+   "13027": {
+    "single_family": 58,
+    "multi_family": 0
+   },
+   "13029": {
+    "single_family": 348,
+    "multi_family": 385
+   },
+   "13031": {
+    "single_family": 929,
+    "multi_family": 460
+   },
+   "13033": {
+    "single_family": 52,
+    "multi_family": 48
+   },
+   "13035": {
+    "single_family": 85,
+    "multi_family": 0
+   },
+   "13037": {
+    "single_family": 5,
+    "multi_family": 0
+   },
+   "13039": {
+    "single_family": 418,
+    "multi_family": 28
+   },
+   "13043": {
+    "single_family": 7,
+    "multi_family": 0
+   },
+   "13045": {
+    "single_family": 776,
+    "multi_family": 289
+   },
+   "13047": {
+    "single_family": 339,
+    "multi_family": 207
+   },
+   "13049": {
+    "single_family": 41,
+    "multi_family": 0
+   },
+   "13051": {
+    "single_family": 2666,
+    "multi_family": 1760
+   },
+   "13053": {
+    "single_family": 3,
+    "multi_family": 0
+   },
+   "13055": {
+    "single_family": 2,
+    "multi_family": 0
+   },
+   "13057": {
+    "single_family": 1491,
+    "multi_family": 33
+   },
+   "13059": {
+    "single_family": 226,
+    "multi_family": 522
+   },
+   "13061": {
+    "single_family": 5,
+    "multi_family": 0
+   },
+   "13063": {
+    "single_family": 399,
+    "multi_family": 394
+   },
+   "13065": {
+    "single_family": 0,
+    "multi_family": 0
+   },
+   "13067": {
+    "single_family": 988,
+    "multi_family": 799
+   },
+   "13069": {
+    "single_family": 73,
+    "multi_family": 15
+   },
+   "13071": {
+    "single_family": 81,
+    "multi_family": 30
+   },
+   "13073": {
+    "single_family": 1141,
+    "multi_family": 72
+   },
+   "13075": {
+    "single_family": 53,
+    "multi_family": 225
+   },
+   "13077": {
+    "single_family": 751,
+    "multi_family": 0
+   },
+   "13079": {
+    "single_family": 29,
+    "multi_family": 0
+   },
+   "13081": {
+    "single_family": 27,
+    "multi_family": 0
+   },
+   "13083": {
+    "single_family": 5,
+    "multi_family": 4
+   },
+   "13085": {
+    "single_family": 1069,
+    "multi_family": 0
+   },
+   "13087": {
+    "single_family": 75,
+    "multi_family": 60
+   },
+   "13089": {
+    "single_family": 805,
+    "multi_family": 516
+   },
+   "13091": {
+    "single_family": 5,
+    "multi_family": 0
+   },
+   "13093": {
+    "single_family": 22,
+    "multi_family": 0
+   },
+   "13095": {
+    "single_family": 32,
+    "multi_family": 0
+   },
+   "13097": {
+    "single_family": 471,
+    "multi_family": 330
+   },
+   "13099": {
+    "single_family": 12,
+    "multi_family": 0
+   },
+   "13101": {
+    "single_family": 4,
+    "multi_family": 0
+   },
+   "13103": {
+    "single_family": 212,
+    "multi_family": 0
+   },
+   "13105": {
+    "single_family": 127,
+    "multi_family": 2
+   },
+   "13107": {
+    "single_family": 49,
+    "multi_family": 0
+   },
+   "13109": {
+    "single_family": 16,
+    "multi_family": 9
+   },
+   "13111": {
+    "single_family": 356,
+    "multi_family": 0
+   },
+   "13113": {
+    "single_family": 435,
+    "multi_family": 0
+   },
+   "13115": {
+    "single_family": 330,
+    "multi_family": 0
+   },
+   "13117": {
+    "single_family": 1409,
+    "multi_family": 334
+   },
+   "13119": {
+    "single_family": 142,
+    "multi_family": 0
+   },
+   "13121": {
+    "single_family": 2344,
+    "multi_family": 7316
+   },
+   "13123": {
+    "single_family": 96,
+    "multi_family": 116
+   },
+   "13127": {
+    "single_family": 448,
+    "multi_family": 0
+   },
+   "13129": {
+    "single_family": 289,
+    "multi_family": 0
+   },
+   "13131": {
+    "single_family": 55,
+    "multi_family": 0
+   },
+   "13133": {
+    "single_family": 311,
+    "multi_family": 0
+   },
+   "13135": {
+    "single_family": 2950,
+    "multi_family": 996
+   },
+   "13137": {
+    "single_family": 378,
+    "multi_family": 12
+   },
+   "13139": {
+    "single_family": 1892,
+    "multi_family": 104
+   },
+   "13141": {
+    "single_family": 24,
+    "multi_family": 0
+   },
+   "13143": {
+    "single_family": 159,
+    "multi_family": 0
+   },
+   "13145": {
+    "single_family": 177,
+    "multi_family": 0
+   },
+   "13147": {
+    "single_family": 177,
+    "multi_family": 20
+   },
+   "13149": {
+    "single_family": 54,
+    "multi_family": 0
+   },
+   "13151": {
+    "single_family": 1666,
+    "multi_family": 0
+   },
+   "13153": {
+    "single_family": 1132,
+    "multi_family": 86
+   },
+   "13155": {
+    "single_family": 10,
+    "multi_family": 0
+   },
+   "13157": {
+    "single_family": 1816,
+    "multi_family": 11
+   },
+   "13159": {
+    "single_family": 124,
+    "multi_family": 0
+   },
+   "13161": {
+    "single_family": 9,
+    "multi_family": 0
+   },
+   "13163": {
+    "single_family": 24,
+    "multi_family": 0
+   },
+   "13165": {
+    "single_family": 25,
+    "multi_family": 10
+   },
+   "13167": {
+    "single_family": 0,
+    "multi_family": 0
+   },
+   "13169": {
+    "single_family": 68,
+    "multi_family": 0
+   },
+   "13171": {
+    "single_family": 136,
+    "multi_family": 0
+   },
+   "13173": {
+    "single_family": 39,
+    "multi_family": 0
+   },
+   "13175": {
+    "single_family": 38,
+    "multi_family": 64
+   },
+   "13177": {
+    "single_family": 92,
+    "multi_family": 2
+   },
+   "13179": {
+    "single_family": 348,
+    "multi_family": 7
+   },
+   "13181": {
+    "single_family": 55,
+    "multi_family": 0
+   },
+   "13183": {
+    "single_family": 275,
+    "multi_family": 0
+   },
+   "13185": {
+    "single_family": 800,
+    "multi_family": 4
+   },
+   "13187": {
+    "single_family": 270,
+    "multi_family": 0
+   },
+   "13189": {
+    "single_family": 86,
+    "multi_family": 0
+   },
+   "13191": {
+    "single_family": 106,
+    "multi_family": 0
+   },
+   "13193": {
+    "single_family": 14,
+    "multi_family": 0
+   },
+   "13195": {
+    "single_family": 130,
+    "multi_family": 0
+   },
+   "13197": {
+    "single_family": 13,
+    "multi_family": 0
+   },
+   "13199": {
+    "single_family": 117,
+    "multi_family": 0
+   },
+   "13201": {
+    "single_family": 28,
+    "multi_family": 0
+   },
+   "13205": {
+    "single_family": 18,
+    "multi_family": 0
+   },
+   "13207": {
+    "single_family": 258,
+    "multi_family": 0
+   },
+   "13209": {
+    "single_family": 18,
+    "multi_family": 0
+   },
+   "13211": {
+    "single_family": 147,
+    "multi_family": 0
+   },
+   "13213": {
+    "single_family": 120,
+    "multi_family": 21
+   },
+   "13215": {
+    "single_family": 230,
+    "multi_family": 30
+   },
+   "13217": {
+    "single_family": 600,
+    "multi_family": 5
+   },
+   "13219": {
+    "single_family": 320,
+    "multi_family": 0
+   },
+   "13221": {
+    "single_family": 80,
+    "multi_family": 0
+   },
+   "13223": {
+    "single_family": 1290,
+    "multi_family": 36
+   },
+   "13225": {
+    "single_family": 139,
+    "multi_family": 0
+   },
+   "13227": {
+    "single_family": 259,
+    "multi_family": 18
+   },
+   "13229": {
+    "single_family": 68,
+    "multi_family": 0
+   },
+   "13231": {
+    "single_family": 106,
+    "multi_family": 0
+   },
+   "13233": {
+    "single_family": 121,
+    "multi_family": 96
+   },
+   "13235": {
+    "single_family": 68,
+    "multi_family": 0
+   },
+   "13237": {
+    "single_family": 98,
+    "multi_family": 0
+   },
+   "13239": {
+    "single_family": 24,
+    "multi_family": 0
+   },
+   "13241": {
+    "single_family": 122,
+    "multi_family": 6
+   },
+   "13243": {
+    "single_family": 9,
+    "multi_family": 0
+   },
+   "13245": {
+    "single_family": 534,
+    "multi_family": 0
+   },
+   "13247": {
+    "single_family": 339,
+    "multi_family": 0
+   },
+   "13249": {
+    "single_family": 18,
+    "multi_family": 0
+   },
+   "13251": {
+    "single_family": 19,
+    "multi_family": 0
+   },
+   "13253": {
+    "single_family": 33,
+    "multi_family": 0
+   },
+   "13255": {
+    "single_family": 317,
+    "multi_family": 0
+   },
+   "13257": {
+    "single_family": 36,
+    "multi_family": 0
+   },
+   "13259": {
+    "single_family": 1,
+    "multi_family": 0
+   },
+   "13261": {
+    "single_family": 24,
+    "multi_family": 12
+   },
+   "13263": {
+    "single_family": 0,
+    "multi_family": 0
+   },
+   "13267": {
+    "single_family": 74,
+    "multi_family": 0
+   },
+   "13269": {
+    "single_family": 14,
+    "multi_family": 0
+   },
+   "13271": {
+    "single_family": 0,
+    "multi_family": 0
+   },
+   "13273": {
+    "single_family": 5,
+    "multi_family": 0
+   },
+   "13275": {
+    "single_family": 131,
+    "multi_family": 72
+   },
+   "13277": {
+    "single_family": 111,
+    "multi_family": 66
+   },
+   "13279": {
+    "single_family": 19,
+    "multi_family": 16
+   },
+   "13281": {
+    "single_family": 84,
+    "multi_family": 0
+   },
+   "13283": {
+    "single_family": 0,
+    "multi_family": 4
+   },
+   "13285": {
+    "single_family": 418,
+    "multi_family": 300
+   },
+   "13287": {
+    "single_family": 3,
+    "multi_family": 0
+   },
+   "13289": {
+    "single_family": 13,
+    "multi_family": 0
+   },
+   "13291": {
+    "single_family": 264,
+    "multi_family": 0
+   },
+   "13293": {
+    "single_family": 127,
+    "multi_family": 0
+   },
+   "13295": {
+    "single_family": 281,
+    "multi_family": 18
+   },
+   "13297": {
+    "single_family": 549,
+    "multi_family": 20
+   },
+   "13299": {
+    "single_family": 36,
+    "multi_family": 83
+   },
+   "13301": {
+    "single_family": 0,
+    "multi_family": 0
+   },
+   "13303": {
+    "single_family": 99,
+    "multi_family": 0
+   },
+   "13305": {
+    "single_family": 98,
+    "multi_family": 4
+   },
+   "13307": {
+    "single_family": 9,
+    "multi_family": 0
+   },
+   "13309": {
+    "single_family": 0,
+    "multi_family": 0
+   },
+   "13311": {
+    "single_family": 188,
+    "multi_family": 2
+   },
+   "13313": {
+    "single_family": 297,
+    "multi_family": 112
+   },
+   "13317": {
+    "single_family": 29,
+    "multi_family": 8
+   },
+   "13319": {
+    "single_family": 18,
+    "multi_family": 0
+   },
+   "13321": {
+    "single_family": 25,
+    "multi_family": 36
+   }
+  },
+  "note": "Best-effort parse of the public Census BPS county annual file.",
+  "source": "Census Building Permits Survey, county annual file co2025a.txt"
+ },
+ "non_metro": {
+  "county_count": 86,
+  "population": 1971643.0,
+  "median_home_value_wt": 188123.0,
+  "median_gross_rent_wt": 882.0,
+  "median_household_income_wt": 58955.0,
+  "pct_owner_occupied": 69.3,
+  "note": "Population-weighted aggregate of the 86 GA counties outside the 14 MSAs. Weighted means are used as a robust proxy for a regional median.",
+  "source": "Census ACS 5-year 2024 (B25077 value, B25064 rent, B19013 income, B25003 tenure)"
+ },
  "kpis": {
-  "ga_home_price_yoy": null,
-  "ga_hpi_latest": null,
+  "ga_home_price_yoy": 2.45,
+  "ga_hpi_latest": 662.12,
   "median_affordability_index": 135.6,
   "median_permits_per_1k": 6.0,
   "median_pct_owner_occupied": 55.8,
-  "non_metro_county_count": null
+  "non_metro_county_count": 86
  },
  "_meta": {
   "metro_rollup": {
-   "last_updated": "2026-06-02T12:14:26Z",
+   "last_updated": "2026-06-02T12:32:18Z",
    "n_metros": 14,
+   "stale": false
+  },
+  "ga_hpi": {
+   "last_updated": "2026-06-02T12:32:19Z",
+   "stale": false
+  },
+  "county_acs": {
+   "last_updated": "2026-06-02T12:32:20Z",
+   "stale": false
+  },
+  "county_permits": {
+   "last_updated": "2026-06-02T12:32:20Z",
+   "stale": false
+  },
+  "non_metro": {
+   "last_updated": "2026-06-02T12:32:20Z",
    "stale": false
   }
  },
- "latest_label": "2026-06",
+ "latest_label": "2026-Q1",
  "coverage_note": "14 MSAs cover 73 of Georgia's 159 counties (~82% of population). The county ACS layer and the Non-Metro Georgia aggregate cover the remaining 86 counties.",
  "source_summary": {
   "ga_hpi": "FHFA HPI via FRED (GASTHPI/USSTHPI)",

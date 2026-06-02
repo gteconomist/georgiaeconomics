@@ -5100,15 +5100,23 @@
         },
         {
           "name": "Georgia Power",
-          "source_url": "https://en.wikipedia.org/wiki/Metro_Atlanta"
+          "source_url": "https://www.selectgeorgia.com/discover-georgia/industries/why-atlanta/top-companies"
         },
         {
           "name": "Cornerstone Christian Academy",
           "source_url": "https://www.ajc.com/top-workplaces"
         },
         {
+          "name": "Emory University",
+          "source_url": "https://en.wikipedia.org/wiki/Economy_of_Atlanta"
+        },
+        {
           "name": "Healthcare",
           "source_url": "https://services.selectgeorgia.com/data/documents/Atlanta_Federal_OZ_Prospectus.pdf"
+        },
+        {
+          "name": "Northside Hospital",
+          "source_url": "https://en.wikipedia.org/wiki/Economy_of_Atlanta"
         },
         {
           "name": "Aerospace",
@@ -5127,39 +5135,31 @@
           "source_url": "https://www.selectgeorgia.com/discover-georgia/industries/fortune-500-list"
         },
         {
-          "name": "Gentiva Health Services",
+          "name": "Financial",
+          "source_url": "https://en.wikipedia.org/wiki/Metro_Atlanta"
+        },
+        {
+          "name": "Grady Health System",
           "source_url": "https://en.wikipedia.org/wiki/Economy_of_Atlanta"
         },
         {
-          "name": "Industries Growing Faster",
-          "source_url": "https://www.selectgeorgia.com/discover-georgia/industries/why-atlanta/top-companies"
+          "name": "Wellstar Health System",
+          "source_url": "https://en.wikipedia.org/wiki/Economy_of_Atlanta"
         },
         {
           "name": "Chemical Manufacturing",
           "source_url": "https://www.selectgeorgia.com/discover-georgia/industries/fortune-500-list"
-        },
-        {
-          "name": "Foundation Financial Group",
-          "source_url": "https://en.wikipedia.org/wiki/Economy_of_Atlanta"
-        },
-        {
-          "name": "Robust Manufacturing Industry",
-          "source_url": "https://www.selectgeorgia.com/discover-georgia/industries/fortune-500-list"
-        },
-        {
-          "name": "Building Technologies",
-          "source_url": "https://www.selectgeorgia.com/sxsw/innovation-resources"
         }
       ],
       "sources": [
         "https://en.wikipedia.org/wiki/Economy_of_Atlanta",
-        "https://www.ajc.com/top-workplaces",
+        "https://www.selectgeorgia.com/landing-pages/san-fran-to-atl/top-brands",
         "https://en.wikipedia.org/wiki/Metro_Atlanta",
+        "https://www.ajc.com/top-workplaces",
         "https://www.selectgeorgia.com/discover-georgia/industries/why-atlanta/top-companies",
         "https://www.selectgeorgia.com/discover-georgia/industries/fortune-500-list",
-        "https://www.selectgeorgia.com/landing-pages/san-fran-to-atl/world-class-talent-calls-atlanta-home",
         "https://www.selectgeorgia.com/sxsw/innovation-resources",
-        "https://www.selectgeorgia.com/landing-pages/san-fran-to-atl/top-brands"
+        "https://www.selectgeorgia.com/landing-pages/san-fran-to-atl/world-class-talent-calls-atlanta-home"
       ],
       "method": "Representative list auto-discovered via Tavily web search across chamber-of-commerce, development-authority and local-news sources. Not exhaustive; ordering approximates source frequency, not headcount."
     },

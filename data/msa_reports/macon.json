@@ -4939,10 +4939,6 @@
           "source_url": "https://www.macon.com/news/business/article258547393.html"
         },
         {
-          "name": "Healthcare of Atlanta",
-          "source_url": "https://www.macon.com/living/article300278809.html"
-        },
-        {
           "name": "Armstrong World Industries",
           "source_url": "https://www.macon.com/news/local/article235905642.html"
         },
@@ -4951,12 +4947,24 @@
           "source_url": "https://www.macon.com/news/local/article235905642.html"
         },
         {
+          "name": "Coliseum Medical Hospital",
+          "source_url": "https://www.macon.com/news/local/article235905642.html"
+        },
+        {
+          "name": "Coliseum Northside Hospital",
+          "source_url": "https://www.macon.com/news/local/article235905642.html"
+        },
+        {
           "name": "Distribution Company of Georgia",
           "source_url": "https://www.macon.com/news/local/article235905642.html"
         },
         {
-          "name": "Navicent Health",
-          "source_url": "https://www.macon.com/news/local/article235905642.html"
+          "name": "Healthcare of Atlanta",
+          "source_url": "https://www.macon.com/living/article300278809.html"
+        },
+        {
+          "name": "Medical Center of Central Georgia",
+          "source_url": "https://en.wikipedia.org/wiki/Central_Georgia"
         },
         {
           "name": "Tile Company",
@@ -4971,27 +4979,19 @@
           "source_url": "https://www.macon.com/news/local/article235905642.html"
         },
         {
-          "name": "Blue Bird Body Co",
-          "source_url": "https://www.macon.com/news/business/article258547393.html"
-        },
-        {
-          "name": "General Motors",
-          "source_url": "https://www.macon.com/news/local/article312115475.html"
-        },
-        {
-          "name": "Houston Healthcare Complex",
-          "source_url": "https://www.macon.com/news/business/article258547393.html"
+          "name": "Atrium Health Navicent Medical Center",
+          "source_url": null
         }
       ],
       "sources": [
-        "https://www.macon.com/living/article300278809.html",
         "https://en.wikipedia.org/wiki/Macon,_Georgia",
+        "https://www.macon.com/living/article300278809.html",
         "https://en.wikipedia.org/wiki/Central_Georgia",
         "https://www.macon.com/news/local/article312115475.html",
         "https://www.macon.com/news/business/article258547393.html",
         "https://www.macon.com/news/local/article235905642.html",
-        "https://www.macon.com/news/local/article217410110.html",
-        "https://www.selectgeorgia.com/discover-georgia/industries/fortune-500-list"
+        "https://www.bizjournals.com/atlanta/news/2019/12/15/health-care-companies-expand-in-macon-market.html",
+        "https://georgia.org/sites/default/files/2026-05/board_book_fy26_-_25cmsr206_q3_4.pdf"
       ],
       "method": "Representative list auto-discovered via Tavily web search across chamber-of-commerce, development-authority and local-news sources. Not exhaustive; ordering approximates source frequency, not headcount."
     },

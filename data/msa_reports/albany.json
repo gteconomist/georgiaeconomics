@@ -4063,6 +4063,10 @@
           "source_url": "https://en.wikipedia.org/wiki/Albany,_Georgia"
         },
         {
+          "name": "Florida Railway",
+          "source_url": "https://en.wikipedia.org/wiki/Albany,_Georgia"
+        },
+        {
           "name": "Aerospace",
           "source_url": "https://www.selectgeorgia.com/discover-georgia/industries/fortune-500-list"
         },
@@ -4071,19 +4075,15 @@
           "source_url": null
         },
         {
-          "name": "Florida Railway",
-          "source_url": "https://en.wikipedia.org/wiki/Albany,_Georgia"
+          "name": "Dougherty County School System",
+          "source_url": null
         },
         {
           "name": "Health",
           "source_url": "https://en.wikipedia.org/wiki/Albany,_Georgia"
         },
         {
-          "name": "Knolls Atomic Power Laboratory",
-          "source_url": "https://www.bizjournals.com/albany/subscriber-only/2025/10/17/albanys-330-largest-employers.html"
-        },
-        {
-          "name": "Albany Medical Center",
+          "name": "Albany Technical College",
           "source_url": null
         },
         {
@@ -4095,35 +4095,35 @@
           "source_url": "https://www.selectgeorgia.com/discover-georgia/industries/fortune-500-list"
         },
         {
-          "name": "Cisco Systems Dematic Flexport Sources",
-          "source_url": "https://georgia.org/sites/default/files/2025-05/coil_technology_ecosystem_report_2025.pdf"
-        },
-        {
-          "name": "Dougherty County School System",
-          "source_url": null
-        },
-        {
-          "name": "Fluor Marine Propulsion LLC",
-          "source_url": "https://www.bizjournals.com/albany/subscriber-only/2023/07/14/albany-areas-largest-private-sector-employers.html"
-        },
-        {
           "name": "Food Manufacturers",
           "source_url": "https://www.selectgeorgia.com/discover-georgia/industries/fortune-500-list"
         },
         {
           "name": "Food Processing",
           "source_url": "https://www.selectgeorgia.com/discover-georgia/industries/fortune-500-list"
+        },
+        {
+          "name": "Georgia Power Economic Development",
+          "source_url": "https://www.selectgeorgia.com/discover-georgia/industries/fortune-500-list"
+        },
+        {
+          "name": "Industries",
+          "source_url": "https://georgia.org/business-support/small-business"
+        },
+        {
+          "name": "Metal Manufacturing",
+          "source_url": "https://www.selectgeorgia.com/discover-georgia/industries/fortune-500-list"
         }
       ],
       "sources": [
         "https://en.wikipedia.org/wiki/Albany,_Georgia",
-        "https://georgia.org/sites/default/files/2025-05/coil_technology_ecosystem_report_2025.pdf",
         "https://www.selectgeorgia.com/discover-georgia/industries/fortune-500-list",
         "https://georgia.org/business-support/small-business",
         "https://albanyherald.com/wp-content/uploads/2025/04/042925-ABH-A01-A12.pdf",
         "https://www.bizjournals.com/albany/news/2023/07/14/albany-region-largest-private-sector-employers.html",
+        "https://www.bizjournals.com/albany/subscriber-only/2025/10/17/albanys-330-largest-employers.html",
         "https://www.bizjournals.com/albany/subscriber-only/2023/07/14/albany-areas-largest-private-sector-employers.html",
-        "https://www.bizjournals.com/albany/subscriber-only/2025/10/17/albanys-330-largest-employers.html"
+        "https://www.bizjournals.com/bizjournals"
       ],
       "method": "Representative list auto-discovered via Tavily web search across chamber-of-commerce, development-authority and local-news sources. Not exhaustive; ordering approximates source frequency, not headcount."
     },

@@ -4309,7 +4309,11 @@
           "source_url": "https://en.wikipedia.org/wiki/Rome,_Georgia"
         },
         {
-          "name": "Kerry Group",
+          "name": "Harbin Clinic",
+          "source_url": "https://en.wikipedia.org/wiki/Rome,_Georgia"
+        },
+        {
+          "name": "Redmond Regional Medical Center",
           "source_url": "https://en.wikipedia.org/wiki/Rome,_Georgia"
         },
         {
@@ -4321,6 +4325,10 @@
           "source_url": "https://en.wikipedia.org/wiki/Rome,_Georgia"
         },
         {
+          "name": "Mills Fitzner",
+          "source_url": "https://www.northwestgeorgianews.com/rome/news/local/getting-down-to-business-chamber-hosts-annual-meeting-at-forum/article_2c292d95-89c6-4cb2-8950-81f981fc7218.html"
+        },
+        {
           "name": "Atrium Health Floyd",
           "source_url": "https://en.wikipedia.org/wiki/Atrium_Health_Floyd"
         },
@@ -4329,7 +4337,7 @@
           "source_url": "https://www.northwestgeorgianews.com/rome/business/rome-and-floyd-county-industrial-expansion-gains-make-site-selection-magazine-top-10-list/article_49657e1e-79f8-11eb-808a-07dd0a6bfb11.html"
         },
         {
-          "name": "Harbin Clinic",
+          "name": "Kerry Group",
           "source_url": "https://en.wikipedia.org/wiki/Rome,_Georgia"
         },
         {
@@ -4337,39 +4345,31 @@
           "source_url": "https://georgia.org/sites/default/files/2023-01/lowes_4.pdf"
         },
         {
-          "name": "Redmond Regional Medical Center",
-          "source_url": "https://en.wikipedia.org/wiki/Rome,_Georgia"
-        },
-        {
-          "name": "Summer Food Service Program",
-          "source_url": "https://www.northwestgeorgianews.com/rome/business/whos_who/shawhankins-welcomes-new-employees-to-growing-team-in-georgia/article_6c60e85a-431d-11e3-9af5-0019bb30f31a.html"
-        },
-        {
-          "name": "Bank of Italy",
-          "source_url": null
-        },
-        {
           "name": "Berry College",
-          "source_url": "https://en.wikipedia.org/wiki/Atrium_Health_Floyd"
+          "source_url": "https://www.northwestgeorgianews.com/jill-fisher/article_59879411-06d9-44c3-9def-274e326ae1e7.html"
         },
         {
           "name": "Floyd Healthcare Management",
           "source_url": "https://www.northwestgeorgianews.com/primary-issue-for-local-employers-right-now-is-growth-of-the-workforce/article_27902aa4-f2f3-11eb-b2a1-6bb1c539a9f7.html"
         },
         {
-          "name": "General Electric",
+          "name": "Georgia Health Sciences University",
           "source_url": "https://en.wikipedia.org/wiki/Rome,_Georgia"
+        },
+        {
+          "name": "Georgia Northwestern Technical College",
+          "source_url": "https://www.northwestgeorgianews.com/jill-fisher/article_59879411-06d9-44c3-9def-274e326ae1e7.html"
         }
       ],
       "sources": [
         "https://en.wikipedia.org/wiki/Rome,_Georgia",
-        "https://www.northwestgeorgianews.com/rome/business/rome-and-floyd-county-industrial-expansion-gains-make-site-selection-magazine-top-10-list/article_49657e1e-79f8-11eb-808a-07dd0a6bfb11.html",
         "https://en.wikipedia.org/wiki/Atrium_Health_Floyd",
         "https://www.selectgeorgia.com/blog/team-researchers-provide-clear-employment-overview-community-partners",
+        "https://www.northwestgeorgianews.com/rome/business/rome-and-floyd-county-industrial-expansion-gains-make-site-selection-magazine-top-10-list/article_49657e1e-79f8-11eb-808a-07dd0a6bfb11.html",
         "https://www.ajc.com/business/lowe-bringing-600-jobs-rome/V7ylHfF7WKPOa2Zbe5IWKK",
         "https://georgia.org/sites/default/files/2023-01/lowes_4.pdf",
-        "https://www.northwestgeorgianews.com/rome/business/whos_who/shawhankins-welcomes-new-employees-to-growing-team-in-georgia/article_6c60e85a-431d-11e3-9af5-0019bb30f31a.html",
-        "https://www.northwestgeorgianews.com/primary-issue-for-local-employers-right-now-is-growth-of-the-workforce/article_27902aa4-f2f3-11eb-b2a1-6bb1c539a9f7.html"
+        "https://www.northwestgeorgianews.com/jill-fisher/article_59879411-06d9-44c3-9def-274e326ae1e7.html",
+        "https://www.northwestgeorgianews.com/rome/news/local/getting-down-to-business-chamber-hosts-annual-meeting-at-forum/article_2c292d95-89c6-4cb2-8950-81f981fc7218.html"
       ],
       "method": "Representative list auto-discovered via Tavily web search across chamber-of-commerce, development-authority and local-news sources. Not exhaustive; ordering approximates source frequency, not headcount."
     },

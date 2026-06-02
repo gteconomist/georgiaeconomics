@@ -5019,24 +5019,28 @@
           "source_url": "https://www.savannahnow.com/story/news/2026/02/24/forbes-ranked-2-georgia-businesses-among-top-50-large-employers-in-us/88828522007"
         },
         {
-          "name": "Savannah State University",
+          "name": "Georgia Ports Authority",
+          "source_url": "https://www.savannahnow.com/story/news/local/2026/05/10/savannahs-state-of-small-business-shows-growth-opportunities/89997038007"
+        },
+        {
+          "name": "Port of Savannah",
+          "source_url": "https://www.savannahnow.com/story/business/2021/03/10/savannah-nations-top-location-new-industry-and-other-job-creating-development-according-economic-dev/6941326002"
+        },
+        {
+          "name": "Chatham County School District",
+          "source_url": null
+        },
+        {
+          "name": "Colony Bank",
           "source_url": "https://www.savannahnow.com/story/business/2013/02/19/understanding-purpose-savannah-chamber/13655438007"
         },
         {
-          "name": "Savannah Technical College",
-          "source_url": "https://www.savannahnow.com/story/business/2013/02/19/understanding-purpose-savannah-chamber/13655438007"
+          "name": "Memorial Health University Medical Center",
+          "source_url": null
         },
         {
           "name": "General Motors",
-          "source_url": "https://www.savannahnow.com/story/news/2025/10/13/best-employers-in-georgia-forbes-ranks-delta-lockheed-martin-and-more/86668731007"
-        },
-        {
-          "name": "University of Notre Dame",
-          "source_url": "https://www.savannahnow.com/story/news/2025/10/13/best-employers-in-georgia-forbes-ranks-delta-lockheed-martin-and-more/86668731007"
-        },
-        {
-          "name": "Derst Baking Company",
-          "source_url": "https://www.savannahnow.com/story/business/2013/02/19/understanding-purpose-savannah-chamber/13655438007"
+          "source_url": "https://www.savannahnow.com/story/news/2025/09/05/forbes-ranked-georgias-best-employers-highlighting-these-companies/85987718007"
         },
         {
           "name": "Georgia Power",
@@ -5047,20 +5051,16 @@
           "source_url": "https://www.savannahnow.com/story/news/2026/02/24/forbes-ranked-2-georgia-businesses-among-top-50-large-employers-in-us/88828522007"
         },
         {
-          "name": "Port of Savannah",
-          "source_url": "https://www.savannahnow.com/story/business/2021/03/10/savannah-nations-top-location-new-industry-and-other-job-creating-development-according-economic-dev/6941326002"
+          "name": "Heartland Payment Systems",
+          "source_url": "https://www.savannahnow.com/story/business/2013/02/19/understanding-purpose-savannah-chamber/13655438007"
         },
         {
-          "name": "Savannah Economic Development Authority",
-          "source_url": "https://www.augustachronicle.com/story/news/2021/07/27/incentives-help-georgia-secure-economic-development-deals-jobs-wayfair-rockingham-farms-savannah-ga/7955302002"
+          "name": "Hyundai Motor Group",
+          "source_url": "https://www.savannahnow.com/story/news/local/2026/05/10/savannahs-state-of-small-business-shows-growth-opportunities/89997038007"
         },
         {
-          "name": "Southern Company",
-          "source_url": "https://www.savannahnow.com/story/news/2026/02/24/forbes-ranked-2-georgia-businesses-among-top-50-large-employers-in-us/88828522007"
-        },
-        {
-          "name": "Chatham County Public School System",
-          "source_url": null
+          "name": "Liberty Mutual Insurance",
+          "source_url": "https://www.savannahnow.com/story/business/2013/02/19/understanding-purpose-savannah-chamber/13655438007"
         }
       ],
       "sources": [
@@ -5068,9 +5068,9 @@
         "https://www.savannahnow.com/story/news/2026/02/24/forbes-ranked-2-georgia-businesses-among-top-50-large-employers-in-us/88828522007",
         "https://www.augustachronicle.com/story/news/2021/07/27/incentives-help-georgia-secure-economic-development-deals-jobs-wayfair-rockingham-farms-savannah-ga/7955302002",
         "https://www.selectgeorgia.com/yourgeorgia/why-savannah-HQ",
-        "https://www.savannahnow.com/story/news/2025/12/11/forbes-reveals-georgias-top-25-employers-from-chick-fil-a-to-delta-primerica/87700060007",
-        "https://www.savannahnow.com/story/news/2025/10/13/best-employers-in-georgia-forbes-ranks-delta-lockheed-martin-and-more/86668731007",
         "https://www.savannahnow.com/story/business/2013/02/19/understanding-purpose-savannah-chamber/13655438007",
+        "https://www.savannahnow.com/story/news/2025/09/05/forbes-ranked-georgias-best-employers-highlighting-these-companies/85987718007",
+        "https://www.savannahnow.com/story/news/local/2024/03/01/savannah-chamber-president-bridges-business-growth-quality-of-life/72790391007",
         "https://www.savannahnow.com/story/business/employment/2025/10/10/savannah-area-workforce-leaders-come-together-for-updates-at-downtown-business-association-luncheon/86563396007"
       ],
       "method": "Representative list auto-discovered via Tavily web search across chamber-of-commerce, development-authority and local-news sources. Not exhaustive; ordering approximates source frequency, not headcount."

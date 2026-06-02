@@ -3870,12 +3870,20 @@
       "as_of": "2026-06-02",
       "employers": [
         {
-          "name": "Advanced Manufacturing",
-          "source_url": "https://properties.selectgeorgia.com/target_industries_app/dist/index.html"
+          "name": "Port of Savannah",
+          "source_url": "https://www.savannahnow.com/story/news/2008/09/11/savannah-best-performing-cities-list-jobs/13766785007"
         },
         {
           "name": "Liberty County School System",
           "source_url": null
+        },
+        {
+          "name": "Memorial Health System",
+          "source_url": null
+        },
+        {
+          "name": "Advanced Manufacturing",
+          "source_url": "https://properties.selectgeorgia.com/target_industries_app/dist/index.html"
         },
         {
           "name": "Company",
@@ -3883,57 +3891,49 @@
         },
         {
           "name": "Georgia Power",
-          "source_url": "https://www.selectgeorgia.com/blog/georgia-southern-innovation-group"
-        },
-        {
-          "name": "Business Innovation Group",
-          "source_url": "https://www.selectgeorgia.com/blog/georgia-southern-innovation-group"
+          "source_url": "https://properties.selectgeorgia.com/target_industries_app/dist/index.html"
         },
         {
           "name": "Georgia Southern Innovation Group",
           "source_url": "https://www.selectgeorgia.com/blog/georgia-southern-innovation-group"
         },
         {
-          "name": "Georgia Southern University",
-          "source_url": "https://www.selectgeorgia.com/blog/georgia-southern-innovation-group"
-        },
-        {
-          "name": "Gulfstream Aerospace",
-          "source_url": "https://www.savannahnow.com/story/news/2007/04/20/keys-future-0/13805381007"
-        },
-        {
           "name": "Hinesville Hospital",
           "source_url": null
         },
         {
-          "name": "Hinesville Medical Center",
+          "name": "Liberty County Hospital",
           "source_url": null
         },
         {
-          "name": "Target Industries",
-          "source_url": "https://properties.selectgeorgia.com/target_industries_app/dist/index.html"
+          "name": "Aerospace",
+          "source_url": "https://georgia.org/sites/default/files/2018-11/gdecd_board_book_-_5-23-18.pdf"
         },
         {
-          "name": "Arts Academy Fitness",
-          "source_url": "https://georgia.org/sites/default/files/2020-09/georgia_safety_promise-9-14.pdf"
+          "name": "Annual Red Carpet Tour",
+          "source_url": "https://georgia.org/sites/default/files/2018-12/gdecd_board_book_august_2018.pdf"
         },
         {
           "name": "Automotive",
           "source_url": "https://georgia.org/sites/default/files/2018-11/gdecd_board_book_-_5-23-18.pdf"
         },
         {
-          "name": "Aviation",
-          "source_url": "https://georgia.org/sites/default/files/2018-11/gdecd_board_book_-_5-23-18.pdf"
+          "name": "Ave Guyton Mahgniffe LLC Food",
+          "source_url": "https://georgia.org/sites/default/files/2020-09/georgia_safety_promise-9-14.pdf"
+        },
+        {
+          "name": "Barnes Mill Rd Hamilton Harris County",
+          "source_url": "https://georgia.org/sites/default/files/2020-09/georgia_safety_promise-9-14.pdf"
         }
       ],
       "sources": [
-        "https://en.wikipedia.org/wiki/Metropolitan_statistical_area",
-        "https://properties.selectgeorgia.com/target_industries_app/dist/index.html",
         "https://www.selectgeorgia.com/blog/georgia-southern-innovation-group",
+        "https://en.wikipedia.org/wiki/Savannah,_Georgia",
         "https://georgia.org/sites/default/files/2020-09/georgia_safety_promise-9-14.pdf",
         "https://www.savannahnow.com/story/news/2007/04/20/keys-future-0/13805381007",
-        "https://www.savannahnow.com/story/business/2015/05/19/business-summary/13959722007",
         "https://georgia.org/sites/default/files/2018-11/gdecd_board_book_-_5-23-18.pdf",
+        "https://georgia.org/sites/default/files/2018-12/gdecd_board_book_august_2018.pdf",
+        "https://properties.selectgeorgia.com/target_industries_app/dist/index.html",
         "https://www.augustachronicle.com/story/business/2010/11/21/working-our-way-augusta-area-sees-job-growth/14571763007"
       ],
       "method": "Representative list auto-discovered via Tavily web search across chamber-of-commerce, development-authority and local-news sources. Not exhaustive; ordering approximates source frequency, not headcount."

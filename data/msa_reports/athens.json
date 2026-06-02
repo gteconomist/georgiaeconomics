@@ -4937,69 +4937,69 @@
       "employers": [
         {
           "name": "University of Georgia",
-          "source_url": "https://www.onlineathens.com/story/business/2013/01/05/brodrick-remarkable-year-athens/15586276007"
+          "source_url": "https://en.wikipedia.org/wiki/Athens,_Georgia"
         },
         {
           "name": "RWDC Industries",
           "source_url": "https://en.wikipedia.org/wiki/Athens,_Georgia"
         },
         {
-          "name": "Clarke County School System",
-          "source_url": null
-        },
-        {
           "name": "Janssen Pharmaceuticals",
           "source_url": "https://en.wikipedia.org/wiki/Athens,_Georgia"
-        },
-        {
-          "name": "Piedmont Athens Regional Medical Center",
-          "source_url": null
-        },
-        {
-          "name": "Children's Healthcare of Atlanta",
-          "source_url": "https://www.onlineathens.com/story/news/2026/03/04/georgias-best-employers-are-these-2-big-businesses-forbes-says/88982542007"
         },
         {
           "name": "Peachtree Medical Billing",
           "source_url": "https://en.wikipedia.org/wiki/Athens,_Georgia"
         },
         {
-          "name": "Athens Technical College",
-          "source_url": "https://georgia.org/sites/default/files/2021-04/logistics_education_report.pdf"
+          "name": "Children's Healthcare of Atlanta",
+          "source_url": "https://www.onlineathens.com/story/news/2026/03/04/georgias-best-employers-are-these-2-big-businesses-forbes-says/88982542007"
         },
         {
-          "name": "Electric",
-          "source_url": "https://en.wikipedia.org/wiki/Athens,_Georgia"
+          "name": "Clarke County School District",
+          "source_url": null
+        },
+        {
+          "name": "Blue Bird Corporation",
+          "source_url": null
+        },
+        {
+          "name": "Piedmont Athens Regional Medical Center",
+          "source_url": null
         },
         {
           "name": "Port of Savannah",
           "source_url": "https://www.onlineathens.com/story/news/state/2015/08/28/forecast-stock-market-roller-coaster-wont-dampen-athens-economy/15484730007"
         },
         {
-          "name": "State Normal School",
+          "name": "Turned Into Recording Academy",
           "source_url": "https://en.wikipedia.org/wiki/Athens,_Georgia"
         },
         {
-          "name": "Agricultural College",
-          "source_url": "https://georgia.org/sites/default/files/2021-04/logistics_education_report.pdf"
+          "name": "UGA Health Care",
+          "source_url": null
         },
         {
-          "name": "Albany State University Albany Technical College",
-          "source_url": "https://georgia.org/sites/default/files/2021-04/logistics_education_report.pdf"
+          "name": "AU College of Nursing",
+          "source_url": "https://en.wikipedia.org/wiki/Athens,_Georgia"
         },
         {
           "name": "Asbury Automotive Group",
           "source_url": "https://www.augustachronicle.com/story/news/2025/06/04/fortune-500s-list-of-the-biggest-corporations-includes-17-in-georgia/84010835007"
+        },
+        {
+          "name": "Athena Industrial Park",
+          "source_url": "https://www.onlineathens.com/story/business/2013/01/05/brodrick-remarkable-year-athens/15586276007"
         }
       ],
       "sources": [
+        "https://en.wikipedia.org/wiki/Athens,_Georgia",
         "https://www.onlineathens.com/story/news/state/2015/08/28/forecast-stock-market-roller-coaster-wont-dampen-athens-economy/15484730007",
         "https://www.onlineathens.com/story/news/2026/03/04/georgias-best-employers-are-these-2-big-businesses-forbes-says/88982542007",
-        "https://en.wikipedia.org/wiki/Athens,_Georgia",
         "https://www.augustachronicle.com/story/news/2025/06/04/fortune-500s-list-of-the-biggest-corporations-includes-17-in-georgia/84010835007",
+        "https://en.wikipedia.org/wiki/Metro_Atlanta",
         "https://www.onlineathens.com/story/business/2013/01/05/brodrick-remarkable-year-athens/15586276007",
         "https://www.onlineathens.com/story/business/2014/07/26/terrell-athens-chamber-focusing-members-and-partnerships-2014/15524196007",
-        "https://www.onlineathens.com/story/news/state/2019/05/24/athens-entrepreneurs-get-business-help-at-state-chamber-event/5073147007",
         "https://www.onlineathens.com/story/business/2021/09/02/jobs-athens-abundant-employers-experience-labor-shortage/5647514001"
       ],
       "method": "Representative list auto-discovered via Tavily web search across chamber-of-commerce, development-authority and local-news sources. Not exhaustive; ordering approximates source frequency, not headcount."
