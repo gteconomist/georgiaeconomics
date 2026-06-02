@@ -27,6 +27,8 @@ jobs:
     steps:
       - name: Check out repo
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0   # full history so the push step can rebase
 
       - name: Set up Python
         uses: actions/setup-python@v5
@@ -49,7 +51,12 @@ jobs:
           if ! git diff --quiet -- data/automotive.json; then
             git add data/automotive.json
             git commit -m "data: refresh GA automotive & EV (QCEW + BEA + CBP + Tavily) [skip ci]"
-            git push
+            pushed=false
+            for attempt in 1 2 3 4 5; do
+              if git pull --rebase --autostash origin main && git push; then pushed=true; break; fi
+              echo "push attempt $attempt rejected; rebasing and retrying..."; sleep 5
+            done
+            [ "$pushed" = true ] || { echo "::error::push failed after retries"; exit 1; }
           else
             echo "No data changes — nothing to commit."
           fi

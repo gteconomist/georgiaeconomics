@@ -196,32 +196,62 @@ def attach_state_share(metros: List[dict], ga_nominal_bn_latest: Optional[float]
 # --------------------------------------------------------------------------- #
 # 2. Statewide GA GDP (SAGDP9N real + SAGDP2N nominal, GA + US)
 # --------------------------------------------------------------------------- #
-def _linecode1_series(table: str, geofips_csv: str, years: List[int]) -> Dict[str, Dict[int, float]]:
-    """{geofips: {year: value_millions}} for LineCode 1 (all-industry total)."""
+# BEA Regional GetData wants ONE GeoFips per request (or the "STATE" keyword for
+# all states); comma-joined GeoFips lists and LineCode="ALL" are NOT supported and
+# return nothing. These helpers mirror the proven scripts/fetch_film.py pattern.
+
+def _bea_series(table: str, geofips: str, years: List[int], line_code: str = "1") -> Dict[int, float]:
+    """{year: value_millions} for one table / single GeoFips / linecode across years."""
     res = bea_get({
         "method": "GetData", "DataSetName": "Regional", "TableName": table,
-        "LineCode": "1", "GeoFips": geofips_csv, "Year": ",".join(str(y) for y in years),
+        "LineCode": line_code, "GeoFips": geofips,
+        "Year": ",".join(str(y) for y in years),
     })
-    out: Dict[str, Dict[int, float]] = {}
+    out: Dict[int, float] = {}
     for row in _rows(res):
-        fips = (row.get("GeoFips") or "").strip()
         try:
             yr = int(row.get("TimePeriod"))
         except (TypeError, ValueError):
             continue
         v = _val(row)
         if v is not None:
-            out.setdefault(fips, {})[yr] = v
+            out[yr] = v
     return out
+
+
+def _bea_all_states(table: str, line_code: str, year: int) -> Dict[str, float]:
+    """{state_fips: value_millions} for all states in one year (GeoFips='STATE')."""
+    res = bea_get({
+        "method": "GetData", "DataSetName": "Regional", "TableName": table,
+        "LineCode": line_code, "GeoFips": "STATE", "Year": str(year),
+    })
+    out: Dict[str, float] = {}
+    for row in _rows(res):
+        fips = (row.get("GeoFips") or "").strip()
+        v = _val(row)
+        if fips and v is not None:
+            out[fips] = v
+    return out
+
+
+def _bea_linecodes(table: str) -> List[dict]:
+    """All LineCode {Key, Desc} for a table (GetParameterValuesFiltered)."""
+    res = bea_get({
+        "method": "GetParameterValuesFiltered", "DataSetName": "Regional",
+        "TargetParameter": "LineCode", "TableName": table,
+    })
+    vals = (res or {}).get("ParamValue", []) if isinstance(res, dict) else []
+    if isinstance(vals, dict):
+        vals = [vals]
+    return vals or []
 
 
 def fetch_ga_gdp(years_back: int = 13) -> Optional[dict]:
     this_year = date.today().year
     years = list(range(this_year - years_back, this_year))
-    real = _linecode1_series("SAGDP9N", f"{GA_FIPS},{US_FIPS}", years)
-    nominal = _linecode1_series("SAGDP2N", f"{GA_FIPS},{US_FIPS}", years)
-    ga_real, us_real = real.get(GA_FIPS, {}), real.get(US_FIPS, {})
-    ga_nom = nominal.get(GA_FIPS, {})
+    ga_real = _bea_series("SAGDP9N", GA_FIPS, years)   # real, chained $
+    us_real = _bea_series("SAGDP9N", US_FIPS, years)
+    ga_nom = _bea_series("SAGDP2N", GA_FIPS, years)     # nominal, current $
     if not ga_real and not ga_nom:
         return None
     yrs = sorted(set(ga_real) | set(ga_nom))
@@ -252,88 +282,95 @@ def fetch_ga_gdp(years_back: int = 13) -> Optional[dict]:
 # --------------------------------------------------------------------------- #
 def fetch_peers() -> Optional[List[dict]]:
     this_year = date.today().year
-    years = [this_year - 2, this_year - 1]
-    csv = ",".join(f for f, _ in PEERS) + f",{US_FIPS}"
-    real = _linecode1_series("SAGDP9N", csv, years)
-    if not real:
+    # SAGDP is annual and lags ~1 year; probe newest pair, fall back one year.
+    for y_latest in (this_year - 1, this_year - 2, this_year - 3):
+        cur = _bea_all_states("SAGDP9N", "1", y_latest)
+        if cur:
+            break
+    else:
         return None
-    # best-effort per-capita real GDP via SAGDP1 (description match), latest year
-    pcap = _per_capita_real_by_state(csv, years[-1])
+    prev = _bea_all_states("SAGDP9N", "1", y_latest - 1)
+    us_cur = _bea_series("SAGDP9N", US_FIPS, [y_latest])          # US not in 'STATE'
+    us_prev = _bea_series("SAGDP9N", US_FIPS, [y_latest - 1])
+    pcap = _per_capita_real_by_state(y_latest)
     out = []
     for fips, name in PEERS + [(US_FIPS, "United States")]:
-        s = real.get(fips, {})
-        yrs = sorted(s)
-        yoy = None
-        if len(yrs) >= 2 and s[yrs[-2]]:
-            yoy = round(100 * (s[yrs[-1]] - s[yrs[-2]]) / s[yrs[-2]], 2)
+        if fips == US_FIPS:
+            c, p = us_cur.get(y_latest), us_prev.get(y_latest - 1)
+        else:
+            c, p = cur.get(fips), prev.get(fips)
+        yoy = round(100 * (c - p) / p, 2) if (c and p) else None
         out.append({
             "state": name, "fips": fips,
-            "real_bn": round(s[yrs[-1]] / 1000, 2) if yrs else None,
+            "real_bn": round(c / 1000, 2) if c else None,
             "real_yoy": yoy,
             "per_capita": pcap.get(fips),
         })
     return out
 
 
-def _per_capita_real_by_state(geofips_csv: str, year: int) -> Dict[str, int]:
-    """Per-capita real GDP from SAGDP1 (LineCode ALL), matched by Description."""
-    res = bea_get({
-        "method": "GetData", "DataSetName": "Regional", "TableName": "SAGDP1",
-        "LineCode": "ALL", "GeoFips": geofips_csv, "Year": str(year),
-    })
-    out: Dict[str, int] = {}
-    for row in _rows(res):
-        desc = (row.get("Description") or "").lower()
+def _per_capita_real_by_state(year: int) -> Dict[str, int]:
+    """Per-capita real GDP for all states (SAGDP1), via the proven STATE keyword
+    + a specific LineCode found by description (no LineCode='ALL')."""
+    lc = None
+    for v in _bea_linecodes("SAGDP1"):
+        desc = (v.get("Desc") or "").lower()
         if "per capita" in desc and "real" in desc:
-            fips = (row.get("GeoFips") or "").strip()
-            v = _val(row)
-            if v is not None:
-                out[fips] = int(round(v))
-    return out
+            lc = str(v.get("Key")); break
+    if not lc:
+        return {}
+    raw = _bea_all_states("SAGDP1", lc, year)
+    return {f: int(round(v)) for f, v in raw.items()}
 
 
 # --------------------------------------------------------------------------- #
-# 4. Sector composition (GA GDP by industry, SAGDP2N LineCode ALL)
+# 4. Sector composition (GA GDP by industry, SAGDP2N — per-linecode)
 # --------------------------------------------------------------------------- #
-# Descriptions to exclude (totals / sub-aggregates) so we keep the ~major sectors.
-_SECTOR_SKIP = ("all industry total", "private industries", "government and government enterprises",
-                "addenda", "natural resources and mining")  # keep granular instead of rollups
+# Top-level NAICS sectors we surface. We match each to its SAGDP2N LineCode by
+# the start of the line description, then fetch GA's value for that linecode
+# (single-GeoFips GetData — the proven pattern; LineCode='ALL' is unsupported).
+_SECTOR_DESC_PREFIXES = [
+    "agriculture, forestry, fishing", "mining, quarrying", "utilities", "construction",
+    "manufacturing", "wholesale trade", "retail trade", "transportation and warehousing",
+    "information", "finance and insurance", "real estate and rental",
+    "professional, scientific, and technical", "management of companies",
+    "administrative and support", "educational services", "health care and social assistance",
+    "arts, entertainment, and recreation", "accommodation and food services",
+    "other services", "government and government enterprises",
+]
 
 
 def fetch_sectors(year: Optional[int] = None) -> Optional[dict]:
     y = year or (date.today().year - 1)
-    res = bea_get({
-        "method": "GetData", "DataSetName": "Regional", "TableName": "SAGDP2N",
-        "LineCode": "ALL", "GeoFips": GA_FIPS, "Year": str(y),
-    })
-    rows = _rows(res)
-    if not rows:
+    codes = _bea_linecodes("SAGDP2N")
+    if not codes:
         return None
-    total = None
-    raw = []
-    for row in rows:
-        desc = (row.get("Description") or "").strip()
-        v = _val(row)
+    # map each wanted top-level sector to the first matching line code
+    wanted: Dict[str, tuple] = {}
+    for v in codes:
+        desc = (v.get("Desc") or "").strip()
+        dl = desc.lower()
+        for pref in _SECTOR_DESC_PREFIXES:
+            if pref not in wanted and dl.startswith(pref):
+                wanted[pref] = (str(v.get("Key")), desc)
+                break
+    if not wanted:
+        return None
+    sectors: List[dict] = []
+    total = 0.0
+    for lc, desc in wanted.values():
+        s = _bea_series("SAGDP2N", GA_FIPS, [y], line_code=lc)
+        # the requested year may not be out yet — accept the latest available
+        v = s.get(y) or (s[max(s)] if s else None)
         if v is None:
             continue
-        dl = desc.lower()
-        if dl == "all industry total" or dl.startswith("all industry"):
-            total = v
-            continue
-        if any(s in dl for s in _SECTOR_SKIP):
-            continue
-        # keep only top-level NAICS sectors (BEA marks them; heuristic: no leading digits,
-        # reasonably short description) — we filter to a curated set below.
-        raw.append((desc, v))
-    if not total:
-        total = sum(v for _, v in raw) or None
-    if not raw or not total:
+        sectors.append({"name": desc, "gdp_bn": round(v / 1000, 2), "_v": v})
+        total += v
+    if not sectors or total <= 0:
         return None
-    sectors = sorted(
-        ({"name": d, "gdp_bn": round(v / 1000, 2), "share_pct": round(100 * v / total, 1)}
-         for d, v in raw),
-        key=lambda s: s["gdp_bn"], reverse=True,
-    )
+    for s in sectors:
+        s["share_pct"] = round(100 * s.pop("_v") / total, 1)
+    sectors.sort(key=lambda s: s["gdp_bn"], reverse=True)
     return {
         "year": y, "total_bn": round(total / 1000, 2), "sectors": sectors,
         "source": "BEA SAGDP2N by industry (current $)",

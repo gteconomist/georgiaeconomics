@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Georgia Economic Outlook — Business-Cycle Index & 5-Year Forecast | Georgia Economics</title>
+<meta name="description" content="Georgia's coincident business-cycle index and a 5-year model forecast of GDP, employment, unemployment, population, and home prices — statewide and by metro. Model extrapolation from BLS, BEA, Census, and FHFA actuals.">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="/styles.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+<script defer src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/gh/gteconomist/economicsguru@main/assets/charts.js"></script>
+
+<style>
+  .chart-canvas-tall { position: relative; height: 360px; background: var(--chart-bg); padding: 6px; }
+  .chart-canvas-med  { position: relative; height: 380px; background: var(--chart-bg); padding: 6px; }
+
+  .panel-controls { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin: 4px 0 12px; }
+  .panel-controls label { font-size: 12px; color: var(--ink-soft); font-weight: 600; text-transform: uppercase; letter-spacing: 0.04em; }
+  .panel-controls select {
+    font-family: inherit; font-size: 14px; padding: 5px 9px; border: 1px solid var(--border);
+    border-radius: 6px; background: #fff; color: var(--navy); font-weight: 600;
+  }
+  .toggle-group { display: inline-flex; border: 1px solid var(--border); border-radius: 6px; overflow: hidden; }
+  .toggle-group button {
+    font-family: inherit; font-size: 13px; padding: 5px 11px; border: 0; background: #fff;
+    color: var(--navy); font-weight: 600; cursor: pointer; border-right: 1px solid var(--border);
+  }
+  .toggle-group button:last-child { border-right: 0; }
+  .toggle-group button.active { background: var(--navy); color: #fff; }
+
+  .pending {
+    background: var(--peach-pale); border: 1px dashed var(--peach, #e8a87c);
+    border-radius: 8px; padding: 14px 16px; color: var(--ink-soft); font-size: 13px;
+  }
+  .pending strong { color: var(--peachDeep, #c46b3a); }
+
+  .disclaimer {
+    background: #fff7ed; border-left: 4px solid var(--peachDeep, #c46b3a);
+    border-radius: 6px; padding: 12px 16px; margin: 4px 0 14px; font-size: 13px; color: var(--ink, #1a3a5c);
+  }
+  .disclaimer strong { color: var(--peachDeep, #c46b3a); }
+
+  .data-table-wrap { overflow-x: auto; }
+  table.data-table { width: 100%; border-collapse: collapse; font-size: 14px; min-width: 520px; }
+  table.data-table thead th {
+    text-align: left; padding: 8px 10px; background: var(--chart-bg);
+    border-bottom: 2px solid var(--navy); color: var(--navy);
+    font-weight: 700; text-transform: uppercase; letter-spacing: 0.04em; font-size: 11px; cursor: pointer;
+  }
+  table.data-table thead th.numeric { text-align: right; }
+  table.data-table tbody td { padding: 7px 10px; border-bottom: 1px dotted var(--border); }
+  table.data-table tbody td.numeric { text-align: right; font-variant-numeric: tabular-nums; }
+  table.data-table tbody tr:hover { background: var(--peach-pale); }
+  table.data-table .metro-name { font-weight: 600; color: var(--navy); }
+  .pos { color: var(--teal); font-weight: 600; }
+  .neg { color: var(--coral); font-weight: 600; }
+
+  .stale-badge { display:inline-block; font-size:11px; font-weight:700; color:var(--peachDeep,#c46b3a); background:var(--peach-pale); border-radius:4px; padding:1px 6px; margin-left:8px; vertical-align:middle; }
+  .source-note { font-size: 12px; color: var(--ink-soft); margin-top: 8px; font-style: italic; }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <div class="brand">Georgia<span class="tag">Economics</span></div>
+    <nav>
+      <a href="/">Home</a>
+      <a href="/counties/">Counties</a>
+      <a href="/msa/">Metros</a>
+      <a href="/labor/">Labor</a>
+      <a href="/housing/">Housing</a>
+      <a href="/about/">About</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="page-header">
+    <h1>Georgia economic outlook</h1>
+    <div class="subtitle">A coincident business-cycle index &mdash; where Georgia's economy is right now &mdash; and a 5-year model forecast of the headline indicators, statewide and by metro. Built from BLS, BEA, Census, and FHFA actuals.</div>
+    <div class="latest">Cycle index through: <strong id="latest-label">&mdash;</strong></div>
+  </section>
+
+  <div class="notice" id="coverage-note" style="display:none;"></div>
+
+  <!-- KPI strip -->
+  <div class="kpi-grid">
+    <div class="kpi">
+      <div class="label">Business-cycle index</div>
+      <div class="value" id="kpi-cycle">&mdash;</div>
+      <div class="delta">100 = Jan 2019 &middot; 1&sigma; = 10 pts</div>
+    </div>
+    <div class="kpi">
+      <div class="label">vs. cycle peak</div>
+      <div class="value" id="kpi-vspeak">&mdash;</div>
+      <div class="delta" id="kpi-direction">&mdash;</div>
+    </div>
+    <div class="kpi">
+      <div class="label">Forecast GDP growth</div>
+      <div class="value" id="kpi-gmp">&mdash;</div>
+      <div class="delta">2030, model (YoY)</div>
+    </div>
+    <div class="kpi">
+      <div class="label">Forecast job growth</div>
+      <div class="value" id="kpi-emp">&mdash;</div>
+      <div class="delta">2030, model (YoY)</div>
+    </div>
+    <div class="kpi">
+      <div class="label">Metros at/above peak</div>
+      <div class="value" id="kpi-peak">&mdash;</div>
+      <div class="delta">of 14, cycle index</div>
+    </div>
+    <div class="kpi">
+      <div class="label">Metros tracked</div>
+      <div class="value" id="kpi-metros">14</div>
+      <div class="delta">+ statewide</div>
+    </div>
+  </div>
+
+  <!-- Business-cycle index (marquee) -->
+  <div class="chart-panel" style="margin-top: 22px;">
+    <h2>Where Georgia Is in the Cycle <span id="cycle-stale" class="stale-badge" style="display:none;">stale</span></h2>
+    <p class="sub">A Stock-Watson coincident index from statewide payroll employment and unemployment, rebased to 100 in January 2019 and smoothed. Higher = more economic activity; the COVID trough and recovery are visible.</p>
+    <div id="cycle-pending" class="pending" style="display:none;"><strong>Cycle index pending:</strong> populates on the first data-refresh run after deploy.</div>
+    <div class="chart-canvas-tall"><canvas id="cycle-chart"></canvas></div>
+    <div class="source-note" id="cycle-caption"></div>
+  </div>
+
+  <!-- 5-year forecast -->
+  <div class="chart-panel" style="margin-top: 22px;">
+    <h2>Five-Year Outlook <span id="fc-stale" class="stale-badge" style="display:none;">stale</span></h2>
+    <div class="disclaimer" id="fc-disclaimer"><strong>Model projection, not an official forecast.</strong> <span id="fc-disclaimer-text"></span></div>
+    <p class="sub">Projected path of each indicator, 2026&ndash;2030, if recent trends persist. Pick a metric.</p>
+    <div class="panel-controls">
+      <label for="fc-metric">Indicator</label>
+      <select id="fc-metric"></select>
+    </div>
+    <div id="fc-pending" class="pending" style="display:none;"><strong>Forecast pending:</strong> the employment, unemployment, and population projections are live now; GDP and home-price projections fill in once those statewide series populate on the first refresh after deploy.</div>
+    <div class="chart-canvas-med"><canvas id="fc-chart"></canvas></div>
+  </div>
+
+  <!-- Metro cycle roll-up -->
+  <div class="chart-panel" style="margin-top: 22px;">
+    <h2>Each Metro vs. Its Own Peak</h2>
+    <p class="sub">How far each metro's cycle index sits below (coral) or at/above (teal) its own peak &mdash; who's still climbing and who's rolling over.</p>
+    <div class="chart-canvas-med"><canvas id="metro-cycle-chart"></canvas></div>
+    <div class="source-note">Source: roll-up of the 14 metro reports (coincident cycle index).</div>
+  </div>
+
+  <!-- Metro growth outlook -->
+  <div class="chart-panel" style="margin-top: 22px;">
+    <h2>Metro Growth Outlook (2026&ndash;2030)</h2>
+    <div class="disclaimer">Model projections — see the caveat above. Annualized (CAGR) over the forecast horizon.</div>
+    <div class="panel-controls">
+      <div class="toggle-group" id="growth-metric-toggle">
+        <button data-metric="fc_gmp_cagr" class="active">GDP growth</button>
+        <button data-metric="fc_emp_cagr">Job growth</button>
+      </div>
+    </div>
+    <div class="chart-canvas-med"><canvas id="growth-chart"></canvas></div>
+    <div class="source-note">Source: roll-up of the 14 metro reports (5-year damped-Holt forecast).</div>
+  </div>
+
+  <!-- Methodology -->
+  <div class="chart-panel" style="margin-top: 22px;">
+    <h2>About this data</h2>
+    <p class="sub" style="font-size:14px; line-height:1.6;">
+      The <strong>business-cycle index</strong> is a Stock-Watson-style coincident indicator: the first principal component of statewide payroll employment (BLS CES) and unemployment (BLS LAUS), z-scored, rebased to 100 in January 2019, and lightly smoothed (1 standard deviation &asymp; 10 index points). It describes where the economy <em>is</em>, not where it's going. The <strong>5-year forecast</strong> uses damped-trend Holt smoothing (an ARIMA-family method) fit to each historical series; levels are projected in log space and the trend is damped to avoid runaway extrapolation. These are <strong>mechanical model projections from past data &mdash; not official forecasts, predictions, or investment advice</strong>, and they do not incorporate policy changes, shocks, or judgment. Statewide figures are computed from Georgia actuals; metro figures roll up from the 14 <a href="/msa/">metro reports</a> using the identical methodology. This page is state- and metro-level (not county). Sections show a <span class="stale-badge">stale</span> badge when their inputs are more than a few months old.
+    </p>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div>&copy; <span id="yr"></span> Georgia Economics &middot; Sister site to <a href="https://economicsguru.com">economicsguru.com</a> &middot; <a href="/about/">Methodology</a></div>
+    <div>Model projections from BLS, BEA, Census, and FHFA actuals &mdash; not official forecasts.</div>
+    <div class="eig">
+      <a href="https://www.economicimpact.com" target="_blank" rel="noopener" aria-label="Economic Impact Group">
+        <img src="/assets/ei_logo_NEW_200pxw.png" alt="Economic Impact Group">
+      </a>
+      <span class="product-of">A product of <a href="https://www.economicimpact.com" target="_blank" rel="noopener">Economic Impact Group, LLC</a>.</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+document.getElementById('yr').textContent = new Date().getFullYear();
+
+const BRAND = {
+  navy: '#1a3a5c', peachDeep: '#c46b3a', peach: '#e8a87c',
+  mustard: '#d4a017', teal: '#3a8d8d', coral: '#d4624a',
+  green: '#6b8e3d', grid: '#b6ad8d', inkSoft: '#6b7280',
+};
+
+// Forecast metric registry: key -> {label, fmt}
+const FC_METRICS = {
+  gmp:                 { label: 'GDP ($bn)',            fmt: v => '$' + Number(v).toFixed(0) + 'bn' },
+  gmp_yoy:             { label: 'GDP growth (YoY %)',   fmt: v => v.toFixed(1) + '%' },
+  total_employment:    { label: 'Employment (000s)',   fmt: v => Math.round(v).toLocaleString() + 'K' },
+  total_employment_yoy:{ label: 'Job growth (YoY %)',  fmt: v => v.toFixed(1) + '%' },
+  unemployment:        { label: 'Unemployment rate',   fmt: v => v.toFixed(1) + '%' },
+  population:          { label: 'Population (000s)',    fmt: v => Math.round(v).toLocaleString() + 'K' },
+  population_yoy:      { label: 'Population growth (YoY %)', fmt: v => v.toFixed(1) + '%' },
+  hpi_yoy:             { label: 'Home-price growth (YoY %)', fmt: v => v.toFixed(1) + '%' },
+  personal_income_yoy: { label: 'Personal-income growth (YoY %)', fmt: v => v.toFixed(1) + '%' },
+};
+
+const fmtSigned = (v, s) => v == null ? '—' : (v >= 0 ? '+' : '') + Number(v).toFixed(s == null ? 1 : s);
+let DATA = null;
+
+async function init() {
+  const res = await fetch('/data/outlook.json?v=' + new Date().toISOString().slice(0, 10));
+  DATA = await res.json();
+
+  if (DATA.coverage_note) {
+    const el = document.getElementById('coverage-note');
+    el.textContent = DATA.coverage_note; el.style.display = '';
+  }
+  document.getElementById('fc-disclaimer-text').textContent = DATA.disclaimer || '';
+  document.getElementById('latest-label').textContent = DATA.latest_label || '—';
+
+  const meta = DATA._meta || {};
+  const stale = n => !meta[n] || meta[n].stale;
+
+  renderKpis();
+  renderCycle(stale('ga_cycle'));
+  renderForecast(stale('ga_forecast'));
+  renderMetroCycle();
+  renderGrowth();
+}
+
+function renderKpis() {
+  const k = DATA.kpis || {};
+  document.getElementById('kpi-cycle').textContent = k.cycle_latest == null ? '—' : Number(k.cycle_latest).toFixed(1);
+  document.getElementById('kpi-vspeak').textContent = fmtSigned(k.cycle_vs_peak) + ' pts';
+  const dir = document.getElementById('kpi-direction');
+  dir.textContent = k.cycle_direction ? k.cycle_direction[0].toUpperCase() + k.cycle_direction.slice(1) : '—';
+  document.getElementById('kpi-gmp').textContent = k.fc_gmp_growth_2030 == null ? '—' : fmtSigned(k.fc_gmp_growth_2030) + '%';
+  document.getElementById('kpi-emp').textContent = k.fc_emp_growth_2030 == null ? '—' : fmtSigned(k.fc_emp_growth_2030) + '%';
+  document.getElementById('kpi-peak').textContent = k.metros_above_peak == null ? '—' : k.metros_above_peak;
+  if (k.metro_count) document.getElementById('kpi-metros').textContent = k.metro_count;
+}
+
+/* ---- Business-cycle index ---- */
+function renderCycle(isStale) {
+  const c = DATA.ga_cycle;
+  if (!c || !c.months) { document.getElementById('cycle-pending').style.display = ''; return; }
+  if (isStale) document.getElementById('cycle-stale').style.display = '';
+  document.getElementById('cycle-caption').textContent =
+    `Peak ${c.peak_value} (${c.peak_month}); trough ${c.trough_value} (${c.trough_month}); latest ${c.latest_value} (${c.latest_month}). ${c.n_months} months.`;
+  const ctx = document.getElementById('cycle-chart').getContext('2d');
+  new Chart(ctx, {
+    type: 'line',
+    data: { labels: c.months, datasets: [{
+      label: 'Coincident index', data: c.values, borderColor: BRAND.navy,
+      backgroundColor: 'rgba(26,58,92,0.10)', fill: true, tension: 0.2, pointRadius: 0, borderWidth: 2.5,
+    }] },
+    options: {
+      responsive: true, maintainAspectRatio: false,
+      scales: {
+        x: { grid: { display: false }, ticks: { color: BRAND.navy, font: { size: 10 }, autoSkip: true, maxTicksLimit: 12, maxRotation: 45 } },
+        y: { grid: { color: BRAND.grid, borderDash: [3,4] }, ticks: { color: BRAND.navy, font: { size: 11 } } },
+      },
+      plugins: {
+        legend: { display: false },
+        tooltip: { callbacks: { label: it => 'Index: ' + it.parsed.y.toFixed(1) } },
+      },
+    },
+  });
+}
+
+/* ---- 5-year forecast ---- */
+let fcChart = null;
+function renderForecast(isStale) {
+  const f = DATA.ga_forecast;
+  if (!f || !f.metrics || !f.years) { document.getElementById('fc-pending').style.display = ''; return; }
+  if (isStale) document.getElementById('fc-stale').style.display = '';
+  // populate the metric selector from available metrics, prefer level metrics first
+  const sel = document.getElementById('fc-metric');
+  const order = ['gmp','total_employment','unemployment','population','hpi_yoy','gmp_yoy','total_employment_yoy','population_yoy','personal_income_yoy'];
+  const avail = order.filter(m => f.metrics.includes(m) && FC_METRICS[m]);
+  avail.forEach((m, i) => {
+    const o = document.createElement('option'); o.value = m; o.textContent = FC_METRICS[m].label;
+    sel.appendChild(o);
+  });
+  if (!avail.length) { document.getElementById('fc-pending').style.display = ''; return; }
+  sel.addEventListener('change', drawForecast);
+  drawForecast();
+}
+function drawForecast() {
+  const f = DATA.ga_forecast;
+  const sel = document.getElementById('fc-metric');
+  const key = sel.value || sel.options[0]?.value;
+  if (!key || !f[key]) return;
+  const meta = FC_METRICS[key];
+  const isRate = key.endsWith('_yoy') || key === 'unemployment';
+  const ctx = document.getElementById('fc-chart').getContext('2d');
+  if (fcChart) fcChart.destroy();
+  fcChart = new Chart(ctx, {
+    type: isRate ? 'line' : 'bar',
+    data: { labels: f.years.map(y => y + 'F'), datasets: [{
+      label: meta.label, data: f[key],
+      borderColor: BRAND.peachDeep, backgroundColor: isRate ? 'rgba(196,107,58,0.12)' : BRAND.teal,
+      fill: isRate, tension: 0.25, pointRadius: isRate ? 3 : 0, borderWidth: 2.5, borderDash: isRate ? [5,4] : undefined,
+    }] },
+    options: {
+      responsive: true, maintainAspectRatio: false,
+      scales: {
+        x: { grid: { display: false }, ticks: { color: BRAND.navy, font: { size: 12 } } },
+        y: { grid: { color: BRAND.grid, borderDash: [3,4] }, ticks: { color: BRAND.navy, font: { size: 11 } }, beginAtZero: !isRate },
+      },
+      plugins: {
+        legend: { display: false },
+        title: { display: true, text: meta.label + ' — projected', color: BRAND.navy, font: { size: 13 } },
+        tooltip: { callbacks: { label: it => meta.fmt(it.parsed.y) } },
+      },
+    },
+  });
+}
+
+/* ---- Metro cycle: % from own peak ---- */
+function renderMetroCycle() {
+  const rows = (DATA.metros || [])
+    .filter(m => typeof m.pct_from_peak === 'number')
+    .sort((a, b) => b.pct_from_peak - a.pct_from_peak);
+  if (!rows.length) return;
+  const ctx = document.getElementById('metro-cycle-chart').getContext('2d');
+  new Chart(ctx, {
+    type: 'bar',
+    data: { labels: rows.map(r => r.short_name), datasets: [{
+      data: rows.map(r => r.pct_from_peak),
+      backgroundColor: rows.map(r => r.pct_from_peak >= 0 ? BRAND.teal : BRAND.coral), borderWidth: 0,
+    }] },
+    options: {
+      indexAxis: 'y', responsive: true, maintainAspectRatio: false,
+      scales: {
+        x: { grid: { color: BRAND.grid, borderDash: [3,4] }, ticks: { color: BRAND.navy, font: { size: 11 }, callback: v => (v > 0 ? '+' : '') + v + '%' } },
+        y: { grid: { display: false }, ticks: { color: BRAND.navy, font: { size: 11, weight: 'bold' } } },
+      },
+      plugins: { legend: { display: false }, tooltip: { callbacks: { label: it => fmtSigned(it.parsed.x) + '% vs peak' } } },
+    },
+  });
+}
+
+/* ---- Metro growth outlook ---- */
+let growthMetric = 'fc_gmp_cagr', growthChart = null;
+function renderGrowth() {
+  document.querySelectorAll('#growth-metric-toggle button').forEach(b => b.addEventListener('click', () => {
+    document.querySelectorAll('#growth-metric-toggle button').forEach(x => x.classList.remove('active'));
+    b.classList.add('active'); growthMetric = b.dataset.metric; drawGrowth();
+  }));
+  drawGrowth();
+}
+function drawGrowth() {
+  const rows = (DATA.metros || [])
+    .filter(m => typeof m[growthMetric] === 'number')
+    .sort((a, b) => b[growthMetric] - a[growthMetric]);
+  const ctx = document.getElementById('growth-chart').getContext('2d');
+  if (growthChart) growthChart.destroy();
+  if (!rows.length) {
+    document.getElementById('growth-chart').parentElement.insertAdjacentHTML('beforeend',
+      '<div class="pending" style="margin-top:8px;">This projection populates once statewide/metro GDP series refresh in CI.</div>');
+    return;
+  }
+  growthChart = new Chart(ctx, {
+    type: 'bar',
+    data: { labels: rows.map(r => r.short_name), datasets: [{
+      data: rows.map(r => r[growthMetric]), backgroundColor: BRAND.navy, borderWidth: 0,
+    }] },
+    options: {
+      indexAxis: 'y', responsive: true, maintainAspectRatio: false,
+      scales: {
+        x: { grid: { color: BRAND.grid, borderDash: [3,4] }, ticks: { color: BRAND.navy, font: { size: 11 }, callback: v => v + '%' } },
+        y: { grid: { display: false }, ticks: { color: BRAND.navy, font: { size: 11, weight: 'bold' } } },
+      },
+      plugins: { legend: { display: false }, tooltip: { callbacks: { label: it => it.parsed.x.toFixed(2) + '% / yr (CAGR)' } } },
+    },
+  });
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  init().catch(err => {
+    console.error('outlook init failed:', err);
+    document.querySelector('main').insertAdjacentHTML('beforeend',
+      '<div style="padding:20px; color:var(--coral); font-weight:600;">Failed to load outlook data. Check console.</div>');
+  });
+});
+</script>
+</body>
+</html>

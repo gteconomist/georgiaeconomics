@@ -29,6 +29,8 @@ jobs:
     timeout-minutes: 60
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0   # full history so the commit step can rebase before pushing
 
       - uses: actions/setup-python@v5
         with:
@@ -97,14 +99,35 @@ jobs:
         # pull hits the network and degrades gracefully on failure.
         run: python3 scripts/fetch_migration.py
 
+      - name: Build economic outlook (cycle + forecast)
+        # Computes the statewide business-cycle index + 5-year forecast by feeding
+        # GA actuals (labor/gdp/population/housing JSON) into the same modeling
+        # helpers the metros use, and rolls up the 14 reports. Runs AFTER the GDP
+        # and housing steps so ga_gdp / ga_hpi exist as forecast inputs. No keys.
+        run: python3 scripts/fetch_forecasts.py
+
       - name: Commit refreshed JSON + pages
         run: |
           git config user.name  "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/msa_reports/ msa/ data/ga_msa_counties.json data/housing.json data/gdp.json data/migration.json REPORT_STATUS_MATRIX.md
+          git add data/msa_reports/ msa/ data/ga_msa_counties.json data/housing.json data/gdp.json data/migration.json data/outlook.json REPORT_STATUS_MATRIX.md
           if git diff --cached --quiet; then
             echo "No changes to commit."
-          else
-            git commit -m "chore(msa-reports): nightly data + page refresh $(date -u +%F)"
-            git push
+            exit 0
+          fi
+          git commit -m "chore(msa-reports): nightly data + page refresh $(date -u +%F)"
+          # This run can take several minutes, so the remote may have advanced
+          # (a manual push, or an overlapping run). Rebase onto the latest main
+          # and retry the push a few times before failing the job.
+          pushed=false
+          for attempt in 1 2 3 4 5; do
+            if git pull --rebase --autostash origin main && git push; then
+              pushed=true; break
+            fi
+            echo "push attempt $attempt rejected; rebasing onto latest main and retrying..."
+            sleep 5
+          done
+          if [ "$pushed" != true ]; then
+            echo "::error::could not push refreshed data after 5 rebase+push attempts"
+            exit 1
           fi

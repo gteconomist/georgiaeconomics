@@ -74,14 +74,20 @@ Use data already in hand.
 
 ---
 
-## Sequencing
+## Sequencing & progress
 
-1. **Housing page** (WS1) — starting point, scoped in `HOUSING_PAGE_SCOPE.md`.
-2. **State GDP page** (WS1) — next-easiest stub, data largely in hand.
-3. **Migration page** (WS2) — first "unbury the MSA depth" win, high distinctiveness.
-4. **Forecasts hub** (WS2).
-5. Thicken Labor + Trade (WS3).
-6. Consumer stub (WS1, needs new pipelines) + connective tissue (WS4).
+1. ✅ **Housing page** (WS1) — DONE. `HOUSING_PAGE_SCOPE.md`; `/housing/`, `scripts/fetch_housing.py`. Statewide GA HPI + 159-county ACS map + non-metro aggregate.
+2. ✅ **State GDP page** (WS1) — DONE. `STATE_GDP_PAGE_SCOPE.md`; `/gdp/`, `scripts/fetch_gdp.py`. SAGDP statewide + CAGDP2 county + SE peers + sectors + non-metro.
+3. ✅ **Migration page** (WS2) — DONE. `MIGRATION_PAGE_SCOPE.md`; `/migration/`, `scripts/fetch_migration.py` (+ `fetch_state_flows()` in `pull_irs_soi.py`). IRS SOI state flows + 159-county net-migration map + metro attraction.
+4. ✅ **Forecasts/Outlook hub** (WS2) — DONE. `FORECASTS_PAGE_SCOPE.md`; `/outlook/`, `scripts/fetch_forecasts.py`. Reuses `business_cycle_index` + `forecast_arima` helpers on GA actuals; cycle index + 5-yr forecast + metro roll-ups. Carries a model-projection disclaimer.
+5. ◻ Thicken **Labor + Trade** (WS3) — NOT STARTED. ← resume here.
+6. ◻ **Consumer** stub (WS1, needs new pipelines: GA DoR sales tax, Georgia Power demand) + connective tissue (WS4).
+
+All four new pages fold their roll-up into `update-msa-reports.yml` (after the metro
+reports regenerate) and commit `data/{housing,gdp,migration,outlook}.json`. The home-grid
+cards are flipped to "Live now"; GDP/Migration/Outlook are home-grid-only (not top nav).
+All `update-*.yml` workflows were hardened with `fetch-depth: 0` + rebase-and-retry push
+to survive concurrent-push races.
 
 ## Conventions to preserve (all Phase 4 work)
 
@@ -100,6 +106,22 @@ Use data already in hand.
 
 ## ▶ RESUME HERE (Phase 4)
 
-Start with the **Housing page** per `HOUSING_PAGE_SCOPE.md`. It closes a visible
-"Coming soon" gap, the underlying data is already `live` across all 14 metros, and it
-reuses the proven topic-page template end to end.
+**Done (2026-06-02 session):** Housing, State GDP, Migration, Outlook — all four pages
+built, wired, and shipped; all `update-*.yml` workflows hardened. Two "Coming soon" home
+stubs closed (Housing, State GDP); Migration + Outlook added net-new.
+
+**Next: WS3 — thicken Labor + Trade** (data already in hand, no new external sources):
+- **Labor** — fold in the county LAUS layer (`fetch_bls_laus.py` + `counties.json`) for a
+  159-county unemployment map, a metro labor comparison, and sector diffusion (already
+  computed in the MSA reports). Follow the proven roll-up + statewide + county pattern.
+- **Trade** — multi-year export trends + commodity breakdown (not just top-country); the
+  ITA MSA exports endpoint is still partially blocked (`reference_ita_exports_endpoint_dead`).
+
+**Then:** Consumer stub (needs NEW pipelines — GA Dept. of Revenue sales-tax collections,
+Georgia Power residential demand) + WS4 connective tissue (scorecard, search, alerts,
+full cross-metro comparator).
+
+Reuse the established playbook: scope doc → `scripts/fetch_<topic>.py` (with `--rollup`
+local validation) → `/<topic>/index.html` (reuse Housing/GDP choropleth + pending/stale
+patterns) → fold into `update-msa-reports.yml` → flip/add home card → verify lint + JSON
+keys → hand over the rebase-first push block.
