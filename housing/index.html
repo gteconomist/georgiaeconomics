@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Georgia Housing — Home Prices, Affordability & Permits by Metro and County | Georgia Economics</title>
+<meta name="description" content="Live Georgia housing data: FHFA home-price index, affordability, valuation, building permits, and a 159-county map of home values and ownership. Statewide, 14 metros, and non-metro Georgia. From FHFA, Census ACS, and the Building Permits Survey.">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="/styles.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+<script defer src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/gh/gteconomist/economicsguru@main/assets/charts.js"></script>
+<!-- Plotly + maps.js for the 159-county choropleth -->
+<script defer src="https://cdn.plot.ly/plotly-2.35.2.min.js"></script>
+<script defer src="/maps.js"></script>
+
+<style>
+  .chart-canvas-tall { position: relative; height: 340px; background: var(--chart-bg); padding: 6px; }
+  .chart-canvas-med  { position: relative; height: 380px; background: var(--chart-bg); padding: 6px; }
+
+  .panel-controls { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin: 4px 0 12px; }
+  .panel-controls label { font-size: 12px; color: var(--ink-soft); font-weight: 600; text-transform: uppercase; letter-spacing: 0.04em; }
+  .panel-controls select {
+    font-family: inherit; font-size: 14px; padding: 5px 9px; border: 1px solid var(--border);
+    border-radius: 6px; background: #fff; color: var(--navy); font-weight: 600;
+  }
+  .toggle-group { display: inline-flex; border: 1px solid var(--border); border-radius: 6px; overflow: hidden; }
+  .toggle-group button {
+    font-family: inherit; font-size: 13px; padding: 5px 11px; border: 0; background: #fff;
+    color: var(--navy); font-weight: 600; cursor: pointer; border-right: 1px solid var(--border);
+  }
+  .toggle-group button:last-child { border-right: 0; }
+  .toggle-group button.active { background: var(--navy); color: #fff; }
+
+  #county-map { height: 520px; background: var(--chart-bg); }
+
+  .pending {
+    background: var(--peach-pale); border: 1px dashed var(--peach, #e8a87c);
+    border-radius: 8px; padding: 14px 16px; color: var(--ink-soft); font-size: 13px;
+  }
+  .pending strong { color: var(--peachDeep, #c46b3a); }
+
+  /* Non-metro callout */
+  .nonmetro-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 14px; margin-top: 6px; }
+  .nonmetro-stat { background: var(--chart-bg); border-radius: 8px; padding: 12px 14px; }
+  .nonmetro-stat .label { font-size: 11px; text-transform: uppercase; letter-spacing: 0.04em; color: var(--ink-soft); font-weight: 700; }
+  .nonmetro-stat .value { font-size: 22px; font-weight: 800; color: var(--navy); margin-top: 2px; font-variant-numeric: tabular-nums; }
+
+  /* Stock table */
+  .stock-table-wrap { overflow-x: auto; }
+  table.stock-table { width: 100%; border-collapse: collapse; font-size: 14px; min-width: 680px; }
+  table.stock-table thead th {
+    text-align: left; padding: 8px 10px; background: var(--chart-bg);
+    border-bottom: 2px solid var(--navy); color: var(--navy);
+    font-weight: 700; text-transform: uppercase; letter-spacing: 0.04em; font-size: 11px; cursor: pointer;
+  }
+  table.stock-table thead th.numeric { text-align: right; }
+  table.stock-table tbody td { padding: 7px 10px; border-bottom: 1px dotted var(--border); }
+  table.stock-table tbody td.numeric { text-align: right; font-variant-numeric: tabular-nums; }
+  table.stock-table tbody tr:hover { background: var(--peach-pale); }
+  table.stock-table .metro-name { font-weight: 600; color: var(--navy); }
+
+  .stale-badge { display:inline-block; font-size:11px; font-weight:700; color:var(--peachDeep,#c46b3a); background:var(--peach-pale); border-radius:4px; padding:1px 6px; margin-left:8px; vertical-align:middle; }
+  .source-note { font-size: 12px; color: var(--ink-soft); margin-top: 8px; font-style: italic; }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <div class="brand">Georgia<span class="tag">Economics</span></div>
+    <nav>
+      <a href="/">Home</a>
+      <a href="/counties/">Counties</a>
+      <a href="/msa/">Metros</a>
+      <a href="/labor/">Labor</a>
+      <a href="/housing/" class="active">Housing</a>
+      <a href="/about/">About</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="page-header">
+    <h1>Georgia housing</h1>
+    <div class="subtitle">Home prices, affordability, valuation, and construction across the state &mdash; statewide, all 14 metros, a 159-county map, and a non-metro Georgia aggregate. Sources: FHFA House Price Index, Census ACS 5-year, and the Census Building Permits Survey.</div>
+    <div class="latest">Latest data: <strong id="latest-label">&mdash;</strong></div>
+  </section>
+
+  <div class="notice" id="coverage-note" style="display:none;"></div>
+
+  <!-- KPI strip -->
+  <div class="kpi-grid">
+    <div class="kpi">
+      <div class="label">GA home-price growth</div>
+      <div class="value" id="kpi-hpi-yoy">&mdash;</div>
+      <div class="delta">FHFA HPI, YoY</div>
+    </div>
+    <div class="kpi">
+      <div class="label">GA HPI level</div>
+      <div class="value" id="kpi-hpi-level">&mdash;</div>
+      <div class="delta">All-transactions index</div>
+    </div>
+    <div class="kpi">
+      <div class="label">Median metro affordability</div>
+      <div class="value" id="kpi-afford">&mdash;</div>
+      <div class="delta">100 = median income exactly qualifies</div>
+    </div>
+    <div class="kpi">
+      <div class="label">Median permits / 1k</div>
+      <div class="value" id="kpi-permits">&mdash;</div>
+      <div class="delta">Residential, across metros</div>
+    </div>
+    <div class="kpi">
+      <div class="label">Median owner-occupancy</div>
+      <div class="value" id="kpi-owner">&mdash;</div>
+      <div class="delta">Share of occupied units</div>
+    </div>
+    <div class="kpi">
+      <div class="label">Non-metro counties</div>
+      <div class="value" id="kpi-nonmetro">86</div>
+      <div class="delta">Outside the 14 MSAs</div>
+    </div>
+  </div>
+
+  <!-- Home prices over time -->
+  <div class="chart-panel" style="margin-top: 22px;">
+    <h2>Home Prices Over Time <span id="hpi-stale" class="stale-badge" style="display:none;">stale</span></h2>
+    <p class="sub">FHFA House Price Index. The statewide Georgia and US lines cover 100% of the state; overlay any metro to compare. Indexed (1991 Q1 = 100 for the GA/US all-transactions series; metros use the purchase-only series).</p>
+    <div class="panel-controls">
+      <label for="hpi-metro">Overlay metro</label>
+      <select id="hpi-metro"><option value="">None</option></select>
+    </div>
+    <div id="hpi-pending" class="pending" style="display:none;"><strong>Statewide GA series pending:</strong> the metro lines below are live now; the Georgia + US statewide HPI populates on the first data-refresh run after deploy. Refresh after the workflow completes.</div>
+    <div class="chart-canvas-tall"><canvas id="hpi-chart"></canvas></div>
+  </div>
+
+  <!-- Metro comparison -->
+  <div class="chart-panel" style="margin-top: 22px;">
+    <h2>Metro Home-Price Growth &mdash; Latest Year</h2>
+    <p class="sub">Year-over-year change in the FHFA HPI by metro, fastest to slowest. Teal = at or above the statewide-metro median, coral = below.</p>
+    <div class="chart-canvas-med"><canvas id="metro-yoy-chart"></canvas></div>
+  </div>
+
+  <!-- County choropleth -->
+  <div class="chart-panel" style="margin-top: 22px;">
+    <h2>Every County <span id="county-stale" class="stale-badge" style="display:none;">stale</span></h2>
+    <p class="sub">All 159 Georgia counties &mdash; the 86 outside any metro included. Census ACS 5-year estimates.</p>
+    <div class="panel-controls">
+      <div class="toggle-group" id="county-metric-toggle">
+        <button data-metric="median_home_value" class="active">Median home value</button>
+        <button data-metric="pct_owner_occupied">% owner-occupied</button>
+        <button data-metric="median_gross_rent">Median rent</button>
+      </div>
+    </div>
+    <div id="county-pending" class="pending" style="display:none;"><strong>County map pending:</strong> the all-159-county ACS layer populates on the first data-refresh run after deploy (it needs the Census API key from repo secrets). Refresh after the workflow completes.</div>
+    <div id="county-map"></div>
+    <div class="source-note">Source: Census ACS 5-year (B25077 home value, B25064 gross rent, B25003 tenure).</div>
+  </div>
+
+  <!-- Non-metro Georgia -->
+  <div class="chart-panel" style="margin-top: 22px;">
+    <h2>Non-Metro Georgia <span id="nonmetro-stale" class="stale-badge" style="display:none;">stale</span></h2>
+    <p class="sub">The 86 counties outside the 14 MSAs &mdash; roughly a fifth of Georgians &mdash; aggregated so rural housing isn't invisible. Population-weighted across counties.</p>
+    <div id="nonmetro-pending" class="pending" style="display:none;"><strong>Aggregate pending:</strong> the non-metro roll-up derives from the county ACS layer and populates on the first data-refresh run after deploy.</div>
+    <div class="nonmetro-grid" id="nonmetro-grid" style="display:none;"></div>
+  </div>
+
+  <!-- Affordability -->
+  <div class="chart-panel" style="margin-top: 22px;">
+    <h2>Affordability</h2>
+    <p class="sub">Buyer affordability by metro (NAR-style: 100 = the median household income exactly qualifies for the median-priced home at prevailing rates; higher is more affordable). Select a metro to see its rent-burden trend vs the US.</p>
+    <div class="panel-controls">
+      <label for="afford-metro">Rent-burden metro</label>
+      <select id="afford-metro"></select>
+    </div>
+    <div class="chart-grid">
+      <div class="chart-panel" style="margin:0; box-shadow:none; padding:0;">
+        <div class="chart-canvas-med"><canvas id="afford-chart"></canvas></div>
+      </div>
+      <div class="chart-panel" style="margin:0; box-shadow:none; padding:0;">
+        <div class="chart-canvas-med"><canvas id="rentburden-chart"></canvas></div>
+      </div>
+    </div>
+    <div class="source-note">Source: EIG affordability composite (ACS median income vs. income needed for the median home) and ACS B25064/B19013 rent burden.</div>
+  </div>
+
+  <!-- Valuation scatter -->
+  <div class="chart-panel" style="margin-top: 22px;">
+    <h2>Are Metros Over- or Under-Valued?</h2>
+    <p class="sub">Each metro plotted by price-to-income (x) and price-to-rent (y). Toward the upper-right = pricier relative to local incomes and rents. Bubble color is the EIG fair-value gap (teal = below fair value, coral = above).</p>
+    <div class="chart-canvas-med"><canvas id="valuation-chart"></canvas></div>
+    <div class="source-note">Source: EIG valuation model &mdash; FHFA HPI vs. BEA per-capita income (log-log fair-value regression).</div>
+  </div>
+
+  <!-- Housing stock mix -->
+  <div class="chart-panel" style="margin-top: 22px;">
+    <h2>Housing Stock by Metro</h2>
+    <p class="sub">Tenure and structure mix from ACS 5-year. Click a column header to sort.</p>
+    <div class="stock-table-wrap">
+      <table class="stock-table">
+        <thead><tr>
+          <th data-sort="short_name">Metro</th>
+          <th class="numeric" data-sort="total_housing_units">Housing units</th>
+          <th class="numeric" data-sort="pct_owner_occupied">Owner %</th>
+          <th class="numeric" data-sort="pct_renter_occupied">Renter %</th>
+          <th class="numeric" data-sort="pct_vacant">Vacant %</th>
+          <th class="numeric" data-sort="pct_1unit_detached">SF detached %</th>
+          <th class="numeric" data-sort="pct_multifamily">Multifamily %</th>
+        </tr></thead>
+        <tbody id="stock-body"></tbody>
+      </table>
+    </div>
+    <div class="source-note">Source: Census ACS 5-year (B25024 structure, B25003 tenure, B25002 occupancy).</div>
+  </div>
+
+  <!-- Methodology -->
+  <div class="chart-panel" style="margin-top: 22px;">
+    <h2>About this data</h2>
+    <p class="sub" style="font-size:14px; line-height:1.6;">
+      The statewide Georgia and US price trends use the FHFA all-transactions House Price Index via FRED. Metro price, valuation, affordability, permits, and stock figures roll up from the 14 individual <a href="/msa/">metro reports</a>. The 159-county map and the Non-Metro Georgia aggregate use Census ACS 5-year estimates, which lag by about 2.5 years (the midpoint of the rolling window) but are smoother and available for every county. The 14 MSAs cover 73 of Georgia's 159 counties and about 82% of its population; the county layer and non-metro aggregate represent the remaining 86 counties. Sections show a <span class="stale-badge">stale</span> badge when their underlying source is more than six months old.
+    </p>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div>&copy; <span id="yr"></span> Georgia Economics &middot; Sister site to <a href="https://economicsguru.com">economicsguru.com</a> &middot; <a href="/about/">Methodology</a></div>
+    <div>Data refreshes monthly from FHFA, Census ACS, and the Building Permits Survey.</div>
+    <div class="eig">
+      <a href="https://www.economicimpact.com" target="_blank" rel="noopener" aria-label="Economic Impact Group">
+        <img src="/assets/ei_logo_NEW_200pxw.png" alt="Economic Impact Group">
+      </a>
+      <span class="product-of">A product of <a href="https://www.economicimpact.com" target="_blank" rel="noopener">Economic Impact Group, LLC</a>.</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+document.getElementById('yr').textContent = new Date().getFullYear();
+
+const BRAND = {
+  navy: '#1a3a5c', peachDeep: '#c46b3a', peach: '#e8a87c',
+  mustard: '#d4a017', teal: '#3a8d8d', coral: '#d4624a',
+  green: '#6b8e3d', grid: '#b6ad8d', inkSoft: '#6b7280',
+};
+
+const fmtUSD0 = v => v == null ? '—' : '$' + Math.round(v).toLocaleString();
+const fmtNum1 = v => v == null ? '—' : Number(v).toLocaleString('en-US', { maximumFractionDigits: 1 });
+const fmtPct1 = v => v == null ? '—' : Number(v).toFixed(1) + '%';
+const fmtSignedPct = v => v == null ? '—' : (v >= 0 ? '+' : '') + Number(v).toFixed(1) + '%';
+
+let DATA = null;
+
+async function init() {
+  const res = await fetch('/data/housing.json?v=' + new Date().toISOString().slice(0, 10));
+  DATA = await res.json();
+
+  if (DATA.coverage_note) {
+    const el = document.getElementById('coverage-note');
+    el.textContent = DATA.coverage_note;
+    el.style.display = '';
+  }
+  document.getElementById('latest-label').textContent = DATA.latest_label || '—';
+
+  const meta = DATA._meta || {};
+  const stale = name => !meta[name] || meta[name].stale;
+
+  renderKpis();
+  renderHpi(stale('ga_hpi'));
+  renderMetroYoY();
+  renderCounty(stale('county_acs'));
+  renderNonMetro(stale('non_metro'));
+  renderAffordability();
+  renderValuation();
+  renderStockTable();
+}
+
+function renderKpis() {
+  const k = DATA.kpis || {};
+  document.getElementById('kpi-hpi-yoy').textContent  = fmtSignedPct(k.ga_home_price_yoy);
+  document.getElementById('kpi-hpi-level').textContent = k.ga_hpi_latest == null ? '—' : fmtNum1(k.ga_hpi_latest);
+  document.getElementById('kpi-afford').textContent   = k.median_affordability_index == null ? '—' : fmtNum1(k.median_affordability_index);
+  document.getElementById('kpi-permits').textContent  = k.median_permits_per_1k == null ? '—' : fmtNum1(k.median_permits_per_1k);
+  document.getElementById('kpi-owner').textContent    = k.median_pct_owner_occupied == null ? '—' : fmtPct1(k.median_pct_owner_occupied);
+  if (k.non_metro_county_count) document.getElementById('kpi-nonmetro').textContent = k.non_metro_county_count;
+}
+
+/* ---- Home prices over time: GA + US + optional metro overlay ---- */
+let hpiChart = null;
+function renderHpi(isStale) {
+  const ga = DATA.ga_hpi;
+  const sel = document.getElementById('hpi-metro');
+  (DATA.metros || []).forEach((m, i) => {
+    if (m.fhfa_hpi) {
+      const o = document.createElement('option');
+      o.value = String(i); o.textContent = m.short_name;
+      sel.appendChild(o);
+    }
+  });
+  sel.addEventListener('change', drawHpi);
+
+  if (!ga) {
+    document.getElementById('hpi-pending').style.display = '';
+  } else if (isStale) {
+    document.getElementById('hpi-stale').style.display = '';
+  }
+  drawHpi();
+}
+function drawHpi() {
+  const ga = DATA.ga_hpi;
+  const sel = document.getElementById('hpi-metro');
+  const datasets = [];
+  let labels = [];
+
+  if (ga && ga.quarters) {
+    labels = ga.quarters;
+    datasets.push({ label: 'Georgia', data: ga.values, borderColor: BRAND.navy, backgroundColor: 'rgba(26,58,92,0.08)', fill: false, tension: 0.25, pointRadius: 0, borderWidth: 2.5 });
+    if (ga.us_values) datasets.push({ label: 'United States', data: ga.us_values, borderColor: BRAND.inkSoft, borderDash: [5,4], fill: false, tension: 0.25, pointRadius: 0, borderWidth: 1.8 });
+  }
+
+  const idx = sel.value;
+  if (idx !== '') {
+    const m = DATA.metros[Number(idx)];
+    const h = m && m.fhfa_hpi;
+    if (h && h.quarters) {
+      if (!labels.length) labels = h.quarters;
+      // align metro series onto the label axis
+      const map = {}; h.quarters.forEach((q, i) => map[q] = h.values[i]);
+      const data = labels.map(q => map[q] != null ? map[q] : null);
+      datasets.push({ label: m.short_name, data, borderColor: BRAND.peachDeep, backgroundColor: 'rgba(196,107,58,0.10)', fill: false, tension: 0.25, pointRadius: 0, borderWidth: 2.2 });
+    }
+  }
+
+  const ctx = document.getElementById('hpi-chart').getContext('2d');
+  if (hpiChart) hpiChart.destroy();
+  if (!datasets.length) return;
+  hpiChart = new Chart(ctx, {
+    type: 'line',
+    data: { labels, datasets },
+    options: {
+      responsive: true, maintainAspectRatio: false,
+      interaction: { mode: 'index', intersect: false },
+      scales: {
+        x: { grid: { display: false }, ticks: { color: BRAND.navy, font: { size: 11 }, autoSkip: true, maxTicksLimit: 12, maxRotation: 45 } },
+        y: { grid: { color: BRAND.grid, borderDash: [3,4] }, ticks: { color: BRAND.navy, font: { size: 11 } } },
+      },
+      plugins: {
+        legend: { display: true, labels: { color: BRAND.navy, font: { size: 12 }, boxWidth: 18 } },
+        tooltip: { callbacks: { label: it => it.dataset.label + ': ' + fmtNum1(it.parsed.y) } },
+      },
+    },
+  });
+}
+
+/* ---- Metro YoY comparison ---- */
+function renderMetroYoY() {
+  const rows = (DATA.metros || [])
+    .map(m => ({ name: m.short_name, yoy: m.fhfa_hpi && m.fhfa_hpi.latest_yoy }))
+    .filter(r => typeof r.yoy === 'number')
+    .sort((a, b) => b.yoy - a.yoy);
+  if (!rows.length) return;
+  const med = (DATA.statewide_medians || {}).median_home_price_yoy;
+  const colors = rows.map(r => (med != null && r.yoy >= med) ? BRAND.teal : BRAND.coral);
+  const ctx = document.getElementById('metro-yoy-chart').getContext('2d');
+  new Chart(ctx, {
+    type: 'bar',
+    data: { labels: rows.map(r => r.name), datasets: [{ data: rows.map(r => r.yoy), backgroundColor: colors, borderWidth: 0 }] },
+    options: {
+      indexAxis: 'y', responsive: true, maintainAspectRatio: false,
+      scales: {
+        x: { grid: { color: BRAND.grid, borderDash: [3,4] }, ticks: { color: BRAND.navy, font: { size: 11 }, callback: v => (v > 0 ? '+' : '') + v + '%' } },
+        y: { grid: { display: false }, ticks: { color: BRAND.navy, font: { size: 12, weight: 'bold' } } },
+      },
+      plugins: {
+        legend: { display: false },
+        tooltip: { callbacks: { label: it => 'YoY: ' + fmtSignedPct(it.parsed.x) } },
+      },
+    },
+  });
+}
+
+/* ---- County choropleth ---- */
+let countyMetric = 'median_home_value';
+function renderCounty(isStale) {
+  const acs = DATA.county_acs;
+  if (!acs || !acs.counties) {
+    document.getElementById('county-pending').style.display = '';
+    return;
+  }
+  if (isStale) document.getElementById('county-stale').style.display = '';
+  document.querySelectorAll('#county-metric-toggle button').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('#county-metric-toggle button').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      countyMetric = btn.dataset.metric;
+      drawCounty();
+    });
+  });
+  drawCounty();
+}
+function drawCounty() {
+  const acs = DATA.county_acs;
+  if (!acs || !window.gaMaps) return;
+  const metricLabels = {
+    median_home_value: 'Median home value',
+    pct_owner_occupied: 'Owner-occupied',
+    median_gross_rent: 'Median gross rent',
+  };
+  const unit = countyMetric === 'pct_owner_occupied' ? '%' : '$';
+  const points = Object.entries(acs.counties).map(([fips, r]) => ({
+    fips, value: r[countyMetric], label: r.name,
+  })).filter(p => p.value != null);
+  window.gaMaps.drawGAChoropleth('county-map', points, {
+    metricLabel: metricLabels[countyMetric], unit,
+    colorscale: countyMetric === 'pct_owner_occupied' ? 'sequential' : 'sequential',
+  }).catch(err => console.warn('county map draw failed:', err));
+}
+
+/* ---- Non-metro aggregate ---- */
+function renderNonMetro(isStale) {
+  const nm = DATA.non_metro;
+  if (!nm) { document.getElementById('nonmetro-pending').style.display = ''; return; }
+  if (isStale) document.getElementById('nonmetro-stale').style.display = '';
+  const grid = document.getElementById('nonmetro-grid');
+  const stats = [
+    ['Counties', nm.county_count],
+    ['Population', nm.population == null ? null : Math.round(nm.population).toLocaleString()],
+    ['Median home value', fmtUSD0(nm.median_home_value_wt)],
+    ['Median gross rent', fmtUSD0(nm.median_gross_rent_wt)],
+    ['Median household income', fmtUSD0(nm.median_household_income_wt)],
+    ['Owner-occupied', fmtPct1(nm.pct_owner_occupied)],
+  ];
+  grid.innerHTML = stats.map(([l, v]) =>
+    `<div class="nonmetro-stat"><div class="label">${l}</div><div class="value">${v == null ? '—' : v}</div></div>`).join('');
+  grid.style.display = '';
+}
+
+/* ---- Affordability: metro bar + selected-metro rent burden ---- */
+let rentChart = null;
+function renderAffordability() {
+  const metros = (DATA.metros || []).filter(m => m.housing_affordability && m.housing_affordability.latest_index != null);
+  if (metros.length) {
+    const sorted = metros.slice().sort((a, b) => b.housing_affordability.latest_index - a.housing_affordability.latest_index);
+    const ctx = document.getElementById('afford-chart').getContext('2d');
+    new Chart(ctx, {
+      type: 'bar',
+      data: { labels: sorted.map(m => m.short_name), datasets: [{ data: sorted.map(m => m.housing_affordability.latest_index), backgroundColor: sorted.map(m => m.housing_affordability.latest_index >= 100 ? BRAND.teal : BRAND.coral), borderWidth: 0 }] },
+      options: {
+        indexAxis: 'y', responsive: true, maintainAspectRatio: false,
+        scales: {
+          x: { grid: { color: BRAND.grid, borderDash: [3,4] }, ticks: { color: BRAND.navy, font: { size: 11 } } },
+          y: { grid: { display: false }, ticks: { color: BRAND.navy, font: { size: 11, weight: 'bold' } } },
+        },
+        plugins: { legend: { display: false }, title: { display: true, text: 'Buyer affordability index by metro', color: BRAND.navy, font: { size: 13 } }, tooltip: { callbacks: { label: it => 'Index: ' + fmtNum1(it.parsed.x) } } },
+      },
+    });
+  }
+  // rent-burden selector
+  const sel = document.getElementById('afford-metro');
+  (DATA.metros || []).forEach((m, i) => {
+    if (m.acs_affordability) {
+      const o = document.createElement('option'); o.value = String(i); o.textContent = m.short_name; sel.appendChild(o);
+    }
+  });
+  sel.addEventListener('change', drawRentBurden);
+  drawRentBurden();
+}
+function drawRentBurden() {
+  const sel = document.getElementById('afford-metro');
+  const m = DATA.metros[Number(sel.value || 0)];
+  const a = m && m.acs_affordability;
+  const ctx = document.getElementById('rentburden-chart').getContext('2d');
+  if (rentChart) rentChart.destroy();
+  if (!a || !a.years) return;
+  rentChart = new Chart(ctx, {
+    type: 'line',
+    data: {
+      labels: a.years,
+      datasets: [
+        { label: (m.short_name || 'Metro') + ' rent burden', data: a.msa_rent_burden_pct, borderColor: BRAND.peachDeep, backgroundColor: 'rgba(196,107,58,0.10)', fill: true, tension: 0.25, borderWidth: 2.5, pointRadius: 2 },
+        { label: 'US rent burden', data: a.us_rent_burden_pct, borderColor: BRAND.inkSoft, borderDash: [5,4], fill: false, tension: 0.25, borderWidth: 1.8, pointRadius: 0 },
+      ],
+    },
+    options: {
+      responsive: true, maintainAspectRatio: false,
+      scales: { x: { grid: { display: false }, ticks: { color: BRAND.navy, font: { size: 11 } } }, y: { grid: { color: BRAND.grid, borderDash: [3,4] }, ticks: { color: BRAND.navy, font: { size: 11 }, callback: v => v + '%' } } },
+      plugins: { legend: { display: true, labels: { color: BRAND.navy, font: { size: 11 }, boxWidth: 16 } }, title: { display: true, text: 'Rent as % of income', color: BRAND.navy, font: { size: 13 } }, tooltip: { callbacks: { label: it => it.dataset.label + ': ' + fmtPct1(it.parsed.y) } } },
+    },
+  });
+}
+
+/* ---- Valuation scatter ---- */
+function renderValuation() {
+  const pts = DATA.valuation_scatter || [];
+  if (!pts.length) return;
+  const ctx = document.getElementById('valuation-chart').getContext('2d');
+  new Chart(ctx, {
+    type: 'scatter',
+    data: {
+      datasets: [{
+        data: pts.map(p => ({ x: p.price_to_income, y: p.price_to_rent, metro: p.metro, val: p.valuation_pct })),
+        backgroundColor: pts.map(p => (p.valuation_pct != null && p.valuation_pct > 0) ? BRAND.coral : BRAND.teal),
+        pointRadius: 7, pointHoverRadius: 9,
+      }],
+    },
+    options: {
+      responsive: true, maintainAspectRatio: false,
+      scales: {
+        x: { title: { display: true, text: 'Price-to-income ratio', color: BRAND.navy }, grid: { color: BRAND.grid, borderDash: [3,4] }, ticks: { color: BRAND.navy, font: { size: 11 } } },
+        y: { title: { display: true, text: 'Price-to-rent ratio', color: BRAND.navy }, grid: { color: BRAND.grid, borderDash: [3,4] }, ticks: { color: BRAND.navy, font: { size: 11 } } },
+      },
+      plugins: {
+        legend: { display: false },
+        tooltip: { callbacks: { label: it => { const d = it.raw; return `${d.metro}: P/I ${fmtNum1(d.x)}, P/R ${fmtNum1(d.y)}` + (d.val != null ? `, ${fmtSignedPct(d.val)} vs fair value` : ''); } } },
+      },
+    },
+  });
+}
+
+/* ---- Stock table ---- */
+let stockSort = { key: 'total_housing_units', dir: -1 };
+function stockRows() {
+  return (DATA.metros || []).map(m => {
+    const c = m.acs_housing_characteristics || {};
+    const v = c.values || {}; const der = c.derived || {};
+    return {
+      short_name: m.short_name,
+      total_housing_units: v.total_housing_units,
+      pct_owner_occupied: der.pct_owner_occupied,
+      pct_renter_occupied: der.pct_renter_occupied,
+      pct_vacant: der.pct_vacant,
+      pct_1unit_detached: der.pct_1unit_detached,
+      pct_multifamily: der.pct_multifamily,
+    };
+  }).filter(r => r.total_housing_units != null);
+}
+function renderStockTable() {
+  const tbody = document.getElementById('stock-body');
+  const draw = () => {
+    const rows = stockRows().sort((a, b) => {
+      const av = a[stockSort.key], bv = b[stockSort.key];
+      if (typeof av === 'string') return stockSort.dir * av.localeCompare(bv);
+      return stockSort.dir * ((av || 0) - (bv || 0));
+    });
+    tbody.innerHTML = rows.map(r => `
+      <tr>
+        <td class="metro-name">${r.short_name}</td>
+        <td class="numeric">${r.total_housing_units == null ? '—' : Math.round(r.total_housing_units).toLocaleString()}</td>
+        <td class="numeric">${fmtPct1(r.pct_owner_occupied)}</td>
+        <td class="numeric">${fmtPct1(r.pct_renter_occupied)}</td>
+        <td class="numeric">${fmtPct1(r.pct_vacant)}</td>
+        <td class="numeric">${fmtPct1(r.pct_1unit_detached)}</td>
+        <td class="numeric">${fmtPct1(r.pct_multifamily)}</td>
+      </tr>`).join('');
+  };
+  document.querySelectorAll('.stock-table thead th').forEach(th => {
+    th.addEventListener('click', () => {
+      const key = th.dataset.sort;
+      stockSort = { key, dir: (stockSort.key === key ? -stockSort.dir : -1) };
+      draw();
+    });
+  });
+  draw();
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  init().catch(err => {
+    console.error('housing init failed:', err);
+    document.querySelector('main').insertAdjacentHTML('beforeend',
+      '<div style="padding:20px; color:var(--coral); font-weight:600;">Failed to load housing data. Check console.</div>');
+  });
+});
+</script>
+</body>
+</html>

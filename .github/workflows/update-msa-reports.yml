@@ -70,11 +70,22 @@ jobs:
           # Refresh the 14-metro QA status matrix from the latest section_status.
           python3 scripts/build_report_status_matrix.py
 
+      - name: Build statewide housing roll-up
+        # Rolls the freshly-regenerated metro reports up into data/housing.json,
+        # adds the statewide GA/US FHFA series (FRED), the all-159-county ACS
+        # layer (Census), and the non-metro Georgia aggregate. Runs AFTER the
+        # metro JSONs regenerate so it never reads stale data. Each section
+        # degrades gracefully, so a transient API failure can't blank the page.
+        env:
+          FRED_API_KEY:   ${{ secrets.FRED_API_KEY }}
+          CENSUS_API_KEY: ${{ secrets.CENSUS_API_KEY }}
+        run: python3 scripts/fetch_housing.py
+
       - name: Commit refreshed JSON + pages
         run: |
           git config user.name  "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/msa_reports/ msa/ data/ga_msa_counties.json REPORT_STATUS_MATRIX.md
+          git add data/msa_reports/ msa/ data/ga_msa_counties.json data/housing.json REPORT_STATUS_MATRIX.md
           if git diff --cached --quiet; then
             echo "No changes to commit."
           else
