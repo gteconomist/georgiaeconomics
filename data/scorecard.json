@@ -61,6 +61,14 @@
    "value": "Expanding",
    "delta": "-0.8% vs peak",
    "trend": "good"
+  },
+  {
+   "topic": "Consumer",
+   "href": "/consumer/",
+   "label": "Spending per capita",
+   "value": "$590,419",
+   "delta": "+6.0% PCE YoY",
+   "trend": "good"
   }
  ]
 }
