@@ -1,5 +1,5 @@
 {
- "fetched_at": "2026-06-02T21:15:51Z",
+ "fetched_at": "2026-06-03T13:27:54Z",
  "schema": "gdp/v1",
  "metros": [
   {
@@ -30,7 +30,8 @@
     ]
    },
    "pi_bn": 7.51,
-   "per_capita_income": 51419
+   "per_capita_income": 51419,
+   "share_of_state_pct": 0.9
   },
   {
    "slug": "athens",
@@ -60,7 +61,8 @@
     ]
    },
    "pi_bn": 12.66,
-   "per_capita_income": 58346
+   "per_capita_income": 58346,
+   "share_of_state_pct": 1.6
   },
   {
    "slug": "atlanta",
@@ -90,7 +92,8 @@
     ]
    },
    "pi_bn": 456.65,
-   "per_capita_income": 72400
+   "per_capita_income": 72400,
+   "share_of_state_pct": 65.3
   },
   {
    "slug": "augusta",
@@ -120,7 +123,8 @@
     ]
    },
    "pi_bn": 34.45,
-   "per_capita_income": 56387
+   "per_capita_income": 56387,
+   "share_of_state_pct": 4.2
   },
   {
    "slug": "brunswick",
@@ -150,7 +154,8 @@
     ]
    },
    "pi_bn": 7.21,
-   "per_capita_income": 60092
+   "per_capita_income": 60092,
+   "share_of_state_pct": 0.8
   },
   {
    "slug": "columbus",
@@ -180,7 +185,8 @@
     ]
    },
    "pi_bn": 17.29,
-   "per_capita_income": 52558
+   "per_capita_income": 52558,
+   "share_of_state_pct": 2.2
   },
   {
    "slug": "dalton",
@@ -210,7 +216,8 @@
     ]
    },
    "pi_bn": 6.92,
-   "per_capita_income": 48417
+   "per_capita_income": 48417,
+   "share_of_state_pct": 1.0
   },
   {
    "slug": "gainesville",
@@ -240,7 +247,8 @@
     ]
    },
    "pi_bn": 13.82,
-   "per_capita_income": 65490
+   "per_capita_income": 65490,
+   "share_of_state_pct": 1.9
   },
   {
    "slug": "hinesville",
@@ -270,7 +278,8 @@
     ]
    },
    "pi_bn": 3.99,
-   "per_capita_income": 51118
+   "per_capita_income": 51118,
+   "share_of_state_pct": 0.6
   },
   {
    "slug": "macon",
@@ -300,7 +309,8 @@
     ]
    },
    "pi_bn": 12.18,
-   "per_capita_income": 52491
+   "per_capita_income": 52491,
+   "share_of_state_pct": 1.5
   },
   {
    "slug": "rome",
@@ -330,7 +340,8 @@
     ]
    },
    "pi_bn": 4.9,
-   "per_capita_income": 49527
+   "per_capita_income": 49527,
+   "share_of_state_pct": 0.6
   },
   {
    "slug": "savannah",
@@ -360,7 +371,8 @@
     ]
    },
    "pi_bn": 26.56,
-   "per_capita_income": 64775
+   "per_capita_income": 64775,
+   "share_of_state_pct": 3.8
   },
   {
    "slug": "valdosta",
@@ -390,7 +402,8 @@
     ]
    },
    "pi_bn": 7.05,
-   "per_capita_income": 47629
+   "per_capita_income": 47629,
+   "share_of_state_pct": 0.9
   },
   {
    "slug": "warner-robins",
@@ -420,9 +433,261 @@
     ]
    },
    "pi_bn": 11.1,
-   "per_capita_income": 55775
+   "per_capita_income": 55775,
+   "share_of_state_pct": 1.3
   }
  ],
+ "ga_gdp": {
+  "years": [
+   2013,
+   2014,
+   2015,
+   2016,
+   2017,
+   2018,
+   2019,
+   2020,
+   2021,
+   2022,
+   2023,
+   2024,
+   2025
+  ],
+  "real_bn": [
+   499.9,
+   517.51,
+   540.11,
+   561.72,
+   583.54,
+   600.93,
+   620.74,
+   603.2,
+   643.75,
+   670.11,
+   679.45,
+   697.45,
+   710.41
+  ],
+  "nominal_bn": [
+   467.56,
+   493.37,
+   525.52,
+   554.9,
+   583.54,
+   612.8,
+   646.7,
+   638.49,
+   706.0,
+   785.92,
+   835.76,
+   881.51,
+   924.83
+  ],
+  "us_real_bn": [
+   17812.17,
+   18261.71,
+   18799.62,
+   19141.67,
+   19612.1,
+   20193.9,
+   20715.67,
+   20284.5,
+   21532.41,
+   22075.93,
+   22723.72,
+   23358.44,
+   23850.44
+  ],
+  "per_capita": [
+   null,
+   null,
+   null,
+   null,
+   null,
+   null,
+   null,
+   59491,
+   65413,
+   71905,
+   75541,
+   78677,
+   81823
+  ],
+  "real_yoy": [
+   null,
+   3.52,
+   4.37,
+   4.0,
+   3.89,
+   2.98,
+   3.3,
+   -2.83,
+   6.72,
+   4.09,
+   1.39,
+   2.65,
+   1.86
+  ],
+  "latest_year": 2025,
+  "latest_nominal_bn": 924.83,
+  "latest_real_bn": 710.41,
+  "latest_real_yoy": 1.86,
+  "latest_per_capita": 81823,
+  "source": "BEA SAGDP9 (real, chained $) + SAGDP2 (nominal, current $), LineCode 1"
+ },
+ "peers": [
+  {
+   "state": "Georgia",
+   "fips": "13000",
+   "real_bn": 697.45,
+   "real_yoy": 2.65,
+   "per_capita": 62249
+  },
+  {
+   "state": "Florida",
+   "fips": "12000",
+   "real_bn": 1352.28,
+   "real_yoy": 3.28,
+   "per_capita": 58123
+  },
+  {
+   "state": "North Carolina",
+   "fips": "37000",
+   "real_bn": 664.13,
+   "real_yoy": 3.28,
+   "per_capita": 60091
+  },
+  {
+   "state": "South Carolina",
+   "fips": "45000",
+   "real_bn": 278.03,
+   "real_yoy": 4.51,
+   "per_capita": 50641
+  },
+  {
+   "state": "Tennessee",
+   "fips": "47000",
+   "real_bn": 440.2,
+   "real_yoy": 2.78,
+   "per_capita": 60706
+  },
+  {
+   "state": "Alabama",
+   "fips": "01000",
+   "real_bn": 255.63,
+   "real_yoy": 2.95,
+   "per_capita": 49511
+  },
+  {
+   "state": "United States",
+   "fips": "00000",
+   "real_bn": 23358.44,
+   "real_yoy": 2.79,
+   "per_capita": 68701
+  }
+ ],
+ "sectors": {
+  "year": 2025,
+  "total_bn": 895.7,
+  "sectors": [
+   {
+    "name": "Real estate and rental and leasing (53)",
+    "gdp_bn": 133.4,
+    "share_pct": 14.9
+   },
+   {
+    "name": "Manufacturing (31-33)",
+    "gdp_bn": 85.51,
+    "share_pct": 9.5
+   },
+   {
+    "name": "Finance and insurance (52)",
+    "gdp_bn": 77.38,
+    "share_pct": 8.6
+   },
+   {
+    "name": "Educational services, health care, and social assistance (61,62)",
+    "gdp_bn": 75.39,
+    "share_pct": 8.4
+   },
+   {
+    "name": "Wholesale trade (42)",
+    "gdp_bn": 71.13,
+    "share_pct": 7.9
+   },
+   {
+    "name": "Professional, scientific, and technical services (54)",
+    "gdp_bn": 67.48,
+    "share_pct": 7.5
+   },
+   {
+    "name": "Health care and social assistance (62)",
+    "gdp_bn": 65.39,
+    "share_pct": 7.3
+   },
+   {
+    "name": "Retail trade (44-45)",
+    "gdp_bn": 57.71,
+    "share_pct": 6.4
+   },
+   {
+    "name": "Information (51)",
+    "gdp_bn": 53.68,
+    "share_pct": 6.0
+   },
+   {
+    "name": "Construction (23)",
+    "gdp_bn": 48.16,
+    "share_pct": 5.4
+   },
+   {
+    "name": "Transportation and warehousing (48-49)",
+    "gdp_bn": 38.08,
+    "share_pct": 4.3
+   },
+   {
+    "name": "Administrative and support and waste management and remediation services (56)",
+    "gdp_bn": 31.21,
+    "share_pct": 3.5
+   },
+   {
+    "name": "Accommodation and food services (72)",
+    "gdp_bn": 25.96,
+    "share_pct": 2.9
+   },
+   {
+    "name": "Management of companies and enterprises (55)",
+    "gdp_bn": 17.98,
+    "share_pct": 2.0
+   },
+   {
+    "name": "Other services (except government and government enterprises) (81)",
+    "gdp_bn": 16.39,
+    "share_pct": 1.8
+   },
+   {
+    "name": "Utilities (22)",
+    "gdp_bn": 14.69,
+    "share_pct": 1.6
+   },
+   {
+    "name": "Arts, entertainment, and recreation (71)",
+    "gdp_bn": 7.51,
+    "share_pct": 0.8
+   },
+   {
+    "name": "Agriculture, forestry, fishing and hunting (11)",
+    "gdp_bn": 6.74,
+    "share_pct": 0.8
+   },
+   {
+    "name": "Mining, quarrying, and oil and gas extraction (21)",
+    "gdp_bn": 1.91,
+    "share_pct": 0.2
+   }
+  ],
+  "source": "BEA SAGDP2 by industry (current $)"
+ },
  "county_gdp": {
   "year": 2024,
   "counties": {
@@ -1226,42 +1491,54 @@
  },
  "non_metro": {
   "county_count": 86,
-  "gdp_bn": 94.69,
+  "gdp_bn": 94.7,
   "population": 2033015.0,
-  "gdp_per_capita_wt": 46576,
+  "gdp_per_capita_wt": 46581,
   "year": 2024,
   "note": "Aggregate of the 86 GA counties outside the 14 MSAs.",
   "source": "BEA CAGDP2 (county GDP, LineCode 1, current $)"
  },
  "kpis": {
-  "ga_nominal_gdp_bn": null,
-  "ga_real_gdp_yoy": null,
-  "ga_gdp_per_capita": null,
-  "largest_sector": null,
+  "ga_nominal_gdp_bn": 924.83,
+  "ga_real_gdp_yoy": 1.86,
+  "ga_gdp_per_capita": 81823,
+  "largest_sector": "Real estate and rental and leasing (53)",
   "metro_count": 14,
   "non_metro_county_count": 86
  },
  "_meta": {
   "metro_rollup": {
-   "last_updated": "2026-06-02T21:15:51Z",
+   "last_updated": "2026-06-03T13:27:54Z",
    "n_metros": 14,
    "stale": false
   },
+  "ga_gdp": {
+   "last_updated": "2026-06-03T13:27:55Z",
+   "stale": false
+  },
+  "peers": {
+   "last_updated": "2026-06-03T13:27:57Z",
+   "stale": false
+  },
+  "sectors": {
+   "last_updated": "2026-06-03T13:28:04Z",
+   "stale": false
+  },
   "county_gdp": {
-   "last_updated": "2026-06-02T21:15:53Z",
+   "last_updated": "2026-06-03T13:28:05Z",
    "stale": false
   },
   "non_metro": {
-   "last_updated": "2026-06-02T21:15:53Z",
+   "last_updated": "2026-06-03T13:28:05Z",
    "stale": false
   }
  },
  "latest_label": "2025",
  "coverage_note": "Statewide GDP (BEA SAGDP) covers 100% of Georgia. The 159-county BEA CAGDP2 layer and the Non-Metro Georgia aggregate cover the 86 counties outside the 14 MSAs.",
  "source_summary": {
-  "ga_gdp": "BEA SAGDP9N (real) + SAGDP2N (nominal), GA + US",
-  "peers": "BEA SAGDP9N + SAGDP1 (per-capita), SE states",
-  "sectors": "BEA SAGDP2N by industry",
+  "ga_gdp": "BEA SAGDP9 (real) + SAGDP2 (nominal), GA + US",
+  "peers": "BEA SAGDP9 + SAGDP1 (per-capita), SE states",
+  "sectors": "BEA SAGDP2 by industry",
   "metros": "Roll-up of data/msa_reports/*.json (bea_gmp + bea_personal_income)",
   "county_gdp": "BEA CAGDP2 (all 159 counties)"
  }

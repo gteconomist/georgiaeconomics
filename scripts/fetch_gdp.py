@@ -6,18 +6,18 @@ all-159-county BEA CAGDP2 layer, a Southeast-peer comparison, and a Non-Metro
 Georgia aggregate so the 86 counties outside the 14 MSAs are represented.
 
 Coverage design (see STATE_GDP_PAGE_SCOPE.md / PHASE4_PLAN.md):
-  • Statewide GA GDP ... BEA SAGDP9N (real, chained $) + SAGDP2N (nominal, current $),
+  • Statewide GA GDP ... BEA SAGDP9 (real, chained $) + SAGDP2 (nominal, current $),
                          LineCode 1 (all-industry total), GA + US. 100% of the state.
-  • Per-capita ......... derived from SAGDP2N nominal ÷ state population history
+  • Per-capita ......... derived from SAGDP2 nominal ÷ state population history
                          (data/population.json) for a consistent population base.
   • SE peers ........... GA vs FL / NC / SC / TN / AL (+ US) — real GDP growth and,
                          best-effort, per-capita real GDP (SAGDP1).
-  • Sectors ............ GA GDP by industry from SAGDP2N (LineCode ALL), latest year.
+  • Sectors ............ GA GDP by industry from SAGDP2 (LineCode ALL), latest year.
   • County layer ....... BEA CAGDP2 (LineCode 1) for all 159 counties -> choropleth,
                          per-capita derived from county pop_latest (population.json).
   • Non-Metro Georgia .. aggregate of the 86 counties not in any of the 14 MSAs.
 
-Units: SAGDP9N/SAGDP2N are millions of $; CAGDP2 is thousands of $.
+Units: SAGDP9/SAGDP2 are millions of $; CAGDP2 is thousands of $.
 
 Graceful degradation (house convention): each section is wrapped in try/except;
 on failure we PRESERVE the prior value from data/gdp.json and do NOT bump
@@ -156,18 +156,11 @@ def bea_get(params: dict, retries: int = 3) -> Optional[dict]:
                 # while probing, so don't treat it as a hard error or print noise.
                 expected = (code == "101"
                             or any(s in low for s in ("not available", "no data", "invalid year")))
-                # TEMP DIAG: always surface state-level (SAGDP*) errors in full while we
-                # stabilise the statewide GDP pulls.
-                if tn.startswith("SAGDP") or not expected:
+                if not expected:
                     print(f"  [gdp/BEA error] {tn} "
                           f"geo={params.get('GeoFips')} lc={params.get('LineCode')} "
                           f"yr={params.get('Year')}: {err}", file=sys.stderr)
                 return None
-            # TEMP DIAG: dump BEAAPI minus the Request echo (i.e. Results/Error) for SAGDP.
-            if tn.startswith("SAGDP") and str(params.get("method")) == "GetData":
-                diag = {k: v for k, v in beaapi.items() if k != "Request"} if isinstance(beaapi, dict) else beaapi
-                print(f"  [gdp/BEA diag] {tn} geo={params.get('GeoFips')} yr={params.get('Year')}: "
-                      f"{str(diag)[:400]}", file=sys.stderr)
             return results
         except Exception as e:
             print(f"  [gdp/BEA err] {type(e).__name__}: {str(e)[:80]}", file=sys.stderr)
@@ -227,7 +220,7 @@ def attach_state_share(metros: List[dict], ga_nominal_bn_latest: Optional[float]
 
 
 # --------------------------------------------------------------------------- #
-# 2. Statewide GA GDP (SAGDP9N real + SAGDP2N nominal, GA + US)
+# 2. Statewide GA GDP (SAGDP9 real + SAGDP2 nominal, GA + US)
 # --------------------------------------------------------------------------- #
 # BEA Regional GetData wants ONE GeoFips per request (or the "STATE" keyword for
 # all states); comma-joined GeoFips lists and LineCode="ALL" are NOT supported and
@@ -284,9 +277,9 @@ def _bea_linecodes(table: str) -> List[dict]:
 def fetch_ga_gdp(years_back: int = 13) -> Optional[dict]:
     # Request ALL published years (avoids 101 on the not-yet-published latest year),
     # then keep the most recent `years_back` for the chart.
-    ga_real = _bea_series("SAGDP9N", GA_FIPS, None)   # real, chained $
-    us_real = _bea_series("SAGDP9N", US_FIPS, None)
-    ga_nom = _bea_series("SAGDP2N", GA_FIPS, None)     # nominal, current $
+    ga_real = _bea_series("SAGDP9", GA_FIPS, None)   # real, chained $
+    us_real = _bea_series("SAGDP9", US_FIPS, None)
+    ga_nom = _bea_series("SAGDP2", GA_FIPS, None)     # nominal, current $
     if not ga_real and not ga_nom:
         return None
     yrs = sorted(set(ga_real) | set(ga_nom))[-years_back:]
@@ -308,7 +301,7 @@ def fetch_ga_gdp(years_back: int = 13) -> Optional[dict]:
         "latest_real_bn": next((v for v in reversed(real_bn) if v is not None), None),
         "latest_real_yoy": latest_real_yoy,
         "latest_per_capita": next((v for v in reversed(per_capita) if v is not None), None),
-        "source": "BEA SAGDP9N (real, chained $) + SAGDP2N (nominal, current $), LineCode 1",
+        "source": "BEA SAGDP9 (real, chained $) + SAGDP2 (nominal, current $), LineCode 1",
     }
 
 
@@ -320,14 +313,14 @@ def fetch_peers() -> Optional[List[dict]]:
     # SAGDP annual GDP lags ~1.5 yrs, so the latest published year is ~this_year-2.
     # Probe from there (newest first) and fall back if a year isn't out yet.
     for y_latest in (this_year - 2, this_year - 1, this_year - 3, this_year - 4):
-        cur = _bea_all_states("SAGDP9N", "1", y_latest)
+        cur = _bea_all_states("SAGDP9", "1", y_latest)
         if cur:
             break
     else:
         return None
-    prev = _bea_all_states("SAGDP9N", "1", y_latest - 1)
-    us_cur = _bea_series("SAGDP9N", US_FIPS, [y_latest])          # US not in 'STATE'
-    us_prev = _bea_series("SAGDP9N", US_FIPS, [y_latest - 1])
+    prev = _bea_all_states("SAGDP9", "1", y_latest - 1)
+    us_cur = _bea_series("SAGDP9", US_FIPS, [y_latest])          # US not in 'STATE'
+    us_prev = _bea_series("SAGDP9", US_FIPS, [y_latest - 1])
     try:
         pcap = _per_capita_real_by_state(y_latest)
     except Exception:
@@ -349,23 +342,22 @@ def fetch_peers() -> Optional[List[dict]]:
 
 
 def _per_capita_real_by_state(year: int) -> Dict[str, int]:
-    """Per-capita real GDP for all states (SAGDP1), via the proven STATE keyword
-    + a specific LineCode found by description (no LineCode='ALL')."""
-    lc = None
-    for v in _bea_linecodes("SAGDP1"):
-        desc = (v.get("Desc") or "").lower()
-        if "per capita" in desc and "real" in desc:
-            lc = str(v.get("Key")); break
-    if not lc:
-        return {}
-    raw = _bea_all_states("SAGDP1", lc, year)
-    return {f: int(round(v)) for f, v in raw.items()}
+    """Per-capita real GDP for all states = real GDP (SAGDP9, $millions) / population
+    (SAINC1 LineCode 2). BEA has no direct per-capita real-GDP line."""
+    real = _bea_all_states("SAGDP9", "1", year)   # millions of chained $
+    pop = _bea_all_states("SAINC1", "2", year)    # persons
+    out: Dict[str, int] = {}
+    for fips, rv in real.items():
+        p = pop.get(fips)
+        if p:
+            out[fips] = int(round(rv * 1e6 / p))
+    return out
 
 
 # --------------------------------------------------------------------------- #
-# 4. Sector composition (GA GDP by industry, SAGDP2N — per-linecode)
+# 4. Sector composition (GA GDP by industry, SAGDP2 — per-linecode)
 # --------------------------------------------------------------------------- #
-# Top-level NAICS sectors we surface. We match each to its SAGDP2N LineCode by
+# Top-level NAICS sectors we surface. We match each to its SAGDP2 LineCode by
 # the start of the line description, then fetch GA's value for that linecode
 # (single-GeoFips GetData — the proven pattern; LineCode='ALL' is unsupported).
 _SECTOR_DESC_PREFIXES = [
@@ -383,17 +375,20 @@ def fetch_sectors(year: Optional[int] = None) -> Optional[dict]:
     # Request ALL published years (a single not-yet-published year would 101 the
     # whole call) and use the latest year actually returned for each line code.
     yrs = [year] if year else None
-    codes = _bea_linecodes("SAGDP2N")
+    codes = _bea_linecodes("SAGDP2")
     if not codes:
         return None
-    # map each wanted top-level sector to the first matching line code
+    # map each wanted top-level sector to the first matching line code.
+    # SAGDP2 descriptions look like "[SAGDP2] Gross domestic product (GDP) by
+    # state: Manufacturing (31-33)" — the sector name is after the last ": ".
     wanted: Dict[str, tuple] = {}
     for v in codes:
-        desc = (v.get("Desc") or "").strip()
-        dl = desc.lower()
+        raw = (v.get("Desc") or "").strip()
+        name = raw.split(": ", 1)[-1].strip() if ": " in raw else raw
+        dl = name.lower()
         for pref in _SECTOR_DESC_PREFIXES:
             if pref not in wanted and dl.startswith(pref):
-                wanted[pref] = (str(v.get("Key")), desc)
+                wanted[pref] = (str(v.get("Key")), name)
                 break
     if not wanted:
         return None
@@ -401,7 +396,7 @@ def fetch_sectors(year: Optional[int] = None) -> Optional[dict]:
     total = 0.0
     used_year = None
     for lc, desc in wanted.values():
-        s = _bea_series("SAGDP2N", GA_FIPS, yrs, line_code=lc)
+        s = _bea_series("SAGDP2", GA_FIPS, yrs, line_code=lc)
         if not s:
             continue
         yy = max(s)                      # latest year actually returned
@@ -416,7 +411,7 @@ def fetch_sectors(year: Optional[int] = None) -> Optional[dict]:
     sectors.sort(key=lambda s: s["gdp_bn"], reverse=True)
     return {
         "year": used_year, "total_bn": round(total / 1000, 2), "sectors": sectors,
-        "source": "BEA SAGDP2N by industry (current $)",
+        "source": "BEA SAGDP2 by industry (current $)",
     }
 
 
@@ -560,9 +555,9 @@ def build(rollup_only: bool = False) -> dict:
                             "BEA CAGDP2 layer and the Non-Metro Georgia aggregate cover the 86 "
                             "counties outside the 14 MSAs.")
     out["source_summary"] = {
-        "ga_gdp": "BEA SAGDP9N (real) + SAGDP2N (nominal), GA + US",
-        "peers": "BEA SAGDP9N + SAGDP1 (per-capita), SE states",
-        "sectors": "BEA SAGDP2N by industry",
+        "ga_gdp": "BEA SAGDP9 (real) + SAGDP2 (nominal), GA + US",
+        "peers": "BEA SAGDP9 + SAGDP1 (per-capita), SE states",
+        "sectors": "BEA SAGDP2 by industry",
         "metros": "Roll-up of data/msa_reports/*.json (bea_gmp + bea_personal_income)",
         "county_gdp": "BEA CAGDP2 (all 159 counties)",
     }
