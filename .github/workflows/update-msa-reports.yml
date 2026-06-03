@@ -123,11 +123,16 @@ jobs:
         # profiles) so the header search stays in sync. Deterministic output.
         run: python3 scripts/build_search_index.py
 
+      - name: Rebuild home scorecard (Phase 5 WS5)
+        # Roll the freshly-refreshed topic KPIs into data/scorecard.json for the
+        # home-page "Economy at a glance" strip. Deterministic output.
+        run: python3 scripts/build_scorecard.py
+
       - name: Commit refreshed JSON + pages
         run: |
           git config user.name  "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/msa_reports/ msa/ counties/ data/ga_msa_counties.json data/housing.json data/gdp.json data/migration.json data/outlook.json data/search-index.json data/county_index.json REPORT_STATUS_MATRIX.md
+          git add data/msa_reports/ msa/ counties/ data/ga_msa_counties.json data/housing.json data/gdp.json data/migration.json data/outlook.json data/search-index.json data/county_index.json data/scorecard.json REPORT_STATUS_MATRIX.md
           if git diff --cached --quiet; then
             echo "No changes to commit."
             exit 0

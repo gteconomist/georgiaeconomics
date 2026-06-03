@@ -204,9 +204,31 @@ update-population.yml / update-labor.yml if you want same-day refresh.
 
 **Validated:** 190/190 load-order sim, 0 dead links, generator idempotent, single-county mode works.
 
-## ▶ RESUME HERE (Phase 5 — WS5 polish, the last workstream)
+## ✅ WS5 SHIPPED (2026-06-03) — PHASE 5 COMPLETE
 
-**WS5 — visual polish.** Redesigned hero, a unified card system across pages, tighter type
-hierarchy, and a statewide **"Economy at a glance"** scorecard rolling up headline KPIs across
-topics (labor/housing/GDP/migration/inflation/outlook) — likely a new home-page component fed by
-the existing topic JSON. After WS5, Phase 5 is complete.
+**"Economy at a glance" scorecard.** `scripts/build_scorecard.py` rolls one headline KPI from each
+topic JSON into `data/scorecard.json` (7 cards: Unemployment, Population, GDP/capita, Home prices,
+Inflation, Net migration, Business cycle — each formatted at build time with a good/bad/neutral
+trend). `GE.scorecard` (assets/app.js) renders it into `[data-ge-scorecard]`; the home page shows it
+as a card strip under the hero ("Georgia economy at a glance" → links to each topic + /directory/).
+CI: `build_scorecard.py` runs after the topic roll-ups in update-msa-reports.yml; commits
+`data/scorecard.json`.
+
+**Unified cards + type (site-wide, via shared CSS — no per-page edits).** `.kpi`, `.chart-panel`,
+and `.map-panel` now share the 10px radius of the newer card system (`.topic-card`/`.dir-card`/
+`.score-card`/`.county-az`), so every page's cards read consistently. Done centrally in styles.css/
+app.css to avoid touching page HTML.
+
+**Validated:** 190/190 load-order sim, 0 dead links, scorecard generator idempotent, lint green,
+CSS braces balanced.
+
+---
+
+## Phase 5 status: COMPLETE (WS1–WS5 all shipped 2026-06-02 → 2026-06-03)
+
+WS1 shared-shell chrome · WS2 grouped nav + breadcrumbs + /directory/ + client-side search ·
+WS3 clickable metro nav-map (+ later: black GA outline, no neighbors, locked zoom) · WS4 159
+county profiles · WS5 scorecard + unified cards. Possible follow-ons (not Phase 5):
+same-day scorecard/county refresh by adding the generate→stamp→index→scorecard tail to
+update-population.yml / update-labor.yml; optional glossary page (WS2 stretch); allow zoom-in on
+maps while still capping zoom-out at the GA frame.

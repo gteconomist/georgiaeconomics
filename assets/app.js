@@ -270,6 +270,26 @@
    * (window.gaMaps) + Plotly, which the host page must load.
    * ================================================================= */
 
+  // "Economy at a glance" scorecard — renders data/scorecard.json (built by
+  // scripts/build_scorecard.py) into a container with [data-ge-scorecard].
+  function scorecard(elId) {
+    var el = document.getElementById(elId);
+    if (!el) return;
+    data("scorecard").then(function (j) {
+      var cards = (j && j.cards) || [];
+      if (!cards.length) return;
+      el.innerHTML = cards.map(function (c) {
+        var t = (c.trend === "good" || c.trend === "bad") ? c.trend : "neutral";
+        return '<a class="score-card" href="' + c.href + '">' +
+                 '<span class="sc-label">' + c.label + "</span>" +
+                 '<span class="sc-value">' + c.value + "</span>" +
+                 '<span class="sc-delta ' + t + '">' + c.delta + "</span>" +
+               "</a>";
+      }).join("");
+      el.classList.add("is-loaded");
+    }).catch(function () { /* leave the static placeholder in place */ });
+  }
+
   function slugify(name) { return String(name).toLowerCase().replace(/&/g, "and").replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, ""); }
 
   var _metroLookup = null; // promise -> { byFips: {fips:{cbsa,slug,name}}, msas: {...} }
@@ -371,6 +391,8 @@
   // click to the standing /msa/ choropleth once it has rendered (it draws
   // asynchronously, so poll briefly for the Plotly graph div).
   function autoWireMaps() {
+    var sc = document.querySelector("[data-ge-scorecard]");
+    if (sc && sc.id) scorecard(sc.id);
     var hero = document.querySelector("[data-ge-metromap]");
     if (hero && hero.id) metroMap(hero.id, { metricLabel: hero.getAttribute("data-metric-label") });
     if (document.getElementById("msa-choropleth")) {
@@ -393,7 +415,7 @@
     setYear: setYear, show: show, hide: hide, text: text, axes: axes,
     // WS2/WS3 helpers (also run automatically on DOMContentLoaded):
     markActiveNav: markActiveNav, metroMap: metroMap, attachMetroNav: attachMetroNav,
-    attachCountyNav: attachCountyNav, slugify: slugify, PAGES: PAGES,
+    attachCountyNav: attachCountyNav, scorecard: scorecard, slugify: slugify, PAGES: PAGES,
   };
 
   document.addEventListener("DOMContentLoaded", function () {
