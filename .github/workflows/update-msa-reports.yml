@@ -72,6 +72,13 @@ jobs:
           # Refresh the 14-metro QA status matrix from the latest section_status.
           python3 scripts/build_report_status_matrix.py
 
+      - name: Stamp shared chrome (Phase 5 WS1)
+        # Inject the shared head/header/footer partials into the freshly
+        # regenerated metro pages via their GEN:HEAD/HEADER/FOOTER markers.
+        # Idempotent (unchanged pages produce no diff) and must run AFTER
+        # generate_msa_pages.py so the new pages get the current chrome.
+        run: python3 scripts/build_site.py
+
       - name: Build statewide housing roll-up
         # Rolls the freshly-regenerated metro reports up into data/housing.json,
         # adds the statewide GA/US FHFA series (FRED), the all-159-county ACS

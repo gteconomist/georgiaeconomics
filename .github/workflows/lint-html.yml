@@ -42,3 +42,20 @@ jobs:
             exit 1
           fi
           echo "OK: no broken charts.js URLs found"
+
+      - name: Lint app.js must NOT be deferred (Phase 5 WS1)
+        run: |
+          # app.js defines window.GE (palette + fmt helpers) and each page's
+          # end-of-body inline script uses GE.* at parse time, BEFORE deferred
+          # scripts run. Loading app.js with `defer` makes GE undefined when the
+          # inline script executes → blank page. (See memory:
+          # reference_georgiaeconomics_page_gotchas / project_phase5_consolidation)
+          BAD=$(grep -rEn '<script[^>]*\bdefer\b[^>]*/assets/app\.js' --include='*.html' . || true)
+          if [ -n "$BAD" ]; then
+            echo "$BAD"
+            echo ""
+            echo "::error::/assets/app.js must be loaded WITHOUT defer."
+            echo "::error::Use: <script src=\"/assets/app.js\"></script>"
+            exit 1
+          fi
+          echo "OK: app.js is not deferred on any page"

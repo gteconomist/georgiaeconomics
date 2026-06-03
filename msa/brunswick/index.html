@@ -5,14 +5,21 @@
 <title>Brunswick MSA Economic Profile | Economic Impact Group, LLC</title>
 <meta name="description" content="Brunswick, GA metro economic profile from Economic Impact Group, LLC: business cycle, employment, housing, demographics, exports, and migration — built from BLS, BEA, Census, FHFA, FRED and IRS SOI data.">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- GEN:HEAD -->
 <link rel="stylesheet" href="/styles.css">
+<link rel="stylesheet" href="/assets/app.css">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700;800&display=swap" rel="stylesheet">
-
-<!-- Chart.js -->
+<!-- app.js is intentionally NOT deferred: it defines window.GE (palette + fmt
+     helpers) with no dependencies, so it must be available to each page's
+     end-of-body inline script, which runs during parse before deferred scripts. -->
+<script src="/assets/app.js"></script>
 <script defer src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
 <script defer src="https://cdn.jsdelivr.net/gh/gteconomist/economicsguru@main/assets/charts.js"></script>
+<!-- /GEN:HEAD -->
+
+<!-- Chart.js -->
 
 <style>
   /* ---------- Report header band ---------- */
@@ -325,19 +332,21 @@
 </head>
 <body>
 
+<!-- GEN:HEADER -->
 <header class="site-header">
   <div class="wrap">
-    <div class="brand">Georgia<span class="tag">Economics</span></div>
+    <div class="brand"><a href="/">Georgia<span class="tag">Economics</span></a></div>
     <nav>
       <a href="/">Home</a>
       <a href="/counties/">Counties</a>
-      <a href="/msa/" class="active">Metros</a>
+      <a href="/msa/">Metros</a>
       <a href="/labor/">Labor</a>
       <a href="/housing/">Housing</a>
       <a href="/about/">About</a>
     </nav>
   </div>
 </header>
+<!-- /GEN:HEADER -->
 
 <main>
 
@@ -928,10 +937,11 @@
 
 </main>
 
+<!-- GEN:FOOTER -->
 <footer class="site-footer">
   <div class="wrap">
-    <div>&copy; <span id="yr"></span> <strong>Economic Impact Group, LLC</strong> &middot; Published on <a href="/">Georgia Economics</a> &middot; <a href="/about/">Methodology</a></div>
-    <div>Built from 100% public &amp; subscription-free data sources.</div>
+    <div>&copy; <span id="yr"></span> Georgia Economics &middot; Sister site to <a href="https://economicsguru.com">economicsguru.com</a> &middot; <a href="/about/">Methodology</a></div>
+    <div>Built with public data from BLS, FRED, BEA, Census, and Georgia state agencies.</div>
     <div class="eig">
       <a href="https://www.economicimpact.com" target="_blank" rel="noopener" aria-label="Economic Impact Group">
         <img src="/assets/ei_logo_NEW_200pxw.png" alt="Economic Impact Group">
@@ -940,6 +950,7 @@
     </div>
   </div>
 </footer>
+<!-- /GEN:FOOTER -->
 
 <script>
 document.getElementById('yr').textContent = new Date().getFullYear();

@@ -120,47 +120,42 @@ globals, so the collision class of bug becomes impossible.
 
 ---
 
-## ▶ RESUME HERE (Phase 5 WS1 rollout — in progress, 2026-06-02)
+## ✅ WS1 COMPLETE (chrome rollout finished 2026-06-03)
 
-**Mechanism decided:** build-time partial injection via `scripts/build_site.py` (GEN markers).
+**Mechanism:** build-time partial injection via `scripts/build_site.py` (GEN markers).
+Shipped: `assets/app.js` (`window.GE` = BRAND palette + fmt helpers + `data()` +
+`setYear`/`markActiveNav` + `show/hide/text`), `assets/app.css`, `partials/{head,header,
+footer}.html`, `scripts/build_site.py`.
 
-**Built + shipped:** `assets/app.js` (`window.GE` = BRAND palette + fmt helpers + `data()` +
-`setYear`/`markActiveNav` + `show/hide/text`), `assets/app.css` (shared component CSS),
-`partials/{head,header,footer}.html`, `scripts/build_site.py`.
+**CRITICAL gotcha (keep):** `app.js` is loaded **WITHOUT `defer`** so `window.GE` exists
+before each page's end-of-body inline script runs (deferred app.js → blank page). A
+lint-html.yml rule now fails the build if `/assets/app.js` is ever loaded with `defer`.
 
-**CRITICAL gotcha (already fixed in partials/head.html — keep it):** `app.js` is loaded
-**WITHOUT `defer`** so `window.GE` exists before each page's end-of-body inline script runs
-(deferred app.js → blank page; we hit this on labor). Validate every migrated page with a
-Node load-order sim: run app.js → eval inline script → fire DOMContentLoaded; expect no throw.
+**All 30 pages migrated.** `/labor/` is the only FULL `GE.*` conversion; every other page is
+**chrome-centralized only** — head/header/footer via GEN markers, with inline `<style>` +
+local `const BRAND`/`fmt` kept as harmless dupes and charts untouched. The 25 finished this
+session: home, about, counties, inflation, population, trade, msa/index, 4 industries, and all
+14 MSA reports (savannah template + 13 metros).
 
-**Migrated so far (5):** `/labor/` (FULL conversion to `GE.*`, no inline style), and
-`/housing/ /gdp/ /migration/ /outlook/` (chrome-centralized only — head/header/footer via
-GEN markers; their inline `<style>` + local `const BRAND`/`fmt` kept as harmless dupes;
-charts untouched). All verified + live.
+**Validated:** 30/30 pass the Node load-order sim (app.js → inline → DOMContentLoaded, 0
+throws, GE defined); diff is chrome-only; the `generate_msa_pages.py` → `build_site.py`
+round-trip is idempotent (regenerating a metro reproduces the same chrome diff). Active-nav is
+path-based (`markActiveNav`) so `/msa/<x>/` lights up "Metros" with no per-page markup.
 
-**STILL TO MIGRATE (25):**
-- Standalone: `index.html` (home), `about/`, `counties/`, `inflation/`, `population/`,
-  `trade/`, `msa/index.html`.
-- Industries: `industries/{agriculture,automotive,data-centers,film}/index.html`.
-- MSA reports: `msa/savannah/index.html` (the TEMPLATE) + the 13 generated metros.
+**CI wired:** `update-msa-reports.yml` has a "Stamp shared chrome" `build_site.py` step AFTER
+`generate_msa_pages.py`. NOTE: did **not** add a `const BRAND` lint guard — chrome-only
+migration keeps the inline dupes on purpose, so that guard only becomes valid after full
+`GE.*` conversion of every page.
 
-**Proven recipe (chrome-centralization, low-risk — used on the 4 map pages):** a Python
-migrator that regex-replaces (a) the head block `<link .../styles.css> … charts.js</script>`
-→ `<!-- GEN:HEAD -->\n<!-- /GEN:HEAD -->` (keep page-specific plotly/maps.js + inline
-`<style>` in place), (b) `<header class="site-header">…</header>` → GEN:HEADER markers,
-(c) `<footer class="site-footer">…</footer>` → GEN:FOOTER markers; then run
-`python3 scripts/build_site.py`. The migrator MUST assert all three regions matched before
-writing (some older pages/home may differ — check counts, fix by hand if a match fails).
+**Known content delta:** centralizing the footer dropped each page's own source-attribution
+line (e.g. "Source: USDA NASS", per-MSA "Sources: BLS LAUS & QCEW…") + per-page copyright in
+favor of the shared generic footer (same change the 5 already-shipped pages adopted). To
+restore per-page sources, add a page-specific footer slot below `<!-- /GEN:FOOTER -->`.
 
-**MSA pages:** add GEN markers to `msa/savannah/index.html` (template), confirm
-`generate_msa_pages.py` still produces the 13 metros correctly (its NARRATIVE/SCORECARD/
-EMPLOYERS replacements are independent of the chrome regions), then run `build_site.py` to
-stamp all 14. Active-nav is path-based (markActiveNav) so `/msa/<x>/` lights up "Metros".
+## ▶ RESUME HERE (Phase 5 — the VISIBLE workstreams)
 
-**CI wiring (last WS1 step):** add a `python3 scripts/build_site.py` step to
-`update-msa-reports.yml` AFTER `generate_msa_pages.py` (so regenerated metro pages get
-re-stamped), and ensure `assets/` + `partials/` are committed. Optionally add a lint rule
-to fail if a page re-declares a global `const BRAND`.
-
-**Then:** WS2 (Places/Topics nav + search), WS3 (map-as-navigation), WS4 (county profiles),
-WS5 (visual polish). These are the VISIBLE workstreams.
+WS1 (invisible refactor) is done; pages look identical by design. Next, in order:
+WS2 (Places/Topics grouped nav + client-side `search-index.json` + `/directory/` hub),
+WS3 (map-as-primary-navigation, reusing `maps.js`), WS4 (159 county profiles via
+`scripts/generate_county_pages.py` from existing JSON — the payoff), WS5 (visual polish:
+hero map + "Economy at a glance" scorecard). See the workstream sections above for detail.

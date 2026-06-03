@@ -5,14 +5,21 @@
 <title>Georgia Trade & Logistics — Port of Savannah, Brunswick, Hartsfield-Jackson | Georgia Economics</title>
 <meta name="description" content="Live Georgia trade and logistics data: Port of Savannah TEU container traffic, Port of Brunswick auto throughput, Hartsfield-Jackson cargo, GA exports by country.">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- GEN:HEAD -->
 <link rel="stylesheet" href="/styles.css">
+<link rel="stylesheet" href="/assets/app.css">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700;800&display=swap" rel="stylesheet">
-
-<!-- Chart.js + shared brand setup -->
+<!-- app.js is intentionally NOT deferred: it defines window.GE (palette + fmt
+     helpers) with no dependencies, so it must be available to each page's
+     end-of-body inline script, which runs during parse before deferred scripts. -->
+<script src="/assets/app.js"></script>
 <script defer src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
 <script defer src="https://cdn.jsdelivr.net/gh/gteconomist/economicsguru@main/assets/charts.js"></script>
+<!-- /GEN:HEAD -->
+
+<!-- Chart.js + shared brand setup -->
 
 <style>
   .trade-grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
@@ -42,9 +49,10 @@
 </head>
 <body>
 
+<!-- GEN:HEADER -->
 <header class="site-header">
   <div class="wrap">
-    <div class="brand">Georgia<span class="tag">Economics</span></div>
+    <div class="brand"><a href="/">Georgia<span class="tag">Economics</span></a></div>
     <nav>
       <a href="/">Home</a>
       <a href="/counties/">Counties</a>
@@ -55,6 +63,7 @@
     </nav>
   </div>
 </header>
+<!-- /GEN:HEADER -->
 
 <main>
   <section class="page-header">
@@ -157,10 +166,11 @@
 
 </main>
 
+<!-- GEN:FOOTER -->
 <footer class="site-footer">
   <div class="wrap">
     <div>&copy; <span id="yr"></span> Georgia Economics &middot; Sister site to <a href="https://economicsguru.com">economicsguru.com</a> &middot; <a href="/about/">Methodology</a></div>
-    <div>Sources: Georgia Ports Authority, ATL airport, US Census, BLS QCEW.</div>
+    <div>Built with public data from BLS, FRED, BEA, Census, and Georgia state agencies.</div>
     <div class="eig">
       <a href="https://www.economicimpact.com" target="_blank" rel="noopener" aria-label="Economic Impact Group">
         <img src="/assets/ei_logo_NEW_200pxw.png" alt="Economic Impact Group">
@@ -169,6 +179,7 @@
     </div>
   </div>
 </footer>
+<!-- /GEN:FOOTER -->
 
 <script>
 document.getElementById('yr').textContent = new Date().getFullYear();
