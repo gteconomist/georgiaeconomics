@@ -18,6 +18,54 @@
 <script defer src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
 <script defer src="https://cdn.jsdelivr.net/gh/gteconomist/economicsguru@main/assets/charts.js"></script>
 <!-- /GEN:HEAD -->
+<!-- Plotly + maps.js for the 159-county unemployment choropleth (reuses data/counties.json) -->
+<script defer src="https://cdn.plot.ly/plotly-2.35.2.min.js"></script>
+<script defer src="/maps.js"></script>
+
+<style>
+  #county-ur-map { height: 520px; background: var(--chart-bg); }
+  .pending {
+    background: var(--peach-pale); border: 1px dashed var(--peach, #e8a87c);
+    border-radius: 8px; padding: 14px 16px; color: var(--ink-soft); font-size: 13px;
+  }
+  .pending strong { color: var(--peach-deep, #c46b3a); }
+
+  /* Metro comparison table */
+  .metro-table-wrap { overflow-x: auto; }
+  table.metro-table { width: 100%; border-collapse: collapse; font-size: 14px; min-width: 620px; }
+  table.metro-table thead th {
+    text-align: left; padding: 8px 10px; background: var(--chart-bg);
+    border-bottom: 2px solid var(--navy); color: var(--navy);
+    font-weight: 700; text-transform: uppercase; letter-spacing: 0.04em; font-size: 11px;
+    cursor: pointer; user-select: none; white-space: nowrap;
+  }
+  table.metro-table thead th.numeric { text-align: right; }
+  table.metro-table thead th.sorted::after { content: " \25BE"; font-size: 9px; }
+  table.metro-table tbody td { padding: 7px 10px; border-bottom: 1px dotted var(--border); }
+  table.metro-table tbody td.numeric { text-align: right; font-variant-numeric: tabular-nums; }
+  table.metro-table tbody tr:hover { background: var(--peach-pale); }
+  table.metro-table .metro-name { font-weight: 600; color: var(--navy); }
+  table.metro-table .yoy-up { color: var(--teal); font-weight: 600; }
+  table.metro-table .yoy-down { color: var(--coral); font-weight: 600; }
+
+  /* Diffusion callout */
+  .diffusion-band {
+    display: grid; grid-template-columns: 150px 1fr; gap: 22px; align-items: center;
+    background: var(--chart-bg); border-radius: 10px; padding: 18px 22px; margin-top: 6px;
+  }
+  @media (max-width: 720px) { .diffusion-band { grid-template-columns: 1fr; gap: 12px; } }
+  .diffusion-band .big { font-family: var(--font-display); color: var(--navy); font-size: 46px; font-weight: 800; line-height: 1; }
+  .diffusion-band .big small { display: block; font-size: 12px; font-weight: 600; color: var(--ink-soft); text-transform: uppercase; letter-spacing: 0.04em; margin-top: 6px; }
+  .diffusion-meter { height: 14px; border-radius: 7px; background: var(--coral); overflow: hidden; }
+  .diffusion-meter > span { display: block; height: 100%; background: var(--teal); }
+  .diffusion-band .interp { margin: 10px 0 0; color: var(--ink); font-size: 14px; }
+  .diffusion-tags { margin-top: 8px; font-size: 12px; color: var(--ink-soft); }
+  .stale-badge {
+    display: inline-block; font-size: 10px; font-weight: 700; text-transform: uppercase;
+    letter-spacing: 0.05em; color: #fff; background: var(--peach-deep, #c46b3a);
+    border-radius: 4px; padding: 2px 6px; vertical-align: middle; margin-left: 8px;
+  }
+</style>
 </head>
 <body>
 
@@ -150,6 +198,52 @@
     </div>
     <div class="source-note">Source: BLS CES, GA state, NAICS supersectors. Excludes Mining &amp; Logging (negligible in GA).</div>
   </div>
+
+  <!-- Sector diffusion (employment breadth) -->
+  <div class="chart-panel" style="margin-top: 22px;">
+    <h2>How broad is the job growth? <span id="diffusion-stale" class="stale-badge" style="display:none;">stale</span></h2>
+    <p class="sub">The employment <em>diffusion index</em> &mdash; the share of Georgia's major sectors that are adding jobs year-over-year. A high reading means growth is broad-based; a low reading means a handful of sectors are carrying the whole market.</p>
+    <div id="diffusion-pending" class="pending" style="display:none;"><strong>Diffusion pending:</strong> the statewide breadth measure derives from the CES sector pull and populates on the next labor-data refresh.</div>
+    <div class="diffusion-band" id="diffusion-band" style="display:none;">
+      <div class="big"><span id="diffusion-pct">&mdash;</span><small>of sectors growing</small></div>
+      <div>
+        <div class="diffusion-meter"><span id="diffusion-meter-fill" style="width:0%"></span></div>
+        <p class="interp" id="diffusion-interp">&mdash;</p>
+        <div class="diffusion-tags" id="diffusion-tags"></div>
+      </div>
+    </div>
+    <div class="source-note">Breadth = sectors with positive YoY employment &divide; sectors tracked. Source: BLS CES, GA state supersectors.</div>
+  </div>
+
+  <!-- Metro labor markets compared -->
+  <div class="chart-panel" style="margin-top: 22px;">
+    <h2>Metro labor markets compared <span id="metro-stale" class="stale-badge" style="display:none;">stale</span></h2>
+    <p class="sub">Georgia's 14 metropolitan areas side by side: unemployment, total nonfarm payrolls and their year-over-year change, plus each metro's job-growth breadth. Click a column to sort. Rolled up from the 14 <a href="/msa/">metro reports</a>.</p>
+    <div id="metro-pending" class="pending" style="display:none;"><strong>Metro comparison pending:</strong> rolls up from the 14 metro reports on the next data-refresh run after deploy.</div>
+    <div class="metro-table-wrap">
+      <table class="metro-table" id="metro-table" style="display:none;">
+        <thead><tr>
+          <th data-sort="short_name">Metro</th>
+          <th class="numeric" data-sort="unemployment_rate">Unemp. rate</th>
+          <th class="numeric" data-sort="nonfarm_k">Nonfarm (K)</th>
+          <th class="numeric" data-sort="nonfarm_yoy_pct">Jobs YoY</th>
+          <th class="numeric" data-sort="diffusion_pct">Sector breadth</th>
+        </tr></thead>
+        <tbody id="metro-body"></tbody>
+      </table>
+    </div>
+    <div class="source-note">Sources: BLS LAUS (metro unemployment) + BLS CES (metro payrolls), via the per-metro reports. Sector breadth shown only for metros with enough published supersectors to be meaningful.</div>
+  </div>
+
+  <!-- 159-county unemployment map -->
+  <div class="chart-panel" style="margin-top: 22px;">
+    <h2>Unemployment across all 159 counties</h2>
+    <p class="sub">Monthly county unemployment rate, seasonally unadjusted. Drag the slider to move through the last year. Source: BLS LAUS. For the full county view, see <a href="/counties/">Counties</a>.</p>
+    <div id="county-pending" class="pending" style="display:none;"><strong>County map pending:</strong> the all-159-county LAUS layer populates on the first labor-data refresh after deploy. Refresh after the workflow completes.</div>
+    <div id="county-ur-map"></div>
+    <div class="leaderboard-grid" id="county-leaderboards" style="margin-top:16px;"></div>
+    <div class="source-note">Source: BLS LAUS &mdash; Local Area Unemployment Statistics, county-level monthly.</div>
+  </div>
 </main>
 
 <!-- GEN:FOOTER -->
@@ -200,6 +294,92 @@
     renderPayrollsChart(d.total_payrolls_k);
     renderSectorYoYChart(d.sectors);
     renderSectorTable(d.sectors);
+
+    // Phase 4 WS3 additions
+    const meta = d._meta || {};
+    renderDiffusion(d.sector_diffusion, meta.sector_diffusion);
+    renderMetroTable(d.metro_labor, meta.metro_labor);
+    loadCountyMap();   // independent fetch of data/counties.json
+  }
+
+  /* ---- Sector diffusion (employment breadth) ---- */
+  function renderDiffusion(sd, meta) {
+    if (!sd || sd.statewide_pct == null) { GE.show('diffusion-pending'); return; }
+    if (meta && meta.stale) document.getElementById('diffusion-stale').style.display = '';
+    document.getElementById('diffusion-band').style.display = '';
+    GE.text('diffusion-pct', Math.round(sd.statewide_pct) + '%');
+    document.getElementById('diffusion-meter-fill').style.width = sd.statewide_pct + '%';
+    const n = sd.n_growing, t = sd.n_total;
+    let verdict;
+    if (sd.statewide_pct >= 60) verdict = 'broad-based — most sectors are hiring';
+    else if (sd.statewide_pct >= 40) verdict = 'mixed — growth is spread unevenly across sectors';
+    else verdict = 'narrow — a handful of sectors are carrying the labor market';
+    GE.text('diffusion-interp', `${n} of ${t} sectors are adding jobs year-over-year — a ${verdict}.`);
+    const tags = document.getElementById('diffusion-tags');
+    const grow = (sd.growing || []).join(', ') || '—';
+    tags.innerHTML = `<strong style="color:var(--teal)">Growing:</strong> ${grow}`;
+  }
+
+  /* ---- Metro comparison table (click-to-sort) ---- */
+  let metroRows = [], metroSortKey = 'nonfarm_k', metroSortDesc = true;
+  function renderMetroTable(rows, meta) {
+    if (!rows || !rows.length) { GE.show('metro-pending'); return; }
+    if (meta && meta.stale) document.getElementById('metro-stale').style.display = '';
+    metroRows = rows.slice();
+    document.getElementById('metro-table').style.display = '';
+    document.querySelectorAll('#metro-table thead th').forEach(th => {
+      const key = th.dataset.sort;
+      if (!key) return;
+      th.addEventListener('click', () => {
+        if (metroSortKey === key) { metroSortDesc = !metroSortDesc; }
+        else { metroSortKey = key; metroSortDesc = (key !== 'short_name'); }
+        drawMetroBody();
+      });
+    });
+    drawMetroBody();
+  }
+  function drawMetroBody() {
+    const rows = metroRows.slice().sort((a, b) => {
+      let av = a[metroSortKey], bv = b[metroSortKey];
+      if (av == null) return 1; if (bv == null) return -1;
+      if (typeof av === 'string') return metroSortDesc ? bv.localeCompare(av) : av.localeCompare(bv);
+      return metroSortDesc ? bv - av : av - bv;
+    });
+    document.querySelectorAll('#metro-table thead th').forEach(th =>
+      th.classList.toggle('sorted', th.dataset.sort === metroSortKey));
+    document.getElementById('metro-body').innerHTML = rows.map(r => {
+      const yoy = r.nonfarm_yoy_pct;
+      const yoyCls = yoy == null ? '' : (yoy >= 0 ? 'yoy-up' : 'yoy-down');
+      const yoyTxt = yoy == null ? '—' : (yoy > 0 ? '+' : '') + yoy.toFixed(1) + '%';
+      const diff = r.diffusion_pct == null ? '—' : Math.round(r.diffusion_pct) + '%';
+      return `<tr>` +
+        `<td class="metro-name">${r.short_name}</td>` +
+        `<td class="numeric">${r.unemployment_rate != null ? r.unemployment_rate.toFixed(1) + '%' : '—'}</td>` +
+        `<td class="numeric">${r.nonfarm_k != null ? r.nonfarm_k.toLocaleString() : '—'}</td>` +
+        `<td class="numeric ${yoyCls}">${yoyTxt}</td>` +
+        `<td class="numeric">${diff}</td></tr>`;
+    }).join('');
+  }
+
+  /* ---- 159-county unemployment choropleth (reuses data/counties.json) ---- */
+  async function loadCountyMap() {
+    try {
+      const day = new Date().toISOString().slice(0, 10);
+      const res = await fetch('/data/counties.json?v=' + day);
+      const data = await res.json();
+      if (!data.frames || !data.frames.length || !window.gaMaps) { GE.show('county-pending'); return; }
+      await window.gaMaps.drawGATimeChoropleth('county-ur-map', data.frames, {
+        metricLabel: data.metric_label || 'Unemployment',
+        unit: data.unit || '%',
+        colorscale: 'sequential',
+        frameDuration: 600,
+      });
+      const latest = data.frames[data.frames.length - 1].points;
+      window.gaMaps.renderLeaderboards('county-leaderboards', latest, { topN: 8, unit: '%', lowerIsBetter: true });
+    } catch (err) {
+      console.error('county map load failed:', err);
+      GE.show('county-pending');
+    }
   }
 
   function renderURChart(series) {

@@ -995,5 +995,220 @@
       "yoy_pct": -1.0,
       "yoy_delta_k": -7.0
     }
-  ]
+  ],
+  "metro_labor": [
+    {
+      "slug": "atlanta",
+      "short_name": "Atlanta",
+      "cbsa": "12060",
+      "population": 6307261,
+      "unemployment_rate": 3.3,
+      "ur_as_of": "2026-03",
+      "nonfarm_k": 3124.2,
+      "nonfarm_yoy_pct": 0.33,
+      "nonfarm_as_of": "2026-04",
+      "diffusion_pct": 43.0,
+      "n_sectors": 14
+    },
+    {
+      "slug": "augusta",
+      "short_name": "Augusta",
+      "cbsa": "12260",
+      "population": 611000,
+      "unemployment_rate": 3.9,
+      "ur_as_of": "2026-03",
+      "nonfarm_k": 254.2,
+      "nonfarm_yoy_pct": -0.2,
+      "nonfarm_as_of": "2026-04",
+      "diffusion_pct": 33.0,
+      "n_sectors": 12
+    },
+    {
+      "slug": "savannah",
+      "short_name": "Savannah",
+      "cbsa": "42340",
+      "population": 410000,
+      "unemployment_rate": 2.9,
+      "ur_as_of": "2026-03",
+      "nonfarm_k": 216.4,
+      "nonfarm_yoy_pct": 0.09,
+      "nonfarm_as_of": "2026-04",
+      "diffusion_pct": 33.0,
+      "n_sectors": 12
+    },
+    {
+      "slug": "columbus",
+      "short_name": "Columbus",
+      "cbsa": "17980",
+      "population": 329000,
+      "unemployment_rate": 4.2,
+      "ur_as_of": "2026-03",
+      "nonfarm_k": 122.5,
+      "nonfarm_yoy_pct": -0.41,
+      "nonfarm_as_of": "2026-04",
+      "diffusion_pct": 25.0,
+      "n_sectors": 12
+    },
+    {
+      "slug": "macon",
+      "short_name": "Macon",
+      "cbsa": "31420",
+      "population": 232000,
+      "unemployment_rate": 3.9,
+      "ur_as_of": "2026-03",
+      "nonfarm_k": 102.1,
+      "nonfarm_yoy_pct": -0.2,
+      "nonfarm_as_of": "2026-04",
+      "diffusion_pct": 42.0,
+      "n_sectors": 12
+    },
+    {
+      "slug": "athens",
+      "short_name": "Athens",
+      "cbsa": "12020",
+      "population": 217000,
+      "unemployment_rate": 2.9,
+      "ur_as_of": "2026-03",
+      "nonfarm_k": 108.7,
+      "nonfarm_yoy_pct": 2.45,
+      "nonfarm_as_of": "2026-04",
+      "diffusion_pct": 42.0,
+      "n_sectors": 12
+    },
+    {
+      "slug": "gainesville",
+      "short_name": "Gainesville",
+      "cbsa": "23580",
+      "population": 211000,
+      "unemployment_rate": 2.8,
+      "ur_as_of": "2026-03",
+      "nonfarm_k": 110.0,
+      "nonfarm_yoy_pct": 0.55,
+      "nonfarm_as_of": "2026-04",
+      "diffusion_pct": 58.0,
+      "n_sectors": 12
+    },
+    {
+      "slug": "warner-robins",
+      "short_name": "Warner Robins",
+      "cbsa": "47580",
+      "population": 199000,
+      "unemployment_rate": 3.1,
+      "ur_as_of": "2026-03",
+      "nonfarm_k": 78.3,
+      "nonfarm_yoy_pct": -1.26,
+      "nonfarm_as_of": "2026-04",
+      "diffusion_pct": null,
+      "n_sectors": 3
+    },
+    {
+      "slug": "valdosta",
+      "short_name": "Valdosta",
+      "cbsa": "46660",
+      "population": 148000,
+      "unemployment_rate": 3.6,
+      "ur_as_of": "2026-03",
+      "nonfarm_k": 56.9,
+      "nonfarm_yoy_pct": 0.53,
+      "nonfarm_as_of": "2026-04",
+      "diffusion_pct": null,
+      "n_sectors": 3
+    },
+    {
+      "slug": "albany",
+      "short_name": "Albany",
+      "cbsa": "10500",
+      "population": 146000,
+      "unemployment_rate": 4.0,
+      "ur_as_of": "2026-03",
+      "nonfarm_k": 59.5,
+      "nonfarm_yoy_pct": -2.78,
+      "nonfarm_as_of": "2026-04",
+      "diffusion_pct": null,
+      "n_sectors": 3
+    },
+    {
+      "slug": "dalton",
+      "short_name": "Dalton",
+      "cbsa": "19140",
+      "population": 143000,
+      "unemployment_rate": 4.0,
+      "ur_as_of": "2026-03",
+      "nonfarm_k": 66.5,
+      "nonfarm_yoy_pct": -0.89,
+      "nonfarm_as_of": "2026-04",
+      "diffusion_pct": 17.0,
+      "n_sectors": 6
+    },
+    {
+      "slug": "brunswick",
+      "short_name": "Brunswick",
+      "cbsa": "15260",
+      "population": 120000,
+      "unemployment_rate": 3.1,
+      "ur_as_of": "2026-03",
+      "nonfarm_k": 50.5,
+      "nonfarm_yoy_pct": 0.8,
+      "nonfarm_as_of": "2026-04",
+      "diffusion_pct": null,
+      "n_sectors": 3
+    },
+    {
+      "slug": "rome",
+      "short_name": "Rome",
+      "cbsa": "40660",
+      "population": 99000,
+      "unemployment_rate": 3.3,
+      "ur_as_of": "2026-03",
+      "nonfarm_k": 47.1,
+      "nonfarm_yoy_pct": -0.42,
+      "nonfarm_as_of": "2026-04",
+      "diffusion_pct": null,
+      "n_sectors": 5
+    },
+    {
+      "slug": "hinesville",
+      "short_name": "Hinesville",
+      "cbsa": "25980",
+      "population": 78000,
+      "unemployment_rate": 3.9,
+      "ur_as_of": "2026-03",
+      "nonfarm_k": 21.8,
+      "nonfarm_yoy_pct": -1.8,
+      "nonfarm_as_of": "2026-04",
+      "diffusion_pct": null,
+      "n_sectors": 1
+    }
+  ],
+  "sector_diffusion": {
+    "statewide_pct": 20.0,
+    "n_growing": 2,
+    "n_total": 10,
+    "growing": [
+      "Education & Health Services",
+      "Other Services"
+    ],
+    "shrinking": [
+      "Construction",
+      "Manufacturing",
+      "Trade, Transportation & Utilities",
+      "Information",
+      "Financial Activities",
+      "Professional & Business Services",
+      "Leisure & Hospitality",
+      "Government"
+    ],
+    "as_of": "2026-04"
+  },
+  "_meta": {
+    "metro_labor": {
+      "last_updated": "2026-06-03T19:31:33Z",
+      "n_metros": 14,
+      "stale": false
+    },
+    "sector_diffusion": {
+      "last_updated": "2026-06-03T19:31:33Z",
+      "stale": false
+    }
+  }
 }

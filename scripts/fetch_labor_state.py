@@ -35,14 +35,28 @@ import time
 import urllib.request
 import urllib.error
 from pathlib import Path
-from datetime import date
+from datetime import date, datetime
 
+# Key is required only for the live BLS pull (full run). The --rollup mode is a
+# pure local read of data/msa_reports/*.json + the prior data/labor.json and
+# needs no key, so we defer the check into the full-run path.
 BLS_API_KEY = os.environ.get("BLS_API_KEY", "").strip()
-if not BLS_API_KEY:
-    print("ERROR: BLS_API_KEY env var not set", file=sys.stderr)
-    sys.exit(2)
 
 BLS_URL = "https://api.bls.gov/publicAPI/v2/timeseries/data/"
+
+ROOT = Path(__file__).parent.parent
+DATA = ROOT / "data"
+MSA_REPORTS = DATA / "msa_reports"
+OUT_PATH = DATA / "labor.json"
+STALE_MONTHS = 6
+
+# Supersector labels that are aggregates, not real sectors — excluded from the
+# diffusion (employment-breadth) count so they don't double-count.
+_DIFFUSION_EXCLUDE = {"Total nonfarm", "Total private", "Total Nonfarm", "Goods producing",
+                      "Service-providing", "Private service-providing"}
+# A metro needs at least this many published supersectors for its diffusion
+# share to be meaningful (small MSAs publish only 1–6, making the % degenerate).
+_MIN_DIFFUSION_SECTORS = 6
 
 # ---------- Series IDs ----------
 LAUS_SERIES = {
@@ -106,8 +120,155 @@ def parse_series_to_monthly(series_block):
     return out
 
 
+# --------------------------------------------------------------------------- #
+# Roll-up layer (Phase 4 WS3) — pure local reads, no BLS key needed
+# --------------------------------------------------------------------------- #
+def _now_iso():
+    return datetime.utcnow().strftime("%Y-%m-%dT%H:%M:%SZ")
+
+
+def _is_stale(meta_entry):
+    if not meta_entry or not meta_entry.get("last_updated"):
+        return True
+    try:
+        d = datetime.strptime(meta_entry["last_updated"][:10], "%Y-%m-%d")
+    except Exception:
+        return True
+    return (datetime.utcnow() - d).days > STALE_MONTHS * 30
+
+
+def _metro_diffusion(ces_by_supersector):
+    """Share (%) of a metro's CES supersectors that are growing YoY.
+
+    Returns (diffusion_pct or None, n_sectors_counted). None when too few
+    supersectors are published for the share to be meaningful.
+    """
+    sectors = (ces_by_supersector or {}).get("sectors", {}) or {}
+    vals = []
+    for name, blk in sectors.items():
+        if name in _DIFFUSION_EXCLUDE:
+            continue
+        y = (blk or {}).get("latest_yoy")
+        if isinstance(y, (int, float)):
+            vals.append(y)
+    if len(vals) < _MIN_DIFFUSION_SECTORS:
+        return None, len(vals)
+    growing = sum(1 for v in vals if v > 0)
+    return round(100.0 * growing / len(vals), 0), len(vals)
+
+
+def rollup_metro_labor():
+    """Read all 14 msa_reports/*.json → compact per-metro labor block.
+
+    Each metro contributes its latest LAUS unemployment rate, total nonfarm
+    payrolls (+ YoY) from CES, and a sector-diffusion (employment-breadth)
+    share. Sorted by population descending. Pure local read.
+    """
+    rows = []
+    for path in sorted(MSA_REPORTS.glob("*.json")):
+        try:
+            rep = json.loads(path.read_text())
+        except Exception as e:
+            print(f"  [labor rollup] skip {path.name}: {type(e).__name__}", file=sys.stderr)
+            continue
+        secs = rep.get("sections", {}) or {}
+        status = rep.get("section_status", {}) or {}
+        lau = secs.get("laus_unemployment", {}) or {}
+        ces = secs.get("ces_employment", {}) or {}
+
+        ur = lau.get("latest_value") if status.get("laus_unemployment") in ("live", "partial", "stale") else None
+        nonfarm = ces.get("latest_value") if status.get("ces_employment") in ("live", "partial", "stale") else None
+        diffusion_pct, n_sec = _metro_diffusion(secs.get("ces_by_supersector"))
+
+        rows.append({
+            "slug": path.stem,
+            "short_name": rep.get("short_name"),
+            "cbsa": rep.get("cbsa"),
+            "population": rep.get("population"),
+            "unemployment_rate": ur,
+            "ur_as_of": lau.get("latest_month"),
+            "nonfarm_k": nonfarm,
+            "nonfarm_yoy_pct": ces.get("latest_yoy"),
+            "nonfarm_as_of": ces.get("latest_month"),
+            "diffusion_pct": diffusion_pct,
+            "n_sectors": n_sec,
+        })
+    rows.sort(key=lambda r: -(r.get("population") or 0))
+    return rows
+
+
+def compute_sector_diffusion(sectors):
+    """Statewide employment breadth: share of CES supersectors growing YoY.
+
+    `sectors` is the existing labor.json sectors list (10 GA supersectors, each
+    with a yoy_pct). Returns None if absent.
+    """
+    sectors = sectors or []
+    vals = [(s.get("name"), s.get("yoy_pct")) for s in sectors
+            if isinstance(s.get("yoy_pct"), (int, float))]
+    if not vals:
+        return None
+    growing = [n for n, y in vals if y > 0]
+    shrinking = [n for n, y in vals if y <= 0]
+    return {
+        "statewide_pct": round(100.0 * len(growing) / len(vals), 0),
+        "n_growing": len(growing),
+        "n_total": len(vals),
+        "growing": growing,
+        "shrinking": shrinking,
+    }
+
+
+def attach_rollups(out, *, sectors_for_diffusion, as_of_label):
+    """Add metro_labor + sector_diffusion (+ _meta) to `out`, degrading gracefully."""
+    meta = out.get("_meta", {}) or {}
+
+    # metro comparison
+    try:
+        metro = rollup_metro_labor()
+    except Exception as e:
+        print(f"  [labor rollup] metro_labor raised {type(e).__name__}: {e}", file=sys.stderr)
+        metro = None
+    if metro:
+        out["metro_labor"] = metro
+        meta["metro_labor"] = {"last_updated": _now_iso(), "n_metros": len(metro)}
+
+    # statewide sector diffusion
+    diff = compute_sector_diffusion(sectors_for_diffusion)
+    if diff:
+        diff["as_of"] = as_of_label
+        out["sector_diffusion"] = diff
+        meta["sector_diffusion"] = {"last_updated": _now_iso()}
+
+    for v in meta.values():
+        v["stale"] = _is_stale(v)
+    out["_meta"] = meta
+    return out
+
+
+def run_rollup_only():
+    """--rollup mode: refresh only the roll-up blocks; preserve live state series."""
+    if not OUT_PATH.exists():
+        print("ERROR: data/labor.json not found — run a full fetch first", file=sys.stderr)
+        return 2
+    out = json.loads(OUT_PATH.read_text())
+    attach_rollups(out, sectors_for_diffusion=out.get("sectors"),
+                   as_of_label=out.get("latest_label"))
+    OUT_PATH.write_text(json.dumps(out, indent=2))
+    ml = out.get("metro_labor") or []
+    sd = out.get("sector_diffusion") or {}
+    print(f"Wrote {OUT_PATH} (rollup-only)")
+    print(f"  metro_labor: {len(ml)} metros")
+    if sd:
+        print(f"  sector_diffusion: {sd.get('n_growing')}/{sd.get('n_total')} sectors growing ({sd.get('statewide_pct')}%)")
+    return 0
+
+
 # ---------- Main ----------
 def main():
+    if not BLS_API_KEY:
+        print("ERROR: BLS_API_KEY env var not set", file=sys.stderr)
+        sys.exit(2)
     # Single batch — 4 LAUS + 11 CES = 15 series, well under the 50 series cap
     all_series_ids = list(LAUS_SERIES.values()) + [s[2] for s in SECTOR_DEFS]
     print(f"  Fetching {len(all_series_ids)} BLS series in 1 batch...", flush=True)
@@ -186,13 +347,22 @@ def main():
         "sectors":            sectors,
     }
 
-    out_path = Path(__file__).parent.parent / "data" / "labor.json"
+    # Phase 4 WS3 roll-ups: metro comparison + statewide sector diffusion.
+    # Local reads of data/msa_reports/*.json; degrade gracefully on failure.
+    attach_rollups(out, sectors_for_diffusion=sectors, as_of_label=out["latest_label"])
+
+    out_path = OUT_PATH
     out_path.parent.mkdir(exist_ok=True)
     with open(out_path, "w") as f:
         json.dump(out, f, indent=2)
 
     n_months = len(ur)
     print(f"Wrote {out_path}")
+    if out.get("metro_labor"):
+        print(f"  Metro labor: {len(out['metro_labor'])} metros")
+    if out.get("sector_diffusion"):
+        sd = out["sector_diffusion"]
+        print(f"  Diffusion:   {sd['n_growing']}/{sd['n_total']} sectors growing ({sd['statewide_pct']}%)")
     print(f"  Months: {n_months}  ({ur[0][0]} → {ur[-1][0]})")
     print(f"  UR latest: {ur_latest}%   YoY {ur_yoy_delta:+.1f}pp")
     print(f"  Payrolls:  {pay_latest:.1f}K  ({pay_yoy_pct:+.1f}% YoY)")
@@ -202,4 +372,6 @@ def main():
 
 
 if __name__ == "__main__":
+    if "--rollup" in sys.argv[1:]:
+        raise SystemExit(run_rollup_only())
     main()

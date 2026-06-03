@@ -106,6 +106,13 @@ jobs:
         # and housing steps so ga_gdp / ga_hpi exist as forecast inputs. No keys.
         run: python3 scripts/fetch_forecasts.py
 
+      - name: Build statewide labor roll-up (Phase 4 WS3)
+        # Refreshes ONLY the metro-comparison + sector-diffusion blocks in
+        # data/labor.json from the freshly-regenerated metro reports (local read,
+        # no BLS key). Preserves the live state UR/payrolls/sector series, which
+        # the full monthly pull in update-labor.yml owns. Degrades gracefully.
+        run: python3 scripts/fetch_labor_state.py --rollup
+
       - name: Generate county profiles (Phase 5 WS4)
         # Build all 159 /counties/<slug>/ pages from the freshly-refreshed JSON
         # (population/labor/gdp/housing). Runs AFTER the gdp + housing roll-ups so
@@ -132,7 +139,7 @@ jobs:
         run: |
           git config user.name  "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/msa_reports/ msa/ counties/ data/ga_msa_counties.json data/housing.json data/gdp.json data/migration.json data/outlook.json data/search-index.json data/county_index.json data/scorecard.json REPORT_STATUS_MATRIX.md
+          git add data/msa_reports/ msa/ counties/ data/ga_msa_counties.json data/housing.json data/gdp.json data/migration.json data/outlook.json data/labor.json data/search-index.json data/county_index.json data/scorecard.json REPORT_STATUS_MATRIX.md
           if git diff --cached --quiet; then
             echo "No changes to commit."
             exit 0

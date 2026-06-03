@@ -80,8 +80,19 @@ Use data already in hand.
 2. ✅ **State GDP page** (WS1) — DONE. `STATE_GDP_PAGE_SCOPE.md`; `/gdp/`, `scripts/fetch_gdp.py`. SAGDP statewide + CAGDP2 county + SE peers + sectors + non-metro.
 3. ✅ **Migration page** (WS2) — DONE. `MIGRATION_PAGE_SCOPE.md`; `/migration/`, `scripts/fetch_migration.py` (+ `fetch_state_flows()` in `pull_irs_soi.py`). IRS SOI state flows + 159-county net-migration map + metro attraction.
 4. ✅ **Forecasts/Outlook hub** (WS2) — DONE. `FORECASTS_PAGE_SCOPE.md`; `/outlook/`, `scripts/fetch_forecasts.py`. Reuses `business_cycle_index` + `forecast_arima` helpers on GA actuals; cycle index + 5-yr forecast + metro roll-ups. Carries a model-projection disclaimer.
-5. ◻ Thicken **Labor + Trade** (WS3) — NOT STARTED. ← resume here.
-6. ◻ **Consumer** stub (WS1, needs new pipelines: GA DoR sales tax, Georgia Power demand) + connective tissue (WS4).
+5. ✅ Thicken **Labor + Trade** (WS3) — DONE 2026-06-03. `LABOR_PAGE_SCOPE.md` /
+   `TRADE_PAGE_SCOPE.md`.
+   - **Labor**: `fetch_labor_state.py` gained a `--rollup` mode (keyless local read) →
+     `metro_labor` (14-metro UR + nonfarm + YoY + sector breadth) + `sector_diffusion`
+     (statewide employment breadth). `/labor/` adds a 159-county UR choropleth (reuses
+     `data/counties.json` via `drawGATimeChoropleth`), a click-to-sort metro comparison
+     table, and a diffusion callout. Rollup folded into `update-msa-reports.yml`; full
+     monthly pull stays in `update-labor.yml`.
+   - **Trade**: `fetch_trade.py` gained `build_exports_annual()` (6-yr total-export trend +
+     CAGR) and `build_exports_by_commodity()` (HS2 chapter breakdown), both Census
+     USA Trade Online. `/trade/` adds the multi-year trend + commodity bars. Runs in the
+     existing `update-trade.yml` (no topology change; ITA MSA exports still out of scope).
+6. ◻ **Consumer** stub (WS1, needs new pipelines: GA DoR sales tax, Georgia Power demand) + connective tissue (WS4). ← resume here.
 
 All four new pages fold their roll-up into `update-msa-reports.yml` (after the metro
 reports regenerate) and commit `data/{housing,gdp,migration,outlook}.json`. The home-grid
@@ -107,19 +118,27 @@ to survive concurrent-push races.
 ## ▶ RESUME HERE (Phase 4)
 
 **Done (2026-06-02 session):** Housing, State GDP, Migration, Outlook — all four pages
-built, wired, and shipped; all `update-*.yml` workflows hardened. Two "Coming soon" home
-stubs closed (Housing, State GDP); Migration + Outlook added net-new.
+built, wired, and shipped; all `update-*.yml` workflows hardened.
 
-**Next: WS3 — thicken Labor + Trade** (data already in hand, no new external sources):
-- **Labor** — fold in the county LAUS layer (`fetch_bls_laus.py` + `counties.json`) for a
-  159-county unemployment map, a metro labor comparison, and sector diffusion (already
-  computed in the MSA reports). Follow the proven roll-up + statewide + county pattern.
-- **Trade** — multi-year export trends + commodity breakdown (not just top-country); the
-  ITA MSA exports endpoint is still partially blocked (`reference_ita_exports_endpoint_dead`).
+**Done (2026-06-03 session):** WS3 — Labor + Trade thickened (see sequencing item #5).
+Labor: 159-county UR map (reuses `data/counties.json`), 14-metro comparison table, sector
+diffusion; `fetch_labor_state.py --rollup` folded into `update-msa-reports.yml`. Trade:
+multi-year export trend + HS2 commodity breakdown via Census, in `update-trade.yml`. Both
+pages lint clean, JS syntax-checked, roll-ups validated offline. On push, `update-labor.yml`
+and `update-trade.yml` fire (path filters match the touched scripts) and populate the live
+Census/BLS sections within minutes; the metro_labor + sector_diffusion blocks are already
+committed with real values from the local `--rollup`.
 
-**Then:** Consumer stub (needs NEW pipelines — GA Dept. of Revenue sales-tax collections,
-Georgia Power residential demand) + WS4 connective tissue (scorecard, search, alerts,
-full cross-metro comparator).
+**Next: WS1 Consumer stub + WS4 connective tissue.**
+- **Consumer** stub — needs NEW pipelines: GA Dept. of Revenue sales-tax collections,
+  Georgia Power residential demand, retail proxies. No existing pipeline — the only Phase 4
+  item that needs genuinely new data. Flips the last "Coming soon" home card.
+- **WS4 connective tissue** — full cross-metro comparator (extend `/msa/` radar to all 33
+  metrics), email/RSS refresh alerts. (Scorecard + site search already shipped in Phase 5.)
+
+**Trade follow-up (deferred, not blocking):** Port of Savannah TEU, Brunswick autos, and ATL
+Hartsfield cargo are still calibrated fixtures — a Tavily/GPA-press-release scraper is the
+remaining live-wiring task for `/trade/`.
 
 Reuse the established playbook: scope doc → `scripts/fetch_<topic>.py` (with `--rollup`
 local validation) → `/<topic>/index.html` (reuse Housing/GDP choropleth + pending/stale

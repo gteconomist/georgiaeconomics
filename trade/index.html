@@ -45,6 +45,22 @@
   table.exports-table .yoy-down { color: var(--coral); font-weight: 600; }
 
   .source-note { font-size: 12px; color: var(--ink-soft); margin-top: 8px; font-style: italic; }
+
+  .pending {
+    background: var(--peach-pale); border: 1px dashed var(--peach, #e8a87c);
+    border-radius: 8px; padding: 14px 16px; color: var(--ink-soft); font-size: 13px;
+  }
+  .pending strong { color: var(--peach-deep, #c46b3a); }
+  .stale-badge {
+    display: inline-block; font-size: 10px; font-weight: 700; text-transform: uppercase;
+    letter-spacing: 0.05em; color: #fff; background: var(--peach-deep, #c46b3a);
+    border-radius: 4px; padding: 2px 6px; vertical-align: middle; margin-left: 8px;
+  }
+  .trend-callout { display: flex; flex-wrap: wrap; gap: 26px; margin: 2px 0 14px; }
+  .trend-callout .stat .n { font-family: var(--font-display); color: var(--navy); font-size: 30px; font-weight: 800; line-height: 1; }
+  .trend-callout .stat .l { font-size: 12px; color: var(--ink-soft); font-weight: 600; text-transform: uppercase; letter-spacing: 0.04em; margin-top: 4px; }
+  .trend-callout .stat .n.up { color: var(--teal); }
+  .trend-callout .stat .n.down { color: var(--coral); }
 </style>
 </head>
 <body>
@@ -185,6 +201,29 @@
     <div class="source-note">Source: US Census Bureau, USA Trade Online — state-level exports by destination (target). Currently fixture data.</div>
   </div>
 
+  <!-- Multi-year export trend -->
+  <div class="chart-panel" style="margin-top: 22px;">
+    <h2>Georgia goods exports — the long view <span id="annual-stale" class="stale-badge" style="display:none;">stale</span></h2>
+    <p class="sub">Total goods exports originating in Georgia, by calendar year. The destinations table above is a single-year snapshot; this is the trend underneath it. Source: US Census Bureau, USA Trade Online.</p>
+    <div id="annual-pending" class="pending" style="display:none;"><strong>Trend pending:</strong> the multi-year export series populates on the first trade-data refresh after deploy (needs the Census API key from repo secrets).</div>
+    <div class="trend-callout" id="annual-callout" style="display:none;">
+      <div class="stat"><div class="n" id="annual-latest">—</div><div class="l" id="annual-latest-yr">Latest year total</div></div>
+      <div class="stat"><div class="n" id="annual-yoy">—</div><div class="l">Year-over-year</div></div>
+      <div class="stat"><div class="n" id="annual-cagr">—</div><div class="l" id="annual-cagr-l">Annualized growth</div></div>
+    </div>
+    <div class="big-canvas" id="annual-canvas-wrap" style="display:none;"><canvas id="exports-annual"></canvas></div>
+    <div class="source-note">Source: US Census Bureau, USA Trade Online — state-origin goods exports, all destinations. Annual totals sum the same per-country data as the destinations table.</div>
+  </div>
+
+  <!-- Commodity breakdown -->
+  <div class="chart-panel" style="margin-top: 22px;">
+    <h2>What Georgia ships — exports by commodity <span id="commodity-stale" class="stale-badge" style="display:none;">stale</span></h2>
+    <p class="sub">Top product chapters (2-digit Harmonized System) as a share of Georgia's goods exports for the latest year. Bars in teal are growing year-over-year; coral are shrinking. Source: US Census Bureau, USA Trade Online.</p>
+    <div id="commodity-pending" class="pending" style="display:none;"><strong>Commodity breakdown pending:</strong> the HS-chapter breakdown populates on the first trade-data refresh after deploy.</div>
+    <div class="big-canvas" id="commodity-canvas-wrap" style="display:none;"><canvas id="exports-commodity"></canvas></div>
+    <div class="source-note">Source: US Census Bureau, USA Trade Online — state exports by HS2 chapter, all destinations. "All other" aggregates chapters outside the top 10.</div>
+  </div>
+
   <!-- Leading indicator chart — the highlight -->
   <div class="chart-panel" style="margin-top: 22px;">
     <h2>The Lead Indicator: Savannah TEUs → Atlanta T&amp;W Employment</h2>
@@ -286,6 +325,81 @@ async function init() {
   renderATLCargo(d.atl_cargo_kt);
   renderLeadIndicator(d.savannah_teu_k, d.atl_tw_employment_k);
   renderExportsTable(d.ga_exports_latest || d.ga_exports_2025 || [], d.ga_exports_top10_total_musd || 0);
+
+  // Phase 4 WS3 additions
+  const meta = d._meta || {};
+  renderExportsAnnual(d.exports_annual, meta.exports_annual);
+  renderExportsCommodity(d.exports_by_commodity, meta.exports_by_commodity);
+}
+
+/* --- Multi-year total exports trend --- */
+function renderExportsAnnual(a, meta) {
+  const show = id => { const el = document.getElementById(id); if (el) el.style.display = ''; };
+  if (!a || !a.years || a.years.length < 2) { show('annual-pending'); return; }
+  if (meta && meta.stale) show('annual-stale');
+  show('annual-callout'); show('annual-canvas-wrap');
+
+  document.getElementById('annual-latest').textContent = '$' + (a.latest_total_musd / 1000).toFixed(1) + 'B';
+  document.getElementById('annual-latest-yr').textContent = a.latest_year + ' total';
+  const yoyEl = document.getElementById('annual-yoy');
+  if (a.yoy_pct != null) { yoyEl.textContent = fmtPct(a.yoy_pct); yoyEl.classList.add(a.yoy_pct >= 0 ? 'up' : 'down'); }
+  const cagrEl = document.getElementById('annual-cagr');
+  if (a.cagr_pct != null) {
+    cagrEl.textContent = fmtPct(a.cagr_pct); cagrEl.classList.add(a.cagr_pct >= 0 ? 'up' : 'down');
+    document.getElementById('annual-cagr-l').textContent = `Annualized, ${a.years[0]}–${a.years[a.years.length-1]}`;
+  }
+
+  const ctx = document.getElementById('exports-annual').getContext('2d');
+  new Chart(ctx, {
+    type: 'bar',
+    data: { labels: a.years.map(String), datasets: [{ label: 'GA goods exports ($B)', data: a.total_musd.map(v => v / 1000), backgroundColor: BRAND_COLORS.navy, borderWidth: 0 }] },
+    options: {
+      responsive: true, maintainAspectRatio: false,
+      scales: {
+        x: { grid: { display: false }, ticks: { color: BRAND_COLORS.navy, font: { size: 12, weight: 'bold' } } },
+        y: { beginAtZero: true, grid: { color: BRAND_COLORS.grid, borderDash: [3,4] }, ticks: { color: BRAND_COLORS.navy, font: { size: 11 }, callback: v => '$' + v.toFixed(0) + 'B' } },
+      },
+      plugins: { legend: { display: false }, tooltip: { callbacks: { label: it => 'Exports: $' + it.parsed.y.toFixed(2) + 'B' } } },
+    },
+  });
+}
+
+/* --- Exports by HS2 commodity chapter --- */
+function renderExportsCommodity(c, meta) {
+  const show = id => { const el = document.getElementById(id); if (el) el.style.display = ''; };
+  if (!c || !c.chapters || !c.chapters.length) { show('commodity-pending'); return; }
+  if (meta && meta.stale) show('commodity-stale');
+  show('commodity-canvas-wrap');
+
+  const rows = c.chapters.slice();
+  const labels = rows.map(r => r.name);
+  const values = rows.map(r => r.value_musd / 1000);   // $B
+  const colors = rows.map(r => (r.yoy_pct == null ? BRAND_COLORS.navySoft : (r.yoy_pct >= 0 ? BRAND_COLORS.teal : BRAND_COLORS.coral)));
+  if (c.other_musd) { labels.push('All other'); values.push(c.other_musd / 1000); colors.push(BRAND_COLORS.grid); }
+
+  const ctx = document.getElementById('exports-commodity').getContext('2d');
+  new Chart(ctx, {
+    type: 'bar',
+    data: { labels, datasets: [{ label: 'Exports ($B)', data: values, backgroundColor: colors, borderWidth: 0 }] },
+    options: {
+      indexAxis: 'y', responsive: true, maintainAspectRatio: false,
+      scales: {
+        x: { grid: { color: BRAND_COLORS.grid, borderDash: [3,4] }, ticks: { color: BRAND_COLORS.navy, font: { size: 11 }, callback: v => '$' + v.toFixed(0) + 'B' } },
+        y: { grid: { display: false }, ticks: { color: BRAND_COLORS.navy, font: { size: 12, weight: 'bold' } } },
+      },
+      plugins: {
+        legend: { display: false },
+        tooltip: { callbacks: {
+          label: it => {
+            const r = rows[it.dataIndex];
+            if (!r) return '$' + it.parsed.x.toFixed(2) + 'B';
+            const yoy = r.yoy_pct == null ? '' : '  (' + fmtPct(r.yoy_pct) + ' YoY)';
+            return `$${it.parsed.x.toFixed(2)}B · ${r.share_pct}% of exports${yoy}`;
+          },
+        } },
+      },
+    },
+  });
 }
 
 /* --- Chart 1: Savannah TEU (60+ months, year-shaded bars) --- */

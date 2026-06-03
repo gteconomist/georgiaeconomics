@@ -104,13 +104,18 @@ def _is_aggregate(name):
 
 
 # ---------- Census USA Trade Online — GA exports by country ----------
+_EXPORTS_BY_YEAR_CACHE = {}
+
 def fetch_ga_exports_by_country_annual(year):
     """Sum monthly GA exports per country, return dict country_name -> total $.
 
     Strategy: try multiple Census API query shapes, since the right combination
     of get-fields, predicates, and COMM_LVL has been finicky. Logs what each
-    attempt returns so we can debug from Actions output.
+    attempt returns so we can debug from Actions output. Results are cached per
+    year so the country table and the multi-year trend don't double-pull a year.
     """
+    if year in _EXPORTS_BY_YEAR_CACHE:
+        return _EXPORTS_BY_YEAR_CACHE[year]
     base = "https://api.census.gov/data/timeseries/intltrade/exports/statehs"
 
     # Try several query strategies in order. Each is tagged with a name for logging.
@@ -135,9 +140,12 @@ def fetch_ga_exports_by_country_annual(year):
         n_real = sum(1 for k in result if not _is_aggregate(k))
         print(f"        → got {len(result)} country rows ({n_real} real after filter)", file=sys.stderr)
         if n_real >= 5:
-            return {k: v for k, v in result.items() if not _is_aggregate(k)}
+            clean = {k: v for k, v in result.items() if not _is_aggregate(k)}
+            _EXPORTS_BY_YEAR_CACHE[year] = clean
+            return clean
 
     print(f"      All Census strategies returned <5 real countries for {year}", file=sys.stderr)
+    _EXPORTS_BY_YEAR_CACHE[year] = {}
     return {}
 
 
@@ -305,6 +313,181 @@ def build_top_exports(latest_year):
     return top10
 
 
+# ---------- Census USA Trade Online — multi-year total & commodity breakdown ----------
+from datetime import datetime
+
+def _now_iso():
+    return datetime.utcnow().strftime("%Y-%m-%dT%H:%M:%SZ")
+
+# HS 2-digit chapter → readable name (the chapters that matter for GA exports;
+# anything else falls back to the description Census returns, then "HS <code>").
+HS2_NAMES = {
+    "02": "Meat", "03": "Fish & seafood", "08": "Edible fruit & nuts",
+    "10": "Cereals", "12": "Oil seeds & oleaginous fruits",
+    "16": "Prepared meat & fish", "17": "Sugars & confectionery",
+    "23": "Food-industry residues (animal feed)",
+    "24": "Tobacco", "27": "Mineral fuels & oils",
+    "28": "Inorganic chemicals", "29": "Organic chemicals",
+    "30": "Pharmaceuticals", "31": "Fertilizers", "32": "Tanning & dyeing extracts",
+    "33": "Essential oils & cosmetics", "38": "Misc. chemical products",
+    "39": "Plastics", "40": "Rubber", "44": "Wood",
+    "47": "Wood pulp", "48": "Paper & paperboard",
+    "52": "Cotton", "55": "Man-made staple fibers",
+    "72": "Iron & steel", "73": "Iron & steel articles",
+    "74": "Copper", "76": "Aluminum",
+    "84": "Machinery & mechanical appliances", "85": "Electrical machinery & equipment",
+    "87": "Vehicles", "88": "Aircraft & spacecraft", "90": "Optical & medical instruments",
+    "94": "Furniture & bedding", "95": "Toys, games & sports equipment",
+}
+
+def _hs2_name(code, desc=None):
+    code = (code or "").zfill(2)
+    if code in HS2_NAMES:
+        return HS2_NAMES[code]
+    if desc:
+        d = desc.strip().title()
+        return d[:48] if d else f"HS {code}"
+    return f"HS {code}"
+
+
+def _census_annual_total(year):
+    """Total GA goods exports for a calendar year ($), summed over all countries.
+
+    Reuses the proven per-country pull and sums the real-country values (the same
+    figures the destinations table is built from), so the annual trend ties out
+    exactly to the country table for overlapping years. Returns float or None.
+    """
+    by_country = fetch_ga_exports_by_country_annual(year)
+    if not by_country:
+        return None
+    total = sum(v for v in by_country.values() if isinstance(v, (int, float)))
+    return total if total > 0 else None
+
+
+def build_exports_annual(latest_year, years_back=6):
+    """Annual GA total goods exports for the last `years_back` complete years.
+
+    Returns dict with years[], total_musd[], latest figures, YoY, and CAGR. None
+    if fewer than 2 years are obtainable.
+    """
+    print(f"\n[Census] Building {years_back}-year export trend ending {latest_year}...")
+    years, totals = [], []
+    for y in range(latest_year - years_back + 1, latest_year + 1):
+        t = _census_annual_total(y)
+        if t is None:
+            print(f"  → {y}: no data", file=sys.stderr)
+            continue
+        years.append(y)
+        totals.append(round(t / 1e6, 0))   # $ → $M
+        print(f"  → {y}: ${totals[-1]:,.0f}M", file=sys.stderr)
+
+    if len(years) < 2:
+        return None
+
+    latest_total = totals[-1]
+    prev_total = totals[-2]
+    yoy = round((latest_total - prev_total) / prev_total * 100, 1) if prev_total else None
+    n = len(totals) - 1
+    cagr = round(((totals[-1] / totals[0]) ** (1.0 / n) - 1) * 100, 1) if totals[0] and n else None
+    return {
+        "years": years,
+        "total_musd": totals,
+        "latest_year": years[-1],
+        "latest_total_musd": latest_total,
+        "yoy_pct": yoy,
+        "cagr_pct": cagr,
+    }
+
+
+def _fetch_commodity_year(year, top_n=10):
+    """GA exports by HS2 chapter for a calendar year, summed over months & countries.
+
+    Census timeseries aggregates over dimensions not present in `get=`, so by
+    requesting E_COMMODITY (not CTY_CODE) at COMM_LVL=HS2 we get one row per
+    chapter already summed across destinations. Loops months and sums ALL_VAL_MO.
+    Returns {hs2: {"name", "value"}} or {} on failure.
+    """
+    base = "https://api.census.gov/data/timeseries/intltrade/exports/statehs"
+    by_chapter = {}   # hs2 -> {"name", "value"}
+    got_any = False
+    for month in range(1, 13):
+        params = {
+            "get":      "E_COMMODITY,E_COMMODITY_LDESC,ALL_VAL_MO",
+            "STATE":    "13",
+            "COMM_LVL": "HS2",
+            "time":     f"{year}-{month:02d}",
+            "key":      CENSUS_API_KEY,
+        }
+        url = base + "?" + urllib.parse.urlencode(params, quote_via=urllib.parse.quote)
+        rows = http_get_json(url, timeout=90)
+        if not rows or len(rows) < 2:
+            if month == 1 and not by_chapter:
+                # try GA-state-abbrev variant once before bailing
+                params["STATE"] = "GA"
+                url = base + "?" + urllib.parse.urlencode(params, quote_via=urllib.parse.quote)
+                rows = http_get_json(url, timeout=90)
+                if not rows or len(rows) < 2:
+                    return {}
+            else:
+                continue
+        header = rows[0]
+        if "E_COMMODITY" not in header or "ALL_VAL_MO" not in header:
+            print(f"        ⚠ unexpected commodity header: {header}", file=sys.stderr)
+            continue
+        ci = header.index("E_COMMODITY")
+        vi = header.index("ALL_VAL_MO")
+        di = header.index("E_COMMODITY_LDESC") if "E_COMMODITY_LDESC" in header else None
+        for r in rows[1:]:
+            if len(r) <= max(ci, vi):
+                continue
+            code = (r[ci] or "").strip()
+            if not code or code in ("-", "TOTAL"):
+                continue
+            try:
+                v = float(r[vi])
+            except (TypeError, ValueError):
+                continue
+            desc = r[di] if di is not None and len(r) > di else None
+            ent = by_chapter.setdefault(code, {"name": _hs2_name(code, desc), "value": 0.0})
+            ent["value"] += v
+            got_any = True
+    return by_chapter if got_any else {}
+
+
+def build_exports_by_commodity(year, prev_year=None, top_n=10):
+    """Top HS2 chapters for `year` with share and (optional) YoY. None on failure."""
+    print(f"\n[Census] Building HS2 commodity breakdown for {year}...")
+    cur = _fetch_commodity_year(year)
+    if not cur:
+        print(f"  → no commodity data for {year}", file=sys.stderr)
+        return None
+    prev = _fetch_commodity_year(prev_year) if prev_year else {}
+
+    total = sum(c["value"] for c in cur.values())
+    if total <= 0:
+        return None
+
+    ranked = sorted(cur.items(), key=lambda kv: -kv[1]["value"])
+    chapters = []
+    for code, ent in ranked[:top_n]:
+        pv = prev.get(code, {}).get("value") if prev else None
+        yoy = round((ent["value"] - pv) / pv * 100, 1) if pv else None
+        chapters.append({
+            "hs2": code,
+            "name": ent["name"],
+            "value_musd": round(ent["value"] / 1e6, 0),
+            "share_pct": round(ent["value"] / total * 100, 1),
+            "yoy_pct": yoy,
+        })
+    other = total - sum(c["value"] for code, c in ranked[:top_n])
+    return {
+        "year": year,
+        "chapters": chapters,
+        "other_musd": round(max(other, 0) / 1e6, 0),
+        "total_musd": round(total / 1e6, 0),
+    }
+
+
 # ---------- BLS CES — ATL MSA T&W employment ----------
 BLS_URL = "https://api.bls.gov/publicAPI/v2/timeseries/data/"
 
@@ -405,6 +588,39 @@ def main():
         print(f"\n  ✓ Census exports: top country = {top10[0]['country']} (${top10[0]['value_musd']:,.0f}M)")
     else:
         print(f"  ✗ Census exports failed; keeping fixture", file=sys.stderr)
+
+    # 1b. Multi-year total-exports trend + HS2 commodity breakdown (Phase 4 WS3).
+    # Each is wrapped so a Census hiccup preserves the prior value and leaves the
+    # rest of trade.json live. Uses the same year that the country table resolved.
+    meta = existing.get("_meta", {}) or {}
+    try:
+        annual = build_exports_annual(latest_export_year, years_back=6)
+    except Exception as e:
+        print(f"  [trade] exports_annual raised {type(e).__name__}: {e}", file=sys.stderr)
+        annual = None
+    if annual:
+        existing["exports_annual"] = annual
+        meta["exports_annual"] = {"last_updated": _now_iso()}
+        print(f"  ✓ exports_annual: {annual['years'][0]}–{annual['years'][-1]}, "
+              f"latest ${annual['latest_total_musd']:,.0f}M (CAGR {annual['cagr_pct']}%)")
+    elif "exports_annual" not in existing:
+        print(f"  ✗ exports_annual unavailable; no prior to preserve", file=sys.stderr)
+
+    try:
+        commodity = build_exports_by_commodity(latest_export_year, prev_year=latest_export_year - 1)
+    except Exception as e:
+        print(f"  [trade] exports_by_commodity raised {type(e).__name__}: {e}", file=sys.stderr)
+        commodity = None
+    if commodity:
+        existing["exports_by_commodity"] = commodity
+        meta["exports_by_commodity"] = {"last_updated": _now_iso()}
+        top = commodity["chapters"][0] if commodity["chapters"] else None
+        if top:
+            print(f"  ✓ exports_by_commodity: top chapter = {top['name']} ({top['share_pct']}%)")
+    elif "exports_by_commodity" not in existing:
+        print(f"  ✗ exports_by_commodity unavailable; no prior to preserve", file=sys.stderr)
+
+    existing["_meta"] = meta
 
     # 2. BLS ATL MSA T&W employment
     print(f"\n[BLS] Pulling ATL MSA Transportation & Warehousing employment...")
