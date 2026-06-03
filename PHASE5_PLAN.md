@@ -182,14 +182,31 @@ load-order sim. Lint (app.js-not-deferred, charts.js URL) green; app.css braces 
 `/counties/`) and `/counties/` map clicks are NOT yet metro-wired — both become county-profile
 links in WS4. The `/counties/` heat map stays the county index until then.
 
-## ▶ RESUME HERE (Phase 5 — WS4 then WS5)
+## ✅ WS4 SHIPPED (2026-06-03)
 
-**WS4 — county profiles (the payoff).** Build `scripts/generate_county_pages.py` → `/counties/<slug>/`
-for all 159 counties from existing JSON (population/unemployment/GDP/housing + MSA membership via
-`ga_msa_counties.json`), on the WS1 shell. Then: (1) repoint the 159 county rows in
-`build_search_index.py` from the metro URL to `/counties/<slug>/`; (2) metro-wire the `/counties/`
-choropleth + home hero so a county click can open its profile (extend `attachMetroNav` to a
-county-profile mode); (3) fold generation into the nightly workflow + `build_site.py` stamp.
+**159 county profiles.** `scripts/generate_county_pages.py` bakes a clean overview for every
+county into `/counties/<slug>/index.html` from existing JSON — population + components of change
+(`population.json`), 12-month unemployment trend + rank (`counties.json`), GDP + per-capita
+(`gdp.json`), home value/rent/income/ownership + permits (`housing.json`), and MSA membership
+(`ga_msa_counties.json`). Values are baked at build time (deterministic; the only client JS is a
+Chart.js sparkline). Shared chrome via the same GEN markers + `build_site.py`.
 
-**WS5 — visual polish.** Redesigned hero, unified card system, and a statewide
-**"Economy at a glance"** scorecard rolling up headline KPIs across topics.
+**Discovery wired:** search-index county rows now point to `/counties/<slug>/` (190 items, 0 dead);
+the `/counties/` heat map is click-navigable to profiles (`GE.attachCountyNav` auto-wires
+`#ga-county-map` via `data/county_index.json`); `/counties/` got an A–Z list (GEN:COUNTY_INDEX,
+filled by the generator); breadcrumbs handle `/counties/<slug>/` → Home › Places › Counties › X.
+
+**CI:** `update-msa-reports.yml` now runs `generate_county_pages.py` AFTER the gdp+housing roll-ups
+(so values are fresh), then `build_site.py` (stamp) + `build_search_index.py`; commits `counties/`
++ `data/county_index.json`. NOTE: population.json/counties.json refresh in their own workflows, so
+county pages pick those up on the next MSA run — consider adding the same 3-step tail to
+update-population.yml / update-labor.yml if you want same-day refresh.
+
+**Validated:** 190/190 load-order sim, 0 dead links, generator idempotent, single-county mode works.
+
+## ▶ RESUME HERE (Phase 5 — WS5 polish, the last workstream)
+
+**WS5 — visual polish.** Redesigned hero, a unified card system across pages, tighter type
+hierarchy, and a statewide **"Economy at a glance"** scorecard rolling up headline KPIs across
+topics (labor/housing/GDP/migration/inflation/outlook) — likely a new home-page component fed by
+the existing topic JSON. After WS5, Phase 5 is complete.

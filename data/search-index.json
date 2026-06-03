@@ -4,957 +4,957 @@
  "items": [
   {
    "title": "Appling County",
-   "url": "/counties/",
+   "url": "/counties/appling/",
    "kind": "County",
    "keywords": "appling county fips 13001"
   },
   {
    "title": "Atkinson County",
-   "url": "/counties/",
+   "url": "/counties/atkinson/",
    "kind": "County",
    "keywords": "atkinson county fips 13003"
   },
   {
    "title": "Bacon County",
-   "url": "/counties/",
+   "url": "/counties/bacon/",
    "kind": "County",
    "keywords": "bacon county fips 13005"
   },
   {
    "title": "Baker County",
-   "url": "/msa/albany/",
+   "url": "/counties/baker/",
    "kind": "County",
-   "keywords": "baker county fips 13007"
+   "keywords": "baker county fips 13007 albany metro"
   },
   {
    "title": "Baldwin County",
-   "url": "/counties/",
+   "url": "/counties/baldwin/",
    "kind": "County",
    "keywords": "baldwin county fips 13009"
   },
   {
    "title": "Banks County",
-   "url": "/counties/",
+   "url": "/counties/banks/",
    "kind": "County",
    "keywords": "banks county fips 13011"
   },
   {
    "title": "Barrow County",
-   "url": "/msa/atlanta/",
+   "url": "/counties/barrow/",
    "kind": "County",
-   "keywords": "barrow county fips 13013"
+   "keywords": "barrow county fips 13013 atlanta metro"
   },
   {
    "title": "Bartow County",
-   "url": "/msa/atlanta/",
+   "url": "/counties/bartow/",
    "kind": "County",
-   "keywords": "bartow county fips 13015"
+   "keywords": "bartow county fips 13015 atlanta metro"
   },
   {
    "title": "Ben Hill County",
-   "url": "/counties/",
+   "url": "/counties/ben-hill/",
    "kind": "County",
    "keywords": "ben hill county fips 13017"
   },
   {
    "title": "Berrien County",
-   "url": "/counties/",
+   "url": "/counties/berrien/",
    "kind": "County",
    "keywords": "berrien county fips 13019"
   },
   {
    "title": "Bibb County",
-   "url": "/msa/macon/",
+   "url": "/counties/bibb/",
    "kind": "County",
-   "keywords": "bibb county fips 13021"
+   "keywords": "bibb county fips 13021 macon metro"
   },
   {
    "title": "Bleckley County",
-   "url": "/counties/",
+   "url": "/counties/bleckley/",
    "kind": "County",
    "keywords": "bleckley county fips 13023"
   },
   {
    "title": "Brantley County",
-   "url": "/msa/brunswick/",
+   "url": "/counties/brantley/",
    "kind": "County",
-   "keywords": "brantley county fips 13025"
+   "keywords": "brantley county fips 13025 brunswick metro"
   },
   {
    "title": "Brooks County",
-   "url": "/msa/valdosta/",
+   "url": "/counties/brooks/",
    "kind": "County",
-   "keywords": "brooks county fips 13027"
+   "keywords": "brooks county fips 13027 valdosta metro"
   },
   {
    "title": "Bryan County",
-   "url": "/msa/savannah/",
+   "url": "/counties/bryan/",
    "kind": "County",
-   "keywords": "bryan county fips 13029"
+   "keywords": "bryan county fips 13029 savannah metro"
   },
   {
    "title": "Bulloch County",
-   "url": "/counties/",
+   "url": "/counties/bulloch/",
    "kind": "County",
    "keywords": "bulloch county fips 13031"
   },
   {
    "title": "Burke County",
-   "url": "/msa/augusta/",
+   "url": "/counties/burke/",
    "kind": "County",
-   "keywords": "burke county fips 13033"
+   "keywords": "burke county fips 13033 augusta metro"
   },
   {
    "title": "Butts County",
-   "url": "/msa/atlanta/",
+   "url": "/counties/butts/",
    "kind": "County",
-   "keywords": "butts county fips 13035"
+   "keywords": "butts county fips 13035 atlanta metro"
   },
   {
    "title": "Calhoun County",
-   "url": "/counties/",
+   "url": "/counties/calhoun/",
    "kind": "County",
    "keywords": "calhoun county fips 13037"
   },
   {
    "title": "Camden County",
-   "url": "/counties/",
+   "url": "/counties/camden/",
    "kind": "County",
    "keywords": "camden county fips 13039"
   },
   {
    "title": "Candler County",
-   "url": "/counties/",
+   "url": "/counties/candler/",
    "kind": "County",
    "keywords": "candler county fips 13043"
   },
   {
    "title": "Carroll County",
-   "url": "/msa/atlanta/",
+   "url": "/counties/carroll/",
    "kind": "County",
-   "keywords": "carroll county fips 13045"
+   "keywords": "carroll county fips 13045 atlanta metro"
   },
   {
    "title": "Catoosa County",
-   "url": "/counties/",
+   "url": "/counties/catoosa/",
    "kind": "County",
    "keywords": "catoosa county fips 13047"
   },
   {
    "title": "Charlton County",
-   "url": "/counties/",
+   "url": "/counties/charlton/",
    "kind": "County",
    "keywords": "charlton county fips 13049"
   },
   {
    "title": "Chatham County",
-   "url": "/msa/savannah/",
+   "url": "/counties/chatham/",
    "kind": "County",
-   "keywords": "chatham county fips 13051"
+   "keywords": "chatham county fips 13051 savannah metro"
   },
   {
    "title": "Chattahoochee County",
-   "url": "/msa/columbus/",
+   "url": "/counties/chattahoochee/",
    "kind": "County",
-   "keywords": "chattahoochee county fips 13053"
+   "keywords": "chattahoochee county fips 13053 columbus metro"
   },
   {
    "title": "Chattooga County",
-   "url": "/counties/",
+   "url": "/counties/chattooga/",
    "kind": "County",
    "keywords": "chattooga county fips 13055"
   },
   {
    "title": "Cherokee County",
-   "url": "/msa/atlanta/",
+   "url": "/counties/cherokee/",
    "kind": "County",
-   "keywords": "cherokee county fips 13057"
+   "keywords": "cherokee county fips 13057 atlanta metro"
   },
   {
    "title": "Clarke County",
-   "url": "/msa/athens/",
+   "url": "/counties/clarke/",
    "kind": "County",
-   "keywords": "clarke county fips 13059"
+   "keywords": "clarke county fips 13059 athens metro"
   },
   {
    "title": "Clay County",
-   "url": "/counties/",
+   "url": "/counties/clay/",
    "kind": "County",
    "keywords": "clay county fips 13061"
   },
   {
    "title": "Clayton County",
-   "url": "/msa/atlanta/",
+   "url": "/counties/clayton/",
    "kind": "County",
-   "keywords": "clayton county fips 13063"
+   "keywords": "clayton county fips 13063 atlanta metro"
   },
   {
    "title": "Clinch County",
-   "url": "/counties/",
+   "url": "/counties/clinch/",
    "kind": "County",
    "keywords": "clinch county fips 13065"
   },
   {
    "title": "Cobb County",
-   "url": "/msa/atlanta/",
+   "url": "/counties/cobb/",
    "kind": "County",
-   "keywords": "cobb county fips 13067"
+   "keywords": "cobb county fips 13067 atlanta metro"
   },
   {
    "title": "Coffee County",
-   "url": "/counties/",
+   "url": "/counties/coffee/",
    "kind": "County",
    "keywords": "coffee county fips 13069"
   },
   {
    "title": "Colquitt County",
-   "url": "/counties/",
+   "url": "/counties/colquitt/",
    "kind": "County",
    "keywords": "colquitt county fips 13071"
   },
   {
    "title": "Columbia County",
-   "url": "/msa/augusta/",
+   "url": "/counties/columbia/",
    "kind": "County",
-   "keywords": "columbia county fips 13073"
+   "keywords": "columbia county fips 13073 augusta metro"
   },
   {
    "title": "Cook County",
-   "url": "/counties/",
+   "url": "/counties/cook/",
    "kind": "County",
    "keywords": "cook county fips 13075"
   },
   {
    "title": "Coweta County",
-   "url": "/msa/atlanta/",
+   "url": "/counties/coweta/",
    "kind": "County",
-   "keywords": "coweta county fips 13077"
+   "keywords": "coweta county fips 13077 atlanta metro"
   },
   {
    "title": "Crawford County",
-   "url": "/msa/macon/",
+   "url": "/counties/crawford/",
    "kind": "County",
-   "keywords": "crawford county fips 13079"
+   "keywords": "crawford county fips 13079 macon metro"
   },
   {
    "title": "Crisp County",
-   "url": "/counties/",
+   "url": "/counties/crisp/",
    "kind": "County",
    "keywords": "crisp county fips 13081"
   },
   {
    "title": "Dade County",
-   "url": "/counties/",
+   "url": "/counties/dade/",
    "kind": "County",
    "keywords": "dade county fips 13083"
   },
   {
    "title": "Dawson County",
-   "url": "/msa/atlanta/",
+   "url": "/counties/dawson/",
    "kind": "County",
-   "keywords": "dawson county fips 13085"
+   "keywords": "dawson county fips 13085 atlanta metro"
   },
   {
    "title": "DeKalb County",
-   "url": "/msa/atlanta/",
+   "url": "/counties/dekalb/",
    "kind": "County",
-   "keywords": "dekalb county fips 13089"
+   "keywords": "dekalb county fips 13089 atlanta metro"
   },
   {
    "title": "Decatur County",
-   "url": "/counties/",
+   "url": "/counties/decatur/",
    "kind": "County",
    "keywords": "decatur county fips 13087"
   },
   {
    "title": "Dodge County",
-   "url": "/counties/",
+   "url": "/counties/dodge/",
    "kind": "County",
    "keywords": "dodge county fips 13091"
   },
   {
    "title": "Dooly County",
-   "url": "/counties/",
+   "url": "/counties/dooly/",
    "kind": "County",
    "keywords": "dooly county fips 13093"
   },
   {
    "title": "Dougherty County",
-   "url": "/msa/albany/",
+   "url": "/counties/dougherty/",
    "kind": "County",
-   "keywords": "dougherty county fips 13095"
+   "keywords": "dougherty county fips 13095 albany metro"
   },
   {
    "title": "Douglas County",
-   "url": "/msa/atlanta/",
+   "url": "/counties/douglas/",
    "kind": "County",
-   "keywords": "douglas county fips 13097"
+   "keywords": "douglas county fips 13097 atlanta metro"
   },
   {
    "title": "Early County",
-   "url": "/counties/",
+   "url": "/counties/early/",
    "kind": "County",
    "keywords": "early county fips 13099"
   },
   {
    "title": "Echols County",
-   "url": "/msa/valdosta/",
+   "url": "/counties/echols/",
    "kind": "County",
-   "keywords": "echols county fips 13101"
+   "keywords": "echols county fips 13101 valdosta metro"
   },
   {
    "title": "Effingham County",
-   "url": "/msa/savannah/",
+   "url": "/counties/effingham/",
    "kind": "County",
-   "keywords": "effingham county fips 13103"
+   "keywords": "effingham county fips 13103 savannah metro"
   },
   {
    "title": "Elbert County",
-   "url": "/counties/",
+   "url": "/counties/elbert/",
    "kind": "County",
    "keywords": "elbert county fips 13105"
   },
   {
    "title": "Emanuel County",
-   "url": "/counties/",
+   "url": "/counties/emanuel/",
    "kind": "County",
    "keywords": "emanuel county fips 13107"
   },
   {
    "title": "Evans County",
-   "url": "/counties/",
+   "url": "/counties/evans/",
    "kind": "County",
    "keywords": "evans county fips 13109"
   },
   {
    "title": "Fannin County",
-   "url": "/counties/",
+   "url": "/counties/fannin/",
    "kind": "County",
    "keywords": "fannin county fips 13111"
   },
   {
    "title": "Fayette County",
-   "url": "/msa/atlanta/",
+   "url": "/counties/fayette/",
    "kind": "County",
-   "keywords": "fayette county fips 13113"
+   "keywords": "fayette county fips 13113 atlanta metro"
   },
   {
    "title": "Floyd County",
-   "url": "/msa/rome/",
+   "url": "/counties/floyd/",
    "kind": "County",
-   "keywords": "floyd county fips 13115"
+   "keywords": "floyd county fips 13115 rome metro"
   },
   {
    "title": "Forsyth County",
-   "url": "/msa/atlanta/",
+   "url": "/counties/forsyth/",
    "kind": "County",
-   "keywords": "forsyth county fips 13117"
+   "keywords": "forsyth county fips 13117 atlanta metro"
   },
   {
    "title": "Franklin County",
-   "url": "/counties/",
+   "url": "/counties/franklin/",
    "kind": "County",
    "keywords": "franklin county fips 13119"
   },
   {
    "title": "Fulton County",
-   "url": "/msa/atlanta/",
+   "url": "/counties/fulton/",
    "kind": "County",
-   "keywords": "fulton county fips 13121"
+   "keywords": "fulton county fips 13121 atlanta metro"
   },
   {
    "title": "Gilmer County",
-   "url": "/counties/",
+   "url": "/counties/gilmer/",
    "kind": "County",
    "keywords": "gilmer county fips 13123"
   },
   {
    "title": "Glascock County",
-   "url": "/counties/",
+   "url": "/counties/glascock/",
    "kind": "County",
    "keywords": "glascock county fips 13125"
   },
   {
    "title": "Glynn County",
-   "url": "/msa/brunswick/",
+   "url": "/counties/glynn/",
    "kind": "County",
-   "keywords": "glynn county fips 13127"
+   "keywords": "glynn county fips 13127 brunswick metro"
   },
   {
    "title": "Gordon County",
-   "url": "/counties/",
+   "url": "/counties/gordon/",
    "kind": "County",
    "keywords": "gordon county fips 13129"
   },
   {
    "title": "Grady County",
-   "url": "/counties/",
+   "url": "/counties/grady/",
    "kind": "County",
    "keywords": "grady county fips 13131"
   },
   {
    "title": "Greene County",
-   "url": "/counties/",
+   "url": "/counties/greene/",
    "kind": "County",
    "keywords": "greene county fips 13133"
   },
   {
    "title": "Gwinnett County",
-   "url": "/msa/atlanta/",
+   "url": "/counties/gwinnett/",
    "kind": "County",
-   "keywords": "gwinnett county fips 13135"
+   "keywords": "gwinnett county fips 13135 atlanta metro"
   },
   {
    "title": "Habersham County",
-   "url": "/counties/",
+   "url": "/counties/habersham/",
    "kind": "County",
    "keywords": "habersham county fips 13137"
   },
   {
    "title": "Hall County",
-   "url": "/msa/gainesville/",
+   "url": "/counties/hall/",
    "kind": "County",
-   "keywords": "hall county fips 13139"
+   "keywords": "hall county fips 13139 gainesville metro"
   },
   {
    "title": "Hancock County",
-   "url": "/counties/",
+   "url": "/counties/hancock/",
    "kind": "County",
    "keywords": "hancock county fips 13141"
   },
   {
    "title": "Haralson County",
-   "url": "/msa/atlanta/",
+   "url": "/counties/haralson/",
    "kind": "County",
-   "keywords": "haralson county fips 13143"
+   "keywords": "haralson county fips 13143 atlanta metro"
   },
   {
    "title": "Harris County",
-   "url": "/msa/columbus/",
+   "url": "/counties/harris/",
    "kind": "County",
-   "keywords": "harris county fips 13145"
+   "keywords": "harris county fips 13145 columbus metro"
   },
   {
    "title": "Hart County",
-   "url": "/counties/",
+   "url": "/counties/hart/",
    "kind": "County",
    "keywords": "hart county fips 13147"
   },
   {
    "title": "Heard County",
-   "url": "/msa/atlanta/",
+   "url": "/counties/heard/",
    "kind": "County",
-   "keywords": "heard county fips 13149"
+   "keywords": "heard county fips 13149 atlanta metro"
   },
   {
    "title": "Henry County",
-   "url": "/msa/atlanta/",
+   "url": "/counties/henry/",
    "kind": "County",
-   "keywords": "henry county fips 13151"
+   "keywords": "henry county fips 13151 atlanta metro"
   },
   {
    "title": "Houston County",
-   "url": "/msa/warner-robins/",
+   "url": "/counties/houston/",
    "kind": "County",
-   "keywords": "houston county fips 13153"
+   "keywords": "houston county fips 13153 warner-robins metro"
   },
   {
    "title": "Irwin County",
-   "url": "/counties/",
+   "url": "/counties/irwin/",
    "kind": "County",
    "keywords": "irwin county fips 13155"
   },
   {
    "title": "Jackson County",
-   "url": "/counties/",
+   "url": "/counties/jackson/",
    "kind": "County",
    "keywords": "jackson county fips 13157"
   },
   {
    "title": "Jasper County",
-   "url": "/msa/atlanta/",
+   "url": "/counties/jasper/",
    "kind": "County",
-   "keywords": "jasper county fips 13159"
+   "keywords": "jasper county fips 13159 atlanta metro"
   },
   {
    "title": "Jeff Davis County",
-   "url": "/counties/",
+   "url": "/counties/jeff-davis/",
    "kind": "County",
    "keywords": "jeff davis county fips 13161"
   },
   {
    "title": "Jefferson County",
-   "url": "/counties/",
+   "url": "/counties/jefferson/",
    "kind": "County",
    "keywords": "jefferson county fips 13163"
   },
   {
    "title": "Jenkins County",
-   "url": "/counties/",
+   "url": "/counties/jenkins/",
    "kind": "County",
    "keywords": "jenkins county fips 13165"
   },
   {
    "title": "Johnson County",
-   "url": "/counties/",
+   "url": "/counties/johnson/",
    "kind": "County",
    "keywords": "johnson county fips 13167"
   },
   {
    "title": "Jones County",
-   "url": "/msa/macon/",
+   "url": "/counties/jones/",
    "kind": "County",
-   "keywords": "jones county fips 13169"
+   "keywords": "jones county fips 13169 macon metro"
   },
   {
    "title": "Lamar County",
-   "url": "/msa/atlanta/",
+   "url": "/counties/lamar/",
    "kind": "County",
-   "keywords": "lamar county fips 13171"
+   "keywords": "lamar county fips 13171 atlanta metro"
   },
   {
    "title": "Lanier County",
-   "url": "/msa/valdosta/",
+   "url": "/counties/lanier/",
    "kind": "County",
-   "keywords": "lanier county fips 13173"
+   "keywords": "lanier county fips 13173 valdosta metro"
   },
   {
    "title": "Laurens County",
-   "url": "/counties/",
+   "url": "/counties/laurens/",
    "kind": "County",
    "keywords": "laurens county fips 13175"
   },
   {
    "title": "Lee County",
-   "url": "/msa/albany/",
+   "url": "/counties/lee/",
    "kind": "County",
-   "keywords": "lee county fips 13177"
+   "keywords": "lee county fips 13177 albany metro"
   },
   {
    "title": "Liberty County",
-   "url": "/msa/hinesville/",
+   "url": "/counties/liberty/",
    "kind": "County",
-   "keywords": "liberty county fips 13179"
+   "keywords": "liberty county fips 13179 hinesville metro"
   },
   {
    "title": "Lincoln County",
-   "url": "/msa/augusta/",
+   "url": "/counties/lincoln/",
    "kind": "County",
-   "keywords": "lincoln county fips 13181"
+   "keywords": "lincoln county fips 13181 augusta metro"
   },
   {
    "title": "Long County",
-   "url": "/msa/hinesville/",
+   "url": "/counties/long/",
    "kind": "County",
-   "keywords": "long county fips 13183"
+   "keywords": "long county fips 13183 hinesville metro"
   },
   {
    "title": "Lowndes County",
-   "url": "/msa/valdosta/",
+   "url": "/counties/lowndes/",
    "kind": "County",
-   "keywords": "lowndes county fips 13185"
+   "keywords": "lowndes county fips 13185 valdosta metro"
   },
   {
    "title": "Lumpkin County",
-   "url": "/counties/",
+   "url": "/counties/lumpkin/",
    "kind": "County",
    "keywords": "lumpkin county fips 13187"
   },
   {
    "title": "Macon County",
-   "url": "/counties/",
+   "url": "/counties/macon/",
    "kind": "County",
    "keywords": "macon county fips 13193"
   },
   {
    "title": "Madison County",
-   "url": "/msa/athens/",
+   "url": "/counties/madison/",
    "kind": "County",
-   "keywords": "madison county fips 13195"
+   "keywords": "madison county fips 13195 athens metro"
   },
   {
    "title": "Marion County",
-   "url": "/msa/columbus/",
+   "url": "/counties/marion/",
    "kind": "County",
-   "keywords": "marion county fips 13197"
+   "keywords": "marion county fips 13197 columbus metro"
   },
   {
    "title": "McDuffie County",
-   "url": "/msa/augusta/",
+   "url": "/counties/mcduffie/",
    "kind": "County",
-   "keywords": "mcduffie county fips 13189"
+   "keywords": "mcduffie county fips 13189 augusta metro"
   },
   {
    "title": "McIntosh County",
-   "url": "/msa/brunswick/",
+   "url": "/counties/mcintosh/",
    "kind": "County",
-   "keywords": "mcintosh county fips 13191"
+   "keywords": "mcintosh county fips 13191 brunswick metro"
   },
   {
    "title": "Meriwether County",
-   "url": "/msa/atlanta/",
+   "url": "/counties/meriwether/",
    "kind": "County",
-   "keywords": "meriwether county fips 13199"
+   "keywords": "meriwether county fips 13199 atlanta metro"
   },
   {
    "title": "Miller County",
-   "url": "/counties/",
+   "url": "/counties/miller/",
    "kind": "County",
    "keywords": "miller county fips 13201"
   },
   {
    "title": "Mitchell County",
-   "url": "/counties/",
+   "url": "/counties/mitchell/",
    "kind": "County",
    "keywords": "mitchell county fips 13205"
   },
   {
    "title": "Monroe County",
-   "url": "/msa/macon/",
+   "url": "/counties/monroe/",
    "kind": "County",
-   "keywords": "monroe county fips 13207"
+   "keywords": "monroe county fips 13207 macon metro"
   },
   {
    "title": "Montgomery County",
-   "url": "/counties/",
+   "url": "/counties/montgomery/",
    "kind": "County",
    "keywords": "montgomery county fips 13209"
   },
   {
    "title": "Morgan County",
-   "url": "/msa/atlanta/",
+   "url": "/counties/morgan/",
    "kind": "County",
-   "keywords": "morgan county fips 13211"
+   "keywords": "morgan county fips 13211 atlanta metro"
   },
   {
    "title": "Murray County",
-   "url": "/msa/dalton/",
+   "url": "/counties/murray/",
    "kind": "County",
-   "keywords": "murray county fips 13213"
+   "keywords": "murray county fips 13213 dalton metro"
   },
   {
    "title": "Muscogee County",
-   "url": "/msa/columbus/",
+   "url": "/counties/muscogee/",
    "kind": "County",
-   "keywords": "muscogee county fips 13215"
+   "keywords": "muscogee county fips 13215 columbus metro"
   },
   {
    "title": "Newton County",
-   "url": "/msa/atlanta/",
+   "url": "/counties/newton/",
    "kind": "County",
-   "keywords": "newton county fips 13217"
+   "keywords": "newton county fips 13217 atlanta metro"
   },
   {
    "title": "Oconee County",
-   "url": "/msa/athens/",
+   "url": "/counties/oconee/",
    "kind": "County",
-   "keywords": "oconee county fips 13219"
+   "keywords": "oconee county fips 13219 athens metro"
   },
   {
    "title": "Oglethorpe County",
-   "url": "/msa/athens/",
+   "url": "/counties/oglethorpe/",
    "kind": "County",
-   "keywords": "oglethorpe county fips 13221"
+   "keywords": "oglethorpe county fips 13221 athens metro"
   },
   {
    "title": "Paulding County",
-   "url": "/msa/atlanta/",
+   "url": "/counties/paulding/",
    "kind": "County",
-   "keywords": "paulding county fips 13223"
+   "keywords": "paulding county fips 13223 atlanta metro"
   },
   {
    "title": "Peach County",
-   "url": "/msa/warner-robins/",
+   "url": "/counties/peach/",
    "kind": "County",
-   "keywords": "peach county fips 13225"
+   "keywords": "peach county fips 13225 warner-robins metro"
   },
   {
    "title": "Pickens County",
-   "url": "/msa/atlanta/",
+   "url": "/counties/pickens/",
    "kind": "County",
-   "keywords": "pickens county fips 13227"
+   "keywords": "pickens county fips 13227 atlanta metro"
   },
   {
    "title": "Pierce County",
-   "url": "/counties/",
+   "url": "/counties/pierce/",
    "kind": "County",
    "keywords": "pierce county fips 13229"
   },
   {
    "title": "Pike County",
-   "url": "/msa/atlanta/",
+   "url": "/counties/pike/",
    "kind": "County",
-   "keywords": "pike county fips 13231"
+   "keywords": "pike county fips 13231 atlanta metro"
   },
   {
    "title": "Polk County",
-   "url": "/counties/",
+   "url": "/counties/polk/",
    "kind": "County",
    "keywords": "polk county fips 13233"
   },
   {
    "title": "Pulaski County",
-   "url": "/msa/warner-robins/",
+   "url": "/counties/pulaski/",
    "kind": "County",
-   "keywords": "pulaski county fips 13235"
+   "keywords": "pulaski county fips 13235 warner-robins metro"
   },
   {
    "title": "Putnam County",
-   "url": "/counties/",
+   "url": "/counties/putnam/",
    "kind": "County",
    "keywords": "putnam county fips 13237"
   },
   {
    "title": "Quitman County",
-   "url": "/counties/",
+   "url": "/counties/quitman/",
    "kind": "County",
    "keywords": "quitman county fips 13239"
   },
   {
    "title": "Rabun County",
-   "url": "/counties/",
+   "url": "/counties/rabun/",
    "kind": "County",
    "keywords": "rabun county fips 13241"
   },
   {
    "title": "Randolph County",
-   "url": "/counties/",
+   "url": "/counties/randolph/",
    "kind": "County",
    "keywords": "randolph county fips 13243"
   },
   {
    "title": "Richmond County",
-   "url": "/msa/augusta/",
+   "url": "/counties/richmond/",
    "kind": "County",
-   "keywords": "richmond county fips 13245"
+   "keywords": "richmond county fips 13245 augusta metro"
   },
   {
    "title": "Rockdale County",
-   "url": "/msa/atlanta/",
+   "url": "/counties/rockdale/",
    "kind": "County",
-   "keywords": "rockdale county fips 13247"
+   "keywords": "rockdale county fips 13247 atlanta metro"
   },
   {
    "title": "Schley County",
-   "url": "/counties/",
+   "url": "/counties/schley/",
    "kind": "County",
    "keywords": "schley county fips 13249"
   },
   {
    "title": "Screven County",
-   "url": "/counties/",
+   "url": "/counties/screven/",
    "kind": "County",
    "keywords": "screven county fips 13251"
   },
   {
    "title": "Seminole County",
-   "url": "/counties/",
+   "url": "/counties/seminole/",
    "kind": "County",
    "keywords": "seminole county fips 13253"
   },
   {
    "title": "Spalding County",
-   "url": "/msa/atlanta/",
+   "url": "/counties/spalding/",
    "kind": "County",
-   "keywords": "spalding county fips 13255"
+   "keywords": "spalding county fips 13255 atlanta metro"
   },
   {
    "title": "Stephens County",
-   "url": "/counties/",
+   "url": "/counties/stephens/",
    "kind": "County",
    "keywords": "stephens county fips 13257"
   },
   {
    "title": "Stewart County",
-   "url": "/msa/columbus/",
+   "url": "/counties/stewart/",
    "kind": "County",
-   "keywords": "stewart county fips 13259"
+   "keywords": "stewart county fips 13259 columbus metro"
   },
   {
    "title": "Sumter County",
-   "url": "/counties/",
+   "url": "/counties/sumter/",
    "kind": "County",
    "keywords": "sumter county fips 13261"
   },
   {
    "title": "Talbot County",
-   "url": "/msa/columbus/",
+   "url": "/counties/talbot/",
    "kind": "County",
-   "keywords": "talbot county fips 13263"
+   "keywords": "talbot county fips 13263 columbus metro"
   },
   {
    "title": "Taliaferro County",
-   "url": "/counties/",
+   "url": "/counties/taliaferro/",
    "kind": "County",
    "keywords": "taliaferro county fips 13265"
   },
   {
    "title": "Tattnall County",
-   "url": "/counties/",
+   "url": "/counties/tattnall/",
    "kind": "County",
    "keywords": "tattnall county fips 13267"
   },
   {
    "title": "Taylor County",
-   "url": "/counties/",
+   "url": "/counties/taylor/",
    "kind": "County",
    "keywords": "taylor county fips 13269"
   },
   {
    "title": "Telfair County",
-   "url": "/counties/",
+   "url": "/counties/telfair/",
    "kind": "County",
    "keywords": "telfair county fips 13271"
   },
   {
    "title": "Terrell County",
-   "url": "/msa/albany/",
+   "url": "/counties/terrell/",
    "kind": "County",
-   "keywords": "terrell county fips 13273"
+   "keywords": "terrell county fips 13273 albany metro"
   },
   {
    "title": "Thomas County",
-   "url": "/counties/",
+   "url": "/counties/thomas/",
    "kind": "County",
    "keywords": "thomas county fips 13275"
   },
   {
    "title": "Tift County",
-   "url": "/counties/",
+   "url": "/counties/tift/",
    "kind": "County",
    "keywords": "tift county fips 13277"
   },
   {
    "title": "Toombs County",
-   "url": "/counties/",
+   "url": "/counties/toombs/",
    "kind": "County",
    "keywords": "toombs county fips 13279"
   },
   {
    "title": "Towns County",
-   "url": "/counties/",
+   "url": "/counties/towns/",
    "kind": "County",
    "keywords": "towns county fips 13281"
   },
   {
    "title": "Treutlen County",
-   "url": "/counties/",
+   "url": "/counties/treutlen/",
    "kind": "County",
    "keywords": "treutlen county fips 13283"
   },
   {
    "title": "Troup County",
-   "url": "/counties/",
+   "url": "/counties/troup/",
    "kind": "County",
    "keywords": "troup county fips 13285"
   },
   {
    "title": "Turner County",
-   "url": "/counties/",
+   "url": "/counties/turner/",
    "kind": "County",
    "keywords": "turner county fips 13287"
   },
   {
    "title": "Twiggs County",
-   "url": "/msa/macon/",
+   "url": "/counties/twiggs/",
    "kind": "County",
-   "keywords": "twiggs county fips 13289"
+   "keywords": "twiggs county fips 13289 macon metro"
   },
   {
    "title": "Union County",
-   "url": "/counties/",
+   "url": "/counties/union/",
    "kind": "County",
    "keywords": "union county fips 13291"
   },
   {
    "title": "Upson County",
-   "url": "/counties/",
+   "url": "/counties/upson/",
    "kind": "County",
    "keywords": "upson county fips 13293"
   },
   {
    "title": "Walker County",
-   "url": "/counties/",
+   "url": "/counties/walker/",
    "kind": "County",
    "keywords": "walker county fips 13295"
   },
   {
    "title": "Walton County",
-   "url": "/msa/atlanta/",
+   "url": "/counties/walton/",
    "kind": "County",
-   "keywords": "walton county fips 13297"
+   "keywords": "walton county fips 13297 atlanta metro"
   },
   {
    "title": "Ware County",
-   "url": "/counties/",
+   "url": "/counties/ware/",
    "kind": "County",
    "keywords": "ware county fips 13299"
   },
   {
    "title": "Warren County",
-   "url": "/counties/",
+   "url": "/counties/warren/",
    "kind": "County",
    "keywords": "warren county fips 13301"
   },
   {
    "title": "Washington County",
-   "url": "/counties/",
+   "url": "/counties/washington/",
    "kind": "County",
    "keywords": "washington county fips 13303"
   },
   {
    "title": "Wayne County",
-   "url": "/counties/",
+   "url": "/counties/wayne/",
    "kind": "County",
    "keywords": "wayne county fips 13305"
   },
   {
    "title": "Webster County",
-   "url": "/counties/",
+   "url": "/counties/webster/",
    "kind": "County",
    "keywords": "webster county fips 13307"
   },
   {
    "title": "Wheeler County",
-   "url": "/counties/",
+   "url": "/counties/wheeler/",
    "kind": "County",
    "keywords": "wheeler county fips 13309"
   },
   {
    "title": "White County",
-   "url": "/counties/",
+   "url": "/counties/white/",
    "kind": "County",
    "keywords": "white county fips 13311"
   },
   {
    "title": "Whitfield County",
-   "url": "/msa/dalton/",
+   "url": "/counties/whitfield/",
    "kind": "County",
-   "keywords": "whitfield county fips 13313"
+   "keywords": "whitfield county fips 13313 dalton metro"
   },
   {
    "title": "Wilcox County",
-   "url": "/counties/",
+   "url": "/counties/wilcox/",
    "kind": "County",
    "keywords": "wilcox county fips 13315"
   },
   {
    "title": "Wilkes County",
-   "url": "/counties/",
+   "url": "/counties/wilkes/",
    "kind": "County",
    "keywords": "wilkes county fips 13317"
   },
   {
    "title": "Wilkinson County",
-   "url": "/counties/",
+   "url": "/counties/wilkinson/",
    "kind": "County",
    "keywords": "wilkinson county fips 13319"
   },
   {
    "title": "Worth County",
-   "url": "/msa/albany/",
+   "url": "/counties/worth/",
    "kind": "County",
-   "keywords": "worth county fips 13321"
+   "keywords": "worth county fips 13321 albany metro"
   },
   {
    "title": "Agriculture",

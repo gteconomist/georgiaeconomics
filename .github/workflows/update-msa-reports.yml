@@ -72,18 +72,6 @@ jobs:
           # Refresh the 14-metro QA status matrix from the latest section_status.
           python3 scripts/build_report_status_matrix.py
 
-      - name: Stamp shared chrome (Phase 5 WS1)
-        # Inject the shared head/header/footer partials into the freshly
-        # regenerated metro pages via their GEN:HEAD/HEADER/FOOTER markers.
-        # Idempotent (unchanged pages produce no diff) and must run AFTER
-        # generate_msa_pages.py so the new pages get the current chrome.
-        run: python3 scripts/build_site.py
-
-      - name: Rebuild client-side search index (Phase 5 WS2)
-        # Regenerate data/search-index.json (static pages + 14 metros + 159
-        # counties) so the header search stays in sync. Deterministic output.
-        run: python3 scripts/build_search_index.py
-
       - name: Build statewide housing roll-up
         # Rolls the freshly-regenerated metro reports up into data/housing.json,
         # adds the statewide GA/US FHFA series (FRED), the all-159-county ACS
@@ -118,11 +106,28 @@ jobs:
         # and housing steps so ga_gdp / ga_hpi exist as forecast inputs. No keys.
         run: python3 scripts/fetch_forecasts.py
 
+      - name: Generate county profiles (Phase 5 WS4)
+        # Build all 159 /counties/<slug>/ pages from the freshly-refreshed JSON
+        # (population/labor/gdp/housing). Runs AFTER the gdp + housing roll-ups so
+        # it bakes current values; also fills the A–Z list on /counties/ and writes
+        # data/county_index.json for the clickable county map. Deterministic output.
+        run: python3 scripts/generate_county_pages.py
+
+      - name: Stamp shared chrome (Phase 5 WS1)
+        # Inject the shared head/header/footer partials into every freshly
+        # regenerated page (metros + counties) via their GEN markers. Idempotent.
+        run: python3 scripts/build_site.py
+
+      - name: Rebuild client-side search index (Phase 5 WS2)
+        # Regenerate data/search-index.json (static pages + 14 metros + 159 county
+        # profiles) so the header search stays in sync. Deterministic output.
+        run: python3 scripts/build_search_index.py
+
       - name: Commit refreshed JSON + pages
         run: |
           git config user.name  "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/msa_reports/ msa/ data/ga_msa_counties.json data/housing.json data/gdp.json data/migration.json data/outlook.json data/search-index.json REPORT_STATUS_MATRIX.md
+          git add data/msa_reports/ msa/ counties/ data/ga_msa_counties.json data/housing.json data/gdp.json data/migration.json data/outlook.json data/search-index.json data/county_index.json REPORT_STATUS_MATRIX.md
           if git diff --cached --quiet; then
             echo "No changes to commit."
             exit 0

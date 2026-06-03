@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Forsyth County, Georgia — Population, Jobs, GDP & Housing | Georgia Economics</title>
+<meta name="description" content="Forsyth County, Georgia at a glance: population 282,805, unemployment 2.7%, GDP per capita $57,556, median home value $550,400. Live data from BLS, BEA, and Census.">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- GEN:HEAD -->
+<link rel="stylesheet" href="/styles.css">
+<link rel="stylesheet" href="/assets/app.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700;800&display=swap" rel="stylesheet">
+<!-- app.js is intentionally NOT deferred: it defines window.GE (palette + fmt
+     helpers) with no dependencies, so it must be available to each page's
+     end-of-body inline script, which runs during parse before deferred scripts. -->
+<script src="/assets/app.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/gh/gteconomist/economicsguru@main/assets/charts.js"></script>
+<!-- /GEN:HEAD -->
+</head>
+<body>
+
+<!-- GEN:HEADER -->
+<header class="site-header">
+  <div class="wrap">
+    <div class="brand"><a href="/">Georgia<span class="tag">Economics</span></a></div>
+    <nav class="site-nav" aria-label="Primary">
+      <div class="nav-group" data-axis="places">
+        <button type="button" class="nav-top" aria-haspopup="true" aria-expanded="false">Places</button>
+        <div class="nav-menu">
+          <a href="/counties/">Counties</a>
+          <a href="/msa/">Metros</a>
+          <a href="/population/">Population</a>
+        </div>
+      </div>
+      <div class="nav-group" data-axis="topics">
+        <button type="button" class="nav-top" aria-haspopup="true" aria-expanded="false">Topics</button>
+        <div class="nav-menu nav-menu-cols">
+          <a href="/labor/">Labor</a>
+          <a href="/housing/">Housing</a>
+          <a href="/gdp/">GDP</a>
+          <a href="/migration/">Migration</a>
+          <a href="/inflation/">Inflation</a>
+          <a href="/trade/">Trade &amp; Logistics</a>
+          <a href="/outlook/">Outlook</a>
+        </div>
+      </div>
+      <div class="nav-group" data-axis="industries">
+        <button type="button" class="nav-top" aria-haspopup="true" aria-expanded="false">Industries</button>
+        <div class="nav-menu">
+          <a href="/industries/agriculture/">Agriculture</a>
+          <a href="/industries/automotive/">Automotive &amp; EV</a>
+          <a href="/industries/data-centers/">Data Centers</a>
+          <a href="/industries/film/">Film</a>
+        </div>
+      </div>
+      <a class="nav-top nav-link" href="/directory/">Directory</a>
+      <a class="nav-top nav-link" href="/about/">About</a>
+    </nav>
+    <div class="nav-search" role="search">
+      <input type="search" id="site-search" placeholder="Search places &amp; topics…" autocomplete="off" aria-label="Search Georgia Economics" aria-expanded="false" aria-controls="site-search-results">
+      <div class="search-results" id="site-search-results" role="listbox" hidden></div>
+    </div>
+  </div>
+</header>
+<!-- /GEN:HEADER -->
+
+<main>
+  <section class="page-header">
+    <h1>Forsyth County</h1>
+    <p class="subtitle">In the <a href="/msa/atlanta/">Atlanta metro</a> &middot; Georgia</p>
+    <div class="latest">Unemployment as of <strong>2026-03</strong> &middot; population vintage <strong>2025</strong> &middot; GDP <strong>2024</strong> &middot; ACS <strong>2024</strong></div>
+  </section>
+
+  <div class="kpi-grid">
+    <div class="kpi"><div class="label">Population</div><div class="value">282,805</div><div class="delta down">11.8% since 2020 (+29,928)</div></div>
+    <div class="kpi"><div class="label">Unemployment</div><div class="value">2.7%</div><div class="delta down">-0.9 pp vs state (3.6%)</div></div>
+    <div class="kpi"><div class="label">GDP / capita</div><div class="value">$57,556</div><div class="delta">Total $16.28bn</div></div>
+    <div class="kpi"><div class="label">Median home value</div><div class="value">$550,400</div><div class="delta">Rent $2,090/mo</div></div>
+    <div class="kpi"><div class="label">Median household income</div><div class="value">$143,784</div><div class="delta">Homeownership 84.4%</div></div>
+    <div class="kpi"><div class="label">Metro area</div><div class="value" style="font-size:16px; line-height:1.25;"><a href="/msa/atlanta/">Atlanta metro &rarr;</a></div><div class="delta">3rd-lowest of 159 counties</div></div>
+  </div>
+
+  <div class="chart-panel" style="margin-top: 22px;">
+    <h2>Unemployment — last 12 months</h2>
+    <p class="sub">Monthly local-area unemployment rate (BLS LAUS), 2025-03 – 2026-03.</p>
+    <div class="chart-canvas-med"><canvas id="ur-trend"></canvas></div>
+  </div>
+
+  <div class="chart-panel" style="margin-top: 22px;">
+    <h2>Population &amp; migration</h2>
+    <p class="sub">Components of change behind Forsyth County's 11.8% growth (Census PEP, 2025).</p>
+    
+      <div class="stat-grid">
+        <div class="stat-card"><div class="label">Domestic migration</div><div class="value">+19,568</div></div>
+        <div class="stat-card"><div class="label">International migration</div><div class="value">+6,749</div></div>
+        <div class="stat-card"><div class="label">Natural change</div><div class="value">+3,857</div></div>
+        <div class="stat-card"><div class="label">Net population change</div><div class="value">+29,928</div></div>
+      </div>
+  </div>
+
+  <div class="chart-panel" style="margin-top: 22px;">
+    <h2>Housing</h2>
+    <p class="sub">Median values from Census ACS (2024); permits from the Building Permits Survey (2025).</p>
+    <div class="data-table-wrap">
+      <table class="data-table">
+        <tbody>
+          <tr><td class="row-name">Median home value</td><td class="numeric">$550,400</td></tr>
+          <tr><td class="row-name">Median gross rent</td><td class="numeric">$2,090/mo</td></tr>
+          <tr><td class="row-name">Median household income</td><td class="numeric">$143,784</td></tr>
+          <tr><td class="row-name">Homeownership rate</td><td class="numeric">84.4%</td></tr>
+          <tr><td class="row-name">Building permits (2025)</td><td class="numeric">1,743 (1,409 SF / 334 MF)</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="source-note">A county-level overview. For deep metro analysis, see the Forsyth County metro report linked above. Statewide context: <a href="/population/">Population</a> &middot; <a href="/labor/">Labor</a> &middot; <a href="/gdp/">GDP</a> &middot; <a href="/housing/">Housing</a>.</p>
+  </div>
+</main>
+
+<!-- GEN:FOOTER -->
+<footer class="site-footer">
+  <div class="wrap">
+    <div>&copy; <span id="yr"></span> Georgia Economics &middot; Sister site to <a href="https://economicsguru.com">economicsguru.com</a> &middot; <a href="/about/">Methodology</a></div>
+    <div>Built with public data from BLS, FRED, BEA, Census, and Georgia state agencies.</div>
+    <div class="eig">
+      <a href="https://www.economicimpact.com" target="_blank" rel="noopener" aria-label="Economic Impact Group">
+        <img src="/assets/ei_logo_NEW_200pxw.png" alt="Economic Impact Group">
+      </a>
+      <span class="product-of">A product of <a href="https://www.economicimpact.com" target="_blank" rel="noopener">Economic Impact Group, LLC</a>.</span>
+    </div>
+  </div>
+</footer>
+<!-- /GEN:FOOTER -->
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  var S = {"labels":["2025-03","2025-04","2025-05","2025-06","2025-07","2025-08","2025-09","2025-11","2025-12","2026-01","2026-02","2026-03"],"values":[2.7,2.3,2.6,2.9,2.8,2.9,2.6,2.9,2.5,2.8,2.9,2.7]};
+  var el = document.getElementById('ur-trend');
+  if (!el || !window.Chart || !S.labels.length) return;
+  new Chart(el.getContext('2d'), {
+    type: 'line',
+    data: { labels: S.labels, datasets: [{
+      label: 'Unemployment %', data: S.values,
+      borderColor: GE.BRAND.coral, backgroundColor: 'rgba(212,98,74,0.10)',
+      borderWidth: 2, fill: true, tension: 0.3, pointRadius: 2,
+    }] },
+    options: { responsive: true, maintainAspectRatio: false,
+      plugins: { legend: { display: false } },
+      scales: GE.axes({ xTicks: 12 }) },
+  });
+});
+</script>
+</body>
+</html>

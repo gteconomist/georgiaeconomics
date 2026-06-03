@@ -156,3 +156,15 @@ table.data-table .row-name, table.data-table .metro-name { font-weight: 600; col
 .hero-map-wrap h2 { margin: 0; font-family: var(--font-display); color: var(--navy); font-size: 20px; }
 .hero-map-wrap .hint { font-size: 13px; color: var(--ink-soft); }
 .hero-map-wrap .geo-nav-map { height: 460px; }
+
+/* County A–Z index on /counties/ (filled by generate_county_pages.py) */
+.county-az { columns: 3; column-gap: 28px; }
+@media (max-width: 720px) { .county-az { columns: 2; } }
+@media (max-width: 460px) { .county-az { columns: 1; } }
+.county-az a {
+  display: flex; align-items: baseline; justify-content: space-between; gap: 8px;
+  padding: 6px 0; color: var(--navy); font-weight: 600; border-bottom: 1px dotted var(--border);
+  break-inside: avoid;
+}
+.county-az a:hover { text-decoration: none; color: var(--peach-deep); }
+.county-az .cx-metro { font-size: 11px; color: var(--ink-soft); font-weight: 600; text-transform: uppercase; letter-spacing: 0.03em; }

@@ -172,6 +172,13 @@
       trail.push({ label: titleCaseSlug(m[1]), href: null });
       return trail;
     }
+    var cm = path.match(/^\/counties\/([^/]+)\/$/);
+    if (cm && cm[1] !== "") {
+      trail.push({ label: "Places", href: null });
+      trail.push({ label: "Counties", href: "/counties/" });
+      trail.push({ label: titleCaseSlug(cm[1]) + " County", href: null });
+      return trail;
+    }
     var page = PAGES.filter(function (p) { return p.path === path; })[0];
     if (page) {
       if (page.axis && AXES[page.axis]) {
@@ -280,6 +287,30 @@
     return _metroLookup;
   }
 
+  var _countyLookup = null; // promise -> { fips: {slug, name, metro} }
+  function countyLookup() {
+    if (_countyLookup) return _countyLookup;
+    _countyLookup = data("county_index").then(function (j) { return (j && j.counties) || {}; });
+    return _countyLookup;
+  }
+
+  // Attach a click handler to an already-rendered county choropleth so that
+  // clicking a county opens its profile page (/counties/<slug>/).
+  function attachCountyNav(elId) {
+    var el = document.getElementById(elId);
+    if (!el || typeof el.on !== "function") return false;
+    countyLookup().then(function (byFips) {
+      el.on("plotly_click", function (ev) {
+        var pt = ev && ev.points && ev.points[0];
+        if (!pt) return;
+        var hit = byFips[pt.location];
+        if (hit) location.href = "/counties/" + hit.slug + "/";
+      });
+      el.style.cursor = "pointer";
+    });
+    return true;
+  }
+
   // Attach a click handler to an already-rendered Plotly choropleth so that
   // clicking a county navigates to its metro report. No-ops for non-metro
   // counties (no page yet) and if Plotly/maps.js aren't present.
@@ -348,6 +379,13 @@
         if (attachMetroNav("msa-choropleth") || ++tries > 40) clearInterval(t);
       }, 250);
     }
+    // The /counties/ heat map (animated) → clicking a county opens its profile.
+    if (document.getElementById("ga-county-map")) {
+      var ctries = 0;
+      var ct = setInterval(function () {
+        if (attachCountyNav("ga-county-map") || ++ctries > 40) clearInterval(ct);
+      }, 250);
+    }
   }
 
   window.GE = {
@@ -355,7 +393,7 @@
     setYear: setYear, show: show, hide: hide, text: text, axes: axes,
     // WS2/WS3 helpers (also run automatically on DOMContentLoaded):
     markActiveNav: markActiveNav, metroMap: metroMap, attachMetroNav: attachMetroNav,
-    slugify: slugify, PAGES: PAGES,
+    attachCountyNav: attachCountyNav, slugify: slugify, PAGES: PAGES,
   };
 
   document.addEventListener("DOMContentLoaded", function () {
