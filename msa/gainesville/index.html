@@ -966,10 +966,6 @@
 
   <!-- Bottom footnote -->
   <div style="margin-top:32px; padding:16px; background: var(--chart-bg); border:1px solid var(--border); font-size:12px; color:var(--ink-soft); line-height:1.5;">
-    <div style="padding:10px 12px; margin-bottom:12px; background: rgba(212, 160, 23, 0.10); border-left:4px solid var(--mustard); color:var(--ink);">
-      <strong style="color:var(--navy);">Disclaimer.</strong>
-      Charts and analysis are provided for informational purposes only. Data is pulled directly from official statistical agencies but is not independently validated by Economic Impact Group, LLC; please consult the original source for any decisions that depend on accuracy.
-    </div>
     <strong style="color:var(--navy);">About this report.</strong>
     Prepared by <strong>Economic Impact Group, LLC</strong> and published on the Georgia Economics platform. Built from public &amp; subscription-free data sources only: BLS (CES, QCEW, LAUS), BEA (Regional GDP &amp; Personal Income), Census Bureau (PEP, ACS, BPS, Business Formation Statistics, USA Trade Online, F-33 School System Finances), FHFA (HPI), EPA AirData (annual AQI by CBSA), FRED, IRS SOI migration, ITA TradeStats, and Georgia Ports Authority monthly statistics. Sections flagged with a <span class="src-pill proxy">Proxy</span> pill use Economic Impact Group composite measures where the source data is not directly published (business cycle index, valuation model, vitality, quality-of-life). The Vitality composite blends labor-force participation (ACS B23025), latest-year personal-income growth (BEA), young-adult 25&ndash;34 share (ACS B01001) and net-migration rate (IRS SOI). The Quality-of-Life composite blends air quality (EPA median AQI), long commute share (ACS), housing affordability and poverty (ACS). <strong style="color:var(--navy);">Crime is deliberately excluded</strong> from the Quality-of-Life composite: no clean, automated, current MSA-level crime feed exists &mdash; the FBI Crime Data API reports only by agency/state and is key-gated, and the FBI's by-MSA crime table was discontinued after 2019, so rather than freeze a stale 2019 figure the metric is omitted. Forecast columns (ARIMA) and the EIG credit score are live composite estimates, labeled accordingly. Refreshed nightly via GitHub Actions; the as-of stamp at the top of the page reflects the latest underlying release.
   </div>
@@ -979,6 +975,7 @@
 <!-- GEN:FOOTER -->
 <footer class="site-footer">
   <div class="wrap">
+    <p class="footer-disclaimer"><strong>Disclaimer.</strong> Charts and analysis are provided for informational purposes only. Data is pulled directly from official statistical agencies but is not independently validated by Economic Impact Group, LLC; please consult the original source for any decisions that depend on accuracy.</p>
     <div>&copy; <span id="yr"></span> Georgia Economics &middot; Sister site to <a href="https://economicsguru.com">economicsguru.com</a> &middot; <a href="/about/">Methodology</a></div>
     <div>Built with public data from BLS, FRED, BEA, Census, and Georgia state agencies.</div>
     <div class="eig">

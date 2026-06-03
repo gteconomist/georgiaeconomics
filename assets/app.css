@@ -67,6 +67,14 @@ table.data-table .row-name, table.data-table .metro-name { font-weight: 600; col
 .stat-card .label, .nonmetro-stat .label { font-size: 11px; text-transform: uppercase; letter-spacing: 0.04em; color: var(--ink-soft); font-weight: 700; }
 .stat-card .value, .nonmetro-stat .value { font-size: 22px; font-weight: 800; color: var(--navy); margin-top: 2px; font-variant-numeric: tabular-nums; }
 
+/* ---- site-wide footer disclaimer (injected via the footer partial) ---- */
+.site-footer .footer-disclaimer {
+  flex-basis: 100%; margin: 0 0 6px; font-size: 12px; line-height: 1.5; color: var(--ink-soft);
+  background: rgba(212, 160, 23, 0.10); border-left: 4px solid var(--mustard);
+  border-radius: 0 4px 4px 0; padding: 10px 14px;
+}
+.site-footer .footer-disclaimer strong { color: var(--navy); }
+
 /* ---- side-by-side flow columns ---- */
 .flows-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
 @media (max-width: 720px) { .flows-grid { grid-template-columns: 1fr; } }
