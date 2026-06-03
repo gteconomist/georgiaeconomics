@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Directory — Every Place, Topic & Industry | Georgia Economics</title>
+<meta name="description" content="The full Georgia Economics directory: every topic (labor, housing, GDP, migration, inflation, trade, outlook, population), all 14 metros, the county heat map, and the distinctive industries — agriculture, automotive & EV, data centers, and film.">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- GEN:HEAD -->
+<link rel="stylesheet" href="/styles.css">
+<link rel="stylesheet" href="/assets/app.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700;800&display=swap" rel="stylesheet">
+<!-- app.js is intentionally NOT deferred: it defines window.GE (palette + fmt
+     helpers) with no dependencies, so it must be available to each page's
+     end-of-body inline script, which runs during parse before deferred scripts. -->
+<script src="/assets/app.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/gh/gteconomist/economicsguru@main/assets/charts.js"></script>
+<!-- /GEN:HEAD -->
+<style>
+  .dir-section { margin: 28px 0; }
+  .dir-section > h2 { font-family: var(--font-display); color: var(--navy); font-size: 22px; margin: 0 0 4px; }
+  .dir-section > p  { color: var(--ink-soft); font-size: 14px; margin: 0 0 14px; }
+  .dir-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 12px; }
+  .dir-card {
+    display: block; background: var(--surface); border: 1px solid var(--border);
+    border-top: 3px solid var(--peach-deep); border-radius: 10px; padding: 13px 15px;
+    box-shadow: var(--card-shadow); transition: transform 0.12s ease, box-shadow 0.12s ease;
+  }
+  .dir-card:hover { transform: translateY(-2px); text-decoration: none; box-shadow: 0 6px 18px rgba(15,23,42,0.10); }
+  .dir-card .name { font-weight: 700; color: var(--navy); font-size: 16px; }
+  .dir-card .desc { color: var(--ink-soft); font-size: 13px; margin-top: 3px; }
+  .metro-list { columns: 2; column-gap: 28px; }
+  @media (max-width: 560px) { .metro-list { columns: 1; } }
+  .metro-list a { display: block; padding: 6px 0; color: var(--navy); font-weight: 600; border-bottom: 1px dotted var(--border); }
+</style>
+</head>
+<body>
+
+<!-- GEN:HEADER -->
+<header class="site-header">
+  <div class="wrap">
+    <div class="brand"><a href="/">Georgia<span class="tag">Economics</span></a></div>
+    <nav class="site-nav" aria-label="Primary">
+      <div class="nav-group" data-axis="places">
+        <button type="button" class="nav-top" aria-haspopup="true" aria-expanded="false">Places</button>
+        <div class="nav-menu">
+          <a href="/counties/">Counties</a>
+          <a href="/msa/">Metros</a>
+          <a href="/population/">Population</a>
+        </div>
+      </div>
+      <div class="nav-group" data-axis="topics">
+        <button type="button" class="nav-top" aria-haspopup="true" aria-expanded="false">Topics</button>
+        <div class="nav-menu nav-menu-cols">
+          <a href="/labor/">Labor</a>
+          <a href="/housing/">Housing</a>
+          <a href="/gdp/">GDP</a>
+          <a href="/migration/">Migration</a>
+          <a href="/inflation/">Inflation</a>
+          <a href="/trade/">Trade &amp; Logistics</a>
+          <a href="/outlook/">Outlook</a>
+        </div>
+      </div>
+      <div class="nav-group" data-axis="industries">
+        <button type="button" class="nav-top" aria-haspopup="true" aria-expanded="false">Industries</button>
+        <div class="nav-menu">
+          <a href="/industries/agriculture/">Agriculture</a>
+          <a href="/industries/automotive/">Automotive &amp; EV</a>
+          <a href="/industries/data-centers/">Data Centers</a>
+          <a href="/industries/film/">Film</a>
+        </div>
+      </div>
+      <a class="nav-top nav-link" href="/directory/">Directory</a>
+      <a class="nav-top nav-link" href="/about/">About</a>
+    </nav>
+    <div class="nav-search" role="search">
+      <input type="search" id="site-search" placeholder="Search places &amp; topics…" autocomplete="off" aria-label="Search Georgia Economics" aria-expanded="false" aria-controls="site-search-results">
+      <div class="search-results" id="site-search-results" role="listbox" hidden></div>
+    </div>
+  </div>
+</header>
+<!-- /GEN:HEADER -->
+
+<main>
+  <section class="page-header">
+    <h1>Directory</h1>
+    <p>Everything on Georgia Economics, in one place — organised by <strong>Places</strong>, <strong>Topics</strong>, and <strong>Industries</strong>.</p>
+  </section>
+
+  <section class="dir-section">
+    <h2>Places</h2>
+    <p>Geography, from the whole state down to individual counties.</p>
+    <div class="dir-grid">
+      <a class="dir-card" href="/counties/"><div class="name">County Heat Map</div><div class="desc">All 159 counties on one interactive, time-sliding unemployment map.</div></a>
+      <a class="dir-card" href="/msa/"><div class="name">Metro Dashboard</div><div class="desc">Compare all 14 Georgia metros; open any one for a full report.</div></a>
+      <a class="dir-card" href="/population/"><div class="name">Population &amp; Growth</div><div class="desc">State and county growth, components of change, age and race structure.</div></a>
+    </div>
+  </section>
+
+  <section class="dir-section">
+    <h2>Topics</h2>
+    <p>Statewide economic indicators, refreshed from public data.</p>
+    <div class="dir-grid">
+      <a class="dir-card" href="/labor/"><div class="name">Labor Market</div><div class="desc">Unemployment, payrolls, and sector employment.</div></a>
+      <a class="dir-card" href="/housing/"><div class="name">Housing</div><div class="desc">Home prices, affordability, valuation, and permits.</div></a>
+      <a class="dir-card" href="/gdp/"><div class="name">State GDP</div><div class="desc">Real &amp; nominal output, per-capita GDP, sector mix.</div></a>
+      <a class="dir-card" href="/migration/"><div class="name">Migration</div><div class="desc">Where movers come from and go to; net-migration map.</div></a>
+      <a class="dir-card" href="/inflation/"><div class="name">Inflation</div><div class="desc">South &amp; Atlanta CPI, gas prices, real-wage tracker.</div></a>
+      <a class="dir-card" href="/trade/"><div class="name">Trade &amp; Logistics</div><div class="desc">Port of Savannah, Brunswick, ATL cargo, exports.</div></a>
+      <a class="dir-card" href="/outlook/"><div class="name">Economic Outlook</div><div class="desc">Business-cycle index and a 5-year model forecast.</div></a>
+    </div>
+  </section>
+
+  <section class="dir-section">
+    <h2>Industries</h2>
+    <p>The sectors that make Georgia's economy distinctive.</p>
+    <div class="dir-grid">
+      <a class="dir-card" href="/industries/agriculture/"><div class="name">Agriculture</div><div class="desc">Broilers, peanuts, pecans, cotton, blueberries — USDA NASS.</div></a>
+      <a class="dir-card" href="/industries/automotive/"><div class="name">Automotive &amp; EV</div><div class="desc">Kia, the Hyundai Metaplant, suppliers, the EV corridor.</div></a>
+      <a class="dir-card" href="/industries/data-centers/"><div class="name">Data Centers</div><div class="desc">Capacity, county rankings, power load, tax tracker.</div></a>
+      <a class="dir-card" href="/industries/film/"><div class="name">Film Industry</div><div class="desc">Annual spend, sector employment, productions filmed here.</div></a>
+    </div>
+  </section>
+
+  <section class="dir-section">
+    <h2>All 14 metros</h2>
+    <p>Each links to its full metro report.</p>
+    <div class="metro-list">
+      <a href="/msa/atlanta/">Atlanta</a>
+      <a href="/msa/augusta/">Augusta</a>
+      <a href="/msa/savannah/">Savannah</a>
+      <a href="/msa/columbus/">Columbus</a>
+      <a href="/msa/macon/">Macon</a>
+      <a href="/msa/athens/">Athens</a>
+      <a href="/msa/gainesville/">Gainesville</a>
+      <a href="/msa/warner-robins/">Warner Robins</a>
+      <a href="/msa/valdosta/">Valdosta</a>
+      <a href="/msa/albany/">Albany</a>
+      <a href="/msa/dalton/">Dalton</a>
+      <a href="/msa/brunswick/">Brunswick</a>
+      <a href="/msa/rome/">Rome</a>
+      <a href="/msa/hinesville/">Hinesville</a>
+    </div>
+  </section>
+</main>
+
+<!-- GEN:FOOTER -->
+<footer class="site-footer">
+  <div class="wrap">
+    <div>&copy; <span id="yr"></span> Georgia Economics &middot; Sister site to <a href="https://economicsguru.com">economicsguru.com</a> &middot; <a href="/about/">Methodology</a></div>
+    <div>Built with public data from BLS, FRED, BEA, Census, and Georgia state agencies.</div>
+    <div class="eig">
+      <a href="https://www.economicimpact.com" target="_blank" rel="noopener" aria-label="Economic Impact Group">
+        <img src="/assets/ei_logo_NEW_200pxw.png" alt="Economic Impact Group">
+      </a>
+      <span class="product-of">A product of <a href="https://www.economicimpact.com" target="_blank" rel="noopener">Economic Impact Group, LLC</a>.</span>
+    </div>
+  </div>
+</footer>
+<!-- /GEN:FOOTER -->
+
+</body>
+</html>

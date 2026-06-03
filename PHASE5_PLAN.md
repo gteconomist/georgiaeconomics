@@ -152,10 +152,44 @@ line (e.g. "Source: USDA NASS", per-MSA "Sources: BLS LAUS & QCEW…") + per-pag
 favor of the shared generic footer (same change the 5 already-shipped pages adopted). To
 restore per-page sources, add a page-specific footer slot below `<!-- /GEN:FOOTER -->`.
 
-## ▶ RESUME HERE (Phase 5 — the VISIBLE workstreams)
+## ✅ WS2 + WS3 SHIPPED (2026-06-03)
 
-WS1 (invisible refactor) is done; pages look identical by design. Next, in order:
-WS2 (Places/Topics grouped nav + client-side `search-index.json` + `/directory/` hub),
-WS3 (map-as-primary-navigation, reusing `maps.js`), WS4 (159 county profiles via
-`scripts/generate_county_pages.py` from existing JSON — the payoff), WS5 (visual polish:
-hero map + "Economy at a glance" scorecard). See the workstream sections above for detail.
+**WS2 — IA, nav & search.** `partials/header.html` is now a grouped nav: **Places**
+(Counties / Metros / Population), **Topics** (Labor / Housing / GDP / Migration / Inflation /
+Trade / Outlook), **Industries** (Agriculture / Automotive / Data Centers / Film), plus
+Directory + About. Dropdowns: CSS hover on desktop, JS click/Escape/outside-click + a mobile
+stacked layout — all in `app.js` (`initNav`) and `app.css`. `markActiveNav` now lights the
+matching link **and** its parent group. **Breadcrumbs** auto-inject at the top of `<main>` on
+every inner page from a path→registry in `app.js` (`initBreadcrumbs` + `PAGES`), no per-page
+markup; `/msa/<slug>/` → Home › Places › Metros › <Metro>. New **`/directory/`** hub lists
+every place/topic/industry + all 14 metros. **Client-side search**: `scripts/build_search_index.py`
+→ `data/search-index.json` (190 items: pages + 14 metros + 159 counties), header search box
+with keyboard nav in `app.js` (`initSearch`). Wired into `update-msa-reports.yml`
+(rebuild + commit `data/search-index.json`).
+
+**WS3 — map as navigation.** `app.js` adds `GE.metroMap(elId)` (renders a clickable metro
+choropleth on `[data-ge-metromap]`, shaded by metro unemployment via `gaMaps.drawGAChoropleth`)
+and `GE.attachMetroNav(elId)` (click a county → its metro report). `autoWireMaps` renders the
+home **hero map** (`index.html` now loads Plotly + maps.js page-specifically) and auto-attaches
+metro-nav to the standing `#msa-choropleth` on `/msa/`. Slugs come from `GE.slugify` (verified
+to match all 14 `msa/<slug>/` dirs).
+
+**Validated:** app.js parses + full `GE` API present; 14/14 metro slugs resolve; **0 dead
+links** across the 190-item search index (31 unique URLs all exist); 31/31 pages pass the Node
+load-order sim. Lint (app.js-not-deferred, charts.js URL) green; app.css braces balanced.
+
+**Deliberate interim:** the 159 **county** search entries point at their **metro** report (or
+`/counties/`) and `/counties/` map clicks are NOT yet metro-wired — both become county-profile
+links in WS4. The `/counties/` heat map stays the county index until then.
+
+## ▶ RESUME HERE (Phase 5 — WS4 then WS5)
+
+**WS4 — county profiles (the payoff).** Build `scripts/generate_county_pages.py` → `/counties/<slug>/`
+for all 159 counties from existing JSON (population/unemployment/GDP/housing + MSA membership via
+`ga_msa_counties.json`), on the WS1 shell. Then: (1) repoint the 159 county rows in
+`build_search_index.py` from the metro URL to `/counties/<slug>/`; (2) metro-wire the `/counties/`
+choropleth + home hero so a county click can open its profile (extend `attachMetroNav` to a
+county-profile mode); (3) fold generation into the nightly workflow + `build_site.py` stamp.
+
+**WS5 — visual polish.** Redesigned hero, unified card system, and a statewide
+**"Economy at a glance"** scorecard rolling up headline KPIs across topics.

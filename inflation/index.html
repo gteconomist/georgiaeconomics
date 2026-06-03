@@ -135,14 +135,43 @@
 <header class="site-header">
   <div class="wrap">
     <div class="brand"><a href="/">Georgia<span class="tag">Economics</span></a></div>
-    <nav>
-      <a href="/">Home</a>
-      <a href="/counties/">Counties</a>
-      <a href="/msa/">Metros</a>
-      <a href="/labor/">Labor</a>
-      <a href="/housing/">Housing</a>
-      <a href="/about/">About</a>
+    <nav class="site-nav" aria-label="Primary">
+      <div class="nav-group" data-axis="places">
+        <button type="button" class="nav-top" aria-haspopup="true" aria-expanded="false">Places</button>
+        <div class="nav-menu">
+          <a href="/counties/">Counties</a>
+          <a href="/msa/">Metros</a>
+          <a href="/population/">Population</a>
+        </div>
+      </div>
+      <div class="nav-group" data-axis="topics">
+        <button type="button" class="nav-top" aria-haspopup="true" aria-expanded="false">Topics</button>
+        <div class="nav-menu nav-menu-cols">
+          <a href="/labor/">Labor</a>
+          <a href="/housing/">Housing</a>
+          <a href="/gdp/">GDP</a>
+          <a href="/migration/">Migration</a>
+          <a href="/inflation/">Inflation</a>
+          <a href="/trade/">Trade &amp; Logistics</a>
+          <a href="/outlook/">Outlook</a>
+        </div>
+      </div>
+      <div class="nav-group" data-axis="industries">
+        <button type="button" class="nav-top" aria-haspopup="true" aria-expanded="false">Industries</button>
+        <div class="nav-menu">
+          <a href="/industries/agriculture/">Agriculture</a>
+          <a href="/industries/automotive/">Automotive &amp; EV</a>
+          <a href="/industries/data-centers/">Data Centers</a>
+          <a href="/industries/film/">Film</a>
+        </div>
+      </div>
+      <a class="nav-top nav-link" href="/directory/">Directory</a>
+      <a class="nav-top nav-link" href="/about/">About</a>
     </nav>
+    <div class="nav-search" role="search">
+      <input type="search" id="site-search" placeholder="Search places &amp; topics…" autocomplete="off" aria-label="Search Georgia Economics" aria-expanded="false" aria-controls="site-search-results">
+      <div class="search-results" id="site-search-results" role="listbox" hidden></div>
+    </div>
   </div>
 </header>
 <!-- /GEN:HEADER -->

@@ -70,3 +70,89 @@ table.data-table .row-name, table.data-table .metro-name { font-weight: 600; col
 /* ---- side-by-side flow columns ---- */
 .flows-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
 @media (max-width: 720px) { .flows-grid { grid-template-columns: 1fr; } }
+
+/* =====================================================================
+ * WS2 — grouped navigation, search, breadcrumbs (Phase 5)
+ * ===================================================================== */
+
+/* The shared header lays out: brand | nav | search. */
+.site-header .site-nav { display: flex; align-items: center; gap: 4px; flex: 1 1 auto; }
+.site-header .nav-group { position: relative; }
+.site-header .nav-top {
+  font-family: inherit; font-size: 13px; color: var(--ink-soft);
+  text-transform: uppercase; letter-spacing: 0.06em; font-weight: 600;
+  background: none; border: 0; cursor: pointer; padding: 8px 12px; border-radius: 6px;
+  display: inline-flex; align-items: center; gap: 5px; line-height: 1; text-decoration: none;
+}
+.site-header .nav-group > .nav-top::after {
+  content: "▾"; font-size: 10px; color: var(--peach-deep); transition: transform 0.15s ease;
+}
+.site-header .nav-top:hover, .site-header .nav-top.active { color: var(--navy); background: var(--peach-pale); }
+.site-header .nav-group.open > .nav-top::after { transform: rotate(180deg); }
+
+.site-header .nav-menu {
+  position: absolute; top: 100%; left: 0; z-index: 50; min-width: 200px;
+  background: var(--surface); border: 1px solid var(--border); border-top: 2px solid var(--peach-deep);
+  border-radius: 0 0 8px 8px; box-shadow: var(--card-shadow); padding: 8px;
+  opacity: 0; visibility: hidden; transform: translateY(-6px); transition: opacity 0.12s ease, transform 0.12s ease;
+}
+.site-header .nav-group:hover > .nav-menu,
+.site-header .nav-group.open > .nav-menu { opacity: 1; visibility: visible; transform: translateY(0); }
+.site-header .nav-menu.nav-menu-cols { display: grid; grid-template-columns: 1fr 1fr; min-width: 320px; }
+.site-header .nav-menu a {
+  display: block; padding: 8px 12px; border-radius: 6px; font-size: 14px; font-weight: 600;
+  color: var(--navy); text-transform: none; letter-spacing: 0; white-space: nowrap;
+}
+.site-header .nav-menu a:hover { background: var(--peach-pale); text-decoration: none; }
+.site-header .nav-menu a.active { background: var(--navy); color: #fff; }
+
+/* Header search */
+.nav-search { position: relative; flex: 0 0 auto; }
+.nav-search input {
+  font-family: inherit; font-size: 14px; padding: 7px 12px; width: 190px;
+  border: 1px solid var(--border); border-radius: 18px; background: var(--page-bg); color: var(--ink);
+  transition: width 0.18s ease, background 0.18s ease, border-color 0.18s ease;
+}
+.nav-search input:focus { outline: none; width: 230px; background: #fff; border-color: var(--peach-deep); }
+.search-results {
+  position: absolute; top: calc(100% + 6px); right: 0; z-index: 60; width: 300px; max-width: 80vw;
+  background: var(--surface); border: 1px solid var(--border); border-top: 2px solid var(--peach-deep);
+  border-radius: 0 0 8px 8px; box-shadow: var(--card-shadow); padding: 6px; max-height: 70vh; overflow-y: auto;
+}
+.search-results .sr-item {
+  display: flex; align-items: baseline; justify-content: space-between; gap: 10px;
+  padding: 8px 11px; border-radius: 6px; color: var(--navy);
+}
+.search-results .sr-item:hover, .search-results .sr-item.active { background: var(--peach-pale); text-decoration: none; }
+.search-results .sr-title { font-weight: 600; font-size: 14px; }
+.search-results .sr-kind { font-size: 10px; text-transform: uppercase; letter-spacing: 0.05em; color: var(--ink-soft); font-weight: 700; }
+
+/* Breadcrumbs (auto-injected at top of <main> on inner pages) */
+.breadcrumbs { font-size: 13px; color: var(--ink-soft); margin: -8px 0 18px; display: flex; flex-wrap: wrap; gap: 6px; align-items: center; }
+.breadcrumbs a { color: var(--ink-soft); font-weight: 600; }
+.breadcrumbs a:hover { color: var(--navy); }
+.breadcrumbs .sep { color: var(--peach-deep); }
+.breadcrumbs [aria-current="page"] { color: var(--navy); font-weight: 700; }
+
+/* Mobile: stack the nav, drop hover-dropdowns to always-open lists */
+@media (max-width: 860px) {
+  .site-header .wrap { flex-wrap: wrap; gap: 12px; }
+  .site-header .site-nav { order: 3; flex-basis: 100%; flex-wrap: wrap; gap: 2px; }
+  .site-header .nav-menu { position: static; opacity: 1; visibility: visible; transform: none;
+    box-shadow: none; border: 0; border-left: 2px solid var(--peach-pale); border-radius: 0;
+    padding: 2px 0 2px 10px; min-width: 0; display: none; }
+  .site-header .nav-menu.nav-menu-cols { grid-template-columns: 1fr; min-width: 0; }
+  .site-header .nav-group.open > .nav-menu { display: block; }
+  .nav-search { order: 2; margin-left: auto; }
+}
+
+/* =====================================================================
+ * WS3 — map-as-navigation
+ * ===================================================================== */
+.geo-nav-map { height: 520px; background: var(--chart-bg); border-radius: 10px; }
+.hero-map-wrap { margin-top: 22px; background: var(--surface); border: 1px solid var(--border);
+  border-radius: 12px; box-shadow: var(--card-shadow); padding: 16px 16px 8px; }
+.hero-map-wrap .hero-map-head { display: flex; align-items: baseline; justify-content: space-between; flex-wrap: wrap; gap: 8px; margin-bottom: 6px; }
+.hero-map-wrap h2 { margin: 0; font-family: var(--font-display); color: var(--navy); font-size: 20px; }
+.hero-map-wrap .hint { font-size: 13px; color: var(--ink-soft); }
+.hero-map-wrap .geo-nav-map { height: 460px; }
