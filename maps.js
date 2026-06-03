@@ -62,6 +62,34 @@ function loadUSCountiesGeoJSON() {
   return _geojsonPromise;
 }
 
+/* ---------- Georgia state outline ----------
+ * A single GA boundary polygon, fetched from the same raw.githubusercontent.com
+ * host as the counties geojson and cached. Used to draw a black state border
+ * and to drop the neighboring-state subunit lines. Fails soft: if the fetch is
+ * ever unavailable, the map simply renders without the outline. */
+const GA_OUTLINE_GEOJSON = 'https://raw.githubusercontent.com/glynnbird/usstatesgeojson/master/georgia.geojson';
+let _gaOutlinePromise = null;
+function loadGAOutline() {
+  if (!_gaOutlinePromise) {
+    _gaOutlinePromise = fetch(GA_OUTLINE_GEOJSON)
+      .then(r => (r.ok ? r.json() : Promise.reject(new Error('outline ' + r.status))))
+      .then(feat => ({ type: 'FeatureCollection', features: [{ type: 'Feature', id: 'GA', properties: {}, geometry: feat.geometry }] }))
+      .catch(() => null);   // fail soft — no outline, map still draws
+  }
+  return _gaOutlinePromise;
+}
+
+/* A transparent-fill choropleth whose only job is to draw a black GA border. */
+function _gaOutlineTrace(outline) {
+  return {
+    type: 'choropleth', locationmode: 'geojson-id', geojson: outline, featureidkey: 'id',
+    locations: ['GA'], z: [0], showscale: false,
+    colorscale: [[0, 'rgba(0,0,0,0)'], [1, 'rgba(0,0,0,0)']],
+    marker: { line: { color: '#1a1a1a', width: 1.6 } },
+    hoverinfo: 'skip',
+  };
+}
+
 /* ---------- Format helpers ---------- */
 function fmtPct(v, digits) {
   if (v == null || isNaN(v)) return '—';
@@ -93,8 +121,10 @@ function fmtMoney(v) {
 async function drawGAChoropleth(elId, dataPoints, opts) {
   opts = opts || {};
   const geojson = await loadUSCountiesGeoJSON();
+  const outline = await loadGAOutline();
 
-  const scale = opts.colorscale === 'diverging' ? SCALE_DIVERGING
+  const scale = Array.isArray(opts.colorscale) ? opts.colorscale
+              : opts.colorscale === 'diverging' ? SCALE_DIVERGING
               : opts.colorscale === 'inverse'   ? SCALE_INVERSE
               :                                   SCALE_SEQUENTIAL;
 
@@ -153,17 +183,18 @@ async function drawGAChoropleth(elId, dataPoints, opts) {
       scope: 'usa',
       fitbounds: 'locations',
       visible: false,
-      showsubunits: true,
-      subunitcolor: '#ffffff',
+      showsubunits: false,   // hide neighboring states — Georgia only
       bgcolor: BRAND_MAP.cream,
     },
+    dragmode: false,         // lock the view to Georgia (no pan)
     paper_bgcolor: BRAND_MAP.cream,
     plot_bgcolor: BRAND_MAP.cream,
     margin: { t: opts.title ? 36 : 8, l: 8, r: 8, b: 8 },
     font: { family: 'Source Sans Pro, Arial, sans-serif', color: BRAND_MAP.navy },
   };
 
-  return Plotly.newPlot(elId, [trace], layout, { responsive: true, displayModeBar: false });
+  const traces = outline ? [trace, _gaOutlineTrace(outline)] : [trace];
+  return Plotly.newPlot(elId, traces, layout, { responsive: true, displayModeBar: false, scrollZoom: false });
 }
 
 /* ---------- drawGATimeChoropleth ----------
@@ -179,6 +210,7 @@ async function drawGATimeChoropleth(elId, framesByDate, opts) {
   opts = opts || {};
   if (!framesByDate || !framesByDate.length) return;
   const geojson = await loadUSCountiesGeoJSON();
+  const outline = await loadGAOutline();
 
   const scale = opts.colorscale === 'diverging' ? SCALE_DIVERGING
               : opts.colorscale === 'inverse'   ? SCALE_INVERSE
@@ -237,8 +269,9 @@ async function drawGATimeChoropleth(elId, framesByDate, opts) {
     title: opts.title ? { text: opts.title, font: { family: 'Source Sans Pro', size: 16, color: BRAND_MAP.navy } } : undefined,
     geo: {
       scope: 'usa', fitbounds: 'locations', visible: false,
-      showsubunits: true, subunitcolor: '#ffffff', bgcolor: BRAND_MAP.cream,
+      showsubunits: false, bgcolor: BRAND_MAP.cream,
     },
+    dragmode: false,
     paper_bgcolor: BRAND_MAP.cream,
     plot_bgcolor: BRAND_MAP.cream,
     margin: { t: opts.title ? 36 : 8, l: 8, r: 8, b: 80 },
@@ -267,7 +300,8 @@ async function drawGATimeChoropleth(elId, framesByDate, opts) {
     }],
   };
 
-  await Plotly.newPlot(elId, [initial], layout, { responsive: true, displayModeBar: false });
+  const initialTraces = outline ? [initial, _gaOutlineTrace(outline)] : [initial];
+  await Plotly.newPlot(elId, initialTraces, layout, { responsive: true, displayModeBar: false, scrollZoom: false });
   return Plotly.addFrames(elId, frames);
 }
 

@@ -308,10 +308,11 @@
       var lk = res[0], msa = res[1];
       var byCbsa = {};
       ((msa && msa.msas) || []).forEach(function (m) { byCbsa[m.cbsa] = m; });
-      var points = [];
+      var points = [], vals = [];
       Object.keys(lk.byFips).forEach(function (fips) {
         var hit = lk.byFips[fips], m = byCbsa[hit.cbsa] || {};
         var ur = m.metrics && m.metrics.unemployment_rate;
+        if (ur != null) vals.push(ur);
         points.push({
           fips: fips,
           value: (ur == null ? null : ur),
@@ -320,10 +321,17 @@
                      (ur == null ? "—" : ur.toFixed(1) + "%") + "<br><i>click to open report →</i>",
         });
       });
+      // Fully-saturated teal→mustard→coral scale with a fixed range, so every
+      // metro reads clearly and none blends into the cream background (the old
+      // "inverse" scale put mid values at cream — Valdosta disappeared).
+      var lo = vals.length ? Math.min.apply(null, vals) : 0;
+      var hi = vals.length ? Math.max.apply(null, vals) : 1;
+      if (hi - lo < 0.5) { hi = lo + 0.5; } // avoid a flat scale when metros cluster
       return window.gaMaps.drawGAChoropleth(elId, points, {
         metricLabel: opts.metricLabel || "Metro unemployment",
         unit: "%",
-        colorscale: "inverse",
+        colorscale: [[0, BRAND.teal], [0.5, BRAND.mustard], [1, BRAND.coral]],
+        zmin: lo, zmax: hi,
       }).then(function () { attachMetroNav(elId); return true; });
     }).catch(function (e) { if (window.console) console.warn("metroMap failed:", e); return false; });
   }
