@@ -92,7 +92,16 @@ Use data already in hand.
      CAGR) and `build_exports_by_commodity()` (HS2 chapter breakdown), both Census
      USA Trade Online. `/trade/` adds the multi-year trend + commodity bars. Runs in the
      existing `update-trade.yml` (no topology change; ITA MSA exports still out of scope).
-6. ◻ **Consumer** stub (WS1, needs new pipelines: GA DoR sales tax, Georgia Power demand) + connective tissue (WS4). ← resume here.
+6. ✅ **Consumer** stub (WS1) — DONE 2026-06-03. `CONSUMER_PAGE_SCOPE.md`; `/consumer/`,
+   `scripts/fetch_consumer.py` → `data/consumer.json`, `update-consumer.yml`. Anchored on
+   BEA state PCE (SAPCE1 total trend + SAPCE1 goods/services / SAPCE2 by-function
+   composition + SAPCE3 per-capita SE peers), EIA v2 GA residential electricity
+   (demand + price), a real-wage purchasing-power tracker reused from `inflation.json`,
+   and a best-effort FRED/Census sales-tax proxy. Flips the **last** "Coming soon" home
+   card to "Live now"; added to Topics nav (partial) + search index + home scorecard
+   (Consumer card, guarded). All Phase 4 WS1 stubs are now closed.
+7. ◻ **WS4 connective tissue** — full cross-metro comparator + refresh alerts (RSS/email).
+   ← resume here. (Scorecard + site search already shipped in Phase 5.)
 
 All four new pages fold their roll-up into `update-msa-reports.yml` (after the metro
 reports regenerate) and commit `data/{housing,gdp,migration,outlook}.json`. The home-grid
@@ -129,12 +138,20 @@ and `update-trade.yml` fire (path filters match the touched scripts) and populat
 Census/BLS sections within minutes; the metro_labor + sector_diffusion blocks are already
 committed with real values from the local `--rollup`.
 
-**Next: WS1 Consumer stub + WS4 connective tissue.**
-- **Consumer** stub — needs NEW pipelines: GA Dept. of Revenue sales-tax collections,
-  Georgia Power residential demand, retail proxies. No existing pipeline — the only Phase 4
-  item that needs genuinely new data. Flips the last "Coming soon" home card.
-- **WS4 connective tissue** — full cross-metro comparator (extend `/msa/` radar to all 33
-  metrics), email/RSS refresh alerts. (Scorecard + site search already shipped in Phase 5.)
+**Done (2026-06-03, later):** WS1 Consumer stub shipped (see sequencing item #6) — BEA PCE +
+EIA GA residential electricity + real-wage tracker + best-effort sales-tax proxy; new
+`/consumer/` page, `fetch_consumer.py`, `update-consumer.yml`; **the last "Coming soon" home
+card is flipped** (all three WS1 stubs now closed: Housing, State GDP, Consumer). Nav +
+search index + home scorecard wired. EIA puller reads `EIA_API_KEY` (repo secret); the BEA
+PCE sections reuse the proven `fetch_gdp.py` SAGDP mechanics, degrade gracefully, and
+`update-consumer.yml` fires on push to populate live.
+
+**Next: WS4 connective tissue.**
+- **Full cross-metro comparator** — extend the `/msa/` radar (currently 6 metrics in
+  `data/msa.json`) into an any-metro, all-33-metric comparator reading across
+  `data/msa_reports/*.json`.
+- **Refresh alerts** — a static RSS `feed.xml` regenerated when data refreshes (works on GH
+  Pages); email is a stretch (needs sending infra). Scope with the user next session.
 
 **Trade follow-up (deferred, not blocking):** Port of Savannah TEU, Brunswick autos, and ATL
 Hartsfield cargo are still calibrated fixtures — a Tavily/GPA-press-release scraper is the

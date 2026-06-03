@@ -1,0 +1,63 @@
+name: Update GA consumer data (BEA PCE + EIA electricity + real wages)
+
+on:
+  workflow_dispatch:
+  schedule:
+    # BEA state PCE is annual (released ~Oct); EIA electricity updates monthly
+    # with a ~2-month lag. Run on the 12th @ 16:00 UTC to catch the monthly EIA
+    # drop and refresh the real-wage copy from the inflation page.
+    - cron: '0 16 12 * *'
+  push:
+    branches: [main]
+    paths:
+      - 'scripts/fetch_consumer.py'
+      - '.github/workflows/update-consumer.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repo
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0   # full history so the push step can rebase
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Fetch consumer data (BEA PCE + EIA electricity + FRED + real wages)
+        env:
+          BEA_API_KEY:    ${{ secrets.BEA_API_KEY }}
+          EIA_API_KEY:    ${{ secrets.EIA_API_KEY }}
+          FRED_API_KEY:   ${{ secrets.FRED_API_KEY }}
+          CENSUS_API_KEY: ${{ secrets.CENSUS_API_KEY }}
+        run: |
+          python scripts/fetch_consumer.py
+
+      - name: Rebuild home scorecard (Consumer KPI)
+        run: python3 scripts/build_scorecard.py
+
+      - name: Commit updated data
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          changed=0
+          for f in data/consumer.json data/scorecard.json; do
+            if ! git diff --quiet -- "$f"; then git add "$f"; changed=1; fi
+          done
+          if [ $changed -eq 1 ]; then
+            git commit -m "data: refresh GA consumer (BEA PCE + EIA electricity + real wages) [skip ci]"
+            pushed=false
+            for attempt in 1 2 3 4 5; do
+              if git pull --rebase --autostash origin main && git push; then pushed=true; break; fi
+              echo "push attempt $attempt rejected; rebasing and retrying..."; sleep 5
+            done
+            [ "$pushed" = true ] || { echo "::error::push failed after retries"; exit 1; }
+          else
+            echo "No consumer data changes — nothing to commit."
+          fi

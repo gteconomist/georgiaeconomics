@@ -38,6 +38,7 @@ STATIC = [
     ("Migration", "/migration/", "Topic", "migration movers domestic international irs soi inflow outflow"),
     ("Inflation", "/inflation/", "Topic", "inflation cpi prices gas gasoline atlanta south real wages"),
     ("Economic Outlook", "/outlook/", "Topic", "outlook forecast business cycle index recession projection"),
+    ("Consumer", "/consumer/", "Topic", "consumer spending pce personal consumption expenditures electricity georgia power real wages purchasing power bea eia"),
     ("Agriculture", "/industries/agriculture/", "Industry", "agriculture farm broilers peanuts pecans cotton blueberries usda nass"),
     ("Automotive & EV", "/industries/automotive/", "Industry", "automotive ev electric vehicle kia hyundai metaplant suppliers"),
     ("Data Centers", "/industries/data-centers/", "Industry", "data centers megawatts capacity georgia power hyperscale"),

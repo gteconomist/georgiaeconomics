@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Georgia Consumer Spending — PCE, Electricity Demand & Real Wages | Georgia Economics</title>
+<meta name="description" content="Live Georgia consumer data: BEA personal consumption expenditures (total, per-capita, by category), a Southeast-peer comparison, Georgia residential electricity demand and price, and a real-wage purchasing-power tracker.">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- GEN:HEAD -->
+<link rel="stylesheet" href="/styles.css">
+<link rel="stylesheet" href="/assets/app.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700;800&display=swap" rel="stylesheet">
+<!-- app.js is intentionally NOT deferred: it defines window.GE (palette + fmt
+     helpers) with no dependencies, so it must be available to each page's
+     end-of-body inline script, which runs during parse before deferred scripts. -->
+<script src="/assets/app.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/gh/gteconomist/economicsguru@main/assets/charts.js"></script>
+<!-- /GEN:HEAD -->
+
+<style>
+  .chart-canvas-tall { position: relative; height: 340px; background: var(--chart-bg); padding: 6px; }
+  .chart-canvas-med  { position: relative; height: 360px; background: var(--chart-bg); padding: 6px; }
+  .chart-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+  @media (max-width: 980px) { .chart-grid { grid-template-columns: 1fr; } }
+  .pending {
+    background: var(--peach-pale); border: 1px dashed var(--peach, #e8a87c);
+    border-radius: 8px; padding: 14px 16px; color: var(--ink-soft); font-size: 13px;
+  }
+  .pending strong { color: var(--peach-deep, #c46b3a); }
+  .stale-badge {
+    display: inline-block; font-size: 10px; font-weight: 700; text-transform: uppercase;
+    letter-spacing: 0.05em; color: #fff; background: var(--peach-deep, #c46b3a);
+    border-radius: 4px; padding: 2px 6px; vertical-align: middle; margin-left: 8px;
+  }
+  .source-note { font-size: 12px; color: var(--ink-soft); margin-top: 8px; font-style: italic; }
+</style>
+</head>
+<body>
+
+<!-- GEN:HEADER -->
+<header class="site-header">
+  <div class="wrap">
+    <div class="brand"><a href="/">Georgia<span class="tag">Economics</span></a></div>
+    <button type="button" class="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="site-nav"><span class="nav-toggle-bars"></span></button>
+    <nav class="site-nav" id="site-nav" aria-label="Primary">
+      <div class="nav-group" data-axis="places">
+        <button type="button" class="nav-top" aria-haspopup="true" aria-expanded="false">Places</button>
+        <div class="nav-menu">
+          <a href="/counties/">Counties</a>
+          <a href="/msa/">Metros</a>
+        </div>
+      </div>
+      <div class="nav-group" data-axis="topics">
+        <button type="button" class="nav-top" aria-haspopup="true" aria-expanded="false">Topics</button>
+        <div class="nav-menu nav-menu-cols">
+          <a href="/labor/">Labor</a>
+          <a href="/housing/">Housing</a>
+          <a href="/gdp/">GDP</a>
+          <a href="/population/">Population</a>
+          <a href="/migration/">Migration</a>
+          <a href="/inflation/">Inflation</a>
+          <a href="/outlook/">Outlook</a>
+          <a href="/consumer/">Consumer</a>
+        </div>
+      </div>
+      <div class="nav-group" data-axis="industries">
+        <button type="button" class="nav-top" aria-haspopup="true" aria-expanded="false">Industries</button>
+        <div class="nav-menu">
+          <a href="/industries/agriculture/">Agriculture</a>
+          <a href="/industries/automotive/">Automotive &amp; EV</a>
+          <a href="/industries/data-centers/">Data Centers</a>
+          <a href="/industries/film/">Film</a>
+          <a href="/trade/">Trade &amp; Logistics</a>
+        </div>
+      </div>
+      <a class="nav-top nav-link" href="/directory/">Directory</a>
+      <a class="nav-top nav-link" href="/about/">About</a>
+    </nav>
+    <div class="nav-search" role="search">
+      <input type="search" id="site-search" placeholder="Search places &amp; topics…" autocomplete="off" aria-label="Search Georgia Economics" aria-expanded="false" aria-controls="site-search-results">
+      <div class="search-results" id="site-search-results" role="listbox" hidden></div>
+    </div>
+  </div>
+</header>
+<!-- /GEN:HEADER -->
+
+<main>
+  <section class="page-header">
+    <h1>Georgia consumer spending</h1>
+    <div class="subtitle">What Georgians spend and how far their paychecks go: personal consumption expenditures (BEA), a Southeast-peer comparison, residential electricity demand and price (EIA), and a real-wage purchasing-power tracker.</div>
+    <div class="latest">Latest data: <strong id="latest-label">&mdash;</strong></div>
+  </section>
+
+  <div class="notice" id="fixture-banner" style="display:none;">
+    <strong>Data populating:</strong> the BEA, EIA, and FRED sections fill on the first data-refresh run after deploy. Refresh this page after the workflow completes.
+  </div>
+
+  <!-- KPI strip -->
+  <div class="kpi-grid">
+    <div class="kpi">
+      <div class="label">Total consumer spending</div>
+      <div class="value" id="kpi-pce">&mdash;</div>
+      <div class="delta" id="kpi-pce-yoy">&mdash;</div>
+    </div>
+    <div class="kpi">
+      <div class="label">Per-capita spending</div>
+      <div class="value" id="kpi-pce-pc">&mdash;</div>
+      <div class="delta">BEA PCE per resident</div>
+    </div>
+    <div class="kpi">
+      <div class="label">Residential electricity</div>
+      <div class="value" id="kpi-elec">&mdash;</div>
+      <div class="delta" id="kpi-elec-yoy">&mdash;</div>
+    </div>
+    <div class="kpi">
+      <div class="label">Real wages</div>
+      <div class="value" id="kpi-realwage">&mdash;</div>
+      <div class="delta">Purchasing power, YoY</div>
+    </div>
+  </div>
+
+  <!-- PCE trend -->
+  <div class="chart-panel" style="margin-top: 6px;">
+    <h2>Consumer spending over time <span id="trend-stale" class="stale-badge" style="display:none;">stale</span></h2>
+    <p class="sub">Total personal consumption expenditures ($ billions), Georgia vs. the United States. Annual, current dollars. Source: BEA SAPCE.</p>
+    <div id="trend-pending" class="pending" style="display:none;"><strong>Spending trend pending:</strong> the BEA PCE series populates on the first data-refresh run after deploy (needs the BEA API key from repo secrets).</div>
+    <div class="chart-canvas-tall" id="trend-wrap" style="display:none;"><canvas id="pce-trend"></canvas></div>
+    <div class="source-note">Source: BEA SAPCE1 — total personal consumption expenditures, current dollars.</div>
+  </div>
+
+  <!-- Composition + peers side by side -->
+  <div class="chart-grid" style="margin-top: 22px;">
+    <div class="chart-panel">
+      <h2>What Georgians spend on <span id="comp-stale" class="stale-badge" style="display:none;">stale</span></h2>
+      <p class="sub">Share of consumer spending by category, latest year. Source: BEA SAPCE.</p>
+      <div id="comp-pending" class="pending" style="display:none;"><strong>Composition pending:</strong> populates on the first data-refresh run after deploy.</div>
+      <div class="chart-canvas-med" id="comp-wrap" style="display:none;"><canvas id="pce-composition"></canvas></div>
+      <div class="source-note">Source: BEA SAPCE2 (by function) or SAPCE1 (goods vs. services), Georgia.</div>
+    </div>
+
+    <div class="chart-panel">
+      <h2>Per-capita spending vs. Southeast <span id="peers-stale" class="stale-badge" style="display:none;">stale</span></h2>
+      <p class="sub">Per-capita PCE, Georgia vs. FL / NC / SC / TN / AL and the U.S., latest year. Source: BEA SAPCE3.</p>
+      <div id="peers-pending" class="pending" style="display:none;"><strong>Peer comparison pending:</strong> populates on the first data-refresh run after deploy.</div>
+      <div class="chart-canvas-med" id="peers-wrap" style="display:none;"><canvas id="pce-peers"></canvas></div>
+      <div class="source-note">Source: BEA SAPCE3 — per-capita personal consumption expenditures.</div>
+    </div>
+  </div>
+
+  <!-- Electricity -->
+  <div class="chart-panel" style="margin-top: 22px;">
+    <h2>Georgia residential electricity &mdash; demand &amp; price <span id="elec-stale" class="stale-badge" style="display:none;">stale</span></h2>
+    <p class="sub">Monthly residential electricity sales (GWh, bars) and the average retail price (cents per kWh, line) for Georgia households. The most current monthly consumer signal on this page. Source: U.S. Energy Information Administration.</p>
+    <div id="elec-pending" class="pending" style="display:none;"><strong>Electricity data pending:</strong> the EIA residential series populates on the first data-refresh run after deploy (needs the EIA API key from repo secrets).</div>
+    <div class="chart-canvas-tall" id="elec-wrap" style="display:none;"><canvas id="electricity"></canvas></div>
+    <div class="source-note">Source: EIA API v2 — electricity retail sales, Georgia residential sector (NAICS-equivalent). Sales in GWh, price in &cent;/kWh.</div>
+  </div>
+
+  <!-- Real wages + sales tax -->
+  <div class="chart-grid" style="margin-top: 22px;">
+    <div class="chart-panel">
+      <h2>Purchasing power (real wages) <span id="rw-stale" class="stale-badge" style="display:none;">stale</span></h2>
+      <p class="sub">Inflation-adjusted average wages &mdash; how far a Georgia paycheck actually stretches. Source: BLS, via the <a href="/inflation/">inflation tracker</a>.</p>
+      <div id="rw-pending" class="pending" style="display:none;"><strong>Real-wage series pending:</strong> populates from the inflation tracker on the next refresh.</div>
+      <div class="chart-canvas-med" id="rw-wrap" style="display:none;"><canvas id="real-wages"></canvas></div>
+      <div class="source-note">Source: BLS real-wage tracker (reused from the inflation page).</div>
+    </div>
+
+    <div class="chart-panel">
+      <h2>Taxable spending proxy <span id="tax-stale" class="stale-badge" style="display:none;">stale</span></h2>
+      <p class="sub">Georgia general sales-tax collections &mdash; a proxy for taxable consumer spending. Source: Census / FRED.</p>
+      <div id="tax-pending" class="pending" style="display:none;"><strong>Sales-tax series pending:</strong> a best-effort proxy; populates if the source series is available on refresh.</div>
+      <div class="chart-canvas-med" id="tax-wrap" style="display:none;"><canvas id="sales-tax"></canvas></div>
+      <div class="source-note">Source: Census Quarterly Summary of State &amp; Local Tax Revenue / FRED (best-effort).</div>
+    </div>
+  </div>
+
+  <div class="source-note" id="coverage-note" style="margin-top: 18px;"></div>
+</main>
+
+<!-- GEN:FOOTER -->
+<footer class="site-footer">
+  <div class="wrap">
+    <p class="footer-disclaimer"><strong>Disclaimer.</strong> Charts and analysis are provided for informational purposes only. Data is pulled directly from official statistical agencies but is not independently validated by Economic Impact Group, LLC; please consult the original source for any decisions that depend on accuracy.</p>
+    <div>&copy; <span id="yr"></span> Georgia Economics &middot; Sister site to <a href="https://economicsguru.com">economicsguru.com</a> &middot; <a href="/about/">Methodology</a></div>
+    <div>Built with public data from BLS, FRED, BEA, Census, and Georgia state agencies.</div>
+    <div class="eig">
+      <a href="https://www.economicimpact.com" target="_blank" rel="noopener" aria-label="Economic Impact Group">
+        <img src="/assets/ei_logo_NEW_200pxw.png" alt="Economic Impact Group">
+      </a>
+      <span class="product-of">A product of <a href="https://www.economicimpact.com" target="_blank" rel="noopener">Economic Impact Group, LLC</a>.</span>
+    </div>
+  </div>
+</footer>
+<!-- /GEN:FOOTER -->
+
+<script>
+(function () {
+  const B = GE.BRAND;
+  const fmtMonth = GE.fmt.month, fmtMonthLong = GE.fmt.monthLong,
+        fmtSignedPct = GE.fmt.signedPct;
+  const show = id => { const el = document.getElementById(id); if (el) el.style.display = ''; };
+  const money = v => '$' + Number(v).toLocaleString();
+
+  async function init() {
+    const d = await GE.data('consumer');
+    const meta = d._meta || {};
+    GE.text('latest-label', d.latest_label || '—');
+    GE.text('coverage-note', d.coverage_note || '');
+
+    // KPI strip (null-safe)
+    const k = d.kpis || {};
+    if (k.pce_total_bn != null) GE.text('kpi-pce', '$' + k.pce_total_bn.toFixed(1) + 'B');
+    const py = document.getElementById('kpi-pce-yoy');
+    if (k.pce_yoy_pct != null) { py.textContent = fmtSignedPct(k.pce_yoy_pct) + ' YoY'; py.classList.add(k.pce_yoy_pct >= 0 ? 'down' : 'up'); }
+    if (k.pce_per_capita != null) GE.text('kpi-pce-pc', money(k.pce_per_capita));
+    if (k.elec_price_cents_kwh != null) GE.text('kpi-elec', k.elec_price_cents_kwh.toFixed(1) + '¢/kWh');
+    const ey = document.getElementById('kpi-elec-yoy');
+    if (k.elec_price_yoy_pct != null) { ey.textContent = fmtSignedPct(k.elec_price_yoy_pct) + ' price YoY'; ey.classList.add(k.elec_price_yoy_pct <= 0 ? 'down' : 'up'); }
+    if (k.real_wage_yoy_pct != null) GE.text('kpi-realwage', fmtSignedPct(k.real_wage_yoy_pct));
+
+    renderTrend(d.pce_trend, meta.pce_trend);
+    renderComposition(d.pce_by_function, d.pce_composition, meta.pce_by_function || meta.pce_composition);
+    renderPeers(d.pce_peers, meta.pce_peers);
+    renderElectricity(d.electricity, meta.electricity);
+    renderRealWages(d.real_wages, meta.real_wages);
+    renderSalesTax(d.sales_tax, meta.sales_tax);
+  }
+
+  function renderTrend(t, meta) {
+    if (!t || !t.years || !t.years.length) { show('trend-pending'); return; }
+    if (meta && meta.stale) show('trend-stale');
+    show('trend-wrap');
+    const ctx = document.getElementById('pce-trend').getContext('2d');
+    new Chart(ctx, {
+      type: 'line',
+      data: { labels: t.years.map(String), datasets: [
+        { label: 'Georgia', data: t.ga_total_musd.map(v => v / 1000), borderColor: B.navy, backgroundColor: 'rgba(26,58,92,0.10)', fill: true, tension: 0.25, pointRadius: 0, borderWidth: 2.5 },
+        { label: 'United States', data: (t.us_total_musd || []).map(v => v == null ? null : v / 1000), borderColor: B.peachDeep, backgroundColor: 'transparent', borderDash: [5,4], tension: 0.25, pointRadius: 0, borderWidth: 2, yAxisID: 'y2' },
+      ] },
+      options: {
+        responsive: true, maintainAspectRatio: false,
+        scales: {
+          x: { grid: { display: false }, ticks: { color: B.navy, font: { size: 11 } } },
+          y:  { position: 'left',  beginAtZero: false, grid: { color: B.grid, borderDash: [3,4] }, ticks: { color: B.navy, font: { size: 11 }, callback: v => '$' + v.toFixed(0) + 'B' }, title: { display: true, text: 'Georgia ($B)', color: B.navy } },
+          y2: { position: 'right', beginAtZero: false, grid: { display: false }, ticks: { color: B.peachDeep, font: { size: 11 }, callback: v => '$' + (v/1000).toFixed(1) + 'T' }, title: { display: true, text: 'U.S. ($B)', color: B.peachDeep } },
+        },
+        plugins: { legend: { position: 'bottom', labels: { color: B.navy, font: { size: 12, weight: 'bold' }, padding: 12 } },
+          tooltip: { callbacks: { label: it => it.dataset.label + ': $' + it.parsed.y.toFixed(1) + 'B' } } },
+      },
+    });
+  }
+
+  function renderComposition(byFunc, comp, meta) {
+    // Prefer the by-function breakdown; fall back to goods/services split.
+    let labels, values;
+    if (byFunc && byFunc.functions && byFunc.functions.length) {
+      labels = byFunc.functions.map(f => f.name);
+      values = byFunc.functions.map(f => f.value_musd / 1000);
+    } else if (comp && comp.goods_musd != null && comp.services_musd != null) {
+      labels = ['Durable goods', 'Nondurable goods', 'Services'];
+      values = [
+        (comp.durable_musd != null ? comp.durable_musd : 0) / 1000,
+        (comp.nondurable_musd != null ? comp.nondurable_musd : Math.max(comp.goods_musd - (comp.durable_musd || 0), 0)) / 1000,
+        comp.services_musd / 1000,
+      ];
+    } else { show('comp-pending'); return; }
+    if (meta && meta.stale) show('comp-stale');
+    show('comp-wrap');
+    const palette = [B.navy, B.peachDeep, B.teal, B.mustard, B.coral, B.navySoft, B.peach, '#7a8a99', '#9c6b3a', '#557'];
+    const ctx = document.getElementById('pce-composition').getContext('2d');
+    new Chart(ctx, {
+      type: 'bar',
+      data: { labels, datasets: [{ label: 'Spending ($B)', data: values, backgroundColor: labels.map((_, i) => palette[i % palette.length]), borderWidth: 0 }] },
+      options: {
+        indexAxis: 'y', responsive: true, maintainAspectRatio: false,
+        scales: {
+          x: { grid: { color: B.grid, borderDash: [3,4] }, ticks: { color: B.navy, font: { size: 11 }, callback: v => '$' + v.toFixed(0) + 'B' } },
+          y: { grid: { display: false }, ticks: { color: B.navy, font: { size: 11, weight: 'bold' } } },
+        },
+        plugins: { legend: { display: false }, tooltip: { callbacks: { label: it => '$' + it.parsed.x.toFixed(1) + 'B' } } },
+      },
+    });
+  }
+
+  function renderPeers(p, meta) {
+    if (!p || !p.states || !p.states.length) { show('peers-pending'); return; }
+    if (meta && meta.stale) show('peers-stale');
+    show('peers-wrap');
+    const rows = p.states.slice();
+    const labels = rows.map(s => s.name);
+    const values = rows.map(s => s.per_capita);
+    const colors = rows.map(s => s.fips === '13000' ? B.navy : B.navySoft);
+    if (p.us_per_capita != null) { labels.push('United States'); values.push(p.us_per_capita); colors.push(B.peachDeep); }
+    const ctx = document.getElementById('pce-peers').getContext('2d');
+    new Chart(ctx, {
+      type: 'bar',
+      data: { labels, datasets: [{ label: 'Per-capita PCE ($)', data: values, backgroundColor: colors, borderWidth: 0 }] },
+      options: {
+        responsive: true, maintainAspectRatio: false,
+        scales: {
+          x: { grid: { display: false }, ticks: { color: B.navy, font: { size: 11, weight: 'bold' }, maxRotation: 45, minRotation: 0 } },
+          y: { beginAtZero: false, grid: { color: B.grid, borderDash: [3,4] }, ticks: { color: B.navy, font: { size: 11 }, callback: v => '$' + (v/1000).toFixed(0) + 'K' } },
+        },
+        plugins: { legend: { display: false }, tooltip: { callbacks: { label: it => money(it.parsed.y) + ' per resident' } } },
+      },
+    });
+  }
+
+  function renderElectricity(e, meta) {
+    if (!e || !e.months || !e.months.length) { show('elec-pending'); return; }
+    if (meta && meta.stale) show('elec-stale');
+    show('elec-wrap');
+    const labels = e.months.map(fmtMonth);
+    const ctx = document.getElementById('electricity').getContext('2d');
+    new Chart(ctx, {
+      data: {
+        labels,
+        datasets: [
+          { type: 'bar', label: 'Residential sales (GWh)', data: e.sales_gwh, backgroundColor: 'rgba(58,141,141,0.45)', borderWidth: 0, yAxisID: 'y1', order: 2 },
+          { type: 'line', label: 'Avg price (¢/kWh)', data: e.price_cents_kwh, borderColor: B.peachDeep, backgroundColor: 'transparent', borderWidth: 2.5, pointRadius: 0, tension: 0.3, yAxisID: 'y2', order: 1 },
+        ],
+      },
+      options: {
+        responsive: true, maintainAspectRatio: false,
+        scales: {
+          x:  { grid: { display: false }, ticks: { color: B.navy, font: { size: 10 }, maxRotation: 45, autoSkip: true, maxTicksLimit: 14 } },
+          y1: { position: 'left',  beginAtZero: true, grid: { color: B.grid, borderDash: [3,4] }, ticks: { color: B.teal, font: { size: 11 }, callback: v => v.toFixed(0) }, title: { display: true, text: 'Sales (GWh)', color: B.teal, font: { weight: 'bold' } } },
+          y2: { position: 'right', beginAtZero: false, grid: { display: false }, ticks: { color: B.peachDeep, font: { size: 11 }, callback: v => v.toFixed(0) + '¢' }, title: { display: true, text: 'Price (¢/kWh)', color: B.peachDeep, font: { weight: 'bold' } } },
+        },
+        plugins: { legend: { position: 'bottom', labels: { color: B.navy, font: { size: 12, weight: 'bold' }, padding: 12 } },
+          tooltip: { mode: 'index', intersect: false, callbacks: { title: it => fmtMonthLong(e.months[it[0].dataIndex]) } } },
+      },
+    });
+  }
+
+  function renderRealWages(rw, meta) {
+    const series = rw && (rw.index || rw.real_wage_index || rw.values);
+    if (!rw || !rw.months || !series) { show('rw-pending'); return; }
+    if (meta && meta.stale) show('rw-stale');
+    show('rw-wrap');
+    const ctx = document.getElementById('real-wages').getContext('2d');
+    new Chart(ctx, {
+      type: 'line',
+      data: { labels: rw.months.map(fmtMonth), datasets: [{ label: 'Real-wage index', data: series, borderColor: B.teal, backgroundColor: 'rgba(58,141,141,0.12)', fill: true, tension: 0.25, pointRadius: 0, borderWidth: 2.5 }] },
+      options: {
+        responsive: true, maintainAspectRatio: false,
+        scales: {
+          x: { grid: { display: false }, ticks: { color: B.navy, font: { size: 10 }, maxRotation: 45, autoSkip: true, maxTicksLimit: 12 } },
+          y: { beginAtZero: false, grid: { color: B.grid, borderDash: [3,4] }, ticks: { color: B.navy, font: { size: 11 } } },
+        },
+        plugins: { legend: { display: false }, tooltip: { callbacks: { title: it => fmtMonthLong(rw.months[it[0].dataIndex]) } } },
+      },
+    });
+  }
+
+  function renderSalesTax(t, meta) {
+    if (!t || !t.quarters || !t.quarters.length) { show('tax-pending'); return; }
+    if (meta && meta.stale) show('tax-stale');
+    show('tax-wrap');
+    const ctx = document.getElementById('sales-tax').getContext('2d');
+    new Chart(ctx, {
+      type: 'line',
+      data: { labels: t.quarters, datasets: [{ label: 'Sales tax', data: t.values_musd, borderColor: B.navy, backgroundColor: 'rgba(26,58,92,0.10)', fill: true, tension: 0.2, pointRadius: 0, borderWidth: 2.5 }] },
+      options: {
+        responsive: true, maintainAspectRatio: false,
+        scales: {
+          x: { grid: { display: false }, ticks: { color: B.navy, font: { size: 10 }, maxRotation: 45, autoSkip: true, maxTicksLimit: 12 } },
+          y: { beginAtZero: false, grid: { color: B.grid, borderDash: [3,4] }, ticks: { color: B.navy, font: { size: 11 } } },
+        },
+        plugins: { legend: { display: false } },
+      },
+    });
+  }
+
+  document.addEventListener('DOMContentLoaded', () => {
+    init().catch(err => {
+      console.error('consumer init failed:', err);
+      document.querySelector('main').insertAdjacentHTML('beforeend',
+        '<div style="padding:20px; color:var(--coral); font-weight:600;">Failed to load consumer data. Check console.</div>');
+    });
+  });
+})();
+</script>
+</body>
+</html>
