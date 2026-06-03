@@ -4,8 +4,8 @@ Output: data/film.json (replaces fixture).
 
 Data sources by section:
   • employment trend (12 yrs)        — BLS QCEW annual CSV slices, NAICS 5121, GA (FIPS 13000)
-  • state comparison (latest year)   — BEA Regional SAGDP2N, NAICS 512 (Motion picture & sound recording), all states
-  • production spend trend           — BEA Regional SAGDP2N, NAICS 512, GA only, 12-yr timeseries
+  • state comparison (latest year)   — BEA Regional SAGDP2, NAICS 512 (Motion picture & sound recording), all states
+  • production spend trend           — BEA Regional SAGDP2, NAICS 512, GA only, 12-yr timeseries
                                        (industry GDP — comparable, not the DECD "production spend" $5.5B figure)
   • production spend HEADLINE only   — Tavily search → DECD annual press release (latest year)
   • tax credits issued (latest year) — Tavily search → GA Department of Audits & Accounts report
@@ -160,7 +160,7 @@ def fetch_qcew_employment_naics5121(start_year, end_year):
 
 
 # ---------------------------------------------------------------------------
-# BEA Regional API — SAGDP2N (GDP by state), NAICS 512 (Motion picture & sound recording)
+# BEA Regional API — SAGDP2 (GDP by state), NAICS 512 (Motion picture & sound recording)
 # ---------------------------------------------------------------------------
 BEA_URL = "https://apps.bea.gov/api/data"
 
@@ -215,14 +215,14 @@ def bea_get(params):
 
 
 def bea_find_motion_picture_linecode():
-    """Look up the SAGDP2N LineCode whose description matches NAICS 512
+    """Look up the SAGDP2 LineCode whose description matches NAICS 512
     (Motion picture and sound recording industries).
     """
     res = bea_get({
         "method": "GetParameterValuesFiltered",
         "datasetname": "Regional",
         "TargetParameter": "LineCode",
-        "TableName": "SAGDP2N",
+        "TableName": "SAGDP2",
     })
     values = res.get("ParamValue", []) if isinstance(res, dict) else []
     if not isinstance(values, list):
@@ -233,18 +233,18 @@ def bea_find_motion_picture_linecode():
         if "motion picture" in desc.lower() and "sound" in desc.lower():
             print(f"      [BEA] LineCode for NAICS 512: {v.get('Key')} → \"{desc}\"")
             return str(v.get("Key"))
-    raise RuntimeError("Could not find LineCode for 'Motion picture and sound recording' in SAGDP2N")
+    raise RuntimeError("Could not find LineCode for 'Motion picture and sound recording' in SAGDP2")
 
 
 def bea_fetch_sagdp2n_series(line_code, geo_fips, years):
-    """Fetch SAGDP2N series for the given LineCode + GeoFips + years.
+    """Fetch SAGDP2 series for the given LineCode + GeoFips + years.
     Returns list of (year, value_millions_of_dollars).
-    SAGDP2N values are reported in millions of current dollars.
+    SAGDP2 values are reported in millions of current dollars.
     """
     res = bea_get({
         "method": "GetData",
         "datasetname": "Regional",
-        "TableName": "SAGDP2N",
+        "TableName": "SAGDP2",
         "LineCode": line_code,
         "GeoFips": geo_fips,
         "Year": ",".join(str(y) for y in years),
@@ -265,13 +265,13 @@ def bea_fetch_sagdp2n_series(line_code, geo_fips, years):
 
 
 def bea_fetch_state_comparison(line_code, year):
-    """Fetch SAGDP2N for ALL states for a single year. Returns list of
+    """Fetch SAGDP2 for ALL states for a single year. Returns list of
     {fips, abbr, name, value_m_usd} sorted descending by value.
     """
     res = bea_get({
         "method": "GetData",
         "datasetname": "Regional",
-        "TableName": "SAGDP2N",
+        "TableName": "SAGDP2",
         "LineCode": line_code,
         "GeoFips": "STATE",
         "Year": str(year),
@@ -522,7 +522,7 @@ def main():
     except Exception as e:
         print(f"      ERROR: BLS QCEW fetch failed ({e}) — preserving existing employment values.", file=sys.stderr)
 
-    # ----- 2 & 3) BEA SAGDP2N: GA timeseries + state comparison -----
+    # ----- 2 & 3) BEA SAGDP2: GA timeseries + state comparison -----
     if not BEA_API_KEY:
         print(f"\n[2-3/5] BEA Regional — SKIPPED (no BEA_API_KEY)", file=sys.stderr)
     else:
@@ -534,13 +534,13 @@ def main():
 
         if line_code:
             # ----- 2) GA timeseries: industry GDP (proxy for "production spend") -----
-            print(f"\n[2/5] BEA SAGDP2N NAICS 512 GDP — GA, {START_YEAR}-{END_YEAR}:")
+            print(f"\n[2/5] BEA SAGDP2 NAICS 512 GDP — GA, {START_YEAR}-{END_YEAR}:")
             try:
                 ga_years = list(range(START_YEAR, END_YEAR + 1))
                 ga_series = bea_fetch_sagdp2n_series(line_code, GA_AREA_FIPS, ga_years)
                 if ga_series:
                     years      = [y for y, _ in ga_series]
-                    # BEA SAGDP2N is in millions; convert to billions for the chart
+                    # BEA SAGDP2 is in millions; convert to billions for the chart
                     spend_b    = [round(v / 1000.0, 3) for _, v in ga_series]
                     out["trends"]["years"]              = years
                     out["trends"]["production_spend_b"] = spend_b
@@ -561,7 +561,7 @@ def main():
                     ) if prior_b else None
                     meta["production_spend"] = {
                         "last_updated": TODAY_ISO,
-                        "source": "BEA Regional SAGDP2N — NAICS 512 (Motion picture and sound recording industries), GA",
+                        "source": "BEA Regional SAGDP2 — NAICS 512 (Motion picture and sound recording industries), GA",
                         "metric_note": "Industry GDP (value-added). Distinct from DECD's gross production spend figure.",
                         "coverage_years": [years[0], years[-1]],
                     }
@@ -570,7 +570,7 @@ def main():
                 print(f"      ERROR: BEA GA timeseries fetch failed ({e}) — preserving existing trend.", file=sys.stderr)
 
             # ----- 3) State comparison: all 50 states for the latest available year -----
-            print(f"\n[3/5] BEA SAGDP2N NAICS 512 GDP — all states, latest year:")
+            print(f"\n[3/5] BEA SAGDP2 NAICS 512 GDP — all states, latest year:")
             try:
                 state_rows = bea_fetch_state_comparison(line_code, END_YEAR)
                 if not state_rows and END_YEAR > 2000:
@@ -609,7 +609,7 @@ def main():
                         out["kpis"]["national_rank"] = ga_rank
                     meta["state_comparison"] = {
                         "last_updated": TODAY_ISO,
-                        "source": "BEA Regional SAGDP2N — NAICS 512 (Motion picture & sound recording industries) GDP by state",
+                        "source": "BEA Regional SAGDP2 — NAICS 512 (Motion picture & sound recording industries) GDP by state",
                         "metric_label": "Industry GDP (value-added, $B)",
                         "year": END_YEAR if state_rows else END_YEAR - 1,
                     }

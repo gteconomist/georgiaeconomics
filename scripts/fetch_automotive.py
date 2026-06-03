@@ -5,9 +5,9 @@ Output: data/automotive.json (replaces fixture once a live section lands).
 Data sources by section:
   • employment trend (12 yrs)        — BLS QCEW annual CSV slices, NAICS 3361+3362+3363, GA (area 13000)
                                        (motor vehicle manufacturing + bodies/trailers + parts, summed)
-  • state comparison (latest year)   — BEA Regional SAGDP2N, NAICS 3361MV ("Motor vehicles, bodies and
+  • state comparison (latest year)   — BEA Regional SAGDP2, NAICS 3361MV ("Motor vehicles, bodies and
                                        trailers, and parts manufacturing"), all states
-  • industry GDP trend (12 yrs)      — BEA Regional SAGDP2N, same LineCode, GA only timeseries
+  • industry GDP trend (12 yrs)      — BEA Regional SAGDP2, same LineCode, GA only timeseries
   • establishment counts             — Census County Business Patterns (CBP), NAICS 3361/3362/3363, GA
                                        (latest available year — typically lags ~18 months)
   • plant milestones + investment $  — Tavily search → state press releases, AJC, Reuters, etc.
@@ -181,7 +181,7 @@ def fetch_qcew_auto_employment(start_year, end_year):
 
 
 # ---------------------------------------------------------------------------
-# BEA Regional API — SAGDP2N, "Motor vehicles, bodies and trailers, and parts mfg"
+# BEA Regional API — SAGDP2, "Motor vehicles, bodies and trailers, and parts mfg"
 # ---------------------------------------------------------------------------
 BEA_URL = "https://apps.bea.gov/api/data"
 
@@ -231,15 +231,15 @@ def bea_get(params):
 
 
 def bea_find_motor_vehicle_linecode():
-    """Find the SAGDP2N LineCode whose description is the auto-manufacturing aggregate:
+    """Find the SAGDP2 LineCode whose description is the auto-manufacturing aggregate:
     'Motor vehicles, bodies and trailers, and parts manufacturing'
-    (NAICS 3361-3363 rolled up — the only motor-vehicle line published in SAGDP2N).
+    (NAICS 3361-3363 rolled up — the only motor-vehicle line published in SAGDP2).
     """
     res = bea_get({
         "method": "GetParameterValuesFiltered",
         "datasetname": "Regional",
         "TargetParameter": "LineCode",
-        "TableName": "SAGDP2N",
+        "TableName": "SAGDP2",
     })
     values = res.get("ParamValue", []) if isinstance(res, dict) else []
     if not isinstance(values, list):
@@ -258,7 +258,7 @@ def bea_find_motor_vehicle_linecode():
             candidates.append((1, key, desc))   # acceptable
 
     if not candidates:
-        raise RuntimeError("Could not find a 'Motor vehicles…' LineCode in SAGDP2N")
+        raise RuntimeError("Could not find a 'Motor vehicles…' LineCode in SAGDP2")
 
     candidates.sort()
     rank, key, desc = candidates[0]
@@ -270,7 +270,7 @@ def bea_fetch_sagdp2n_series(line_code, geo_fips, years):
     res = bea_get({
         "method": "GetData",
         "datasetname": "Regional",
-        "TableName": "SAGDP2N",
+        "TableName": "SAGDP2",
         "LineCode": line_code,
         "GeoFips": geo_fips,
         "Year": ",".join(str(y) for y in years),
@@ -294,7 +294,7 @@ def bea_fetch_state_comparison(line_code, year):
     res = bea_get({
         "method": "GetData",
         "datasetname": "Regional",
-        "TableName": "SAGDP2N",
+        "TableName": "SAGDP2",
         "LineCode": line_code,
         "GeoFips": "STATE",
         "Year": str(year),
@@ -598,7 +598,7 @@ def main():
     except Exception as e:
         print(f"      ERROR: BLS QCEW fetch failed ({e}) — preserving existing.", file=sys.stderr)
 
-    # ----- 2 & 3) BEA SAGDP2N: industry GDP timeseries + state comparison -----
+    # ----- 2 & 3) BEA SAGDP2: industry GDP timeseries + state comparison -----
     if not BEA_API_KEY:
         print(f"\n[2-3/5] BEA Regional — SKIPPED (no BEA_API_KEY)", file=sys.stderr)
     else:
@@ -610,7 +610,7 @@ def main():
 
         if line_code:
             # ----- 2) GA timeseries -----
-            print(f"\n[2/5] BEA SAGDP2N motor-vehicle GDP — GA, {START_YEAR}-{END_YEAR}:")
+            print(f"\n[2/5] BEA SAGDP2 motor-vehicle GDP — GA, {START_YEAR}-{END_YEAR}:")
             try:
                 ga_years = list(range(START_YEAR, END_YEAR + 1))
                 ga_series = bea_fetch_sagdp2n_series(line_code, GA_AREA_FIPS, ga_years)
@@ -627,7 +627,7 @@ def main():
                     ) if prior_b else None
                     meta["industry_gdp"] = {
                         "last_updated": TODAY_ISO,
-                        "source": "BEA Regional SAGDP2N — motor vehicles, bodies and trailers, and parts manufacturing, GA",
+                        "source": "BEA Regional SAGDP2 — motor vehicles, bodies and trailers, and parts manufacturing, GA",
                         "metric_note": "Industry value-added (GDP). NAICS 3361 + 3362 + 3363 rolled up.",
                         "coverage_years": [years[0], years[-1]],
                         "line_code": line_code,
@@ -637,7 +637,7 @@ def main():
                 print(f"      ERROR: BEA GA timeseries fetch failed ({e})", file=sys.stderr)
 
             # ----- 3) State comparison -----
-            print(f"\n[3/5] BEA SAGDP2N motor-vehicle GDP — all states, latest year:")
+            print(f"\n[3/5] BEA SAGDP2 motor-vehicle GDP — all states, latest year:")
             try:
                 state_rows = bea_fetch_state_comparison(line_code, END_YEAR)
                 if not state_rows and END_YEAR > 2000:
@@ -674,7 +674,7 @@ def main():
                         out["kpis"]["national_rank"] = ga_rank
                     meta["state_comparison"] = {
                         "last_updated": TODAY_ISO,
-                        "source": "BEA Regional SAGDP2N — motor-vehicle manufacturing GDP by state",
+                        "source": "BEA Regional SAGDP2 — motor-vehicle manufacturing GDP by state",
                         "metric_label": "Industry GDP (value-added, $B)",
                         "year": END_YEAR if state_rows else END_YEAR - 1,
                     }

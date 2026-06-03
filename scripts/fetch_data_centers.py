@@ -6,9 +6,9 @@ Data sources by section:
   • employment trend (12 yrs)        — BLS QCEW annual CSV slices, NAICS 518210
                                        (Data Processing, Hosting, and Related Services), GA (area 13000)
   • wages trend (12 yrs)             — BLS QCEW avg weekly wage, same NAICS, plus all-private GA
-  • industry GDP trend (12 yrs)      — BEA Regional SAGDP2N, "Information" sector LineCode, GA
+  • industry GDP trend (12 yrs)      — BEA Regional SAGDP2, "Information" sector LineCode, GA
                                        (NOTE: broader than data centers — page calls this out)
-  • state comparison (latest year)   — BEA Regional SAGDP2N, Information sector, all states
+  • state comparison (latest year)   — BEA Regional SAGDP2, Information sector, all states
   • establishment counts             — Census County Business Patterns (CBP), NAICS 518210, GA
                                        (state-level, lags ~18 months)
   • facilities + counties (static)   — Costar export at data/seeds/costar_data_centers_ga_*.xlsx
@@ -193,7 +193,7 @@ def fetch_qcew_dc_employment_and_wages(start_year, end_year):
 
 
 # ---------------------------------------------------------------------------
-# BEA Regional API — SAGDP2N, Information sector
+# BEA Regional API — SAGDP2, Information sector
 # ---------------------------------------------------------------------------
 BEA_URL = "https://apps.bea.gov/api/data"
 
@@ -230,7 +230,7 @@ def bea_get(params):
 
 
 def bea_find_information_linecode():
-    """Find SAGDP2N LineCode whose description is 'Information' (the broader sector
+    """Find SAGDP2 LineCode whose description is 'Information' (the broader sector
     that contains NAICS 518210). BEA reshuffles codes occasionally, so look up
     dynamically rather than hardcoding.
     """
@@ -238,7 +238,7 @@ def bea_find_information_linecode():
         "method": "GetParameterValuesFiltered",
         "datasetname": "Regional",
         "TargetParameter": "LineCode",
-        "TableName": "SAGDP2N",
+        "TableName": "SAGDP2",
     })
     values = res.get("ParamValue", []) if isinstance(res, dict) else []
     if not isinstance(values, list):
@@ -246,18 +246,22 @@ def bea_find_information_linecode():
 
     candidates = []
     for v in values:
-        desc = (v.get("Desc") or "").strip().lower()
+        raw = (v.get("Desc") or "").strip()
+        # SAGDP2 descriptions read "[SAGDP2] Gross domestic product (GDP) by
+        # state: Information (51)" — the sector name is after the last ": ".
+        desc = raw.split(": ", 1)[-1].strip().lower() if ": " in raw else raw.lower()
         key  = str(v.get("Key", "")).strip()
         if not key:
             continue
-        # Prefer exact "information" sector header line
-        if desc == "information":
+        bare = desc.split(" (")[0].strip()   # drop trailing NAICS code, e.g. "(51)"
+        # Prefer the bare "Information" sector header over any sub-lines.
+        if bare == "information":
             candidates.append((0, key, desc))
-        elif "information" in desc and "data" in desc:
+        elif desc.startswith("information") or ("information" in desc and "data" in desc):
             candidates.append((1, key, desc))
 
     if not candidates:
-        raise RuntimeError("Could not find an 'Information' LineCode in SAGDP2N")
+        raise RuntimeError("Could not find an 'Information' LineCode in SAGDP2")
 
     candidates.sort()
     rank, key, desc = candidates[0]
@@ -269,7 +273,7 @@ def bea_fetch_sagdp2n_series(line_code, geo_fips, years):
     res = bea_get({
         "method": "GetData",
         "datasetname": "Regional",
-        "TableName": "SAGDP2N",
+        "TableName": "SAGDP2",
         "LineCode": line_code,
         "GeoFips": geo_fips,
         "Year": ",".join(str(y) for y in years),
@@ -293,7 +297,7 @@ def bea_fetch_state_comparison(line_code, year):
     res = bea_get({
         "method": "GetData",
         "datasetname": "Regional",
-        "TableName": "SAGDP2N",
+        "TableName": "SAGDP2",
         "LineCode": line_code,
         "GeoFips": "STATE",
         "Year": str(year),
@@ -687,7 +691,7 @@ def main():
     except Exception as e:
         print(f"      ERROR: BLS QCEW fetch failed ({e}) — preserving existing.", file=sys.stderr)
 
-    # ----- 2 & 3) BEA SAGDP2N: Information sector — GA series + state comparison -----
+    # ----- 2 & 3) BEA SAGDP2: Information sector — GA series + state comparison -----
     if not BEA_API_KEY:
         print(f"\n[2-3/7] BEA Regional — SKIPPED (no BEA_API_KEY)", file=sys.stderr)
     else:
@@ -698,7 +702,7 @@ def main():
             line_code = None
 
         if line_code:
-            print(f"\n[2/7] BEA SAGDP2N Information-sector GDP — GA, {START_YEAR}-{END_YEAR}:")
+            print(f"\n[2/7] BEA SAGDP2 Information-sector GDP — GA, {START_YEAR}-{END_YEAR}:")
             try:
                 ga_years = list(range(START_YEAR, END_YEAR + 1))
                 ga_series = bea_fetch_sagdp2n_series(line_code, GA_AREA_FIPS, ga_years)
@@ -713,7 +717,7 @@ def main():
                     out["kpis"]["industry_gdp_yoy_pct"]  = round((latest_b - prior_b) / prior_b * 100, 1) if prior_b else None
                     meta["industry_gdp"] = {
                         "last_updated": TODAY_ISO,
-                        "source": "BEA Regional SAGDP2N — Information sector, GA",
+                        "source": "BEA Regional SAGDP2 — Information sector, GA",
                         "metric_note": "Information sector value-added GDP (NAICS 51 — broader than data centers; includes telecom, publishing, software). Page calls this out.",
                         "coverage_years": [years[0], years[-1]],
                         "line_code": line_code,
@@ -722,7 +726,7 @@ def main():
             except Exception as e:
                 print(f"      ERROR: BEA GA timeseries fetch failed ({e})", file=sys.stderr)
 
-            print(f"\n[3/7] BEA SAGDP2N Information-sector GDP — all states, latest year:")
+            print(f"\n[3/7] BEA SAGDP2 Information-sector GDP — all states, latest year:")
             try:
                 state_rows = bea_fetch_state_comparison(line_code, END_YEAR)
                 if not state_rows and END_YEAR > 2000:
@@ -755,7 +759,7 @@ def main():
                         out["kpis"]["national_rank_information"] = ga_rank
                     meta["state_comparison"] = {
                         "last_updated": TODAY_ISO,
-                        "source": "BEA Regional SAGDP2N — Information sector GDP by state",
+                        "source": "BEA Regional SAGDP2 — Information sector GDP by state",
                         "metric_label": "Information-sector GDP (value-added, $B) — broader than data centers",
                         "year": END_YEAR if state_rows else END_YEAR - 1,
                     }
