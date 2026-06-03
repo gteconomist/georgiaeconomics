@@ -1,10 +1,10 @@
 {
-  "fetched_at": "2026-06-02",
-  "latest_year": 2024,
+  "fetched_at": "2026-06-03",
+  "latest_year": 2025,
   "_fixture": false,
   "_meta": {
     "employment": {
-      "last_updated": "2026-06-02",
+      "last_updated": "2026-06-03",
       "source": "BLS QCEW annual averages, NAICS 518210 (Data Processing, Hosting), GA (area 13000)",
       "coverage_years": [
         2014,
@@ -12,22 +12,29 @@
       ]
     },
     "industry_gdp": {
-      "last_updated": null,
-      "source": "BEA Regional SAGDP2N \u2014 Information sector, GA (caveat: broader than data centers)"
+      "last_updated": "2026-06-03",
+      "source": "BEA Regional SAGDP2 \u2014 Information sector, GA",
+      "metric_note": "Information sector value-added GDP (NAICS 51 \u2014 broader than data centers; includes telecom, publishing, software). Page calls this out.",
+      "coverage_years": [
+        2014,
+        2025
+      ],
+      "line_code": "45"
     },
     "wages": {
-      "last_updated": "2026-06-02",
+      "last_updated": "2026-06-03",
       "source": "BLS QCEW avg weekly wage, NAICS 518210 vs all-private GA"
     },
     "establishments": {
-      "last_updated": "2026-06-02",
+      "last_updated": "2026-06-03",
       "source": "Census CBP 2023 \u2014 NAICS 518210, GA",
       "year": 2023
     },
     "state_comparison": {
-      "last_updated": null,
-      "source": "BEA SAGDP2N \u2014 Information sector by state",
-      "year": 2024
+      "last_updated": "2026-06-03",
+      "source": "BEA Regional SAGDP2 \u2014 Information sector GDP by state",
+      "metric_label": "Information-sector GDP (value-added, $B) \u2014 broader than data centers",
+      "year": 2025
     },
     "mw_peer_states": {
       "last_updated": null,
@@ -50,11 +57,11 @@
       "psc_headline_source": "https://www.georgiapower.com/news-hub/press-releases/georgia-public-service-commission-approves-plan-to-meet-the-energy-needs-of-a-growing-georgia.html"
     },
     "water": {
-      "last_updated": "2026-06-02",
+      "last_updated": "2026-06-03",
       "source": "GA EPD water-withdrawal permits + MW-based modeled remainder"
     },
     "policy": {
-      "last_updated": "2026-06-02",
+      "last_updated": "2026-06-03",
       "source": "GA legis.ga.gov + AJC + Georgia Recorder (Tavily); exemption timeline curated."
     },
     "pending_announcements": {
@@ -71,12 +78,12 @@
     "n_facilities_total": 138,
     "employment_latest_k": 24.62,
     "employment_yoy_pct": 0.4,
-    "industry_gdp_latest_b": 33.1,
-    "industry_gdp_yoy_pct": 8.5,
+    "industry_gdp_latest_b": 53.68,
+    "industry_gdp_yoy_pct": 0.9,
     "avg_weekly_wage": 3304,
     "wage_vs_private_ratio": 2.32,
     "establishments_latest": 567,
-    "national_rank_information": 12,
+    "national_rank_information": 6,
     "national_rank_mw": 5,
     "rba_existing_sf": 16168125,
     "exemption_forgone_revenue_m": 215.0,
@@ -85,7 +92,6 @@
   },
   "trends": {
     "years": [
-      2013,
       2014,
       2015,
       2016,
@@ -96,7 +102,8 @@
       2021,
       2022,
       2023,
-      2024
+      2024,
+      2025
     ],
     "employment_k": [
       7.95,
@@ -127,18 +134,18 @@
       2025
     ],
     "gdp_b": [
-      18.2,
-      19.0,
-      20.4,
-      21.6,
-      22.5,
-      23.4,
-      24.2,
-      25.0,
-      26.5,
-      28.2,
-      30.5,
-      33.1
+      35.966,
+      39.964,
+      45.733,
+      48.431,
+      46.128,
+      51.341,
+      48.565,
+      53.642,
+      53.247,
+      50.65,
+      53.176,
+      53.68
     ],
     "wages_weekly": [
       1880,
@@ -191,72 +198,72 @@
     {
       "state": "California",
       "abbr": "CA",
-      "gdp_b": 425.0,
+      "gdp_b": 480.61,
       "rank": 1,
       "color": "#1a3a5c"
     },
     {
       "state": "New York",
       "abbr": "NY",
-      "gdp_b": 215.0,
+      "gdp_b": 208.64,
       "rank": 2,
       "color": "#3a8d8d"
     },
     {
       "state": "Washington",
       "abbr": "WA",
-      "gdp_b": 175.0,
+      "gdp_b": 146.85,
       "rank": 3,
       "color": "#9b8b6a"
     },
     {
       "state": "Texas",
       "abbr": "TX",
-      "gdp_b": 145.0,
+      "gdp_b": 111.52,
       "rank": 4,
-      "color": "#9b8b6a"
-    },
-    {
-      "state": "Virginia",
-      "abbr": "VA",
-      "gdp_b": 75.0,
-      "rank": 5,
-      "color": "#9b8b6a"
-    },
-    {
-      "state": "Massachusetts",
-      "abbr": "MA",
-      "gdp_b": 68.0,
-      "rank": 6,
-      "color": "#9b8b6a"
-    },
-    {
-      "state": "Illinois",
-      "abbr": "IL",
-      "gdp_b": 62.0,
-      "rank": 7,
-      "color": "#9b8b6a"
-    },
-    {
-      "state": "New Jersey",
-      "abbr": "NJ",
-      "gdp_b": 55.0,
-      "rank": 8,
       "color": "#9b8b6a"
     },
     {
       "state": "Florida",
       "abbr": "FL",
-      "gdp_b": 42.0,
-      "rank": 9,
+      "gdp_b": 63.42,
+      "rank": 5,
       "color": "#9b8b6a"
     },
     {
       "state": "Georgia",
       "abbr": "GA",
-      "gdp_b": 33.1,
-      "rank": 12,
+      "gdp_b": 53.68,
+      "rank": 6,
       "color": "#c46b3a"
+    },
+    {
+      "state": "Massachusetts",
+      "abbr": "MA",
+      "gdp_b": 52.53,
+      "rank": 7,
+      "color": "#9b8b6a"
+    },
+    {
+      "state": "Illinois",
+      "abbr": "IL",
+      "gdp_b": 51.04,
+      "rank": 8,
+      "color": "#9b8b6a"
+    },
+    {
+      "state": "Pennsylvania",
+      "abbr": "PA",
+      "gdp_b": 43.6,
+      "rank": 9,
+      "color": "#9b8b6a"
+    },
+    {
+      "state": "New Jersey",
+      "abbr": "NJ",
+      "gdp_b": 42.06,
+      "rank": 10,
+      "color": "#9b8b6a"
     }
   ],
   "mw_peer_states": [
@@ -5005,7 +5012,7 @@
     "exemption_forgone_revenue_m": 215.0,
     "exemption_forgone_revenue_year": 2024
   },
-  "source_summary": "Live sources updated 2026-06-02: employment, wages, establishments, load_forecast, water, policy, pending_announcements. Stale or static: industry_gdp, state_comparison, mw_peer_states, facilities, counties.",
+  "source_summary": "Live sources updated 2026-06-03: employment, industry_gdp, wages, establishments, state_comparison, water, policy. Stale or static: mw_peer_states, facilities, counties, load_forecast, pending_announcements.",
   "pending_announcements": [
     {
       "title": "Georgia Power\u2019s data center build-out raises fears of eminent domain",
