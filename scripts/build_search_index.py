@@ -37,12 +37,12 @@ STATIC = [
     ("State GDP", "/gdp/", "Topic", "gdp output economy per capita sectors bea"),
     ("Migration", "/migration/", "Topic", "migration movers domestic international irs soi inflow outflow"),
     ("Inflation", "/inflation/", "Topic", "inflation cpi prices gas gasoline atlanta south real wages"),
-    ("Trade & Logistics", "/trade/", "Topic", "trade logistics port savannah brunswick exports cargo teu"),
     ("Economic Outlook", "/outlook/", "Topic", "outlook forecast business cycle index recession projection"),
     ("Agriculture", "/industries/agriculture/", "Industry", "agriculture farm broilers peanuts pecans cotton blueberries usda nass"),
     ("Automotive & EV", "/industries/automotive/", "Industry", "automotive ev electric vehicle kia hyundai metaplant suppliers"),
     ("Data Centers", "/industries/data-centers/", "Industry", "data centers megawatts capacity georgia power hyperscale"),
     ("Film Industry", "/industries/film/", "Industry", "film movie production spend motion picture studios"),
+    ("Trade & Logistics", "/trade/", "Industry", "trade logistics port savannah brunswick exports cargo teu"),
     ("Directory", "/directory/", "Page", "directory index sitemap all pages"),
     ("About", "/about/", "Page", "about methodology sources data"),
 ]

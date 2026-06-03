@@ -981,6 +981,12 @@
    "keywords": "film movie production spend motion picture studios"
   },
   {
+   "title": "Trade & Logistics",
+   "url": "/trade/",
+   "kind": "Industry",
+   "keywords": "trade logistics port savannah brunswick exports cargo teu"
+  },
+  {
    "title": "Albany metro",
    "url": "/msa/albany/",
    "kind": "Metro",
@@ -1135,12 +1141,6 @@
    "url": "/gdp/",
    "kind": "Topic",
    "keywords": "gdp output economy per capita sectors bea"
-  },
-  {
-   "title": "Trade & Logistics",
-   "url": "/trade/",
-   "kind": "Topic",
-   "keywords": "trade logistics port savannah brunswick exports cargo teu"
   }
  ]
 }

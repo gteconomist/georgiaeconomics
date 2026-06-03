@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <title>About | Georgia Economics</title>
-<meta name="description" content="Georgia Economics is a live data dashboard for the Peach State — county heat maps, metro comparisons, and the industries that make Georgia distinctive (logistic">
+<meta name="description" content="About Georgia Economics — a live, public-data view of Georgia's economy across the state, 14 metros, and all 159 counties. Sources, methodology, and update cadence. A product of Economic Impact Group.">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <!-- GEN:HEAD -->
 <link rel="stylesheet" href="/styles.css">
@@ -31,7 +31,6 @@
         <div class="nav-menu">
           <a href="/counties/">Counties</a>
           <a href="/msa/">Metros</a>
-          <a href="/population/">Population</a>
         </div>
       </div>
       <div class="nav-group" data-axis="topics">
@@ -40,9 +39,9 @@
           <a href="/labor/">Labor</a>
           <a href="/housing/">Housing</a>
           <a href="/gdp/">GDP</a>
+          <a href="/population/">Population</a>
           <a href="/migration/">Migration</a>
           <a href="/inflation/">Inflation</a>
-          <a href="/trade/">Trade &amp; Logistics</a>
           <a href="/outlook/">Outlook</a>
         </div>
       </div>
@@ -53,6 +52,7 @@
           <a href="/industries/automotive/">Automotive &amp; EV</a>
           <a href="/industries/data-centers/">Data Centers</a>
           <a href="/industries/film/">Film</a>
+          <a href="/trade/">Trade &amp; Logistics</a>
         </div>
       </div>
       <a class="nav-top nav-link" href="/directory/">Directory</a>
@@ -69,14 +69,63 @@
 <main>
   <section class="page-header">
     <h1>About Georgia Economics</h1>
-    <div class="subtitle">Georgia Economics is a live data dashboard for the Peach State — county heat maps, metro comparisons, and the industries that make Georgia distinctive (logistics, film, agriculture, automotive). Sister site to <a href="https://economicsguru.com">economicsguru.com</a>. Sources: BLS, FRED, BEA, Census, and Georgia state agencies. Methodology pages forthcoming for each topic.</div>
+    <div class="subtitle">A live, public-data view of Georgia's economy — statewide, across all 14 metros, and down to every one of the 159 counties.</div>
   </section>
 
-  <div class="notice">
-    <strong>Page in development.</strong> The data pipeline for this topic is being wired up. In the meantime, the <a href="/counties/">county heat map</a> is live with monthly BLS LAUS data for all 159 Georgia counties.
+  <div class="chart-panel" style="margin-top: 22px;">
+    <h2>What this is</h2>
+    <p style="margin:0 0 12px;">Georgia Economics turns the public economic record for the Peach State into something you can actually read at a glance. Instead of hunting across federal data portals, you get county heat maps, metro comparisons, statewide indicators, and the sectors that make Georgia distinctive — logistics, film, agriculture, and automotive — all in one place, refreshed automatically.</p>
+    <p style="margin:0;">It is the sister site to <a href="https://economicsguru.com">economicsguru.com</a> and shares its typography and palette. Everything here is built from primary, free-to-access government data; there are no proprietary or paywalled figures, and the site carries no advertising.</p>
   </div>
 
-  <p style="margin-top:24px;"><a href="/">&larr; Back to home</a></p>
+  <div class="chart-panel" style="margin-top: 22px;">
+    <h2>What's covered</h2>
+    <p class="sub">Four ways into the same economy.</p>
+    <div class="stat-grid">
+      <div class="stat-card"><div class="label">Counties</div><div class="value">159</div></div>
+      <div class="stat-card"><div class="label">Metro areas</div><div class="value">14</div></div>
+      <div class="stat-card"><div class="label">Statewide topics</div><div class="value">7</div></div>
+      <div class="stat-card"><div class="label">Featured industries</div><div class="value">5</div></div>
+    </div>
+    <p style="margin:12px 0 0;">Topics span <a href="/labor/">labor</a>, <a href="/housing/">housing</a>, <a href="/gdp/">GDP</a>, <a href="/population/">population</a>, <a href="/migration/">migration</a>, <a href="/inflation/">inflation</a>, and the <a href="/outlook/">economic outlook</a>. Featured industries — <a href="/industries/agriculture/">agriculture</a>, <a href="/industries/automotive/">automotive &amp; EV</a>, <a href="/industries/data-centers/">data centers</a>, <a href="/industries/film/">film</a>, and <a href="/trade/">trade &amp; logistics</a> — cover the sectors that make Georgia distinctive. Browse everything from the <a href="/directory/">directory</a>, or jump straight to a place from the home-page map.</p>
+  </div>
+
+  <div class="chart-panel" style="margin-top: 22px;">
+    <h2>Where the data comes from</h2>
+    <p class="sub">Every figure traces back to a primary public source.</p>
+    <div class="data-table-wrap">
+      <table class="data-table">
+        <thead><tr><th>Area</th><th>Primary sources</th></tr></thead>
+        <tbody>
+          <tr><td class="row-name">Labor &amp; unemployment</td><td>U.S. Bureau of Labor Statistics — LAUS (county), CES &amp; QCEW (payrolls, sectors, wages)</td></tr>
+          <tr><td class="row-name">Housing</td><td>FHFA House Price Index, Census ACS (values, rent, ownership), Census Building Permits Survey (via FRED)</td></tr>
+          <tr><td class="row-name">GDP &amp; output</td><td>U.S. Bureau of Economic Analysis — SAGDP &amp; CAGDP (state, metro, county)</td></tr>
+          <tr><td class="row-name">Population &amp; migration</td><td>U.S. Census Bureau Population Estimates Program; IRS Statistics of Income (county-to-county flows)</td></tr>
+          <tr><td class="row-name">Inflation</td><td>BLS Consumer Price Index (South region &amp; Atlanta MSA) and Average Price Data (fuel)</td></tr>
+          <tr><td class="row-name">Trade &amp; logistics</td><td>Georgia Ports Authority, Hartsfield-Jackson cargo, U.S. Census trade statistics</td></tr>
+          <tr><td class="row-name">Industries</td><td>BLS QCEW, BEA, Census County Business Patterns, USDA NASS (agriculture), plus Georgia state agencies</td></tr>
+          <tr><td class="row-name">Outlook</td><td>A coincident business-cycle index and 5-year forecast modeled from the series above</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="source-note">Federal data is aggregated by the Federal Reserve's FRED where convenient. Georgia state agencies include the Department of Economic Development, the Environmental Protection Division, and the Public Service Commission.</p>
+  </div>
+
+  <div class="chart-panel" style="margin-top: 22px;">
+    <h2>How it stays current</h2>
+    <p style="margin:0;">The site is fully automated. Scheduled jobs pull each source from its public API on a regular cadence — most series monthly, GDP and several others quarterly or annually as the agencies publish — and the pages rebuild themselves from the refreshed data. When a source is temporarily unavailable, the affected section degrades gracefully rather than showing stale or blank numbers. The result is a plain, fast, static site with no logins and nothing to install.</p>
+  </div>
+
+  <div class="chart-panel" style="margin-top: 22px;">
+    <h2>Methodology &amp; limitations</h2>
+    <p style="margin:0 0 12px;">Figures are reported as their source agency publishes them, including normal revisions — economic data is routinely revised as more complete information arrives, so values can shift between visits. Geographies follow the U.S. Office of Management and Budget's metropolitan-area definitions, and metro totals are county-aggregated, so a metro that crosses the state line (Augusta, Columbus) includes its out-of-state counties.</p>
+    <p style="margin:0;">County profiles are a clean overview rather than the deep analysis on the metro report pages; where a county sits inside a metro, its profile links through to that fuller report. This site is an information resource, not investment, legal, or policy advice.</p>
+  </div>
+
+  <div class="chart-panel" style="margin-top: 22px;">
+    <h2>Who makes it</h2>
+    <p style="margin:0;">Georgia Economics is a product of <a href="https://www.economicimpact.com" target="_blank" rel="noopener">Economic Impact Group, LLC</a>, and a sister site to <a href="https://economicsguru.com">economicsguru.com</a>. Questions or corrections are welcome — the goal is an accurate, genuinely useful public picture of Georgia's economy.</p>
+  </div>
 </main>
 
 <!-- GEN:FOOTER -->
