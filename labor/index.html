@@ -5,59 +5,40 @@
 <title>Georgia Labor Market — Statewide Unemployment, Payrolls & Sectors | Georgia Economics</title>
 <meta name="description" content="Live Georgia labor market data: statewide unemployment rate, total nonfarm payrolls, sector-by-sector employment, and YoY change. Updated monthly from BLS LAUS and CES.">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- GEN:HEAD -->
 <link rel="stylesheet" href="/styles.css">
+<link rel="stylesheet" href="/assets/app.css">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700;800&display=swap" rel="stylesheet">
-
 <script defer src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
 <script defer src="https://cdn.jsdelivr.net/gh/gteconomist/economicsguru@main/assets/charts.js"></script>
-
-<style>
-  .chart-canvas-tall { position: relative; height: 340px; background: var(--chart-bg); padding: 6px; }
-  .chart-canvas-med  { position: relative; height: 380px; background: var(--chart-bg); padding: 6px; }
-
-  /* Sector table */
-  .sector-table-wrap { overflow-x: auto; }
-  table.sector-table { width: 100%; border-collapse: collapse; font-size: 14px; min-width: 580px; }
-  table.sector-table thead th {
-    text-align: left; padding: 8px 10px; background: var(--chart-bg);
-    border-bottom: 2px solid var(--navy); color: var(--navy);
-    font-weight: 700; text-transform: uppercase; letter-spacing: 0.04em; font-size: 11px;
-  }
-  table.sector-table thead th.numeric { text-align: right; }
-  table.sector-table tbody td { padding: 7px 10px; border-bottom: 1px dotted var(--border); }
-  table.sector-table tbody td.numeric { text-align: right; font-variant-numeric: tabular-nums; }
-  table.sector-table tbody tr:hover { background: var(--peach-pale); }
-  table.sector-table .sector-name { font-weight: 600; color: var(--navy); }
-  table.sector-table .yoy-up   { color: var(--teal); font-weight: 600; }
-  table.sector-table .yoy-down { color: var(--coral); font-weight: 600; }
-  table.sector-table .yoy-flat { color: var(--ink-soft); }
-
-  .source-note { font-size: 12px; color: var(--ink-soft); margin-top: 8px; font-style: italic; }
-</style>
+<script defer src="/assets/app.js"></script>
+<!-- /GEN:HEAD -->
 </head>
 <body>
 
+<!-- GEN:HEADER -->
 <header class="site-header">
   <div class="wrap">
-    <div class="brand">Georgia<span class="tag">Economics</span></div>
+    <div class="brand"><a href="/">Georgia<span class="tag">Economics</span></a></div>
     <nav>
       <a href="/">Home</a>
       <a href="/counties/">Counties</a>
       <a href="/msa/">Metros</a>
-      <a href="/labor/" class="active">Labor</a>
+      <a href="/labor/">Labor</a>
       <a href="/housing/">Housing</a>
       <a href="/about/">About</a>
     </nav>
   </div>
 </header>
+<!-- /GEN:HEADER -->
 
 <main>
   <section class="page-header">
     <h1>Georgia labor market</h1>
     <div class="subtitle">Statewide unemployment, total nonfarm payrolls, and sector-by-sector employment from BLS LAUS and CES. For the county-level cut, see <a href="/counties/">Counties</a>.</div>
-    <div class="latest">Latest data: <strong id="latest-label">—</strong></div>
+    <div class="latest">Latest data: <strong id="latest-label">&mdash;</strong></div>
   </section>
 
   <div class="notice" id="fixture-banner" style="display:none;">
@@ -68,32 +49,32 @@
   <div class="kpi-grid">
     <div class="kpi">
       <div class="label">Unemployment rate</div>
-      <div class="value" id="kpi-ur">—</div>
-      <div class="delta" id="kpi-ur-yoy">—</div>
+      <div class="value" id="kpi-ur">&mdash;</div>
+      <div class="delta" id="kpi-ur-yoy">&mdash;</div>
     </div>
     <div class="kpi">
       <div class="label">Total nonfarm payrolls</div>
-      <div class="value" id="kpi-pay">—</div>
-      <div class="delta" id="kpi-pay-yoy">—</div>
+      <div class="value" id="kpi-pay">&mdash;</div>
+      <div class="delta" id="kpi-pay-yoy">&mdash;</div>
     </div>
     <div class="kpi">
       <div class="label">Labor force</div>
-      <div class="value" id="kpi-lf">—</div>
+      <div class="value" id="kpi-lf">&mdash;</div>
       <div class="delta">Civilian, seasonally adjusted</div>
     </div>
     <div class="kpi">
       <div class="label">Fastest-growing sector</div>
-      <div class="value" id="kpi-fastest-pct">—</div>
-      <div class="delta" id="kpi-fastest-name">—</div>
+      <div class="value" id="kpi-fastest-pct">&mdash;</div>
+      <div class="delta" id="kpi-fastest-name">&mdash;</div>
     </div>
     <div class="kpi">
       <div class="label">Weakest sector</div>
-      <div class="value" id="kpi-weakest-pct">—</div>
-      <div class="delta" id="kpi-weakest-name">—</div>
+      <div class="value" id="kpi-weakest-pct">&mdash;</div>
+      <div class="delta" id="kpi-weakest-name">&mdash;</div>
     </div>
     <div class="kpi">
       <div class="label">Sectors tracked</div>
-      <div class="value" id="kpi-n-sectors">—</div>
+      <div class="value" id="kpi-n-sectors">&mdash;</div>
       <div class="delta">CES NAICS supersectors</div>
     </div>
   </div>
@@ -115,17 +96,17 @@
 
   <!-- Sector YoY bar chart -->
   <div class="chart-panel" style="margin-top: 22px;">
-    <h2>Sector Employment Growth — YoY Change</h2>
+    <h2>Sector Employment Growth &mdash; YoY Change</h2>
     <p class="sub">Year-over-year percent change in employment by NAICS supersector. Sorted from fastest growing to fastest shrinking. Bars in teal are growing; bars in coral are shrinking.</p>
     <div class="chart-canvas-med"><canvas id="sector-yoy-chart"></canvas></div>
   </div>
 
   <!-- Sector table -->
   <div class="chart-panel" style="margin-top: 22px;">
-    <h2>Employment by Sector — Latest Month</h2>
+    <h2>Employment by Sector &mdash; Latest Month</h2>
     <p class="sub">Total payrolls broken out by sector, with year-over-year change.</p>
-    <div class="sector-table-wrap">
-      <table class="sector-table">
+    <div class="data-table-wrap">
+      <table class="data-table">
         <thead><tr>
           <th>Sector</th>
           <th class="numeric">Latest (K jobs)</th>
@@ -139,10 +120,11 @@
   </div>
 </main>
 
+<!-- GEN:FOOTER -->
 <footer class="site-footer">
   <div class="wrap">
     <div>&copy; <span id="yr"></span> Georgia Economics &middot; Sister site to <a href="https://economicsguru.com">economicsguru.com</a> &middot; <a href="/about/">Methodology</a></div>
-    <div>Data refreshes monthly from BLS LAUS and CES.</div>
+    <div>Built with public data from BLS, FRED, BEA, Census, and Georgia state agencies.</div>
     <div class="eig">
       <a href="https://www.economicimpact.com" target="_blank" rel="noopener" aria-label="Economic Impact Group">
         <img src="/assets/ei_logo_NEW_200pxw.png" alt="Economic Impact Group">
@@ -151,162 +133,113 @@
     </div>
   </div>
 </footer>
+<!-- /GEN:FOOTER -->
 
 <script>
-document.getElementById('yr').textContent = new Date().getFullYear();
+(function () {
+  const B = GE.BRAND;
+  const fmtMonth = GE.fmt.month, fmtMonthLong = GE.fmt.monthLong,
+        fmtPct = GE.fmt.pct, fmtSignedPct = GE.fmt.signedPct,
+        fmtSignedPp = GE.fmt.signedPp, fmtK = GE.fmt.k;
 
-const BRAND_COLORS = {
-  navy: '#1a3a5c', peachDeep: '#c46b3a', peach: '#e8a87c',
-  mustard: '#d4a017', teal: '#3a8d8d', coral: '#d4624a',
-  green: '#6b8e3d', grid: '#b6ad8d', inkSoft: '#6b7280',
-};
+  async function init() {
+    const d = await GE.data('labor');
+    if (d._fixture) GE.show('fixture-banner');
+    GE.text('latest-label', fmtMonthLong(d.latest_label));
 
-function fmtMonth(s) {
-  const [y,m] = s.split('-').map(Number);
-  return new Date(y, m-1, 1).toLocaleString('en-US', { month: 'short', year: '2-digit' });
-}
-function fmtMonthLong(s) {
-  const [y,m] = s.split('-').map(Number);
-  return new Date(y, m-1, 1).toLocaleString('en-US', { month: 'long', year: 'numeric' });
-}
-function fmtPct(v, digits) { if (v == null) return '—'; return v.toFixed(digits == null ? 1 : digits) + '%'; }
-function fmtSignedPct(v) { if (v == null) return '—'; return (v >= 0 ? '+' : '') + v.toFixed(1) + '%'; }
-function fmtSignedPp(v)  { if (v == null) return '—'; return (v >= 0 ? '+' : '') + v.toFixed(1) + ' pp'; }
-function fmtSignedK(v)   { if (v == null) return '—'; return (v >= 0 ? '+' : '') + v.toFixed(1); }
-function fmtK(v)         { if (v == null) return '—'; return v.toLocaleString('en-US', { maximumFractionDigits: 1 }); }
+    GE.text('kpi-ur', fmtPct(d.kpis.unemployment_rate_latest));
+    const urYoy = document.getElementById('kpi-ur-yoy');
+    urYoy.textContent = fmtSignedPp(d.kpis.unemployment_rate_yoy_delta) + ' YoY';
+    urYoy.classList.add(d.kpis.unemployment_rate_yoy_delta < 0 ? 'down' : (d.kpis.unemployment_rate_yoy_delta > 0 ? 'up' : 'flat'));
 
-async function init() {
-  const res = await fetch('/data/labor.json?v=' + new Date().toISOString().slice(0, 10));
-  const d   = await res.json();
+    GE.text('kpi-pay', fmtK(d.kpis.total_payrolls_k_latest) + 'K');
+    const payYoy = document.getElementById('kpi-pay-yoy');
+    payYoy.textContent = fmtSignedPct(d.kpis.total_payrolls_yoy_pct) + ' YoY';
+    payYoy.classList.add(d.kpis.total_payrolls_yoy_pct >= 0 ? 'down' : 'up');
 
-  if (d._fixture) document.getElementById('fixture-banner').style.display = '';
+    GE.text('kpi-lf', fmtK(d.kpis.labor_force_k_latest) + 'K');
+    GE.text('kpi-fastest-pct', fmtSignedPct(d.kpis.fastest_growing_sector_yoy_pct));
+    GE.text('kpi-fastest-name', d.kpis.fastest_growing_sector || '—');
+    GE.text('kpi-weakest-pct', fmtSignedPct(d.kpis.weakest_sector_yoy_pct));
+    GE.text('kpi-weakest-name', d.kpis.weakest_sector || '—');
+    GE.text('kpi-n-sectors', (d.sectors || []).length);
 
-  document.getElementById('latest-label').textContent = fmtMonthLong(d.latest_label);
+    renderURChart(d.unemployment_rate);
+    renderPayrollsChart(d.total_payrolls_k);
+    renderSectorYoYChart(d.sectors);
+    renderSectorTable(d.sectors);
+  }
 
-  // KPI strip
-  document.getElementById('kpi-ur').textContent       = fmtPct(d.kpis.unemployment_rate_latest);
-  const urYoy = document.getElementById('kpi-ur-yoy');
-  urYoy.textContent = fmtSignedPp(d.kpis.unemployment_rate_yoy_delta) + ' YoY';
-  urYoy.classList.add(d.kpis.unemployment_rate_yoy_delta < 0 ? 'down' : (d.kpis.unemployment_rate_yoy_delta > 0 ? 'up' : 'flat'));
-
-  document.getElementById('kpi-pay').textContent      = fmtK(d.kpis.total_payrolls_k_latest) + 'K';
-  const payYoy = document.getElementById('kpi-pay-yoy');
-  payYoy.textContent = fmtSignedPct(d.kpis.total_payrolls_yoy_pct) + ' YoY';
-  payYoy.classList.add(d.kpis.total_payrolls_yoy_pct >= 0 ? 'down' : 'up');
-
-  document.getElementById('kpi-lf').textContent       = fmtK(d.kpis.labor_force_k_latest) + 'K';
-
-  document.getElementById('kpi-fastest-pct').textContent  = fmtSignedPct(d.kpis.fastest_growing_sector_yoy_pct);
-  document.getElementById('kpi-fastest-name').textContent = d.kpis.fastest_growing_sector || '—';
-
-  document.getElementById('kpi-weakest-pct').textContent  = fmtSignedPct(d.kpis.weakest_sector_yoy_pct);
-  document.getElementById('kpi-weakest-name').textContent = d.kpis.weakest_sector || '—';
-
-  document.getElementById('kpi-n-sectors').textContent = (d.sectors || []).length;
-
-  renderURChart(d.unemployment_rate);
-  renderPayrollsChart(d.total_payrolls_k);
-  renderSectorYoYChart(d.sectors);
-  renderSectorTable(d.sectors);
-}
-
-function renderURChart(series) {
-  const labels = series.map(r => fmtMonth(r[0]));
-  const values = series.map(r => r[1]);
-  const ctx = document.getElementById('ur-chart').getContext('2d');
-  new Chart(ctx, {
-    type: 'line',
-    data: { labels, datasets: [{ label: 'UR (%)', data: values, borderColor: BRAND_COLORS.navy, backgroundColor: 'rgba(26,58,92,0.10)', fill: true, tension: 0.25, pointRadius: 0, borderWidth: 2.5 }] },
-    options: {
-      responsive: true, maintainAspectRatio: false,
-      scales: {
-        x: { grid: { display: false }, ticks: { color: BRAND_COLORS.navy, font: { size: 11 }, maxRotation: 45, autoSkip: true, maxTicksLimit: 12 } },
-        y: { beginAtZero: false, grid: { color: BRAND_COLORS.grid, borderDash: [3,4] }, ticks: { color: BRAND_COLORS.navy, font: { size: 11 }, callback: v => v.toFixed(1) + '%' } },
+  function renderURChart(series) {
+    const ctx = document.getElementById('ur-chart').getContext('2d');
+    new Chart(ctx, {
+      type: 'line',
+      data: { labels: series.map(r => fmtMonth(r[0])), datasets: [{ label: 'UR (%)', data: series.map(r => r[1]), borderColor: B.navy, backgroundColor: 'rgba(26,58,92,0.10)', fill: true, tension: 0.25, pointRadius: 0, borderWidth: 2.5 }] },
+      options: {
+        responsive: true, maintainAspectRatio: false,
+        scales: {
+          x: { grid: { display: false }, ticks: { color: B.navy, font: { size: 11 }, maxRotation: 45, autoSkip: true, maxTicksLimit: 12 } },
+          y: { beginAtZero: false, grid: { color: B.grid, borderDash: [3,4] }, ticks: { color: B.navy, font: { size: 11 }, callback: v => v.toFixed(1) + '%' } },
+        },
+        plugins: { legend: { display: false }, tooltip: { callbacks: { title: it => fmtMonthLong(series[it[0].dataIndex][0]), label: it => 'UR: ' + it.parsed.y.toFixed(1) + '%' } } },
       },
-      plugins: {
-        legend: { display: false },
-        tooltip: { callbacks: { title: (it) => fmtMonthLong(series[it[0].dataIndex][0]), label: (it) => 'UR: ' + it.parsed.y.toFixed(1) + '%' } },
+    });
+  }
+
+  function renderPayrollsChart(series) {
+    const ctx = document.getElementById('payrolls-chart').getContext('2d');
+    new Chart(ctx, {
+      type: 'line',
+      data: { labels: series.map(r => fmtMonth(r[0])), datasets: [{ label: 'Payrolls (K)', data: series.map(r => r[1]), borderColor: B.peachDeep, backgroundColor: 'rgba(196,107,58,0.12)', fill: true, tension: 0.25, pointRadius: 0, borderWidth: 2.5 }] },
+      options: {
+        responsive: true, maintainAspectRatio: false,
+        scales: {
+          x: { grid: { display: false }, ticks: { color: B.navy, font: { size: 11 }, maxRotation: 45, autoSkip: true, maxTicksLimit: 12 } },
+          y: { beginAtZero: false, grid: { color: B.grid, borderDash: [3,4] }, ticks: { color: B.navy, font: { size: 11 }, callback: v => Math.round(v).toLocaleString() + 'K' } },
+        },
+        plugins: { legend: { display: false }, tooltip: { callbacks: { title: it => fmtMonthLong(series[it[0].dataIndex][0]), label: it => Math.round(it.parsed.y).toLocaleString() + 'K jobs' } } },
       },
-    },
+    });
+  }
+
+  function renderSectorYoYChart(sectors) {
+    if (!sectors || !sectors.length) return;
+    const sorted = sectors.slice().sort((a,b) => b.yoy_pct - a.yoy_pct);
+    const ctx = document.getElementById('sector-yoy-chart').getContext('2d');
+    new Chart(ctx, {
+      type: 'bar',
+      data: { labels: sorted.map(s => s.name), datasets: [{ label: 'YoY %', data: sorted.map(s => s.yoy_pct), backgroundColor: sorted.map(s => s.yoy_pct >= 0 ? B.teal : B.coral), borderWidth: 0 }] },
+      options: {
+        indexAxis: 'y', responsive: true, maintainAspectRatio: false,
+        scales: {
+          x: { grid: { color: B.grid, borderDash: [3,4] }, ticks: { color: B.navy, font: { size: 11 }, callback: v => (v > 0 ? '+' : '') + v.toFixed(1) + '%' } },
+          y: { grid: { display: false }, ticks: { color: B.navy, font: { size: 12, weight: 'bold' } } },
+        },
+        plugins: { legend: { display: false }, tooltip: { callbacks: { label: it => 'YoY: ' + (it.parsed.x >= 0 ? '+' : '') + it.parsed.x.toFixed(1) + '%' } } },
+      },
+    });
+  }
+
+  function renderSectorTable(sectors) {
+    sectors = sectors || [];
+    const sorted = sectors.slice().sort((a, b) => b.latest_k - a.latest_k);
+    document.getElementById('sector-body').innerHTML = sorted.map(s => {
+      const cls = s.yoy_pct > 0 ? 'yoy-up' : (s.yoy_pct < 0 ? 'yoy-down' : 'yoy-flat');
+      return `<tr><td class="row-name">${s.name}</td>` +
+        `<td class="numeric">${s.latest_k.toLocaleString()}</td>` +
+        `<td class="numeric ${cls}">${(s.yoy_delta_k > 0 ? '+' : '') + s.yoy_delta_k.toFixed(1)}</td>` +
+        `<td class="numeric ${cls}">${(s.yoy_pct > 0 ? '+' : '') + s.yoy_pct.toFixed(1)}%</td></tr>`;
+    }).join('');
+  }
+
+  document.addEventListener('DOMContentLoaded', () => {
+    init().catch(err => {
+      console.error('labor init failed:', err);
+      document.querySelector('main').insertAdjacentHTML('beforeend',
+        '<div style="padding:20px; color:var(--coral); font-weight:600;">Failed to load labor data. Check console.</div>');
+    });
   });
-}
-
-function renderPayrollsChart(series) {
-  const labels = series.map(r => fmtMonth(r[0]));
-  const values = series.map(r => r[1]);
-  const ctx = document.getElementById('payrolls-chart').getContext('2d');
-  new Chart(ctx, {
-    type: 'line',
-    data: { labels, datasets: [{ label: 'Payrolls (K)', data: values, borderColor: BRAND_COLORS.peachDeep, backgroundColor: 'rgba(196,107,58,0.12)', fill: true, tension: 0.25, pointRadius: 0, borderWidth: 2.5 }] },
-    options: {
-      responsive: true, maintainAspectRatio: false,
-      scales: {
-        x: { grid: { display: false }, ticks: { color: BRAND_COLORS.navy, font: { size: 11 }, maxRotation: 45, autoSkip: true, maxTicksLimit: 12 } },
-        y: { beginAtZero: false, grid: { color: BRAND_COLORS.grid, borderDash: [3,4] }, ticks: { color: BRAND_COLORS.navy, font: { size: 11 }, callback: v => Math.round(v).toLocaleString() + 'K' } },
-      },
-      plugins: {
-        legend: { display: false },
-        tooltip: { callbacks: { title: (it) => fmtMonthLong(series[it[0].dataIndex][0]), label: (it) => Math.round(it.parsed.y).toLocaleString() + 'K jobs' } },
-      },
-    },
-  });
-}
-
-function renderSectorYoYChart(sectors) {
-  if (!sectors || !sectors.length) return;
-  // Sort fastest growing -> fastest shrinking
-  const sorted = sectors.slice().sort((a,b) => b.yoy_pct - a.yoy_pct);
-  const labels = sorted.map(s => s.name);
-  const values = sorted.map(s => s.yoy_pct);
-  const colors = values.map(v => v >= 0 ? BRAND_COLORS.teal : BRAND_COLORS.coral);
-
-  const ctx = document.getElementById('sector-yoy-chart').getContext('2d');
-  new Chart(ctx, {
-    type: 'bar',
-    data: { labels, datasets: [{ label: 'YoY %', data: values, backgroundColor: colors, borderWidth: 0 }] },
-    options: {
-      indexAxis: 'y',
-      responsive: true, maintainAspectRatio: false,
-      scales: {
-        x: { grid: { color: BRAND_COLORS.grid, borderDash: [3,4] }, ticks: { color: BRAND_COLORS.navy, font: { size: 11 }, callback: v => (v > 0 ? '+' : '') + v.toFixed(1) + '%' } },
-        y: { grid: { display: false }, ticks: { color: BRAND_COLORS.navy, font: { size: 12, weight: 'bold' } } },
-      },
-      plugins: {
-        legend: { display: false },
-        tooltip: { callbacks: { label: (it) => 'YoY: ' + (it.parsed.x >= 0 ? '+' : '') + it.parsed.x.toFixed(1) + '%' } },
-      },
-    },
-  });
-}
-
-function renderSectorTable(sectors) {
-  if (!sectors) sectors = [];
-  // Sort by latest size descending
-  const sorted = sectors.slice().sort((a, b) => b.latest_k - a.latest_k);
-  const tbody = document.getElementById('sector-body');
-  tbody.innerHTML = '';
-  sorted.forEach(s => {
-    const tr = document.createElement('tr');
-    const yoyCls = s.yoy_pct > 0 ? 'yoy-up' : (s.yoy_pct < 0 ? 'yoy-down' : 'yoy-flat');
-    tr.innerHTML = `
-      <td class="sector-name">${s.name}</td>
-      <td class="numeric">${s.latest_k.toLocaleString()}</td>
-      <td class="numeric ${yoyCls}">${(s.yoy_delta_k > 0 ? '+' : '') + s.yoy_delta_k.toFixed(1)}</td>
-      <td class="numeric ${yoyCls}">${(s.yoy_pct > 0 ? '+' : '') + s.yoy_pct.toFixed(1)}%</td>
-    `;
-    tbody.appendChild(tr);
-  });
-}
-
-// Wait for DOMContentLoaded so deferred scripts have finished executing
-// before init() touches Chart / Plotly / window.gaMaps.
-document.addEventListener('DOMContentLoaded', () => {
-  init().catch(err => {
-    console.error('labor init failed:', err);
-    document.querySelector('main').insertAdjacentHTML('beforeend',
-      '<div style="padding:20px; color:var(--coral); font-weight:600;">Failed to load labor data. Check console.</div>');
-  });
-});
+})();
 </script>
 </body>
 </html>
