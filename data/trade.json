@@ -1327,7 +1327,7 @@
     }
   ],
   "ga_exports_top10_total_musd": 35268.0,
-  "fetched_at": "2026-06-02",
+  "fetched_at": "2026-06-03",
   "ga_exports_latest": [
     {
       "country": "Canada",
@@ -1400,5 +1400,112 @@
       "rank": 10
     }
   ],
-  "exports_data_year": 2025
+  "exports_data_year": 2025,
+  "exports_annual": {
+    "years": [
+      2020,
+      2021,
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "total_musd": [
+      39516.0,
+      43552.0,
+      48433.0,
+      51124.0,
+      55106.0,
+      61371.0
+    ],
+    "latest_year": 2025,
+    "latest_total_musd": 61371.0,
+    "yoy_pct": 11.4,
+    "cagr_pct": 9.2
+  },
+  "exports_by_commodity": {
+    "year": 2025,
+    "chapters": [
+      {
+        "hs2": "84",
+        "name": "Machinery & mechanical appliances",
+        "value_musd": 1087.0,
+        "share_pct": 25.6,
+        "yoy_pct": 67.3
+      },
+      {
+        "hs2": "88",
+        "name": "Aircraft & spacecraft",
+        "value_musd": 691.0,
+        "share_pct": 16.3,
+        "yoy_pct": -4.1
+      },
+      {
+        "hs2": "85",
+        "name": "Electrical machinery & equipment",
+        "value_musd": 440.0,
+        "share_pct": 10.4,
+        "yoy_pct": 2.0
+      },
+      {
+        "hs2": "87",
+        "name": "Vehicles",
+        "value_musd": 290.0,
+        "share_pct": 6.8,
+        "yoy_pct": 5.8
+      },
+      {
+        "hs2": "90",
+        "name": "Optical & medical instruments",
+        "value_musd": 203.0,
+        "share_pct": 4.8,
+        "yoy_pct": 0.3
+      },
+      {
+        "hs2": "39",
+        "name": "Plastics",
+        "value_musd": 194.0,
+        "share_pct": 4.6,
+        "yoy_pct": 14.3
+      },
+      {
+        "hs2": "48",
+        "name": "Paper & paperboard",
+        "value_musd": 146.0,
+        "share_pct": 3.4,
+        "yoy_pct": -0.7
+      },
+      {
+        "hs2": "47",
+        "name": "Wood pulp",
+        "value_musd": 120.0,
+        "share_pct": 2.8,
+        "yoy_pct": -13.6
+      },
+      {
+        "hs2": "02",
+        "name": "Meat",
+        "value_musd": 96.0,
+        "share_pct": 2.3,
+        "yoy_pct": -18.8
+      },
+      {
+        "hs2": "38",
+        "name": "Misc. chemical products",
+        "value_musd": 71.0,
+        "share_pct": 1.7,
+        "yoy_pct": -9.2
+      }
+    ],
+    "other_musd": 908.0,
+    "total_musd": 4246.0
+  },
+  "_meta": {
+    "exports_annual": {
+      "last_updated": "2026-06-03T19:34:43Z"
+    },
+    "exports_by_commodity": {
+      "last_updated": "2026-06-03T19:34:53Z"
+    }
+  }
 }
