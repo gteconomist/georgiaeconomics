@@ -87,31 +87,6 @@
     background: transparent; color: var(--ink-soft);
     border: 1px solid var(--border); cursor: not-allowed;
   }
-
-  /* Banner pointing to the new feature */
-  .report-banner {
-    margin: 16px 0 22px; padding: 14px 18px;
-    background: linear-gradient(90deg, var(--navy) 0%, var(--navy-soft) 100%);
-    color: #fff; border-radius: 4px;
-    display: flex; align-items: center; gap: 16px; flex-wrap: wrap;
-  }
-  .report-banner .icon {
-    font-family: var(--font-display); font-size: 26px; font-weight: 800;
-    color: var(--peach); line-height: 1;
-  }
-  .report-banner .copy { flex: 1; min-width: 260px; }
-  .report-banner h3 {
-    margin: 0 0 2px; font-family: var(--font-display); font-size: 16px;
-    text-transform: uppercase; letter-spacing: 0.04em; font-weight: 700;
-  }
-  .report-banner p { margin: 0; font-size: 13px; opacity: 0.9; }
-  .report-banner a.cta {
-    background: var(--peach); color: var(--navy);
-    padding: 8px 18px; font-size: 12px; font-weight: 700;
-    text-transform: uppercase; letter-spacing: 0.06em;
-    border-radius: 3px; text-decoration: none;
-  }
-  .report-banner a.cta:hover { background: #fff; text-decoration: none; }
 </style>
 </head>
 <body>
@@ -170,16 +145,6 @@
 
   <div class="notice" id="fixture-banner" style="display:none;">
     <strong>Seed data:</strong> This page is showing fixture values calibrated to reflect plausible GA MSA characteristics (Savannah leads on growth, Atlanta leads on output, Athens on labor) while the BLS QCEW + FHFA + Census + BEA pipelines are wired up.
-  </div>
-
-  <!-- NEW: EIG Metro Economic Profile report CTA -->
-  <div class="report-banner">
-    <div class="icon">&#9656;</div>
-    <div class="copy">
-      <h3>Metro Economic Profile reports — all 14 live</h3>
-      <p>Full multi-page report for every Georgia MSA — business cycle, employment, housing, demographics, exports, migration. Prepared by <strong>Economic Impact Group, LLC</strong> and refreshed nightly. Click any metro's <strong>View &rarr;</strong> in the table below, or start with the flagship Savannah profile.</p>
-    </div>
-    <a class="cta" href="/msa/savannah/">See Savannah report &rarr;</a>
   </div>
 
   <!-- Headline callouts strip -->
