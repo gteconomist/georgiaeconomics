@@ -131,6 +131,17 @@
   // Grouped-nav dropdowns: hover opens on desktop (CSS); click/keyboard opens
   // on touch + for accessibility. Outside-click and Escape close everything.
   function initNav() {
+    // Mobile hamburger: toggle the whole nav open/closed.
+    var header = document.querySelector(".site-header");
+    var toggle = document.querySelector(".site-header .nav-toggle");
+    if (header && toggle) {
+      toggle.addEventListener("click", function () {
+        var open = header.classList.toggle("nav-open");
+        toggle.setAttribute("aria-expanded", open ? "true" : "false");
+        toggle.setAttribute("aria-label", open ? "Close menu" : "Open menu");
+      });
+    }
+
     var groups = Array.prototype.slice.call(document.querySelectorAll(".site-header .nav-group"));
     if (!groups.length) return;
     function closeAll(except) {

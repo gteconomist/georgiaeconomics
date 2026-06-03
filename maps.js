@@ -90,6 +90,28 @@ function _gaOutlineTrace(outline) {
   };
 }
 
+/* ---------- Narrow-viewport (phone) detection + brand colorbar ----------
+ * On a phone the choropleth is portrait and a vertical colorbar steals most of
+ * the width, shrinking Georgia to a sliver. On narrow screens we lay the
+ * colorbar out horizontally so the map can use the full width. */
+function _isNarrow() {
+  return typeof window !== 'undefined' && (window.innerWidth || 999) < 700;
+}
+function _brandColorbar(label, unit, narrow, pos) {
+  var cb = {
+    tickfont: { family: 'Source Sans Pro, Arial, sans-serif', size: 11, color: BRAND_MAP.navy },
+    title: { text: (label || '') + (unit ? ' (' + unit + ')' : ''), font: { size: 12, color: BRAND_MAP.navy } },
+  };
+  if (narrow) {
+    cb.orientation = 'h'; cb.thickness = 10; cb.len = 0.92; cb.x = 0.5; cb.xanchor = 'center';
+    if (pos === 'top') { cb.y = 1.0; cb.yanchor = 'bottom'; cb.title.side = 'top'; }
+    else { cb.y = -0.02; cb.yanchor = 'top'; cb.title.side = 'bottom'; }
+  } else {
+    cb.thickness = 12; cb.len = 0.8; cb.x = 1.02;
+  }
+  return cb;
+}
+
 /* ---------- Format helpers ---------- */
 function fmtPct(v, digits) {
   if (v == null || isNaN(v)) return '—';
@@ -129,6 +151,7 @@ async function drawGAChoropleth(elId, dataPoints, opts) {
               :                                   SCALE_SEQUENTIAL;
 
   const unit = opts.unit || '';
+  const narrow = _isNarrow();
   const fmt  = opts.valueFormatter || (v => {
     if (unit === '%') return fmtPct(v, 1);
     if (unit === '$') return fmtMoney(v);
@@ -170,11 +193,7 @@ async function drawGAChoropleth(elId, dataPoints, opts) {
     zmin: zmin,
     zmax: zmax,
     marker: { line: { width: 0.4, color: '#ffffff' } },
-    colorbar: {
-      thickness: 12, len: 0.8, x: 1.02,
-      tickfont: { family: 'Source Sans Pro, Arial, sans-serif', size: 11, color: BRAND_MAP.navy },
-      title: { text: (opts.metricLabel || '') + (unit ? ' (' + unit + ')' : ''), font: { size: 12, color: BRAND_MAP.navy } },
-    },
+    colorbar: _brandColorbar(opts.metricLabel, unit, narrow, 'bottom'),
   };
 
   const layout = {
@@ -189,7 +208,9 @@ async function drawGAChoropleth(elId, dataPoints, opts) {
     dragmode: false,         // lock the view to Georgia (no pan)
     paper_bgcolor: BRAND_MAP.cream,
     plot_bgcolor: BRAND_MAP.cream,
-    margin: { t: opts.title ? 36 : 8, l: 8, r: 8, b: 8 },
+    // On phones the colorbar moves below the map, so leave room at the bottom.
+    margin: narrow ? { t: opts.title ? 36 : 8, l: 8, r: 8, b: 52 }
+                   : { t: opts.title ? 36 : 8, l: 8, r: 8, b: 8 },
     font: { family: 'Source Sans Pro, Arial, sans-serif', color: BRAND_MAP.navy },
   };
 
@@ -217,6 +238,7 @@ async function drawGATimeChoropleth(elId, framesByDate, opts) {
               :                                   SCALE_SEQUENTIAL;
 
   const unit = opts.unit || '';
+  const narrow = _isNarrow();
   const fmt  = opts.valueFormatter || (v => {
     if (unit === '%') return fmtPct(v, 1);
     if (unit === '$') return fmtMoney(v);
@@ -248,11 +270,7 @@ async function drawGATimeChoropleth(elId, framesByDate, opts) {
       colorscale: scale,
       zmin, zmax,
       marker: { line: { width: 0.4, color: '#ffffff' } },
-      colorbar: {
-        thickness: 12, len: 0.8, x: 1.02,
-        tickfont: { family: 'Source Sans Pro, Arial, sans-serif', size: 11, color: BRAND_MAP.navy },
-        title: { text: (opts.metricLabel || '') + (unit ? ' (' + unit + ')' : ''), font: { size: 12, color: BRAND_MAP.navy } },
-      },
+      colorbar: _brandColorbar(opts.metricLabel, unit, narrow, 'top'),
     };
   }
 
@@ -274,7 +292,9 @@ async function drawGATimeChoropleth(elId, framesByDate, opts) {
     dragmode: false,
     paper_bgcolor: BRAND_MAP.cream,
     plot_bgcolor: BRAND_MAP.cream,
-    margin: { t: opts.title ? 36 : 8, l: 8, r: 8, b: 80 },
+    // On phones the colorbar sits above the map (the slider owns the bottom),
+    // so reserve a little extra headroom.
+    margin: { t: narrow ? 44 : (opts.title ? 36 : 8), l: 8, r: 8, b: 80 },
     font: { family: 'Source Sans Pro, Arial, sans-serif', color: BRAND_MAP.navy },
     sliders: [{
       active: framesByDate.length - 1,
