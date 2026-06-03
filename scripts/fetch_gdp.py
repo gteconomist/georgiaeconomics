@@ -136,11 +136,14 @@ def bea_get(params: dict, retries: int = 3) -> Optional[dict]:
         try:
             with urllib.request.urlopen(url, timeout=60) as r:
                 j = json.loads(r.read().decode("utf-8"))
-            results = (j.get("BEAAPI") or {}).get("Results") or {}
+            beaapi = j.get("BEAAPI") or {}
+            results = beaapi.get("Results") or {}
             if isinstance(results, list):
                 results = results[0] if results else {}
             tn = str(params.get("TableName") or "")
-            err = results.get("Error") if isinstance(results, dict) else None
+            # BEA can put the error at BEAAPI.Error (sibling of Results) OR inside Results.
+            err = (beaapi.get("Error")
+                   or (results.get("Error") if isinstance(results, dict) else None))
             if err:
                 if isinstance(err, list):
                     err = err[0] if err else {}
@@ -160,11 +163,11 @@ def bea_get(params: dict, retries: int = 3) -> Optional[dict]:
                           f"geo={params.get('GeoFips')} lc={params.get('LineCode')} "
                           f"yr={params.get('Year')}: {err}", file=sys.stderr)
                 return None
-            # TEMP DIAG: dump the raw BEA response for state-level GetData calls.
+            # TEMP DIAG: dump BEAAPI minus the Request echo (i.e. Results/Error) for SAGDP.
             if tn.startswith("SAGDP") and str(params.get("method")) == "GetData":
-                rkeys = list(results.keys()) if isinstance(results, dict) else type(results).__name__
-                print(f"  [gdp/BEA diag] {tn} geo={params.get('GeoFips')} yr={params.get('Year')} "
-                      f"Resultkeys={rkeys} raw={str(j)[:400]}", file=sys.stderr)
+                diag = {k: v for k, v in beaapi.items() if k != "Request"} if isinstance(beaapi, dict) else beaapi
+                print(f"  [gdp/BEA diag] {tn} geo={params.get('GeoFips')} yr={params.get('Year')}: "
+                      f"{str(diag)[:400]}", file=sys.stderr)
             return results
         except Exception as e:
             print(f"  [gdp/BEA err] {type(e).__name__}: {str(e)[:80]}", file=sys.stderr)
