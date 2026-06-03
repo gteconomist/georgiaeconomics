@@ -3,6 +3,9 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700;800&display=swap" rel="stylesheet">
+<!-- app.js is intentionally NOT deferred: it defines window.GE (palette + fmt
+     helpers) with no dependencies, so it must be available to each page's
+     end-of-body inline script, which runs during parse before deferred scripts. -->
+<script src="/assets/app.js"></script>
 <script defer src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
 <script defer src="https://cdn.jsdelivr.net/gh/gteconomist/economicsguru@main/assets/charts.js"></script>
-<script defer src="/assets/app.js"></script>
