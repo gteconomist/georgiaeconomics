@@ -4,11 +4,11 @@
   "source": "FIXTURE (target: BLS QCEW NAICS 3361/3362/3363 + BEA SAGDP2N motor vehicle GDP + Census CBP + Tavily plant milestones)",
   "latest_year": 2025,
   "kpis": {
-    "industry_gdp_latest_b": 4.2,
-    "industry_gdp_yoy_pct": 16.7,
+    "industry_gdp_latest_b": 0.0,
+    "industry_gdp_yoy_pct": -100.0,
     "employment_latest_k": 32.59,
     "employment_yoy_pct": 2.5,
-    "national_rank": 9,
+    "national_rank": 11,
     "ev_investment_total_b": 15.1,
     "establishments_latest": 225,
     "establishments_breakdown": {
@@ -41,18 +41,18 @@
       2025
     ],
     "gdp_b": [
-      1.85,
-      2.05,
-      2.15,
-      2.3,
-      2.4,
-      2.5,
-      2.1,
-      2.7,
-      2.9,
-      3.1,
-      3.6,
-      4.2
+      2.453,
+      2.549,
+      2.803,
+      3.36,
+      3.307,
+      3.797,
+      3.343,
+      3.159,
+      3.83,
+      4.424,
+      4.731,
+      0.0
     ],
     "employment_k_years": [
       2014,
@@ -103,74 +103,74 @@
   ],
   "state_comparison": [
     {
-      "state": "Michigan",
-      "abbr": "MI",
-      "gdp_b": 45.2,
+      "state": "Alabama",
+      "abbr": "AL",
+      "gdp_b": 0.0,
       "rank": 1,
       "color": "#1a3a5c"
     },
     {
-      "state": "Indiana",
-      "abbr": "IN",
-      "gdp_b": 14.5,
+      "state": "Alaska",
+      "abbr": "AK",
+      "gdp_b": 0.0,
       "rank": 2,
       "color": "#3a8d8d"
     },
     {
-      "state": "Ohio",
-      "abbr": "OH",
-      "gdp_b": 13.8,
+      "state": "Arizona",
+      "abbr": "AZ",
+      "gdp_b": 0.0,
       "rank": 3,
       "color": "#9b8b6a"
     },
     {
-      "state": "Tennessee",
-      "abbr": "TN",
-      "gdp_b": 10.2,
+      "state": "Arkansas",
+      "abbr": "AR",
+      "gdp_b": 0.0,
       "rank": 4,
       "color": "#9b8b6a"
     },
     {
-      "state": "Kentucky",
-      "abbr": "KY",
-      "gdp_b": 9.8,
+      "state": "California",
+      "abbr": "CA",
+      "gdp_b": 0.0,
       "rank": 5,
       "color": "#9b8b6a"
     },
     {
-      "state": "Alabama",
-      "abbr": "AL",
-      "gdp_b": 8.1,
+      "state": "Colorado",
+      "abbr": "CO",
+      "gdp_b": 0.0,
       "rank": 6,
       "color": "#9b8b6a"
     },
     {
-      "state": "South Carolina",
-      "abbr": "SC",
-      "gdp_b": 7.4,
+      "state": "Connecticut",
+      "abbr": "CT",
+      "gdp_b": 0.0,
       "rank": 7,
       "color": "#9b8b6a"
     },
     {
-      "state": "Texas",
-      "abbr": "TX",
-      "gdp_b": 5.2,
+      "state": "Delaware",
+      "abbr": "DE",
+      "gdp_b": 0.0,
       "rank": 8,
+      "color": "#9b8b6a"
+    },
+    {
+      "state": "DC",
+      "abbr": "DC",
+      "gdp_b": 0.0,
+      "rank": 9,
       "color": "#9b8b6a"
     },
     {
       "state": "Georgia",
       "abbr": "GA",
-      "gdp_b": 4.2,
-      "rank": 9,
+      "gdp_b": 0.0,
+      "rank": 11,
       "color": "#c46b3a"
-    },
-    {
-      "state": "Mississippi",
-      "abbr": "MS",
-      "gdp_b": 3.6,
-      "rank": 10,
-      "color": "#9b8b6a"
     }
   ],
   "plants": [
@@ -353,7 +353,7 @@
   ],
   "_meta": {
     "employment": {
-      "last_updated": "2026-06-02",
+      "last_updated": "2026-06-03",
       "source": "BLS QCEW annual averages, NAICS 3361+3362+3363 (motor vehicle mfg + bodies/trailers + parts), GA (area 13000)",
       "coverage_years": [
         2014,
@@ -361,15 +361,23 @@
       ]
     },
     "industry_gdp": {
-      "last_updated": null,
-      "source": null
+      "last_updated": "2026-06-03",
+      "source": "BEA Regional SAGDP2 \u2014 motor vehicles, bodies and trailers, and parts manufacturing, GA",
+      "metric_note": "Industry value-added (GDP). NAICS 3361 + 3362 + 3363 rolled up.",
+      "coverage_years": [
+        2014,
+        2025
+      ],
+      "line_code": "21"
     },
     "state_comparison": {
-      "last_updated": null,
-      "source": null
+      "last_updated": "2026-06-03",
+      "source": "BEA Regional SAGDP2 \u2014 motor-vehicle manufacturing GDP by state",
+      "metric_label": "Industry GDP (value-added, $B)",
+      "year": 2025
     },
     "establishments": {
-      "last_updated": "2026-06-02",
+      "last_updated": "2026-06-03",
       "source": "Census CBP 2023 \u2014 NAICS 3361/3362/3363, GA",
       "year": 2023
     },
@@ -389,6 +397,6 @@
       "source": null
     }
   },
-  "fetched_at": "2026-06-02",
-  "source_summary": "Live sources updated 2026-06-02: employment, establishments, ev_investment, plants. Stale or static: industry_gdp, state_comparison, milestones."
+  "fetched_at": "2026-06-03",
+  "source_summary": "Live sources updated 2026-06-03: employment, industry_gdp, state_comparison, establishments. Stale or static: ev_investment, plants, milestones."
 }
