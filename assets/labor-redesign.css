@@ -1,0 +1,101 @@
+/* labor-redesign.css — "Modern Editorial" restyle, SCOPED TO /labor/ ONLY.
+ *
+ * Loaded after the page's inline <style> block so it wins on source order.
+ * Nothing else on the site links this file, so the :root token overrides
+ * below only take effect on the Labor page. This is the staging ground for
+ * the eventual site-wide token refresh (which would fold these into
+ * styles.css / app.css and update maps.js).
+ *
+ * What it changes vs. the legacy look:
+ *   - kills the cream (#fbf5dc) chart wells -> charts sit on white
+ *   - one cool neutral story (no warm khaki borders)
+ *   - Source Serif 4 display face vs the sans body (real type contrast)
+ *   - sentence/Title-case panel titles; caps reserved for micro-labels
+ *   - terracotta as the single GA signature accent
+ *   - KPI strip becomes one hairline-divided rail
+ */
+
+:root {
+  --page-bg:     #f5f6f8;   /* single cool page neutral */
+  --surface:     #ffffff;
+  --chart-bg:    #ffffff;   /* <- cream killed (chart wells + table heads) */
+  --panel-bg:    #ffffff;
+  --border:      #e6e9ed;   /* cool hairline, replaces khaki #d9d3b8 */
+  --grid:        #e9edf1;
+  --ink:         #16202c;
+  --ink-soft:    #5b6675;
+  --ink-faint:   #8a94a0;
+  --card-shadow: 0 1px 2px rgba(16,32,44,.05), 0 8px 24px rgba(16,32,44,.06);
+  --font-display:"Source Serif 4", Georgia, serif;
+
+  /* refined accents */
+  --peach-deep:  #c05f3c;   /* terracotta signature */
+  --teal:        #1f7a6b;   /* good / up */
+  --coral:       #cc5b43;   /* bad / down */
+  --peach-pale:  #f6e7df;   /* terracotta wash (notices) */
+}
+
+body { background: var(--page-bg); }
+
+/* ---- header ---- */
+.site-header { border-bottom: 1px solid var(--border); box-shadow: none; }
+.site-header .brand .tag { color: var(--peach-deep); }
+.site-header .nav-top:hover, .site-header .nav-top.active { background: #f0f2f5; color: var(--navy); }
+.site-header .nav-group > .nav-top::after { color: var(--peach-deep); }
+.nav-search input:focus { border-color: var(--peach-deep); }
+
+/* ---- page header ---- */
+.page-header { border-bottom: 1px solid var(--border); padding-bottom: 20px; margin-bottom: 26px; }
+.page-header h1 { font-size: 40px; font-weight: 700; letter-spacing: -0.015em; color: var(--ink); }
+.page-header .subtitle { font-style: normal; font-size: 17px; color: var(--ink-soft); }
+.page-header .latest strong { color: var(--navy); }
+.breadcrumbs .sep { color: var(--border); }
+
+/* ---- KPI rail: hairline-divided, serif figures ---- */
+.kpi-grid {
+  gap: 1px; background: var(--border);
+  border: 1px solid var(--border); border-radius: 14px;
+  overflow: hidden; box-shadow: var(--card-shadow);
+}
+.kpi { border: 0; border-radius: 0; box-shadow: none; background: #fff; padding: 16px 18px; }
+.kpi .label { color: var(--ink-faint); }
+.kpi .value { font-family: var(--font-display); font-size: 30px; font-weight: 700; }
+
+/* ---- panels ---- */
+.chart-panel, .map-panel {
+  border: 1px solid var(--border); border-radius: 14px; padding: 20px 22px;
+}
+.chart-panel h2, .map-panel h2 {
+  font-family: var(--font-display); text-transform: none;
+  letter-spacing: -0.01em; font-weight: 600; font-size: 21px; color: var(--ink);
+}
+.chart-panel .sub, .map-panel .sub { font-size: 13.5px; color: var(--ink-soft); }
+
+/* charts on white (line/bar wells + county map well) */
+.chart-canvas, .chart-canvas-tall, .chart-canvas-med, #county-ur-map {
+  background: #ffffff; border-top: 1px solid var(--border); padding-top: 12px;
+}
+
+/* ---- tables: hairline rules, cool hover, quiet headers ---- */
+table.data-table thead th, table.metro-table thead th {
+  background: #ffffff; border-bottom: 1px solid #d3d9df;
+  color: var(--ink-faint); text-transform: uppercase;
+}
+table.data-table tbody td, table.metro-table tbody td { border-bottom: 1px solid var(--border); }
+table.data-table tbody tr:hover, table.metro-table tbody tr:hover { background: #f8fafb; }
+.pos, .yoy-up { color: var(--teal); }
+.neg, .yoy-down { color: var(--coral); }
+
+/* ---- diffusion band ---- */
+.diffusion-band { background: #f8fafb; border: 1px solid var(--border); }
+.diffusion-band .big { font-family: var(--font-display); color: var(--navy); }
+.diffusion-meter { background: #edf0f3; }
+.diffusion-meter > span { background: linear-gradient(90deg, var(--teal), #3a9a88); }
+
+/* ---- leaderboards next to county map ---- */
+.leaderboard { border: 1px solid var(--border); }
+.leaderboard h3 { font-family: var(--font-display); text-transform: none; letter-spacing: -0.01em; }
+
+/* ---- notices keep terracotta family via vars ---- */
+.pending { background: var(--peach-pale); border-color: var(--peach-deep); }
+.stale-badge { background: var(--peach-deep); }
