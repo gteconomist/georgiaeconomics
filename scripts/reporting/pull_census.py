@@ -804,14 +804,67 @@ def _download_text(url: str, timeout: int = 60) -> Optional[str]:
 # national CSV per metro (or, when Savannah-gated, failed slowly on the other 13).
 _PEP_CC_CACHE: Dict[int, Optional[dict]] = {}
 
+# On-disk cache so the ~3,200-row national CSV (served from the slow census.gov
+# static host) isn't re-fetched on every workflow run — this download was the
+# main driver of the census_net_migration delay. Freshness is gated on a date
+# stored *inside* the file, NOT the file mtime, because CI checks out the repo
+# fresh each run (which would reset mtimes and make every file look new).
+# Positive hits are trusted for ~3 weeks; "not yet published" misses are
+# re-probed weekly so a newly released vintage is still picked up promptly.
+_PEP_CACHE_DIR = Path(__file__).resolve().parents[2] / "data" / "cache"
+_PEP_CACHE_TTL_FOUND = 21   # days
+_PEP_CACHE_TTL_MISS = 7     # days
+
+
+def _pep_cache_read(v: int) -> Optional[dict]:
+    """Fresh on-disk entry for vintage v. Returns the parsed dict for a positive
+    hit, the sentinel {"_miss": True} for a fresh negative hit, or None (stale/absent)."""
+    path = _PEP_CACHE_DIR / f"pep_cc_{v}.json"
+    try:
+        if not path.exists():
+            return None
+        blob = json.loads(path.read_text())
+        age = (date.today() - date.fromisoformat(blob.get("_fetched", "1970-01-01"))).days
+        if blob.get("found"):
+            if age > _PEP_CACHE_TTL_FOUND:
+                return None
+            by_fips = {
+                fips: {int(y): tuple(t) for y, t in rec.items()}
+                for fips, rec in blob["by_fips"].items()
+            }
+            return {"years": [int(y) for y in blob["years"]], "by_fips": by_fips}
+        return {"_miss": True} if age <= _PEP_CACHE_TTL_MISS else None
+    except Exception as e:
+        print(f"  [PEP-CC cache read err] {type(e).__name__}: {str(e)[:80]}", file=sys.stderr)
+        return None
+
+
+def _pep_cache_write(v: int, parsed: Optional[dict]) -> None:
+    path = _PEP_CACHE_DIR / f"pep_cc_{v}.json"
+    try:
+        _PEP_CACHE_DIR.mkdir(parents=True, exist_ok=True)
+        if parsed:
+            blob = {"_fetched": date.today().isoformat(), "found": True,
+                    "years": parsed["years"], "by_fips": parsed["by_fips"]}
+        else:
+            blob = {"_fetched": date.today().isoformat(), "found": False}
+        path.write_text(json.dumps(blob))
+    except Exception as e:
+        print(f"  [PEP-CC cache write err] {type(e).__name__}: {str(e)[:80]}", file=sys.stderr)
+
 
 def _load_pep_components(v: int) -> Optional[dict]:
     """Download + parse the national PEP county components-of-change CSV for vintage
-    `v`, once per process. Returns {"years": [...], "by_fips": {fips5: {year: (dom,
-    intl, net)}}} or None. Cached (incl. None) so an --all run hits the network once
-    per vintage."""
+    `v`, once per process (in-memory) and at most ~once per few weeks (on disk).
+    Returns {"years": [...], "by_fips": {fips5: {year: (dom, intl, net)}}} or None."""
     if v in _PEP_CC_CACHE:
         return _PEP_CC_CACHE[v]
+    # On-disk cache first — survives across runs and the per-metro --all loop.
+    cached = _pep_cache_read(v)
+    if cached is not None:
+        result = None if cached.get("_miss") else cached
+        _PEP_CC_CACHE[v] = result
+        return result
     urls = [
         f"https://www2.census.gov/programs-surveys/popest/datasets/2020-{v}/counties/totals/co-est{v}-alldata.csv",
         f"https://www2.census.gov/programs-surveys/popest/datasets/2020-{v}/counties/totals/CO-EST{v}-ALLDATA.csv",
@@ -840,6 +893,7 @@ def _load_pep_components(v: int) -> Optional[dict]:
         if by_fips:
             parsed = {"years": years, "by_fips": by_fips}
             break
+    _pep_cache_write(v, parsed)   # persist (positive or "not published") for next run
     _PEP_CC_CACHE[v] = parsed
     return parsed
 

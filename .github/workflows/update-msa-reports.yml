@@ -154,7 +154,7 @@ jobs:
         run: |
           git config user.name  "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/msa_reports/ msa/ counties/ data/ga_msa_counties.json data/msa.json data/housing.json data/gdp.json data/migration.json data/outlook.json data/labor.json data/county_metrics.json data/search-index.json data/county_index.json data/scorecard.json REPORT_STATUS_MATRIX.md
+          git add data/msa_reports/ data/cache/ msa/ counties/ data/ga_msa_counties.json data/msa.json data/housing.json data/gdp.json data/migration.json data/outlook.json data/labor.json data/county_metrics.json data/search-index.json data/county_index.json data/scorecard.json REPORT_STATUS_MATRIX.md
           if git diff --cached --quiet; then
             echo "No changes to commit."
             exit 0

@@ -316,7 +316,9 @@ def main():
     ur_yoy_delta = round(ur_latest - ur[-13][1], 1) if ur and len(ur) >= 13 else None
     pay_latest   = total_nonfarm[-1][1] if total_nonfarm else None
     pay_yoy_pct  = round((pay_latest - total_nonfarm[-13][1]) / total_nonfarm[-13][1] * 100, 1) if total_nonfarm and len(total_nonfarm) >= 13 else None
-    lf_latest    = labor_force[-1][1] if labor_force else None
+    # BLS LAUS labor-force series is a raw headcount; this KPI field is in
+    # *thousands* (the page appends "K"), so scale to match. Nearest thousand.
+    lf_latest    = round(labor_force[-1][1] / 1000) if labor_force else None
 
     if sectors:
         fastest = max(sectors, key=lambda s: s["yoy_pct"])
