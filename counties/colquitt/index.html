@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <title>Colquitt County, Georgia — Population, Jobs, GDP & Housing | Georgia Economics</title>
-<meta name="description" content="Colquitt County, Georgia at a glance: population 47,438, unemployment 3.0%, GDP per capita $44,712, median home value $121,400. Live data from BLS, BEA, and Census.">
+<meta name="description" content="Colquitt County, Georgia at a glance: population 47,438, unemployment 2.4%, GDP per capita $44,712, median home value $121,400. Live data from BLS, BEA, and Census.">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <!-- GEN:HEAD -->
 <link rel="stylesheet" href="/styles.css">
@@ -75,21 +75,21 @@
   <section class="page-header">
     <h1>Colquitt County</h1>
     <p class="subtitle">Non-metro Georgia</p>
-    <div class="latest">Unemployment as of <strong>2026-03</strong> &middot; population vintage <strong>2025</strong> &middot; GDP <strong>2024</strong> &middot; ACS <strong>2024</strong></div>
+    <div class="latest">Unemployment as of <strong>2026-04</strong> &middot; population vintage <strong>2025</strong> &middot; GDP <strong>2024</strong> &middot; ACS <strong>2024</strong></div>
   </section>
 
   <div class="kpi-grid">
     <div class="kpi"><div class="label">Population</div><div class="value">47,438</div><div class="delta down">3.3% since 2020 (+1,530)</div></div>
-    <div class="kpi"><div class="label">Unemployment</div><div class="value">3.0%</div><div class="delta down">-0.6 pp vs state (3.6%)</div></div>
+    <div class="kpi"><div class="label">Unemployment</div><div class="value">2.4%</div><div class="delta down">-0.6 pp vs state (3.0%)</div></div>
     <div class="kpi"><div class="label">GDP / capita</div><div class="value">$44,712</div><div class="delta">Total $2.12bn</div></div>
     <div class="kpi"><div class="label">Median home value</div><div class="value">$121,400</div><div class="delta">Rent $818/mo</div></div>
     <div class="kpi"><div class="label">Median household income</div><div class="value">$49,341</div><div class="delta">Homeownership 63.7%</div></div>
-    <div class="kpi"><div class="label">Metro area</div><div class="value" style="font-size:16px; line-height:1.25;">Non-metro Georgia</div><div class="delta">27th-lowest of 159 counties</div></div>
+    <div class="kpi"><div class="label">Metro area</div><div class="value" style="font-size:16px; line-height:1.25;">Non-metro Georgia</div><div class="delta">18th-lowest of 159 counties</div></div>
   </div>
 
   <div class="chart-panel" style="margin-top: 22px;">
     <h2>Unemployment — last 12 months</h2>
-    <p class="sub">Monthly local-area unemployment rate (BLS LAUS), 2025-03 – 2026-03.</p>
+    <p class="sub">Monthly local-area unemployment rate (BLS LAUS), 2025-04 – 2026-04.</p>
     <div class="chart-canvas-med"><canvas id="ur-trend"></canvas></div>
   </div>
 
@@ -141,7 +141,7 @@
 
 <script>
 document.addEventListener('DOMContentLoaded', function () {
-  var S = {"labels":["2025-03","2025-04","2025-05","2025-06","2025-07","2025-08","2025-09","2025-11","2025-12","2026-01","2026-02","2026-03"],"values":[3.1,2.5,3.1,3.6,3.5,3.5,3.1,2.9,2.7,3.1,3.2,3.0]};
+  var S = {"labels":["2025-04","2025-05","2025-06","2025-07","2025-08","2025-09","2025-11","2025-12","2026-01","2026-02","2026-03","2026-04"],"values":[2.5,3.1,3.6,3.5,3.5,3.1,2.9,2.7,3.1,3.2,3.0,2.4]};
   var el = document.getElementById('ur-trend');
   if (!el || !window.Chart || !S.labels.length) return;
   new Chart(el.getContext('2d'), {
