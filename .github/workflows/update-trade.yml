@@ -29,10 +29,11 @@ jobs:
         with:
           python-version: '3.11'
 
-      - name: Fetch Census exports + BLS T&W employment
+      - name: Fetch Census exports + BLS T&W employment + GPA port throughput
         env:
           CENSUS_API_KEY: ${{ secrets.CENSUS_API_KEY }}
           BLS_API_KEY:    ${{ secrets.BLS_API_KEY }}
+          TAVILY_API_KEY: ${{ secrets.TAVILY_API_KEY }}
         run: |
           python scripts/fetch_trade.py
 

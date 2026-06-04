@@ -214,9 +214,22 @@ housing/gdp/labor roll-ups).
 - A static RSS `feed.xml` regenerated when data refreshes (works on GH Pages); email is a
   stretch (needs sending infra). Scope with the user.
 
-**Trade follow-up (deferred, not blocking):** Port of Savannah TEU, Brunswick autos, and ATL
-Hartsfield cargo are still calibrated fixtures — a Tavily/GPA-press-release scraper is the
-remaining live-wiring task for `/trade/`.
+**Done (2026-06-03, make-it-live polish):**
+- **Consumer sales-tax** confirmed already live + correctly scaled — FRED `QTAXT09QTAXCAT3GANO`
+  is Millions of $ (Q4'25 = $2,391M), matching the `values_musd` field. Polished the chart to
+  a clear `$B` axis/tooltip and de-flagged the "best-effort" label.
+- **Trade ports** — `fetch_trade.py` now does a best-effort GPA latest-month update via Tavily:
+  `update_ports()` scrapes the newest Port of Savannah TEU + Brunswick auto units (+ YoY) from
+  GPA press releases, range-guards them, and updates the latest chart point + headline KPIs,
+  preserving the calibrated historical series. `TAVILY_API_KEY` wired into `update-trade.yml`;
+  degrades to the calibrated series on any miss. ATL Hartsfield cargo stays a labeled estimate
+  (no public monthly API). Extraction regexes unit-tested against real GPA press-release wording.
+  Source notes on `/trade/` updated to say so honestly.
+
+  **Future upgrade (optional):** GPA publishes a "Monthly TEU Throughput" PDF on the
+  By-the-Numbers page (stable URL) with the full real monthly series — parsing it in CI
+  (pdfplumber) would make the entire Savannah series live, not just the latest point. Deferred
+  because the PDF table layout couldn't be validated from the build session.
 
 Reuse the established playbook: scope doc → `scripts/fetch_<topic>.py` (with `--rollup`
 local validation) → `/<topic>/index.html` (reuse Housing/GDP choropleth + pending/stale

@@ -173,7 +173,7 @@
       <p class="sub">Georgia general sales-tax collections &mdash; a proxy for taxable consumer spending. Source: Census / FRED.</p>
       <div id="tax-pending" class="pending" style="display:none;"><strong>Sales-tax series pending:</strong> a best-effort proxy; populates if the source series is available on refresh.</div>
       <div class="chart-canvas-med" id="tax-wrap" style="display:none;"><canvas id="sales-tax"></canvas></div>
-      <div class="source-note">Source: Census Quarterly Summary of State &amp; Local Tax Revenue / FRED (best-effort).</div>
+      <div class="source-note">Source: U.S. Census Quarterly Summary of State &amp; Local Tax Revenue (T09 general sales &amp; gross-receipts tax), via FRED. Quarterly, $ billions.</div>
     </div>
   </div>
 
@@ -357,21 +357,31 @@
     });
   }
 
+  function qLabel(d) {
+    // FRED quarter dates are quarter-start months: 01/04/07/10 → Q1..Q4
+    const m = /^(\d{4})-(\d{2})/.exec(d);
+    if (!m) return d;
+    const q = Math.floor((parseInt(m[2], 10) - 1) / 3) + 1;
+    return 'Q' + q + " '" + m[1].slice(2);
+  }
   function renderSalesTax(t, meta) {
     if (!t || !t.quarters || !t.quarters.length) { show('tax-pending'); return; }
     if (meta && meta.stale) show('tax-stale');
     show('tax-wrap');
+    const labels = t.quarters.map(qLabel);
+    const billions = t.values_musd.map(v => v / 1000);   // $M → $B
     const ctx = document.getElementById('sales-tax').getContext('2d');
     new Chart(ctx, {
       type: 'line',
-      data: { labels: t.quarters, datasets: [{ label: 'Sales tax', data: t.values_musd, borderColor: B.navy, backgroundColor: 'rgba(26,58,92,0.10)', fill: true, tension: 0.2, pointRadius: 0, borderWidth: 2.5 }] },
+      data: { labels, datasets: [{ label: 'GA general sales tax ($B/qtr)', data: billions, borderColor: B.navy, backgroundColor: 'rgba(26,58,92,0.10)', fill: true, tension: 0.2, pointRadius: 0, borderWidth: 2.5 }] },
       options: {
         responsive: true, maintainAspectRatio: false,
         scales: {
           x: { grid: { display: false }, ticks: { color: B.navy, font: { size: 10 }, maxRotation: 45, autoSkip: true, maxTicksLimit: 12 } },
-          y: { beginAtZero: false, grid: { color: B.grid, borderDash: [3,4] }, ticks: { color: B.navy, font: { size: 11 } } },
+          y: { beginAtZero: false, grid: { color: B.grid, borderDash: [3,4] }, ticks: { color: B.navy, font: { size: 11 }, callback: v => '$' + v.toFixed(1) + 'B' } },
         },
-        plugins: { legend: { display: false } },
+        plugins: { legend: { display: false },
+          tooltip: { callbacks: { title: it => 'Quarter ' + labels[it[0].dataIndex], label: it => 'Sales tax: $' + it.parsed.y.toFixed(2) + 'B' } } },
       },
     });
   }

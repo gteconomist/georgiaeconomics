@@ -20,6 +20,7 @@ Env: CENSUS_API_KEY, BLS_API_KEY
 
 import json
 import os
+import re
 import sys
 import time
 import urllib.request
@@ -30,6 +31,7 @@ from datetime import date
 
 CENSUS_API_KEY = os.environ.get("CENSUS_API_KEY", "").strip()
 BLS_API_KEY    = os.environ.get("BLS_API_KEY",    "").strip()
+TAVILY_API_KEY = os.environ.get("TAVILY_API_KEY", "").strip()
 
 if not CENSUS_API_KEY:
     print("ERROR: CENSUS_API_KEY env var not set", file=sys.stderr)
@@ -559,6 +561,143 @@ def fetch_bls_atl_tw_employment(months=80):
     return out[-months:] if months else out
 
 
+# ---------- Georgia Ports Authority — latest monthly throughput (best-effort) ----------
+# GPA publishes the latest month's Port of Savannah TEUs and Brunswick auto/RoRo
+# units in press releases ("...534,037 TEUs in August, up 9 percent..."). We pull
+# the latest figure via Tavily and update ONLY the most recent point + the headline
+# KPIs, preserving the calibrated historical series. Everything degrades to the
+# prior value, so a miss can never blank the page. No Tavily key → skipped entirely.
+TAVILY_SEARCH_URL = "https://api.tavily.com/search"
+_MONTHS = {m: i for i, m in enumerate(
+    ["january", "february", "march", "april", "may", "june", "july", "august",
+     "september", "october", "november", "december"], start=1)}
+
+RE_TEU   = re.compile(r"(\d{3},\d{3}|\d{6})\s*(?:twenty-foot|TEU)", re.IGNORECASE)
+RE_AUTOS = re.compile(r"([\d,]{4,7})\s*(?:units|vehicles|autos)", re.IGNORECASE)
+RE_MONTH = re.compile(r"\b(January|February|March|April|May|June|July|August|"
+                      r"September|October|November|December)\b", re.IGNORECASE)
+RE_YOY   = re.compile(r"(up|down|rose|fell|fall\w*|increas\w*|decreas\w*|declin\w*|grew|grow\w*|"
+                      r"gain\w*|drop\w*|jump\w*)\s*(?:by|of|to)?\s*(\d{1,2}(?:\.\d)?)\s*percent",
+                      re.IGNORECASE)
+
+
+def _tavily_search(query, *, max_results=6, time_range="month"):
+    if not TAVILY_API_KEY:
+        return {}
+    payload = {
+        "query": query, "search_depth": "advanced", "max_results": max_results,
+        "include_answer": "advanced", "include_domains": ["gaports.com"],
+    }
+    if time_range:
+        payload["time_range"] = time_range
+    body = json.dumps(payload).encode("utf-8")
+    req = urllib.request.Request(
+        TAVILY_SEARCH_URL, data=body,
+        headers={"Content-Type": "application/json", "Authorization": f"Bearer {TAVILY_API_KEY}"})
+    try:
+        with urllib.request.urlopen(req, timeout=45) as resp:
+            return json.loads(resp.read().decode("utf-8"))
+    except Exception as e:
+        print(f"      [Tavily] search failed: {type(e).__name__}: {e}", file=sys.stderr)
+        return {}
+
+
+def _tavily_texts(resp):
+    """Flatten a Tavily response into (text, published_date) snippets to scan."""
+    out = []
+    if resp.get("answer"):
+        out.append((resp["answer"], None))
+    for r in resp.get("results", []) or []:
+        txt = " ".join(filter(None, [r.get("title"), r.get("content")]))
+        if txt:
+            out.append((txt, r.get("published_date")))
+    return out
+
+
+def _ym_from(month_idx, published_date):
+    """Resolve a Month name + a result's publish date to 'YYYY-MM'.
+    The figure usually refers to the month named; pick the year from the publish
+    date (or today), rolling back if that would land in the future."""
+    yr = TODAY.year
+    if published_date and len(published_date) >= 4 and published_date[:4].isdigit():
+        yr = int(published_date[:4])
+    cand = date(yr, month_idx, 1)
+    if cand > TODAY.replace(day=1):
+        cand = date(yr - 1, month_idx, 1)
+    return f"{cand.year}-{cand.month:02d}"
+
+
+def _extract_latest(resp, number_re, lo_k, hi_k):
+    """Scan Tavily snippets for the freshest '<number> <unit> in <Month> ... up/down X percent'.
+    Returns (ym, value_k, yoy_pct) with value in thousands, or None. Range-guarded."""
+    best = None  # (ym, value_k, yoy_pct)
+    for text, pub in _tavily_texts(resp):
+        nm = number_re.search(text)
+        mm = RE_MONTH.search(text)
+        if not nm or not mm:
+            continue
+        try:
+            val = float(nm.group(1).replace(",", ""))
+        except ValueError:
+            continue
+        val_k = round(val / 1000.0, 1)
+        if not (lo_k <= val_k <= hi_k):       # implausible → skip
+            continue
+        ym = _ym_from(_MONTHS[mm.group(1).lower()], pub)
+        yoy = None
+        ym_match = RE_YOY.search(text)
+        if ym_match:
+            sign = -1 if re.match(r"(down|fell|fall|decreas|declin|drop)", ym_match.group(1), re.I) else 1
+            yoy = round(sign * float(ym_match.group(2)), 1)
+        if best is None or ym > best[0]:
+            best = (ym, val_k, yoy)
+    return best
+
+
+def _apply_latest(existing, series_key, kpi_latest, kpi_yoy, found, label):
+    """Update a [[ym,val],...] series + KPIs with a freshly-scraped latest point."""
+    if not found:
+        return False
+    ym, val_k, yoy = found
+    series = existing.get(series_key) or []
+    if series and ym <= series[-1][0]:
+        # Not newer than what we already have — just refresh the headline value.
+        if ym == series[-1][0]:
+            series[-1][1] = val_k
+    else:
+        series.append([ym, val_k])
+    existing[series_key] = series
+    kp = existing.setdefault("kpis", {})
+    kp[kpi_latest] = val_k
+    if yoy is not None:
+        kp[kpi_yoy] = yoy
+    print(f"  ✓ {label}: {val_k}K for {ym}" + (f" ({yoy:+.1f}% YoY)" if yoy is not None else ""))
+    return True
+
+
+def update_ports(existing):
+    """Best-effort refresh of Savannah TEU + Brunswick autos latest points from GPA."""
+    if not TAVILY_API_KEY:
+        print("  [ports] no TAVILY_API_KEY; keeping calibrated port series", file=sys.stderr)
+        return []
+    live = []
+    print("\n[GPA/Tavily] Port of Savannah latest monthly TEUs...")
+    sav = _extract_latest(
+        _tavily_search("Port of Savannah container volume TEUs latest month"),
+        RE_TEU, lo_k=200, hi_k=700)
+    if _apply_latest(existing, "savannah_teu_k", "savannah_teu_latest", "savannah_teu_yoy", sav, "Savannah TEU"):
+        live.append("Savannah TEU (GPA)")
+
+    print("[GPA/Tavily] Port of Brunswick latest monthly auto units...")
+    bru = _extract_latest(
+        _tavily_search("Port of Brunswick Colonel's Island RoRo auto units latest month"),
+        RE_AUTOS, lo_k=20, hi_k=120)
+    if _apply_latest(existing, "brunswick_autos_k", "brunswick_autos_latest", "brunswick_autos_yoy", bru, "Brunswick autos"):
+        live.append("Brunswick autos (GPA)")
+
+    return live
+
+
 # ---------- Main ----------
 def main():
     fixture_path = Path(__file__).parent.parent / "data" / "trade.json"
@@ -638,16 +777,28 @@ def main():
         kpis["top_export_musd"]    = top10[0]["value_musd"]
         existing["kpis"] = kpis
 
+    # 3b. Best-effort GPA latest-month port throughput (Savannah TEU + Brunswick autos)
+    try:
+        ports_live = update_ports(existing)
+    except Exception as e:
+        print(f"  [trade] update_ports raised {type(e).__name__}: {e}", file=sys.stderr)
+        ports_live = []
+
     # 4. Mark partial-live status
     notes = []
     if top10: notes.append("Census USA Trade Online (GA exports)")
     if tw:    notes.append("BLS CES (ATL MSA T&W employment)")
+    notes += ports_live
     if notes:
         existing["_fixture"] = False
+        still_fixture = []
+        if "Savannah TEU (GPA)" not in ports_live: still_fixture.append("Port of Savannah TEU")
+        if "Brunswick autos (GPA)" not in ports_live: still_fixture.append("Brunswick autos")
+        still_fixture.append("ATL Hartsfield cargo")   # no clean public source
         existing["_note"] = (
-            "Partial live data: " + ", ".join(notes) + ". "
-            "Port of Savannah TEU, Brunswick autos, and ATL Hartsfield cargo still on fixture "
-            "(Tavily-based scrapers in next iteration)."
+            "Live data: " + ", ".join(notes) + ". "
+            + ("Calibrated estimate (latest GPA point may not have refreshed): "
+               + ", ".join(still_fixture) + "." if still_fixture else "")
         )
     existing["fetched_at"] = TODAY.isoformat()
     if top10:
