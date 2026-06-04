@@ -1,7 +1,7 @@
 {
   "_fixture": false,
   "source": "BLS LAUS \u2014 Local Area Unemployment Statistics, county-level monthly",
-  "fetched_at": "2026-06-03",
+  "fetched_at": "2026-06-04",
   "latest_label": "2026-04",
   "kpis": {
     "statewide_avg_unemp": 3.0,
