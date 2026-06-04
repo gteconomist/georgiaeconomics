@@ -106,6 +106,13 @@ jobs:
         # and housing steps so ga_gdp / ga_hpi exist as forecast inputs. No keys.
         run: python3 scripts/fetch_forecasts.py
 
+      - name: Broaden cross-metro comparator (Phase 4 WS4)
+        # Roll the ~22 scalar metrics each metro report already computes into
+        # data/msa.json (+ metric catalog & themes) so the /msa/ comparator covers
+        # every indicator, not just the 6 live-pulled ones. Local read, no keys;
+        # the 6 live metrics (pulled by update-msa.yml) are left untouched.
+        run: python3 scripts/fetch_msa_metrics.py --rollup
+
       - name: Build statewide labor roll-up (Phase 4 WS3)
         # Refreshes ONLY the metro-comparison + sector-diffusion blocks in
         # data/labor.json from the freshly-regenerated metro reports (local read,
@@ -139,7 +146,7 @@ jobs:
         run: |
           git config user.name  "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/msa_reports/ msa/ counties/ data/ga_msa_counties.json data/housing.json data/gdp.json data/migration.json data/outlook.json data/labor.json data/search-index.json data/county_index.json data/scorecard.json REPORT_STATUS_MATRIX.md
+          git add data/msa_reports/ msa/ counties/ data/ga_msa_counties.json data/msa.json data/housing.json data/gdp.json data/migration.json data/outlook.json data/labor.json data/search-index.json data/county_index.json data/scorecard.json REPORT_STATUS_MATRIX.md
           if git diff --cached --quiet; then
             echo "No changes to commit."
             exit 0

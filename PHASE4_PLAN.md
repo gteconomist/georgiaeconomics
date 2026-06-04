@@ -146,9 +146,21 @@ search index + home scorecard wired. EIA puller reads `EIA_API_KEY` (repo secret
 PCE sections reuse the proven `fetch_gdp.py` SAGDP mechanics, degrade gracefully, and
 `update-consumer.yml` fires on push to populate live.
 
-**Next: WS4 connective tissue.**
+**Done (2026-06-03, WS4 comparator):** Broadened the `/msa/` comparator from 6 metrics to
+**27**. `fetch_msa_metrics.py` gained a `--rollup` mode that pulls ~22 scalar metrics from
+`data/msa_reports/*.json` (job growth, GDP & income growth, net-migration rate, business-cycle
+index, ARIMA forecast, air quality, business formation, vitality, quality-of-life, valuation,
+affordability, rent burden, ownership, business/living costs, industrial diversity, credit
+score, …) into `data/msa.json` with a per-metric catalog (`label`, `unit`, `polarity`,
+`theme`, `source`) + `theme_order`; the 6 live API metrics are untouched. The page now leads
+with a **sortable metros × metrics heatmap** (percentile-shaded, theme-grouped, value/rank
+toggle, click a metro → profile), keeps the **radar as a themed focused view** (Headline +
+6 themes), a **single-metro profile** (rank bars vs the field), and the **choropleth widened**
+to all metrics (theme-grouped picker). Roll-up folded into `update-msa-reports.yml` (after
+metro regen); the full pull stays in `update-msa.yml`. Validated offline + via a logic
+simulation. **This is the last WS4 comparator item; only refresh alerts remain.**
 
-### Broaden the cross-metro comparator (recommended design)
+### Broaden the cross-metro comparator (recommended design — SHIPPED above)
 
 **Important correction:** a comparator already exists on `/msa/` — `fetch_msa_metrics.py`
 builds `data/msa.json`, and the page lets you pick any 2–3 of the 14 metros and overlay them

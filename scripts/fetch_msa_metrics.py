@@ -51,6 +51,158 @@ assert len(ATLANTA_COUNTY_FIPS) == 29, f"Expected 29 Atlanta counties, got {len(
 # Index: short_name -> (cbsa, full_name, population)
 MSA_BY_SHORT = {short: (cbsa, full, pop) for cbsa, short, full, pop in GA_MSAS}
 
+MSA_REPORTS_DIR = Path(__file__).parent.parent / "data" / "msa_reports"
+
+# --------------------------------------------------------------------------- #
+# Metric catalog (Phase 4 WS4 — broadened comparator)
+#
+# The 6 "live" metrics are pulled fresh from APIs above. The rest are rolled up
+# from data/msa_reports/*.json (each metro already computes them). `polarity`
+# drives heatmap colour: good_high (teal=high), good_low (teal=low), neutral
+# (grey scale, no good/bad). `theme` groups columns + powers the radar's theme
+# selector. `lower_is_better` is kept for the existing radar normaliser.
+# --------------------------------------------------------------------------- #
+def _M(key, label, unit, polarity, theme, source, fmt="num"):
+    return {"key": key, "label": label, "unit": unit, "polarity": polarity,
+            "lower_is_better": polarity == "good_low", "theme": theme,
+            "source": source, "fmt": fmt}
+
+# The 6 live metrics (values come from the API pulls; metadata lives here).
+LIVE_METRICS = [
+    _M("unemployment_rate", "Unemployment rate", "%", "good_low", "Labor", "BLS LAUS", "pct1"),
+    _M("wage_growth_yoy", "Avg weekly wage growth", "% YoY", "good_high", "Labor", "BLS QCEW", "pct1"),
+    _M("pop_growth_yoy", "Population growth", "% YoY", "good_high", "Growth", "Census ACS", "pct2"),
+    _M("home_price_yoy", "Home-price growth", "% YoY", "good_high", "Housing", "FHFA HPI", "pct1"),
+    _M("permits_per_1k", "Building permits / 1k", "/1k", "good_high", "Housing", "Census BPS", "num1"),
+    _M("gdp_per_capita", "GDP per capita", "$", "good_high", "Output & income", "BEA", "usd0"),
+]
+
+# Rolled up from the metro reports. (section, *path) is the extractor; `net_rate`
+# is special-cased (IRS net ÷ population).
+ROLLUP_METRICS = [
+    # Labor
+    (_M("job_growth_yoy", "Job growth (CES)", "% YoY", "good_high", "Labor", "BLS CES", "pct1"),
+        ("ces_employment", "latest_yoy")),
+    # Growth
+    (_M("net_migration_per_1k", "Net migration / 1k", "/1k", "good_high", "Growth", "IRS SOI", "num2"),
+        ("__net_rate__",)),
+    (_M("cycle_index", "Business-cycle index", "idx", "good_high", "Growth", "EIG (BLS CES+LAUS)", "num1"),
+        ("business_cycle_index", "latest_value")),
+    (_M("forecast_gmp_yoy", "Forecast GDP growth", "% next yr", "good_high", "Growth", "EIG forecast", "pct1"),
+        ("forecast_arima", "gmp_yoy", 0)),
+    # Output & income
+    (_M("gmp_growth_yoy", "Real GDP growth", "% YoY", "good_high", "Output & income", "BEA CAGDP2", "pct1"),
+        ("bea_gmp", "latest_yoy")),
+    (_M("per_capita_income", "Per-capita income", "$", "good_high", "Output & income", "BEA CAINC1", "usd0"),
+        ("bea_personal_income", "latest_per_capita_income")),
+    (_M("income_growth_yoy", "Income growth", "% YoY", "good_high", "Output & income", "BEA CAINC1", "pct1"),
+        ("bea_personal_income", "latest_yoy")),
+    # Housing
+    (_M("price_to_income", "Price-to-income", "x", "good_low", "Housing", "EIG valuation", "num1"),
+        ("housing_valuation", "price_to_income_ratio")),
+    (_M("valuation_pct", "Home over/under-valuation", "%", "good_low", "Housing", "EIG valuation", "pct1"),
+        ("housing_valuation", "latest_valuation_pct")),
+    (_M("affordability_index", "Buyer affordability", "idx", "good_high", "Housing", "EIG (NAR-style)", "num1"),
+        ("housing_affordability", "latest_index")),
+    (_M("rent_burden_pct", "Rent burden", "%", "good_low", "Housing", "Census ACS", "pct1"),
+        ("acs_affordability", "msa_rent_burden_pct", -1)),
+    (_M("pct_owner_occupied", "Home-ownership", "%", "good_high", "Housing", "Census ACS", "pct1"),
+        ("acs_housing_characteristics", "derived", "pct_owner_occupied")),
+    # Quality of life
+    (_M("median_aqi", "Air quality (median AQI)", "AQI", "good_low", "Quality of life", "EPA AirData", "num0"),
+        ("epa_air_quality", "median_aqi")),
+    (_M("quality_of_life", "Quality of life", "idx", "good_high", "Quality of life", "EIG composite", "num0"),
+        ("quality_of_life", "value")),
+    (_M("vitality", "Economic vitality", "0-1", "good_high", "Quality of life", "EIG composite", "num2"),
+        ("vitality", "value")),
+    (_M("median_age", "Median age", "yrs", "neutral", "Quality of life", "Census ACS", "num1"),
+        ("acs_housing_characteristics", "values", "median_age")),
+    # Business
+    (_M("business_formation_rate", "Business formation rate", "%", "good_high", "Business", "Census BDS", "pct1"),
+        ("entrepreneurship", "entry_rate_msa")),
+    (_M("cost_of_living_index", "Cost of living (US=100)", "idx", "good_low", "Business", "EIG (BEA RPP logic)", "num0"),
+        ("business_costs", "cost_of_living_index")),
+    (_M("business_cost_index", "Business costs (US=100)", "idx", "good_low", "Business", "EIG composite", "num0"),
+        ("business_costs", "business_cost_index")),
+    (_M("industrial_diversity", "Industrial diversity", "0-1", "good_high", "Business", "EIG Hachman", "num2"),
+        ("industrial_diversity", "score")),
+    (_M("credit_score", "Metro credit score", "0-100", "good_high", "Business", "EIG composite", "num0"),
+        ("credit_score", "score")),
+]
+
+# Theme display order for the page (heatmap column groups + radar selector).
+THEME_ORDER = ["Labor", "Growth", "Output & income", "Housing", "Quality of life", "Business"]
+
+
+def _report_scalar(rep, path, status_ok=("live", "partial", "stale")):
+    """Pull a scalar from a report by (section, *path), guarded on section_status."""
+    sec = path[0]
+    if rep.get("section_status", {}).get(sec) not in status_ok:
+        return None
+    v = rep.get("sections", {}).get(sec)
+    for p in path[1:]:
+        if isinstance(p, int):
+            if isinstance(v, list) and -len(v) <= p < len(v):
+                v = v[p]
+            else:
+                return None
+        else:
+            if isinstance(v, dict) and p in v:
+                v = v[p]
+            else:
+                return None
+    return v if isinstance(v, (int, float)) else None
+
+
+def rollup_report_metrics():
+    """Read all msa_reports/*.json → {short_name: {metric_key: value}} for the
+    ROLLUP_METRICS catalog. Pure local read, no API keys."""
+    out = {}
+    if not MSA_REPORTS_DIR.exists():
+        return out
+    for path in sorted(MSA_REPORTS_DIR.glob("*.json")):
+        try:
+            rep = json.loads(path.read_text())
+        except Exception:
+            continue
+        short = rep.get("short_name")
+        if not short:
+            continue
+        vals = {}
+        for mdef, extractor in ROLLUP_METRICS:
+            key = mdef["key"]
+            if extractor == ("__net_rate__",):
+                net = _report_scalar(rep, ("irs_soi_migration", "net"))
+                pop = rep.get("population")
+                v = round(net / pop * 1000, 2) if (isinstance(net, (int, float)) and pop) else None
+            else:
+                v = _report_scalar(rep, extractor)
+            if v is not None:
+                vals[key] = v
+        out[short] = vals
+    return out
+
+
+def build_metric_catalog():
+    """The full ordered metric metadata list written to msa.json."""
+    return LIVE_METRICS + [m for (m, _ex) in ROLLUP_METRICS]
+
+
+def apply_rollup(existing):
+    """Merge report-rollup metrics into existing['msas'] and (re)write the metric
+    catalog + theme order. Live-6 values are left untouched."""
+    rolled = rollup_report_metrics()
+    n_filled = 0
+    for msa in existing.get("msas", []):
+        short = msa.get("short_name")
+        m = msa.setdefault("metrics", {})
+        for key, val in (rolled.get(short) or {}).items():
+            m[key] = val
+            n_filled += 1
+    existing["metrics"] = build_metric_catalog()
+    existing["theme_order"] = THEME_ORDER
+    return n_filled
+
 
 # ---------- HTTP helpers ----------
 # FRED enforces 120 requests/minute/key (HTTP 429 over that). The county-HPI
@@ -620,6 +772,11 @@ def main():
         if wage and short in wage: m["wage_growth_yoy"]  = wage[short];    fetched_metrics.add("wage_growth_yoy")
         if permits and short in permits: m["permits_per_1k"] = permits[short]; fetched_metrics.add("permits_per_1k")
 
+    # Phase 4 WS4: merge the ~22 report-rollup metrics + rebuild the metric catalog.
+    n_rolled = apply_rollup(existing)
+    print(f"\n[WS4 rollup] merged {n_rolled} report-metric values; "
+          f"catalog now {len(existing['metrics'])} metrics")
+
     # Recompute medians and callouts from the updated MSA data
     recompute_aggregates(existing)
 
@@ -654,5 +811,27 @@ def main():
     print(f"Per-MSA fallback to fixture for any MSAs/metrics that failed")
 
 
+def run_rollup_only():
+    """--rollup: merge report metrics + rebuild catalog only; no API pulls/keys.
+    Used by update-msa-reports.yml after the metro JSONs regenerate, and for
+    local validation."""
+    path = Path(__file__).parent.parent / "data" / "msa.json"
+    if not path.exists():
+        print("ERROR: data/msa.json not found", file=sys.stderr)
+        return 2
+    existing = json.load(open(path))
+    n = apply_rollup(existing)
+    recompute_aggregates(existing)
+    existing["fetched_at"] = TODAY.isoformat()
+    with open(path, "w") as f:
+        json.dump(existing, f, indent=2)
+    print(f"Wrote {path} (rollup-only): merged {n} report-metric values; "
+          f"catalog now {len(existing['metrics'])} metrics across "
+          f"{len(existing.get('theme_order', []))} themes")
+    return 0
+
+
 if __name__ == "__main__":
+    if "--rollup" in sys.argv[1:]:
+        raise SystemExit(run_rollup_only())
     main()
