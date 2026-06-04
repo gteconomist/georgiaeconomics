@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-06-04T01:04:15Z",
+  "fetched_at": "2026-06-04T01:07:41Z",
   "schema": "consumer/v1",
   "pce_trend": {
     "years": [
@@ -756,31 +756,31 @@
   },
   "_meta": {
     "pce_trend": {
-      "last_updated": "2026-06-04T01:04:16Z",
+      "last_updated": "2026-06-04T01:07:41Z",
       "stale": false
     },
     "pce_composition": {
-      "last_updated": "2026-06-04T01:04:17Z",
+      "last_updated": "2026-06-04T01:07:43Z",
       "stale": false
     },
     "pce_by_function": {
-      "last_updated": "2026-06-04T01:04:53Z",
+      "last_updated": "2026-06-04T01:07:48Z",
       "stale": false
     },
     "pce_peers": {
-      "last_updated": "2026-06-04T01:04:54Z",
+      "last_updated": "2026-06-04T01:07:49Z",
       "stale": false
     },
     "electricity": {
-      "last_updated": "2026-06-03T21:43:06Z",
+      "last_updated": "2026-06-04T01:07:49Z",
       "stale": false
     },
     "sales_tax": {
-      "last_updated": "2026-06-03T21:43:07Z",
+      "last_updated": "2026-06-04T01:07:50Z",
       "stale": false
     },
     "real_wages": {
-      "last_updated": "2026-06-04T01:04:54Z",
+      "last_updated": "2026-06-04T01:07:50Z",
       "stale": false
     }
   },
