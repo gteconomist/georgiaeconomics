@@ -112,6 +112,20 @@
   table.heat thead .name-col { z-index: 4; background: var(--chart-bg); }
   table.heat tbody tr:hover .name-col { background: var(--peach-pale); }
   table.heat .name-col .pop { display: block; font-size: 10px; color: var(--ink-soft); font-weight: 400; }
+  /* metro name = link to its full deep-dive report. Lives in the sticky-left
+     column, so it never scrolls out of view as the metric columns scroll. */
+  table.heat .name-col a.metro-report { color: var(--navy); font-weight: 700; text-decoration: none; }
+  table.heat .name-col a.metro-report .ext { color: var(--peach-deep); margin-left: 4px; }
+  table.heat tbody tr:hover .name-col a.metro-report { color: var(--peach-deep); text-decoration: underline; }
+  /* announce the affordance above the table */
+  .heat-hint { margin: 2px 0 12px; font-size: 13px; font-weight: 700; color: var(--peach-deep); display: flex; align-items: center; gap: 6px; }
+  /* "View full report" CTA in the Metro profile panel */
+  .profile-report {
+    display: none; margin-left: 12px; padding: 4px 12px; border-radius: 14px;
+    background: var(--peach-deep); color: #fff; font-size: 12px; font-weight: 700;
+    text-decoration: none; vertical-align: middle;
+  }
+  .profile-report:hover { background: var(--navy); text-decoration: none; }
   .heat-legend { font-size: 12px; color: var(--ink-soft); margin-top: 10px; display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
   .heat-grad { display: inline-block; width: 120px; height: 12px; border-radius: 2px;
     background: linear-gradient(90deg, rgba(212,98,74,0.55), rgba(255,255,255,0), rgba(58,141,141,0.55)); border: 1px solid var(--border); }
@@ -202,7 +216,7 @@
   <!-- PRIMARY: full metros × metrics heatmap -->
   <div class="map-panel">
     <h2>Every metro, every metric</h2>
-    <p class="sub">All 14 GA metros across <strong id="metric-count">27</strong> indicators, shaded by where each metro ranks among the 14 — <span style="color:var(--teal); font-weight:700;">teal = strong</span>, <span style="color:var(--coral); font-weight:700;">coral = weak</span>, grey = neutral. Click any column to sort; click a metro to load its profile below.</p>
+    <p class="sub">All 14 GA metros across <strong id="metric-count">27</strong> indicators, shaded by where each metro ranks among the 14 — <span style="color:var(--teal); font-weight:700;">teal = strong</span>, <span style="color:var(--coral); font-weight:700;">coral = weak</span>, grey = neutral. Click any column header to sort.</p>
     <div class="cmp-controls">
       <label for="heat-theme">Show:</label>
       <select id="heat-theme"><option value="__all__">All themes</option></select>
@@ -212,6 +226,7 @@
         <option value="rank">Ranks (1 = best)</option>
       </select>
     </div>
+    <p class="heat-hint"><span class="arr">→</span> Click any metro's name to open its full economic report</p>
     <div class="heat-wrap">
       <table class="heat" id="heat-table">
         <thead id="heat-head"></thead>
@@ -248,6 +263,7 @@
     <div class="cmp-controls">
       <label for="profile-msa">Metro:</label>
       <select id="profile-msa"></select>
+      <a id="profile-report" class="profile-report" href="#">View full report ↗</a>
     </div>
     <div class="profile-grid" id="profile-body"></div>
   </div>
@@ -469,7 +485,8 @@ function renderHeatmap() {
   const body = document.getElementById('heat-body');
   body.innerHTML = rows.map(row => {
     const i = idxOf[row.short_name];
-    let tds = `<td class="name-col" data-msa="${row.short_name}">${row.short_name}<span class="pop">${(row.population/1000).toFixed(0)}k</span></td>`;
+    const slug = row.short_name.toLowerCase().replace(/\s+/g, '-');
+    let tds = `<td class="name-col" data-msa="${row.short_name}"><a class="metro-report" href="/msa/${slug}/" title="Open the full ${row.short_name} economic report">${row.short_name}<span class="ext">↗</span></a><span class="pop">${(row.population/1000).toFixed(0)}k</span></td>`;
     metrics.forEach(m => {
       const st = MSTATE[m.key];
       const score = st.scores[i];
@@ -483,12 +500,6 @@ function renderHeatmap() {
     });
     return `<tr>${tds}</tr>`;
   }).join('');
-  body.querySelectorAll('.name-col').forEach(td => td.addEventListener('click', () => {
-    const ms = td.dataset.msa;
-    document.getElementById('profile-msa').value = ms;
-    renderProfile(ms);
-    document.getElementById('profile-body').scrollIntoView({ behavior: 'smooth', block: 'center' });
-  }));
 }
 
 /* ---- Focused radar (themed) ---- */
@@ -603,6 +614,13 @@ function renderProfile(shortName) {
   const row = DATA.msas.find(r => r.short_name === shortName);
   if (!row) return;
   const i = DATA.msas.indexOf(row);
+  // point the "View full report" CTA at this metro's deep-dive page
+  const rl = document.getElementById('profile-report');
+  if (rl) {
+    rl.href = '/msa/' + shortName.toLowerCase().replace(/\s+/g, '-') + '/';
+    rl.textContent = 'View full ' + shortName + ' report ↗';
+    rl.style.display = 'inline-block';
+  }
   const body = document.getElementById('profile-body');
   let html = '';
   groupByTheme().forEach(g => {

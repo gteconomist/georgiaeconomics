@@ -24,6 +24,42 @@
 <!-- Plotly + maps.js power the clickable hero metro map (page-specific). -->
 <script defer src="https://cdn.plot.ly/plotly-2.35.2.min.js"></script>
 <script defer src="/maps.js"></script>
+
+<style>
+  /* Homepage card hierarchy (Modern Editorial): 2 large flagships + compact groups */
+  .home-feature { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; margin-top: 28px; }
+  @media (max-width: 740px) { .home-feature { grid-template-columns: 1fr; } }
+  .feature-card {
+    position: relative; display: flex; flex-direction: column; gap: 8px;
+    background: var(--panel-bg); border: 1px solid var(--border); border-radius: 14px;
+    padding: 24px 26px 22px 28px; box-shadow: var(--card-shadow);
+    text-decoration: none; color: var(--ink); overflow: hidden;
+    transition: transform .12s ease, box-shadow .12s ease;
+  }
+  .feature-card::before { content: ""; position: absolute; left: 0; top: 0; bottom: 0; width: 4px; background: var(--peach-deep); }
+  .feature-card:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(16,32,44,.10); text-decoration: none; }
+  .fc-eyebrow { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: .07em; color: var(--peach-deep); }
+  .feature-card h3 { font-family: var(--font-display); font-size: 26px; font-weight: 700; color: var(--ink); margin: 2px 0 0; letter-spacing: -.015em; }
+  .feature-card p { font-size: 15px; color: var(--ink-soft); margin: 0; }
+  .fc-cta { margin-top: 6px; font-size: 14px; font-weight: 700; color: var(--navy); }
+  .feature-card:hover .fc-cta { color: var(--peach-deep); }
+
+  .home-section-head { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; flex-wrap: wrap; margin: 40px 0 14px; padding-bottom: 8px; border-bottom: 1px solid var(--border); }
+  .home-section-head h2 { font-family: var(--font-display); font-size: 22px; font-weight: 700; color: var(--ink); margin: 0; letter-spacing: -.01em; }
+  .home-section-head span { font-size: 13px; color: var(--ink-soft); }
+
+  .compact-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
+  @media (max-width: 900px) { .compact-grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 520px) { .compact-grid { grid-template-columns: 1fr; } }
+  .compact-card {
+    display: block; background: var(--panel-bg); border: 1px solid var(--border);
+    border-radius: 12px; padding: 15px 16px; text-decoration: none; color: var(--ink);
+    transition: border-color .12s ease, transform .12s ease, box-shadow .12s ease;
+  }
+  .compact-card:hover { border-color: var(--peach-deep); transform: translateY(-1px); box-shadow: var(--card-shadow); text-decoration: none; }
+  .compact-card h4 { font-family: var(--font-display); font-size: 17px; font-weight: 600; color: var(--navy); margin: 0 0 4px; letter-spacing: -.01em; }
+  .compact-card p { font-size: 13px; color: var(--ink-soft); margin: 0; line-height: 1.45; }
+</style>
 </head>
 <body>
 
@@ -107,98 +143,49 @@
     <div id="hero-metro-map" class="geo-nav-map" data-ge-metromap data-metric-label="Metro unemployment"></div>
   </section>
 
-  <div class="topic-grid">
-
-    <a class="topic-card feature" href="/counties/">
-      <div class="badge">Live now</div>
-      <h3>County Heat Map</h3>
-      <p>All 159 counties on one interactive map. Drag the time slider to watch unemployment ripple across the state.</p>
+  <!-- Featured: the two interactive flagships -->
+  <section class="home-feature" aria-label="Featured tools">
+    <a class="feature-card" href="/counties/">
+      <span class="fc-eyebrow">Interactive map &middot; 159 counties</span>
+      <h3>County heat map</h3>
+      <p>Every Georgia county on one map. Drag the time slider to watch unemployment ripple across the state, then open any county's profile.</p>
+      <span class="fc-cta">Explore the counties &rarr;</span>
     </a>
-
-    <a class="topic-card feature" href="/msa/">
-      <div class="badge">Live now</div>
-      <h3>Metro Dashboard</h3>
-      <p>Side-by-side comparisons of all 14 GA MSAs &mdash; Atlanta, Savannah, Augusta, Columbus, Athens, and more. Pick any 2-3 to overlay on a radar chart.</p>
+    <a class="feature-card" href="/msa/">
+      <span class="fc-eyebrow">Compare 14 metros &middot; 27 indicators</span>
+      <h3>Metro dashboard</h3>
+      <p>Every Georgia metro ranked side by side across jobs, housing, growth and output &mdash; with a full economic deep-dive report for each.</p>
+      <span class="fc-cta">Compare the metros &rarr;</span>
     </a>
+  </section>
 
-    <a class="topic-card" href="/labor/">
-      <div class="badge">Live now</div>
-      <h3>Labor Market</h3>
-      <p>Statewide unemployment, total nonfarm payrolls, sector-by-sector employment with YoY change. Real BLS data, refreshed monthly.</p>
-    </a>
+  <!-- Statewide topics -->
+  <div class="home-section-head">
+    <h2>Explore by topic</h2>
+    <span>Statewide indicators, refreshed monthly from BLS, BEA &amp; Census</span>
+  </div>
+  <div class="compact-grid">
+    <a class="compact-card" href="/labor/"><h4>Labor market</h4><p>Unemployment, payrolls &amp; sector jobs with year-over-year change.</p></a>
+    <a class="compact-card" href="/housing/"><h4>Housing</h4><p>Home prices, affordability &amp; building permits, statewide and by metro.</p></a>
+    <a class="compact-card" href="/population/"><h4>Population &amp; growth</h4><p>Growth, components of change, age &amp; race. Census PEP.</p></a>
+    <a class="compact-card" href="/migration/"><h4>Migration</h4><p>Who's moving in and out, county by county. IRS SOI + Census.</p></a>
+    <a class="compact-card" href="/gdp/"><h4>State GDP</h4><p>Output, per-capita &amp; sector mix, with Southeast peers.</p></a>
+    <a class="compact-card" href="/outlook/"><h4>Economic outlook</h4><p>A business-cycle index plus a 5-year forecast.</p></a>
+    <a class="compact-card" href="/inflation/"><h4>Inflation</h4><p>Atlanta &amp; South CPI, gas prices, a real-wage tracker.</p></a>
+    <a class="compact-card" href="/consumer/"><h4>Consumer</h4><p>Spending, electricity demand &amp; purchasing power.</p></a>
+  </div>
 
-    <a class="topic-card feature" href="/housing/">
-      <div class="badge">Live now</div>
-      <h3>Housing</h3>
-      <p>FHFA home prices statewide &amp; by metro, an all-159-county value map, affordability, valuation, and building permits &mdash; including non-metro Georgia.</p>
-    </a>
-
-    <a class="topic-card feature" href="/population/">
-      <div class="badge">Live now</div>
-      <h3>Population &amp; Growth</h3>
-      <p>State + county growth, components of change (births, deaths, net migration), age pyramid, race/ethnicity, Southeast peers. Census PEP.</p>
-    </a>
-
-    <a class="topic-card feature" href="/migration/">
-      <div class="badge">Live now</div>
-      <h3>Migration</h3>
-      <p>Where movers come from and go to (state-to-state), a 159-county net-migration map, the domestic vs. international vs. natural split, and metro attraction. IRS SOI + Census PEP.</p>
-    </a>
-
-    <a class="topic-card feature" href="/gdp/">
-      <div class="badge">Live now</div>
-      <h3>State GDP</h3>
-      <p>Real &amp; nominal output, per-capita GDP, sector composition, a Southeast-peer comparison (FL/NC/SC/TN/AL), and a 159-county output map &mdash; including non-metro Georgia.</p>
-    </a>
-
-    <a class="topic-card feature" href="/outlook/">
-      <div class="badge">Live now</div>
-      <h3>Economic Outlook</h3>
-      <p>A coincident business-cycle index &mdash; where Georgia's economy is now &mdash; plus a 5-year model forecast of GDP, jobs, unemployment, population, and home prices, statewide and by metro.</p>
-    </a>
-
-    <a class="topic-card feature" href="/inflation/">
-      <div class="badge">Live now</div>
-      <h3>Inflation</h3>
-      <p>South region + Atlanta MSA CPI, category breakdown (food / energy / shelter), GA retail gasoline, and a real-wage tracker. BLS data, refreshed monthly.</p>
-    </a>
-
-    <a class="topic-card feature" href="/consumer/">
-      <div class="badge">Live now</div>
-      <h3>Consumer</h3>
-      <p>Personal consumption expenditures (total, per-capita, by category), a Southeast-peer comparison, Georgia residential electricity demand &amp; price, and a real-wage purchasing-power tracker. BEA + EIA + BLS.</p>
-    </a>
-
-    <a class="topic-card feature" href="/trade/">
-      <div class="badge">Distinctive</div>
-      <h3>Trade &amp; Logistics</h3>
-      <p>Port of Savannah monthly TEUs, Brunswick auto throughput, Hartsfield-Jackson cargo, GA exports by country.</p>
-    </a>
-
-    <a class="topic-card feature" href="/industries/film/">
-      <div class="badge">Distinctive</div>
-      <h3>Film Industry</h3>
-      <p>Annual GA film spend, motion-picture-sector employment, productions filmed in Georgia.</p>
-    </a>
-
-    <a class="topic-card feature" href="/industries/agriculture/">
-      <div class="badge">Distinctive</div>
-      <h3>Agriculture</h3>
-      <p>Broilers (#1), peanuts (#1), pecans (#1), cotton, blueberries &mdash; USDA NASS data.</p>
-    </a>
-
-    <a class="topic-card feature" href="/industries/automotive/">
-      <div class="badge">Distinctive</div>
-      <h3>Automotive &amp; EV</h3>
-      <p>Kia West Point, Hyundai Metaplant Bryan County, supplier footprint, the "EV corridor" story.</p>
-    </a>
-
-    <a class="topic-card feature" href="/industries/data-centers/">
-      <div class="badge">Distinctive</div>
-      <h3>Data Centers</h3>
-      <p>138 facilities tracked &mdash; operating + pipeline MW capacity, county rankings, Georgia Power load forecast, tax exemption tracker, water use.</p>
-    </a>
-
+  <!-- Industries -->
+  <div class="home-section-head">
+    <h2>Industries &amp; signature sectors</h2>
+    <span>The industries that make Georgia's economy distinctive</span>
+  </div>
+  <div class="compact-grid">
+    <a class="compact-card" href="/trade/"><h4>Trade &amp; logistics</h4><p>Port of Savannah, Brunswick autos, ATL cargo, exports.</p></a>
+    <a class="compact-card" href="/industries/automotive/"><h4>Automotive &amp; EV</h4><p>Kia, the Hyundai Metaplant, and the EV corridor.</p></a>
+    <a class="compact-card" href="/industries/data-centers/"><h4>Data centers</h4><p>138 facilities, MW capacity, county rankings, water use.</p></a>
+    <a class="compact-card" href="/industries/film/"><h4>Film</h4><p>GA film spend, motion-picture jobs, productions shot here.</p></a>
+    <a class="compact-card" href="/industries/agriculture/"><h4>Agriculture</h4><p>Broilers, peanuts, pecans, cotton, blueberries. USDA.</p></a>
   </div>
 </main>
 
