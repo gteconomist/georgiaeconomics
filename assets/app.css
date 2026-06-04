@@ -32,7 +32,7 @@
 }
 .pending strong { color: var(--peach-deep); }
 .disclaimer {
-  background: #fff7ed; border-left: 4px solid var(--peach-deep);
+  background: var(--peach-pale); border-left: 4px solid var(--peach-deep);
   border-radius: 6px; padding: 12px 16px; margin: 4px 0 14px; font-size: 13px; color: var(--ink);
 }
 .disclaimer strong { color: var(--peach-deep); }
@@ -46,14 +46,14 @@
 .data-table-wrap { overflow-x: auto; }
 table.data-table { width: 100%; border-collapse: collapse; font-size: 14px; min-width: 520px; }
 table.data-table thead th {
-  text-align: left; padding: 8px 10px; background: var(--chart-bg);
-  border-bottom: 2px solid var(--navy); color: var(--navy);
-  font-weight: 700; text-transform: uppercase; letter-spacing: 0.04em; font-size: 11px; cursor: pointer;
+  text-align: left; padding: 9px 10px; background: #ffffff;
+  border-bottom: 1px solid #d3d9df; color: var(--ink-faint);
+  font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; font-size: 11px; cursor: pointer;
 }
 table.data-table thead th.numeric { text-align: right; }
-table.data-table tbody td { padding: 7px 10px; border-bottom: 1px dotted var(--border); }
+table.data-table tbody td { padding: 9px 10px; border-bottom: 1px solid var(--border); }
 table.data-table tbody td.numeric { text-align: right; font-variant-numeric: tabular-nums; }
-table.data-table tbody tr:hover { background: var(--peach-pale); }
+table.data-table tbody tr:hover { background: #f8fafb; }
 table.data-table .row-name, table.data-table .metro-name { font-weight: 600; color: var(--navy); }
 .pos { color: var(--teal); font-weight: 600; }
 .neg { color: var(--coral); font-weight: 600; }
@@ -63,7 +63,7 @@ table.data-table .row-name, table.data-table .metro-name { font-weight: 600; col
 
 /* ---- small stat grids (e.g. non-metro aggregate) ---- */
 .stat-grid, .nonmetro-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 14px; margin-top: 6px; }
-.stat-card, .nonmetro-stat { background: var(--chart-bg); border-radius: 8px; padding: 12px 14px; }
+.stat-card, .nonmetro-stat { background: var(--page-bg); border: 1px solid var(--border); border-radius: 8px; padding: 12px 14px; }
 .stat-card .label, .nonmetro-stat .label { font-size: 11px; text-transform: uppercase; letter-spacing: 0.04em; color: var(--ink-soft); font-weight: 700; }
 .stat-card .value, .nonmetro-stat .value { font-size: 22px; font-weight: 800; color: var(--navy); margin-top: 2px; font-variant-numeric: tabular-nums; }
 
@@ -207,7 +207,7 @@ table.data-table .row-name, table.data-table .metro-name { font-weight: 600; col
  * ===================================================================== */
 .econ-glance { margin-top: 26px; }
 .econ-glance .eg-head { display: flex; align-items: baseline; justify-content: space-between; flex-wrap: wrap; gap: 8px; margin-bottom: 12px; }
-.econ-glance .eg-head h2 { margin: 0; font-family: var(--font-display); color: var(--navy); font-size: 22px; font-weight: 800; }
+.econ-glance .eg-head h2 { margin: 0; font-family: var(--font-display); color: var(--ink); font-size: 24px; font-weight: 700; letter-spacing: -0.01em; }
 .econ-glance .eg-head .eg-all { font-size: 13px; font-weight: 600; color: var(--peach-deep); }
 .scorecard { display: grid; grid-template-columns: repeat(7, 1fr); gap: 12px; }
 @media (max-width: 1100px) { .scorecard { grid-template-columns: repeat(4, 1fr); } }
@@ -220,7 +220,7 @@ table.data-table .row-name, table.data-table .metro-name { font-weight: 600; col
 }
 .score-card:hover { transform: translateY(-2px); text-decoration: none; box-shadow: 0 6px 18px rgba(15, 23, 42, 0.10); }
 .sc-label { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; color: var(--ink-soft); }
-.sc-value { font-family: var(--font-display); font-size: 23px; font-weight: 800; color: var(--navy); line-height: 1.05; }
+.sc-value { font-family: var(--font-display); font-size: 24px; font-weight: 700; color: var(--ink); line-height: 1.05; }
 .sc-delta { font-size: 12px; font-weight: 600; }
 .sc-delta.good { color: var(--teal); }
 .sc-delta.bad  { color: var(--coral); }

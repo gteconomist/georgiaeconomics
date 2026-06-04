@@ -14,12 +14,13 @@ const BRAND_MAP = {
   teal: '#3a8d8d',
   coral: '#d4624a',
   peach: '#e8a87c',
-  peachDeep: '#c46b3a',
-  peachPale: '#faead9',
+  peachDeep: '#c05f3c',
+  peachPale: '#f6e7df',
   cream: '#fbf5dc',
-  ink: '#1a1a1a',
-  inkSoft: '#6b7280',
-  border: '#d9d3b8',
+  mapBg: '#ffffff',   /* Modern Editorial: maps render on white, not cream */
+  ink: '#16202c',
+  inkSoft: '#5b6675',
+  border: '#e6e9ed',
 };
 
 /* ---------- Color scales ---------- */
@@ -36,7 +37,7 @@ const SCALE_SEQUENTIAL = [
 const SCALE_DIVERGING = [
   [0.00, BRAND_MAP.teal],
   [0.25, '#a4d4d4'],
-  [0.50, BRAND_MAP.cream],
+  [0.50, '#eef1f4'],
   [0.75, BRAND_MAP.peach],
   [1.00, BRAND_MAP.coral],
 ];
@@ -45,7 +46,7 @@ const SCALE_DIVERGING = [
 const SCALE_INVERSE = [
   [0.00, BRAND_MAP.navy],
   [0.25, BRAND_MAP.teal],
-  [0.55, BRAND_MAP.cream],
+  [0.55, '#eef1f4'],
   [0.80, BRAND_MAP.peach],
   [1.00, BRAND_MAP.coral],
 ];
@@ -203,11 +204,11 @@ async function drawGAChoropleth(elId, dataPoints, opts) {
       fitbounds: 'locations',
       visible: false,
       showsubunits: false,   // hide neighboring states — Georgia only
-      bgcolor: BRAND_MAP.cream,
+      bgcolor: BRAND_MAP.mapBg,
     },
     dragmode: false,         // lock the view to Georgia (no pan)
-    paper_bgcolor: BRAND_MAP.cream,
-    plot_bgcolor: BRAND_MAP.cream,
+    paper_bgcolor: BRAND_MAP.mapBg,
+    plot_bgcolor: BRAND_MAP.mapBg,
     // On phones the colorbar moves below the map, so leave room at the bottom.
     margin: narrow ? { t: opts.title ? 36 : 8, l: 8, r: 8, b: 52 }
                    : { t: opts.title ? 36 : 8, l: 8, r: 8, b: 8 },
@@ -287,11 +288,11 @@ async function drawGATimeChoropleth(elId, framesByDate, opts) {
     title: opts.title ? { text: opts.title, font: { family: 'Source Sans Pro', size: 16, color: BRAND_MAP.navy } } : undefined,
     geo: {
       scope: 'usa', fitbounds: 'locations', visible: false,
-      showsubunits: false, bgcolor: BRAND_MAP.cream,
+      showsubunits: false, bgcolor: BRAND_MAP.mapBg,
     },
     dragmode: false,
-    paper_bgcolor: BRAND_MAP.cream,
-    plot_bgcolor: BRAND_MAP.cream,
+    paper_bgcolor: BRAND_MAP.mapBg,
+    plot_bgcolor: BRAND_MAP.mapBg,
     // On phones the colorbar sits above the map (the slider owns the bottom),
     // so reserve a little extra headroom.
     margin: { t: narrow ? 44 : (opts.title ? 36 : 8), l: 8, r: 8, b: 80 },
@@ -311,7 +312,7 @@ async function drawGATimeChoropleth(elId, framesByDate, opts) {
       type: 'buttons',
       x: 0.02, y: -0.08, xanchor: 'left', yanchor: 'top',
       direction: 'left', pad: { t: 4, r: 6 },
-      bgcolor: BRAND_MAP.cream, bordercolor: BRAND_MAP.navy,
+      bgcolor: BRAND_MAP.mapBg, bordercolor: BRAND_MAP.navy,
       font: { color: BRAND_MAP.navy, family: 'Source Sans Pro', size: 12 },
       buttons: [
         { label: '▶ Play', method: 'animate', args: [null, { mode: 'immediate', fromcurrent: true, frame: { duration: opts.frameDuration || 600, redraw: true }, transition: { duration: 0 } }] },

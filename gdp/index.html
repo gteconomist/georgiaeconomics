@@ -10,13 +10,16 @@
 <link rel="stylesheet" href="/assets/app.css">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700;800&family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600;8..60,700&display=swap" rel="stylesheet">
 <!-- app.js is intentionally NOT deferred: it defines window.GE (palette + fmt
      helpers) with no dependencies, so it must be available to each page's
      end-of-body inline script, which runs during parse before deferred scripts. -->
 <script src="/assets/app.js"></script>
 <script defer src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
 <script defer src="https://cdn.jsdelivr.net/gh/gteconomist/economicsguru@main/assets/charts.js"></script>
+<!-- GA-only: disable the shared charts.js "creamBg" plugin (Modern Editorial =
+     charts on white). Must load AFTER charts.js. -->
+<script defer src="/assets/ge-chart-overrides.js"></script>
 <!-- /GEN:HEAD -->
 <!-- Plotly + maps.js for the 159-county output choropleth -->
 <script defer src="https://cdn.plot.ly/plotly-2.35.2.min.js"></script>
@@ -39,10 +42,10 @@
   #county-map { height: 520px; background: var(--chart-bg); }
 
   .pending {
-    background: var(--peach-pale); border: 1px dashed var(--peach, #e8a87c);
+    background: var(--peach-pale); border: 1px dashed var(--peach, #d98a63);
     border-radius: 8px; padding: 14px 16px; color: var(--ink-soft); font-size: 13px;
   }
-  .pending strong { color: var(--peachDeep, #c46b3a); }
+  .pending strong { color: var(--peachDeep, #c05f3c); }
 
   .nonmetro-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 14px; margin-top: 6px; }
   .nonmetro-stat { background: var(--chart-bg); border-radius: 8px; padding: 12px 14px; }
@@ -62,7 +65,7 @@
   table.data-table tbody tr:hover { background: var(--peach-pale); }
   table.data-table .metro-name { font-weight: 600; color: var(--navy); }
 
-  .stale-badge { display:inline-block; font-size:11px; font-weight:700; color:var(--peachDeep,#c46b3a); background:var(--peach-pale); border-radius:4px; padding:1px 6px; margin-left:8px; vertical-align:middle; }
+  .stale-badge { display:inline-block; font-size:11px; font-weight:700; color:var(--peachDeep,#c05f3c); background:var(--peach-pale); border-radius:4px; padding:1px 6px; margin-left:8px; vertical-align:middle; }
   .source-note { font-size: 12px; color: var(--ink-soft); margin-top: 8px; font-style: italic; }
 </style>
 </head>
@@ -266,9 +269,9 @@
 document.getElementById('yr').textContent = new Date().getFullYear();
 
 const BRAND = {
-  navy: '#1a3a5c', peachDeep: '#c46b3a', peach: '#e8a87c',
-  mustard: '#d4a017', teal: '#3a8d8d', coral: '#d4624a',
-  green: '#6b8e3d', grid: '#b6ad8d', inkSoft: '#6b7280',
+  navy: '#1a3a5c', peachDeep: '#c05f3c', peach: '#d98a63',
+  mustard: '#c08a2e', teal: '#1f7a6b', coral: '#cc5b43',
+  green: '#6b8e3d', grid: '#e9edf1', inkSoft: '#5b6675',
 };
 
 const fmtBn = v => v == null ? '—' : '$' + Number(v).toLocaleString('en-US', { maximumFractionDigits: 1 }) + 'bn';

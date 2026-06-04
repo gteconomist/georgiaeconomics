@@ -10,13 +10,16 @@
 <link rel="stylesheet" href="/assets/app.css">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700;800&family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600;8..60,700&display=swap" rel="stylesheet">
 <!-- app.js is intentionally NOT deferred: it defines window.GE (palette + fmt
      helpers) with no dependencies, so it must be available to each page's
      end-of-body inline script, which runs during parse before deferred scripts. -->
 <script src="/assets/app.js"></script>
 <script defer src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
 <script defer src="https://cdn.jsdelivr.net/gh/gteconomist/economicsguru@main/assets/charts.js"></script>
+<!-- GA-only: disable the shared charts.js "creamBg" plugin (Modern Editorial =
+     charts on white). Must load AFTER charts.js. -->
+<script defer src="/assets/ge-chart-overrides.js"></script>
 <!-- /GEN:HEAD -->
 <style>
   .dir-section { margin: 28px 0; }

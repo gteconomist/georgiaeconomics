@@ -10,13 +10,16 @@
 <link rel="stylesheet" href="/assets/app.css">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700;800&family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600;8..60,700&display=swap" rel="stylesheet">
 <!-- app.js is intentionally NOT deferred: it defines window.GE (palette + fmt
      helpers) with no dependencies, so it must be available to each page's
      end-of-body inline script, which runs during parse before deferred scripts. -->
 <script src="/assets/app.js"></script>
 <script defer src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
 <script defer src="https://cdn.jsdelivr.net/gh/gteconomist/economicsguru@main/assets/charts.js"></script>
+<!-- GA-only: disable the shared charts.js "creamBg" plugin (Modern Editorial =
+     charts on white). Must load AFTER charts.js. -->
+<script defer src="/assets/ge-chart-overrides.js"></script>
 <!-- /GEN:HEAD -->
 
 <!-- Chart.js -->
@@ -288,7 +291,7 @@
     .site-header, .site-footer, .print-actions { display: none !important; }
     main { padding: 0 !important; max-width: none !important; }
     .report-band { background: #1a3a5c !important; -webkit-print-color-adjust: exact; color-adjust: exact; }
-    .canvas-sm, .canvas-md, .canvas-lg { background: #fbf5dc !important; -webkit-print-color-adjust: exact; }
+    .canvas-sm, .canvas-md, .canvas-lg { background: #ffffff !important; -webkit-print-color-adjust: exact; }
     .section-header { page-break-after: avoid; }
     .report-panel, .narrative-grid { page-break-inside: avoid; }
     .chart-row { page-break-inside: avoid; }
@@ -1026,18 +1029,18 @@ document.getElementById('yr').textContent = new Date().getFullYear();
 /* Brand palette */
 const C = {
   sav:   '#1a3a5c',
-  ga:    '#c46b3a',
-  us:    '#3a8d8d',
+  ga:    '#c05f3c',
+  us:    '#1f7a6b',
   navy:  '#1a3a5c',
-  peach: '#c46b3a',
-  teal:  '#3a8d8d',
-  must:  '#d4a017',
-  coral: '#d4624a',
+  peach: '#c05f3c',
+  teal:  '#1f7a6b',
+  must:  '#c08a2e',
+  coral: '#cc5b43',
   green: '#6b8e3d',
-  grid:  '#b6ad8d',
-  ink:   '#1a1a1a',
-  soft:  '#6b7280',
-  bg:    '#fbf5dc',
+  grid:  '#e9edf1',
+  ink:   '#16202c',
+  soft:  '#5b6675',
+  bg:    '#ffffff',
 };
 
 /* Common Chart.js defaults to match site */
@@ -1811,13 +1814,13 @@ function replaceDiffusionChartCES(ces) {
   if (ga && ga.count >= 8) datasets.push({
     label: 'Georgia',
     data: months.map(m => pctAt(ga.agg, m)),
-    borderColor: '#c46b3a', backgroundColor: 'transparent',
+    borderColor: '#c05f3c', backgroundColor: 'transparent',
     borderWidth: 1.5, borderDash: [5, 3], pointRadius: 0, fill: false, tension: 0.3, spanGaps: true,
   });
   if (us && us.count >= 8) datasets.push({
     label: 'United States',
     data: months.map(m => pctAt(us.agg, m)),
-    borderColor: '#3a8d8d', backgroundColor: 'transparent',
+    borderColor: '#1f7a6b', backgroundColor: 'transparent',
     borderWidth: 1.5, borderDash: [2, 2], pointRadius: 0, fill: false, tension: 0.3, spanGaps: true,
   });
 

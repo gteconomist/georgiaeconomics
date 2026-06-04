@@ -4,37 +4,39 @@
  */
 
 :root {
-  /* Palette — kept in lockstep with economicsguru for visual continuity */
+  /* Palette — "Modern Editorial" (June 2026). GA diverged from economicsguru:
+     one cool neutral story, serif display, terracotta as the single accent. */
   --navy:        #1a3a5c;
   --navy-soft:   #2e5984;
-  --mustard:     #d4a017;
+  --mustard:     #c08a2e;   /* desaturated; used sparingly */
   --khaki:       #9b8b6a;
-  --teal:        #3a8d8d;
+  --teal:        #1f7a6b;   /* refined — "good / up" */
   --teal-light:  #5fb8b8;
-  --coral:       #d4624a;
+  --coral:       #cc5b43;   /* refined — "bad / down" */
   --green:       #6b8e3d;
   --silver:      #9ba3ab;
-  --black:       #1a1a1a;
+  --black:       #16202c;
 
-  /* GA-distinctive accent — Peach State */
-  --peach:       #e8a87c;
-  --peach-deep:  #c46b3a;
-  --peach-pale:  #faead9;
+  /* GA signature accent — terracotta (refined "Peach State") */
+  --peach:       #d98a63;
+  --peach-deep:  #c05f3c;
+  --peach-pale:  #f6e7df;
 
-  /* Surfaces */
-  --page-bg:     #eceef1;   /* light cool gray — lets white cards pop */
+  /* Surfaces — cool neutrals; cream killed */
+  --page-bg:     #f5f6f8;   /* single cool page neutral */
   --surface:     #ffffff;   /* header / footer / opaque chrome */
-  --chart-bg:    #fbf5dc;
+  --chart-bg:    #ffffff;   /* charts now sit on white (no parchment) */
   --panel-bg:    #ffffff;
-  --border:      #d9d3b8;
-  --grid:        #b6ad8d;
-  --ink:         #1a1a1a;
-  --ink-soft:    #6b7280;
-  --card-shadow: 0 1px 2px rgba(15, 23, 42, 0.04), 0 4px 12px rgba(15, 23, 42, 0.06);
+  --border:      #e6e9ed;   /* cool hairline (replaces warm khaki) */
+  --grid:        #e9edf1;
+  --ink:         #16202c;
+  --ink-soft:    #5b6675;
+  --ink-faint:   #8a94a0;
+  --card-shadow: 0 1px 2px rgba(16, 32, 44, 0.05), 0 8px 24px rgba(16, 32, 44, 0.06);
 
-  /* Type */
+  /* Type — serif display vs sans body for real editorial contrast */
   --font-sans: "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
-  --font-display: "Source Sans Pro", Georgia, serif;
+  --font-display: "Source Serif 4", Georgia, "Times New Roman", serif;
 }
 
 * { box-sizing: border-box; }
@@ -53,9 +55,9 @@ a:hover { text-decoration: underline; }
 
 /* ---------- Page chrome ---------- */
 .site-header {
-  border-bottom: 2px solid var(--navy);
+  border-bottom: 1px solid var(--border);
   background: var(--surface);
-  box-shadow: 0 1px 0 rgba(15, 23, 42, 0.04);
+  box-shadow: none;
 }
 .site-header .wrap {
   max-width: 1200px; margin: 0 auto; padding: 18px 24px;
@@ -76,12 +78,13 @@ a:hover { text-decoration: underline; }
 main { max-width: 1200px; margin: 0 auto; padding: 28px 24px 48px; }
 
 .page-header { margin-bottom: 18px; }
+.page-header { border-bottom: 1px solid var(--border); padding-bottom: 18px; }
 .page-header h1 {
-  font-family: var(--font-display); color: var(--navy);
-  font-weight: 800; font-size: 32px; letter-spacing: -0.01em;
-  margin: 0 0 4px;
+  font-family: var(--font-display); color: var(--ink);
+  font-weight: 700; font-size: 38px; letter-spacing: -0.015em; line-height: 1.1;
+  margin: 0 0 6px;
 }
-.page-header .subtitle { color: var(--ink-soft); font-style: italic; font-size: 15px; }
+.page-header .subtitle { color: var(--ink-soft); font-style: normal; font-size: 16px; }
 .page-header .latest { margin-top: 6px; font-size: 13px; color: var(--ink-soft); }
 .page-header .latest strong { color: var(--navy); font-style: normal; }
 
@@ -93,17 +96,20 @@ main { max-width: 1200px; margin: 0 auto; padding: 28px 24px 48px; }
 }
 
 /* ---------- KPI cards ---------- */
-.kpi-grid { display: grid; grid-template-columns: repeat(6, 1fr); gap: 12px; margin-bottom: 22px; }
+/* hairline-divided rail (no per-card stripes/shadows) */
+.kpi-grid {
+  display: grid; grid-template-columns: repeat(6, 1fr); gap: 1px; margin-bottom: 22px;
+  background: var(--border); border: 1px solid var(--border);
+  border-radius: 14px; overflow: hidden; box-shadow: var(--card-shadow);
+}
 @media (max-width: 1000px) { .kpi-grid { grid-template-columns: repeat(3, 1fr); } }
 @media (max-width: 600px) { .kpi-grid { grid-template-columns: repeat(2, 1fr); } }
 .kpi {
-  border: 1px solid var(--border); border-top: 3px solid var(--navy);
-  background: var(--panel-bg); border-radius: 10px;
-  padding: 12px 14px;
-  box-shadow: var(--card-shadow);
+  border: 0; border-radius: 0; background: var(--panel-bg);
+  padding: 15px 16px; box-shadow: none;
 }
-.kpi .label { font-size: 11px; font-weight: 700; color: var(--navy); text-transform: uppercase; letter-spacing: 0.08em; }
-.kpi .value { font-family: var(--font-display); font-size: 26px; font-weight: 700; color: var(--navy); margin-top: 4px; line-height: 1.1; }
+.kpi .label { font-size: 11px; font-weight: 700; color: var(--ink-faint); text-transform: uppercase; letter-spacing: 0.07em; }
+.kpi .value { font-family: var(--font-display); font-size: 29px; font-weight: 700; color: var(--ink); margin-top: 6px; line-height: 1.05; }
 .kpi .delta { font-size: 12px; margin-top: 4px; color: var(--ink-soft); font-weight: 500; }
 .kpi .delta.up   { color: var(--coral); }
 .kpi .delta.down { color: var(--teal); }
@@ -113,13 +119,13 @@ main { max-width: 1200px; margin: 0 auto; padding: 28px 24px 48px; }
 .chart-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
 @media (max-width: 980px) { .chart-grid { grid-template-columns: 1fr; } }
 .chart-panel { background: var(--panel-bg); border: 1px solid var(--border); border-radius: 10px; padding: 14px 16px 18px; box-shadow: var(--card-shadow); }
-.chart-panel h2 { font-family: var(--font-display); color: var(--navy); font-size: 16px; font-weight: 700; margin: 0 0 4px; text-transform: uppercase; letter-spacing: 0.04em; }
+.chart-panel h2 { font-family: var(--font-display); color: var(--ink); font-size: 20px; font-weight: 600; margin: 0 0 4px; text-transform: none; letter-spacing: -0.01em; }
 .chart-panel .sub { font-size: 12px; color: var(--ink-soft); margin: 0 0 10px; }
 .chart-canvas { position: relative; height: 320px; background: var(--chart-bg); padding: 4px; }
 
 /* ---------- Map panels (georgiaeconomics-specific) ---------- */
 .map-panel { background: var(--panel-bg); border: 1px solid var(--border); border-radius: 10px; padding: 14px 16px 18px; margin-bottom: 22px; box-shadow: var(--card-shadow); }
-.map-panel h2 { font-family: var(--font-display); color: var(--navy); font-size: 18px; font-weight: 700; margin: 0 0 4px; text-transform: uppercase; letter-spacing: 0.04em; }
+.map-panel h2 { font-family: var(--font-display); color: var(--ink); font-size: 21px; font-weight: 600; margin: 0 0 4px; text-transform: none; letter-spacing: -0.01em; }
 .map-panel .sub { font-size: 13px; color: var(--ink-soft); margin: 0 0 12px; }
 .map-controls {
   display: flex; flex-wrap: wrap; gap: 12px; align-items: center;
@@ -145,7 +151,7 @@ main { max-width: 1200px; margin: 0 auto; padding: 28px 24px 48px; }
 
 /* ---------- Topic grid (landing) ---------- */
 .hero { padding: 36px 0 24px; }
-.hero h1 { font-size: 40px; font-family: var(--font-display); color: var(--navy); font-weight: 800; margin: 0 0 10px; }
+.hero h1 { font-size: 44px; font-family: var(--font-display); color: var(--ink); font-weight: 700; letter-spacing: -0.02em; line-height: 1.08; margin: 0 0 12px; }
 .hero p  { font-size: 17px; color: var(--ink-soft); max-width: 720px; margin: 0; }
 .hero .peach-stripe {
   display: inline-block; padding: 2px 10px; background: var(--peach-pale);
