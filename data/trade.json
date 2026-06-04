@@ -1,6 +1,6 @@
 {
   "_fixture": false,
-  "_note": "Partial live data: Census USA Trade Online (GA exports), BLS CES (ATL MSA T&W employment). Port of Savannah TEU, Brunswick autos, and ATL Hartsfield cargo still on fixture (Tavily-based scrapers in next iteration).",
+  "_note": "Live data: Census USA Trade Online (GA exports), BLS CES (ATL MSA T&W employment). Calibrated estimate (latest GPA point may not have refreshed): Port of Savannah TEU, Brunswick autos, ATL Hartsfield cargo.",
   "source": "FIXTURE (target: Census USA Trade Online + BLS CES + Tavily for ports)",
   "latest_label": "2026-04",
   "kpis": {
@@ -1327,7 +1327,7 @@
     }
   ],
   "ga_exports_top10_total_musd": 35268.0,
-  "fetched_at": "2026-06-03",
+  "fetched_at": "2026-06-04",
   "ga_exports_latest": [
     {
       "country": "Canada",
@@ -1502,10 +1502,10 @@
   },
   "_meta": {
     "exports_annual": {
-      "last_updated": "2026-06-03T19:34:43Z"
+      "last_updated": "2026-06-04T03:12:54Z"
     },
     "exports_by_commodity": {
-      "last_updated": "2026-06-03T19:34:53Z"
+      "last_updated": "2026-06-04T03:13:02Z"
     }
   }
 }
