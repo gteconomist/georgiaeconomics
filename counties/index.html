@@ -85,7 +85,7 @@
   <section class="page-header">
     <h1>Georgia counties at a glance</h1>
     <div class="subtitle">Hover any county for its unemployment rate. Drag the time slider to watch the last 12 months ripple across all 159.</div>
-    <div class="latest">Latest data: <strong id="latest-month">—</strong> &middot; Statewide average: <strong id="state-avg">—</strong></div>
+    <div class="latest">Latest data: <strong id="latest-month">—</strong> &middot; <span id="state-avg-label">Statewide average</span>: <strong id="state-avg">—</strong></div>
   </section>
 
   <div class="notice" id="fixture-banner" style="display:none;">
@@ -95,9 +95,9 @@
   <!-- KPI strip -->
   <div class="kpi-grid">
     <div class="kpi">
-      <div class="label">Statewide avg</div>
+      <div class="label" id="kpi-statewide-label">Statewide avg</div>
       <div class="value" id="kpi-statewide">—</div>
-      <div class="delta">All 159 counties, unweighted</div>
+      <div class="delta" id="kpi-statewide-delta">All 159 counties, unweighted</div>
     </div>
     <div class="kpi">
       <div class="label">Lowest county</div>
@@ -112,35 +112,30 @@
     <div class="kpi">
       <div class="label">Counties tracked</div>
       <div class="value">159</div>
-      <div class="delta">BLS LAUS, monthly</div>
+      <div class="delta">All Georgia counties</div>
     </div>
     <div class="kpi">
-      <div class="label">Time series</div>
-      <div class="value">12 mo</div>
-      <div class="delta">Drag slider below</div>
+      <div class="label">Vintage</div>
+      <div class="value" id="kpi-period-val" style="font-size:15px; line-height:1.3;">12 mo</div>
+      <div class="delta" id="kpi-period-delta">Drag slider below</div>
     </div>
     <div class="kpi">
       <div class="label">Data source</div>
-      <div class="value" style="font-size:14px; line-height:1.3;">BLS LAUS</div>
-      <div class="delta">Local Area Unemp Stats</div>
+      <div class="value" id="kpi-source-val" style="font-size:14px; line-height:1.3;">BLS LAUS</div>
+      <div class="delta" id="kpi-source-delta">Local Area Unemp Stats</div>
     </div>
   </div>
 
-  <!-- Time-animated choropleth -->
+  <!-- County choropleth (unemployment animates; other metrics are static) -->
   <div class="map-panel">
-    <h2>Unemployment by County — 12-Month Animation</h2>
-    <p class="sub">Each county shaded by its monthly unemployment rate. Click ▶ Play or drag the slider.</p>
+    <h2 id="map-h2">Unemployment by County — 12-Month Animation</h2>
+    <p class="sub" id="map-sub">Each county shaded by its monthly unemployment rate. Click ▶ Play or drag the slider.</p>
     <div class="map-controls">
       <label for="metric-select">Metric</label>
-      <select id="metric-select">
-        <option value="unemployment_rate" selected>Unemployment rate (%)</option>
-        <option value="median_income" disabled>Median household income — coming soon</option>
-        <option value="population_change" disabled>Population change — coming soon</option>
-        <option value="poverty_rate" disabled>Poverty rate — coming soon</option>
-      </select>
+      <select id="metric-select"></select>
     </div>
     <div class="map-container" id="ga-county-map"></div>
-    <div class="map-legend-note">Color scale uses a global min/max across all 12 frames so colors stay comparable as you scrub through time.</div>
+    <div class="map-legend-note" id="map-note">Color scale uses a global min/max across all 12 frames so colors stay comparable as you scrub through time.</div>
   </div>
 
   <!-- Best & worst leaderboards -->
@@ -343,45 +338,131 @@
 <script>
 document.getElementById('yr').textContent = new Date().getFullYear();
 
+let FRAMES = null, URKPI = null, URLABEL = 'Unemployment rate', CM = { metrics: [], counties: {} };
+
+function fval(v, fmt) {
+  if (v == null || isNaN(v)) return '—';
+  switch (fmt) {
+    case 'usd0': return '$' + Math.round(v).toLocaleString();
+    case 'pct1': return v.toFixed(1) + '%';
+    case 'pct1signed': return (v > 0 ? '+' : '') + v.toFixed(1) + '%';
+    case 'num0signed': return (v > 0 ? '+' : '') + Math.round(v).toLocaleString();
+    case 'num0': return Math.round(v).toLocaleString();
+    default: return v.toLocaleString();
+  }
+}
+function setLb(role, text) {
+  const el = document.querySelector('#county-leaderboards [data-role="' + role + '"] h3');
+  if (el) el.textContent = text;
+}
+const setT = (id, v) => { const el = document.getElementById(id); if (el) el.textContent = v; };
+
 async function init() {
-  // Cache-bust by calendar day instead of by millisecond.
-  // counties.json only changes when the monthly workflow runs, so a daily
-  // bust lets the browser AND jsDelivr/GH Pages CDNs serve cached copies
-  // for up to 24h. The old approach (?v=Date.now() + cache:'no-store') forced
-  // a fresh ~189 KB download on every single page view.
-  const day = new Date().toISOString().slice(0, 10); // e.g. "2026-05-12"
-  const res  = await fetch('/data/counties.json?v=' + day);
-  const data = await res.json();
+  // Daily cache-bust so the CDN can serve cached copies for up to 24h.
+  const day = new Date().toISOString().slice(0, 10);
+  const cRes = await fetch('/data/counties.json?v=' + day);
+  const cdata = await cRes.json();
+  FRAMES = cdata.frames;
+  URKPI = cdata.kpis;
+  URLABEL = cdata.metric_label || 'Unemployment rate';
+  if (cdata._fixture) document.getElementById('fixture-banner').style.display = '';
+  setT('latest-month', cdata.latest_label || '—');
 
-  // Fixture banner
-  if (data._fixture) document.getElementById('fixture-banner').style.display = '';
+  // Static per-county metrics (median income, poverty, population change, …).
+  // Degrades gracefully: if the file is missing, only the unemployment view shows.
+  try {
+    const mRes = await fetch('/data/county_metrics.json?v=' + day);
+    if (mRes.ok) CM = await mRes.json();
+  } catch (e) { /* leave CM empty */ }
 
-  // Header text
-  document.getElementById('latest-month').textContent = data.latest_label || '—';
-  document.getElementById('state-avg').textContent    = (data.kpis.statewide_avg_unemp ?? '—') + '%';
+  // Build the metric selector: unemployment (animated) + live static metrics.
+  const sel = document.getElementById('metric-select');
+  sel.innerHTML = '';
+  const urOpt = document.createElement('option');
+  urOpt.value = 'unemployment_rate';
+  urOpt.textContent = 'Unemployment rate (%) — monthly';
+  sel.appendChild(urOpt);
+  (CM.metrics || []).forEach(m => {
+    const o = document.createElement('option');
+    o.value = m.key; o.textContent = m.label;
+    sel.appendChild(o);
+  });
+  sel.value = 'unemployment_rate';
+  sel.addEventListener('change', () => renderMetric(sel.value));
 
-  // KPI strip
-  document.getElementById('kpi-statewide').textContent    = data.kpis.statewide_avg_unemp + '%';
-  document.getElementById('kpi-lowest-val').textContent   = data.kpis.lowest.value  + '%';
-  document.getElementById('kpi-lowest-name').textContent  = data.kpis.lowest.county  + ' County';
-  document.getElementById('kpi-highest-val').textContent  = data.kpis.highest.value + '%';
-  document.getElementById('kpi-highest-name').textContent = data.kpis.highest.county + ' County';
+  renderMetric('unemployment_rate');
+}
 
-  // Map (animated)
-  await window.gaMaps.drawGATimeChoropleth('ga-county-map', data.frames, {
-    metricLabel: data.metric_label || 'Unemployment',
-    unit: data.unit || '%',
-    colorscale: 'sequential',
-    frameDuration: 600,
+async function renderUnemployment() {
+  await window.gaMaps.drawGATimeChoropleth('ga-county-map', FRAMES, {
+    metricLabel: URLABEL, unit: '%', colorscale: 'sequential', frameDuration: 600,
+  });
+  setT('map-h2', 'Unemployment by County — 12-Month Animation');
+  setT('map-sub', 'Each county shaded by its monthly unemployment rate. Click ▶ Play or drag the slider.');
+  setT('map-note', 'Color scale uses a global min/max across all 12 frames so colors stay comparable as you scrub through time.');
+  setLb('best', 'Lowest unemployment');
+  setLb('worst', 'Highest unemployment');
+  window.gaMaps.renderLeaderboards('county-leaderboards', FRAMES[FRAMES.length - 1].points, { topN: 8, unit: '%', lowerIsBetter: true });
+  setT('kpi-statewide-label', 'Statewide avg');
+  setT('kpi-statewide', (URKPI.statewide_avg_unemp ?? '—') + '%');
+  setT('kpi-statewide-delta', 'All 159 counties, unweighted');
+  setT('state-avg-label', 'Statewide average');
+  setT('state-avg', (URKPI.statewide_avg_unemp ?? '—') + '%');
+  setT('kpi-lowest-val', URKPI.lowest.value + '%');
+  setT('kpi-lowest-name', URKPI.lowest.county + ' County');
+  setT('kpi-highest-val', URKPI.highest.value + '%');
+  setT('kpi-highest-name', URKPI.highest.county + ' County');
+  setT('kpi-period-val', '12 mo');
+  setT('kpi-period-delta', 'Drag slider below');
+  setT('kpi-source-val', 'BLS LAUS');
+  setT('kpi-source-delta', 'Local Area Unemp Stats');
+}
+
+async function renderMetric(key) {
+  if (key === 'unemployment_rate') { await renderUnemployment(); return; }
+  const m = (CM.metrics || []).find(x => x.key === key);
+  if (!m) return;
+  const points = [];
+  for (const fips in CM.counties) {
+    const v = CM.counties[fips][key];
+    if (v == null) continue;
+    points.push({ fips, value: v, label: CM.counties[fips].name });
+  }
+  if (!points.length) return;
+  const lowerBetter = m.polarity === 'good_low';
+  const vf = v => fval(v, m.fmt);
+
+  await window.gaMaps.drawGAChoropleth('ga-county-map', points, {
+    metricLabel: m.label, unit: m.unit, colorscale: m.colorscale, valueFormatter: vf,
   });
 
-  // Leaderboards from the latest frame
-  const latestPoints = data.frames[data.frames.length - 1].points;
-  window.gaMaps.renderLeaderboards('county-leaderboards', latestPoints, {
-    topN: 8,
-    unit: '%',
-    lowerIsBetter: true,
-  });
+  setT('map-h2', m.label + ' by County');
+  setT('map-sub', 'Each county shaded by its ' + m.label.toLowerCase() + '.'
+       + (m.colorscale === 'diverging' ? ' Diverging scale centred on zero (blue below, red above).' : ''));
+  setT('map-note', 'Source: ' + m.source + '. Static county map, latest available vintage.');
+
+  setLb('best', (lowerBetter ? 'Lowest ' : 'Highest ') + m.label.toLowerCase());
+  setLb('worst', (lowerBetter ? 'Highest ' : 'Lowest ') + m.label.toLowerCase());
+  window.gaMaps.renderLeaderboards('county-leaderboards', points, { topN: 8, lowerIsBetter: lowerBetter, valueFormatter: vf });
+
+  const vals = points.map(p => p.value);
+  const isSum = key === 'net_migration';
+  const agg = isSum ? vals.reduce((a, b) => a + b, 0) : vals.reduce((a, b) => a + b, 0) / vals.length;
+  setT('kpi-statewide-label', isSum ? 'Statewide total' : 'Statewide avg');
+  setT('kpi-statewide', fval(agg, m.fmt));
+  setT('kpi-statewide-delta', isSum ? 'Sum of 159 counties' : 'Mean of 159 counties');
+  setT('state-avg-label', isSum ? 'Statewide net' : 'Statewide average');
+  setT('state-avg', fval(agg, m.fmt));
+  const asc = points.slice().sort((a, b) => a.value - b.value);
+  const lo = asc[0], hi = asc[asc.length - 1];
+  setT('kpi-lowest-val', fval(lo.value, m.fmt));
+  setT('kpi-lowest-name', lo.label + ' County');
+  setT('kpi-highest-val', fval(hi.value, m.fmt));
+  setT('kpi-highest-name', hi.label + ' County');
+  setT('kpi-period-val', (m.source.indexOf('ACS') >= 0 && CM.acs_vintage) ? CM.acs_vintage : 'Latest');
+  setT('kpi-period-delta', 'Single vintage');
+  setT('kpi-source-val', m.source.split('(')[0].trim());
+  setT('kpi-source-delta', m.label);
 }
 
 // Wait for DOMContentLoaded so deferred scripts (Plotly, maps.js) have finished executing —

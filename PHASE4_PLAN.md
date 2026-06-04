@@ -146,6 +146,16 @@ search index + home scorecard wired. EIA puller reads `EIA_API_KEY` (repo secret
 PCE sections reuse the proven `fetch_gdp.py` SAGDP mechanics, degrade gracefully, and
 `update-consumer.yml` fires on push to populate live.
 
+**Done (2026-06-03, county map):** Broadened the `/counties/` map from 1 working metric
+(animated LAUS unemployment) to **6**. New `scripts/build_county_metrics.py` rolls the
+already-pulled county layers — ACS median income / home value / poverty (added `B17001` to
+`fetch_housing.py`'s county ACS pull), PEP population change + net migration, BEA county GDP
+per capita — into `data/county_metrics.json` with a metric catalog. The page's selector now
+switches between the animated unemployment view and static choropleths per metric
+(polarity-aware coloring + leaderboards + KPIs; diverging scale for net migration / population
+change). Folded into `update-msa-reports.yml`. Poverty appears on the next nightly run once
+the ACS pull adds `B17001`; the other 5 shipped immediately. Validated offline + simulation.
+
 **Done (2026-06-03, WS4 comparator):** Broadened the `/msa/` comparator from 6 metrics to
 **27**. `fetch_msa_metrics.py` gained a `--rollup` mode that pulls ~22 scalar metrics from
 `data/msa_reports/*.json` (job growth, GDP & income growth, net-migration rate, business-cycle

@@ -256,6 +256,8 @@ ACS_VARS = {
     "B25003_001E": "occupied_units",
     "B25003_002E": "owner_occupied",
     "B01003_001E": "population",
+    "B17001_001E": "poverty_universe",   # pop for whom poverty status is determined
+    "B17001_002E": "poverty_below",      # of those, income below poverty level
 }
 
 
@@ -307,6 +309,8 @@ def fetch_county_acs(year: Optional[int] = None) -> Optional[dict]:
                 rec[label] = None
         oo, occ = rec.get("owner_occupied"), rec.get("occupied_units")
         rec["pct_owner_occupied"] = round(100 * oo / occ, 1) if oo and occ else None
+        pov, povu = rec.get("poverty_below"), rec.get("poverty_universe")
+        rec["pct_poverty"] = round(100 * pov / povu, 1) if pov is not None and povu else None
         rec["name"] = GA_NAME.get(fips, row[idx["NAME"]].split(",")[0])
         counties[fips] = rec
     return {
@@ -314,7 +318,7 @@ def fetch_county_acs(year: Optional[int] = None) -> Optional[dict]:
         "vintage_window": f"{y-4}-{y}",
         "variables": list(ACS_VARS.values()),
         "counties": counties,
-        "source": f"Census ACS 5-year {y} (B25077 value, B25064 rent, B19013 income, B25003 tenure)",
+        "source": f"Census ACS 5-year {y} (B25077 value, B25064 rent, B19013 income, B25003 tenure, B17001 poverty)",
     }
 
 
