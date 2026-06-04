@@ -259,6 +259,7 @@
     if (byFunc && byFunc.functions && byFunc.functions.length) {
       labels = byFunc.functions.map(f => f.name);
       values = byFunc.functions.map(f => f.value_musd / 1000);
+      if (byFunc.other_musd) { labels.push('All other'); values.push(byFunc.other_musd / 1000); }
     } else if (comp && comp.goods_musd != null && comp.services_musd != null) {
       labels = ['Durable goods', 'Nondurable goods', 'Services'];
       values = [
@@ -344,14 +345,14 @@
     const ctx = document.getElementById('real-wages').getContext('2d');
     new Chart(ctx, {
       type: 'line',
-      data: { labels: rw.months.map(fmtMonth), datasets: [{ label: 'Real-wage index', data: series, borderColor: B.teal, backgroundColor: 'rgba(58,141,141,0.12)', fill: true, tension: 0.25, pointRadius: 0, borderWidth: 2.5 }] },
+      data: { labels: rw.months.map(fmtMonth), datasets: [{ label: 'Real avg weekly wage (2020 $)', data: series, borderColor: B.teal, backgroundColor: 'rgba(58,141,141,0.12)', fill: true, tension: 0.25, pointRadius: 0, borderWidth: 2.5 }] },
       options: {
         responsive: true, maintainAspectRatio: false,
         scales: {
           x: { grid: { display: false }, ticks: { color: B.navy, font: { size: 10 }, maxRotation: 45, autoSkip: true, maxTicksLimit: 12 } },
-          y: { beginAtZero: false, grid: { color: B.grid, borderDash: [3,4] }, ticks: { color: B.navy, font: { size: 11 } } },
+          y: { beginAtZero: false, grid: { color: B.grid, borderDash: [3,4] }, ticks: { color: B.navy, font: { size: 11 }, callback: v => '$' + Math.round(v).toLocaleString() } },
         },
-        plugins: { legend: { display: false }, tooltip: { callbacks: { title: it => fmtMonthLong(rw.months[it[0].dataIndex]) } } },
+        plugins: { legend: { display: false }, tooltip: { callbacks: { title: it => fmtMonthLong(rw.months[it[0].dataIndex]), label: it => '$' + Math.round(it.parsed.y).toLocaleString() + '/wk (2020 $)' } } },
       },
     });
   }

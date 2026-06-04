@@ -68,9 +68,6 @@ PEERS = [
 US_FIPS = "00000"
 GA_FIPS = "13000"
 
-# SAPCE1 (PCE by major type of product) standard LineCodes.
-SAPCE1_LINES = {1: "total", 2: "goods", 3: "durable", 4: "nondurable", 5: "services"}
-
 
 # --------------------------------------------------------------------------- #
 # helpers
@@ -231,14 +228,74 @@ def fetch_pce_trend(years_back: int = 13) -> Optional[dict]:
     }
 
 
+_SAPCE1_CATS_CACHE: Optional[Dict[str, str]] = None
+
+def _sapce1_cat_keys() -> Dict[str, str]:
+    """Map SAPCE1 category name -> LineCode. BEA prefixes every Desc with
+    '[SAPCE1] Total personal consumption expenditures[: <category>]', so we key
+    off the part after the colon (the bare total line maps to '__total__')."""
+    global _SAPCE1_CATS_CACHE
+    if _SAPCE1_CATS_CACHE is not None:
+        return _SAPCE1_CATS_CACHE
+    out: Dict[str, str] = {}
+    for lv in _bea_linecodes("SAPCE1"):
+        desc = str(lv.get("Desc") or "").strip()
+        key = str(lv.get("Key") or "").strip()
+        if not key:
+            continue
+        cat = desc.split(":", 1)[1].strip().lower() if ":" in desc else "__total__"
+        out.setdefault(cat, key)
+    _SAPCE1_CATS_CACHE = out
+    return out
+
+
+# Leaf spending categories within SAPCE1 (no double-counting; the NPISH
+# reconciliation lines are excluded). Drives the "what Georgians spend on" chart.
+_SAPCE1_FUNCTIONS = [
+    "housing and utilities", "health care", "food services and accommodations",
+    "financial services and insurance", "transportation services", "recreation services",
+    "other services", "motor vehicles and parts",
+    "furnishings and durable household equipment", "recreational goods and vehicles",
+    "other durable goods", "food and beverages purchased for off-premises consumption",
+    "clothing and footwear", "gasoline and other energy goods", "other nondurable goods",
+]
+
+# Pretty display names for the leaf categories above.
+_FUNC_DISPLAY = {
+    "housing and utilities": "Housing & utilities",
+    "health care": "Health care",
+    "food services and accommodations": "Restaurants & hotels",
+    "financial services and insurance": "Financial services & insurance",
+    "transportation services": "Transportation services",
+    "recreation services": "Recreation services",
+    "other services": "Other services",
+    "motor vehicles and parts": "Motor vehicles & parts",
+    "furnishings and durable household equipment": "Furnishings & appliances",
+    "recreational goods and vehicles": "Recreational goods & vehicles",
+    "other durable goods": "Other durable goods",
+    "food and beverages purchased for off-premises consumption": "Groceries",
+    "clothing and footwear": "Clothing & footwear",
+    "gasoline and other energy goods": "Gasoline & energy goods",
+    "other nondurable goods": "Other nondurable goods",
+}
+
+
 def fetch_pce_composition(year: int) -> Optional[dict]:
-    """GA PCE split into goods/durable/nondurable/services for one year."""
+    """GA PCE high-level split: goods / durable / nondurable / services."""
+    cats = _sapce1_cat_keys()
+    want = {"goods": "goods", "durable goods": "durable",
+            "nondurable goods": "nondurable", "services": "services",
+            "__total__": "total"}
+    if "goods" not in cats or "services" not in cats:
+        return None
     out: Dict[str, Any] = {"year": year}
-    for lc, key in SAPCE1_LINES.items():
-        s = _bea_series("SAPCE1", GA_FIPS, [year], line_code=str(lc))
+    for cat, our_key in want.items():
+        lc = cats.get(cat)
+        if not lc:
+            continue
+        s = _bea_series("SAPCE1", GA_FIPS, [year], line_code=lc)
         if year in s:
-            out[f"{key}_musd"] = round(s[year])
-    # need at least goods + services to be meaningful
+            out[f"{our_key}_musd"] = round(s[year])
     if "goods_musd" not in out or "services_musd" not in out:
         return None
     out["total_musd"] = out.get("total_musd") or round(out.get("goods_musd", 0) + out.get("services_musd", 0))
@@ -247,65 +304,68 @@ def fetch_pce_composition(year: int) -> Optional[dict]:
 
 
 def fetch_pce_by_function(year: int, top_n: int = 10) -> Optional[dict]:
-    """GA PCE by function (housing, health, food, …) for one year — best-effort.
+    """GA PCE by spending category (housing, health, restaurants, groceries, …).
 
-    Discovers SAPCE2 LineCodes dynamically, pulls GA for each, drops the total /
-    obvious subtotal lines, and returns the largest `top_n`. Capped to keep the
-    BEA call count reasonable; degrades to None on any trouble.
+    Built from SAPCE1's leaf categories — these are mutually exclusive and sum to
+    total PCE, so shares are meaningful. Returns the largest `top_n` plus an
+    "All other" remainder. Degrades to None on trouble.
     """
-    lines = _bea_linecodes("SAPCE2")
-    if not lines:
-        return None
-    # The grand total is LineCode 1 ("Personal consumption expenditures"); skip it
-    # and a couple of broad aggregates so we show actual spending categories.
-    SKIP_DESC = ("personal consumption expenditures", "household consumption expenditures",
-                 "final consumption expenditures of nonprofit")
-    funcs = []
-    for lv in lines:
-        key = str(lv.get("Key") or "").strip()
-        desc = str(lv.get("Desc") or "").strip()
-        if not key or key == "1":
-            continue
-        if any(s in desc.lower() for s in SKIP_DESC):
-            continue
-        funcs.append((key, desc))
-        if len(funcs) >= 40:  # hard cap on probing breadth
-            break
-
+    cats = _sapce1_cat_keys()
     rows = []
-    for key, desc in funcs:
-        s = _bea_series("SAPCE2", GA_FIPS, [year], line_code=key)
-        v = s.get(year)
+    for cat in _SAPCE1_FUNCTIONS:
+        lc = cats.get(cat)
+        if not lc:
+            continue
+        v = _bea_series("SAPCE1", GA_FIPS, [year], line_code=lc).get(year)
         if isinstance(v, (int, float)) and v > 0:
-            rows.append({"name": desc, "value_musd": round(v)})
-    if len(rows) < 4:
+            rows.append({"name": _FUNC_DISPLAY.get(cat, cat.title()), "value_musd": round(v)})
+    if len(rows) < 5:
         return None
+    grand_total = sum(r["value_musd"] for r in rows)
     rows.sort(key=lambda r: -r["value_musd"])
-    rows = rows[:top_n]
-    total = sum(r["value_musd"] for r in rows)
-    for r in rows:
-        r["share_pct"] = round(r["value_musd"] / total * 100, 1) if total else None
-    return {"year": year, "functions": rows,
-            "source": "BEA SAPCE2 (PCE by function), GA, current $M; top categories"}
+    top = rows[:top_n]
+    other = grand_total - sum(r["value_musd"] for r in top)
+    for r in top:
+        r["share_pct"] = round(r["value_musd"] / grand_total * 100, 1) if grand_total else None
+    return {"year": year, "functions": top,
+            "other_musd": round(max(other, 0)),
+            "total_musd": round(grand_total),
+            "source": "BEA SAPCE1 leaf spending categories, GA, current $M"}
 
 
 def fetch_pce_peers(year: int) -> Optional[dict]:
-    """Per-capita PCE for GA + SE peers + US, one year (SAPCE3 LineCode 1)."""
-    per_state = _bea_all_states("SAPCE3", "1", year)
-    us = _bea_series("SAPCE3", US_FIPS, [year], line_code="1").get(year)
-    if not per_state:
+    """Per-capita PCE for GA + SE peers + US, one year.
+
+    BEA's SAPCE3 LineCode 1 returns *total* PCE (not per-capita), so we derive
+    per-capita ourselves: total PCE (SAPCE1, $M) × 1e6 ÷ population (SAINC1
+    LineCode 2, persons). Robust and unit-checked.
+    """
+    totals = _bea_all_states("SAPCE1", "1", year)        # $millions per state
+    pops = _bea_all_states("SAINC1", "2", year)          # persons per state
+    if not totals or not pops:
         return None
+
+    def _pc(fips):
+        t, p = totals.get(fips), pops.get(fips)
+        if isinstance(t, (int, float)) and isinstance(p, (int, float)) and p > 0:
+            return round(t * 1e6 / p)
+        return None
+
     states = []
     for fips, name in PEERS:
-        v = per_state.get(fips)
-        if isinstance(v, (int, float)):
-            states.append({"fips": fips, "name": name, "per_capita": round(v)})
+        pc = _pc(fips)
+        if pc is not None:
+            states.append({"fips": fips, "name": name, "per_capita": pc})
     if not states:
         return None
     states.sort(key=lambda s: -s["per_capita"])
-    return {"year": year, "states": states,
-            "us_per_capita": round(us) if isinstance(us, (int, float)) else None,
-            "source": "BEA SAPCE3 (per-capita PCE), current $"}
+
+    us_total = _bea_series("SAPCE1", US_FIPS, [year], line_code="1").get(year)
+    us_pop = _bea_series("SAINC1", US_FIPS, [year], line_code="2").get(year)
+    us_pc = round(us_total * 1e6 / us_pop) if (us_total and us_pop) else None
+
+    return {"year": year, "states": states, "us_per_capita": us_pc,
+            "source": "BEA SAPCE1 total PCE ÷ SAINC1 population (derived per-capita), current $"}
 
 
 def _latest_pce_year() -> int:
@@ -453,11 +513,22 @@ def copy_real_wages() -> Optional[dict]:
         return None
     if not rw or not rw.get("months"):
         return None
-    # Keep just the series the consumer page draws.
-    out = {"months": rw.get("months"), "source": "BLS via data/inflation.json (real-wage tracker)"}
-    for k in ("index", "real_wage_index", "values", "yoy_pct"):
-        if k in rw:
-            out[k] = rw[k]
+    # The inflation tracker stores the inflation-adjusted weekly-wage series under
+    # `real_weekly_2020` (2020 $) and its YoY under `real_yoy_pct`. Map those onto
+    # the keys the consumer page draws (`index` + `yoy_pct`).
+    series = rw.get("real_weekly_2020") or rw.get("real_wage_index") or rw.get("index")
+    if not series:
+        return None
+    out = {
+        "months": rw.get("months"),
+        "index": series,
+        "yoy_pct": rw.get("real_yoy_pct") or rw.get("yoy_pct"),
+        "unit": "2020 $/week",
+        "latest_real": rw.get("latest_real"),
+        "latest_real_yoy": rw.get("latest_real_yoy"),
+        "base_label": rw.get("base_label"),
+        "source": "BLS via data/inflation.json (real average weekly wage, 2020 $)",
+    }
     return out
 
 

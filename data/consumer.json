@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-06-03T21:43:04Z",
+  "fetched_at": "2026-06-04T01:04:15Z",
   "schema": "consumer/v1",
   "pce_trend": {
     "years": [
@@ -69,12 +69,70 @@
   },
   "pce_composition": {
     "year": 2024,
-    "total_musd": 590419,
     "goods_musd": 205714,
     "durable_musd": 68359,
-    "nondurable_musd": 25530,
-    "services_musd": 14199,
+    "nondurable_musd": 137355,
+    "services_musd": 384705,
+    "total_musd": 590419,
     "source": "BEA SAPCE1 (PCE by major type of product), GA, current $M"
+  },
+  "pce_by_function": {
+    "year": 2024,
+    "functions": [
+      {
+        "name": "Housing & utilities",
+        "value_musd": 106622,
+        "share_pct": 18.2
+      },
+      {
+        "name": "Health care",
+        "value_musd": 97048,
+        "share_pct": 16.5
+      },
+      {
+        "name": "Other nondurable goods",
+        "value_musd": 53770,
+        "share_pct": 9.2
+      },
+      {
+        "name": "Groceries",
+        "value_musd": 50392,
+        "share_pct": 8.6
+      },
+      {
+        "name": "Other services",
+        "value_musd": 46877,
+        "share_pct": 8.0
+      },
+      {
+        "name": "Restaurants & hotels",
+        "value_musd": 44050,
+        "share_pct": 7.5
+      },
+      {
+        "name": "Financial services & insurance",
+        "value_musd": 37717,
+        "share_pct": 6.4
+      },
+      {
+        "name": "Recreation services",
+        "value_musd": 25671,
+        "share_pct": 4.4
+      },
+      {
+        "name": "Motor vehicles & parts",
+        "value_musd": 25530,
+        "share_pct": 4.4
+      },
+      {
+        "name": "Transportation services",
+        "value_musd": 22785,
+        "share_pct": 3.9
+      }
+    ],
+    "other_musd": 76021,
+    "total_musd": 586483,
+    "source": "BEA SAPCE1 leaf spending categories, GA, current $M"
   },
   "pce_peers": {
     "year": 2024,
@@ -82,36 +140,36 @@
       {
         "fips": "12000",
         "name": "Florida",
-        "per_capita": 1463514
-      },
-      {
-        "fips": "13000",
-        "name": "Georgia",
-        "per_capita": 590419
+        "per_capita": 62904
       },
       {
         "fips": "37000",
         "name": "North Carolina",
-        "per_capita": 589125
+        "per_capita": 53305
+      },
+      {
+        "fips": "13000",
+        "name": "Georgia",
+        "per_capita": 52696
       },
       {
         "fips": "47000",
         "name": "Tennessee",
-        "per_capita": 372279
+        "per_capita": 51340
       },
       {
         "fips": "45000",
         "name": "South Carolina",
-        "per_capita": 281738
+        "per_capita": 51315
       },
       {
         "fips": "01000",
         "name": "Alabama",
-        "per_capita": 242905
+        "per_capita": 47047
       }
     ],
-    "us_per_capita": 19896009,
-    "source": "BEA SAPCE3 (per-capita PCE), current $"
+    "us_per_capita": 58517,
+    "source": "BEA SAPCE1 total PCE \u00f7 SAINC1 population (derived per-capita), current $"
   },
   "electricity": {
     "months": [
@@ -528,27 +586,189 @@
       "2026-03",
       "2026-04"
     ],
-    "source": "BLS via data/inflation.json (real-wage tracker)"
+    "index": [
+      924.6,
+      935.62,
+      921.84,
+      952.69,
+      945.87,
+      936.25,
+      931.35,
+      960.4,
+      941.82,
+      949.4,
+      973.96,
+      952.57,
+      944.33,
+      924.18,
+      911.07,
+      910.28,
+      913.99,
+      911.3,
+      922.1,
+      947.97,
+      931.41,
+      933.7,
+      937.67,
+      931.77,
+      945.81,
+      922.96,
+      898.15,
+      896.48,
+      909.19,
+      872.89,
+      884.2,
+      892.74,
+      896.31,
+      925.24,
+      893.02,
+      900.13,
+      920.59,
+      897.55,
+      877.75,
+      906.27,
+      873.36,
+      870.99,
+      900.01,
+      880.89,
+      880.02,
+      905.98,
+      887.87,
+      887.82,
+      874.35,
+      872.43,
+      866.05,
+      874.57,
+      873.2,
+      905.63,
+      877.91,
+      891.31,
+      920.96,
+      918.96,
+      918.72,
+      952.87,
+      905.02,
+      948.95,
+      948.08,
+      925.62,
+      927.1,
+      962.15,
+      939.68,
+      949.88,
+      955.44,
+      999.37,
+      987.29,
+      969.77,
+      997.28,
+      984.21,
+      955.89
+    ],
+    "yoy_pct": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      0.46,
+      -0.09,
+      -2.28,
+      -3.0,
+      -3.5,
+      -2.34,
+      -1.65,
+      -1.13,
+      -1.35,
+      -2.16,
+      -2.52,
+      -1.92,
+      -0.72,
+      -0.46,
+      -1.02,
+      -1.15,
+      -2.09,
+      -2.95,
+      -4.72,
+      -4.57,
+      -3.5,
+      -3.15,
+      -3.02,
+      -3.61,
+      -2.94,
+      -2.56,
+      -1.31,
+      -1.71,
+      -1.02,
+      -0.79,
+      0.08,
+      -0.45,
+      -1.74,
+      -1.49,
+      -1.34,
+      -2.32,
+      -3.06,
+      -3.05,
+      -2.54,
+      -1.62,
+      0.15,
+      0.5,
+      0.9,
+      1.13,
+      2.42,
+      3.19,
+      4.08,
+      4.77,
+      6.54,
+      7.25,
+      8.03,
+      7.16,
+      6.08,
+      6.48,
+      6.62,
+      5.78,
+      6.36,
+      6.65,
+      6.0,
+      6.48,
+      5.23,
+      4.91,
+      2.27
+    ],
+    "unit": "2020 $/week",
+    "latest_real": 955.89,
+    "latest_real_yoy": 2.27,
+    "base_label": "Jan 2020",
+    "source": "BLS via data/inflation.json (real average weekly wage, 2020 $)"
   },
   "kpis": {
     "pce_total_bn": 590.4,
-    "pce_per_capita": 590419,
+    "pce_per_capita": 52696,
     "pce_yoy_pct": 6.0,
     "elec_price_cents_kwh": 15.01,
     "elec_price_yoy_pct": 2.2,
-    "real_wage_yoy_pct": null
+    "real_wage_yoy_pct": 2.27
   },
   "_meta": {
     "pce_trend": {
-      "last_updated": "2026-06-03T21:43:05Z",
+      "last_updated": "2026-06-04T01:04:16Z",
       "stale": false
     },
     "pce_composition": {
-      "last_updated": "2026-06-03T21:43:05Z",
+      "last_updated": "2026-06-04T01:04:17Z",
+      "stale": false
+    },
+    "pce_by_function": {
+      "last_updated": "2026-06-04T01:04:53Z",
       "stale": false
     },
     "pce_peers": {
-      "last_updated": "2026-06-03T21:43:06Z",
+      "last_updated": "2026-06-04T01:04:54Z",
       "stale": false
     },
     "electricity": {
@@ -560,7 +780,7 @@
       "stale": false
     },
     "real_wages": {
-      "last_updated": "2026-06-03T21:43:07Z",
+      "last_updated": "2026-06-04T01:04:54Z",
       "stale": false
     }
   },
