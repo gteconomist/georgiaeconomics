@@ -147,11 +147,50 @@ PCE sections reuse the proven `fetch_gdp.py` SAGDP mechanics, degrade gracefully
 `update-consumer.yml` fires on push to populate live.
 
 **Next: WS4 connective tissue.**
-- **Full cross-metro comparator** — extend the `/msa/` radar (currently 6 metrics in
-  `data/msa.json`) into an any-metro, all-33-metric comparator reading across
-  `data/msa_reports/*.json`.
-- **Refresh alerts** — a static RSS `feed.xml` regenerated when data refreshes (works on GH
-  Pages); email is a stretch (needs sending infra). Scope with the user next session.
+
+### Broaden the cross-metro comparator (recommended design)
+
+**Important correction:** a comparator already exists on `/msa/` — `fetch_msa_metrics.py`
+builds `data/msa.json`, and the page lets you pick any 2–3 of the 14 metros and overlay them
+on a radar (6 metrics: unemployment, wage growth, pop growth, home-price growth, permits/1k,
+GDP per capita) plus a choropleth recolorable by those 6. WS4 is **not** "build a comparator"
+— it's "widen the one we have." The 14 metro reports each already compute ~20–25 *comparable*
+scalar metrics (UR, job growth, per-capita income, net-migration rate, EPA air quality,
+business formation, business-cycle index, ARIMA forecast, vitality, quality-of-life,
+price-to-income, affordability, business costs, industrial diversity, credit score, school
+per-pupil, median age, …); only 6 ever reach the comparator.
+
+**Why not just add axes to the radar:** a radar is great for 2–3 metros across ≤~6 axes and
+becomes unreadable past ~8, and it can't show "who leads on what" across all 14 metros at
+once. So change the *primary* surface rather than overloading the radar.
+
+**Recommended design (in priority order):**
+
+1. **Primary view — sortable metros × metrics heatmap table.** 14 rows × ~20–25 metric
+   columns grouped by theme (Labor / Housing / Growth / Output / Quality of life / Business).
+   Each cell shaded by the metro's percentile rank on that metric, good/bad-aware via the
+   existing `lower_is_better` flag. Click any column header to sort. This is the at-a-glance
+   "who's best at what" the radar can't give, and it scales to every metric for free.
+2. **Secondary view — keep the radar, add a theme selector.** Still pick 2–3 metros, but
+   choose *which* ~6-axis theme to chart (Labor, Housing, …), so the radar stays legible
+   while exposing every metric across theme tabs.
+3. **Widen the choropleth** to recolor by any of the ~25 metrics (it already does this for 6;
+   just feed it the larger metric list).
+4. **Optional polish — single-metro "profile" view:** pick one metro, see all its metrics as
+   rank bars vs. the 14-metro median ("what is this metro good/bad at").
+
+**Data layer (reuses the Housing/Labor roll-up pattern):** extend `fetch_msa_metrics.py` with
+a roll-up that reads `data/msa_reports/*.json`, pulls one latest scalar per metric (guarding
+on `section_status` like the other roll-ups), and emits them into `data/msa.json` alongside
+per-metric metadata (`key`, `label`, `unit`, `lower_is_better`, `theme`/`axis_label`,
+`source`). The page's current min-max-with-inversion normalization carries straight over to
+the heatmap cell colors, so the heatmap and radar share one normalized dataset. Fold the
+roll-up into `update-msa-reports.yml` after the metro JSONs regenerate (same placement as the
+housing/gdp/labor roll-ups).
+
+### Refresh alerts
+- A static RSS `feed.xml` regenerated when data refreshes (works on GH Pages); email is a
+  stretch (needs sending infra). Scope with the user.
 
 **Trade follow-up (deferred, not blocking):** Port of Savannah TEU, Brunswick autos, and ATL
 Hartsfield cargo are still calibrated fixtures — a Tavily/GPA-press-release scraper is the
