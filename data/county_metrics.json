@@ -1,6 +1,6 @@
 {
  "_note": "Static per-county metrics for the /counties/ map; built by scripts/build_county_metrics.py.",
- "fetched_at": "2026-06-04T02:02:03Z",
+ "fetched_at": "2026-06-04T12:46:19Z",
  "metrics": [
   {
    "key": "median_income",
@@ -20,6 +20,16 @@
    "polarity": "good_high",
    "colorscale": "diverging",
    "source": "Census PEP (5-yr growth)",
+   "n_counties": 159
+  },
+  {
+   "key": "poverty_rate",
+   "label": "Poverty rate",
+   "unit": "%",
+   "fmt": "pct1",
+   "polarity": "good_low",
+   "colorscale": "inverse",
+   "source": "Census ACS 5-year (B17001)",
    "n_counties": 159
   },
   {
@@ -58,7 +68,7 @@
    "name": "Appling",
    "median_income": 46651.0,
    "median_home_value": 76700.0,
-   "poverty_rate": null,
+   "poverty_rate": 22.5,
    "population_change": 3.94,
    "net_migration": 831,
    "gdp_per_capita": 114212
@@ -67,7 +77,7 @@
    "name": "Atkinson",
    "median_income": 42347.0,
    "median_home_value": 79000.0,
-   "poverty_rate": null,
+   "poverty_rate": 25.0,
    "population_change": 1.77,
    "net_migration": -12,
    "gdp_per_capita": 42856
@@ -76,7 +86,7 @@
    "name": "Bacon",
    "median_income": 44694.0,
    "median_home_value": 101400.0,
-   "poverty_rate": null,
+   "poverty_rate": 24.5,
    "population_change": -0.39,
    "net_migration": 19,
    "gdp_per_capita": 45911
@@ -85,7 +95,7 @@
    "name": "Baker",
    "median_income": 46012.0,
    "median_home_value": 119500.0,
-   "poverty_rate": null,
+   "poverty_rate": 26.3,
    "population_change": -4.32,
    "net_migration": 3,
    "gdp_per_capita": 32378
@@ -94,7 +104,7 @@
    "name": "Baldwin",
    "median_income": 54403.0,
    "median_home_value": 181900.0,
-   "poverty_rate": null,
+   "poverty_rate": 21.7,
    "population_change": 0.55,
    "net_migration": 963,
    "gdp_per_capita": 45196
@@ -103,7 +113,7 @@
    "name": "Banks",
    "median_income": 77063.0,
    "median_home_value": 278100.0,
-   "poverty_rate": null,
+   "poverty_rate": 11.3,
    "population_change": 17.34,
    "net_migration": 2974,
    "gdp_per_capita": 32434
@@ -112,7 +122,7 @@
    "name": "Barrow",
    "median_income": 80653.0,
    "median_home_value": 294700.0,
-   "poverty_rate": null,
+   "poverty_rate": 9.6,
    "population_change": 18.68,
    "net_migration": 13509,
    "gdp_per_capita": 38046
@@ -121,7 +131,7 @@
    "name": "Bartow",
    "median_income": 82243.0,
    "median_home_value": 289000.0,
-   "poverty_rate": null,
+   "poverty_rate": 10.3,
    "population_change": 10.54,
    "net_migration": 10629,
    "gdp_per_capita": 71576
@@ -130,7 +140,7 @@
    "name": "Ben Hill",
    "median_income": 41758.0,
    "median_home_value": 112700.0,
-   "poverty_rate": null,
+   "poverty_rate": 25.2,
    "population_change": -0.39,
    "net_migration": 193,
    "gdp_per_capita": 48002
@@ -139,7 +149,7 @@
    "name": "Berrien",
    "median_income": 52876.0,
    "median_home_value": 131600.0,
-   "poverty_rate": null,
+   "poverty_rate": 20.6,
    "population_change": 4.35,
    "net_migration": 875,
    "gdp_per_capita": 29221
@@ -148,7 +158,7 @@
    "name": "Bibb",
    "median_income": 51234.0,
    "median_home_value": 174500.0,
-   "poverty_rate": null,
+   "poverty_rate": 24.7,
    "population_change": 0.32,
    "net_migration": 791,
    "gdp_per_capita": 70316
@@ -157,7 +167,7 @@
    "name": "Bleckley",
    "median_income": 62008.0,
    "median_home_value": 149600.0,
-   "poverty_rate": null,
+   "poverty_rate": 19.3,
    "population_change": 2.8,
    "net_migration": 567,
    "gdp_per_capita": 28531
@@ -166,7 +176,7 @@
    "name": "Brantley",
    "median_income": 58239.0,
    "median_home_value": 99600.0,
-   "poverty_rate": null,
+   "poverty_rate": 17.1,
    "population_change": 4.93,
    "net_migration": 1153,
    "gdp_per_capita": 19633
@@ -175,7 +185,7 @@
    "name": "Brooks",
    "median_income": 46807.0,
    "median_home_value": 139200.0,
-   "poverty_rate": null,
+   "poverty_rate": 25.4,
    "population_change": -1.04,
    "net_migration": 300,
    "gdp_per_capita": 40039
@@ -184,7 +194,7 @@
    "name": "Bryan",
    "median_income": 103408.0,
    "median_home_value": 343200.0,
-   "poverty_rate": null,
+   "poverty_rate": 6.7,
    "population_change": 15.57,
    "net_migration": 5835,
    "gdp_per_capita": 65394
@@ -193,7 +203,7 @@
    "name": "Bulloch",
    "median_income": 58810.0,
    "median_home_value": 222500.0,
-   "poverty_rate": null,
+   "poverty_rate": 23.0,
    "population_change": 8.8,
    "net_migration": 5903,
    "gdp_per_capita": 43875
@@ -202,7 +212,7 @@
    "name": "Burke",
    "median_income": 53014.0,
    "median_home_value": 151600.0,
-   "poverty_rate": null,
+   "poverty_rate": 18.3,
    "population_change": -0.91,
    "net_migration": 8,
    "gdp_per_capita": 161392
@@ -211,7 +221,7 @@
    "name": "Butts",
    "median_income": 69241.0,
    "median_home_value": 240600.0,
-   "poverty_rate": null,
+   "poverty_rate": 10.4,
    "population_change": 6.53,
    "net_migration": 1934,
    "gdp_per_capita": 38866
@@ -220,7 +230,7 @@
    "name": "Calhoun",
    "median_income": 46940.0,
    "median_home_value": 81000.0,
-   "poverty_rate": null,
+   "poverty_rate": 22.8,
    "population_change": -2.85,
    "net_migration": -68,
    "gdp_per_capita": 28108
@@ -229,7 +239,7 @@
    "name": "Camden",
    "median_income": 74378.0,
    "median_home_value": 261400.0,
-   "poverty_rate": null,
+   "poverty_rate": 12.9,
    "population_change": 9.49,
    "net_migration": 3948,
    "gdp_per_capita": 45928
@@ -238,7 +248,7 @@
    "name": "Candler",
    "median_income": 49581.0,
    "median_home_value": 159200.0,
-   "poverty_rate": null,
+   "poverty_rate": 16.3,
    "population_change": 2.17,
    "net_migration": 464,
    "gdp_per_capita": 35967
@@ -247,7 +257,7 @@
    "name": "Carroll",
    "median_income": 73714.0,
    "median_home_value": 255100.0,
-   "poverty_rate": null,
+   "poverty_rate": 15.4,
    "population_change": 9.75,
    "net_migration": 10499,
    "gdp_per_capita": 60332
@@ -256,7 +266,7 @@
    "name": "Catoosa",
    "median_income": 74639.0,
    "median_home_value": 240900.0,
-   "poverty_rate": null,
+   "poverty_rate": 9.9,
    "population_change": 2.34,
    "net_migration": 2543,
    "gdp_per_capita": 32583
@@ -265,7 +275,7 @@
    "name": "Charlton",
    "median_income": 61276.0,
    "median_home_value": 142800.0,
-   "poverty_rate": null,
+   "poverty_rate": 18.1,
    "population_change": 4.74,
    "net_migration": 826,
    "gdp_per_capita": 21999
@@ -274,7 +284,7 @@
    "name": "Chatham",
    "median_income": 71097.0,
    "median_home_value": 302700.0,
-   "poverty_rate": null,
+   "poverty_rate": 14.3,
    "population_change": 5.67,
    "net_migration": 13570,
    "gdp_per_capita": 91269
@@ -283,7 +293,7 @@
    "name": "Chattahoochee",
    "median_income": 61042.0,
    "median_home_value": 102700.0,
-   "poverty_rate": null,
+   "poverty_rate": 13.9,
    "population_change": -10.59,
    "net_migration": -1647,
    "gdp_per_capita": 258614
@@ -292,7 +302,7 @@
    "name": "Chattooga",
    "median_income": 50285.0,
    "median_home_value": 115600.0,
-   "poverty_rate": null,
+   "poverty_rate": 21.2,
    "population_change": 1.5,
    "net_migration": 1185,
    "gdp_per_capita": 29078
@@ -301,7 +311,7 @@
    "name": "Cherokee",
    "median_income": 108115.0,
    "median_home_value": 435100.0,
-   "poverty_rate": null,
+   "poverty_rate": 7.0,
    "population_change": 11.61,
    "net_migration": 27065,
    "gdp_per_capita": 44296
@@ -310,7 +320,7 @@
    "name": "Clarke",
    "median_income": 53625.0,
    "median_home_value": 298900.0,
-   "poverty_rate": null,
+   "poverty_rate": 26.0,
    "population_change": 1.03,
    "net_migration": -757,
    "gdp_per_capita": 83313
@@ -319,7 +329,7 @@
    "name": "Clay",
    "median_income": 49147.0,
    "median_home_value": 94400.0,
-   "poverty_rate": null,
+   "poverty_rate": 21.0,
    "population_change": -0.53,
    "net_migration": 83,
    "gdp_per_capita": 26390
@@ -328,7 +338,7 @@
    "name": "Clayton",
    "median_income": 59806.0,
    "median_home_value": 222300.0,
-   "poverty_rate": null,
+   "poverty_rate": 17.9,
    "population_change": -0.63,
    "net_migration": -7799,
    "gdp_per_capita": 88350
@@ -337,7 +347,7 @@
    "name": "Clinch",
    "median_income": 45847.0,
    "median_home_value": 84400.0,
-   "poverty_rate": null,
+   "poverty_rate": 26.1,
    "population_change": 1.75,
    "net_migration": 95,
    "gdp_per_capita": 46119
@@ -346,7 +356,7 @@
    "name": "Cobb",
    "median_income": 102738.0,
    "median_home_value": 407200.0,
-   "poverty_rate": null,
+   "poverty_rate": 8.7,
    "population_change": 3.52,
    "net_migration": 9491,
    "gdp_per_capita": 103194
@@ -355,7 +365,7 @@
    "name": "Coffee",
    "median_income": 50683.0,
    "median_home_value": 128900.0,
-   "poverty_rate": null,
+   "poverty_rate": 23.1,
    "population_change": 3.16,
    "net_migration": 985,
    "gdp_per_capita": 51247
@@ -364,7 +374,7 @@
    "name": "Colquitt",
    "median_income": 49341.0,
    "median_home_value": 121400.0,
-   "poverty_rate": null,
+   "poverty_rate": 22.9,
    "population_change": 3.33,
    "net_migration": 1437,
    "gdp_per_capita": 44712
@@ -373,7 +383,7 @@
    "name": "Columbia",
    "median_income": 95592.0,
    "median_home_value": 305300.0,
-   "poverty_rate": null,
+   "poverty_rate": 7.5,
    "population_change": 7.86,
    "net_migration": 10088,
    "gdp_per_capita": 36757
@@ -382,7 +392,7 @@
    "name": "Cook",
    "median_income": 53651.0,
    "median_home_value": 157500.0,
-   "poverty_rate": null,
+   "poverty_rate": 17.7,
    "population_change": 5.77,
    "net_migration": 988,
    "gdp_per_capita": 29390
@@ -391,7 +401,7 @@
    "name": "Coweta",
    "median_income": 95548.0,
    "median_home_value": 357500.0,
-   "poverty_rate": null,
+   "poverty_rate": 7.4,
    "population_change": 9.2,
    "net_migration": 12141,
    "gdp_per_capita": 47899
@@ -400,7 +410,7 @@
    "name": "Crawford",
    "median_income": 67116.0,
    "median_home_value": 164100.0,
-   "poverty_rate": null,
+   "poverty_rate": 11.6,
    "population_change": 0.93,
    "net_migration": 626,
    "gdp_per_capita": 19095
@@ -409,7 +419,7 @@
    "name": "Crisp",
    "median_income": 45105.0,
    "median_home_value": 140200.0,
-   "poverty_rate": null,
+   "poverty_rate": 23.3,
    "population_change": -4.09,
    "net_migration": -399,
    "gdp_per_capita": 71579
@@ -418,7 +428,7 @@
    "name": "Dade",
    "median_income": 64568.0,
    "median_home_value": 198500.0,
-   "poverty_rate": null,
+   "poverty_rate": 8.2,
    "population_change": -0.49,
    "net_migration": 330,
    "gdp_per_capita": 40260
@@ -427,7 +437,7 @@
    "name": "Dawson",
    "median_income": 92991.0,
    "median_home_value": 406700.0,
-   "poverty_rate": null,
+   "poverty_rate": 8.5,
    "population_change": 30.68,
    "net_migration": 7956,
    "gdp_per_capita": 43858
@@ -436,7 +446,7 @@
    "name": "Decatur",
    "median_income": 53317.0,
    "median_home_value": 158800.0,
-   "poverty_rate": null,
+   "poverty_rate": 22.0,
    "population_change": -0.01,
    "net_migration": 241,
    "gdp_per_capita": 48509
@@ -445,7 +455,7 @@
    "name": "DeKalb",
    "median_income": 80644.0,
    "median_home_value": 357800.0,
-   "poverty_rate": null,
+   "poverty_rate": 13.7,
    "population_change": 1.28,
    "net_migration": -10728,
    "gdp_per_capita": 76633
@@ -454,7 +464,7 @@
    "name": "Dodge",
    "median_income": 51587.0,
    "median_home_value": 118100.0,
-   "poverty_rate": null,
+   "poverty_rate": 21.5,
    "population_change": -1.43,
    "net_migration": 202,
    "gdp_per_capita": 29753
@@ -463,7 +473,7 @@
    "name": "Dooly",
    "median_income": 60987.0,
    "median_home_value": 107400.0,
-   "poverty_rate": null,
+   "poverty_rate": 15.7,
    "population_change": -0.09,
    "net_migration": 190,
    "gdp_per_capita": 37058
@@ -472,7 +482,7 @@
    "name": "Dougherty",
    "median_income": 49044.0,
    "median_home_value": 134400.0,
-   "poverty_rate": null,
+   "poverty_rate": 25.0,
    "population_change": -3.0,
    "net_migration": -2363,
    "gdp_per_capita": 76151
@@ -481,7 +491,7 @@
    "name": "Douglas",
    "median_income": 82984.0,
    "median_home_value": 296900.0,
-   "poverty_rate": null,
+   "poverty_rate": 10.9,
    "population_change": 6.63,
    "net_migration": 7051,
    "gdp_per_capita": 53012
@@ -490,7 +500,7 @@
    "name": "Early",
    "median_income": 54083.0,
    "median_home_value": 131300.0,
-   "poverty_rate": null,
+   "poverty_rate": 23.6,
    "population_change": -3.13,
    "net_migration": -79,
    "gdp_per_capita": 62809
@@ -499,7 +509,7 @@
    "name": "Echols",
    "median_income": 59489.0,
    "median_home_value": 124100.0,
-   "poverty_rate": null,
+   "poverty_rate": 14.2,
    "population_change": -0.83,
    "net_migration": -67,
    "gdp_per_capita": 14623
@@ -508,7 +518,7 @@
    "name": "Effingham",
    "median_income": 88438.0,
    "median_home_value": 276000.0,
-   "poverty_rate": null,
+   "poverty_rate": 6.8,
    "population_change": 14.14,
    "net_migration": 8006,
    "gdp_per_capita": 40664
@@ -517,7 +527,7 @@
    "name": "Elbert",
    "median_income": 58450.0,
    "median_home_value": 142000.0,
-   "poverty_rate": null,
+   "poverty_rate": 18.0,
    "population_change": 2.06,
    "net_migration": 951,
    "gdp_per_capita": 49732
@@ -526,7 +536,7 @@
    "name": "Emanuel",
    "median_income": 52772.0,
    "median_home_value": 94700.0,
-   "poverty_rate": null,
+   "poverty_rate": 25.7,
    "population_change": 1.18,
    "net_migration": 471,
    "gdp_per_capita": 43019
@@ -535,7 +545,7 @@
    "name": "Evans",
    "median_income": 53259.0,
    "median_home_value": 138200.0,
-   "poverty_rate": null,
+   "poverty_rate": 19.1,
    "population_change": 2.17,
    "net_migration": 310,
    "gdp_per_capita": 49723
@@ -544,7 +554,7 @@
    "name": "Fannin",
    "median_income": 57073.0,
    "median_home_value": 306600.0,
-   "poverty_rate": null,
+   "poverty_rate": 13.7,
    "population_change": 2.59,
    "net_migration": 2009,
    "gdp_per_capita": 49729
@@ -553,7 +563,7 @@
    "name": "Fayette",
    "median_income": 111978.0,
    "median_home_value": 436400.0,
-   "poverty_rate": null,
+   "poverty_rate": 5.6,
    "population_change": 4.73,
    "net_migration": 6720,
    "gdp_per_capita": 66086
@@ -562,7 +572,7 @@
    "name": "Floyd",
    "median_income": 65565.0,
    "median_home_value": 217900.0,
-   "poverty_rate": null,
+   "poverty_rate": 16.0,
    "population_change": 2.82,
    "net_migration": 3691,
    "gdp_per_capita": 56092
@@ -571,7 +581,7 @@
    "name": "Forsyth",
    "median_income": 143784.0,
    "median_home_value": 550400.0,
-   "poverty_rate": null,
+   "poverty_rate": 4.3,
    "population_change": 11.84,
    "net_migration": 26317,
    "gdp_per_capita": 57556
@@ -580,7 +590,7 @@
    "name": "Franklin",
    "median_income": 53046.0,
    "median_home_value": 179000.0,
-   "poverty_rate": null,
+   "poverty_rate": 19.5,
    "population_change": 10.53,
    "net_migration": 2497,
    "gdp_per_capita": 57902
@@ -589,7 +599,7 @@
    "name": "Fulton",
    "median_income": 95292.0,
    "median_home_value": 458800.0,
-   "poverty_rate": null,
+   "poverty_rate": 12.3,
    "population_change": 2.74,
    "net_migration": 8186,
    "gdp_per_capita": 221664
@@ -598,7 +608,7 @@
    "name": "Gilmer",
    "median_income": 74499.0,
    "median_home_value": 314000.0,
-   "poverty_rate": null,
+   "poverty_rate": 16.0,
    "population_change": 7.87,
    "net_migration": 3136,
    "gdp_per_capita": 42467
@@ -607,7 +617,7 @@
    "name": "Glascock",
    "median_income": 54934.0,
    "median_home_value": 123800.0,
-   "poverty_rate": null,
+   "poverty_rate": 12.6,
    "population_change": 8.39,
    "net_migration": 267,
    "gdp_per_capita": 13134
@@ -616,7 +626,7 @@
    "name": "Glynn",
    "median_income": 69799.0,
    "median_home_value": 301300.0,
-   "poverty_rate": null,
+   "poverty_rate": 16.1,
    "population_change": 3.69,
    "net_migration": 4119,
    "gdp_per_capita": 71619
@@ -625,7 +635,7 @@
    "name": "Gordon",
    "median_income": 63650.0,
    "median_home_value": 222900.0,
-   "poverty_rate": null,
+   "poverty_rate": 12.0,
    "population_change": 6.88,
    "net_migration": 4143,
    "gdp_per_capita": 54805
@@ -634,7 +644,7 @@
    "name": "Grady",
    "median_income": 58980.0,
    "median_home_value": 152400.0,
-   "poverty_rate": null,
+   "poverty_rate": 20.3,
    "population_change": 1.44,
    "net_migration": 491,
    "gdp_per_capita": 32864
@@ -643,7 +653,7 @@
    "name": "Greene",
    "median_income": 86272.0,
    "median_home_value": 394800.0,
-   "poverty_rate": null,
+   "poverty_rate": 9.8,
    "population_change": 12.28,
    "net_migration": 2969,
    "gdp_per_capita": 58119
@@ -652,7 +662,7 @@
    "name": "Gwinnett",
    "median_income": 87890.0,
    "median_home_value": 380900.0,
-   "poverty_rate": null,
+   "poverty_rate": 10.8,
    "population_change": 6.24,
    "net_migration": 32313,
    "gdp_per_capita": 71121
@@ -661,7 +671,7 @@
    "name": "Habersham",
    "median_income": 67309.0,
    "median_home_value": 238300.0,
-   "poverty_rate": null,
+   "poverty_rate": 14.1,
    "population_change": 9.33,
    "net_migration": 4529,
    "gdp_per_capita": 41773
@@ -670,7 +680,7 @@
    "name": "Hall",
    "median_income": 80901.0,
    "median_home_value": 350400.0,
-   "poverty_rate": null,
+   "poverty_rate": 11.8,
    "population_change": 11.4,
    "net_migration": 18845,
    "gdp_per_capita": 79444
@@ -679,7 +689,7 @@
    "name": "Hancock",
    "median_income": 40082.0,
    "median_home_value": 88600.0,
-   "poverty_rate": null,
+   "poverty_rate": 30.6,
    "population_change": -0.33,
    "net_migration": 356,
    "gdp_per_capita": 23275
@@ -688,7 +698,7 @@
    "name": "Haralson",
    "median_income": 72127.0,
    "median_home_value": 227500.0,
-   "poverty_rate": null,
+   "poverty_rate": 15.4,
    "population_change": 10.04,
    "net_migration": 3355,
    "gdp_per_capita": 42416
@@ -697,7 +707,7 @@
    "name": "Harris",
    "median_income": 97302.0,
    "median_home_value": 302800.0,
-   "poverty_rate": null,
+   "poverty_rate": 9.0,
    "population_change": 6.8,
    "net_migration": 2589,
    "gdp_per_capita": 23216
@@ -706,7 +716,7 @@
    "name": "Hart",
    "median_income": 59385.0,
    "median_home_value": 215100.0,
-   "poverty_rate": null,
+   "poverty_rate": 11.9,
    "population_change": 10.69,
    "net_migration": 3337,
    "gdp_per_capita": 44361
@@ -715,7 +725,7 @@
    "name": "Heard",
    "median_income": 65868.0,
    "median_home_value": 186800.0,
-   "poverty_rate": null,
+   "poverty_rate": 17.9,
    "population_change": 6.15,
    "net_migration": 916,
    "gdp_per_capita": 123810
@@ -724,7 +734,7 @@
    "name": "Henry",
    "median_income": 83146.0,
    "median_home_value": 313900.0,
-   "poverty_rate": null,
+   "poverty_rate": 9.2,
    "population_change": 9.53,
    "net_migration": 19341,
    "gdp_per_capita": 44735
@@ -733,7 +743,7 @@
    "name": "Houston",
    "median_income": 80698.0,
    "median_home_value": 219800.0,
-   "poverty_rate": null,
+   "poverty_rate": 11.1,
    "population_change": 8.45,
    "net_migration": 11816,
    "gdp_per_capita": 55724
@@ -742,7 +752,7 @@
    "name": "Irwin",
    "median_income": 51384.0,
    "median_home_value": 105600.0,
-   "poverty_rate": null,
+   "poverty_rate": 22.4,
    "population_change": -6.49,
    "net_migration": -383,
    "gdp_per_capita": 32499
@@ -751,7 +761,7 @@
    "name": "Jackson",
    "median_income": 89544.0,
    "median_home_value": 345000.0,
-   "poverty_rate": null,
+   "poverty_rate": 7.3,
    "population_change": 29.31,
    "net_migration": 21018,
    "gdp_per_capita": 65659
@@ -760,7 +770,7 @@
    "name": "Jasper",
    "median_income": 60134.0,
    "median_home_value": 243400.0,
-   "poverty_rate": null,
+   "poverty_rate": 16.0,
    "population_change": 20.18,
    "net_migration": 3007,
    "gdp_per_capita": 24579
@@ -769,7 +779,7 @@
    "name": "Jeff Davis",
    "median_income": 40283.0,
    "median_home_value": 118300.0,
-   "poverty_rate": null,
+   "poverty_rate": 21.8,
    "population_change": 2.83,
    "net_migration": 568,
    "gdp_per_capita": 45580
@@ -778,7 +788,7 @@
    "name": "Jefferson",
    "median_income": 53014.0,
    "median_home_value": 105400.0,
-   "poverty_rate": null,
+   "poverty_rate": 16.9,
    "population_change": -4.25,
    "net_migration": -228,
    "gdp_per_capita": 48558
@@ -787,7 +797,7 @@
    "name": "Jenkins",
    "median_income": 44389.0,
    "median_home_value": 92900.0,
-   "poverty_rate": null,
+   "poverty_rate": 22.9,
    "population_change": 2.11,
    "net_migration": 346,
    "gdp_per_capita": 24225
@@ -796,7 +806,7 @@
    "name": "Johnson",
    "median_income": 51028.0,
    "median_home_value": 94900.0,
-   "poverty_rate": null,
+   "poverty_rate": 24.2,
    "population_change": 1.42,
    "net_migration": 304,
    "gdp_per_capita": 18333
@@ -805,7 +815,7 @@
    "name": "Jones",
    "median_income": 75500.0,
    "median_home_value": 194500.0,
-   "poverty_rate": null,
+   "poverty_rate": 12.1,
    "population_change": 2.83,
    "net_migration": 1157,
    "gdp_per_capita": 22333
@@ -814,7 +824,7 @@
    "name": "Lamar",
    "median_income": 67062.0,
    "median_home_value": 216500.0,
-   "poverty_rate": null,
+   "poverty_rate": 9.6,
    "population_change": 12.86,
    "net_migration": 2506,
    "gdp_per_capita": 31919
@@ -823,7 +833,7 @@
    "name": "Lanier",
    "median_income": 47186.0,
    "median_home_value": 162300.0,
-   "poverty_rate": null,
+   "poverty_rate": 26.1,
    "population_change": 7.12,
    "net_migration": 650,
    "gdp_per_capita": 18278
@@ -832,7 +842,7 @@
    "name": "Laurens",
    "median_income": 55010.0,
    "median_home_value": 154500.0,
-   "poverty_rate": null,
+   "poverty_rate": 22.6,
    "population_change": 3.02,
    "net_migration": 1849,
    "gdp_per_capita": 52974
@@ -841,7 +851,7 @@
    "name": "Lee",
    "median_income": 89168.0,
    "median_home_value": 231800.0,
-   "poverty_rate": null,
+   "poverty_rate": 5.7,
    "population_change": 2.91,
    "net_migration": 872,
    "gdp_per_capita": 32158
@@ -850,7 +860,7 @@
    "name": "Liberty",
    "median_income": 60456.0,
    "median_home_value": 201500.0,
-   "poverty_rate": null,
+   "poverty_rate": 15.3,
    "population_change": 7.63,
    "net_migration": 784,
    "gdp_per_capita": 75225
@@ -859,7 +869,7 @@
    "name": "Lincoln",
    "median_income": 56907.0,
    "median_home_value": 165900.0,
-   "poverty_rate": null,
+   "poverty_rate": 17.0,
    "population_change": 5.32,
    "net_migration": 602,
    "gdp_per_capita": 22520
@@ -868,7 +878,7 @@
    "name": "Long",
    "median_income": 68808.0,
    "median_home_value": 218300.0,
-   "poverty_rate": null,
+   "poverty_rate": 17.3,
    "population_change": 32.61,
    "net_migration": 4504,
    "gdp_per_capita": 14311
@@ -877,7 +887,7 @@
    "name": "Lowndes",
    "median_income": 58541.0,
    "median_home_value": 215600.0,
-   "poverty_rate": null,
+   "poverty_rate": 19.2,
    "population_change": 3.74,
    "net_migration": 2206,
    "gdp_per_capita": 58072
@@ -886,7 +896,7 @@
    "name": "Lumpkin",
    "median_income": 77448.0,
    "median_home_value": 307900.0,
-   "poverty_rate": null,
+   "poverty_rate": 14.1,
    "population_change": 7.54,
    "net_migration": 2836,
    "gdp_per_capita": 37687
@@ -895,7 +905,7 @@
    "name": "McDuffie",
    "median_income": 56733.0,
    "median_home_value": 170200.0,
-   "poverty_rate": null,
+   "poverty_rate": 20.3,
    "population_change": 0.14,
    "net_migration": 248,
    "gdp_per_capita": 40448
@@ -904,7 +914,7 @@
    "name": "McIntosh",
    "median_income": 50273.0,
    "median_home_value": 182700.0,
-   "poverty_rate": null,
+   "poverty_rate": 23.0,
    "population_change": 9.18,
    "net_migration": 1423,
    "gdp_per_capita": 26065
@@ -913,7 +923,7 @@
    "name": "Macon",
    "median_income": 41031.0,
    "median_home_value": 97300.0,
-   "poverty_rate": null,
+   "poverty_rate": 25.1,
    "population_change": -2.18,
    "net_migration": -22,
    "gdp_per_capita": 52360
@@ -922,7 +932,7 @@
    "name": "Madison",
    "median_income": 61963.0,
    "median_home_value": 219700.0,
-   "poverty_rate": null,
+   "poverty_rate": 17.2,
    "population_change": 8.77,
    "net_migration": 2517,
    "gdp_per_capita": 26879
@@ -931,7 +941,7 @@
    "name": "Marion",
    "median_income": 51667.0,
    "median_home_value": 154100.0,
-   "poverty_rate": null,
+   "poverty_rate": 20.9,
    "population_change": 1.95,
    "net_migration": 372,
    "gdp_per_capita": 19391
@@ -940,7 +950,7 @@
    "name": "Meriwether",
    "median_income": 57340.0,
    "median_home_value": 168800.0,
-   "poverty_rate": null,
+   "poverty_rate": 18.9,
    "population_change": 4.4,
    "net_migration": 1399,
    "gdp_per_capita": 42438
@@ -949,7 +959,7 @@
    "name": "Miller",
    "median_income": 51425.0,
    "median_home_value": 124000.0,
-   "poverty_rate": null,
+   "poverty_rate": 23.8,
    "population_change": -3.05,
    "net_migration": 71,
    "gdp_per_capita": 47731
@@ -958,7 +968,7 @@
    "name": "Mitchell",
    "median_income": 57613.0,
    "median_home_value": 106000.0,
-   "poverty_rate": null,
+   "poverty_rate": 23.4,
    "population_change": -5.58,
    "net_migration": -860,
    "gdp_per_capita": 51005
@@ -967,7 +977,7 @@
    "name": "Monroe",
    "median_income": 83183.0,
    "median_home_value": 271200.0,
-   "poverty_rate": null,
+   "poverty_rate": 12.3,
    "population_change": 14.1,
    "net_migration": 4422,
    "gdp_per_capita": 57134
@@ -976,7 +986,7 @@
    "name": "Montgomery",
    "median_income": 51941.0,
    "median_home_value": 115500.0,
-   "poverty_rate": null,
+   "poverty_rate": 20.6,
    "population_change": 0.82,
    "net_migration": 146,
    "gdp_per_capita": 24824
@@ -985,7 +995,7 @@
    "name": "Morgan",
    "median_income": 78111.0,
    "median_home_value": 342300.0,
-   "poverty_rate": null,
+   "poverty_rate": 8.8,
    "population_change": 9.37,
    "net_migration": 2056,
    "gdp_per_capita": 68695
@@ -994,7 +1004,7 @@
    "name": "Murray",
    "median_income": 69253.0,
    "median_home_value": 180700.0,
-   "poverty_rate": null,
+   "poverty_rate": 14.4,
    "population_change": 4.03,
    "net_migration": 1899,
    "gdp_per_capita": 45368
@@ -1003,7 +1013,7 @@
    "name": "Muscogee",
    "median_income": 58073.0,
    "median_home_value": 193900.0,
-   "poverty_rate": null,
+   "poverty_rate": 19.0,
    "population_change": -2.34,
    "net_migration": -6667,
    "gdp_per_capita": 68468
@@ -1012,7 +1022,7 @@
    "name": "Newton",
    "median_income": 77179.0,
    "median_home_value": 265000.0,
-   "poverty_rate": null,
+   "poverty_rate": 12.3,
    "population_change": 11.23,
    "net_migration": 11694,
    "gdp_per_capita": 36567
@@ -1021,7 +1031,7 @@
    "name": "Oconee",
    "median_income": 121217.0,
    "median_home_value": 461600.0,
-   "poverty_rate": null,
+   "poverty_rate": 6.2,
    "population_change": 6.88,
    "net_migration": 3118,
    "gdp_per_capita": 57124
@@ -1030,7 +1040,7 @@
    "name": "Oglethorpe",
    "median_income": 75034.0,
    "median_home_value": 231600.0,
-   "poverty_rate": null,
+   "poverty_rate": 11.6,
    "population_change": 10.4,
    "net_migration": 1698,
    "gdp_per_capita": 31534
@@ -1039,7 +1049,7 @@
    "name": "Paulding",
    "median_income": 98031.0,
    "median_home_value": 326300.0,
-   "poverty_rate": null,
+   "poverty_rate": 6.6,
    "population_change": 12.67,
    "net_migration": 18543,
    "gdp_per_capita": 27135
@@ -1048,7 +1058,7 @@
    "name": "Peach",
    "median_income": 71293.0,
    "median_home_value": 207800.0,
-   "poverty_rate": null,
+   "poverty_rate": 17.3,
    "population_change": 6.48,
    "net_migration": 1867,
    "gdp_per_capita": 45170
@@ -1057,7 +1067,7 @@
    "name": "Pickens",
    "median_income": 78930.0,
    "median_home_value": 332700.0,
-   "poverty_rate": null,
+   "poverty_rate": 12.0,
    "population_change": 11.44,
    "net_migration": 4427,
    "gdp_per_capita": 42726
@@ -1066,7 +1076,7 @@
    "name": "Pierce",
    "median_income": 60517.0,
    "median_home_value": 153300.0,
-   "poverty_rate": null,
+   "poverty_rate": 13.8,
    "population_change": 5.14,
    "net_migration": 1279,
    "gdp_per_capita": 31748
@@ -1075,7 +1085,7 @@
    "name": "Pike",
    "median_income": 86719.0,
    "median_home_value": 305600.0,
-   "poverty_rate": null,
+   "poverty_rate": 9.3,
    "population_change": 10.47,
    "net_migration": 2177,
    "gdp_per_capita": 24380
@@ -1084,7 +1094,7 @@
    "name": "Polk",
    "median_income": 58515.0,
    "median_home_value": 187600.0,
-   "poverty_rate": null,
+   "poverty_rate": 16.4,
    "population_change": 6.02,
    "net_migration": 2492,
    "gdp_per_capita": 38237
@@ -1093,7 +1103,7 @@
    "name": "Pulaski",
    "median_income": 50406.0,
    "median_home_value": 157600.0,
-   "poverty_rate": null,
+   "poverty_rate": 16.5,
    "population_change": 3.04,
    "net_migration": 591,
    "gdp_per_capita": 36851
@@ -1102,7 +1112,7 @@
    "name": "Putnam",
    "median_income": 72096.0,
    "median_home_value": 249300.0,
-   "poverty_rate": null,
+   "poverty_rate": 17.6,
    "population_change": 7.03,
    "net_migration": 2175,
    "gdp_per_capita": 38194
@@ -1111,7 +1121,7 @@
    "name": "Quitman",
    "median_income": 40179.0,
    "median_home_value": 104600.0,
-   "poverty_rate": null,
+   "poverty_rate": 15.7,
    "population_change": 1.3,
    "net_migration": 127,
    "gdp_per_capita": 20695
@@ -1120,7 +1130,7 @@
    "name": "Rabun",
    "median_income": 67493.0,
    "median_home_value": 295200.0,
-   "poverty_rate": null,
+   "poverty_rate": 13.1,
    "population_change": 4.95,
    "net_migration": 1431,
    "gdp_per_capita": 47957
@@ -1129,7 +1139,7 @@
    "name": "Randolph",
    "median_income": 28380.0,
    "median_home_value": 90200.0,
-   "poverty_rate": null,
+   "poverty_rate": 30.0,
    "population_change": -3.3,
    "net_migration": -16,
    "gdp_per_capita": 37012
@@ -1138,7 +1148,7 @@
    "name": "Richmond",
    "median_income": 55637.0,
    "median_home_value": 178500.0,
-   "poverty_rate": null,
+   "poverty_rate": 20.0,
    "population_change": -0.01,
    "net_migration": -1626,
    "gdp_per_capita": 81413
@@ -1147,7 +1157,7 @@
    "name": "Rockdale",
    "median_income": 77247.0,
    "median_home_value": 292900.0,
-   "poverty_rate": null,
+   "poverty_rate": 10.8,
    "population_change": 5.17,
    "net_migration": 4391,
    "gdp_per_capita": 60045
@@ -1156,7 +1166,7 @@
    "name": "Schley",
    "median_income": 56875.0,
    "median_home_value": 143900.0,
-   "poverty_rate": null,
+   "poverty_rate": 13.9,
    "population_change": 1.23,
    "net_migration": 59,
    "gdp_per_capita": 33796
@@ -1165,7 +1175,7 @@
    "name": "Screven",
    "median_income": 52792.0,
    "median_home_value": 124300.0,
-   "poverty_rate": null,
+   "poverty_rate": 17.2,
    "population_change": 2.39,
    "net_migration": 570,
    "gdp_per_capita": 29639
@@ -1174,7 +1184,7 @@
    "name": "Seminole",
    "median_income": 49495.0,
    "median_home_value": 121900.0,
-   "poverty_rate": null,
+   "poverty_rate": 20.1,
    "population_change": 0.36,
    "net_migration": 302,
    "gdp_per_capita": 44865
@@ -1183,7 +1193,7 @@
    "name": "Spalding",
    "median_income": 62071.0,
    "median_home_value": 228700.0,
-   "poverty_rate": null,
+   "poverty_rate": 18.9,
    "population_change": 4.92,
    "net_migration": 3870,
    "gdp_per_capita": 43716
@@ -1192,7 +1202,7 @@
    "name": "Stephens",
    "median_income": 54754.0,
    "median_home_value": 175300.0,
-   "poverty_rate": null,
+   "poverty_rate": 15.8,
    "population_change": 3.83,
    "net_migration": 1645,
    "gdp_per_capita": 51709
@@ -1201,7 +1211,7 @@
    "name": "Stewart",
    "median_income": 33250.0,
    "median_home_value": 65100.0,
-   "poverty_rate": null,
+   "poverty_rate": 26.4,
    "population_change": -12.54,
    "net_migration": -465,
    "gdp_per_capita": 42941
@@ -1210,7 +1220,7 @@
    "name": "Sumter",
    "median_income": 42653.0,
    "median_home_value": 120200.0,
-   "poverty_rate": null,
+   "poverty_rate": 23.7,
    "population_change": -2.43,
    "net_migration": -473,
    "gdp_per_capita": 43874
@@ -1219,7 +1229,7 @@
    "name": "Talbot",
    "median_income": 41597.0,
    "median_home_value": 117100.0,
-   "poverty_rate": null,
+   "poverty_rate": 25.2,
    "population_change": -0.35,
    "net_migration": 250,
    "gdp_per_capita": 58784
@@ -1228,7 +1238,7 @@
    "name": "Taliaferro",
    "median_income": 52500.0,
    "median_home_value": 68900.0,
-   "poverty_rate": null,
+   "poverty_rate": 20.4,
    "population_change": 6.68,
    "net_migration": 193,
    "gdp_per_capita": 27039
@@ -1237,7 +1247,7 @@
    "name": "Tattnall",
    "median_income": 50747.0,
    "median_home_value": 140000.0,
-   "poverty_rate": null,
+   "poverty_rate": 23.4,
    "population_change": 0.2,
    "net_migration": 128,
    "gdp_per_capita": 37759
@@ -1246,7 +1256,7 @@
    "name": "Taylor",
    "median_income": 41788.0,
    "median_home_value": 87700.0,
-   "poverty_rate": null,
+   "poverty_rate": 32.1,
    "population_change": -0.03,
    "net_migration": 141,
    "gdp_per_capita": 35504
@@ -1255,7 +1265,7 @@
    "name": "Telfair",
    "median_income": 50929.0,
    "median_home_value": 113300.0,
-   "poverty_rate": null,
+   "poverty_rate": 24.1,
    "population_change": -10.07,
    "net_migration": -1109,
    "gdp_per_capita": 37065
@@ -1264,7 +1274,7 @@
    "name": "Terrell",
    "median_income": 46171.0,
    "median_home_value": 118400.0,
-   "poverty_rate": null,
+   "poverty_rate": 33.3,
    "population_change": -5.29,
    "net_migration": -295,
    "gdp_per_capita": 36583
@@ -1273,7 +1283,7 @@
    "name": "Thomas",
    "median_income": 60736.0,
    "median_home_value": 196700.0,
-   "poverty_rate": null,
+   "poverty_rate": 17.9,
    "population_change": 1.28,
    "net_migration": 903,
    "gdp_per_capita": 68273
@@ -1282,7 +1292,7 @@
    "name": "Tift",
    "median_income": 53255.0,
    "median_home_value": 165200.0,
-   "poverty_rate": null,
+   "poverty_rate": 20.8,
    "population_change": 2.11,
    "net_migration": 526,
    "gdp_per_capita": 65689
@@ -1291,7 +1301,7 @@
    "name": "Toombs",
    "median_income": 52621.0,
    "median_home_value": 137000.0,
-   "poverty_rate": null,
+   "poverty_rate": 22.5,
    "population_change": 1.72,
    "net_migration": 465,
    "gdp_per_capita": 55063
@@ -1300,7 +1310,7 @@
    "name": "Towns",
    "median_income": 59135.0,
    "median_home_value": 316100.0,
-   "poverty_rate": null,
+   "poverty_rate": 13.3,
    "population_change": 5.84,
    "net_migration": 1492,
    "gdp_per_capita": 45215
@@ -1309,7 +1319,7 @@
    "name": "Treutlen",
    "median_income": 55518.0,
    "median_home_value": 100100.0,
-   "poverty_rate": null,
+   "poverty_rate": 13.8,
    "population_change": 1.06,
    "net_migration": 214,
    "gdp_per_capita": 23733
@@ -1318,7 +1328,7 @@
    "name": "Troup",
    "median_income": 56776.0,
    "median_home_value": 217200.0,
-   "poverty_rate": null,
+   "poverty_rate": 16.9,
    "population_change": 4.99,
    "net_migration": 3161,
    "gdp_per_capita": 72435
@@ -1327,7 +1337,7 @@
    "name": "Turner",
    "median_income": 36799.0,
    "median_home_value": 97300.0,
-   "poverty_rate": null,
+   "poverty_rate": 20.3,
    "population_change": -0.07,
    "net_migration": 105,
    "gdp_per_capita": 31321
@@ -1336,7 +1346,7 @@
    "name": "Twiggs",
    "median_income": 56324.0,
    "median_home_value": 111300.0,
-   "poverty_rate": null,
+   "poverty_rate": 18.2,
    "population_change": -5.14,
    "net_migration": 103,
    "gdp_per_capita": 43632
@@ -1345,7 +1355,7 @@
    "name": "Union",
    "median_income": 66176.0,
    "median_home_value": 307400.0,
-   "poverty_rate": null,
+   "poverty_rate": 10.9,
    "population_change": 12.3,
    "net_migration": 4292,
    "gdp_per_capita": 45159
@@ -1354,7 +1364,7 @@
    "name": "Upson",
    "median_income": 55429.0,
    "median_home_value": 168700.0,
-   "poverty_rate": null,
+   "poverty_rate": 19.3,
    "population_change": 2.72,
    "net_migration": 1379,
    "gdp_per_capita": 34259
@@ -1363,7 +1373,7 @@
    "name": "Walker",
    "median_income": 59469.0,
    "median_home_value": 197100.0,
-   "poverty_rate": null,
+   "poverty_rate": 13.3,
    "population_change": 3.68,
    "net_migration": 3808,
    "gdp_per_capita": 32286
@@ -1372,7 +1382,7 @@
    "name": "Walton",
    "median_income": 84945.0,
    "median_home_value": 339500.0,
-   "poverty_rate": null,
+   "poverty_rate": 11.9,
    "population_change": 16.04,
    "net_migration": 14784,
    "gdp_per_capita": 38495
@@ -1381,7 +1391,7 @@
    "name": "Ware",
    "median_income": 47448.0,
    "median_home_value": 109500.0,
-   "poverty_rate": null,
+   "poverty_rate": 21.5,
    "population_change": 1.85,
    "net_migration": 1141,
    "gdp_per_capita": 51648
@@ -1390,7 +1400,7 @@
    "name": "Warren",
    "median_income": 44289.0,
    "median_home_value": 67100.0,
-   "poverty_rate": null,
+   "poverty_rate": 21.4,
    "population_change": 1.17,
    "net_migration": 219,
    "gdp_per_capita": 53833
@@ -1399,7 +1409,7 @@
    "name": "Washington",
    "median_income": 46023.0,
    "median_home_value": 112500.0,
-   "poverty_rate": null,
+   "poverty_rate": 17.2,
    "population_change": -2.49,
    "net_migration": 59,
    "gdp_per_capita": 44559
@@ -1408,7 +1418,7 @@
    "name": "Wayne",
    "median_income": 53427.0,
    "median_home_value": 162800.0,
-   "poverty_rate": null,
+   "poverty_rate": 21.3,
    "population_change": 7.75,
    "net_migration": 2795,
    "gdp_per_capita": 50824
@@ -1417,7 +1427,7 @@
    "name": "Webster",
    "median_income": 46792.0,
    "median_home_value": 82600.0,
-   "poverty_rate": null,
+   "poverty_rate": 22.3,
    "population_change": 0.72,
    "net_migration": 24,
    "gdp_per_capita": 35649
@@ -1426,7 +1436,7 @@
    "name": "Wheeler",
    "median_income": 40539.0,
    "median_home_value": 88200.0,
-   "poverty_rate": null,
+   "poverty_rate": 32.7,
    "population_change": 1.65,
    "net_migration": 148,
    "gdp_per_capita": 21083
@@ -1435,7 +1445,7 @@
    "name": "White",
    "median_income": 70666.0,
    "median_home_value": 278900.0,
-   "poverty_rate": null,
+   "poverty_rate": 12.4,
    "population_change": 6.03,
    "net_migration": 2324,
    "gdp_per_capita": 43307
@@ -1444,7 +1454,7 @@
    "name": "Whitfield",
    "median_income": 67070.0,
    "median_home_value": 218000.0,
-   "poverty_rate": null,
+   "poverty_rate": 14.8,
    "population_change": 3.33,
    "net_migration": 2373,
    "gdp_per_capita": 72934
@@ -1453,7 +1463,7 @@
    "name": "Wilcox",
    "median_income": 54138.0,
    "median_home_value": 87600.0,
-   "poverty_rate": null,
+   "poverty_rate": 21.9,
    "population_change": 0.11,
    "net_migration": 303,
    "gdp_per_capita": 24853
@@ -1462,7 +1472,7 @@
    "name": "Wilkes",
    "median_income": 52043.0,
    "median_home_value": 122700.0,
-   "poverty_rate": null,
+   "poverty_rate": 17.8,
    "population_change": -0.15,
    "net_migration": 356,
    "gdp_per_capita": 52473
@@ -1471,7 +1481,7 @@
    "name": "Wilkinson",
    "median_income": 45465.0,
    "median_home_value": 86300.0,
-   "poverty_rate": null,
+   "poverty_rate": 21.6,
    "population_change": -2.06,
    "net_migration": 11,
    "gdp_per_capita": 69778
@@ -1480,7 +1490,7 @@
    "name": "Worth",
    "median_income": 58694.0,
    "median_home_value": 104900.0,
-   "poverty_rate": null,
+   "poverty_rate": 24.0,
    "population_change": -3.19,
    "net_migration": -145,
    "gdp_per_capita": 22506
