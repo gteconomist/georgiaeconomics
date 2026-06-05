@@ -3,7 +3,7 @@
   "short_name": "Warner Robins",
   "full_name": "Warner Robins, GA",
   "population": 199000,
-  "as_of": "2026-06-04",
+  "as_of": "2026-06-05",
   "sections": {
     "ces_employment": {
       "series_id": "SMS13475800000000001",
@@ -4708,7 +4708,7 @@
     "ces_employment": "live",
     "ces_by_supersector": "live",
     "laus_unemployment": "live",
-    "fhfa_hpi": "stale",
+    "fhfa_hpi": "live",
     "census_pep": "live",
     "census_acs_demographics": "live",
     "bea_gmp": "live",
@@ -4717,7 +4717,7 @@
     "qcew_yoy_changes": "stale",
     "qcew_3digit": "live",
     "health_check": "live",
-    "census_bps_permits": "stale",
+    "census_bps_permits": "live",
     "ita_msa_exports": "live",
     "irs_soi_migration": "live",
     "epa_air_quality": "live",
