@@ -1327,7 +1327,7 @@
     }
   ],
   "ga_exports_top10_total_musd": 35268.0,
-  "fetched_at": "2026-06-04",
+  "fetched_at": "2026-06-05",
   "ga_exports_latest": [
     {
       "country": "Canada",
@@ -1502,10 +1502,10 @@
   },
   "_meta": {
     "exports_annual": {
-      "last_updated": "2026-06-04T03:12:54Z"
+      "last_updated": "2026-06-05T22:37:52Z"
     },
     "exports_by_commodity": {
-      "last_updated": "2026-06-04T03:13:02Z"
+      "last_updated": "2026-06-05T22:38:00Z"
     }
   }
 }
