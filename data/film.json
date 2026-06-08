@@ -301,7 +301,7 @@
   ],
   "_meta": {
     "production_spend": {
-      "last_updated": "2026-06-03",
+      "last_updated": "2026-06-08",
       "source": "BEA Regional SAGDP2 \u2014 NAICS 512 (Motion picture and sound recording industries), GA",
       "metric_note": "Industry GDP (value-added). Distinct from DECD's gross production spend figure.",
       "coverage_years": [
@@ -316,7 +316,7 @@
       "latest_value_b": 1.3
     },
     "employment": {
-      "last_updated": "2026-06-03",
+      "last_updated": "2026-06-08",
       "source": "BLS QCEW annual averages, NAICS 5121, GA (area_fips 13000)",
       "coverage_years": [
         2014,
@@ -324,7 +324,7 @@
       ]
     },
     "state_comparison": {
-      "last_updated": "2026-06-03",
+      "last_updated": "2026-06-08",
       "source": "BEA Regional SAGDP2 \u2014 NAICS 512 (Motion picture & sound recording industries) GDP by state",
       "metric_label": "Industry GDP (value-added, $B)",
       "year": 2025
@@ -345,6 +345,6 @@
       "year": 2026
     }
   },
-  "fetched_at": "2026-06-03",
-  "source_summary": "Live sources updated 2026-06-03: production_spend, employment, state_comparison, decd_headline. Stale or static: tax_credits, notable_productions, major_studios."
+  "fetched_at": "2026-06-08",
+  "source_summary": "Live sources updated 2026-06-08: production_spend, employment, state_comparison. Stale or static: tax_credits, notable_productions, major_studios, decd_headline."
 }
