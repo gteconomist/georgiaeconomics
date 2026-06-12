@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-06-04T01:07:41Z",
+  "fetched_at": "2026-06-12T18:10:19Z",
   "schema": "consumer/v1",
   "pce_trend": {
     "years": [
@@ -474,7 +474,8 @@
       "2025-01-01",
       "2025-04-01",
       "2025-07-01",
-      "2025-10-01"
+      "2025-10-01",
+      "2026-01-01"
     ],
     "values_musd": [
       1546,
@@ -504,7 +505,8 @@
       2285,
       2401,
       2359,
-      2391
+      2391,
+      2437
     ],
     "source": "Census QTAX \u2014 GA general sales & gross-receipts tax (quarterly, $K)"
   },
@@ -756,31 +758,31 @@
   },
   "_meta": {
     "pce_trend": {
-      "last_updated": "2026-06-04T01:07:41Z",
+      "last_updated": "2026-06-12T18:10:20Z",
       "stale": false
     },
     "pce_composition": {
-      "last_updated": "2026-06-04T01:07:43Z",
+      "last_updated": "2026-06-12T18:10:22Z",
       "stale": false
     },
     "pce_by_function": {
-      "last_updated": "2026-06-04T01:07:48Z",
+      "last_updated": "2026-06-12T18:10:26Z",
       "stale": false
     },
     "pce_peers": {
-      "last_updated": "2026-06-04T01:07:49Z",
+      "last_updated": "2026-06-12T18:10:28Z",
       "stale": false
     },
     "electricity": {
-      "last_updated": "2026-06-04T01:07:49Z",
+      "last_updated": "2026-06-12T18:10:28Z",
       "stale": false
     },
     "sales_tax": {
-      "last_updated": "2026-06-04T01:07:50Z",
+      "last_updated": "2026-06-12T18:10:28Z",
       "stale": false
     },
     "real_wages": {
-      "last_updated": "2026-06-04T01:07:50Z",
+      "last_updated": "2026-06-12T18:10:28Z",
       "stale": false
     }
   },
