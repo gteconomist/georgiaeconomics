@@ -3,7 +3,7 @@
   "short_name": "Columbus",
   "full_name": "Columbus, GA-AL",
   "population": 329000,
-  "as_of": "2026-06-11",
+  "as_of": "2026-06-12",
   "sections": {
     "ces_employment": {
       "series_id": "SMS13179800000000001",
@@ -5586,8 +5586,8 @@
     "fhfa_hpi": "live",
     "census_pep": "live",
     "census_acs_demographics": "live",
-    "bea_gmp": "live",
-    "bea_personal_income": "live",
+    "bea_gmp": "stale",
+    "bea_personal_income": "stale",
     "qcew_industry_shares": "live",
     "qcew_yoy_changes": "stale",
     "qcew_3digit": "live",

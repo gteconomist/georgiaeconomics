@@ -3,7 +3,7 @@
   "short_name": "Savannah",
   "full_name": "Savannah, GA",
   "population": 410000,
-  "as_of": "2026-06-11",
+  "as_of": "2026-06-12",
   "sections": {
     "ces_employment": {
       "series_id": "SMS13423400000000001",
@@ -5673,8 +5673,8 @@
     "fhfa_hpi": "live",
     "census_pep": "live",
     "census_acs_demographics": "live",
-    "bea_gmp": "live",
-    "bea_personal_income": "live",
+    "bea_gmp": "stale",
+    "bea_personal_income": "stale",
     "qcew_industry_shares": "live",
     "qcew_yoy_changes": "live",
     "qcew_3digit": "live",
