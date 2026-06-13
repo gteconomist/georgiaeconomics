@@ -3,7 +3,7 @@
   "short_name": "Hinesville",
   "full_name": "Hinesville, GA",
   "population": 78000,
-  "as_of": "2026-06-12",
+  "as_of": "2026-06-13",
   "sections": {
     "ces_employment": {
       "series_id": "SMS13259800000000001",
@@ -4526,8 +4526,8 @@
     "fhfa_hpi": "live",
     "census_pep": "live",
     "census_acs_demographics": "live",
-    "bea_gmp": "stale",
-    "bea_personal_income": "stale",
+    "bea_gmp": "live",
+    "bea_personal_income": "live",
     "qcew_industry_shares": "live",
     "qcew_yoy_changes": "stale",
     "qcew_3digit": "live",
