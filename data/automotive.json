@@ -353,7 +353,7 @@
   ],
   "_meta": {
     "employment": {
-      "last_updated": "2026-06-03",
+      "last_updated": "2026-06-16",
       "source": "BLS QCEW annual averages, NAICS 3361+3362+3363 (motor vehicle mfg + bodies/trailers + parts), GA (area 13000)",
       "coverage_years": [
         2014,
@@ -361,7 +361,7 @@
       ]
     },
     "industry_gdp": {
-      "last_updated": "2026-06-03",
+      "last_updated": "2026-06-16",
       "source": "BEA Regional SAGDP2 \u2014 motor vehicles, bodies and trailers, and parts manufacturing, GA",
       "metric_note": "Industry value-added (GDP). NAICS 3361 + 3362 + 3363 rolled up.",
       "coverage_years": [
@@ -371,13 +371,13 @@
       "line_code": "21"
     },
     "state_comparison": {
-      "last_updated": "2026-06-03",
+      "last_updated": "2026-06-16",
       "source": "BEA Regional SAGDP2 \u2014 motor-vehicle manufacturing GDP by state",
       "metric_label": "Industry GDP (value-added, $B)",
       "year": 2025
     },
     "establishments": {
-      "last_updated": "2026-06-03",
+      "last_updated": "2026-06-16",
       "source": "Census CBP 2023 \u2014 NAICS 3361/3362/3363, GA",
       "year": 2023
     },
@@ -397,6 +397,6 @@
       "source": null
     }
   },
-  "fetched_at": "2026-06-03",
-  "source_summary": "Live sources updated 2026-06-03: employment, industry_gdp, state_comparison, establishments. Stale or static: ev_investment, plants, milestones."
+  "fetched_at": "2026-06-16",
+  "source_summary": "Live sources updated 2026-06-16: employment, industry_gdp, state_comparison, establishments. Stale or static: ev_investment, plants, milestones."
 }
