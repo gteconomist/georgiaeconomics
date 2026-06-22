@@ -3,7 +3,7 @@
   "short_name": "Dalton",
   "full_name": "Dalton, GA",
   "population": 143000,
-  "as_of": "2026-06-21",
+  "as_of": "2026-06-22",
   "sections": {
     "ces_employment": {
       "series_id": "SMS13191400000000001",
@@ -3740,7 +3740,73 @@
           "share_pct": 1.97
         }
       },
-      "ga": {},
+      "ga": {
+        "Mining": {
+          "employment": 5985,
+          "avg_annual_wage": 88452,
+          "share_pct": 0.13
+        },
+        "Construction": {
+          "employment": 231617,
+          "avg_annual_wage": 91208,
+          "share_pct": 5.01
+        },
+        "Manufacturing": {
+          "employment": 425580,
+          "avg_annual_wage": 74308,
+          "share_pct": 9.2
+        },
+        "Transportation/Utilities": {
+          "employment": 303474,
+          "avg_annual_wage": 71855,
+          "share_pct": 6.56
+        },
+        "Wholesale Trade": {
+          "employment": 228969,
+          "avg_annual_wage": 101400,
+          "share_pct": 4.95
+        },
+        "Retail Trade": {
+          "employment": 523623,
+          "avg_annual_wage": 41496,
+          "share_pct": 11.32
+        },
+        "Information": {
+          "employment": 115491,
+          "avg_annual_wage": 133900,
+          "share_pct": 2.5
+        },
+        "Financial Activities": {
+          "employment": 276687,
+          "avg_annual_wage": 104837,
+          "share_pct": 5.98
+        },
+        "Prof. & Bus. Services": {
+          "employment": 754330,
+          "avg_annual_wage": 95327,
+          "share_pct": 16.31
+        },
+        "Education & Health Services": {
+          "employment": 691935,
+          "avg_annual_wage": 70935,
+          "share_pct": 14.97
+        },
+        "Leisure & Hospitality": {
+          "employment": 512859,
+          "avg_annual_wage": 30454,
+          "share_pct": 11.09
+        },
+        "Other Services": {
+          "employment": 120767,
+          "avg_annual_wage": 54028,
+          "share_pct": 2.61
+        },
+        "Government": {
+          "employment": 432322,
+          "avg_annual_wage": 61147,
+          "share_pct": 9.35
+        }
+      },
       "us": {
         "Mining": {
           "employment": 577300,
@@ -3810,7 +3876,7 @@
       },
       "totals": {
         "msa": 47632,
-        "ga": 0,
+        "ga": 4623639,
         "us": 147126378
       }
     },
@@ -3938,9 +4004,17 @@
             "growing": 11,
             "shrinking": 24,
             "flat": 0
+          },
+          {
+            "label": "2025 Q2",
+            "value": 28.6,
+            "n": 35,
+            "growing": 10,
+            "shrinking": 25,
+            "flat": 0
           }
         ],
-        "latest": 31.4
+        "latest": 28.6
       }
     },
     "health_check": {
@@ -4910,7 +4984,7 @@
     },
     "industrial_diversity": {
       "score": 0.462,
-      "ga_score": null,
+      "ga_score": 0.984,
       "n_sectors": 10,
       "as_of_label": "2024 Q4",
       "method": "Hachman index = 1 / \u03a3(local_share\u00b2 / US_share) over QCEW super-sectors; 1.0 = industrial mix identical to the U.S. (most balanced/diversified), lower = more concentrated.",
