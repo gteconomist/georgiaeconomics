@@ -1,15 +1,15 @@
 {
- "fetched_at": "2026-06-23T12:16:34Z",
+ "fetched_at": "2026-06-24T11:52:17Z",
  "schema": "outlook/v1",
  "disclaimer": "The 5-year figures are model extrapolations from historical trends (damped-Holt / ARIMA-family) \u2014 not official forecasts, predictions, or investment advice. They assume recent trends persist and do not account for policy changes, shocks, or expert judgment.",
  "metros": [
   {
    "slug": "albany",
    "short_name": "Albany",
-   "cycle_latest": 93.16,
+   "cycle_latest": 93.41,
    "cycle_peak": 111.69,
    "cycle_latest_month": "2026-04",
-   "pct_from_peak": -16.6,
+   "pct_from_peak": -16.4,
    "fc_gmp_cagr": 4.62,
    "fc_emp_cagr": -0.25,
    "fc_gmp_2030": 10.9,
@@ -18,8 +18,8 @@
   {
    "slug": "athens",
    "short_name": "Athens",
-   "cycle_latest": 121.42,
-   "cycle_peak": 121.42,
+   "cycle_latest": 121.48,
+   "cycle_peak": 121.48,
    "cycle_latest_month": "2026-04",
    "pct_from_peak": 0.0,
    "fc_gmp_cagr": 3.41,
@@ -30,8 +30,8 @@
   {
    "slug": "atlanta",
    "short_name": "Atlanta",
-   "cycle_latest": 115.99,
-   "cycle_peak": 115.99,
+   "cycle_latest": 116.1,
+   "cycle_peak": 116.1,
    "cycle_latest_month": "2026-04",
    "pct_from_peak": 0.0,
    "fc_gmp_cagr": 1.6,
@@ -54,8 +54,8 @@
   {
    "slug": "brunswick",
    "short_name": "Brunswick",
-   "cycle_latest": 120.5,
-   "cycle_peak": 120.5,
+   "cycle_latest": 120.61,
+   "cycle_peak": 120.61,
    "cycle_latest_month": "2026-04",
    "pct_from_peak": 0.0,
    "fc_gmp_cagr": 6.14,
@@ -66,10 +66,10 @@
   {
    "slug": "columbus",
    "short_name": "Columbus",
-   "cycle_latest": 98.69,
+   "cycle_latest": 99.03,
    "cycle_peak": 107.89,
    "cycle_latest_month": "2026-04",
-   "pct_from_peak": -8.5,
+   "pct_from_peak": -8.2,
    "fc_gmp_cagr": 4.34,
    "fc_emp_cagr": -0.02,
    "fc_gmp_2030": 25.6,
@@ -102,10 +102,10 @@
   {
    "slug": "hinesville",
    "short_name": "Hinesville",
-   "cycle_latest": 115.07,
-   "cycle_peak": 121.42,
+   "cycle_latest": 114.5,
+   "cycle_peak": 121.43,
    "cycle_latest_month": "2026-04",
-   "pct_from_peak": -5.2,
+   "pct_from_peak": -5.7,
    "fc_gmp_cagr": 5.22,
    "fc_emp_cagr": 0.11,
    "fc_gmp_2030": 7.6,
@@ -114,10 +114,10 @@
   {
    "slug": "macon",
    "short_name": "Macon",
-   "cycle_latest": 101.68,
+   "cycle_latest": 101.86,
    "cycle_peak": 105.35,
    "cycle_latest_month": "2026-04",
-   "pct_from_peak": -3.5,
+   "pct_from_peak": -3.3,
    "fc_gmp_cagr": 1.17,
    "fc_emp_cagr": 0.07,
    "fc_gmp_2030": 15.4,
@@ -158,10 +158,10 @@
   {
    "slug": "warner-robins",
    "short_name": "Warner Robins",
-   "cycle_latest": 119.52,
-   "cycle_peak": 123.31,
+   "cycle_latest": 119.38,
+   "cycle_peak": 123.32,
    "cycle_latest_month": "2026-04",
-   "pct_from_peak": -3.1,
+   "pct_from_peak": -3.2,
    "fc_gmp_cagr": 5.2,
    "fc_emp_cagr": 0.25,
    "fc_gmp_2030": 15.8,
@@ -441,16 +441,16 @@
  },
  "_meta": {
   "metro_rollup": {
-   "last_updated": "2026-06-23T12:16:34Z",
+   "last_updated": "2026-06-24T11:52:17Z",
    "n_metros": 14,
    "stale": false
   },
   "ga_cycle": {
-   "last_updated": "2026-06-23T12:16:34Z",
+   "last_updated": "2026-06-24T11:52:17Z",
    "stale": false
   },
   "ga_forecast": {
-   "last_updated": "2026-06-23T12:16:34Z",
+   "last_updated": "2026-06-24T11:52:17Z",
    "stale": false
   }
  },
