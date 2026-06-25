@@ -1,5 +1,5 @@
 {
- "fetched_at": "2026-06-24T11:52:13Z",
+ "fetched_at": "2026-06-25T12:06:14Z",
  "schema": "gdp/v1",
  "metros": [
   {
@@ -1508,7 +1508,7 @@
  },
  "_meta": {
   "metro_rollup": {
-   "last_updated": "2026-06-24T11:52:13Z",
+   "last_updated": "2026-06-25T12:06:14Z",
    "n_metros": 14,
    "stale": false
   },
@@ -1529,7 +1529,7 @@
    "stale": false
   },
   "non_metro": {
-   "last_updated": "2026-06-24T11:52:15Z",
+   "last_updated": "2026-06-25T12:06:16Z",
    "stale": false
   }
  },
