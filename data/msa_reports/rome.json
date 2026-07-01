@@ -3,7 +3,7 @@
   "short_name": "Rome",
   "full_name": "Rome, GA",
   "population": 99000,
-  "as_of": "2026-06-30",
+  "as_of": "2026-07-01",
   "sections": {
     "ces_employment": {
       "series_id": "SMS13406600000000001",
@@ -4394,74 +4394,74 @@
       "source": "Census Business Dynamics Statistics (establishment entry rate, 2022); metro rate indexed to US=100"
     },
     "major_employers": {
-      "as_of": "2026-06-02",
+      "as_of": "2026-07-01",
       "employers": [
+        {
+          "name": "Floyd Medical Center",
+          "source_url": "https://en.wikipedia.org/wiki/Rome,_Georgia"
+        },
+        {
+          "name": "Shaw Industries",
+          "source_url": "https://www.northwestgeorgianews.com/calhoun_times/business/local/shaw-industries-named-to-forbes-2022-list-of-best-employers-in-georgia/article_e15be4b6-23d3-11ed-8279-1ba3cf349fad.html"
+        },
+        {
+          "name": "State Mutual Insurance Company",
+          "source_url": "https://en.wikipedia.org/wiki/Rome,_Georgia"
+        },
+        {
+          "name": "Suzuki Manufacturing of America",
+          "source_url": "https://en.wikipedia.org/wiki/Rome,_Georgia"
+        },
+        {
+          "name": "VT Industries",
+          "source_url": "https://www.georgia.org/he/node/50316"
+        },
         {
           "name": "Atrium Health Floyd",
           "source_url": "https://en.wikipedia.org/wiki/Atrium_Health_Floyd"
         },
         {
-          "name": "Berry College",
-          "source_url": "https://en.wikipedia.org/wiki/Atrium_Health_Floyd"
+          "name": "Harbin Clinic",
+          "source_url": "https://en.wikipedia.org/wiki/Rome,_Georgia"
         },
         {
-          "name": "Floyd Medical Center",
-          "source_url": "https://en.wikipedia.org/wiki/Atrium_Health_Floyd"
+          "name": "Kerry Group",
+          "source_url": "https://en.wikipedia.org/wiki/Rome,_Georgia"
         },
         {
-          "name": "Greater Rome Existing Industries Association",
-          "source_url": "https://www.northwestgeorgianews.com/rome/business/rome-floyd-chamber-celebrates-rome-industries/article_34aae01c-d8ff-11ef-b2a8-a38613426472.html"
+          "name": "Medical College of Georgia",
+          "source_url": "https://en.wikipedia.org/wiki/Rome,_Georgia"
         },
         {
-          "name": "Lowe's Distribution Center",
+          "name": "Redmond Regional Medical Center",
+          "source_url": "https://en.wikipedia.org/wiki/Rome,_Georgia"
+        },
+        {
+          "name": "Distribution",
           "source_url": "https://georgia.org/sites/default/files/2023-01/lowes_4.pdf"
         },
         {
-          "name": "Mills Fitzner",
-          "source_url": "https://www.northwestgeorgianews.com/rome/news/local/getting-down-to-business-chamber-hosts-annual-meeting-at-forum/article_2c292d95-89c6-4cb2-8950-81f981fc7218.html"
-        },
-        {
-          "name": "Rome City School District",
-          "source_url": "https://en.wikipedia.org/wiki/Atrium_Health_Floyd"
-        },
-        {
-          "name": "Summit Hill Foods",
-          "source_url": "https://www.northwestgeorgianews.com/rome/business/rome-floyd-chamber-celebrates-rome-industries/article_34aae01c-d8ff-11ef-b2a8-a38613426472.html"
-        },
-        {
-          "name": "Floyd Healthcare Management",
-          "source_url": "https://www.northwestgeorgianews.com/primary-issue-for-local-employers-right-now-is-growth-of-the-workforce/article_27902aa4-f2f3-11eb-b2a1-6bb1c539a9f7.html"
-        },
-        {
-          "name": "Georgia Highlands College",
-          "source_url": "https://en.wikipedia.org/wiki/Atrium_Health_Floyd"
-        },
-        {
-          "name": "Georgia Northwestern Technical College",
+          "name": "Catoosa Co. News",
           "source_url": "https://www.northwestgeorgianews.com/jill-fisher/article_59879411-06d9-44c3-9def-274e326ae1e7.html"
         },
         {
-          "name": "Georgia Power",
-          "source_url": "https://www.selectgeorgia.com/blog/team-researchers-provide-clear-employment-overview-community-partners"
+          "name": "General Electric",
+          "source_url": "https://en.wikipedia.org/wiki/Rome,_Georgia"
         },
         {
-          "name": "Georgia.org Company",
-          "source_url": "https://georgia.org/sites/default/files/2023-01/lowes_4.pdf"
-        },
-        {
-          "name": "Homegrown Family Foods",
-          "source_url": null
+          "name": "Georgia Health Sciences University",
+          "source_url": "https://en.wikipedia.org/wiki/Rome,_Georgia"
         }
       ],
       "sources": [
+        "https://en.wikipedia.org/wiki/Rome,_Georgia",
         "https://en.wikipedia.org/wiki/Atrium_Health_Floyd",
-        "https://www.northwestgeorgianews.com/rome/business/rome-and-floyd-county-industrial-expansion-gains-make-site-selection-magazine-top-10-list/article_49657e1e-79f8-11eb-808a-07dd0a6bfb11.html",
-        "https://www.selectgeorgia.com/blog/team-researchers-provide-clear-employment-overview-community-partners",
         "https://georgia.org/sites/default/files/2023-01/lowes_4.pdf",
+        "https://www.georgia.org/he/node/50316",
+        "https://www.northwestgeorgianews.com/calhoun_times/business/local/shaw-industries-named-to-forbes-2022-list-of-best-employers-in-georgia/article_e15be4b6-23d3-11ed-8279-1ba3cf349fad.html",
         "https://www.northwestgeorgianews.com/rome/business/rome-floyd-chamber-celebrates-rome-industries/article_34aae01c-d8ff-11ef-b2a8-a38613426472.html",
-        "https://www.northwestgeorgianews.com/jill-fisher/article_59879411-06d9-44c3-9def-274e326ae1e7.html",
-        "https://www.northwestgeorgianews.com/rome/news/local/goodwill-hosting-multi-employer-hiring-event-jan-20/article_33530fd3-d0a9-4df5-9047-3ab4d6ab3942.html",
-        "https://www.northwestgeorgianews.com/rome/news/local/getting-down-to-business-chamber-hosts-annual-meeting-at-forum/article_2c292d95-89c6-4cb2-8950-81f981fc7218.html"
+        "https://georgia.org/business-support/small-business",
+        "https://www.northwestgeorgianews.com/jill-fisher/article_59879411-06d9-44c3-9def-274e326ae1e7.html"
       ],
       "method": "Representative list auto-discovered via Tavily web search across chamber-of-commerce, development-authority and local-news sources. Not exhaustive; ordering approximates source frequency, not headcount."
     },
@@ -4901,7 +4901,7 @@
     "acs_housing_characteristics": "live",
     "acs_block_group_income": "live",
     "entrepreneurship": "live",
-    "major_employers": "stale",
+    "major_employers": "partial",
     "business_cycle_index": "live",
     "forecast_arima": "failed",
     "vitality": "live",

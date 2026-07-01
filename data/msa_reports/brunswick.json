@@ -3,7 +3,7 @@
   "short_name": "Brunswick",
   "full_name": "Brunswick, GA",
   "population": 120000,
-  "as_of": "2026-06-30",
+  "as_of": "2026-07-01",
   "sections": {
     "ces_employment": {
       "series_id": "SMS13152600000000001",
@@ -4096,7 +4096,7 @@
       "source": "Census Business Dynamics Statistics (establishment entry rate, 2022); metro rate indexed to US=100"
     },
     "major_employers": {
-      "as_of": "2026-06-02",
+      "as_of": "2026-07-01",
       "employers": [
         {
           "name": "Southeast Georgia Health System",
@@ -4107,62 +4107,62 @@
           "source_url": "https://en.wikipedia.org/wiki/Brunswick,_Georgia"
         },
         {
-          "name": "Georgia Ports Authority",
-          "source_url": "https://en.wikipedia.org/wiki/Brunswick,_Georgia"
-        },
-        {
-          "name": "Georgia Power Economic Development",
-          "source_url": "https://www.selectgeorgia.com/blog/wtc-sav-prosperity"
-        },
-        {
-          "name": "The Port of Brunswick",
-          "source_url": "https://en.wikipedia.org/wiki/Brunswick,_Georgia"
-        },
-        {
-          "name": "Aviation Academy",
-          "source_url": "https://georgia.org/sites/default/files/2018-12/GABusClimRkgs_1.pdf"
+          "name": "Food Processing",
+          "source_url": "https://georgia.org/business-support/small-business"
         },
         {
           "name": "General Motors",
           "source_url": "https://en.wikipedia.org/wiki/Brunswick,_Georgia"
         },
         {
-          "name": "Georgia Power Regional Economic Development Manager",
-          "source_url": "https://www.selectgeorgia.com/blog/wtc-sav-prosperity"
-        },
-        {
-          "name": "Georgia Power Team",
-          "source_url": "https://www.selectgeorgia.com/blog/wtc-sav-prosperity"
+          "name": "Logistics",
+          "source_url": "https://georgia.org/business-support/small-business"
         },
         {
           "name": "Marine Port",
           "source_url": "https://en.wikipedia.org/wiki/Brunswick,_Georgia"
         },
         {
-          "name": "Ports of Savannah",
-          "source_url": "https://www.selectgeorgia.com/blog/wtc-sav-prosperity"
+          "name": "Automotive",
+          "source_url": "https://georgia.org/business-support/small-business"
         },
         {
-          "name": "St. Thomas University",
-          "source_url": "https://en.wikipedia.org/wiki/New_Brunswick"
+          "name": "Energy",
+          "source_url": "https://georgia.org/business-support/small-business"
         },
         {
-          "name": "Aerospace Exports",
-          "source_url": "https://georgia.org"
+          "name": "Georgia Ports Authority",
+          "source_url": "https://en.wikipedia.org/wiki/Brunswick,_Georgia"
         },
         {
-          "name": "College",
-          "source_url": "https://en.wikipedia.org/wiki/New_Brunswick"
+          "name": "Manufacturing",
+          "source_url": "https://georgia.org/business-support/small-business"
+        },
+        {
+          "name": "The Port of Brunswick",
+          "source_url": "https://en.wikipedia.org/wiki/Brunswick,_Georgia"
+        },
+        {
+          "name": "Explore Georgia's Leading Industries",
+          "source_url": "https://georgia.org/business-support/small-business"
+        },
+        {
+          "name": "Greenfield LLC",
+          "source_url": "https://georgia.org/business-support/small-business"
+        },
+        {
+          "name": "InnoTek LLC",
+          "source_url": "https://georgia.org/business-support/small-business"
         }
       ],
       "sources": [
         "https://en.wikipedia.org/wiki/Brunswick,_Georgia",
-        "https://www.selectgeorgia.com/blog/wtc-sav-prosperity",
-        "https://georgia.org/sites/default/files/2018-12/GABusClimRkgs_1.pdf",
-        "https://georgia.org",
+        "https://en.wikipedia.org/wiki/History_of_Brunswick,_Georgia",
+        "https://georgia.org/business-support/small-business",
+        "https://www.bizjournals.com/atlanta",
         "https://en.wikipedia.org/wiki/Golden_Isles_of_Georgia",
-        "https://www.savannahnow.com/story/news/2013/09/29/education-tax-reform-and-3-georgias/13493143007",
-        "https://en.wikipedia.org/wiki/New_Brunswick"
+        "https://georgia.org/industries/film",
+        "https://georgia.org/sites/default/files/2021-05/georgia_taiwan_connection_2021.pdf"
       ],
       "method": "Representative list auto-discovered via Tavily web search across chamber-of-commerce, development-authority and local-news sources. Not exhaustive; ordering approximates source frequency, not headcount."
     },
@@ -4741,7 +4741,7 @@
     "acs_housing_characteristics": "live",
     "acs_block_group_income": "live",
     "entrepreneurship": "live",
-    "major_employers": "stale",
+    "major_employers": "partial",
     "business_cycle_index": "live",
     "forecast_arima": "live",
     "vitality": "live",

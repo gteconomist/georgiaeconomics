@@ -3,7 +3,7 @@
   "short_name": "Dalton",
   "full_name": "Dalton, GA",
   "population": 143000,
-  "as_of": "2026-06-30",
+  "as_of": "2026-07-01",
   "sections": {
     "ces_employment": {
       "series_id": "SMS13191400000000001",
@@ -4489,74 +4489,73 @@
       "source": "Census Business Dynamics Statistics (establishment entry rate, 2022); metro rate indexed to US=100"
     },
     "major_employers": {
-      "as_of": "2026-06-02",
+      "as_of": "2026-07-01",
       "employers": [
-        {
-          "name": "Shaw Industries",
-          "source_url": "https://en.wikipedia.org/wiki/Shaw_Industries"
-        },
-        {
-          "name": "Hamilton Health Care System",
-          "source_url": "https://valdostadailytimes.com/2018/01/01/engineered-floors-growth-varnell-drama-among-top-stories-in-dalton-area-in-2017"
-        },
-        {
-          "name": "Beaulieu Group",
-          "source_url": "https://valdostadailytimes.com/2018/01/01/engineered-floors-growth-varnell-drama-among-top-stories-in-dalton-area-in-2017"
-        },
         {
           "name": "Carpet Capital",
           "source_url": "https://en.wikipedia.org/wiki/Dalton,_Georgia"
-        },
-        {
-          "name": "Dalton Public Schools",
-          "source_url": "https://www.ledger-enquirer.com/news/business/article29444089.html"
-        },
-        {
-          "name": "Food City",
-          "source_url": "https://valdostadailytimes.com/2019/01/23/something-we-can-all-be-proud-of-food-city-opens-second-dalton-location"
         },
         {
           "name": "Mohawk Industries",
           "source_url": "https://georgia.org/sites/default/files/2021-04/logistics_education_report.pdf"
         },
         {
+          "name": "Shaw Industries",
+          "source_url": null
+        },
+        {
           "name": "Flooring",
           "source_url": "https://georgia.org/sites/default/files/2023-01/engineered_floors.pdf"
         },
         {
-          "name": "Whitfield County Schools",
-          "source_url": "https://www.ledger-enquirer.com/news/business/article29444089.html"
-        },
-        {
-          "name": "Company",
-          "source_url": "https://www.ajc.com/business/dalton-augusta-worst-for-job-losses-lately/qWPbpKazCnZFJtn1Kel1RM"
-        },
-        {
-          "name": "Georgia Power",
-          "source_url": "https://valdostadailytimes.com/2019/01/23/something-we-can-all-be-proud-of-food-city-opens-second-dalton-location"
-        },
-        {
-          "name": "WellStar Dalton Hospital",
+          "name": "Dalton Public Schools",
           "source_url": null
         },
         {
-          "name": "Columbus Regional Health",
-          "source_url": "https://www.ledger-enquirer.com/news/business/article29444089.html"
+          "name": "Emory University",
+          "source_url": "https://www.ajc.com/business/georgia-best-employers-for-2019-according-forbes/97QBCslwnyl3Ob4ujTmnLK"
         },
         {
-          "name": "Commercial Interiors Manufacturing",
+          "name": "Logistics",
+          "source_url": "https://georgia.org/sites/default/files/2021-04/logistics_education_report.pdf"
+        },
+        {
+          "name": "Dalton State College",
+          "source_url": "https://georgia.org/sites/default/files/2021-04/logistics_education_report.pdf"
+        },
+        {
+          "name": "Engineered Floors Manufacturing",
+          "source_url": "https://georgia.org/sites/default/files/2023-01/engineered_floors.pdf"
+        },
+        {
+          "name": "Genuine Parts Co",
+          "source_url": "https://georgia.org/sites/default/files/2021-04/logistics_education_report.pdf"
+        },
+        {
+          "name": "Georgia Department of Economic Georgia.org Company",
+          "source_url": "https://georgia.org/sites/default/files/2023-01/engineered_floors.pdf"
+        },
+        {
+          "name": "Georgia Military College",
+          "source_url": "https://georgia.org/sites/default/files/2021-04/logistics_education_report.pdf"
+        },
+        {
+          "name": "Health IT",
           "source_url": "https://georgia.org/sites/default/files/2021-02/fy21_q2_board_book.pdf"
+        },
+        {
+          "name": "Heritage Capital Group",
+          "source_url": "https://www.bizjournals.com/atlanta/print-edition/2013/01/25/celebrating-atlantas-top-minds-in.html"
         }
       ],
       "sources": [
         "https://en.wikipedia.org/wiki/Dalton,_Georgia",
-        "https://www.ajc.com/business/dalton-augusta-worst-for-job-losses-lately/qWPbpKazCnZFJtn1Kel1RM",
-        "https://en.wikipedia.org/wiki/Shaw_Industries",
+        "https://www.ajc.com/business/georgia-best-employers-for-2019-according-forbes/97QBCslwnyl3Ob4ujTmnLK",
+        "https://www.ajc.com/video/news/2026/05/one-industry-polluted-this-town-now-the-city-is-betting-on-ai",
         "https://georgia.org/sites/default/files/2023-01/engineered_floors.pdf",
-        "https://valdostadailytimes.com/2017/09/11/questions-and-answers-with-shaw-industries-ceo-vance-bell",
-        "https://valdostadailytimes.com/2019/01/23/something-we-can-all-be-proud-of-food-city-opens-second-dalton-location",
-        "https://valdostadailytimes.com/2018/01/01/engineered-floors-growth-varnell-drama-among-top-stories-in-dalton-area-in-2017",
-        "https://georgia.org/sites/default/files/2021-04/logistics_education_report.pdf"
+        "https://georgia.org/sites/default/files/2021-02/fy21_q2_board_book.pdf",
+        "https://georgia.org/sites/default/files/2021-04/logistics_education_report.pdf",
+        "https://www.bizjournals.com/atlanta/print-edition/2013/01/25/celebrating-atlantas-top-minds-in.html"
       ],
       "method": "Representative list auto-discovered via Tavily web search across chamber-of-commerce, development-authority and local-news sources. Not exhaustive; ordering approximates source frequency, not headcount."
     },
@@ -5135,7 +5134,7 @@
     "acs_housing_characteristics": "live",
     "acs_block_group_income": "live",
     "entrepreneurship": "live",
-    "major_employers": "stale",
+    "major_employers": "partial",
     "business_cycle_index": "live",
     "forecast_arima": "live",
     "vitality": "live",

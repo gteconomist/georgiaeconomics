@@ -3,7 +3,7 @@
   "short_name": "Hinesville",
   "full_name": "Hinesville, GA",
   "population": 78000,
-  "as_of": "2026-06-30",
+  "as_of": "2026-07-01",
   "sections": {
     "ces_employment": {
       "series_id": "SMS13259800000000001",
@@ -3947,74 +3947,74 @@
       "source": "Census Business Dynamics Statistics (establishment entry rate, 2022); metro rate indexed to US=100"
     },
     "major_employers": {
-      "as_of": "2026-06-02",
+      "as_of": "2026-07-01",
       "employers": [
+        {
+          "name": "View All Industries",
+          "source_url": "https://georgia.org/hyundai-motor-group-metaplant-america"
+        },
+        {
+          "name": "Explore Georgia's Leading Industries",
+          "source_url": "https://georgia.org/hyundai-motor-group-metaplant-america"
+        },
+        {
+          "name": "Food Processing",
+          "source_url": "https://georgia.org/hyundai-motor-group-metaplant-america"
+        },
+        {
+          "name": "Greenfield LLC",
+          "source_url": "https://georgia.org/business-support/small-business"
+        },
+        {
+          "name": "InnoTek LLC",
+          "source_url": "https://georgia.org/business-support/small-business"
+        },
         {
           "name": "Liberty County School System",
           "source_url": null
         },
         {
-          "name": "Liberty County Development Authority CEO Ronald",
-          "source_url": "https://www.savannahnow.com/exchange/2014-08-23/business-savannah-brief"
+          "name": "Logistics",
+          "source_url": "https://georgia.org/hyundai-motor-group-metaplant-america"
         },
         {
-          "name": "B&K Group",
-          "source_url": null
+          "name": "Muscadine Products Corporation",
+          "source_url": "https://georgia.org/business-support/small-business"
         },
         {
-          "name": "Georgia Southern Innovation Group",
-          "source_url": "https://www.selectgeorgia.com/blog/georgia-southern-innovation-group"
+          "name": "Advanced Manufacturing",
+          "source_url": "https://properties.selectgeorgia.com/target_industries_app/dist/index.html"
         },
         {
-          "name": "Hinesville Hospital",
-          "source_url": null
-        },
-        {
-          "name": "Liberty Regional Medical Center",
-          "source_url": null
-        },
-        {
-          "name": "Southeast Georgia Health System",
-          "source_url": null
+          "name": "Hyundai Motor Group Metaplant America",
+          "source_url": "https://georgia.org/hyundai-motor-group-metaplant-america"
         },
         {
           "name": "Aerospace",
-          "source_url": "https://georgia.org/sites/default/files/2018-11/gdecd_board_book_-_5-23-18.pdf"
-        },
-        {
-          "name": "Annual Red Carpet Tour",
-          "source_url": "https://georgia.org/sites/default/files/2018-12/gdecd_board_book_august_2018.pdf"
+          "source_url": "https://georgia.org/hyundai-motor-group-metaplant-america"
         },
         {
           "name": "Automotive",
-          "source_url": "https://georgia.org/sites/default/files/2018-11/gdecd_board_book_-_5-23-18.pdf"
+          "source_url": "https://georgia.org/hyundai-motor-group-metaplant-america"
         },
         {
-          "name": "Ave Guyton Mahgniffe LLC Food",
-          "source_url": "https://georgia.org/sites/default/files/2020-09/georgia_safety_promise-9-14.pdf"
+          "name": "Company",
+          "source_url": "https://properties.selectgeorgia.com/target_industries_app/dist/index.html"
         },
         {
-          "name": "Barnes Mill Rd Hamilton Harris County",
-          "source_url": "https://georgia.org/sites/default/files/2020-09/georgia_safety_promise-9-14.pdf"
-        },
-        {
-          "name": "Bill Lattimore of The Lattimore Company",
-          "source_url": "https://www.savannahnow.com/story/news/2007/04/20/keys-future-0/13805381007"
-        },
-        {
-          "name": "Business Innovation Group",
-          "source_url": "https://www.selectgeorgia.com/blog/georgia-southern-innovation-group"
+          "name": "Distribution",
+          "source_url": "https://georgia.org/business-support/small-business"
         }
       ],
       "sources": [
-        "https://www.savannahnow.com/exchange/2014-08-23/business-savannah-brief",
-        "https://www.selectgeorgia.com/blog/georgia-southern-innovation-group",
+        "https://en.wikipedia.org/wiki/Metropolitan_statistical_area",
         "https://en.wikipedia.org/wiki/Savannah,_Georgia",
-        "https://georgia.org/sites/default/files/2020-09/georgia_safety_promise-9-14.pdf",
-        "https://georgia.org/sites/default/files/2018-11/gdecd_board_book_-_5-23-18.pdf",
-        "https://georgia.org/sites/default/files/2018-12/gdecd_board_book_august_2018.pdf",
-        "https://www.savannahnow.com/story/news/2007/04/20/keys-future-0/13805381007",
-        "https://www.augustachronicle.com/story/business/2010/11/21/working-our-way-augusta-area-sees-job-growth/14571763007"
+        "https://www.selectgeorgia.com/blog/georgia-southern-innovation-group",
+        "https://georgia.org/hyundai-motor-group-metaplant-america",
+        "https://georgia.org/business-support/small-business",
+        "https://georgia.org/sites/default/files/2020-08/georgia_safety_promise-8-27.pdf",
+        "https://www.savannahnow.com/story/business/2014/07/15/business-savannah-news-summary/13962793007",
+        "https://properties.selectgeorgia.com/target_industries_app/dist/index.html"
       ],
       "method": "Representative list auto-discovered via Tavily web search across chamber-of-commerce, development-authority and local-news sources. Not exhaustive; ordering approximates source frequency, not headcount."
     },
@@ -4588,7 +4588,7 @@
     "acs_housing_characteristics": "live",
     "acs_block_group_income": "live",
     "entrepreneurship": "live",
-    "major_employers": "stale",
+    "major_employers": "partial",
     "business_cycle_index": "live",
     "forecast_arima": "live",
     "vitality": "live",

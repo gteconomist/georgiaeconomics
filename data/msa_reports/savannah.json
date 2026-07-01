@@ -3,7 +3,7 @@
   "short_name": "Savannah",
   "full_name": "Savannah, GA",
   "population": 410000,
-  "as_of": "2026-06-30",
+  "as_of": "2026-07-01",
   "sections": {
     "ces_employment": {
       "series_id": "SMS13423400000000001",
@@ -5117,74 +5117,74 @@
       "source": "Census Business Dynamics Statistics (establishment entry rate, 2022); metro rate indexed to US=100"
     },
     "major_employers": {
-      "as_of": "2026-06-02",
+      "as_of": "2026-07-01",
       "employers": [
         {
           "name": "Children's Healthcare of Atlanta",
           "source_url": "https://www.savannahnow.com/story/news/2026/02/24/forbes-ranked-2-georgia-businesses-among-top-50-large-employers-in-us/88828522007"
         },
         {
-          "name": "Gulfstream Aerospace",
-          "source_url": "https://www.savannahnow.com/story/business/2013/02/19/understanding-purpose-savannah-chamber/13655438007"
+          "name": "Paulding County School District",
+          "source_url": "https://www.savannahnow.com/story/news/2026/02/26/forbes-ranks-georgia-businesses-as-top-5-midsize-employers-in-state/88878493007"
         },
         {
-          "name": "Georgia Ports Authority",
-          "source_url": "https://www.savannahnow.com/story/news/local/2026/05/10/savannahs-state-of-small-business-shows-growth-opportunities/89997038007"
+          "name": "Gulfstream Aerospace",
+          "source_url": null
+        },
+        {
+          "name": "Memorial Health University Medical Center",
+          "source_url": null
+        },
+        {
+          "name": "Digital Marketing Solutions",
+          "source_url": "https://www.savannahnow.com/story/news/2026/02/24/forbes-ranked-2-georgia-businesses-among-top-50-large-employers-in-us/88828522007"
+        },
+        {
+          "name": "Georgia Southern University",
+          "source_url": "https://www.selectgeorgia.com/blog/welcome-seapoint-industrial-site-savannah-ga"
         },
         {
           "name": "Port of Savannah",
-          "source_url": "https://www.savannahnow.com/story/business/2021/03/10/savannah-nations-top-location-new-industry-and-other-job-creating-development-according-economic-dev/6941326002"
+          "source_url": null
         },
         {
-          "name": "Derst Baking Company",
-          "source_url": "https://www.savannahnow.com/story/business/2013/02/19/understanding-purpose-savannah-chamber/13655438007"
+          "name": "Savannah College of Art",
+          "source_url": null
+        },
+        {
+          "name": "Food Processing",
+          "source_url": "https://www.selectgeorgia.com/discover-georgia/industries/fortune-500-list"
         },
         {
           "name": "Forsyth County School District",
           "source_url": "https://www.savannahnow.com/story/news/2026/02/24/forbes-ranked-2-georgia-businesses-among-top-50-large-employers-in-us/88828522007"
         },
         {
-          "name": "Georgia Power",
+          "name": "Savannah River Nuclear Solutions",
+          "source_url": "https://www.augustachronicle.com/story/news/local/the-people-sentinel/2019/10/16/chamber-of-commerce-recognizes-community-champions/2519701007"
+        },
+        {
+          "name": "St. Jude Children's Research Hospital",
           "source_url": "https://www.savannahnow.com/story/news/2026/02/24/forbes-ranked-2-georgia-businesses-among-top-50-large-employers-in-us/88828522007"
         },
         {
-          "name": "Hyundai Motor Group",
-          "source_url": "https://www.savannahnow.com/story/news/local/2026/05/10/savannahs-state-of-small-business-shows-growth-opportunities/89997038007"
-        },
-        {
-          "name": "Metaplant America",
-          "source_url": "https://www.savannahnow.com/story/news/local/2026/05/10/savannahs-state-of-small-business-shows-growth-opportunities/89997038007"
-        },
-        {
-          "name": "Savannah Economic Development Authority",
-          "source_url": "https://www.selectgeorgia.com/blog/welcome-seapoint-industrial-site-savannah-ga"
-        },
-        {
-          "name": "Savannah State University",
-          "source_url": "https://www.savannahnow.com/story/business/2013/02/19/understanding-purpose-savannah-chamber/13655438007"
-        },
-        {
-          "name": "Chatham County Public School System",
-          "source_url": null
-        },
-        {
-          "name": "Colony Bank",
-          "source_url": "https://www.savannahnow.com/story/business/2013/02/19/understanding-purpose-savannah-chamber/13655438007"
-        },
-        {
-          "name": "Georgia Southern University",
+          "name": "Stanford University",
           "source_url": "https://www.savannahnow.com/story/news/2026/02/24/forbes-ranked-2-georgia-businesses-among-top-50-large-employers-in-us/88828522007"
+        },
+        {
+          "name": "The Coca-Cola Company",
+          "source_url": "https://www.selectgeorgia.com/discover-georgia/industries/fortune-500-list"
         }
       ],
       "sources": [
-        "https://www.savannahnow.com/story/news/2026/02/24/forbes-ranked-2-georgia-businesses-among-top-50-large-employers-in-us/88828522007",
+        "https://en.wikipedia.org/wiki/Savannah,_Georgia",
         "https://www.selectgeorgia.com/blog/welcome-seapoint-industrial-site-savannah-ga",
-        "https://www.augustachronicle.com/story/news/2021/07/27/incentives-help-georgia-secure-economic-development-deals-jobs-wayfair-rockingham-farms-savannah-ga/7955302002",
-        "https://www.onlineathens.com/story/news/2026/03/04/georgias-best-employers-are-these-2-big-businesses-forbes-says/88982542007",
-        "https://www.selectgeorgia.com/yourgeorgia/why-savannah-HQ",
-        "https://www.savannahnow.com/story/news/2016/07/08/garden-city-police-department-savannah-firms-make-best-places-work-georgia-list/13921419007",
-        "https://www.savannahnow.com/story/business/employment/2025/10/10/savannah-area-workforce-leaders-come-together-for-updates-at-downtown-business-association-luncheon/86563396007",
-        "https://www.savannahnow.com/story/business/2013/02/19/understanding-purpose-savannah-chamber/13655438007"
+        "https://www.savannahnow.com/story/news/2026/02/24/forbes-ranked-2-georgia-businesses-among-top-50-large-employers-in-us/88828522007",
+        "https://en.wikipedia.org/wiki/Augusta,_Georgia",
+        "https://www.selectgeorgia.com/discover-georgia/industries/fortune-500-list",
+        "https://georgia.org/business-support/small-business",
+        "https://www.savannahnow.com/story/business/2012/10/30/business-savannah-business-roundup/13816314007",
+        "https://georgia.org/sites/default/files/2021-07/georgia-highlights_4th_edition_25th_anniversary_2021.pdf"
       ],
       "method": "Representative list auto-discovered via Tavily web search across chamber-of-commerce, development-authority and local-news sources. Not exhaustive; ordering approximates source frequency, not headcount."
     },
@@ -5768,7 +5768,7 @@
     "acs_housing_characteristics": "live",
     "acs_block_group_income": "live",
     "entrepreneurship": "live",
-    "major_employers": "stale",
+    "major_employers": "partial",
     "business_cycle_index": "live",
     "forecast_arima": "live",
     "vitality": "live",

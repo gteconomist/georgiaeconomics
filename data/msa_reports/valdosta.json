@@ -3,7 +3,7 @@
   "short_name": "Valdosta",
   "full_name": "Valdosta, GA",
   "population": 148000,
-  "as_of": "2026-06-30",
+  "as_of": "2026-07-01",
   "sections": {
     "ces_employment": {
       "series_id": "SMS13466600000000001",
@@ -4145,74 +4145,74 @@
       "source": "Census Business Dynamics Statistics (establishment entry rate, 2022); metro rate indexed to US=100"
     },
     "major_employers": {
-      "as_of": "2026-06-02",
+      "as_of": "2026-07-01",
       "employers": [
         {
           "name": "Valdosta State University",
-          "source_url": "https://valdostadailytimes.com/2015/09/13/finding-the-competitive-edge"
+          "source_url": "https://en.wikipedia.org/wiki/Valdosta_metropolitan_area"
+        },
+        {
+          "name": "Our Company",
+          "source_url": "https://valdostadailytimes.com"
+        },
+        {
+          "name": "Stratas Foods",
+          "source_url": "https://www.selectgeorgia.com/blog/rural-transformation/one-valdosta-lowndes-interview"
         },
         {
           "name": "South Georgia Medical Center",
-          "source_url": "https://valdostadailytimes.com/2005/12/06/area-leaders-make-predictions-for-the-upcoming-year"
-        },
-        {
-          "name": "Firstline Corporation",
-          "source_url": "https://valdostadailytimes.com/2005/12/06/area-leaders-make-predictions-for-the-upcoming-year"
-        },
-        {
-          "name": "Lowndes County Schools",
-          "source_url": "https://valdostadailytimes.com/2018/05/24/summit-seeks-matching-jobs-with-workers"
-        },
-        {
-          "name": "Valdosta-Lowndes County Development Authority",
-          "source_url": "https://valdostadailytimes.com/2026/04/20/sea-drone-company-to-bring-hundreds-of-jobs"
-        },
-        {
-          "name": "Wiregrass Georgia Technical College",
-          "source_url": "https://valdostadailytimes.com/2015/09/13/finding-the-competitive-edge"
-        },
-        {
-          "name": "Lowndes County School System",
           "source_url": null
         },
         {
-          "name": "Marcotek Digital Office Solutions",
-          "source_url": "https://valdostadailytimes.com/2019/09/29/business-briefs-155"
+          "name": "ACE Electric",
+          "source_url": "https://www.selectgeorgia.com/blog/rural-transformation/one-valdosta-lowndes-interview"
         },
         {
-          "name": "REIT Rayonier Inc",
+          "name": "Berry Global Manufacturing",
+          "source_url": "https://www.selectgeorgia.com/blog/rural-transformation/one-valdosta-lowndes-interview"
+        },
+        {
+          "name": "Steeda Manufacturing",
+          "source_url": "https://valdostadailytimes.com/2026/06/26/att-store-named-leading-business-of-the-week-by-valdosta-lowndes-chamber-of-commerce"
+        },
+        {
+          "name": "Wiregrass Technical College",
+          "source_url": "https://valdostadailytimes.com/2026/02/23/gary-wisenbaker-data-centers-whats-good-for-the-goose-is-good-for-the-gander"
+        },
+        {
+          "name": "Career Academy",
+          "source_url": "https://www.selectgeorgia.com/blog/rural-transformation/one-valdosta-lowndes-interview"
+        },
+        {
+          "name": "Corporation",
+          "source_url": "https://valdostadailytimes.com/2026/06/26/att-store-named-leading-business-of-the-week-by-valdosta-lowndes-chamber-of-commerce"
+        },
+        {
+          "name": "Valdosta Lowndes County Development Authority",
+          "source_url": "https://georgia.org/sites/default/files/2022-02/2021-11-3_gdecd_board_meeting_minutes.pdf"
+        },
+        {
+          "name": "Cisco Systems Dematic Flexport Sources",
+          "source_url": "https://georgia.org/sites/default/files/2025-05/coil_technology_ecosystem_report_2025.pdf"
+        },
+        {
+          "name": "Georgia Power",
+          "source_url": "https://georgia.org/sites/default/files/2025-05/coil_technology_ecosystem_report_2025.pdf"
+        },
+        {
+          "name": "Mayo Health Clinic",
           "source_url": null
-        },
-        {
-          "name": "Sunset Farm Foods",
-          "source_url": "https://valdostadailytimes.com/2021/03/05/chamber-presents-annual-awards"
-        },
-        {
-          "name": "The Herndon Company",
-          "source_url": "https://valdostadailytimes.com/2019/09/29/business-briefs-155"
-        },
-        {
-          "name": "Utility Plastics LLC",
-          "source_url": null
-        },
-        {
-          "name": "Valdosta Technical College",
-          "source_url": "https://valdostadailytimes.com/2005/12/06/area-leaders-make-predictions-for-the-upcoming-year"
-        },
-        {
-          "name": "CJB Industries",
-          "source_url": "https://valdostadailytimes.com/2021/03/05/chamber-presents-annual-awards"
         }
       ],
       "sources": [
-        "https://valdostadailytimes.com/2019/09/29/business-briefs-155",
-        "https://valdostadailytimes.com/2015/09/13/finding-the-competitive-edge",
+        "https://en.wikipedia.org/wiki/Valdosta_metropolitan_area",
+        "https://www.selectgeorgia.com/blog/rural-transformation/one-valdosta-lowndes-interview",
         "https://valdostadailytimes.com/2026/02/23/gary-wisenbaker-data-centers-whats-good-for-the-goose-is-good-for-the-gander",
-        "https://georgia.org/sites/default/files/2025-05/coil_technology_ecosystem_report_2025.pdf",
-        "https://valdostadailytimes.com/2005/12/06/area-leaders-make-predictions-for-the-upcoming-year",
-        "https://valdostadailytimes.com/2021/03/05/chamber-presents-annual-awards",
-        "https://valdostadailytimes.com/2018/05/24/summit-seeks-matching-jobs-with-workers",
-        "https://valdostadailytimes.com/2017/06/18/business-briefs-53"
+        "https://georgia.org/sites/default/files/2022-02/2021-11-3_gdecd_board_meeting_minutes.pdf",
+        "https://en.wikipedia.org/wiki/Valdosta,_Georgia",
+        "https://valdostadailytimes.com",
+        "https://valdostadailytimes.com/2026/06/26/att-store-named-leading-business-of-the-week-by-valdosta-lowndes-chamber-of-commerce",
+        "https://valdostadailytimes.com/2026/04/10/valdosta-lowndes-county-chamber-of-commerce-names-hog-n-bones-leading-business-of-the-week"
       ],
       "method": "Representative list auto-discovered via Tavily web search across chamber-of-commerce, development-authority and local-news sources. Not exhaustive; ordering approximates source frequency, not headcount."
     },
@@ -4791,7 +4791,7 @@
     "acs_housing_characteristics": "live",
     "acs_block_group_income": "live",
     "entrepreneurship": "live",
-    "major_employers": "stale",
+    "major_employers": "partial",
     "business_cycle_index": "live",
     "forecast_arima": "live",
     "vitality": "live",

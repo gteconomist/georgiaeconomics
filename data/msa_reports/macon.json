@@ -3,7 +3,7 @@
   "short_name": "Macon",
   "full_name": "Macon-Bibb County, GA",
   "population": 232000,
-  "as_of": "2026-06-30",
+  "as_of": "2026-07-01",
   "sections": {
     "ces_employment": {
       "series_id": "SMS13314200000000001",
@@ -5037,74 +5037,74 @@
       "source": "Census Business Dynamics Statistics (establishment entry rate, 2022); metro rate indexed to US=100"
     },
     "major_employers": {
-      "as_of": "2026-06-02",
+      "as_of": "2026-07-01",
       "employers": [
+        {
+          "name": "Atrium Health Navicent",
+          "source_url": "https://en.wikipedia.org/wiki/Macon,_Georgia"
+        },
         {
           "name": "Mercer University",
           "source_url": "https://en.wikipedia.org/wiki/Macon,_Georgia"
         },
         {
-          "name": "Atrium Health Navicent The Medical Center",
-          "source_url": "https://www.macon.com/news/business/article258547393.html"
-        },
-        {
-          "name": "Coliseum Health Systems",
-          "source_url": "https://www.macon.com/news/business/article258547393.html"
-        },
-        {
-          "name": "Healthcare of Atlanta",
-          "source_url": "https://www.macon.com/news/local/article312115475.html"
-        },
-        {
-          "name": "Armstrong World Industries",
-          "source_url": "https://www.macon.com/news/local/article235905642.html"
-        },
-        {
-          "name": "Distribution Company of Georgia",
-          "source_url": "https://www.macon.com/news/local/article235905642.html"
-        },
-        {
-          "name": "Navicent Health",
-          "source_url": "https://www.macon.com/news/local/article235905642.html"
+          "name": "Forsyth County School District",
+          "source_url": "https://www.macon.com/news/local/article314818813.html"
         },
         {
           "name": "Norfolk Southern Railway",
           "source_url": null
         },
         {
-          "name": "Tractor Supply Company",
-          "source_url": "https://www.macon.com/news/local/article235905642.html"
+          "name": "Piedmont Healthcare Macon",
+          "source_url": "https://en.wikipedia.org/wiki/Macon,_Georgia"
         },
         {
-          "name": "General Motors",
-          "source_url": "https://www.macon.com/news/local/article312115475.html"
+          "name": "Aerospace",
+          "source_url": "https://www.selectgeorgia.com/discover-georgia/industries/fortune-500-list"
         },
         {
           "name": "Medical Center of Central Georgia",
           "source_url": "https://en.wikipedia.org/wiki/Central_Georgia"
         },
         {
-          "name": "Perdue Foods",
-          "source_url": "https://www.macon.com/news/business/article258547393.html"
+          "name": "Rheem Manufacturing",
+          "source_url": "https://www.macon.com/living/article300278809.html"
         },
         {
-          "name": "Piedmont Healthcare Macon",
-          "source_url": "https://en.wikipedia.org/wiki/Macon,_Georgia"
+          "name": "Southern Company",
+          "source_url": "https://www.macon.com/news/local/article314818813.html"
         },
         {
-          "name": "Southwest Airlines",
-          "source_url": "https://www.macon.com/news/local/article312115475.html"
+          "name": "Bibb County School District",
+          "source_url": null
+        },
+        {
+          "name": "Children's Healthcare of Atlanta",
+          "source_url": "https://www.macon.com/living/article300278809.html"
+        },
+        {
+          "name": "Cola Bottling Co",
+          "source_url": null
+        },
+        {
+          "name": "Food Processing",
+          "source_url": "https://www.selectgeorgia.com/discover-georgia/industries/fortune-500-list"
+        },
+        {
+          "name": "Georgia Power",
+          "source_url": null
         }
       ],
       "sources": [
         "https://en.wikipedia.org/wiki/Macon,_Georgia",
-        "https://www.macon.com/news/business/article258547393.html",
+        "https://www.macon.com/news/local/article314818813.html",
         "https://en.wikipedia.org/wiki/Central_Georgia",
-        "https://www.macon.com/news/local/article312115475.html",
         "https://www.macon.com/living/article300278809.html",
-        "https://www.macon.com/news/local/article235905642.html",
-        "http://www.bizjournals.com/atlanta/search/results?q=Kay+Pippin",
-        "https://www.macon.com/news/local/article307535776.html"
+        "https://www.selectgeorgia.com/discover-georgia/industries/why-atlanta/top-companies",
+        "https://www.selectgeorgia.com/discover-georgia/industries/fortune-500-list",
+        "https://georgia.org/sites/default/files/2022-05/2022-2-23_gdecd_board_meeting_minutes.pdf",
+        "https://georgia.org/sites/default/files/2021-05/georgia_japan_connection_2021.pdf"
       ],
       "method": "Representative list auto-discovered via Tavily web search across chamber-of-commerce, development-authority and local-news sources. Not exhaustive; ordering approximates source frequency, not headcount."
     },
@@ -5683,7 +5683,7 @@
     "acs_housing_characteristics": "live",
     "acs_block_group_income": "live",
     "entrepreneurship": "live",
-    "major_employers": "stale",
+    "major_employers": "partial",
     "business_cycle_index": "live",
     "forecast_arima": "live",
     "vitality": "live",
