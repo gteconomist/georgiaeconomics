@@ -3,7 +3,7 @@
   "short_name": "Columbus",
   "full_name": "Columbus, GA-AL",
   "population": 329000,
-  "as_of": "2026-07-01",
+  "as_of": "2026-07-02",
   "sections": {
     "ces_employment": {
       "series_id": "SMS13179800000000001",
@@ -3949,7 +3949,8 @@
         "2026-01",
         "2026-02",
         "2026-03",
-        "2026-04"
+        "2026-04",
+        "2026-05"
       ],
       "values": [
         5.3,
@@ -4038,10 +4039,11 @@
         4.3,
         4.2,
         4.2,
-        3.3
+        3.3,
+        3.8
       ],
-      "latest_month": "2026-04",
-      "latest_value": 3.3
+      "latest_month": "2026-05",
+      "latest_value": 3.8
     },
     "fhfa_hpi": {
       "series_id": "ATNHPIUS17980Q",
@@ -5035,19 +5037,19 @@
       "source": "Census Business Dynamics Statistics (establishment entry rate, 2022); metro rate indexed to US=100"
     },
     "major_employers": {
-      "as_of": "2026-07-01",
+      "as_of": "2026-07-02",
       "employers": [
         {
           "name": "Health Care",
           "source_url": "https://www.bizjournals.com/atlanta/subscriber-only/2025/10/17/metro-atlantas-largest-employers.html"
         },
         {
-          "name": "Bradley Co",
+          "name": "Columbus State University",
           "source_url": "https://en.wikipedia.org/wiki/Columbus,_Georgia"
         },
         {
-          "name": "Columbus State University",
-          "source_url": "https://en.wikipedia.org/wiki/Columbus,_Georgia"
+          "name": "Manufacturing",
+          "source_url": "https://www.bizjournals.com/atlanta/subscriber-only/2025/10/17/metro-atlantas-largest-employers.html"
         },
         {
           "name": "Muscogee County School District",
@@ -5066,43 +5068,43 @@
           "source_url": "https://en.wikipedia.org/wiki/List_of_largest_Central_Ohio_employers"
         },
         {
-          "name": "Manufacturing",
-          "source_url": "https://www.bizjournals.com/atlanta/subscriber-only/2025/10/17/metro-atlantas-largest-employers.html"
-        },
-        {
-          "name": "Ohio State University",
-          "source_url": "https://en.wikipedia.org/wiki/Columbus_metropolitan_area,_Ohio"
-        },
-        {
           "name": "Corp. Mgt",
           "source_url": "https://en.wikipedia.org/wiki/List_of_largest_Central_Ohio_employers"
         },
         {
-          "name": "Mount Carmel Health System",
-          "source_url": "https://en.wikipedia.org/wiki/List_of_largest_Central_Ohio_employers"
+          "name": "Food",
+          "source_url": "https://www.bizjournals.com/atlanta/subscriber-only/2025/10/17/metro-atlantas-largest-employers.html"
         },
         {
           "name": "Nationwide Children's Hospital",
           "source_url": "https://en.wikipedia.org/wiki/List_of_largest_Central_Ohio_employers"
         },
         {
-          "name": "Nationwide Insurance",
-          "source_url": "https://en.wikipedia.org/wiki/Economy_of_Columbus,_Ohio"
+          "name": "Ohio State University",
+          "source_url": "https://en.wikipedia.org/wiki/List_of_largest_Central_Ohio_employers"
         },
         {
-          "name": "Columbus Public Schools",
-          "source_url": "https://en.wikipedia.org/wiki/List_of_largest_Central_Ohio_employers"
+          "name": "Bradley Co",
+          "source_url": "https://en.wikipedia.org/wiki/Columbus,_Georgia"
+        },
+        {
+          "name": "Energy",
+          "source_url": "https://www.bizjournals.com/atlanta/subscriber-only/2025/10/17/metro-atlantas-largest-employers.html"
+        },
+        {
+          "name": "Financial Services",
+          "source_url": "https://www.bizjournals.com/atlanta/subscriber-only/2025/10/17/metro-atlantas-largest-employers.html"
         }
       ],
       "sources": [
         "https://en.wikipedia.org/wiki/Columbus,_Georgia",
+        "https://www.ledger-enquirer.com/news/state/georgia/article312697701.html",
+        "https://www.selectgeorgia.com/blog/columbus-georgia-a-home-for-headquarters",
         "https://www.ledger-enquirer.com/news/business/article244035037.html",
+        "https://en.wikipedia.org/wiki/Category:Companies_based_in_Columbus,_Georgia",
         "https://www.bizjournals.com/atlanta/subscriber-only/2025/10/17/metro-atlantas-largest-employers.html",
-        "https://en.wikipedia.org/wiki/List_of_largest_companies_in_the_United_States_by_revenue",
-        "https://georgia.org/business-support/small-business",
-        "https://www.ledger-enquirer.com/news/politics-government/article311841650.html",
-        "https://georgia.org/sites/default/files/2023-01/2022-8-24_gdecd_board_meeting_minutes.pdf",
-        "https://georgia.org/sites/default/files/2021-04/logistics_education_report.pdf"
+        "https://www.selectgeorgia.com/about-us/our-team/regional-development/andrew-camp-west",
+        "https://www.ledger-enquirer.com/news/business/article283415023.html"
       ],
       "method": "Representative list auto-discovered via Tavily web search across chamber-of-commerce, development-authority and local-news sources. Not exhaustive; ordering approximates source frequency, not headcount."
     },
@@ -5208,104 +5210,106 @@
         "2026-01",
         "2026-02",
         "2026-03",
-        "2026-04"
+        "2026-04",
+        "2026-05"
       ],
       "values": [
         100.0,
-        101.11,
-        103.87,
-        104.28,
-        103.38,
-        101.73,
-        101.26,
-        102.69,
-        104.16,
-        106.16,
-        107.11,
-        107.58,
-        107.89,
-        106.84,
-        79.92,
-        57.27,
-        41.59,
-        53.03,
-        62.7,
-        68.22,
-        75.2,
-        79.97,
-        82.91,
-        83.02,
-        83.19,
-        83.67,
-        85.74,
-        86.33,
-        86.65,
-        87.48,
-        88.3,
-        91.7,
-        94.63,
-        98.53,
-        100.84,
+        101.12,
+        103.89,
+        104.3,
+        103.39,
+        101.74,
+        101.27,
+        102.7,
+        104.19,
+        106.19,
+        107.14,
+        107.62,
+        107.93,
+        106.88,
+        79.82,
+        57.05,
+        41.3,
+        52.8,
+        62.51,
+        68.07,
+        75.08,
+        79.87,
+        82.83,
+        82.94,
+        83.11,
+        83.59,
+        85.67,
+        86.26,
+        86.59,
+        87.42,
+        88.25,
+        91.66,
+        94.61,
+        98.52,
+        100.85,
         99.71,
         99.03,
-        97.85,
+        97.84,
         99.79,
-        100.75,
+        100.76,
         100.78,
         101.13,
         98.96,
-        100.87,
-        99.37,
+        100.88,
+        99.36,
         100.91,
         99.19,
         99.62,
         99.94,
         101.38,
-        103.43,
-        104.5,
-        103.65,
-        102.23,
-        101.36,
-        102.94,
-        103.56,
-        104.15,
-        102.99,
+        103.45,
+        104.53,
+        103.67,
+        102.24,
+        101.37,
+        102.96,
+        103.57,
+        104.17,
+        103.0,
         100.81,
-        99.01,
-        98.05,
-        99.64,
+        99.0,
+        98.04,
+        99.63,
         100.25,
         99.55,
-        98.05,
-        96.96,
-        97.54,
-        97.68,
-        97.87,
-        97.6,
+        98.04,
+        96.94,
+        97.53,
+        97.67,
         97.86,
-        98.58,
-        98.79,
+        97.59,
+        97.85,
+        98.57,
+        98.78,
         100.34,
         101.19,
-        101.0,
+        101.01,
         100.02,
-        99.05,
-        98.67,
-        97.67,
-        97.64,
-        96.79,
-        96.23,
-        95.47,
-        97.75,
-        99.03
+        99.04,
+        98.66,
+        97.66,
+        97.63,
+        96.78,
+        96.21,
+        95.45,
+        97.74,
+        99.66,
+        101.4
       ],
-      "latest_month": "2026-04",
-      "latest_value": 99.03,
+      "latest_month": "2026-05",
+      "latest_value": 101.4,
       "peak_month": "2020-01",
-      "peak_value": 107.89,
+      "peak_value": 107.93,
       "trough_month": "2020-05",
-      "trough_value": 41.59,
-      "n_months": 87,
+      "trough_value": 41.3,
+      "n_months": 88,
       "source": "EIG composite \u2014 computed from BLS CES + LAUS"
     },
     "forecast_arima": {
@@ -5623,7 +5627,7 @@
       "source": "EIG composite \u2014 NAR-style affordability: ACS median household income (B19013) vs. income needed for the median home (ACS B25077 value scaled by FHFA HPI; Freddie Mac PMMS 30-yr rate via FRED). >100 = median household can afford the median home."
     },
     "credit_score": {
-      "score": 59,
+      "score": 58,
       "grade": "BBB+",
       "outlook": "Positive",
       "components": {
@@ -5632,11 +5636,11 @@
           "weight": 0.25
         },
         "business_cycle": {
-          "score": 0.461,
+          "score": 0.556,
           "weight": 0.2
         },
         "labor_market": {
-          "score": 0.705,
+          "score": 0.561,
           "weight": 0.2
         },
         "quality_of_life": {

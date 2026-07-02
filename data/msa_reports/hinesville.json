@@ -3,7 +3,7 @@
   "short_name": "Hinesville",
   "full_name": "Hinesville, GA",
   "population": 78000,
-  "as_of": "2026-07-01",
+  "as_of": "2026-07-02",
   "sections": {
     "ces_employment": {
       "series_id": "SMS13259800000000001",
@@ -2860,7 +2860,8 @@
         "2026-01",
         "2026-02",
         "2026-03",
-        "2026-04"
+        "2026-04",
+        "2026-05"
       ],
       "values": [
         4.9,
@@ -2949,10 +2950,11 @@
         4.0,
         4.2,
         3.9,
-        3.3
+        3.3,
+        3.6
       ],
-      "latest_month": "2026-04",
-      "latest_value": 3.3
+      "latest_month": "2026-05",
+      "latest_value": 3.6
     },
     "fhfa_hpi": {
       "series_id": "ATNHPIUS25980Q",
@@ -3947,7 +3949,7 @@
       "source": "Census Business Dynamics Statistics (establishment entry rate, 2022); metro rate indexed to US=100"
     },
     "major_employers": {
-      "as_of": "2026-07-01",
+      "as_of": "2026-07-02",
       "employers": [
         {
           "name": "View All Industries",
@@ -3958,39 +3960,23 @@
           "source_url": "https://georgia.org/hyundai-motor-group-metaplant-america"
         },
         {
-          "name": "Food Processing",
-          "source_url": "https://georgia.org/hyundai-motor-group-metaplant-america"
-        },
-        {
-          "name": "Greenfield LLC",
-          "source_url": "https://georgia.org/business-support/small-business"
-        },
-        {
-          "name": "InnoTek LLC",
-          "source_url": "https://georgia.org/business-support/small-business"
-        },
-        {
           "name": "Liberty County School System",
           "source_url": null
         },
         {
-          "name": "Logistics",
-          "source_url": "https://georgia.org/hyundai-motor-group-metaplant-america"
+          "name": "Liberty Regional Medical Center",
+          "source_url": null
         },
         {
-          "name": "Muscadine Products Corporation",
-          "source_url": "https://georgia.org/business-support/small-business"
-        },
-        {
-          "name": "Advanced Manufacturing",
-          "source_url": "https://properties.selectgeorgia.com/target_industries_app/dist/index.html"
-        },
-        {
-          "name": "Hyundai Motor Group Metaplant America",
-          "source_url": "https://georgia.org/hyundai-motor-group-metaplant-america"
+          "name": "Ro Port",
+          "source_url": "https://georgia.org"
         },
         {
           "name": "Aerospace",
+          "source_url": "https://georgia.org/hyundai-motor-group-metaplant-america"
+        },
+        {
+          "name": "Hyundai Motor Group Metaplant America",
           "source_url": "https://georgia.org/hyundai-motor-group-metaplant-america"
         },
         {
@@ -3998,23 +3984,39 @@
           "source_url": "https://georgia.org/hyundai-motor-group-metaplant-america"
         },
         {
-          "name": "Company",
-          "source_url": "https://properties.selectgeorgia.com/target_industries_app/dist/index.html"
+          "name": "Food Processing",
+          "source_url": "https://georgia.org/hyundai-motor-group-metaplant-america"
         },
         {
-          "name": "Distribution",
+          "name": "Georgia Southern Innovation Group",
+          "source_url": "https://www.selectgeorgia.com/blog/georgia-southern-innovation-group"
+        },
+        {
+          "name": "Greenfield LLC",
+          "source_url": "https://georgia.org/business-support/small-business"
+        },
+        {
+          "name": "Hinesville Hospital",
+          "source_url": null
+        },
+        {
+          "name": "Hinesville Medical Center",
+          "source_url": null
+        },
+        {
+          "name": "InnoTek LLC",
           "source_url": "https://georgia.org/business-support/small-business"
         }
       ],
       "sources": [
         "https://en.wikipedia.org/wiki/Metropolitan_statistical_area",
-        "https://en.wikipedia.org/wiki/Savannah,_Georgia",
         "https://www.selectgeorgia.com/blog/georgia-southern-innovation-group",
         "https://georgia.org/hyundai-motor-group-metaplant-america",
-        "https://georgia.org/business-support/small-business",
+        "https://georgia.org",
         "https://georgia.org/sites/default/files/2020-08/georgia_safety_promise-8-27.pdf",
-        "https://www.savannahnow.com/story/business/2014/07/15/business-savannah-news-summary/13962793007",
-        "https://properties.selectgeorgia.com/target_industries_app/dist/index.html"
+        "https://georgia.org/business-support/small-business",
+        "https://georgia.org/sites/default/files/2018-11/gdecd_board_book_-_5-23-18.pdf",
+        "https://www.savannahnow.com/story/news/2009/02/13/jobless-claims-up-39-percent/13746010007"
       ],
       "method": "Representative list auto-discovered via Tavily web search across chamber-of-commerce, development-authority and local-news sources. Not exhaustive; ordering approximates source frequency, not headcount."
     },
@@ -4028,7 +4030,7 @@
         "ces_employment": 0.707,
         "laus_unemployment_neg": 0.707
       },
-      "correlation": 0.805,
+      "correlation": 0.806,
       "rebase_month": "2019-01",
       "rebase_value": 100.0,
       "smoothing": "3-month centered MA",
@@ -4120,104 +4122,106 @@
         "2026-01",
         "2026-02",
         "2026-03",
-        "2026-04"
+        "2026-04",
+        "2026-05"
       ],
       "values": [
         100.0,
         100.97,
-        104.07,
-        103.49,
-        102.13,
-        99.99,
-        98.83,
-        99.42,
-        100.58,
-        102.53,
+        104.09,
         103.5,
-        103.1,
-        102.52,
+        102.14,
+        99.99,
+        98.82,
+        99.41,
+        100.59,
+        102.54,
+        103.51,
+        103.12,
+        102.53,
         100.39,
-        80.63,
-        67.06,
-        57.95,
-        68.22,
-        74.61,
-        78.88,
-        85.47,
-        90.7,
-        94.76,
-        95.92,
-        97.07,
+        80.55,
+        66.93,
+        57.78,
+        68.09,
+        74.51,
+        78.79,
+        85.41,
+        90.66,
+        94.74,
+        95.9,
+        97.06,
         99.4,
-        102.12,
-        103.67,
-        103.48,
-        104.25,
-        104.44,
-        106.39,
-        106.01,
-        107.76,
-        109.88,
-        110.26,
-        110.26,
-        108.52,
-        111.42,
-        112.0,
-        112.96,
-        111.98,
-        112.35,
-        114.48,
-        115.25,
-        116.61,
-        116.61,
-        117.0,
-        116.61,
-        116.21,
-        116.81,
-        117.0,
-        116.23,
-        115.25,
-        114.09,
-        114.67,
-        113.9,
-        114.3,
-        114.7,
-        114.89,
-        114.5,
-        113.53,
-        114.3,
-        115.64,
-        115.82,
-        115.81,
-        114.84,
-        116.97,
-        119.29,
-        121.23,
-        121.43,
-        120.27,
-        119.69,
-        118.33,
-        119.12,
-        118.73,
-        117.38,
-        116.02,
-        116.01,
-        117.75,
-        116.4,
-        116.6,
-        114.67,
-        113.9,
-        112.55,
-        113.52,
-        114.5
+        102.13,
+        103.69,
+        103.49,
+        104.27,
+        104.46,
+        106.41,
+        106.03,
+        107.79,
+        109.92,
+        110.31,
+        110.3,
+        108.56,
+        111.47,
+        112.05,
+        113.01,
+        112.03,
+        112.41,
+        114.54,
+        115.32,
+        116.68,
+        116.68,
+        117.07,
+        116.68,
+        116.28,
+        116.88,
+        117.07,
+        116.3,
+        115.32,
+        114.15,
+        114.74,
+        113.96,
+        114.37,
+        114.76,
+        114.95,
+        114.56,
+        113.58,
+        114.36,
+        115.71,
+        115.89,
+        115.88,
+        114.91,
+        117.05,
+        119.38,
+        121.33,
+        121.53,
+        120.36,
+        119.78,
+        118.41,
+        119.2,
+        118.81,
+        117.46,
+        116.09,
+        116.08,
+        117.83,
+        116.47,
+        116.67,
+        114.74,
+        113.96,
+        112.6,
+        113.58,
+        114.75,
+        115.44
       ],
-      "latest_month": "2026-04",
-      "latest_value": 114.5,
+      "latest_month": "2026-05",
+      "latest_value": 115.44,
       "peak_month": "2024-11",
-      "peak_value": 121.43,
+      "peak_value": 121.53,
       "trough_month": "2020-05",
-      "trough_value": 57.95,
-      "n_months": 87,
+      "trough_value": 57.78,
+      "n_months": 88,
       "source": "EIG composite \u2014 computed from BLS CES + LAUS"
     },
     "forecast_arima": {
@@ -4530,7 +4534,7 @@
       "source": "EIG composite \u2014 NAR-style affordability: ACS median household income (B19013) vs. income needed for the median home (ACS B25077 value scaled by FHFA HPI; Freddie Mac PMMS 30-yr rate via FRED). >100 = median household can afford the median home."
     },
     "credit_score": {
-      "score": 83,
+      "score": 81,
       "grade": "AA",
       "outlook": "Stable",
       "components": {
@@ -4539,11 +4543,11 @@
           "weight": 0.25
         },
         "business_cycle": {
-          "score": 0.926,
+          "score": 0.939,
           "weight": 0.2
         },
         "labor_market": {
-          "score": 0.705,
+          "score": 0.621,
           "weight": 0.2
         },
         "quality_of_life": {

@@ -3,7 +3,7 @@
   "short_name": "Albany",
   "full_name": "Albany, GA",
   "population": 146000,
-  "as_of": "2026-07-01",
+  "as_of": "2026-07-02",
   "sections": {
     "ces_employment": {
       "series_id": "SMS13105000000000001",
@@ -3058,7 +3058,8 @@
         "2026-01",
         "2026-02",
         "2026-03",
-        "2026-04"
+        "2026-04",
+        "2026-05"
       ],
       "values": [
         5.4,
@@ -3147,10 +3148,11 @@
         4.4,
         4.3,
         4.0,
-        3.5
+        3.5,
+        3.9
       ],
-      "latest_month": "2026-04",
-      "latest_value": 3.5
+      "latest_month": "2026-05",
+      "latest_value": 3.9
     },
     "fhfa_hpi": {
       "series_id": "ATNHPIUS10500Q",
@@ -4142,11 +4144,11 @@
       "source": "Census Business Dynamics Statistics (establishment entry rate, 2022); metro rate indexed to US=100"
     },
     "major_employers": {
-      "as_of": "2026-07-01",
+      "as_of": "2026-07-02",
       "employers": [
         {
-          "name": "Food",
-          "source_url": "https://www.bizjournals.com/atlanta/subscriber-only/2025/10/17/metro-atlantas-largest-employers.html"
+          "name": "Manufacturing",
+          "source_url": "https://en.wikipedia.org/wiki/Albany,_Georgia"
         },
         {
           "name": "Marine Corps Logistics Base Albany",
@@ -4157,12 +4159,16 @@
           "source_url": "https://www.selectgeorgia.com/discover-georgia/industries/fortune-500-list"
         },
         {
-          "name": "Health",
-          "source_url": "https://en.wikipedia.org/wiki/Albany,_Georgia"
+          "name": "Food Processing",
+          "source_url": "https://www.selectgeorgia.com/discover-georgia/industries/fortune-500-list"
         },
         {
-          "name": "Manufacturing",
-          "source_url": "https://en.wikipedia.org/wiki/Albany,_Georgia"
+          "name": "Northeast Grocery Inc",
+          "source_url": "https://www.bizjournals.com/albany/subscriber-only/2025/10/17/albanys-330-largest-employers.html"
+        },
+        {
+          "name": "Albany Med Health System",
+          "source_url": "https://www.bizjournals.com/albany/news/2023/07/14/albany-region-largest-private-sector-employers.html"
         },
         {
           "name": "Albany State University",
@@ -4193,12 +4199,8 @@
           "source_url": "https://georgia.org/business-support/small-business"
         },
         {
-          "name": "Quarterly Unemployment Insurance Match Data",
-          "source_url": "https://georgia.org/sites/default/files/2025-05/coil_technology_ecosystem_report_2025.pdf"
-        },
-        {
-          "name": "Financial Services",
-          "source_url": "https://www.bizjournals.com/atlanta/subscriber-only/2025/10/17/metro-atlantas-largest-employers.html"
+          "name": "Phoebe Putney Memorial Hospital",
+          "source_url": null
         }
       ],
       "sources": [
@@ -4208,7 +4210,7 @@
         "https://www.bizjournals.com/atlanta/datacenter/lists",
         "https://www.selectgeorgia.com/discover-georgia/industries/fortune-500-list",
         "https://georgia.org/business-support/small-business",
-        "https://albanyherald.com/wp-content/uploads/2025/04/042925-ABH-A01-A12.pdf",
+        "https://georgia.org/sites/default/files/2021-04/logistics_education_report.pdf",
         "https://www.bizjournals.com/albany/news/2023/07/14/albany-region-largest-private-sector-employers.html"
       ],
       "method": "Representative list auto-discovered via Tavily web search across chamber-of-commerce, development-authority and local-news sources. Not exhaustive; ordering approximates source frequency, not headcount."
@@ -4223,7 +4225,7 @@
         "ces_employment": 0.707,
         "laus_unemployment_neg": 0.707
       },
-      "correlation": 0.728,
+      "correlation": 0.715,
       "rebase_month": "2019-01",
       "rebase_value": 100.0,
       "smoothing": "3-month centered MA",
@@ -4315,104 +4317,106 @@
         "2026-01",
         "2026-02",
         "2026-03",
-        "2026-04"
+        "2026-04",
+        "2026-05"
       ],
       "values": [
         100.0,
         101.5,
-        105.63,
-        107.52,
-        108.07,
+        105.64,
+        107.53,
+        108.08,
         106.26,
-        104.55,
-        104.48,
-        104.94,
-        106.06,
-        106.22,
-        106.47,
-        107.21,
+        104.56,
+        104.49,
+        104.95,
+        106.08,
+        106.24,
+        106.48,
+        107.22,
         105.79,
-        82.33,
-        64.57,
-        52.89,
-        61.13,
-        66.0,
-        67.6,
-        72.86,
-        76.97,
-        79.44,
-        80.14,
-        80.48,
-        82.47,
-        84.9,
+        82.3,
+        64.52,
+        52.82,
+        61.07,
+        65.94,
+        67.55,
+        72.82,
+        76.95,
+        79.42,
+        80.12,
+        80.46,
+        82.45,
+        84.89,
         86.71,
-        86.41,
+        86.4,
         88.11,
         88.94,
-        92.99,
-        95.63,
-        98.39,
-        100.19,
-        99.68,
+        93.0,
+        95.64,
+        98.41,
         100.22,
-        100.26,
-        103.09,
-        104.77,
-        104.67,
-        103.74,
-        103.02,
-        105.57,
-        107.81,
-        111.18,
-        111.68,
-        111.69,
-        110.17,
-        109.5,
-        107.99,
-        105.52,
+        99.71,
+        100.25,
+        100.29,
+        103.11,
+        104.8,
+        104.7,
+        103.77,
+        103.03,
+        105.58,
+        107.82,
+        111.2,
+        111.7,
+        111.71,
+        110.18,
+        109.51,
+        108.02,
+        105.54,
+        102.98,
+        102.54,
+        102.93,
+        103.91,
+        103.21,
+        103.48,
+        103.44,
+        104.29,
+        103.11,
+        102.31,
+        102.62,
+        103.86,
+        103.78,
+        102.18,
+        100.86,
+        100.76,
         102.96,
-        102.52,
-        102.92,
-        103.89,
-        103.19,
-        103.45,
-        103.4,
-        104.26,
-        103.09,
-        102.29,
-        102.59,
-        103.83,
-        103.76,
-        102.16,
-        100.85,
-        100.75,
-        102.95,
-        103.71,
-        105.07,
-        101.94,
-        101.09,
-        99.58,
-        100.9,
-        100.89,
-        99.74,
-        97.22,
-        95.19,
-        94.09,
-        92.71,
-        92.49,
-        91.47,
-        91.46,
-        91.27,
-        92.53,
-        93.41
+        103.74,
+        105.09,
+        101.96,
+        101.12,
+        99.6,
+        100.93,
+        100.92,
+        99.76,
+        97.25,
+        95.21,
+        94.12,
+        92.74,
+        92.52,
+        91.5,
+        91.48,
+        91.3,
+        92.57,
+        93.38,
+        93.95
       ],
-      "latest_month": "2026-04",
-      "latest_value": 93.41,
+      "latest_month": "2026-05",
+      "latest_value": 93.95,
       "peak_month": "2022-12",
-      "peak_value": 111.69,
+      "peak_value": 111.71,
       "trough_month": "2020-05",
-      "trough_value": 52.89,
-      "n_months": 87,
+      "trough_value": 52.82,
+      "n_months": 88,
       "source": "EIG composite \u2014 computed from BLS CES + LAUS"
     },
     "forecast_arima": {
@@ -4730,20 +4734,20 @@
       "source": "EIG composite \u2014 NAR-style affordability: ACS median household income (B19013) vs. income needed for the median home (ACS B25077 value scaled by FHFA HPI; Freddie Mac PMMS 30-yr rate via FRED). >100 = median household can afford the median home."
     },
     "credit_score": {
-      "score": 47,
+      "score": 45,
       "grade": "BBB-",
-      "outlook": "Stable",
+      "outlook": "Positive",
       "components": {
         "vitality": {
           "score": 0.31,
           "weight": 0.25
         },
         "business_cycle": {
-          "score": 0.255,
+          "score": 0.273,
           "weight": 0.2
         },
         "labor_market": {
-          "score": 0.65,
+          "score": 0.531,
           "weight": 0.2
         },
         "quality_of_life": {

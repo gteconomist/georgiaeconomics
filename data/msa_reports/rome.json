@@ -3,7 +3,7 @@
   "short_name": "Rome",
   "full_name": "Rome, GA",
   "population": 99000,
-  "as_of": "2026-07-01",
+  "as_of": "2026-07-02",
   "sections": {
     "ces_employment": {
       "series_id": "SMS13406600000000001",
@@ -3256,7 +3256,8 @@
         "2026-01",
         "2026-02",
         "2026-03",
-        "2026-04"
+        "2026-04",
+        "2026-05"
       ],
       "values": [
         5.2,
@@ -3345,10 +3346,11 @@
         3.6,
         3.7,
         3.3,
-        2.7
+        2.8,
+        3.0
       ],
-      "latest_month": "2026-04",
-      "latest_value": 2.7
+      "latest_month": "2026-05",
+      "latest_value": 3.0
     },
     "fhfa_hpi": {
       "series_id": "ATNHPIUS40660Q",
@@ -4394,31 +4396,19 @@
       "source": "Census Business Dynamics Statistics (establishment entry rate, 2022); metro rate indexed to US=100"
     },
     "major_employers": {
-      "as_of": "2026-07-01",
+      "as_of": "2026-07-02",
       "employers": [
+        {
+          "name": "F&P Plant",
+          "source_url": "https://www.northwestgeorgianews.com/rome/news/local/icymi-economic-development-in-floyd-county-is-booming/article_782a905a-78e6-11ee-aef8-e7b6f5a5827f.html"
+        },
+        {
+          "name": "Mills Fitzner",
+          "source_url": "https://www.northwestgeorgianews.com/rome/news/local/getting-down-to-business-chamber-hosts-annual-meeting-at-forum/article_2c292d95-89c6-4cb2-8950-81f981fc7218.html"
+        },
         {
           "name": "Floyd Medical Center",
           "source_url": "https://en.wikipedia.org/wiki/Rome,_Georgia"
-        },
-        {
-          "name": "Shaw Industries",
-          "source_url": "https://www.northwestgeorgianews.com/calhoun_times/business/local/shaw-industries-named-to-forbes-2022-list-of-best-employers-in-georgia/article_e15be4b6-23d3-11ed-8279-1ba3cf349fad.html"
-        },
-        {
-          "name": "State Mutual Insurance Company",
-          "source_url": "https://en.wikipedia.org/wiki/Rome,_Georgia"
-        },
-        {
-          "name": "Suzuki Manufacturing of America",
-          "source_url": "https://en.wikipedia.org/wiki/Rome,_Georgia"
-        },
-        {
-          "name": "VT Industries",
-          "source_url": "https://www.georgia.org/he/node/50316"
-        },
-        {
-          "name": "Atrium Health Floyd",
-          "source_url": "https://en.wikipedia.org/wiki/Atrium_Health_Floyd"
         },
         {
           "name": "Harbin Clinic",
@@ -4429,20 +4419,20 @@
           "source_url": "https://en.wikipedia.org/wiki/Rome,_Georgia"
         },
         {
-          "name": "Medical College of Georgia",
-          "source_url": "https://en.wikipedia.org/wiki/Rome,_Georgia"
-        },
-        {
           "name": "Redmond Regional Medical Center",
           "source_url": "https://en.wikipedia.org/wiki/Rome,_Georgia"
         },
         {
-          "name": "Distribution",
-          "source_url": "https://georgia.org/sites/default/files/2023-01/lowes_4.pdf"
+          "name": "State Mutual Insurance Company",
+          "source_url": "https://en.wikipedia.org/wiki/Rome,_Georgia"
         },
         {
-          "name": "Catoosa Co. News",
-          "source_url": "https://www.northwestgeorgianews.com/jill-fisher/article_59879411-06d9-44c3-9def-274e326ae1e7.html"
+          "name": "Suzuki Manufacturing of America",
+          "source_url": "https://en.wikipedia.org/wiki/Rome,_Georgia"
+        },
+        {
+          "name": "Georgia Power",
+          "source_url": "https://www.selectgeorgia.com/blog/team-researchers-provide-clear-employment-overview-community-partners"
         },
         {
           "name": "General Electric",
@@ -4451,17 +4441,29 @@
         {
           "name": "Georgia Health Sciences University",
           "source_url": "https://en.wikipedia.org/wiki/Rome,_Georgia"
+        },
+        {
+          "name": "Georgia Hospital Association Health Care Marietta",
+          "source_url": "https://georgia.org/sites/default/files/2020-07/georgia_safety_promise-7.23.pdf"
+        },
+        {
+          "name": "Lewis Chemical Co",
+          "source_url": "https://www.northwestgeorgianews.com/rome/business/lewis-chemical-named-small-business-of-the-year-larry-alford-of-service-master-by-twins/article_130f8d6a-8486-11e3-b983-001a4bcf6878.html"
+        },
+        {
+          "name": "Medical College of Georgia",
+          "source_url": "https://en.wikipedia.org/wiki/Rome,_Georgia"
         }
       ],
       "sources": [
         "https://en.wikipedia.org/wiki/Rome,_Georgia",
-        "https://en.wikipedia.org/wiki/Atrium_Health_Floyd",
+        "https://www.selectgeorgia.com/blog/team-researchers-provide-clear-employment-overview-community-partners",
+        "https://georgia.org/sites/default/files/2020-07/georgia_safety_promise-7.23.pdf",
+        "https://www.northwestgeorgianews.com/rome/news/local/icymi-economic-development-in-floyd-county-is-booming/article_782a905a-78e6-11ee-aef8-e7b6f5a5827f.html",
+        "https://properties.selectgeorgia.com/target_industries_app/dist/index.html",
         "https://georgia.org/sites/default/files/2023-01/lowes_4.pdf",
-        "https://www.georgia.org/he/node/50316",
-        "https://www.northwestgeorgianews.com/calhoun_times/business/local/shaw-industries-named-to-forbes-2022-list-of-best-employers-in-georgia/article_e15be4b6-23d3-11ed-8279-1ba3cf349fad.html",
-        "https://www.northwestgeorgianews.com/rome/business/rome-floyd-chamber-celebrates-rome-industries/article_34aae01c-d8ff-11ef-b2a8-a38613426472.html",
-        "https://georgia.org/business-support/small-business",
-        "https://www.northwestgeorgianews.com/jill-fisher/article_59879411-06d9-44c3-9def-274e326ae1e7.html"
+        "https://www.northwestgeorgianews.com/hometown_headlines/business/business-bob-blumberg-downtown-restaurant-owner-and-broad-street-advocate-leaving-rome-chamber-existing-industries/article_f244fc93-eb26-5edc-9498-50b4a2744d38.html",
+        "https://www.northwestgeorgianews.com/rome/business/lewis-chemical-named-small-business-of-the-year-larry-alford-of-service-master-by-twins/article_130f8d6a-8486-11e3-b983-001a4bcf6878.html"
       ],
       "method": "Representative list auto-discovered via Tavily web search across chamber-of-commerce, development-authority and local-news sources. Not exhaustive; ordering approximates source frequency, not headcount."
     },
@@ -4475,7 +4477,7 @@
         "ces_employment": 0.707,
         "laus_unemployment_neg": 0.707
       },
-      "correlation": 0.613,
+      "correlation": 0.615,
       "rebase_month": "2019-01",
       "rebase_value": 100.0,
       "smoothing": "3-month centered MA",
@@ -4567,104 +4569,106 @@
         "2026-01",
         "2026-02",
         "2026-03",
-        "2026-04"
+        "2026-04",
+        "2026-05"
       ],
       "values": [
         100.0,
         101.17,
-        104.03,
-        104.57,
-        104.09,
-        102.0,
+        104.05,
+        104.59,
+        104.11,
+        102.01,
         101.71,
-        102.79,
-        104.26,
-        104.63,
-        103.07,
+        102.8,
+        104.28,
+        104.65,
+        103.08,
+        102.15,
+        101.91,
         102.14,
-        101.9,
-        102.13,
-        83.31,
-        70.48,
-        62.43,
-        74.54,
-        82.62,
-        87.55,
-        92.23,
-        94.8,
-        95.99,
+        83.27,
+        70.4,
+        62.33,
+        74.47,
+        82.59,
+        87.53,
+        92.22,
+        94.81,
+        96.0,
         95.86,
-        96.27,
-        97.77,
-        100.04,
-        101.14,
-        100.91,
-        101.41,
-        102.38,
-        104.51,
-        105.39,
-        106.81,
-        108.07,
-        108.25,
+        96.28,
+        97.78,
+        100.06,
+        101.16,
+        100.93,
+        101.43,
+        102.4,
+        104.54,
+        105.42,
+        106.84,
         108.11,
-        108.15,
-        110.29,
-        111.02,
-        110.93,
-        110.76,
-        111.3,
-        113.2,
-        113.38,
-        114.15,
-        114.32,
-        114.91,
-        115.44,
-        116.53,
-        117.4,
-        115.99,
-        112.44,
-        109.67,
-        111.36,
-        116.15,
-        118.74,
-        120.96,
-        120.85,
-        121.14,
-        119.79,
-        118.68,
-        118.9,
-        118.42,
+        108.28,
+        108.14,
+        108.17,
+        110.32,
+        111.05,
+        110.96,
+        110.78,
+        111.31,
+        113.22,
+        113.4,
+        114.17,
+        114.34,
+        114.93,
+        115.45,
+        116.54,
+        117.41,
+        116.0,
+        112.45,
+        109.69,
+        111.37,
+        116.16,
+        118.75,
+        120.97,
+        120.87,
+        121.16,
+        119.8,
+        118.69,
+        118.91,
+        118.43,
         117.01,
         115.7,
         115.02,
         117.01,
-        117.43,
-        119.32,
+        117.44,
         119.33,
+        119.34,
         120.57,
         119.7,
         119.06,
         119.37,
-        119.53,
+        119.54,
         119.32,
         117.83,
-        116.89,
+        116.88,
         117.26,
         117.88,
         118.73,
-        118.09,
+        118.1,
         117.69,
         117.69,
-        119.33,
-        120.71
+        119.19,
+        120.61,
+        121.31
       ],
-      "latest_month": "2026-04",
-      "latest_value": 120.71,
-      "peak_month": "2023-12",
-      "peak_value": 121.14,
+      "latest_month": "2026-05",
+      "latest_value": 121.31,
+      "peak_month": "2026-05",
+      "peak_value": 121.31,
       "trough_month": "2020-05",
-      "trough_value": 62.43,
-      "n_months": 87,
+      "trough_value": 62.33,
+      "n_months": 88,
       "source": "EIG composite \u2014 computed from BLS CES + LAUS"
     },
     "forecast_arima": null,
@@ -4843,7 +4847,7 @@
       "source": "EIG composite \u2014 NAR-style affordability: ACS median household income (B19013) vs. income needed for the median home (ACS B25077 value scaled by FHFA HPI; Freddie Mac PMMS 30-yr rate via FRED). >100 = median household can afford the median home."
     },
     "credit_score": {
-      "score": 69,
+      "score": 68,
       "grade": "A",
       "outlook": "Positive",
       "components": {
@@ -4852,11 +4856,11 @@
           "weight": 0.25
         },
         "business_cycle": {
-          "score": 0.981,
+          "score": 0.983,
           "weight": 0.2
         },
         "labor_market": {
-          "score": 0.841,
+          "score": 0.779,
           "weight": 0.2
         },
         "quality_of_life": {

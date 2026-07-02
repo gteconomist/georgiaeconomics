@@ -3,7 +3,7 @@
   "short_name": "Atlanta",
   "full_name": "Atlanta-Sandy Springs-Alpharetta, GA",
   "population": 6307261,
-  "as_of": "2026-07-01",
+  "as_of": "2026-07-02",
   "sections": {
     "ces_employment": {
       "series_id": "SMS13120600000000001",
@@ -4147,7 +4147,8 @@
         "2026-01",
         "2026-02",
         "2026-03",
-        "2026-04"
+        "2026-04",
+        "2026-05"
       ],
       "values": [
         4.0,
@@ -4236,10 +4237,11 @@
         3.6,
         3.6,
         3.3,
-        2.8
+        2.8,
+        3.2
       ],
-      "latest_month": "2026-04",
-      "latest_value": 2.8
+      "latest_month": "2026-05",
+      "latest_value": 3.2
     },
     "fhfa_hpi": {
       "series_id": "ATNHPIUS12060Q",
@@ -5211,18 +5213,10 @@
       "source": "Census Business Dynamics Statistics (establishment entry rate, 2022); metro rate indexed to US=100"
     },
     "major_employers": {
-      "as_of": "2026-07-01",
+      "as_of": "2026-07-02",
       "employers": [
         {
-          "name": "Healthcare",
-          "source_url": "https://www.developfultoncounty.com/major-employers.php"
-        },
-        {
-          "name": "Northside Hospital",
-          "source_url": "https://en.wikipedia.org/wiki/Economy_of_Atlanta"
-        },
-        {
-          "name": "The Coca-Cola Company",
+          "name": "Southern Company",
           "source_url": "https://en.wikipedia.org/wiki/Economy_of_Atlanta"
         },
         {
@@ -5230,7 +5224,11 @@
           "source_url": "https://en.wikipedia.org/wiki/Economy_of_Atlanta"
         },
         {
-          "name": "Southern Company",
+          "name": "Northside Hospital",
+          "source_url": "https://en.wikipedia.org/wiki/Economy_of_Atlanta"
+        },
+        {
+          "name": "Piedmont Healthcare",
           "source_url": "https://en.wikipedia.org/wiki/Economy_of_Atlanta"
         },
         {
@@ -5238,47 +5236,51 @@
           "source_url": "https://en.wikipedia.org/wiki/Economy_of_Atlanta"
         },
         {
+          "name": "Emory Healthcare",
+          "source_url": "https://en.wikipedia.org/wiki/Economy_of_Atlanta"
+        },
+        {
           "name": "Grady Health System",
           "source_url": "https://en.wikipedia.org/wiki/Economy_of_Atlanta"
         },
         {
-          "name": "General Medical",
-          "source_url": "https://www.metroatlantachamber.com/wp-content/uploads/2023/08/Top-Employer-Final.pdf"
+          "name": "Healthcare of Atlanta",
+          "source_url": "https://www.ajc.com/ajcjobs"
         },
         {
-          "name": "Cornerstone Christian Academy's",
-          "source_url": "https://www.ajc.com/top-workplaces"
+          "name": "Cola Company",
+          "source_url": null
+        },
+        {
+          "name": "Aerospace",
+          "source_url": "https://www.selectgeorgia.com/discover-georgia/industries/fortune-500-list"
+        },
+        {
+          "name": "Georgia Power Economic Development",
+          "source_url": "https://www.selectgeorgia.com/landing-pages/san-fran-to-atl/top-brands"
+        },
+        {
+          "name": "Oxford Industries",
+          "source_url": "https://en.wikipedia.org/wiki/Economy_of_Atlanta"
         },
         {
           "name": "Foundation Financial Group",
           "source_url": "https://en.wikipedia.org/wiki/Economy_of_Atlanta"
         },
         {
-          "name": "Georgia State University",
-          "source_url": "https://www.metroatlantachamber.com/wp-content/uploads/2023/08/Top-Employer-Final.pdf"
-        },
-        {
-          "name": "Gentiva Health Services",
-          "source_url": "https://en.wikipedia.org/wiki/Economy_of_Atlanta"
-        },
-        {
-          "name": "Georgia Gwinnett College",
-          "source_url": "https://www.metroatlantachamber.com/wp-content/uploads/2023/08/Top-Employer-Final.pdf"
-        },
-        {
-          "name": "Oxford Industries",
-          "source_url": "https://en.wikipedia.org/wiki/Economy_of_Atlanta"
+          "name": "Automotive",
+          "source_url": "https://en.wikipedia.org/wiki/Metro_Atlanta"
         }
       ],
       "sources": [
         "https://en.wikipedia.org/wiki/Economy_of_Atlanta",
         "https://www.bizjournals.com/atlanta/datacenter/lists",
+        "https://en.wikipedia.org/wiki/Metro_Atlanta",
         "https://www.ajc.com/top-workplaces",
+        "https://www.bizjournals.com/atlanta/subscriber-only/2025/10/17/metro-atlantas-largest-employers.html",
         "https://www.selectgeorgia.com/discover-georgia/industries/why-atlanta/top-companies",
-        "https://www.selectgeorgia.com/discover-georgia/industries/fortune-500-list",
-        "https://www.metroatlantachamber.com/wp-content/uploads/2023/08/Top-Employer-Final.pdf",
-        "https://www.developfultoncounty.com/major-employers.php",
-        "https://www.knowatlanta.com/jobs/atlanta-fortune-500"
+        "https://www.selectgeorgia.com/landing-pages/san-fran-to-atl/top-brands",
+        "https://www.selectgeorgia.com/sxsw/top-brands"
       ],
       "method": "Representative list auto-discovered via Tavily web search across chamber-of-commerce, development-authority and local-news sources. Not exhaustive; ordering approximates source frequency, not headcount."
     },
@@ -5384,64 +5386,65 @@
         "2026-01",
         "2026-02",
         "2026-03",
-        "2026-04"
+        "2026-04",
+        "2026-05"
       ],
       "values": [
         100.0,
-        100.31,
+        100.32,
         101.65,
-        101.84,
-        101.66,
+        101.85,
+        101.67,
         101.13,
         101.08,
-        102.38,
-        103.2,
-        104.44,
-        104.65,
-        104.38,
-        104.01,
+        102.39,
+        103.21,
+        104.45,
+        104.67,
+        104.39,
+        104.02,
         102.22,
-        83.47,
-        67.73,
-        56.32,
-        64.06,
-        70.7,
-        75.43,
-        80.84,
-        84.77,
-        88.17,
-        89.66,
-        91.14,
-        92.73,
-        94.61,
-        95.86,
-        96.2,
-        97.49,
-        98.77,
-        101.34,
+        83.42,
+        67.63,
+        56.19,
+        63.95,
+        70.61,
+        75.36,
+        80.79,
+        84.73,
+        88.14,
+        89.64,
+        91.12,
+        92.71,
+        94.6,
+        95.85,
+        96.19,
+        97.48,
+        98.76,
+        101.35,
         103.13,
-        105.27,
-        107.04,
-        107.15,
-        107.46,
-        107.49,
-        109.34,
-        110.18,
-        110.05,
-        109.8,
+        105.28,
+        107.05,
+        107.16,
+        107.47,
+        107.5,
+        109.35,
+        110.2,
+        110.06,
+        109.81,
         109.54,
-        110.8,
+        110.81,
         111.09,
-        111.95,
-        112.26,
-        112.3,
-        112.02,
-        111.64,
+        111.96,
+        112.27,
+        112.31,
+        112.03,
+        111.65,
         112.43,
-        112.62,
+        112.63,
         112.54,
         112.03,
-        111.76,
+        111.75,
         112.3,
         112.36,
         113.22,
@@ -5453,35 +5456,36 @@
         114.67,
         113.94,
         112.88,
-        112.19,
-        112.95,
-        113.44,
+        112.18,
+        112.94,
+        113.43,
         114.23,
         114.58,
         114.59,
         114.43,
         114.05,
         114.81,
-        115.14,
+        115.15,
         114.88,
         114.25,
-        113.77,
+        113.76,
         114.07,
         113.64,
-        113.97,
-        113.56,
+        113.96,
+        113.55,
         113.52,
         113.62,
-        115.06,
-        116.1
+        115.05,
+        115.93,
+        116.49
       ],
-      "latest_month": "2026-04",
-      "latest_value": 116.1,
-      "peak_month": "2026-04",
-      "peak_value": 116.1,
+      "latest_month": "2026-05",
+      "latest_value": 116.49,
+      "peak_month": "2026-05",
+      "peak_value": 116.49,
       "trough_month": "2020-05",
-      "trough_value": 56.32,
-      "n_months": 87,
+      "trough_value": 56.19,
+      "n_months": 88,
       "source": "EIG composite \u2014 computed from BLS CES + LAUS"
     },
     "forecast_arima": {
@@ -5803,7 +5807,7 @@
       "source": "EIG composite \u2014 NAR-style affordability: ACS median household income (B19013) vs. income needed for the median home (ACS B25077 value scaled by FHFA HPI; Freddie Mac PMMS 30-yr rate via FRED). >100 = median household can afford the median home."
     },
     "credit_score": {
-      "score": 77,
+      "score": 76,
       "grade": "AA-",
       "outlook": "Positive",
       "components": {
@@ -5812,11 +5816,11 @@
           "weight": 0.25
         },
         "business_cycle": {
-          "score": 0.946,
+          "score": 0.95,
           "weight": 0.2
         },
         "labor_market": {
-          "score": 0.822,
+          "score": 0.731,
           "weight": 0.2
         },
         "quality_of_life": {

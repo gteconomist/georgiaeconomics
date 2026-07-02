@@ -3,7 +3,7 @@
   "short_name": "Brunswick",
   "full_name": "Brunswick, GA",
   "population": 120000,
-  "as_of": "2026-07-01",
+  "as_of": "2026-07-02",
   "sections": {
     "ces_employment": {
       "series_id": "SMS13152600000000001",
@@ -3058,7 +3058,8 @@
         "2026-01",
         "2026-02",
         "2026-03",
-        "2026-04"
+        "2026-04",
+        "2026-05"
       ],
       "values": [
         4.4,
@@ -3147,10 +3148,11 @@
         3.1,
         3.3,
         3.1,
-        2.6
+        2.5,
+        2.8
       ],
-      "latest_month": "2026-04",
-      "latest_value": 2.6
+      "latest_month": "2026-05",
+      "latest_value": 2.8
     },
     "fhfa_hpi": {
       "series_id": "ATNHPIUS15260Q",
@@ -4096,7 +4098,7 @@
       "source": "Census Business Dynamics Statistics (establishment entry rate, 2022); metro rate indexed to US=100"
     },
     "major_employers": {
-      "as_of": "2026-07-01",
+      "as_of": "2026-07-02",
       "employers": [
         {
           "name": "Southeast Georgia Health System",
@@ -4107,61 +4109,62 @@
           "source_url": "https://en.wikipedia.org/wiki/Brunswick,_Georgia"
         },
         {
-          "name": "Food Processing",
-          "source_url": "https://georgia.org/business-support/small-business"
+          "name": "Georgia Ports Authority",
+          "source_url": "https://en.wikipedia.org/wiki/Brunswick,_Georgia"
+        },
+        {
+          "name": "Georgia Power Economic Development",
+          "source_url": "https://www.selectgeorgia.com/blog/wtc-sav-prosperity"
+        },
+        {
+          "name": "Port of Brunswick",
+          "source_url": null
+        },
+        {
+          "name": "Ro Port",
+          "source_url": "https://georgia.org"
         },
         {
           "name": "General Motors",
           "source_url": "https://en.wikipedia.org/wiki/Brunswick,_Georgia"
         },
         {
-          "name": "Logistics",
-          "source_url": "https://georgia.org/business-support/small-business"
-        },
-        {
           "name": "Marine Port",
           "source_url": "https://en.wikipedia.org/wiki/Brunswick,_Georgia"
         },
         {
-          "name": "Automotive",
-          "source_url": "https://georgia.org/business-support/small-business"
+          "name": "Pharmaceutical",
+          "source_url": "https://en.wikipedia.org/wiki/List_of_largest_companies_in_the_United_States_by_revenue"
         },
         {
-          "name": "Energy",
-          "source_url": "https://georgia.org/business-support/small-business"
+          "name": "Port of Savannah",
+          "source_url": "https://georgia.org"
         },
         {
-          "name": "Georgia Ports Authority",
-          "source_url": "https://en.wikipedia.org/wiki/Brunswick,_Georgia"
+          "name": "Ports of Savannah",
+          "source_url": "https://www.selectgeorgia.com/blog/wtc-sav-prosperity"
         },
         {
-          "name": "Manufacturing",
-          "source_url": "https://georgia.org/business-support/small-business"
+          "name": "Terry College of Business",
+          "source_url": "https://www.savannahnow.com/story/sponsor-story/georgia-ports/2025/03/31/one-in-eight-jobs-across-state-related-to-savannah-brunswick-ports/82706533007"
         },
         {
-          "name": "The Port of Brunswick",
-          "source_url": "https://en.wikipedia.org/wiki/Brunswick,_Georgia"
+          "name": "Beyond Health Group",
+          "source_url": "https://www.selectgeorgia.com/services/support-for-communities/small-business-resources"
         },
         {
-          "name": "Explore Georgia's Leading Industries",
-          "source_url": "https://georgia.org/business-support/small-business"
-        },
-        {
-          "name": "Greenfield LLC",
-          "source_url": "https://georgia.org/business-support/small-business"
-        },
-        {
-          "name": "InnoTek LLC",
-          "source_url": "https://georgia.org/business-support/small-business"
+          "name": "Company",
+          "source_url": "https://georgia.org/sites/default/files/2021-05/georgia_taiwan_connection_2021.pdf"
         }
       ],
       "sources": [
         "https://en.wikipedia.org/wiki/Brunswick,_Georgia",
+        "https://www.selectgeorgia.com/blog/wtc-sav-prosperity",
         "https://en.wikipedia.org/wiki/History_of_Brunswick,_Georgia",
-        "https://georgia.org/business-support/small-business",
-        "https://www.bizjournals.com/atlanta",
-        "https://en.wikipedia.org/wiki/Golden_Isles_of_Georgia",
-        "https://georgia.org/industries/film",
+        "https://en.wikipedia.org/wiki/List_of_largest_companies_in_the_United_States_by_revenue",
+        "https://georgia.org",
+        "https://georgia.org/sites/default/files/2018-07/georgiafortunemagazine.pdf",
+        "https://www.selectgeorgia.com/services/support-for-communities/small-business-resources",
         "https://georgia.org/sites/default/files/2021-05/georgia_taiwan_connection_2021.pdf"
       ],
       "method": "Representative list auto-discovered via Tavily web search across chamber-of-commerce, development-authority and local-news sources. Not exhaustive; ordering approximates source frequency, not headcount."
@@ -4176,7 +4179,7 @@
         "ces_employment": 0.707,
         "laus_unemployment_neg": 0.707
       },
-      "correlation": 0.706,
+      "correlation": 0.705,
       "rebase_month": "2019-01",
       "rebase_value": 100.0,
       "smoothing": "3-month centered MA",
@@ -4268,104 +4271,106 @@
         "2026-01",
         "2026-02",
         "2026-03",
-        "2026-04"
+        "2026-04",
+        "2026-05"
       ],
       "values": [
         100.0,
         100.5,
         102.25,
-        102.73,
-        102.88,
-        102.42,
-        102.17,
+        102.74,
+        102.89,
+        102.43,
+        102.18,
         102.25,
         102.77,
-        104.02,
-        104.71,
+        104.03,
+        104.72,
         104.39,
         103.99,
         103.1,
-        81.22,
-        66.65,
-        58.88,
-        73.35,
-        82.14,
+        81.2,
+        66.61,
+        58.83,
+        73.32,
+        82.12,
         85.73,
         89.75,
-        92.0,
-        93.98,
+        92.01,
+        93.99,
         94.66,
-        95.39,
-        96.72,
-        98.14,
-        98.99,
-        99.05,
-        100.28,
-        101.09,
-        102.75,
-        103.46,
-        105.29,
+        95.4,
+        96.73,
+        98.15,
+        99.0,
+        99.06,
+        100.29,
+        101.1,
+        102.76,
+        103.47,
+        105.3,
         106.68,
         107.03,
         107.3,
-        107.29,
+        107.28,
         108.59,
         109.17,
         108.9,
-        108.83,
-        108.68,
-        109.99,
-        110.36,
-        111.52,
-        112.06,
-        112.35,
-        112.45,
-        112.41,
-        113.74,
-        114.32,
-        114.65,
-        114.48,
-        114.25,
-        114.97,
-        114.85,
-        115.79,
-        116.06,
-        116.43,
-        116.51,
-        116.36,
-        117.15,
-        117.23,
-        116.98,
-        115.96,
-        115.52,
-        116.43,
+        108.82,
+        108.67,
+        109.98,
+        110.34,
+        111.5,
+        112.04,
+        112.33,
+        112.42,
+        112.38,
+        113.71,
+        114.29,
+        114.62,
+        114.44,
+        114.21,
+        114.93,
+        114.81,
+        115.75,
+        116.02,
+        116.39,
+        116.47,
+        116.31,
+        117.1,
+        117.18,
         116.93,
-        117.76,
-        117.89,
-        117.45,
-        117.02,
-        116.56,
-        118.37,
-        119.09,
-        119.17,
-        118.57,
-        118.27,
-        118.84,
-        118.5,
-        119.25,
-        118.98,
-        118.84,
-        118.6,
-        119.73,
-        120.61
+        115.91,
+        115.46,
+        116.37,
+        116.87,
+        117.7,
+        117.83,
+        117.39,
+        116.97,
+        116.5,
+        118.32,
+        119.03,
+        119.1,
+        118.51,
+        118.2,
+        118.78,
+        118.43,
+        119.18,
+        118.91,
+        118.78,
+        118.53,
+        119.8,
+        120.78,
+        121.58
       ],
-      "latest_month": "2026-04",
-      "latest_value": 120.61,
-      "peak_month": "2026-04",
-      "peak_value": 120.61,
+      "latest_month": "2026-05",
+      "latest_value": 121.58,
+      "peak_month": "2026-05",
+      "peak_value": 121.58,
       "trough_month": "2020-05",
-      "trough_value": 58.88,
-      "n_months": 87,
+      "trough_value": 58.83,
+      "n_months": 88,
       "source": "EIG composite \u2014 computed from BLS CES + LAUS"
     },
     "forecast_arima": {
@@ -4683,7 +4688,7 @@
       "source": "EIG composite \u2014 NAR-style affordability: ACS median household income (B19013) vs. income needed for the median home (ACS B25077 value scaled by FHFA HPI; Freddie Mac PMMS 30-yr rate via FRED). >100 = median household can afford the median home."
     },
     "credit_score": {
-      "score": 72,
+      "score": 71,
       "grade": "A+",
       "outlook": "Positive",
       "components": {
@@ -4692,11 +4697,11 @@
           "weight": 0.25
         },
         "business_cycle": {
-          "score": 0.98,
+          "score": 0.985,
           "weight": 0.2
         },
         "labor_market": {
-          "score": 0.859,
+          "score": 0.822,
           "weight": 0.2
         },
         "quality_of_life": {
