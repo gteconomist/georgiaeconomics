@@ -3,7 +3,7 @@
   "short_name": "Dalton",
   "full_name": "Dalton, GA",
   "population": 143000,
-  "as_of": "2026-07-02",
+  "as_of": "2026-07-03",
   "sections": {
     "ces_employment": {
       "series_id": "SMS13191400000000001",
@@ -2206,7 +2206,8 @@
               "2026-02",
               "2026-03",
               "2026-04",
-              "2026-05"
+              "2026-05",
+              "2026-06"
             ],
             "values": [
               633.0,
@@ -2236,8 +2237,9 @@
               602.0,
               601.0,
               604.0,
-              609.0,
-              613.0
+              608.0,
+              611.0,
+              607.0
             ],
             "yoy_pct": [
               null,
@@ -2267,10 +2269,11 @@
               -3.22,
               -3.38,
               -2.58,
-              -2.09,
-              -0.81
+              -2.25,
+              -1.13,
+              -1.46
             ],
-            "latest_yoy": -0.81,
+            "latest_yoy": -1.46,
             "adjustment": "SA"
           },
           "Construction": {
@@ -2305,7 +2308,8 @@
               "2026-02",
               "2026-03",
               "2026-04",
-              "2026-05"
+              "2026-05",
+              "2026-06"
             ],
             "values": [
               8123.0,
@@ -2335,8 +2339,9 @@
               8317.0,
               8296.0,
               8311.0,
+              8314.0,
               8320.0,
-              8337.0
+              8331.0
             ],
             "yoy_pct": [
               null,
@@ -2366,10 +2371,11 @@
               0.64,
               0.35,
               0.46,
-              0.59,
-              0.82
+              0.52,
+              0.62,
+              0.77
             ],
-            "latest_yoy": 0.82,
+            "latest_yoy": 0.77,
             "adjustment": "SA"
           },
           "Manufacturing": {
@@ -2404,7 +2410,8 @@
               "2026-02",
               "2026-03",
               "2026-04",
-              "2026-05"
+              "2026-05",
+              "2026-06"
             ],
             "values": [
               12875.0,
@@ -2434,8 +2441,9 @@
               12582.0,
               12583.0,
               12598.0,
-              12598.0,
-              12605.0
+              12597.0,
+              12595.0,
+              12598.0
             ],
             "yoy_pct": [
               null,
@@ -2466,9 +2474,10 @@
               -0.69,
               -0.54,
               -0.51,
-              -0.36
+              -0.44,
+              -0.3
             ],
-            "latest_yoy": -0.36,
+            "latest_yoy": -0.3,
             "adjustment": "SA"
           },
           "Trade, transportation, and utilities": {
@@ -2503,7 +2512,8 @@
               "2026-02",
               "2026-03",
               "2026-04",
-              "2026-05"
+              "2026-05",
+              "2026-06"
             ],
             "values": [
               28799.0,
@@ -2533,8 +2543,9 @@
               28654.0,
               28618.0,
               28650.0,
-              28712.0,
-              28709.0
+              28715.0,
+              28732.0,
+              28728.0
             ],
             "yoy_pct": [
               null,
@@ -2564,10 +2575,11 @@
               -0.49,
               -0.65,
               -0.49,
-              -0.25,
-              -0.19
+              -0.24,
+              -0.11,
+              -0.05
             ],
-            "latest_yoy": -0.19,
+            "latest_yoy": -0.05,
             "adjustment": "SA"
           },
           "Information": {
@@ -2602,7 +2614,8 @@
               "2026-02",
               "2026-03",
               "2026-04",
-              "2026-05"
+              "2026-05",
+              "2026-06"
             ],
             "values": [
               2963.0,
@@ -2632,8 +2645,9 @@
               2815.0,
               2792.0,
               2793.0,
-              2785.0,
-              2783.0
+              2787.0,
+              2783.0,
+              2774.0
             ],
             "yoy_pct": [
               null,
@@ -2663,10 +2677,11 @@
               -2.16,
               -2.92,
               -2.58,
-              -2.79,
-              -2.83
+              -2.72,
+              -2.83,
+              -3.11
             ],
-            "latest_yoy": -2.83,
+            "latest_yoy": -3.11,
             "adjustment": "SA"
           },
           "Financial activities": {
@@ -2701,7 +2716,8 @@
               "2026-02",
               "2026-03",
               "2026-04",
-              "2026-05"
+              "2026-05",
+              "2026-06"
             ],
             "values": [
               9165.0,
@@ -2732,6 +2748,7 @@
               9149.0,
               9132.0,
               9126.0,
+              9104.0,
               9104.0
             ],
             "yoy_pct": [
@@ -2763,9 +2780,10 @@
               -0.54,
               -0.75,
               -0.86,
-              -1.16
+              -1.16,
+              -1.09
             ],
-            "latest_yoy": -1.16,
+            "latest_yoy": -1.09,
             "adjustment": "SA"
           },
           "Professional and business services": {
@@ -2800,7 +2818,8 @@
               "2026-02",
               "2026-03",
               "2026-04",
-              "2026-05"
+              "2026-05",
+              "2026-06"
             ],
             "values": [
               22668.0,
@@ -2830,8 +2849,9 @@
               22408.0,
               22412.0,
               22440.0,
-              22462.0,
-              22468.0
+              22460.0,
+              22471.0,
+              22507.0
             ],
             "yoy_pct": [
               null,
@@ -2862,9 +2882,10 @@
               -0.27,
               -0.08,
               -0.04,
-              0.08
+              0.09,
+              0.39
             ],
-            "latest_yoy": 0.08,
+            "latest_yoy": 0.39,
             "adjustment": "SA"
           },
           "Education and health services": {
@@ -2899,7 +2920,8 @@
               "2026-02",
               "2026-03",
               "2026-04",
-              "2026-05"
+              "2026-05",
+              "2026-06"
             ],
             "values": [
               26033.0,
@@ -2929,8 +2951,9 @@
               27746.0,
               27697.0,
               27792.0,
-              27846.0,
-              27886.0
+              27859.0,
+              27904.0,
+              27973.0
             ],
             "yoy_pct": [
               null,
@@ -2960,10 +2983,11 @@
               2.74,
               2.34,
               2.43,
-              2.31,
-              2.24
+              2.36,
+              2.3,
+              2.37
             ],
-            "latest_yoy": 2.24,
+            "latest_yoy": 2.37,
             "adjustment": "SA"
           },
           "Leisure and hospitality": {
@@ -2998,7 +3022,8 @@
               "2026-02",
               "2026-03",
               "2026-04",
-              "2026-05"
+              "2026-05",
+              "2026-06"
             ],
             "values": [
               16716.0,
@@ -3028,8 +3053,9 @@
               16966.0,
               16935.0,
               16979.0,
-              17009.0,
-              17079.0
+              16972.0,
+              17012.0,
+              16951.0
             ],
             "yoy_pct": [
               null,
@@ -3059,10 +3085,11 @@
               0.8,
               0.83,
               0.93,
+              0.81,
               1.03,
-              1.43
+              0.68
             ],
-            "latest_yoy": 1.43,
+            "latest_yoy": 0.68,
             "adjustment": "SA"
           },
           "Other services": {
@@ -3097,7 +3124,8 @@
               "2026-02",
               "2026-03",
               "2026-04",
-              "2026-05"
+              "2026-05",
+              "2026-06"
             ],
             "values": [
               5917.0,
@@ -3127,8 +3155,9 @@
               6026.0,
               6032.0,
               6018.0,
-              6027.0,
-              6030.0
+              6029.0,
+              6032.0,
+              6040.0
             ],
             "yoy_pct": [
               null,
@@ -3158,10 +3187,11 @@
               0.85,
               0.92,
               0.52,
-              0.67,
-              0.6
+              0.7,
+              0.63,
+              0.94
             ],
-            "latest_yoy": 0.6,
+            "latest_yoy": 0.94,
             "adjustment": "SA"
           },
           "Government": {
@@ -3196,7 +3226,8 @@
               "2026-02",
               "2026-03",
               "2026-04",
-              "2026-05"
+              "2026-05",
+              "2026-06"
             ],
             "values": [
               23140.0,
@@ -3226,8 +3257,9 @@
               23329.0,
               23321.0,
               23333.0,
-              23335.0,
-              23387.0
+              23331.0,
+              23363.0,
+              23371.0
             ],
             "yoy_pct": [
               null,
@@ -3257,10 +3289,11 @@
               -0.97,
               -1.01,
               -0.96,
-              -0.99,
-              -0.74
+              -1.01,
+              -0.84,
+              -0.91
             ],
-            "latest_yoy": -0.74,
+            "latest_yoy": -0.91,
             "adjustment": "SA"
           }
         }
@@ -4491,23 +4524,31 @@
       "source": "Census Business Dynamics Statistics (establishment entry rate, 2022); metro rate indexed to US=100"
     },
     "major_employers": {
-      "as_of": "2026-07-02",
+      "as_of": "2026-07-03",
       "employers": [
         {
           "name": "Shaw Industries",
-          "source_url": "https://en.wikipedia.org/wiki/Shaw_Industries"
+          "source_url": "https://www.ajc.com/sp/forever-chemicals"
+        },
+        {
+          "name": "Food City",
+          "source_url": "https://valdostadailytimes.com/2019/01/23/something-we-can-all-be-proud-of-food-city-opens-second-dalton-location"
         },
         {
           "name": "Mohawk Industries",
-          "source_url": "https://georgia.org/sites/default/files/2021-04/logistics_education_report.pdf"
+          "source_url": null
         },
         {
-          "name": "Carpet Capital",
-          "source_url": "https://en.wikipedia.org/wiki/Dalton,_Georgia"
+          "name": "Whitfield County School District",
+          "source_url": null
         },
         {
           "name": "Manufacturing",
           "source_url": "https://www.bizjournals.com/atlanta/news/2023/06/29/solar-workforce-qcells-dalton-georgia.html"
+        },
+        {
+          "name": "Dalton City School System",
+          "source_url": null
         },
         {
           "name": "Dalton Public Schools",
@@ -4522,43 +4563,35 @@
           "source_url": "https://www.ajc.com/business/georgia-best-employers-for-2019-according-forbes/97QBCslwnyl3Ob4ujTmnLK"
         },
         {
-          "name": "Whitfield County School System",
-          "source_url": null
+          "name": "Georgia State University",
+          "source_url": "https://georgia.org/sites/default/files/2021-04/logistics_education_report.pdf"
         },
         {
           "name": "CELLS America Inc",
           "source_url": "https://www.bizjournals.com/atlanta/news/2023/06/29/solar-workforce-qcells-dalton-georgia.html"
         },
         {
-          "name": "Dalton State College",
-          "source_url": "https://valdostadailytimes.com/2017/09/11/questions-and-answers-with-shaw-industries-ceo-vance-bell"
+          "name": "Dalton-Whitfield Joint Development Authority",
+          "source_url": "https://www.augustachronicle.com/story/news/2021/07/27/how-ga-potential-economic-agreements-impact-jobs-pay/7964894002"
         },
         {
-          "name": "Flooring",
-          "source_url": "https://georgia.org/sites/default/files/2023-01/engineered_floors.pdf"
+          "name": "Georgia Power",
+          "source_url": "https://valdostadailytimes.com/2019/01/23/something-we-can-all-be-proud-of-food-city-opens-second-dalton-location"
         },
         {
-          "name": "Genuine Parts Co",
+          "name": "Georgia Southwestern State University",
           "source_url": "https://georgia.org/sites/default/files/2021-04/logistics_education_report.pdf"
-        },
-        {
-          "name": "Georgia Northwestern Technical College",
-          "source_url": "https://valdostadailytimes.com/2017/09/11/questions-and-answers-with-shaw-industries-ceo-vance-bell"
-        },
-        {
-          "name": "Group",
-          "source_url": "https://www.ajc.com/business/dalton-augusta-worst-for-job-losses-lately/qWPbpKazCnZFJtn1Kel1RM"
         }
       ],
       "sources": [
-        "https://en.wikipedia.org/wiki/Dalton,_Georgia",
-        "https://www.bizjournals.com/atlanta/news/2023/06/29/solar-workforce-qcells-dalton-georgia.html",
-        "https://en.wikipedia.org/wiki/Shaw_Industries",
-        "https://valdostadailytimes.com/2017/09/11/questions-and-answers-with-shaw-industries-ceo-vance-bell",
         "https://www.ajc.com/business/georgia-best-employers-for-2019-according-forbes/97QBCslwnyl3Ob4ujTmnLK",
+        "https://www.ajc.com/sp/forever-chemicals",
+        "https://en.wikipedia.org/wiki/Shaw_Industries",
+        "https://valdostadailytimes.com/2019/01/23/something-we-can-all-be-proud-of-food-city-opens-second-dalton-location",
+        "https://georgia.org/sites/default/files/2019-08/gdecd_board_book_q2_feb.pdf",
         "https://georgia.org/sites/default/files/2021-04/logistics_education_report.pdf",
-        "https://www.bizjournals.com/atlanta/news/2024/11/22/manufacturing-industry-workforce-shortage.html",
-        "https://georgia.org/sites/default/files/2023-01/engineered_floors.pdf"
+        "https://www.bizjournals.com/atlanta/news/2023/06/29/solar-workforce-qcells-dalton-georgia.html",
+        "https://www.augustachronicle.com/story/news/2021/07/27/how-ga-potential-economic-agreements-impact-jobs-pay/7964894002"
       ],
       "method": "Representative list auto-discovered via Tavily web search across chamber-of-commerce, development-authority and local-news sources. Not exhaustive; ordering approximates source frequency, not headcount."
     },

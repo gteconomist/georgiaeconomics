@@ -3,7 +3,7 @@
   "short_name": "Hinesville",
   "full_name": "Hinesville, GA",
   "population": 78000,
-  "as_of": "2026-07-02",
+  "as_of": "2026-07-03",
   "sections": {
     "ces_employment": {
       "series_id": "SMS13259800000000001",
@@ -1711,7 +1711,8 @@
               "2026-02",
               "2026-03",
               "2026-04",
-              "2026-05"
+              "2026-05",
+              "2026-06"
             ],
             "values": [
               633.0,
@@ -1741,8 +1742,9 @@
               602.0,
               601.0,
               604.0,
-              609.0,
-              613.0
+              608.0,
+              611.0,
+              607.0
             ],
             "yoy_pct": [
               null,
@@ -1772,10 +1774,11 @@
               -3.22,
               -3.38,
               -2.58,
-              -2.09,
-              -0.81
+              -2.25,
+              -1.13,
+              -1.46
             ],
-            "latest_yoy": -0.81,
+            "latest_yoy": -1.46,
             "adjustment": "SA"
           },
           "Construction": {
@@ -1810,7 +1813,8 @@
               "2026-02",
               "2026-03",
               "2026-04",
-              "2026-05"
+              "2026-05",
+              "2026-06"
             ],
             "values": [
               8123.0,
@@ -1840,8 +1844,9 @@
               8317.0,
               8296.0,
               8311.0,
+              8314.0,
               8320.0,
-              8337.0
+              8331.0
             ],
             "yoy_pct": [
               null,
@@ -1871,10 +1876,11 @@
               0.64,
               0.35,
               0.46,
-              0.59,
-              0.82
+              0.52,
+              0.62,
+              0.77
             ],
-            "latest_yoy": 0.82,
+            "latest_yoy": 0.77,
             "adjustment": "SA"
           },
           "Manufacturing": {
@@ -1909,7 +1915,8 @@
               "2026-02",
               "2026-03",
               "2026-04",
-              "2026-05"
+              "2026-05",
+              "2026-06"
             ],
             "values": [
               12875.0,
@@ -1939,8 +1946,9 @@
               12582.0,
               12583.0,
               12598.0,
-              12598.0,
-              12605.0
+              12597.0,
+              12595.0,
+              12598.0
             ],
             "yoy_pct": [
               null,
@@ -1971,9 +1979,10 @@
               -0.69,
               -0.54,
               -0.51,
-              -0.36
+              -0.44,
+              -0.3
             ],
-            "latest_yoy": -0.36,
+            "latest_yoy": -0.3,
             "adjustment": "SA"
           },
           "Trade, transportation, and utilities": {
@@ -2008,7 +2017,8 @@
               "2026-02",
               "2026-03",
               "2026-04",
-              "2026-05"
+              "2026-05",
+              "2026-06"
             ],
             "values": [
               28799.0,
@@ -2038,8 +2048,9 @@
               28654.0,
               28618.0,
               28650.0,
-              28712.0,
-              28709.0
+              28715.0,
+              28732.0,
+              28728.0
             ],
             "yoy_pct": [
               null,
@@ -2069,10 +2080,11 @@
               -0.49,
               -0.65,
               -0.49,
-              -0.25,
-              -0.19
+              -0.24,
+              -0.11,
+              -0.05
             ],
-            "latest_yoy": -0.19,
+            "latest_yoy": -0.05,
             "adjustment": "SA"
           },
           "Information": {
@@ -2107,7 +2119,8 @@
               "2026-02",
               "2026-03",
               "2026-04",
-              "2026-05"
+              "2026-05",
+              "2026-06"
             ],
             "values": [
               2963.0,
@@ -2137,8 +2150,9 @@
               2815.0,
               2792.0,
               2793.0,
-              2785.0,
-              2783.0
+              2787.0,
+              2783.0,
+              2774.0
             ],
             "yoy_pct": [
               null,
@@ -2168,10 +2182,11 @@
               -2.16,
               -2.92,
               -2.58,
-              -2.79,
-              -2.83
+              -2.72,
+              -2.83,
+              -3.11
             ],
-            "latest_yoy": -2.83,
+            "latest_yoy": -3.11,
             "adjustment": "SA"
           },
           "Financial activities": {
@@ -2206,7 +2221,8 @@
               "2026-02",
               "2026-03",
               "2026-04",
-              "2026-05"
+              "2026-05",
+              "2026-06"
             ],
             "values": [
               9165.0,
@@ -2237,6 +2253,7 @@
               9149.0,
               9132.0,
               9126.0,
+              9104.0,
               9104.0
             ],
             "yoy_pct": [
@@ -2268,9 +2285,10 @@
               -0.54,
               -0.75,
               -0.86,
-              -1.16
+              -1.16,
+              -1.09
             ],
-            "latest_yoy": -1.16,
+            "latest_yoy": -1.09,
             "adjustment": "SA"
           },
           "Professional and business services": {
@@ -2305,7 +2323,8 @@
               "2026-02",
               "2026-03",
               "2026-04",
-              "2026-05"
+              "2026-05",
+              "2026-06"
             ],
             "values": [
               22668.0,
@@ -2335,8 +2354,9 @@
               22408.0,
               22412.0,
               22440.0,
-              22462.0,
-              22468.0
+              22460.0,
+              22471.0,
+              22507.0
             ],
             "yoy_pct": [
               null,
@@ -2367,9 +2387,10 @@
               -0.27,
               -0.08,
               -0.04,
-              0.08
+              0.09,
+              0.39
             ],
-            "latest_yoy": 0.08,
+            "latest_yoy": 0.39,
             "adjustment": "SA"
           },
           "Education and health services": {
@@ -2404,7 +2425,8 @@
               "2026-02",
               "2026-03",
               "2026-04",
-              "2026-05"
+              "2026-05",
+              "2026-06"
             ],
             "values": [
               26033.0,
@@ -2434,8 +2456,9 @@
               27746.0,
               27697.0,
               27792.0,
-              27846.0,
-              27886.0
+              27859.0,
+              27904.0,
+              27973.0
             ],
             "yoy_pct": [
               null,
@@ -2465,10 +2488,11 @@
               2.74,
               2.34,
               2.43,
-              2.31,
-              2.24
+              2.36,
+              2.3,
+              2.37
             ],
-            "latest_yoy": 2.24,
+            "latest_yoy": 2.37,
             "adjustment": "SA"
           },
           "Leisure and hospitality": {
@@ -2503,7 +2527,8 @@
               "2026-02",
               "2026-03",
               "2026-04",
-              "2026-05"
+              "2026-05",
+              "2026-06"
             ],
             "values": [
               16716.0,
@@ -2533,8 +2558,9 @@
               16966.0,
               16935.0,
               16979.0,
-              17009.0,
-              17079.0
+              16972.0,
+              17012.0,
+              16951.0
             ],
             "yoy_pct": [
               null,
@@ -2564,10 +2590,11 @@
               0.8,
               0.83,
               0.93,
+              0.81,
               1.03,
-              1.43
+              0.68
             ],
-            "latest_yoy": 1.43,
+            "latest_yoy": 0.68,
             "adjustment": "SA"
           },
           "Other services": {
@@ -2602,7 +2629,8 @@
               "2026-02",
               "2026-03",
               "2026-04",
-              "2026-05"
+              "2026-05",
+              "2026-06"
             ],
             "values": [
               5917.0,
@@ -2632,8 +2660,9 @@
               6026.0,
               6032.0,
               6018.0,
-              6027.0,
-              6030.0
+              6029.0,
+              6032.0,
+              6040.0
             ],
             "yoy_pct": [
               null,
@@ -2663,10 +2692,11 @@
               0.85,
               0.92,
               0.52,
-              0.67,
-              0.6
+              0.7,
+              0.63,
+              0.94
             ],
-            "latest_yoy": 0.6,
+            "latest_yoy": 0.94,
             "adjustment": "SA"
           },
           "Government": {
@@ -2701,7 +2731,8 @@
               "2026-02",
               "2026-03",
               "2026-04",
-              "2026-05"
+              "2026-05",
+              "2026-06"
             ],
             "values": [
               23140.0,
@@ -2731,8 +2762,9 @@
               23329.0,
               23321.0,
               23333.0,
-              23335.0,
-              23387.0
+              23331.0,
+              23363.0,
+              23371.0
             ],
             "yoy_pct": [
               null,
@@ -2762,10 +2794,11 @@
               -0.97,
               -1.01,
               -0.96,
-              -0.99,
-              -0.74
+              -1.01,
+              -0.84,
+              -0.91
             ],
-            "latest_yoy": -0.74,
+            "latest_yoy": -0.91,
             "adjustment": "SA"
           }
         }
@@ -3949,30 +3982,18 @@
       "source": "Census Business Dynamics Statistics (establishment entry rate, 2022); metro rate indexed to US=100"
     },
     "major_employers": {
-      "as_of": "2026-07-02",
+      "as_of": "2026-07-03",
       "employers": [
         {
-          "name": "View All Industries",
-          "source_url": "https://georgia.org/hyundai-motor-group-metaplant-america"
-        },
-        {
-          "name": "Explore Georgia's Leading Industries",
-          "source_url": "https://georgia.org/hyundai-motor-group-metaplant-america"
+          "name": "Hinesville Medical Center",
+          "source_url": null
         },
         {
           "name": "Liberty County School System",
           "source_url": null
         },
         {
-          "name": "Liberty Regional Medical Center",
-          "source_url": null
-        },
-        {
-          "name": "Ro Port",
-          "source_url": "https://georgia.org"
-        },
-        {
-          "name": "Aerospace",
+          "name": "View All Industries",
           "source_url": "https://georgia.org/hyundai-motor-group-metaplant-america"
         },
         {
@@ -3980,8 +4001,32 @@
           "source_url": "https://georgia.org/hyundai-motor-group-metaplant-america"
         },
         {
+          "name": "Explore Georgia's Leading Industries",
+          "source_url": "https://georgia.org/hyundai-motor-group-metaplant-america"
+        },
+        {
+          "name": "Ro Port",
+          "source_url": "https://georgia.org"
+        },
+        {
+          "name": "Advanced Manufacturing",
+          "source_url": "https://properties.selectgeorgia.com/target_industries_app/dist/index.html"
+        },
+        {
+          "name": "Aerospace",
+          "source_url": "https://georgia.org/hyundai-motor-group-metaplant-america"
+        },
+        {
+          "name": "International Auto Logistics",
+          "source_url": "https://www.savannahnow.com/story/business/2014/07/15/business-savannah-news-summary/13962793007"
+        },
+        {
           "name": "Automotive",
           "source_url": "https://georgia.org/hyundai-motor-group-metaplant-america"
+        },
+        {
+          "name": "Company",
+          "source_url": "https://properties.selectgeorgia.com/target_industries_app/dist/index.html"
         },
         {
           "name": "Food Processing",
@@ -3994,29 +4039,17 @@
         {
           "name": "Greenfield LLC",
           "source_url": "https://georgia.org/business-support/small-business"
-        },
-        {
-          "name": "Hinesville Hospital",
-          "source_url": null
-        },
-        {
-          "name": "Hinesville Medical Center",
-          "source_url": null
-        },
-        {
-          "name": "InnoTek LLC",
-          "source_url": "https://georgia.org/business-support/small-business"
         }
       ],
       "sources": [
-        "https://en.wikipedia.org/wiki/Metropolitan_statistical_area",
         "https://www.selectgeorgia.com/blog/georgia-southern-innovation-group",
         "https://georgia.org/hyundai-motor-group-metaplant-america",
         "https://georgia.org",
-        "https://georgia.org/sites/default/files/2020-08/georgia_safety_promise-8-27.pdf",
+        "https://www.savannahnow.com/story/business/2014/07/15/business-savannah-news-summary/13962793007",
         "https://georgia.org/business-support/small-business",
         "https://georgia.org/sites/default/files/2018-11/gdecd_board_book_-_5-23-18.pdf",
-        "https://www.savannahnow.com/story/news/2009/02/13/jobless-claims-up-39-percent/13746010007"
+        "https://www.savannahnow.com/story/news/2009/02/13/jobless-claims-up-39-percent/13746010007",
+        "https://properties.selectgeorgia.com/target_industries_app/dist/index.html"
       ],
       "method": "Representative list auto-discovered via Tavily web search across chamber-of-commerce, development-authority and local-news sources. Not exhaustive; ordering approximates source frequency, not headcount."
     },
