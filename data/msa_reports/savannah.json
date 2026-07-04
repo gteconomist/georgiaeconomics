@@ -3,7 +3,7 @@
   "short_name": "Savannah",
   "full_name": "Savannah, GA",
   "population": 410000,
-  "as_of": "2026-07-03",
+  "as_of": "2026-07-04",
   "sections": {
     "ces_employment": {
       "series_id": "SMS13423400000000001",
@@ -5152,74 +5152,74 @@
       "source": "Census Business Dynamics Statistics (establishment entry rate, 2022); metro rate indexed to US=100"
     },
     "major_employers": {
-      "as_of": "2026-07-03",
+      "as_of": "2026-07-04",
       "employers": [
         {
           "name": "Children's Healthcare of Atlanta",
-          "source_url": "https://www.savannahnow.com/story/news/2026/02/24/forbes-ranked-2-georgia-businesses-among-top-50-large-employers-in-us/88828522007"
+          "source_url": "https://www.onlineathens.com/story/news/2026/03/04/georgias-best-employers-are-these-2-big-businesses-forbes-says/88982542007"
         },
         {
           "name": "Gulfstream Aerospace",
           "source_url": "https://en.wikipedia.org/wiki/Category:Companies_based_in_Savannah,_Georgia"
         },
         {
-          "name": "Digital Marketing Solutions",
-          "source_url": "https://www.savannahnow.com/story/news/2026/02/24/forbes-ranked-2-georgia-businesses-among-top-50-large-employers-in-us/88828522007"
-        },
-        {
           "name": "Georgia Ports Authority",
           "source_url": "https://www.savannahnow.com/story/news/local/2026/05/10/savannahs-state-of-small-business-shows-growth-opportunities/89997038007"
-        },
-        {
-          "name": "Chatham County School District",
-          "source_url": null
-        },
-        {
-          "name": "Memorial Health University Medical Center",
-          "source_url": null
-        },
-        {
-          "name": "Savannah State University",
-          "source_url": null
-        },
-        {
-          "name": "Georgia Southern University",
-          "source_url": "https://www.selectgeorgia.com/blog/welcome-seapoint-industrial-site-savannah-ga"
         },
         {
           "name": "Hyundai Motor Group",
           "source_url": "https://www.savannahnow.com/story/news/local/2026/05/10/savannahs-state-of-small-business-shows-growth-opportunities/89997038007"
         },
         {
+          "name": "Logistics",
+          "source_url": "https://www.selectgeorgia.com/yourgeorgia/why-savannah-HQ/gateway-world"
+        },
+        {
           "name": "Metaplant America",
           "source_url": "https://www.savannahnow.com/story/news/local/2026/05/10/savannahs-state-of-small-business-shows-growth-opportunities/89997038007"
+        },
+        {
+          "name": "Port of Savannah",
+          "source_url": "https://www.selectgeorgia.com/yourgeorgia/why-savannah-HQ/gateway-world"
         },
         {
           "name": "Baptist Health System",
           "source_url": null
         },
         {
-          "name": "Chatham County Public Schools",
+          "name": "Chatham County School System",
           "source_url": null
         },
         {
-          "name": "Food Processing",
-          "source_url": "https://www.selectgeorgia.com/discover-georgia/industries/fortune-500-list"
+          "name": "Digital Marketing Solutions",
+          "source_url": "https://www.savannahnow.com/story/business/2013/02/19/understanding-purpose-savannah-chamber/13655438007"
         },
         {
-          "name": "Forsyth County School District",
-          "source_url": "https://www.savannahnow.com/story/news/2026/02/24/forbes-ranked-2-georgia-businesses-among-top-50-large-employers-in-us/88828522007"
+          "name": "Georgia Power",
+          "source_url": "https://georgia.org/sites/default/files/2025-05/coil_technology_ecosystem_report_2025.pdf"
+        },
+        {
+          "name": "Greenfield LLC",
+          "source_url": "https://georgia.org/business-support/small-business"
+        },
+        {
+          "name": "InnoTek LLC",
+          "source_url": "https://georgia.org/business-support/small-business"
+        },
+        {
+          "name": "Memorial Health System",
+          "source_url": null
         }
       ],
       "sources": [
-        "https://www.selectgeorgia.com/blog/welcome-seapoint-industrial-site-savannah-ga",
+        "https://www.selectgeorgia.com/yourgeorgia/why-savannah-HQ/gateway-world",
+        "https://georgia.org/sites/default/files/2025-05/coil_technology_ecosystem_report_2025.pdf",
         "https://en.wikipedia.org/wiki/Category:Companies_based_in_Savannah,_Georgia",
-        "https://www.ajc.com/business/georgia-best-employers-for-2019-according-forbes/97QBCslwnyl3Ob4ujTmnLK",
-        "https://www.savannahnow.com/story/news/2026/02/24/forbes-ranked-2-georgia-businesses-among-top-50-large-employers-in-us/88828522007",
-        "https://www.selectgeorgia.com/discover-georgia/industries/fortune-500-list",
+        "https://www.selectgeorgia.com/yourgeorgia/why-savannah-HQ/more-bang-less-buck",
+        "https://georgia.org",
+        "https://georgia.org/center-of-innovation/jobs-and-investment-georgia-increase-2010",
         "https://www.savannahnow.com/story/news/2016/07/08/garden-city-police-department-savannah-firms-make-best-places-work-georgia-list/13921419007",
-        "https://www.savannahnow.com/story/business/2012/10/30/business-savannah-business-roundup/13816314007",
-        "https://www.savannahnow.com/story/news/local/2026/05/10/savannahs-state-of-small-business-shows-growth-opportunities/89997038007"
+        "https://www.savannahnow.com/story/business/2012/10/30/business-savannah-business-roundup/13816314007"
       ],
       "method": "Representative list auto-discovered via Tavily web search across chamber-of-commerce, development-authority and local-news sources. Not exhaustive; ordering approximates source frequency, not headcount."
     },

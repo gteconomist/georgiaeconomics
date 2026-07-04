@@ -3,7 +3,7 @@
   "short_name": "Valdosta",
   "full_name": "Valdosta, GA",
   "population": 148000,
-  "as_of": "2026-07-03",
+  "as_of": "2026-07-04",
   "sections": {
     "ces_employment": {
       "series_id": "SMS13466600000000001",
@@ -4180,39 +4180,39 @@
       "source": "Census Business Dynamics Statistics (establishment entry rate, 2022); metro rate indexed to US=100"
     },
     "major_employers": {
-      "as_of": "2026-07-03",
+      "as_of": "2026-07-04",
       "employers": [
         {
-          "name": "Berry Global Manufacturing",
-          "source_url": "https://www.selectgeorgia.com/blog/rural-transformation/one-valdosta-lowndes-interview"
+          "name": "Valdosta State University",
+          "source_url": "https://en.wikipedia.org/wiki/Valdosta_metropolitan_area"
         },
         {
           "name": "Stratas Foods",
           "source_url": "https://www.selectgeorgia.com/blog/rural-transformation/one-valdosta-lowndes-interview"
         },
         {
-          "name": "Valdosta State University",
-          "source_url": "https://en.wikipedia.org/wiki/Valdosta_metropolitan_area"
-        },
-        {
-          "name": "South Georgia Medical Center",
-          "source_url": "https://valdostadailytimes.com/2014/05/07/chamber-names-world-class-employees-2"
+          "name": "Berry Global Manufacturing",
+          "source_url": "https://www.selectgeorgia.com/blog/rural-transformation/one-valdosta-lowndes-interview"
         },
         {
           "name": "ACE Electric",
           "source_url": "https://www.selectgeorgia.com/blog/rural-transformation/one-valdosta-lowndes-interview"
         },
         {
-          "name": "Smith Drug Company",
-          "source_url": "https://valdostadailytimes.com/2014/05/07/chamber-names-world-class-employees-2"
+          "name": "South Georgia Medical Center",
+          "source_url": null
         },
         {
           "name": "Sunset Farm Foods",
           "source_url": "https://valdostadailytimes.com/2021/03/05/chamber-presents-annual-awards"
         },
         {
-          "name": "CBJ Industries",
-          "source_url": "https://valdostadailytimes.com/2014/05/07/chamber-names-world-class-employees-2"
+          "name": "The Scruggs Company",
+          "source_url": "https://valdostadailytimes.com/2014/06/24/scruggs-named-leading-business-of-the-week"
+        },
+        {
+          "name": "Renasant Bank",
+          "source_url": "https://valdostadailytimes.com/2021/03/05/chamber-presents-annual-awards"
         },
         {
           "name": "Career Academy",
@@ -4223,31 +4223,31 @@
           "source_url": "https://www.selectgeorgia.com/blog/rural-transformation/one-valdosta-lowndes-interview"
         },
         {
-          "name": "Distribution",
-          "source_url": "https://valdostadailytimes.com/2014/05/07/chamber-names-world-class-employees-2"
-        },
-        {
-          "name": "Renasant Bank",
-          "source_url": "https://valdostadailytimes.com/2021/03/05/chamber-presents-annual-awards"
-        },
-        {
-          "name": "Azalea Health",
-          "source_url": "https://valdostadailytimes.com/2014/05/07/chamber-names-world-class-employees-2"
+          "name": "Marcotek Digital Office Solutions",
+          "source_url": "https://valdostadailytimes.com/2019/01/20/business-briefs-122"
         },
         {
           "name": "Mayo Health Clinic",
           "source_url": null
+        },
+        {
+          "name": "New Hire Solutions",
+          "source_url": "https://valdostadailytimes.com/2014/06/24/scruggs-named-leading-business-of-the-week"
+        },
+        {
+          "name": "Rayonier Inc",
+          "source_url": "https://jobs.valdostadailytimes.com/employers"
         }
       ],
       "sources": [
         "https://en.wikipedia.org/wiki/Valdosta_metropolitan_area",
         "https://www.selectgeorgia.com/blog/rural-transformation/one-valdosta-lowndes-interview",
         "https://valdostadailytimes.com/2026/02/23/gary-wisenbaker-data-centers-whats-good-for-the-goose-is-good-for-the-gander",
-        "https://georgia.org/sites/default/files/2025-05/coil_technology_ecosystem_report_2025.pdf",
-        "https://valdostadailytimes.com/2021/03/05/chamber-presents-annual-awards",
-        "https://valdostadailytimes.com/2019/07/19/valdosta-dry-cleaners-leading-business",
-        "https://valdostadailytimes.com/2014/05/07/chamber-names-world-class-employees-2",
-        "https://valdostadailytimes.com/2017/06/18/business-briefs-53"
+        "https://valdostadailytimes.com/2015/09/13/finding-the-competitive-edge",
+        "https://www.selectgeorgia.com/blog/locations-and-expansions/georgia-2023-growth",
+        "https://valdostadailytimes.com/2019/01/20/business-briefs-122",
+        "https://valdostadailytimes.com/2019/06/23/business-briefs-135",
+        "https://valdostadailytimes.com/2014/06/24/scruggs-named-leading-business-of-the-week"
       ],
       "method": "Representative list auto-discovered via Tavily web search across chamber-of-commerce, development-authority and local-news sources. Not exhaustive; ordering approximates source frequency, not headcount."
     },

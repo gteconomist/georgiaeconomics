@@ -3,7 +3,7 @@
   "short_name": "Macon",
   "full_name": "Macon-Bibb County, GA",
   "population": 232000,
-  "as_of": "2026-07-03",
+  "as_of": "2026-07-04",
   "sections": {
     "ces_employment": {
       "series_id": "SMS13314200000000001",
@@ -5072,7 +5072,7 @@
       "source": "Census Business Dynamics Statistics (establishment entry rate, 2022); metro rate indexed to US=100"
     },
     "major_employers": {
-      "as_of": "2026-07-03",
+      "as_of": "2026-07-04",
       "employers": [
         {
           "name": "Mercer University",
@@ -5091,6 +5091,14 @@
           "source_url": "https://www.macon.com/living/article300278809.html"
         },
         {
+          "name": "Navicent Health",
+          "source_url": "https://www.macon.com/news/local/article235905642.html"
+        },
+        {
+          "name": "Aerospace",
+          "source_url": "https://georgia.org/press-releases/2026/georgia-based-unified-legacy-create-500-new-jobs-macon-bibb-county"
+        },
+        {
           "name": "Armstrong World Industries",
           "source_url": "https://www.macon.com/news/local/article235905642.html"
         },
@@ -5099,47 +5107,39 @@
           "source_url": "https://www.macon.com/news/local/article235905642.html"
         },
         {
-          "name": "Blue Bird Corporation",
-          "source_url": "https://en.wikipedia.org/wiki/Central_Georgia"
-        },
-        {
           "name": "Distribution Company of Georgia",
           "source_url": "https://www.macon.com/news/local/article235905642.html"
-        },
-        {
-          "name": "Forsyth County School District",
-          "source_url": "https://www.macon.com/living/article300278809.html"
         },
         {
           "name": "Manufacturing",
           "source_url": "https://georgia.org/press-releases/2026/georgia-based-unified-legacy-create-500-new-jobs-macon-bibb-county"
         },
         {
-          "name": "Southern Company",
-          "source_url": "https://www.macon.com/living/article300278809.html"
+          "name": "Tile Company",
+          "source_url": "https://www.macon.com/news/local/article235905642.html"
         },
         {
           "name": "Tractor Supply Company",
           "source_url": "https://www.macon.com/news/local/article235905642.html"
         },
         {
-          "name": "Wesleyan College",
-          "source_url": "https://www.macon.com/news/local/article314818813.html"
+          "name": "YKK Corporation of America",
+          "source_url": "https://www.macon.com/news/local/article235905642.html"
         },
         {
-          "name": "Aerospace",
-          "source_url": "https://georgia.org/press-releases/2026/georgia-based-unified-legacy-create-500-new-jobs-macon-bibb-county"
+          "name": "Atrium Health Navicent Medical Center",
+          "source_url": null
         }
       ],
       "sources": [
         "https://en.wikipedia.org/wiki/Macon,_Georgia",
         "https://www.macon.com/living/article300278809.html",
-        "https://www.macon.com/news/local/article314818813.html",
+        "https://www.macon.com/news/local/article280753115.html",
         "https://www.macon.com/news/business/article258547393.html",
         "https://www.macon.com/news/local/article312115475.html",
         "https://en.wikipedia.org/wiki/Central_Georgia",
         "https://www.macon.com/news/local/article235905642.html",
-        "https://www.macon.com/news/business/article254311083.html"
+        "https://www.macon.com/news/local/article249660958.html"
       ],
       "method": "Representative list auto-discovered via Tavily web search across chamber-of-commerce, development-authority and local-news sources. Not exhaustive; ordering approximates source frequency, not headcount."
     },

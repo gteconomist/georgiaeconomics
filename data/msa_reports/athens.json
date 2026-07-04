@@ -3,7 +3,7 @@
   "short_name": "Athens",
   "full_name": "Athens-Clarke County, GA",
   "population": 217000,
-  "as_of": "2026-07-03",
+  "as_of": "2026-07-04",
   "sections": {
     "ces_employment": {
       "series_id": "SMS13120200000000001",
@@ -5081,7 +5081,7 @@
       "source": "Census Business Dynamics Statistics (establishment entry rate, 2022); metro rate indexed to US=100"
     },
     "major_employers": {
-      "as_of": "2026-07-03",
+      "as_of": "2026-07-04",
       "employers": [
         {
           "name": "University of Georgia",
@@ -5092,63 +5092,63 @@
           "source_url": null
         },
         {
-          "name": "Janssen Pharmaceuticals",
-          "source_url": "https://en.wikipedia.org/wiki/Athens,_Georgia"
+          "name": "Logistics",
+          "source_url": "https://georgia.org/why-georgia"
         },
         {
-          "name": "RWDC Industries",
-          "source_url": "https://en.wikipedia.org/wiki/Athens,_Georgia"
+          "name": "Piedmont Athens Regional Medical Center",
+          "source_url": null
         },
         {
           "name": "Children's Healthcare of Atlanta",
           "source_url": "https://www.onlineathens.com/story/news/2026/03/04/georgias-best-employers-are-these-2-big-businesses-forbes-says/88982542007"
         },
         {
-          "name": "Athens Regional Medical Center",
-          "source_url": null
+          "name": "Greenfield LLC",
+          "source_url": "https://georgia.org/business-support/small-business"
         },
         {
-          "name": "Hyundai Motor Group",
-          "source_url": "https://georgia.org/sites/default/files/2022-08/fy22q4_board_book_-_22admin204_1.pdf"
+          "name": "InnoTek LLC",
+          "source_url": "https://georgia.org/business-support/small-business"
+        },
+        {
+          "name": "Muscadine Products Corporation",
+          "source_url": "https://georgia.org/business-support/small-business"
+        },
+        {
+          "name": "Food",
+          "source_url": "https://georgia.org/sites/default/files/2020-08/georgia_safety_promise-8-27.pdf"
+        },
+        {
+          "name": "Georgia Power",
+          "source_url": "https://www.onlineathens.com/story/business/2014/07/26/terrell-athens-chamber-focusing-members-and-partnerships-2014/15524196007"
+        },
+        {
+          "name": "Insurance",
+          "source_url": "https://georgia.org/sites/default/files/2020-08/georgia_safety_promise-8-27.pdf"
+        },
+        {
+          "name": "Janssen Pharmaceuticals",
+          "source_url": "https://en.wikipedia.org/wiki/Athens,_Georgia"
         },
         {
           "name": "Peachtree Medical Billing",
           "source_url": "https://en.wikipedia.org/wiki/Athens,_Georgia"
         },
         {
-          "name": "Piedmont Healthcare",
-          "source_url": null
-        },
-        {
-          "name": "Athens Technical College Augusta University Piedmont",
+          "name": "RWDC Industries",
           "source_url": "https://en.wikipedia.org/wiki/Athens,_Georgia"
-        },
-        {
-          "name": "Barberitos Creature Comforts Brewing Co. Fire",
-          "source_url": "https://en.wikipedia.org/wiki/Athens,_Georgia"
-        },
-        {
-          "name": "Blue Bird Corporation",
-          "source_url": null
-        },
-        {
-          "name": "Dress Boutique Terrapin Beer Company Wuxtry",
-          "source_url": "https://en.wikipedia.org/wiki/Athens,_Georgia"
-        },
-        {
-          "name": "Electric Owl Studios",
-          "source_url": "https://georgia.org/sites/default/files/2022-05/fy22q3_board_book.pdf"
         }
       ],
       "sources": [
         "https://en.wikipedia.org/wiki/Athens,_Georgia",
         "https://www.onlineathens.com/story/news/2026/03/04/georgias-best-employers-are-these-2-big-businesses-forbes-says/88982542007",
-        "https://www.augustachronicle.com/story/news/2025/06/04/fortune-500s-list-of-the-biggest-corporations-includes-17-in-georgia/84010835007",
-        "https://www.ajc.com/top-workplaces/rounding-out-the-top-5-large-businesses/5FF7QFEAMRGF3PLDXYSC4NOFWQ",
-        "https://www.onlineathens.com/story/business/2018/06/25/athens-chamber-commerce-names-north/1772620007",
+        "https://georgia.org/why-georgia",
         "https://georgia.org/business-support/small-business",
-        "https://georgia.org/sites/default/files/2022-08/fy22q4_board_book_-_22admin204_1.pdf",
-        "https://georgia.org/sites/default/files/2022-05/fy22q3_board_book.pdf"
+        "https://www.ajc.com/top-workplaces/rounding-out-the-top-5-large-businesses/5FF7QFEAMRGF3PLDXYSC4NOFWQ",
+        "https://georgia.org/sites/default/files/2020-08/georgia_safety_promise-8-27.pdf",
+        "https://www.onlineathens.com/story/business/2014/07/26/terrell-athens-chamber-focusing-members-and-partnerships-2014/15524196007",
+        "https://www.onlineathens.com/story/business/2018/06/25/athens-chamber-commerce-names-north/1772620007"
       ],
       "method": "Representative list auto-discovered via Tavily web search across chamber-of-commerce, development-authority and local-news sources. Not exhaustive; ordering approximates source frequency, not headcount."
     },

@@ -3,7 +3,7 @@
   "short_name": "Rome",
   "full_name": "Rome, GA",
   "population": 99000,
-  "as_of": "2026-07-03",
+  "as_of": "2026-07-04",
   "sections": {
     "ces_employment": {
       "series_id": "SMS13406600000000001",
@@ -4429,7 +4429,7 @@
       "source": "Census Business Dynamics Statistics (establishment entry rate, 2022); metro rate indexed to US=100"
     },
     "major_employers": {
-      "as_of": "2026-07-03",
+      "as_of": "2026-07-04",
       "employers": [
         {
           "name": "F&P Plant",
@@ -4440,20 +4440,12 @@
           "source_url": "https://www.bizjournals.com/atlanta/news/2021/02/11/ball-corp-rome-ga-made-aluminum-cups-launch.html"
         },
         {
-          "name": "Floyd Medical Center",
+          "name": "Kerry Group",
           "source_url": "https://en.wikipedia.org/wiki/Rome,_Georgia"
         },
         {
           "name": "Mills Fitzner",
           "source_url": "https://www.northwestgeorgianews.com/rome/news/local/getting-down-to-business-chamber-hosts-annual-meeting-at-forum/article_2c292d95-89c6-4cb2-8950-81f981fc7218.html"
-        },
-        {
-          "name": "Harbin Clinic",
-          "source_url": "https://en.wikipedia.org/wiki/Rome,_Georgia"
-        },
-        {
-          "name": "Redmond Regional Medical Center",
-          "source_url": "https://en.wikipedia.org/wiki/Rome,_Georgia"
         },
         {
           "name": "State Mutual Insurance Company",
@@ -4464,20 +4456,20 @@
           "source_url": "https://en.wikipedia.org/wiki/Rome,_Georgia"
         },
         {
-          "name": "Atrium Health Floyd",
-          "source_url": "https://en.wikipedia.org/wiki/Atrium_Health_Floyd"
-        },
-        {
-          "name": "Kerry Group",
+          "name": "Floyd Medical Center",
           "source_url": "https://en.wikipedia.org/wiki/Rome,_Georgia"
         },
         {
-          "name": "Floyd Hospital",
-          "source_url": "https://en.wikipedia.org/wiki/Atrium_Health_Floyd"
+          "name": "Harbin Clinic",
+          "source_url": "https://en.wikipedia.org/wiki/Rome,_Georgia"
         },
         {
-          "name": "Lowe's Distribution Center",
-          "source_url": "https://georgia.org/sites/default/files/2023-01/lowes_4.pdf"
+          "name": "Medical College of Georgia",
+          "source_url": "https://en.wikipedia.org/wiki/Rome,_Georgia"
+        },
+        {
+          "name": "Redmond Regional Medical Center",
+          "source_url": "https://en.wikipedia.org/wiki/Rome,_Georgia"
         },
         {
           "name": "General Electric",
@@ -4486,17 +4478,25 @@
         {
           "name": "Georgia Health Sciences University",
           "source_url": "https://en.wikipedia.org/wiki/Rome,_Georgia"
+        },
+        {
+          "name": "Rome Plow Company",
+          "source_url": "https://en.wikipedia.org/wiki/Rome,_Georgia"
+        },
+        {
+          "name": "VT Industries",
+          "source_url": "https://www.northwestgeorgianews.com/rome/business/rome-floyd-chamber-celebrates-rome-industries/article_34aae01c-d8ff-11ef-b2a8-a38613426472.html"
         }
       ],
       "sources": [
         "https://en.wikipedia.org/wiki/Rome,_Georgia",
-        "https://en.wikipedia.org/wiki/Atrium_Health_Floyd",
         "https://www.selectgeorgia.com/blog/team-researchers-provide-clear-employment-overview-community-partners",
         "https://georgia.org/sites/default/files/2023-01/lowes_4.pdf",
         "https://www.northwestgeorgianews.com/rome/news/local/icymi-economic-development-in-floyd-county-is-booming/article_782a905a-78e6-11ee-aef8-e7b6f5a5827f.html",
         "https://www.bizjournals.com/atlanta/news/2021/02/11/ball-corp-rome-ga-made-aluminum-cups-launch.html",
         "https://www.northwestgeorgianews.com/rome/business/lewis-chemical-named-small-business-of-the-year-larry-alford-of-service-master-by-twins/article_130f8d6a-8486-11e3-b983-001a4bcf6878.html",
-        "https://www.northwestgeorgianews.com/rome/news/local/getting-down-to-business-chamber-hosts-annual-meeting-at-forum/article_2c292d95-89c6-4cb2-8950-81f981fc7218.html"
+        "https://www.northwestgeorgianews.com/rome/news/local/getting-down-to-business-chamber-hosts-annual-meeting-at-forum/article_2c292d95-89c6-4cb2-8950-81f981fc7218.html",
+        "https://www.northwestgeorgianews.com/rome/business/rome-floyd-chamber-celebrates-rome-industries/article_34aae01c-d8ff-11ef-b2a8-a38613426472.html"
       ],
       "method": "Representative list auto-discovered via Tavily web search across chamber-of-commerce, development-authority and local-news sources. Not exhaustive; ordering approximates source frequency, not headcount."
     },
