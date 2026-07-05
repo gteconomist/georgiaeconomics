@@ -2,7 +2,7 @@
   "_fixture": false,
   "_note": "Live data: Census USA Trade Online (GA exports), BLS CES (ATL MSA T&W employment). Calibrated estimate (latest GPA point may not have refreshed): Port of Savannah TEU, Brunswick autos, ATL Hartsfield cargo.",
   "source": "FIXTURE (target: Census USA Trade Online + BLS CES + Tavily for ports)",
-  "latest_label": "2026-04",
+  "latest_label": "2026-05",
   "kpis": {
     "savannah_teu_latest": 464,
     "savannah_teu_yoy": -0.4,
@@ -12,7 +12,7 @@
     "atl_cargo_yoy": -3.5,
     "savannah_2025_total_teu_k": 5653,
     "top_export_country": "Canada",
-    "top_export_musd": 6805.0
+    "top_export_musd": 6882.0
   },
   "savannah_teu_k": [
     [
@@ -934,10 +934,6 @@
   ],
   "atl_tw_employment_k": [
     [
-      "2019-09",
-      172.9
-    ],
-    [
       "2019-10",
       175.2
     ],
@@ -1251,27 +1247,31 @@
     ],
     [
       "2026-04",
-      189.2
+      189.5
+    ],
+    [
+      "2026-05",
+      190.2
     ]
   ],
   "ga_exports_2025": [
     {
       "country": "Canada",
-      "value_musd": 6805.0,
-      "yoy_pct": -12.5,
+      "value_musd": 6882.0,
+      "yoy_pct": -12.2,
       "iso": "CA",
       "rank": 1
     },
     {
       "country": "Mexico",
-      "value_musd": 6317.0,
+      "value_musd": 6314.0,
       "yoy_pct": -0.8,
       "iso": "MX",
       "rank": 2
     },
     {
       "country": "Singapore",
-      "value_musd": 3583.0,
+      "value_musd": 3584.0,
       "yoy_pct": 46.4,
       "iso": "SG",
       "rank": 3
@@ -1285,67 +1285,67 @@
     },
     {
       "country": "Netherlands",
-      "value_musd": 3151.0,
-      "yoy_pct": 21.3,
+      "value_musd": 3155.0,
+      "yoy_pct": 21.4,
       "iso": "NL",
       "rank": 5
     },
     {
       "country": "China",
-      "value_musd": 2995.0,
-      "yoy_pct": -2.0,
+      "value_musd": 2998.0,
+      "yoy_pct": -1.9,
       "iso": "CN",
       "rank": 6
     },
     {
       "country": "Japan",
-      "value_musd": 2847.0,
+      "value_musd": 2848.0,
       "yoy_pct": 73.5,
       "iso": "JP",
       "rank": 7
     },
     {
       "country": "Poland",
-      "value_musd": 2152.0,
-      "yoy_pct": 61.6,
+      "value_musd": 2151.0,
+      "yoy_pct": 61.5,
       "iso": "",
       "rank": 8
     },
     {
       "country": "United Kingdom",
-      "value_musd": 1970.0,
-      "yoy_pct": 34.1,
+      "value_musd": 2011.0,
+      "yoy_pct": 36.9,
       "iso": "GB",
       "rank": 9
     },
     {
       "country": "United Arab Emirates",
-      "value_musd": 1960.0,
-      "yoy_pct": 38.5,
+      "value_musd": 1966.0,
+      "yoy_pct": 38.9,
       "iso": "AE",
       "rank": 10
     }
   ],
-  "ga_exports_top10_total_musd": 35268.0,
-  "fetched_at": "2026-06-05",
+  "ga_exports_top10_total_musd": 35397.0,
+  "fetched_at": "2026-07-05",
   "ga_exports_latest": [
     {
       "country": "Canada",
-      "value_musd": 6805.0,
-      "yoy_pct": -12.5,
+      "value_musd": 6882.0,
+      "yoy_pct": -12.2,
       "iso": "CA",
       "rank": 1
     },
     {
       "country": "Mexico",
-      "value_musd": 6317.0,
+      "value_musd": 6314.0,
       "yoy_pct": -0.8,
       "iso": "MX",
       "rank": 2
     },
     {
       "country": "Singapore",
-      "value_musd": 3583.0,
+      "value_musd": 3584.0,
       "yoy_pct": 46.4,
       "iso": "SG",
       "rank": 3
@@ -1359,43 +1359,43 @@
     },
     {
       "country": "Netherlands",
-      "value_musd": 3151.0,
-      "yoy_pct": 21.3,
+      "value_musd": 3155.0,
+      "yoy_pct": 21.4,
       "iso": "NL",
       "rank": 5
     },
     {
       "country": "China",
-      "value_musd": 2995.0,
-      "yoy_pct": -2.0,
+      "value_musd": 2998.0,
+      "yoy_pct": -1.9,
       "iso": "CN",
       "rank": 6
     },
     {
       "country": "Japan",
-      "value_musd": 2847.0,
+      "value_musd": 2848.0,
       "yoy_pct": 73.5,
       "iso": "JP",
       "rank": 7
     },
     {
       "country": "Poland",
-      "value_musd": 2152.0,
-      "yoy_pct": 61.6,
+      "value_musd": 2151.0,
+      "yoy_pct": 61.5,
       "iso": "",
       "rank": 8
     },
     {
       "country": "United Kingdom",
-      "value_musd": 1970.0,
-      "yoy_pct": 34.1,
+      "value_musd": 2011.0,
+      "yoy_pct": 36.9,
       "iso": "GB",
       "rank": 9
     },
     {
       "country": "United Arab Emirates",
-      "value_musd": 1960.0,
-      "yoy_pct": 38.5,
+      "value_musd": 1966.0,
+      "yoy_pct": 38.9,
       "iso": "AE",
       "rank": 10
     }
@@ -1414,13 +1414,13 @@
       39516.0,
       43552.0,
       48433.0,
-      51124.0,
-      55106.0,
-      61371.0
+      51097.0,
+      55143.0,
+      61383.0
     ],
     "latest_year": 2025,
-    "latest_total_musd": 61371.0,
-    "yoy_pct": 11.4,
+    "latest_total_musd": 61383.0,
+    "yoy_pct": 11.3,
     "cagr_pct": 9.2
   },
   "exports_by_commodity": {
@@ -1429,83 +1429,83 @@
       {
         "hs2": "84",
         "name": "Machinery & mechanical appliances",
-        "value_musd": 1087.0,
-        "share_pct": 25.6,
-        "yoy_pct": 67.3
+        "value_musd": 1088.0,
+        "share_pct": 25.4,
+        "yoy_pct": 67.5
       },
       {
         "hs2": "88",
         "name": "Aircraft & spacecraft",
-        "value_musd": 691.0,
+        "value_musd": 696.0,
         "share_pct": 16.3,
-        "yoy_pct": -4.1
+        "yoy_pct": -3.3
       },
       {
         "hs2": "85",
         "name": "Electrical machinery & equipment",
-        "value_musd": 440.0,
-        "share_pct": 10.4,
-        "yoy_pct": 2.0
+        "value_musd": 441.0,
+        "share_pct": 10.3,
+        "yoy_pct": 2.1
       },
       {
         "hs2": "87",
         "name": "Vehicles",
-        "value_musd": 290.0,
-        "share_pct": 6.8,
-        "yoy_pct": 5.8
+        "value_musd": 304.0,
+        "share_pct": 7.1,
+        "yoy_pct": 11.1
       },
       {
         "hs2": "90",
         "name": "Optical & medical instruments",
-        "value_musd": 203.0,
+        "value_musd": 204.0,
         "share_pct": 4.8,
-        "yoy_pct": 0.3
+        "yoy_pct": 1.0
       },
       {
         "hs2": "39",
         "name": "Plastics",
-        "value_musd": 194.0,
-        "share_pct": 4.6,
-        "yoy_pct": 14.3
+        "value_musd": 195.0,
+        "share_pct": 4.5,
+        "yoy_pct": 14.6
       },
       {
         "hs2": "48",
         "name": "Paper & paperboard",
-        "value_musd": 146.0,
+        "value_musd": 143.0,
         "share_pct": 3.4,
-        "yoy_pct": -0.7
+        "yoy_pct": -2.5
       },
       {
         "hs2": "47",
         "name": "Wood pulp",
-        "value_musd": 120.0,
+        "value_musd": 121.0,
         "share_pct": 2.8,
-        "yoy_pct": -13.6
+        "yoy_pct": -13.0
       },
       {
         "hs2": "02",
         "name": "Meat",
         "value_musd": 96.0,
-        "share_pct": 2.3,
-        "yoy_pct": -18.8
+        "share_pct": 2.2,
+        "yoy_pct": -19.3
       },
       {
         "hs2": "38",
         "name": "Misc. chemical products",
-        "value_musd": 71.0,
-        "share_pct": 1.7,
-        "yoy_pct": -9.2
+        "value_musd": 70.0,
+        "share_pct": 1.6,
+        "yoy_pct": -10.2
       }
     ],
-    "other_musd": 908.0,
-    "total_musd": 4246.0
+    "other_musd": 918.0,
+    "total_musd": 4277.0
   },
   "_meta": {
     "exports_annual": {
-      "last_updated": "2026-06-05T22:37:52Z"
+      "last_updated": "2026-07-05T19:11:46Z"
     },
     "exports_by_commodity": {
-      "last_updated": "2026-06-05T22:38:00Z"
+      "last_updated": "2026-07-05T19:11:55Z"
     }
   }
 }
