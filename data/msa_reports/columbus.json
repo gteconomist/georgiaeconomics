@@ -3,7 +3,7 @@
   "short_name": "Columbus",
   "full_name": "Columbus, GA-AL",
   "population": 329000,
-  "as_of": "2026-07-04",
+  "as_of": "2026-07-05",
   "sections": {
     "ces_employment": {
       "series_id": "SMS13179800000000001",
@@ -5070,7 +5070,7 @@
       "source": "Census Business Dynamics Statistics (establishment entry rate, 2022); metro rate indexed to US=100"
     },
     "major_employers": {
-      "as_of": "2026-07-04",
+      "as_of": "2026-07-05",
       "employers": [
         {
           "name": "Health Care",
@@ -5097,16 +5097,20 @@
           "source_url": "https://en.wikipedia.org/wiki/Columbus,_Georgia"
         },
         {
+          "name": "Bradley Co",
+          "source_url": "https://en.wikipedia.org/wiki/Columbus,_Georgia"
+        },
+        {
           "name": "Financial Activities",
+          "source_url": "https://en.wikipedia.org/wiki/List_of_largest_Central_Ohio_employers"
+        },
+        {
+          "name": "Corp. Mgt",
           "source_url": "https://en.wikipedia.org/wiki/List_of_largest_Central_Ohio_employers"
         },
         {
           "name": "Food",
           "source_url": "https://www.bizjournals.com/atlanta/subscriber-only/2025/10/17/metro-atlantas-largest-employers.html"
-        },
-        {
-          "name": "Corp. Mgt",
-          "source_url": "https://en.wikipedia.org/wiki/List_of_largest_Central_Ohio_employers"
         },
         {
           "name": "Nationwide Children's Hospital",
@@ -5115,10 +5119,6 @@
         {
           "name": "Ohio State University",
           "source_url": "https://en.wikipedia.org/wiki/List_of_largest_Central_Ohio_employers"
-        },
-        {
-          "name": "Bradley Co",
-          "source_url": "https://en.wikipedia.org/wiki/Columbus,_Georgia"
         },
         {
           "name": "Columbus City Schools",
@@ -5135,9 +5135,9 @@
         "https://www.selectgeorgia.com/blog/columbus-georgia-a-home-for-headquarters",
         "https://en.wikipedia.org/wiki/Category:Companies_based_in_Columbus,_Georgia",
         "https://www.bizjournals.com/atlanta/subscriber-only/2025/10/17/metro-atlantas-largest-employers.html",
-        "https://en.wikipedia.org/wiki/List_of_largest_companies_in_the_United_States_by_revenue",
         "https://www.selectgeorgia.com/about-us/our-team/regional-development/andrew-camp-west",
-        "https://www.ledger-enquirer.com/news/business/article283415023.html"
+        "https://www.ledger-enquirer.com/news/business/article283415023.html",
+        "https://www.ledger-enquirer.com/news/business/article289530136.html"
       ],
       "method": "Representative list auto-discovered via Tavily web search across chamber-of-commerce, development-authority and local-news sources. Not exhaustive; ordering approximates source frequency, not headcount."
     },

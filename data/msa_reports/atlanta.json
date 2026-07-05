@@ -3,7 +3,7 @@
   "short_name": "Atlanta",
   "full_name": "Atlanta-Sandy Springs-Alpharetta, GA",
   "population": 6307261,
-  "as_of": "2026-07-04",
+  "as_of": "2026-07-05",
   "sections": {
     "ces_employment": {
       "series_id": "SMS13120600000000001",
@@ -5246,7 +5246,7 @@
       "source": "Census Business Dynamics Statistics (establishment entry rate, 2022); metro rate indexed to US=100"
     },
     "major_employers": {
-      "as_of": "2026-07-04",
+      "as_of": "2026-07-05",
       "employers": [
         {
           "name": "Southern Company",
@@ -5254,6 +5254,10 @@
         },
         {
           "name": "Emory Healthcare",
+          "source_url": "https://en.wikipedia.org/wiki/Economy_of_Atlanta"
+        },
+        {
+          "name": "Grady Health System",
           "source_url": "https://en.wikipedia.org/wiki/Economy_of_Atlanta"
         },
         {
@@ -5273,36 +5277,32 @@
           "source_url": "https://en.wikipedia.org/wiki/Economy_of_Atlanta"
         },
         {
-          "name": "Grady Health System",
-          "source_url": "https://en.wikipedia.org/wiki/Economy_of_Atlanta"
-        },
-        {
-          "name": "Aerospace",
-          "source_url": "https://www.selectgeorgia.com/discover-georgia/industries/fortune-500-list"
-        },
-        {
-          "name": "Industries Growing Faster",
-          "source_url": "https://www.selectgeorgia.com/landing-pages/san-fran-to-atl/top-brands"
-        },
-        {
-          "name": "Manufacturing",
-          "source_url": "https://www.bizjournals.com/atlanta/subscriber-only/2025/10/17/metro-atlantas-largest-employers.html"
+          "name": "Healthcare of Atlanta",
+          "source_url": "https://www.ajc.com/ajcjobs"
         },
         {
           "name": "Cola Company",
           "source_url": null
         },
         {
+          "name": "Industries Growing Faster",
+          "source_url": "https://www.selectgeorgia.com/landing-pages/san-fran-to-atl/top-brands"
+        },
+        {
           "name": "Energy",
           "source_url": "https://www.bizjournals.com/atlanta/subscriber-only/2025/10/17/metro-atlantas-largest-employers.html"
         },
         {
-          "name": "Healthcare of Atlanta",
-          "source_url": null
+          "name": "Health Care",
+          "source_url": "https://www.bizjournals.com/atlanta/subscriber-only/2025/10/17/metro-atlantas-largest-employers.html"
         },
         {
-          "name": "Financial Services",
+          "name": "Manufacturing",
           "source_url": "https://www.bizjournals.com/atlanta/subscriber-only/2025/10/17/metro-atlantas-largest-employers.html"
+        },
+        {
+          "name": "Cornerstone Christian Academy's",
+          "source_url": "https://www.ajc.com/top-workplaces"
         }
       ],
       "sources": [
@@ -5312,8 +5312,8 @@
         "https://www.bizjournals.com/atlanta/subscriber-only/2025/10/17/metro-atlantas-largest-employers.html",
         "https://www.selectgeorgia.com/discover-georgia/industries/why-atlanta/top-companies",
         "https://www.bizjournals.com/atlanta/subscriber-only/2022/07/15/atlantas-25-largest-employers.html",
-        "https://www.selectgeorgia.com/sxsw/top-brands",
-        "https://www.selectgeorgia.com/discover-georgia/industries/fortune-500-list"
+        "https://www.ajc.com/top-workplaces",
+        "https://www.selectgeorgia.com/sxsw/top-brands"
       ],
       "method": "Representative list auto-discovered via Tavily web search across chamber-of-commerce, development-authority and local-news sources. Not exhaustive; ordering approximates source frequency, not headcount."
     },

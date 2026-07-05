@@ -3,7 +3,7 @@
   "short_name": "Hinesville",
   "full_name": "Hinesville, GA",
   "population": 78000,
-  "as_of": "2026-07-04",
+  "as_of": "2026-07-05",
   "sections": {
     "ces_employment": {
       "series_id": "SMS13259800000000001",
@@ -3982,26 +3982,22 @@
       "source": "Census Business Dynamics Statistics (establishment entry rate, 2022); metro rate indexed to US=100"
     },
     "major_employers": {
-      "as_of": "2026-07-04",
+      "as_of": "2026-07-05",
       "employers": [
+        {
+          "name": "Hyundai Motor Group",
+          "source_url": "https://georgia.org/hyundai-motor-group-metaplant-america"
+        },
         {
           "name": "Liberty County School System",
           "source_url": null
         },
         {
+          "name": "Ro Port",
+          "source_url": "https://georgia.org"
+        },
+        {
           "name": "View All Industries",
-          "source_url": "https://georgia.org/hyundai-motor-group-metaplant-america"
-        },
-        {
-          "name": "Explore Georgia's Leading Industries",
-          "source_url": "https://georgia.org/hyundai-motor-group-metaplant-america"
-        },
-        {
-          "name": "Advanced Manufacturing",
-          "source_url": "https://properties.selectgeorgia.com/target_industries_app/dist/index.html"
-        },
-        {
-          "name": "Hyundai Motor Group Metaplant America",
           "source_url": "https://georgia.org/hyundai-motor-group-metaplant-america"
         },
         {
@@ -4009,47 +4005,49 @@
           "source_url": "https://georgia.org/hyundai-motor-group-metaplant-america"
         },
         {
+          "name": "Explore Georgia's Leading Industries",
+          "source_url": "https://georgia.org/hyundai-motor-group-metaplant-america"
+        },
+        {
           "name": "Automotive",
           "source_url": "https://georgia.org/hyundai-motor-group-metaplant-america"
         },
         {
-          "name": "Company",
-          "source_url": "https://properties.selectgeorgia.com/target_industries_app/dist/index.html"
-        },
-        {
-          "name": "Food Processing",
-          "source_url": "https://georgia.org/hyundai-motor-group-metaplant-america"
-        },
-        {
-          "name": "Georgia Southern Innovation Group",
-          "source_url": "https://www.selectgeorgia.com/blog/georgia-southern-innovation-group"
-        },
-        {
-          "name": "Greenfield LLC",
-          "source_url": "https://georgia.org/business-support/small-business"
-        },
-        {
-          "name": "Health",
-          "source_url": null
-        },
-        {
-          "name": "Hinesville Hospital",
+          "name": "Cola Bottling Company",
           "source_url": null
         },
         {
           "name": "Hinesville Medical Center",
           "source_url": null
+        },
+        {
+          "name": "Liberty Regional Medical Center",
+          "source_url": null
+        },
+        {
+          "name": "Manufacturing",
+          "source_url": "https://georgia.org/hyundai-motor-group-metaplant-america"
+        },
+        {
+          "name": "Metaplant America",
+          "source_url": null
+        },
+        {
+          "name": "Port of Brunswick No",
+          "source_url": "https://georgia.org"
+        },
+        {
+          "name": "Port of Savannah",
+          "source_url": "https://georgia.org"
         }
       ],
       "sources": [
         "https://en.wikipedia.org/wiki/Metropolitan_statistical_area",
-        "https://www.selectgeorgia.com/blog/georgia-southern-innovation-group",
         "https://georgia.org/hyundai-motor-group-metaplant-america",
+        "https://georgia.org",
         "https://georgia.org/sites/default/files/2020-08/georgia_safety_promise-8-27.pdf",
-        "https://georgia.org/business-support/small-business",
-        "https://georgia.org/sites/default/files/2018-11/gdecd_board_book_-_5-23-18.pdf",
-        "https://www.savannahnow.com/story/news/2009/02/13/jobless-claims-up-39-percent/13746010007",
-        "https://properties.selectgeorgia.com/target_industries_app/dist/index.html"
+        "https://www.savannahnow.com/story/news/2007/04/20/keys-future-0/13805381007",
+        "https://georgia.org/sites/default/files/2018-11/gdecd_board_book_-_5-23-18.pdf"
       ],
       "method": "Representative list auto-discovered via Tavily web search across chamber-of-commerce, development-authority and local-news sources. Not exhaustive; ordering approximates source frequency, not headcount."
     },

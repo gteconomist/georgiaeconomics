@@ -3,7 +3,7 @@
   "short_name": "Macon",
   "full_name": "Macon-Bibb County, GA",
   "population": 232000,
-  "as_of": "2026-07-04",
+  "as_of": "2026-07-05",
   "sections": {
     "ces_employment": {
       "series_id": "SMS13314200000000001",
@@ -5072,7 +5072,7 @@
       "source": "Census Business Dynamics Statistics (establishment entry rate, 2022); metro rate indexed to US=100"
     },
     "major_employers": {
-      "as_of": "2026-07-04",
+      "as_of": "2026-07-05",
       "employers": [
         {
           "name": "Mercer University",
@@ -5115,10 +5115,6 @@
           "source_url": "https://georgia.org/press-releases/2026/georgia-based-unified-legacy-create-500-new-jobs-macon-bibb-county"
         },
         {
-          "name": "Tile Company",
-          "source_url": "https://www.macon.com/news/local/article235905642.html"
-        },
-        {
           "name": "Tractor Supply Company",
           "source_url": "https://www.macon.com/news/local/article235905642.html"
         },
@@ -5127,7 +5123,11 @@
           "source_url": "https://www.macon.com/news/local/article235905642.html"
         },
         {
-          "name": "Atrium Health Navicent Medical Center",
+          "name": "Cobb County School District",
+          "source_url": "https://www.macon.com/living/article300278809.html"
+        },
+        {
+          "name": "Coliseum Medical Hospitals",
           "source_url": null
         }
       ],

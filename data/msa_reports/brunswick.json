@@ -3,7 +3,7 @@
   "short_name": "Brunswick",
   "full_name": "Brunswick, GA",
   "population": 120000,
-  "as_of": "2026-07-04",
+  "as_of": "2026-07-05",
   "sections": {
     "ces_employment": {
       "series_id": "SMS13152600000000001",
@@ -4131,7 +4131,7 @@
       "source": "Census Business Dynamics Statistics (establishment entry rate, 2022); metro rate indexed to US=100"
     },
     "major_employers": {
-      "as_of": "2026-07-04",
+      "as_of": "2026-07-05",
       "employers": [
         {
           "name": "Southeast Georgia Health System",
@@ -4142,63 +4142,61 @@
           "source_url": "https://en.wikipedia.org/wiki/Brunswick,_Georgia"
         },
         {
-          "name": "Georgia Ports Authority",
-          "source_url": "https://en.wikipedia.org/wiki/Brunswick,_Georgia"
-        },
-        {
           "name": "Georgia Power Economic Development",
           "source_url": "https://www.selectgeorgia.com/blog/wtc-sav-prosperity"
         },
         {
-          "name": "General Motors",
+          "name": "Georgia Ports Authority",
           "source_url": "https://en.wikipedia.org/wiki/Brunswick,_Georgia"
-        },
-        {
-          "name": "Georgia Port Authority",
-          "source_url": "https://www.ajc.com/business/2026/01/heavy-equipment-lifting-business-at-crucial-time-for-brunswick-port"
-        },
-        {
-          "name": "Greenfield LLC",
-          "source_url": "https://georgia.org/business-support/small-business"
-        },
-        {
-          "name": "InnoTek LLC",
-          "source_url": "https://georgia.org/business-support/small-business"
-        },
-        {
-          "name": "Irving Group of Companies",
-          "source_url": "https://en.wikipedia.org/wiki/New_Brunswick"
-        },
-        {
-          "name": "Marine Port",
-          "source_url": "https://en.wikipedia.org/wiki/Brunswick,_Georgia"
-        },
-        {
-          "name": "Muscadine Products Corporation",
-          "source_url": "https://georgia.org/business-support/small-business"
         },
         {
           "name": "Port of Brunswick",
           "source_url": null
         },
         {
+          "name": "Ro Port",
+          "source_url": "https://georgia.org"
+        },
+        {
+          "name": "General Motors",
+          "source_url": "https://en.wikipedia.org/wiki/Brunswick,_Georgia"
+        },
+        {
+          "name": "Georgia Power Regional Economic Development Manager",
+          "source_url": "https://www.selectgeorgia.com/blog/wtc-sav-prosperity"
+        },
+        {
+          "name": "Georgia Power Team",
+          "source_url": "https://www.selectgeorgia.com/blog/wtc-sav-prosperity"
+        },
+        {
+          "name": "Marine Port",
+          "source_url": "https://en.wikipedia.org/wiki/Brunswick,_Georgia"
+        },
+        {
+          "name": "Port of Savannah",
+          "source_url": "https://georgia.org"
+        },
+        {
           "name": "Ports of Savannah",
           "source_url": "https://www.selectgeorgia.com/blog/wtc-sav-prosperity"
         },
         {
-          "name": "Terry College of Business",
-          "source_url": "https://www.savannahnow.com/story/sponsor-story/georgia-ports/2025/03/31/one-in-eight-jobs-across-state-related-to-savannah-brunswick-ports/82706533007"
+          "name": "ArcelorMittal Building Solutions Brings North American",
+          "source_url": "https://georgia.org"
+        },
+        {
+          "name": "Authority Brands Relocates HQ",
+          "source_url": "https://georgia.org"
         }
       ],
       "sources": [
         "https://en.wikipedia.org/wiki/Brunswick,_Georgia",
         "https://www.selectgeorgia.com/blog/wtc-sav-prosperity",
         "https://en.wikipedia.org/wiki/History_of_Brunswick,_Georgia",
-        "https://www.ajc.com/business/2026/01/heavy-equipment-lifting-business-at-crucial-time-for-brunswick-port",
         "https://www.selectgeorgia.com/services/support-for-communities/small-business-resources",
         "https://georgia.org/sites/default/files/2021-05/georgia_taiwan_connection_2021.pdf",
-        "https://georgia.org/business-support/small-business",
-        "https://en.wikipedia.org/wiki/New_Brunswick"
+        "https://georgia.org"
       ],
       "method": "Representative list auto-discovered via Tavily web search across chamber-of-commerce, development-authority and local-news sources. Not exhaustive; ordering approximates source frequency, not headcount."
     },

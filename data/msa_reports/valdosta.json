@@ -3,7 +3,7 @@
   "short_name": "Valdosta",
   "full_name": "Valdosta, GA",
   "population": 148000,
-  "as_of": "2026-07-04",
+  "as_of": "2026-07-05",
   "sections": {
     "ces_employment": {
       "series_id": "SMS13466600000000001",
@@ -4180,14 +4180,18 @@
       "source": "Census Business Dynamics Statistics (establishment entry rate, 2022); metro rate indexed to US=100"
     },
     "major_employers": {
-      "as_of": "2026-07-04",
+      "as_of": "2026-07-05",
       "employers": [
         {
           "name": "Valdosta State University",
           "source_url": "https://en.wikipedia.org/wiki/Valdosta_metropolitan_area"
         },
         {
-          "name": "Stratas Foods",
+          "name": "South Georgia Medical Center",
+          "source_url": "https://valdostadailytimes.com/2005/12/06/valdosta-receives-metro-designation"
+        },
+        {
+          "name": "ACE Electric",
           "source_url": "https://www.selectgeorgia.com/blog/rural-transformation/one-valdosta-lowndes-interview"
         },
         {
@@ -4195,15 +4199,23 @@
           "source_url": "https://www.selectgeorgia.com/blog/rural-transformation/one-valdosta-lowndes-interview"
         },
         {
-          "name": "ACE Electric",
+          "name": "Stratas Foods",
           "source_url": "https://www.selectgeorgia.com/blog/rural-transformation/one-valdosta-lowndes-interview"
         },
         {
-          "name": "South Georgia Medical Center",
-          "source_url": null
+          "name": "New Hire Solutions",
+          "source_url": "https://valdostadailytimes.com/2014/06/24/scruggs-named-leading-business-of-the-week"
+        },
+        {
+          "name": "Smith Drug Company",
+          "source_url": "https://valdostadailytimes.com/2014/05/07/chamber-names-world-class-employees-2"
         },
         {
           "name": "Sunset Farm Foods",
+          "source_url": "https://valdostadailytimes.com/2021/03/05/chamber-presents-annual-awards"
+        },
+        {
+          "name": "Renasant Bank",
           "source_url": "https://valdostadailytimes.com/2021/03/05/chamber-presents-annual-awards"
         },
         {
@@ -4211,8 +4223,8 @@
           "source_url": "https://valdostadailytimes.com/2014/06/24/scruggs-named-leading-business-of-the-week"
         },
         {
-          "name": "Renasant Bank",
-          "source_url": "https://valdostadailytimes.com/2021/03/05/chamber-presents-annual-awards"
+          "name": "Azalea Health",
+          "source_url": "https://valdostadailytimes.com/2014/05/07/chamber-names-world-class-employees-2"
         },
         {
           "name": "Career Academy",
@@ -4223,30 +4235,18 @@
           "source_url": "https://www.selectgeorgia.com/blog/rural-transformation/one-valdosta-lowndes-interview"
         },
         {
-          "name": "Marcotek Digital Office Solutions",
-          "source_url": "https://valdostadailytimes.com/2019/01/20/business-briefs-122"
-        },
-        {
-          "name": "Mayo Health Clinic",
+          "name": "Distribution Center",
           "source_url": null
-        },
-        {
-          "name": "New Hire Solutions",
-          "source_url": "https://valdostadailytimes.com/2014/06/24/scruggs-named-leading-business-of-the-week"
-        },
-        {
-          "name": "Rayonier Inc",
-          "source_url": "https://jobs.valdostadailytimes.com/employers"
         }
       ],
       "sources": [
         "https://en.wikipedia.org/wiki/Valdosta_metropolitan_area",
         "https://www.selectgeorgia.com/blog/rural-transformation/one-valdosta-lowndes-interview",
         "https://valdostadailytimes.com/2026/02/23/gary-wisenbaker-data-centers-whats-good-for-the-goose-is-good-for-the-gander",
-        "https://valdostadailytimes.com/2015/09/13/finding-the-competitive-edge",
-        "https://www.selectgeorgia.com/blog/locations-and-expansions/georgia-2023-growth",
-        "https://valdostadailytimes.com/2019/01/20/business-briefs-122",
+        "https://georgia.org/sites/default/files/2022-02/2021-11-3_gdecd_board_meeting_minutes.pdf",
+        "https://valdostadailytimes.com/2005/12/06/valdosta-receives-metro-designation",
         "https://valdostadailytimes.com/2019/06/23/business-briefs-135",
+        "https://valdostadailytimes.com/2021/03/05/chamber-presents-annual-awards",
         "https://valdostadailytimes.com/2014/06/24/scruggs-named-leading-business-of-the-week"
       ],
       "method": "Representative list auto-discovered via Tavily web search across chamber-of-commerce, development-authority and local-news sources. Not exhaustive; ordering approximates source frequency, not headcount."
