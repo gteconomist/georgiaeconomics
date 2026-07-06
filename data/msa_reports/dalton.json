@@ -3,7 +3,7 @@
   "short_name": "Dalton",
   "full_name": "Dalton, GA",
   "population": 143000,
-  "as_of": "2026-07-05",
+  "as_of": "2026-07-06",
   "sections": {
     "ces_employment": {
       "series_id": "SMS13191400000000001",
@@ -4524,12 +4524,8 @@
       "source": "Census Business Dynamics Statistics (establishment entry rate, 2022); metro rate indexed to US=100"
     },
     "major_employers": {
-      "as_of": "2026-07-05",
+      "as_of": "2026-07-06",
       "employers": [
-        {
-          "name": "Mohawk Industries",
-          "source_url": "https://georgia.org/sites/default/files/2021-04/logistics_education_report.pdf"
-        },
         {
           "name": "Carpet Capital",
           "source_url": "https://en.wikipedia.org/wiki/Dalton,_Georgia"
@@ -4543,15 +4539,7 @@
           "source_url": "https://www.bizjournals.com/atlanta/news/2023/06/29/solar-workforce-qcells-dalton-georgia.html"
         },
         {
-          "name": "Shaw Industries",
-          "source_url": null
-        },
-        {
-          "name": "Emory University",
-          "source_url": "https://www.ajc.com/business/georgia-best-employers-for-2019-according-forbes/97QBCslwnyl3Ob4ujTmnLK"
-        },
-        {
-          "name": "Technical College System of Georgia",
+          "name": "Mohawk Industries",
           "source_url": "https://georgia.org/sites/default/files/2021-04/logistics_education_report.pdf"
         },
         {
@@ -4559,8 +4547,20 @@
           "source_url": "https://www.bizjournals.com/atlanta/news/2023/06/29/solar-workforce-qcells-dalton-georgia.html"
         },
         {
+          "name": "Emory University",
+          "source_url": "https://www.ajc.com/business/georgia-best-employers-for-2019-according-forbes/97QBCslwnyl3Ob4ujTmnLK"
+        },
+        {
           "name": "Flooring",
           "source_url": "https://georgia.org/sites/default/files/2023-01/engineered_floors.pdf"
+        },
+        {
+          "name": "Shaw Industries",
+          "source_url": null
+        },
+        {
+          "name": "Emory Healthcare",
+          "source_url": "https://www.ajc.com/business/dalton-augusta-worst-for-job-losses-lately/qWPbpKazCnZFJtn1Kel1RM"
         },
         {
           "name": "Genuine Parts Co",
@@ -4571,12 +4571,12 @@
           "source_url": "https://valdostadailytimes.com/2019/01/23/something-we-can-all-be-proud-of-food-city-opens-second-dalton-location"
         },
         {
-          "name": "Group",
-          "source_url": "https://www.ajc.com/business/dalton-augusta-worst-for-job-losses-lately/qWPbpKazCnZFJtn1Kel1RM"
-        },
-        {
           "name": "Our Company",
           "source_url": "https://valdostadailytimes.com/2019/01/23/something-we-can-all-be-proud-of-food-city-opens-second-dalton-location"
+        },
+        {
+          "name": "Technical College System of Georgia",
+          "source_url": "https://georgia.org/sites/default/files/2021-04/logistics_education_report.pdf"
         },
         {
           "name": "University of Tennessee",
@@ -4586,12 +4586,12 @@
       "sources": [
         "https://en.wikipedia.org/wiki/Dalton,_Georgia",
         "https://www.bizjournals.com/atlanta/news/2023/06/29/solar-workforce-qcells-dalton-georgia.html",
+        "https://www.ajc.com/business/dalton-augusta-worst-for-job-losses-lately/qWPbpKazCnZFJtn1Kel1RM",
         "https://www.ajc.com/business/georgia-best-employers-for-2019-according-forbes/97QBCslwnyl3Ob4ujTmnLK",
-        "https://www.bizjournals.com/atlanta/news/2024/11/22/manufacturing-industry-workforce-shortage.html",
+        "https://www.ajc.com/video/news/2026/05/one-industry-polluted-this-town-now-the-city-is-betting-on-ai",
         "https://valdostadailytimes.com/2019/01/23/something-we-can-all-be-proud-of-food-city-opens-second-dalton-location",
         "https://georgia.org/sites/default/files/2021-04/logistics_education_report.pdf",
-        "https://georgia.org/sites/default/files/2023-01/engineered_floors.pdf",
-        "https://www.ajc.com/business/dalton-augusta-worst-for-job-losses-lately/qWPbpKazCnZFJtn1Kel1RM"
+        "https://georgia.org/sites/default/files/2023-01/engineered_floors.pdf"
       ],
       "method": "Representative list auto-discovered via Tavily web search across chamber-of-commerce, development-authority and local-news sources. Not exhaustive; ordering approximates source frequency, not headcount."
     },

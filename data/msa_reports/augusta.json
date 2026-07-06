@@ -3,7 +3,7 @@
   "short_name": "Augusta",
   "full_name": "Augusta-Richmond County, GA-SC",
   "population": 611000,
-  "as_of": "2026-07-05",
+  "as_of": "2026-07-06",
   "sections": {
     "ces_employment": {
       "series_id": "SMS13122600000000001",
@@ -5053,14 +5053,14 @@
       "source": "Census Business Dynamics Statistics (establishment entry rate, 2022); metro rate indexed to US=100"
     },
     "major_employers": {
-      "as_of": "2026-07-05",
+      "as_of": "2026-07-06",
       "employers": [
         {
           "name": "Augusta University",
           "source_url": "https://en.wikipedia.org/wiki/Augusta,_Georgia"
         },
         {
-          "name": "FPL Food",
+          "name": "Department of Energy",
           "source_url": "https://en.wikipedia.org/wiki/Augusta,_Georgia"
         },
         {
@@ -5068,23 +5068,39 @@
           "source_url": "https://en.wikipedia.org/wiki/Augusta,_Georgia"
         },
         {
+          "name": "Encompass Health Corporation",
+          "source_url": "https://en.wikipedia.org/wiki/Augusta_metropolitan_area"
+        },
+        {
+          "name": "FPL Food",
+          "source_url": "https://en.wikipedia.org/wiki/Augusta,_Georgia"
+        },
+        {
+          "name": "Medical District",
+          "source_url": "https://en.wikipedia.org/wiki/Augusta,_Georgia"
+        },
+        {
           "name": "Digital Marketing Solutions",
           "source_url": "https://www.augustachronicle.com/story/business/2024/08/27/georgia-top-companies-forbes-best-employers-by-state-list/74968857007"
         },
         {
-          "name": "Richmond County School System",
+          "name": "Aerospace",
+          "source_url": "https://www.selectgeorgia.com/discover-georgia/industries/fortune-500-list"
+        },
+        {
+          "name": "Augusta Economic Development Authority",
+          "source_url": "https://en.wikipedia.org/wiki/Augusta,_Georgia"
+        },
+        {
+          "name": "Augusta Technical College",
           "source_url": "https://en.wikipedia.org/wiki/Augusta_metropolitan_area"
         },
         {
-          "name": "Department of Energy",
-          "source_url": "https://en.wikipedia.org/wiki/Augusta,_Georgia"
+          "name": "East Georgia State College",
+          "source_url": "https://en.wikipedia.org/wiki/Augusta_metropolitan_area"
         },
         {
-          "name": "Doctors Hospital",
-          "source_url": "https://en.wikipedia.org/wiki/Augusta,_Georgia"
-        },
-        {
-          "name": "Encompass Health Corporation",
+          "name": "Georgia Military College",
           "source_url": "https://en.wikipedia.org/wiki/Augusta_metropolitan_area"
         },
         {
@@ -5092,24 +5108,8 @@
           "source_url": "https://www.augustachronicle.com/story/business/2020/01/04/scuttlebiz-metro-area-economic-growth-outpaced-national-average-in-2018/1954353007"
         },
         {
-          "name": "Medical District",
-          "source_url": "https://en.wikipedia.org/wiki/Augusta,_Georgia"
-        },
-        {
-          "name": "Southern Company",
-          "source_url": "https://www.augustachronicle.com/story/business/2024/08/27/georgia-top-companies-forbes-best-employers-by-state-list/74968857007"
-        },
-        {
-          "name": "Augusta Economic Development Authority",
-          "source_url": "https://en.wikipedia.org/wiki/Augusta,_Georgia"
-        },
-        {
-          "name": "Charlie Norwood VA Medical Center",
-          "source_url": "https://en.wikipedia.org/wiki/Augusta,_Georgia"
-        },
-        {
-          "name": "Children's Healthcare of Atlanta",
-          "source_url": "https://www.augustachronicle.com/story/business/2024/08/27/georgia-top-companies-forbes-best-employers-by-state-list/74968857007"
+          "name": "Inpatient Rehabilitation Hospital Augusta",
+          "source_url": "https://en.wikipedia.org/wiki/Augusta_metropolitan_area"
         }
       ],
       "sources": [
@@ -5120,7 +5120,7 @@
         "https://www.augustachronicle.com/story/business/2024/08/27/georgia-top-companies-forbes-best-employers-by-state-list/74968857007",
         "https://en.wikipedia.org/wiki/Category:Companies_based_in_Augusta,_Georgia",
         "https://www.augustachronicle.com/story/news/local/the-people-sentinel/2019/10/16/chamber-of-commerce-recognizes-community-champions/2519701007",
-        "https://georgia.org/sites/default/files/2020-09/fy20_q4_board_book.pdf"
+        "https://www.savannahnow.com/story/news/2007/04/20/keys-future-0/13805381007"
       ],
       "method": "Representative list auto-discovered via Tavily web search across chamber-of-commerce, development-authority and local-news sources. Not exhaustive; ordering approximates source frequency, not headcount."
     },

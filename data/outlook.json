@@ -1,5 +1,5 @@
 {
- "fetched_at": "2026-07-05T11:39:47Z",
+ "fetched_at": "2026-07-06T13:02:04Z",
  "schema": "outlook/v1",
  "disclaimer": "The 5-year figures are model extrapolations from historical trends (damped-Holt / ARIMA-family) \u2014 not official forecasts, predictions, or investment advice. They assume recent trends persist and do not account for policy changes, shocks, or expert judgment.",
  "metros": [
@@ -443,16 +443,16 @@
  },
  "_meta": {
   "metro_rollup": {
-   "last_updated": "2026-07-05T11:39:47Z",
+   "last_updated": "2026-07-06T13:02:05Z",
    "n_metros": 14,
    "stale": false
   },
   "ga_cycle": {
-   "last_updated": "2026-07-05T11:39:47Z",
+   "last_updated": "2026-07-06T13:02:05Z",
    "stale": false
   },
   "ga_forecast": {
-   "last_updated": "2026-07-05T11:39:47Z",
+   "last_updated": "2026-07-06T13:02:05Z",
    "stale": false
   }
  },

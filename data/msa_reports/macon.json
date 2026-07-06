@@ -3,7 +3,7 @@
   "short_name": "Macon",
   "full_name": "Macon-Bibb County, GA",
   "population": 232000,
-  "as_of": "2026-07-05",
+  "as_of": "2026-07-06",
   "sections": {
     "ces_employment": {
       "series_id": "SMS13314200000000001",
@@ -5072,11 +5072,15 @@
       "source": "Census Business Dynamics Statistics (establishment entry rate, 2022); metro rate indexed to US=100"
     },
     "major_employers": {
-      "as_of": "2026-07-05",
+      "as_of": "2026-07-06",
       "employers": [
         {
           "name": "Mercer University",
           "source_url": "https://en.wikipedia.org/wiki/Macon,_Georgia"
+        },
+        {
+          "name": "Aerospace",
+          "source_url": "https://georgia.org/press-releases/2025/trinet-create-750-jobs-metro-atlanta"
         },
         {
           "name": "Atrium Health Navicent The Medical Center",
@@ -5087,16 +5091,12 @@
           "source_url": "https://www.macon.com/news/business/article258547393.html"
         },
         {
-          "name": "Healthcare of Atlanta",
+          "name": "Piedmont Healthcare",
+          "source_url": null
+        },
+        {
+          "name": "Southern Company",
           "source_url": "https://www.macon.com/living/article300278809.html"
-        },
-        {
-          "name": "Navicent Health",
-          "source_url": "https://www.macon.com/news/local/article235905642.html"
-        },
-        {
-          "name": "Aerospace",
-          "source_url": "https://georgia.org/press-releases/2026/georgia-based-unified-legacy-create-500-new-jobs-macon-bibb-county"
         },
         {
           "name": "Armstrong World Industries",
@@ -5107,12 +5107,20 @@
           "source_url": "https://www.macon.com/news/local/article235905642.html"
         },
         {
-          "name": "Distribution Company of Georgia",
-          "source_url": "https://www.macon.com/news/local/article235905642.html"
+          "name": "Forsyth County School District",
+          "source_url": "https://www.macon.com/living/article300278809.html"
+        },
+        {
+          "name": "Logistics",
+          "source_url": "https://georgia.org/center-of-innovation/jobs-and-investment-georgia-increase-2010"
         },
         {
           "name": "Manufacturing",
-          "source_url": "https://georgia.org/press-releases/2026/georgia-based-unified-legacy-create-500-new-jobs-macon-bibb-county"
+          "source_url": "https://georgia.org/press-releases/2025/trinet-create-750-jobs-metro-atlanta"
+        },
+        {
+          "name": "Mohawk Industries",
+          "source_url": "https://www.macon.com/living/article300278809.html"
         },
         {
           "name": "Tractor Supply Company",
@@ -5121,25 +5129,17 @@
         {
           "name": "YKK Corporation of America",
           "source_url": "https://www.macon.com/news/local/article235905642.html"
-        },
-        {
-          "name": "Cobb County School District",
-          "source_url": "https://www.macon.com/living/article300278809.html"
-        },
-        {
-          "name": "Coliseum Medical Hospitals",
-          "source_url": null
         }
       ],
       "sources": [
         "https://en.wikipedia.org/wiki/Macon,_Georgia",
         "https://www.macon.com/living/article300278809.html",
-        "https://www.macon.com/news/local/article280753115.html",
-        "https://www.macon.com/news/business/article258547393.html",
-        "https://www.macon.com/news/local/article312115475.html",
-        "https://en.wikipedia.org/wiki/Central_Georgia",
+        "https://www.macon.com/news/local/article314818813.html",
+        "https://georgia.org/press-releases/2025/trinet-create-750-jobs-metro-atlanta",
+        "https://www.selectgeorgia.com/discover-georgia/industries/fortune-500-list",
+        "https://georgia.org/center-of-innovation/jobs-and-investment-georgia-increase-2010",
         "https://www.macon.com/news/local/article235905642.html",
-        "https://www.macon.com/news/local/article249660958.html"
+        "https://www.macon.com/news/business/article258547393.html"
       ],
       "method": "Representative list auto-discovered via Tavily web search across chamber-of-commerce, development-authority and local-news sources. Not exhaustive; ordering approximates source frequency, not headcount."
     },

@@ -3,7 +3,7 @@
   "short_name": "Warner Robins",
   "full_name": "Warner Robins, GA",
   "population": 199000,
-  "as_of": "2026-07-05",
+  "as_of": "2026-07-06",
   "sections": {
     "ces_employment": {
       "series_id": "SMS13475800000000001",
@@ -4201,12 +4201,8 @@
       "source": "Census Business Dynamics Statistics (establishment entry rate, 2022); metro rate indexed to US=100"
     },
     "major_employers": {
-      "as_of": "2026-07-05",
+      "as_of": "2026-07-06",
       "employers": [
-        {
-          "name": "Pratt Industries",
-          "source_url": "https://www.macon.com/news/business/article279055784.html"
-        },
         {
           "name": "Atrium Health Navicent The Medical Center",
           "source_url": "https://www.macon.com/news/business/article258547393.html"
@@ -4220,36 +4216,36 @@
           "source_url": "https://www.macon.com/news/business/article258547393.html"
         },
         {
+          "name": "Pratt Industries",
+          "source_url": "https://www.bizjournals.com/atlanta/news/2026/04/27/pratt-industries-corrugated-box-warner-robins.html"
+        },
+        {
+          "name": "Robins International Industrial Park",
+          "source_url": "https://www.macon.com/news/local/community/houston-peach/article315207803.html"
+        },
+        {
           "name": "Blue Bird Body Co",
           "source_url": "https://www.macon.com/news/business/article258547393.html"
         },
         {
-          "name": "Robins Industrial Park",
-          "source_url": "https://www.macon.com/news/business/article279055784.html"
+          "name": "Manufacturing",
+          "source_url": "https://georgia.org/why-georgia/regions-georgia/middle-georgia"
+        },
+        {
+          "name": "Atrium Health Navicent Medical Center",
+          "source_url": null
         },
         {
           "name": "Houston Medical Center",
           "source_url": "https://en.wikipedia.org/wiki/Warner_Robins,_Georgia"
         },
         {
-          "name": "Manufacturing",
-          "source_url": "https://www.bizjournals.com/atlanta/news/2026/04/27/pratt-industries-corrugated-box-warner-robins.html"
-        },
-        {
-          "name": "Blue Bird Corporation",
+          "name": "Medical Center of Central Georgia",
           "source_url": "https://en.wikipedia.org/wiki/Central_Georgia"
         },
         {
           "name": "Coliseum Health Systems",
           "source_url": "https://www.macon.com/news/business/article258547393.html"
-        },
-        {
-          "name": "Emory Healthcare",
-          "source_url": "https://www.bizjournals.com/atlanta/news/2024/08/22/emory-healthcare-houston-healthcare-partnership.html"
-        },
-        {
-          "name": "Medical Center of Central Georgia",
-          "source_url": "https://en.wikipedia.org/wiki/Central_Georgia"
         },
         {
           "name": "Mercer University",
@@ -4258,17 +4254,21 @@
         {
           "name": "Primary Industries",
           "source_url": "https://www.macon.com/news/business/article258547393.html"
+        },
+        {
+          "name": "Terry College of Business",
+          "source_url": "https://www.macon.com/news/business/article258547393.html"
         }
       ],
       "sources": [
         "https://www.macon.com/news/business/article258547393.html",
         "https://en.wikipedia.org/wiki/Central_Georgia",
         "https://en.wikipedia.org/wiki/Warner_Robins,_Georgia",
-        "https://www.macon.com/news/business/article279055784.html",
         "https://www.macon.com/news/local/community/houston-peach/article315207803.html",
-        "https://www.bizjournals.com/atlanta/news/2026/04/27/pratt-industries-corrugated-box-warner-robins.html",
         "https://www.bizjournals.com/atlanta/news/2024/08/22/emory-healthcare-houston-healthcare-partnership.html",
-        "https://www.bizjournals.com/sitemap/atlanta/2014-05"
+        "https://georgia.org/why-georgia/regions-georgia/middle-georgia",
+        "https://www.bizjournals.com/atlanta/news/2026/04/27/pratt-industries-corrugated-box-warner-robins.html",
+        "https://georgia.org/sites/default/files/2021-04/logistics_education_report.pdf"
       ],
       "method": "Representative list auto-discovered via Tavily web search across chamber-of-commerce, development-authority and local-news sources. Not exhaustive; ordering approximates source frequency, not headcount."
     },

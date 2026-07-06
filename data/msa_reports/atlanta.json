@@ -3,7 +3,7 @@
   "short_name": "Atlanta",
   "full_name": "Atlanta-Sandy Springs-Alpharetta, GA",
   "population": 6307261,
-  "as_of": "2026-07-05",
+  "as_of": "2026-07-06",
   "sections": {
     "ces_employment": {
       "series_id": "SMS13120600000000001",
@@ -5246,10 +5246,26 @@
       "source": "Census Business Dynamics Statistics (establishment entry rate, 2022); metro rate indexed to US=100"
     },
     "major_employers": {
-      "as_of": "2026-07-05",
+      "as_of": "2026-07-06",
       "employers": [
         {
+          "name": "Emory University",
+          "source_url": "https://en.wikipedia.org/wiki/Economy_of_Atlanta"
+        },
+        {
+          "name": "Piedmont Healthcare",
+          "source_url": "https://en.wikipedia.org/wiki/Economy_of_Atlanta"
+        },
+        {
           "name": "Southern Company",
+          "source_url": "https://en.wikipedia.org/wiki/Economy_of_Atlanta"
+        },
+        {
+          "name": "Northside Hospital",
+          "source_url": "https://en.wikipedia.org/wiki/Economy_of_Atlanta"
+        },
+        {
+          "name": "Wellstar Health System",
           "source_url": "https://en.wikipedia.org/wiki/Economy_of_Atlanta"
         },
         {
@@ -5261,59 +5277,43 @@
           "source_url": "https://en.wikipedia.org/wiki/Economy_of_Atlanta"
         },
         {
-          "name": "Emory University",
-          "source_url": "https://en.wikipedia.org/wiki/Economy_of_Atlanta"
-        },
-        {
-          "name": "Northside Hospital",
-          "source_url": "https://en.wikipedia.org/wiki/Economy_of_Atlanta"
-        },
-        {
-          "name": "Piedmont Healthcare",
-          "source_url": "https://en.wikipedia.org/wiki/Economy_of_Atlanta"
-        },
-        {
-          "name": "Wellstar Health System",
-          "source_url": "https://en.wikipedia.org/wiki/Economy_of_Atlanta"
+          "name": "Cola Company",
+          "source_url": null
         },
         {
           "name": "Healthcare of Atlanta",
-          "source_url": "https://www.ajc.com/ajcjobs"
+          "source_url": null
         },
         {
-          "name": "Cola Company",
-          "source_url": null
+          "name": "Cornerstone Christian Academy's",
+          "source_url": "https://www.ajc.com/top-workplaces"
         },
         {
           "name": "Industries Growing Faster",
           "source_url": "https://www.selectgeorgia.com/landing-pages/san-fran-to-atl/top-brands"
         },
         {
-          "name": "Energy",
-          "source_url": "https://www.bizjournals.com/atlanta/subscriber-only/2025/10/17/metro-atlantas-largest-employers.html"
+          "name": "Foundation Financial Group",
+          "source_url": "https://en.wikipedia.org/wiki/Economy_of_Atlanta"
         },
         {
-          "name": "Health Care",
-          "source_url": "https://www.bizjournals.com/atlanta/subscriber-only/2025/10/17/metro-atlantas-largest-employers.html"
+          "name": "Gentiva Health Services",
+          "source_url": "https://en.wikipedia.org/wiki/Economy_of_Atlanta"
         },
         {
-          "name": "Manufacturing",
-          "source_url": "https://www.bizjournals.com/atlanta/subscriber-only/2025/10/17/metro-atlantas-largest-employers.html"
-        },
-        {
-          "name": "Cornerstone Christian Academy's",
-          "source_url": "https://www.ajc.com/top-workplaces"
+          "name": "Oxford Industries",
+          "source_url": "https://en.wikipedia.org/wiki/Economy_of_Atlanta"
         }
       ],
       "sources": [
         "https://en.wikipedia.org/wiki/Economy_of_Atlanta",
+        "https://www.bizjournals.com/atlanta/subscriber-only/2022/07/15/atlantas-25-largest-employers.html",
         "https://www.bizjournals.com/atlanta/datacenter/lists",
         "https://www.selectgeorgia.com/landing-pages/san-fran-to-atl/top-brands",
-        "https://www.bizjournals.com/atlanta/subscriber-only/2025/10/17/metro-atlantas-largest-employers.html",
-        "https://www.selectgeorgia.com/discover-georgia/industries/why-atlanta/top-companies",
-        "https://www.bizjournals.com/atlanta/subscriber-only/2022/07/15/atlantas-25-largest-employers.html",
         "https://www.ajc.com/top-workplaces",
-        "https://www.selectgeorgia.com/sxsw/top-brands"
+        "https://www.bizjournals.com/atlanta/subscriber-only/2025/10/17/metro-atlantas-largest-employers.html",
+        "https://www.selectgeorgia.com/sxsw/top-brands",
+        "https://www.selectgeorgia.com/discover-georgia/industries/fortune-500-list"
       ],
       "method": "Representative list auto-discovered via Tavily web search across chamber-of-commerce, development-authority and local-news sources. Not exhaustive; ordering approximates source frequency, not headcount."
     },

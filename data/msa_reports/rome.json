@@ -3,7 +3,7 @@
   "short_name": "Rome",
   "full_name": "Rome, GA",
   "population": 99000,
-  "as_of": "2026-07-05",
+  "as_of": "2026-07-06",
   "sections": {
     "ces_employment": {
       "series_id": "SMS13406600000000001",
@@ -4429,74 +4429,74 @@
       "source": "Census Business Dynamics Statistics (establishment entry rate, 2022); metro rate indexed to US=100"
     },
     "major_employers": {
-      "as_of": "2026-07-05",
+      "as_of": "2026-07-06",
       "employers": [
         {
-          "name": "Mills Fitzner",
-          "source_url": "https://www.northwestgeorgianews.com/rome/news/local/getting-down-to-business-chamber-hosts-annual-meeting-at-forum/article_2c292d95-89c6-4cb2-8950-81f981fc7218.html"
+          "name": "Berry College",
+          "source_url": "https://en.wikipedia.org/wiki/Rome,_Georgia"
+        },
+        {
+          "name": "Energy",
+          "source_url": "https://www.bizjournals.com/atlanta/potmsearch/detail/submission/6568858/Melissa_Free"
+        },
+        {
+          "name": "Georgia Northwestern Technical College",
+          "source_url": "https://en.wikipedia.org/wiki/Rome,_Georgia"
+        },
+        {
+          "name": "Georgia Power",
+          "source_url": "https://www.bizjournals.com/atlanta/potmsearch/detail/submission/6568858/Melissa_Free"
+        },
+        {
+          "name": "Aerospace",
+          "source_url": "https://georgia.org/blog/state-small-business-roundtable-opportunity"
         },
         {
           "name": "Ball Corp",
           "source_url": "https://www.bizjournals.com/atlanta/news/2021/02/11/ball-corp-rome-ga-made-aluminum-cups-launch.html"
         },
         {
-          "name": "Floyd Medical Center",
+          "name": "Manufacturing",
+          "source_url": "https://www.bizjournals.com/atlanta/news/2025/09/26/georgia-largest-manufacturers-by-employment.html"
+        },
+        {
+          "name": "Shorter University",
           "source_url": "https://en.wikipedia.org/wiki/Rome,_Georgia"
         },
         {
-          "name": "Harbin Clinic",
-          "source_url": "https://en.wikipedia.org/wiki/Rome,_Georgia"
-        },
-        {
-          "name": "Redmond Regional Medical Center",
-          "source_url": "https://en.wikipedia.org/wiki/Rome,_Georgia"
-        },
-        {
-          "name": "State Mutual Insurance Company",
-          "source_url": "https://en.wikipedia.org/wiki/Rome,_Georgia"
-        },
-        {
-          "name": "Suzuki Manufacturing of America",
-          "source_url": "https://en.wikipedia.org/wiki/Rome,_Georgia"
-        },
-        {
-          "name": "General Electric",
-          "source_url": "https://en.wikipedia.org/wiki/Rome,_Georgia"
-        },
-        {
-          "name": "Kerry Group",
-          "source_url": "https://en.wikipedia.org/wiki/Rome,_Georgia"
-        },
-        {
-          "name": "Georgia Power",
-          "source_url": "https://www.northwestgeorgianews.com/rome/news/local/getting-down-to-business-chamber-hosts-annual-meeting-at-forum/article_2c292d95-89c6-4cb2-8950-81f981fc7218.html"
-        },
-        {
-          "name": "Aerospace",
-          "source_url": "https://georgia.org/blogs/brewing-global-success"
+          "name": "Swifty Serve Corp",
+          "source_url": "https://www.bizjournals.com/atlanta/stories/2000/11/13/daily25.html"
         },
         {
           "name": "Atlanta's The Maintenance Group",
           "source_url": "https://www.bizjournals.com/atlanta/news/2021/02/11/ball-corp-rome-ga-made-aluminum-cups-launch.html"
         },
         {
-          "name": "Bank",
-          "source_url": "https://www.bizjournals.com/atlanta/news/2024/03/26/rome-georgia-nova-river-district-cci-real-estate.html"
+          "name": "Automotive",
+          "source_url": "https://georgia.org/blog/state-small-business-roundtable-opportunity"
         },
         {
-          "name": "Georgia Health Sciences University",
-          "source_url": "https://en.wikipedia.org/wiki/Rome,_Georgia"
+          "name": "Company",
+          "source_url": "https://www.bizjournals.com/atlanta/potmsearch/detail/submission/6568858/Melissa_Free"
+        },
+        {
+          "name": "Floyd County School District",
+          "source_url": null
+        },
+        {
+          "name": "Floyd Medical Center",
+          "source_url": null
         }
       ],
       "sources": [
+        "https://www.bizjournals.com/atlanta/news/2025/09/26/georgia-largest-manufacturers-by-employment.html",
         "https://en.wikipedia.org/wiki/Rome,_Georgia",
-        "https://georgia.org/sites/default/files/2023-01/lowes_4.pdf",
-        "https://www.bizjournals.com/atlanta/news/2024/03/26/rome-georgia-nova-river-district-cci-real-estate.html",
-        "https://georgia.org/blogs/brewing-global-success",
+        "https://www.ajc.com/business/while-metro-economies-thrive-rural-georgia-not-keeping-pace/GpZ6cf6kkR0nlz1lXVsTzI",
         "https://www.selectgeorgia.com/blog/success-stories/Kerry",
         "https://www.bizjournals.com/atlanta/news/2021/02/11/ball-corp-rome-ga-made-aluminum-cups-launch.html",
-        "https://www.northwestgeorgianews.com/hometown_headlines/business/business-bob-blumberg-downtown-restaurant-owner-and-broad-street-advocate-leaving-rome-chamber-existing-industries/article_f244fc93-eb26-5edc-9498-50b4a2744d38.html",
-        "https://www.northwestgeorgianews.com/rome/news/local/getting-down-to-business-chamber-hosts-annual-meeting-at-forum/article_2c292d95-89c6-4cb2-8950-81f981fc7218.html"
+        "https://www.bizjournals.com/atlanta/stories/2000/11/13/daily25.html",
+        "https://www.bizjournals.com/atlanta/news/2025/10/30/nova-river-district-downtown-rome-cci-real-estate.html",
+        "https://www.bizjournals.com/atlanta/potmsearch/detail/submission/6568858/Melissa_Free"
       ],
       "method": "Representative list auto-discovered via Tavily web search across chamber-of-commerce, development-authority and local-news sources. Not exhaustive; ordering approximates source frequency, not headcount."
     },

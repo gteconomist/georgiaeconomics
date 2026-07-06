@@ -3,7 +3,7 @@
   "short_name": "Albany",
   "full_name": "Albany, GA",
   "population": 146000,
-  "as_of": "2026-07-05",
+  "as_of": "2026-07-06",
   "sections": {
     "ces_employment": {
       "series_id": "SMS13105000000000001",
@@ -4177,7 +4177,7 @@
       "source": "Census Business Dynamics Statistics (establishment entry rate, 2022); metro rate indexed to US=100"
     },
     "major_employers": {
-      "as_of": "2026-07-05",
+      "as_of": "2026-07-06",
       "employers": [
         {
           "name": "Manufacturing",
@@ -4200,51 +4200,51 @@
           "source_url": null
         },
         {
-          "name": "Albany Technical College",
-          "source_url": null
-        },
-        {
           "name": "Company",
           "source_url": "https://www.bizjournals.com/atlanta/datacenter/lists"
+        },
+        {
+          "name": "Food Processing",
+          "source_url": "https://www.selectgeorgia.com/discover-georgia/industries/fortune-500-list"
+        },
+        {
+          "name": "Northeast Grocery Inc",
+          "source_url": "https://www.bizjournals.com/albany/subscriber-only/2025/10/17/albanys-330-largest-employers.html"
+        },
+        {
+          "name": "Dougherty County School System",
+          "source_url": "https://albanyherald.com/news/life-changing-opportunities-await-southwest-georgia-regional-job-fair-participants"
         },
         {
           "name": "Energy",
           "source_url": "https://www.bizjournals.com/atlanta/subscriber-only/2025/10/17/metro-atlantas-largest-employers.html"
         },
         {
-          "name": "Financial Services",
-          "source_url": "https://www.bizjournals.com/atlanta/subscriber-only/2025/10/17/metro-atlantas-largest-employers.html"
+          "name": "Alliant Health Solutions",
+          "source_url": "https://www.bizjournals.com/atlanta/event/172489/2026/2026-best-places-to-work-healthiest-employers-awards"
         },
         {
-          "name": "Food",
-          "source_url": "https://www.bizjournals.com/atlanta/subscriber-only/2025/10/17/metro-atlantas-largest-employers.html"
+          "name": "Asbury Automotive",
+          "source_url": "https://www.selectgeorgia.com/discover-georgia/industries/fortune-500-list"
         },
         {
-          "name": "Health Care",
-          "source_url": "https://www.bizjournals.com/atlanta/subscriber-only/2025/10/17/metro-atlantas-largest-employers.html"
+          "name": "Dougherty Technical College",
+          "source_url": null
         },
         {
-          "name": "Industries",
-          "source_url": "https://www.bizjournals.com/atlanta/subscriber-only/2025/10/17/metro-atlantas-largest-employers.html"
-        },
-        {
-          "name": "Marketing Solutions",
-          "source_url": "https://www.bizjournals.com/atlanta/subscriber-only/2025/10/17/metro-atlantas-largest-employers.html"
-        },
-        {
-          "name": "Northeast Grocery Inc",
-          "source_url": "https://www.bizjournals.com/albany/subscriber-only/2025/10/17/albanys-330-largest-employers.html"
+          "name": "Electric",
+          "source_url": "https://www.selectgeorgia.com/discover-georgia/industries/fortune-500-list"
         }
       ],
       "sources": [
         "https://en.wikipedia.org/wiki/Albany,_Georgia",
         "https://www.bizjournals.com/atlanta/subscriber-only/2025/10/17/metro-atlantas-largest-employers.html",
-        "https://www.bizjournals.com/atlanta/subscriber-only/2022/07/15/atlantas-25-largest-employers.html",
         "https://www.bizjournals.com/atlanta/datacenter/lists",
         "https://www.selectgeorgia.com/discover-georgia/industries/fortune-500-list",
-        "https://www.bizjournals.com/atlanta/datacenter/lists/employers-and-whos-who",
-        "https://www.bizjournals.com/albany/news/2023/07/14/albany-region-largest-private-sector-employers.html",
-        "https://www.bizjournals.com/albany/news/2024/07/12/albany-metro-area-private-sector-jobs-employers.html"
+        "https://georgia.org/why-georgia/regions-georgia",
+        "https://www.bizjournals.com/atlanta/event/172489/2026/2026-best-places-to-work-healthiest-employers-awards",
+        "https://albanyherald.com/news/life-changing-opportunities-await-southwest-georgia-regional-job-fair-participants",
+        "https://georgia.org/business-support/small-business"
       ],
       "method": "Representative list auto-discovered via Tavily web search across chamber-of-commerce, development-authority and local-news sources. Not exhaustive; ordering approximates source frequency, not headcount."
     },

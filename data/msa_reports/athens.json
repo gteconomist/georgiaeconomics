@@ -3,7 +3,7 @@
   "short_name": "Athens",
   "full_name": "Athens-Clarke County, GA",
   "population": 217000,
-  "as_of": "2026-07-05",
+  "as_of": "2026-07-06",
   "sections": {
     "ces_employment": {
       "series_id": "SMS13120200000000001",
@@ -5081,23 +5081,15 @@
       "source": "Census Business Dynamics Statistics (establishment entry rate, 2022); metro rate indexed to US=100"
     },
     "major_employers": {
-      "as_of": "2026-07-05",
+      "as_of": "2026-07-06",
       "employers": [
         {
           "name": "University of Georgia",
-          "source_url": "https://www.selectgeorgia.com/landing-pages/san-fran-to-atl/world-class-talent-calls-atlanta-home"
-        },
-        {
-          "name": "Aerospace",
-          "source_url": "https://georgia.org"
+          "source_url": "https://www.onlineathens.com/story/business/2018/06/25/athens-chamber-commerce-names-north/1772620007"
         },
         {
           "name": "Children's Healthcare of Atlanta",
           "source_url": "https://www.onlineathens.com/story/news/2026/03/04/georgias-best-employers-are-these-2-big-businesses-forbes-says/88982542007"
-        },
-        {
-          "name": "Ro Port",
-          "source_url": "https://georgia.org"
         },
         {
           "name": "Clarke County School District",
@@ -5108,47 +5100,55 @@
           "source_url": null
         },
         {
-          "name": "Automotive",
-          "source_url": "https://georgia.org"
+          "name": "Aerospace",
+          "source_url": "https://georgia.org/sites/default/files/2022-05/2022-2-23_gdecd_board_meeting_minutes.pdf"
         },
         {
           "name": "Janssen Pharmaceuticals",
           "source_url": "https://en.wikipedia.org/wiki/Athens,_Georgia"
         },
         {
-          "name": "Logistics",
-          "source_url": "https://georgia.org/why-georgia"
-        },
-        {
-          "name": "Port of Brunswick No",
-          "source_url": "https://georgia.org"
-        },
-        {
-          "name": "Port of Savannah",
-          "source_url": "https://georgia.org"
-        },
-        {
           "name": "RWDC Industries",
           "source_url": "https://en.wikipedia.org/wiki/Athens,_Georgia"
         },
         {
-          "name": "ArcelorMittal Building Solutions Brings North American",
-          "source_url": "https://georgia.org"
+          "name": "Athens Regional Airport Authority",
+          "source_url": null
         },
         {
-          "name": "Athens County School District",
+          "name": "Automotive",
+          "source_url": "https://www.georgia.org/he/node/47076"
+        },
+        {
+          "name": "Clarke County School System",
           "source_url": null
+        },
+        {
+          "name": "Piedmont Athens Regional Hospital",
+          "source_url": null
+        },
+        {
+          "name": "Athens Technical College Augusta University Piedmont",
+          "source_url": "https://en.wikipedia.org/wiki/Athens,_Georgia"
+        },
+        {
+          "name": "Barberitos Creature Comforts Brewing Co. Fire",
+          "source_url": "https://en.wikipedia.org/wiki/Athens,_Georgia"
+        },
+        {
+          "name": "Bay County Industrial Park",
+          "source_url": "https://www.onlineathens.com/story/news/local/2025/09/01/handful-of-key-employers-help-power-bay-county-economic-future/85729803007"
         }
       ],
       "sources": [
         "https://en.wikipedia.org/wiki/Athens,_Georgia",
         "https://www.onlineathens.com/story/news/2026/03/04/georgias-best-employers-are-these-2-big-businesses-forbes-says/88982542007",
-        "https://georgia.org/why-georgia",
-        "https://georgia.org",
         "https://www.ajc.com/top-workplaces/rounding-out-the-top-5-large-businesses/5FF7QFEAMRGF3PLDXYSC4NOFWQ",
         "https://www.onlineathens.com/story/business/2014/07/26/terrell-athens-chamber-focusing-members-and-partnerships-2014/15524196007",
+        "https://www.onlineathens.com/story/business/2018/06/25/athens-chamber-commerce-names-north/1772620007",
         "https://georgia.org/sites/default/files/2021-04/logistics_education_report.pdf",
-        "https://georgia.org/sites/default/files/2022-05/2022-2-23_gdecd_board_meeting_minutes.pdf"
+        "https://georgia.org/sites/default/files/2022-05/2022-2-23_gdecd_board_meeting_minutes.pdf",
+        "https://www.georgia.org/he/node/47076"
       ],
       "method": "Representative list auto-discovered via Tavily web search across chamber-of-commerce, development-authority and local-news sources. Not exhaustive; ordering approximates source frequency, not headcount."
     },
