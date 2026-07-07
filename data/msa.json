@@ -282,7 +282,7 @@
       "full_name": "Atlanta-Sandy Springs-Alpharetta, GA",
       "population": 6307261,
       "metrics": {
-        "unemployment_rate": 2.8,
+        "unemployment_rate": 3.2,
         "pop_growth_yoy": 1.29,
         "home_price_yoy": 1.8,
         "permits_per_1k": 5.2,
@@ -317,7 +317,7 @@
       "full_name": "Augusta-Richmond County, GA-SC",
       "population": 611000,
       "metrics": {
-        "unemployment_rate": 3.3,
+        "unemployment_rate": 3.7,
         "pop_growth_yoy": 1.0,
         "home_price_yoy": 3.8,
         "permits_per_1k": 6.8,
@@ -352,7 +352,7 @@
       "full_name": "Savannah, GA",
       "population": 410000,
       "metrics": {
-        "unemployment_rate": 2.4,
+        "unemployment_rate": 2.7,
         "pop_growth_yoy": 1.5,
         "home_price_yoy": 0.6,
         "permits_per_1k": 13.1,
@@ -387,7 +387,7 @@
       "full_name": "Columbus, GA-AL",
       "population": 329000,
       "metrics": {
-        "unemployment_rate": 3.3,
+        "unemployment_rate": 3.8,
         "pop_growth_yoy": -0.16,
         "home_price_yoy": 8.3,
         "permits_per_1k": 48.3,
@@ -422,7 +422,7 @@
       "full_name": "Macon-Bibb County, GA",
       "population": 232000,
       "metrics": {
-        "unemployment_rate": 3.4,
+        "unemployment_rate": 3.8,
         "pop_growth_yoy": 0.39,
         "home_price_yoy": 5.1,
         "permits_per_1k": 2.2,
@@ -457,7 +457,7 @@
       "full_name": "Athens-Clarke County, GA",
       "population": 217000,
       "metrics": {
-        "unemployment_rate": 2.4,
+        "unemployment_rate": 2.8,
         "pop_growth_yoy": 0.92,
         "home_price_yoy": 1.7,
         "permits_per_1k": 5.9,
@@ -492,7 +492,7 @@
       "full_name": "Gainesville, GA",
       "population": 211000,
       "metrics": {
-        "unemployment_rate": 2.3,
+        "unemployment_rate": 2.6,
         "pop_growth_yoy": 2.07,
         "home_price_yoy": 3.7,
         "permits_per_1k": 9.5,
@@ -527,7 +527,7 @@
       "full_name": "Warner Robins, GA",
       "population": 199000,
       "metrics": {
-        "unemployment_rate": 2.6,
+        "unemployment_rate": 2.9,
         "pop_growth_yoy": 1.56,
         "home_price_yoy": -0.7,
         "permits_per_1k": 7.2,
@@ -562,7 +562,7 @@
       "full_name": "Valdosta, GA",
       "population": 148000,
       "metrics": {
-        "unemployment_rate": 3.0,
+        "unemployment_rate": 3.5,
         "pop_growth_yoy": 0.7,
         "home_price_yoy": 6.6,
         "permits_per_1k": 6.1,
@@ -597,7 +597,7 @@
       "full_name": "Albany, GA",
       "population": 146000,
       "metrics": {
-        "unemployment_rate": 3.5,
+        "unemployment_rate": 3.9,
         "pop_growth_yoy": -0.51,
         "home_price_yoy": 4.4,
         "permits_per_1k": 1.3,
@@ -632,7 +632,7 @@
       "full_name": "Dalton, GA",
       "population": 143000,
       "metrics": {
-        "unemployment_rate": 3.1,
+        "unemployment_rate": 3.3,
         "pop_growth_yoy": 0.53,
         "home_price_yoy": 2.2,
         "permits_per_1k": 3.9,
@@ -667,7 +667,7 @@
       "full_name": "Brunswick, GA",
       "population": 120000,
       "metrics": {
-        "unemployment_rate": 2.6,
+        "unemployment_rate": 2.8,
         "pop_growth_yoy": 0.64,
         "home_price_yoy": -6.2,
         "permits_per_1k": 5.3,
@@ -702,7 +702,7 @@
       "full_name": "Rome, GA",
       "population": 99000,
       "metrics": {
-        "unemployment_rate": 2.7,
+        "unemployment_rate": 3.0,
         "pop_growth_yoy": 0.72,
         "home_price_yoy": 3.7,
         "permits_per_1k": 3.3,
@@ -736,7 +736,7 @@
       "full_name": "Hinesville, GA",
       "population": 78000,
       "metrics": {
-        "unemployment_rate": 3.3,
+        "unemployment_rate": 3.6,
         "pop_growth_yoy": 1.7,
         "home_price_yoy": 3.8,
         "permits_per_1k": 8.1,
@@ -766,7 +766,7 @@
     }
   ],
   "statewide_medians": {
-    "median_unemployment": 2.9,
+    "median_unemployment": 3.25,
     "median_wage_growth": 4.0,
     "median_pop_growth": 0.82,
     "median_home_price_yoy": 3.7,
@@ -776,7 +776,7 @@
   "callouts": {
     "lowest_unemployment": {
       "msa": "Gainesville",
-      "value": 2.3
+      "value": 2.6
     },
     "highest_wage_growth": {
       "msa": "Gainesville",
