@@ -3,7 +3,7 @@
   "short_name": "Atlanta",
   "full_name": "Atlanta-Sandy Springs-Alpharetta, GA",
   "population": 6307261,
-  "as_of": "2026-07-06",
+  "as_of": "2026-07-07",
   "sections": {
     "ces_employment": {
       "series_id": "SMS13120600000000001",
@@ -5246,7 +5246,7 @@
       "source": "Census Business Dynamics Statistics (establishment entry rate, 2022); metro rate indexed to US=100"
     },
     "major_employers": {
-      "as_of": "2026-07-06",
+      "as_of": "2026-07-07",
       "employers": [
         {
           "name": "Emory University",
@@ -5257,7 +5257,7 @@
           "source_url": "https://en.wikipedia.org/wiki/Economy_of_Atlanta"
         },
         {
-          "name": "Southern Company",
+          "name": "Emory Healthcare",
           "source_url": "https://en.wikipedia.org/wiki/Economy_of_Atlanta"
         },
         {
@@ -5265,54 +5265,54 @@
           "source_url": "https://en.wikipedia.org/wiki/Economy_of_Atlanta"
         },
         {
+          "name": "Southern Company",
+          "source_url": "https://en.wikipedia.org/wiki/Economy_of_Atlanta"
+        },
+        {
           "name": "Wellstar Health System",
           "source_url": "https://en.wikipedia.org/wiki/Economy_of_Atlanta"
         },
         {
-          "name": "Emory Healthcare",
+          "name": "Delta Air Lines Inc",
+          "source_url": "https://www.bizjournals.com/atlanta/datacenter/lists"
+        },
+        {
+          "name": "Industries",
+          "source_url": "https://www.bizjournals.com/atlanta/subscriber-only/2025/10/17/metro-atlantas-largest-employers.html"
+        },
+        {
+          "name": "The Coca-Cola Company",
           "source_url": "https://en.wikipedia.org/wiki/Economy_of_Atlanta"
         },
         {
-          "name": "Grady Health System",
+          "name": "Atlanta's Company Lists",
+          "source_url": "https://www.bizjournals.com/atlanta/datacenter/lists"
+        },
+        {
+          "name": "Children's Healthcare of Atlanta",
           "source_url": "https://en.wikipedia.org/wiki/Economy_of_Atlanta"
-        },
-        {
-          "name": "Cola Company",
-          "source_url": null
-        },
-        {
-          "name": "Healthcare of Atlanta",
-          "source_url": null
         },
         {
           "name": "Cornerstone Christian Academy's",
           "source_url": "https://www.ajc.com/top-workplaces"
         },
         {
-          "name": "Industries Growing Faster",
-          "source_url": "https://www.selectgeorgia.com/landing-pages/san-fran-to-atl/top-brands"
+          "name": "Food Processing",
+          "source_url": "https://georgia.org/why-georgia/regions-georgia/metro-atlanta"
         },
         {
           "name": "Foundation Financial Group",
-          "source_url": "https://en.wikipedia.org/wiki/Economy_of_Atlanta"
-        },
-        {
-          "name": "Gentiva Health Services",
-          "source_url": "https://en.wikipedia.org/wiki/Economy_of_Atlanta"
-        },
-        {
-          "name": "Oxford Industries",
           "source_url": "https://en.wikipedia.org/wiki/Economy_of_Atlanta"
         }
       ],
       "sources": [
         "https://en.wikipedia.org/wiki/Economy_of_Atlanta",
-        "https://www.bizjournals.com/atlanta/subscriber-only/2022/07/15/atlantas-25-largest-employers.html",
         "https://www.bizjournals.com/atlanta/datacenter/lists",
+        "https://www.bizjournals.com/atlanta/subscriber-only/2022/07/15/atlantas-25-largest-employers.html",
         "https://www.selectgeorgia.com/landing-pages/san-fran-to-atl/top-brands",
-        "https://www.ajc.com/top-workplaces",
         "https://www.bizjournals.com/atlanta/subscriber-only/2025/10/17/metro-atlantas-largest-employers.html",
-        "https://www.selectgeorgia.com/sxsw/top-brands",
+        "https://georgia.org/why-georgia/regions-georgia/metro-atlanta",
+        "https://www.ajc.com/top-workplaces",
         "https://www.selectgeorgia.com/discover-georgia/industries/fortune-500-list"
       ],
       "method": "Representative list auto-discovered via Tavily web search across chamber-of-commerce, development-authority and local-news sources. Not exhaustive; ordering approximates source frequency, not headcount."

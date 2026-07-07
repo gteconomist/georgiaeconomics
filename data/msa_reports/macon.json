@@ -3,7 +3,7 @@
   "short_name": "Macon",
   "full_name": "Macon-Bibb County, GA",
   "population": 232000,
-  "as_of": "2026-07-06",
+  "as_of": "2026-07-07",
   "sections": {
     "ces_employment": {
       "series_id": "SMS13314200000000001",
@@ -5072,74 +5072,74 @@
       "source": "Census Business Dynamics Statistics (establishment entry rate, 2022); metro rate indexed to US=100"
     },
     "major_employers": {
-      "as_of": "2026-07-06",
+      "as_of": "2026-07-07",
       "employers": [
+        {
+          "name": "Manufacturing",
+          "source_url": "https://georgia.org/press-releases/2026/georgia-based-unified-legacy-create-500-new-jobs-macon-bibb-county"
+        },
+        {
+          "name": "Aerospace",
+          "source_url": "https://georgia.org/press-releases/2026/georgia-based-unified-legacy-create-500-new-jobs-macon-bibb-county"
+        },
         {
           "name": "Mercer University",
           "source_url": "https://en.wikipedia.org/wiki/Macon,_Georgia"
         },
         {
-          "name": "Aerospace",
-          "source_url": "https://georgia.org/press-releases/2025/trinet-create-750-jobs-metro-atlanta"
+          "name": "ArcelorMittal Building Solutions Brings North American",
+          "source_url": "https://georgia.org/press-releases/2026/georgia-based-unified-legacy-create-500-new-jobs-macon-bibb-county"
         },
         {
-          "name": "Atrium Health Navicent The Medical Center",
-          "source_url": "https://www.macon.com/news/business/article258547393.html"
-        },
-        {
-          "name": "Coliseum Health Systems",
-          "source_url": "https://www.macon.com/news/business/article258547393.html"
+          "name": "Automotive",
+          "source_url": "https://georgia.org/press-releases/2026/georgia-based-unified-legacy-create-500-new-jobs-macon-bibb-county"
         },
         {
           "name": "Piedmont Healthcare",
-          "source_url": null
+          "source_url": "https://choosemacon.com/work/major-employers"
         },
         {
-          "name": "Southern Company",
-          "source_url": "https://www.macon.com/living/article300278809.html"
+          "name": "Authority Brands Relocates HQ",
+          "source_url": "https://georgia.org/press-releases/2026/georgia-based-unified-legacy-create-500-new-jobs-macon-bibb-county"
         },
         {
-          "name": "Armstrong World Industries",
-          "source_url": "https://www.macon.com/news/local/article235905642.html"
+          "name": "Blue Bird Corporation",
+          "source_url": "https://en.wikipedia.org/wiki/Central_Georgia"
         },
         {
-          "name": "Beasley Flooring Products",
-          "source_url": "https://www.macon.com/news/local/article235905642.html"
+          "name": "Cobb Co",
+          "source_url": "https://georgia.org/press-releases/2026/georgia-based-unified-legacy-create-500-new-jobs-macon-bibb-county"
         },
         {
-          "name": "Forsyth County School District",
-          "source_url": "https://www.macon.com/living/article300278809.html"
+          "name": "Pratt Industries",
+          "source_url": "https://georgia.org/why-georgia/regions-georgia/middle-georgia"
         },
         {
-          "name": "Logistics",
-          "source_url": "https://georgia.org/center-of-innovation/jobs-and-investment-georgia-increase-2010"
+          "name": "Thomas Co",
+          "source_url": "https://georgia.org/press-releases/2026/georgia-based-unified-legacy-create-500-new-jobs-macon-bibb-county"
         },
         {
-          "name": "Manufacturing",
-          "source_url": "https://georgia.org/press-releases/2025/trinet-create-750-jobs-metro-atlanta"
+          "name": "Atrium Health",
+          "source_url": "https://choosemacon.com/work/major-employers"
         },
         {
-          "name": "Mohawk Industries",
-          "source_url": "https://www.macon.com/living/article300278809.html"
+          "name": "Crisp Co",
+          "source_url": "https://georgia.org/press-releases/2026/georgia-based-unified-legacy-create-500-new-jobs-macon-bibb-county"
         },
         {
-          "name": "Tractor Supply Company",
-          "source_url": "https://www.macon.com/news/local/article235905642.html"
-        },
-        {
-          "name": "YKK Corporation of America",
-          "source_url": "https://www.macon.com/news/local/article235905642.html"
+          "name": "Energy",
+          "source_url": "https://georgia.org/press-releases/2026/georgia-based-unified-legacy-create-500-new-jobs-macon-bibb-county"
         }
       ],
       "sources": [
         "https://en.wikipedia.org/wiki/Macon,_Georgia",
         "https://www.macon.com/living/article300278809.html",
-        "https://www.macon.com/news/local/article314818813.html",
-        "https://georgia.org/press-releases/2025/trinet-create-750-jobs-metro-atlanta",
-        "https://www.selectgeorgia.com/discover-georgia/industries/fortune-500-list",
-        "https://georgia.org/center-of-innovation/jobs-and-investment-georgia-increase-2010",
-        "https://www.macon.com/news/local/article235905642.html",
-        "https://www.macon.com/news/business/article258547393.html"
+        "https://en.wikipedia.org/wiki/Central_Georgia",
+        "https://georgia.org/press-releases/2026/georgia-based-unified-legacy-create-500-new-jobs-macon-bibb-county",
+        "https://georgia.org/press-releases/2026/arcelormittal-building-solutions-brings-north-american-hq-macon-bibb",
+        "https://georgia.org/why-georgia/regions-georgia/middle-georgia",
+        "https://choosemacon.com/work/major-employers",
+        "https://maconchamber.com/category/economic-development"
       ],
       "method": "Representative list auto-discovered via Tavily web search across chamber-of-commerce, development-authority and local-news sources. Not exhaustive; ordering approximates source frequency, not headcount."
     },

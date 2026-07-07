@@ -3,7 +3,7 @@
   "short_name": "Athens",
   "full_name": "Athens-Clarke County, GA",
   "population": 217000,
-  "as_of": "2026-07-06",
+  "as_of": "2026-07-07",
   "sections": {
     "ces_employment": {
       "series_id": "SMS13120200000000001",
@@ -5081,74 +5081,74 @@
       "source": "Census Business Dynamics Statistics (establishment entry rate, 2022); metro rate indexed to US=100"
     },
     "major_employers": {
-      "as_of": "2026-07-06",
+      "as_of": "2026-07-07",
       "employers": [
+        {
+          "name": "Aerospace",
+          "source_url": "https://georgia.org/search?page=134"
+        },
+        {
+          "name": "Automotive",
+          "source_url": "https://georgia.org/search?page=134"
+        },
+        {
+          "name": "Manufacturing",
+          "source_url": "https://georgia.org/search?page=134"
+        },
         {
           "name": "University of Georgia",
           "source_url": "https://www.onlineathens.com/story/business/2018/06/25/athens-chamber-commerce-names-north/1772620007"
+        },
+        {
+          "name": "Energy",
+          "source_url": "https://georgia.org/search?page=134"
+        },
+        {
+          "name": "Food Processing",
+          "source_url": "https://georgia.org/search?page=134"
+        },
+        {
+          "name": "Logistics",
+          "source_url": "https://georgia.org/search?page=134"
         },
         {
           "name": "Children's Healthcare of Atlanta",
           "source_url": "https://www.onlineathens.com/story/news/2026/03/04/georgias-best-employers-are-these-2-big-businesses-forbes-says/88982542007"
         },
         {
-          "name": "Clarke County School District",
-          "source_url": null
+          "name": "ArcelorMittal Building Solutions Brings North American",
+          "source_url": "https://georgia.org/press-releases/2023/life-sciences-manufacturer-meissner-create-1700-jobs-athens-clarke-county"
         },
         {
-          "name": "Piedmont Athens Regional Medical Center",
-          "source_url": null
+          "name": "Authority Brands Relocates HQ",
+          "source_url": "https://georgia.org/press-releases/2023/life-sciences-manufacturer-meissner-create-1700-jobs-athens-clarke-county"
         },
         {
-          "name": "Aerospace",
-          "source_url": "https://georgia.org/sites/default/files/2022-05/2022-2-23_gdecd_board_meeting_minutes.pdf"
+          "name": "Cobb Co",
+          "source_url": "https://georgia.org/press-releases/2023/life-sciences-manufacturer-meissner-create-1700-jobs-athens-clarke-county"
         },
         {
-          "name": "Janssen Pharmaceuticals",
-          "source_url": "https://en.wikipedia.org/wiki/Athens,_Georgia"
+          "name": "Industries",
+          "source_url": "https://georgia.org/press-releases/2023/life-sciences-manufacturer-meissner-create-1700-jobs-athens-clarke-county"
         },
         {
-          "name": "RWDC Industries",
-          "source_url": "https://en.wikipedia.org/wiki/Athens,_Georgia"
+          "name": "Southerfield Road Industrial Park Earns",
+          "source_url": "https://georgia.org/press-releases/2023/life-sciences-manufacturer-meissner-create-1700-jobs-athens-clarke-county"
         },
         {
-          "name": "Athens Regional Airport Authority",
-          "source_url": null
-        },
-        {
-          "name": "Automotive",
-          "source_url": "https://www.georgia.org/he/node/47076"
-        },
-        {
-          "name": "Clarke County School System",
-          "source_url": null
-        },
-        {
-          "name": "Piedmont Athens Regional Hospital",
-          "source_url": null
-        },
-        {
-          "name": "Athens Technical College Augusta University Piedmont",
-          "source_url": "https://en.wikipedia.org/wiki/Athens,_Georgia"
-        },
-        {
-          "name": "Barberitos Creature Comforts Brewing Co. Fire",
-          "source_url": "https://en.wikipedia.org/wiki/Athens,_Georgia"
-        },
-        {
-          "name": "Bay County Industrial Park",
-          "source_url": "https://www.onlineathens.com/story/news/local/2025/09/01/handful-of-key-employers-help-power-bay-county-economic-future/85729803007"
+          "name": "Thomas Co",
+          "source_url": "https://georgia.org"
         }
       ],
       "sources": [
         "https://en.wikipedia.org/wiki/Athens,_Georgia",
         "https://www.onlineathens.com/story/news/2026/03/04/georgias-best-employers-are-these-2-big-businesses-forbes-says/88982542007",
-        "https://www.ajc.com/top-workplaces/rounding-out-the-top-5-large-businesses/5FF7QFEAMRGF3PLDXYSC4NOFWQ",
+        "https://georgia.org/press-releases/2023/life-sciences-manufacturer-meissner-create-1700-jobs-athens-clarke-county",
+        "https://georgia.org/search?page=134",
+        "https://georgia.org/blog/georgia-exporter-year-athens-research-and-technology",
+        "https://www.georgia.org/he/node/47076",
         "https://www.onlineathens.com/story/business/2014/07/26/terrell-athens-chamber-focusing-members-and-partnerships-2014/15524196007",
-        "https://www.onlineathens.com/story/business/2018/06/25/athens-chamber-commerce-names-north/1772620007",
-        "https://georgia.org/sites/default/files/2021-04/logistics_education_report.pdf",
-        "https://georgia.org/sites/default/files/2022-05/2022-2-23_gdecd_board_meeting_minutes.pdf",
-        "https://www.georgia.org/he/node/47076"
+        "https://www.onlineathens.com/story/business/2018/06/25/athens-chamber-commerce-names-north/1772620007"
       ],
       "method": "Representative list auto-discovered via Tavily web search across chamber-of-commerce, development-authority and local-news sources. Not exhaustive; ordering approximates source frequency, not headcount."
     },

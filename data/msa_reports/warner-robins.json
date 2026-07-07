@@ -3,7 +3,7 @@
   "short_name": "Warner Robins",
   "full_name": "Warner Robins, GA",
   "population": 199000,
-  "as_of": "2026-07-06",
+  "as_of": "2026-07-07",
   "sections": {
     "ces_employment": {
       "series_id": "SMS13475800000000001",
@@ -4201,74 +4201,74 @@
       "source": "Census Business Dynamics Statistics (establishment entry rate, 2022); metro rate indexed to US=100"
     },
     "major_employers": {
-      "as_of": "2026-07-06",
+      "as_of": "2026-07-07",
       "employers": [
         {
-          "name": "Atrium Health Navicent The Medical Center",
-          "source_url": "https://www.macon.com/news/business/article258547393.html"
-        },
-        {
-          "name": "Houston Healthcare Complex",
-          "source_url": "https://www.macon.com/news/business/article258547393.html"
-        },
-        {
-          "name": "Perdue Foods",
-          "source_url": "https://www.macon.com/news/business/article258547393.html"
-        },
-        {
           "name": "Pratt Industries",
-          "source_url": "https://www.bizjournals.com/atlanta/news/2026/04/27/pratt-industries-corrugated-box-warner-robins.html"
-        },
-        {
-          "name": "Robins International Industrial Park",
-          "source_url": "https://www.macon.com/news/local/community/houston-peach/article315207803.html"
-        },
-        {
-          "name": "Blue Bird Body Co",
-          "source_url": "https://www.macon.com/news/business/article258547393.html"
+          "source_url": "https://georgia.org/press-releases/2023/georgia-based-pratt-industries-plans-new-manufacturing-facility-peach-county"
         },
         {
           "name": "Manufacturing",
           "source_url": "https://georgia.org/why-georgia/regions-georgia/middle-georgia"
         },
         {
-          "name": "Atrium Health Navicent Medical Center",
-          "source_url": null
-        },
-        {
-          "name": "Houston Medical Center",
-          "source_url": "https://en.wikipedia.org/wiki/Warner_Robins,_Georgia"
+          "name": "Houston Healthcare",
+          "source_url": "https://en.wikipedia.org/wiki/Central_Georgia"
         },
         {
           "name": "Medical Center of Central Georgia",
           "source_url": "https://en.wikipedia.org/wiki/Central_Georgia"
         },
         {
-          "name": "Coliseum Health Systems",
-          "source_url": "https://www.macon.com/news/business/article258547393.html"
+          "name": "Robins International Industrial Park",
+          "source_url": "https://www.macon.com/news/local/community/houston-peach/article315207803.html"
         },
         {
-          "name": "Mercer University",
-          "source_url": "https://www.macon.com/news/business/article258547393.html"
+          "name": "Blue Bird Corporation",
+          "source_url": "https://en.wikipedia.org/wiki/Central_Georgia"
         },
         {
-          "name": "Primary Industries",
-          "source_url": "https://www.macon.com/news/business/article258547393.html"
+          "name": "Coliseum Health System",
+          "source_url": "https://en.wikipedia.org/wiki/Central_Georgia"
         },
         {
-          "name": "Terry College of Business",
-          "source_url": "https://www.macon.com/news/business/article258547393.html"
+          "name": "Houston Medical Center",
+          "source_url": "https://en.wikipedia.org/wiki/Warner_Robins,_Georgia"
+        },
+        {
+          "name": "Inalfa Roof Systems",
+          "source_url": "https://georgia.org/sites/default/files/2020-08/2019_-_12-4-19_gdecd_board_meeting_minutes.pdf"
+        },
+        {
+          "name": "Criterion Technologies",
+          "source_url": "https://en.wikipedia.org/wiki/Central_Georgia"
+        },
+        {
+          "name": "Georgia Beer Co",
+          "source_url": "https://georgia.org/blogs/longtime-investment-workforce-solutions-keeps-georgia-top-state-business"
+        },
+        {
+          "name": "Greenfield LLC",
+          "source_url": "https://georgia.org/blogs/longtime-investment-workforce-solutions-keeps-georgia-top-state-business"
+        },
+        {
+          "name": "Solutions Pest",
+          "source_url": "https://en.wikipedia.org/wiki/Central_Georgia"
+        },
+        {
+          "name": "Southern Company",
+          "source_url": "https://en.wikipedia.org/wiki/Central_Georgia"
         }
       ],
       "sources": [
-        "https://www.macon.com/news/business/article258547393.html",
         "https://en.wikipedia.org/wiki/Central_Georgia",
         "https://en.wikipedia.org/wiki/Warner_Robins,_Georgia",
+        "https://en.wikipedia.org/wiki/Robins_Air_Force_Base",
         "https://www.macon.com/news/local/community/houston-peach/article315207803.html",
-        "https://www.bizjournals.com/atlanta/news/2024/08/22/emory-healthcare-houston-healthcare-partnership.html",
+        "https://georgia.org/press-releases/2023/georgia-based-pratt-industries-plans-new-manufacturing-facility-peach-county",
         "https://georgia.org/why-georgia/regions-georgia/middle-georgia",
         "https://www.bizjournals.com/atlanta/news/2026/04/27/pratt-industries-corrugated-box-warner-robins.html",
-        "https://georgia.org/sites/default/files/2021-04/logistics_education_report.pdf"
+        "https://georgia.org/sites/default/files/2020-08/2019_-_12-4-19_gdecd_board_meeting_minutes.pdf"
       ],
       "method": "Representative list auto-discovered via Tavily web search across chamber-of-commerce, development-authority and local-news sources. Not exhaustive; ordering approximates source frequency, not headcount."
     },

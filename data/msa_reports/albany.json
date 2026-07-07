@@ -3,7 +3,7 @@
   "short_name": "Albany",
   "full_name": "Albany, GA",
   "population": 146000,
-  "as_of": "2026-07-06",
+  "as_of": "2026-07-07",
   "sections": {
     "ces_employment": {
       "series_id": "SMS13105000000000001",
@@ -4177,8 +4177,12 @@
       "source": "Census Business Dynamics Statistics (establishment entry rate, 2022); metro rate indexed to US=100"
     },
     "major_employers": {
-      "as_of": "2026-07-06",
+      "as_of": "2026-07-07",
       "employers": [
+        {
+          "name": "Aerospace",
+          "source_url": "https://www.selectgeorgia.com/discover-georgia/industries/fortune-500-list"
+        },
         {
           "name": "Manufacturing",
           "source_url": "https://en.wikipedia.org/wiki/Albany,_Georgia"
@@ -4188,7 +4192,15 @@
           "source_url": "https://en.wikipedia.org/wiki/Albany,_Georgia"
         },
         {
-          "name": "Aerospace",
+          "name": "Dougherty County School System",
+          "source_url": "https://albanyherald.com/news/life-changing-opportunities-await-southwest-georgia-regional-job-fair-participants"
+        },
+        {
+          "name": "Energy",
+          "source_url": "https://www.bizjournals.com/atlanta/subscriber-only/2025/10/17/metro-atlantas-largest-employers.html"
+        },
+        {
+          "name": "Food Processing",
           "source_url": "https://www.selectgeorgia.com/discover-georgia/industries/fortune-500-list"
         },
         {
@@ -4200,36 +4212,24 @@
           "source_url": null
         },
         {
-          "name": "Company",
-          "source_url": "https://www.bizjournals.com/atlanta/datacenter/lists"
-        },
-        {
-          "name": "Food Processing",
-          "source_url": "https://www.selectgeorgia.com/discover-georgia/industries/fortune-500-list"
-        },
-        {
           "name": "Northeast Grocery Inc",
           "source_url": "https://www.bizjournals.com/albany/subscriber-only/2025/10/17/albanys-330-largest-employers.html"
         },
         {
-          "name": "Dougherty County School System",
-          "source_url": "https://albanyherald.com/news/life-changing-opportunities-await-southwest-georgia-regional-job-fair-participants"
+          "name": "Atlanta's Company Lists",
+          "source_url": "https://www.bizjournals.com/atlanta/datacenter/lists"
         },
         {
-          "name": "Energy",
+          "name": "Automotive",
+          "source_url": "https://georgia.org/why-georgia/regions-georgia"
+        },
+        {
+          "name": "Industries",
           "source_url": "https://www.bizjournals.com/atlanta/subscriber-only/2025/10/17/metro-atlantas-largest-employers.html"
         },
         {
-          "name": "Alliant Health Solutions",
-          "source_url": "https://www.bizjournals.com/atlanta/event/172489/2026/2026-best-places-to-work-healthiest-employers-awards"
-        },
-        {
-          "name": "Asbury Automotive",
-          "source_url": "https://www.selectgeorgia.com/discover-georgia/industries/fortune-500-list"
-        },
-        {
-          "name": "Dougherty Technical College",
-          "source_url": null
+          "name": "Phoebe Putney Health System",
+          "source_url": "https://albanyherald.com/wp-content/uploads/2025/04/042925-ABH-A01-A12.pdf"
         },
         {
           "name": "Electric",
@@ -4242,9 +4242,9 @@
         "https://www.bizjournals.com/atlanta/datacenter/lists",
         "https://www.selectgeorgia.com/discover-georgia/industries/fortune-500-list",
         "https://georgia.org/why-georgia/regions-georgia",
-        "https://www.bizjournals.com/atlanta/event/172489/2026/2026-best-places-to-work-healthiest-employers-awards",
-        "https://albanyherald.com/news/life-changing-opportunities-await-southwest-georgia-regional-job-fair-participants",
-        "https://georgia.org/business-support/small-business"
+        "https://albanyherald.com/wp-content/uploads/2025/04/042925-ABH-A01-A12.pdf",
+        "https://www.georgia.org/es/node/21121",
+        "https://albanyherald.com/news/life-changing-opportunities-await-southwest-georgia-regional-job-fair-participants"
       ],
       "method": "Representative list auto-discovered via Tavily web search across chamber-of-commerce, development-authority and local-news sources. Not exhaustive; ordering approximates source frequency, not headcount."
     },

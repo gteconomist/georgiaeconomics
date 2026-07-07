@@ -1,5 +1,5 @@
 {
- "fetched_at": "2026-07-06T13:01:52Z",
+ "fetched_at": "2026-07-07T12:03:25Z",
  "schema": "housing/v1",
  "metros": [
   {
@@ -7499,24 +7499,24 @@
  },
  "_meta": {
   "metro_rollup": {
-   "last_updated": "2026-07-06T13:01:52Z",
+   "last_updated": "2026-07-07T12:03:25Z",
    "n_metros": 14,
    "stale": false
   },
   "ga_hpi": {
-   "last_updated": "2026-07-06T13:01:54Z",
+   "last_updated": "2026-07-07T12:03:26Z",
    "stale": false
   },
   "county_acs": {
-   "last_updated": "2026-07-06T13:01:55Z",
+   "last_updated": "2026-07-07T12:03:26Z",
    "stale": false
   },
   "county_permits": {
-   "last_updated": "2026-07-06T13:01:56Z",
+   "last_updated": "2026-07-07T12:03:26Z",
    "stale": false
   },
   "non_metro": {
-   "last_updated": "2026-07-06T13:01:56Z",
+   "last_updated": "2026-07-07T12:03:26Z",
    "stale": false
   }
  },

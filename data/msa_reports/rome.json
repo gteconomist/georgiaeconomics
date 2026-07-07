@@ -3,7 +3,7 @@
   "short_name": "Rome",
   "full_name": "Rome, GA",
   "population": 99000,
-  "as_of": "2026-07-06",
+  "as_of": "2026-07-07",
   "sections": {
     "ces_employment": {
       "series_id": "SMS13406600000000001",
@@ -4429,74 +4429,74 @@
       "source": "Census Business Dynamics Statistics (establishment entry rate, 2022); metro rate indexed to US=100"
     },
     "major_employers": {
-      "as_of": "2026-07-06",
+      "as_of": "2026-07-07",
       "employers": [
         {
-          "name": "Berry College",
-          "source_url": "https://en.wikipedia.org/wiki/Rome,_Georgia"
-        },
-        {
-          "name": "Energy",
-          "source_url": "https://www.bizjournals.com/atlanta/potmsearch/detail/submission/6568858/Melissa_Free"
-        },
-        {
-          "name": "Georgia Northwestern Technical College",
-          "source_url": "https://en.wikipedia.org/wiki/Rome,_Georgia"
-        },
-        {
-          "name": "Georgia Power",
-          "source_url": "https://www.bizjournals.com/atlanta/potmsearch/detail/submission/6568858/Melissa_Free"
-        },
-        {
-          "name": "Aerospace",
-          "source_url": "https://georgia.org/blog/state-small-business-roundtable-opportunity"
+          "name": "Mills Fitzner",
+          "source_url": "https://www.northwestgeorgianews.com/rome/news/local/getting-down-to-business-chamber-hosts-annual-meeting-at-forum/article_2c292d95-89c6-4cb2-8950-81f981fc7218.html"
         },
         {
           "name": "Ball Corp",
           "source_url": "https://www.bizjournals.com/atlanta/news/2021/02/11/ball-corp-rome-ga-made-aluminum-cups-launch.html"
         },
         {
-          "name": "Manufacturing",
-          "source_url": "https://www.bizjournals.com/atlanta/news/2025/09/26/georgia-largest-manufacturers-by-employment.html"
-        },
-        {
-          "name": "Shorter University",
+          "name": "Floyd Medical Center",
           "source_url": "https://en.wikipedia.org/wiki/Rome,_Georgia"
         },
         {
-          "name": "Swifty Serve Corp",
-          "source_url": "https://www.bizjournals.com/atlanta/stories/2000/11/13/daily25.html"
+          "name": "Harbin Clinic",
+          "source_url": "https://en.wikipedia.org/wiki/Rome,_Georgia"
+        },
+        {
+          "name": "Redmond Regional Medical Center",
+          "source_url": "https://en.wikipedia.org/wiki/Rome,_Georgia"
+        },
+        {
+          "name": "State Mutual Insurance Company",
+          "source_url": "https://en.wikipedia.org/wiki/Rome,_Georgia"
+        },
+        {
+          "name": "Suzuki Manufacturing of America",
+          "source_url": "https://en.wikipedia.org/wiki/Rome,_Georgia"
+        },
+        {
+          "name": "Utilities",
+          "source_url": "https://en.wikipedia.org/wiki/List_of_largest_Italian_companies"
+        },
+        {
+          "name": "Kerry Group",
+          "source_url": "https://en.wikipedia.org/wiki/Rome,_Georgia"
+        },
+        {
+          "name": "Medical College of Georgia",
+          "source_url": "https://en.wikipedia.org/wiki/Rome,_Georgia"
+        },
+        {
+          "name": "Georgia Power",
+          "source_url": "https://www.northwestgeorgianews.com/rome/news/local/getting-down-to-business-chamber-hosts-annual-meeting-at-forum/article_2c292d95-89c6-4cb2-8950-81f981fc7218.html"
+        },
+        {
+          "name": "Aerospace",
+          "source_url": "https://en.wikipedia.org/wiki/List_of_largest_Italian_companies"
+        },
+        {
+          "name": "Ameriprise Financial Services",
+          "source_url": "https://www.bizjournals.com/atlanta/news/2025/10/30/nova-river-district-downtown-rome-cci-real-estate.html"
         },
         {
           "name": "Atlanta's The Maintenance Group",
           "source_url": "https://www.bizjournals.com/atlanta/news/2021/02/11/ball-corp-rome-ga-made-aluminum-cups-launch.html"
-        },
-        {
-          "name": "Automotive",
-          "source_url": "https://georgia.org/blog/state-small-business-roundtable-opportunity"
-        },
-        {
-          "name": "Company",
-          "source_url": "https://www.bizjournals.com/atlanta/potmsearch/detail/submission/6568858/Melissa_Free"
-        },
-        {
-          "name": "Floyd County School District",
-          "source_url": null
-        },
-        {
-          "name": "Floyd Medical Center",
-          "source_url": null
         }
       ],
       "sources": [
-        "https://www.bizjournals.com/atlanta/news/2025/09/26/georgia-largest-manufacturers-by-employment.html",
         "https://en.wikipedia.org/wiki/Rome,_Georgia",
-        "https://www.ajc.com/business/while-metro-economies-thrive-rural-georgia-not-keeping-pace/GpZ6cf6kkR0nlz1lXVsTzI",
-        "https://www.selectgeorgia.com/blog/success-stories/Kerry",
-        "https://www.bizjournals.com/atlanta/news/2021/02/11/ball-corp-rome-ga-made-aluminum-cups-launch.html",
-        "https://www.bizjournals.com/atlanta/stories/2000/11/13/daily25.html",
+        "https://www.ajc.com/business/lowe-bringing-600-jobs-rome/V7ylHfF7WKPOa2Zbe5IWKK",
+        "https://georgia.org/press-releases/2024/governor-and-first-lady-kemp-reinforce-economic-partnerships-italy",
         "https://www.bizjournals.com/atlanta/news/2025/10/30/nova-river-district-downtown-rome-cci-real-estate.html",
-        "https://www.bizjournals.com/atlanta/potmsearch/detail/submission/6568858/Melissa_Free"
+        "https://georgia.org/sites/default/files/2023-01/lowes_4.pdf",
+        "https://www.bizjournals.com/atlanta/news/2025/09/26/georgia-largest-manufacturers-by-employment.html",
+        "https://www.bizjournals.com/atlanta/news/2021/02/11/ball-corp-rome-ga-made-aluminum-cups-launch.html",
+        "https://www.northwestgeorgianews.com/rome/news/local/getting-down-to-business-chamber-hosts-annual-meeting-at-forum/article_2c292d95-89c6-4cb2-8950-81f981fc7218.html"
       ],
       "method": "Representative list auto-discovered via Tavily web search across chamber-of-commerce, development-authority and local-news sources. Not exhaustive; ordering approximates source frequency, not headcount."
     },

@@ -3,7 +3,7 @@
   "short_name": "Savannah",
   "full_name": "Savannah, GA",
   "population": 410000,
-  "as_of": "2026-07-06",
+  "as_of": "2026-07-07",
   "sections": {
     "ces_employment": {
       "series_id": "SMS13423400000000001",
@@ -5152,74 +5152,74 @@
       "source": "Census Business Dynamics Statistics (establishment entry rate, 2022); metro rate indexed to US=100"
     },
     "major_employers": {
-      "as_of": "2026-07-06",
+      "as_of": "2026-07-07",
       "employers": [
-        {
-          "name": "Children's Healthcare of Atlanta",
-          "source_url": "https://www.onlineathens.com/story/news/2026/03/04/georgias-best-employers-are-these-2-big-businesses-forbes-says/88982542007"
-        },
-        {
-          "name": "Port of Savannah",
-          "source_url": "https://www.savannahnow.com/story/business/2024/03/28/new-savannah-chamber-initiative-kicks-off-with-appearance-from-gov-kemp/73104939007"
-        },
-        {
-          "name": "Savannah State University",
-          "source_url": null
-        },
         {
           "name": "Aerospace",
           "source_url": "https://www.selectgeorgia.com/discover-georgia/industries/fortune-500-list"
         },
         {
-          "name": "Georgia Ports Authority",
-          "source_url": "https://www.savannahnow.com/story/news/local/2026/05/10/savannahs-state-of-small-business-shows-growth-opportunities/89997038007"
-        },
-        {
-          "name": "Digital Marketing Solutions",
+          "name": "Children's Healthcare of Atlanta",
           "source_url": "https://www.savannahnow.com/story/news/2026/02/24/forbes-ranked-2-georgia-businesses-among-top-50-large-employers-in-us/88828522007"
         },
         {
-          "name": "Georgia Southern University",
-          "source_url": "https://www.selectgeorgia.com/blog/welcome-seapoint-industrial-site-savannah-ga"
+          "name": "Port of Savannah",
+          "source_url": "https://georgia.org"
+        },
+        {
+          "name": "Savannah State University",
+          "source_url": "https://www.savannahnow.com/story/business/2013/02/19/understanding-purpose-savannah-chamber/13655438007"
+        },
+        {
+          "name": "Automotive",
+          "source_url": "https://georgia.org"
+        },
+        {
+          "name": "Food Processing",
+          "source_url": "https://www.selectgeorgia.com/discover-georgia/industries/fortune-500-list"
+        },
+        {
+          "name": "Georgia Ports Authority",
+          "source_url": null
+        },
+        {
+          "name": "Manufacturing",
+          "source_url": "https://georgia.org/press-releases/2026/georgia-recognizes-five-2026-small-business-rock-stars"
         },
         {
           "name": "Memorial Health University Medical Center",
           "source_url": null
         },
         {
-          "name": "Hyundai Motor Group",
-          "source_url": "https://www.savannahnow.com/story/news/local/2026/05/10/savannahs-state-of-small-business-shows-growth-opportunities/89997038007"
+          "name": "ArcelorMittal Building Solutions Brings North American",
+          "source_url": "https://georgia.org/press-releases/2026/georgia-recognizes-five-2026-small-business-rock-stars"
         },
         {
-          "name": "Metaplant",
-          "source_url": "https://www.georgia.org/press-release/sewon-america-announces-740-new-jobs-effingham-county"
+          "name": "Authority Brands Relocates HQ",
+          "source_url": "https://georgia.org/press-releases/2026/georgia-recognizes-five-2026-small-business-rock-stars"
         },
         {
-          "name": "Savannah College of Art",
-          "source_url": "https://www.selectgeorgia.com/yourgeorgia/why-savannah-HQ/culture-in-atlanta"
+          "name": "Cobb Co",
+          "source_url": "https://georgia.org/press-releases/2026/georgia-recognizes-five-2026-small-business-rock-stars"
         },
         {
-          "name": "Baptist Healthcare",
-          "source_url": null
+          "name": "Digital Marketing Solutions",
+          "source_url": "https://www.savannahnow.com/story/news/2026/02/24/forbes-ranked-2-georgia-businesses-among-top-50-large-employers-in-us/88828522007"
         },
         {
-          "name": "Chatham Manufacturing Center",
-          "source_url": null
-        },
-        {
-          "name": "Distribution",
-          "source_url": "https://georgia.org/center-of-innovation/jobs-and-investment-georgia-increase-2010"
+          "name": "Energy",
+          "source_url": "https://georgia.org"
         }
       ],
       "sources": [
-        "https://en.wikipedia.org/wiki/Savannah,_Georgia",
-        "https://www.selectgeorgia.com/yourgeorgia/why-savannah-HQ/culture-in-atlanta",
-        "https://www.selectgeorgia.com/blog/welcome-seapoint-industrial-site-savannah-ga",
         "https://en.wikipedia.org/wiki/Category:Companies_based_in_Savannah,_Georgia",
-        "https://www.onlineathens.com/story/news/2026/03/04/georgias-best-employers-are-these-2-big-businesses-forbes-says/88982542007",
+        "https://www.ajc.com/business/georgia-best-employers-for-2019-according-forbes/97QBCslwnyl3Ob4ujTmnLK",
         "https://www.savannahnow.com/story/news/2026/02/24/forbes-ranked-2-georgia-businesses-among-top-50-large-employers-in-us/88828522007",
-        "https://www.savannahnow.com/story/news/2016/07/08/garden-city-police-department-savannah-firms-make-best-places-work-georgia-list/13921419007",
-        "https://www.savannahnow.com/story/news/2006/09/03/number-high-paying-jobs-savannah/13828107007"
+        "https://www.augustachronicle.com/story/news/2021/07/27/incentives-help-georgia-secure-economic-development-deals-jobs-wayfair-rockingham-farms-savannah-ga/7955302002",
+        "https://www.selectgeorgia.com/discover-georgia/industries/fortune-500-list",
+        "https://georgia.org/press-releases/2026/georgia-recognizes-five-2026-small-business-rock-stars",
+        "https://www.savannahnow.com/story/business/2013/02/19/understanding-purpose-savannah-chamber/13655438007",
+        "https://www.savannahnow.com/story/news/2016/07/08/garden-city-police-department-savannah-firms-make-best-places-work-georgia-list/13921419007"
       ],
       "method": "Representative list auto-discovered via Tavily web search across chamber-of-commerce, development-authority and local-news sources. Not exhaustive; ordering approximates source frequency, not headcount."
     },

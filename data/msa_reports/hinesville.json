@@ -3,7 +3,7 @@
   "short_name": "Hinesville",
   "full_name": "Hinesville, GA",
   "population": 78000,
-  "as_of": "2026-07-06",
+  "as_of": "2026-07-07",
   "sections": {
     "ces_employment": {
       "series_id": "SMS13259800000000001",
@@ -3982,35 +3982,19 @@
       "source": "Census Business Dynamics Statistics (establishment entry rate, 2022); metro rate indexed to US=100"
     },
     "major_employers": {
-      "as_of": "2026-07-06",
+      "as_of": "2026-07-07",
       "employers": [
         {
           "name": "Aerospace",
           "source_url": "https://georgia.org/why-georgia/regions-georgia"
         },
         {
-          "name": "Hyundai Motor Group Metaplant America",
-          "source_url": "https://georgia.org/hyundai-motor-group-metaplant-america"
-        },
-        {
-          "name": "Liberty County School System",
-          "source_url": null
-        },
-        {
           "name": "Automotive",
           "source_url": "https://georgia.org/why-georgia/regions-georgia"
         },
         {
-          "name": "View All Industries",
-          "source_url": "https://georgia.org/hyundai-motor-group-metaplant-america"
-        },
-        {
-          "name": "Advanced Manufacturing",
-          "source_url": "https://properties.selectgeorgia.com/target_industries_app/dist/index.html"
-        },
-        {
-          "name": "Augusta Technical College",
-          "source_url": "https://georgia.org/why-georgia/regions-georgia"
+          "name": "Manufacturing",
+          "source_url": "https://georgia.org"
         },
         {
           "name": "Energy",
@@ -4021,6 +4005,26 @@
           "source_url": "https://georgia.org/why-georgia/regions-georgia"
         },
         {
+          "name": "Hyundai Motor Group Metaplant America",
+          "source_url": "https://georgia.org"
+        },
+        {
+          "name": "Logistics",
+          "source_url": "https://georgia.org/hyundai-motor-group-metaplant-america"
+        },
+        {
+          "name": "View All Industries",
+          "source_url": "https://georgia.org/hyundai-motor-group-metaplant-america"
+        },
+        {
+          "name": "Augusta Technical College",
+          "source_url": "https://georgia.org/why-georgia/regions-georgia"
+        },
+        {
+          "name": "Explore Georgia's Leading Industries",
+          "source_url": "https://georgia.org/hyundai-motor-group-metaplant-america"
+        },
+        {
           "name": "Georgia Military College",
           "source_url": "https://georgia.org/why-georgia/regions-georgia"
         },
@@ -4029,25 +4033,21 @@
           "source_url": "https://georgia.org/why-georgia/regions-georgia"
         },
         {
-          "name": "Company",
-          "source_url": "https://properties.selectgeorgia.com/target_industries_app/dist/index.html"
+          "name": "ArcelorMittal Building Solutions Brings North American",
+          "source_url": "https://georgia.org"
         },
         {
-          "name": "Executive Chair of Hyundai Motor Group",
-          "source_url": "https://georgia.org/hyundai-motor-group-metaplant-america"
-        },
-        {
-          "name": "Explore Georgia's Leading Industries",
-          "source_url": "https://georgia.org/hyundai-motor-group-metaplant-america"
+          "name": "Authority Brands Relocates HQ",
+          "source_url": "https://georgia.org"
         }
       ],
       "sources": [
         "https://georgia.org/why-georgia/regions-georgia",
         "https://www.selectgeorgia.com/blog/georgia-southern-innovation-group",
+        "https://georgia.org",
         "https://georgia.org/hyundai-motor-group-metaplant-america",
         "https://georgia.org/sites/default/files/2020-08/georgia_safety_promise-8-27.pdf",
-        "https://georgia.org/sites/default/files/2018-11/gdecd_board_book_-_5-23-18.pdf",
-        "https://www.savannahnow.com/story/news/2007/04/20/keys-future-0/13805381007",
+        "https://georgia.org/why-georgia/regions-georgia/coastal-georgia",
         "https://www.savannahnow.com/story/news/2009/02/13/jobless-claims-up-39-percent/13746010007",
         "https://properties.selectgeorgia.com/target_industries_app/dist/index.html"
       ],
