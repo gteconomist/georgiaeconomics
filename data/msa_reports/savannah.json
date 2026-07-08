@@ -3,7 +3,7 @@
   "short_name": "Savannah",
   "full_name": "Savannah, GA",
   "population": 410000,
-  "as_of": "2026-07-07",
+  "as_of": "2026-07-08",
   "sections": {
     "ces_employment": {
       "series_id": "SMS13423400000000001",
@@ -5152,42 +5152,42 @@
       "source": "Census Business Dynamics Statistics (establishment entry rate, 2022); metro rate indexed to US=100"
     },
     "major_employers": {
-      "as_of": "2026-07-07",
+      "as_of": "2026-07-08",
       "employers": [
-        {
-          "name": "Aerospace",
-          "source_url": "https://www.selectgeorgia.com/discover-georgia/industries/fortune-500-list"
-        },
         {
           "name": "Children's Healthcare of Atlanta",
           "source_url": "https://www.savannahnow.com/story/news/2026/02/24/forbes-ranked-2-georgia-businesses-among-top-50-large-employers-in-us/88828522007"
         },
         {
-          "name": "Port of Savannah",
-          "source_url": "https://georgia.org"
+          "name": "Gulfstream Aerospace",
+          "source_url": "https://en.wikipedia.org/wiki/Category:Companies_based_in_Savannah,_Georgia"
         },
         {
           "name": "Savannah State University",
-          "source_url": "https://www.savannahnow.com/story/business/2013/02/19/understanding-purpose-savannah-chamber/13655438007"
+          "source_url": "https://www.selectgeorgia.com/yourgeorgia/why-savannah-HQ/innovation-resources"
+        },
+        {
+          "name": "Georgia Southern University",
+          "source_url": "https://www.selectgeorgia.com/blog/welcome-seapoint-industrial-site-savannah-ga"
+        },
+        {
+          "name": "Savannah College of Art",
+          "source_url": "https://www.selectgeorgia.com/yourgeorgia/why-savannah-HQ/innovation-resources"
         },
         {
           "name": "Automotive",
           "source_url": "https://georgia.org"
         },
         {
-          "name": "Food Processing",
-          "source_url": "https://www.selectgeorgia.com/discover-georgia/industries/fortune-500-list"
-        },
-        {
-          "name": "Georgia Ports Authority",
+          "name": "Chatham County School District",
           "source_url": null
         },
         {
-          "name": "Manufacturing",
-          "source_url": "https://georgia.org/press-releases/2026/georgia-recognizes-five-2026-small-business-rock-stars"
+          "name": "Memorial Health University Medical Center",
+          "source_url": null
         },
         {
-          "name": "Memorial Health University Medical Center",
+          "name": "Port of Savannah",
           "source_url": null
         },
         {
@@ -5207,15 +5207,15 @@
           "source_url": "https://www.savannahnow.com/story/news/2026/02/24/forbes-ranked-2-georgia-businesses-among-top-50-large-employers-in-us/88828522007"
         },
         {
-          "name": "Energy",
-          "source_url": "https://georgia.org"
+          "name": "Forsyth County School District",
+          "source_url": "https://www.savannahnow.com/story/news/2026/02/24/forbes-ranked-2-georgia-businesses-among-top-50-large-employers-in-us/88828522007"
         }
       ],
       "sources": [
+        "https://www.selectgeorgia.com/blog/welcome-seapoint-industrial-site-savannah-ga",
         "https://en.wikipedia.org/wiki/Category:Companies_based_in_Savannah,_Georgia",
-        "https://www.ajc.com/business/georgia-best-employers-for-2019-according-forbes/97QBCslwnyl3Ob4ujTmnLK",
         "https://www.savannahnow.com/story/news/2026/02/24/forbes-ranked-2-georgia-businesses-among-top-50-large-employers-in-us/88828522007",
-        "https://www.augustachronicle.com/story/news/2021/07/27/incentives-help-georgia-secure-economic-development-deals-jobs-wayfair-rockingham-farms-savannah-ga/7955302002",
+        "https://www.selectgeorgia.com/yourgeorgia/why-savannah-HQ/innovation-resources",
         "https://www.selectgeorgia.com/discover-georgia/industries/fortune-500-list",
         "https://georgia.org/press-releases/2026/georgia-recognizes-five-2026-small-business-rock-stars",
         "https://www.savannahnow.com/story/business/2013/02/19/understanding-purpose-savannah-chamber/13655438007",

@@ -3,7 +3,7 @@
   "short_name": "Warner Robins",
   "full_name": "Warner Robins, GA",
   "population": 199000,
-  "as_of": "2026-07-07",
+  "as_of": "2026-07-08",
   "sections": {
     "ces_employment": {
       "series_id": "SMS13475800000000001",
@@ -4201,47 +4201,39 @@
       "source": "Census Business Dynamics Statistics (establishment entry rate, 2022); metro rate indexed to US=100"
     },
     "major_employers": {
-      "as_of": "2026-07-07",
+      "as_of": "2026-07-08",
       "employers": [
         {
           "name": "Pratt Industries",
           "source_url": "https://georgia.org/press-releases/2023/georgia-based-pratt-industries-plans-new-manufacturing-facility-peach-county"
         },
         {
+          "name": "Houston Medical Center",
+          "source_url": "https://en.wikipedia.org/wiki/Warner_Robins,_Georgia"
+        },
+        {
           "name": "Manufacturing",
           "source_url": "https://georgia.org/why-georgia/regions-georgia/middle-georgia"
-        },
-        {
-          "name": "Houston Healthcare",
-          "source_url": "https://en.wikipedia.org/wiki/Central_Georgia"
-        },
-        {
-          "name": "Medical Center of Central Georgia",
-          "source_url": "https://en.wikipedia.org/wiki/Central_Georgia"
-        },
-        {
-          "name": "Robins International Industrial Park",
-          "source_url": "https://www.macon.com/news/local/community/houston-peach/article315207803.html"
         },
         {
           "name": "Blue Bird Corporation",
           "source_url": "https://en.wikipedia.org/wiki/Central_Georgia"
         },
         {
-          "name": "Coliseum Health System",
+          "name": "Houston Healthcare",
           "source_url": "https://en.wikipedia.org/wiki/Central_Georgia"
         },
         {
-          "name": "Houston Medical Center",
-          "source_url": "https://en.wikipedia.org/wiki/Warner_Robins,_Georgia"
+          "name": "Navicent Health",
+          "source_url": "https://www.macon.com/news/coronavirus/article242037296.html"
         },
         {
-          "name": "Inalfa Roof Systems",
-          "source_url": "https://georgia.org/sites/default/files/2020-08/2019_-_12-4-19_gdecd_board_meeting_minutes.pdf"
+          "name": "Airport East Industrial Park",
+          "source_url": "https://georgia.org/press-releases/2022/two-industrial-sites-bibb-county-earn-georgia-ready-accelerated-development-select"
         },
         {
-          "name": "Criterion Technologies",
-          "source_url": "https://en.wikipedia.org/wiki/Central_Georgia"
+          "name": "GE Aviation",
+          "source_url": null
         },
         {
           "name": "Georgia Beer Co",
@@ -4252,20 +4244,28 @@
           "source_url": "https://georgia.org/blogs/longtime-investment-workforce-solutions-keeps-georgia-top-state-business"
         },
         {
-          "name": "Solutions Pest",
-          "source_url": "https://en.wikipedia.org/wiki/Central_Georgia"
+          "name": "InnoTek LLC",
+          "source_url": "https://georgia.org/blogs/longtime-investment-workforce-solutions-keeps-georgia-top-state-business"
         },
         {
-          "name": "Southern Company",
-          "source_url": "https://en.wikipedia.org/wiki/Central_Georgia"
+          "name": "Logistics",
+          "source_url": "https://georgia.org/sites/default/files/2021-04/logistics_education_report.pdf"
+        },
+        {
+          "name": "Robins International Industrial Park",
+          "source_url": "https://georgia.org/sites/default/files/2021-02/fy21_q2_board_book.pdf"
+        },
+        {
+          "name": "Tyson Foods",
+          "source_url": null
         }
       ],
       "sources": [
         "https://en.wikipedia.org/wiki/Central_Georgia",
         "https://en.wikipedia.org/wiki/Warner_Robins,_Georgia",
-        "https://en.wikipedia.org/wiki/Robins_Air_Force_Base",
-        "https://www.macon.com/news/local/community/houston-peach/article315207803.html",
         "https://georgia.org/press-releases/2023/georgia-based-pratt-industries-plans-new-manufacturing-facility-peach-county",
+        "https://georgia.org/press-releases/2022/two-industrial-sites-bibb-county-earn-georgia-ready-accelerated-development-select",
+        "https://www.bizjournals.com/atlanta/news/2025/05/29/emory-houston-attorney-general.html",
         "https://georgia.org/why-georgia/regions-georgia/middle-georgia",
         "https://www.bizjournals.com/atlanta/news/2026/04/27/pratt-industries-corrugated-box-warner-robins.html",
         "https://georgia.org/sites/default/files/2020-08/2019_-_12-4-19_gdecd_board_meeting_minutes.pdf"

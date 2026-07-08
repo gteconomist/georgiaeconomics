@@ -3,7 +3,7 @@
   "short_name": "Athens",
   "full_name": "Athens-Clarke County, GA",
   "population": 217000,
-  "as_of": "2026-07-07",
+  "as_of": "2026-07-08",
   "sections": {
     "ces_employment": {
       "series_id": "SMS13120200000000001",
@@ -5081,39 +5081,31 @@
       "source": "Census Business Dynamics Statistics (establishment entry rate, 2022); metro rate indexed to US=100"
     },
     "major_employers": {
-      "as_of": "2026-07-07",
+      "as_of": "2026-07-08",
       "employers": [
         {
           "name": "Aerospace",
-          "source_url": "https://georgia.org/search?page=134"
+          "source_url": "https://georgia.org/press-releases/2023/duckshin-housing-plans-first-us-facility-athens-clarke-county"
         },
         {
           "name": "Automotive",
-          "source_url": "https://georgia.org/search?page=134"
+          "source_url": "https://www.georgia.org/es-col/node/47771"
         },
         {
           "name": "Manufacturing",
-          "source_url": "https://georgia.org/search?page=134"
+          "source_url": "https://georgia.org/press-releases/2023/duckshin-housing-plans-first-us-facility-athens-clarke-county"
+        },
+        {
+          "name": "Energy",
+          "source_url": "https://www.georgia.org/es-col/node/47771"
+        },
+        {
+          "name": "Food Processing",
+          "source_url": "https://www.georgia.org/es-col/node/47771"
         },
         {
           "name": "University of Georgia",
           "source_url": "https://www.onlineathens.com/story/business/2018/06/25/athens-chamber-commerce-names-north/1772620007"
-        },
-        {
-          "name": "Energy",
-          "source_url": "https://georgia.org/search?page=134"
-        },
-        {
-          "name": "Food Processing",
-          "source_url": "https://georgia.org/search?page=134"
-        },
-        {
-          "name": "Logistics",
-          "source_url": "https://georgia.org/search?page=134"
-        },
-        {
-          "name": "Children's Healthcare of Atlanta",
-          "source_url": "https://www.onlineathens.com/story/news/2026/03/04/georgias-best-employers-are-these-2-big-businesses-forbes-says/88982542007"
         },
         {
           "name": "ArcelorMittal Building Solutions Brings North American",
@@ -5124,12 +5116,16 @@
           "source_url": "https://georgia.org/press-releases/2023/life-sciences-manufacturer-meissner-create-1700-jobs-athens-clarke-county"
         },
         {
+          "name": "Children's Healthcare of Atlanta",
+          "source_url": "https://www.onlineathens.com/story/news/2026/03/04/georgias-best-employers-are-these-2-big-businesses-forbes-says/88982542007"
+        },
+        {
           "name": "Cobb Co",
           "source_url": "https://georgia.org/press-releases/2023/life-sciences-manufacturer-meissner-create-1700-jobs-athens-clarke-county"
         },
         {
-          "name": "Industries",
-          "source_url": "https://georgia.org/press-releases/2023/life-sciences-manufacturer-meissner-create-1700-jobs-athens-clarke-county"
+          "name": "Janssen Pharmaceuticals",
+          "source_url": "https://en.wikipedia.org/wiki/Athens,_Georgia"
         },
         {
           "name": "Southerfield Road Industrial Park Earns",
@@ -5137,15 +5133,19 @@
         },
         {
           "name": "Thomas Co",
-          "source_url": "https://georgia.org"
+          "source_url": "https://georgia.org/press-releases/2023/duckshin-housing-plans-first-us-facility-athens-clarke-county"
+        },
+        {
+          "name": "Clarke County School District",
+          "source_url": null
         }
       ],
       "sources": [
-        "https://en.wikipedia.org/wiki/Athens,_Georgia",
         "https://www.onlineathens.com/story/news/2026/03/04/georgias-best-employers-are-these-2-big-businesses-forbes-says/88982542007",
+        "https://en.wikipedia.org/wiki/Athens,_Georgia",
         "https://georgia.org/press-releases/2023/life-sciences-manufacturer-meissner-create-1700-jobs-athens-clarke-county",
-        "https://georgia.org/search?page=134",
-        "https://georgia.org/blog/georgia-exporter-year-athens-research-and-technology",
+        "https://georgia.org/press-releases/2023/duckshin-housing-plans-first-us-facility-athens-clarke-county",
+        "https://www.georgia.org/es-col/node/47771",
         "https://www.georgia.org/he/node/47076",
         "https://www.onlineathens.com/story/business/2014/07/26/terrell-athens-chamber-focusing-members-and-partnerships-2014/15524196007",
         "https://www.onlineathens.com/story/business/2018/06/25/athens-chamber-commerce-names-north/1772620007"

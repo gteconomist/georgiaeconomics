@@ -3,7 +3,7 @@
   "short_name": "Macon",
   "full_name": "Macon-Bibb County, GA",
   "population": 232000,
-  "as_of": "2026-07-07",
+  "as_of": "2026-07-08",
   "sections": {
     "ces_employment": {
       "series_id": "SMS13314200000000001",
@@ -5072,14 +5072,14 @@
       "source": "Census Business Dynamics Statistics (establishment entry rate, 2022); metro rate indexed to US=100"
     },
     "major_employers": {
-      "as_of": "2026-07-07",
+      "as_of": "2026-07-08",
       "employers": [
         {
-          "name": "Manufacturing",
+          "name": "Aerospace",
           "source_url": "https://georgia.org/press-releases/2026/georgia-based-unified-legacy-create-500-new-jobs-macon-bibb-county"
         },
         {
-          "name": "Aerospace",
+          "name": "Manufacturing",
           "source_url": "https://georgia.org/press-releases/2026/georgia-based-unified-legacy-create-500-new-jobs-macon-bibb-county"
         },
         {
@@ -5088,26 +5088,26 @@
         },
         {
           "name": "ArcelorMittal Building Solutions Brings North American",
-          "source_url": "https://georgia.org/press-releases/2026/georgia-based-unified-legacy-create-500-new-jobs-macon-bibb-county"
-        },
-        {
-          "name": "Automotive",
-          "source_url": "https://georgia.org/press-releases/2026/georgia-based-unified-legacy-create-500-new-jobs-macon-bibb-county"
-        },
-        {
-          "name": "Piedmont Healthcare",
-          "source_url": "https://choosemacon.com/work/major-employers"
+          "source_url": "https://georgia.org/press-releases/2023/key-industries-sustain-momentum-states-economic-development"
         },
         {
           "name": "Authority Brands Relocates HQ",
           "source_url": "https://georgia.org/press-releases/2026/georgia-based-unified-legacy-create-500-new-jobs-macon-bibb-county"
         },
         {
-          "name": "Blue Bird Corporation",
-          "source_url": "https://en.wikipedia.org/wiki/Central_Georgia"
+          "name": "Automotive",
+          "source_url": "https://georgia.org"
         },
         {
           "name": "Cobb Co",
+          "source_url": "https://georgia.org/press-releases/2026/georgia-based-unified-legacy-create-500-new-jobs-macon-bibb-county"
+        },
+        {
+          "name": "Thomas Co",
+          "source_url": "https://georgia.org/press-releases/2026/georgia-based-unified-legacy-create-500-new-jobs-macon-bibb-county"
+        },
+        {
+          "name": "Crisp Co",
           "source_url": "https://georgia.org/press-releases/2026/georgia-based-unified-legacy-create-500-new-jobs-macon-bibb-county"
         },
         {
@@ -5115,31 +5115,31 @@
           "source_url": "https://georgia.org/why-georgia/regions-georgia/middle-georgia"
         },
         {
-          "name": "Thomas Co",
+          "name": "Yancey Engineered Solutions Bringing",
           "source_url": "https://georgia.org/press-releases/2026/georgia-based-unified-legacy-create-500-new-jobs-macon-bibb-county"
         },
         {
-          "name": "Atrium Health",
-          "source_url": "https://choosemacon.com/work/major-employers"
+          "name": "Atrium Health Navicent",
+          "source_url": "https://en.wikipedia.org/wiki/Macon,_Georgia"
         },
         {
-          "name": "Crisp Co",
-          "source_url": "https://georgia.org/press-releases/2026/georgia-based-unified-legacy-create-500-new-jobs-macon-bibb-county"
+          "name": "Norfolk Southern Railway",
+          "source_url": null
         },
         {
-          "name": "Energy",
-          "source_url": "https://georgia.org/press-releases/2026/georgia-based-unified-legacy-create-500-new-jobs-macon-bibb-county"
+          "name": "Piedmont Healthcare",
+          "source_url": null
         }
       ],
       "sources": [
         "https://en.wikipedia.org/wiki/Macon,_Georgia",
         "https://www.macon.com/living/article300278809.html",
-        "https://en.wikipedia.org/wiki/Central_Georgia",
+        "https://georgia.org/press-releases/2023/key-industries-sustain-momentum-states-economic-development",
         "https://georgia.org/press-releases/2026/georgia-based-unified-legacy-create-500-new-jobs-macon-bibb-county",
         "https://georgia.org/press-releases/2026/arcelormittal-building-solutions-brings-north-american-hq-macon-bibb",
         "https://georgia.org/why-georgia/regions-georgia/middle-georgia",
-        "https://choosemacon.com/work/major-employers",
-        "https://maconchamber.com/category/economic-development"
+        "https://www.macon.com/news/local/article249660958.html",
+        "http://www.bizjournals.com/atlanta/search/results?q=Kay+Pippin"
       ],
       "method": "Representative list auto-discovered via Tavily web search across chamber-of-commerce, development-authority and local-news sources. Not exhaustive; ordering approximates source frequency, not headcount."
     },

@@ -3,7 +3,7 @@
   "short_name": "Brunswick",
   "full_name": "Brunswick, GA",
   "population": 120000,
-  "as_of": "2026-07-07",
+  "as_of": "2026-07-08",
   "sections": {
     "ces_employment": {
       "series_id": "SMS13152600000000001",
@@ -4131,7 +4131,7 @@
       "source": "Census Business Dynamics Statistics (establishment entry rate, 2022); metro rate indexed to US=100"
     },
     "major_employers": {
-      "as_of": "2026-07-07",
+      "as_of": "2026-07-08",
       "employers": [
         {
           "name": "Aerospace",
@@ -4146,10 +4146,6 @@
           "source_url": "https://en.wikipedia.org/wiki/Brunswick,_Georgia"
         },
         {
-          "name": "Manufacturing",
-          "source_url": "https://georgia.org/search?search=&page=99"
-        },
-        {
           "name": "Energy",
           "source_url": "https://georgia.org/search?search=&page=99"
         },
@@ -4158,16 +4154,24 @@
           "source_url": "https://georgia.org/search?search=&page=99"
         },
         {
+          "name": "Manufacturing",
+          "source_url": "https://georgia.org/search?search=&page=99"
+        },
+        {
           "name": "Logistics",
           "source_url": "https://georgia.org/search?search=&page=99"
+        },
+        {
+          "name": "General Motors",
+          "source_url": "https://en.wikipedia.org/wiki/Brunswick,_Georgia"
         },
         {
           "name": "Georgia Power Economic Development",
           "source_url": "https://www.selectgeorgia.com/blog/wtc-sav-prosperity"
         },
         {
-          "name": "Port of Savannah",
-          "source_url": "https://georgia.org"
+          "name": "Port of Brunswick",
+          "source_url": null
         },
         {
           "name": "ArcelorMittal Building Solutions Brings North American",
@@ -4182,12 +4186,8 @@
           "source_url": "https://georgia.org"
         },
         {
-          "name": "Georgia Ports Authority",
-          "source_url": "https://en.wikipedia.org/wiki/Brunswick,_Georgia"
-        },
-        {
-          "name": "Port of Brunswick No",
-          "source_url": "https://georgia.org"
+          "name": "Explore Georgia's Leading Industries",
+          "source_url": "https://georgia.org/search?search=&page=99"
         }
       ],
       "sources": [
@@ -4195,10 +4195,10 @@
         "https://www.selectgeorgia.com/blog/wtc-sav-prosperity",
         "https://georgia.org/search?search=&page=99",
         "https://georgia.org",
+        "https://georgia.org/sites/sites-and-buildings",
         "https://georgia.org/newsroom/press-releases/leading-e-commerce-company-expands-in-glynn-county",
         "https://www.selectgeorgia.com/services/support-for-communities/small-business-resources",
-        "https://georgia.org/press-release/innovation-isles-aerospace-park-certified-ready-accelerated-development",
-        "https://georgia.org/blogs/global-local-international-businesses-grow-globally-georgia"
+        "https://georgia.org/press-release/innovation-isles-aerospace-park-certified-ready-accelerated-development"
       ],
       "method": "Representative list auto-discovered via Tavily web search across chamber-of-commerce, development-authority and local-news sources. Not exhaustive; ordering approximates source frequency, not headcount."
     },
