@@ -3,7 +3,7 @@
   "short_name": "Rome",
   "full_name": "Rome, GA",
   "population": 99000,
-  "as_of": "2026-07-08",
+  "as_of": "2026-07-09",
   "sections": {
     "ces_employment": {
       "series_id": "SMS13406600000000001",
@@ -4429,43 +4429,27 @@
       "source": "Census Business Dynamics Statistics (establishment entry rate, 2022); metro rate indexed to US=100"
     },
     "major_employers": {
-      "as_of": "2026-07-08",
+      "as_of": "2026-07-09",
       "employers": [
-        {
-          "name": "Aerospace",
-          "source_url": "https://www.georgia.org/he/node/50316"
-        },
         {
           "name": "Mills Fitzner",
           "source_url": "https://www.northwestgeorgianews.com/rome/news/local/getting-down-to-business-chamber-hosts-annual-meeting-at-forum/article_2c292d95-89c6-4cb2-8950-81f981fc7218.html"
         },
         {
-          "name": "Automotive",
-          "source_url": "https://www.georgia.org/he/node/50316"
-        },
-        {
-          "name": "Energy",
-          "source_url": "https://www.georgia.org/he/node/50316"
-        },
-        {
-          "name": "Food Processing",
-          "source_url": "https://www.georgia.org/he/node/50316"
-        },
-        {
-          "name": "VT Industries",
-          "source_url": "https://www.northwestgeorgianews.com/rome/business/keeping-on-growing-floyd-county-businesses-expanding-from-2022-into-2023/article_227bb320-bc51-11ed-989c-4329e03be1d7.html"
-        },
-        {
           "name": "Floyd Medical Center",
-          "source_url": "https://en.wikipedia.org/wiki/Rome,_Georgia"
+          "source_url": "https://en.wikipedia.org/wiki/Atrium_Health_Floyd"
+        },
+        {
+          "name": "Atrium Health Floyd",
+          "source_url": "https://en.wikipedia.org/wiki/Atrium_Health_Floyd"
+        },
+        {
+          "name": "Floyd Hospital",
+          "source_url": "https://en.wikipedia.org/wiki/Atrium_Health_Floyd"
         },
         {
           "name": "Harbin Clinic",
           "source_url": "https://en.wikipedia.org/wiki/Rome,_Georgia"
-        },
-        {
-          "name": "Manufacturing",
-          "source_url": "https://www.georgia.org/he/node/50316"
         },
         {
           "name": "Redmond Regional Medical Center",
@@ -4476,27 +4460,43 @@
           "source_url": "https://en.wikipedia.org/wiki/Rome,_Georgia"
         },
         {
-          "name": "Georgia Health Sciences University",
+          "name": "Suzuki Manufacturing of America",
           "source_url": "https://en.wikipedia.org/wiki/Rome,_Georgia"
         },
         {
-          "name": "Logistics",
-          "source_url": "https://www.georgia.org/he/node/50316"
+          "name": "Atlanta's The Maintenance Group",
+          "source_url": "https://www.bizjournals.com/atlanta/news/2021/02/11/ball-corp-rome-ga-made-aluminum-cups-launch.html"
         },
         {
-          "name": "Medical College of Georgia",
+          "name": "Ball Corp. Rome",
+          "source_url": "https://www.bizjournals.com/atlanta/news/2021/02/11/ball-corp-rome-ga-made-aluminum-cups-launch.html"
+        },
+        {
+          "name": "Ball Corporation",
+          "source_url": null
+        },
+        {
+          "name": "Development Authority of Floyd County",
+          "source_url": "https://www.northwestgeorgianews.com/hometown_headlines/business/business-bob-blumberg-downtown-restaurant-owner-and-broad-street-advocate-leaving-rome-chamber-existing-industries/article_f244fc93-eb26-5edc-9498-50b4a2744d38.html"
+        },
+        {
+          "name": "Emory Healthcare",
+          "source_url": "https://www.ajc.com/business/lowe-bringing-600-jobs-rome/V7ylHfF7WKPOa2Zbe5IWKK"
+        },
+        {
+          "name": "General Electric",
           "source_url": "https://en.wikipedia.org/wiki/Rome,_Georgia"
         }
       ],
       "sources": [
+        "https://en.wikipedia.org/wiki/Atrium_Health_Floyd",
+        "https://www.selectgeorgia.com/blog/team-researchers-provide-clear-employment-overview-community-partners",
+        "https://www.ajc.com/business/lowe-bringing-600-jobs-rome/V7ylHfF7WKPOa2Zbe5IWKK",
         "https://en.wikipedia.org/wiki/Rome,_Georgia",
-        "https://www.bizjournals.com/atlanta/news/2025/10/30/nova-river-district-downtown-rome-cci-real-estate.html",
-        "https://www.georgia.org/he/node/50316",
-        "https://georgia.org/newsroom/press-releases/foss-manufacturing-to-create-150-jobs-invest-15-million-in-floyd-county",
-        "https://georgia.org/press-release/ball-corporation-build-new-manufacturing-facility-floyd-county-create-more-180-new",
-        "https://georgia.org/sites/default/files/2023-01/lowes_4.pdf",
         "https://georgia.org/press-releases/2024/governor-and-first-lady-kemp-reinforce-economic-partnerships-italy",
-        "https://www.northwestgeorgianews.com/rome/news/local/getting-down-to-business-chamber-hosts-annual-meeting-at-forum/article_2c292d95-89c6-4cb2-8950-81f981fc7218.html"
+        "https://www.bizjournals.com/atlanta/news/2025/10/30/nova-river-district-downtown-rome-cci-real-estate.html",
+        "https://georgia.org/sites/default/files/2023-01/lowes_4.pdf",
+        "https://www.northwestgeorgianews.com/hometown_headlines/business/business-bob-blumberg-downtown-restaurant-owner-and-broad-street-advocate-leaving-rome-chamber-existing-industries/article_f244fc93-eb26-5edc-9498-50b4a2744d38.html"
       ],
       "method": "Representative list auto-discovered via Tavily web search across chamber-of-commerce, development-authority and local-news sources. Not exhaustive; ordering approximates source frequency, not headcount."
     },

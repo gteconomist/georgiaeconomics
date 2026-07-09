@@ -3,7 +3,7 @@
   "short_name": "Macon",
   "full_name": "Macon-Bibb County, GA",
   "population": 232000,
-  "as_of": "2026-07-08",
+  "as_of": "2026-07-09",
   "sections": {
     "ces_employment": {
       "series_id": "SMS13314200000000001",
@@ -5072,7 +5072,7 @@
       "source": "Census Business Dynamics Statistics (establishment entry rate, 2022); metro rate indexed to US=100"
     },
     "major_employers": {
-      "as_of": "2026-07-08",
+      "as_of": "2026-07-09",
       "employers": [
         {
           "name": "Aerospace",
@@ -5083,44 +5083,40 @@
           "source_url": "https://georgia.org/press-releases/2026/georgia-based-unified-legacy-create-500-new-jobs-macon-bibb-county"
         },
         {
-          "name": "Mercer University",
-          "source_url": "https://en.wikipedia.org/wiki/Macon,_Georgia"
-        },
-        {
           "name": "ArcelorMittal Building Solutions Brings North American",
-          "source_url": "https://georgia.org/press-releases/2023/key-industries-sustain-momentum-states-economic-development"
+          "source_url": "https://georgia.org/press-releases/2026/georgia-based-unified-legacy-create-500-new-jobs-macon-bibb-county"
         },
         {
           "name": "Authority Brands Relocates HQ",
           "source_url": "https://georgia.org/press-releases/2026/georgia-based-unified-legacy-create-500-new-jobs-macon-bibb-county"
         },
         {
-          "name": "Automotive",
-          "source_url": "https://georgia.org"
-        },
-        {
           "name": "Cobb Co",
           "source_url": "https://georgia.org/press-releases/2026/georgia-based-unified-legacy-create-500-new-jobs-macon-bibb-county"
+        },
+        {
+          "name": "Mercer University",
+          "source_url": "https://en.wikipedia.org/wiki/Macon,_Georgia"
         },
         {
           "name": "Thomas Co",
           "source_url": "https://georgia.org/press-releases/2026/georgia-based-unified-legacy-create-500-new-jobs-macon-bibb-county"
         },
         {
+          "name": "Atrium Health Navicent",
+          "source_url": "https://en.wikipedia.org/wiki/Macon,_Georgia"
+        },
+        {
+          "name": "Automotive",
+          "source_url": "https://georgia.org"
+        },
+        {
           "name": "Crisp Co",
           "source_url": "https://georgia.org/press-releases/2026/georgia-based-unified-legacy-create-500-new-jobs-macon-bibb-county"
         },
         {
-          "name": "Pratt Industries",
-          "source_url": "https://georgia.org/why-georgia/regions-georgia/middle-georgia"
-        },
-        {
           "name": "Yancey Engineered Solutions Bringing",
           "source_url": "https://georgia.org/press-releases/2026/georgia-based-unified-legacy-create-500-new-jobs-macon-bibb-county"
-        },
-        {
-          "name": "Atrium Health Navicent",
-          "source_url": "https://en.wikipedia.org/wiki/Macon,_Georgia"
         },
         {
           "name": "Norfolk Southern Railway",
@@ -5129,17 +5125,21 @@
         {
           "name": "Piedmont Healthcare",
           "source_url": null
+        },
+        {
+          "name": "Pratt Industries",
+          "source_url": "https://georgia.org/why-georgia/regions-georgia/middle-georgia"
         }
       ],
       "sources": [
         "https://en.wikipedia.org/wiki/Macon,_Georgia",
         "https://www.macon.com/living/article300278809.html",
-        "https://georgia.org/press-releases/2023/key-industries-sustain-momentum-states-economic-development",
+        "https://en.wikipedia.org/wiki/Central_Georgia",
         "https://georgia.org/press-releases/2026/georgia-based-unified-legacy-create-500-new-jobs-macon-bibb-county",
         "https://georgia.org/press-releases/2026/arcelormittal-building-solutions-brings-north-american-hq-macon-bibb",
-        "https://georgia.org/why-georgia/regions-georgia/middle-georgia",
-        "https://www.macon.com/news/local/article249660958.html",
-        "http://www.bizjournals.com/atlanta/search/results?q=Kay+Pippin"
+        "https://georgia.org/press-releases/2025/trinet-create-750-jobs-metro-atlanta",
+        "https://www.selectgeorgia.com/about-us/our-team/regional-development/ryan-waldrep-central",
+        "https://georgia.org/why-georgia/regions-georgia/middle-georgia"
       ],
       "method": "Representative list auto-discovered via Tavily web search across chamber-of-commerce, development-authority and local-news sources. Not exhaustive; ordering approximates source frequency, not headcount."
     },

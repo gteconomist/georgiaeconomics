@@ -3,7 +3,7 @@
   "short_name": "Athens",
   "full_name": "Athens-Clarke County, GA",
   "population": 217000,
-  "as_of": "2026-07-08",
+  "as_of": "2026-07-09",
   "sections": {
     "ces_employment": {
       "series_id": "SMS13120200000000001",
@@ -5081,73 +5081,73 @@
       "source": "Census Business Dynamics Statistics (establishment entry rate, 2022); metro rate indexed to US=100"
     },
     "major_employers": {
-      "as_of": "2026-07-08",
+      "as_of": "2026-07-09",
       "employers": [
         {
-          "name": "Aerospace",
-          "source_url": "https://georgia.org/press-releases/2023/duckshin-housing-plans-first-us-facility-athens-clarke-county"
-        },
-        {
-          "name": "Automotive",
-          "source_url": "https://www.georgia.org/es-col/node/47771"
-        },
-        {
-          "name": "Manufacturing",
-          "source_url": "https://georgia.org/press-releases/2023/duckshin-housing-plans-first-us-facility-athens-clarke-county"
-        },
-        {
-          "name": "Energy",
-          "source_url": "https://www.georgia.org/es-col/node/47771"
-        },
-        {
-          "name": "Food Processing",
-          "source_url": "https://www.georgia.org/es-col/node/47771"
-        },
-        {
           "name": "University of Georgia",
-          "source_url": "https://www.onlineathens.com/story/business/2018/06/25/athens-chamber-commerce-names-north/1772620007"
+          "source_url": "https://georgia.org/blogs/five-georgia-manufacturers-share-secrets-success"
         },
         {
-          "name": "ArcelorMittal Building Solutions Brings North American",
-          "source_url": "https://georgia.org/press-releases/2023/life-sciences-manufacturer-meissner-create-1700-jobs-athens-clarke-county"
-        },
-        {
-          "name": "Authority Brands Relocates HQ",
-          "source_url": "https://georgia.org/press-releases/2023/life-sciences-manufacturer-meissner-create-1700-jobs-athens-clarke-county"
+          "name": "Aerospace",
+          "source_url": "https://georgia.org/press-releases/2022/boehringer-ingelheim-expands-global-innovation-capabilities-invests-57-million"
         },
         {
           "name": "Children's Healthcare of Atlanta",
           "source_url": "https://www.onlineathens.com/story/news/2026/03/04/georgias-best-employers-are-these-2-big-businesses-forbes-says/88982542007"
         },
         {
-          "name": "Cobb Co",
-          "source_url": "https://georgia.org/press-releases/2023/life-sciences-manufacturer-meissner-create-1700-jobs-athens-clarke-county"
+          "name": "RWDC Industries",
+          "source_url": "https://en.wikipedia.org/wiki/Athens,_Georgia"
+        },
+        {
+          "name": "Clarke County School System",
+          "source_url": null
+        },
+        {
+          "name": "Georgia Power",
+          "source_url": "https://www.onlineathens.com/story/news/2026/03/04/georgias-best-employers-are-these-2-big-businesses-forbes-says/88982542007"
         },
         {
           "name": "Janssen Pharmaceuticals",
           "source_url": "https://en.wikipedia.org/wiki/Athens,_Georgia"
         },
         {
-          "name": "Southerfield Road Industrial Park Earns",
-          "source_url": "https://georgia.org/press-releases/2023/life-sciences-manufacturer-meissner-create-1700-jobs-athens-clarke-county"
+          "name": "Manufacturing",
+          "source_url": "https://georgia.org/press-releases/2022/boehringer-ingelheim-expands-global-innovation-capabilities-invests-57-million"
         },
         {
-          "name": "Thomas Co",
-          "source_url": "https://georgia.org/press-releases/2023/duckshin-housing-plans-first-us-facility-athens-clarke-county"
+          "name": "Peachtree Medical Billing",
+          "source_url": "https://en.wikipedia.org/wiki/Athens,_Georgia"
         },
         {
-          "name": "Clarke County School District",
+          "name": "Piedmont Healthcare",
           "source_url": null
+        },
+        {
+          "name": "Automotive",
+          "source_url": "https://georgia.org/search?search=jobs&page=136"
+        },
+        {
+          "name": "Energy",
+          "source_url": "https://georgia.org/search?search=jobs&page=136"
+        },
+        {
+          "name": "Food Processing",
+          "source_url": "https://georgia.org/search?search=jobs&page=136"
+        },
+        {
+          "name": "Logistics",
+          "source_url": "https://georgia.org/search?search=jobs&page=136"
         }
       ],
       "sources": [
         "https://www.onlineathens.com/story/news/2026/03/04/georgias-best-employers-are-these-2-big-businesses-forbes-says/88982542007",
         "https://en.wikipedia.org/wiki/Athens,_Georgia",
+        "https://www.onlineathens.com/story/opinion/2013/04/12/editors-desk-new-focus-economic-development-athens/15575766007",
         "https://georgia.org/press-releases/2023/life-sciences-manufacturer-meissner-create-1700-jobs-athens-clarke-county",
-        "https://georgia.org/press-releases/2023/duckshin-housing-plans-first-us-facility-athens-clarke-county",
-        "https://www.georgia.org/es-col/node/47771",
-        "https://www.georgia.org/he/node/47076",
-        "https://www.onlineathens.com/story/business/2014/07/26/terrell-athens-chamber-focusing-members-and-partnerships-2014/15524196007",
+        "https://georgia.org/blogs/five-georgia-manufacturers-share-secrets-success",
+        "https://www.onlineathens.com/story/business/2023/08/09/the-georgia-chamber-of-commerce-hold-congressional-luncheon-in-athens/70553954007",
+        "https://georgia.org/press-releases/2022/boehringer-ingelheim-expands-global-innovation-capabilities-invests-57-million",
         "https://www.onlineathens.com/story/business/2018/06/25/athens-chamber-commerce-names-north/1772620007"
       ],
       "method": "Representative list auto-discovered via Tavily web search across chamber-of-commerce, development-authority and local-news sources. Not exhaustive; ordering approximates source frequency, not headcount."

@@ -3,7 +3,7 @@
   "short_name": "Dalton",
   "full_name": "Dalton, GA",
   "population": 143000,
-  "as_of": "2026-07-08",
+  "as_of": "2026-07-09",
   "sections": {
     "ces_employment": {
       "series_id": "SMS13191400000000001",
@@ -4524,7 +4524,7 @@
       "source": "Census Business Dynamics Statistics (establishment entry rate, 2022); metro rate indexed to US=100"
     },
     "major_employers": {
-      "as_of": "2026-07-08",
+      "as_of": "2026-07-09",
       "employers": [
         {
           "name": "Manufacturing",
@@ -4532,34 +4532,22 @@
         },
         {
           "name": "Aerospace",
-          "source_url": "https://www.georgia.org/press-release/solar-energy-giant-qcells-power-470-new-jobs-new-whitfield-county-facility"
+          "source_url": "https://georgia.org/newsroom/press-releases/global-flooring-company-expand-dalton-creating-200-jobs"
+        },
+        {
+          "name": "Shaw Industries",
+          "source_url": "https://www.ajc.com/business/employment/slow-carpet-sales-leads-dalton-plant-closing/i6IWYuTMhqDpy2SltAagkM"
         },
         {
           "name": "Carpet Capital",
           "source_url": "https://en.wikipedia.org/wiki/Dalton,_Georgia"
         },
         {
-          "name": "Crisp Co",
-          "source_url": "https://www.georgia.org/press-release/solar-energy-giant-qcells-power-470-new-jobs-new-whitfield-county-facility"
-        },
-        {
-          "name": "Logistics",
-          "source_url": "https://georgia.org/newsroom/press-releases/global-flooring-company-expand-dalton-creating-200-jobs"
+          "name": "Food City",
+          "source_url": "https://valdostadailytimes.com/2019/01/23/something-we-can-all-be-proud-of-food-city-opens-second-dalton-location"
         },
         {
           "name": "Mohawk Industries",
-          "source_url": "https://georgia.org/sites/default/files/2021-04/logistics_education_report.pdf"
-        },
-        {
-          "name": "Thomas Co",
-          "source_url": "https://www.georgia.org/press-release/solar-energy-giant-qcells-power-470-new-jobs-new-whitfield-county-facility"
-        },
-        {
-          "name": "Yancey Engineered Solutions Bringing",
-          "source_url": "https://www.georgia.org/press-release/solar-energy-giant-qcells-power-470-new-jobs-new-whitfield-county-facility"
-        },
-        {
-          "name": "Shaw Industries",
           "source_url": null
         },
         {
@@ -4579,19 +4567,31 @@
           "source_url": "https://georgia.org/newsroom/press-releases/global-flooring-company-expand-dalton-creating-200-jobs"
         },
         {
-          "name": "Dalton State College",
-          "source_url": "https://georgia.org/sites/default/files/2021-04/logistics_education_report.pdf"
+          "name": "Crisp Co",
+          "source_url": "https://georgia.org/newsroom/press-releases/global-flooring-company-expand-dalton-creating-200-jobs"
+        },
+        {
+          "name": "Energy",
+          "source_url": "https://georgia.org/newsroom/press-releases/global-flooring-company-expand-dalton-creating-200-jobs"
+        },
+        {
+          "name": "Food Processing",
+          "source_url": "https://georgia.org/newsroom/press-releases/global-flooring-company-expand-dalton-creating-200-jobs"
+        },
+        {
+          "name": "Logistics",
+          "source_url": "https://georgia.org/newsroom/press-releases/global-flooring-company-expand-dalton-creating-200-jobs"
         }
       ],
       "sources": [
         "https://www.bizjournals.com/atlanta/news/2023/08/04/georgia-cities-wage-growth-salary.html",
         "https://en.wikipedia.org/wiki/Dalton,_Georgia",
         "https://www.bizjournals.com/atlanta/news/2023/06/29/solar-workforce-qcells-dalton-georgia.html",
-        "https://www.ajc.com/business/georgia-best-employers-for-2019-according-forbes/97QBCslwnyl3Ob4ujTmnLK",
-        "https://www.georgia.org/press-release/solar-energy-giant-qcells-power-470-new-jobs-new-whitfield-county-facility",
+        "https://www.ajc.com/business/dalton-augusta-worst-for-job-losses-lately/qWPbpKazCnZFJtn1Kel1RM",
+        "https://www.ajc.com/business/employment/slow-carpet-sales-leads-dalton-plant-closing/i6IWYuTMhqDpy2SltAagkM",
         "https://georgia.org/newsroom/press-releases/global-flooring-company-expand-dalton-creating-200-jobs",
         "https://georgia.org/newsroom/press-releases/belgian-flooring-manufacturer-to-locate-first-u-s-plant-in-dalton",
-        "https://georgia.org/sites/default/files/2021-04/logistics_education_report.pdf"
+        "https://valdostadailytimes.com/2019/01/23/something-we-can-all-be-proud-of-food-city-opens-second-dalton-location"
       ],
       "method": "Representative list auto-discovered via Tavily web search across chamber-of-commerce, development-authority and local-news sources. Not exhaustive; ordering approximates source frequency, not headcount."
     },

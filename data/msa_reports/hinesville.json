@@ -3,7 +3,7 @@
   "short_name": "Hinesville",
   "full_name": "Hinesville, GA",
   "population": 78000,
-  "as_of": "2026-07-08",
+  "as_of": "2026-07-09",
   "sections": {
     "ces_employment": {
       "series_id": "SMS13259800000000001",
@@ -3982,73 +3982,74 @@
       "source": "Census Business Dynamics Statistics (establishment entry rate, 2022); metro rate indexed to US=100"
     },
     "major_employers": {
-      "as_of": "2026-07-08",
+      "as_of": "2026-07-09",
       "employers": [
         {
           "name": "Aerospace",
-          "source_url": "https://georgia.org"
+          "source_url": "https://georgia.org/why-georgia/regions-georgia"
+        },
+        {
+          "name": "Liberty County School District",
+          "source_url": "https://en.wikipedia.org/wiki/Hinesville,_Georgia"
         },
         {
           "name": "Automotive",
-          "source_url": "https://georgia.org"
+          "source_url": "https://georgia.org/why-georgia/regions-georgia"
         },
         {
-          "name": "Manufacturing",
-          "source_url": "https://georgia.org"
-        },
-        {
-          "name": "Liberty County School System",
-          "source_url": null
+          "name": "Company",
+          "source_url": "https://www.savannahnow.com/story/business/2016/05/18/bis-brief-va-clinic-hold-open-house-hinesville/13973918007"
         },
         {
           "name": "Energy",
-          "source_url": "https://georgia.org"
+          "source_url": "https://georgia.org/why-georgia/regions-georgia"
         },
         {
           "name": "Food Processing",
-          "source_url": "https://georgia.org"
+          "source_url": "https://georgia.org/why-georgia/regions-georgia"
         },
         {
-          "name": "Logistics",
-          "source_url": "https://georgia.org/why-georgia/regions-georgia"
+          "name": "Hinesville City Schools",
+          "source_url": null
+        },
+        {
+          "name": "Hinesville Hospital",
+          "source_url": null
         },
         {
           "name": "Hinesville Medical Center",
           "source_url": null
         },
         {
-          "name": "Hyundai Motor Group Metaplant America",
-          "source_url": "https://georgia.org"
+          "name": "Manufacturing",
+          "source_url": "https://georgia.org/why-georgia/regions-georgia"
+        },
+        {
+          "name": "Sandler Nonwoven Corporation",
+          "source_url": null
+        },
+        {
+          "name": "Southeast Health",
+          "source_url": null
         },
         {
           "name": "ArcelorMittal Building Solutions Brings North American",
           "source_url": "https://georgia.org"
         },
         {
-          "name": "Augusta Technical College",
-          "source_url": "https://georgia.org/why-georgia/regions-georgia"
-        },
-        {
-          "name": "Authority Brands Relocates HQ",
-          "source_url": "https://georgia.org"
-        },
-        {
-          "name": "Cobb Co",
-          "source_url": "https://georgia.org"
-        },
-        {
-          "name": "Distribution",
-          "source_url": "https://georgia.org/why-georgia/regions-georgia/coastal-georgia"
+          "name": "Arts Academy Fitness",
+          "source_url": "https://georgia.org/sites/default/files/2020-08/georgia_safety_promise-8-27.pdf"
         }
       ],
       "sources": [
         "https://en.wikipedia.org/wiki/Savannah_metropolitan_area",
-        "https://georgia.org",
-        "https://georgia.org/sites/default/files/2020-08/georgia_safety_promise-8-27.pdf",
-        "https://georgia.org/why-georgia/regions-georgia",
         "https://georgia.org/why-georgia/regions-georgia/coastal-georgia",
-        "https://georgia.org/hyundai-motor-group-metaplant-america",
-        "https://georgia.org/sites/default/files/2018-11/gdecd_board_book_-_5-23-18.pdf"
+        "https://georgia.org/sites/default/files/2020-08/georgia_safety_promise-8-27.pdf",
+        "https://www.savannahnow.com/story/business/2016/05/18/bis-brief-va-clinic-hold-open-house-hinesville/13973918007",
+        "https://en.wikipedia.org/wiki/Hinesville,_Georgia",
+        "https://georgia.org/why-georgia/regions-georgia",
+        "https://georgia.org",
+        "https://www.savannahnow.com/story/news/2012/02/04/exchange-brief/13663454007"
       ],
       "method": "Representative list auto-discovered via Tavily web search across chamber-of-commerce, development-authority and local-news sources. Not exhaustive; ordering approximates source frequency, not headcount."
     },

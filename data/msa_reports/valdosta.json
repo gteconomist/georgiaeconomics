@@ -3,7 +3,7 @@
   "short_name": "Valdosta",
   "full_name": "Valdosta, GA",
   "population": 148000,
-  "as_of": "2026-07-08",
+  "as_of": "2026-07-09",
   "sections": {
     "ces_employment": {
       "series_id": "SMS13466600000000001",
@@ -4180,35 +4180,11 @@
       "source": "Census Business Dynamics Statistics (establishment entry rate, 2022); metro rate indexed to US=100"
     },
     "major_employers": {
-      "as_of": "2026-07-08",
+      "as_of": "2026-07-09",
       "employers": [
         {
           "name": "Valdosta State University",
           "source_url": "https://en.wikipedia.org/wiki/Valdosta_metropolitan_area"
-        },
-        {
-          "name": "South Georgia Medical Center",
-          "source_url": "https://valdostadailytimes.com/2014/05/07/chamber-names-world-class-employees-2"
-        },
-        {
-          "name": "Smith Drug Company",
-          "source_url": "https://valdostadailytimes.com/2014/05/07/chamber-names-world-class-employees-2"
-        },
-        {
-          "name": "New Hire Solutions",
-          "source_url": "https://valdostadailytimes.com/2014/05/07/chamber-names-world-class-employees-2"
-        },
-        {
-          "name": "CBJ Industries",
-          "source_url": "https://valdostadailytimes.com/2014/05/07/chamber-names-world-class-employees-2"
-        },
-        {
-          "name": "Distribution",
-          "source_url": "https://valdostadailytimes.com/2014/05/07/chamber-names-world-class-employees-2"
-        },
-        {
-          "name": "Sunset Farm Foods",
-          "source_url": "https://valdostadailytimes.com/2021/03/05/chamber-presents-annual-awards"
         },
         {
           "name": "ACE Electric",
@@ -4219,35 +4195,59 @@
           "source_url": "https://www.selectgeorgia.com/blog/rural-transformation/one-valdosta-lowndes-interview"
         },
         {
-          "name": "Gil Harbin Industrial Boulevard",
-          "source_url": "https://georgia.org/press-releases/2026/red-cats-blue-ops-inc-bring-hundreds-new-jobs-lowndes-county-manufacturing-facility"
-        },
-        {
-          "name": "Lowndes Co",
-          "source_url": "https://georgia.org/press-releases/2026/red-cats-blue-ops-inc-bring-hundreds-new-jobs-lowndes-county-manufacturing-facility"
-        },
-        {
-          "name": "Renasant Bank",
-          "source_url": "https://valdostadailytimes.com/2021/03/05/chamber-presents-annual-awards"
+          "name": "South Georgia Medical Center",
+          "source_url": null
         },
         {
           "name": "Stratas Foods",
           "source_url": "https://www.selectgeorgia.com/blog/rural-transformation/one-valdosta-lowndes-interview"
         },
         {
-          "name": "Whitehead Industrial Hardware",
-          "source_url": "https://valdostadailytimes.com/2019/03/10/meet-the-winners-chamber-names-2019-award-winners"
+          "name": "Daechang Seat Corp",
+          "source_url": "https://www.selectgeorgia.com/blog/locations-and-expansions/georgia-2023-growth"
+        },
+        {
+          "name": "Electric Transportation",
+          "source_url": "https://www.selectgeorgia.com/blog/locations-and-expansions/georgia-2023-growth"
+        },
+        {
+          "name": "Food Processing Industry",
+          "source_url": "https://www.selectgeorgia.com/blog/locations-and-expansions/georgia-2023-growth"
+        },
+        {
+          "name": "Lowndes County School District",
+          "source_url": null
+        },
+        {
+          "name": "Lowndes County School System",
+          "source_url": null
+        },
+        {
+          "name": "Mayo Health Clinic",
+          "source_url": null
+        },
+        {
+          "name": "Rayonier Inc",
+          "source_url": "https://jobs.valdostadailytimes.com/employers"
+        },
+        {
+          "name": "Sunset Farm Foods",
+          "source_url": "https://valdostadailytimes.com/2021/03/05/chamber-presents-annual-awards"
+        },
+        {
+          "name": "Toyota Industries",
+          "source_url": "https://www.selectgeorgia.com/blog/locations-and-expansions/georgia-2023-growth"
         }
       ],
       "sources": [
         "https://en.wikipedia.org/wiki/Valdosta_metropolitan_area",
+        "https://www.selectgeorgia.com/blog/rural-transformation/one-valdosta-lowndes-interview",
         "https://valdostadailytimes.com/2026/02/23/gary-wisenbaker-data-centers-whats-good-for-the-goose-is-good-for-the-gander",
-        "https://georgia.org/sites/default/files/2022-02/2021-11-3_gdecd_board_meeting_minutes.pdf",
-        "https://georgia.org/press-releases/2026/red-cats-blue-ops-inc-bring-hundreds-new-jobs-lowndes-county-manufacturing-facility",
-        "https://www.georgia.org/press-release/red-cats-blue-ops-inc-bring-hundreds-new-jobs-lowndes-county-manufacturing-facility",
-        "https://valdostadailytimes.com/2017/10/22/business-briefs-69",
-        "https://valdostadailytimes.com/2014/05/07/chamber-names-world-class-employees-2",
-        "https://valdostadailytimes.com/2021/03/05/chamber-presents-annual-awards"
+        "https://valdostadailytimes.com/2015/09/13/finding-the-competitive-edge",
+        "https://www.selectgeorgia.com/blog/locations-and-expansions/georgia-2023-growth",
+        "https://valdostadailytimes.com/2019/01/20/business-briefs-122",
+        "https://valdostadailytimes.com/2019/06/23/business-briefs-135",
+        "https://valdostadailytimes.com/2014/06/24/scruggs-named-leading-business-of-the-week"
       ],
       "method": "Representative list auto-discovered via Tavily web search across chamber-of-commerce, development-authority and local-news sources. Not exhaustive; ordering approximates source frequency, not headcount."
     },
