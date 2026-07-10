@@ -3,7 +3,7 @@
   "short_name": "Valdosta",
   "full_name": "Valdosta, GA",
   "population": 148000,
-  "as_of": "2026-07-09",
+  "as_of": "2026-07-10",
   "sections": {
     "ces_employment": {
       "series_id": "SMS13466600000000001",
@@ -4180,46 +4180,30 @@
       "source": "Census Business Dynamics Statistics (establishment entry rate, 2022); metro rate indexed to US=100"
     },
     "major_employers": {
-      "as_of": "2026-07-09",
+      "as_of": "2026-07-10",
       "employers": [
         {
           "name": "Valdosta State University",
           "source_url": "https://en.wikipedia.org/wiki/Valdosta_metropolitan_area"
         },
         {
-          "name": "ACE Electric",
-          "source_url": "https://www.selectgeorgia.com/blog/rural-transformation/one-valdosta-lowndes-interview"
-        },
-        {
-          "name": "Berry Global Manufacturing",
-          "source_url": "https://www.selectgeorgia.com/blog/rural-transformation/one-valdosta-lowndes-interview"
-        },
-        {
           "name": "South Georgia Medical Center",
           "source_url": null
+        },
+        {
+          "name": "Georgia Power",
+          "source_url": "https://www.selectgeorgia.com/blog/rural-transformation/one-valdosta-lowndes-interview"
         },
         {
           "name": "Stratas Foods",
           "source_url": "https://www.selectgeorgia.com/blog/rural-transformation/one-valdosta-lowndes-interview"
         },
         {
-          "name": "Daechang Seat Corp",
-          "source_url": "https://www.selectgeorgia.com/blog/locations-and-expansions/georgia-2023-growth"
-        },
-        {
-          "name": "Electric Transportation",
-          "source_url": "https://www.selectgeorgia.com/blog/locations-and-expansions/georgia-2023-growth"
-        },
-        {
           "name": "Food Processing Industry",
-          "source_url": "https://www.selectgeorgia.com/blog/locations-and-expansions/georgia-2023-growth"
+          "source_url": "https://www.selectgeorgia.com/blog/locations-and-expansions/georgia-q2-2024"
         },
         {
           "name": "Lowndes County School District",
-          "source_url": null
-        },
-        {
-          "name": "Lowndes County School System",
           "source_url": null
         },
         {
@@ -4231,23 +4215,39 @@
           "source_url": "https://jobs.valdostadailytimes.com/employers"
         },
         {
-          "name": "Sunset Farm Foods",
-          "source_url": "https://valdostadailytimes.com/2021/03/05/chamber-presents-annual-awards"
+          "name": "ACE Electric",
+          "source_url": "https://www.selectgeorgia.com/blog/rural-transformation/one-valdosta-lowndes-interview"
         },
         {
-          "name": "Toyota Industries",
-          "source_url": "https://www.selectgeorgia.com/blog/locations-and-expansions/georgia-2023-growth"
+          "name": "Aerospace",
+          "source_url": "https://www.selectgeorgia.com/blog/locations-and-expansions/georgia-q2-2024"
+        },
+        {
+          "name": "Berry Global Manufacturing",
+          "source_url": "https://www.selectgeorgia.com/blog/rural-transformation/one-valdosta-lowndes-interview"
+        },
+        {
+          "name": "Career Academy",
+          "source_url": "https://www.selectgeorgia.com/blog/rural-transformation/one-valdosta-lowndes-interview"
+        },
+        {
+          "name": "Cargill Inc",
+          "source_url": "https://www.selectgeorgia.com/blog/locations-and-expansions/georgia-q2-2024"
+        },
+        {
+          "name": "College",
+          "source_url": "https://www.selectgeorgia.com/blog/rural-transformation/one-valdosta-lowndes-interview"
         }
       ],
       "sources": [
         "https://en.wikipedia.org/wiki/Valdosta_metropolitan_area",
-        "https://www.selectgeorgia.com/blog/rural-transformation/one-valdosta-lowndes-interview",
         "https://valdostadailytimes.com/2026/02/23/gary-wisenbaker-data-centers-whats-good-for-the-goose-is-good-for-the-gander",
         "https://valdostadailytimes.com/2015/09/13/finding-the-competitive-edge",
-        "https://www.selectgeorgia.com/blog/locations-and-expansions/georgia-2023-growth",
-        "https://valdostadailytimes.com/2019/01/20/business-briefs-122",
-        "https://valdostadailytimes.com/2019/06/23/business-briefs-135",
-        "https://valdostadailytimes.com/2014/06/24/scruggs-named-leading-business-of-the-week"
+        "https://georgia.org/press-releases/2023/walmart-dairy-facility-valdosta-boost-local-ag-industry",
+        "https://georgia.org/sites/default/files/2022-02/2021-11-3_gdecd_board_meeting_minutes.pdf",
+        "https://www.selectgeorgia.com/blog/rural-transformation/one-valdosta-lowndes-interview",
+        "https://valdostadailytimes.com/2021/03/05/chamber-presents-annual-awards",
+        "https://valdostadailytimes.com/2019/07/19/valdosta-dry-cleaners-leading-business"
       ],
       "method": "Representative list auto-discovered via Tavily web search across chamber-of-commerce, development-authority and local-news sources. Not exhaustive; ordering approximates source frequency, not headcount."
     },

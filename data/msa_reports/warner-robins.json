@@ -3,7 +3,7 @@
   "short_name": "Warner Robins",
   "full_name": "Warner Robins, GA",
   "population": 199000,
-  "as_of": "2026-07-09",
+  "as_of": "2026-07-10",
   "sections": {
     "ces_employment": {
       "series_id": "SMS13475800000000001",
@@ -4201,7 +4201,7 @@
       "source": "Census Business Dynamics Statistics (establishment entry rate, 2022); metro rate indexed to US=100"
     },
     "major_employers": {
-      "as_of": "2026-07-09",
+      "as_of": "2026-07-10",
       "employers": [
         {
           "name": "Pratt Industries",
@@ -4212,24 +4212,8 @@
           "source_url": "https://en.wikipedia.org/wiki/Central_Georgia"
         },
         {
-          "name": "Houston Medical Center",
-          "source_url": "https://en.wikipedia.org/wiki/Warner_Robins,_Georgia"
-        },
-        {
-          "name": "Medical Center of Central Georgia",
-          "source_url": "https://en.wikipedia.org/wiki/Central_Georgia"
-        },
-        {
           "name": "Emory Healthcare",
           "source_url": "https://www.bizjournals.com/atlanta/news/2024/08/22/emory-healthcare-houston-healthcare-partnership.html"
-        },
-        {
-          "name": "Georgia Beer Co",
-          "source_url": "https://georgia.org/blogs/longtime-investment-workforce-solutions-keeps-georgia-top-state-business"
-        },
-        {
-          "name": "Greenfield LLC",
-          "source_url": "https://georgia.org/blogs/longtime-investment-workforce-solutions-keeps-georgia-top-state-business"
         },
         {
           "name": "Industrial",
@@ -4240,35 +4224,51 @@
           "source_url": "https://www.bizjournals.com/atlanta/news/2026/04/27/pratt-industries-corrugated-box-warner-robins.html"
         },
         {
-          "name": "Blue Bird Corporation",
+          "name": "Medical Center of Central Georgia",
           "source_url": "https://en.wikipedia.org/wiki/Central_Georgia"
         },
         {
-          "name": "Coliseum Health System",
-          "source_url": "https://en.wikipedia.org/wiki/Central_Georgia"
-        },
-        {
-          "name": "Criterion Technologies",
-          "source_url": "https://en.wikipedia.org/wiki/Central_Georgia"
-        },
-        {
-          "name": "Houston County School System",
+          "name": "GE Aviation",
           "source_url": null
         },
         {
-          "name": "Joint Development Authority of Peach County",
-          "source_url": "https://www.macon.com/news/local/community/houston-peach/article315207803.html"
+          "name": "Georgia Beer Co",
+          "source_url": "https://georgia.org/blogs/longtime-investment-workforce-solutions-keeps-georgia-top-state-business"
+        },
+        {
+          "name": "Greenfield LLC",
+          "source_url": "https://georgia.org/blogs/longtime-investment-workforce-solutions-keeps-georgia-top-state-business"
+        },
+        {
+          "name": "Health Care",
+          "source_url": "https://www.bizjournals.com/atlanta/news/2024/08/22/emory-healthcare-houston-healthcare-partnership.html"
+        },
+        {
+          "name": "Houston Medical Center",
+          "source_url": "https://en.wikipedia.org/wiki/Warner_Robins,_Georgia"
+        },
+        {
+          "name": "Air Refueling Group",
+          "source_url": "https://en.wikipedia.org/wiki/Robins_Air_Force_Base"
+        },
+        {
+          "name": "Ameriprise Financial Services",
+          "source_url": "https://www.bizjournals.com/atlanta/news/2024/08/22/emory-healthcare-houston-healthcare-partnership.html"
+        },
+        {
+          "name": "Augusta Technical College",
+          "source_url": "https://www.augustachronicle.com/story/business/2010/11/21/working-our-way-augusta-area-sees-job-growth/14571763007"
         }
       ],
       "sources": [
         "https://en.wikipedia.org/wiki/Central_Georgia",
-        "https://en.wikipedia.org/wiki/Warner_Robins,_Georgia",
         "https://en.wikipedia.org/wiki/Robins_Air_Force_Base",
-        "https://www.macon.com/news/local/community/houston-peach/article315207803.html",
         "https://georgia.org/press-releases/2023/georgia-based-pratt-industries-plans-new-manufacturing-facility-peach-county",
-        "https://georgia.org/blogs/longtime-investment-workforce-solutions-keeps-georgia-top-state-business",
+        "https://www.bizjournals.com/atlanta/news/2024/08/22/emory-healthcare-houston-healthcare-partnership.html",
         "https://www.bizjournals.com/atlanta/news/2026/04/27/pratt-industries-corrugated-box-warner-robins.html",
-        "https://www.bizjournals.com/atlanta/news/2024/08/22/emory-healthcare-houston-healthcare-partnership.html"
+        "https://georgia.org/sites/default/files/2019-08/gdecd_board_book_q2_feb.pdf",
+        "https://www.macon.com/news/local/community/houston-peach/article315207803.html",
+        "https://en.wikipedia.org/wiki/Warner_Robins,_Georgia"
       ],
       "method": "Representative list auto-discovered via Tavily web search across chamber-of-commerce, development-authority and local-news sources. Not exhaustive; ordering approximates source frequency, not headcount."
     },

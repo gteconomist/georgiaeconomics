@@ -3,7 +3,7 @@
   "short_name": "Macon",
   "full_name": "Macon-Bibb County, GA",
   "population": 232000,
-  "as_of": "2026-07-09",
+  "as_of": "2026-07-10",
   "sections": {
     "ces_employment": {
       "series_id": "SMS13314200000000001",
@@ -5072,14 +5072,14 @@
       "source": "Census Business Dynamics Statistics (establishment entry rate, 2022); metro rate indexed to US=100"
     },
     "major_employers": {
-      "as_of": "2026-07-09",
+      "as_of": "2026-07-10",
       "employers": [
         {
-          "name": "Aerospace",
+          "name": "Manufacturing",
           "source_url": "https://georgia.org/press-releases/2026/georgia-based-unified-legacy-create-500-new-jobs-macon-bibb-county"
         },
         {
-          "name": "Manufacturing",
+          "name": "Aerospace",
           "source_url": "https://georgia.org/press-releases/2026/georgia-based-unified-legacy-create-500-new-jobs-macon-bibb-county"
         },
         {
@@ -5095,28 +5095,28 @@
           "source_url": "https://georgia.org/press-releases/2026/georgia-based-unified-legacy-create-500-new-jobs-macon-bibb-county"
         },
         {
-          "name": "Mercer University",
-          "source_url": "https://en.wikipedia.org/wiki/Macon,_Georgia"
+          "name": "Crisp Co",
+          "source_url": "https://georgia.org/press-releases/2026/georgia-based-unified-legacy-create-500-new-jobs-macon-bibb-county"
         },
         {
           "name": "Thomas Co",
           "source_url": "https://georgia.org/press-releases/2026/georgia-based-unified-legacy-create-500-new-jobs-macon-bibb-county"
         },
         {
+          "name": "Yancey Engineered Solutions Bringing",
+          "source_url": "https://georgia.org/press-releases/2026/georgia-based-unified-legacy-create-500-new-jobs-macon-bibb-county"
+        },
+        {
+          "name": "Mercer University",
+          "source_url": "https://en.wikipedia.org/wiki/Macon,_Georgia"
+        },
+        {
           "name": "Atrium Health Navicent",
           "source_url": "https://en.wikipedia.org/wiki/Macon,_Georgia"
         },
         {
-          "name": "Automotive",
-          "source_url": "https://georgia.org"
-        },
-        {
-          "name": "Crisp Co",
-          "source_url": "https://georgia.org/press-releases/2026/georgia-based-unified-legacy-create-500-new-jobs-macon-bibb-county"
-        },
-        {
-          "name": "Yancey Engineered Solutions Bringing",
-          "source_url": "https://georgia.org/press-releases/2026/georgia-based-unified-legacy-create-500-new-jobs-macon-bibb-county"
+          "name": "Encore Plastics Corporation",
+          "source_url": "https://georgia.org/why-georgia/regions-georgia/middle-georgia"
         },
         {
           "name": "Norfolk Southern Railway",
@@ -5138,8 +5138,8 @@
         "https://georgia.org/press-releases/2026/georgia-based-unified-legacy-create-500-new-jobs-macon-bibb-county",
         "https://georgia.org/press-releases/2026/arcelormittal-building-solutions-brings-north-american-hq-macon-bibb",
         "https://georgia.org/press-releases/2025/trinet-create-750-jobs-metro-atlanta",
-        "https://www.selectgeorgia.com/about-us/our-team/regional-development/ryan-waldrep-central",
-        "https://georgia.org/why-georgia/regions-georgia/middle-georgia"
+        "https://georgia.org/why-georgia/regions-georgia/middle-georgia",
+        "https://georgia.org/press-releases/2026/georgia-applauds-lockheed-martins-75-years-production-impact"
       ],
       "method": "Representative list auto-discovered via Tavily web search across chamber-of-commerce, development-authority and local-news sources. Not exhaustive; ordering approximates source frequency, not headcount."
     },
