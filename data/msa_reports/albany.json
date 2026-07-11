@@ -3,7 +3,7 @@
   "short_name": "Albany",
   "full_name": "Albany, GA",
   "population": 146000,
-  "as_of": "2026-07-10",
+  "as_of": "2026-07-11",
   "sections": {
     "ces_employment": {
       "series_id": "SMS13105000000000001",
@@ -4177,14 +4177,10 @@
       "source": "Census Business Dynamics Statistics (establishment entry rate, 2022); metro rate indexed to US=100"
     },
     "major_employers": {
-      "as_of": "2026-07-10",
+      "as_of": "2026-07-11",
       "employers": [
         {
           "name": "Manufacturing",
-          "source_url": "https://en.wikipedia.org/wiki/Albany,_Georgia"
-        },
-        {
-          "name": "Marine Corps Logistics Base Albany",
           "source_url": "https://en.wikipedia.org/wiki/Albany,_Georgia"
         },
         {
@@ -4192,8 +4188,8 @@
           "source_url": "https://georgia.org/newsroom/press-releases/customer-care-company-to-locate-training-facility-in-albany"
         },
         {
-          "name": "Company",
-          "source_url": "https://www.bizjournals.com/atlanta/datacenter/lists"
+          "name": "Marine Corps Logistics Base Albany",
+          "source_url": "https://en.wikipedia.org/wiki/Albany,_Georgia"
         },
         {
           "name": "Energy",
@@ -4201,23 +4197,7 @@
         },
         {
           "name": "Northeast Grocery Inc",
-          "source_url": "https://www.bizjournals.com/albany/subscriber-only/2026/07/02/albanys-365-largest-employers.html"
-        },
-        {
-          "name": "Albany State University",
-          "source_url": null
-        },
-        {
-          "name": "Golub Corp",
-          "source_url": "https://www.bizjournals.com/albany/subscriber-only/2024/07/12/albany-areas-largest-private-sector-employers.html"
-        },
-        {
-          "name": "Health",
-          "source_url": "https://en.wikipedia.org/wiki/Albany,_Georgia"
-        },
-        {
-          "name": "Phoebe Putney Memorial Hospital",
-          "source_url": null
+          "source_url": "https://www.bizjournals.com/albany/subscriber-only/2025/10/17/albanys-330-largest-employers.html"
         },
         {
           "name": "Automotive",
@@ -4228,23 +4208,43 @@
           "source_url": "https://georgia.org/newsroom/press-releases/customer-care-company-to-locate-training-facility-in-albany"
         },
         {
+          "name": "Health",
+          "source_url": "https://en.wikipedia.org/wiki/Albany,_Georgia"
+        },
+        {
+          "name": "Albany State University",
+          "source_url": null
+        },
+        {
           "name": "Industries",
           "source_url": "https://www.bizjournals.com/atlanta/subscriber-only/2025/10/17/metro-atlantas-largest-employers.html"
         },
         {
-          "name": "Albany Regional Medical Center",
+          "name": "Phoebe Putney Memorial Hospital",
+          "source_url": null
+        },
+        {
+          "name": "Atlanta's Company Lists",
+          "source_url": "https://www.bizjournals.com/atlanta/datacenter/lists"
+        },
+        {
+          "name": "Regeneron Pharmaceuticals Inc",
+          "source_url": "https://www.bizjournals.com/albany/subscriber-only/2025/10/17/albanys-330-largest-employers.html"
+        },
+        {
+          "name": "Albany School System",
           "source_url": null
         }
       ],
       "sources": [
         "https://en.wikipedia.org/wiki/Albany,_Georgia",
         "https://www.bizjournals.com/atlanta/subscriber-only/2025/10/17/metro-atlantas-largest-employers.html",
+        "https://www.bizjournals.com/atlanta/subscriber-only/2022/07/15/atlantas-25-largest-employers.html",
         "https://www.bizjournals.com/atlanta/datacenter/lists",
-        "https://www.bizjournals.com/atlanta/subscriber-only/2023/10/06/atlantas-50-largest-private-companies.html",
         "https://georgia.org/newsroom/press-releases/customer-care-company-to-locate-training-facility-in-albany",
-        "https://georgia.org/sites/default/files/2021-04/logistics_education_report.pdf",
         "https://georgia.org/search?search=&page=99",
-        "https://albanyherald.com/features/albany-is-the-heart-of-trimark-strategic"
+        "https://georgia.org/sites/default/files/2021-04/logistics_education_report.pdf",
+        "https://georgia.org/newsroom/press-releases/georgia-department-of-economic-development-commissioner-leads-trade-missions-to-israel-and-dubai"
       ],
       "method": "Representative list auto-discovered via Tavily web search across chamber-of-commerce, development-authority and local-news sources. Not exhaustive; ordering approximates source frequency, not headcount."
     },

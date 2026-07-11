@@ -3,7 +3,7 @@
   "short_name": "Dalton",
   "full_name": "Dalton, GA",
   "population": 143000,
-  "as_of": "2026-07-10",
+  "as_of": "2026-07-11",
   "sections": {
     "ces_employment": {
       "series_id": "SMS13191400000000001",
@@ -4524,11 +4524,23 @@
       "source": "Census Business Dynamics Statistics (establishment entry rate, 2022); metro rate indexed to US=100"
     },
     "major_employers": {
-      "as_of": "2026-07-10",
+      "as_of": "2026-07-11",
       "employers": [
         {
           "name": "Manufacturing",
           "source_url": "https://www.bizjournals.com/atlanta/news/2023/06/29/solar-workforce-qcells-dalton-georgia.html"
+        },
+        {
+          "name": "Aerospace",
+          "source_url": "https://georgia.org/newsroom/press-releases/global-flooring-company-expand-dalton-creating-200-jobs"
+        },
+        {
+          "name": "Shaw Industries",
+          "source_url": "https://www.ajc.com/business/employment/slow-carpet-sales-leads-dalton-plant-closing/i6IWYuTMhqDpy2SltAagkM"
+        },
+        {
+          "name": "Automotive",
+          "source_url": "https://georgia.org/newsroom/press-releases/global-flooring-company-expand-dalton-creating-200-jobs"
         },
         {
           "name": "Carpet Capital",
@@ -4543,55 +4555,43 @@
           "source_url": "https://en.wikipedia.org/wiki/Dalton,_Georgia"
         },
         {
-          "name": "Shaw Industries",
-          "source_url": "https://www.ajc.com/business/employment/slow-carpet-sales-leads-dalton-plant-closing/i6IWYuTMhqDpy2SltAagkM"
+          "name": "Energy",
+          "source_url": "https://georgia.org/newsroom/press-releases/global-flooring-company-expand-dalton-creating-200-jobs"
         },
         {
-          "name": "Aerospace",
-          "source_url": "https://georgia.org/newsroom/press-releases/belgian-flooring-manufacturer-to-locate-first-u-s-plant-in-dalton"
+          "name": "Food Processing",
+          "source_url": "https://georgia.org/newsroom/press-releases/global-flooring-company-expand-dalton-creating-200-jobs"
         },
         {
-          "name": "Beaulieu Group",
-          "source_url": "https://valdostadailytimes.com/2018/01/01/engineered-floors-growth-varnell-drama-among-top-stories-in-dalton-area-in-2017"
+          "name": "Logistics",
+          "source_url": "https://georgia.org/newsroom/press-releases/global-flooring-company-expand-dalton-creating-200-jobs"
         },
         {
-          "name": "Flooring",
-          "source_url": "https://valdostadailytimes.com/2018/01/01/engineered-floors-growth-varnell-drama-among-top-stories-in-dalton-area-in-2017"
-        },
-        {
-          "name": "American Airlines",
-          "source_url": "https://www.bizjournals.com/atlanta/news/2023/08/04/georgia-cities-wage-growth-salary.html"
+          "name": "Authority Brands Relocates HQ",
+          "source_url": "https://georgia.org/newsroom/press-releases/global-flooring-company-expand-dalton-creating-200-jobs"
         },
         {
           "name": "CELLS America Inc",
           "source_url": "https://www.bizjournals.com/atlanta/news/2023/06/29/solar-workforce-qcells-dalton-georgia.html"
         },
         {
-          "name": "Dalton Regional Medical Center",
-          "source_url": null
+          "name": "Cobb Co",
+          "source_url": "https://georgia.org/newsroom/press-releases/global-flooring-company-expand-dalton-creating-200-jobs"
         },
         {
-          "name": "Greenfield LLC",
-          "source_url": "https://georgia.org/blogs/korea-connections-successful-business-built-strong-relationships"
-        },
-        {
-          "name": "InnoTek LLC",
-          "source_url": "https://georgia.org/blogs/korea-connections-successful-business-built-strong-relationships"
-        },
-        {
-          "name": "Yancey Engineered Solutions",
-          "source_url": null
+          "name": "Crisp Co",
+          "source_url": "https://georgia.org/newsroom/press-releases/global-flooring-company-expand-dalton-creating-200-jobs"
         }
       ],
       "sources": [
         "https://www.bizjournals.com/atlanta/news/2023/08/04/georgia-cities-wage-growth-salary.html",
         "https://en.wikipedia.org/wiki/Dalton,_Georgia",
         "https://www.bizjournals.com/atlanta/news/2023/06/29/solar-workforce-qcells-dalton-georgia.html",
-        "https://georgia.org/blogs/korea-connections-successful-business-built-strong-relationships",
-        "https://www.ajc.com/business/employment/slow-carpet-sales-leads-dalton-plant-closing/i6IWYuTMhqDpy2SltAagkM",
         "https://www.ajc.com/business/dalton-augusta-worst-for-job-losses-lately/qWPbpKazCnZFJtn1Kel1RM",
-        "https://valdostadailytimes.com/2018/01/01/engineered-floors-growth-varnell-drama-among-top-stories-in-dalton-area-in-2017",
-        "https://valdostadailytimes.com/2019/01/23/something-we-can-all-be-proud-of-food-city-opens-second-dalton-location"
+        "https://www.ajc.com/business/georgia-best-employers-for-2019-according-forbes/97QBCslwnyl3Ob4ujTmnLK",
+        "https://www.georgia.org/press-release/solar-energy-giant-qcells-power-470-new-jobs-new-whitfield-county-facility",
+        "https://georgia.org/newsroom/press-releases/global-flooring-company-expand-dalton-creating-200-jobs",
+        "https://georgia.org/newsroom/press-releases/belgian-flooring-manufacturer-to-locate-first-u-s-plant-in-dalton"
       ],
       "method": "Representative list auto-discovered via Tavily web search across chamber-of-commerce, development-authority and local-news sources. Not exhaustive; ordering approximates source frequency, not headcount."
     },

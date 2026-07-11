@@ -3,7 +3,7 @@
   "short_name": "Columbus",
   "full_name": "Columbus, GA-AL",
   "population": 329000,
-  "as_of": "2026-07-10",
+  "as_of": "2026-07-11",
   "sections": {
     "ces_employment": {
       "series_id": "SMS13179800000000001",
@@ -5070,7 +5070,7 @@
       "source": "Census Business Dynamics Statistics (establishment entry rate, 2022); metro rate indexed to US=100"
     },
     "major_employers": {
-      "as_of": "2026-07-10",
+      "as_of": "2026-07-11",
       "employers": [
         {
           "name": "Health Care",
@@ -5082,7 +5082,7 @@
         },
         {
           "name": "Manufacturing",
-          "source_url": "https://georgia.org/press-releases/2026/rtxs-pratt-whitney-announces-new-200m-columbus-expansion-cuts-ribbon-prior-expansion"
+          "source_url": "https://www.bizjournals.com/atlanta/subscriber-only/2025/10/17/metro-atlantas-largest-employers.html"
         },
         {
           "name": "Muscogee County School District",
@@ -5097,16 +5097,16 @@
           "source_url": "https://en.wikipedia.org/wiki/Columbus,_Georgia"
         },
         {
+          "name": "Bradley Co",
+          "source_url": "https://en.wikipedia.org/wiki/Columbus,_Georgia"
+        },
+        {
           "name": "Financial Activities",
           "source_url": "https://en.wikipedia.org/wiki/List_of_largest_Central_Ohio_employers"
         },
         {
           "name": "Ohio State University",
           "source_url": "https://en.wikipedia.org/wiki/Columbus_metropolitan_area,_Ohio"
-        },
-        {
-          "name": "Aerospace",
-          "source_url": "https://georgia.org/press-releases/2026/rtxs-pratt-whitney-announces-new-200m-columbus-expansion-cuts-ribbon-prior-expansion"
         },
         {
           "name": "Corp. Mgt",
@@ -5125,7 +5125,7 @@
           "source_url": "https://en.wikipedia.org/wiki/Economy_of_Columbus,_Ohio"
         },
         {
-          "name": "Automotive",
+          "name": "Aerospace",
           "source_url": "https://georgia.org"
         }
       ],
@@ -5133,11 +5133,11 @@
         "https://en.wikipedia.org/wiki/Columbus,_Georgia",
         "https://www.selectgeorgia.com/blog/columbus-georgia-a-home-for-headquarters",
         "https://en.wikipedia.org/wiki/Category:Companies_based_in_Columbus,_Georgia",
-        "https://georgia.org/press-releases/2026/rtxs-pratt-whitney-announces-new-200m-columbus-expansion-cuts-ribbon-prior-expansion",
         "https://www.bizjournals.com/atlanta/subscriber-only/2025/10/17/metro-atlantas-largest-employers.html",
         "https://georgia.org",
         "https://www.selectgeorgia.com/about-us/our-team/regional-development/andrew-camp-west",
-        "https://georgia.org/sites/default/files/2023-01/2022-8-24_gdecd_board_meeting_minutes.pdf"
+        "https://georgia.org/sites/default/files/2023-01/2022-8-24_gdecd_board_meeting_minutes.pdf",
+        "https://georgia.org/sites/default/files/2021-04/logistics_education_report.pdf"
       ],
       "method": "Representative list auto-discovered via Tavily web search across chamber-of-commerce, development-authority and local-news sources. Not exhaustive; ordering approximates source frequency, not headcount."
     },

@@ -3,7 +3,7 @@
   "short_name": "Atlanta",
   "full_name": "Atlanta-Sandy Springs-Alpharetta, GA",
   "population": 6307261,
-  "as_of": "2026-07-10",
+  "as_of": "2026-07-11",
   "sections": {
     "ces_employment": {
       "series_id": "SMS13120600000000001",
@@ -5246,7 +5246,7 @@
       "source": "Census Business Dynamics Statistics (establishment entry rate, 2022); metro rate indexed to US=100"
     },
     "major_employers": {
-      "as_of": "2026-07-10",
+      "as_of": "2026-07-11",
       "employers": [
         {
           "name": "Emory University",
@@ -5257,12 +5257,12 @@
           "source_url": "https://en.wikipedia.org/wiki/Economy_of_Atlanta"
         },
         {
-          "name": "Company",
-          "source_url": "https://www.bizjournals.com/atlanta/datacenter/lists"
-        },
-        {
           "name": "Northside Hospital",
           "source_url": "https://en.wikipedia.org/wiki/Economy_of_Atlanta"
+        },
+        {
+          "name": "Company",
+          "source_url": "https://www.bizjournals.com/atlanta/datacenter/lists"
         },
         {
           "name": "Wellstar Health System",
@@ -5271,6 +5271,10 @@
         {
           "name": "Delta Air Lines Inc",
           "source_url": "https://www.bizjournals.com/atlanta/datacenter/lists"
+        },
+        {
+          "name": "Emory Healthcare",
+          "source_url": "https://en.wikipedia.org/wiki/Economy_of_Atlanta"
         },
         {
           "name": "General Medical",
@@ -5291,10 +5295,6 @@
         {
           "name": "Professional Schools",
           "source_url": "https://www.metroatlantachamber.com/wp-content/uploads/2023/08/Top-Employer-Final.pdf"
-        },
-        {
-          "name": "Emory Healthcare",
-          "source_url": "https://en.wikipedia.org/wiki/Economy_of_Atlanta"
         },
         {
           "name": "Foundation Financial Group",

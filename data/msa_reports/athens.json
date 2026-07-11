@@ -3,7 +3,7 @@
   "short_name": "Athens",
   "full_name": "Athens-Clarke County, GA",
   "population": 217000,
-  "as_of": "2026-07-10",
+  "as_of": "2026-07-11",
   "sections": {
     "ces_employment": {
       "series_id": "SMS13120200000000001",
@@ -5081,35 +5081,55 @@
       "source": "Census Business Dynamics Statistics (establishment entry rate, 2022); metro rate indexed to US=100"
     },
     "major_employers": {
-      "as_of": "2026-07-10",
+      "as_of": "2026-07-11",
       "employers": [
         {
-          "name": "Janssen Pharmaceuticals",
-          "source_url": "https://en.wikipedia.org/wiki/Athens,_Georgia"
+          "name": "Ohio University",
+          "source_url": "https://en.wikipedia.org/wiki/Athens,_Ohio"
+        },
+        {
+          "name": "Aerospace",
+          "source_url": "https://georgia.org/press-releases/2022/boehringer-ingelheim-expands-global-innovation-capabilities-invests-57-million"
         },
         {
           "name": "Children's Healthcare of Atlanta",
           "source_url": "https://www.onlineathens.com/story/news/2026/03/04/georgias-best-employers-are-these-2-big-businesses-forbes-says/88982542007"
         },
         {
+          "name": "University of Georgia",
+          "source_url": null
+        },
+        {
           "name": "RWDC Industries",
           "source_url": "https://en.wikipedia.org/wiki/Athens,_Georgia"
+        },
+        {
+          "name": "Janssen Pharmaceuticals",
+          "source_url": "https://en.wikipedia.org/wiki/Athens,_Georgia"
+        },
+        {
+          "name": "Manufacturing",
+          "source_url": "https://georgia.org/press-releases/2022/boehringer-ingelheim-expands-global-innovation-capabilities-invests-57-million"
         },
         {
           "name": "Peachtree Medical Billing",
           "source_url": "https://en.wikipedia.org/wiki/Athens,_Georgia"
         },
         {
-          "name": "University of Georgia",
-          "source_url": "https://www.onlineathens.com/story/business/2023/08/09/the-georgia-chamber-of-commerce-hold-congressional-luncheon-in-athens/70553954007"
+          "name": "ArcelorMittal Building Solutions Brings North American",
+          "source_url": "https://georgia.org/press-releases/2023/life-sciences-manufacturer-meissner-create-1700-jobs-athens-clarke-county"
         },
         {
-          "name": "Piedmont Athens Regional Medical Center",
-          "source_url": null
+          "name": "Authority Brands Relocates HQ",
+          "source_url": "https://georgia.org/press-releases/2023/life-sciences-manufacturer-meissner-create-1700-jobs-athens-clarke-county"
         },
         {
-          "name": "Aerospace",
-          "source_url": "https://georgia.org/press-releases/2022/boehringer-ingelheim-expands-global-innovation-capabilities-invests-57-million"
+          "name": "Cobb Co",
+          "source_url": "https://georgia.org/press-releases/2023/life-sciences-manufacturer-meissner-create-1700-jobs-athens-clarke-county"
+        },
+        {
+          "name": "Georgia Power",
+          "source_url": "https://www.onlineathens.com/story/news/2026/03/04/georgias-best-employers-are-these-2-big-businesses-forbes-says/88982542007"
         },
         {
           "name": "Meissner Corporation",
@@ -5118,37 +5138,17 @@
         {
           "name": "Southern Company",
           "source_url": "https://www.onlineathens.com/story/news/2026/03/04/georgias-best-employers-are-these-2-big-businesses-forbes-says/88982542007"
-        },
-        {
-          "name": "Aegean Airlines",
-          "source_url": null
-        },
-        {
-          "name": "ArcelorMittal Building Solutions Brings North American",
-          "source_url": "https://georgia.org/press-releases/2023/life-sciences-manufacturer-meissner-create-1700-jobs-athens-clarke-county"
-        },
-        {
-          "name": "Athens Medical Center",
-          "source_url": null
-        },
-        {
-          "name": "Athens Technical College Augusta University Piedmont",
-          "source_url": "https://en.wikipedia.org/wiki/Athens,_Georgia"
-        },
-        {
-          "name": "Authority Brands Relocates HQ",
-          "source_url": "https://georgia.org/press-releases/2023/life-sciences-manufacturer-meissner-create-1700-jobs-athens-clarke-county"
         }
       ],
       "sources": [
-        "https://www.onlineathens.com/story/news/state/2014/08/27/forecast-athens-area-jobs-grow-12-percent/15520915007",
         "https://www.onlineathens.com/story/news/2026/03/04/georgias-best-employers-are-these-2-big-businesses-forbes-says/88982542007",
         "https://en.wikipedia.org/wiki/Athens,_Georgia",
         "https://www.augustachronicle.com/story/news/2025/06/04/fortune-500s-list-of-the-biggest-corporations-includes-17-in-georgia/84010835007",
+        "https://en.wikipedia.org/wiki/Category:Companies_based_in_Athens,_Georgia",
         "https://georgia.org/press-releases/2023/life-sciences-manufacturer-meissner-create-1700-jobs-athens-clarke-county",
-        "https://www.onlineathens.com/story/business/2023/08/09/the-georgia-chamber-of-commerce-hold-congressional-luncheon-in-athens/70553954007",
-        "https://georgia.org/sites/default/files/2020-08/georgia_safety_promise-8-27.pdf",
-        "https://georgia.org/press-releases/2022/boehringer-ingelheim-expands-global-innovation-capabilities-invests-57-million"
+        "https://www.ajc.com/top-workplaces/rounding-out-the-top-5-large-businesses/5FF7QFEAMRGF3PLDXYSC4NOFWQ",
+        "https://georgia.org/press-releases/2022/boehringer-ingelheim-expands-global-innovation-capabilities-invests-57-million",
+        "https://www.onlineathens.com/story/business/2014/07/26/terrell-athens-chamber-focusing-members-and-partnerships-2014/15524196007"
       ],
       "method": "Representative list auto-discovered via Tavily web search across chamber-of-commerce, development-authority and local-news sources. Not exhaustive; ordering approximates source frequency, not headcount."
     },

@@ -3,7 +3,7 @@
   "short_name": "Savannah",
   "full_name": "Savannah, GA",
   "population": 410000,
-  "as_of": "2026-07-10",
+  "as_of": "2026-07-11",
   "sections": {
     "ces_employment": {
       "series_id": "SMS13423400000000001",
@@ -5152,26 +5152,22 @@
       "source": "Census Business Dynamics Statistics (establishment entry rate, 2022); metro rate indexed to US=100"
     },
     "major_employers": {
-      "as_of": "2026-07-10",
+      "as_of": "2026-07-11",
       "employers": [
         {
-          "name": "Gulfstream Aerospace",
-          "source_url": null
+          "name": "Savannah State University",
+          "source_url": "https://en.wikipedia.org/wiki/Savannah_metropolitan_area"
         },
         {
           "name": "Children's Healthcare of Atlanta",
           "source_url": "https://www.savannahnow.com/story/news/2026/02/24/forbes-ranked-2-georgia-businesses-among-top-50-large-employers-in-us/88828522007"
         },
         {
-          "name": "Memorial Health University Medical Center",
-          "source_url": null
+          "name": "Gulfstream Aerospace",
+          "source_url": "https://en.wikipedia.org/wiki/Category:Companies_based_in_Savannah,_Georgia"
         },
         {
           "name": "Port of Savannah",
-          "source_url": null
-        },
-        {
-          "name": "Savannah State University",
           "source_url": null
         },
         {
@@ -5179,15 +5175,15 @@
           "source_url": "https://www.savannahnow.com/story/news/2021/05/07/amazon-announces-savannah-georgia-area-fulfillment-facility-create-1-000-jobs/4986754001"
         },
         {
-          "name": "Best Companies Group",
-          "source_url": "https://www.savannahnow.com/story/business/2013/10/14/business-savannah-news-summary/13965727007"
+          "name": "Savannah College of Art",
+          "source_url": "https://en.wikipedia.org/wiki/Savannah_metropolitan_area"
         },
         {
-          "name": "Boeing Savannah Assembly Plant",
-          "source_url": null
+          "name": "Savannah Technical College",
+          "source_url": "https://en.wikipedia.org/wiki/Savannah_metropolitan_area"
         },
         {
-          "name": "Chatham County Public School System",
+          "name": "Baptist Healthcare",
           "source_url": null
         },
         {
@@ -5195,31 +5191,35 @@
           "source_url": null
         },
         {
-          "name": "Hyundai Motor Group",
+          "name": "Chatham County School System",
           "source_url": null
         },
         {
-          "name": "Metaplant",
+          "name": "Digital Marketing Solutions",
+          "source_url": "https://www.savannahnow.com/story/news/2026/02/26/forbes-ranks-georgia-businesses-as-top-5-midsize-employers-in-state/88878493007"
+        },
+        {
+          "name": "Georgia Power",
+          "source_url": "https://www.selectgeorgia.com/blog/welcome-seapoint-industrial-site-savannah-ga"
+        },
+        {
+          "name": "Hyundai Motor America Metaplant",
           "source_url": null
         },
         {
-          "name": "Savannah Economic Development Authority",
-          "source_url": "https://www.selectgeorgia.com/blog/welcome-seapoint-industrial-site-savannah-ga"
-        },
-        {
-          "name": "Seapoint Industrial Site",
-          "source_url": "https://www.selectgeorgia.com/blog/welcome-seapoint-industrial-site-savannah-ga"
+          "name": "Memorial Health System",
+          "source_url": null
         }
       ],
       "sources": [
         "https://en.wikipedia.org/wiki/Savannah,_Georgia",
+        "https://en.wikipedia.org/wiki/Savannah_metropolitan_area",
         "https://www.selectgeorgia.com/blog/welcome-seapoint-industrial-site-savannah-ga",
         "https://www.savannahnow.com/story/news/2026/02/24/forbes-ranked-2-georgia-businesses-among-top-50-large-employers-in-us/88828522007",
-        "https://georgia.org/press-releases/2026/georgia-recognizes-five-2026-small-business-rock-stars",
-        "https://georgia.org/sites/default/files/2023-01/nine-line-case-study.pdf",
+        "https://en.wikipedia.org/wiki/Category:Companies_based_in_Savannah,_Georgia",
+        "https://www.savannahnow.com/story/news/2026/02/26/forbes-ranks-georgia-businesses-as-top-5-midsize-employers-in-state/88878493007",
         "https://www.savannahnow.com/story/news/2016/07/08/garden-city-police-department-savannah-firms-make-best-places-work-georgia-list/13921419007",
-        "https://www.savannahnow.com/story/business/2013/10/14/business-savannah-news-summary/13965727007",
-        "https://www.savannahnow.com/story/news/politics/state/2025/11/25/savannahs-state-lawmakers-talk-tourism-childcare-and-timber-at-event/87449964007"
+        "https://www.savannahnow.com/story/business/2013/10/14/business-savannah-news-summary/13965727007"
       ],
       "method": "Representative list auto-discovered via Tavily web search across chamber-of-commerce, development-authority and local-news sources. Not exhaustive; ordering approximates source frequency, not headcount."
     },

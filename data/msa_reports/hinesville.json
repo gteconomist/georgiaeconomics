@@ -3,7 +3,7 @@
   "short_name": "Hinesville",
   "full_name": "Hinesville, GA",
   "population": 78000,
-  "as_of": "2026-07-10",
+  "as_of": "2026-07-11",
   "sections": {
     "ces_employment": {
       "series_id": "SMS13259800000000001",
@@ -3982,27 +3982,19 @@
       "source": "Census Business Dynamics Statistics (establishment entry rate, 2022); metro rate indexed to US=100"
     },
     "major_employers": {
-      "as_of": "2026-07-10",
+      "as_of": "2026-07-11",
       "employers": [
         {
           "name": "Aerospace",
           "source_url": "https://georgia.org/why-georgia/regions-georgia"
         },
         {
+          "name": "Liberty County School District",
+          "source_url": "https://en.wikipedia.org/wiki/Hinesville,_Georgia"
+        },
+        {
           "name": "Automotive",
           "source_url": "https://georgia.org/why-georgia/regions-georgia"
-        },
-        {
-          "name": "Liberty County School System",
-          "source_url": null
-        },
-        {
-          "name": "Manufacturing",
-          "source_url": "https://georgia.org/why-georgia/regions-georgia"
-        },
-        {
-          "name": "Hyundai Motor Group",
-          "source_url": "https://georgia.org/why-georgia/regions-georgia/coastal-georgia"
         },
         {
           "name": "Energy",
@@ -4013,23 +4005,23 @@
           "source_url": "https://georgia.org/why-georgia/regions-georgia"
         },
         {
-          "name": "Hinesville Hospital",
+          "name": "Hinesville City Schools",
           "source_url": null
         },
         {
-          "name": "Liberty County School District",
+          "name": "Hinesville Medical Center",
           "source_url": null
         },
         {
-          "name": "Liberty Regional Medical Center",
+          "name": "Liberty County School System",
           "source_url": null
         },
         {
-          "name": "Logistics",
+          "name": "Manufacturing",
           "source_url": "https://georgia.org/why-georgia/regions-georgia"
         },
         {
-          "name": "Memorial Health",
+          "name": "Southeast Georgia Health System",
           "source_url": null
         },
         {
@@ -4037,17 +4029,24 @@
           "source_url": "https://georgia.org"
         },
         {
+          "name": "Arts Academy Fitness",
+          "source_url": "https://georgia.org/sites/default/files/2020-08/georgia_safety_promise-8-27.pdf"
+        },
+        {
           "name": "Augusta Technical College",
           "source_url": "https://georgia.org/why-georgia/regions-georgia"
+        },
+        {
+          "name": "Authority Brands Relocates HQ",
+          "source_url": "https://georgia.org"
         }
       ],
       "sources": [
         "https://en.wikipedia.org/wiki/Savannah_metropolitan_area",
-        "https://georgia.org/why-georgia/regions-georgia/coastal-georgia",
-        "https://www.savannahnow.com/story/news/2007/04/20/keys-future-0/13805381007",
+        "https://georgia.org/sites/default/files/2020-08/georgia_safety_promise-8-27.pdf",
+        "https://en.wikipedia.org/wiki/Hinesville,_Georgia",
         "https://georgia.org/why-georgia/regions-georgia",
-        "https://georgia.org",
-        "https://georgia.org/hyundai-motor-group-metaplant-america"
+        "https://georgia.org"
       ],
       "method": "Representative list auto-discovered via Tavily web search across chamber-of-commerce, development-authority and local-news sources. Not exhaustive; ordering approximates source frequency, not headcount."
     },
