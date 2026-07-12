@@ -3,7 +3,7 @@
   "short_name": "Gainesville",
   "full_name": "Gainesville, GA",
   "population": 211000,
-  "as_of": "2026-07-11",
+  "as_of": "2026-07-12",
   "sections": {
     "ces_employment": {
       "series_id": "SMS13235800000000001",
@@ -5792,7 +5792,7 @@
     "acs_housing_characteristics": "live",
     "acs_block_group_income": "live",
     "entrepreneurship": "live",
-    "major_employers": "partial",
+    "major_employers": "stale",
     "business_cycle_index": "live",
     "forecast_arima": "live",
     "vitality": "live",
