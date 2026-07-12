@@ -2,13 +2,13 @@
   "_fixture": false,
   "_meta": {
     "state_trend": {
-      "last_updated": "2026-06-12",
+      "last_updated": "2026-07-12",
       "source": "U.S. Census Bureau Population Estimates Program (PEP)",
       "vintage": 2025,
       "url": "https://www2.census.gov/programs-surveys/popest/datasets/2020-2025/state/totals/NST-EST2025-ALLDATA.csv"
     },
     "components": {
-      "last_updated": "2026-06-12",
+      "last_updated": "2026-07-12",
       "source": "U.S. Census Bureau PEP \u2014 components of change",
       "vintage": 2025,
       "coverage_years": [
@@ -17,7 +17,7 @@
       ]
     },
     "counties": {
-      "last_updated": "2026-06-12",
+      "last_updated": "2026-07-12",
       "source": "U.S. Census Bureau PEP \u2014 county totals",
       "vintage": 2025,
       "n_counties": 159,
@@ -27,7 +27,7 @@
       ]
     },
     "peer_states": {
-      "last_updated": "2026-06-12",
+      "last_updated": "2026-07-12",
       "source": "U.S. Census Bureau PEP \u2014 state totals",
       "vintage": 2025,
       "states": [
@@ -41,20 +41,20 @@
       ]
     },
     "age_structure": {
-      "last_updated": "2026-06-12",
+      "last_updated": "2026-07-12",
       "source": "U.S. Census Bureau PEP \u2014 state by single year of age + sex",
       "vintage": 2024
     },
     "race_composition": {
-      "last_updated": "2026-06-12",
+      "last_updated": "2026-07-12",
       "source": "U.S. Census Bureau PEP \u2014 state by race + Hispanic origin",
       "vintage": 2024,
       "has_hispanic": true
     }
   },
-  "fetched_at": "2026-06-12",
+  "fetched_at": "2026-07-12",
   "latest_year": 2025,
-  "source_summary": "Live sections updated 2026-06-12: state_trend, components, counties, peer_states, age_structure, race_composition. Stale or pending: none.",
+  "source_summary": "Live sections updated 2026-07-12: state_trend, components, counties, peer_states, age_structure, race_composition. Stale or pending: none.",
   "kpis": {
     "population_latest": 11302748,
     "population_base": 10732595,
