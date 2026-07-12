@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-06-12T18:10:19Z",
+  "fetched_at": "2026-07-12T17:02:08Z",
   "schema": "consumer/v1",
   "pce_trend": {
     "years": [
@@ -259,7 +259,8 @@
       "2025-12",
       "2026-01",
       "2026-02",
-      "2026-03"
+      "2026-03",
+      "2026-04"
     ],
     "sales_gwh": [
       5305.1,
@@ -348,7 +349,8 @@
       5361.7,
       6097.6,
       5271.6,
-      4124.2
+      4124.2,
+      3961.0
     ],
     "price_cents_kwh": [
       11.01,
@@ -437,11 +439,12 @@
       13.67,
       14.46,
       14.13,
-      15.01
+      15.01,
+      15.37
     ],
-    "latest_month": "2026-03",
-    "latest_price_cents_kwh": 15.01,
-    "price_yoy_pct": 2.2,
+    "latest_month": "2026-04",
+    "latest_price_cents_kwh": 15.37,
+    "price_yoy_pct": 3.7,
     "source": "EIA API v2 electricity/retail-sales \u2014 Georgia residential (sales in GWh, price in \u00a2/kWh)"
   },
   "sales_tax": {
@@ -752,37 +755,37 @@
     "pce_total_bn": 590.4,
     "pce_per_capita": 52696,
     "pce_yoy_pct": 6.0,
-    "elec_price_cents_kwh": 15.01,
-    "elec_price_yoy_pct": 2.2,
+    "elec_price_cents_kwh": 15.37,
+    "elec_price_yoy_pct": 3.7,
     "real_wage_yoy_pct": 2.27
   },
   "_meta": {
     "pce_trend": {
-      "last_updated": "2026-06-12T18:10:20Z",
+      "last_updated": "2026-07-12T17:02:09Z",
       "stale": false
     },
     "pce_composition": {
-      "last_updated": "2026-06-12T18:10:22Z",
+      "last_updated": "2026-07-12T17:02:09Z",
       "stale": false
     },
     "pce_by_function": {
-      "last_updated": "2026-06-12T18:10:26Z",
+      "last_updated": "2026-07-12T17:02:11Z",
       "stale": false
     },
     "pce_peers": {
-      "last_updated": "2026-06-12T18:10:28Z",
+      "last_updated": "2026-07-12T17:02:11Z",
       "stale": false
     },
     "electricity": {
-      "last_updated": "2026-06-12T18:10:28Z",
+      "last_updated": "2026-07-12T17:02:13Z",
       "stale": false
     },
     "sales_tax": {
-      "last_updated": "2026-06-12T18:10:28Z",
+      "last_updated": "2026-07-12T17:02:14Z",
       "stale": false
     },
     "real_wages": {
-      "last_updated": "2026-06-12T18:10:28Z",
+      "last_updated": "2026-07-12T17:02:14Z",
       "stale": false
     }
   },
