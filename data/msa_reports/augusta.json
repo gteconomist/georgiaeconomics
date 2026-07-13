@@ -3,7 +3,7 @@
   "short_name": "Augusta",
   "full_name": "Augusta-Richmond County, GA-SC",
   "population": 611000,
-  "as_of": "2026-07-12",
+  "as_of": "2026-07-13",
   "sections": {
     "ces_employment": {
       "series_id": "SMS13122600000000001",
@@ -5701,7 +5701,7 @@
     "acs_housing_characteristics": "live",
     "acs_block_group_income": "live",
     "entrepreneurship": "live",
-    "major_employers": "partial",
+    "major_employers": "stale",
     "business_cycle_index": "live",
     "forecast_arima": "live",
     "vitality": "live",
