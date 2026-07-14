@@ -3,7 +3,7 @@
   "short_name": "Savannah",
   "full_name": "Savannah, GA",
   "population": 410000,
-  "as_of": "2026-07-13",
+  "as_of": "2026-07-14",
   "sections": {
     "ces_employment": {
       "series_id": "SMS13423400000000001",
@@ -4935,15 +4935,15 @@
       "source": "IRS SOI county-to-county migration (https://www.irs.gov/pub/irs-soi/countyinflow2223.csv)"
     },
     "epa_air_quality": {
-      "year": 2025,
-      "median_aqi": 44.0,
-      "max_aqi": 90.0,
-      "p90_aqi": 59.0,
-      "days_with_aqi": 273,
-      "good_days": 182,
-      "pct_good_days": 66.7,
-      "unhealthy_or_worse_days": 0,
-      "source": "EPA AirData annual AQI by CBSA, 2025 (https://aqs.epa.gov/aqsweb/airdata/annual_aqi_by_cbsa_2025.zip)"
+      "year": 2026,
+      "median_aqi": 48.0,
+      "max_aqi": 103.0,
+      "p90_aqi": 69.0,
+      "days_with_aqi": 120,
+      "good_days": 65,
+      "pct_good_days": 54.2,
+      "unhealthy_or_worse_days": 1,
+      "source": "EPA AirData annual AQI by CBSA, 2026 (https://aqs.epa.gov/aqsweb/airdata/annual_aqi_by_cbsa_2026.zip)"
     },
     "school_finance": {
       "year": 2024,
@@ -5599,14 +5599,14 @@
       "source": "EIG composite \u2014 computed from ACS, BEA and IRS SOI inputs"
     },
     "quality_of_life": {
-      "value": 183,
-      "rank_estimate": 98,
+      "value": 180,
+      "rank_estimate": 106,
       "n_metros": 387,
-      "mean_z": 0.66,
+      "mean_z": 0.598,
       "components": {
         "median_aqi": {
-          "value": 44.0,
-          "z": 0.071,
+          "value": 48.0,
+          "z": -0.214,
           "weight": 1.0
         },
         "commute_60_plus_pct": {
@@ -5764,7 +5764,7 @@
           "weight": 0.2
         },
         "quality_of_life": {
-          "score": 0.745,
+          "score": 0.725,
           "weight": 0.15
         },
         "income_growth": {

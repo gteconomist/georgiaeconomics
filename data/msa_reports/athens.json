@@ -3,7 +3,7 @@
   "short_name": "Athens",
   "full_name": "Athens-Clarke County, GA",
   "population": 217000,
-  "as_of": "2026-07-13",
+  "as_of": "2026-07-14",
   "sections": {
     "ces_employment": {
       "series_id": "SMS13120200000000001",
@@ -4874,15 +4874,15 @@
       "source": "IRS SOI county-to-county migration (https://www.irs.gov/pub/irs-soi/countyinflow2223.csv)"
     },
     "epa_air_quality": {
-      "year": 2025,
-      "median_aqi": 44.0,
-      "max_aqi": 89.0,
-      "p90_aqi": 60.0,
-      "days_with_aqi": 273,
-      "good_days": 182,
-      "pct_good_days": 66.7,
-      "unhealthy_or_worse_days": 0,
-      "source": "EPA AirData annual AQI by CBSA, 2025 (https://aqs.epa.gov/aqsweb/airdata/annual_aqi_by_cbsa_2025.zip)"
+      "year": 2026,
+      "median_aqi": 54.0,
+      "max_aqi": 115.0,
+      "p90_aqi": 79.0,
+      "days_with_aqi": 120,
+      "good_days": 54,
+      "pct_good_days": 45.0,
+      "unhealthy_or_worse_days": 2,
+      "source": "EPA AirData annual AQI by CBSA, 2026 (https://aqs.epa.gov/aqsweb/airdata/annual_aqi_by_cbsa_2026.zip)"
     },
     "school_finance": null,
     "acs_age_structure": {
@@ -5528,14 +5528,14 @@
       "source": "EIG composite \u2014 computed from ACS, BEA and IRS SOI inputs"
     },
     "quality_of_life": {
-      "value": 140,
-      "rank_estimate": 224,
+      "value": 131,
+      "rank_estimate": 251,
       "n_metros": 387,
-      "mean_z": -0.196,
+      "mean_z": -0.384,
       "components": {
         "median_aqi": {
-          "value": 44.0,
-          "z": 0.071,
+          "value": 54.0,
+          "z": -0.643,
           "weight": 1.0
         },
         "commute_60_plus_pct": {
@@ -5671,7 +5671,7 @@
       "source": "EIG composite \u2014 NAR-style affordability: ACS median household income (B19013) vs. income needed for the median home (ACS B25077 value scaled by FHFA HPI; Freddie Mac PMMS 30-yr rate via FRED). >100 = median household can afford the median home."
     },
     "credit_score": {
-      "score": 72,
+      "score": 71,
       "grade": "A+",
       "outlook": "Positive",
       "components": {
@@ -5688,7 +5688,7 @@
           "weight": 0.2
         },
         "quality_of_life": {
-          "score": 0.422,
+          "score": 0.35,
           "weight": 0.15
         },
         "income_growth": {

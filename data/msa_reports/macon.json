@@ -3,7 +3,7 @@
   "short_name": "Macon",
   "full_name": "Macon-Bibb County, GA",
   "population": 232000,
-  "as_of": "2026-07-13",
+  "as_of": "2026-07-14",
   "sections": {
     "ces_employment": {
       "series_id": "SMS13314200000000001",
@@ -4864,15 +4864,15 @@
       "source": "IRS SOI county-to-county migration (https://www.irs.gov/pub/irs-soi/countyinflow2223.csv)"
     },
     "epa_air_quality": {
-      "year": 2025,
-      "median_aqi": 51.0,
-      "max_aqi": 119.0,
-      "p90_aqi": 64.0,
-      "days_with_aqi": 271,
-      "good_days": 134,
-      "pct_good_days": 49.4,
-      "unhealthy_or_worse_days": 1,
-      "source": "EPA AirData annual AQI by CBSA, 2025 (https://aqs.epa.gov/aqsweb/airdata/annual_aqi_by_cbsa_2025.zip)"
+      "year": 2026,
+      "median_aqi": 57.0,
+      "max_aqi": 165.0,
+      "p90_aqi": 89.0,
+      "days_with_aqi": 120,
+      "good_days": 32,
+      "pct_good_days": 26.7,
+      "unhealthy_or_worse_days": 7,
+      "source": "EPA AirData annual AQI by CBSA, 2026 (https://aqs.epa.gov/aqsweb/airdata/annual_aqi_by_cbsa_2026.zip)"
     },
     "school_finance": null,
     "acs_age_structure": {
@@ -5519,14 +5519,14 @@
       "source": "EIG composite \u2014 computed from ACS, BEA and IRS SOI inputs"
     },
     "quality_of_life": {
-      "value": 148,
-      "rank_estimate": 201,
+      "value": 142,
+      "rank_estimate": 218,
       "n_metros": 387,
-      "mean_z": -0.047,
+      "mean_z": -0.16,
       "components": {
         "median_aqi": {
-          "value": 51.0,
-          "z": -0.429,
+          "value": 57.0,
+          "z": -0.857,
           "weight": 1.0
         },
         "commute_60_plus_pct": {
@@ -5662,7 +5662,7 @@
       "source": "EIG composite \u2014 NAR-style affordability: ACS median household income (B19013) vs. income needed for the median home (ACS B25077 value scaled by FHFA HPI; Freddie Mac PMMS 30-yr rate via FRED). >100 = median household can afford the median home."
     },
     "credit_score": {
-      "score": 54,
+      "score": 53,
       "grade": "BBB",
       "outlook": "Positive",
       "components": {
@@ -5679,7 +5679,7 @@
           "weight": 0.2
         },
         "quality_of_life": {
-          "score": 0.481,
+          "score": 0.436,
           "weight": 0.15
         },
         "income_growth": {

@@ -3,7 +3,7 @@
   "short_name": "Gainesville",
   "full_name": "Gainesville, GA",
   "population": 211000,
-  "as_of": "2026-07-13",
+  "as_of": "2026-07-14",
   "sections": {
     "ces_employment": {
       "series_id": "SMS13235800000000001",
@@ -4940,15 +4940,15 @@
       "source": "IRS SOI county-to-county migration (https://www.irs.gov/pub/irs-soi/countyinflow2223.csv)"
     },
     "epa_air_quality": {
-      "year": 2025,
+      "year": 2026,
       "median_aqi": 46.0,
-      "max_aqi": 82.0,
-      "p90_aqi": 62.0,
-      "days_with_aqi": 242,
-      "good_days": 133,
-      "pct_good_days": 55.0,
+      "max_aqi": 86.0,
+      "p90_aqi": 68.0,
+      "days_with_aqi": 112,
+      "good_days": 61,
+      "pct_good_days": 54.5,
       "unhealthy_or_worse_days": 0,
-      "source": "EPA AirData annual AQI by CBSA, 2025 (https://aqs.epa.gov/aqsweb/airdata/annual_aqi_by_cbsa_2025.zip)"
+      "source": "EPA AirData annual AQI by CBSA, 2026 (https://aqs.epa.gov/aqsweb/airdata/annual_aqi_by_cbsa_2026.zip)"
     },
     "school_finance": null,
     "acs_age_structure": {

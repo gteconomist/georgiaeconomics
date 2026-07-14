@@ -3,7 +3,7 @@
   "short_name": "Columbus",
   "full_name": "Columbus, GA-AL",
   "population": 329000,
-  "as_of": "2026-07-13",
+  "as_of": "2026-07-14",
   "sections": {
     "ces_employment": {
       "series_id": "SMS13179800000000001",
@@ -4860,15 +4860,15 @@
       "source": "IRS SOI county-to-county migration (https://www.irs.gov/pub/irs-soi/countyinflow2223.csv)"
     },
     "epa_air_quality": {
-      "year": 2025,
-      "median_aqi": 47.0,
-      "max_aqi": 166.0,
-      "p90_aqi": 65.0,
-      "days_with_aqi": 272,
-      "good_days": 160,
-      "pct_good_days": 58.8,
-      "unhealthy_or_worse_days": 5,
-      "source": "EPA AirData annual AQI by CBSA, 2025 (https://aqs.epa.gov/aqsweb/airdata/annual_aqi_by_cbsa_2025.zip)"
+      "year": 2026,
+      "median_aqi": 53.0,
+      "max_aqi": 158.0,
+      "p90_aqi": 78.0,
+      "days_with_aqi": 120,
+      "good_days": 52,
+      "pct_good_days": 43.3,
+      "unhealthy_or_worse_days": 3,
+      "source": "EPA AirData annual AQI by CBSA, 2026 (https://aqs.epa.gov/aqsweb/airdata/annual_aqi_by_cbsa_2026.zip)"
     },
     "school_finance": null,
     "acs_age_structure": {
@@ -5517,14 +5517,14 @@
       "source": "EIG composite \u2014 computed from ACS, BEA and IRS SOI inputs"
     },
     "quality_of_life": {
-      "value": 156,
-      "rank_estimate": 176,
+      "value": 150,
+      "rank_estimate": 193,
       "n_metros": 387,
-      "mean_z": 0.113,
+      "mean_z": 0.001,
       "components": {
         "median_aqi": {
-          "value": 47.0,
-          "z": -0.143,
+          "value": 53.0,
+          "z": -0.571,
           "weight": 1.0
         },
         "commute_60_plus_pct": {
@@ -5677,7 +5677,7 @@
           "weight": 0.2
         },
         "quality_of_life": {
-          "score": 0.545,
+          "score": 0.5,
           "weight": 0.15
         },
         "income_growth": {

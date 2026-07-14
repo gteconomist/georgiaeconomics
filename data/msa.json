@@ -300,15 +300,15 @@
         "affordability_index": 110.1,
         "rent_burden_pct": 22.4,
         "pct_owner_occupied": 61.2,
-        "median_aqi": 52.0,
-        "quality_of_life": 164,
+        "median_aqi": 54.0,
+        "quality_of_life": 162,
         "vitality": 0.67,
         "median_age": 37.2,
         "business_formation_rate": 13.73,
         "cost_of_living_index": 109,
         "business_cost_index": 109,
         "industrial_diversity": 0.976,
-        "credit_score": 76
+        "credit_score": 75
       }
     },
     {
@@ -335,15 +335,15 @@
         "affordability_index": 138.3,
         "rent_burden_pct": 19.4,
         "pct_owner_occupied": 58.1,
-        "median_aqi": 51.0,
-        "quality_of_life": 166,
+        "median_aqi": 54.0,
+        "quality_of_life": 163,
         "vitality": 0.45,
         "median_age": 38.3,
         "business_formation_rate": 10.21,
         "cost_of_living_index": 89,
         "business_cost_index": 87,
         "industrial_diversity": 0.83,
-        "credit_score": 67
+        "credit_score": 66
       }
     },
     {
@@ -370,8 +370,8 @@
         "affordability_index": 115.3,
         "rent_burden_pct": 22.6,
         "pct_owner_occupied": 55.3,
-        "median_aqi": 44.0,
-        "quality_of_life": 183,
+        "median_aqi": 48.0,
+        "quality_of_life": 180,
         "vitality": 0.67,
         "median_age": 36.9,
         "business_formation_rate": 12.03,
@@ -405,8 +405,8 @@
         "affordability_index": 135.6,
         "rent_burden_pct": 21.6,
         "pct_owner_occupied": 50.5,
-        "median_aqi": 47.0,
-        "quality_of_life": 156,
+        "median_aqi": 53.0,
+        "quality_of_life": 150,
         "vitality": 0.48,
         "median_age": 36.5,
         "business_formation_rate": 11.33,
@@ -440,15 +440,15 @@
         "affordability_index": 142.6,
         "rent_burden_pct": 21.0,
         "pct_owner_occupied": 52.3,
-        "median_aqi": 51.0,
-        "quality_of_life": 148,
+        "median_aqi": 57.0,
+        "quality_of_life": 142,
         "vitality": 0.34,
         "median_age": 38.6,
         "business_formation_rate": 9.65,
         "cost_of_living_index": 84,
         "business_cost_index": 81,
         "industrial_diversity": 0.539,
-        "credit_score": 54
+        "credit_score": 53
       }
     },
     {
@@ -475,15 +475,15 @@
         "affordability_index": 95.4,
         "rent_burden_pct": 22.0,
         "pct_owner_occupied": 51.7,
-        "median_aqi": 44.0,
-        "quality_of_life": 140,
+        "median_aqi": 54.0,
+        "quality_of_life": 131,
         "vitality": 0.5,
         "median_age": 33.6,
         "business_formation_rate": 10.95,
         "cost_of_living_index": 91,
         "business_cost_index": 89,
         "industrial_diversity": 0.771,
-        "credit_score": 72
+        "credit_score": 71
       }
     },
     {
@@ -545,15 +545,15 @@
         "affordability_index": 164.2,
         "rent_burden_pct": 17.6,
         "pct_owner_occupied": 61.1,
-        "median_aqi": 44.0,
-        "quality_of_life": 183,
+        "median_aqi": 49.0,
+        "quality_of_life": 179,
         "vitality": 0.57,
         "median_age": 36.6,
         "business_formation_rate": 11.83,
         "cost_of_living_index": 90,
         "business_cost_index": 88,
         "industrial_diversity": 0.83,
-        "credit_score": 78
+        "credit_score": 77
       }
     },
     {
@@ -580,8 +580,8 @@
         "affordability_index": 127.9,
         "rent_burden_pct": 21.5,
         "pct_owner_occupied": 52.8,
-        "median_aqi": 49.0,
-        "quality_of_life": 150,
+        "median_aqi": 50.0,
+        "quality_of_life": 149,
         "vitality": 0.44,
         "median_age": 33.2,
         "business_formation_rate": 9.41,
@@ -615,8 +615,8 @@
         "affordability_index": 163.2,
         "rent_burden_pct": 20.0,
         "pct_owner_occupied": 48.2,
-        "median_aqi": 46.0,
-        "quality_of_life": 156,
+        "median_aqi": 52.0,
+        "quality_of_life": 151,
         "vitality": 0.31,
         "median_age": 38.1,
         "business_formation_rate": 10.05,
@@ -650,15 +650,15 @@
         "affordability_index": 146.6,
         "rent_burden_pct": 16.6,
         "pct_owner_occupied": 64.1,
-        "median_aqi": 39.0,
-        "quality_of_life": 179,
+        "median_aqi": 45.0,
+        "quality_of_life": 174,
         "vitality": 0.5,
         "median_age": 37.1,
         "business_formation_rate": 9.47,
         "cost_of_living_index": 80,
         "business_cost_index": 77,
         "industrial_diversity": 0.462,
-        "credit_score": 69
+        "credit_score": 68
       }
     },
     {
@@ -685,8 +685,8 @@
         "affordability_index": 123.9,
         "rent_burden_pct": 19.5,
         "pct_owner_occupied": 56.3,
-        "median_aqi": 39.0,
-        "quality_of_life": 168,
+        "median_aqi": 43.0,
+        "quality_of_life": 165,
         "vitality": 0.31,
         "median_age": 43.6,
         "business_formation_rate": 10.31,
@@ -719,15 +719,15 @@
         "affordability_index": 135.7,
         "rent_burden_pct": 18.6,
         "pct_owner_occupied": 57.3,
-        "median_aqi": 38.0,
-        "quality_of_life": 171,
+        "median_aqi": 43.0,
+        "quality_of_life": 166,
         "vitality": 0.35,
         "median_age": 38.2,
         "business_formation_rate": 10.36,
         "cost_of_living_index": 84,
         "business_cost_index": 82,
         "industrial_diversity": 0.858,
-        "credit_score": 68
+        "credit_score": 67
       }
     },
     {
@@ -799,7 +799,7 @@
       "value": 95697
     }
   },
-  "fetched_at": "2026-07-13",
+  "fetched_at": "2026-07-14",
   "theme_order": [
     "Labor",
     "Growth",

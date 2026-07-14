@@ -3,7 +3,7 @@
   "short_name": "Brunswick",
   "full_name": "Brunswick, GA",
   "population": 120000,
-  "as_of": "2026-07-13",
+  "as_of": "2026-07-14",
   "sections": {
     "ces_employment": {
       "series_id": "SMS13152600000000001",
@@ -3925,15 +3925,15 @@
       "source": "IRS SOI county-to-county migration (https://www.irs.gov/pub/irs-soi/countyinflow2223.csv)"
     },
     "epa_air_quality": {
-      "year": 2025,
-      "median_aqi": 39.0,
-      "max_aqi": 94.0,
-      "p90_aqi": 54.0,
-      "days_with_aqi": 287,
-      "good_days": 235,
-      "pct_good_days": 81.9,
-      "unhealthy_or_worse_days": 0,
-      "source": "EPA AirData annual AQI by CBSA, 2025 (https://aqs.epa.gov/aqsweb/airdata/annual_aqi_by_cbsa_2025.zip)"
+      "year": 2026,
+      "median_aqi": 43.0,
+      "max_aqi": 160.0,
+      "p90_aqi": 61.0,
+      "days_with_aqi": 120,
+      "good_days": 80,
+      "pct_good_days": 66.7,
+      "unhealthy_or_worse_days": 2,
+      "source": "EPA AirData annual AQI by CBSA, 2026 (https://aqs.epa.gov/aqsweb/airdata/annual_aqi_by_cbsa_2026.zip)"
     },
     "school_finance": null,
     "acs_age_structure": {
@@ -4578,14 +4578,14 @@
       "source": "EIG composite \u2014 computed from ACS, BEA and IRS SOI inputs"
     },
     "quality_of_life": {
-      "value": 168,
-      "rank_estimate": 138,
+      "value": 165,
+      "rank_estimate": 149,
       "n_metros": 387,
-      "mean_z": 0.365,
+      "mean_z": 0.29,
       "components": {
         "median_aqi": {
-          "value": 39.0,
-          "z": 0.429,
+          "value": 43.0,
+          "z": 0.143,
           "weight": 1.0
         },
         "commute_60_plus_pct": {
@@ -4738,7 +4738,7 @@
           "weight": 0.2
         },
         "quality_of_life": {
-          "score": 0.642,
+          "score": 0.614,
           "weight": 0.15
         },
         "income_growth": {

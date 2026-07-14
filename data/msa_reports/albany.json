@@ -3,7 +3,7 @@
   "short_name": "Albany",
   "full_name": "Albany, GA",
   "population": 146000,
-  "as_of": "2026-07-13",
+  "as_of": "2026-07-14",
   "sections": {
     "ces_employment": {
       "series_id": "SMS13105000000000001",
@@ -3969,15 +3969,15 @@
       "source": "IRS SOI county-to-county migration (https://www.irs.gov/pub/irs-soi/countyinflow2223.csv)"
     },
     "epa_air_quality": {
-      "year": 2025,
-      "median_aqi": 46.0,
-      "max_aqi": 115.0,
-      "p90_aqi": 67.0,
-      "days_with_aqi": 243,
-      "good_days": 135,
-      "pct_good_days": 55.6,
-      "unhealthy_or_worse_days": 1,
-      "source": "EPA AirData annual AQI by CBSA, 2025 (https://aqs.epa.gov/aqsweb/airdata/annual_aqi_by_cbsa_2025.zip)"
+      "year": 2026,
+      "median_aqi": 52.0,
+      "max_aqi": 168.0,
+      "p90_aqi": 72.0,
+      "days_with_aqi": 120,
+      "good_days": 53,
+      "pct_good_days": 44.2,
+      "unhealthy_or_worse_days": 4,
+      "source": "EPA AirData annual AQI by CBSA, 2026 (https://aqs.epa.gov/aqsweb/airdata/annual_aqi_by_cbsa_2026.zip)"
     },
     "school_finance": null,
     "acs_age_structure": {
@@ -4624,14 +4624,14 @@
       "source": "EIG composite \u2014 computed from ACS, BEA and IRS SOI inputs"
     },
     "quality_of_life": {
-      "value": 156,
-      "rank_estimate": 174,
+      "value": 151,
+      "rank_estimate": 192,
       "n_metros": 387,
-      "mean_z": 0.124,
+      "mean_z": 0.011,
       "components": {
         "median_aqi": {
-          "value": 46.0,
-          "z": -0.071,
+          "value": 52.0,
+          "z": -0.5,
           "weight": 1.0
         },
         "commute_60_plus_pct": {
@@ -4784,7 +4784,7 @@
           "weight": 0.2
         },
         "quality_of_life": {
-          "score": 0.549,
+          "score": 0.504,
           "weight": 0.15
         },
         "income_growth": {

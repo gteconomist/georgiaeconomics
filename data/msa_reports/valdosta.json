@@ -3,7 +3,7 @@
   "short_name": "Valdosta",
   "full_name": "Valdosta, GA",
   "population": 148000,
-  "as_of": "2026-07-13",
+  "as_of": "2026-07-14",
   "sections": {
     "ces_employment": {
       "series_id": "SMS13466600000000001",
@@ -3973,15 +3973,15 @@
       "source": "IRS SOI county-to-county migration (https://www.irs.gov/pub/irs-soi/countyinflow2223.csv)"
     },
     "epa_air_quality": {
-      "year": 2025,
-      "median_aqi": 49.0,
-      "max_aqi": 88.0,
-      "p90_aqi": 63.0,
-      "days_with_aqi": 243,
-      "good_days": 126,
-      "pct_good_days": 51.9,
-      "unhealthy_or_worse_days": 0,
-      "source": "EPA AirData annual AQI by CBSA, 2025 (https://aqs.epa.gov/aqsweb/airdata/annual_aqi_by_cbsa_2025.zip)"
+      "year": 2026,
+      "median_aqi": 50.0,
+      "max_aqi": 172.0,
+      "p90_aqi": 72.0,
+      "days_with_aqi": 120,
+      "good_days": 62,
+      "pct_good_days": 51.7,
+      "unhealthy_or_worse_days": 3,
+      "source": "EPA AirData annual AQI by CBSA, 2026 (https://aqs.epa.gov/aqsweb/airdata/annual_aqi_by_cbsa_2026.zip)"
     },
     "school_finance": null,
     "acs_age_structure": {
@@ -4627,14 +4627,14 @@
       "source": "EIG composite \u2014 computed from ACS, BEA and IRS SOI inputs"
     },
     "quality_of_life": {
-      "value": 150,
-      "rank_estimate": 194,
+      "value": 149,
+      "rank_estimate": 197,
       "n_metros": 387,
-      "mean_z": -0.006,
+      "mean_z": -0.025,
       "components": {
         "median_aqi": {
-          "value": 49.0,
-          "z": -0.286,
+          "value": 50.0,
+          "z": -0.357,
           "weight": 1.0
         },
         "commute_60_plus_pct": {
@@ -4787,7 +4787,7 @@
           "weight": 0.2
         },
         "quality_of_life": {
-          "score": 0.498,
+          "score": 0.49,
           "weight": 0.15
         },
         "income_growth": {
