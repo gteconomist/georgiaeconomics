@@ -1214,12 +1214,12 @@
   },
   "_meta": {
     "metro_labor": {
-      "last_updated": "2026-07-15T11:01:43Z",
+      "last_updated": "2026-07-16T11:24:45Z",
       "n_metros": 14,
       "stale": false
     },
     "sector_diffusion": {
-      "last_updated": "2026-07-15T11:01:43Z",
+      "last_updated": "2026-07-16T11:24:45Z",
       "stale": false
     }
   }
