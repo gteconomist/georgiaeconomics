@@ -1016,10 +1016,10 @@
       "population": 6307261,
       "unemployment_rate": 3.2,
       "ur_as_of": "2026-05",
-      "nonfarm_k": 3127.1,
-      "nonfarm_yoy_pct": 0.39,
-      "nonfarm_as_of": "2026-05",
-      "diffusion_pct": 29.0,
+      "nonfarm_k": 3119.0,
+      "nonfarm_yoy_pct": 0.35,
+      "nonfarm_as_of": "2026-06",
+      "diffusion_pct": 43.0,
       "n_sectors": 14
     },
     {
@@ -1029,10 +1029,10 @@
       "population": 611000,
       "unemployment_rate": 3.7,
       "ur_as_of": "2026-05",
-      "nonfarm_k": 254.6,
-      "nonfarm_yoy_pct": 0.43,
-      "nonfarm_as_of": "2026-05",
-      "diffusion_pct": 33.0,
+      "nonfarm_k": 253.9,
+      "nonfarm_yoy_pct": 0.4,
+      "nonfarm_as_of": "2026-06",
+      "diffusion_pct": 50.0,
       "n_sectors": 12
     },
     {
@@ -1042,9 +1042,9 @@
       "population": 410000,
       "unemployment_rate": 2.7,
       "ur_as_of": "2026-05",
-      "nonfarm_k": 216.6,
-      "nonfarm_yoy_pct": 0.7,
-      "nonfarm_as_of": "2026-05",
+      "nonfarm_k": 216.1,
+      "nonfarm_yoy_pct": 0.46,
+      "nonfarm_as_of": "2026-06",
       "diffusion_pct": 58.0,
       "n_sectors": 12
     },
@@ -1055,9 +1055,9 @@
       "population": 329000,
       "unemployment_rate": 3.8,
       "ur_as_of": "2026-05",
-      "nonfarm_k": 123.2,
+      "nonfarm_k": 123.0,
       "nonfarm_yoy_pct": 0.0,
-      "nonfarm_as_of": "2026-05",
+      "nonfarm_as_of": "2026-06",
       "diffusion_pct": 25.0,
       "n_sectors": 12
     },
@@ -1068,10 +1068,10 @@
       "population": 232000,
       "unemployment_rate": 3.8,
       "ur_as_of": "2026-05",
-      "nonfarm_k": 102.5,
-      "nonfarm_yoy_pct": 0.0,
-      "nonfarm_as_of": "2026-05",
-      "diffusion_pct": 50.0,
+      "nonfarm_k": 102.1,
+      "nonfarm_yoy_pct": -0.1,
+      "nonfarm_as_of": "2026-06",
+      "diffusion_pct": 58.0,
       "n_sectors": 12
     },
     {
@@ -1081,10 +1081,10 @@
       "population": 217000,
       "unemployment_rate": 2.8,
       "ur_as_of": "2026-05",
-      "nonfarm_k": 109.0,
-      "nonfarm_yoy_pct": 2.93,
-      "nonfarm_as_of": "2026-05",
-      "diffusion_pct": 58.0,
+      "nonfarm_k": 108.7,
+      "nonfarm_yoy_pct": 2.64,
+      "nonfarm_as_of": "2026-06",
+      "diffusion_pct": 67.0,
       "n_sectors": 12
     },
     {
@@ -1094,9 +1094,9 @@
       "population": 211000,
       "unemployment_rate": 2.6,
       "ur_as_of": "2026-05",
-      "nonfarm_k": 109.6,
+      "nonfarm_k": 109.3,
       "nonfarm_yoy_pct": 0.18,
-      "nonfarm_as_of": "2026-05",
+      "nonfarm_as_of": "2026-06",
       "diffusion_pct": 50.0,
       "n_sectors": 12
     },
@@ -1107,9 +1107,9 @@
       "population": 199000,
       "unemployment_rate": 2.9,
       "ur_as_of": "2026-05",
-      "nonfarm_k": 77.8,
-      "nonfarm_yoy_pct": -2.02,
-      "nonfarm_as_of": "2026-05",
+      "nonfarm_k": 77.7,
+      "nonfarm_yoy_pct": -1.65,
+      "nonfarm_as_of": "2026-06",
       "diffusion_pct": null,
       "n_sectors": 3
     },
@@ -1121,8 +1121,8 @@
       "unemployment_rate": 3.5,
       "ur_as_of": "2026-05",
       "nonfarm_k": 56.8,
-      "nonfarm_yoy_pct": -0.18,
-      "nonfarm_as_of": "2026-05",
+      "nonfarm_yoy_pct": 0.0,
+      "nonfarm_as_of": "2026-06",
       "diffusion_pct": null,
       "n_sectors": 3
     },
@@ -1133,9 +1133,9 @@
       "population": 146000,
       "unemployment_rate": 3.9,
       "ur_as_of": "2026-05",
-      "nonfarm_k": 59.7,
-      "nonfarm_yoy_pct": -2.13,
-      "nonfarm_as_of": "2026-05",
+      "nonfarm_k": 59.3,
+      "nonfarm_yoy_pct": -2.79,
+      "nonfarm_as_of": "2026-06",
       "diffusion_pct": null,
       "n_sectors": 3
     },
@@ -1146,10 +1146,10 @@
       "population": 143000,
       "unemployment_rate": 3.3,
       "ur_as_of": "2026-05",
-      "nonfarm_k": 66.5,
-      "nonfarm_yoy_pct": -1.34,
-      "nonfarm_as_of": "2026-05",
-      "diffusion_pct": 17.0,
+      "nonfarm_k": 66.3,
+      "nonfarm_yoy_pct": -0.9,
+      "nonfarm_as_of": "2026-06",
+      "diffusion_pct": 50.0,
       "n_sectors": 6
     },
     {
@@ -1159,9 +1159,9 @@
       "population": 120000,
       "unemployment_rate": 2.8,
       "ur_as_of": "2026-05",
-      "nonfarm_k": 50.5,
-      "nonfarm_yoy_pct": 1.61,
-      "nonfarm_as_of": "2026-05",
+      "nonfarm_k": 50.1,
+      "nonfarm_yoy_pct": 1.01,
+      "nonfarm_as_of": "2026-06",
       "diffusion_pct": null,
       "n_sectors": 3
     },
@@ -1172,9 +1172,9 @@
       "population": 99000,
       "unemployment_rate": 3.0,
       "ur_as_of": "2026-05",
-      "nonfarm_k": 47.1,
-      "nonfarm_yoy_pct": -0.42,
-      "nonfarm_as_of": "2026-05",
+      "nonfarm_k": 46.9,
+      "nonfarm_yoy_pct": -0.85,
+      "nonfarm_as_of": "2026-06",
       "diffusion_pct": null,
       "n_sectors": 5
     },
@@ -1186,8 +1186,8 @@
       "unemployment_rate": 3.6,
       "ur_as_of": "2026-05",
       "nonfarm_k": 21.8,
-      "nonfarm_yoy_pct": -0.91,
-      "nonfarm_as_of": "2026-05",
+      "nonfarm_yoy_pct": -0.46,
+      "nonfarm_as_of": "2026-06",
       "diffusion_pct": null,
       "n_sectors": 1
     }
@@ -1214,12 +1214,12 @@
   },
   "_meta": {
     "metro_labor": {
-      "last_updated": "2026-07-21T11:27:17Z",
+      "last_updated": "2026-07-22T11:31:31Z",
       "n_metros": 14,
       "stale": false
     },
     "sector_diffusion": {
-      "last_updated": "2026-07-21T11:27:17Z",
+      "last_updated": "2026-07-22T11:31:31Z",
       "stale": false
     }
   }
