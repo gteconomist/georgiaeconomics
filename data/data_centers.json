@@ -1,10 +1,10 @@
 {
-  "fetched_at": "2026-06-22",
+  "fetched_at": "2026-07-22",
   "latest_year": 2025,
   "_fixture": false,
   "_meta": {
     "employment": {
-      "last_updated": "2026-06-22",
+      "last_updated": "2026-07-22",
       "source": "BLS QCEW annual averages, NAICS 518210 (Data Processing, Hosting), GA (area 13000)",
       "coverage_years": [
         2014,
@@ -12,7 +12,7 @@
       ]
     },
     "industry_gdp": {
-      "last_updated": "2026-06-22",
+      "last_updated": "2026-07-22",
       "source": "BEA Regional SAGDP2 \u2014 Information sector, GA",
       "metric_note": "Information sector value-added GDP (NAICS 51 \u2014 broader than data centers; includes telecom, publishing, software). Page calls this out.",
       "coverage_years": [
@@ -22,16 +22,16 @@
       "line_code": "45"
     },
     "wages": {
-      "last_updated": "2026-06-22",
+      "last_updated": "2026-07-22",
       "source": "BLS QCEW avg weekly wage, NAICS 518210 vs all-private GA"
     },
     "establishments": {
-      "last_updated": "2026-06-22",
+      "last_updated": "2026-07-22",
       "source": "Census CBP 2023 \u2014 NAICS 518210, GA",
       "year": 2023
     },
     "state_comparison": {
-      "last_updated": "2026-06-22",
+      "last_updated": "2026-07-22",
       "source": "BEA Regional SAGDP2 \u2014 Information sector GDP by state",
       "metric_label": "Information-sector GDP (value-added, $B) \u2014 broader than data centers",
       "year": 2025
@@ -57,11 +57,11 @@
       "psc_headline_source": "https://www.georgiapower.com/news-hub/press-releases/georgia-public-service-commission-approves-plan-to-meet-the-energy-needs-of-a-growing-georgia.html"
     },
     "water": {
-      "last_updated": "2026-06-22",
+      "last_updated": "2026-07-22",
       "source": "GA EPD water-withdrawal permits + MW-based modeled remainder"
     },
     "policy": {
-      "last_updated": "2026-06-22",
+      "last_updated": "2026-07-22",
       "source": "GA legis.ga.gov + AJC + Georgia Recorder (Tavily); exemption timeline curated."
     },
     "pending_announcements": {
@@ -5012,7 +5012,7 @@
     "exemption_forgone_revenue_m": 215.0,
     "exemption_forgone_revenue_year": 2024
   },
-  "source_summary": "Live sources updated 2026-06-22: employment, industry_gdp, wages, establishments, state_comparison, water, policy. Stale or static: mw_peer_states, facilities, counties, load_forecast, pending_announcements.",
+  "source_summary": "Live sources updated 2026-07-22: employment, industry_gdp, wages, establishments, state_comparison, water, policy. Stale or static: mw_peer_states, facilities, counties, load_forecast, pending_announcements.",
   "pending_announcements": [
     {
       "title": "Georgia Power\u2019s data center build-out raises fears of eminent domain",
