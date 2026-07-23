@@ -1,5 +1,5 @@
 {
- "fetched_at": "2026-07-22T11:31:04Z",
+ "fetched_at": "2026-07-23T11:23:37Z",
  "schema": "gdp/v1",
  "metros": [
   {
@@ -539,51 +539,51 @@
   {
    "state": "Georgia",
    "fips": "13000",
-   "real_bn": 710.41,
-   "real_yoy": 1.86,
-   "per_capita": 62853
+   "real_bn": 697.45,
+   "real_yoy": 2.65,
+   "per_capita": 62249
   },
   {
    "state": "Florida",
    "fips": "12000",
-   "real_bn": 1393.84,
-   "real_yoy": 3.07,
-   "per_capita": 59407
+   "real_bn": 1352.28,
+   "real_yoy": 3.28,
+   "per_capita": 58123
   },
   {
    "state": "North Carolina",
    "fips": "37000",
-   "real_bn": 682.39,
-   "real_yoy": 2.75,
-   "per_capita": 60939
+   "real_bn": 664.13,
+   "real_yoy": 3.28,
+   "per_capita": 60091
   },
   {
    "state": "South Carolina",
    "fips": "45000",
-   "real_bn": 286.77,
-   "real_yoy": 3.14,
-   "per_capita": 51483
+   "real_bn": 278.03,
+   "real_yoy": 4.51,
+   "per_capita": 50641
   },
   {
    "state": "Tennessee",
    "fips": "47000",
-   "real_bn": 449.36,
-   "real_yoy": 2.08,
-   "per_capita": 61429
+   "real_bn": 440.2,
+   "real_yoy": 2.78,
+   "per_capita": 60706
   },
   {
    "state": "Alabama",
    "fips": "01000",
-   "real_bn": 260.65,
-   "real_yoy": 1.96,
-   "per_capita": 50191
+   "real_bn": 255.63,
+   "real_yoy": 2.95,
+   "per_capita": 49511
   },
   {
    "state": "United States",
    "fips": "00000",
-   "real_bn": 23850.44,
-   "real_yoy": 2.11,
-   "per_capita": 69782
+   "real_bn": 23358.44,
+   "real_yoy": 2.79,
+   "per_capita": 68701
   }
  ],
  "sectors": {
@@ -1508,28 +1508,28 @@
  },
  "_meta": {
   "metro_rollup": {
-   "last_updated": "2026-07-22T11:31:04Z",
+   "last_updated": "2026-07-23T11:23:37Z",
    "n_metros": 14,
    "stale": false
   },
   "ga_gdp": {
-   "last_updated": "2026-07-22T11:31:07Z",
+   "last_updated": "2026-07-23T11:23:37Z",
    "stale": false
   },
   "peers": {
-   "last_updated": "2026-07-22T11:31:17Z",
+   "last_updated": "2026-07-23T11:23:39Z",
    "stale": false
   },
   "sectors": {
-   "last_updated": "2026-07-22T11:31:28Z",
+   "last_updated": "2026-07-23T11:23:44Z",
    "stale": false
   },
   "county_gdp": {
-   "last_updated": "2026-07-22T11:31:29Z",
+   "last_updated": "2026-07-23T11:23:44Z",
    "stale": false
   },
   "non_metro": {
-   "last_updated": "2026-07-22T11:31:29Z",
+   "last_updated": "2026-07-23T11:23:44Z",
    "stale": false
   }
  },
