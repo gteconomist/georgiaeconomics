@@ -3,7 +3,7 @@
   "short_name": "Atlanta",
   "full_name": "Atlanta-Sandy Springs-Alpharetta, GA",
   "population": 6307261,
-  "as_of": "2026-07-23",
+  "as_of": "2026-07-24",
   "sections": {
     "ces_employment": {
       "series_id": "SMS13120600000000001",
@@ -5946,7 +5946,7 @@
     "ces_employment": "live",
     "ces_by_supersector": "live",
     "laus_unemployment": "live",
-    "fhfa_hpi": "live",
+    "fhfa_hpi": "stale",
     "census_pep": "live",
     "census_acs_demographics": "live",
     "bea_gmp": "live",
@@ -5955,7 +5955,7 @@
     "qcew_yoy_changes": "stale",
     "qcew_3digit": "live",
     "health_check": "live",
-    "census_bps_permits": "live",
+    "census_bps_permits": "stale",
     "ita_msa_exports": "live",
     "irs_soi_migration": "live",
     "epa_air_quality": "live",
