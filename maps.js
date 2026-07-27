@@ -81,12 +81,12 @@ function loadGAOutline() {
 }
 
 /* A transparent-fill choropleth whose only job is to draw a black GA border. */
-function _gaOutlineTrace(outline) {
+function _gaOutlineTrace(outline, color) {
   return {
     type: 'choropleth', locationmode: 'geojson-id', geojson: outline, featureidkey: 'id',
     locations: ['GA'], z: [0], showscale: false,
     colorscale: [[0, 'rgba(0,0,0,0)'], [1, 'rgba(0,0,0,0)']],
-    marker: { line: { color: '#1a1a1a', width: 1.6 } },
+    marker: { line: { color: color || '#1a1a1a', width: 1.6 } },
     hoverinfo: 'skip',
   };
 }
@@ -98,10 +98,11 @@ function _gaOutlineTrace(outline) {
 function _isNarrow() {
   return typeof window !== 'undefined' && (window.innerWidth || 999) < 700;
 }
-function _brandColorbar(label, unit, narrow, pos) {
+function _brandColorbar(label, unit, narrow, pos, inkColor) {
+  var ink = inkColor || BRAND_MAP.navy;
   var cb = {
-    tickfont: { family: 'Source Sans Pro, Arial, sans-serif', size: 11, color: BRAND_MAP.navy },
-    title: { text: (label || '') + (unit ? ' (' + unit + ')' : ''), font: { size: 12, color: BRAND_MAP.navy } },
+    tickfont: { family: 'Source Sans Pro, Arial, sans-serif', size: 11, color: ink },
+    title: { text: (label || '') + (unit ? ' (' + unit + ')' : ''), font: { size: 12, color: ink } },
   };
   if (narrow) {
     cb.orientation = 'h'; cb.thickness = 10; cb.len = 0.92; cb.x = 0.5; cb.xanchor = 'center';
@@ -153,6 +154,12 @@ async function drawGAChoropleth(elId, dataPoints, opts) {
 
   const unit = opts.unit || '';
   const narrow = _isNarrow();
+  // Optional dark-surface theming (used by the EIG landing-page hero). All four
+  // default to the existing light-map values, so every other caller is unchanged.
+  const bg      = opts.bgcolor      || BRAND_MAP.mapBg;
+  const lineCol = opts.lineColor    || '#ffffff';
+  const inkCol  = opts.fontColor    || BRAND_MAP.navy;
+  const outCol  = opts.outlineColor || '#1a1a1a';
   const fmt  = opts.valueFormatter || (v => {
     if (unit === '%') return fmtPct(v, 1);
     if (unit === '$') return fmtMoney(v);
@@ -193,29 +200,39 @@ async function drawGAChoropleth(elId, dataPoints, opts) {
     colorscale: scale,
     zmin: zmin,
     zmax: zmax,
-    marker: { line: { width: 0.4, color: '#ffffff' } },
-    colorbar: _brandColorbar(opts.metricLabel, unit, narrow, 'bottom'),
+    marker: { line: { width: 0.4, color: lineCol } },
+    // `horizontalColorbar` forces the phone-style horizontal legend below the
+    // map at any width. Used by the EIG hero, where a vertical bar would eat a
+    // quarter of the available width and shrink Georgia to a thumbnail.
+    colorbar: _brandColorbar(opts.metricLabel, unit, narrow || !!opts.horizontalColorbar, 'bottom', inkCol),
   };
+
+  // `scope: 'usa'` forces the geo subplot into a USA-shaped (~1.91:1) box, so a
+  // tall, narrow state like Georgia is fitted to the box HEIGHT and ends up
+  // small with wide empty margins either side. That is fine for the standard
+  // full-width map panels. `opts.fill` opts out of the scope and uses a plain
+  // Mercator projection instead, so `fitbounds: 'locations'` fills whatever box
+  // it is given — used by the EIG landing-page hero, where the map is the
+  // headline visual. Everything else keeps the historical scoped behaviour.
+  const geo = opts.fill
+    ? { fitbounds: 'locations', visible: false, projection: { type: 'mercator' }, bgcolor: bg }
+    : { scope: 'usa', fitbounds: 'locations', visible: false, showsubunits: false, bgcolor: bg };
 
   const layout = {
-    title: opts.title ? { text: opts.title, font: { family: 'Source Sans Pro', size: 16, color: BRAND_MAP.navy } } : undefined,
-    geo: {
-      scope: 'usa',
-      fitbounds: 'locations',
-      visible: false,
-      showsubunits: false,   // hide neighboring states — Georgia only
-      bgcolor: BRAND_MAP.mapBg,
-    },
+    title: opts.title ? { text: opts.title, font: { family: 'Source Sans Pro', size: 16, color: inkCol } } : undefined,
+    geo: geo,
     dragmode: false,         // lock the view to Georgia (no pan)
-    paper_bgcolor: BRAND_MAP.mapBg,
-    plot_bgcolor: BRAND_MAP.mapBg,
-    // On phones the colorbar moves below the map, so leave room at the bottom.
-    margin: narrow ? { t: opts.title ? 36 : 8, l: 8, r: 8, b: 52 }
-                   : { t: opts.title ? 36 : 8, l: 8, r: 8, b: 8 },
-    font: { family: 'Source Sans Pro, Arial, sans-serif', color: BRAND_MAP.navy },
+    paper_bgcolor: bg,
+    plot_bgcolor: bg,
+    // When the colorbar sits below the map (phones, or an explicit request),
+    // leave room at the bottom for it.
+    margin: (narrow || opts.horizontalColorbar)
+      ? { t: opts.title ? 36 : 8, l: 8, r: 8, b: 52 }
+      : { t: opts.title ? 36 : 8, l: 8, r: 8, b: 8 },
+    font: { family: 'Source Sans Pro, Arial, sans-serif', color: inkCol },
   };
 
-  const traces = outline ? [trace, _gaOutlineTrace(outline)] : [trace];
+  const traces = outline ? [trace, _gaOutlineTrace(outline, outCol)] : [trace];
   return Plotly.newPlot(elId, traces, layout, { responsive: true, displayModeBar: false, scrollZoom: false });
 }
 

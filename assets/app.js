@@ -389,10 +389,27 @@
       var lo = vals.length ? Math.min.apply(null, vals) : 0;
       var hi = vals.length ? Math.max.apply(null, vals) : 1;
       if (hi - lo < 0.5) { hi = lo + 0.5; } // avoid a flat scale when metros cluster
+      // Themes. Default is the existing light Modern Editorial map; "eig-dark"
+      // renders the map on EIG charcoal with the amber ramp for the branded
+      // landing-page hero. Selected per-element via data-ge-theme.
+      // On the charcoal hero the low end of the ramp must still be legible
+      // against the #231f20 background — a near-black low end made the
+      // healthiest metros vanish. Starts at the EIG logo's taupe instead.
+      var theme = (opts.theme === "eig-dark") ? {
+        colorscale: [[0, "#8a7366"], [0.5, "#c9740f"], [1, "#ffc46e"]],
+        bgcolor: "#231f20", lineColor: "#231f20",
+        fontColor: "#bdb6ae", outlineColor: "#6b6158",
+        horizontalColorbar: true, fill: true,
+      } : {
+        colorscale: [[0, BRAND.teal], [0.5, BRAND.mustard], [1, BRAND.coral]],
+      };
       return window.gaMaps.drawGAChoropleth(elId, points, {
         metricLabel: opts.metricLabel || "Metro unemployment",
         unit: "%",
-        colorscale: [[0, BRAND.teal], [0.5, BRAND.mustard], [1, BRAND.coral]],
+        colorscale: theme.colorscale,
+        bgcolor: theme.bgcolor, lineColor: theme.lineColor,
+        fontColor: theme.fontColor, outlineColor: theme.outlineColor,
+        horizontalColorbar: theme.horizontalColorbar, fill: theme.fill,
         zmin: lo, zmax: hi,
       }).then(function () { attachMetroNav(elId); return true; });
     }).catch(function (e) { if (window.console) console.warn("metroMap failed:", e); return false; });
@@ -405,7 +422,17 @@
     var sc = document.querySelector("[data-ge-scorecard]");
     if (sc && sc.id) scorecard(sc.id);
     var hero = document.querySelector("[data-ge-metromap]");
-    if (hero && hero.id) metroMap(hero.id, { metricLabel: hero.getAttribute("data-metric-label") });
+    if (hero && hero.id) metroMap(hero.id, {
+      metricLabel: hero.getAttribute("data-metric-label"),
+      theme: hero.getAttribute("data-ge-theme"),
+    }).then(function (ok) {
+      // The map is the hero image on the EIG landing page, so a failed render
+      // (Plotly CDN down, geojson fetch blocked) must not leave a 500px hole.
+      // Fall back to a plain text link into the same destination.
+      if (ok || !hero.hasAttribute("data-ge-fallback")) return;
+      hero.classList.add("map-failed");
+      hero.innerHTML = '<a class="map-fallback" href="/msa/">Explore Georgia’s 14 metro economies →</a>';
+    });
     if (document.getElementById("msa-choropleth")) {
       var tries = 0;
       var t = setInterval(function () {
