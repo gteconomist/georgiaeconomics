@@ -8,9 +8,12 @@
 <!-- GEN:HEAD -->
 <link rel="stylesheet" href="/styles.css">
 <link rel="stylesheet" href="/assets/app.css">
+<!-- EIG brand layer — site-wide chrome (charcoal + amber). Must load AFTER
+     styles.css/app.css so its chrome rules win. See EIG_REBRAND.md. -->
+<link rel="stylesheet" href="/assets/eig.css">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700;800&family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600;8..60,700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700;800&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
 <!-- app.js is intentionally NOT deferred: it defines window.GE (palette + fmt
      helpers) with no dependencies, so it must be available to each page's
      end-of-body inline script, which runs during parse before deferred scripts. -->
@@ -41,16 +44,16 @@
   .toggle-group button.active { background: var(--navy); color: #fff; }
 
   .pending {
-    background: var(--peach-pale); border: 1px dashed var(--peach, #e8a87c);
+    background: var(--peach-pale); border: 1px dashed var(--peach, #f7b45c);
     border-radius: 8px; padding: 14px 16px; color: var(--ink-soft); font-size: 13px;
   }
-  .pending strong { color: var(--peachDeep, #c46b3a); }
+  .pending strong { color: var(--peachDeep, #c9740f); }
 
   .disclaimer {
-    background: #fff7ed; border-left: 4px solid var(--peachDeep, #c46b3a);
-    border-radius: 6px; padding: 12px 16px; margin: 4px 0 14px; font-size: 13px; color: var(--ink, #1a3a5c);
+    background: #fff7ed; border-left: 4px solid var(--peachDeep, #c9740f);
+    border-radius: 6px; padding: 12px 16px; margin: 4px 0 14px; font-size: 13px; color: var(--ink, #231f20);
   }
-  .disclaimer strong { color: var(--peachDeep, #c46b3a); }
+  .disclaimer strong { color: var(--peachDeep, #c9740f); }
 
   .data-table-wrap { overflow-x: auto; }
   table.data-table { width: 100%; border-collapse: collapse; font-size: 14px; min-width: 520px; }
@@ -67,7 +70,7 @@
   .pos { color: var(--teal); font-weight: 600; }
   .neg { color: var(--coral); font-weight: 600; }
 
-  .stale-badge { display:inline-block; font-size:11px; font-weight:700; color:var(--peachDeep,#c46b3a); background:var(--peach-pale); border-radius:4px; padding:1px 6px; margin-left:8px; vertical-align:middle; }
+  .stale-badge { display:inline-block; font-size:11px; font-weight:700; color:var(--peachDeep,#c9740f); background:var(--peach-pale); border-radius:4px; padding:1px 6px; margin-left:8px; vertical-align:middle; }
   .source-note { font-size: 12px; color: var(--ink-soft); margin-top: 8px; font-style: italic; }
 </style>
 </head>
@@ -237,9 +240,9 @@
 document.getElementById('yr').textContent = new Date().getFullYear();
 
 const BRAND = {
-  navy: '#1a3a5c', peachDeep: '#c46b3a', peach: '#e8a87c',
-  mustard: '#d4a017', teal: '#3a8d8d', coral: '#d4624a',
-  green: '#6b8e3d', grid: '#b6ad8d', inkSoft: '#6b7280',
+  navy: '#231f20', peachDeep: '#c9740f', peach: '#f7b45c',
+  mustard: '#f7941e', teal: '#3f7d52', coral: '#a8432f',
+  green: '#6f8f4a', grid: '#b8b0a4', inkSoft: '#6d6e71',
 };
 
 // Forecast metric registry: key -> {label, fmt}
@@ -303,7 +306,7 @@ function renderCycle(isStale) {
     type: 'line',
     data: { labels: c.months, datasets: [{
       label: 'Coincident index', data: c.values, borderColor: BRAND.navy,
-      backgroundColor: 'rgba(26,58,92,0.10)', fill: true, tension: 0.2, pointRadius: 0, borderWidth: 2.5,
+      backgroundColor: 'rgba(60, 42, 16,0.10)', fill: true, tension: 0.2, pointRadius: 0, borderWidth: 2.5,
     }] },
     options: {
       responsive: true, maintainAspectRatio: false,

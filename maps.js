@@ -7,24 +7,28 @@
 
 const GA_STATE_FIPS = '13';
 
-/* ---------- Brand tokens (mirror BRAND in charts.js, plus GA accents) ---------- */
+/* ---------- Brand tokens ----------
+ * EIG palette (July 2026 rebrand). Names are unchanged from the previous
+ * Modern Editorial scheme so existing references keep working; the VALUES are
+ * now EIG — `navy` is a warm charcoal, `peach`/`mustard` are the amber family.
+ * Mirrors the :root remap in /styles.css. See EIG_REBRAND.md. */
 const BRAND_MAP = {
-  navy: '#1a3a5c',
-  mustard: '#d4a017',
-  teal: '#3a8d8d',
-  coral: '#d4624a',
-  peach: '#e8a87c',
-  peachDeep: '#c05f3c',
-  peachPale: '#f6e7df',
-  cream: '#fbf5dc',
-  mapBg: '#ffffff',   /* Modern Editorial: maps render on white, not cream */
-  ink: '#16202c',
-  inkSoft: '#5b6675',
-  border: '#e6e9ed',
+  navy: '#231f20',
+  mustard: '#f7941e',
+  teal: '#3f7d52',
+  coral: '#a8432f',
+  peach: '#f7b45c',
+  peachDeep: '#c9740f',
+  peachPale: '#fde8cc',
+  cream: '#f7f6f4',
+  mapBg: '#ffffff',   /* maps render on white panels */
+  ink: '#1f2226',
+  inkSoft: '#6d6e71',
+  border: '#e4e2df',
 };
 
 /* ---------- Color scales ---------- */
-/* Sequential — for one-sided metrics (unemployment, poverty, prices). Cream -> peach -> navy. */
+/* Sequential — for one-sided metrics (unemployment, poverty, prices). Amber tint -> amber -> deep amber -> brick -> charcoal. */
 const SCALE_SEQUENTIAL = [
   [0.00, BRAND_MAP.peachPale],
   [0.25, BRAND_MAP.peach],
@@ -33,20 +37,20 @@ const SCALE_SEQUENTIAL = [
   [1.00, BRAND_MAP.navy],
 ];
 
-/* Diverging — for change metrics (population change, MoM unemployment delta). Teal (down) <-> coral (up). */
+/* Diverging — for change metrics (population change, MoM unemployment delta). Forest green (down) <-> brick red (up). */
 const SCALE_DIVERGING = [
   [0.00, BRAND_MAP.teal],
-  [0.25, '#a4d4d4'],
-  [0.50, '#eef1f4'],
+  [0.25, '#b9d0be'],
+  [0.50, '#f1efec'],
   [0.75, BRAND_MAP.peach],
   [1.00, BRAND_MAP.coral],
 ];
 
-/* Sequential reverse — for "higher is worse" metrics where you want navy at the high end. */
+/* Sequential reverse — for "higher is worse" metrics where you want charcoal at the high end. */
 const SCALE_INVERSE = [
   [0.00, BRAND_MAP.navy],
   [0.25, BRAND_MAP.teal],
-  [0.55, '#eef1f4'],
+  [0.55, '#f1efec'],
   [0.80, BRAND_MAP.peach],
   [1.00, BRAND_MAP.coral],
 ];
@@ -65,7 +69,7 @@ function loadUSCountiesGeoJSON() {
 
 /* ---------- Georgia state outline ----------
  * A single GA boundary polygon, fetched from the same raw.githubusercontent.com
- * host as the counties geojson and cached. Used to draw a black state border
+ * host as the counties geojson and cached. Used to draw a dark state border
  * and to drop the neighboring-state subunit lines. Fails soft: if the fetch is
  * ever unavailable, the map simply renders without the outline. */
 const GA_OUTLINE_GEOJSON = 'https://raw.githubusercontent.com/glynnbird/usstatesgeojson/master/georgia.geojson';
@@ -80,7 +84,7 @@ function loadGAOutline() {
   return _gaOutlinePromise;
 }
 
-/* A transparent-fill choropleth whose only job is to draw a black GA border. */
+/* A transparent-fill choropleth whose only job is to draw the GA border. */
 function _gaOutlineTrace(outline, color) {
   return {
     type: 'choropleth', locationmode: 'geojson-id', geojson: outline, featureidkey: 'id',
@@ -101,7 +105,7 @@ function _isNarrow() {
 function _brandColorbar(label, unit, narrow, pos, inkColor) {
   var ink = inkColor || BRAND_MAP.navy;
   var cb = {
-    tickfont: { family: 'Source Sans Pro, Arial, sans-serif', size: 11, color: ink },
+    tickfont: { family: 'Geist, Source Sans Pro, Arial, sans-serif', size: 11, color: ink },
     title: { text: (label || '') + (unit ? ' (' + unit + ')' : ''), font: { size: 12, color: ink } },
   };
   if (narrow) {
@@ -219,7 +223,7 @@ async function drawGAChoropleth(elId, dataPoints, opts) {
     : { scope: 'usa', fitbounds: 'locations', visible: false, showsubunits: false, bgcolor: bg };
 
   const layout = {
-    title: opts.title ? { text: opts.title, font: { family: 'Source Sans Pro', size: 16, color: inkCol } } : undefined,
+    title: opts.title ? { text: opts.title, font: { family: 'Geist, Source Sans Pro, Arial, sans-serif', size: 16, color: inkCol } } : undefined,
     geo: geo,
     dragmode: false,         // lock the view to Georgia (no pan)
     paper_bgcolor: bg,
@@ -229,7 +233,7 @@ async function drawGAChoropleth(elId, dataPoints, opts) {
     margin: (narrow || opts.horizontalColorbar)
       ? { t: opts.title ? 36 : 8, l: 8, r: 8, b: 52 }
       : { t: opts.title ? 36 : 8, l: 8, r: 8, b: 8 },
-    font: { family: 'Source Sans Pro, Arial, sans-serif', color: inkCol },
+    font: { family: 'Geist, Source Sans Pro, Arial, sans-serif', color: inkCol },
   };
 
   const traces = outline ? [trace, _gaOutlineTrace(outline, outCol)] : [trace];
@@ -302,7 +306,7 @@ async function drawGATimeChoropleth(elId, framesByDate, opts) {
   }));
 
   const layout = {
-    title: opts.title ? { text: opts.title, font: { family: 'Source Sans Pro', size: 16, color: BRAND_MAP.navy } } : undefined,
+    title: opts.title ? { text: opts.title, font: { family: 'Geist, Source Sans Pro, Arial, sans-serif', size: 16, color: BRAND_MAP.navy } } : undefined,
     geo: {
       scope: 'usa', fitbounds: 'locations', visible: false,
       showsubunits: false, bgcolor: BRAND_MAP.mapBg,
@@ -313,10 +317,10 @@ async function drawGATimeChoropleth(elId, framesByDate, opts) {
     // On phones the colorbar sits above the map (the slider owns the bottom),
     // so reserve a little extra headroom.
     margin: { t: narrow ? 44 : (opts.title ? 36 : 8), l: 8, r: 8, b: 80 },
-    font: { family: 'Source Sans Pro, Arial, sans-serif', color: BRAND_MAP.navy },
+    font: { family: 'Geist, Source Sans Pro, Arial, sans-serif', color: BRAND_MAP.navy },
     sliders: [{
       active: framesByDate.length - 1,
-      currentvalue: { prefix: 'Month: ', font: { size: 13, color: BRAND_MAP.navy, family: 'Source Sans Pro' } },
+      currentvalue: { prefix: 'Month: ', font: { size: 13, color: BRAND_MAP.navy, family: 'Geist, Source Sans Pro, Arial, sans-serif' } },
       pad: { t: 30 },
       steps: sliderSteps,
       bgcolor: BRAND_MAP.peachPale,
@@ -330,7 +334,7 @@ async function drawGATimeChoropleth(elId, framesByDate, opts) {
       x: 0.02, y: -0.08, xanchor: 'left', yanchor: 'top',
       direction: 'left', pad: { t: 4, r: 6 },
       bgcolor: BRAND_MAP.mapBg, bordercolor: BRAND_MAP.navy,
-      font: { color: BRAND_MAP.navy, family: 'Source Sans Pro', size: 12 },
+      font: { color: BRAND_MAP.navy, family: 'Geist, Source Sans Pro, Arial, sans-serif', size: 12 },
       buttons: [
         { label: '▶ Play', method: 'animate', args: [null, { mode: 'immediate', fromcurrent: true, frame: { duration: opts.frameDuration || 600, redraw: true }, transition: { duration: 0 } }] },
         { label: '❚❚ Pause', method: 'animate', args: [[null], { mode: 'immediate', frame: { duration: 0, redraw: false }, transition: { duration: 0 } }] },

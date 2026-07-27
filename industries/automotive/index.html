@@ -8,9 +8,12 @@
 <!-- GEN:HEAD -->
 <link rel="stylesheet" href="/styles.css">
 <link rel="stylesheet" href="/assets/app.css">
+<!-- EIG brand layer — site-wide chrome (charcoal + amber). Must load AFTER
+     styles.css/app.css so its chrome rules win. See EIG_REBRAND.md. -->
+<link rel="stylesheet" href="/assets/eig.css">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700;800&family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600;8..60,700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700;800&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
 <!-- app.js is intentionally NOT deferred: it defines window.GE (palette + fmt
      helpers) with no dependencies, so it must be available to each page's
      end-of-body inline script, which runs during parse before deferred scripts. -->
@@ -26,7 +29,7 @@
 <style>
   /* Auto/EV hero — teal-to-navy gradient with peach accent (distinct from film's navy/peach) */
   .auto-hero {
-    background: linear-gradient(135deg, #1a3a5c 0%, #3a8d8d 100%);
+    background: linear-gradient(135deg, #231f20 0%, #3f7d52 100%);
     color: #fff; padding: 32px 30px; margin-bottom: 26px; border-radius: 4px;
     position: relative; overflow: hidden;
   }
@@ -77,10 +80,10 @@
     padding: 3px 8px; border-radius: 3px; white-space: nowrap;
     background: var(--chart-bg); color: var(--silver);
   }
-  .plant-card.status-operating          .status-pill { background: rgba(107,142,61,0.18); color: var(--green); }
-  .plant-card.status-under-construction .status-pill { background: rgba(212,160,23,0.18); color: var(--mustard); }
-  .plant-card.status-announced          .status-pill { background: rgba(58,141,141,0.18); color: var(--teal); }
-  .plant-card.status-paused             .status-pill { background: rgba(212,98,74,0.18); color: var(--coral); }
+  .plant-card.status-operating          .status-pill { background: rgba(111,143,74,0.18); color: var(--green); }
+  .plant-card.status-under-construction .status-pill { background: rgba(247,148,30,0.18); color: var(--mustard); }
+  .plant-card.status-announced          .status-pill { background: rgba(63,125,82,0.18); color: var(--teal); }
+  .plant-card.status-paused             .status-pill { background: rgba(168,67,47,0.18); color: var(--coral); }
   .plant-card .city {
     font-size: 12px; color: var(--peach-deep); font-weight: 700;
     text-transform: uppercase; letter-spacing: 0.05em; margin-top: 2px;
@@ -97,7 +100,7 @@
   .plant-card .hint {
     margin-top: 8px; padding: 6px 8px;
     background: var(--peach-pale); border-left: 3px solid var(--peach-deep);
-    font-size: 11px; color: #5a3a20;
+    font-size: 11px; color: #6b4a1e;
   }
   .plant-card .hint a { color: var(--peach-deep); font-weight: 600; }
 
@@ -135,7 +138,7 @@
   }
   .stale-banner {
     margin-bottom: 22px; padding: 12px 16px;
-    background: rgba(212, 160, 23, 0.10);
+    background: rgba(247,148,30, 0.10);
     border-left: 4px solid var(--mustard);
     font-size: 14px; color: var(--ink);
   }
@@ -289,8 +292,8 @@
 document.getElementById('yr').textContent = new Date().getFullYear();
 
 const BRAND_COLORS = {
-  navy: '#1a3a5c', peachDeep: '#c46b3a', peach: '#e8a87c', peachPale: '#faead9',
-  mustard: '#d4a017', teal: '#3a8d8d', coral: '#d4624a', green: '#6b8e3d', grid: '#b6ad8d',
+  navy: '#231f20', peachDeep: '#c9740f', peach: '#f7b45c', peachPale: '#fde8cc',
+  mustard: '#f7941e', teal: '#3f7d52', coral: '#a8432f', green: '#6f8f4a', grid: '#b8b0a4',
 };
 
 function fmtSignedPct(v) { if (v == null) return '—'; return (v >= 0 ? '+' : '') + v.toFixed(1) + '%'; }

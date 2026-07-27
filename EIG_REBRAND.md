@@ -1,6 +1,7 @@
 # EIG rebrand — scope & rollout
 
-**Status:** Landing page shipped 2026-07-27. Remaining pages pending.
+**Status:** COMPLETE site-wide (2026-07-27). All 191 pages on the EIG palette,
+type and chrome.
 **Goal:** Make georgiaeconomics.com read as an Economic Impact Group product —
 a sibling of [housinganalytics.org](https://housinganalytics.org), which is the
 other EIG *tool* (as opposed to the models: futureimpactmodel.com, cocsmodel.com,
@@ -60,18 +61,24 @@ Chosen direction: **Concept B hero on Concept A chrome.**
   amber left rule, and the topic/industry grids on the EIG card system.
 - **Source band** — charcoal credibility strip listing the statistical agencies.
 
-## How the scoping works (important)
+## How the CSS is organised
 
-**Every rule in `assets/eig.css` is scoped to `body.eig`.** Only pages that opt
-in with `class="eig"` on `<body>` change; the other ~190 pages keep the existing
-Modern Editorial styling with zero risk. The stylesheet is linked from
-`index.html` **outside** the `<!-- GEN:HEAD -->` markers, so `build_site.py`
-does not strip it when it re-stamps shared chrome (verified: re-running
-`build_site.py` leaves `index.html` byte-identical).
+Three layers, loaded in this order:
 
-The shared header and footer are restyled **by CSS only** — `partials/*.html`
-were not edited — so no other page's markup changed and the nightly generators
-are unaffected.
+1. **`styles.css`** — the palette (`:root`) and global chrome. Rebranded in
+   place; variable names kept (see the token-remap note below).
+2. **`assets/app.css`** — shared components promoted out of per-page styles.
+3. **`assets/eig.css`** — the EIG brand layer. Loaded on every page via
+   `partials/head.html`, and **must load after** the first two so its chrome
+   rules win. Holds only what a token swap cannot express.
+
+Plus **`assets/eig-home.css`** for the landing page alone, scoped to
+`body.home` and linked page-specifically **outside** the `<!-- GEN:HEAD -->`
+markers so `build_site.py` will not strip it.
+
+The shared header and footer are restyled **by CSS only** — the markup in
+`partials/header.html` and `partials/footer.html` is untouched — so the nightly
+generators are unaffected.
 
 ### Shared-code changes (all backwards compatible, defaults unchanged)
 
@@ -94,25 +101,80 @@ render **pixel-identical** before and after the shared-JS changes.
 
 ---
 
-## Rollout path for the rest of the site
+## Site-wide rollout (2026-07-27)
 
-1. Add `class="eig"` to `<body>` and the `eig.css` + Geist `<link>`s (outside the
-   GEN markers) on each static page as it is converted.
-2. For the generated pages, make the same two additions in
-   `scripts/generate_county_pages.py` and `scripts/generate_msa_pages.py` — that
-   converts 173 pages in one step.
-3. Port each page's inline `<style>` block onto the EIG tokens. Most pages still
-   declare their own `const BRAND` + `fmt` helpers (deliberate, see PHASE5_PLAN
-   — chrome-only migration); charts will keep the old palette until those are
-   converted to `GE.*`.
-4. Once every page carries the class, drop the `body.eig` scoping from
-   `eig.css`, fold it into `styles.css`/`app.css`, and delete the old palette.
+Shipped in one pass after the landing page. Approach, in order of leverage:
 
-## Known issue found during this pass (not yet fixed site-wide)
+**1. Token remap — the whole trick.** The `:root` block in `styles.css` now
+holds EIG values under the *old variable names*. Roughly 600 `var(--navy)` /
+`var(--peach-deep)` / … references live in 29 pages' inline `<style>` blocks;
+remapping the values rebranded every one of them at once, where renaming would
+have meant editing all 191 pages for no visual gain. So `--navy` is a warm
+charcoal, `--peach` is the EIG amber, `--font-display` is Geist. Each entry
+carries its old value in a comment. housinganalytics does the same
+(`--color-navy: #231f20`).
 
-The shared header switches to the hamburger layout at `max-width: 860px`, but
-the desktop row stops fitting at about **1020px**. Between ~861px and ~1023px
-the search box overhangs the viewport and the page scrolls sideways. **This
-affects every page on the site.** It is worked around under `body.eig` in
-`eig.css`; the real fix is raising the `860px` breakpoint in `assets/app.css`
-(line ~159) to `1024px`, which corrects all ~190 pages at once.
+**2. Chrome via the shared head partial.** `assets/eig.css` is linked from
+`partials/head.html`, so `build_site.py` stamps it into all 191 pages and any
+regenerated page inherits it automatically — no per-page edits, no generator
+template changes, nothing to forget. It carries only what a token swap cannot
+express: the header becoming charcoal with a 4px amber rule, the dark dropdown
+menus and search field, the footer.
+
+**3. Landing page isolated.** Its full-bleed hero, KPI strip and section
+kickers moved to `assets/eig-home.css`, scoped to `body.home` and linked
+page-specifically outside the GEN markers. `main { max-width: none }` would
+wreck every inner page if it leaked, so this separation is load-bearing.
+
+**4. Chart colours remapped** (~470 literal values) from the old
+navy/teal/coral onto the EIG chart palette — charcoal, amber, forest green,
+brick red, slate, warm brown. Three passes were needed because the old palette
+hid in three forms: hex literals, `rgb()`/`rgba()` triplets (the `/msa/`
+comparator heat map was shading cells old-teal and old-coral this way), and
+colours baked into `data/*.json` by the `fetch_*.py` scripts. **The scripts were
+fixed too** — otherwise the next monthly refresh would have written the old
+palette straight back into the data. Body copy that named colours ("bars in
+teal are growing") was reworded to "green"/"red".
+
+Note this diverges from housinganalytics, whose `tokens.css` deliberately pins
+chart colours to its pre-rebrand hexes. That worked there because its original
+chart palette was already earthy; here the old palette was navy/teal/coral,
+which read as the previous brand.
+
+**5. Header overflow fixed site-wide** — see below.
+
+### What is left
+
+- **Charts still declare their own `BRAND` objects.** 11 pages carry an inline
+  `const BRAND = {…}`, now holding EIG values. Converting them to `GE.*` is the
+  remaining Phase 5 WS1 work; only `/labor/` is fully converted. Once every page
+  is on `GE.*`, add the lint rule that fails on a re-declared `const BRAND`
+  (PHASE5_PLAN explains why that guard is invalid until then).
+- The `--navy` / `--peach-*` variable names are now misnomers. Renaming is safe
+  but touches every page; worth doing only alongside the `GE.*` conversion.
+
+## Responsive bugs found and fixed during this pass
+
+Both were **pre-existing**, unrelated to the rebrand, and both made pages
+scroll sideways.
+
+1. **Header, all ~190 pages.** The shared header switched to the hamburger
+   layout at `max-width: 860px`, but the desktop row (brand + 5 nav groups +
+   search) stops fitting at about 1020px — leaving a dead band from ~861px to
+   ~1023px, i.e. iPad landscape and half-screen desktop windows, where the
+   search box overhung the viewport. Fixed by raising the breakpoint in
+   `assets/app.css` to `1024px`.
+2. **Metro reports, all 14.** `.report-panel` sits in a CSS grid and contains a
+   Chart.js `<canvas>`. Grid items default to `min-width: auto`, so the canvas
+   forced its track to the canvas's intrinsic width and pushed the grid past the
+   viewport around 981–1024px and again near 768px. Fixed with `min-width: 0` in
+   the Savannah template, propagated by `generate_msa_pages.py`.
+
+Verified afterwards: no horizontal overflow on 12 representative pages at 1440,
+1200, 1024, 1023, 980, 900, 861, 860, 768 and 600px.
+
+### Still open (pre-existing, not addressed)
+
+Metro report pages overflow by ~28px at 375–420px and ~88px at 360px — dense
+data tables that need a scroll wrapper. This pass improved it (was 43px / 103px)
+but did not fix it. Every other page type is clean down to 360px.

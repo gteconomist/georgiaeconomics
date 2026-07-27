@@ -658,10 +658,10 @@ def main():
                         gdp_b = round(r["value_m_usd"] / 1000.0, 2)
                         # GA gets the peach-deep, the leader gets navy, #2 teal,
                         # everyone else neutral khaki.
-                        color = ("#c46b3a" if r["abbr"] == "GA"
-                                 else "#1a3a5c" if i == 0
-                                 else "#3a8d8d" if i == 1
-                                 else "#9b8b6a")
+                        color = ("#c9740f" if r["abbr"] == "GA"
+                                 else "#231f20" if i == 0
+                                 else "#3f7d52" if i == 1
+                                 else "#9c867a")
                         state_comparison.append({
                             "state": r["state"], "abbr": r["abbr"],
                             "gdp_b": gdp_b, "rank": i + 1, "color": color,

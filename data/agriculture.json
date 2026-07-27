@@ -161,52 +161,52 @@
     {
       "category": "Broilers",
       "pct": 39.2,
-      "color": "#1a3a5c"
+      "color": "#231f20"
     },
     {
       "category": "Eggs",
       "pct": 6.8,
-      "color": "#2e5984"
+      "color": "#3a4049"
     },
     {
       "category": "Cotton",
       "pct": 9.1,
-      "color": "#c46b3a"
+      "color": "#c9740f"
     },
     {
       "category": "Peanuts",
       "pct": 8.4,
-      "color": "#e8a87c"
+      "color": "#f7b45c"
     },
     {
       "category": "Beef cattle",
       "pct": 6.2,
-      "color": "#d4a017"
+      "color": "#f7941e"
     },
     {
       "category": "Greenhouse/nursery",
       "pct": 5.4,
-      "color": "#9b8b6a"
+      "color": "#9c867a"
     },
     {
       "category": "Pecans",
       "pct": 3.6,
-      "color": "#6b8e3d"
+      "color": "#6f8f4a"
     },
     {
       "category": "Vegetables",
       "pct": 9.2,
-      "color": "#3a8d8d"
+      "color": "#3f7d52"
     },
     {
       "category": "Forestry",
       "pct": 7.3,
-      "color": "#5fb8b8"
+      "color": "#7fa98a"
     },
     {
       "category": "Other",
       "pct": 4.8,
-      "color": "#9ba3ab"
+      "color": "#a7a9ac"
     }
   ],
   "county_production": {

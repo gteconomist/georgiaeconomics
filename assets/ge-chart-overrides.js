@@ -2,7 +2,7 @@
  *
  * The shared charts.js (loaded from the economicsguru repo via jsDelivr)
  * registers a global Chart.js plugin, "creamBg", that paints a parchment
- * (#fbf5dc) fill behind every chart. GA diverged to the Modern Editorial
+ * (#f7f6f4) fill behind every chart. GA diverged to the Modern Editorial
  * look (charts on white), so we disable that plugin here — WITHOUT editing
  * charts.js, which would also restyle economicsguru.com.
  *

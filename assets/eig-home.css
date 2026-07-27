@@ -1,0 +1,219 @@
+/* georgiaeconomics.com — landing page only
+ * ============================================================================
+ * Loaded ONLY by index.html, page-specifically and OUTSIDE the
+ * <!-- GEN:HEAD --> markers so scripts/build_site.py will not strip it.
+ * Every rule is scoped to `body.home` so nothing here can reach the other 190
+ * pages — in particular `main { max-width: none }`, which the full-bleed hero
+ * needs and which would break every inner page's layout if it leaked.
+ *
+ * Site-wide EIG chrome lives in assets/eig.css. See EIG_REBRAND.md.
+ * ============================================================================ */
+
+/* Sections manage their own width so the hero can run full-bleed. */
+body.home main { max-width: none; margin: 0; padding: 0; }
+body.home .eig-wrap { max-width: 1200px; margin: 0 auto; padding: 0 26px; }
+
+/* ══════════════════════════════════════════════════════════════════════════
+   HERO — charcoal band, the 159-county choropleth as the hero image, KPI strip
+   welded to the bottom edge.
+   ══════════════════════════════════════════════════════════════════════════ */
+body.home .eig-hero {
+  background: var(--eig-charcoal);
+  color: #fff;
+  position: relative;
+  overflow: hidden;
+}
+/* Warm amber bloom behind the map — decoration only, never over content. */
+body.home .eig-hero::after {
+  content: "";
+  position: absolute; inset: 0;
+  background: radial-gradient(900px 440px at 78% 44%, rgba(247,148,30,.16), transparent 62%);
+  pointer-events: none;
+}
+body.home .eig-hero .eig-wrap { max-width: 1280px; }
+body.home .eig-hero__in {
+  display: grid;
+  grid-template-columns: 1fr 1.1fr;
+  gap: 34px;
+  align-items: center;
+  padding-top: 48px;
+  position: relative;
+  z-index: 1;
+}
+body.home .eig-live {
+  display: inline-flex; align-items: center; gap: 8px;
+  font: 600 11.5px/1 var(--eig-mono);
+  letter-spacing: .1em; text-transform: uppercase; color: var(--eig-amber);
+  border: 1px solid rgba(247,148,30,.4); border-radius: 999px; padding: 6px 12px;
+}
+body.home .eig-live i {
+  width: 7px; height: 7px; border-radius: 50%; background: var(--eig-amber);
+  box-shadow: 0 0 0 0 rgba(247,148,30,.7); animation: eig-pulse 2.2s infinite;
+}
+@keyframes eig-pulse {
+  70%  { box-shadow: 0 0 0 8px rgba(247,148,30,0); }
+  100% { box-shadow: 0 0 0 0 rgba(247,148,30,0); }
+}
+@media (prefers-reduced-motion: reduce) {
+  body.home .eig-live i { animation: none; }
+}
+body.home .eig-hero h1 {
+  font-family: var(--eig-sans);
+  font-size: 54px; line-height: 1.03; letter-spacing: -.035em; font-weight: 800;
+  color: #fff; margin: 18px 0 16px;
+}
+body.home .eig-hero h1 em { font-style: normal; color: var(--eig-amber); }
+body.home .eig-lede { font-size: 17.5px; color: #bdb6ae; max-width: 52ch; margin: 0 0 26px; }
+body.home .eig-ctas { display: flex; gap: 12px; flex-wrap: wrap; align-items: center; }
+body.home .eig-btn {
+  background: var(--eig-amber); color: #231603;
+  font-weight: 700; font-size: 15px; padding: 13px 22px; border-radius: 11px;
+  transition: background .14s ease;
+}
+body.home .eig-btn:hover { background: var(--eig-amber-deep); color: #231603; text-decoration: none; }
+body.home .eig-btn-ghost {
+  border: 1.5px solid #4b433f; color: #efeae4;
+  font-weight: 600; font-size: 15px; padding: 12px 20px; border-radius: 11px;
+  transition: border-color .14s ease, color .14s ease;
+}
+body.home .eig-btn-ghost:hover { border-color: var(--eig-amber); color: var(--eig-amber); text-decoration: none; }
+
+/* EIG attribution lockup inside the hero */
+body.home .eig-by { display: inline-flex; align-items: center; gap: 13px; margin-top: 26px; }
+body.home .eig-by img { height: 44px; width: auto; display: block; }
+body.home .eig-by .lab {
+  font-size: 12px; color: #8d857f; text-transform: uppercase;
+  letter-spacing: .09em; font-weight: 700; line-height: 1.5;
+}
+body.home .eig-by .lab b { display: block; color: #ded8d1; font-size: 13.5px; letter-spacing: .02em; text-transform: none; }
+body.home .eig-by:hover .lab b { color: var(--eig-amber); }
+
+/* Hero map. Drawn with maps.js `fill: true` (no USA scope) so it fills this
+   box instead of being letterboxed into a USA-shaped one. */
+body.home .eig-hero__map { padding-top: 6px; }
+body.home .eig-hero__map .geo-nav-map {
+  width: 100%; height: 500px;
+  background: transparent; border-radius: 12px;
+}
+body.home .eig-mapcap {
+  display: flex; justify-content: space-between; gap: 12px;
+  font: 500 11.5px/1.4 var(--eig-mono); color: #a49c94;
+  letter-spacing: .06em; text-transform: uppercase;
+  margin-top: 4px; padding-bottom: 22px;
+}
+
+/* KPI strip welded to the bottom of the hero */
+body.home .eig-strip { background: var(--eig-charcoal-2); border-top: 1px solid #3b3533; position: relative; z-index: 1; }
+body.home .eig-strip .scorecard {
+  max-width: 1200px; margin: 0 auto; padding: 0 26px;
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: 0;
+}
+body.home .eig-strip .score-card {
+  background: transparent; border: 0; border-radius: 0;
+  border-right: 1px solid #3b3533; border-bottom: 1px solid #3b3533;
+  padding: 16px 18px; box-shadow: none; display: flex; flex-direction: column; gap: 3px;
+}
+body.home .eig-strip .score-card:nth-child(4n) { border-right: 0; }
+body.home .eig-strip .score-card:nth-last-child(-n+4) { border-bottom: 0; }
+body.home .eig-strip .score-card:hover { background: var(--eig-charcoal-3); transform: none; box-shadow: none; }
+body.home .eig-strip .sc-label { color: #8d857f; font-family: var(--eig-sans); font-size: 10.5px; letter-spacing: .09em; }
+body.home .eig-strip .sc-value { color: #fff; font-family: var(--eig-sans); font-size: 25px; font-weight: 800; letter-spacing: -.02em; }
+body.home .eig-strip .sc-delta { font-size: 11.5px; }
+body.home .eig-strip .sc-delta.good    { color: var(--eig-green-on-dark); }
+body.home .eig-strip .sc-delta.bad     { color: var(--eig-brick-on-dark); }
+body.home .eig-strip .sc-delta.neutral { color: #8d857f; }
+body.home .eig-strip .source-note { color: #8d857f; padding: 18px 26px; }
+body.home .eig-strip .source-note a { color: var(--eig-amber); }
+
+/* ══════════════════════════════════════════════════════════════════════════
+   BODY SECTIONS — numbered kickers + the EIG card system
+   ══════════════════════════════════════════════════════════════════════════ */
+body.home .eig-sec { padding: 56px 0 0; }
+body.home .eig-sec:last-of-type { padding-bottom: 56px; }
+body.home .eig-kick { display: flex; align-items: baseline; gap: 16px; margin-bottom: 6px; }
+body.home .eig-kick .no { font: 700 13px/1 var(--eig-mono); color: var(--eig-amber); letter-spacing: .1em; }
+body.home .eig-kick h2 {
+  font-family: var(--eig-sans); font-size: 32px; letter-spacing: -.024em;
+  font-weight: 700; color: var(--eig-charcoal); margin: 0;
+}
+body.home .eig-sub { color: var(--eig-muted); font-size: 15.5px; margin: 0 0 24px 39px; max-width: 68ch; }
+
+/* Two flagship cards */
+body.home .eig-flag { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+body.home .eig-flagcard {
+  position: relative; display: flex; flex-direction: column; gap: 8px;
+  background: #fff; border: 1px solid var(--eig-hair); border-radius: 14px;
+  padding: 24px 26px 22px 28px; box-shadow: var(--eig-shadow-card);
+  color: var(--eig-body); overflow: hidden;
+  transition: transform .12s ease, box-shadow .12s ease;
+}
+body.home .eig-flagcard::before {
+  content: ""; position: absolute; left: 0; top: 0; bottom: 0; width: 4px; background: var(--eig-amber);
+}
+body.home .eig-flagcard:hover { transform: translateY(-2px); box-shadow: var(--eig-shadow-lift); text-decoration: none; }
+body.home .eig-flagcard .eyebrow {
+  font-size: 11.5px; font-weight: 700; text-transform: uppercase;
+  letter-spacing: .11em; color: var(--eig-amber-deep);
+}
+body.home .eig-flagcard h3 {
+  font-family: var(--eig-sans); font-size: 25px; font-weight: 700;
+  color: var(--eig-charcoal); margin: 2px 0 0; letter-spacing: -.02em;
+}
+body.home .eig-flagcard p { font-size: 15px; color: var(--eig-muted); margin: 0; }
+body.home .eig-flagcard .go { margin-top: 6px; font-size: 14px; font-weight: 700; color: var(--eig-charcoal); }
+body.home .eig-flagcard:hover .go { color: var(--eig-amber-deep); }
+
+/* Compact topic / industry cards */
+body.home .eig-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
+body.home .eig-card {
+  display: block; background: #fff; border: 1px solid var(--eig-hair);
+  border-left: 3px solid var(--eig-hair); border-radius: 10px; padding: 15px 17px;
+  color: var(--eig-body);
+  transition: border-left-color .12s ease, transform .12s ease, box-shadow .12s ease;
+}
+body.home .eig-card:hover {
+  border-left-color: var(--eig-amber); transform: translateY(-1px);
+  box-shadow: var(--eig-shadow-card); text-decoration: none;
+}
+body.home .eig-card h4 {
+  font-family: var(--eig-sans); font-size: 16.5px; font-weight: 700;
+  color: var(--eig-charcoal); margin: 0 0 4px; letter-spacing: -.012em;
+}
+body.home .eig-card p { font-size: 13px; color: var(--eig-muted); margin: 0; line-height: 1.45; }
+
+/* Source credibility band */
+body.home .eig-cred { background: var(--eig-charcoal); color: #fff; padding: 34px 0; text-align: center; margin-top: 56px; }
+body.home .eig-cred .t {
+  font-size: 12px; text-transform: uppercase; letter-spacing: .14em;
+  color: var(--eig-amber); font-weight: 700;
+}
+body.home .eig-cred .s {
+  margin-top: 13px; display: flex; gap: 26px; justify-content: center; flex-wrap: wrap;
+  font-size: 15px; font-weight: 600; color: #e6e2dd;
+}
+/* The shared footer carries its own top margin for inner pages; the credibility
+   band already closes the landing page, so drop it here. */
+body.home .site-footer { margin-top: 0; }
+
+/* ══════════════════════════════════════════════════════════════════════════
+   Responsive
+   ══════════════════════════════════════════════════════════════════════════ */
+@media (max-width: 980px) {
+  body.home .eig-hero__in { grid-template-columns: 1fr; gap: 26px; padding-top: 36px; }
+  body.home .eig-hero h1 { font-size: 38px; }
+  body.home .eig-hero__map .geo-nav-map { height: 340px; }
+  body.home .eig-flag, body.home .eig-grid { grid-template-columns: 1fr 1fr; }
+  body.home .eig-strip .scorecard { grid-template-columns: repeat(2, 1fr); }
+  body.home .eig-strip .score-card:nth-child(4n) { border-right: 1px solid #3b3533; }
+  body.home .eig-strip .score-card:nth-child(2n) { border-right: 0; }
+  body.home .eig-strip .score-card:nth-last-child(-n+4) { border-bottom: 1px solid #3b3533; }
+  body.home .eig-strip .score-card:nth-last-child(-n+2) { border-bottom: 0; }
+}
+@media (max-width: 620px) {
+  body.home .eig-hero h1 { font-size: 31px; }
+  body.home .eig-lede { font-size: 16px; }
+  body.home .eig-kick h2 { font-size: 25px; }
+  body.home .eig-sub { margin-left: 0; }
+  body.home .eig-flag, body.home .eig-grid { grid-template-columns: 1fr; }
+  body.home .eig-cred .s { gap: 14px; font-size: 14px; }
+}

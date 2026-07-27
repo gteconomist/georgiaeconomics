@@ -8,9 +8,12 @@
 <!-- GEN:HEAD -->
 <link rel="stylesheet" href="/styles.css">
 <link rel="stylesheet" href="/assets/app.css">
+<!-- EIG brand layer — site-wide chrome (charcoal + amber). Must load AFTER
+     styles.css/app.css so its chrome rules win. See EIG_REBRAND.md. -->
+<link rel="stylesheet" href="/assets/eig.css">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700;800&family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600;8..60,700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700;800&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
 <!-- app.js is intentionally NOT deferred: it defines window.GE (palette + fmt
      helpers) with no dependencies, so it must be available to each page's
      end-of-body inline script, which runs during parse before deferred scripts. -->
@@ -67,15 +70,15 @@
   table.msa-table tbody td { padding: 7px 10px; border-bottom: 1px dotted var(--border); }
   table.msa-table tbody td.numeric { text-align: right; font-variant-numeric: tabular-nums; }
   table.msa-table tbody tr:hover { background: var(--peach-pale); }
-  table.msa-table .best  { background: rgba(58, 141, 141, 0.12); font-weight: 700; }
-  table.msa-table .worst { background: rgba(212, 98, 74, 0.10); }
+  table.msa-table .best  { background: rgba(63,125,82, 0.12); font-weight: 700; }
+  table.msa-table .worst { background: rgba(168,67,47, 0.10); }
   table.msa-table tbody td.msa-name { font-weight: 600; color: var(--navy); }
   table.msa-table tbody td.msa-name .pop { display: block; font-size: 11px; color: var(--ink-soft); font-weight: 400; }
 
   .table-legend { font-size: 12px; color: var(--ink-soft); margin-top: 10px; }
   .table-legend .swatch { display: inline-block; width: 10px; height: 10px; vertical-align: middle; margin: 0 4px 0 8px; }
-  .table-legend .sw-best  { background: rgba(58, 141, 141, 0.5); }
-  .table-legend .sw-worst { background: rgba(212, 98, 74, 0.4); }
+  .table-legend .sw-best  { background: rgba(63,125,82, 0.5); }
+  .table-legend .sw-worst { background: rgba(168,67,47, 0.4); }
 
   /* "View report" pill in the MSA comparison table */
   .report-btn {
@@ -128,7 +131,7 @@
   .profile-report:hover { background: var(--navy); text-decoration: none; }
   .heat-legend { font-size: 12px; color: var(--ink-soft); margin-top: 10px; display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
   .heat-grad { display: inline-block; width: 120px; height: 12px; border-radius: 2px;
-    background: linear-gradient(90deg, rgba(212,98,74,0.55), rgba(255,255,255,0), rgba(58,141,141,0.55)); border: 1px solid var(--border); }
+    background: linear-gradient(90deg, rgba(168,67,47,0.55), rgba(255,255,255,0), rgba(63,125,82,0.55)); border: 1px solid var(--border); }
 
   /* ---- Metro profile ---- */
   .profile-grid { display: grid; grid-template-columns: 180px 1fr 84px 60px; gap: 4px 10px; align-items: center; font-size: 13px; }
@@ -216,7 +219,7 @@
   <!-- PRIMARY: full metros × metrics heatmap -->
   <div class="map-panel">
     <h2>Every metro, every metric</h2>
-    <p class="sub">All 14 GA metros across <strong id="metric-count">27</strong> indicators, shaded by where each metro ranks among the 14 — <span style="color:var(--teal); font-weight:700;">teal = strong</span>, <span style="color:var(--coral); font-weight:700;">coral = weak</span>, grey = neutral. Click any column header to sort.</p>
+    <p class="sub">All 14 GA metros across <strong id="metric-count">27</strong> indicators, shaded by where each metro ranks among the 14 — <span style="color:var(--teal); font-weight:700;">green = strong</span>, <span style="color:var(--coral); font-weight:700;">red = weak</span>, grey = neutral. Click any column header to sort.</p>
     <div class="cmp-controls">
       <label for="heat-theme">Show:</label>
       <select id="heat-theme"><option value="__all__">All themes</option></select>
@@ -302,9 +305,9 @@ document.getElementById('yr').textContent = new Date().getFullYear();
 
 /* Brand colors (mirror BRAND in charts.js, plus GA peach-deep) */
 const SLOT_COLORS = [
-  { line: '#1a3a5c', fill: 'rgba(26, 58, 92, 0.18)'  },  // navy
-  { line: '#c05f3c', fill: 'rgba(196, 107, 58, 0.18)' }, // peach-deep
-  { line: '#1f7a6b', fill: 'rgba(58, 141, 141, 0.18)' }, // teal
+  { line: '#231f20', fill: 'rgba(60, 42, 16, 0.18)'  },  // navy
+  { line: '#c9740f', fill: 'rgba(196, 107, 58, 0.18)' }, // peach-deep
+  { line: '#3f7d52', fill: 'rgba(63,125,82, 0.18)' }, // teal
 ];
 
 /* Format a value using the metric's fmt + unit. */
@@ -355,9 +358,9 @@ function computeMetricState() {
 /* Heatmap cell background from score; neutral metrics use a grey-blue ramp. */
 function cellBg(score, neutral) {
   if (score == null) return 'transparent';
-  if (neutral) { const a = (score / 100) * 0.40; return `rgba(46,89,132,${a.toFixed(3)})`; }
-  if (score >= 50) { const a = ((score - 50) / 50) * 0.55; return `rgba(58,141,141,${a.toFixed(3)})`; }
-  const a = ((50 - score) / 50) * 0.55; return `rgba(212,98,74,${a.toFixed(3)})`;
+  if (neutral) { const a = (score / 100) * 0.40; return `rgba(58, 64, 73,${a.toFixed(3)})`; }
+  if (score >= 50) { const a = ((score - 50) / 50) * 0.55; return `rgba(63,125,82,${a.toFixed(3)})`; }
+  const a = ((50 - score) / 50) * 0.55; return `rgba(168,67,47,${a.toFixed(3)})`;
 }
 
 let DATA = null;
@@ -586,14 +589,14 @@ function renderRadar() {
       scales: {
         r: {
           min: 0, max: 100,
-          ticks: { stepSize: 20, color: '#5b6675', backdropColor: 'transparent', font: { size: 10 } },
-          pointLabels: { color: '#1a3a5c', font: { size: 12, weight: 'bold' } },
-          grid:        { color: '#e9edf1' },
-          angleLines:  { color: '#e9edf1' },
+          ticks: { stepSize: 20, color: '#6d6e71', backdropColor: 'transparent', font: { size: 10 } },
+          pointLabels: { color: '#231f20', font: { size: 12, weight: 'bold' } },
+          grid:        { color: '#edebe8' },
+          angleLines:  { color: '#edebe8' },
         },
       },
       plugins: {
-        legend: { position: 'bottom', labels: { color: '#1a3a5c', font: { size: 13, weight: 'bold' }, padding: 14 } },
+        legend: { position: 'bottom', labels: { color: '#231f20', font: { size: 13, weight: 'bold' }, padding: 14 } },
         tooltip: {
           callbacks: {
             label: (c) => {
@@ -636,9 +639,9 @@ function renderProfile(shortName) {
       } else if (neutral) {
         bar = `<div class="profile-barwrap"><span class="mid"></span><div class="profile-bar" style="left:0; width:${score}%; background:${cellBg(score, true)}"></div></div>`;
       } else if (score >= 50) {
-        bar = `<div class="profile-barwrap"><span class="mid"></span><div class="profile-bar" style="left:50%; width:${(score-50)}%; background:rgba(58,141,141,0.75)"></div></div>`;
+        bar = `<div class="profile-barwrap"><span class="mid"></span><div class="profile-bar" style="left:50%; width:${(score-50)}%; background:rgba(63,125,82,0.75)"></div></div>`;
       } else {
-        bar = `<div class="profile-barwrap"><span class="mid"></span><div class="profile-bar" style="left:${score}%; width:${(50-score)}%; background:rgba(212,98,74,0.7)"></div></div>`;
+        bar = `<div class="profile-barwrap"><span class="mid"></span><div class="profile-bar" style="left:${score}%; width:${(50-score)}%; background:rgba(168,67,47,0.7)"></div></div>`;
       }
       const rank = st.ranks[i] != null ? `${st.ranks[i]}/${st.nPresent}` : '—';
       html += `<div class="profile-label" title="${m.source}">${m.label}</div>${bar}`

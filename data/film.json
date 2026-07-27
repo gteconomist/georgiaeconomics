@@ -203,56 +203,56 @@
       "abbr": "AL",
       "spend_b": 0.0,
       "rank": 1,
-      "color": "#1a3a5c"
+      "color": "#231f20"
     },
     {
       "state": "Alaska",
       "abbr": "AK",
       "spend_b": 0.0,
       "rank": 2,
-      "color": "#3a8d8d"
+      "color": "#3f7d52"
     },
     {
       "state": "Arizona",
       "abbr": "AZ",
       "spend_b": 0.0,
       "rank": 3,
-      "color": "#9b8b6a"
+      "color": "#9c867a"
     },
     {
       "state": "Arkansas",
       "abbr": "AR",
       "spend_b": 0.0,
       "rank": 4,
-      "color": "#9b8b6a"
+      "color": "#9c867a"
     },
     {
       "state": "California",
       "abbr": "CA",
       "spend_b": 0.0,
       "rank": 5,
-      "color": "#9b8b6a"
+      "color": "#9c867a"
     },
     {
       "state": "Colorado",
       "abbr": "CO",
       "spend_b": 0.0,
       "rank": 6,
-      "color": "#9b8b6a"
+      "color": "#9c867a"
     },
     {
       "state": "Connecticut",
       "abbr": "CT",
       "spend_b": 0.0,
       "rank": 7,
-      "color": "#9b8b6a"
+      "color": "#9c867a"
     },
     {
       "state": "Georgia",
       "abbr": "GA",
       "spend_b": 0.0,
       "rank": 11,
-      "color": "#c46b3a"
+      "color": "#c9740f"
     }
   ],
   "major_studios": [

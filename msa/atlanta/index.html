@@ -8,9 +8,12 @@
 <!-- GEN:HEAD -->
 <link rel="stylesheet" href="/styles.css">
 <link rel="stylesheet" href="/assets/app.css">
+<!-- EIG brand layer — site-wide chrome (charcoal + amber). Must load AFTER
+     styles.css/app.css so its chrome rules win. See EIG_REBRAND.md. -->
+<link rel="stylesheet" href="/assets/eig.css">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700;800&family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600;8..60,700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700;800&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
 <!-- app.js is intentionally NOT deferred: it defines window.GE (palette + fmt
      helpers) with no dependencies, so it must be available to each page's
      end-of-body inline script, which runs during parse before deferred scripts. -->
@@ -154,7 +157,7 @@
   }
   table.report-table tbody td.divider { border-left: 2px dashed var(--peach-deep); }
   table.report-table tbody tr.pct td { color: var(--ink-soft); font-size: 12px; font-style: italic; }
-  table.report-table tbody tr.major td { background: rgba(26, 58, 92, 0.04); }
+  table.report-table tbody tr.major td { background: rgba(60, 42, 16, 0.04); }
 
   /* ---------- Chart grids ---------- */
   .chart-row {
@@ -171,6 +174,11 @@
   .report-panel {
     background: var(--panel-bg); border: 1px solid var(--border);
     padding: 12px 14px 14px;
+    /* Grid items default to min-width:auto, so a Chart.js <canvas> forces its
+       track to the canvas's intrinsic width and blows the grid past the
+       viewport — every metro report scrolled sideways between roughly 981px
+       and 1024px, and again around 768px. min-width:0 lets the track shrink. */
+    min-width: 0;
   }
   .report-panel h3 {
     font-family: var(--font-display); color: var(--navy);
@@ -290,7 +298,7 @@
   @media print {
     .site-header, .site-footer, .print-actions { display: none !important; }
     main { padding: 0 !important; max-width: none !important; }
-    .report-band { background: #1a3a5c !important; -webkit-print-color-adjust: exact; color-adjust: exact; }
+    .report-band { background: #231f20 !important; -webkit-print-color-adjust: exact; color-adjust: exact; }
     .canvas-sm, .canvas-md, .canvas-lg { background: #ffffff !important; -webkit-print-color-adjust: exact; }
     .section-header { page-break-after: avoid; }
     .report-panel, .narrative-grid { page-break-inside: avoid; }
@@ -305,16 +313,16 @@
     color: var(--ink-soft); margin-left: 6px; font-weight: 600;
     text-transform: uppercase; letter-spacing: 0.04em;
   }
-  .src-pill.proxy { background: rgba(212, 160, 23, 0.12); border-color: var(--mustard); color: #8a6a10; }
-  .src-pill.live  { background: rgba(58, 141, 141, 0.14); border-color: var(--teal); color: #225e5e; }
-  .src-pill.demo  { background: rgba(212, 98, 74, 0.12); border-color: var(--coral); color: #8e3a26; }
-  .src-pill.partial { background: rgba(212, 160, 23, 0.12); border-color: var(--mustard); color: #8a6a10; }
+  .src-pill.proxy { background: rgba(247,148,30, 0.12); border-color: var(--mustard); color: #8a5a0c; }
+  .src-pill.live  { background: rgba(63,125,82, 0.14); border-color: var(--teal); color: #2f5f3f; }
+  .src-pill.demo  { background: rgba(168,67,47, 0.12); border-color: var(--coral); color: #8a3626; }
+  .src-pill.partial { background: rgba(247,148,30, 0.12); border-color: var(--mustard); color: #8a5a0c; }
 
   /* ---------- Top-of-page preview banner ---------- */
   .preview-banner {
     margin: 0 0 18px;
     padding: 14px 18px;
-    background: rgba(212, 98, 74, 0.10);
+    background: rgba(168,67,47, 0.10);
     border: 1px solid var(--coral);
     border-left: 6px solid var(--coral);
     color: var(--ink);
@@ -403,7 +411,7 @@
   </div>
 
   <!-- Live indicators strip (populated from /data/msa_reports/savannah.json) -->
-  <div id="live-strip" style="display:none; margin-bottom:14px; padding:12px 16px; background:rgba(58, 141, 141, 0.08); border:1px solid var(--teal); border-left:5px solid var(--teal); border-radius:3px;">
+  <div id="live-strip" style="display:none; margin-bottom:14px; padding:12px 16px; background:rgba(63,125,82, 0.08); border:1px solid var(--teal); border-left:5px solid var(--teal); border-radius:3px;">
     <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px;">
       <div>
         <span class="src-pill live" style="margin-right:8px;">Live</span>
@@ -464,7 +472,7 @@
   </div>
 
   <!-- GA-relative rankings (populated from /data/msa.json by loadGARankings()) -->
-  <div id="ga-rank-panel" style="display:none; margin:0 0 18px; padding:12px 16px; background:rgba(26,58,92,0.05); border:1px solid var(--border); border-left:5px solid var(--navy); border-radius:3px;">
+  <div id="ga-rank-panel" style="display:none; margin:0 0 18px; padding:12px 16px; background:rgba(60, 42, 16,0.05); border:1px solid var(--border); border-left:5px solid var(--navy); border-radius:3px;">
     <div style="display:flex; justify-content:space-between; align-items:baseline; flex-wrap:wrap; gap:8px;">
       <strong style="color:var(--navy); font-size:13px;">Where this metro ranks among Georgia's 14 MSAs</strong>
       <span style="font-size:11px; color:var(--ink-soft); font-style:italic;">1 = best in Georgia on each metric <span class="src-pill live" style="margin-left:4px;">Live</span></span>
@@ -539,7 +547,7 @@
   <!-- ============================================================ -->
   <!-- PAGE 1 BOTTOM: Headline indicators table                      -->
   <!-- ============================================================ -->
-  <div id="forecast-banner" style="margin: 8px 0 6px; padding: 10px 14px; background: rgba(212, 160, 23, 0.10); border-left: 4px solid var(--mustard); font-size: 12px; color: var(--ink);">
+  <div id="forecast-banner" style="margin: 8px 0 6px; padding: 10px 14px; background: rgba(247,148,30, 0.10); border-left: 4px solid var(--mustard); font-size: 12px; color: var(--ink);">
     <strong style="color: var(--navy);">Forecast model pending &middot; Historical columns are demo data.</strong>
     <span class="src-pill demo" style="margin-left:6px;">Demo</span>
     Historical columns are illustrative trajectories that look plausible for a Sun Belt port metro; the 2025 column shows a handful of values pulled live from the existing <code>data/msa.json</code> feed (BLS LAUS unemployment, FHFA HPI, Census PEP population growth, BEA GDP per capita). Forecast columns are intentionally blank until Phase 2 of the rollout, when the Economic Impact Group ARIMA + Atlanta Fed consensus blend goes live.
@@ -1001,18 +1009,18 @@ document.getElementById('yr').textContent = new Date().getFullYear();
 
 /* Brand palette */
 const C = {
-  sav:   '#1a3a5c',
-  ga:    '#c05f3c',
-  us:    '#1f7a6b',
-  navy:  '#1a3a5c',
-  peach: '#c05f3c',
-  teal:  '#1f7a6b',
-  must:  '#c08a2e',
-  coral: '#cc5b43',
-  green: '#6b8e3d',
-  grid:  '#e9edf1',
-  ink:   '#16202c',
-  soft:  '#5b6675',
+  sav:   '#231f20',
+  ga:    '#c9740f',
+  us:    '#3f7d52',
+  navy:  '#231f20',
+  peach: '#c9740f',
+  teal:  '#3f7d52',
+  must:  '#f7941e',
+  coral: '#a8432f',
+  green: '#6f8f4a',
+  grid:  '#edebe8',
+  ink:   '#1f2226',
+  soft:  '#6d6e71',
   bg:    '#ffffff',
 };
 
@@ -1605,7 +1613,7 @@ function overwriteTableCell(id, newValue) {
   const cell = document.querySelector(`[data-live-cell="${id}"]`);
   if (!cell) return;
   cell.textContent = newValue;
-  cell.style.background = 'rgba(58, 141, 141, 0.12)';
+  cell.style.background = 'rgba(63,125,82, 0.12)';
   cell.style.fontWeight = '700';
   cell.title = 'Live value from the public-data pipeline (replaces demo data)';
 }
@@ -1781,19 +1789,19 @@ function replaceDiffusionChartCES(ces) {
   const datasets = [{
     label: MSA_NAME,
     data: months.map(m => pctAt(msa.agg, m)),
-    borderColor: '#1a3a5c', backgroundColor: 'rgba(26, 58, 92, 0.10)',
+    borderColor: '#231f20', backgroundColor: 'rgba(60, 42, 16, 0.10)',
     borderWidth: 2.5, pointRadius: 2, fill: true, tension: 0.3, spanGaps: true,
   }];
   if (ga && ga.count >= 8) datasets.push({
     label: 'Georgia',
     data: months.map(m => pctAt(ga.agg, m)),
-    borderColor: '#c05f3c', backgroundColor: 'transparent',
+    borderColor: '#c9740f', backgroundColor: 'transparent',
     borderWidth: 1.5, borderDash: [5, 3], pointRadius: 0, fill: false, tension: 0.3, spanGaps: true,
   });
   if (us && us.count >= 8) datasets.push({
     label: 'United States',
     data: months.map(m => pctAt(us.agg, m)),
-    borderColor: '#1f7a6b', backgroundColor: 'transparent',
+    borderColor: '#3f7d52', backgroundColor: 'transparent',
     borderWidth: 1.5, borderDash: [2, 2], pointRadius: 0, fill: false, tension: 0.3, spanGaps: true,
   });
 
@@ -1925,7 +1933,7 @@ function replaceInequalityTable(acs, bg) {
     const el = document.getElementById(id);
     if (el && val != null) {
       el.textContent = val;
-      el.style.background = 'rgba(58, 141, 141, 0.12)';
+      el.style.background = 'rgba(63,125,82, 0.12)';
       el.style.fontWeight = '700';
       el.title = 'Live value from the public-data pipeline (replaces demo data)';
     }

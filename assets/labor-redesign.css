@@ -7,7 +7,7 @@
  * styles.css / app.css and update maps.js).
  *
  * What it changes vs. the legacy look:
- *   - kills the cream (#fbf5dc) chart wells -> charts sit on white
+ *   - kills the cream (#f7f6f4) chart wells -> charts sit on white
  *   - one cool neutral story (no warm khaki borders)
  *   - Source Serif 4 display face vs the sans body (real type contrast)
  *   - sentence/Title-case panel titles; caps reserved for micro-labels
@@ -16,23 +16,23 @@
  */
 
 :root {
-  --page-bg:     #f5f6f8;   /* single cool page neutral */
+  --page-bg:     #f7f6f4;   /* single cool page neutral */
   --surface:     #ffffff;
   --chart-bg:    #ffffff;   /* <- cream killed (chart wells + table heads) */
   --panel-bg:    #ffffff;
-  --border:      #e6e9ed;   /* cool hairline, replaces khaki #d9d3b8 */
-  --grid:        #e9edf1;
-  --ink:         #16202c;
+  --border:      #e4e2df;   /* cool hairline, replaces khaki #d9d3b8 */
+  --grid:        #edebe8;
+  --ink:         #1f2226;
   --ink-soft:    #5b6675;
-  --ink-faint:   #8a94a0;
-  --card-shadow: 0 1px 2px rgba(16,32,44,.05), 0 8px 24px rgba(16,32,44,.06);
+  --ink-faint:   #a7a9ac;
+  --card-shadow: 0 1px 2px rgba(35, 31, 32,.05), 0 8px 24px rgba(35, 31, 32,.06);
   --font-display:"Source Serif 4", Georgia, serif;
 
   /* refined accents */
-  --peach-deep:  #c05f3c;   /* terracotta signature */
-  --teal:        #1f7a6b;   /* good / up */
-  --coral:       #cc5b43;   /* bad / down */
-  --peach-pale:  #f6e7df;   /* terracotta wash (notices) */
+  --peach-deep:  #c9740f;   /* terracotta signature */
+  --teal:        #3f7d52;   /* good / up */
+  --coral:       #a8432f;   /* bad / down */
+  --peach-pale:  #fde8cc;   /* terracotta wash (notices) */
 }
 
 body { background: var(--page-bg); }
@@ -78,16 +78,16 @@ body { background: var(--page-bg); }
 
 /* ---- tables: hairline rules, cool hover, quiet headers ---- */
 table.data-table thead th, table.metro-table thead th {
-  background: #ffffff; border-bottom: 1px solid #d3d9df;
+  background: #ffffff; border-bottom: 1px solid #e4e2df;
   color: var(--ink-faint); text-transform: uppercase;
 }
 table.data-table tbody td, table.metro-table tbody td { border-bottom: 1px solid var(--border); }
-table.data-table tbody tr:hover, table.metro-table tbody tr:hover { background: #f8fafb; }
+table.data-table tbody tr:hover, table.metro-table tbody tr:hover { background: #faf9f7; }
 .pos, .yoy-up { color: var(--teal); }
 .neg, .yoy-down { color: var(--coral); }
 
 /* ---- diffusion band ---- */
-.diffusion-band { background: #f8fafb; border: 1px solid var(--border); }
+.diffusion-band { background: #faf9f7; border: 1px solid var(--border); }
 .diffusion-band .big { font-family: var(--font-display); color: var(--navy); }
 .diffusion-meter { background: #edf0f3; }
 .diffusion-meter > span { background: linear-gradient(90deg, var(--teal), #3a9a88); }

@@ -1,42 +1,59 @@
 /* georgiaeconomics.com — shared styles
- * Sister site to economicsguru.com — same typography & navy/mustard/teal palette.
- * GA-distinctive accent: --peach (#e8a87c) used for map gradients and state callouts.
+ * Sister site to economicsguru.com; branded as an Economic Impact Group product
+ * (charcoal #231f20 + amber #f7941e, Geist), matching housinganalytics.org.
+ * The palette lives in the :root block below; see EIG_REBRAND.md for the
+ * rollout and for why the legacy variable names were kept.
  */
 
 :root {
-  /* Palette — "Modern Editorial" (June 2026). GA diverged from economicsguru:
-     one cool neutral story, serif display, terracotta as the single accent. */
-  --navy:        #1a3a5c;
-  --navy-soft:   #2e5984;
-  --mustard:     #c08a2e;   /* desaturated; used sparingly */
-  --khaki:       #9b8b6a;
-  --teal:        #1f7a6b;   /* refined — "good / up" */
-  --teal-light:  #5fb8b8;
-  --coral:       #cc5b43;   /* refined — "bad / down" */
-  --green:       #6b8e3d;
-  --silver:      #9ba3ab;
-  --black:       #16202c;
+  /* ── Palette — EIG (July 2026) ───────────────────────────────────────────
+   * The Economic Impact Group brand, ported from the canonical tokens in
+   * gteconomist/housinganalytics (src/styles/tokens.css) so this site reads as
+   * a sibling of housinganalytics.org. See EIG_REBRAND.md.
+   *
+   * The variable NAMES are deliberately unchanged. Roughly 600 `var(--navy)` /
+   * `var(--peach-deep)` / … references are spread across 29 pages' inline
+   * styles; remapping the values here rebrands every one of them at once,
+   * where renaming would mean touching all 191 pages for no visual gain.
+   * So: `--navy` is now a warm charcoal, `--peach` is the EIG amber, and so on.
+   * The old value is noted after each so the mapping stays legible.
+   * (housinganalytics does the same thing — its `--color-navy` is #231f20.)
+   * Semantic aliases matching the EIG token names are defined further down. */
+  --navy:        #231f20;   /* EIG charcoal — primary brand dark (was #1a3a5c) */
+  --navy-soft:   #3a4049;   /* slate blue-grey (was #2e5984) */
+  --mustard:     #f7941e;   /* EIG amber — the logo's bar (was #c08a2e) */
+  --khaki:       #9c867a;   /* warm brown (was #9b8b6a) */
+  --teal:        #3f7d52;   /* forest green — "good / up" (was #1f7a6b) */
+  --teal-light:  #7fa98a;   /* light forest tint (was #5fb8b8) */
+  --coral:       #a8432f;   /* brick red — "bad / down" (was #cc5b43) */
+  --green:       #6f8f4a;   /* warm olive — secondary positive (was #6b8e3d) */
+  --silver:      #a7a9ac;   /* warm light grey (was #9ba3ab) */
+  --black:       #1f2226;   /* body ink (was #16202c) */
 
-  /* GA signature accent — terracotta (refined "Peach State") */
-  --peach:       #d98a63;
-  --peach-deep:  #c05f3c;
-  --peach-pale:  #f6e7df;
+  /* Accent. Was GA-distinctive terracotta; now the single EIG amber, so the
+     `--peach-*` names survive only as aliases for existing call sites. */
+  --peach:       #f7941e;   /* EIG amber (was #d98a63) */
+  --peach-deep:  #c9740f;   /* deep amber — hover, eyebrows (was #c05f3c) */
+  --peach-pale:  #fde8cc;   /* amber tint — chips, tags (was #f6e7df) */
 
-  /* Surfaces — cool neutrals; cream killed */
-  --page-bg:     #f5f6f8;   /* single cool page neutral */
-  --surface:     #ffffff;   /* header / footer / opaque chrome */
-  --chart-bg:    #ffffff;   /* charts now sit on white (no parchment) */
+  /* Surfaces — warm neutrals (LOCI/EIG), replacing the cool greys */
+  --page-bg:     #f7f6f4;   /* EIG cream (was #f5f6f8) */
+  --surface:     #ffffff;   /* opaque chrome + cards */
+  --chart-bg:    #ffffff;   /* charts sit on white */
   --panel-bg:    #ffffff;
-  --border:      #e6e9ed;   /* cool hairline (replaces warm khaki) */
-  --grid:        #e9edf1;
-  --ink:         #16202c;
-  --ink-soft:    #5b6675;
-  --ink-faint:   #8a94a0;
-  --card-shadow: 0 1px 2px rgba(16, 32, 44, 0.05), 0 8px 24px rgba(16, 32, 44, 0.06);
+  --border:      #e4e2df;   /* warm hairline (was #e6e9ed) */
+  --grid:        #edebe8;   /* faint warm divider (was #e9edf1) */
+  --ink:         #1f2226;   /* (was #16202c) */
+  --ink-soft:    #6d6e71;   /* (was #5b6675) */
+  --ink-faint:   #a7a9ac;   /* (was #8a94a0) */
+  --card-shadow: 0 1px 3px rgba(35, 31, 32, 0.06), 0 8px 24px rgba(60, 42, 16, 0.08);
 
-  /* Type — serif display vs sans body for real editorial contrast */
-  --font-sans: "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
-  --font-display: "Source Serif 4", Georgia, "Times New Roman", serif;
+  /* Type — Geist throughout, matching housinganalytics. The old scheme paired a
+     serif display with a sans body; EIG uses one sans with tight tracking on
+     headings, so `--font-display` now resolves to the same family. */
+  --font-sans: "Geist", "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+  --font-display: "Geist", "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+  --font-mono: "Geist Mono", ui-monospace, "SF Mono", Menlo, Consolas, monospace;
 }
 
 * { box-sizing: border-box; }
@@ -172,7 +189,7 @@ main { max-width: 1200px; margin: 0 auto; padding: 28px 24px 48px; }
 .topic-card:hover {
   border-color: var(--navy); text-decoration: none;
   transform: translateY(-1px);
-  box-shadow: 0 2px 4px rgba(15, 23, 42, 0.06), 0 8px 20px rgba(15, 23, 42, 0.08);
+  box-shadow: 0 2px 4px rgba(35, 31, 32, 0.06), 0 8px 20px rgba(35, 31, 32, 0.08);
 }
 .topic-card.coming { opacity: 0.55; cursor: not-allowed; }
 .topic-card.feature { border-top-color: var(--peach-deep); }

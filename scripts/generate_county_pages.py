@@ -250,7 +250,7 @@ document.addEventListener('DOMContentLoaded', function () {{
     type: 'line',
     data: {{ labels: S.labels, datasets: [{{
       label: 'Unemployment %', data: S.values,
-      borderColor: GE.BRAND.coral, backgroundColor: 'rgba(212,98,74,0.10)',
+      borderColor: GE.BRAND.coral, backgroundColor: 'rgba(168,67,47,0.10)',
       borderWidth: 2, fill: true, tension: 0.3, pointRadius: 2,
     }}] }},
     options: {{ responsive: true, maintainAspectRatio: false,

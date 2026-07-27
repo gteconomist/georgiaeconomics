@@ -8,9 +8,12 @@
 <!-- GEN:HEAD -->
 <link rel="stylesheet" href="/styles.css">
 <link rel="stylesheet" href="/assets/app.css">
+<!-- EIG brand layer — site-wide chrome (charcoal + amber). Must load AFTER
+     styles.css/app.css so its chrome rules win. See EIG_REBRAND.md. -->
+<link rel="stylesheet" href="/assets/eig.css">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700;800&family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600;8..60,700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700;800&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
 <!-- app.js is intentionally NOT deferred: it defines window.GE (palette + fmt
      helpers) with no dependencies, so it must be available to each page's
      end-of-body inline script, which runs during parse before deferred scripts. -->
@@ -34,7 +37,7 @@
      accent strip on the right. The headline is the South-region YoY figure
      because it's the freshest reading (Atlanta MSA only publishes bi-monthly). */
   .cpi-hero {
-    background: linear-gradient(135deg, var(--navy) 0%, #2e5984 100%);
+    background: linear-gradient(135deg, var(--navy) 0%, #3a4049 100%);
     color: #fff; padding: 32px 30px; margin-bottom: 26px; border-radius: 4px;
     position: relative; overflow: hidden;
   }
@@ -88,7 +91,7 @@
   }
   .stale-banner {
     margin-bottom: 22px; padding: 12px 16px;
-    background: rgba(212, 160, 23, 0.10);
+    background: rgba(247,148,30, 0.10);
     border-left: 4px solid var(--mustard);
     font-size: 14px; color: var(--ink);
   }
@@ -116,7 +119,7 @@
     color: var(--navy); font-weight: 600;
   }
   .component-table tr.headline td { background: var(--peach-pale); font-weight: 700; }
-  .component-table tr.core td     { background: rgba(212, 160, 23, 0.08); }
+  .component-table tr.core td     { background: rgba(247,148,30, 0.08); }
   .component-bar-wrap {
     position: relative; height: 14px;
     background: var(--chart-bg); border: 1px solid var(--border);
@@ -237,7 +240,7 @@
 
     <div class="chart-panel">
       <h2>What&rsquo;s driving inflation <span class="as-of" id="badge-components"></span></h2>
-      <p class="sub">South-region CPI broken into spending categories. Year-over-year change at left; cumulative 5-year change at right. Bars colored coral for prices up, teal for prices down.</p>
+      <p class="sub">South-region CPI broken into spending categories. Year-over-year change at left; cumulative 5-year change at right. Bars colored red for prices up, green for prices down.</p>
       <div id="components-table-wrap" style="max-height: 380px; overflow-y: auto;">
         <table class="component-table">
           <thead>
@@ -301,10 +304,10 @@
 document.getElementById('yr').textContent = new Date().getFullYear();
 
 const BRAND = {
-  navy: '#1a3a5c', peachDeep: '#c46b3a', peach: '#e8a87c', peachPale: '#faead9',
-  mustard: '#d4a017', teal: '#3a8d8d', coral: '#d4624a',
-  khaki: '#9b8b6a', green: '#6b8e3d', silver: '#9ba3ab',
-  grid: '#b6ad8d',
+  navy: '#231f20', peachDeep: '#c9740f', peach: '#f7b45c', peachPale: '#fde8cc',
+  mustard: '#f7941e', teal: '#3f7d52', coral: '#a8432f',
+  khaki: '#9c867a', green: '#6f8f4a', silver: '#a7a9ac',
+  grid: '#b8b0a4',
 };
 
 const fmtPct  = (v, dp) => v == null ? '—' : Number(v).toFixed(dp == null ? 1 : dp) + '%';
@@ -730,7 +733,7 @@ function renderRealWagesChart(rw) {
           label: 'Nominal wages YoY',
           data: rw.nominal_yoy_pct.slice(startAt),
           borderColor: BRAND.navy,
-          backgroundColor: 'rgba(26, 58, 92, 0.08)',
+          backgroundColor: 'rgba(60, 42, 16, 0.08)',
           borderWidth: 2, fill: false, tension: 0.3,
           pointRadius: 0, pointHitRadius: 12,
           spanGaps: true,

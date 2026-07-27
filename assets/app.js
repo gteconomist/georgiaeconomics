@@ -14,21 +14,23 @@
   "use strict";
 
   // Brand palette — mirrors the CSS custom properties in /styles.css.
+  // EIG values (July 2026 rebrand); the KEYS are unchanged so pages that read
+  // GE.BRAND.navy keep working — `navy` is now the EIG charcoal. See EIG_REBRAND.md.
   var BRAND = {
-    navy:      "#1a3a5c",
-    navySoft:  "#2e5984",
-    mustard:   "#c08a2e",
-    teal:      "#1f7a6b",
-    tealLight: "#5fb8b8",
-    coral:     "#cc5b43",
-    green:     "#6b8e3d",
-    peach:     "#d98a63",
-    peachDeep: "#c05f3c",
-    peachPale: "#f6e7df",
-    grid:      "#e9edf1",
-    ink:       "#16202c",
-    inkSoft:   "#5b6675",
-    border:    "#e6e9ed",
+    navy:      "#231f20",
+    navySoft:  "#3a4049",
+    mustard:   "#f7941e",
+    teal:      "#3f7d52",
+    tealLight: "#7fa98a",
+    coral:     "#a8432f",
+    green:     "#6f8f4a",
+    peach:     "#f7941e",
+    peachDeep: "#c9740f",
+    peachPale: "#fde8cc",
+    grid:      "#edebe8",
+    ink:       "#1f2226",
+    inkSoft:   "#6d6e71",
+    border:    "#e4e2df",
     chartBg:   "#ffffff",
   };
 

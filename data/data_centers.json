@@ -200,70 +200,70 @@
       "abbr": "CA",
       "gdp_b": 480.61,
       "rank": 1,
-      "color": "#1a3a5c"
+      "color": "#231f20"
     },
     {
       "state": "New York",
       "abbr": "NY",
       "gdp_b": 208.64,
       "rank": 2,
-      "color": "#3a8d8d"
+      "color": "#3f7d52"
     },
     {
       "state": "Washington",
       "abbr": "WA",
       "gdp_b": 146.85,
       "rank": 3,
-      "color": "#9b8b6a"
+      "color": "#9c867a"
     },
     {
       "state": "Texas",
       "abbr": "TX",
       "gdp_b": 111.52,
       "rank": 4,
-      "color": "#9b8b6a"
+      "color": "#9c867a"
     },
     {
       "state": "Florida",
       "abbr": "FL",
       "gdp_b": 63.42,
       "rank": 5,
-      "color": "#9b8b6a"
+      "color": "#9c867a"
     },
     {
       "state": "Georgia",
       "abbr": "GA",
       "gdp_b": 53.68,
       "rank": 6,
-      "color": "#c46b3a"
+      "color": "#c9740f"
     },
     {
       "state": "Massachusetts",
       "abbr": "MA",
       "gdp_b": 52.53,
       "rank": 7,
-      "color": "#9b8b6a"
+      "color": "#9c867a"
     },
     {
       "state": "Illinois",
       "abbr": "IL",
       "gdp_b": 51.04,
       "rank": 8,
-      "color": "#9b8b6a"
+      "color": "#9c867a"
     },
     {
       "state": "Pennsylvania",
       "abbr": "PA",
       "gdp_b": 43.6,
       "rank": 9,
-      "color": "#9b8b6a"
+      "color": "#9c867a"
     },
     {
       "state": "New Jersey",
       "abbr": "NJ",
       "gdp_b": 42.06,
       "rank": 10,
-      "color": "#9b8b6a"
+      "color": "#9c867a"
     }
   ],
   "mw_peer_states": [
@@ -273,7 +273,7 @@
       "mw_existing": 4750,
       "mw_pipeline": 11500,
       "rank": 1,
-      "color": "#1a3a5c"
+      "color": "#231f20"
     },
     {
       "state": "Texas (Dallas + Austin)",
@@ -281,7 +281,7 @@
       "mw_existing": 1850,
       "mw_pipeline": 4200,
       "rank": 2,
-      "color": "#3a8d8d"
+      "color": "#3f7d52"
     },
     {
       "state": "Arizona (Phoenix)",
@@ -289,7 +289,7 @@
       "mw_existing": 1450,
       "mw_pipeline": 3100,
       "rank": 3,
-      "color": "#9b8b6a"
+      "color": "#9c867a"
     },
     {
       "state": "Illinois (Chicago)",
@@ -297,7 +297,7 @@
       "mw_existing": 1280,
       "mw_pipeline": 2400,
       "rank": 4,
-      "color": "#9b8b6a"
+      "color": "#9c867a"
     },
     {
       "state": "Georgia (Atlanta)",
@@ -305,7 +305,7 @@
       "mw_existing": 1177.7,
       "mw_pipeline": 1102.0,
       "rank": 5,
-      "color": "#c46b3a"
+      "color": "#c9740f"
     },
     {
       "state": "Oregon (Hillsboro)",
@@ -313,7 +313,7 @@
       "mw_existing": 950,
       "mw_pipeline": 1750,
       "rank": 6,
-      "color": "#9b8b6a"
+      "color": "#9c867a"
     },
     {
       "state": "Ohio (Columbus)",
@@ -321,7 +321,7 @@
       "mw_existing": 720,
       "mw_pipeline": 2100,
       "rank": 7,
-      "color": "#9b8b6a"
+      "color": "#9c867a"
     },
     {
       "state": "Nevada (Las Vegas/Reno)",
@@ -329,7 +329,7 @@
       "mw_existing": 680,
       "mw_pipeline": 1100,
       "rank": 8,
-      "color": "#9b8b6a"
+      "color": "#9c867a"
     }
   ],
   "counties": [

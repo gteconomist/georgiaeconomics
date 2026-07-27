@@ -107,70 +107,70 @@
       "abbr": "AL",
       "gdp_b": 0.0,
       "rank": 1,
-      "color": "#1a3a5c"
+      "color": "#231f20"
     },
     {
       "state": "Alaska",
       "abbr": "AK",
       "gdp_b": 0.0,
       "rank": 2,
-      "color": "#3a8d8d"
+      "color": "#3f7d52"
     },
     {
       "state": "Arizona",
       "abbr": "AZ",
       "gdp_b": 0.0,
       "rank": 3,
-      "color": "#9b8b6a"
+      "color": "#9c867a"
     },
     {
       "state": "Arkansas",
       "abbr": "AR",
       "gdp_b": 0.0,
       "rank": 4,
-      "color": "#9b8b6a"
+      "color": "#9c867a"
     },
     {
       "state": "California",
       "abbr": "CA",
       "gdp_b": 0.0,
       "rank": 5,
-      "color": "#9b8b6a"
+      "color": "#9c867a"
     },
     {
       "state": "Colorado",
       "abbr": "CO",
       "gdp_b": 0.0,
       "rank": 6,
-      "color": "#9b8b6a"
+      "color": "#9c867a"
     },
     {
       "state": "Connecticut",
       "abbr": "CT",
       "gdp_b": 0.0,
       "rank": 7,
-      "color": "#9b8b6a"
+      "color": "#9c867a"
     },
     {
       "state": "Delaware",
       "abbr": "DE",
       "gdp_b": 0.0,
       "rank": 8,
-      "color": "#9b8b6a"
+      "color": "#9c867a"
     },
     {
       "state": "DC",
       "abbr": "DC",
       "gdp_b": 0.0,
       "rank": 9,
-      "color": "#9b8b6a"
+      "color": "#9c867a"
     },
     {
       "state": "Georgia",
       "abbr": "GA",
       "gdp_b": 0.0,
       "rank": 11,
-      "color": "#c46b3a"
+      "color": "#c9740f"
     }
   ],
   "plants": [
