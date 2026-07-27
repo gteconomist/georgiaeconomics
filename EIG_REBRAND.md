@@ -41,9 +41,19 @@ the EIG logo lockup in the footer.
 
 Chosen direction: **Concept B hero on Concept A chrome.**
 
-- **Hero** — full-bleed charcoal band. The clickable metro choropleth is the
-  hero image (amber ramp on charcoal), with a live-refresh chip, the headline,
-  two CTAs and the EIG attribution lockup on the left.
+- **Hero** — full-bleed charcoal band. The clickable **159-county** choropleth
+  is the hero image (amber ramp on charcoal, click → county profile), with a
+  live-refresh chip, the headline, two CTAs and the EIG attribution lockup on
+  the left. `GE.countyMap` draws it from the latest frame of `data/counties.json`;
+  `GE.metroMap` remains available for a 14-metro hero via `data-ge-metromap`.
+  - **Colour ramp:** Georgia county unemployment is tightly clustered (most
+    counties within about a point of each other, plus a thin upper tail), so an
+    evenly spaced ramp renders the state almost flat. `quantileStops()` places
+    the ramp's stops at the data's own quartiles, spreading colour across where
+    the counties actually are, while `zmin`/`zmax` stay the true min/max so the
+    legend still reads in real percentage points.
+  - The low end starts at the EIG logo's taupe rather than near-black, so the
+    lowest-unemployment counties stay legible against the charcoal background.
 - **KPI strip** — `data/scorecard.json` rendered as an 8-cell strip welded to
   the bottom edge of the hero. Same `GE.scorecard` renderer as before, restyled.
 - **Body** — numbered section kickers (`01/02/03`), two flagship cards with an

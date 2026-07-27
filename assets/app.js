@@ -360,6 +360,72 @@
     return true;
   }
 
+  // Shared dark-hero map theme (EIG landing page). Kept in one place so the
+  // county and metro hero maps cannot drift apart.
+  //   - the ramp starts at the EIG logo's taupe, not near-black, so the lowest
+  //     values stay legible against the #231f20 hero background;
+  //   - `fill` drops Plotly's USA scope so Georgia fills its box (see maps.js);
+  //   - `horizontalColorbar` puts the legend under the map instead of eating a
+  //     quarter of the width.
+  var EIG_DARK_MAP = {
+    colorscale: [[0, "#8a7366"], [0.5, "#c9740f"], [1, "#ffc46e"]],
+    bgcolor: "#231f20", lineColor: "#231f20",
+    fontColor: "#bdb6ae", outlineColor: "#6b6158",
+    horizontalColorbar: true, fill: true,
+  };
+
+  // Georgia county unemployment is tightly clustered (most counties sit within
+  // about a point of each other, with a long thin upper tail), so an evenly
+  // spaced colour ramp renders the state almost flat. Placing the ramp's stops
+  // at the data's own quartiles spreads the colour across where the counties
+  // actually are, while zmin/zmax stay the true min/max so the legend still
+  // reads in real percentage points.
+  function quantileStops(values, colors) {
+    var v = values.filter(function (x) { return typeof x === "number" && isFinite(x); }).sort(function (a, b) { return a - b; });
+    if (v.length < 4) return null;
+    var lo = v[0], hi = v[v.length - 1];
+    if (!(hi > lo)) return null;
+    var q = function (p) { return v[Math.min(v.length - 1, Math.round(p * (v.length - 1)))]; };
+    var pos = [0, (q(0.25) - lo) / (hi - lo), (q(0.5) - lo) / (hi - lo), (q(0.75) - lo) / (hi - lo), 1];
+    // Plotly needs strictly increasing stop positions.
+    for (var i = 1; i < pos.length; i++) if (pos[i] <= pos[i - 1]) pos[i] = Math.min(1, pos[i - 1] + 1e-4);
+    return pos.map(function (p, i) { return [p, colors[i]]; });
+  }
+
+  // Render a clickable county choropleth (the EIG landing-page hero): all 159
+  // counties shaded by their latest unemployment rate, click -> county profile.
+  function countyMap(elId, opts) {
+    opts = opts || {};
+    var el = document.getElementById(elId);
+    if (!el || !window.gaMaps || !window.Plotly) return Promise.resolve(false);
+    return data("counties").then(function (j) {
+      var frames = (j && j.frames) || [];
+      if (!frames.length) return false;
+      var latest = frames[frames.length - 1];
+      var points = (latest.points || []).map(function (p) {
+        return {
+          fips: p.fips, value: p.value, label: p.label,
+          hoverText: "<b>" + p.label + " County</b><br>Unemployment: " +
+                     (p.value == null ? "—" : p.value.toFixed(1) + "%") +
+                     "<br><i>click to open profile →</i>",
+        };
+      });
+      var vals = points.map(function (p) { return p.value; });
+      var theme = (opts.theme === "eig-dark") ? EIG_DARK_MAP : {};
+      var ramp = (opts.theme === "eig-dark")
+        ? quantileStops(vals, ["#8a7366", "#b8802c", "#dc8f18", "#f7941e", "#ffd79a"])
+        : null;
+      return window.gaMaps.drawGAChoropleth(elId, points, {
+        metricLabel: opts.metricLabel || j.metric_label || "Unemployment rate",
+        unit: j.unit || "%",
+        colorscale: ramp || theme.colorscale,
+        bgcolor: theme.bgcolor, lineColor: theme.lineColor,
+        fontColor: theme.fontColor, outlineColor: theme.outlineColor,
+        horizontalColorbar: theme.horizontalColorbar, fill: theme.fill,
+      }).then(function () { attachCountyNav(elId); return true; });
+    }).catch(function (e) { if (window.console) console.warn("countyMap failed:", e); return false; });
+  }
+
   // Render a clickable "explore the metros" choropleth (e.g. the home hero):
   // all metro counties shaded by their metro's unemployment, click -> metro page.
   function metroMap(elId, opts) {
@@ -392,15 +458,7 @@
       // Themes. Default is the existing light Modern Editorial map; "eig-dark"
       // renders the map on EIG charcoal with the amber ramp for the branded
       // landing-page hero. Selected per-element via data-ge-theme.
-      // On the charcoal hero the low end of the ramp must still be legible
-      // against the #231f20 background — a near-black low end made the
-      // healthiest metros vanish. Starts at the EIG logo's taupe instead.
-      var theme = (opts.theme === "eig-dark") ? {
-        colorscale: [[0, "#8a7366"], [0.5, "#c9740f"], [1, "#ffc46e"]],
-        bgcolor: "#231f20", lineColor: "#231f20",
-        fontColor: "#bdb6ae", outlineColor: "#6b6158",
-        horizontalColorbar: true, fill: true,
-      } : {
+      var theme = (opts.theme === "eig-dark") ? EIG_DARK_MAP : {
         colorscale: [[0, BRAND.teal], [0.5, BRAND.mustard], [1, BRAND.coral]],
       };
       return window.gaMaps.drawGAChoropleth(elId, points, {
@@ -421,18 +479,26 @@
   function autoWireMaps() {
     var sc = document.querySelector("[data-ge-scorecard]");
     if (sc && sc.id) scorecard(sc.id);
-    var hero = document.querySelector("[data-ge-metromap]");
-    if (hero && hero.id) metroMap(hero.id, {
-      metricLabel: hero.getAttribute("data-metric-label"),
-      theme: hero.getAttribute("data-ge-theme"),
-    }).then(function (ok) {
-      // The map is the hero image on the EIG landing page, so a failed render
-      // (Plotly CDN down, geojson fetch blocked) must not leave a 500px hole.
-      // Fall back to a plain text link into the same destination.
-      if (ok || !hero.hasAttribute("data-ge-fallback")) return;
-      hero.classList.add("map-failed");
-      hero.innerHTML = '<a class="map-fallback" href="/msa/">Explore Georgia’s 14 metro economies →</a>';
-    });
+    // Hero map: [data-ge-countymap] draws all 159 counties (click -> county
+    // profile); [data-ge-metromap] draws the 14 metros (click -> metro report).
+    var hero = document.querySelector("[data-ge-countymap], [data-ge-metromap]");
+    if (hero && hero.id) {
+      var isCounty = hero.hasAttribute("data-ge-countymap");
+      var draw = isCounty ? countyMap : metroMap;
+      draw(hero.id, {
+        metricLabel: hero.getAttribute("data-metric-label"),
+        theme: hero.getAttribute("data-ge-theme"),
+      }).then(function (ok) {
+        // The map is the hero image on the EIG landing page, so a failed render
+        // (Plotly CDN down, geojson fetch blocked) must not leave a 500px hole.
+        // Fall back to a plain text link into the same destination.
+        if (ok || !hero.hasAttribute("data-ge-fallback")) return;
+        hero.classList.add("map-failed");
+        hero.innerHTML = isCounty
+          ? '<a class="map-fallback" href="/counties/">Explore all 159 Georgia counties →</a>'
+          : '<a class="map-fallback" href="/msa/">Explore Georgia’s 14 metro economies →</a>';
+      });
+    }
     if (document.getElementById("msa-choropleth")) {
       var tries = 0;
       var t = setInterval(function () {
@@ -452,7 +518,7 @@
     BRAND: BRAND, fmt: fmt, data: data,
     setYear: setYear, show: show, hide: hide, text: text, axes: axes,
     // WS2/WS3 helpers (also run automatically on DOMContentLoaded):
-    markActiveNav: markActiveNav, metroMap: metroMap, attachMetroNav: attachMetroNav,
+    markActiveNav: markActiveNav, metroMap: metroMap, countyMap: countyMap, attachMetroNav: attachMetroNav,
     attachCountyNav: attachCountyNav, scorecard: scorecard, slugify: slugify, PAGES: PAGES,
   };
 
