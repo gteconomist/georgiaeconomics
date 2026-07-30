@@ -1,5 +1,5 @@
 {
- "fetched_at": "2026-07-29T11:35:32Z",
+ "fetched_at": "2026-07-30T11:15:11Z",
  "schema": "migration/v1",
  "metros": [
   {
@@ -1375,15 +1375,15 @@
     "net": 66
    },
    {
-    "state": "Arkansas",
-    "in": 104,
-    "out": 46,
-    "net": 58
-   },
-   {
     "state": "Alaska",
     "in": 79,
     "out": 21,
+    "net": 58
+   },
+   {
+    "state": "Arkansas",
+    "in": 104,
+    "out": 46,
     "net": 58
    },
    {
@@ -1513,24 +1513,24 @@
  },
  "_meta": {
   "metro_rollup": {
-   "last_updated": "2026-07-29T11:35:32Z",
+   "last_updated": "2026-07-30T11:15:11Z",
    "n_metros": 14,
    "stale": false
   },
   "components": {
-   "last_updated": "2026-07-29T11:35:32Z",
+   "last_updated": "2026-07-30T11:15:11Z",
    "stale": false
   },
   "counties": {
-   "last_updated": "2026-07-29T11:35:32Z",
+   "last_updated": "2026-07-30T11:15:11Z",
    "stale": false
   },
   "non_metro": {
-   "last_updated": "2026-07-29T11:35:32Z",
+   "last_updated": "2026-07-30T11:15:11Z",
    "stale": false
   },
   "state_flows": {
-   "last_updated": "2026-07-29T11:35:34Z",
+   "last_updated": "2026-07-30T11:15:13Z",
    "stale": false
   }
  },
