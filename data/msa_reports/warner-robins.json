@@ -3,7 +3,7 @@
   "short_name": "Warner Robins",
   "full_name": "Warner Robins, GA",
   "population": 199000,
-  "as_of": "2026-07-31",
+  "as_of": "2026-08-01",
   "sections": {
     "ces_employment": {
       "series_id": "SMS13475800000000001",
@@ -4254,7 +4254,7 @@
       "source": "Census Business Dynamics Statistics (establishment entry rate, 2022); metro rate indexed to US=100"
     },
     "major_employers": {
-      "as_of": "2026-07-11",
+      "as_of": "2026-08-01",
       "employers": [
         {
           "name": "Pratt Industries",
@@ -4265,14 +4265,6 @@
           "source_url": "https://www.bizjournals.com/atlanta/news/2024/08/22/emory-healthcare-houston-healthcare-partnership.html"
         },
         {
-          "name": "Houston Medical Center",
-          "source_url": "https://en.wikipedia.org/wiki/Warner_Robins,_Georgia"
-        },
-        {
-          "name": "Manufacturing",
-          "source_url": "https://georgia.org/why-georgia/regions-georgia/middle-georgia"
-        },
-        {
           "name": "Houston Healthcare",
           "source_url": "https://en.wikipedia.org/wiki/Central_Georgia"
         },
@@ -4281,47 +4273,55 @@
           "source_url": "https://en.wikipedia.org/wiki/Central_Georgia"
         },
         {
-          "name": "Warner Robins Air Logistics Complex",
-          "source_url": "https://georgia.org/sites/default/files/2019-08/gdecd_board_book_q2_feb.pdf"
+          "name": "Manufacturing",
+          "source_url": "https://georgia.org/why-georgia/regions-georgia/middle-georgia"
+        },
+        {
+          "name": "Robins International Industrial Park",
+          "source_url": "https://georgia.org/sites/default/files/2021-02/fy21_q2_board_book.pdf"
         },
         {
           "name": "Aerospace",
-          "source_url": "https://www.georgia.org/en-can/node/54216"
+          "source_url": "https://georgia.org/sites/sites-and-buildings"
         },
         {
-          "name": "Ameriprise Financial Services",
-          "source_url": "https://www.bizjournals.com/atlanta/news/2024/08/22/emory-healthcare-houston-healthcare-partnership.html"
+          "name": "Food Processing",
+          "source_url": "https://georgia.org/why-georgia/regions-georgia/middle-georgia"
         },
         {
-          "name": "GE Aviation",
-          "source_url": null
+          "name": "Automotive",
+          "source_url": "https://georgia.org/sites/sites-and-buildings"
         },
         {
-          "name": "Georgia Beer Co",
-          "source_url": "https://georgia.org/blogs/longtime-investment-workforce-solutions-keeps-georgia-top-state-business"
+          "name": "Blue Bird Corporation",
+          "source_url": "https://en.wikipedia.org/wiki/Central_Georgia"
         },
         {
-          "name": "Greenfield LLC",
-          "source_url": "https://georgia.org/blogs/longtime-investment-workforce-solutions-keeps-georgia-top-state-business"
+          "name": "Central Georgia Technical College",
+          "source_url": "https://en.wikipedia.org/wiki/Central_Georgia"
         },
         {
-          "name": "Health Care",
-          "source_url": "https://www.bizjournals.com/atlanta/news/2024/08/22/emory-healthcare-houston-healthcare-partnership.html"
+          "name": "Coliseum Health System",
+          "source_url": "https://en.wikipedia.org/wiki/Central_Georgia"
         },
         {
-          "name": "Hyundai Metaplant",
-          "source_url": "https://www.bizjournals.com/atlanta/news/2026/04/27/pratt-industries-corrugated-box-warner-robins.html"
+          "name": "Criterion Technologies",
+          "source_url": "https://en.wikipedia.org/wiki/Central_Georgia"
+        },
+        {
+          "name": "Energy",
+          "source_url": "https://georgia.org/sites/sites-and-buildings"
         }
       ],
       "sources": [
         "https://en.wikipedia.org/wiki/Central_Georgia",
-        "https://en.wikipedia.org/wiki/Warner_Robins,_Georgia",
         "https://georgia.org/press-releases/2023/georgia-based-pratt-industries-plans-new-manufacturing-facility-peach-county",
         "https://www.bizjournals.com/atlanta/news/2024/08/22/emory-healthcare-houston-healthcare-partnership.html",
         "https://georgia.org/why-georgia/regions-georgia/middle-georgia",
-        "https://www.georgia.org/en-can/node/54216",
-        "https://georgia.org/sites/default/files/2019-08/gdecd_board_book_q2_feb.pdf",
-        "https://www.savannahnow.com/story/business/2014/07/15/business-savannah-news-summary/13962793007"
+        "https://georgia.org/sites/sites-and-buildings",
+        "https://georgia.org/sites/default/files/2019-08/gdecd_board_book-nov_2018.pdf",
+        "https://www.bizjournals.com/sitemap/atlanta/2014-05",
+        "https://georgia.org/sites/default/files/2021-04/logistics_education_report.pdf"
       ],
       "method": "Representative list auto-discovered via Tavily web search across chamber-of-commerce, development-authority and local-news sources. Not exhaustive; ordering approximates source frequency, not headcount."
     },
@@ -4880,7 +4880,7 @@
     "acs_housing_characteristics": "live",
     "acs_block_group_income": "live",
     "entrepreneurship": "live",
-    "major_employers": "stale",
+    "major_employers": "partial",
     "business_cycle_index": "live",
     "forecast_arima": "live",
     "vitality": "live",

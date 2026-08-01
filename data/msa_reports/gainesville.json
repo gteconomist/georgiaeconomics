@@ -3,7 +3,7 @@
   "short_name": "Gainesville",
   "full_name": "Gainesville, GA",
   "population": 211000,
-  "as_of": "2026-07-31",
+  "as_of": "2026-08-01",
   "sections": {
     "ces_employment": {
       "series_id": "SMS13235800000000001",
@@ -5224,54 +5224,46 @@
       "source": "Census Business Dynamics Statistics (establishment entry rate, 2022); metro rate indexed to US=100"
     },
     "major_employers": {
-      "as_of": "2026-07-11",
+      "as_of": "2026-08-01",
       "employers": [
         {
-          "name": "University of Florida",
-          "source_url": "https://en.wikipedia.org/wiki/Gainesville,_Florida"
+          "name": "Aerospace",
+          "source_url": "https://georgia.org/why-georgia/regions-georgia/northeast-georgia"
         },
         {
-          "name": "Gainesville-Hall Co",
-          "source_url": "https://www.bizjournals.com/atlanta/news/2022/06/06/kubota-to-build-new-facility.html"
+          "name": "Food Processing",
+          "source_url": "https://georgia.org/why-georgia/regions-georgia/northeast-georgia"
         },
         {
           "name": "Northeast Georgia Health System",
           "source_url": "https://en.wikipedia.org/wiki/Gainesville,_Georgia"
         },
         {
-          "name": "College Football Playoff",
+          "name": "University of Florida",
+          "source_url": "https://en.wikipedia.org/wiki/Gainesville,_Florida"
+        },
+        {
+          "name": "Koch Foods",
+          "source_url": "https://en.wikipedia.org/wiki/Gainesville,_Georgia"
+        },
+        {
+          "name": "The Longstreet Clinic",
+          "source_url": "https://en.wikipedia.org/wiki/Gainesville,_Georgia"
+        },
+        {
+          "name": "Automotive",
+          "source_url": "https://georgia.org/why-georgia/regions-georgia/northeast-georgia"
+        },
+        {
+          "name": "Gainesville-Hall Co",
           "source_url": "https://www.bizjournals.com/atlanta/news/2022/06/06/kubota-to-build-new-facility.html"
         },
         {
-          "name": "Comprehensive Annual Financial Report",
-          "source_url": "https://en.wikipedia.org/wiki/Gainesville,_Georgia"
+          "name": "Manufacturing",
+          "source_url": "https://www.bizjournals.com/atlanta/news/2022/06/06/kubota-to-build-new-facility.html"
         },
         {
-          "name": "Distribution",
-          "source_url": "https://www.gainesvilletimes.com/news/business-archived/chamber-honors-3-companies-as-the-years-best-in-hall"
-        },
-        {
-          "name": "Elan Drug Technologies",
-          "source_url": "https://www.gainesvilletimes.com/news/business-archived/chamber-honors-3-companies-as-the-years-best-in-hall"
-        },
-        {
-          "name": "Hall County School District",
-          "source_url": "https://en.wikipedia.org/wiki/Gainesville,_Georgia"
-        },
-        {
-          "name": "Kubota Manufacturing of America",
-          "source_url": "https://www.gainesvilletimes.com/news/business-archived/chamber-honors-3-companies-as-the-years-best-in-hall"
-        },
-        {
-          "name": "Wrigley Manufacturing",
-          "source_url": "https://www.gainesvilletimes.com/news/business-archived/chamber-honors-3-companies-as-the-years-best-in-hall"
-        },
-        {
-          "name": "Alachua County School Board",
-          "source_url": null
-        },
-        {
-          "name": "Annual Comprehensive Financial Report",
+          "name": "Alachua County Public Schools",
           "source_url": "https://en.wikipedia.org/wiki/Gainesville,_Florida"
         },
         {
@@ -5279,19 +5271,27 @@
           "source_url": "https://en.wikipedia.org/wiki/Gainesville,_Georgia"
         },
         {
-          "name": "Gold Creek Foods",
-          "source_url": "https://www.bizjournals.com/atlanta/related_content.html?topic=Kubota+Industrial+Equipment+Corp"
+          "name": "Comprehensive Annual Financial Report",
+          "source_url": "https://en.wikipedia.org/wiki/Gainesville,_Georgia"
+        },
+        {
+          "name": "Energy",
+          "source_url": "https://georgia.org/why-georgia/regions-georgia/northeast-georgia"
+        },
+        {
+          "name": "Professional Company",
+          "source_url": "https://en.wikipedia.org/wiki/Gainesville,_Georgia"
         }
       ],
       "sources": [
         "https://en.wikipedia.org/wiki/Gainesville,_Georgia",
-        "https://www.bizjournals.com/atlanta/related_content.html?topic=Kubota+Industrial+Equipment+Corp",
         "https://www.ajc.com/top-workplaces/2025/08/15-newcomers-join-ranks-of-atlantas-top-large-workplaces",
-        "https://www.bizjournals.com/atlanta/news/2022/06/06/kubota-to-build-new-facility.html",
-        "https://www.bizjournals.com/atlanta/news/2023/09/05/cj-foodville-tous-les-jours-plant-food-processing.html",
         "https://en.wikipedia.org/wiki/Gainesville,_Florida",
-        "https://www.gainesvilletimes.com/news/business-archived/chamber-honors-3-companies-as-the-years-best-in-hall",
-        "https://www.gainesvilletimes.com/news/business-archived/hall-chamber-of-commerce-honors-2-local-businesses"
+        "https://www.bizjournals.com/atlanta/news/2022/06/06/kubota-to-build-new-facility.html",
+        "https://georgia.org/why-georgia/regions-georgia/northeast-georgia",
+        "https://www.selectgeorgia.com/discover-georgia/industries/fortune-500-list",
+        "https://georgia.org",
+        "https://georgia.org/business-support/small-business"
       ],
       "method": "Representative list auto-discovered via Tavily web search across chamber-of-commerce, development-authority and local-news sources. Not exhaustive; ordering approximates source frequency, not headcount."
     },
@@ -5850,7 +5850,7 @@
     "acs_housing_characteristics": "live",
     "acs_block_group_income": "live",
     "entrepreneurship": "live",
-    "major_employers": "stale",
+    "major_employers": "partial",
     "business_cycle_index": "live",
     "forecast_arima": "live",
     "vitality": "live",

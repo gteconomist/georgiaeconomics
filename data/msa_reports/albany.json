@@ -3,7 +3,7 @@
   "short_name": "Albany",
   "full_name": "Albany, GA",
   "population": 146000,
-  "as_of": "2026-07-31",
+  "as_of": "2026-08-01",
   "sections": {
     "ces_employment": {
       "series_id": "SMS13105000000000001",
@@ -4230,74 +4230,74 @@
       "source": "Census Business Dynamics Statistics (establishment entry rate, 2022); metro rate indexed to US=100"
     },
     "major_employers": {
-      "as_of": "2026-07-11",
+      "as_of": "2026-08-01",
       "employers": [
         {
-          "name": "Manufacturing",
-          "source_url": "https://en.wikipedia.org/wiki/Albany,_Georgia"
-        },
-        {
-          "name": "Aerospace",
-          "source_url": "https://georgia.org/newsroom/press-releases/customer-care-company-to-locate-training-facility-in-albany"
-        },
-        {
-          "name": "Marine Corps Logistics Base Albany",
-          "source_url": "https://en.wikipedia.org/wiki/Albany,_Georgia"
-        },
-        {
-          "name": "Energy",
-          "source_url": "https://www.bizjournals.com/atlanta/subscriber-only/2025/10/17/metro-atlantas-largest-employers.html"
-        },
-        {
-          "name": "Northeast Grocery Inc",
+          "name": "Albany Med Health System",
           "source_url": "https://www.bizjournals.com/albany/subscriber-only/2025/10/17/albanys-330-largest-employers.html"
-        },
-        {
-          "name": "Automotive",
-          "source_url": "https://georgia.org/newsroom/press-releases/customer-care-company-to-locate-training-facility-in-albany"
-        },
-        {
-          "name": "Food Processing",
-          "source_url": "https://georgia.org/newsroom/press-releases/customer-care-company-to-locate-training-facility-in-albany"
-        },
-        {
-          "name": "Health",
-          "source_url": "https://en.wikipedia.org/wiki/Albany,_Georgia"
         },
         {
           "name": "Albany State University",
           "source_url": null
         },
         {
-          "name": "Industries",
-          "source_url": "https://www.bizjournals.com/atlanta/subscriber-only/2025/10/17/metro-atlantas-largest-employers.html"
+          "name": "Company",
+          "source_url": "https://www.bizjournals.com/atlanta/subscriber-only/2022/07/15/atlantas-25-largest-employers.html"
         },
         {
-          "name": "Phoebe Putney Memorial Hospital",
-          "source_url": null
-        },
-        {
-          "name": "Atlanta's Company Lists",
-          "source_url": "https://www.bizjournals.com/atlanta/datacenter/lists"
-        },
-        {
-          "name": "Regeneron Pharmaceuticals Inc",
+          "name": "Northeast Grocery Inc",
           "source_url": "https://www.bizjournals.com/albany/subscriber-only/2025/10/17/albanys-330-largest-employers.html"
         },
         {
-          "name": "Albany School System",
+          "name": "Emory University",
+          "source_url": "https://www.bizjournals.com/atlanta/subscriber-only/2025/10/17/metro-atlantas-largest-employers.html"
+        },
+        {
+          "name": "Phoebe Putney Health System",
+          "source_url": "https://albanyherald.com/wp-content/uploads/2025/04/042925-ABH-A01-A12.pdf"
+        },
+        {
+          "name": "Aerospace",
+          "source_url": "https://www.selectgeorgia.com/discover-georgia/industries/fortune-500-list"
+        },
+        {
+          "name": "Delta Air Lines Inc",
+          "source_url": "https://www.bizjournals.com/atlanta/subscriber-only/2022/07/15/atlantas-25-largest-employers.html"
+        },
+        {
+          "name": "Dougherty County School System",
           "source_url": null
+        },
+        {
+          "name": "Emory Healthcare",
+          "source_url": "https://www.bizjournals.com/atlanta/subscriber-only/2025/10/17/metro-atlantas-largest-employers.html"
+        },
+        {
+          "name": "Energy",
+          "source_url": "https://www.bizjournals.com/atlanta/datacenter/lists/employers-and-whos-who"
+        },
+        {
+          "name": "Health Partners",
+          "source_url": null
+        },
+        {
+          "name": "J&J Medical Devices",
+          "source_url": null
+        },
+        {
+          "name": "Manufacturing Companies Ranked",
+          "source_url": "https://www.bizjournals.com/atlanta/datacenter/lists"
         }
       ],
       "sources": [
-        "https://en.wikipedia.org/wiki/Albany,_Georgia",
         "https://www.bizjournals.com/atlanta/subscriber-only/2025/10/17/metro-atlantas-largest-employers.html",
         "https://www.bizjournals.com/atlanta/subscriber-only/2022/07/15/atlantas-25-largest-employers.html",
         "https://www.bizjournals.com/atlanta/datacenter/lists",
-        "https://georgia.org/newsroom/press-releases/customer-care-company-to-locate-training-facility-in-albany",
-        "https://georgia.org/search?search=&page=99",
-        "https://georgia.org/sites/default/files/2021-04/logistics_education_report.pdf",
-        "https://georgia.org/newsroom/press-releases/georgia-department-of-economic-development-commissioner-leads-trade-missions-to-israel-and-dubai"
+        "https://albanyherald.com/wp-content/uploads/2025/04/042925-ABH-A01-A12.pdf",
+        "https://en.wikipedia.org/wiki/Albany,_Georgia",
+        "https://www.selectgeorgia.com/discover-georgia/industries/fortune-500-list",
+        "https://www.bizjournals.com/atlanta/datacenter/lists/employers-and-whos-who",
+        "https://www.bizjournals.com/atlanta/event/172489/2026/2026-best-places-to-work-healthiest-employers-awards"
       ],
       "method": "Representative list auto-discovered via Tavily web search across chamber-of-commerce, development-authority and local-news sources. Not exhaustive; ordering approximates source frequency, not headcount."
     },
@@ -4856,7 +4856,7 @@
     "acs_housing_characteristics": "live",
     "acs_block_group_income": "live",
     "entrepreneurship": "live",
-    "major_employers": "stale",
+    "major_employers": "partial",
     "business_cycle_index": "live",
     "forecast_arima": "live",
     "vitality": "live",

@@ -3,7 +3,7 @@
   "short_name": "Macon",
   "full_name": "Macon-Bibb County, GA",
   "population": 232000,
-  "as_of": "2026-07-31",
+  "as_of": "2026-08-01",
   "sections": {
     "ces_employment": {
       "series_id": "SMS13314200000000001",
@@ -5152,23 +5152,15 @@
       "source": "Census Business Dynamics Statistics (establishment entry rate, 2022); metro rate indexed to US=100"
     },
     "major_employers": {
-      "as_of": "2026-07-11",
+      "as_of": "2026-08-01",
       "employers": [
         {
+          "name": "Atrium Health Navicent",
+          "source_url": "https://en.wikipedia.org/wiki/Macon,_Georgia"
+        },
+        {
           "name": "Manufacturing",
-          "source_url": "https://georgia.org/press-releases/2026/georgia-based-unified-legacy-create-500-new-jobs-macon-bibb-county"
-        },
-        {
-          "name": "ArcelorMittal Building Solutions Brings North American",
-          "source_url": "https://georgia.org/press-releases/2026/georgia-based-unified-legacy-create-500-new-jobs-macon-bibb-county"
-        },
-        {
-          "name": "Authority Brands Relocates HQ",
-          "source_url": "https://georgia.org/press-releases/2026/georgia-based-unified-legacy-create-500-new-jobs-macon-bibb-county"
-        },
-        {
-          "name": "Cobb Co",
-          "source_url": "https://georgia.org/press-releases/2026/georgia-based-unified-legacy-create-500-new-jobs-macon-bibb-county"
+          "source_url": "https://georgia.org/press-releases/2026/arcelormittal-building-solutions-brings-north-american-hq-macon-bibb"
         },
         {
           "name": "Mercer University",
@@ -5176,31 +5168,15 @@
         },
         {
           "name": "Aerospace",
+          "source_url": "https://georgia.org/press-releases/2026/arcelormittal-building-solutions-brings-north-american-hq-macon-bibb"
+        },
+        {
+          "name": "ArcelorMittal Building Solutions",
+          "source_url": "https://georgia.org/press-releases/2026/arcelormittal-building-solutions-brings-north-american-hq-macon-bibb"
+        },
+        {
+          "name": "Automotive",
           "source_url": "https://georgia.org/press-releases/2026/georgia-based-unified-legacy-create-500-new-jobs-macon-bibb-county"
-        },
-        {
-          "name": "Atrium Health Navicent",
-          "source_url": "https://en.wikipedia.org/wiki/Macon,_Georgia"
-        },
-        {
-          "name": "Pratt Industries",
-          "source_url": "https://georgia.org/why-georgia/regions-georgia/middle-georgia"
-        },
-        {
-          "name": "Thomas Co",
-          "source_url": "https://georgia.org/press-releases/2026/georgia-based-unified-legacy-create-500-new-jobs-macon-bibb-county"
-        },
-        {
-          "name": "Crisp Co",
-          "source_url": "https://georgia.org/press-releases/2026/georgia-based-unified-legacy-create-500-new-jobs-macon-bibb-county"
-        },
-        {
-          "name": "Yancey Engineered Solutions Bringing",
-          "source_url": "https://georgia.org/press-releases/2026/georgia-based-unified-legacy-create-500-new-jobs-macon-bibb-county"
-        },
-        {
-          "name": "Navicent Health",
-          "source_url": null
         },
         {
           "name": "Norfolk Southern Railway",
@@ -5209,17 +5185,41 @@
         {
           "name": "Piedmont Healthcare",
           "source_url": null
+        },
+        {
+          "name": "Food Lion",
+          "source_url": "https://www.bizjournals.com/atlanta/news/2024/09/19/ykk-ap-america-atlanta-central-georgia.html"
+        },
+        {
+          "name": "Food Processing",
+          "source_url": "https://georgia.org/press-releases/2026/georgia-based-unified-legacy-create-500-new-jobs-macon-bibb-county"
+        },
+        {
+          "name": "GreenBox Systems",
+          "source_url": "https://georgia.org/press-releases/2025/economic-development-investments-break-new-record"
+        },
+        {
+          "name": "Group",
+          "source_url": "https://www.bizjournals.com/atlanta/news/2024/09/19/ykk-ap-america-atlanta-central-georgia.html"
+        },
+        {
+          "name": "Medical Center of Central Georgia",
+          "source_url": "https://en.wikipedia.org/wiki/Central_Georgia"
+        },
+        {
+          "name": "Authority Brands Relocates HQ",
+          "source_url": "https://georgia.org/press-releases/2026/arcelormittal-building-solutions-brings-north-american-hq-macon-bibb"
         }
       ],
       "sources": [
         "https://en.wikipedia.org/wiki/Macon,_Georgia",
-        "https://www.macon.com/living/article300278809.html",
         "https://en.wikipedia.org/wiki/Central_Georgia",
-        "https://georgia.org/press-releases/2026/georgia-based-unified-legacy-create-500-new-jobs-macon-bibb-county",
         "https://georgia.org/press-releases/2026/arcelormittal-building-solutions-brings-north-american-hq-macon-bibb",
-        "https://georgia.org/press-releases/2025/trinet-create-750-jobs-metro-atlanta",
-        "https://www.bizjournals.com/atlanta/news/2019/12/15/health-care-companies-expand-in-macon-market.html",
-        "https://www.bizjournals.com/atlanta/news/2019/12/14/macon-chamber-at-forefront-of-new-initiatives.html"
+        "https://georgia.org/press-releases/2026/georgia-based-unified-legacy-create-500-new-jobs-macon-bibb-county",
+        "https://georgia.org/why-georgia/regions-georgia/middle-georgia",
+        "https://georgia.org/press-releases/2025/economic-development-investments-break-new-record",
+        "https://www.selectgeorgia.com/discover-georgia/industries/fortune-500-list",
+        "https://www.bizjournals.com/atlanta/news/2024/09/19/ykk-ap-america-atlanta-central-georgia.html"
       ],
       "method": "Representative list auto-discovered via Tavily web search across chamber-of-commerce, development-authority and local-news sources. Not exhaustive; ordering approximates source frequency, not headcount."
     },
@@ -5778,7 +5778,7 @@
     "acs_housing_characteristics": "live",
     "acs_block_group_income": "live",
     "entrepreneurship": "live",
-    "major_employers": "stale",
+    "major_employers": "partial",
     "business_cycle_index": "live",
     "forecast_arima": "live",
     "vitality": "live",

@@ -3,7 +3,7 @@
   "short_name": "Rome",
   "full_name": "Rome, GA",
   "population": 99000,
-  "as_of": "2026-07-31",
+  "as_of": "2026-08-01",
   "sections": {
     "ces_employment": {
       "series_id": "SMS13406600000000001",
@@ -4488,22 +4488,22 @@
       "source": "Census Business Dynamics Statistics (establishment entry rate, 2022); metro rate indexed to US=100"
     },
     "major_employers": {
-      "as_of": "2026-07-11",
+      "as_of": "2026-08-01",
       "employers": [
+        {
+          "name": "Harbin Clinic",
+          "source_url": "https://en.wikipedia.org/wiki/Rome,_Georgia"
+        },
         {
           "name": "State Mutual Insurance Company",
           "source_url": "https://en.wikipedia.org/wiki/Rome,_Georgia"
         },
         {
-          "name": "Suzuki Manufacturing of America",
+          "name": "Floyd Medical Center",
           "source_url": "https://en.wikipedia.org/wiki/Rome,_Georgia"
         },
         {
-          "name": "Utilities",
-          "source_url": "https://en.wikipedia.org/wiki/List_of_largest_Italian_companies"
-        },
-        {
-          "name": "Floyd Medical Center",
+          "name": "Kerry Group",
           "source_url": "https://en.wikipedia.org/wiki/Rome,_Georgia"
         },
         {
@@ -4511,51 +4511,51 @@
           "source_url": "https://en.wikipedia.org/wiki/Atrium_Health_Floyd"
         },
         {
-          "name": "Kerry Group",
-          "source_url": "https://en.wikipedia.org/wiki/Rome,_Georgia"
-        },
-        {
           "name": "Redmond Regional Medical Center",
           "source_url": "https://en.wikipedia.org/wiki/Rome,_Georgia"
         },
         {
+          "name": "Suzuki Manufacturing of America",
+          "source_url": "https://en.wikipedia.org/wiki/Rome,_Georgia"
+        },
+        {
+          "name": "General Electric",
+          "source_url": "https://en.wikipedia.org/wiki/Rome,_Georgia"
+        },
+        {
+          "name": "Rome Plow Company",
+          "source_url": "https://en.wikipedia.org/wiki/Rome,_Georgia"
+        },
+        {
           "name": "Aerospace",
-          "source_url": "https://en.wikipedia.org/wiki/List_of_largest_Italian_companies"
+          "source_url": "https://georgia.org/staff/david-nuckolls"
         },
         {
-          "name": "Atlanta's The Maintenance Group",
-          "source_url": "https://www.bizjournals.com/atlanta/news/2021/02/11/ball-corp-rome-ga-made-aluminum-cups-launch.html"
-        },
-        {
-          "name": "Ball Corp. Rome",
-          "source_url": "https://www.bizjournals.com/atlanta/news/2021/02/11/ball-corp-rome-ga-made-aluminum-cups-launch.html"
-        },
-        {
-          "name": "Ball Corporation",
+          "name": "Floyd County School District",
           "source_url": null
         },
         {
-          "name": "Development Authority of Floyd County",
-          "source_url": "https://www.northwestgeorgianews.com/hometown_headlines/business/business-bob-blumberg-downtown-restaurant-owner-and-broad-street-advocate-leaving-rome-chamber-existing-industries/article_f244fc93-eb26-5edc-9498-50b4a2744d38.html"
-        },
-        {
-          "name": "Energy",
-          "source_url": "https://en.wikipedia.org/wiki/List_of_largest_Italian_companies"
+          "name": "Food Processing",
+          "source_url": "https://georgia.org/staff/david-nuckolls"
         },
         {
           "name": "Georgia Health Sciences University",
           "source_url": "https://en.wikipedia.org/wiki/Rome,_Georgia"
+        },
+        {
+          "name": "Greenfield LLC",
+          "source_url": "https://georgia.org/business-support/small-business"
         }
       ],
       "sources": [
         "https://en.wikipedia.org/wiki/Rome,_Georgia",
         "https://en.wikipedia.org/wiki/Atrium_Health_Floyd",
-        "https://www.selectgeorgia.com/blog/team-researchers-provide-clear-employment-overview-community-partners",
         "https://georgia.org/press-releases/2024/governor-and-first-lady-kemp-reinforce-economic-partnerships-italy",
         "https://www.bizjournals.com/atlanta/news/2025/10/30/nova-river-district-downtown-rome-cci-real-estate.html",
+        "https://www.bizjournals.com/atlanta/news/2025/09/26/georgia-largest-manufacturers-by-employment.html",
         "https://georgia.org/sites/default/files/2023-01/lowes_4.pdf",
-        "https://www.northwestgeorgianews.com/hometown_headlines/business/business-bob-blumberg-downtown-restaurant-owner-and-broad-street-advocate-leaving-rome-chamber-existing-industries/article_f244fc93-eb26-5edc-9498-50b4a2744d38.html",
-        "https://www.bizjournals.com/atlanta/news/2021/02/11/ball-corp-rome-ga-made-aluminum-cups-launch.html"
+        "https://georgia.org/staff/david-nuckolls",
+        "https://georgia.org/business-support/small-business"
       ],
       "method": "Representative list auto-discovered via Tavily web search across chamber-of-commerce, development-authority and local-news sources. Not exhaustive; ordering approximates source frequency, not headcount."
     },
@@ -4999,7 +4999,7 @@
     "acs_housing_characteristics": "live",
     "acs_block_group_income": "live",
     "entrepreneurship": "live",
-    "major_employers": "stale",
+    "major_employers": "partial",
     "business_cycle_index": "live",
     "forecast_arima": "failed",
     "vitality": "live",

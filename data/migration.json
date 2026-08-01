@@ -1,5 +1,5 @@
 {
- "fetched_at": "2026-07-31T11:42:22Z",
+ "fetched_at": "2026-08-01T10:51:56Z",
  "schema": "migration/v1",
  "metros": [
   {
@@ -1513,24 +1513,24 @@
  },
  "_meta": {
   "metro_rollup": {
-   "last_updated": "2026-07-31T11:42:22Z",
+   "last_updated": "2026-08-01T10:51:56Z",
    "n_metros": 14,
    "stale": false
   },
   "components": {
-   "last_updated": "2026-07-31T11:42:22Z",
+   "last_updated": "2026-08-01T10:51:56Z",
    "stale": false
   },
   "counties": {
-   "last_updated": "2026-07-31T11:42:22Z",
+   "last_updated": "2026-08-01T10:51:56Z",
    "stale": false
   },
   "non_metro": {
-   "last_updated": "2026-07-31T11:42:22Z",
+   "last_updated": "2026-08-01T10:51:56Z",
    "stale": false
   },
   "state_flows": {
-   "last_updated": "2026-07-31T11:42:24Z",
+   "last_updated": "2026-08-01T10:51:57Z",
    "stale": false
   }
  },

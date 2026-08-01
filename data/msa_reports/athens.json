@@ -3,7 +3,7 @@
   "short_name": "Athens",
   "full_name": "Athens-Clarke County, GA",
   "population": 217000,
-  "as_of": "2026-07-31",
+  "as_of": "2026-08-01",
   "sections": {
     "ces_employment": {
       "series_id": "SMS13120200000000001",
@@ -5161,74 +5161,74 @@
       "source": "Census Business Dynamics Statistics (establishment entry rate, 2022); metro rate indexed to US=100"
     },
     "major_employers": {
-      "as_of": "2026-07-11",
+      "as_of": "2026-08-01",
       "employers": [
-        {
-          "name": "Ohio University",
-          "source_url": "https://en.wikipedia.org/wiki/Athens,_Ohio"
-        },
-        {
-          "name": "Aerospace",
-          "source_url": "https://georgia.org/press-releases/2022/boehringer-ingelheim-expands-global-innovation-capabilities-invests-57-million"
-        },
         {
           "name": "Children's Healthcare of Atlanta",
           "source_url": "https://www.onlineathens.com/story/news/2026/03/04/georgias-best-employers-are-these-2-big-businesses-forbes-says/88982542007"
+        },
+        {
+          "name": "Aerospace",
+          "source_url": "https://georgia.org/search?search=jobs&page=137"
+        },
+        {
+          "name": "Clarke County School District",
+          "source_url": null
+        },
+        {
+          "name": "Piedmont Athens Regional Medical Center",
+          "source_url": null
         },
         {
           "name": "University of Georgia",
           "source_url": null
         },
         {
-          "name": "RWDC Industries",
-          "source_url": "https://en.wikipedia.org/wiki/Athens,_Georgia"
+          "name": "Athens Hardware Company",
+          "source_url": "https://en.wikipedia.org/wiki/Category:Companies_based_in_Athens,_Georgia"
         },
         {
-          "name": "Janssen Pharmaceuticals",
-          "source_url": "https://en.wikipedia.org/wiki/Athens,_Georgia"
+          "name": "Terrapin Beer Company",
+          "source_url": "https://en.wikipedia.org/wiki/Category:Companies_based_in_Athens,_Georgia"
+        },
+        {
+          "name": "Automotive",
+          "source_url": "https://georgia.org/search?search=jobs&page=137"
+        },
+        {
+          "name": "Energy",
+          "source_url": "https://georgia.org/search?search=jobs&page=137"
+        },
+        {
+          "name": "Food Processing",
+          "source_url": "https://georgia.org/search?search=jobs&page=137"
+        },
+        {
+          "name": "Logistics",
+          "source_url": "https://georgia.org/search?search=jobs&page=137"
         },
         {
           "name": "Manufacturing",
-          "source_url": "https://georgia.org/press-releases/2022/boehringer-ingelheim-expands-global-innovation-capabilities-invests-57-million"
+          "source_url": "https://georgia.org/search?search=jobs&page=137"
         },
         {
-          "name": "Peachtree Medical Billing",
-          "source_url": "https://en.wikipedia.org/wiki/Athens,_Georgia"
+          "name": "Southern Regional Medical Center",
+          "source_url": "https://www.ajc.com/ajcjobs"
         },
         {
-          "name": "ArcelorMittal Building Solutions Brings North American",
-          "source_url": "https://georgia.org/press-releases/2023/life-sciences-manufacturer-meissner-create-1700-jobs-athens-clarke-county"
-        },
-        {
-          "name": "Authority Brands Relocates HQ",
-          "source_url": "https://georgia.org/press-releases/2023/life-sciences-manufacturer-meissner-create-1700-jobs-athens-clarke-county"
-        },
-        {
-          "name": "Cobb Co",
-          "source_url": "https://georgia.org/press-releases/2023/life-sciences-manufacturer-meissner-create-1700-jobs-athens-clarke-county"
-        },
-        {
-          "name": "Georgia Power",
-          "source_url": "https://www.onlineathens.com/story/news/2026/03/04/georgias-best-employers-are-these-2-big-businesses-forbes-says/88982542007"
-        },
-        {
-          "name": "Meissner Corporation",
-          "source_url": "https://georgia.org/press-releases/2023/life-sciences-manufacturer-meissner-create-1700-jobs-athens-clarke-county"
-        },
-        {
-          "name": "Southern Company",
-          "source_url": "https://www.onlineathens.com/story/news/2026/03/04/georgias-best-employers-are-these-2-big-businesses-forbes-says/88982542007"
+          "name": "TeleNet Marketing Solutions",
+          "source_url": "https://www.onlineathens.com/story/news/state/2014/08/27/forecast-athens-area-jobs-grow-12-percent/15520915007"
         }
       ],
       "sources": [
         "https://www.onlineathens.com/story/news/2026/03/04/georgias-best-employers-are-these-2-big-businesses-forbes-says/88982542007",
         "https://en.wikipedia.org/wiki/Athens,_Georgia",
-        "https://www.augustachronicle.com/story/news/2025/06/04/fortune-500s-list-of-the-biggest-corporations-includes-17-in-georgia/84010835007",
         "https://en.wikipedia.org/wiki/Category:Companies_based_in_Athens,_Georgia",
-        "https://georgia.org/press-releases/2023/life-sciences-manufacturer-meissner-create-1700-jobs-athens-clarke-county",
+        "https://georgia.org/search?search=jobs&page=137",
+        "https://georgia.org/search?page=61",
         "https://www.ajc.com/top-workplaces/rounding-out-the-top-5-large-businesses/5FF7QFEAMRGF3PLDXYSC4NOFWQ",
-        "https://georgia.org/press-releases/2022/boehringer-ingelheim-expands-global-innovation-capabilities-invests-57-million",
-        "https://www.onlineathens.com/story/business/2014/07/26/terrell-athens-chamber-focusing-members-and-partnerships-2014/15524196007"
+        "https://www.augustachronicle.com/story/news/2025/08/26/forbes-ranked-americas-best-employers-by-state-what-is-georgias/85830225007",
+        "https://www.bizjournals.com/sitemap/atlanta/2016-07"
       ],
       "method": "Representative list auto-discovered via Tavily web search across chamber-of-commerce, development-authority and local-news sources. Not exhaustive; ordering approximates source frequency, not headcount."
     },
@@ -5787,7 +5787,7 @@
     "acs_housing_characteristics": "live",
     "acs_block_group_income": "live",
     "entrepreneurship": "live",
-    "major_employers": "stale",
+    "major_employers": "partial",
     "business_cycle_index": "live",
     "forecast_arima": "live",
     "vitality": "live",
