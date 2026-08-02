@@ -3,7 +3,7 @@
   "short_name": "Augusta",
   "full_name": "Augusta-Richmond County, GA-SC",
   "population": 611000,
-  "as_of": "2026-08-01",
+  "as_of": "2026-08-02",
   "sections": {
     "ces_employment": {
       "series_id": "SMS13122600000000001",
@@ -5133,15 +5133,11 @@
       "source": "Census Business Dynamics Statistics (establishment entry rate, 2022); metro rate indexed to US=100"
     },
     "major_employers": {
-      "as_of": "2026-08-01",
+      "as_of": "2026-08-02",
       "employers": [
         {
           "name": "Augusta University",
           "source_url": "https://en.wikipedia.org/wiki/Augusta,_Georgia"
-        },
-        {
-          "name": "GF Casting Solutions",
-          "source_url": "https://www.augustachronicle.com/story/business/economy/2025/01/08/augustas-economic-development-in-2024-likely-will-set-up-strong-2025/77519554007"
         },
         {
           "name": "Medical District",
@@ -5152,10 +5148,6 @@
           "source_url": "https://en.wikipedia.org/wiki/Augusta,_Georgia"
         },
         {
-          "name": "Encompass Health",
-          "source_url": "https://en.wikipedia.org/wiki/Augusta_metropolitan_area"
-        },
-        {
           "name": "Department of Energy",
           "source_url": "https://en.wikipedia.org/wiki/Augusta,_Georgia"
         },
@@ -5164,8 +5156,8 @@
           "source_url": "https://en.wikipedia.org/wiki/Augusta,_Georgia"
         },
         {
-          "name": "Augusta Technical College",
-          "source_url": "https://en.wikipedia.org/wiki/Augusta_metropolitan_area"
+          "name": "Cardinal Health",
+          "source_url": "https://en.wikipedia.org/wiki/Augusta,_Georgia"
         },
         {
           "name": "Charlie Norwood VA Medical Center",
@@ -5176,31 +5168,39 @@
           "source_url": "https://en.wikipedia.org/wiki/Augusta,_Georgia"
         },
         {
-          "name": "East Georgia State College",
-          "source_url": "https://en.wikipedia.org/wiki/Augusta_metropolitan_area"
+          "name": "FPL Food",
+          "source_url": "https://en.wikipedia.org/wiki/Augusta,_Georgia"
         },
         {
-          "name": "Georgia Military College",
-          "source_url": "https://en.wikipedia.org/wiki/Augusta_metropolitan_area"
+          "name": "International Paper Company",
+          "source_url": "https://www.augustaga.gov/DocumentView.asp?DID=335"
         },
         {
-          "name": "Inpatient Rehabilitation Hospital Augusta",
-          "source_url": "https://en.wikipedia.org/wiki/Augusta_metropolitan_area"
+          "name": "Is Your Company",
+          "source_url": "https://www.augustametrochamber.com/manufacturing"
         },
         {
-          "name": "Paine College",
-          "source_url": "https://en.wikipedia.org/wiki/Augusta_metropolitan_area"
+          "name": "MCG Health",
+          "source_url": "https://www.augustaga.gov/DocumentView.asp?DID=335"
+        },
+        {
+          "name": "Manufacturing",
+          "source_url": "https://www.augustametrochamber.com/manufacturing"
+        },
+        {
+          "name": "Medical College of Georgia",
+          "source_url": "https://www.augustaga.gov/DocumentView.asp?DID=335"
         }
       ],
       "sources": [
         "https://en.wikipedia.org/wiki/Augusta,_Georgia",
+        "https://www.augustachronicle.com/story/business/2020/01/04/scuttlebiz-metro-area-economic-growth-outpaced-national-average-in-2018/1954353007",
         "https://en.wikipedia.org/wiki/Augusta_metropolitan_area",
-        "https://en.wikipedia.org/wiki/East_Georgia_(region)",
         "https://www.augustachronicle.com/story/business/economy/2025/01/08/augustas-economic-development-in-2024-likely-will-set-up-strong-2025/77519554007",
-        "https://www.selectgeorgia.com/blog/locations-and-expansions/georgia-q2-2024",
+        "https://www.augustachronicle.com/story/news/2025/08/26/forbes-ranked-americas-best-employers-by-state-what-is-georgias/85830225007",
         "https://www.augustachronicle.com/story/business/2024/08/27/georgia-top-companies-forbes-best-employers-by-state-list/74968857007",
-        "https://georgia.org/sites/default/files/2020-09/fy20_q4_board_book.pdf",
-        "https://www.augustachronicle.com/story/news/2018/06/07/chamber-augusta-magazine-name-top-10-young-professionals/12034297007"
+        "https://www.augustametrochamber.com/manufacturing",
+        "https://www.augustaga.gov/DocumentView.asp?DID=335"
       ],
       "method": "Representative list auto-discovered via Tavily web search across chamber-of-commerce, development-authority and local-news sources. Not exhaustive; ordering approximates source frequency, not headcount."
     },

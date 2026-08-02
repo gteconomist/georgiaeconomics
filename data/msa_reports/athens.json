@@ -3,7 +3,7 @@
   "short_name": "Athens",
   "full_name": "Athens-Clarke County, GA",
   "population": 217000,
-  "as_of": "2026-08-01",
+  "as_of": "2026-08-02",
   "sections": {
     "ces_employment": {
       "series_id": "SMS13120200000000001",
@@ -5161,74 +5161,74 @@
       "source": "Census Business Dynamics Statistics (establishment entry rate, 2022); metro rate indexed to US=100"
     },
     "major_employers": {
-      "as_of": "2026-08-01",
+      "as_of": "2026-08-02",
       "employers": [
+        {
+          "name": "University of Georgia",
+          "source_url": "https://www.onlineathens.com/story/business/2012/01/29/athens-companies-among-fastest-growing-uga-list/15621643007"
+        },
         {
           "name": "Children's Healthcare of Atlanta",
           "source_url": "https://www.onlineathens.com/story/news/2026/03/04/georgias-best-employers-are-these-2-big-businesses-forbes-says/88982542007"
-        },
-        {
-          "name": "Aerospace",
-          "source_url": "https://georgia.org/search?search=jobs&page=137"
         },
         {
           "name": "Clarke County School District",
           "source_url": null
         },
         {
-          "name": "Piedmont Athens Regional Medical Center",
-          "source_url": null
-        },
-        {
-          "name": "University of Georgia",
-          "source_url": null
-        },
-        {
-          "name": "Athens Hardware Company",
-          "source_url": "https://en.wikipedia.org/wiki/Category:Companies_based_in_Athens,_Georgia"
+          "name": "TeleNet Marketing Solutions",
+          "source_url": "https://www.onlineathens.com/story/news/state/2014/08/27/forecast-athens-area-jobs-grow-12-percent/15520915007"
         },
         {
           "name": "Terrapin Beer Company",
           "source_url": "https://en.wikipedia.org/wiki/Category:Companies_based_in_Athens,_Georgia"
         },
         {
-          "name": "Automotive",
-          "source_url": "https://georgia.org/search?search=jobs&page=137"
+          "name": "Athens Orthopedic Clinic",
+          "source_url": "https://www.onlineathens.com/business"
         },
         {
-          "name": "Energy",
-          "source_url": "https://georgia.org/search?search=jobs&page=137"
+          "name": "Athens Regional Medical Center",
+          "source_url": null
         },
         {
-          "name": "Food Processing",
-          "source_url": "https://georgia.org/search?search=jobs&page=137"
+          "name": "Athens Technical College",
+          "source_url": null
         },
         {
-          "name": "Logistics",
-          "source_url": "https://georgia.org/search?search=jobs&page=137"
-        },
-        {
-          "name": "Manufacturing",
-          "source_url": "https://georgia.org/search?search=jobs&page=137"
-        },
-        {
-          "name": "Southern Regional Medical Center",
-          "source_url": "https://www.ajc.com/ajcjobs"
-        },
-        {
-          "name": "TeleNet Marketing Solutions",
+          "name": "Georgia State University's Economic Forecasting Center's",
           "source_url": "https://www.onlineathens.com/story/news/state/2014/08/27/forecast-athens-area-jobs-grow-12-percent/15520915007"
+        },
+        {
+          "name": "New Christian Brothers Automotive",
+          "source_url": "https://www.onlineathens.com/business"
+        },
+        {
+          "name": "Piedmont Athens Regional Hospital",
+          "source_url": null
+        },
+        {
+          "name": "Piedmont Healthcare",
+          "source_url": null
+        },
+        {
+          "name": "Puritan Mill",
+          "source_url": "https://www.onlineathens.com/business"
+        },
+        {
+          "name": "UGA Port of Savannah",
+          "source_url": "https://www.onlineathens.com/business"
         }
       ],
       "sources": [
-        "https://www.onlineathens.com/story/news/2026/03/04/georgias-best-employers-are-these-2-big-businesses-forbes-says/88982542007",
+        "https://www.onlineathens.com/story/news/state/2014/08/27/forecast-athens-area-jobs-grow-12-percent/15520915007",
+        "https://www.onlineathens.com/business",
         "https://en.wikipedia.org/wiki/Athens,_Georgia",
-        "https://en.wikipedia.org/wiki/Category:Companies_based_in_Athens,_Georgia",
-        "https://georgia.org/search?search=jobs&page=137",
-        "https://georgia.org/search?page=61",
+        "https://www.onlineathens.com/story/news/2026/03/04/georgias-best-employers-are-these-2-big-businesses-forbes-says/88982542007",
+        "https://www.onlineathens.com/story/opinion/2013/04/12/editors-desk-new-focus-economic-development-athens/15575766007",
         "https://www.ajc.com/top-workplaces/rounding-out-the-top-5-large-businesses/5FF7QFEAMRGF3PLDXYSC4NOFWQ",
-        "https://www.augustachronicle.com/story/news/2025/08/26/forbes-ranked-americas-best-employers-by-state-what-is-georgias/85830225007",
-        "https://www.bizjournals.com/sitemap/atlanta/2016-07"
+        "https://www.onlineathens.com/story/business/2012/01/29/athens-companies-among-fastest-growing-uga-list/15621643007",
+        "https://www.augustachronicle.com/story/news/2025/06/04/fortune-500s-list-of-the-biggest-corporations-includes-17-in-georgia/84010835007"
       ],
       "method": "Representative list auto-discovered via Tavily web search across chamber-of-commerce, development-authority and local-news sources. Not exhaustive; ordering approximates source frequency, not headcount."
     },

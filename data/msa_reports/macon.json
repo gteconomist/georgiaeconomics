@@ -3,7 +3,7 @@
   "short_name": "Macon",
   "full_name": "Macon-Bibb County, GA",
   "population": 232000,
-  "as_of": "2026-08-01",
+  "as_of": "2026-08-02",
   "sections": {
     "ces_employment": {
       "series_id": "SMS13314200000000001",
@@ -5016,14 +5016,12 @@
       "source": "Census ACS 5-year B25064 (median gross rent) / B19013 (median HH income), MSA vs US",
       "years": [
         2020,
-        2021,
         2022,
         2023,
         2024
       ],
       "affordability_index": [
         95.2,
-        97.3,
         97.6,
         99.5,
         99.8
@@ -5031,12 +5029,10 @@
       "msa_rent_burden_pct": [
         21.2,
         20.8,
-        20.8,
         20.7,
         21.0
       ],
       "us_rent_burden_pct": [
-        20.2,
         20.2,
         20.2,
         20.6,
@@ -5044,7 +5040,6 @@
       ],
       "msa_median_income": [
         46083,
-        49619,
         54700,
         58127,
         59526
@@ -5152,31 +5147,35 @@
       "source": "Census Business Dynamics Statistics (establishment entry rate, 2022); metro rate indexed to US=100"
     },
     "major_employers": {
-      "as_of": "2026-08-01",
+      "as_of": "2026-08-02",
       "employers": [
         {
-          "name": "Atrium Health Navicent",
-          "source_url": "https://en.wikipedia.org/wiki/Macon,_Georgia"
+          "name": "Aerospace",
+          "source_url": "https://georgia.org/press-releases/2025/economic-development-investments-break-new-record"
         },
         {
           "name": "Manufacturing",
-          "source_url": "https://georgia.org/press-releases/2026/arcelormittal-building-solutions-brings-north-american-hq-macon-bibb"
+          "source_url": "https://georgia.org/search?page=126"
         },
         {
           "name": "Mercer University",
           "source_url": "https://en.wikipedia.org/wiki/Macon,_Georgia"
         },
         {
-          "name": "Aerospace",
-          "source_url": "https://georgia.org/press-releases/2026/arcelormittal-building-solutions-brings-north-american-hq-macon-bibb"
-        },
-        {
-          "name": "ArcelorMittal Building Solutions",
-          "source_url": "https://georgia.org/press-releases/2026/arcelormittal-building-solutions-brings-north-american-hq-macon-bibb"
+          "name": "Atrium Health Navicent",
+          "source_url": "https://en.wikipedia.org/wiki/Macon,_Georgia"
         },
         {
           "name": "Automotive",
-          "source_url": "https://georgia.org/press-releases/2026/georgia-based-unified-legacy-create-500-new-jobs-macon-bibb-county"
+          "source_url": "https://georgia.org/search?page=126"
+        },
+        {
+          "name": "Food Processing",
+          "source_url": "https://georgia.org/search?page=126"
+        },
+        {
+          "name": "Brazil's Group Guidoni",
+          "source_url": "https://www.bizjournals.com/atlanta/news/2019/12/13/macon-bibb-county-industrial-sector-soars.html"
         },
         {
           "name": "Norfolk Southern Railway",
@@ -5187,39 +5186,35 @@
           "source_url": null
         },
         {
-          "name": "Food Lion",
-          "source_url": "https://www.bizjournals.com/atlanta/news/2024/09/19/ykk-ap-america-atlanta-central-georgia.html"
+          "name": "Pratt Industries",
+          "source_url": "https://georgia.org/why-georgia/regions-georgia/middle-georgia"
         },
         {
-          "name": "Food Processing",
-          "source_url": "https://georgia.org/press-releases/2026/georgia-based-unified-legacy-create-500-new-jobs-macon-bibb-county"
+          "name": "Sandler Corp. Nonwovens",
+          "source_url": "https://georgia.org/why-georgia/regions-georgia/middle-georgia"
         },
         {
-          "name": "GreenBox Systems",
+          "name": "ArcelorMittal Building Solutions Brings North American",
           "source_url": "https://georgia.org/press-releases/2025/economic-development-investments-break-new-record"
         },
         {
-          "name": "Group",
-          "source_url": "https://www.bizjournals.com/atlanta/news/2024/09/19/ykk-ap-america-atlanta-central-georgia.html"
-        },
-        {
-          "name": "Medical Center of Central Georgia",
-          "source_url": "https://en.wikipedia.org/wiki/Central_Georgia"
-        },
-        {
           "name": "Authority Brands Relocates HQ",
-          "source_url": "https://georgia.org/press-releases/2026/arcelormittal-building-solutions-brings-north-american-hq-macon-bibb"
+          "source_url": "https://georgia.org/press-releases/2025/economic-development-investments-break-new-record"
+        },
+        {
+          "name": "Cobb Co",
+          "source_url": "https://georgia.org/press-releases/2025/economic-development-investments-break-new-record"
         }
       ],
       "sources": [
         "https://en.wikipedia.org/wiki/Macon,_Georgia",
         "https://en.wikipedia.org/wiki/Central_Georgia",
-        "https://georgia.org/press-releases/2026/arcelormittal-building-solutions-brings-north-american-hq-macon-bibb",
-        "https://georgia.org/press-releases/2026/georgia-based-unified-legacy-create-500-new-jobs-macon-bibb-county",
-        "https://georgia.org/why-georgia/regions-georgia/middle-georgia",
+        "https://www.selectgeorgia.com/about-us/our-team/regional-development/mia-pressley-ms",
         "https://georgia.org/press-releases/2025/economic-development-investments-break-new-record",
+        "https://georgia.org/search?page=126",
         "https://www.selectgeorgia.com/discover-georgia/industries/fortune-500-list",
-        "https://www.bizjournals.com/atlanta/news/2024/09/19/ykk-ap-america-atlanta-central-georgia.html"
+        "https://www.selectgeorgia.com/about-us/our-team/regional-development/ryan-waldrep-central",
+        "https://www.bizjournals.com/atlanta/news/2019/12/13/macon-bibb-county-industrial-sector-soars.html"
       ],
       "method": "Representative list auto-discovered via Tavily web search across chamber-of-commerce, development-authority and local-news sources. Not exhaustive; ordering approximates source frequency, not headcount."
     },

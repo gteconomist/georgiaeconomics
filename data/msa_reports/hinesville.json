@@ -3,7 +3,7 @@
   "short_name": "Hinesville",
   "full_name": "Hinesville, GA",
   "population": 78000,
-  "as_of": "2026-08-01",
+  "as_of": "2026-08-02",
   "sections": {
     "ces_employment": {
       "series_id": "SMS13259800000000001",
@@ -4029,72 +4029,71 @@
       "source": "Census Business Dynamics Statistics (establishment entry rate, 2022); metro rate indexed to US=100"
     },
     "major_employers": {
-      "as_of": "2026-08-01",
+      "as_of": "2026-08-02",
       "employers": [
         {
-          "name": "Aerospace",
-          "source_url": "https://georgia.org/why-georgia/regions-georgia"
-        },
-        {
-          "name": "Automotive",
-          "source_url": "https://georgia.org/why-georgia/regions-georgia"
-        },
-        {
-          "name": "Energy",
-          "source_url": "https://georgia.org/why-georgia/regions-georgia"
-        },
-        {
-          "name": "Food Processing",
-          "source_url": "https://georgia.org/why-georgia/regions-georgia"
+          "name": "Company Website",
+          "source_url": "https://comegrow.global/major-industries"
         },
         {
           "name": "Liberty County School System",
           "source_url": null
         },
         {
-          "name": "Augusta Technical College",
-          "source_url": "https://georgia.org/why-georgia/regions-georgia"
+          "name": "Builders FirstSource Truss Plant",
+          "source_url": "https://comegrow.global/major-industries"
         },
         {
-          "name": "Georgia Military College",
-          "source_url": "https://georgia.org/why-georgia/regions-georgia"
+          "name": "Hanwha Aerospace",
+          "source_url": "https://comegrow.global/major-industries"
+        },
+        {
+          "name": "Coastal Cooling LLC",
+          "source_url": "https://business.libertycounty.org/list/searchalpha/c"
+        },
+        {
+          "name": "Coastal Electric Cooperative",
+          "source_url": "https://business.libertycounty.org/list/searchalpha/c"
+        },
+        {
+          "name": "Coastal Regional Medical Center",
+          "source_url": null
+        },
+        {
+          "name": "Commerce Street Holdings",
+          "source_url": "https://business.libertycounty.org/list/searchalpha/c"
+        },
+        {
+          "name": "Country Financial",
+          "source_url": "https://business.libertycounty.org/list/searchalpha/c"
+        },
+        {
+          "name": "Gulfstream Aerospace",
+          "source_url": "https://www.savannahnow.com/story/news/2007/04/20/keys-future-0/13805381007"
         },
         {
           "name": "Hyundai Motor Group Metaplant America",
           "source_url": "https://georgia.org/hyundai-motor-group-metaplant-america"
         },
         {
-          "name": "Liberty County School District",
-          "source_url": "https://en.wikipedia.org/wiki/Hinesville,_Georgia"
-        },
-        {
-          "name": "Manufacturing",
-          "source_url": "https://georgia.org/why-georgia/regions-georgia"
-        },
-        {
-          "name": "Middle Georgia State University",
-          "source_url": "https://georgia.org/why-georgia/regions-georgia"
-        },
-        {
-          "name": "Hinesville Hospital",
-          "source_url": null
-        },
-        {
-          "name": "Liberty County High School",
-          "source_url": "https://en.wikipedia.org/wiki/Hinesville,_Georgia"
-        },
-        {
           "name": "Liberty Regional Medical Center",
           "source_url": null
+        },
+        {
+          "name": "Logistics",
+          "source_url": "https://comegrow.global/major-industries"
+        },
+        {
+          "name": "Major Industries",
+          "source_url": "https://comegrow.global/major-industries"
         }
       ],
       "sources": [
+        "https://business.libertycounty.org/list/searchalpha/c",
+        "https://comegrow.global/major-industries",
+        "https://www.savannahnow.com/story/news/2007/04/20/keys-future-0/13805381007",
         "https://georgia.org/why-georgia/regions-georgia",
-        "https://en.wikipedia.org/wiki/Metropolitan_statistical_area",
-        "https://georgia.org/sites/default/files/2020-08/georgia_safety_promise-8-27.pdf",
-        "https://en.wikipedia.org/wiki/Hinesville,_Georgia",
         "https://georgia.org/hyundai-motor-group-metaplant-america",
-        "https://georgia.org",
         "https://www.savannahnow.com/story/news/2012/02/04/exchange-brief/13663454007"
       ],
       "method": "Representative list auto-discovered via Tavily web search across chamber-of-commerce, development-authority and local-news sources. Not exhaustive; ordering approximates source frequency, not headcount."

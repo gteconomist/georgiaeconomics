@@ -3,7 +3,7 @@
   "short_name": "Brunswick",
   "full_name": "Brunswick, GA",
   "population": 120000,
-  "as_of": "2026-08-01",
+  "as_of": "2026-08-02",
   "sections": {
     "ces_employment": {
       "series_id": "SMS13152600000000001",
@@ -4184,7 +4184,7 @@
       "source": "Census Business Dynamics Statistics (establishment entry rate, 2022); metro rate indexed to US=100"
     },
     "major_employers": {
-      "as_of": "2026-08-01",
+      "as_of": "2026-08-02",
       "employers": [
         {
           "name": "Gulfstream Aerospace",
@@ -4199,6 +4199,10 @@
           "source_url": "https://www.selectgeorgia.com/blog/wtc-sav-prosperity"
         },
         {
+          "name": "Sea Island Company",
+          "source_url": "https://en.wikipedia.org/wiki/Golden_Isles_of_Georgia"
+        },
+        {
           "name": "The Port of Brunswick",
           "source_url": "https://en.wikipedia.org/wiki/Brunswick,_Georgia"
         },
@@ -4207,8 +4211,8 @@
           "source_url": "https://www.selectgeorgia.com/blog/wtc-sav-prosperity"
         },
         {
-          "name": "Advanced Manufacturing",
-          "source_url": "https://properties.selectgeorgia.com/target_industries_app/dist/index.html"
+          "name": "Rich Products Corporation",
+          "source_url": "https://goldenislesdev.com/top-employers"
         },
         {
           "name": "College of Coastal Georgia",
@@ -4219,27 +4223,23 @@
           "source_url": "https://en.wikipedia.org/wiki/Golden_Isles_of_Georgia"
         },
         {
+          "name": "Glynn County School System",
+          "source_url": "https://goldenislesdev.com/top-employers"
+        },
+        {
+          "name": "All Industries",
+          "source_url": "https://goldenislesdev.com/top-employers"
+        },
+        {
           "name": "Archer Aviation",
           "source_url": "https://georgia.org/blogs/global-local-industries-put-georgia-map"
         },
         {
-          "name": "Automotive",
-          "source_url": "https://georgia.org"
-        },
-        {
-          "name": "Company",
-          "source_url": "https://properties.selectgeorgia.com/target_industries_app/dist/index.html"
-        },
-        {
-          "name": "Energy",
-          "source_url": "https://georgia.org"
-        },
-        {
-          "name": "Food Processing",
-          "source_url": "https://georgia.org"
-        },
-        {
           "name": "Healthcare",
+          "source_url": "https://en.wikipedia.org/wiki/Golden_Isles_of_Georgia"
+        },
+        {
+          "name": "Major Industries",
           "source_url": "https://en.wikipedia.org/wiki/Golden_Isles_of_Georgia"
         }
       ],
@@ -4247,11 +4247,11 @@
         "https://en.wikipedia.org/wiki/Brunswick,_Georgia",
         "https://www.selectgeorgia.com/blog/wtc-sav-prosperity",
         "https://en.wikipedia.org/wiki/Golden_Isles_of_Georgia",
-        "https://en.wikipedia.org/wiki/History_of_Brunswick,_Georgia",
+        "https://en.wikipedia.org/wiki/Brunswick_Corporation",
         "https://georgia.org/blogs/global-local-industries-put-georgia-map",
+        "https://georgia.org/sites/default/files/2020-05/georgia_taiwan_connection_2020.pdf",
         "https://georgia.org/sites/default/files/2020-08/georgia_safety_promise-8-27.pdf",
-        "https://georgia.org",
-        "https://properties.selectgeorgia.com/target_industries_app/dist/index.html"
+        "https://goldenislesdev.com/top-employers"
       ],
       "method": "Representative list auto-discovered via Tavily web search across chamber-of-commerce, development-authority and local-news sources. Not exhaustive; ordering approximates source frequency, not headcount."
     },
