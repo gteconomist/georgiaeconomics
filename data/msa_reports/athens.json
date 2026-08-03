@@ -3,7 +3,7 @@
   "short_name": "Athens",
   "full_name": "Athens-Clarke County, GA",
   "population": 217000,
-  "as_of": "2026-08-02",
+  "as_of": "2026-08-03",
   "sections": {
     "ces_employment": {
       "series_id": "SMS13120200000000001",
@@ -5161,74 +5161,74 @@
       "source": "Census Business Dynamics Statistics (establishment entry rate, 2022); metro rate indexed to US=100"
     },
     "major_employers": {
-      "as_of": "2026-08-02",
+      "as_of": "2026-08-03",
       "employers": [
         {
+          "name": "Manufacturing",
+          "source_url": "https://georgia.org/why-georgia/regions-georgia/east-central-georgia"
+        },
+        {
           "name": "University of Georgia",
-          "source_url": "https://www.onlineathens.com/story/business/2012/01/29/athens-companies-among-fastest-growing-uga-list/15621643007"
+          "source_url": "https://www.onlineathens.com/story/business/2023/08/09/the-georgia-chamber-of-commerce-hold-congressional-luncheon-in-athens/70553954007"
         },
         {
-          "name": "Children's Healthcare of Atlanta",
-          "source_url": "https://www.onlineathens.com/story/news/2026/03/04/georgias-best-employers-are-these-2-big-businesses-forbes-says/88982542007"
+          "name": "Body Co",
+          "source_url": "https://georgia.org/why-georgia/regions-georgia/east-central-georgia"
         },
         {
-          "name": "Clarke County School District",
+          "name": "Health Care",
+          "source_url": "https://georgia.org/why-georgia/regions-georgia/east-central-georgia"
+        },
+        {
+          "name": "Piedmont Athens Regional Medical Center",
           "source_url": null
+        },
+        {
+          "name": "Athens Regional Health System",
+          "source_url": "https://www.ajc.com/business/hospital-giants-reach-beyond-metro-area/vQS8gUaJsJVpj11tgaX5xJ"
+        },
+        {
+          "name": "Piedmont Healthcare",
+          "source_url": "https://www.ajc.com/business/hospital-giants-reach-beyond-metro-area/vQS8gUaJsJVpj11tgaX5xJ"
         },
         {
           "name": "TeleNet Marketing Solutions",
           "source_url": "https://www.onlineathens.com/story/news/state/2014/08/27/forecast-athens-area-jobs-grow-12-percent/15520915007"
         },
         {
-          "name": "Terrapin Beer Company",
-          "source_url": "https://en.wikipedia.org/wiki/Category:Companies_based_in_Athens,_Georgia"
-        },
-        {
-          "name": "Athens Orthopedic Clinic",
-          "source_url": "https://www.onlineathens.com/business"
-        },
-        {
-          "name": "Athens Regional Medical Center",
-          "source_url": null
+          "name": "Uber Technologies",
+          "source_url": "https://www.onlineathens.com/story/business/2015/11/14/gdol-host-seasonal-recruitment-athens-area-employers/15471064007"
         },
         {
           "name": "Athens Technical College",
           "source_url": null
         },
         {
-          "name": "Georgia State University's Economic Forecasting Center's",
-          "source_url": "https://www.onlineathens.com/story/news/state/2014/08/27/forecast-athens-area-jobs-grow-12-percent/15520915007"
+          "name": "Automotive",
+          "source_url": "https://georgia.org/why-georgia/regions-georgia/east-central-georgia"
         },
         {
-          "name": "New Christian Brothers Automotive",
-          "source_url": "https://www.onlineathens.com/business"
+          "name": "Barberitos Creature Comforts Brewing Co. Fire",
+          "source_url": "https://en.wikipedia.org/wiki/Athens,_Georgia"
         },
         {
-          "name": "Piedmont Athens Regional Hospital",
+          "name": "Clarke County School District",
           "source_url": null
         },
         {
-          "name": "Piedmont Healthcare",
+          "name": "Clarke County School System",
           "source_url": null
-        },
-        {
-          "name": "Puritan Mill",
-          "source_url": "https://www.onlineathens.com/business"
-        },
-        {
-          "name": "UGA Port of Savannah",
-          "source_url": "https://www.onlineathens.com/business"
         }
       ],
       "sources": [
-        "https://www.onlineathens.com/story/news/state/2014/08/27/forecast-athens-area-jobs-grow-12-percent/15520915007",
+        "https://www.onlineathens.com/story/business/2015/11/14/gdol-host-seasonal-recruitment-athens-area-employers/15471064007",
+        "https://www.ajc.com/business/hospital-giants-reach-beyond-metro-area/vQS8gUaJsJVpj11tgaX5xJ",
         "https://www.onlineathens.com/business",
+        "https://georgia.org/why-georgia/regions-georgia/east-central-georgia",
         "https://en.wikipedia.org/wiki/Athens,_Georgia",
-        "https://www.onlineathens.com/story/news/2026/03/04/georgias-best-employers-are-these-2-big-businesses-forbes-says/88982542007",
-        "https://www.onlineathens.com/story/opinion/2013/04/12/editors-desk-new-focus-economic-development-athens/15575766007",
         "https://www.ajc.com/top-workplaces/rounding-out-the-top-5-large-businesses/5FF7QFEAMRGF3PLDXYSC4NOFWQ",
-        "https://www.onlineathens.com/story/business/2012/01/29/athens-companies-among-fastest-growing-uga-list/15621643007",
-        "https://www.augustachronicle.com/story/news/2025/06/04/fortune-500s-list-of-the-biggest-corporations-includes-17-in-georgia/84010835007"
+        "https://www.augustachronicle.com/story/news/2025/08/26/forbes-ranked-americas-best-employers-by-state-what-is-georgias/85830225007",
+        "https://www.onlineathens.com/story/business/2023/08/09/the-georgia-chamber-of-commerce-hold-congressional-luncheon-in-athens/70553954007"
       ],
       "method": "Representative list auto-discovered via Tavily web search across chamber-of-commerce, development-authority and local-news sources. Not exhaustive; ordering approximates source frequency, not headcount."
     },

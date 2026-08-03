@@ -3,7 +3,7 @@
   "short_name": "Rome",
   "full_name": "Rome, GA",
   "population": 99000,
-  "as_of": "2026-08-02",
+  "as_of": "2026-08-03",
   "sections": {
     "ces_employment": {
       "series_id": "SMS13406600000000001",
@@ -4488,22 +4488,10 @@
       "source": "Census Business Dynamics Statistics (establishment entry rate, 2022); metro rate indexed to US=100"
     },
     "major_employers": {
-      "as_of": "2026-08-02",
+      "as_of": "2026-08-03",
       "employers": [
         {
-          "name": "Aerospace",
-          "source_url": "https://georgia.org/staff/david-nuckolls"
-        },
-        {
-          "name": "Floyd Medical Center",
-          "source_url": "https://en.wikipedia.org/wiki/Atrium_Health_Floyd"
-        },
-        {
-          "name": "Harbin Clinic",
-          "source_url": "https://en.wikipedia.org/wiki/Rome,_Georgia"
-        },
-        {
-          "name": "Redmond Regional Medical Center",
+          "name": "State Mutual Insurance Company",
           "source_url": "https://en.wikipedia.org/wiki/Rome,_Georgia"
         },
         {
@@ -4515,47 +4503,59 @@
           "source_url": "https://en.wikipedia.org/wiki/List_of_largest_Italian_companies"
         },
         {
-          "name": "Energy",
-          "source_url": "https://georgia.org/staff/david-nuckolls"
-        },
-        {
-          "name": "Atrium Health Floyd",
-          "source_url": "https://en.wikipedia.org/wiki/Atrium_Health_Floyd"
+          "name": "Floyd Medical Center",
+          "source_url": "https://en.wikipedia.org/wiki/Rome,_Georgia"
         },
         {
           "name": "Kerry Group",
           "source_url": "https://en.wikipedia.org/wiki/Rome,_Georgia"
         },
         {
-          "name": "Logistics",
-          "source_url": "https://georgia.org/staff/david-nuckolls"
+          "name": "Atrium Health Floyd",
+          "source_url": "https://en.wikipedia.org/wiki/Atrium_Health_Floyd"
         },
         {
-          "name": "State Mutual Insurance Company",
+          "name": "Harbin Clinic",
           "source_url": "https://en.wikipedia.org/wiki/Rome,_Georgia"
         },
         {
-          "name": "Automotive",
-          "source_url": "https://georgia.org/staff/david-nuckolls"
+          "name": "Redmond Regional Medical Center",
+          "source_url": "https://en.wikipedia.org/wiki/Rome,_Georgia"
         },
         {
-          "name": "Food Processing",
-          "source_url": "https://georgia.org/staff/david-nuckolls"
+          "name": "Distribution",
+          "source_url": "https://georgia.org/sites/default/files/2023-01/lowes_4.pdf"
         },
         {
-          "name": "Persium Group",
-          "source_url": "https://www.bizjournals.com/atlanta/news/2025/10/30/nova-river-district-downtown-rome-cci-real-estate.html"
+          "name": "Energy",
+          "source_url": "https://www.bizjournals.com/atlanta/potmsearch/detail/submission/6568858/Melissa_Free"
+        },
+        {
+          "name": "Aerospace",
+          "source_url": "https://en.wikipedia.org/wiki/List_of_largest_Italian_companies"
+        },
+        {
+          "name": "General Electric",
+          "source_url": "https://en.wikipedia.org/wiki/Rome,_Georgia"
+        },
+        {
+          "name": "Georgia Health Sciences University",
+          "source_url": "https://en.wikipedia.org/wiki/Rome,_Georgia"
+        },
+        {
+          "name": "Georgia Power",
+          "source_url": "https://www.bizjournals.com/atlanta/potmsearch/detail/submission/6568858/Melissa_Free"
         }
       ],
       "sources": [
-        "https://en.wikipedia.org/wiki/Atrium_Health_Floyd",
         "https://en.wikipedia.org/wiki/Rome,_Georgia",
-        "https://www.bizjournals.com/atlanta/news/2025/10/30/nova-river-district-downtown-rome-cci-real-estate.html",
+        "https://en.wikipedia.org/wiki/Atrium_Health_Floyd",
         "https://georgia.org/sites/default/files/2023-01/lowes_4.pdf",
         "https://www.bizjournals.com/atlanta/news/2025/09/26/georgia-largest-manufacturers-by-employment.html",
         "https://www.bizjournals.com/atlanta/news/2024/03/26/rome-georgia-nova-river-district-cci-real-estate.html",
-        "https://www.ajc.com/news/powerful-family-puts-road-rome-doubt/7hTa4uJKHAfOSUffB4EUAL",
-        "https://georgia.org/staff/david-nuckolls"
+        "https://www.bizjournals.com/atlanta/potmsearch/detail/submission/6568858/Melissa_Free",
+        "https://georgia.org/business-support/small-business",
+        "https://en.wikipedia.org/wiki/List_of_largest_Italian_companies"
       ],
       "method": "Representative list auto-discovered via Tavily web search across chamber-of-commerce, development-authority and local-news sources. Not exhaustive; ordering approximates source frequency, not headcount."
     },

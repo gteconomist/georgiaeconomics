@@ -3,7 +3,7 @@
   "short_name": "Gainesville",
   "full_name": "Gainesville, GA",
   "population": 211000,
-  "as_of": "2026-08-02",
+  "as_of": "2026-08-03",
   "sections": {
     "ces_employment": {
       "series_id": "SMS13235800000000001",
@@ -5224,18 +5224,10 @@
       "source": "Census Business Dynamics Statistics (establishment entry rate, 2022); metro rate indexed to US=100"
     },
     "major_employers": {
-      "as_of": "2026-08-02",
+      "as_of": "2026-08-03",
       "employers": [
         {
-          "name": "Koch Foods",
-          "source_url": "https://en.wikipedia.org/wiki/Gainesville,_Georgia"
-        },
-        {
           "name": "Northeast Georgia Health System",
-          "source_url": "https://en.wikipedia.org/wiki/Gainesville,_Georgia"
-        },
-        {
-          "name": "The Longstreet Clinic",
           "source_url": "https://en.wikipedia.org/wiki/Gainesville,_Georgia"
         },
         {
@@ -5243,11 +5235,23 @@
           "source_url": "https://en.wikipedia.org/wiki/Gainesville,_Florida"
         },
         {
-          "name": "The Jaeger Co",
-          "source_url": "https://www.gainesvilletimes.com/news/simpson-jaeger-companies-win-hall-chambers-top-awards"
+          "name": "Koch Foods",
+          "source_url": "https://en.wikipedia.org/wiki/Gainesville,_Georgia"
         },
         {
-          "name": "Alachua County Public Schools",
+          "name": "The Longstreet Clinic",
+          "source_url": "https://en.wikipedia.org/wiki/Gainesville,_Georgia"
+        },
+        {
+          "name": "Gainesville-Hall Co",
+          "source_url": "https://www.bizjournals.com/atlanta/news/2022/06/06/kubota-to-build-new-facility.html"
+        },
+        {
+          "name": "Manufacturing",
+          "source_url": "https://www.bizjournals.com/atlanta/news/2022/06/06/kubota-to-build-new-facility.html"
+        },
+        {
+          "name": "Annual Comprehensive Financial Report",
           "source_url": "https://en.wikipedia.org/wiki/Gainesville,_Florida"
         },
         {
@@ -5259,39 +5263,35 @@
           "source_url": "https://en.wikipedia.org/wiki/Gainesville,_Georgia"
         },
         {
-          "name": "Professional Company",
-          "source_url": "https://en.wikipedia.org/wiki/Gainesville,_Georgia"
+          "name": "Elan Drug Technologies",
+          "source_url": "https://www.gainesvilletimes.com/news/business-archived/chamber-honors-3-companies-as-the-years-best-in-hall"
         },
         {
-          "name": "Santa Fe College",
-          "source_url": "https://en.wikipedia.org/wiki/Gainesville,_Florida"
+          "name": "Professional Company",
+          "source_url": "https://en.wikipedia.org/wiki/Gainesville,_Georgia"
         },
         {
           "name": "University of North Georgia",
           "source_url": "https://en.wikipedia.org/wiki/Gainesville,_Georgia"
         },
         {
-          "name": "Annual Comprehensive Financial Report",
-          "source_url": "https://en.wikipedia.org/wiki/Gainesville,_Florida"
+          "name": "Aerospace",
+          "source_url": "https://www.selectgeorgia.com/discover-georgia/industries/fortune-500-list"
         },
         {
           "name": "Food Lion",
           "source_url": "https://www.bizjournals.com/atlanta/news/2023/09/05/cj-foodville-tous-les-jours-plant-food-processing.html"
-        },
-        {
-          "name": "Gainesville-Hall Co",
-          "source_url": "https://www.bizjournals.com/atlanta/news/2022/06/06/kubota-to-build-new-facility.html"
         }
       ],
       "sources": [
         "https://en.wikipedia.org/wiki/Gainesville,_Georgia",
-        "https://www.bizjournals.com/atlanta/related_content.html?topic=Kubota+Industrial+Equipment+Corp",
-        "https://en.wikipedia.org/wiki/Gainesville,_Florida",
         "https://www.bizjournals.com/atlanta/news/2022/06/06/kubota-to-build-new-facility.html",
+        "https://en.wikipedia.org/wiki/Gainesville,_Florida",
         "https://www.bizjournals.com/atlanta/news/2023/09/05/cj-foodville-tous-les-jours-plant-food-processing.html",
         "https://www.ajc.com/top-workplaces/2025/08/15-newcomers-join-ranks-of-atlantas-top-large-workplaces",
         "https://www.gainesvilletimes.com/news/business-archived/chamber-honors-3-companies-as-the-years-best-in-hall",
-        "https://www.gainesvilletimes.com/news/business-archived/gainesville-approves-5m-bond-for-ims-gear-georgia"
+        "https://www.selectgeorgia.com/discover-georgia/industries/fortune-500-list",
+        "https://www.savannahnow.com/story/news/state/2025/05/13/best-small-cities-in-georgia-hgtv-names-this-town-an-up-and-coming/83595427007"
       ],
       "method": "Representative list auto-discovered via Tavily web search across chamber-of-commerce, development-authority and local-news sources. Not exhaustive; ordering approximates source frequency, not headcount."
     },

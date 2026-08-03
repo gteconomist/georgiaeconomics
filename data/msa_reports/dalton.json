@@ -3,7 +3,7 @@
   "short_name": "Dalton",
   "full_name": "Dalton, GA",
   "population": 143000,
-  "as_of": "2026-08-02",
+  "as_of": "2026-08-03",
   "sections": {
     "ces_employment": {
       "series_id": "SMS13191400000000001",
@@ -4586,11 +4586,11 @@
       "source": "Census Business Dynamics Statistics (establishment entry rate, 2022); metro rate indexed to US=100"
     },
     "major_employers": {
-      "as_of": "2026-08-02",
+      "as_of": "2026-08-03",
       "employers": [
         {
-          "name": "Shaw Industries",
-          "source_url": "https://valdostadailytimes.com/2017/09/11/questions-and-answers-with-shaw-industries-ceo-vance-bell"
+          "name": "Mohawk Industries",
+          "source_url": "https://en.wikipedia.org/wiki/Dalton,_Georgia"
         },
         {
           "name": "Food City",
@@ -4601,39 +4601,35 @@
           "source_url": "https://www.bizjournals.com/atlanta/news/2023/06/29/solar-workforce-qcells-dalton-georgia.html"
         },
         {
-          "name": "Mohawk Industries",
+          "name": "Carpet Capital",
           "source_url": "https://en.wikipedia.org/wiki/Dalton,_Georgia"
         },
         {
-          "name": "Carpet Capital",
-          "source_url": "https://en.wikipedia.org/wiki/Dalton,_Georgia"
+          "name": "Shaw Industries",
+          "source_url": null
+        },
+        {
+          "name": "Automotive",
+          "source_url": "https://www.bizjournals.com/atlanta/news/2023/08/04/georgia-cities-wage-growth-salary.html"
         },
         {
           "name": "Beaulieu Group",
           "source_url": "https://valdostadailytimes.com/2018/01/01/engineered-floors-growth-varnell-drama-among-top-stories-in-dalton-area-in-2017"
         },
         {
-          "name": "GEDIA Automotive Group",
-          "source_url": "https://valdostadailytimes.com/2020/07/27/german-firm-to-build-parts-for-electric-cars-in-whitfield-county-200-jobs-expected"
+          "name": "Distribution",
+          "source_url": "https://www.selectgeorgia.com/georgiagrowth"
+        },
+        {
+          "name": "Flooring",
+          "source_url": "https://valdostadailytimes.com/2018/01/01/engineered-floors-growth-varnell-drama-among-top-stories-in-dalton-area-in-2017"
+        },
+        {
+          "name": "New Warehouse",
+          "source_url": "https://www.selectgeorgia.com/georgiagrowth"
         },
         {
           "name": "Ammunition LLC",
-          "source_url": "https://www.bizjournals.com/atlanta/news/2023/06/29/solar-workforce-qcells-dalton-georgia.html"
-        },
-        {
-          "name": "Dalton State College",
-          "source_url": null
-        },
-        {
-          "name": "First Horizon Bank",
-          "source_url": "https://www.bizjournals.com/atlanta/news/2023/06/29/solar-workforce-qcells-dalton-georgia.html"
-        },
-        {
-          "name": "Food Lion",
-          "source_url": "https://www.bizjournals.com/atlanta/news/2023/08/04/georgia-cities-wage-growth-salary.html"
-        },
-        {
-          "name": "CELLS America Inc",
           "source_url": "https://www.bizjournals.com/atlanta/news/2023/06/29/solar-workforce-qcells-dalton-georgia.html"
         },
         {
@@ -4642,7 +4638,11 @@
         },
         {
           "name": "Dalton-Whitfield Joint Development Authority",
-          "source_url": "https://valdostadailytimes.com/2020/07/27/german-firm-to-build-parts-for-electric-cars-in-whitfield-county-200-jobs-expected"
+          "source_url": "https://georgia.org/press-releases/2022/solar-energy-giant-qcells-power-470-new-jobs-new-whitfield-county-facility"
+        },
+        {
+          "name": "First Horizon Bank",
+          "source_url": "https://www.bizjournals.com/atlanta/news/2023/06/29/solar-workforce-qcells-dalton-georgia.html"
         }
       ],
       "sources": [
@@ -4650,8 +4650,8 @@
         "https://en.wikipedia.org/wiki/Dalton,_Georgia",
         "https://www.bizjournals.com/atlanta/news/2023/06/29/solar-workforce-qcells-dalton-georgia.html",
         "https://www.ajc.com/business/dalton-augusta-worst-for-job-losses-lately/qWPbpKazCnZFJtn1Kel1RM",
-        "https://georgia.org/blogs/korea-connections-successful-business-built-strong-relationships",
-        "https://valdostadailytimes.com/2017/09/11/questions-and-answers-with-shaw-industries-ceo-vance-bell",
+        "https://www.ajc.com/business/georgia-best-employers-for-2019-according-forbes/97QBCslwnyl3Ob4ujTmnLK",
+        "https://georgia.org/press-releases/2022/solar-energy-giant-qcells-power-470-new-jobs-new-whitfield-county-facility",
         "https://valdostadailytimes.com/2020/07/27/german-firm-to-build-parts-for-electric-cars-in-whitfield-county-200-jobs-expected",
         "https://valdostadailytimes.com/2018/01/01/engineered-floors-growth-varnell-drama-among-top-stories-in-dalton-area-in-2017"
       ],

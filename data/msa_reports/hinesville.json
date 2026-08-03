@@ -3,7 +3,7 @@
   "short_name": "Hinesville",
   "full_name": "Hinesville, GA",
   "population": 78000,
-  "as_of": "2026-08-02",
+  "as_of": "2026-08-03",
   "sections": {
     "ces_employment": {
       "series_id": "SMS13259800000000001",
@@ -4029,72 +4029,71 @@
       "source": "Census Business Dynamics Statistics (establishment entry rate, 2022); metro rate indexed to US=100"
     },
     "major_employers": {
-      "as_of": "2026-08-02",
+      "as_of": "2026-08-03",
       "employers": [
         {
-          "name": "Company Website",
-          "source_url": "https://comegrow.global/major-industries"
+          "name": "Aerospace",
+          "source_url": "https://georgia.org"
+        },
+        {
+          "name": "Automotive",
+          "source_url": "https://georgia.org"
         },
         {
           "name": "Liberty County School System",
           "source_url": null
         },
         {
-          "name": "Builders FirstSource Truss Plant",
-          "source_url": "https://comegrow.global/major-industries"
+          "name": "Advanced Manufacturing",
+          "source_url": "https://properties.selectgeorgia.com/target_industries_app/dist/index.html"
         },
         {
-          "name": "Hanwha Aerospace",
-          "source_url": "https://comegrow.global/major-industries"
+          "name": "Company",
+          "source_url": "https://properties.selectgeorgia.com/target_industries_app/dist/index.html"
         },
         {
-          "name": "Coastal Cooling LLC",
-          "source_url": "https://business.libertycounty.org/list/searchalpha/c"
-        },
-        {
-          "name": "Coastal Electric Cooperative",
-          "source_url": "https://business.libertycounty.org/list/searchalpha/c"
-        },
-        {
-          "name": "Coastal Regional Medical Center",
+          "name": "Fort Stewart Medical Center",
           "source_url": null
         },
         {
-          "name": "Commerce Street Holdings",
-          "source_url": "https://business.libertycounty.org/list/searchalpha/c"
-        },
-        {
-          "name": "Country Financial",
-          "source_url": "https://business.libertycounty.org/list/searchalpha/c"
-        },
-        {
-          "name": "Gulfstream Aerospace",
-          "source_url": "https://www.savannahnow.com/story/news/2007/04/20/keys-future-0/13805381007"
-        },
-        {
-          "name": "Hyundai Motor Group Metaplant America",
-          "source_url": "https://georgia.org/hyundai-motor-group-metaplant-america"
-        },
-        {
-          "name": "Liberty Regional Medical Center",
+          "name": "Hinesville Hospital",
           "source_url": null
         },
         {
-          "name": "Logistics",
-          "source_url": "https://comegrow.global/major-industries"
+          "name": "Hinesville Medical Center",
+          "source_url": null
         },
         {
-          "name": "Major Industries",
-          "source_url": "https://comegrow.global/major-industries"
+          "name": "Liberty County Schools",
+          "source_url": null
+        },
+        {
+          "name": "Southeast Georgia Health System",
+          "source_url": null
+        },
+        {
+          "name": "Arts Academy Fitness",
+          "source_url": "https://georgia.org/sites/default/files/2020-08/georgia_safety_promise-8-27.pdf"
+        },
+        {
+          "name": "Bermuda Lane Flowery Branch Wesco Distribution",
+          "source_url": "https://georgia.org/sites/default/files/2020-08/georgia_safety_promise-8-27.pdf"
+        },
+        {
+          "name": "Co Shopping",
+          "source_url": "https://georgia.org/sites/default/files/2020-08/georgia_safety_promise-8-27.pdf"
+        },
+        {
+          "name": "Crisp Co",
+          "source_url": "https://georgia.org"
         }
       ],
       "sources": [
-        "https://business.libertycounty.org/list/searchalpha/c",
-        "https://comegrow.global/major-industries",
+        "https://georgia.org/sites/default/files/2020-08/georgia_safety_promise-8-27.pdf",
         "https://www.savannahnow.com/story/news/2007/04/20/keys-future-0/13805381007",
-        "https://georgia.org/why-georgia/regions-georgia",
-        "https://georgia.org/hyundai-motor-group-metaplant-america",
-        "https://www.savannahnow.com/story/news/2012/02/04/exchange-brief/13663454007"
+        "https://georgia.org",
+        "https://www.savannahnow.com/story/news/2012/02/04/exchange-brief/13663454007",
+        "https://properties.selectgeorgia.com/target_industries_app/dist/index.html"
       ],
       "method": "Representative list auto-discovered via Tavily web search across chamber-of-commerce, development-authority and local-news sources. Not exhaustive; ordering approximates source frequency, not headcount."
     },

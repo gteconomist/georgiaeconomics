@@ -3,7 +3,7 @@
   "short_name": "Savannah",
   "full_name": "Savannah, GA",
   "population": 410000,
-  "as_of": "2026-08-02",
+  "as_of": "2026-08-03",
   "sections": {
     "ces_employment": {
       "series_id": "SMS13423400000000001",
@@ -5232,74 +5232,74 @@
       "source": "Census Business Dynamics Statistics (establishment entry rate, 2022); metro rate indexed to US=100"
     },
     "major_employers": {
-      "as_of": "2026-08-02",
+      "as_of": "2026-08-03",
       "employers": [
         {
           "name": "Gulfstream Aerospace",
-          "source_url": "https://www.savannahnow.com/story/business/2013/02/19/understanding-purpose-savannah-chamber/13655438007"
+          "source_url": "https://www.savannahnow.com/story/lifestyle/2021/09/09/savannah-ga-covid-vaccine-jcb-st-josephs-candler-gulfstream-savannah-river-mill/5758382001"
         },
         {
           "name": "Children's Healthcare of Atlanta",
           "source_url": "https://www.savannahnow.com/story/news/2026/02/24/forbes-ranked-2-georgia-businesses-among-top-50-large-employers-in-us/88828522007"
         },
         {
-          "name": "Savannah College of Art",
-          "source_url": "https://en.wikipedia.org/wiki/Savannah_metropolitan_area"
-        },
-        {
-          "name": "Colony Bank",
-          "source_url": "https://www.savannahnow.com/story/business/2013/02/19/understanding-purpose-savannah-chamber/13655438007"
-        },
-        {
-          "name": "Hyundai Motor Group Metaplant America",
-          "source_url": "https://www.savannahnow.com/story/news/local/2026/07/19/savannah-career-fair-connects-job-seekers-to-employers/90935722007"
-        },
-        {
-          "name": "Liberty Mutual Insurance",
-          "source_url": "https://www.savannahnow.com/story/business/2013/02/19/understanding-purpose-savannah-chamber/13655438007"
+          "name": "Georgia Ports Authority",
+          "source_url": null
         },
         {
           "name": "Mitsubishi Power Systems",
           "source_url": "https://www.selectgeorgia.com/yourgeorgia/why-savannah-HQ/culture-in-atlanta"
         },
         {
-          "name": "Savannah Technical College",
-          "source_url": "https://en.wikipedia.org/wiki/Savannah_metropolitan_area"
-        },
-        {
-          "name": "Chatham County School District",
-          "source_url": null
-        },
-        {
-          "name": "Georgia Ports Authority",
-          "source_url": null
-        },
-        {
-          "name": "National Office Systems",
-          "source_url": "https://www.savannahnow.com/story/business/2013/01/21/business-savannah-roundup/13965486007"
-        },
-        {
           "name": "Port of Savannah",
           "source_url": null
         },
         {
-          "name": "Savannah Economic Development Authority",
-          "source_url": "https://www.selectgeorgia.com/blog/welcome-seapoint-industrial-site-savannah-ga"
+          "name": "Savannah College of Art",
+          "source_url": "https://www.selectgeorgia.com/yourgeorgia/why-savannah-HQ/culture-in-atlanta"
         },
         {
-          "name": "Savannah State University",
-          "source_url": "https://en.wikipedia.org/wiki/Savannah_metropolitan_area"
+          "name": "AAR Corp",
+          "source_url": null
+        },
+        {
+          "name": "American Naval Stores Company",
+          "source_url": "https://en.wikipedia.org/wiki/Category:Companies_based_in_Savannah,_Georgia"
+        },
+        {
+          "name": "Baptist Health",
+          "source_url": null
+        },
+        {
+          "name": "Co. Morris Multimedia",
+          "source_url": "https://en.wikipedia.org/wiki/Category:Companies_based_in_Savannah,_Georgia"
+        },
+        {
+          "name": "Coastal Empire Beer Co. Savannah Cotton",
+          "source_url": "https://en.wikipedia.org/wiki/Category:Companies_based_in_Savannah,_Georgia"
+        },
+        {
+          "name": "Derst Baking Company",
+          "source_url": "https://en.wikipedia.org/wiki/Category:Companies_based_in_Savannah,_Georgia"
+        },
+        {
+          "name": "Hyundai Motor Group",
+          "source_url": null
+        },
+        {
+          "name": "Memorial University Medical Center",
+          "source_url": null
         }
       ],
       "sources": [
         "https://en.wikipedia.org/wiki/Savannah,_Georgia",
-        "https://en.wikipedia.org/wiki/Savannah_metropolitan_area",
+        "https://www.savannahnow.com/story/lifestyle/2021/09/09/savannah-ga-covid-vaccine-jcb-st-josephs-candler-gulfstream-savannah-river-mill/5758382001",
         "https://www.selectgeorgia.com/yourgeorgia/why-savannah-HQ/culture-in-atlanta",
         "https://www.selectgeorgia.com/blog/welcome-seapoint-industrial-site-savannah-ga",
         "https://www.savannahnow.com/story/news/2026/02/24/forbes-ranked-2-georgia-businesses-among-top-50-large-employers-in-us/88828522007",
-        "https://www.savannahnow.com/story/business/2013/02/19/understanding-purpose-savannah-chamber/13655438007",
-        "https://www.savannahnow.com/story/business/2013/01/21/business-savannah-roundup/13965486007",
-        "https://www.savannahnow.com/story/business/2013/05/27/business-savannah-news-summary/13612244007"
+        "https://en.wikipedia.org/wiki/Category:Companies_based_in_Savannah,_Georgia",
+        "https://www.savannahnow.com/story/business/2013/05/27/business-savannah-news-summary/13612244007",
+        "https://www.savannahnow.com/story/news/2016/07/08/garden-city-police-department-savannah-firms-make-best-places-work-georgia-list/13921419007"
       ],
       "method": "Representative list auto-discovered via Tavily web search across chamber-of-commerce, development-authority and local-news sources. Not exhaustive; ordering approximates source frequency, not headcount."
     },

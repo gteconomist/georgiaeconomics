@@ -3,7 +3,7 @@
   "short_name": "Brunswick",
   "full_name": "Brunswick, GA",
   "population": 120000,
-  "as_of": "2026-08-02",
+  "as_of": "2026-08-03",
   "sections": {
     "ces_employment": {
       "series_id": "SMS13152600000000001",
@@ -4184,7 +4184,7 @@
       "source": "Census Business Dynamics Statistics (establishment entry rate, 2022); metro rate indexed to US=100"
     },
     "major_employers": {
-      "as_of": "2026-08-02",
+      "as_of": "2026-08-03",
       "employers": [
         {
           "name": "Gulfstream Aerospace",
@@ -4195,15 +4195,19 @@
           "source_url": "https://en.wikipedia.org/wiki/Brunswick,_Georgia"
         },
         {
-          "name": "Georgia Ports Authority",
-          "source_url": "https://www.selectgeorgia.com/blog/wtc-sav-prosperity"
-        },
-        {
           "name": "Sea Island Company",
           "source_url": "https://en.wikipedia.org/wiki/Golden_Isles_of_Georgia"
         },
         {
+          "name": "Georgia Ports Authority",
+          "source_url": "https://www.selectgeorgia.com/blog/wtc-sav-prosperity"
+        },
+        {
           "name": "The Port of Brunswick",
+          "source_url": "https://en.wikipedia.org/wiki/Brunswick,_Georgia"
+        },
+        {
+          "name": "College of Coastal Georgia",
           "source_url": "https://en.wikipedia.org/wiki/Brunswick,_Georgia"
         },
         {
@@ -4211,28 +4215,8 @@
           "source_url": "https://www.selectgeorgia.com/blog/wtc-sav-prosperity"
         },
         {
-          "name": "Rich Products Corporation",
-          "source_url": "https://goldenislesdev.com/top-employers"
-        },
-        {
-          "name": "College of Coastal Georgia",
-          "source_url": "https://en.wikipedia.org/wiki/Brunswick,_Georgia"
-        },
-        {
           "name": "Glynn County Development Authority",
           "source_url": "https://en.wikipedia.org/wiki/Golden_Isles_of_Georgia"
-        },
-        {
-          "name": "Glynn County School System",
-          "source_url": "https://goldenislesdev.com/top-employers"
-        },
-        {
-          "name": "All Industries",
-          "source_url": "https://goldenislesdev.com/top-employers"
-        },
-        {
-          "name": "Archer Aviation",
-          "source_url": "https://georgia.org/blogs/global-local-industries-put-georgia-map"
         },
         {
           "name": "Healthcare",
@@ -4241,17 +4225,31 @@
         {
           "name": "Major Industries",
           "source_url": "https://en.wikipedia.org/wiki/Golden_Isles_of_Georgia"
+        },
+        {
+          "name": "Advanced Manufacturing",
+          "source_url": "https://georgia.org/sites/default/files/2023-07/business_incentive_july_23_update_-_23gc388.pdf"
+        },
+        {
+          "name": "Automotive",
+          "source_url": "https://georgia.org/sites/default/files/2023-07/business_incentive_july_23_update_-_23gc388.pdf"
+        },
+        {
+          "name": "Aviation",
+          "source_url": "https://georgia.org/sites/default/files/2023-07/business_incentive_july_23_update_-_23gc388.pdf"
+        },
+        {
+          "name": "Bioscience",
+          "source_url": "https://georgia.org/sites/default/files/2023-07/business_incentive_july_23_update_-_23gc388.pdf"
         }
       ],
       "sources": [
         "https://en.wikipedia.org/wiki/Brunswick,_Georgia",
         "https://www.selectgeorgia.com/blog/wtc-sav-prosperity",
         "https://en.wikipedia.org/wiki/Golden_Isles_of_Georgia",
-        "https://en.wikipedia.org/wiki/Brunswick_Corporation",
-        "https://georgia.org/blogs/global-local-industries-put-georgia-map",
-        "https://georgia.org/sites/default/files/2020-05/georgia_taiwan_connection_2020.pdf",
-        "https://georgia.org/sites/default/files/2020-08/georgia_safety_promise-8-27.pdf",
-        "https://goldenislesdev.com/top-employers"
+        "https://www.savannahnow.com/story/news/2013/09/29/education-tax-reform-and-3-georgias/13493143007",
+        "https://georgia.org/sites/default/files/2023-07/business_incentive_july_23_update_-_23gc388.pdf",
+        "https://www.bizjournals.com/triangle/news/2025/12/26/brunswick-county-nc-economic-development-plans.html"
       ],
       "method": "Representative list auto-discovered via Tavily web search across chamber-of-commerce, development-authority and local-news sources. Not exhaustive; ordering approximates source frequency, not headcount."
     },

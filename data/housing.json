@@ -1,5 +1,5 @@
 {
- "fetched_at": "2026-08-02T10:57:05Z",
+ "fetched_at": "2026-08-03T12:39:38Z",
  "schema": "housing/v1",
  "metros": [
   {
@@ -3046,12 +3046,14 @@
     "source": "Census ACS 5-year B25064 (median gross rent) / B19013 (median HH income), MSA vs US",
     "years": [
      2020,
+     2021,
      2022,
      2023,
      2024
     ],
     "affordability_index": [
      95.2,
+     97.3,
      97.6,
      99.5,
      99.8
@@ -3059,10 +3061,12 @@
     "msa_rent_burden_pct": [
      21.2,
      20.8,
+     20.8,
      20.7,
      21.0
     ],
     "us_rent_burden_pct": [
+     20.2,
      20.2,
      20.2,
      20.6,
@@ -3070,6 +3074,7 @@
     ],
     "msa_median_income": [
      46083,
+     49619,
      54700,
      58127,
      59526
@@ -7494,24 +7499,24 @@
  },
  "_meta": {
   "metro_rollup": {
-   "last_updated": "2026-08-02T10:57:05Z",
+   "last_updated": "2026-08-03T12:39:38Z",
    "n_metros": 14,
    "stale": false
   },
   "ga_hpi": {
-   "last_updated": "2026-08-02T10:57:06Z",
+   "last_updated": "2026-08-03T12:39:39Z",
    "stale": false
   },
   "county_acs": {
-   "last_updated": "2026-08-02T10:57:07Z",
+   "last_updated": "2026-08-03T12:39:40Z",
    "stale": false
   },
   "county_permits": {
-   "last_updated": "2026-08-02T10:57:07Z",
+   "last_updated": "2026-08-03T12:39:40Z",
    "stale": false
   },
   "non_metro": {
-   "last_updated": "2026-08-02T10:57:07Z",
+   "last_updated": "2026-08-03T12:39:40Z",
    "stale": false
   }
  },

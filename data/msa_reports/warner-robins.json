@@ -3,7 +3,7 @@
   "short_name": "Warner Robins",
   "full_name": "Warner Robins, GA",
   "population": 199000,
-  "as_of": "2026-08-02",
+  "as_of": "2026-08-03",
   "sections": {
     "ces_employment": {
       "series_id": "SMS13475800000000001",
@@ -4254,74 +4254,74 @@
       "source": "Census Business Dynamics Statistics (establishment entry rate, 2022); metro rate indexed to US=100"
     },
     "major_employers": {
-      "as_of": "2026-08-02",
+      "as_of": "2026-08-03",
       "employers": [
         {
           "name": "Pratt Industries",
           "source_url": "https://georgia.org/press-releases/2023/georgia-based-pratt-industries-plans-new-manufacturing-facility-peach-county"
         },
         {
-          "name": "Central Georgia Technical College",
-          "source_url": "https://houstoncountyga.net/industries/top-employers"
-        },
-        {
           "name": "Houston Healthcare",
-          "source_url": "https://thekirklandco.com/market_reports/macon-warner-robins_aug2023"
+          "source_url": "https://en.wikipedia.org/wiki/Central_Georgia"
         },
         {
-          "name": "Houston Medical Center",
-          "source_url": "https://en.wikipedia.org/wiki/Warner_Robins,_Georgia"
+          "name": "Central Georgia Technical College",
+          "source_url": "https://en.wikipedia.org/wiki/Central_Georgia"
         },
         {
-          "name": "Professional Schools",
-          "source_url": "https://www.metroatlantachamber.com/wp-content/uploads/2023/08/Top-Employer-Final.pdf"
+          "name": "Manufacturing",
+          "source_url": "https://georgia.org/why-georgia/regions-georgia/middle-georgia"
         },
         {
           "name": "Medical Center of Central Georgia",
           "source_url": "https://en.wikipedia.org/wiki/Central_Georgia"
         },
         {
-          "name": "Mercer University",
-          "source_url": "https://thekirklandco.com/market_reports/macon-warner-robins_aug2023"
-        },
-        {
-          "name": "Museum of Aviation",
-          "source_url": "https://thekirklandco.com/market_reports/macon-warner-robins_aug2023"
-        },
-        {
-          "name": "Emory Healthcare",
-          "source_url": "https://houstoncountyga.net/industries/top-employers"
-        },
-        {
-          "name": "The Kirkland Company",
-          "source_url": "https://thekirklandco.com/market_reports/macon-warner-robins_aug2023"
-        },
-        {
-          "name": "Advanced Drainage Systems",
-          "source_url": "https://houstoncountyga.net/industries/top-employers"
-        },
-        {
-          "name": "Anchor Glass Container Corp",
-          "source_url": "https://houstoncountyga.net/industries/top-employers"
-        },
-        {
           "name": "Blue Bird Corporation",
           "source_url": "https://en.wikipedia.org/wiki/Central_Georgia"
         },
         {
-          "name": "Chief Manufacturing",
+          "name": "Fort Valley State University",
           "source_url": "https://en.wikipedia.org/wiki/Central_Georgia"
+        },
+        {
+          "name": "Georgia College",
+          "source_url": "https://en.wikipedia.org/wiki/Central_Georgia"
+        },
+        {
+          "name": "Georgia Military College",
+          "source_url": "https://en.wikipedia.org/wiki/Central_Georgia"
+        },
+        {
+          "name": "Logistics",
+          "source_url": "https://georgia.org/sites/sites-and-buildings"
+        },
+        {
+          "name": "Mercer University",
+          "source_url": "https://en.wikipedia.org/wiki/Central_Georgia"
+        },
+        {
+          "name": "Middle Georgia State University",
+          "source_url": "https://en.wikipedia.org/wiki/Central_Georgia"
+        },
+        {
+          "name": "Aerospace",
+          "source_url": "https://georgia.org/sites/sites-and-buildings"
+        },
+        {
+          "name": "BAE Systems",
+          "source_url": null
         }
       ],
       "sources": [
-        "https://houstoncountyga.net/industries/top-employers",
-        "https://thekirklandco.com/market_reports/macon-warner-robins_aug2023",
         "https://en.wikipedia.org/wiki/Central_Georgia",
-        "https://www.metroatlantachamber.com/wp-content/uploads/2023/08/Top-Employer-Final.pdf",
         "https://georgia.org/press-releases/2023/georgia-based-pratt-industries-plans-new-manufacturing-facility-peach-county",
+        "https://www.bizjournals.com/atlanta/news/2024/08/22/emory-healthcare-houston-healthcare-partnership.html",
+        "https://georgia.org/why-georgia/regions-georgia/middle-georgia",
+        "https://georgia.org/sites/sites-and-buildings",
         "https://en.wikipedia.org/wiki/Google",
-        "https://www.bizjournals.com/atlanta/news/2026/04/27/pratt-industries-corrugated-box-warner-robins.html",
-        "https://georgia.org/sites/default/files/2021-02/fy21_q2_board_book.pdf"
+        "https://georgia.org/sites/default/files/2021-02/fy21_q2_board_book.pdf",
+        "https://en.wikipedia.org/wiki/Warner_Robins,_Georgia"
       ],
       "method": "Representative list auto-discovered via Tavily web search across chamber-of-commerce, development-authority and local-news sources. Not exhaustive; ordering approximates source frequency, not headcount."
     },

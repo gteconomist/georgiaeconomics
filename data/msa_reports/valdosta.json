@@ -3,7 +3,7 @@
   "short_name": "Valdosta",
   "full_name": "Valdosta, GA",
   "population": 148000,
-  "as_of": "2026-08-02",
+  "as_of": "2026-08-03",
   "sections": {
     "ces_employment": {
       "series_id": "SMS13466600000000001",
@@ -4233,63 +4233,63 @@
       "source": "Census Business Dynamics Statistics (establishment entry rate, 2022); metro rate indexed to US=100"
     },
     "major_employers": {
-      "as_of": "2026-08-02",
+      "as_of": "2026-08-03",
       "employers": [
         {
           "name": "Valdosta State University",
           "source_url": "https://valdostadailytimes.com/2026/02/23/gary-wisenbaker-data-centers-whats-good-for-the-goose-is-good-for-the-gander"
         },
         {
-          "name": "Georgia Gulf Sulfur Corp",
-          "source_url": "https://business.valdostachamber.com/directory/FindStartsWith?term=G"
-        },
-        {
-          "name": "Georgia Power Company",
-          "source_url": "https://business.valdostachamber.com/directory/FindStartsWith?term=G"
-        },
-        {
           "name": "South Georgia Medical Center",
           "source_url": null
-        },
-        {
-          "name": "CJB Industries",
-          "source_url": "https://business.valdostachamber.com/directory/Search/manufacturers-371427"
-        },
-        {
-          "name": "Packaging Corporation of America",
-          "source_url": "https://business.valdostachamber.com/directory/Search/manufacturers-371427"
         },
         {
           "name": "Wiregrass Technical College",
           "source_url": "https://valdostadailytimes.com/2026/02/23/gary-wisenbaker-data-centers-whats-good-for-the-goose-is-good-for-the-gander"
         },
         {
+          "name": "Lowndes County Schools",
+          "source_url": "https://valdostadailytimes.com/2018/05/24/summit-seeks-matching-jobs-with-workers"
+        },
+        {
+          "name": "Renasant Bank",
+          "source_url": "https://valdostadailytimes.com/2021/03/05/chamber-presents-annual-awards"
+        },
+        {
           "name": "ACE Electric",
           "source_url": "https://www.selectgeorgia.com/blog/rural-transformation/one-valdosta-lowndes-interview"
-        },
-        {
-          "name": "Automotive",
-          "source_url": "https://business.valdostachamber.com/directory"
-        },
-        {
-          "name": "Bassford Packaging LLC",
-          "source_url": "https://business.valdostachamber.com/directory/Search/manufacturers-371427"
         },
         {
           "name": "Berry Global Manufacturing",
           "source_url": "https://www.selectgeorgia.com/blog/rural-transformation/one-valdosta-lowndes-interview"
         },
         {
-          "name": "Food Processing Industry",
-          "source_url": "https://www.selectgeorgia.com/blog/locations-and-expansions/georgia-2023-growth"
+          "name": "Career Academy",
+          "source_url": "https://www.selectgeorgia.com/blog/rural-transformation/one-valdosta-lowndes-interview"
         },
         {
-          "name": "Guardian Bank",
-          "source_url": "https://business.valdostachamber.com/directory/FindStartsWith?term=G"
+          "name": "Rayonier Inc",
+          "source_url": "https://jobs.valdostadailytimes.com/employers"
         },
         {
-          "name": "Lowndes County School District",
-          "source_url": null
+          "name": "Stratas Foods",
+          "source_url": "https://www.selectgeorgia.com/blog/rural-transformation/one-valdosta-lowndes-interview"
+        },
+        {
+          "name": "Sunset Farm Foods",
+          "source_url": "https://valdostadailytimes.com/2021/03/05/chamber-presents-annual-awards"
+        },
+        {
+          "name": "Wiregrass Georgia Technical College",
+          "source_url": "https://valdostadailytimes.com/2015/09/13/finding-the-competitive-edge"
+        },
+        {
+          "name": "Business Solutions",
+          "source_url": "https://valdostadailytimes.com/2017/10/22/business-briefs-69"
+        },
+        {
+          "name": "CJB Industries",
+          "source_url": "https://valdostadailytimes.com/2021/03/05/chamber-presents-annual-awards"
         }
       ],
       "sources": [
@@ -4297,10 +4297,10 @@
         "https://valdostadailytimes.com/2026/02/23/gary-wisenbaker-data-centers-whats-good-for-the-goose-is-good-for-the-gander",
         "https://valdostadailytimes.com/2015/09/13/finding-the-competitive-edge",
         "https://www.selectgeorgia.com/blog/locations-and-expansions/georgia-2023-growth",
-        "https://business.valdostachamber.com/directory/FindStartsWith?term=A",
-        "https://business.valdostachamber.com/directory/FindStartsWith?term=G",
-        "https://business.valdostachamber.com/directory/Search/manufacturers-371427",
-        "https://valdostadailytimes.com/2017/10/22/business-briefs-69"
+        "https://valdostadailytimes.com/2017/10/22/business-briefs-69",
+        "https://valdostadailytimes.com/2018/01/28/georgia-petroleum-leading-business",
+        "https://valdostadailytimes.com/2019/01/20/business-briefs-122",
+        "https://valdostadailytimes.com/2019/06/23/business-briefs-135"
       ],
       "method": "Representative list auto-discovered via Tavily web search across chamber-of-commerce, development-authority and local-news sources. Not exhaustive; ordering approximates source frequency, not headcount."
     },
