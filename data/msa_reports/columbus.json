@@ -3,7 +3,7 @@
   "short_name": "Columbus",
   "full_name": "Columbus, GA-AL",
   "population": 329000,
-  "as_of": "2026-08-03",
+  "as_of": "2026-08-04",
   "sections": {
     "ces_employment": {
       "series_id": "SMS13179800000000001",
@@ -5150,7 +5150,7 @@
       "source": "Census Business Dynamics Statistics (establishment entry rate, 2022); metro rate indexed to US=100"
     },
     "major_employers": {
-      "as_of": "2026-08-03",
+      "as_of": "2026-08-04",
       "employers": [
         {
           "name": "Health Care",
@@ -5158,7 +5158,19 @@
         },
         {
           "name": "Columbus State University",
-          "source_url": "https://www.selectgeorgia.com/blog/columbus-georgia-a-home-for-headquarters"
+          "source_url": "https://en.wikipedia.org/wiki/Columbus,_Georgia"
+        },
+        {
+          "name": "Muscogee County School District",
+          "source_url": "https://en.wikipedia.org/wiki/Columbus,_Georgia"
+        },
+        {
+          "name": "Piedmont Columbus Regional Hospital",
+          "source_url": "https://en.wikipedia.org/wiki/Columbus,_Georgia"
+        },
+        {
+          "name": "St. Francis Hospital",
+          "source_url": "https://en.wikipedia.org/wiki/Columbus,_Georgia"
         },
         {
           "name": "Bradley Co",
@@ -5173,8 +5185,8 @@
           "source_url": "https://www.bizjournals.com/columbus/news/2025/10/21/employers-2025-top-of-the-list.html"
         },
         {
-          "name": "Company",
-          "source_url": "https://www.bizjournals.com/atlanta/subscriber-only/2025/10/17/metro-atlantas-largest-employers.html"
+          "name": "American Electric Power",
+          "source_url": "https://en.wikipedia.org/wiki/Economy_of_Columbus,_Ohio"
         },
         {
           "name": "Corp. Mgt",
@@ -5195,29 +5207,17 @@
         {
           "name": "Columbus City Schools",
           "source_url": "https://en.wikipedia.org/wiki/List_of_largest_Central_Ohio_employers"
-        },
-        {
-          "name": "Columbus Public Schools",
-          "source_url": "https://en.wikipedia.org/wiki/List_of_largest_Central_Ohio_employers"
-        },
-        {
-          "name": "Muscogee County School District",
-          "source_url": "https://en.wikipedia.org/wiki/Columbus,_Georgia"
-        },
-        {
-          "name": "Nationwide Insurance",
-          "source_url": "https://en.wikipedia.org/wiki/Economy_of_Columbus,_Ohio"
         }
       ],
       "sources": [
         "https://en.wikipedia.org/wiki/Columbus,_Georgia",
+        "https://www.selectgeorgia.com/about-us/our-team/regional-development/andrew-camp-west",
         "https://www.selectgeorgia.com/blog/columbus-georgia-a-home-for-headquarters",
         "https://www.bizjournals.com/atlanta/news/2026/02/10/choose-columbus-economic-development.html",
         "https://en.wikipedia.org/wiki/Category:Companies_based_in_Columbus,_Georgia",
-        "https://www.bizjournals.com/atlanta/subscriber-only/2025/10/17/metro-atlantas-largest-employers.html",
-        "https://www.bizjournals.com/atlanta/subscriber-only/2022/07/15/atlantas-25-largest-employers.html",
-        "https://www.selectgeorgia.com/about-us/our-team/regional-development/andrew-camp-west",
-        "https://georgia.org/sites/default/files/2023-01/2022-8-24_gdecd_board_meeting_minutes.pdf"
+        "https://georgia.org/sites/default/files/2023-01/2022-8-24_gdecd_board_meeting_minutes.pdf",
+        "https://georgia.org/sites/default/files/2021-04/logistics_education_report.pdf",
+        "https://en.wikipedia.org/wiki/Economy_of_Columbus,_Ohio"
       ],
       "method": "Representative list auto-discovered via Tavily web search across chamber-of-commerce, development-authority and local-news sources. Not exhaustive; ordering approximates source frequency, not headcount."
     },

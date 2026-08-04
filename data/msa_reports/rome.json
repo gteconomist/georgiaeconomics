@@ -3,7 +3,7 @@
   "short_name": "Rome",
   "full_name": "Rome, GA",
   "population": 99000,
-  "as_of": "2026-08-03",
+  "as_of": "2026-08-04",
   "sections": {
     "ces_employment": {
       "series_id": "SMS13406600000000001",
@@ -4488,8 +4488,24 @@
       "source": "Census Business Dynamics Statistics (establishment entry rate, 2022); metro rate indexed to US=100"
     },
     "major_employers": {
-      "as_of": "2026-08-03",
+      "as_of": "2026-08-04",
       "employers": [
+        {
+          "name": "VT Industries",
+          "source_url": "https://www.northwestgeorgianews.com/rome/business/keeping-on-growing-floyd-county-businesses-expanding-from-2022-into-2023/article_227bb320-bc51-11ed-989c-4329e03be1d7.html"
+        },
+        {
+          "name": "Shaw Industries",
+          "source_url": "https://www.northwestgeorgianews.com/calhoun_times/business/local/shaw-industries-named-to-forbes-2022-list-of-best-employers-in-georgia/article_e15be4b6-23d3-11ed-8279-1ba3cf349fad.html"
+        },
+        {
+          "name": "Floyd Medical Center",
+          "source_url": "https://en.wikipedia.org/wiki/Rome,_Georgia"
+        },
+        {
+          "name": "Harbin Clinic",
+          "source_url": "https://en.wikipedia.org/wiki/Rome,_Georgia"
+        },
         {
           "name": "State Mutual Insurance Company",
           "source_url": "https://en.wikipedia.org/wiki/Rome,_Georgia"
@@ -4503,59 +4519,43 @@
           "source_url": "https://en.wikipedia.org/wiki/List_of_largest_Italian_companies"
         },
         {
-          "name": "Floyd Medical Center",
+          "name": "Kerry Group",
           "source_url": "https://en.wikipedia.org/wiki/Rome,_Georgia"
         },
         {
-          "name": "Kerry Group",
-          "source_url": "https://en.wikipedia.org/wiki/Rome,_Georgia"
+          "name": "Synthica Energy",
+          "source_url": "https://www.northwestgeorgianews.com/rome/business/keeping-on-growing-floyd-county-businesses-expanding-from-2022-into-2023/article_227bb320-bc51-11ed-989c-4329e03be1d7.html"
+        },
+        {
+          "name": "Aerospace",
+          "source_url": "https://georgia.org/blogs/brewing-global-success"
         },
         {
           "name": "Atrium Health Floyd",
           "source_url": "https://en.wikipedia.org/wiki/Atrium_Health_Floyd"
         },
         {
-          "name": "Harbin Clinic",
+          "name": "Medical College of Georgia",
           "source_url": "https://en.wikipedia.org/wiki/Rome,_Georgia"
         },
         {
-          "name": "Redmond Regional Medical Center",
-          "source_url": "https://en.wikipedia.org/wiki/Rome,_Georgia"
+          "name": "AdventHealth Medical Group Cardiology",
+          "source_url": "https://www.northwestgeorgianews.com/rome/business"
         },
         {
-          "name": "Distribution",
-          "source_url": "https://georgia.org/sites/default/files/2023-01/lowes_4.pdf"
-        },
-        {
-          "name": "Energy",
-          "source_url": "https://www.bizjournals.com/atlanta/potmsearch/detail/submission/6568858/Melissa_Free"
-        },
-        {
-          "name": "Aerospace",
-          "source_url": "https://en.wikipedia.org/wiki/List_of_largest_Italian_companies"
-        },
-        {
-          "name": "General Electric",
-          "source_url": "https://en.wikipedia.org/wiki/Rome,_Georgia"
-        },
-        {
-          "name": "Georgia Health Sciences University",
-          "source_url": "https://en.wikipedia.org/wiki/Rome,_Georgia"
-        },
-        {
-          "name": "Georgia Power",
-          "source_url": "https://www.bizjournals.com/atlanta/potmsearch/detail/submission/6568858/Melissa_Free"
+          "name": "Massive Hillman Group",
+          "source_url": "https://www.northwestgeorgianews.com/rome/business/keeping-on-growing-floyd-county-businesses-expanding-from-2022-into-2023/article_227bb320-bc51-11ed-989c-4329e03be1d7.html"
         }
       ],
       "sources": [
         "https://en.wikipedia.org/wiki/Rome,_Georgia",
         "https://en.wikipedia.org/wiki/Atrium_Health_Floyd",
-        "https://georgia.org/sites/default/files/2023-01/lowes_4.pdf",
         "https://www.bizjournals.com/atlanta/news/2025/09/26/georgia-largest-manufacturers-by-employment.html",
         "https://www.bizjournals.com/atlanta/news/2024/03/26/rome-georgia-nova-river-district-cci-real-estate.html",
-        "https://www.bizjournals.com/atlanta/potmsearch/detail/submission/6568858/Melissa_Free",
-        "https://georgia.org/business-support/small-business",
-        "https://en.wikipedia.org/wiki/List_of_largest_Italian_companies"
+        "https://georgia.org/blogs/brewing-global-success",
+        "https://www.northwestgeorgianews.com/rome/business",
+        "https://www.northwestgeorgianews.com/rome/business/celebrating-family-owned-small-businesses-in-rome/article_3039f5ec-0720-11ef-a969-db184510c062.html",
+        "https://www.northwestgeorgianews.com/rome/business/keeping-on-growing-floyd-county-businesses-expanding-from-2022-into-2023/article_227bb320-bc51-11ed-989c-4329e03be1d7.html"
       ],
       "method": "Representative list auto-discovered via Tavily web search across chamber-of-commerce, development-authority and local-news sources. Not exhaustive; ordering approximates source frequency, not headcount."
     },

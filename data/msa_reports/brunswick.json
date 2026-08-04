@@ -3,7 +3,7 @@
   "short_name": "Brunswick",
   "full_name": "Brunswick, GA",
   "population": 120000,
-  "as_of": "2026-08-03",
+  "as_of": "2026-08-04",
   "sections": {
     "ces_employment": {
       "series_id": "SMS13152600000000001",
@@ -4184,7 +4184,7 @@
       "source": "Census Business Dynamics Statistics (establishment entry rate, 2022); metro rate indexed to US=100"
     },
     "major_employers": {
-      "as_of": "2026-08-03",
+      "as_of": "2026-08-04",
       "employers": [
         {
           "name": "Gulfstream Aerospace",
@@ -4199,24 +4199,20 @@
           "source_url": "https://en.wikipedia.org/wiki/Golden_Isles_of_Georgia"
         },
         {
-          "name": "Georgia Ports Authority",
-          "source_url": "https://www.selectgeorgia.com/blog/wtc-sav-prosperity"
-        },
-        {
           "name": "The Port of Brunswick",
           "source_url": "https://en.wikipedia.org/wiki/Brunswick,_Georgia"
         },
         {
-          "name": "College of Coastal Georgia",
-          "source_url": "https://en.wikipedia.org/wiki/Brunswick,_Georgia"
-        },
-        {
-          "name": "Georgia Power Economic Development",
+          "name": "Georgia Ports Authority",
           "source_url": "https://www.selectgeorgia.com/blog/wtc-sav-prosperity"
         },
         {
           "name": "Glynn County Development Authority",
           "source_url": "https://en.wikipedia.org/wiki/Golden_Isles_of_Georgia"
+        },
+        {
+          "name": "College of Coastal Georgia",
+          "source_url": "https://en.wikipedia.org/wiki/Brunswick,_Georgia"
         },
         {
           "name": "Healthcare",
@@ -4227,29 +4223,35 @@
           "source_url": "https://en.wikipedia.org/wiki/Golden_Isles_of_Georgia"
         },
         {
-          "name": "Advanced Manufacturing",
-          "source_url": "https://georgia.org/sites/default/files/2023-07/business_incentive_july_23_update_-_23gc388.pdf"
+          "name": "Archer Aviation",
+          "source_url": "https://georgia.org/blogs/global-local-industries-put-georgia-map"
         },
         {
-          "name": "Automotive",
-          "source_url": "https://georgia.org/sites/default/files/2023-07/business_incentive_july_23_update_-_23gc388.pdf"
+          "name": "Georgia Power Economic Development",
+          "source_url": "https://www.selectgeorgia.com/blog/wtc-sav-prosperity"
         },
         {
-          "name": "Aviation",
-          "source_url": "https://georgia.org/sites/default/files/2023-07/business_incentive_july_23_update_-_23gc388.pdf"
+          "name": "Aerospace Giants",
+          "source_url": "https://georgia.org/blogs/global-local-industries-put-georgia-map"
         },
         {
-          "name": "Bioscience",
-          "source_url": "https://georgia.org/sites/default/files/2023-07/business_incentive_july_23_update_-_23gc388.pdf"
+          "name": "Anduril Industries",
+          "source_url": "https://georgia.org/blogs/global-local-industries-put-georgia-map"
+        },
+        {
+          "name": "Arts Academy Fitness",
+          "source_url": "https://georgia.org/sites/default/files/2020-08/georgia_safety_promise-8-27.pdf"
         }
       ],
       "sources": [
         "https://en.wikipedia.org/wiki/Brunswick,_Georgia",
         "https://www.selectgeorgia.com/blog/wtc-sav-prosperity",
         "https://en.wikipedia.org/wiki/Golden_Isles_of_Georgia",
-        "https://www.savannahnow.com/story/news/2013/09/29/education-tax-reform-and-3-georgias/13493143007",
-        "https://georgia.org/sites/default/files/2023-07/business_incentive_july_23_update_-_23gc388.pdf",
-        "https://www.bizjournals.com/triangle/news/2025/12/26/brunswick-county-nc-economic-development-plans.html"
+        "https://en.wikipedia.org/wiki/Brunswick_Corporation",
+        "https://georgia.org/blogs/global-local-industries-put-georgia-map",
+        "https://georgia.org/sites/default/files/2020-08/georgia_safety_promise-8-27.pdf",
+        "https://georgia.org/sites/default/files/2020-05/georgia_taiwan_connection_2020.pdf",
+        "https://en.wikipedia.org/wiki/New_Brunswick"
       ],
       "method": "Representative list auto-discovered via Tavily web search across chamber-of-commerce, development-authority and local-news sources. Not exhaustive; ordering approximates source frequency, not headcount."
     },

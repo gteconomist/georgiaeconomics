@@ -3,7 +3,7 @@
   "short_name": "Macon",
   "full_name": "Macon-Bibb County, GA",
   "population": 232000,
-  "as_of": "2026-08-03",
+  "as_of": "2026-08-04",
   "sections": {
     "ces_employment": {
       "series_id": "SMS13314200000000001",
@@ -5152,12 +5152,8 @@
       "source": "Census Business Dynamics Statistics (establishment entry rate, 2022); metro rate indexed to US=100"
     },
     "major_employers": {
-      "as_of": "2026-08-03",
+      "as_of": "2026-08-04",
       "employers": [
-        {
-          "name": "Atrium Health Navicent",
-          "source_url": "https://en.wikipedia.org/wiki/Macon,_Georgia"
-        },
         {
           "name": "Food Lion",
           "source_url": "https://www.bizjournals.com/atlanta/news/2019/12/14/macon-chamber-at-forefront-of-new-initiatives.html"
@@ -5167,11 +5163,15 @@
           "source_url": "https://georgia.org/press-releases/2026/georgia-based-unified-legacy-create-500-new-jobs-macon-bibb-county"
         },
         {
+          "name": "Mercer University",
+          "source_url": "https://en.wikipedia.org/wiki/Macon,_Georgia"
+        },
+        {
           "name": "Automotive",
           "source_url": "https://georgia.org/press-releases/2026/georgia-based-unified-legacy-create-500-new-jobs-macon-bibb-county"
         },
         {
-          "name": "Mercer University",
+          "name": "Atrium Health Navicent",
           "source_url": "https://en.wikipedia.org/wiki/Macon,_Georgia"
         },
         {
@@ -5179,12 +5179,28 @@
           "source_url": "https://www.bizjournals.com/atlanta/news/2019/12/14/macon-chamber-at-forefront-of-new-initiatives.html"
         },
         {
-          "name": "Aerospace",
-          "source_url": "https://georgia.org/press-releases/2026/georgia-based-unified-legacy-create-500-new-jobs-macon-bibb-county"
+          "name": "Medical Center of Central Georgia",
+          "source_url": "https://en.wikipedia.org/wiki/Central_Georgia"
         },
         {
-          "name": "Piedmont Healthcare Macon",
-          "source_url": "https://en.wikipedia.org/wiki/Macon,_Georgia"
+          "name": "Blue Bird Corporation",
+          "source_url": "https://en.wikipedia.org/wiki/Central_Georgia"
+        },
+        {
+          "name": "Coliseum Health System",
+          "source_url": "https://en.wikipedia.org/wiki/Central_Georgia"
+        },
+        {
+          "name": "Houston Healthcare",
+          "source_url": "https://en.wikipedia.org/wiki/Central_Georgia"
+        },
+        {
+          "name": "Norfolk Southern Railway",
+          "source_url": null
+        },
+        {
+          "name": "Piedmont Healthcare",
+          "source_url": null
         },
         {
           "name": "Thomaston Industrial Park",
@@ -5193,33 +5209,17 @@
         {
           "name": "Thomaston-Upson Industrial Development Authority",
           "source_url": "https://en.wikipedia.org/wiki/Central_Georgia"
-        },
-        {
-          "name": "Medical Center of Central Georgia",
-          "source_url": "https://en.wikipedia.org/wiki/Central_Georgia"
-        },
-        {
-          "name": "Bibb County School District",
-          "source_url": null
-        },
-        {
-          "name": "Cola Bottling Co",
-          "source_url": null
-        },
-        {
-          "name": "Food Processing",
-          "source_url": "https://georgia.org/press-releases/2026/georgia-based-unified-legacy-create-500-new-jobs-macon-bibb-county"
         }
       ],
       "sources": [
         "https://en.wikipedia.org/wiki/Macon,_Georgia",
         "https://en.wikipedia.org/wiki/Central_Georgia",
-        "https://georgia.org/press-releases/2026/arcelormittal-building-solutions-brings-north-american-hq-macon-bibb",
         "https://georgia.org/press-releases/2026/georgia-based-unified-legacy-create-500-new-jobs-macon-bibb-county",
         "https://www.bizjournals.com/atlanta/news/2019/12/15/health-care-companies-expand-in-macon-market.html",
         "https://www.bizjournals.com/atlanta/news/2019/12/14/macon-chamber-at-forefront-of-new-initiatives.html",
         "https://georgia.org/sites/default/files/2021-04/logistics_education_report.pdf",
-        "https://www.bizjournals.com/atlanta/news/2019/12/13/macon-bibb-county-industrial-sector-soars.html"
+        "https://www.bizjournals.com/atlanta/news/2019/12/13/macon-bibb-county-industrial-sector-soars.html",
+        "https://www.bizjournals.com/atlanta/news/2018/12/13/macon-bibb-industrial-relocations-and-expansions.html"
       ],
       "method": "Representative list auto-discovered via Tavily web search across chamber-of-commerce, development-authority and local-news sources. Not exhaustive; ordering approximates source frequency, not headcount."
     },

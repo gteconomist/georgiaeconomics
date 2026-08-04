@@ -3,7 +3,7 @@
   "short_name": "Dalton",
   "full_name": "Dalton, GA",
   "population": 143000,
-  "as_of": "2026-08-03",
+  "as_of": "2026-08-04",
   "sections": {
     "ces_employment": {
       "series_id": "SMS13191400000000001",
@@ -4586,74 +4586,74 @@
       "source": "Census Business Dynamics Statistics (establishment entry rate, 2022); metro rate indexed to US=100"
     },
     "major_employers": {
-      "as_of": "2026-08-03",
+      "as_of": "2026-08-04",
       "employers": [
         {
-          "name": "Mohawk Industries",
+          "name": "Carpet Capital",
           "source_url": "https://en.wikipedia.org/wiki/Dalton,_Georgia"
         },
         {
-          "name": "Food City",
-          "source_url": "https://valdostadailytimes.com/2019/01/23/something-we-can-all-be-proud-of-food-city-opens-second-dalton-location"
+          "name": "Mohawk Industries",
+          "source_url": "https://en.wikipedia.org/wiki/Dalton,_Georgia"
         },
         {
           "name": "Manufacturing",
           "source_url": "https://www.bizjournals.com/atlanta/news/2023/06/29/solar-workforce-qcells-dalton-georgia.html"
         },
         {
-          "name": "Carpet Capital",
-          "source_url": "https://en.wikipedia.org/wiki/Dalton,_Georgia"
-        },
-        {
           "name": "Shaw Industries",
-          "source_url": null
-        },
-        {
-          "name": "Automotive",
-          "source_url": "https://www.bizjournals.com/atlanta/news/2023/08/04/georgia-cities-wage-growth-salary.html"
+          "source_url": "https://valdostadailytimes.com/2018/01/01/engineered-floors-growth-varnell-drama-among-top-stories-in-dalton-area-in-2017"
         },
         {
           "name": "Beaulieu Group",
           "source_url": "https://valdostadailytimes.com/2018/01/01/engineered-floors-growth-varnell-drama-among-top-stories-in-dalton-area-in-2017"
         },
         {
-          "name": "Distribution",
-          "source_url": "https://www.selectgeorgia.com/georgiagrowth"
-        },
-        {
-          "name": "Flooring",
-          "source_url": "https://valdostadailytimes.com/2018/01/01/engineered-floors-growth-varnell-drama-among-top-stories-in-dalton-area-in-2017"
-        },
-        {
-          "name": "New Warehouse",
-          "source_url": "https://www.selectgeorgia.com/georgiagrowth"
+          "name": "GEDIA Automotive Group",
+          "source_url": "https://valdostadailytimes.com/2020/07/27/german-firm-to-build-parts-for-electric-cars-in-whitfield-county-200-jobs-expected"
         },
         {
           "name": "Ammunition LLC",
           "source_url": "https://www.bizjournals.com/atlanta/news/2023/06/29/solar-workforce-qcells-dalton-georgia.html"
         },
         {
-          "name": "Dalton Middle School",
-          "source_url": "https://valdostadailytimes.com/2018/05/16/sixth-grader-wins-dalton-shark-tank-style-contest-and-5000-grand-prize"
+          "name": "First Horizon Bank",
+          "source_url": "https://www.bizjournals.com/atlanta/news/2023/06/29/solar-workforce-qcells-dalton-georgia.html"
+        },
+        {
+          "name": "CELLS America Inc",
+          "source_url": "https://www.bizjournals.com/atlanta/news/2023/06/29/solar-workforce-qcells-dalton-georgia.html"
+        },
+        {
+          "name": "Company",
+          "source_url": "https://www.bizjournals.com/atlanta/news/2023/08/04/georgia-cities-wage-growth-salary.html"
         },
         {
           "name": "Dalton-Whitfield Joint Development Authority",
-          "source_url": "https://georgia.org/press-releases/2022/solar-energy-giant-qcells-power-470-new-jobs-new-whitfield-county-facility"
+          "source_url": "https://valdostadailytimes.com/2020/07/27/german-firm-to-build-parts-for-electric-cars-in-whitfield-county-200-jobs-expected"
         },
         {
-          "name": "First Horizon Bank",
-          "source_url": "https://www.bizjournals.com/atlanta/news/2023/06/29/solar-workforce-qcells-dalton-georgia.html"
+          "name": "Emory University",
+          "source_url": "https://www.ajc.com/business/georgia-best-employers-for-2019-according-forbes/97QBCslwnyl3Ob4ujTmnLK"
+        },
+        {
+          "name": "Food Lion",
+          "source_url": "https://www.bizjournals.com/atlanta/news/2022/05/27/q-cells-building-second-plant-in-dalton.html"
+        },
+        {
+          "name": "Hamilton Health Care System",
+          "source_url": "https://valdostadailytimes.com/2018/01/01/engineered-floors-growth-varnell-drama-among-top-stories-in-dalton-area-in-2017"
         }
       ],
       "sources": [
         "https://www.bizjournals.com/atlanta/news/2023/08/04/georgia-cities-wage-growth-salary.html",
         "https://en.wikipedia.org/wiki/Dalton,_Georgia",
         "https://www.bizjournals.com/atlanta/news/2023/06/29/solar-workforce-qcells-dalton-georgia.html",
+        "https://valdostadailytimes.com/2018/01/01/engineered-floors-growth-varnell-drama-among-top-stories-in-dalton-area-in-2017",
+        "https://valdostadailytimes.com/2018/06/14/japanese-consul-says-dalton-is-welcoming-to-businesses-2",
         "https://www.ajc.com/business/dalton-augusta-worst-for-job-losses-lately/qWPbpKazCnZFJtn1Kel1RM",
-        "https://www.ajc.com/business/georgia-best-employers-for-2019-according-forbes/97QBCslwnyl3Ob4ujTmnLK",
-        "https://georgia.org/press-releases/2022/solar-energy-giant-qcells-power-470-new-jobs-new-whitfield-county-facility",
-        "https://valdostadailytimes.com/2020/07/27/german-firm-to-build-parts-for-electric-cars-in-whitfield-county-200-jobs-expected",
-        "https://valdostadailytimes.com/2018/01/01/engineered-floors-growth-varnell-drama-among-top-stories-in-dalton-area-in-2017"
+        "https://www.bizjournals.com/atlanta/news/2022/05/27/q-cells-building-second-plant-in-dalton.html",
+        "https://valdostadailytimes.com/2020/07/27/german-firm-to-build-parts-for-electric-cars-in-whitfield-county-200-jobs-expected"
       ],
       "method": "Representative list auto-discovered via Tavily web search across chamber-of-commerce, development-authority and local-news sources. Not exhaustive; ordering approximates source frequency, not headcount."
     },
