@@ -3,7 +3,7 @@
   "short_name": "Warner Robins",
   "full_name": "Warner Robins, GA",
   "population": 199000,
-  "as_of": "2026-08-04",
+  "as_of": "2026-08-05",
   "sections": {
     "ces_employment": {
       "series_id": "SMS13475800000000001",
@@ -4254,74 +4254,74 @@
       "source": "Census Business Dynamics Statistics (establishment entry rate, 2022); metro rate indexed to US=100"
     },
     "major_employers": {
-      "as_of": "2026-08-04",
+      "as_of": "2026-08-05",
       "employers": [
         {
           "name": "Pratt Industries",
-          "source_url": "https://www.bizjournals.com/atlanta/news/2026/04/27/pratt-industries-corrugated-box-warner-robins.html"
+          "source_url": "https://georgia.org/press-releases/2023/georgia-based-pratt-industries-plans-new-manufacturing-facility-peach-county"
         },
         {
           "name": "Manufacturing",
-          "source_url": "https://www.bizjournals.com/atlanta/news/2026/04/27/pratt-industries-corrugated-box-warner-robins.html"
+          "source_url": "https://georgia.org/why-georgia/regions-georgia/middle-georgia"
         },
         {
           "name": "Houston Healthcare",
           "source_url": "https://en.wikipedia.org/wiki/Central_Georgia"
         },
         {
-          "name": "Blue Bird Corporation",
-          "source_url": "https://en.wikipedia.org/wiki/Central_Georgia"
-        },
-        {
-          "name": "Company",
-          "source_url": "https://www.bizjournals.com/atlanta/news/2026/04/27/pratt-industries-corrugated-box-warner-robins.html"
-        },
-        {
           "name": "Medical Center of Central Georgia",
           "source_url": "https://en.wikipedia.org/wiki/Central_Georgia"
+        },
+        {
+          "name": "Airport East Industrial Park",
+          "source_url": "https://georgia.org/press-releases/2022/two-industrial-sites-bibb-county-earn-georgia-ready-accelerated-development-select"
+        },
+        {
+          "name": "Company Culture",
+          "source_url": "https://www.ajc.com/careers"
         },
         {
           "name": "Emory Healthcare",
           "source_url": "https://www.bizjournals.com/atlanta/news/2024/08/22/emory-healthcare-houston-healthcare-partnership.html"
         },
         {
-          "name": "Robins International Industrial Park",
-          "source_url": "https://georgia.org/sites/default/files/2021-02/fy21_q2_board_book.pdf"
+          "name": "Encore Plastics Corporation",
+          "source_url": "https://georgia.org/why-georgia/regions-georgia/middle-georgia"
         },
         {
-          "name": "Warner Robins City School System",
+          "name": "Houston County School System",
           "source_url": null
+        },
+        {
+          "name": "Sandler Corp. Nonwovens",
+          "source_url": "https://georgia.org/why-georgia/regions-georgia/middle-georgia"
         },
         {
           "name": "Warner Robins Medical Center",
           "source_url": null
         },
         {
-          "name": "Warner Robins School District",
-          "source_url": null
+          "name": "Atlanta's Illegal Food",
+          "source_url": "https://www.bizjournals.com/sitemap/atlanta/2014-05"
         },
         {
-          "name": "WellStar Warner Robins Hospital",
-          "source_url": null
+          "name": "Automotive Innovation",
+          "source_url": "https://georgia.org/sites/default/files/2020-08/2019_-_12-4-19_gdecd_board_meeting_minutes.pdf"
         },
         {
-          "name": "Adobe Amadeus IT Group Amazon",
-          "source_url": "https://en.wikipedia.org/wiki/Google"
-        },
-        {
-          "name": "Aerospace",
-          "source_url": "https://georgia.org/center-of-innovation/governor-champions-georgias-aerospace-industry-dubai"
+          "name": "Blue Bird Corporation",
+          "source_url": "https://en.wikipedia.org/wiki/Central_Georgia"
         }
       ],
       "sources": [
         "https://en.wikipedia.org/wiki/Central_Georgia",
-        "https://www.bizjournals.com/atlanta/news/2026/04/27/pratt-industries-corrugated-box-warner-robins.html",
         "https://georgia.org/press-releases/2023/georgia-based-pratt-industries-plans-new-manufacturing-facility-peach-county",
         "https://www.bizjournals.com/atlanta/news/2024/08/22/emory-healthcare-houston-healthcare-partnership.html",
-        "https://en.wikipedia.org/wiki/Google",
-        "https://georgia.org/sites/default/files/2021-02/fy21_q2_board_book.pdf",
-        "https://en.wikipedia.org/wiki/Warner_Robins,_Georgia",
-        "https://www.augustachronicle.com/story/business/2010/11/21/working-our-way-augusta-area-sees-job-growth/14571763007"
+        "https://georgia.org/press-releases/2022/two-industrial-sites-bibb-county-earn-georgia-ready-accelerated-development-select",
+        "https://georgia.org/why-georgia/regions-georgia/middle-georgia",
+        "https://www.bizjournals.com/atlanta/news/2026/04/27/pratt-industries-corrugated-box-warner-robins.html",
+        "https://georgia.org/sites/default/files/2020-08/2019_-_12-4-19_gdecd_board_meeting_minutes.pdf",
+        "https://www.bizjournals.com/sitemap/atlanta/2014-05"
       ],
       "method": "Representative list auto-discovered via Tavily web search across chamber-of-commerce, development-authority and local-news sources. Not exhaustive; ordering approximates source frequency, not headcount."
     },

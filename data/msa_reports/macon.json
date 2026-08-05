@@ -3,7 +3,7 @@
   "short_name": "Macon",
   "full_name": "Macon-Bibb County, GA",
   "population": 232000,
-  "as_of": "2026-08-04",
+  "as_of": "2026-08-05",
   "sections": {
     "ces_employment": {
       "series_id": "SMS13314200000000001",
@@ -5152,14 +5152,14 @@
       "source": "Census Business Dynamics Statistics (establishment entry rate, 2022); metro rate indexed to US=100"
     },
     "major_employers": {
-      "as_of": "2026-08-04",
+      "as_of": "2026-08-05",
       "employers": [
         {
-          "name": "Food Lion",
-          "source_url": "https://www.bizjournals.com/atlanta/news/2019/12/14/macon-chamber-at-forefront-of-new-initiatives.html"
+          "name": "Manufacturing",
+          "source_url": "https://georgia.org/press-releases/2026/georgia-based-unified-legacy-create-500-new-jobs-macon-bibb-county"
         },
         {
-          "name": "Manufacturing",
+          "name": "Aerospace",
           "source_url": "https://georgia.org/press-releases/2026/georgia-based-unified-legacy-create-500-new-jobs-macon-bibb-county"
         },
         {
@@ -5167,59 +5167,59 @@
           "source_url": "https://en.wikipedia.org/wiki/Macon,_Georgia"
         },
         {
-          "name": "Automotive",
-          "source_url": "https://georgia.org/press-releases/2026/georgia-based-unified-legacy-create-500-new-jobs-macon-bibb-county"
-        },
-        {
           "name": "Atrium Health Navicent",
           "source_url": "https://en.wikipedia.org/wiki/Macon,_Georgia"
         },
         {
-          "name": "Group",
-          "source_url": "https://www.bizjournals.com/atlanta/news/2019/12/14/macon-chamber-at-forefront-of-new-initiatives.html"
-        },
-        {
-          "name": "Medical Center of Central Georgia",
-          "source_url": "https://en.wikipedia.org/wiki/Central_Georgia"
-        },
-        {
-          "name": "Blue Bird Corporation",
-          "source_url": "https://en.wikipedia.org/wiki/Central_Georgia"
-        },
-        {
-          "name": "Coliseum Health System",
-          "source_url": "https://en.wikipedia.org/wiki/Central_Georgia"
-        },
-        {
-          "name": "Houston Healthcare",
-          "source_url": "https://en.wikipedia.org/wiki/Central_Georgia"
-        },
-        {
-          "name": "Norfolk Southern Railway",
+          "name": "ArcelorMittal Building Solutions",
           "source_url": null
+        },
+        {
+          "name": "Automotive",
+          "source_url": "https://georgia.org/press-releases/2026/georgia-based-unified-legacy-create-500-new-jobs-macon-bibb-county"
+        },
+        {
+          "name": "Brazil's Group Guidoni",
+          "source_url": "https://www.bizjournals.com/atlanta/news/2019/12/13/macon-bibb-county-industrial-sector-soars.html"
+        },
+        {
+          "name": "GreenBox Systems",
+          "source_url": "https://georgia.org/press-releases/2025/economic-development-investments-break-new-record"
         },
         {
           "name": "Piedmont Healthcare",
           "source_url": null
         },
         {
-          "name": "Thomaston Industrial Park",
+          "name": "Medical Center of Central Georgia",
           "source_url": "https://en.wikipedia.org/wiki/Central_Georgia"
         },
         {
-          "name": "Thomaston-Upson Industrial Development Authority",
-          "source_url": "https://en.wikipedia.org/wiki/Central_Georgia"
+          "name": "Navicent Health Medical Center",
+          "source_url": "https://www.selectgeorgia.com/about-us/our-team/regional-development/ryan-waldrep-central"
+        },
+        {
+          "name": "Authority Brands Relocates HQ",
+          "source_url": "https://georgia.org/press-releases/2025/economic-development-investments-break-new-record"
+        },
+        {
+          "name": "Clayton State University",
+          "source_url": "https://www.selectgeorgia.com/about-us/our-team/regional-development/mia-pressley-ms"
+        },
+        {
+          "name": "Cobb Co",
+          "source_url": "https://georgia.org/press-releases/2025/economic-development-investments-break-new-record"
         }
       ],
       "sources": [
         "https://en.wikipedia.org/wiki/Macon,_Georgia",
         "https://en.wikipedia.org/wiki/Central_Georgia",
         "https://georgia.org/press-releases/2026/georgia-based-unified-legacy-create-500-new-jobs-macon-bibb-county",
-        "https://www.bizjournals.com/atlanta/news/2019/12/15/health-care-companies-expand-in-macon-market.html",
-        "https://www.bizjournals.com/atlanta/news/2019/12/14/macon-chamber-at-forefront-of-new-initiatives.html",
-        "https://georgia.org/sites/default/files/2021-04/logistics_education_report.pdf",
-        "https://www.bizjournals.com/atlanta/news/2019/12/13/macon-bibb-county-industrial-sector-soars.html",
-        "https://www.bizjournals.com/atlanta/news/2018/12/13/macon-bibb-industrial-relocations-and-expansions.html"
+        "https://www.selectgeorgia.com/about-us/our-team/regional-development/mia-pressley-ms",
+        "https://georgia.org/press-releases/2025/economic-development-investments-break-new-record",
+        "https://georgia.org/search?page=126",
+        "https://www.selectgeorgia.com/about-us/our-team/regional-development/ryan-waldrep-central",
+        "https://www.bizjournals.com/atlanta/news/2019/12/15/health-care-companies-expand-in-macon-market.html"
       ],
       "method": "Representative list auto-discovered via Tavily web search across chamber-of-commerce, development-authority and local-news sources. Not exhaustive; ordering approximates source frequency, not headcount."
     },

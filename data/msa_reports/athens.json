@@ -3,7 +3,7 @@
   "short_name": "Athens",
   "full_name": "Athens-Clarke County, GA",
   "population": 217000,
-  "as_of": "2026-08-04",
+  "as_of": "2026-08-05",
   "sections": {
     "ces_employment": {
       "series_id": "SMS13120200000000001",
@@ -5161,23 +5161,27 @@
       "source": "Census Business Dynamics Statistics (establishment entry rate, 2022); metro rate indexed to US=100"
     },
     "major_employers": {
-      "as_of": "2026-08-04",
+      "as_of": "2026-08-05",
       "employers": [
-        {
-          "name": "University of Georgia",
-          "source_url": "https://www.onlineathens.com/story/news/state/2013/01/14/new-athens-chamber-chair-aid-new-economic-development-dept/15585264007"
-        },
         {
           "name": "Children's Healthcare of Atlanta",
           "source_url": "https://www.onlineathens.com/story/news/2026/03/04/georgias-best-employers-are-these-2-big-businesses-forbes-says/88982542007"
         },
         {
-          "name": "Aerospace",
-          "source_url": "https://georgia.org/press-releases/2023/life-sciences-manufacturer-meissner-create-1700-jobs-athens-clarke-county"
+          "name": "University of Georgia",
+          "source_url": "https://www.onlineathens.com/story/news/state/2013/01/14/new-athens-chamber-chair-aid-new-economic-development-dept/15585264007"
         },
         {
-          "name": "Clarke County School District",
-          "source_url": null
+          "name": "Manufacturing",
+          "source_url": "https://georgia.org/press-releases/2022/boehringer-ingelheim-expands-global-innovation-capabilities-invests-57-million"
+        },
+        {
+          "name": "Alpha Bank",
+          "source_url": "https://en.wikipedia.org/wiki/Athens"
+        },
+        {
+          "name": "Bank of Greece",
+          "source_url": "https://en.wikipedia.org/wiki/Athens"
         },
         {
           "name": "Certus Bank",
@@ -5188,44 +5192,40 @@
           "source_url": "https://www.onlineathens.com/story/news/state/2013/01/14/new-athens-chamber-chair-aid-new-economic-development-dept/15585264007"
         },
         {
-          "name": "Manufacturing",
-          "source_url": "https://georgia.org/press-releases/2023/life-sciences-manufacturer-meissner-create-1700-jobs-athens-clarke-county"
-        },
-        {
-          "name": "Meissner Corporation",
-          "source_url": "https://georgia.org/press-releases/2023/life-sciences-manufacturer-meissner-create-1700-jobs-athens-clarke-county"
-        },
-        {
-          "name": "TeleNet Marketing Solutions",
-          "source_url": "https://www.onlineathens.com/story/news/state/2014/08/27/forecast-athens-area-jobs-grow-12-percent/15520915007"
+          "name": "Piraeus Bank",
+          "source_url": "https://en.wikipedia.org/wiki/Athens"
         },
         {
           "name": "Athens Housing Authority",
           "source_url": "https://www.onlineathens.com/story/news/state/2013/01/14/new-athens-chamber-chair-aid-new-economic-development-dept/15585264007"
         },
         {
-          "name": "Athens Regional Medical Center",
+          "name": "Athens Medical Center",
           "source_url": null
         },
         {
-          "name": "Athens Technical College Augusta University Piedmont",
-          "source_url": "https://en.wikipedia.org/wiki/Athens,_Georgia"
+          "name": "Body Co",
+          "source_url": "https://georgia.org/why-georgia/regions-georgia/east-central-georgia"
         },
         {
-          "name": "Authority Brands Relocates HQ",
-          "source_url": "https://georgia.org/press-releases/2023/life-sciences-manufacturer-meissner-create-1700-jobs-athens-clarke-county"
+          "name": "Clarke County School District",
+          "source_url": null
         },
         {
-          "name": "Automotive",
-          "source_url": "https://georgia.org/press-releases/2023/life-sciences-manufacturer-meissner-create-1700-jobs-athens-clarke-county"
+          "name": "Food",
+          "source_url": "https://en.wikipedia.org/wiki/List_of_companies_of_Greece"
+        },
+        {
+          "name": "Health Care",
+          "source_url": "https://georgia.org/why-georgia/regions-georgia/east-central-georgia"
         }
       ],
       "sources": [
+        "https://www.onlineathens.com/story/news/state/2015/08/28/forecast-stock-market-roller-coaster-wont-dampen-athens-economy/15484730007",
         "https://www.onlineathens.com/business",
         "https://www.augustachronicle.com/story/news/2025/06/04/fortune-500s-list-of-the-biggest-corporations-includes-17-in-georgia/84010835007",
         "https://en.wikipedia.org/wiki/Athens,_Georgia",
         "https://www.onlineathens.com/story/news/2026/03/04/georgias-best-employers-are-these-2-big-businesses-forbes-says/88982542007",
-        "https://georgia.org/press-releases/2023/life-sciences-manufacturer-meissner-create-1700-jobs-athens-clarke-county",
         "https://www.ajc.com/top-workplaces/rounding-out-the-top-5-large-businesses/5FF7QFEAMRGF3PLDXYSC4NOFWQ",
         "https://www.onlineathens.com/story/news/state/2013/01/14/new-athens-chamber-chair-aid-new-economic-development-dept/15585264007",
         "https://www.augustachronicle.com/story/news/2025/08/26/forbes-ranked-americas-best-employers-by-state-what-is-georgias/85830225007"

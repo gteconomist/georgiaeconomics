@@ -3,7 +3,7 @@
   "short_name": "Albany",
   "full_name": "Albany, GA",
   "population": 146000,
-  "as_of": "2026-08-04",
+  "as_of": "2026-08-05",
   "sections": {
     "ces_employment": {
       "series_id": "SMS13105000000000001",
@@ -4230,18 +4230,22 @@
       "source": "Census Business Dynamics Statistics (establishment entry rate, 2022); metro rate indexed to US=100"
     },
     "major_employers": {
-      "as_of": "2026-08-04",
+      "as_of": "2026-08-05",
       "employers": [
+        {
+          "name": "Northeast Grocery Inc",
+          "source_url": "https://www.bizjournals.com/albany/subscriber-only/2026/07/02/albanys-365-largest-employers.html"
+        },
         {
           "name": "Albany State University",
           "source_url": "https://albanyherald.com/news/local/business-leaders-get-economic-updates-at-uga-summit"
         },
         {
-          "name": "Albany Med Health System",
-          "source_url": "https://www.bizjournals.com/albany/news/2023/07/14/albany-region-largest-private-sector-employers.html"
+          "name": "MillerCoors Brewing Company",
+          "source_url": "https://albanyherald.com/news/local/business-leaders-get-economic-updates-at-uga-summit"
         },
         {
-          "name": "Northeast Grocery Inc",
+          "name": "Health",
           "source_url": "https://www.bizjournals.com/albany/subscriber-only/2026/07/02/albanys-365-largest-employers.html"
         },
         {
@@ -4249,44 +4253,40 @@
           "source_url": "https://www.bizjournals.com/albany/subscriber-only/2026/07/02/albanys-365-largest-employers.html"
         },
         {
-          "name": "MillerCoors Brewing Company",
-          "source_url": "https://albanyherald.com/news/local/business-leaders-get-economic-updates-at-uga-summit"
-        },
-        {
-          "name": "St. Peter's Health",
-          "source_url": "https://www.bizjournals.com/albany/subscriber-only/2026/07/02/albanys-365-largest-employers.html"
+          "name": "Marine Corps Logistics Base",
+          "source_url": null
         },
         {
           "name": "Aerospace",
           "source_url": "https://www.selectgeorgia.com/discover-georgia/industries/fortune-500-list"
         },
         {
-          "name": "Emory Healthcare",
-          "source_url": "https://www.bizjournals.com/atlanta/subscriber-only/2025/10/17/metro-atlantas-largest-employers.html"
-        },
-        {
           "name": "Emory University",
           "source_url": "https://www.bizjournals.com/atlanta/subscriber-only/2025/10/17/metro-atlantas-largest-employers.html"
-        },
-        {
-          "name": "Health Partners",
-          "source_url": null
         },
         {
           "name": "Manufacturing",
           "source_url": "https://www.bizjournals.com/albany/news/2023/07/14/albany-region-largest-private-sector-employers.html"
         },
         {
-          "name": "Marine Corps Logistics Base",
-          "source_url": null
+          "name": "Aflac Inc",
+          "source_url": "https://albanyherald.com/news/heritage-four-other-area-businesses-named-to-georgia-trends-top-100-public-businesses"
         },
         {
-          "name": "Marketing Solutions",
-          "source_url": "https://www.bizjournals.com/albany/subscriber-only/2026/07/02/albanys-365-largest-employers.html"
+          "name": "Albany Housefurnishing Company",
+          "source_url": "https://en.wikipedia.org/wiki/Albany,_Georgia"
         },
         {
-          "name": "Phoebe Putney Health System",
-          "source_url": null
+          "name": "Albany Medical Centerexpand",
+          "source_url": "https://www.bizjournals.com/albany/news/2025/10/17/new-employers-list-2025.html"
+        },
+        {
+          "name": "Albany Railroad Depot Historic District",
+          "source_url": "https://en.wikipedia.org/wiki/Albany,_Georgia"
+        },
+        {
+          "name": "Asbury Automotive",
+          "source_url": "https://www.selectgeorgia.com/discover-georgia/industries/fortune-500-list"
         }
       ],
       "sources": [
@@ -4294,9 +4294,9 @@
         "https://www.bizjournals.com/albany/subscriber-only/2026/07/02/albanys-365-largest-employers.html",
         "https://www.bizjournals.com/atlanta/subscriber-only/2025/10/17/metro-atlantas-largest-employers.html",
         "https://albanyherald.com/news/heritage-four-other-area-businesses-named-to-georgia-trends-top-100-public-businesses",
+        "https://albanyherald.com/news/after-50-years-in-albany-mars-continues-to-be-key-local-employer",
         "https://en.wikipedia.org/wiki/Albany,_Georgia",
         "https://www.selectgeorgia.com/discover-georgia/industries/fortune-500-list",
-        "https://www.bizjournals.com/atlanta/news/2025/09/26/georgia-largest-manufacturers-by-employment.html",
         "https://www.bizjournals.com/albany/news/2023/07/14/albany-region-largest-private-sector-employers.html"
       ],
       "method": "Representative list auto-discovered via Tavily web search across chamber-of-commerce, development-authority and local-news sources. Not exhaustive; ordering approximates source frequency, not headcount."

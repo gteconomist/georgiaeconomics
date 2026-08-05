@@ -3,7 +3,7 @@
   "short_name": "Hinesville",
   "full_name": "Hinesville, GA",
   "population": 78000,
-  "as_of": "2026-08-04",
+  "as_of": "2026-08-05",
   "sections": {
     "ces_employment": {
       "series_id": "SMS13259800000000001",
@@ -4029,39 +4029,43 @@
       "source": "Census Business Dynamics Statistics (establishment entry rate, 2022); metro rate indexed to US=100"
     },
     "major_employers": {
-      "as_of": "2026-08-04",
+      "as_of": "2026-08-05",
       "employers": [
         {
-          "name": "Automotive",
-          "source_url": "https://georgia.org/why-georgia/regions-georgia/coastal-georgia"
+          "name": "Aerospace",
+          "source_url": "https://georgia.org/why-georgia/regions-georgia"
         },
         {
-          "name": "Aerospace",
-          "source_url": "https://georgia.org"
+          "name": "Automotive",
+          "source_url": "https://georgia.org/why-georgia/regions-georgia"
+        },
+        {
+          "name": "Liberty County School System",
+          "source_url": null
+        },
+        {
+          "name": "Manufacturing",
+          "source_url": "https://georgia.org/why-georgia/regions-georgia"
         },
         {
           "name": "Liberty County School District",
           "source_url": "https://en.wikipedia.org/wiki/Hinesville,_Georgia"
         },
         {
-          "name": "Manufacturing",
-          "source_url": "https://georgia.org/why-georgia/regions-georgia/coastal-georgia"
+          "name": "Energy",
+          "source_url": "https://georgia.org/why-georgia/regions-georgia"
         },
         {
-          "name": "Distribution",
-          "source_url": "https://georgia.org/why-georgia/regions-georgia/coastal-georgia"
+          "name": "Food Processing",
+          "source_url": "https://georgia.org/why-georgia/regions-georgia"
+        },
+        {
+          "name": "Georgia Southern University",
+          "source_url": null
         },
         {
           "name": "Hinesville Medical Center",
           "source_url": null
-        },
-        {
-          "name": "Hyundai Motor Group",
-          "source_url": "https://georgia.org/why-georgia/regions-georgia/coastal-georgia"
-        },
-        {
-          "name": "LG Energy Solution",
-          "source_url": "https://georgia.org/why-georgia/regions-georgia/coastal-georgia"
         },
         {
           "name": "Liberty County High School",
@@ -4069,29 +4073,26 @@
         },
         {
           "name": "Logistics",
+          "source_url": "https://georgia.org/why-georgia/regions-georgia"
+        },
+        {
+          "name": "Memorial Health System",
+          "source_url": null
+        },
+        {
+          "name": "Savannah Regional Medical Center",
+          "source_url": null
+        },
+        {
+          "name": "The Hyundai Motor Group Metaplant America",
           "source_url": "https://georgia.org/why-georgia/regions-georgia/coastal-georgia"
-        },
-        {
-          "name": "Long County School District",
-          "source_url": null
-        },
-        {
-          "name": "Memorial Health",
-          "source_url": null
-        },
-        {
-          "name": "Port of Savannah",
-          "source_url": null
-        },
-        {
-          "name": "Southside Regional Medical Center",
-          "source_url": null
         }
       ],
       "sources": [
         "https://georgia.org/why-georgia/regions-georgia/coastal-georgia",
         "https://georgia.org/sites/default/files/2020-08/georgia_safety_promise-8-27.pdf",
         "https://en.wikipedia.org/wiki/Hinesville,_Georgia",
+        "https://georgia.org/why-georgia/regions-georgia",
         "https://georgia.org",
         "https://www.savannahnow.com/story/news/2012/02/04/exchange-brief/13663454007"
       ],

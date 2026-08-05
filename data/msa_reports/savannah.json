@@ -3,7 +3,7 @@
   "short_name": "Savannah",
   "full_name": "Savannah, GA",
   "population": 410000,
-  "as_of": "2026-08-04",
+  "as_of": "2026-08-05",
   "sections": {
     "ces_employment": {
       "series_id": "SMS13423400000000001",
@@ -5232,74 +5232,74 @@
       "source": "Census Business Dynamics Statistics (establishment entry rate, 2022); metro rate indexed to US=100"
     },
     "major_employers": {
-      "as_of": "2026-08-04",
+      "as_of": "2026-08-05",
       "employers": [
-        {
-          "name": "Port of Savannah",
-          "source_url": "https://www.savannahnow.com/story/news/local/2026/07/09/savannah-areas-economic-growth-slowed-to-a-crawl-in-q1-this-year/90826774007"
-        },
-        {
-          "name": "Savannah State University",
-          "source_url": "https://www.selectgeorgia.com/yourgeorgia/why-savannah-HQ/innovation-resources"
-        },
         {
           "name": "Gulfstream Aerospace",
           "source_url": "https://en.wikipedia.org/wiki/Category:Companies_based_in_Savannah,_Georgia"
-        },
-        {
-          "name": "Savannah Technical College",
-          "source_url": "https://en.wikipedia.org/wiki/Savannah,_GA_MSA"
         },
         {
           "name": "Children's Healthcare of Atlanta",
           "source_url": "https://www.savannahnow.com/story/news/2026/02/24/forbes-ranked-2-georgia-businesses-among-top-50-large-employers-in-us/88828522007"
         },
         {
-          "name": "Savannah College of Art",
-          "source_url": "https://www.selectgeorgia.com/yourgeorgia/why-savannah-HQ/innovation-resources"
+          "name": "Colony Bank",
+          "source_url": "https://www.savannahnow.com/story/business/2013/02/19/understanding-purpose-savannah-chamber/13655438007"
         },
         {
-          "name": "Chase Bank",
-          "source_url": "https://en.wikipedia.org/wiki/Savannah,_GA_MSA"
+          "name": "Savannah State University",
+          "source_url": "https://www.savannahnow.com/story/business/2013/02/19/understanding-purpose-savannah-chamber/13655438007"
         },
         {
-          "name": "Derst Baking Company",
-          "source_url": "https://en.wikipedia.org/wiki/Category:Companies_based_in_Savannah,_Georgia"
-        },
-        {
-          "name": "Georgia Southern University",
-          "source_url": "https://www.selectgeorgia.com/yourgeorgia/why-savannah-HQ/innovation-resources"
+          "name": "First Citizens Bank",
+          "source_url": "https://www.savannahnow.com/story/business/2013/02/19/understanding-purpose-savannah-chamber/13655438007"
         },
         {
           "name": "Heartland Payment Systems",
           "source_url": "https://www.savannahnow.com/story/business/2013/02/19/understanding-purpose-savannah-chamber/13655438007"
         },
         {
+          "name": "Hyundai Motor Group",
+          "source_url": "https://www.savannahnow.com/story/business/employment/2025/03/27/savannah-manufacturing-job-opportunities-increase-thanks-to-hyundai-and-rise-efforts/78064144007"
+        },
+        {
           "name": "Liberty Mutual Insurance",
           "source_url": "https://www.savannahnow.com/story/business/2013/02/19/understanding-purpose-savannah-chamber/13655438007"
         },
         {
-          "name": "American Naval Stores Company",
-          "source_url": "https://en.wikipedia.org/wiki/Category:Companies_based_in_Savannah,_Georgia"
+          "name": "Savannah Economic Development Authority",
+          "source_url": "https://www.selectgeorgia.com/blog/welcome-seapoint-industrial-site-savannah-ga"
         },
         {
-          "name": "Candler Health System",
+          "name": "Chatham County School District",
           "source_url": null
         },
         {
-          "name": "Co. Morris Multimedia",
+          "name": "Derst Baking Company",
           "source_url": "https://en.wikipedia.org/wiki/Category:Companies_based_in_Savannah,_Georgia"
+        },
+        {
+          "name": "Memorial Health University Medical Center",
+          "source_url": null
+        },
+        {
+          "name": "Metaplant America",
+          "source_url": null
+        },
+        {
+          "name": "National Office Systems",
+          "source_url": "https://www.savannahnow.com/story/business/2013/01/21/business-savannah-roundup/13965486007"
         }
       ],
       "sources": [
         "https://en.wikipedia.org/wiki/Savannah,_Georgia",
+        "https://en.wikipedia.org/wiki/Augusta,_Georgia",
         "https://www.selectgeorgia.com/blog/welcome-seapoint-industrial-site-savannah-ga",
         "https://www.savannahnow.com/story/news/2026/02/24/forbes-ranked-2-georgia-businesses-among-top-50-large-employers-in-us/88828522007",
         "https://en.wikipedia.org/wiki/Category:Companies_based_in_Savannah,_Georgia",
-        "https://www.savannahnow.com/story/news/local/2026/07/09/savannah-areas-economic-growth-slowed-to-a-crawl-in-q1-this-year/90826774007",
-        "https://www.selectgeorgia.com/yourgeorgia/why-savannah-HQ/innovation-resources",
         "https://www.savannahnow.com/story/business/2013/02/19/understanding-purpose-savannah-chamber/13655438007",
-        "https://www.savannahnow.com/story/business/2014/10/10/savannah-chamber-recognizes-entrepreneurs-manufacturers-2014-business-awards/13961954007"
+        "https://www.savannahnow.com/story/business/2013/01/21/business-savannah-roundup/13965486007",
+        "https://www.savannahnow.com/story/business/2013/05/27/business-savannah-news-summary/13612244007"
       ],
       "method": "Representative list auto-discovered via Tavily web search across chamber-of-commerce, development-authority and local-news sources. Not exhaustive; ordering approximates source frequency, not headcount."
     },

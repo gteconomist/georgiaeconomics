@@ -3,7 +3,7 @@
   "short_name": "Brunswick",
   "full_name": "Brunswick, GA",
   "population": 120000,
-  "as_of": "2026-08-04",
+  "as_of": "2026-08-05",
   "sections": {
     "ces_employment": {
       "series_id": "SMS13152600000000001",
@@ -4184,7 +4184,7 @@
       "source": "Census Business Dynamics Statistics (establishment entry rate, 2022); metro rate indexed to US=100"
     },
     "major_employers": {
-      "as_of": "2026-08-04",
+      "as_of": "2026-08-05",
       "employers": [
         {
           "name": "Gulfstream Aerospace",
@@ -4195,24 +4195,32 @@
           "source_url": "https://en.wikipedia.org/wiki/Brunswick,_Georgia"
         },
         {
-          "name": "Sea Island Company",
-          "source_url": "https://en.wikipedia.org/wiki/Golden_Isles_of_Georgia"
+          "name": "Georgia Ports Authority",
+          "source_url": "https://www.selectgeorgia.com/blog/wtc-sav-prosperity"
         },
         {
           "name": "The Port of Brunswick",
           "source_url": "https://en.wikipedia.org/wiki/Brunswick,_Georgia"
         },
         {
-          "name": "Georgia Ports Authority",
+          "name": "Georgia Power Economic Development",
           "source_url": "https://www.selectgeorgia.com/blog/wtc-sav-prosperity"
+        },
+        {
+          "name": "College of Coastal Georgia",
+          "source_url": "https://en.wikipedia.org/wiki/Brunswick,_Georgia"
         },
         {
           "name": "Glynn County Development Authority",
           "source_url": "https://en.wikipedia.org/wiki/Golden_Isles_of_Georgia"
         },
         {
-          "name": "College of Coastal Georgia",
-          "source_url": "https://en.wikipedia.org/wiki/Brunswick,_Georgia"
+          "name": "Archer Aviation",
+          "source_url": "https://georgia.org/blogs/global-local-industries-put-georgia-map"
+        },
+        {
+          "name": "Food",
+          "source_url": "https://georgia.org/sites/default/files/2020-08/georgia_safety_promise-8-27.pdf"
         },
         {
           "name": "Healthcare",
@@ -4223,12 +4231,8 @@
           "source_url": "https://en.wikipedia.org/wiki/Golden_Isles_of_Georgia"
         },
         {
-          "name": "Archer Aviation",
-          "source_url": "https://georgia.org/blogs/global-local-industries-put-georgia-map"
-        },
-        {
-          "name": "Georgia Power Economic Development",
-          "source_url": "https://www.selectgeorgia.com/blog/wtc-sav-prosperity"
+          "name": "Sea Island Company",
+          "source_url": "https://en.wikipedia.org/wiki/Golden_Isles_of_Georgia"
         },
         {
           "name": "Aerospace Giants",
@@ -4237,17 +4241,13 @@
         {
           "name": "Anduril Industries",
           "source_url": "https://georgia.org/blogs/global-local-industries-put-georgia-map"
-        },
-        {
-          "name": "Arts Academy Fitness",
-          "source_url": "https://georgia.org/sites/default/files/2020-08/georgia_safety_promise-8-27.pdf"
         }
       ],
       "sources": [
         "https://en.wikipedia.org/wiki/Brunswick,_Georgia",
         "https://www.selectgeorgia.com/blog/wtc-sav-prosperity",
         "https://en.wikipedia.org/wiki/Golden_Isles_of_Georgia",
-        "https://en.wikipedia.org/wiki/Brunswick_Corporation",
+        "https://en.wikipedia.org/wiki/History_of_Brunswick,_Georgia",
         "https://georgia.org/blogs/global-local-industries-put-georgia-map",
         "https://georgia.org/sites/default/files/2020-08/georgia_safety_promise-8-27.pdf",
         "https://georgia.org/sites/default/files/2020-05/georgia_taiwan_connection_2020.pdf",
