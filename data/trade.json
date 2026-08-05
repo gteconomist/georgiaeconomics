@@ -1,13 +1,13 @@
 {
   "_fixture": false,
-  "_note": "Live data: Census USA Trade Online (GA exports), BLS CES (ATL MSA T&W employment). Calibrated estimate (latest GPA point may not have refreshed): Port of Savannah TEU, Brunswick autos, ATL Hartsfield cargo.",
+  "_note": "Live data: Census USA Trade Online (GA exports), BLS CES (ATL MSA T&W employment), Savannah TEU (GPA), Brunswick autos (GPA). Calibrated estimate (latest GPA point may not have refreshed): ATL Hartsfield cargo.",
   "source": "FIXTURE (target: Census USA Trade Online + BLS CES + Tavily for ports)",
-  "latest_label": "2026-05",
+  "latest_label": "2026-06",
   "kpis": {
-    "savannah_teu_latest": 464,
-    "savannah_teu_yoy": -0.4,
-    "brunswick_autos_latest": 75.9,
-    "brunswick_autos_yoy": 14.0,
+    "savannah_teu_latest": 575.0,
+    "savannah_teu_yoy": 18.5,
+    "brunswick_autos_latest": 91.4,
+    "brunswick_autos_yoy": 18.0,
     "atl_cargo_latest": 57.9,
     "atl_cargo_yoy": -3.5,
     "savannah_2025_total_teu_k": 5653,
@@ -318,6 +318,10 @@
     [
       "2026-04",
       464
+    ],
+    [
+      "2026-08",
+      575.0
     ]
   ],
   "brunswick_autos_k": [
@@ -623,7 +627,7 @@
     ],
     [
       "2026-04",
-      75.9
+      91.4
     ]
   ],
   "atl_cargo_kt": [
@@ -933,10 +937,6 @@
     ]
   ],
   "atl_tw_employment_k": [
-    [
-      "2019-10",
-      175.2
-    ],
     [
       "2019-11",
       180.2
@@ -1251,7 +1251,11 @@
     ],
     [
       "2026-05",
-      190.2
+      190.0
+    ],
+    [
+      "2026-06",
+      189.4
     ]
   ],
   "ga_exports_2025": [
@@ -1327,7 +1331,7 @@
     }
   ],
   "ga_exports_top10_total_musd": 35397.0,
-  "fetched_at": "2026-07-05",
+  "fetched_at": "2026-08-05",
   "ga_exports_latest": [
     {
       "country": "Canada",
@@ -1502,10 +1506,10 @@
   },
   "_meta": {
     "exports_annual": {
-      "last_updated": "2026-07-05T19:11:46Z"
+      "last_updated": "2026-08-05T19:24:25Z"
     },
     "exports_by_commodity": {
-      "last_updated": "2026-07-05T19:11:55Z"
+      "last_updated": "2026-08-05T19:24:40Z"
     }
   }
 }
