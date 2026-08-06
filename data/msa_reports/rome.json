@@ -3,7 +3,7 @@
   "short_name": "Rome",
   "full_name": "Rome, GA",
   "population": 99000,
-  "as_of": "2026-08-05",
+  "as_of": "2026-08-06",
   "sections": {
     "ces_employment": {
       "series_id": "SMS13406600000000001",
@@ -4488,15 +4488,11 @@
       "source": "Census Business Dynamics Statistics (establishment entry rate, 2022); metro rate indexed to US=100"
     },
     "major_employers": {
-      "as_of": "2026-08-05",
+      "as_of": "2026-08-06",
       "employers": [
         {
           "name": "VT Industries",
           "source_url": "https://albanyherald.com/news/business-news-2/42-million-expansion-of-rome-company-brings-42-new-jobs"
-        },
-        {
-          "name": "Kerry Group",
-          "source_url": "https://en.wikipedia.org/wiki/Rome,_Georgia"
         },
         {
           "name": "Floyd Medical Center",
@@ -4523,11 +4519,23 @@
           "source_url": "https://en.wikipedia.org/wiki/Rome,_Georgia"
         },
         {
+          "name": "Medical College of Georgia",
+          "source_url": "https://en.wikipedia.org/wiki/Rome,_Georgia"
+        },
+        {
           "name": "Redmond Regional Medical Center",
           "source_url": "https://en.wikipedia.org/wiki/Rome,_Georgia"
         },
         {
-          "name": "AdventHealth Medical Group Cardiology",
+          "name": "Floyd Hospital",
+          "source_url": "https://en.wikipedia.org/wiki/Atrium_Health_Floyd"
+        },
+        {
+          "name": "Kerry Group",
+          "source_url": "https://en.wikipedia.org/wiki/Rome,_Georgia"
+        },
+        {
+          "name": "Winthrop Health",
           "source_url": "https://www.northwestgeorgianews.com/rome/business"
         },
         {
@@ -4535,27 +4543,19 @@
           "source_url": "https://en.wikipedia.org/wiki/List_of_largest_Italian_companies"
         },
         {
-          "name": "Capitoline Products Inc",
-          "source_url": "https://albanyherald.com/news/business-news-2/42-million-expansion-of-rome-company-brings-42-new-jobs"
-        },
-        {
           "name": "Coca-Cola Bottling Co. United Inc",
           "source_url": "https://www.bizjournals.com/atlanta/news/2024/03/26/rome-georgia-nova-river-district-cci-real-estate.html"
-        },
-        {
-          "name": "Energy",
-          "source_url": "https://en.wikipedia.org/wiki/List_of_largest_Italian_companies"
         }
       ],
       "sources": [
         "https://en.wikipedia.org/wiki/Rome,_Georgia",
         "https://en.wikipedia.org/wiki/Atrium_Health_Floyd",
-        "https://georgia.org/press-releases/2026/gov-kemp-leads-economic-development-mission-scotland-and-ireland",
-        "https://www.bizjournals.com/atlanta/news/2024/03/26/rome-georgia-nova-river-district-cci-real-estate.html",
         "https://georgia.org/sites/default/files/2023-01/lowes_4.pdf",
-        "https://albanyherald.com/news/business-news-2/42-million-expansion-of-rome-company-brings-42-new-jobs",
+        "https://www.northwestgeorgianews.com/rome/business",
+        "https://www.bizjournals.com/atlanta/news/2024/03/26/rome-georgia-nova-river-district-cci-real-estate.html",
         "https://www.northwestgeorgianews.com/rome/business/lewis-chemical-named-small-business-of-the-year-larry-alford-of-service-master-by-twins/article_130f8d6a-8486-11e3-b983-001a4bcf6878.html",
-        "https://www.northwestgeorgianews.com/rome/business"
+        "https://www.northwestgeorgianews.com/rome/business/celebrating-family-owned-small-businesses-in-rome/article_3039f5ec-0720-11ef-a969-db184510c062.html",
+        "https://albanyherald.com/news/business-news-2/42-million-expansion-of-rome-company-brings-42-new-jobs"
       ],
       "method": "Representative list auto-discovered via Tavily web search across chamber-of-commerce, development-authority and local-news sources. Not exhaustive; ordering approximates source frequency, not headcount."
     },

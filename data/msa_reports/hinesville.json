@@ -3,7 +3,7 @@
   "short_name": "Hinesville",
   "full_name": "Hinesville, GA",
   "population": 78000,
-  "as_of": "2026-08-05",
+  "as_of": "2026-08-06",
   "sections": {
     "ces_employment": {
       "series_id": "SMS13259800000000001",
@@ -4029,72 +4029,73 @@
       "source": "Census Business Dynamics Statistics (establishment entry rate, 2022); metro rate indexed to US=100"
     },
     "major_employers": {
-      "as_of": "2026-08-05",
+      "as_of": "2026-08-06",
       "employers": [
         {
           "name": "Aerospace",
-          "source_url": "https://georgia.org/why-georgia/regions-georgia"
+          "source_url": "https://georgia.org"
         },
         {
           "name": "Automotive",
-          "source_url": "https://georgia.org/why-georgia/regions-georgia"
+          "source_url": "https://georgia.org"
+        },
+        {
+          "name": "Hyundai Motor Group Metaplant America",
+          "source_url": "https://georgia.org"
         },
         {
           "name": "Liberty County School System",
           "source_url": null
         },
         {
-          "name": "Manufacturing",
-          "source_url": "https://georgia.org/why-georgia/regions-georgia"
+          "name": "Logistics",
+          "source_url": "https://georgia.org"
         },
         {
-          "name": "Liberty County School District",
-          "source_url": "https://en.wikipedia.org/wiki/Hinesville,_Georgia"
+          "name": "Manufacturing",
+          "source_url": "https://georgia.org"
+        },
+        {
+          "name": "Distribution",
+          "source_url": "https://georgia.org/why-georgia/regions-georgia/coastal-georgia"
         },
         {
           "name": "Energy",
-          "source_url": "https://georgia.org/why-georgia/regions-georgia"
+          "source_url": "https://georgia.org"
         },
         {
           "name": "Food Processing",
-          "source_url": "https://georgia.org/why-georgia/regions-georgia"
+          "source_url": "https://georgia.org"
         },
         {
-          "name": "Georgia Southern University",
+          "name": "Fort Stewart Medical Center",
           "source_url": null
         },
         {
-          "name": "Hinesville Medical Center",
+          "name": "Gordon Hospital",
           "source_url": null
         },
         {
-          "name": "Liberty County High School",
-          "source_url": "https://en.wikipedia.org/wiki/Hinesville,_Georgia"
-        },
-        {
-          "name": "Logistics",
-          "source_url": "https://georgia.org/why-georgia/regions-georgia"
-        },
-        {
-          "name": "Memorial Health System",
+          "name": "Hinesville Hospital",
           "source_url": null
         },
         {
-          "name": "Savannah Regional Medical Center",
-          "source_url": null
-        },
-        {
-          "name": "The Hyundai Motor Group Metaplant America",
+          "name": "Industries",
           "source_url": "https://georgia.org/why-georgia/regions-georgia/coastal-georgia"
+        },
+        {
+          "name": "Augusta Technical College",
+          "source_url": "https://georgia.org/why-georgia/regions-georgia"
         }
       ],
       "sources": [
-        "https://georgia.org/why-georgia/regions-georgia/coastal-georgia",
-        "https://georgia.org/sites/default/files/2020-08/georgia_safety_promise-8-27.pdf",
-        "https://en.wikipedia.org/wiki/Hinesville,_Georgia",
-        "https://georgia.org/why-georgia/regions-georgia",
         "https://georgia.org",
-        "https://www.savannahnow.com/story/news/2012/02/04/exchange-brief/13663454007"
+        "https://georgia.org/why-georgia/regions-georgia",
+        "https://georgia.org/why-georgia/regions-georgia/coastal-georgia",
+        "https://georgia.org/sites/default/files/2018-11/gdecd_board_book_-_5-23-18.pdf",
+        "https://georgia.org/hyundai-motor-group-metaplant-america",
+        "https://www.savannahnow.com/story/news/2012/02/04/exchange-brief/13663454007",
+        "https://www.savannahnow.com/story/news/2009/02/13/jobless-claims-up-39-percent/13746010007"
       ],
       "method": "Representative list auto-discovered via Tavily web search across chamber-of-commerce, development-authority and local-news sources. Not exhaustive; ordering approximates source frequency, not headcount."
     },

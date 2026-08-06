@@ -3,7 +3,7 @@
   "short_name": "Augusta",
   "full_name": "Augusta-Richmond County, GA-SC",
   "population": 611000,
-  "as_of": "2026-08-05",
+  "as_of": "2026-08-06",
   "sections": {
     "ces_employment": {
       "series_id": "SMS13122600000000001",
@@ -5133,19 +5133,35 @@
       "source": "Census Business Dynamics Statistics (establishment entry rate, 2022); metro rate indexed to US=100"
     },
     "major_employers": {
-      "as_of": "2026-08-05",
+      "as_of": "2026-08-06",
       "employers": [
         {
           "name": "Augusta University",
           "source_url": "https://en.wikipedia.org/wiki/Augusta,_Georgia"
         },
         {
-          "name": "FPL Food",
-          "source_url": "https://www.augustametrochamber.com/partnership-cornerstone-members"
-        },
-        {
           "name": "Richmond County School System",
           "source_url": "https://en.wikipedia.org/wiki/Augusta,_Georgia"
+        },
+        {
+          "name": "Augusta Technical College",
+          "source_url": "https://en.wikipedia.org/wiki/Augusta-Richmond_County,_GA-SC_Metropolitan_Statistical_Area"
+        },
+        {
+          "name": "East Georgia State College",
+          "source_url": "https://en.wikipedia.org/wiki/Augusta-Richmond_County,_GA-SC_Metropolitan_Statistical_Area"
+        },
+        {
+          "name": "Encompass Health Corporation",
+          "source_url": "https://en.wikipedia.org/wiki/Augusta-Richmond_County,_GA-SC_Metropolitan_Statistical_Area"
+        },
+        {
+          "name": "Georgia Military College",
+          "source_url": "https://en.wikipedia.org/wiki/Augusta-Richmond_County,_GA-SC_Metropolitan_Statistical_Area"
+        },
+        {
+          "name": "Paine College",
+          "source_url": "https://en.wikipedia.org/wiki/Augusta-Richmond_County,_GA-SC_Metropolitan_Statistical_Area"
         },
         {
           "name": "Department of Energy",
@@ -5153,26 +5169,6 @@
         },
         {
           "name": "Doctors Hospital",
-          "source_url": "https://en.wikipedia.org/wiki/Augusta,_Georgia"
-        },
-        {
-          "name": "Encompass Health",
-          "source_url": "https://en.wikipedia.org/wiki/Augusta_metropolitan_area"
-        },
-        {
-          "name": "Augusta Technical College",
-          "source_url": "https://en.wikipedia.org/wiki/Augusta_metropolitan_area"
-        },
-        {
-          "name": "Bank of America",
-          "source_url": "https://www.augustametrochamber.com/partnership-cornerstone-members"
-        },
-        {
-          "name": "Beasley Media Group",
-          "source_url": "https://www.augustametrochamber.com/partnership-cornerstone-members"
-        },
-        {
-          "name": "Cardinal Health",
           "source_url": "https://en.wikipedia.org/wiki/Augusta,_Georgia"
         },
         {
@@ -5184,23 +5180,27 @@
           "source_url": "https://en.wikipedia.org/wiki/Augusta,_Georgia"
         },
         {
-          "name": "Fluor Corporation",
-          "source_url": "https://www.augustametrochamber.com/partnership-cornerstone-members"
+          "name": "Augusta Economic Development Authority",
+          "source_url": "https://en.wikipedia.org/wiki/Augusta,_Georgia"
         },
         {
-          "name": "Gracewood State School",
-          "source_url": "https://www.augustaga.gov/DocumentView.asp?DID=335"
+          "name": "GF Casting Solutions",
+          "source_url": "https://www.augustachronicle.com/story/business/economy/2025/01/08/augustas-economic-development-in-2024-likely-will-set-up-strong-2025/77519554007"
+        },
+        {
+          "name": "KSB Company",
+          "source_url": "https://en.wikipedia.org/wiki/Augusta,_Georgia"
         }
       ],
       "sources": [
         "https://en.wikipedia.org/wiki/Augusta,_Georgia",
+        "https://en.wikipedia.org/wiki/Augusta-Richmond_County,_GA-SC_Metropolitan_Statistical_Area",
         "https://en.wikipedia.org/wiki/Augusta_metropolitan_area",
         "https://www.augustachronicle.com/story/business/2020/01/04/scuttlebiz-metro-area-economic-growth-outpaced-national-average-in-2018/1954353007",
         "https://www.augustachronicle.com/story/business/economy/2025/01/08/augustas-economic-development-in-2024-likely-will-set-up-strong-2025/77519554007",
-        "https://www.augustachronicle.com/story/news/2025/06/04/fortune-500s-list-of-the-biggest-corporations-includes-17-in-georgia/84010835007",
         "https://www.augustachronicle.com/story/news/2025/08/26/forbes-ranked-americas-best-employers-by-state-what-is-georgias/85830225007",
-        "https://www.augustametrochamber.com/manufacturing",
-        "https://www.augustaga.gov/DocumentView.asp?DID=335"
+        "https://www.augustachronicle.com/story/business/2022/04/05/augusta-area-job-numbers-still-short-pre-covid-pandemic-levels/7245773001",
+        "https://www.augustachronicle.com/story/news/2012/07/11/area-transit-systems-near-bottom-providing-transportation-jobs/14491060007"
       ],
       "method": "Representative list auto-discovered via Tavily web search across chamber-of-commerce, development-authority and local-news sources. Not exhaustive; ordering approximates source frequency, not headcount."
     },

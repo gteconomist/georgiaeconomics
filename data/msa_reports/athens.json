@@ -3,7 +3,7 @@
   "short_name": "Athens",
   "full_name": "Athens-Clarke County, GA",
   "population": 217000,
-  "as_of": "2026-08-05",
+  "as_of": "2026-08-06",
   "sections": {
     "ces_employment": {
       "series_id": "SMS13120200000000001",
@@ -5161,69 +5161,69 @@
       "source": "Census Business Dynamics Statistics (establishment entry rate, 2022); metro rate indexed to US=100"
     },
     "major_employers": {
-      "as_of": "2026-08-05",
+      "as_of": "2026-08-06",
       "employers": [
-        {
-          "name": "Children's Healthcare of Atlanta",
-          "source_url": "https://www.onlineathens.com/story/news/2026/03/04/georgias-best-employers-are-these-2-big-businesses-forbes-says/88982542007"
-        },
         {
           "name": "University of Georgia",
           "source_url": "https://www.onlineathens.com/story/news/state/2013/01/14/new-athens-chamber-chair-aid-new-economic-development-dept/15585264007"
         },
         {
-          "name": "Manufacturing",
-          "source_url": "https://georgia.org/press-releases/2022/boehringer-ingelheim-expands-global-innovation-capabilities-invests-57-million"
+          "name": "Children's Healthcare of Atlanta",
+          "source_url": "https://www.onlineathens.com/story/news/2026/03/04/georgias-best-employers-are-these-2-big-businesses-forbes-says/88982542007"
         },
         {
-          "name": "Alpha Bank",
-          "source_url": "https://en.wikipedia.org/wiki/Athens"
-        },
-        {
-          "name": "Bank of Greece",
-          "source_url": "https://en.wikipedia.org/wiki/Athens"
-        },
-        {
-          "name": "Certus Bank",
-          "source_url": "https://www.onlineathens.com/story/news/state/2013/01/14/new-athens-chamber-chair-aid-new-economic-development-dept/15585264007"
-        },
-        {
-          "name": "Georgia Power",
-          "source_url": "https://www.onlineathens.com/story/news/state/2013/01/14/new-athens-chamber-chair-aid-new-economic-development-dept/15585264007"
-        },
-        {
-          "name": "Piraeus Bank",
-          "source_url": "https://en.wikipedia.org/wiki/Athens"
+          "name": "Piedmont Healthcare",
+          "source_url": "https://www.ajc.com/business/hospital-giants-reach-beyond-metro-area/vQS8gUaJsJVpj11tgaX5xJ"
         },
         {
           "name": "Athens Housing Authority",
           "source_url": "https://www.onlineathens.com/story/news/state/2013/01/14/new-athens-chamber-chair-aid-new-economic-development-dept/15585264007"
         },
         {
-          "name": "Athens Medical Center",
+          "name": "Athens Regional Medical Center",
           "source_url": null
         },
         {
-          "name": "Body Co",
-          "source_url": "https://georgia.org/why-georgia/regions-georgia/east-central-georgia"
+          "name": "Georgia Power",
+          "source_url": "https://www.onlineathens.com/story/news/state/2013/01/14/new-athens-chamber-chair-aid-new-economic-development-dept/15585264007"
+        },
+        {
+          "name": "Certus Bank",
+          "source_url": "https://www.onlineathens.com/story/news/state/2013/01/14/new-athens-chamber-chair-aid-new-economic-development-dept/15585264007"
+        },
+        {
+          "name": "TeleNet Marketing Solutions",
+          "source_url": "https://www.onlineathens.com/story/news/state/2014/08/27/forecast-athens-area-jobs-grow-12-percent/15520915007"
         },
         {
           "name": "Clarke County School District",
           "source_url": null
         },
         {
-          "name": "Food",
-          "source_url": "https://en.wikipedia.org/wiki/List_of_companies_of_Greece"
+          "name": "Clarke County School System",
+          "source_url": null
         },
         {
-          "name": "Health Care",
-          "source_url": "https://georgia.org/why-georgia/regions-georgia/east-central-georgia"
+          "name": "Hospital",
+          "source_url": "https://www.ajc.com/business/hospital-giants-reach-beyond-metro-area/vQS8gUaJsJVpj11tgaX5xJ"
+        },
+        {
+          "name": "Port of Savannah",
+          "source_url": "https://www.onlineathens.com/story/news/state/2015/08/28/forecast-stock-market-roller-coaster-wont-dampen-athens-economy/15484730007"
+        },
+        {
+          "name": "Synovus Bank",
+          "source_url": null
+        },
+        {
+          "name": "Athens Regional Health System",
+          "source_url": "https://www.ajc.com/business/hospital-giants-reach-beyond-metro-area/vQS8gUaJsJVpj11tgaX5xJ"
         }
       ],
       "sources": [
         "https://www.onlineathens.com/story/news/state/2015/08/28/forecast-stock-market-roller-coaster-wont-dampen-athens-economy/15484730007",
+        "https://www.ajc.com/business/hospital-giants-reach-beyond-metro-area/vQS8gUaJsJVpj11tgaX5xJ",
         "https://www.onlineathens.com/business",
-        "https://www.augustachronicle.com/story/news/2025/06/04/fortune-500s-list-of-the-biggest-corporations-includes-17-in-georgia/84010835007",
         "https://en.wikipedia.org/wiki/Athens,_Georgia",
         "https://www.onlineathens.com/story/news/2026/03/04/georgias-best-employers-are-these-2-big-businesses-forbes-says/88982542007",
         "https://www.ajc.com/top-workplaces/rounding-out-the-top-5-large-businesses/5FF7QFEAMRGF3PLDXYSC4NOFWQ",
