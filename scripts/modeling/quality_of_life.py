@@ -1,4 +1,4 @@
-"""EIG Quality-of-Life Index — a standardized 0-300 composite for an MSA.
+"""Georgia Economics Quality-of-Life Index — a standardized 0-300 composite for an MSA.
 
 Combines liveability signals, each z-scored against an approximate U.S.-metro
 reference distribution (sign-adjusted so higher z = better), averaged, then
@@ -98,11 +98,11 @@ def compute(cbsa: str, output_so_far: dict) -> Optional[dict]:
         "mean_z": round(mean_z, 3),
         "components": components,
         "excluded": ["crime"],
-        "method": ("EIG composite: weighted average of sign-adjusted z-scores for air "
+        "method": ("Georgia Economics composite: weighted average of sign-adjusted z-scores for air "
                    "quality, commute, affordability, poverty and school spending vs. "
                    "approximate U.S.-metro benchmarks; scaled to 0-300 (150 = average)."),
         "note": ("Crime excluded — no clean automated current MSA-level source exists "
                  "(FBI API is agency/state only; the FBI by-MSA table ended in 2019). "
                  "Rank is an estimate from the composite's normal percentile."),
-        "source": "EIG composite — computed from EPA, ACS and Census F-33 inputs",
+        "source": "Georgia Economics composite — computed from EPA, ACS and Census F-33 inputs",
     }

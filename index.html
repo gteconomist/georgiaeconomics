@@ -8,8 +8,8 @@
 <!-- GEN:HEAD -->
 <link rel="stylesheet" href="/styles.css">
 <link rel="stylesheet" href="/assets/app.css">
-<!-- EIG brand layer — site-wide chrome (charcoal + amber). Must load AFTER
-     styles.css/app.css so its chrome rules win. See EIG_REBRAND.md. -->
+<!-- Brand layer — site-wide chrome (charcoal + amber). Must load AFTER
+     styles.css/app.css so its chrome rules win. -->
 <link rel="stylesheet" href="/assets/eig.css">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -30,7 +30,7 @@
 <!-- Landing-page-only styling (full-bleed hero, KPI strip, section kickers).
      Loaded OUTSIDE the GEN:HEAD markers so build_site.py won't strip it, and
      scoped to body.home so it cannot leak into the inner pages. The site-wide
-     EIG chrome now comes from the shared head partial. See EIG_REBRAND.md. -->
+     site-wide chrome now comes from the shared head partial. -->
 <link rel="stylesheet" href="/assets/eig-home.css">
 
 </head>
@@ -99,10 +99,6 @@
           <a class="eig-btn" href="/counties/">Open the county map &rarr;</a>
           <a class="eig-btn-ghost" href="/msa/">Compare the metros</a>
         </div>
-        <a class="eig-by" href="https://www.economicimpact.com" target="_blank" rel="noopener">
-          <img src="/assets/eig-logo-white.png" alt="Economic Impact Group" width="238" height="88">
-          <span class="lab">A research tool from<b>Economic Impact Group, LLC</b></span>
-        </a>
       </div>
       <div class="eig-hero__map">
         <div id="hero-county-map" class="geo-nav-map" data-ge-countymap data-ge-theme="eig-dark" data-ge-fallback data-metric-label="County unemployment"></div>
@@ -180,15 +176,9 @@
 <!-- GEN:FOOTER -->
 <footer class="site-footer">
   <div class="wrap">
-    <p class="footer-disclaimer"><strong>Disclaimer.</strong> Charts and analysis are provided for informational purposes only. Data is pulled directly from official statistical agencies but is not independently validated by Economic Impact Group, LLC; please consult the original source for any decisions that depend on accuracy.</p>
+    <p class="footer-disclaimer"><strong>Disclaimer.</strong> Charts and analysis are provided for informational purposes only. Data is pulled directly from official statistical agencies but is not independently validated by Georgia Economics; please consult the original source for any decisions that depend on accuracy.</p>
     <div>&copy; <span id="yr"></span> Georgia Economics &middot; Sister site to <a href="https://economicsguru.com">economicsguru.com</a> &middot; <a href="/about/">Methodology</a></div>
     <div>Built with public data from BLS, FRED, BEA, Census, and Georgia state agencies.</div>
-    <div class="eig">
-      <a href="https://www.economicimpact.com" target="_blank" rel="noopener" aria-label="Economic Impact Group">
-        <img src="/assets/ei_logo_NEW_200pxw.png" alt="Economic Impact Group">
-      </a>
-      <span class="product-of">A product of <a href="https://www.economicimpact.com" target="_blank" rel="noopener">Economic Impact Group, LLC</a>.</span>
-    </div>
   </div>
 </footer>
 <!-- /GEN:FOOTER -->

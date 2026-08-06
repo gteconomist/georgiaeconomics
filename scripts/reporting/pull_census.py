@@ -356,7 +356,7 @@ def _gazetteer_land_area_sqmi(cbsa: str) -> Optional[float]:
                f"{gy}_Gazetteer/{gy}_Gaz_counties_national.txt")
         try:
             req = urllib.request.Request(url, headers={
-                "User-Agent": "Mozilla/5.0 (compatible; EIG-MSA-reports/1.0)",
+                "User-Agent": "Mozilla/5.0 (compatible; GeorgiaEconomics-MSA-reports/1.0)",
                 "Accept": "text/plain,*/*",
             })
             with urllib.request.urlopen(req, timeout=60) as resp:
@@ -786,7 +786,7 @@ def _safe_int(x) -> int:
 
 def _download_text(url: str, timeout: int = 60) -> Optional[str]:
     try:
-        req = urllib.request.Request(url, headers={"User-Agent": "EIG-MSA-reports/1.0"})
+        req = urllib.request.Request(url, headers={"User-Agent": "GeorgiaEconomics-MSA-reports/1.0"})
         with urllib.request.urlopen(req, timeout=timeout) as resp:
             return resp.read().decode("latin-1", errors="replace")
     except urllib.error.HTTPError as e:
@@ -968,7 +968,7 @@ def _bps_fetch_one_year(y: int, cbsa: str, timeout: int = 60) -> Optional[tuple]
     for url in urls:
         try:
             req = urllib.request.Request(url, headers={
-                "User-Agent": "Mozilla/5.0 (compatible; EIG-MSA-reports/1.0)",
+                "User-Agent": "Mozilla/5.0 (compatible; GeorgiaEconomics-MSA-reports/1.0)",
                 "Accept-Encoding": "gzip",
             })
             with urllib.request.urlopen(req, timeout=timeout) as resp:

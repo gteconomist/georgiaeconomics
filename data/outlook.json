@@ -348,7 +348,7 @@
   "trough_month": "2020-05",
   "trough_value": 54.78,
   "n_months": 77,
-  "source": "EIG composite \u2014 computed from BLS CES + LAUS"
+  "source": "Georgia Economics composite \u2014 computed from BLS CES + LAUS"
  },
  "ga_forecast": {
   "gmp": [
@@ -408,7 +408,7 @@
    "population_yoy",
    "hpi_yoy"
   ],
-  "source": "EIG forecast composite \u2014 computed from BLS/BEA/Census/FHFA actuals"
+  "source": "Georgia Economics forecast composite \u2014 computed from BLS/BEA/Census/FHFA actuals"
  },
  "kpis": {
   "cycle_latest": 111.01,

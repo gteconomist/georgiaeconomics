@@ -1,13 +1,13 @@
 /* georgiaeconomics.com — shared styles
- * Sister site to economicsguru.com; branded as an Economic Impact Group product
+ * Sister site to economicsguru.com; branded as an Georgia Economics product
  * (charcoal #231f20 + amber #f7941e, Geist), matching housinganalytics.org.
  * The palette lives in the :root block below; see EIG_REBRAND.md for the
  * rollout and for why the legacy variable names were kept.
  */
 
 :root {
-  /* ── Palette — EIG (July 2026) ───────────────────────────────────────────
-   * The Economic Impact Group brand, ported from the canonical tokens in
+  /* ── Palette — Georgia Economics (July 2026) ───────────────────────────────────────────
+   * The Georgia Economics brand, ported from the canonical tokens in
    * gteconomist/housinganalytics (src/styles/tokens.css) so this site reads as
    * a sibling of housinganalytics.org. See EIG_REBRAND.md.
    *
@@ -211,18 +211,6 @@ main { max-width: 1200px; margin: 0 auto; padding: 28px 24px 48px; }
   font-size: 13px; color: var(--ink-soft);
 }
 .site-footer .wrap { max-width: 1200px; margin: 0 auto; padding: 0 24px; display: flex; justify-content: space-between; gap: 18px; flex-wrap: wrap; }
-.site-footer .eig {
-  width: 100%;
-  display: flex; align-items: center; gap: 14px;
-  padding: 12px 16px; margin-top: 14px;
-  background: var(--navy);
-  border-radius: 4px;
-  font-size: 12px;
-}
-.site-footer .eig img { height: 40px; width: auto; display: block; }
-.site-footer .eig a { color: #ffffff; font-weight: 600; }
-.site-footer .eig a:hover { color: var(--peach); text-decoration: none; }
-.site-footer .eig .product-of { color: rgba(255,255,255,0.78); }
 
 /* ---------- Hero EIG ribbon (homepage) ---------- */
 .eig-ribbon {

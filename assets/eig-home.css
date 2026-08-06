@@ -78,16 +78,6 @@ body.home .eig-btn-ghost {
 }
 body.home .eig-btn-ghost:hover { border-color: var(--eig-amber); color: var(--eig-amber); text-decoration: none; }
 
-/* EIG attribution lockup inside the hero */
-body.home .eig-by { display: inline-flex; align-items: center; gap: 13px; margin-top: 26px; }
-body.home .eig-by img { height: 44px; width: auto; display: block; }
-body.home .eig-by .lab {
-  font-size: 12px; color: #8d857f; text-transform: uppercase;
-  letter-spacing: .09em; font-weight: 700; line-height: 1.5;
-}
-body.home .eig-by .lab b { display: block; color: #ded8d1; font-size: 13.5px; letter-spacing: .02em; text-transform: none; }
-body.home .eig-by:hover .lab b { color: var(--eig-amber); }
-
 /* Hero map. Drawn with maps.js `fill: true` (no USA scope) so it fills this
    box instead of being letterboxed into a USA-shaped one. */
 body.home .eig-hero__map { padding-top: 6px; }

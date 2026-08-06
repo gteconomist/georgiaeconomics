@@ -1091,7 +1091,7 @@ def fetch_health_check_quarterly(cbsa: str, n_quarters: int = 6) -> Optional[dic
         "unemployment_rate": [round(rate_q[k], 1) if k in rate_q else None for k in quarters],
         "labor_force_000s":  [round(lf_q[k] / 1000, 1) if k in lf_q else None for k in quarters],
         "as_of_label": labels[-1],
-        "source": "BLS QCEW (MSA totals) + LAUS (quarterly-averaged); EIG-assembled",
+        "source": "BLS QCEW (MSA totals) + LAUS (quarterly-averaged); Georgia Economics-assembled",
     }
 
 

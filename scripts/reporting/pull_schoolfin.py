@@ -75,7 +75,7 @@ COUNTY_KEYS = ["conum", "cnty_fips", "county_fips", "fipscounty", "geo_id", "cou
 
 def _download(url: str, timeout: int = 40) -> Optional[str]:
     try:
-        req = urllib.request.Request(url, headers={"User-Agent": "EIG-MSA-reports/1.0"})
+        req = urllib.request.Request(url, headers={"User-Agent": "GeorgiaEconomics-MSA-reports/1.0"})
         with urllib.request.urlopen(req, timeout=timeout) as resp:
             return resp.read().decode("utf-8", errors="replace")
     except urllib.error.HTTPError as e:

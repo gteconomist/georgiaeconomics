@@ -1,4 +1,4 @@
-"""EIG Vitality Index — a standardized composite of an MSA's economic dynamism.
+"""Georgia Economics Vitality Index — a standardized composite of an MSA's economic dynamism.
 
 Combines four forward-looking signals, each z-scored against an approximate U.S.
 metro reference distribution, then averaged:
@@ -34,7 +34,7 @@ from typing import Optional, Dict
 N_METROS = 387
 
 # Approximate U.S.-metro reference distribution (mean, sd) per component.
-# Documented as EIG reference benchmarks; refine as better national data lands.
+# Documented as Georgia Economics reference benchmarks; refine as better national data lands.
 BENCHMARKS = {
     "labor_force_participation": (63.0, 4.5),
     "income_growth_yoy":         (5.0, 2.0),
@@ -98,10 +98,10 @@ def compute(cbsa: str, output_so_far: dict) -> Optional[dict]:
         "n_metros": N_METROS,
         "mean_z": round(mean_z, 3),
         "components": components,
-        "method": ("EIG composite: weighted average of z-scores for LFP, income growth, "
+        "method": ("Georgia Economics composite: weighted average of z-scores for LFP, income growth, "
                    "young-adult share and net-migration rate vs. approximate U.S.-metro "
                    "benchmarks; score = normal CDF of the mean z."),
         "note": ("Rank is an estimate from the composite's normal percentile against "
                  "reference benchmarks, not a live ranking of all metros."),
-        "source": "EIG composite — computed from ACS, BEA and IRS SOI inputs",
+        "source": "Georgia Economics composite — computed from ACS, BEA and IRS SOI inputs",
     }

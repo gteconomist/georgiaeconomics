@@ -1,4 +1,4 @@
-"""EIG Housing Affordability Index for the Metro Economic Profile report.
+"""Georgia Economics Housing Affordability Index for the Metro Economic Profile report.
 
 NAR-style Housing Affordability Index (HAI):
 
@@ -159,7 +159,7 @@ def compute(cbsa: str, output_so_far: dict) -> Optional[dict]:
             "front_end_dti_pct": 28,
             "term_years": 30,
         },
-        "source": ("EIG composite — NAR-style affordability: ACS median household income "
+        "source": ("Georgia Economics composite — NAR-style affordability: ACS median household income "
                    "(B19013) vs. income needed for the median home (ACS B25077 value scaled "
                    "by FHFA HPI; Freddie Mac PMMS 30-yr rate via FRED). >100 = median household "
                    "can afford the median home."),

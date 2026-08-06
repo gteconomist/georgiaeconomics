@@ -2,10 +2,10 @@
 
 **Status:** COMPLETE site-wide (2026-07-27). All 191 pages on the EIG palette,
 type and chrome.
-**Goal:** Make georgiaeconomics.com read as an Economic Impact Group product —
+**Goal:** Give georgiaeconomics.com a single house visual identity —
 a sibling of [housinganalytics.org](https://housinganalytics.org), which is the
 other EIG *tool* (as opposed to the models: futureimpactmodel.com, cocsmodel.com,
-economicimpact.io, economicimpact.com).
+housinganalytics).
 
 ---
 

@@ -86,7 +86,7 @@ _NAME = re.compile(
 
 def _http_post_json(url, payload, headers=None, timeout=45):
     data = json.dumps(payload).encode("utf-8")
-    hdrs = {"Content-Type": "application/json", "User-Agent": "EIG-MSA-reports/1.0"}
+    hdrs = {"Content-Type": "application/json", "User-Agent": "GeorgiaEconomics-MSA-reports/1.0"}
     if headers:
         hdrs.update(headers)
     req = urllib.request.Request(url, data=data, headers=hdrs, method="POST")

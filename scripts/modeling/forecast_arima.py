@@ -281,5 +281,5 @@ def compute(cbsa: str, output_so_far: dict) -> Optional[dict]:
     out["horizon"] = DISPLAY_YEARS
     out["years"] = DISPLAY_YEARS
     out["metrics"] = metrics
-    out["source"] = "EIG forecast composite — computed from BLS/BEA/Census/FHFA actuals"
+    out["source"] = "Georgia Economics forecast composite — computed from BLS/BEA/Census/FHFA actuals"
     return out

@@ -91,7 +91,7 @@
       "polarity": "good_high",
       "lower_is_better": false,
       "theme": "Growth",
-      "source": "EIG (BLS CES+LAUS)",
+      "source": "Georgia Economics (BLS CES+LAUS)",
       "fmt": "num1"
     },
     {
@@ -101,7 +101,7 @@
       "polarity": "good_high",
       "lower_is_better": false,
       "theme": "Growth",
-      "source": "EIG forecast",
+      "source": "Georgia Economics forecast",
       "fmt": "pct1"
     },
     {
@@ -141,7 +141,7 @@
       "polarity": "good_low",
       "lower_is_better": true,
       "theme": "Housing",
-      "source": "EIG valuation",
+      "source": "Georgia Economics valuation",
       "fmt": "num1"
     },
     {
@@ -151,7 +151,7 @@
       "polarity": "good_low",
       "lower_is_better": true,
       "theme": "Housing",
-      "source": "EIG valuation",
+      "source": "Georgia Economics valuation",
       "fmt": "pct1"
     },
     {
@@ -161,7 +161,7 @@
       "polarity": "good_high",
       "lower_is_better": false,
       "theme": "Housing",
-      "source": "EIG (NAR-style)",
+      "source": "Georgia Economics (NAR-style)",
       "fmt": "num1"
     },
     {
@@ -201,7 +201,7 @@
       "polarity": "good_high",
       "lower_is_better": false,
       "theme": "Quality of life",
-      "source": "EIG composite",
+      "source": "Georgia Economics composite",
       "fmt": "num0"
     },
     {
@@ -211,7 +211,7 @@
       "polarity": "good_high",
       "lower_is_better": false,
       "theme": "Quality of life",
-      "source": "EIG composite",
+      "source": "Georgia Economics composite",
       "fmt": "num2"
     },
     {
@@ -241,7 +241,7 @@
       "polarity": "good_low",
       "lower_is_better": true,
       "theme": "Business",
-      "source": "EIG (BEA RPP logic)",
+      "source": "Georgia Economics (BEA RPP logic)",
       "fmt": "num0"
     },
     {
@@ -251,7 +251,7 @@
       "polarity": "good_low",
       "lower_is_better": true,
       "theme": "Business",
-      "source": "EIG composite",
+      "source": "Georgia Economics composite",
       "fmt": "num0"
     },
     {
@@ -261,7 +261,7 @@
       "polarity": "good_high",
       "lower_is_better": false,
       "theme": "Business",
-      "source": "EIG Hachman",
+      "source": "Georgia Economics Hachman",
       "fmt": "num2"
     },
     {
@@ -271,7 +271,7 @@
       "polarity": "good_high",
       "lower_is_better": false,
       "theme": "Business",
-      "source": "EIG composite",
+      "source": "Georgia Economics composite",
       "fmt": "num0"
     }
   ],

@@ -1,4 +1,4 @@
-"""EIG composite + forecast models for the Metro Economic Profile report.
+"""Georgia Economics composite + forecast models for the Metro Economic Profile report.
 
 Each module here is a *computed* section that derives its output from data
 already fetched by scripts/reporting/. Modeling runners receive the orchestrator's
@@ -12,5 +12,5 @@ Modules (this directory grows over Phase 2):
     quality_of_life         ACS + EPA + UCR composite                        [planned]
     housing_valuation       FHFA HPI residual vs. local fundamentals          [planned]
     business_costs          BLS RPP + Tax Foundation + commercial rent       [planned]
-    credit_score            EMMA + EIG fiscal-strength composite              [planned]
+    credit_score            EMMA + Georgia Economics fiscal-strength composite              [planned]
 """

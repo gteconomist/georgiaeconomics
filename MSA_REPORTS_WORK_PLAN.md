@@ -1,10 +1,10 @@
 # Georgia MSA Metro Economic Profile — Work Plan
 
-**A product of Economic Impact Group, LLC**
+**A Georgia Economics product**
 
 **Goal:** Build a full "Metro Economic Profile" report for each of the 14 Georgia MSAs, served as a live HTML page at `/msa/<slug>/` and downloadable as a PDF via the browser's print dialog. The example for Savannah is live at `/msa/savannah/`.
 
-Every section maps to a free, public source (BLS / BEA / Census / FHFA / FRED / IRS SOI / ITA). Where a section needs a composite or modelled measure, Economic Impact Group publishes its own methodology rather than relying on any third-party proprietary index.
+Every section maps to a free, public source (BLS / BEA / Census / FHFA / FRED / IRS SOI / ITA). Where a section needs a composite or modelled measure, Georgia Economics publishes its own methodology rather than relying on any third-party proprietary index.
 
 ---
 
@@ -171,7 +171,7 @@ georgiaeconomics/
 - "Layout Preview" banner with Live/Partial/Demo/EIG composite legend.
 - Forecast columns intentionally em-dashes with "Forecast model pending — Phase 2" annotation.
 - `@media print` CSS so browser "Save as PDF" produces a clean multi-page document.
-- Zero Moody's references; branded "A product of Economic Impact Group, LLC" throughout.
+- Zero Moody's references; self-branded as a Georgia Economics product throughout.
 
 ---
 
@@ -335,7 +335,7 @@ numpy>=1.26
 
 ### Important context for tomorrow's session
 
-- The user is **Alfie Meek**, principal of Economic Impact Group, LLC, and proprietor of the Georgia Economics site.
+- The user is **Alfie Meek**, proprietor of the Georgia Economics site.
 - The site is at `~/Documents/Claude/Projects/Georgia Economics` (local) and lives at https://www.georgiaeconomics.com.
 - Per memory, **Alfie pushes from his Mac via a 3-line git block**; never use the GitHub MCP for writes.
 - Per memory, **never propose manual updates** — default to APIs + Tavily-with-staleness-fallback.

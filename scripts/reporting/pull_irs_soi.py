@@ -79,7 +79,7 @@ def _fetch_csv(url: str, timeout: int = 60) -> Optional[bytes]:
         return _CSV_CACHE[url]
     try:
         req = urllib.request.Request(url, headers={
-            "User-Agent": "Mozilla/5.0 (compatible; EIG-MSA-reports/1.0)",
+            "User-Agent": "Mozilla/5.0 (compatible; GeorgiaEconomics-MSA-reports/1.0)",
             "Accept": "text/csv,*/*",
         })
         with urllib.request.urlopen(req, timeout=timeout) as resp:

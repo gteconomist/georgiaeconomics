@@ -1,4 +1,4 @@
-"""EIG Housing Valuation model — % over/under "fair value" implied by local fundamentals.
+"""Georgia Economics Housing Valuation model — % over/under "fair value" implied by local fundamentals.
 
 The headline number answers: how far does the local house-price level sit above (or
 below) what the metro's *income fundamentals* would justify?
@@ -169,5 +169,5 @@ def compute(cbsa: str, output_so_far: dict) -> Optional[dict]:
         "local income trend. Price-to-income / price-to-rent are current ACS-vintage "
         "cross-checks, not part of the fitted series."
     )
-    out["source"] = "EIG valuation model — FHFA HPI vs. BEA per-capita income (log-log OLS)"
+    out["source"] = "Georgia Economics valuation model — FHFA HPI vs. BEA per-capita income (log-log OLS)"
     return out

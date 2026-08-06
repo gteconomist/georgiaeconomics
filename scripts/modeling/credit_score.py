@@ -1,4 +1,4 @@
-"""EIG Credit Score — a municipal-rating-style grade for the metro economy.
+"""Georgia Economics Credit Score — a municipal-rating-style grade for the metro economy.
 
 Synthesizes the report's other live signals into a single 0-100 creditworthiness
 score, a muni-bond-style letter grade (AAA … BB), and an outlook (Positive / Stable /
@@ -144,7 +144,7 @@ def compute(cbsa: str, output_so_far: dict) -> Optional[dict]:
             k: {"score": round(s, 3), "weight": WEIGHTS[k]} for k, s in subs.items()
         },
         "method": (
-            "EIG composite credit rating: weighted mean of normalized sub-scores for "
+            "Georgia Economics composite credit rating: weighted mean of normalized sub-scores for "
             "vitality (0.25), business-cycle position (0.20), labor market (0.20), "
             "quality of life (0.15), income growth (0.10) and valuation stability (0.10); "
             "scaled 0-100 and mapped to a muni-bond-style letter grade. Outlook from "
@@ -155,5 +155,5 @@ def compute(cbsa: str, output_so_far: dict) -> Optional[dict]:
             "FICO score and not a rated municipal obligation. Sub-scores are percentile "
             "positions vs. approximate US-metro reference points."
         ),
-        "source": "EIG composite — synthesized from vitality, BCI, QoL, BLS, BEA and valuation",
+        "source": "Georgia Economics composite — synthesized from vitality, BCI, QoL, BLS, BEA and valuation",
     }

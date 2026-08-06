@@ -182,7 +182,7 @@ def compute(cbsa: str, output_so_far: dict, rebase_month: Optional[str] = None) 
         "trough_month":     months[trough_i],
         "trough_value":     values[trough_i],
         "n_months":         len(months),
-        "source":           "EIG composite — computed from BLS CES + LAUS",
+        "source":           "Georgia Economics composite — computed from BLS CES + LAUS",
     }
 
 

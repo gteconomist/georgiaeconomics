@@ -81,5 +81,5 @@ def compute(cbsa: str, output_so_far: dict) -> Optional[dict]:
         "method": ("Hachman index = 1 / Σ(local_share² / US_share) over QCEW super-sectors; "
                    "1.0 = industrial mix identical to the U.S. (most balanced/diversified), "
                    "lower = more concentrated."),
-        "source": "EIG composite — computed from QCEW employment shares (MSA & GA vs. US)",
+        "source": "Georgia Economics composite — computed from QCEW employment shares (MSA & GA vs. US)",
     }

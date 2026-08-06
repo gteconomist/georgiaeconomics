@@ -33,7 +33,7 @@ def _fetch_cbsa_aqi_year(year: int, cbsa: str, timeout: int = 45) -> Optional[di
     """Fetch one year's CBSA AQI ZIP and extract this CBSA's row. None on failure."""
     url = f"{AIRDATA_BASE}/annual_aqi_by_cbsa_{year}.zip"
     try:
-        req = urllib.request.Request(url, headers={"User-Agent": "EIG-MSA-reports/1.0"})
+        req = urllib.request.Request(url, headers={"User-Agent": "GeorgiaEconomics-MSA-reports/1.0"})
         with urllib.request.urlopen(req, timeout=timeout) as resp:
             blob = resp.read()
     except urllib.error.HTTPError as e:

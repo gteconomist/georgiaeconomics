@@ -1,7 +1,7 @@
-"""EIG Relative Costs model — local cost of living and cost of doing business, US = 100.
+"""Georgia Economics Relative Costs model — local cost of living and cost of doing business, US = 100.
 
 Powers the "Relative Costs" indicator cell (Living / Business, US = 100). Both indices
-are EIG composites built on the same logic the BEA uses for its Regional Price
+are Georgia Economics composites built on the same logic the BEA uses for its Regional Price
 Parities (RPP): a metro's price level is an expenditure-weighted blend of rents
 (varies most across metros), tradable goods (near-uniform nationally) and local
 services (track local wages).
@@ -118,7 +118,7 @@ def compute(cbsa: str, output_so_far: dict) -> Optional[dict]:
         "wage_ratio": wage_ratio,
         "components": components,
         "method": (
-            "EIG composite (BEA Regional-Price-Parity logic): cost of living = "
+            "Georgia Economics composite (BEA Regional-Price-Parity logic): cost of living = "
             "expenditure-weighted blend of rents (0.36), tradable goods (0.15, ~national) "
             "and wage-elastic services (0.49); cost of doing business = labor (0.62, wage "
             "proxy), occupancy (0.20, rent) and tax/other (0.18, ~national). US = 100."
@@ -129,5 +129,5 @@ def compute(cbsa: str, output_so_far: dict) -> Optional[dict]:
             f"median gross rent ${US_MEDIAN_GROSS_RENT:,.0f}, per-capita income "
             f"${US_PER_CAPITA_INCOME:,.0f}."
         ),
-        "source": "EIG composite — computed from ACS rent + income vs. national benchmarks",
+        "source": "Georgia Economics composite — computed from ACS rent + income vs. national benchmarks",
     }

@@ -245,7 +245,7 @@
      "front_end_dti_pct": 28,
      "term_years": 30
     },
-    "source": "EIG composite \u2014 NAR-style affordability: ACS median household income (B19013) vs. income needed for the median home (ACS B25077 value scaled by FHFA HPI; Freddie Mac PMMS 30-yr rate via FRED). >100 = median household can afford the median home."
+    "source": "Georgia Economics composite \u2014 NAR-style affordability: ACS median household income (B19013) vs. income needed for the median home (ACS B25077 value scaled by FHFA HPI; Freddie Mac PMMS 30-yr rate via FRED). >100 = median household can afford the median home."
    },
    "housing_valuation": {
     "years": [
@@ -289,7 +289,7 @@
     "price_to_rent_ratio": 13.8,
     "method": "Log-log fair-value regression (Dallas Fed / IMF house-price-gap method): log(FHFA HPI) on log(per-capita income) by OLS over overlapping years; valuation = % deviation of actual HPI from the income-implied fair value.",
     "note": "Fitted on 6 overlapping years (2019-2024); residuals are mean-zero over this window, so values read relative to the local income trend. Price-to-income / price-to-rent are current ACS-vintage cross-checks, not part of the fitted series.",
-    "source": "EIG valuation model \u2014 FHFA HPI vs. BEA per-capita income (log-log OLS)"
+    "source": "Georgia Economics valuation model \u2014 FHFA HPI vs. BEA per-capita income (log-log OLS)"
    },
    "acs_housing_characteristics": {
     "source": "Census ACS 5-year, 2024 vintage (B25024 structure, B25035 year built) + Census Gazetteer land area",
@@ -564,7 +564,7 @@
      "front_end_dti_pct": 28,
      "term_years": 30
     },
-    "source": "EIG composite \u2014 NAR-style affordability: ACS median household income (B19013) vs. income needed for the median home (ACS B25077 value scaled by FHFA HPI; Freddie Mac PMMS 30-yr rate via FRED). >100 = median household can afford the median home."
+    "source": "Georgia Economics composite \u2014 NAR-style affordability: ACS median household income (B19013) vs. income needed for the median home (ACS B25077 value scaled by FHFA HPI; Freddie Mac PMMS 30-yr rate via FRED). >100 = median household can afford the median home."
    },
    "housing_valuation": {
     "years": [
@@ -608,7 +608,7 @@
     "price_to_rent_ratio": 21.5,
     "method": "Log-log fair-value regression (Dallas Fed / IMF house-price-gap method): log(FHFA HPI) on log(per-capita income) by OLS over overlapping years; valuation = % deviation of actual HPI from the income-implied fair value.",
     "note": "Fitted on 6 overlapping years (2019-2024); residuals are mean-zero over this window, so values read relative to the local income trend. Price-to-income / price-to-rent are current ACS-vintage cross-checks, not part of the fitted series.",
-    "source": "EIG valuation model \u2014 FHFA HPI vs. BEA per-capita income (log-log OLS)"
+    "source": "Georgia Economics valuation model \u2014 FHFA HPI vs. BEA per-capita income (log-log OLS)"
    },
    "acs_housing_characteristics": {
     "source": "Census ACS 5-year, 2024 vintage (B25024 structure, B25035 year built) + Census Gazetteer land area",
@@ -872,7 +872,7 @@
      "front_end_dti_pct": 28,
      "term_years": 30
     },
-    "source": "EIG composite \u2014 NAR-style affordability: ACS median household income (B19013) vs. income needed for the median home (ACS B25077 value scaled by FHFA HPI; Freddie Mac PMMS 30-yr rate via FRED). >100 = median household can afford the median home."
+    "source": "Georgia Economics composite \u2014 NAR-style affordability: ACS median household income (B19013) vs. income needed for the median home (ACS B25077 value scaled by FHFA HPI; Freddie Mac PMMS 30-yr rate via FRED). >100 = median household can afford the median home."
    },
    "housing_valuation": {
     "years": [
@@ -916,7 +916,7 @@
     "price_to_rent_ratio": 18.3,
     "method": "Log-log fair-value regression (Dallas Fed / IMF house-price-gap method): log(FHFA HPI) on log(per-capita income) by OLS over overlapping years; valuation = % deviation of actual HPI from the income-implied fair value.",
     "note": "Fitted on 6 overlapping years (2019-2024); residuals are mean-zero over this window, so values read relative to the local income trend. Price-to-income / price-to-rent are current ACS-vintage cross-checks, not part of the fitted series.",
-    "source": "EIG valuation model \u2014 FHFA HPI vs. BEA per-capita income (log-log OLS)"
+    "source": "Georgia Economics valuation model \u2014 FHFA HPI vs. BEA per-capita income (log-log OLS)"
    },
    "acs_housing_characteristics": {
     "source": "Census ACS 5-year, 2024 vintage (B25024 structure, B25035 year built) + Census Gazetteer land area",
@@ -1191,7 +1191,7 @@
      "front_end_dti_pct": 28,
      "term_years": 30
     },
-    "source": "EIG composite \u2014 NAR-style affordability: ACS median household income (B19013) vs. income needed for the median home (ACS B25077 value scaled by FHFA HPI; Freddie Mac PMMS 30-yr rate via FRED). >100 = median household can afford the median home."
+    "source": "Georgia Economics composite \u2014 NAR-style affordability: ACS median household income (B19013) vs. income needed for the median home (ACS B25077 value scaled by FHFA HPI; Freddie Mac PMMS 30-yr rate via FRED). >100 = median household can afford the median home."
    },
    "housing_valuation": {
     "years": [
@@ -1235,7 +1235,7 @@
     "price_to_rent_ratio": 16.8,
     "method": "Log-log fair-value regression (Dallas Fed / IMF house-price-gap method): log(FHFA HPI) on log(per-capita income) by OLS over overlapping years; valuation = % deviation of actual HPI from the income-implied fair value.",
     "note": "Fitted on 6 overlapping years (2019-2024); residuals are mean-zero over this window, so values read relative to the local income trend. Price-to-income / price-to-rent are current ACS-vintage cross-checks, not part of the fitted series.",
-    "source": "EIG valuation model \u2014 FHFA HPI vs. BEA per-capita income (log-log OLS)"
+    "source": "Georgia Economics valuation model \u2014 FHFA HPI vs. BEA per-capita income (log-log OLS)"
    },
    "acs_housing_characteristics": {
     "source": "Census ACS 5-year, 2024 vintage (B25024 structure, B25035 year built) + Census Gazetteer land area",
@@ -1510,7 +1510,7 @@
      "front_end_dti_pct": 28,
      "term_years": 30
     },
-    "source": "EIG composite \u2014 NAR-style affordability: ACS median household income (B19013) vs. income needed for the median home (ACS B25077 value scaled by FHFA HPI; Freddie Mac PMMS 30-yr rate via FRED). >100 = median household can afford the median home."
+    "source": "Georgia Economics composite \u2014 NAR-style affordability: ACS median household income (B19013) vs. income needed for the median home (ACS B25077 value scaled by FHFA HPI; Freddie Mac PMMS 30-yr rate via FRED). >100 = median household can afford the median home."
    },
    "housing_valuation": {
     "years": [
@@ -1554,7 +1554,7 @@
     "price_to_rent_ratio": 18.7,
     "method": "Log-log fair-value regression (Dallas Fed / IMF house-price-gap method): log(FHFA HPI) on log(per-capita income) by OLS over overlapping years; valuation = % deviation of actual HPI from the income-implied fair value.",
     "note": "Fitted on 6 overlapping years (2019-2024); residuals are mean-zero over this window, so values read relative to the local income trend. Price-to-income / price-to-rent are current ACS-vintage cross-checks, not part of the fitted series.",
-    "source": "EIG valuation model \u2014 FHFA HPI vs. BEA per-capita income (log-log OLS)"
+    "source": "Georgia Economics valuation model \u2014 FHFA HPI vs. BEA per-capita income (log-log OLS)"
    },
    "acs_housing_characteristics": {
     "source": "Census ACS 5-year, 2024 vintage (B25024 structure, B25035 year built) + Census Gazetteer land area",
@@ -1829,7 +1829,7 @@
      "front_end_dti_pct": 28,
      "term_years": 30
     },
-    "source": "EIG composite \u2014 NAR-style affordability: ACS median household income (B19013) vs. income needed for the median home (ACS B25077 value scaled by FHFA HPI; Freddie Mac PMMS 30-yr rate via FRED). >100 = median household can afford the median home."
+    "source": "Georgia Economics composite \u2014 NAR-style affordability: ACS median household income (B19013) vs. income needed for the median home (ACS B25077 value scaled by FHFA HPI; Freddie Mac PMMS 30-yr rate via FRED). >100 = median household can afford the median home."
    },
    "housing_valuation": {
     "years": [
@@ -1873,7 +1873,7 @@
     "price_to_rent_ratio": 15.4,
     "method": "Log-log fair-value regression (Dallas Fed / IMF house-price-gap method): log(FHFA HPI) on log(per-capita income) by OLS over overlapping years; valuation = % deviation of actual HPI from the income-implied fair value.",
     "note": "Fitted on 6 overlapping years (2019-2024); residuals are mean-zero over this window, so values read relative to the local income trend. Price-to-income / price-to-rent are current ACS-vintage cross-checks, not part of the fitted series.",
-    "source": "EIG valuation model \u2014 FHFA HPI vs. BEA per-capita income (log-log OLS)"
+    "source": "Georgia Economics valuation model \u2014 FHFA HPI vs. BEA per-capita income (log-log OLS)"
    },
    "acs_housing_characteristics": {
     "source": "Census ACS 5-year, 2024 vintage (B25024 structure, B25035 year built) + Census Gazetteer land area",
@@ -2148,7 +2148,7 @@
      "front_end_dti_pct": 28,
      "term_years": 30
     },
-    "source": "EIG composite \u2014 NAR-style affordability: ACS median household income (B19013) vs. income needed for the median home (ACS B25077 value scaled by FHFA HPI; Freddie Mac PMMS 30-yr rate via FRED). >100 = median household can afford the median home."
+    "source": "Georgia Economics composite \u2014 NAR-style affordability: ACS median household income (B19013) vs. income needed for the median home (ACS B25077 value scaled by FHFA HPI; Freddie Mac PMMS 30-yr rate via FRED). >100 = median household can afford the median home."
    },
    "housing_valuation": {
     "years": [
@@ -2192,7 +2192,7 @@
     "price_to_rent_ratio": 18.6,
     "method": "Log-log fair-value regression (Dallas Fed / IMF house-price-gap method): log(FHFA HPI) on log(per-capita income) by OLS over overlapping years; valuation = % deviation of actual HPI from the income-implied fair value.",
     "note": "Fitted on 6 overlapping years (2019-2024); residuals are mean-zero over this window, so values read relative to the local income trend. Price-to-income / price-to-rent are current ACS-vintage cross-checks, not part of the fitted series.",
-    "source": "EIG valuation model \u2014 FHFA HPI vs. BEA per-capita income (log-log OLS)"
+    "source": "Georgia Economics valuation model \u2014 FHFA HPI vs. BEA per-capita income (log-log OLS)"
    },
    "acs_housing_characteristics": {
     "source": "Census ACS 5-year, 2024 vintage (B25024 structure, B25035 year built) + Census Gazetteer land area",
@@ -2467,7 +2467,7 @@
      "front_end_dti_pct": 28,
      "term_years": 30
     },
-    "source": "EIG composite \u2014 NAR-style affordability: ACS median household income (B19013) vs. income needed for the median home (ACS B25077 value scaled by FHFA HPI; Freddie Mac PMMS 30-yr rate via FRED). >100 = median household can afford the median home."
+    "source": "Georgia Economics composite \u2014 NAR-style affordability: ACS median household income (B19013) vs. income needed for the median home (ACS B25077 value scaled by FHFA HPI; Freddie Mac PMMS 30-yr rate via FRED). >100 = median household can afford the median home."
    },
    "housing_valuation": {
     "years": [
@@ -2511,7 +2511,7 @@
     "price_to_rent_ratio": 21.8,
     "method": "Log-log fair-value regression (Dallas Fed / IMF house-price-gap method): log(FHFA HPI) on log(per-capita income) by OLS over overlapping years; valuation = % deviation of actual HPI from the income-implied fair value.",
     "note": "Fitted on 6 overlapping years (2019-2024); residuals are mean-zero over this window, so values read relative to the local income trend. Price-to-income / price-to-rent are current ACS-vintage cross-checks, not part of the fitted series.",
-    "source": "EIG valuation model \u2014 FHFA HPI vs. BEA per-capita income (log-log OLS)"
+    "source": "Georgia Economics valuation model \u2014 FHFA HPI vs. BEA per-capita income (log-log OLS)"
    },
    "acs_housing_characteristics": {
     "source": "Census ACS 5-year, 2024 vintage (B25024 structure, B25035 year built) + Census Gazetteer land area",
@@ -2786,7 +2786,7 @@
      "front_end_dti_pct": 28,
      "term_years": 30
     },
-    "source": "EIG composite \u2014 NAR-style affordability: ACS median household income (B19013) vs. income needed for the median home (ACS B25077 value scaled by FHFA HPI; Freddie Mac PMMS 30-yr rate via FRED). >100 = median household can afford the median home."
+    "source": "Georgia Economics composite \u2014 NAR-style affordability: ACS median household income (B19013) vs. income needed for the median home (ACS B25077 value scaled by FHFA HPI; Freddie Mac PMMS 30-yr rate via FRED). >100 = median household can afford the median home."
    },
    "housing_valuation": {
     "years": [
@@ -2830,7 +2830,7 @@
     "price_to_rent_ratio": 14.0,
     "method": "Log-log fair-value regression (Dallas Fed / IMF house-price-gap method): log(FHFA HPI) on log(per-capita income) by OLS over overlapping years; valuation = % deviation of actual HPI from the income-implied fair value.",
     "note": "Fitted on 6 overlapping years (2019-2024); residuals are mean-zero over this window, so values read relative to the local income trend. Price-to-income / price-to-rent are current ACS-vintage cross-checks, not part of the fitted series.",
-    "source": "EIG valuation model \u2014 FHFA HPI vs. BEA per-capita income (log-log OLS)"
+    "source": "Georgia Economics valuation model \u2014 FHFA HPI vs. BEA per-capita income (log-log OLS)"
    },
    "acs_housing_characteristics": {
     "source": "Census ACS 5-year, 2024 vintage (B25024 structure, B25035 year built) + Census Gazetteer land area",
@@ -3105,7 +3105,7 @@
      "front_end_dti_pct": 28,
      "term_years": 30
     },
-    "source": "EIG composite \u2014 NAR-style affordability: ACS median household income (B19013) vs. income needed for the median home (ACS B25077 value scaled by FHFA HPI; Freddie Mac PMMS 30-yr rate via FRED). >100 = median household can afford the median home."
+    "source": "Georgia Economics composite \u2014 NAR-style affordability: ACS median household income (B19013) vs. income needed for the median home (ACS B25077 value scaled by FHFA HPI; Freddie Mac PMMS 30-yr rate via FRED). >100 = median household can afford the median home."
    },
    "housing_valuation": {
     "years": [
@@ -3149,7 +3149,7 @@
     "price_to_rent_ratio": 15.0,
     "method": "Log-log fair-value regression (Dallas Fed / IMF house-price-gap method): log(FHFA HPI) on log(per-capita income) by OLS over overlapping years; valuation = % deviation of actual HPI from the income-implied fair value.",
     "note": "Fitted on 6 overlapping years (2019-2024); residuals are mean-zero over this window, so values read relative to the local income trend. Price-to-income / price-to-rent are current ACS-vintage cross-checks, not part of the fitted series.",
-    "source": "EIG valuation model \u2014 FHFA HPI vs. BEA per-capita income (log-log OLS)"
+    "source": "Georgia Economics valuation model \u2014 FHFA HPI vs. BEA per-capita income (log-log OLS)"
    },
    "acs_housing_characteristics": {
     "source": "Census ACS 5-year, 2024 vintage (B25024 structure, B25035 year built) + Census Gazetteer land area",
@@ -3424,7 +3424,7 @@
      "front_end_dti_pct": 28,
      "term_years": 30
     },
-    "source": "EIG composite \u2014 NAR-style affordability: ACS median household income (B19013) vs. income needed for the median home (ACS B25077 value scaled by FHFA HPI; Freddie Mac PMMS 30-yr rate via FRED). >100 = median household can afford the median home."
+    "source": "Georgia Economics composite \u2014 NAR-style affordability: ACS median household income (B19013) vs. income needed for the median home (ACS B25077 value scaled by FHFA HPI; Freddie Mac PMMS 30-yr rate via FRED). >100 = median household can afford the median home."
    },
    "housing_valuation": {
     "years": [
@@ -3468,7 +3468,7 @@
     "price_to_rent_ratio": 17.9,
     "method": "Log-log fair-value regression (Dallas Fed / IMF house-price-gap method): log(FHFA HPI) on log(per-capita income) by OLS over overlapping years; valuation = % deviation of actual HPI from the income-implied fair value.",
     "note": "Fitted on 6 overlapping years (2019-2024); residuals are mean-zero over this window, so values read relative to the local income trend. Price-to-income / price-to-rent are current ACS-vintage cross-checks, not part of the fitted series.",
-    "source": "EIG valuation model \u2014 FHFA HPI vs. BEA per-capita income (log-log OLS)"
+    "source": "Georgia Economics valuation model \u2014 FHFA HPI vs. BEA per-capita income (log-log OLS)"
    },
    "acs_housing_characteristics": {
     "source": "Census ACS 5-year, 2024 vintage (B25024 structure, B25035 year built) + Census Gazetteer land area",
@@ -3743,7 +3743,7 @@
      "front_end_dti_pct": 28,
      "term_years": 30
     },
-    "source": "EIG composite \u2014 NAR-style affordability: ACS median household income (B19013) vs. income needed for the median home (ACS B25077 value scaled by FHFA HPI; Freddie Mac PMMS 30-yr rate via FRED). >100 = median household can afford the median home."
+    "source": "Georgia Economics composite \u2014 NAR-style affordability: ACS median household income (B19013) vs. income needed for the median home (ACS B25077 value scaled by FHFA HPI; Freddie Mac PMMS 30-yr rate via FRED). >100 = median household can afford the median home."
    },
    "housing_valuation": {
     "years": [
@@ -3787,7 +3787,7 @@
     "price_to_rent_ratio": 17.3,
     "method": "Log-log fair-value regression (Dallas Fed / IMF house-price-gap method): log(FHFA HPI) on log(per-capita income) by OLS over overlapping years; valuation = % deviation of actual HPI from the income-implied fair value.",
     "note": "Fitted on 6 overlapping years (2019-2024); residuals are mean-zero over this window, so values read relative to the local income trend. Price-to-income / price-to-rent are current ACS-vintage cross-checks, not part of the fitted series.",
-    "source": "EIG valuation model \u2014 FHFA HPI vs. BEA per-capita income (log-log OLS)"
+    "source": "Georgia Economics valuation model \u2014 FHFA HPI vs. BEA per-capita income (log-log OLS)"
    },
    "acs_housing_characteristics": {
     "source": "Census ACS 5-year, 2024 vintage (B25024 structure, B25035 year built) + Census Gazetteer land area",
@@ -4062,7 +4062,7 @@
      "front_end_dti_pct": 28,
      "term_years": 30
     },
-    "source": "EIG composite \u2014 NAR-style affordability: ACS median household income (B19013) vs. income needed for the median home (ACS B25077 value scaled by FHFA HPI; Freddie Mac PMMS 30-yr rate via FRED). >100 = median household can afford the median home."
+    "source": "Georgia Economics composite \u2014 NAR-style affordability: ACS median household income (B19013) vs. income needed for the median home (ACS B25077 value scaled by FHFA HPI; Freddie Mac PMMS 30-yr rate via FRED). >100 = median household can afford the median home."
    },
    "housing_valuation": {
     "years": [
@@ -4106,7 +4106,7 @@
     "price_to_rent_ratio": 16.4,
     "method": "Log-log fair-value regression (Dallas Fed / IMF house-price-gap method): log(FHFA HPI) on log(per-capita income) by OLS over overlapping years; valuation = % deviation of actual HPI from the income-implied fair value.",
     "note": "Fitted on 6 overlapping years (2019-2024); residuals are mean-zero over this window, so values read relative to the local income trend. Price-to-income / price-to-rent are current ACS-vintage cross-checks, not part of the fitted series.",
-    "source": "EIG valuation model \u2014 FHFA HPI vs. BEA per-capita income (log-log OLS)"
+    "source": "Georgia Economics valuation model \u2014 FHFA HPI vs. BEA per-capita income (log-log OLS)"
    },
    "acs_housing_characteristics": {
     "source": "Census ACS 5-year, 2024 vintage (B25024 structure, B25035 year built) + Census Gazetteer land area",
@@ -4381,7 +4381,7 @@
      "front_end_dti_pct": 28,
      "term_years": 30
     },
-    "source": "EIG composite \u2014 NAR-style affordability: ACS median household income (B19013) vs. income needed for the median home (ACS B25077 value scaled by FHFA HPI; Freddie Mac PMMS 30-yr rate via FRED). >100 = median household can afford the median home."
+    "source": "Georgia Economics composite \u2014 NAR-style affordability: ACS median household income (B19013) vs. income needed for the median home (ACS B25077 value scaled by FHFA HPI; Freddie Mac PMMS 30-yr rate via FRED). >100 = median household can afford the median home."
    },
    "housing_valuation": {
     "years": [
@@ -4425,7 +4425,7 @@
     "price_to_rent_ratio": 15.6,
     "method": "Log-log fair-value regression (Dallas Fed / IMF house-price-gap method): log(FHFA HPI) on log(per-capita income) by OLS over overlapping years; valuation = % deviation of actual HPI from the income-implied fair value.",
     "note": "Fitted on 6 overlapping years (2019-2024); residuals are mean-zero over this window, so values read relative to the local income trend. Price-to-income / price-to-rent are current ACS-vintage cross-checks, not part of the fitted series.",
-    "source": "EIG valuation model \u2014 FHFA HPI vs. BEA per-capita income (log-log OLS)"
+    "source": "Georgia Economics valuation model \u2014 FHFA HPI vs. BEA per-capita income (log-log OLS)"
    },
    "acs_housing_characteristics": {
     "source": "Census ACS 5-year, 2024 vintage (B25024 structure, B25035 year built) + Census Gazetteer land area",

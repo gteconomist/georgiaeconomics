@@ -122,10 +122,10 @@ def generate(target: str) -> Path:
 
     # --- shell: <title> + meta description -----------------------------------
     html = re.sub(r"<title>.*?</title>",
-                  f"<title>{short} MSA Economic Profile | Economic Impact Group, LLC</title>",
+                  f"<title>{short} MSA Economic Profile | Georgia Economics</title>",
                   html, count=1, flags=re.S)
     html = re.sub(r'(<meta name="description" content=")[^"]*(">)',
-                  rf"\g<1>{display} metro economic profile from Economic Impact Group, LLC: "
+                  rf"\g<1>{display} metro economic profile from Georgia Economics: "
                   "business cycle, employment, housing, demographics, exports, and migration "
                   r"— built from BLS, BEA, Census, FHFA, FRED and IRS SOI data.\g<2>",
                   html, count=1)
@@ -156,7 +156,7 @@ def generate(target: str) -> Path:
     else:
         html = _replace_region(html, "NARRATIVE", f"""<!-- GEN:NARRATIVE -->
     <section class="analysis">
-      <h2>Analysis<span class="as-of-stamp">{month_year} &middot; Economic Impact Group, LLC</span></h2>
+      <h2>Analysis<span class="as-of-stamp">{month_year} &middot; Georgia Economics</span></h2>
       <p style="font-size:13px;color:var(--ink-soft);font-style:italic;padding:8px 0;">No data file is available for {short}; the written analysis cannot be generated.</p>
     </section>
     <!-- /GEN:NARRATIVE -->""")

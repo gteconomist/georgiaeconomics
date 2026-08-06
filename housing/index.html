@@ -8,8 +8,8 @@
 <!-- GEN:HEAD -->
 <link rel="stylesheet" href="/styles.css">
 <link rel="stylesheet" href="/assets/app.css">
-<!-- EIG brand layer — site-wide chrome (charcoal + amber). Must load AFTER
-     styles.css/app.css so its chrome rules win. See EIG_REBRAND.md. -->
+<!-- Brand layer — site-wide chrome (charcoal + amber). Must load AFTER
+     styles.css/app.css so its chrome rules win. -->
 <link rel="stylesheet" href="/assets/eig.css">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -229,15 +229,15 @@
         <div class="chart-canvas-med"><canvas id="rentburden-chart"></canvas></div>
       </div>
     </div>
-    <div class="source-note">Source: EIG affordability composite (ACS median income vs. income needed for the median home) and ACS B25064/B19013 rent burden.</div>
+    <div class="source-note">Source: Georgia Economics affordability composite (ACS median income vs. income needed for the median home) and ACS B25064/B19013 rent burden.</div>
   </div>
 
   <!-- Valuation scatter -->
   <div class="chart-panel" style="margin-top: 22px;">
     <h2>Are Metros Over- or Under-Valued?</h2>
-    <p class="sub">Each metro plotted by price-to-income (x) and price-to-rent (y). Toward the upper-right = pricier relative to local incomes and rents. Bubble color is the EIG fair-value gap (teal = below fair value, coral = above).</p>
+    <p class="sub">Each metro plotted by price-to-income (x) and price-to-rent (y). Toward the upper-right = pricier relative to local incomes and rents. Bubble color is the Georgia Economics fair-value gap (teal = below fair value, coral = above).</p>
     <div class="chart-canvas-med"><canvas id="valuation-chart"></canvas></div>
-    <div class="source-note">Source: EIG valuation model &mdash; FHFA HPI vs. BEA per-capita income (log-log fair-value regression).</div>
+    <div class="source-note">Source: Georgia Economics valuation model &mdash; FHFA HPI vs. BEA per-capita income (log-log fair-value regression).</div>
   </div>
 
   <!-- Housing stock mix -->
@@ -273,15 +273,9 @@
 <!-- GEN:FOOTER -->
 <footer class="site-footer">
   <div class="wrap">
-    <p class="footer-disclaimer"><strong>Disclaimer.</strong> Charts and analysis are provided for informational purposes only. Data is pulled directly from official statistical agencies but is not independently validated by Economic Impact Group, LLC; please consult the original source for any decisions that depend on accuracy.</p>
+    <p class="footer-disclaimer"><strong>Disclaimer.</strong> Charts and analysis are provided for informational purposes only. Data is pulled directly from official statistical agencies but is not independently validated by Georgia Economics; please consult the original source for any decisions that depend on accuracy.</p>
     <div>&copy; <span id="yr"></span> Georgia Economics &middot; Sister site to <a href="https://economicsguru.com">economicsguru.com</a> &middot; <a href="/about/">Methodology</a></div>
     <div>Built with public data from BLS, FRED, BEA, Census, and Georgia state agencies.</div>
-    <div class="eig">
-      <a href="https://www.economicimpact.com" target="_blank" rel="noopener" aria-label="Economic Impact Group">
-        <img src="/assets/ei_logo_NEW_200pxw.png" alt="Economic Impact Group">
-      </a>
-      <span class="product-of">A product of <a href="https://www.economicimpact.com" target="_blank" rel="noopener">Economic Impact Group, LLC</a>.</span>
-    </div>
   </div>
 </footer>
 <!-- /GEN:FOOTER -->
