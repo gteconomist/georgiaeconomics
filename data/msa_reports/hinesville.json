@@ -3,7 +3,7 @@
   "short_name": "Hinesville",
   "full_name": "Hinesville, GA",
   "population": 78000,
-  "as_of": "2026-08-06",
+  "as_of": "2026-08-07",
   "sections": {
     "ces_employment": {
       "series_id": "SMS13259800000000001",
@@ -4029,73 +4029,72 @@
       "source": "Census Business Dynamics Statistics (establishment entry rate, 2022); metro rate indexed to US=100"
     },
     "major_employers": {
-      "as_of": "2026-08-06",
+      "as_of": "2026-08-07",
       "employers": [
         {
           "name": "Aerospace",
-          "source_url": "https://georgia.org"
+          "source_url": "https://georgia.org/why-georgia/regions-georgia"
         },
         {
           "name": "Automotive",
-          "source_url": "https://georgia.org"
-        },
-        {
-          "name": "Hyundai Motor Group Metaplant America",
-          "source_url": "https://georgia.org"
+          "source_url": "https://georgia.org/why-georgia/regions-georgia"
         },
         {
           "name": "Liberty County School System",
           "source_url": null
         },
         {
-          "name": "Logistics",
-          "source_url": "https://georgia.org"
-        },
-        {
-          "name": "Manufacturing",
-          "source_url": "https://georgia.org"
-        },
-        {
-          "name": "Distribution",
-          "source_url": "https://georgia.org/why-georgia/regions-georgia/coastal-georgia"
-        },
-        {
           "name": "Energy",
-          "source_url": "https://georgia.org"
+          "source_url": "https://georgia.org/why-georgia/regions-georgia"
         },
         {
           "name": "Food Processing",
-          "source_url": "https://georgia.org"
-        },
-        {
-          "name": "Fort Stewart Medical Center",
-          "source_url": null
-        },
-        {
-          "name": "Gordon Hospital",
-          "source_url": null
+          "source_url": "https://georgia.org/why-georgia/regions-georgia"
         },
         {
           "name": "Hinesville Hospital",
           "source_url": null
         },
         {
-          "name": "Industries",
-          "source_url": "https://georgia.org/why-georgia/regions-georgia/coastal-georgia"
+          "name": "Hinesville Medical Center",
+          "source_url": null
+        },
+        {
+          "name": "Liberty Regional Medical Center",
+          "source_url": null
+        },
+        {
+          "name": "Manufacturing",
+          "source_url": "https://georgia.org/why-georgia/regions-georgia"
+        },
+        {
+          "name": "Memorial Health System",
+          "source_url": null
+        },
+        {
+          "name": "Arts Academy Fitness",
+          "source_url": "https://georgia.org/sites/default/files/2020-08/georgia_safety_promise-8-27.pdf"
         },
         {
           "name": "Augusta Technical College",
           "source_url": "https://georgia.org/why-georgia/regions-georgia"
+        },
+        {
+          "name": "Aviation",
+          "source_url": "https://georgia.org/sites/default/files/2018-11/gdecd_board_book_-_5-23-18.pdf"
+        },
+        {
+          "name": "Bermuda Lane Flowery Branch Wesco Distribution",
+          "source_url": "https://georgia.org/sites/default/files/2020-08/georgia_safety_promise-8-27.pdf"
         }
       ],
       "sources": [
-        "https://georgia.org",
+        "/goto?url=CAESawHuR6pNKFyNeY20p34jD3j-QvFvIXsBLsDy3JvRXZ59vtcBPzaJLzxTSw-07n2wmVnVp2o4FAs2KLsuv9RG5Kuk8KE5Jv_sAS9UWdXASg9Y06RoI_jtXK3guXwfyfezHUSp_7s8rNWupvk1",
+        "https://georgia.org/sites/default/files/2020-08/georgia_safety_promise-8-27.pdf",
         "https://georgia.org/why-georgia/regions-georgia",
-        "https://georgia.org/why-georgia/regions-georgia/coastal-georgia",
-        "https://georgia.org/sites/default/files/2018-11/gdecd_board_book_-_5-23-18.pdf",
-        "https://georgia.org/hyundai-motor-group-metaplant-america",
-        "https://www.savannahnow.com/story/news/2012/02/04/exchange-brief/13663454007",
-        "https://www.savannahnow.com/story/news/2009/02/13/jobless-claims-up-39-percent/13746010007"
+        "https://georgia.org",
+        "https://www.selectgeorgia.com/landing-pages/san-fran-to-atl/top-brands",
+        "https://georgia.org/sites/default/files/2018-11/gdecd_board_book_-_5-23-18.pdf"
       ],
       "method": "Representative list auto-discovered via Tavily web search across chamber-of-commerce, development-authority and local-news sources. Not exhaustive; ordering approximates source frequency, not headcount."
     },

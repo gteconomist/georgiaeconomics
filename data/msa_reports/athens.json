@@ -3,7 +3,7 @@
   "short_name": "Athens",
   "full_name": "Athens-Clarke County, GA",
   "population": 217000,
-  "as_of": "2026-08-06",
+  "as_of": "2026-08-07",
   "sections": {
     "ces_employment": {
       "series_id": "SMS13120200000000001",
@@ -5161,39 +5161,51 @@
       "source": "Census Business Dynamics Statistics (establishment entry rate, 2022); metro rate indexed to US=100"
     },
     "major_employers": {
-      "as_of": "2026-08-06",
+      "as_of": "2026-08-07",
       "employers": [
         {
           "name": "University of Georgia",
-          "source_url": "https://www.onlineathens.com/story/news/state/2013/01/14/new-athens-chamber-chair-aid-new-economic-development-dept/15585264007"
+          "source_url": "https://livability.com/ga/athens/education-careers-opportunity/8-top-employers-in-athens-ga"
         },
         {
           "name": "Children's Healthcare of Atlanta",
           "source_url": "https://www.onlineathens.com/story/news/2026/03/04/georgias-best-employers-are-these-2-big-businesses-forbes-says/88982542007"
         },
         {
-          "name": "Piedmont Healthcare",
-          "source_url": "https://www.ajc.com/business/hospital-giants-reach-beyond-metro-area/vQS8gUaJsJVpj11tgaX5xJ"
+          "name": "Health Care System",
+          "source_url": "https://livability.com/ga/athens/education-careers-opportunity/8-top-employers-in-athens-ga"
         },
         {
-          "name": "Athens Housing Authority",
-          "source_url": "https://www.onlineathens.com/story/news/state/2013/01/14/new-athens-chamber-chair-aid-new-economic-development-dept/15585264007"
+          "name": "Power Partners",
+          "source_url": "https://livability.com/ga/athens/education-careers-opportunity/8-top-employers-in-athens-ga"
+        },
+        {
+          "name": "TeleNet Marketing Solutions",
+          "source_url": "https://www.onlineathens.com/story/news/state/2014/08/27/forecast-athens-area-jobs-grow-12-percent/15520915007"
+        },
+        {
+          "name": "Georgia Power",
+          "source_url": "https://www.onlineathens.com/story/business/2014/07/26/terrell-athens-chamber-focusing-members-and-partnerships-2014/15524196007"
         },
         {
           "name": "Athens Regional Medical Center",
           "source_url": null
         },
         {
-          "name": "Georgia Power",
-          "source_url": "https://www.onlineathens.com/story/news/state/2013/01/14/new-athens-chamber-chair-aid-new-economic-development-dept/15585264007"
+          "name": "Athens Technical College",
+          "source_url": null
         },
         {
-          "name": "Certus Bank",
-          "source_url": "https://www.onlineathens.com/story/news/state/2013/01/14/new-athens-chamber-chair-aid-new-economic-development-dept/15585264007"
+          "name": "Augusta University",
+          "source_url": "https://en.wikipedia.org/wiki/Augusta,_Georgia"
         },
         {
-          "name": "TeleNet Marketing Solutions",
-          "source_url": "https://www.onlineathens.com/story/news/state/2014/08/27/forecast-athens-area-jobs-grow-12-percent/15520915007"
+          "name": "BOS Medical Staffing",
+          "source_url": "https://www.athensga.com/featured-jobs"
+        },
+        {
+          "name": "Caterpillar Inc",
+          "source_url": "https://livability.com/ga/athens/education-careers-opportunity/8-top-employers-in-athens-ga"
         },
         {
           "name": "Clarke County School District",
@@ -5204,31 +5216,19 @@
           "source_url": null
         },
         {
-          "name": "Hospital",
-          "source_url": "https://www.ajc.com/business/hospital-giants-reach-beyond-metro-area/vQS8gUaJsJVpj11tgaX5xJ"
-        },
-        {
-          "name": "Port of Savannah",
-          "source_url": "https://www.onlineathens.com/story/news/state/2015/08/28/forecast-stock-market-roller-coaster-wont-dampen-athens-economy/15484730007"
-        },
-        {
-          "name": "Synovus Bank",
-          "source_url": null
-        },
-        {
-          "name": "Athens Regional Health System",
-          "source_url": "https://www.ajc.com/business/hospital-giants-reach-beyond-metro-area/vQS8gUaJsJVpj11tgaX5xJ"
+          "name": "Doctors Hospital",
+          "source_url": "https://en.wikipedia.org/wiki/Augusta,_Georgia"
         }
       ],
       "sources": [
-        "https://www.onlineathens.com/story/news/state/2015/08/28/forecast-stock-market-roller-coaster-wont-dampen-athens-economy/15484730007",
-        "https://www.ajc.com/business/hospital-giants-reach-beyond-metro-area/vQS8gUaJsJVpj11tgaX5xJ",
-        "https://www.onlineathens.com/business",
+        "https://www.onlineathens.com/story/news/state/2014/08/27/forecast-athens-area-jobs-grow-12-percent/15520915007",
         "https://en.wikipedia.org/wiki/Athens,_Georgia",
         "https://www.onlineathens.com/story/news/2026/03/04/georgias-best-employers-are-these-2-big-businesses-forbes-says/88982542007",
+        "https://en.wikipedia.org/wiki/Augusta,_Georgia",
         "https://www.ajc.com/top-workplaces/rounding-out-the-top-5-large-businesses/5FF7QFEAMRGF3PLDXYSC4NOFWQ",
-        "https://www.onlineathens.com/story/news/state/2013/01/14/new-athens-chamber-chair-aid-new-economic-development-dept/15585264007",
-        "https://www.augustachronicle.com/story/news/2025/08/26/forbes-ranked-americas-best-employers-by-state-what-is-georgias/85830225007"
+        "https://www.augustachronicle.com/story/news/2025/08/26/forbes-ranked-americas-best-employers-by-state-what-is-georgias/85830225007",
+        "https://www.onlineathens.com/story/news/state/2017/02/11/athens-area-chamber-commerce-chairman-s-message-fostering-spirit-service/15436553007",
+        "https://www.onlineathens.com/story/business/2014/07/26/terrell-athens-chamber-focusing-members-and-partnerships-2014/15524196007"
       ],
       "method": "Representative list auto-discovered via Tavily web search across chamber-of-commerce, development-authority and local-news sources. Not exhaustive; ordering approximates source frequency, not headcount."
     },

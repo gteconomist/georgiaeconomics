@@ -3,7 +3,7 @@
   "short_name": "Gainesville",
   "full_name": "Gainesville, GA",
   "population": 211000,
-  "as_of": "2026-08-06",
+  "as_of": "2026-08-07",
   "sections": {
     "ces_employment": {
       "series_id": "SMS13235800000000001",
@@ -5224,10 +5224,22 @@
       "source": "Census Business Dynamics Statistics (establishment entry rate, 2022); metro rate indexed to US=100"
     },
     "major_employers": {
-      "as_of": "2026-08-06",
+      "as_of": "2026-08-07",
       "employers": [
         {
+          "name": "Company",
+          "source_url": "https://lensa.com/company/biggest-companies-in-gainesville-ga"
+        },
+        {
+          "name": "Koch Foods",
+          "source_url": "https://en.wikipedia.org/wiki/Gainesville,_Georgia"
+        },
+        {
           "name": "Northeast Georgia Health System",
+          "source_url": "https://en.wikipedia.org/wiki/Gainesville,_Georgia"
+        },
+        {
+          "name": "The Longstreet Clinic",
           "source_url": "https://en.wikipedia.org/wiki/Gainesville,_Georgia"
         },
         {
@@ -5235,27 +5247,11 @@
           "source_url": "https://en.wikipedia.org/wiki/Gainesville,_Florida"
         },
         {
-          "name": "Koch Foods",
-          "source_url": "https://en.wikipedia.org/wiki/Gainesville,_Georgia"
-        },
-        {
-          "name": "Manufacturing",
-          "source_url": "https://www.bizjournals.com/atlanta/news/2022/06/06/kubota-to-build-new-facility.html"
-        },
-        {
-          "name": "The Longstreet Clinic",
-          "source_url": "https://en.wikipedia.org/wiki/Gainesville,_Georgia"
-        },
-        {
-          "name": "Gainesville-Hall Co",
-          "source_url": "https://www.bizjournals.com/atlanta/news/2022/06/06/kubota-to-build-new-facility.html"
+          "name": "Kubota Manufacturing of America",
+          "source_url": "https://www.georgiatrend.com/2024/09/30/gainesville-hall-county-waves-of-success"
         },
         {
           "name": "Alachua County Public Schools",
-          "source_url": "https://en.wikipedia.org/wiki/Gainesville,_Florida"
-        },
-        {
-          "name": "Annual Comprehensive Financial Report",
           "source_url": "https://en.wikipedia.org/wiki/Gainesville,_Florida"
         },
         {
@@ -5267,8 +5263,8 @@
           "source_url": "https://en.wikipedia.org/wiki/Gainesville,_Georgia"
         },
         {
-          "name": "Professional Company",
-          "source_url": "https://en.wikipedia.org/wiki/Gainesville,_Georgia"
+          "name": "Elan Drug Technologies",
+          "source_url": "https://www.gainesvilletimes.com/news/business-archived/chamber-honors-3-companies-as-the-years-best-in-hall"
         },
         {
           "name": "Santa Fe College",
@@ -5279,18 +5275,23 @@
           "source_url": "https://en.wikipedia.org/wiki/Gainesville,_Georgia"
         },
         {
-          "name": "Atlanta Distribution Service Center",
+          "name": "Wrigley Manufacturing",
           "source_url": "https://www.gainesvilletimes.com/news/business-archived/chamber-honors-3-companies-as-the-years-best-in-hall"
+        },
+        {
+          "name": "Aerospace",
+          "source_url": "https://www.selectgeorgia.com/discover-georgia/industries/fortune-500-list"
         }
       ],
       "sources": [
+        "https://lensa.com/company/biggest-companies-in-gainesville-ga",
         "https://en.wikipedia.org/wiki/Gainesville,_Georgia",
-        "https://www.bizjournals.com/atlanta/news/2022/06/06/kubota-to-build-new-facility.html",
-        "https://www.ajc.com/pulse/6-health-care-systems-among-forbes-best-employers-in-georgia/ZHJC3IV7UBFOHH423Y4NIDQDPI",
+        "https://www.georgiatrend.com/2022/09/29/gainesvillehall-county-regional-powerhouse",
+        "https://www.georgiatrend.com/2024/09/30/gainesville-hall-county-waves-of-success",
+        "https://www.ghcc.com/economic-development",
         "https://en.wikipedia.org/wiki/Gainesville,_Florida",
-        "https://www.bizjournals.com/atlanta/news/2023/09/05/cj-foodville-tous-les-jours-plant-food-processing.html",
         "https://www.gainesvilletimes.com/news/business-archived/chamber-honors-3-companies-as-the-years-best-in-hall",
-        "https://www.selectgeorgia.com/about-us/our-team/regional-development/andrew-carnes-ne"
+        "https://www.gainesvilletimes.com/news/business-archived/gainesville-approves-5m-bond-for-ims-gear-georgia"
       ],
       "method": "Representative list auto-discovered via Tavily web search across chamber-of-commerce, development-authority and local-news sources. Not exhaustive; ordering approximates source frequency, not headcount."
     },
