@@ -6,14 +6,14 @@
   "kpis": {
     "production_spend_latest_b": 0.0,
     "production_spend_yoy_pct": -100.0,
-    "tax_credits_latest_b": 1.8,
+    "tax_credits_latest_b": 1.0,
     "employment_latest_k": 15.1,
     "employment_yoy_pct": -9.0,
     "national_rank": 11,
     "n_major_productions": 12,
     "n_major_studios": 6,
     "tax_credit_pct": 30,
-    "decd_production_spend_b": 3.1,
+    "decd_production_spend_b": 2.0,
     "decd_production_spend_fy": 2026
   },
   "trends": {
@@ -100,6 +100,24 @@
   ],
   "notable_productions": [
     {
+      "title": "War Machine",
+      "year": 2026,
+      "studio": "\u2014",
+      "type": "Film",
+      "spend_m": 0,
+      "location": "Georgia",
+      "_source_url": "https://deadline.com/2026/01/netflix-2026-film-slate-war-machine-enola-holmes-3-1236665458"
+    },
+    {
+      "title": "Wednesday',",
+      "year": 2026,
+      "studio": "\u2014",
+      "type": "Film",
+      "spend_m": 0,
+      "location": "Georgia",
+      "_source_url": "https://deadline.com/2026/01/wednesday-ginny-georgia-untamed-ransom-canyon-delayed-2027-1236664789"
+    },
+    {
       "title": "Chad Powers",
       "year": 2026,
       "studio": "\u2014",
@@ -178,22 +196,6 @@
       "studio": "Netflix",
       "type": "TV Series",
       "spend_m": 110,
-      "location": "Atlanta"
-    },
-    {
-      "title": "Cobra Kai",
-      "year": 2024,
-      "studio": "Sony Pictures TV",
-      "type": "TV Series",
-      "spend_m": 95,
-      "location": "Atlanta"
-    },
-    {
-      "title": "Doom Patrol",
-      "year": 2023,
-      "studio": "DC/HBO Max",
-      "type": "TV Series",
-      "spend_m": 80,
       "location": "Atlanta"
     }
   ],
@@ -301,7 +303,7 @@
   ],
   "_meta": {
     "production_spend": {
-      "last_updated": "2026-07-27",
+      "last_updated": "2026-08-08",
       "source": "BEA Regional SAGDP2 \u2014 NAICS 512 (Motion picture and sound recording industries), GA",
       "metric_note": "Industry GDP (value-added). Distinct from DECD's gross production spend figure.",
       "coverage_years": [
@@ -310,10 +312,10 @@
       ]
     },
     "tax_credits": {
-      "last_updated": "2026-07-08",
+      "last_updated": "2026-08-08",
       "source": "Tavily \u2192 GA DOAA FY2026 report",
       "latest_year": 2026,
-      "latest_value_b": 1.8
+      "latest_value_b": 1.0
     },
     "employment": {
       "last_updated": "2026-07-27",
@@ -324,27 +326,27 @@
       ]
     },
     "state_comparison": {
-      "last_updated": "2026-07-27",
+      "last_updated": "2026-08-08",
       "source": "BEA Regional SAGDP2 \u2014 NAICS 512 (Motion picture & sound recording industries) GDP by state",
       "metric_label": "Industry GDP (value-added, $B)",
       "year": 2025
     },
     "notable_productions": {
-      "last_updated": "2026-05-18",
+      "last_updated": "2026-08-08",
       "source": "Tavily \u2192 GA Film Office + trade press announcements",
-      "new_this_run": 1
+      "new_this_run": 2
     },
     "major_studios": {
       "last_updated": null,
       "source": null
     },
     "decd_headline": {
-      "last_updated": "2026-07-08",
+      "last_updated": "2026-08-08",
       "source": "Tavily \u2192 DECD FY2026 press release",
-      "value_b": 3.1,
+      "value_b": 2.0,
       "year": 2026
     }
   },
-  "fetched_at": "2026-07-27",
-  "source_summary": "Live sources updated 2026-07-27: production_spend, employment, state_comparison. Stale or static: tax_credits, notable_productions, major_studios, decd_headline."
+  "fetched_at": "2026-08-08",
+  "source_summary": "Live sources updated 2026-08-08: production_spend, tax_credits, state_comparison, notable_productions, decd_headline. Stale or static: employment, major_studios."
 }
