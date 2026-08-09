@@ -3,7 +3,7 @@
   "short_name": "Hinesville",
   "full_name": "Hinesville, GA",
   "population": 78000,
-  "as_of": "2026-08-08",
+  "as_of": "2026-08-09",
   "sections": {
     "ces_employment": {
       "series_id": "SMS13259800000000001",
@@ -4062,7 +4062,7 @@
       "source": "Census Business Dynamics Statistics (establishment entry rate, 2022); metro rate indexed to US=100"
     },
     "major_employers": {
-      "as_of": "2026-08-08",
+      "as_of": "2026-08-09",
       "employers": [
         {
           "name": "Aerospace",
@@ -4073,62 +4073,60 @@
           "source_url": "https://georgia.org/why-georgia/regions-georgia"
         },
         {
-          "name": "Georgia Power",
-          "source_url": "https://www.savannahnow.com/story/news/2007/04/20/keys-future-0/13805381007"
-        },
-        {
-          "name": "Liberty County School District",
+          "name": "Hinesville Medical Center",
           "source_url": null
         },
         {
-          "name": "Food Processing",
-          "source_url": "https://georgia.org/why-georgia/regions-georgia"
-        },
-        {
-          "name": "International Auto Logistics",
-          "source_url": "https://www.savannahnow.com/story/business/2014/07/15/business-savannah-news-summary/13962793007"
-        },
-        {
-          "name": "Manufacturing",
-          "source_url": "https://georgia.org/why-georgia/regions-georgia"
+          "name": "Liberty County School System",
+          "source_url": null
         },
         {
           "name": "Energy",
           "source_url": "https://georgia.org/why-georgia/regions-georgia"
         },
         {
-          "name": "Greenfield LLC",
-          "source_url": "https://georgia.org/business-support/small-business"
+          "name": "Food Processing",
+          "source_url": "https://georgia.org/why-georgia/regions-georgia"
         },
         {
-          "name": "Hinesville High School",
+          "name": "Fort Stewart Independent School District",
           "source_url": null
         },
         {
-          "name": "Hinesville Hospital",
-          "source_url": null
+          "name": "Manufacturing",
+          "source_url": "https://georgia.org/why-georgia/regions-georgia"
         },
         {
-          "name": "Hinesville Medical Center",
-          "source_url": null
+          "name": "AIAA Aviation",
+          "source_url": "https://georgia.org/sites/default/files/2018-12/gdecd_board_book_august_2018.pdf"
         },
         {
-          "name": "InnoTek LLC",
-          "source_url": "https://georgia.org/business-support/small-business"
+          "name": "Annual Red Carpet Tour",
+          "source_url": "https://georgia.org/sites/default/files/2018-12/gdecd_board_book_august_2018.pdf"
         },
         {
-          "name": "Muscadine Products Corporation",
-          "source_url": "https://georgia.org/business-support/small-business"
+          "name": "Augusta Technical College",
+          "source_url": "https://georgia.org/why-georgia/regions-georgia"
+        },
+        {
+          "name": "COI Logistics",
+          "source_url": "https://georgia.org/sites/default/files/2018-11/gdecd_board_book_-_5-23-18.pdf"
+        },
+        {
+          "name": "Crisp Co",
+          "source_url": "https://georgia.org"
+        },
+        {
+          "name": "Future of Mobility Working Group",
+          "source_url": "https://georgia.org/sites/default/files/2018-11/gdecd_board_book_-_5-23-18.pdf"
         }
       ],
       "sources": [
         "https://www.savannahnow.com/story/news/2007/04/20/keys-future-0/13805381007",
         "https://georgia.org/why-georgia/regions-georgia",
         "https://georgia.org",
-        "https://www.savannahnow.com/story/business/2014/07/15/business-savannah-news-summary/13962793007",
         "https://georgia.org/sites/default/files/2018-11/gdecd_board_book_-_5-23-18.pdf",
-        "https://georgia.org/business-support/small-business",
-        "https://www.savannahnow.com/story/news/2009/02/13/jobless-claims-up-39-percent/13746010007"
+        "https://georgia.org/sites/default/files/2018-12/gdecd_board_book_august_2018.pdf"
       ],
       "method": "Representative list auto-discovered via Tavily web search across chamber-of-commerce, development-authority and local-news sources. Not exhaustive; ordering approximates source frequency, not headcount."
     },
@@ -4659,18 +4657,18 @@
     }
   },
   "section_status": {
-    "ces_employment": "live",
-    "ces_by_supersector": "live",
-    "laus_unemployment": "live",
+    "ces_employment": "stale",
+    "ces_by_supersector": "stale",
+    "laus_unemployment": "stale",
     "fhfa_hpi": "live",
     "census_pep": "live",
     "census_acs_demographics": "live",
     "bea_gmp": "live",
     "bea_personal_income": "live",
-    "qcew_industry_shares": "live",
+    "qcew_industry_shares": "stale",
     "qcew_yoy_changes": "stale",
-    "qcew_3digit": "live",
-    "health_check": "live",
+    "qcew_3digit": "stale",
+    "health_check": "stale",
     "census_bps_permits": "live",
     "ita_msa_exports": "live",
     "irs_soi_migration": "live",

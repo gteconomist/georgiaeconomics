@@ -3,7 +3,7 @@
   "short_name": "Valdosta",
   "full_name": "Valdosta, GA",
   "population": 148000,
-  "as_of": "2026-08-08",
+  "as_of": "2026-08-09",
   "sections": {
     "ces_employment": {
       "series_id": "SMS13466600000000001",
@@ -4266,73 +4266,73 @@
       "source": "Census Business Dynamics Statistics (establishment entry rate, 2022); metro rate indexed to US=100"
     },
     "major_employers": {
-      "as_of": "2026-08-08",
+      "as_of": "2026-08-09",
       "employers": [
         {
-          "name": "South Georgia Medical Center",
-          "source_url": "https://valdostadailytimes.com/2018/06/10/public-employers"
-        },
-        {
           "name": "Valdosta State University",
-          "source_url": "https://valdostadailytimes.com/2018/06/10/public-employers"
+          "source_url": "https://valdostadailytimes.com/2026/02/23/gary-wisenbaker-data-centers-whats-good-for-the-goose-is-good-for-the-gander"
         },
         {
-          "name": "ACE Electric",
-          "source_url": "https://www.selectgeorgia.com/blog/rural-transformation/one-valdosta-lowndes-interview"
+          "name": "Farmers Insurance",
+          "source_url": "https://valdostadailytimes.com/2019/09/22/business-briefs-152"
         },
         {
           "name": "Berry Global Manufacturing",
           "source_url": "https://www.selectgeorgia.com/blog/rural-transformation/one-valdosta-lowndes-interview"
         },
         {
-          "name": "Smith Drug Company",
-          "source_url": "https://valdostadailytimes.com/2014/05/07/chamber-names-world-class-employees-2"
-        },
-        {
           "name": "Stratas Foods",
           "source_url": "https://www.selectgeorgia.com/blog/rural-transformation/one-valdosta-lowndes-interview"
         },
         {
-          "name": "Azalea Health",
-          "source_url": "https://valdostadailytimes.com/2014/05/07/chamber-names-world-class-employees-2"
+          "name": "ACE Electric",
+          "source_url": "https://www.selectgeorgia.com/blog/rural-transformation/one-valdosta-lowndes-interview"
+        },
+        {
+          "name": "Rayonier Inc",
+          "source_url": "https://jobs.valdostadailytimes.com/employers"
         },
         {
           "name": "Sunset Farm Foods",
           "source_url": "https://valdostadailytimes.com/2021/03/05/chamber-presents-annual-awards"
         },
         {
-          "name": "Distribution",
-          "source_url": "https://valdostadailytimes.com/2014/05/07/chamber-names-world-class-employees-2"
+          "name": "Wiregrass Technical College",
+          "source_url": "https://valdostadailytimes.com/2026/02/23/gary-wisenbaker-data-centers-whats-good-for-the-goose-is-good-for-the-gander"
+        },
+        {
+          "name": "Herndon Company",
+          "source_url": "https://valdostadailytimes.com/2017/10/22/business-briefs-69"
         },
         {
           "name": "Renasant Bank",
           "source_url": "https://valdostadailytimes.com/2021/03/05/chamber-presents-annual-awards"
         },
         {
-          "name": "Corporation",
-          "source_url": "https://valdostadailytimes.com/2025/09/01/tm-polyfilm-inc-named-corporation-of-the-quarter-by-valdosta-lowndes-chamber-of-commerce"
+          "name": "Career Academy",
+          "source_url": "https://www.selectgeorgia.com/blog/rural-transformation/one-valdosta-lowndes-interview"
         },
         {
-          "name": "Lawndes County School District",
-          "source_url": null
+          "name": "Our Company",
+          "source_url": "https://valdostadailytimes.com/2026/02/23/gary-wisenbaker-data-centers-whats-good-for-the-goose-is-good-for-the-gander"
         },
         {
-          "name": "New Hire Solutions",
-          "source_url": "https://valdostadailytimes.com/2014/05/07/chamber-names-world-class-employees-2"
+          "name": "Wiregrass Georgia Technical College",
+          "source_url": "https://valdostadailytimes.com/2015/09/13/finding-the-competitive-edge"
         },
         {
-          "name": "Rayonier Inc",
-          "source_url": "https://jobs.valdostadailytimes.com/employers"
+          "name": "Business Solutions",
+          "source_url": "https://valdostadailytimes.com/2017/10/22/business-briefs-69"
         }
       ],
       "sources": [
-        "https://valdostadailytimes.com/2018/06/10/public-employers",
         "https://www.selectgeorgia.com/blog/rural-transformation/one-valdosta-lowndes-interview",
+        "https://valdostadailytimes.com/2026/02/23/gary-wisenbaker-data-centers-whats-good-for-the-goose-is-good-for-the-gander",
         "https://valdostadailytimes.com/2015/09/13/finding-the-competitive-edge",
         "https://www.selectgeorgia.com/blog/locations-and-expansions/georgia-2023-growth",
         "https://valdostadailytimes.com/2017/10/22/business-briefs-69",
         "https://valdostadailytimes.com/2009/08/13/what-we-think-it-cant-be-done-without-them",
-        "https://valdostadailytimes.com/2025/09/01/tm-polyfilm-inc-named-corporation-of-the-quarter-by-valdosta-lowndes-chamber-of-commerce",
+        "https://valdostadailytimes.com/2019/06/23/business-briefs-135",
         "https://valdostadailytimes.com/2021/03/05/chamber-presents-annual-awards"
       ],
       "method": "Representative list auto-discovered via Tavily web search across chamber-of-commerce, development-authority and local-news sources. Not exhaustive; ordering approximates source frequency, not headcount."
@@ -4869,18 +4869,18 @@
     }
   },
   "section_status": {
-    "ces_employment": "live",
-    "ces_by_supersector": "live",
-    "laus_unemployment": "live",
+    "ces_employment": "stale",
+    "ces_by_supersector": "stale",
+    "laus_unemployment": "stale",
     "fhfa_hpi": "live",
     "census_pep": "live",
     "census_acs_demographics": "live",
     "bea_gmp": "live",
     "bea_personal_income": "live",
-    "qcew_industry_shares": "live",
+    "qcew_industry_shares": "stale",
     "qcew_yoy_changes": "stale",
-    "qcew_3digit": "live",
-    "health_check": "live",
+    "qcew_3digit": "stale",
+    "health_check": "stale",
     "census_bps_permits": "live",
     "ita_msa_exports": "live",
     "irs_soi_migration": "live",

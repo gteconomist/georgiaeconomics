@@ -3,7 +3,7 @@
   "short_name": "Atlanta",
   "full_name": "Atlanta-Sandy Springs-Alpharetta, GA",
   "population": 6307261,
-  "as_of": "2026-08-08",
+  "as_of": "2026-08-09",
   "sections": {
     "ces_employment": {
       "series_id": "SMS13120600000000001",
@@ -5365,39 +5365,27 @@
       "source": "Census Business Dynamics Statistics (establishment entry rate, 2022); metro rate indexed to US=100"
     },
     "major_employers": {
-      "as_of": "2026-08-08",
+      "as_of": "2026-08-09",
       "employers": [
         {
-          "name": "Piedmont Healthcare",
-          "source_url": "https://www.bizjournals.com/atlanta/subscriber-only/2022/07/15/atlantas-25-largest-employers.html"
+          "name": "Emory Healthcare",
+          "source_url": "https://www.bizjournals.com/atlanta/subscriber-only/2025/10/17/metro-atlantas-largest-employers.html"
+        },
+        {
+          "name": "Industries Growing Faster",
+          "source_url": "https://www.selectgeorgia.com/landing-pages/san-fran-to-atl/top-brands"
+        },
+        {
+          "name": "Cola Company",
+          "source_url": null
         },
         {
           "name": "Emory University",
           "source_url": "https://www.bizjournals.com/atlanta/subscriber-only/2025/10/17/metro-atlantas-largest-employers.html"
         },
         {
-          "name": "Emory Healthcare",
-          "source_url": "https://www.bizjournals.com/atlanta/subscriber-only/2025/10/17/metro-atlantas-largest-employers.html"
-        },
-        {
-          "name": "Northside Hospital",
-          "source_url": null
-        },
-        {
-          "name": "WellStar Health System",
-          "source_url": null
-        },
-        {
-          "name": "Delta Air Lines Inc",
+          "name": "Piedmont Healthcare",
           "source_url": "https://www.bizjournals.com/atlanta/subscriber-only/2022/07/15/atlantas-25-largest-employers.html"
-        },
-        {
-          "name": "Headquarters Company",
-          "source_url": "https://www.bizjournals.com/atlanta/subscriber-only/2022/07/15/atlantas-25-largest-employers.html"
-        },
-        {
-          "name": "Cornerstone Christian Academy",
-          "source_url": "https://www.ajc.com/top-workplaces"
         },
         {
           "name": "Axiall Company Page Archived",
@@ -5408,15 +5396,27 @@
           "source_url": "https://en.wikipedia.org/wiki/Economy_of_Atlanta"
         },
         {
-          "name": "Industries Growing Faster",
-          "source_url": "https://www.selectgeorgia.com/landing-pages/san-fran-to-atl/top-brands"
-        },
-        {
           "name": "Logistics",
           "source_url": "https://en.wikipedia.org/wiki/Economy_of_Atlanta"
         },
         {
-          "name": "Cola Company",
+          "name": "Southern Company",
+          "source_url": "https://www.selectgeorgia.com/discover-georgia/industries/fortune-500-list"
+        },
+        {
+          "name": "Aerospace",
+          "source_url": "https://www.selectgeorgia.com/discover-georgia/industries/fortune-500-list"
+        },
+        {
+          "name": "Cornerstone Christian Academy",
+          "source_url": "https://www.ajc.com/top-workplaces"
+        },
+        {
+          "name": "Delta Air Lines Inc",
+          "source_url": "https://www.bizjournals.com/atlanta/subscriber-only/2022/07/15/atlantas-25-largest-employers.html"
+        },
+        {
+          "name": "Elevance Health",
           "source_url": null
         },
         {
@@ -5431,8 +5431,8 @@
         "https://en.wikipedia.org/wiki/Economy_of_Atlanta",
         "https://www.ajc.com/top-workplaces",
         "https://www.selectgeorgia.com/discover-georgia/industries/why-atlanta/top-companies",
-        "https://www.ajc.com/top-workplaces/rounding-out-the-top-5-large-businesses/5FF7QFEAMRGF3PLDXYSC4NOFWQ",
-        "https://services.selectgeorgia.com/data/documents/Atlanta_Federal_OZ_Prospectus.pdf"
+        "https://www.selectgeorgia.com/sxsw/top-brands",
+        "https://www.selectgeorgia.com/discover-georgia/industries/fortune-500-list"
       ],
       "method": "Representative list auto-discovered via Tavily web search across chamber-of-commerce, development-authority and local-news sources. Not exhaustive; ordering approximates source frequency, not headcount."
     },
@@ -5972,18 +5972,18 @@
     }
   },
   "section_status": {
-    "ces_employment": "live",
-    "ces_by_supersector": "live",
-    "laus_unemployment": "live",
+    "ces_employment": "stale",
+    "ces_by_supersector": "stale",
+    "laus_unemployment": "stale",
     "fhfa_hpi": "live",
     "census_pep": "live",
     "census_acs_demographics": "live",
     "bea_gmp": "live",
     "bea_personal_income": "live",
-    "qcew_industry_shares": "live",
+    "qcew_industry_shares": "stale",
     "qcew_yoy_changes": "stale",
-    "qcew_3digit": "live",
-    "health_check": "live",
+    "qcew_3digit": "stale",
+    "health_check": "stale",
     "census_bps_permits": "live",
     "ita_msa_exports": "live",
     "irs_soi_migration": "live",

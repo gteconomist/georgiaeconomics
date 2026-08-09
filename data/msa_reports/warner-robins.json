@@ -3,7 +3,7 @@
   "short_name": "Warner Robins",
   "full_name": "Warner Robins, GA",
   "population": 199000,
-  "as_of": "2026-08-08",
+  "as_of": "2026-08-09",
   "sections": {
     "ces_employment": {
       "series_id": "SMS13475800000000001",
@@ -4287,54 +4287,10 @@
       "source": "Census Business Dynamics Statistics (establishment entry rate, 2022); metro rate indexed to US=100"
     },
     "major_employers": {
-      "as_of": "2026-08-08",
+      "as_of": "2026-08-09",
       "employers": [
         {
-          "name": "Pratt Industries",
-          "source_url": "https://www.bizjournals.com/atlanta/news/2026/04/27/pratt-industries-corrugated-box-warner-robins.html"
-        },
-        {
           "name": "Houston Healthcare",
-          "source_url": "https://en.wikipedia.org/wiki/Central_Georgia"
-        },
-        {
-          "name": "Manufacturing",
-          "source_url": "https://georgia.org/sites/sites-and-buildings"
-        },
-        {
-          "name": "GE Aviation",
-          "source_url": null
-        },
-        {
-          "name": "Warner Robins Hospital",
-          "source_url": null
-        },
-        {
-          "name": "Blue Bird Corporation",
-          "source_url": "https://en.wikipedia.org/wiki/Central_Georgia"
-        },
-        {
-          "name": "Coliseum Health System",
-          "source_url": "https://en.wikipedia.org/wiki/Central_Georgia"
-        },
-        {
-          "name": "Logistics",
-          "source_url": "https://georgia.org/sites/sites-and-buildings"
-        },
-        {
-          "name": "Medical Center of Central Georgia",
-          "source_url": "https://en.wikipedia.org/wiki/Central_Georgia"
-        },
-        {
-          "name": "Aerospace",
-          "source_url": "https://georgia.org/sites/sites-and-buildings"
-        },
-        {
-          "name": "BAE Systems",
-          "source_url": null
-        },
-        {
-          "name": "Central Georgia Technical College",
           "source_url": "https://en.wikipedia.org/wiki/Central_Georgia"
         },
         {
@@ -4342,19 +4298,63 @@
           "source_url": "https://www.bizjournals.com/atlanta/news/2024/08/22/emory-healthcare-houston-healthcare-partnership.html"
         },
         {
-          "name": "Food Processing",
+          "name": "Medical Center of Central Georgia",
+          "source_url": "https://en.wikipedia.org/wiki/Central_Georgia"
+        },
+        {
+          "name": "Pratt Industries",
+          "source_url": "https://www.bizjournals.com/atlanta/news/2026/04/27/pratt-industries-corrugated-box-warner-robins.html"
+        },
+        {
+          "name": "Blue Bird Corporation",
+          "source_url": "https://en.wikipedia.org/wiki/Central_Georgia"
+        },
+        {
+          "name": "Central Georgia Technical College",
+          "source_url": "https://en.wikipedia.org/wiki/Central_Georgia"
+        },
+        {
+          "name": "Fort Valley State University",
+          "source_url": "https://en.wikipedia.org/wiki/Central_Georgia"
+        },
+        {
+          "name": "Georgia College",
+          "source_url": "https://en.wikipedia.org/wiki/Central_Georgia"
+        },
+        {
+          "name": "Georgia Military College",
+          "source_url": "https://en.wikipedia.org/wiki/Central_Georgia"
+        },
+        {
+          "name": "Health Care",
+          "source_url": "https://www.bizjournals.com/atlanta/news/2024/08/22/emory-healthcare-houston-healthcare-partnership.html"
+        },
+        {
+          "name": "Logistics",
           "source_url": "https://georgia.org/sites/sites-and-buildings"
+        },
+        {
+          "name": "Manufacturing",
+          "source_url": "https://www.bizjournals.com/atlanta/news/2026/04/27/pratt-industries-corrugated-box-warner-robins.html"
+        },
+        {
+          "name": "Mercer University",
+          "source_url": "https://en.wikipedia.org/wiki/Central_Georgia"
+        },
+        {
+          "name": "Middle Georgia State University",
+          "source_url": "https://en.wikipedia.org/wiki/Central_Georgia"
         }
       ],
       "sources": [
         "https://en.wikipedia.org/wiki/Central_Georgia",
+        "https://www.bizjournals.com/atlanta/news/2026/04/27/pratt-industries-corrugated-box-warner-robins.html",
         "https://www.bizjournals.com/atlanta/news/2024/08/22/emory-healthcare-houston-healthcare-partnership.html",
         "https://georgia.org/sites/sites-and-buildings",
         "https://www.bizjournals.com/atlanta/news/2025/05/29/emory-houston-attorney-general.html",
-        "https://georgia.org/business-support/small-business",
-        "https://www.bizjournals.com/atlanta/news/2026/04/27/pratt-industries-corrugated-box-warner-robins.html",
-        "https://georgia.org/sites/default/files/2020-08/2019_-_12-4-19_gdecd_board_meeting_minutes.pdf",
-        "https://www.bizjournals.com/sitemap/atlanta/2014-05"
+        "https://en.wikipedia.org/wiki/Google",
+        "https://en.wikipedia.org/wiki/Warner_Robins,_Georgia",
+        "https://georgia.org/sites/default/files/2021-02/fy21_q2_board_book.pdf"
       ],
       "method": "Representative list auto-discovered via Tavily web search across chamber-of-commerce, development-authority and local-news sources. Not exhaustive; ordering approximates source frequency, not headcount."
     },
@@ -4890,18 +4890,18 @@
     }
   },
   "section_status": {
-    "ces_employment": "live",
-    "ces_by_supersector": "live",
-    "laus_unemployment": "live",
+    "ces_employment": "stale",
+    "ces_by_supersector": "stale",
+    "laus_unemployment": "stale",
     "fhfa_hpi": "live",
     "census_pep": "live",
     "census_acs_demographics": "live",
     "bea_gmp": "live",
     "bea_personal_income": "live",
-    "qcew_industry_shares": "live",
+    "qcew_industry_shares": "stale",
     "qcew_yoy_changes": "stale",
-    "qcew_3digit": "live",
-    "health_check": "live",
+    "qcew_3digit": "stale",
+    "health_check": "stale",
     "census_bps_permits": "live",
     "ita_msa_exports": "live",
     "irs_soi_migration": "live",
