@@ -3,7 +3,7 @@
   "short_name": "Columbus",
   "full_name": "Columbus, GA-AL",
   "population": 329000,
-  "as_of": "2026-08-09",
+  "as_of": "2026-08-10",
   "sections": {
     "ces_employment": {
       "series_id": "SMS13179800000000001",
@@ -5183,15 +5183,11 @@
       "source": "Census Business Dynamics Statistics (establishment entry rate, 2022); metro rate indexed to US=100"
     },
     "major_employers": {
-      "as_of": "2026-08-09",
+      "as_of": "2026-08-10",
       "employers": [
         {
           "name": "Health Care",
           "source_url": "https://en.wikipedia.org/wiki/List_of_largest_Central_Ohio_employers"
-        },
-        {
-          "name": "Bradley Co",
-          "source_url": "https://en.wikipedia.org/wiki/Columbus,_Georgia"
         },
         {
           "name": "Columbus State University",
@@ -5210,19 +5206,27 @@
           "source_url": "https://en.wikipedia.org/wiki/Columbus,_Georgia"
         },
         {
-          "name": "Financial Activities",
-          "source_url": "https://en.wikipedia.org/wiki/List_of_largest_Central_Ohio_employers"
-        },
-        {
           "name": "Aerospace",
           "source_url": "https://georgia.org"
         },
         {
-          "name": "Corp. Mgt",
+          "name": "Bradley Co",
+          "source_url": "https://en.wikipedia.org/wiki/Columbus,_Georgia"
+        },
+        {
+          "name": "Financial Activities",
           "source_url": "https://en.wikipedia.org/wiki/List_of_largest_Central_Ohio_employers"
         },
         {
-          "name": "Honda of America Manufacturing",
+          "name": "Manufacturing",
+          "source_url": "https://georgia.org"
+        },
+        {
+          "name": "Automotive",
+          "source_url": "https://georgia.org"
+        },
+        {
+          "name": "Corp. Mgt",
           "source_url": "https://en.wikipedia.org/wiki/List_of_largest_Central_Ohio_employers"
         },
         {
@@ -5234,11 +5238,7 @@
           "source_url": "https://en.wikipedia.org/wiki/List_of_largest_Central_Ohio_employers"
         },
         {
-          "name": "Automotive",
-          "source_url": "https://georgia.org"
-        },
-        {
-          "name": "Columbus City Schools",
+          "name": "Columbus Public Schools",
           "source_url": "https://en.wikipedia.org/wiki/List_of_largest_Central_Ohio_employers"
         }
       ],
@@ -5249,8 +5249,8 @@
         "https://en.wikipedia.org/wiki/Category:Companies_based_in_Columbus,_Georgia",
         "https://www.bizjournals.com/atlanta/subscriber-only/2025/10/17/metro-atlantas-largest-employers.html",
         "https://www.ajc.com/business/these-georgia-companies-were-named-black-enterprise-best-companies-for-diversity/akVlNW0HggIXgv3pkchWjK",
-        "https://www.selectgeorgia.com/about-us/our-team/regional-development/andrew-camp-west",
-        "https://georgia.org/sites/default/files/2023-01/2022-8-24_gdecd_board_meeting_minutes.pdf"
+        "https://georgia.org/sites/default/files/2023-01/2022-8-24_gdecd_board_meeting_minutes.pdf",
+        "https://georgia.org"
       ],
       "method": "Representative list auto-discovered via Tavily web search across chamber-of-commerce, development-authority and local-news sources. Not exhaustive; ordering approximates source frequency, not headcount."
     },
@@ -5786,18 +5786,18 @@
     }
   },
   "section_status": {
-    "ces_employment": "stale",
-    "ces_by_supersector": "stale",
-    "laus_unemployment": "stale",
+    "ces_employment": "live",
+    "ces_by_supersector": "live",
+    "laus_unemployment": "live",
     "fhfa_hpi": "live",
     "census_pep": "live",
     "census_acs_demographics": "live",
     "bea_gmp": "live",
     "bea_personal_income": "live",
-    "qcew_industry_shares": "stale",
+    "qcew_industry_shares": "live",
     "qcew_yoy_changes": "stale",
-    "qcew_3digit": "stale",
-    "health_check": "stale",
+    "qcew_3digit": "live",
+    "health_check": "live",
     "census_bps_permits": "live",
     "ita_msa_exports": "live",
     "irs_soi_migration": "live",

@@ -1,5 +1,5 @@
 {
- "fetched_at": "2026-08-09T10:24:06Z",
+ "fetched_at": "2026-08-10T10:30:12Z",
  "schema": "migration/v1",
  "metros": [
   {
@@ -1387,15 +1387,15 @@
     "net": 58
    },
    {
-    "state": "Rhode Island",
-    "in": 102,
-    "out": 46,
-    "net": 56
-   },
-   {
     "state": "Nebraska",
     "in": 56,
     "out": 0,
+    "net": 56
+   },
+   {
+    "state": "Rhode Island",
+    "in": 102,
+    "out": 46,
     "net": 56
    },
    {
@@ -1513,24 +1513,24 @@
  },
  "_meta": {
   "metro_rollup": {
-   "last_updated": "2026-08-09T10:24:06Z",
+   "last_updated": "2026-08-10T10:30:12Z",
    "n_metros": 14,
    "stale": false
   },
   "components": {
-   "last_updated": "2026-08-09T10:24:06Z",
+   "last_updated": "2026-08-10T10:30:12Z",
    "stale": false
   },
   "counties": {
-   "last_updated": "2026-08-09T10:24:06Z",
+   "last_updated": "2026-08-10T10:30:12Z",
    "stale": false
   },
   "non_metro": {
-   "last_updated": "2026-08-09T10:24:06Z",
+   "last_updated": "2026-08-10T10:30:12Z",
    "stale": false
   },
   "state_flows": {
-   "last_updated": "2026-08-09T10:24:07Z",
+   "last_updated": "2026-08-10T10:30:14Z",
    "stale": false
   }
  },

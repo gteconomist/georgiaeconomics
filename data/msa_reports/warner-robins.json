@@ -3,7 +3,7 @@
   "short_name": "Warner Robins",
   "full_name": "Warner Robins, GA",
   "population": 199000,
-  "as_of": "2026-08-09",
+  "as_of": "2026-08-10",
   "sections": {
     "ces_employment": {
       "series_id": "SMS13475800000000001",
@@ -4287,26 +4287,10 @@
       "source": "Census Business Dynamics Statistics (establishment entry rate, 2022); metro rate indexed to US=100"
     },
     "major_employers": {
-      "as_of": "2026-08-09",
+      "as_of": "2026-08-10",
       "employers": [
         {
           "name": "Houston Healthcare",
-          "source_url": "https://en.wikipedia.org/wiki/Central_Georgia"
-        },
-        {
-          "name": "Emory Healthcare",
-          "source_url": "https://www.bizjournals.com/atlanta/news/2024/08/22/emory-healthcare-houston-healthcare-partnership.html"
-        },
-        {
-          "name": "Medical Center of Central Georgia",
-          "source_url": "https://en.wikipedia.org/wiki/Central_Georgia"
-        },
-        {
-          "name": "Pratt Industries",
-          "source_url": "https://www.bizjournals.com/atlanta/news/2026/04/27/pratt-industries-corrugated-box-warner-robins.html"
-        },
-        {
-          "name": "Blue Bird Corporation",
           "source_url": "https://en.wikipedia.org/wiki/Central_Georgia"
         },
         {
@@ -4314,47 +4298,63 @@
           "source_url": "https://en.wikipedia.org/wiki/Central_Georgia"
         },
         {
-          "name": "Fort Valley State University",
+          "name": "Medical Center of Central Georgia",
           "source_url": "https://en.wikipedia.org/wiki/Central_Georgia"
-        },
-        {
-          "name": "Georgia College",
-          "source_url": "https://en.wikipedia.org/wiki/Central_Georgia"
-        },
-        {
-          "name": "Georgia Military College",
-          "source_url": "https://en.wikipedia.org/wiki/Central_Georgia"
-        },
-        {
-          "name": "Health Care",
-          "source_url": "https://www.bizjournals.com/atlanta/news/2024/08/22/emory-healthcare-houston-healthcare-partnership.html"
-        },
-        {
-          "name": "Logistics",
-          "source_url": "https://georgia.org/sites/sites-and-buildings"
-        },
-        {
-          "name": "Manufacturing",
-          "source_url": "https://www.bizjournals.com/atlanta/news/2026/04/27/pratt-industries-corrugated-box-warner-robins.html"
         },
         {
           "name": "Mercer University",
           "source_url": "https://en.wikipedia.org/wiki/Central_Georgia"
         },
         {
-          "name": "Middle Georgia State University",
+          "name": "Atrium Health Navicent",
+          "source_url": "https://thekirklandco.com/market_reports/macon-warner-robins_aug2023"
+        },
+        {
+          "name": "Emory Healthcare",
+          "source_url": "https://www.bizjournals.com/atlanta/news/2024/08/22/emory-healthcare-houston-healthcare-partnership.html"
+        },
+        {
+          "name": "Food Manufacturing",
+          "source_url": "https://www.wrga.gov/article/2351392"
+        },
+        {
+          "name": "Houston County Development Authority",
+          "source_url": "https://georgia.org/sites/default/files/2019-08/gdecd_board_book-nov_2018.pdf"
+        },
+        {
+          "name": "Air Logistics Center",
+          "source_url": null
+        },
+        {
+          "name": "Blue Bird Corporation",
+          "source_url": "https://en.wikipedia.org/wiki/Central_Georgia"
+        },
+        {
+          "name": "COI Aerospace",
+          "source_url": "https://georgia.org/sites/default/files/2019-08/gdecd_board_book-nov_2018.pdf"
+        },
+        {
+          "name": "Chief Manufacturing",
+          "source_url": "https://en.wikipedia.org/wiki/Central_Georgia"
+        },
+        {
+          "name": "Coliseum Health System",
+          "source_url": "https://en.wikipedia.org/wiki/Central_Georgia"
+        },
+        {
+          "name": "Criterion Technologies",
           "source_url": "https://en.wikipedia.org/wiki/Central_Georgia"
         }
       ],
       "sources": [
         "https://en.wikipedia.org/wiki/Central_Georgia",
-        "https://www.bizjournals.com/atlanta/news/2026/04/27/pratt-industries-corrugated-box-warner-robins.html",
+        "https://www.macon.com/news/business/article258547393.html",
+        "https://www.macon.com/living/living-here-guide/article39043491.html",
         "https://www.bizjournals.com/atlanta/news/2024/08/22/emory-healthcare-houston-healthcare-partnership.html",
-        "https://georgia.org/sites/sites-and-buildings",
         "https://www.bizjournals.com/atlanta/news/2025/05/29/emory-houston-attorney-general.html",
-        "https://en.wikipedia.org/wiki/Google",
-        "https://en.wikipedia.org/wiki/Warner_Robins,_Georgia",
-        "https://georgia.org/sites/default/files/2021-02/fy21_q2_board_book.pdf"
+        "https://georgia.org/sites/default/files/2019-08/gdecd_board_book-nov_2018.pdf",
+        "https://en.wikipedia.org/wiki/Robins_Air_Force_Base",
+        "https://georgia.org/sites/default/files/2021-04/logistics_education_report.pdf"
       ],
       "method": "Representative list auto-discovered via Tavily web search across chamber-of-commerce, development-authority and local-news sources. Not exhaustive; ordering approximates source frequency, not headcount."
     },
@@ -4890,18 +4890,18 @@
     }
   },
   "section_status": {
-    "ces_employment": "stale",
-    "ces_by_supersector": "stale",
-    "laus_unemployment": "stale",
+    "ces_employment": "live",
+    "ces_by_supersector": "live",
+    "laus_unemployment": "live",
     "fhfa_hpi": "live",
     "census_pep": "live",
     "census_acs_demographics": "live",
     "bea_gmp": "live",
     "bea_personal_income": "live",
-    "qcew_industry_shares": "stale",
+    "qcew_industry_shares": "live",
     "qcew_yoy_changes": "stale",
-    "qcew_3digit": "stale",
-    "health_check": "stale",
+    "qcew_3digit": "live",
+    "health_check": "live",
     "census_bps_permits": "live",
     "ita_msa_exports": "live",
     "irs_soi_migration": "live",

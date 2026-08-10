@@ -3,7 +3,7 @@
   "short_name": "Savannah",
   "full_name": "Savannah, GA",
   "population": 410000,
-  "as_of": "2026-08-09",
+  "as_of": "2026-08-10",
   "sections": {
     "ces_employment": {
       "series_id": "SMS13423400000000001",
@@ -5265,18 +5265,14 @@
       "source": "Census Business Dynamics Statistics (establishment entry rate, 2022); metro rate indexed to US=100"
     },
     "major_employers": {
-      "as_of": "2026-08-09",
+      "as_of": "2026-08-10",
       "employers": [
-        {
-          "name": "Gulfstream Aerospace",
-          "source_url": "https://www.savannahnow.com/story/business/2013/02/19/understanding-purpose-savannah-chamber/13655438007"
-        },
         {
           "name": "Savannah State University",
           "source_url": "https://en.wikipedia.org/wiki/Savannah_metropolitan_area"
         },
         {
-          "name": "Port of Savannah",
+          "name": "Georgia Ports Authority",
           "source_url": null
         },
         {
@@ -5284,7 +5280,19 @@
           "source_url": "https://en.wikipedia.org/wiki/Savannah_metropolitan_area"
         },
         {
+          "name": "Gulfstream Aerospace",
+          "source_url": "https://www.savannahnow.com/story/business/2013/02/19/understanding-purpose-savannah-chamber/13655438007"
+        },
+        {
           "name": "Savannah Technical College",
+          "source_url": "https://en.wikipedia.org/wiki/Savannah_metropolitan_area"
+        },
+        {
+          "name": "Metaplant",
+          "source_url": "https://www.savannahnow.com/story/news/local/2025/01/09/savannah-economy-bolstered-by-hyundai-expected-outpace-georgia-u-s/77579126007"
+        },
+        {
+          "name": "Chase Bank",
           "source_url": "https://en.wikipedia.org/wiki/Savannah_metropolitan_area"
         },
         {
@@ -5292,27 +5300,15 @@
           "source_url": "https://www.savannahnow.com/story/business/2013/02/19/understanding-purpose-savannah-chamber/13655438007"
         },
         {
-          "name": "Hyundai Motor Group Metaplant America",
-          "source_url": "https://www.savannahnow.com/story/business/employment/2025/05/04/georgia-southern-university-on-fourth-quarter-economic-numbers-predicts-slow-2025-growth-in-savannah/83364111007"
-        },
-        {
-          "name": "Savannah Bee Co",
-          "source_url": "https://www.savannahnow.com/story/business/2012/12/10/five-savannah-area-firms-among-incs-fastest-growing/13774286007"
-        },
-        {
-          "name": "Stage Front Presentation Systems",
-          "source_url": "https://www.savannahnow.com/story/business/2012/12/10/five-savannah-area-firms-among-incs-fastest-growing/13774286007"
-        },
-        {
-          "name": "Chase Bank",
-          "source_url": "https://en.wikipedia.org/wiki/Savannah_metropolitan_area"
-        },
-        {
-          "name": "Chatham County School System",
+          "name": "Georgia Southern University Armstrong",
           "source_url": null
         },
         {
-          "name": "Georgia Southern University",
+          "name": "Georgia Southern University's",
+          "source_url": "https://en.wikipedia.org/wiki/Savannah_metropolitan_area"
+        },
+        {
+          "name": "Hyundai Motor Group",
           "source_url": null
         },
         {
@@ -5322,17 +5318,21 @@
         {
           "name": "Manufacturing",
           "source_url": "https://www.savannahnow.com/story/news/local/2025/01/09/savannah-economy-bolstered-by-hyundai-expected-outpace-georgia-u-s/77579126007"
+        },
+        {
+          "name": "Memorial Health University Medical Center",
+          "source_url": null
         }
       ],
       "sources": [
         "https://en.wikipedia.org/wiki/Savannah,_Georgia",
         "https://www.savannahnow.com/story/news/local/2025/01/09/savannah-economy-bolstered-by-hyundai-expected-outpace-georgia-u-s/77579126007",
+        "https://en.wikipedia.org/wiki/Augusta,_Georgia",
         "https://en.wikipedia.org/wiki/Savannah_metropolitan_area",
         "https://en.wikipedia.org/wiki/Savannah,_GA_MSA",
-        "https://www.selectgeorgia.com/blog/welcome-seapoint-industrial-site-savannah-ga",
-        "https://www.savannahnow.com/story/business/2012/12/10/five-savannah-area-firms-among-incs-fastest-growing/13774286007",
         "https://www.savannahnow.com/story/business/2013/02/19/understanding-purpose-savannah-chamber/13655438007",
-        "https://www.savannahnow.com/story/business/2013/01/21/business-savannah-roundup/13965486007"
+        "https://www.savannahnow.com/story/business/2012/12/10/five-savannah-area-firms-among-incs-fastest-growing/13774286007",
+        "https://www.savannahnow.com/story/business/2013/10/14/business-savannah-news-summary/13965727007"
       ],
       "method": "Representative list auto-discovered via Tavily web search across chamber-of-commerce, development-authority and local-news sources. Not exhaustive; ordering approximates source frequency, not headcount."
     },
@@ -5873,18 +5873,18 @@
     }
   },
   "section_status": {
-    "ces_employment": "stale",
-    "ces_by_supersector": "stale",
-    "laus_unemployment": "stale",
+    "ces_employment": "live",
+    "ces_by_supersector": "live",
+    "laus_unemployment": "live",
     "fhfa_hpi": "live",
     "census_pep": "live",
     "census_acs_demographics": "live",
     "bea_gmp": "live",
     "bea_personal_income": "live",
-    "qcew_industry_shares": "stale",
-    "qcew_yoy_changes": "stale",
-    "qcew_3digit": "stale",
-    "health_check": "stale",
+    "qcew_industry_shares": "live",
+    "qcew_yoy_changes": "live",
+    "qcew_3digit": "live",
+    "health_check": "live",
     "census_bps_permits": "live",
     "ita_msa_exports": "live",
     "irs_soi_migration": "live",

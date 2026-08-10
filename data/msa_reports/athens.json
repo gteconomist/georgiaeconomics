@@ -3,7 +3,7 @@
   "short_name": "Athens",
   "full_name": "Athens-Clarke County, GA",
   "population": 217000,
-  "as_of": "2026-08-09",
+  "as_of": "2026-08-10",
   "sections": {
     "ces_employment": {
       "series_id": "SMS13120200000000001",
@@ -5194,38 +5194,30 @@
       "source": "Census Business Dynamics Statistics (establishment entry rate, 2022); metro rate indexed to US=100"
     },
     "major_employers": {
-      "as_of": "2026-08-09",
+      "as_of": "2026-08-10",
       "employers": [
         {
           "name": "University of Georgia",
-          "source_url": "https://www.onlineathens.com/story/business/2023/08/09/the-georgia-chamber-of-commerce-hold-congressional-luncheon-in-athens/70553954007"
+          "source_url": "https://www.onlineathens.com/story/business/2018/06/25/athens-chamber-commerce-names-north/1772620007"
         },
         {
           "name": "Children's Healthcare of Atlanta",
           "source_url": "https://www.onlineathens.com/story/news/2026/03/04/georgias-best-employers-are-these-2-big-businesses-forbes-says/88982542007"
         },
         {
-          "name": "Georgia Power",
-          "source_url": "https://www.onlineathens.com/story/news/state/2013/01/14/new-athens-chamber-chair-aid-new-economic-development-dept/15585264007"
-        },
-        {
-          "name": "Alpha Bank",
-          "source_url": null
-        },
-        {
-          "name": "Athens Housing Authority",
-          "source_url": "https://www.onlineathens.com/story/news/state/2013/01/14/new-athens-chamber-chair-aid-new-economic-development-dept/15585264007"
-        },
-        {
-          "name": "Athens Regional Medical Center",
-          "source_url": null
-        },
-        {
-          "name": "Caterpillar Inc",
-          "source_url": null
-        },
-        {
           "name": "Clarke County School District",
+          "source_url": null
+        },
+        {
+          "name": "Piedmont Athens Regional Medical Center",
+          "source_url": null
+        },
+        {
+          "name": "TeleNet Marketing Solutions",
+          "source_url": "https://www.onlineathens.com/story/news/state/2014/08/27/forecast-athens-area-jobs-grow-12-percent/15520915007"
+        },
+        {
+          "name": "Athens Technical College",
           "source_url": null
         },
         {
@@ -5233,34 +5225,42 @@
           "source_url": null
         },
         {
-          "name": "National Bank of Greece",
+          "name": "Dell Technologies",
           "source_url": null
-        },
-        {
-          "name": "New Christian Brothers Automotive",
-          "source_url": "https://www.onlineathens.com/business"
         },
         {
           "name": "Piedmont Athens Regional Hospital",
           "source_url": null
         },
         {
-          "name": "Port of Piraeus",
-          "source_url": null
+          "name": "Alpha Bank",
+          "source_url": "https://en.wikipedia.org/wiki/Athens"
         },
         {
-          "name": "University of Athens",
-          "source_url": null
+          "name": "Athens First Bank",
+          "source_url": "https://www.onlineathens.com/story/news/state/2017/02/11/athens-area-chamber-commerce-chairman-s-message-fostering-spirit-service/15436553007"
+        },
+        {
+          "name": "Bank of Greece",
+          "source_url": "https://en.wikipedia.org/wiki/Athens"
+        },
+        {
+          "name": "Barberitos Creature Comforts Brewing Co. Fire",
+          "source_url": "https://en.wikipedia.org/wiki/Athens,_Georgia"
+        },
+        {
+          "name": "Christian Industrial Tract",
+          "source_url": "https://www.onlineathens.com/story/business/2023/04/05/new-company-in-athens-expects-to-create-1700-new-jobs-in-coming-years/70085032007"
         }
       ],
       "sources": [
-        "https://www.augustachronicle.com/story/news/2025/06/04/fortune-500s-list-of-the-biggest-corporations-includes-17-in-georgia/84010835007",
-        "https://www.onlineathens.com/business",
         "https://en.wikipedia.org/wiki/Athens,_Georgia",
         "https://www.onlineathens.com/story/news/2026/03/04/georgias-best-employers-are-these-2-big-businesses-forbes-says/88982542007",
+        "https://services.selectgeorgia.com/data/documents/Atlanta_Federal_OZ_Prospectus.pdf",
+        "https://www.selectgeorgia.com/about-us/our-team/regional-development/andrew-carnes-ne",
         "https://www.ajc.com/top-workplaces/rounding-out-the-top-5-large-businesses/5FF7QFEAMRGF3PLDXYSC4NOFWQ",
-        "https://www.onlineathens.com/story/business/2023/08/09/the-georgia-chamber-of-commerce-hold-congressional-luncheon-in-athens/70553954007",
-        "https://www.onlineathens.com/story/news/state/2013/01/14/new-athens-chamber-chair-aid-new-economic-development-dept/15585264007",
+        "https://www.onlineathens.com/story/news/state/2017/02/11/athens-area-chamber-commerce-chairman-s-message-fostering-spirit-service/15436553007",
+        "https://www.onlineathens.com/story/business/2014/07/26/terrell-athens-chamber-focusing-members-and-partnerships-2014/15524196007",
         "https://www.onlineathens.com/story/business/2018/06/25/athens-chamber-commerce-names-north/1772620007"
       ],
       "method": "Representative list auto-discovered via Tavily web search across chamber-of-commerce, development-authority and local-news sources. Not exhaustive; ordering approximates source frequency, not headcount."
@@ -5797,18 +5797,18 @@
     }
   },
   "section_status": {
-    "ces_employment": "stale",
-    "ces_by_supersector": "stale",
-    "laus_unemployment": "stale",
+    "ces_employment": "live",
+    "ces_by_supersector": "live",
+    "laus_unemployment": "live",
     "fhfa_hpi": "live",
     "census_pep": "live",
     "census_acs_demographics": "live",
     "bea_gmp": "live",
     "bea_personal_income": "live",
-    "qcew_industry_shares": "stale",
+    "qcew_industry_shares": "live",
     "qcew_yoy_changes": "stale",
-    "qcew_3digit": "stale",
-    "health_check": "stale",
+    "qcew_3digit": "live",
+    "health_check": "live",
     "census_bps_permits": "live",
     "ita_msa_exports": "live",
     "irs_soi_migration": "live",

@@ -3,7 +3,7 @@
   "short_name": "Macon",
   "full_name": "Macon-Bibb County, GA",
   "population": 232000,
-  "as_of": "2026-08-09",
+  "as_of": "2026-08-10",
   "sections": {
     "ces_employment": {
       "series_id": "SMS13314200000000001",
@@ -5185,7 +5185,7 @@
       "source": "Census Business Dynamics Statistics (establishment entry rate, 2022); metro rate indexed to US=100"
     },
     "major_employers": {
-      "as_of": "2026-08-09",
+      "as_of": "2026-08-10",
       "employers": [
         {
           "name": "Mercer University",
@@ -5200,10 +5200,6 @@
           "source_url": "https://en.wikipedia.org/wiki/Macon,_Georgia"
         },
         {
-          "name": "Medical Center of Central Georgia",
-          "source_url": "https://en.wikipedia.org/wiki/Central_Georgia"
-        },
-        {
           "name": "Brazil's Group Guidoni",
           "source_url": "https://www.bizjournals.com/atlanta/news/2019/12/13/macon-bibb-county-industrial-sector-soars.html"
         },
@@ -5212,8 +5208,20 @@
           "source_url": null
         },
         {
+          "name": "Piedmont Healthcare Macon",
+          "source_url": "https://en.wikipedia.org/wiki/Macon,_Georgia"
+        },
+        {
+          "name": "The Medical Center of Central Georgia",
+          "source_url": "https://www.macon.com/living/living-here-guide/article39043491.html"
+        },
+        {
           "name": "Defense Systems",
           "source_url": "https://www.selectgeorgia.com/about-us/our-team/regional-development/ryan-waldrep-central"
+        },
+        {
+          "name": "Manufacturing",
+          "source_url": "https://www.bizjournals.com/atlanta/news/2019/12/13/macon-bibb-county-industrial-sector-soars.html"
         },
         {
           "name": "Navicent Health Medical Center",
@@ -5228,31 +5236,23 @@
           "source_url": "https://www.selectgeorgia.com/discover-georgia/industries/fortune-500-list"
         },
         {
-          "name": "Clayton State University",
-          "source_url": "https://www.selectgeorgia.com/about-us/our-team/regional-development/mia-pressley-ms"
-        },
-        {
           "name": "Electric",
           "source_url": "https://www.selectgeorgia.com/discover-georgia/industries/fortune-500-list"
         },
         {
           "name": "Food Manufacturers",
           "source_url": "https://www.selectgeorgia.com/discover-georgia/industries/fortune-500-list"
-        },
-        {
-          "name": "Food Processing",
-          "source_url": "https://www.selectgeorgia.com/discover-georgia/industries/fortune-500-list"
         }
       ],
       "sources": [
         "https://en.wikipedia.org/wiki/Macon,_Georgia",
         "https://en.wikipedia.org/wiki/Central_Georgia",
-        "https://www.selectgeorgia.com/about-us/our-team/regional-development/mia-pressley-ms",
+        "https://www.macon.com/living/living-here-guide/article39043491.html",
+        "https://www.bizjournals.com/atlanta/news/2019/12/13/macon-bibb-county-industrial-sector-soars.html",
         "https://www.selectgeorgia.com/discover-georgia/industries/fortune-500-list",
         "https://www.selectgeorgia.com/about-us/our-team/regional-development/ryan-waldrep-central",
         "https://www.bizjournals.com/atlanta/news/2019/12/15/health-care-companies-expand-in-macon-market.html",
-        "https://amp.macon.com/news/business/article28562158.html",
-        "http://www.bizjournals.com/atlanta/search/results?q=Kay+Pippin"
+        "https://amp.macon.com/news/business/article28562158.html"
       ],
       "method": "Representative list auto-discovered via Tavily web search across chamber-of-commerce, development-authority and local-news sources. Not exhaustive; ordering approximates source frequency, not headcount."
     },
@@ -5788,18 +5788,18 @@
     }
   },
   "section_status": {
-    "ces_employment": "stale",
-    "ces_by_supersector": "stale",
-    "laus_unemployment": "stale",
+    "ces_employment": "live",
+    "ces_by_supersector": "live",
+    "laus_unemployment": "live",
     "fhfa_hpi": "live",
     "census_pep": "live",
     "census_acs_demographics": "live",
     "bea_gmp": "live",
     "bea_personal_income": "live",
-    "qcew_industry_shares": "stale",
+    "qcew_industry_shares": "live",
     "qcew_yoy_changes": "stale",
-    "qcew_3digit": "stale",
-    "health_check": "stale",
+    "qcew_3digit": "live",
+    "health_check": "live",
     "census_bps_permits": "live",
     "ita_msa_exports": "live",
     "irs_soi_migration": "live",

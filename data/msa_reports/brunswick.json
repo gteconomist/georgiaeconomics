@@ -3,7 +3,7 @@
   "short_name": "Brunswick",
   "full_name": "Brunswick, GA",
   "population": 120000,
-  "as_of": "2026-08-09",
+  "as_of": "2026-08-10",
   "sections": {
     "ces_employment": {
       "series_id": "SMS13152600000000001",
@@ -4217,7 +4217,7 @@
       "source": "Census Business Dynamics Statistics (establishment entry rate, 2022); metro rate indexed to US=100"
     },
     "major_employers": {
-      "as_of": "2026-08-09",
+      "as_of": "2026-08-10",
       "employers": [
         {
           "name": "Gulfstream Aerospace",
@@ -4228,12 +4228,16 @@
           "source_url": "https://en.wikipedia.org/wiki/Brunswick,_Georgia"
         },
         {
-          "name": "Georgia Ports Authority",
-          "source_url": "https://www.selectgeorgia.com/blog/wtc-sav-prosperity"
+          "name": "Sea Island Company",
+          "source_url": "https://www.savannahnow.com/story/news/2021/10/20/ahmaud-arbery-murder-trial-brunswick-mcmichaels-bryan-business-demographics/5899609001"
         },
         {
-          "name": "Port of Brunswick",
-          "source_url": null
+          "name": "The Port of Brunswick",
+          "source_url": "https://en.wikipedia.org/wiki/Brunswick,_Georgia"
+        },
+        {
+          "name": "Georgia Ports Authority",
+          "source_url": "https://www.selectgeorgia.com/blog/wtc-sav-prosperity"
         },
         {
           "name": "Georgia Power Economic Development",
@@ -4244,47 +4248,43 @@
           "source_url": "https://en.wikipedia.org/wiki/Brunswick,_Georgia"
         },
         {
-          "name": "Automotive",
-          "source_url": "https://georgia.org"
-        },
-        {
-          "name": "Energy",
-          "source_url": "https://georgia.org"
-        },
-        {
-          "name": "Food Processing",
-          "source_url": "https://georgia.org"
-        },
-        {
-          "name": "Georgia Port Authority",
-          "source_url": "https://www.ajc.com/business/2026/01/heavy-equipment-lifting-business-at-crucial-time-for-brunswick-port"
-        },
-        {
           "name": "Glynn County Development Authority",
           "source_url": "https://en.wikipedia.org/wiki/Golden_Isles_of_Georgia"
         },
         {
-          "name": "State Health Plan",
-          "source_url": "https://www.bizjournals.com/triangle/news/2025/02/07/brunswick-county-retirees-population-growth-jobs.html"
+          "name": "Glynn County Public Schools",
+          "source_url": "https://www.savannahnow.com/story/news/2021/10/20/ahmaud-arbery-murder-trial-brunswick-mcmichaels-bryan-business-demographics/5899609001"
         },
         {
-          "name": "UNC Health",
-          "source_url": "https://www.bizjournals.com/triangle/news/2025/02/07/brunswick-county-retirees-population-growth-jobs.html"
+          "name": "Food",
+          "source_url": "https://georgia.org/sites/default/files/2020-08/georgia_safety_promise-8-27.pdf"
+        },
+        {
+          "name": "Healthcare",
+          "source_url": "https://en.wikipedia.org/wiki/Golden_Isles_of_Georgia"
+        },
+        {
+          "name": "Major Industries",
+          "source_url": "https://en.wikipedia.org/wiki/Golden_Isles_of_Georgia"
         },
         {
           "name": "Arts Academy Fitness",
+          "source_url": "https://georgia.org/sites/default/files/2020-08/georgia_safety_promise-8-27.pdf"
+        },
+        {
+          "name": "BUFORD Buford KRAIBURG TPE Corporation Manufacturers",
           "source_url": "https://georgia.org/sites/default/files/2020-08/georgia_safety_promise-8-27.pdf"
         }
       ],
       "sources": [
         "https://en.wikipedia.org/wiki/Brunswick,_Georgia",
+        "https://www.savannahnow.com/story/news/2021/10/20/ahmaud-arbery-murder-trial-brunswick-mcmichaels-bryan-business-demographics/5899609001",
         "https://www.selectgeorgia.com/blog/wtc-sav-prosperity",
         "https://en.wikipedia.org/wiki/Golden_Isles_of_Georgia",
-        "https://www.ajc.com/business/2026/01/heavy-equipment-lifting-business-at-crucial-time-for-brunswick-port",
-        "https://en.wikipedia.org/wiki/History_of_Brunswick,_Georgia",
+        "https://en.wikipedia.org/wiki/Brunswick_Corporation",
         "https://georgia.org/sites/default/files/2020-08/georgia_safety_promise-8-27.pdf",
         "https://georgia.org/sites/default/files/2020-05/georgia_taiwan_connection_2020.pdf",
-        "https://www.savannahnow.com/story/news/2013/09/29/education-tax-reform-and-3-georgias/13493143007"
+        "https://en.wikipedia.org/wiki/List_of_largest_companies_in_the_United_States_by_revenue"
       ],
       "method": "Representative list auto-discovered via Tavily web search across chamber-of-commerce, development-authority and local-news sources. Not exhaustive; ordering approximates source frequency, not headcount."
     },
@@ -4820,18 +4820,18 @@
     }
   },
   "section_status": {
-    "ces_employment": "stale",
-    "ces_by_supersector": "stale",
-    "laus_unemployment": "stale",
+    "ces_employment": "live",
+    "ces_by_supersector": "live",
+    "laus_unemployment": "live",
     "fhfa_hpi": "live",
     "census_pep": "live",
     "census_acs_demographics": "live",
     "bea_gmp": "live",
     "bea_personal_income": "live",
-    "qcew_industry_shares": "stale",
+    "qcew_industry_shares": "live",
     "qcew_yoy_changes": "stale",
-    "qcew_3digit": "stale",
-    "health_check": "stale",
+    "qcew_3digit": "live",
+    "health_check": "live",
     "census_bps_permits": "live",
     "ita_msa_exports": "live",
     "irs_soi_migration": "live",

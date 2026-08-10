@@ -3,7 +3,7 @@
   "short_name": "Dalton",
   "full_name": "Dalton, GA",
   "population": 143000,
-  "as_of": "2026-08-09",
+  "as_of": "2026-08-10",
   "sections": {
     "ces_employment": {
       "series_id": "SMS13191400000000001",
@@ -4619,11 +4619,19 @@
       "source": "Census Business Dynamics Statistics (establishment entry rate, 2022); metro rate indexed to US=100"
     },
     "major_employers": {
-      "as_of": "2026-08-09",
+      "as_of": "2026-08-10",
       "employers": [
+        {
+          "name": "Beaulieu Group",
+          "source_url": "https://valdostadailytimes.com/2018/01/01/engineered-floors-growth-varnell-drama-among-top-stories-in-dalton-area-in-2017"
+        },
         {
           "name": "Carpet Capital",
           "source_url": "https://en.wikipedia.org/wiki/Dalton,_Georgia"
+        },
+        {
+          "name": "Shaw Industries",
+          "source_url": "https://valdostadailytimes.com/2017/09/11/questions-and-answers-with-shaw-industries-ceo-vance-bell"
         },
         {
           "name": "Flooring",
@@ -4636,10 +4644,6 @@
         {
           "name": "Mohawk Industries",
           "source_url": "https://en.wikipedia.org/wiki/Dalton,_Georgia"
-        },
-        {
-          "name": "Beaulieu International Group",
-          "source_url": null
         },
         {
           "name": "Company",
@@ -4658,24 +4662,20 @@
           "source_url": "https://www.bizjournals.com/atlanta/news/2023/06/29/solar-workforce-qcells-dalton-georgia.html"
         },
         {
-          "name": "Anovion Technologies",
-          "source_url": "https://www.ajc.com/news/at-mid-year-2023-heres-georgia-largest-job-recruitment-announcements/5AHDAO5NB5EJTN2DOX3R2CIYW4"
+          "name": "Dalton State College",
+          "source_url": "https://valdostadailytimes.com/2017/09/11/questions-and-answers-with-shaw-industries-ceo-vance-bell"
         },
         {
-          "name": "Beaulieu Group",
-          "source_url": "https://valdostadailytimes.com/2018/01/01/engineered-floors-growth-varnell-drama-among-top-stories-in-dalton-area-in-2017"
+          "name": "Dalton-Whitfield Joint Development Authority",
+          "source_url": "https://valdostadailytimes.com/2020/07/27/german-firm-to-build-parts-for-electric-cars-in-whitfield-county-200-jobs-expected"
         },
         {
           "name": "Energy",
           "source_url": "https://www.bizjournals.com/atlanta/news/2023/02/01/georgia-incentives-for-qcells-expansion.html"
         },
         {
-          "name": "Manufacturing",
-          "source_url": "https://www.bizjournals.com/atlanta/news/2024/11/22/manufacturing-industry-workforce-shortage.html"
-        },
-        {
-          "name": "QCells Factory",
-          "source_url": "https://www.ajc.com/news/at-mid-year-2023-heres-georgia-largest-job-recruitment-announcements/5AHDAO5NB5EJTN2DOX3R2CIYW4"
+          "name": "Georgia Northwestern Technical College",
+          "source_url": "https://valdostadailytimes.com/2017/09/11/questions-and-answers-with-shaw-industries-ceo-vance-bell"
         }
       ],
       "sources": [
@@ -4683,8 +4683,8 @@
         "https://en.wikipedia.org/wiki/Dalton,_Georgia",
         "https://www.bizjournals.com/atlanta/news/2023/06/29/solar-workforce-qcells-dalton-georgia.html",
         "https://www.ajc.com/business/dalton-augusta-worst-for-job-losses-lately/qWPbpKazCnZFJtn1Kel1RM",
+        "https://valdostadailytimes.com/2017/09/11/questions-and-answers-with-shaw-industries-ceo-vance-bell",
         "https://www.ajc.com/business/georgia-best-employers-for-2019-according-forbes/97QBCslwnyl3Ob4ujTmnLK",
-        "https://www.bizjournals.com/atlanta/news/2024/11/22/manufacturing-industry-workforce-shortage.html",
         "https://valdostadailytimes.com/2020/07/27/german-firm-to-build-parts-for-electric-cars-in-whitfield-county-200-jobs-expected",
         "https://www.bizjournals.com/atlanta/news/2023/02/01/georgia-incentives-for-qcells-expansion.html"
       ],
@@ -5222,18 +5222,18 @@
     }
   },
   "section_status": {
-    "ces_employment": "stale",
-    "ces_by_supersector": "stale",
-    "laus_unemployment": "stale",
+    "ces_employment": "live",
+    "ces_by_supersector": "live",
+    "laus_unemployment": "live",
     "fhfa_hpi": "live",
     "census_pep": "live",
     "census_acs_demographics": "live",
     "bea_gmp": "live",
     "bea_personal_income": "live",
-    "qcew_industry_shares": "stale",
-    "qcew_yoy_changes": "stale",
-    "qcew_3digit": "stale",
-    "health_check": "stale",
+    "qcew_industry_shares": "live",
+    "qcew_yoy_changes": "live",
+    "qcew_3digit": "live",
+    "health_check": "live",
     "census_bps_permits": "live",
     "ita_msa_exports": "live",
     "irs_soi_migration": "live",

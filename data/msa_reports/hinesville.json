@@ -3,7 +3,7 @@
   "short_name": "Hinesville",
   "full_name": "Hinesville, GA",
   "population": 78000,
-  "as_of": "2026-08-09",
+  "as_of": "2026-08-10",
   "sections": {
     "ces_employment": {
       "series_id": "SMS13259800000000001",
@@ -4062,7 +4062,7 @@
       "source": "Census Business Dynamics Statistics (establishment entry rate, 2022); metro rate indexed to US=100"
     },
     "major_employers": {
-      "as_of": "2026-08-09",
+      "as_of": "2026-08-10",
       "employers": [
         {
           "name": "Aerospace",
@@ -4073,12 +4073,12 @@
           "source_url": "https://georgia.org/why-georgia/regions-georgia"
         },
         {
-          "name": "Hinesville Medical Center",
+          "name": "Liberty County School System",
           "source_url": null
         },
         {
-          "name": "Liberty County School System",
-          "source_url": null
+          "name": "United Community Bank",
+          "source_url": "https://www.savannahnow.com/story/news/2012/02/04/exchange-brief/13663454007"
         },
         {
           "name": "Energy",
@@ -4089,24 +4089,28 @@
           "source_url": "https://georgia.org/why-georgia/regions-georgia"
         },
         {
-          "name": "Fort Stewart Independent School District",
-          "source_url": null
-        },
-        {
           "name": "Manufacturing",
           "source_url": "https://georgia.org/why-georgia/regions-georgia"
         },
         {
-          "name": "AIAA Aviation",
-          "source_url": "https://georgia.org/sites/default/files/2018-12/gdecd_board_book_august_2018.pdf"
+          "name": "Memorial Health System",
+          "source_url": null
         },
         {
-          "name": "Annual Red Carpet Tour",
-          "source_url": "https://georgia.org/sites/default/files/2018-12/gdecd_board_book_august_2018.pdf"
+          "name": "Southeast Health",
+          "source_url": null
+        },
+        {
+          "name": "Southside Regional Medical Center",
+          "source_url": null
         },
         {
           "name": "Augusta Technical College",
           "source_url": "https://georgia.org/why-georgia/regions-georgia"
+        },
+        {
+          "name": "Aviation",
+          "source_url": "https://georgia.org/sites/default/files/2018-11/gdecd_board_book_-_5-23-18.pdf"
         },
         {
           "name": "COI Logistics",
@@ -4115,18 +4119,14 @@
         {
           "name": "Crisp Co",
           "source_url": "https://georgia.org"
-        },
-        {
-          "name": "Future of Mobility Working Group",
-          "source_url": "https://georgia.org/sites/default/files/2018-11/gdecd_board_book_-_5-23-18.pdf"
         }
       ],
       "sources": [
-        "https://www.savannahnow.com/story/news/2007/04/20/keys-future-0/13805381007",
         "https://georgia.org/why-georgia/regions-georgia",
         "https://georgia.org",
         "https://georgia.org/sites/default/files/2018-11/gdecd_board_book_-_5-23-18.pdf",
-        "https://georgia.org/sites/default/files/2018-12/gdecd_board_book_august_2018.pdf"
+        "https://www.savannahnow.com/story/news/2012/02/04/exchange-brief/13663454007",
+        "https://www.augustachronicle.com/story/business/2010/11/21/working-our-way-augusta-area-sees-job-growth/14571763007"
       ],
       "method": "Representative list auto-discovered via Tavily web search across chamber-of-commerce, development-authority and local-news sources. Not exhaustive; ordering approximates source frequency, not headcount."
     },
@@ -4657,18 +4657,18 @@
     }
   },
   "section_status": {
-    "ces_employment": "stale",
-    "ces_by_supersector": "stale",
-    "laus_unemployment": "stale",
+    "ces_employment": "live",
+    "ces_by_supersector": "live",
+    "laus_unemployment": "live",
     "fhfa_hpi": "live",
     "census_pep": "live",
     "census_acs_demographics": "live",
     "bea_gmp": "live",
     "bea_personal_income": "live",
-    "qcew_industry_shares": "stale",
+    "qcew_industry_shares": "live",
     "qcew_yoy_changes": "stale",
-    "qcew_3digit": "stale",
-    "health_check": "stale",
+    "qcew_3digit": "live",
+    "health_check": "live",
     "census_bps_permits": "live",
     "ita_msa_exports": "live",
     "irs_soi_migration": "live",

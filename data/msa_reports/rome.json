@@ -3,7 +3,7 @@
   "short_name": "Rome",
   "full_name": "Rome, GA",
   "population": 99000,
-  "as_of": "2026-08-09",
+  "as_of": "2026-08-10",
   "sections": {
     "ces_employment": {
       "series_id": "SMS13406600000000001",
@@ -4521,8 +4521,20 @@
       "source": "Census Business Dynamics Statistics (establishment entry rate, 2022); metro rate indexed to US=100"
     },
     "major_employers": {
-      "as_of": "2026-08-09",
+      "as_of": "2026-08-10",
       "employers": [
+        {
+          "name": "Floyd Medical Center",
+          "source_url": "https://en.wikipedia.org/wiki/Rome,_Georgia"
+        },
+        {
+          "name": "Massive Hillman Group",
+          "source_url": "https://www.northwestgeorgianews.com/rome/business/keeping-on-growing-floyd-county-businesses-expanding-from-2022-into-2023/article_227bb320-bc51-11ed-989c-4329e03be1d7.html"
+        },
+        {
+          "name": "Redmond Regional Medical Center",
+          "source_url": "https://en.wikipedia.org/wiki/Rome,_Georgia"
+        },
         {
           "name": "State Mutual Insurance Company",
           "source_url": "https://en.wikipedia.org/wiki/Rome,_Georgia"
@@ -4530,6 +4542,18 @@
         {
           "name": "Suzuki Manufacturing of America",
           "source_url": "https://en.wikipedia.org/wiki/Rome,_Georgia"
+        },
+        {
+          "name": "Utilities",
+          "source_url": "https://en.wikipedia.org/wiki/List_of_largest_Italian_companies"
+        },
+        {
+          "name": "Northwest Georgia Regional Hospital",
+          "source_url": "https://www.northwestgeorgianews.com/rome/business/keeping-on-growing-floyd-county-businesses-expanding-from-2022-into-2023/article_227bb320-bc51-11ed-989c-4329e03be1d7.html"
+        },
+        {
+          "name": "Synthica Energy",
+          "source_url": "https://www.northwestgeorgianews.com/rome/business/keeping-on-growing-floyd-county-businesses-expanding-from-2022-into-2023/article_227bb320-bc51-11ed-989c-4329e03be1d7.html"
         },
         {
           "name": "Atrium Health Floyd",
@@ -4544,40 +4568,16 @@
           "source_url": "https://en.wikipedia.org/wiki/Rome,_Georgia"
         },
         {
-          "name": "Redmond Regional Medical Center",
-          "source_url": "https://en.wikipedia.org/wiki/Rome,_Georgia"
+          "name": "Northwest Regional Industrial Park",
+          "source_url": "https://www.northwestgeorgianews.com/rome/business/keeping-on-growing-floyd-county-businesses-expanding-from-2022-into-2023/article_227bb320-bc51-11ed-989c-4329e03be1d7.html"
         },
         {
-          "name": "Floyd Medical Center",
-          "source_url": "https://en.wikipedia.org/wiki/Rome,_Georgia"
-        },
-        {
-          "name": "General Electric",
-          "source_url": "https://en.wikipedia.org/wiki/Rome,_Georgia"
-        },
-        {
-          "name": "Lowe's Distribution Center",
-          "source_url": "https://georgia.org/sites/default/files/2023-01/lowes_4.pdf"
+          "name": "Aerospace",
+          "source_url": "https://en.wikipedia.org/wiki/List_of_largest_Italian_companies"
         },
         {
           "name": "Etowah Animal Hospital",
           "source_url": "https://www.northwestgeorgianews.com/rome/business"
-        },
-        {
-          "name": "Georgia Health Sciences University",
-          "source_url": "https://en.wikipedia.org/wiki/Rome,_Georgia"
-        },
-        {
-          "name": "Lewis Chemical Co",
-          "source_url": "https://www.northwestgeorgianews.com/rome/business/lewis-chemical-named-small-business-of-the-year-larry-alford-of-service-master-by-twins/article_130f8d6a-8486-11e3-b983-001a4bcf6878.html"
-        },
-        {
-          "name": "Logistics What Georgia Offers Lowes",
-          "source_url": "https://georgia.org/sites/default/files/2023-01/lowes_4.pdf"
-        },
-        {
-          "name": "Medical College of Georgia",
-          "source_url": "https://en.wikipedia.org/wiki/Rome,_Georgia"
         }
       ],
       "sources": [
@@ -4587,8 +4587,8 @@
         "https://georgia.org/sites/default/files/2023-01/lowes_4.pdf",
         "https://www.northwestgeorgianews.com/rome/business",
         "https://www.northwestgeorgianews.com/rome/business/lewis-chemical-named-small-business-of-the-year-larry-alford-of-service-master-by-twins/article_130f8d6a-8486-11e3-b983-001a4bcf6878.html",
-        "https://en.wikipedia.org/wiki/Economy_of_Italy",
-        "https://en.wikipedia.org/wiki/Italy"
+        "https://www.northwestgeorgianews.com/rome/business/keeping-on-growing-floyd-county-businesses-expanding-from-2022-into-2023/article_227bb320-bc51-11ed-989c-4329e03be1d7.html",
+        "https://en.wikipedia.org/wiki/List_of_largest_Italian_companies"
       ],
       "method": "Representative list auto-discovered via Tavily web search across chamber-of-commerce, development-authority and local-news sources. Not exhaustive; ordering approximates source frequency, not headcount."
     },
@@ -5009,18 +5009,18 @@
     }
   },
   "section_status": {
-    "ces_employment": "stale",
-    "ces_by_supersector": "stale",
-    "laus_unemployment": "stale",
+    "ces_employment": "live",
+    "ces_by_supersector": "live",
+    "laus_unemployment": "live",
     "fhfa_hpi": "live",
     "census_pep": "live",
     "census_acs_demographics": "live",
     "bea_gmp": "live",
     "bea_personal_income": "live",
-    "qcew_industry_shares": "stale",
-    "qcew_yoy_changes": "stale",
-    "qcew_3digit": "stale",
-    "health_check": "stale",
+    "qcew_industry_shares": "live",
+    "qcew_yoy_changes": "live",
+    "qcew_3digit": "live",
+    "health_check": "live",
     "census_bps_permits": "live",
     "ita_msa_exports": "live",
     "irs_soi_migration": "live",
