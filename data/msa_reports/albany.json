@@ -3,7 +3,7 @@
   "short_name": "Albany",
   "full_name": "Albany, GA",
   "population": 146000,
-  "as_of": "2026-08-10",
+  "as_of": "2026-08-11",
   "sections": {
     "ces_employment": {
       "series_id": "SMS13105000000000001",
@@ -4263,7 +4263,7 @@
       "source": "Census Business Dynamics Statistics (establishment entry rate, 2022); metro rate indexed to US=100"
     },
     "major_employers": {
-      "as_of": "2026-08-10",
+      "as_of": "2026-08-11",
       "employers": [
         {
           "name": "Northeast Grocery Inc",
@@ -4282,8 +4282,8 @@
           "source_url": null
         },
         {
-          "name": "Company",
-          "source_url": "https://www.bizjournals.com/atlanta/datacenter/lists"
+          "name": "Dougherty County School System",
+          "source_url": null
         },
         {
           "name": "Emory University",
@@ -4298,39 +4298,39 @@
           "source_url": null
         },
         {
+          "name": "West Georgia Technical College",
+          "source_url": null
+        },
+        {
+          "name": "Aflac Inc",
+          "source_url": "https://albanyherald.com/news/heritage-four-other-area-businesses-named-to-georgia-trends-top-100-public-businesses"
+        },
+        {
+          "name": "Albany Housefurnishing Company",
+          "source_url": "https://en.wikipedia.org/wiki/Albany,_Georgia"
+        },
+        {
           "name": "Albany Medical Centerexpand",
           "source_url": "https://www.bizjournals.com/albany/news/2025/10/17/new-employers-list-2025.html"
         },
         {
-          "name": "Gulfstream Aerospace Corp",
-          "source_url": "https://www.bizjournals.com/atlanta/datacenter/lists"
+          "name": "Albany Railroad Depot Historic District",
+          "source_url": "https://en.wikipedia.org/wiki/Albany,_Georgia"
         },
         {
-          "name": "Heating Co",
-          "source_url": "https://albanyherald.com/news/local/military-honored-at-annual-albany-area-chamber-of-commerce-breakfast"
-        },
-        {
-          "name": "Industrial",
-          "source_url": "https://www.bizjournals.com/atlanta/datacenter/lists"
-        },
-        {
-          "name": "Jackson Spalding Inc",
-          "source_url": "https://www.bizjournals.com/atlanta/datacenter/lists"
-        },
-        {
-          "name": "Marine Corps Logistics Command",
-          "source_url": "https://albanyherald.com/news/local/military-honored-at-annual-albany-area-chamber-of-commerce-breakfast"
+          "name": "Albany Technical College",
+          "source_url": "https://albanyherald.com/news/local/barbara-rivera-holmes-named-albany-area-chamber-of-commerce-ceo"
         }
       ],
       "sources": [
         "https://www.bizjournals.com/albany/subscriber-only/2026/07/02/albanys-365-largest-employers.html",
         "https://www.bizjournals.com/atlanta/subscriber-only/2025/10/17/metro-atlantas-largest-employers.html",
-        "https://www.bizjournals.com/atlanta/datacenter/lists",
-        "https://albanyherald.com/news/after-50-years-in-albany-mars-continues-to-be-key-local-employer",
+        "https://albanyherald.com/news/heritage-four-other-area-businesses-named-to-georgia-trends-top-100-public-businesses",
+        "https://albanyherald.com/uncategorized/slow-but-steady-growth-predicted-for-georgia-albanys-2025-economy",
         "https://albanyherald.com/news/local/military-honored-at-annual-albany-area-chamber-of-commerce-breakfast",
-        "https://albanyherald.com/wp-content/uploads/2025/04/042925-ABH-A01-A12.pdf",
-        "https://www.bizjournals.com/albany/news/2023/07/14/albany-region-largest-private-sector-employers.html",
-        "https://www.bizjournals.com/albany/subscriber-only/2025/10/17/albanys-330-largest-employers.html"
+        "https://albanyherald.com/news/local/barbara-rivera-holmes-named-albany-area-chamber-of-commerce-ceo",
+        "https://en.wikipedia.org/wiki/Albany,_Georgia",
+        "https://www.bizjournals.com/albany/news/2023/07/14/albany-region-largest-private-sector-employers.html"
       ],
       "method": "Representative list auto-discovered via Tavily web search across chamber-of-commerce, development-authority and local-news sources. Not exhaustive; ordering approximates source frequency, not headcount."
     },

@@ -3,7 +3,7 @@
   "short_name": "Warner Robins",
   "full_name": "Warner Robins, GA",
   "population": 199000,
-  "as_of": "2026-08-10",
+  "as_of": "2026-08-11",
   "sections": {
     "ces_employment": {
       "series_id": "SMS13475800000000001",
@@ -4287,14 +4287,22 @@
       "source": "Census Business Dynamics Statistics (establishment entry rate, 2022); metro rate indexed to US=100"
     },
     "major_employers": {
-      "as_of": "2026-08-10",
+      "as_of": "2026-08-11",
       "employers": [
         {
-          "name": "Houston Healthcare",
-          "source_url": "https://en.wikipedia.org/wiki/Central_Georgia"
+          "name": "Robins International Industrial Park",
+          "source_url": "https://georgia.org/sites/default/files/2021-02/fy21_q2_board_book.pdf"
+        },
+        {
+          "name": "Aerospace",
+          "source_url": "https://georgia.org/why-georgia/regions-georgia"
         },
         {
           "name": "Central Georgia Technical College",
+          "source_url": "https://georgia.org/sites/default/files/2021-04/logistics_education_report.pdf"
+        },
+        {
+          "name": "Houston Healthcare",
           "source_url": "https://en.wikipedia.org/wiki/Central_Georgia"
         },
         {
@@ -4302,59 +4310,51 @@
           "source_url": "https://en.wikipedia.org/wiki/Central_Georgia"
         },
         {
-          "name": "Mercer University",
-          "source_url": "https://en.wikipedia.org/wiki/Central_Georgia"
+          "name": "Atlanta University Center",
+          "source_url": "https://georgia.org/sites/default/files/2021-04/logistics_education_report.pdf"
         },
         {
-          "name": "Atrium Health Navicent",
-          "source_url": "https://thekirklandco.com/market_reports/macon-warner-robins_aug2023"
+          "name": "Chattahoochee Technical College",
+          "source_url": "https://georgia.org/sites/default/files/2021-04/logistics_education_report.pdf"
+        },
+        {
+          "name": "Clark Atlanta University",
+          "source_url": "https://georgia.org/sites/default/files/2021-04/logistics_education_report.pdf"
         },
         {
           "name": "Emory Healthcare",
           "source_url": "https://www.bizjournals.com/atlanta/news/2024/08/22/emory-healthcare-houston-healthcare-partnership.html"
         },
         {
-          "name": "Food Manufacturing",
-          "source_url": "https://www.wrga.gov/article/2351392"
-        },
-        {
-          "name": "Houston County Development Authority",
-          "source_url": "https://georgia.org/sites/default/files/2019-08/gdecd_board_book-nov_2018.pdf"
-        },
-        {
-          "name": "Air Logistics Center",
+          "name": "Houston County School District",
           "source_url": null
         },
         {
-          "name": "Blue Bird Corporation",
+          "name": "Logistics",
+          "source_url": "https://georgia.org/sites/default/files/2021-04/logistics_education_report.pdf"
+        },
+        {
+          "name": "Memorial Health System",
+          "source_url": null
+        },
+        {
+          "name": "Middle Georgia State University",
           "source_url": "https://en.wikipedia.org/wiki/Central_Georgia"
         },
         {
-          "name": "COI Aerospace",
-          "source_url": "https://georgia.org/sites/default/files/2019-08/gdecd_board_book-nov_2018.pdf"
-        },
-        {
-          "name": "Chief Manufacturing",
-          "source_url": "https://en.wikipedia.org/wiki/Central_Georgia"
-        },
-        {
-          "name": "Coliseum Health System",
-          "source_url": "https://en.wikipedia.org/wiki/Central_Georgia"
-        },
-        {
-          "name": "Criterion Technologies",
-          "source_url": "https://en.wikipedia.org/wiki/Central_Georgia"
+          "name": "Warner Robins Medical Center",
+          "source_url": null
         }
       ],
       "sources": [
-        "https://en.wikipedia.org/wiki/Central_Georgia",
-        "https://www.macon.com/news/business/article258547393.html",
-        "https://www.macon.com/living/living-here-guide/article39043491.html",
-        "https://www.bizjournals.com/atlanta/news/2024/08/22/emory-healthcare-houston-healthcare-partnership.html",
-        "https://www.bizjournals.com/atlanta/news/2025/05/29/emory-houston-attorney-general.html",
-        "https://georgia.org/sites/default/files/2019-08/gdecd_board_book-nov_2018.pdf",
         "https://en.wikipedia.org/wiki/Robins_Air_Force_Base",
-        "https://georgia.org/sites/default/files/2021-04/logistics_education_report.pdf"
+        "https://georgia.org/sites/default/files/2021-04/logistics_education_report.pdf",
+        "https://www.bizjournals.com/sitemap/atlanta/2017-05",
+        "https://georgia.org/sites/default/files/2021-02/fy21_q2_board_book.pdf",
+        "https://georgia.org/why-georgia/regions-georgia",
+        "https://www.bizjournals.com/atlanta/news/2024/08/22/emory-healthcare-houston-healthcare-partnership.html",
+        "https://en.wikipedia.org/wiki/Central_Georgia",
+        "https://georgia.org/industries/aerospace"
       ],
       "method": "Representative list auto-discovered via Tavily web search across chamber-of-commerce, development-authority and local-news sources. Not exhaustive; ordering approximates source frequency, not headcount."
     },

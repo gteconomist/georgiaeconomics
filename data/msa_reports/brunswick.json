@@ -3,7 +3,7 @@
   "short_name": "Brunswick",
   "full_name": "Brunswick, GA",
   "population": 120000,
-  "as_of": "2026-08-10",
+  "as_of": "2026-08-11",
   "sections": {
     "ces_employment": {
       "series_id": "SMS13152600000000001",
@@ -4217,7 +4217,7 @@
       "source": "Census Business Dynamics Statistics (establishment entry rate, 2022); metro rate indexed to US=100"
     },
     "major_employers": {
-      "as_of": "2026-08-10",
+      "as_of": "2026-08-11",
       "employers": [
         {
           "name": "Gulfstream Aerospace",
@@ -4229,7 +4229,7 @@
         },
         {
           "name": "Sea Island Company",
-          "source_url": "https://www.savannahnow.com/story/news/2021/10/20/ahmaud-arbery-murder-trial-brunswick-mcmichaels-bryan-business-demographics/5899609001"
+          "source_url": "https://en.wikipedia.org/wiki/Golden_Isles_of_Georgia"
         },
         {
           "name": "The Port of Brunswick",
@@ -4240,6 +4240,10 @@
           "source_url": "https://www.selectgeorgia.com/blog/wtc-sav-prosperity"
         },
         {
+          "name": "Glynn County Development Authority",
+          "source_url": "https://en.wikipedia.org/wiki/Golden_Isles_of_Georgia"
+        },
+        {
           "name": "Georgia Power Economic Development",
           "source_url": "https://www.selectgeorgia.com/blog/wtc-sav-prosperity"
         },
@@ -4248,16 +4252,8 @@
           "source_url": "https://en.wikipedia.org/wiki/Brunswick,_Georgia"
         },
         {
-          "name": "Glynn County Development Authority",
-          "source_url": "https://en.wikipedia.org/wiki/Golden_Isles_of_Georgia"
-        },
-        {
           "name": "Glynn County Public Schools",
           "source_url": "https://www.savannahnow.com/story/news/2021/10/20/ahmaud-arbery-murder-trial-brunswick-mcmichaels-bryan-business-demographics/5899609001"
-        },
-        {
-          "name": "Food",
-          "source_url": "https://georgia.org/sites/default/files/2020-08/georgia_safety_promise-8-27.pdf"
         },
         {
           "name": "Healthcare",
@@ -4268,23 +4264,27 @@
           "source_url": "https://en.wikipedia.org/wiki/Golden_Isles_of_Georgia"
         },
         {
-          "name": "Arts Academy Fitness",
-          "source_url": "https://georgia.org/sites/default/files/2020-08/georgia_safety_promise-8-27.pdf"
+          "name": "Georgia Port Authority",
+          "source_url": "https://www.ajc.com/business/2026/01/heavy-equipment-lifting-business-at-crucial-time-for-brunswick-port"
         },
         {
-          "name": "BUFORD Buford KRAIBURG TPE Corporation Manufacturers",
-          "source_url": "https://georgia.org/sites/default/files/2020-08/georgia_safety_promise-8-27.pdf"
+          "name": "American Megatrends ARRIS Group CP Kelco",
+          "source_url": "https://georgia.org/sites/default/files/2019-06/georgia_korea_connection.pdf"
+        },
+        {
+          "name": "Automotive",
+          "source_url": "https://georgia.org"
         }
       ],
       "sources": [
         "https://en.wikipedia.org/wiki/Brunswick,_Georgia",
-        "https://www.savannahnow.com/story/news/2021/10/20/ahmaud-arbery-murder-trial-brunswick-mcmichaels-bryan-business-demographics/5899609001",
         "https://www.selectgeorgia.com/blog/wtc-sav-prosperity",
         "https://en.wikipedia.org/wiki/Golden_Isles_of_Georgia",
-        "https://en.wikipedia.org/wiki/Brunswick_Corporation",
-        "https://georgia.org/sites/default/files/2020-08/georgia_safety_promise-8-27.pdf",
-        "https://georgia.org/sites/default/files/2020-05/georgia_taiwan_connection_2020.pdf",
-        "https://en.wikipedia.org/wiki/List_of_largest_companies_in_the_United_States_by_revenue"
+        "https://www.ajc.com/business/2026/01/heavy-equipment-lifting-business-at-crucial-time-for-brunswick-port",
+        "https://en.wikipedia.org/wiki/History_of_Brunswick,_Georgia",
+        "https://www.savannahnow.com/story/news/2016/07/08/garden-city-police-department-savannah-firms-make-best-places-work-georgia-list/13921419007",
+        "https://georgia.org",
+        "https://www.selectgeorgia.com/landing-pages/san-fran-to-atl/top-brands"
       ],
       "method": "Representative list auto-discovered via Tavily web search across chamber-of-commerce, development-authority and local-news sources. Not exhaustive; ordering approximates source frequency, not headcount."
     },

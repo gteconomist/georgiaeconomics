@@ -3,7 +3,7 @@
   "short_name": "Gainesville",
   "full_name": "Gainesville, GA",
   "population": 211000,
-  "as_of": "2026-08-10",
+  "as_of": "2026-08-11",
   "sections": {
     "ces_employment": {
       "series_id": "SMS13235800000000001",
@@ -5257,12 +5257,8 @@
       "source": "Census Business Dynamics Statistics (establishment entry rate, 2022); metro rate indexed to US=100"
     },
     "major_employers": {
-      "as_of": "2026-08-10",
+      "as_of": "2026-08-11",
       "employers": [
-        {
-          "name": "Northeast Georgia Health System",
-          "source_url": "https://en.wikipedia.org/wiki/Gainesville,_Georgia"
-        },
         {
           "name": "University of Florida",
           "source_url": "https://en.wikipedia.org/wiki/Gainesville,_Florida"
@@ -5272,12 +5268,20 @@
           "source_url": "https://en.wikipedia.org/wiki/Gainesville,_Georgia"
         },
         {
+          "name": "Northeast Georgia Health System",
+          "source_url": "https://en.wikipedia.org/wiki/Gainesville,_Georgia"
+        },
+        {
           "name": "The Longstreet Clinic",
           "source_url": "https://en.wikipedia.org/wiki/Gainesville,_Georgia"
         },
         {
-          "name": "Gainesville-Hall Co",
-          "source_url": "https://www.bizjournals.com/atlanta/news/2022/06/06/kubota-to-build-new-facility.html"
+          "name": "Alachua County Public Schools",
+          "source_url": "https://en.wikipedia.org/wiki/Gainesville,_Florida"
+        },
+        {
+          "name": "Annual Comprehensive Financial Report",
+          "source_url": "https://en.wikipedia.org/wiki/Gainesville,_Florida"
         },
         {
           "name": "Brenau University",
@@ -5286,6 +5290,18 @@
         {
           "name": "Comprehensive Annual Financial Report",
           "source_url": "https://en.wikipedia.org/wiki/Gainesville,_Georgia"
+        },
+        {
+          "name": "Distribution",
+          "source_url": "https://www.gainesvilletimes.com/news/business-archived/chamber-honors-3-companies-as-the-years-best-in-hall"
+        },
+        {
+          "name": "Elan Drug Technologies",
+          "source_url": "https://www.gainesvilletimes.com/news/business-archived/chamber-honors-3-companies-as-the-years-best-in-hall"
+        },
+        {
+          "name": "Kubota Manufacturing of America",
+          "source_url": "https://www.gainesvilletimes.com/news/business-archived/chamber-honors-3-companies-as-the-years-best-in-hall"
         },
         {
           "name": "Professional Company",
@@ -5298,33 +5314,17 @@
         {
           "name": "Wrigley Manufacturing",
           "source_url": "https://www.gainesvilletimes.com/news/business-archived/chamber-honors-3-companies-as-the-years-best-in-hall"
-        },
-        {
-          "name": "Alachua County School District",
-          "source_url": null
-        },
-        {
-          "name": "Annual Comprehensive Financial Report",
-          "source_url": "https://en.wikipedia.org/wiki/Gainesville,_Florida"
-        },
-        {
-          "name": "Coleman Natural Foods",
-          "source_url": null
-        },
-        {
-          "name": "Jac Food Products",
-          "source_url": null
         }
       ],
       "sources": [
         "https://en.wikipedia.org/wiki/Gainesville,_Georgia",
-        "https://www.ajc.com/pulse/6-health-care-systems-among-forbes-best-employers-in-georgia/ZHJC3IV7UBFOHH423Y4NIDQDPI",
         "https://en.wikipedia.org/wiki/Gainesville,_Florida",
-        "https://www.bizjournals.com/atlanta/news/2023/09/05/cj-foodville-tous-les-jours-plant-food-processing.html",
-        "https://www.augustachronicle.com/story/news/2019/01/10/uga-economist-expects-augusta-economy-to-outpace-state-in-2019/6328736007",
+        "https://www.ajc.com/top-workplaces/2025/08/15-newcomers-join-ranks-of-atlantas-top-large-workplaces",
+        "https://www.savannahnow.com/story/news/2025/05/10/best-small-cities-in-georgia-hgtv-names-gainesville-ga-an-up-and-coming-gem/83533116007",
         "https://www.bizjournals.com/atlanta/news/2022/06/06/kubota-to-build-new-facility.html",
         "https://www.gainesvilletimes.com/news/business-archived/chamber-honors-3-companies-as-the-years-best-in-hall",
-        "https://www.gainesvilletimes.com/news/business-archived/hall-chamber-of-commerce-honors-2-local-businesses"
+        "https://georgia.org/sites/default/files/2020-09/fy20_q4_board_book.pdf",
+        "https://www.bizjournals.com/atlanta/news/2024/03/22/blue-ridge-connector-georgia-manufacturers-trucks.html"
       ],
       "method": "Representative list auto-discovered via Tavily web search across chamber-of-commerce, development-authority and local-news sources. Not exhaustive; ordering approximates source frequency, not headcount."
     },

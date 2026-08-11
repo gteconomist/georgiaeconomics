@@ -3,7 +3,7 @@
   "short_name": "Rome",
   "full_name": "Rome, GA",
   "population": 99000,
-  "as_of": "2026-08-10",
+  "as_of": "2026-08-11",
   "sections": {
     "ces_employment": {
       "series_id": "SMS13406600000000001",
@@ -4521,20 +4521,8 @@
       "source": "Census Business Dynamics Statistics (establishment entry rate, 2022); metro rate indexed to US=100"
     },
     "major_employers": {
-      "as_of": "2026-08-10",
+      "as_of": "2026-08-11",
       "employers": [
-        {
-          "name": "Floyd Medical Center",
-          "source_url": "https://en.wikipedia.org/wiki/Rome,_Georgia"
-        },
-        {
-          "name": "Massive Hillman Group",
-          "source_url": "https://www.northwestgeorgianews.com/rome/business/keeping-on-growing-floyd-county-businesses-expanding-from-2022-into-2023/article_227bb320-bc51-11ed-989c-4329e03be1d7.html"
-        },
-        {
-          "name": "Redmond Regional Medical Center",
-          "source_url": "https://en.wikipedia.org/wiki/Rome,_Georgia"
-        },
         {
           "name": "State Mutual Insurance Company",
           "source_url": "https://en.wikipedia.org/wiki/Rome,_Georgia"
@@ -4544,16 +4532,12 @@
           "source_url": "https://en.wikipedia.org/wiki/Rome,_Georgia"
         },
         {
-          "name": "Utilities",
-          "source_url": "https://en.wikipedia.org/wiki/List_of_largest_Italian_companies"
+          "name": "Floyd Medical Center",
+          "source_url": "https://en.wikipedia.org/wiki/Rome,_Georgia"
         },
         {
-          "name": "Northwest Georgia Regional Hospital",
-          "source_url": "https://www.northwestgeorgianews.com/rome/business/keeping-on-growing-floyd-county-businesses-expanding-from-2022-into-2023/article_227bb320-bc51-11ed-989c-4329e03be1d7.html"
-        },
-        {
-          "name": "Synthica Energy",
-          "source_url": "https://www.northwestgeorgianews.com/rome/business/keeping-on-growing-floyd-county-businesses-expanding-from-2022-into-2023/article_227bb320-bc51-11ed-989c-4329e03be1d7.html"
+          "name": "Kerry Group",
+          "source_url": "https://en.wikipedia.org/wiki/Rome,_Georgia"
         },
         {
           "name": "Atrium Health Floyd",
@@ -4564,31 +4548,47 @@
           "source_url": "https://en.wikipedia.org/wiki/Rome,_Georgia"
         },
         {
-          "name": "Kerry Group",
+          "name": "Redmond Regional Medical Center",
           "source_url": "https://en.wikipedia.org/wiki/Rome,_Georgia"
         },
         {
-          "name": "Northwest Regional Industrial Park",
-          "source_url": "https://www.northwestgeorgianews.com/rome/business/keeping-on-growing-floyd-county-businesses-expanding-from-2022-into-2023/article_227bb320-bc51-11ed-989c-4329e03be1d7.html"
-        },
-        {
-          "name": "Aerospace",
-          "source_url": "https://en.wikipedia.org/wiki/List_of_largest_Italian_companies"
-        },
-        {
-          "name": "Etowah Animal Hospital",
+          "name": "Winthrop Health",
           "source_url": "https://www.northwestgeorgianews.com/rome/business"
+        },
+        {
+          "name": "Emory Healthcare",
+          "source_url": "https://www.bizjournals.com/atlanta/subscriber-only/2024/07/12/atlantas-20-largest-employers.html"
+        },
+        {
+          "name": "Emory University",
+          "source_url": "https://www.bizjournals.com/atlanta/subscriber-only/2024/07/12/atlantas-20-largest-employers.html"
+        },
+        {
+          "name": "Food Manufacturing",
+          "source_url": "https://www.northwestgeorgianews.com/the-u-s-cities-that-manufacture-your-grocery-staples/collection_19a7f9c7-ed4b-59db-986b-d248a6587a5a.html"
+        },
+        {
+          "name": "General Electric",
+          "source_url": "https://en.wikipedia.org/wiki/Rome,_Georgia"
+        },
+        {
+          "name": "Georgia Health Sciences University",
+          "source_url": "https://en.wikipedia.org/wiki/Rome,_Georgia"
+        },
+        {
+          "name": "Lewis Chemical Co",
+          "source_url": "https://www.northwestgeorgianews.com/rome/business/lewis-chemical-named-small-business-of-the-year-larry-alford-of-service-master-by-twins/article_130f8d6a-8486-11e3-b983-001a4bcf6878.html"
         }
       ],
       "sources": [
         "https://en.wikipedia.org/wiki/Rome,_Georgia",
         "https://en.wikipedia.org/wiki/Atrium_Health_Floyd",
-        "https://www.selectgeorgia.com/blog/team-researchers-provide-clear-employment-overview-community-partners",
-        "https://georgia.org/sites/default/files/2023-01/lowes_4.pdf",
         "https://www.northwestgeorgianews.com/rome/business",
+        "https://www.bizjournals.com/atlanta/subscriber-only/2024/07/12/atlantas-20-largest-employers.html",
+        "https://georgia.org/sites/default/files/2023-01/lowes_4.pdf",
         "https://www.northwestgeorgianews.com/rome/business/lewis-chemical-named-small-business-of-the-year-larry-alford-of-service-master-by-twins/article_130f8d6a-8486-11e3-b983-001a4bcf6878.html",
-        "https://www.northwestgeorgianews.com/rome/business/keeping-on-growing-floyd-county-businesses-expanding-from-2022-into-2023/article_227bb320-bc51-11ed-989c-4329e03be1d7.html",
-        "https://en.wikipedia.org/wiki/List_of_largest_Italian_companies"
+        "https://www.northwestgeorgianews.com/primary-issue-for-local-employers-right-now-is-growth-of-the-workforce/article_27902aa4-f2f3-11eb-b2a1-6bb1c539a9f7.html",
+        "https://www.northwestgeorgianews.com/the-u-s-cities-that-manufacture-your-grocery-staples/collection_19a7f9c7-ed4b-59db-986b-d248a6587a5a.html"
       ],
       "method": "Representative list auto-discovered via Tavily web search across chamber-of-commerce, development-authority and local-news sources. Not exhaustive; ordering approximates source frequency, not headcount."
     },

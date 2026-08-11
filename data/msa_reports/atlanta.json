@@ -3,7 +3,7 @@
   "short_name": "Atlanta",
   "full_name": "Atlanta-Sandy Springs-Alpharetta, GA",
   "population": 6307261,
-  "as_of": "2026-08-10",
+  "as_of": "2026-08-11",
   "sections": {
     "ces_employment": {
       "series_id": "SMS13120600000000001",
@@ -5365,12 +5365,8 @@
       "source": "Census Business Dynamics Statistics (establishment entry rate, 2022); metro rate indexed to US=100"
     },
     "major_employers": {
-      "as_of": "2026-08-10",
+      "as_of": "2026-08-11",
       "employers": [
-        {
-          "name": "Emory Healthcare",
-          "source_url": "https://www.bizjournals.com/atlanta/subscriber-only/2025/10/17/metro-atlantas-largest-employers.html"
-        },
         {
           "name": "Emory University",
           "source_url": "https://www.bizjournals.com/atlanta/subscriber-only/2025/10/17/metro-atlantas-largest-employers.html"
@@ -5380,12 +5376,12 @@
           "source_url": "https://www.bizjournals.com/atlanta/subscriber-only/2022/07/15/atlantas-25-largest-employers.html"
         },
         {
-          "name": "Cornerstone Christian Academy",
-          "source_url": "https://www.ajc.com/top-workplaces"
-        },
-        {
           "name": "Delta Air Lines Inc",
           "source_url": "https://www.bizjournals.com/atlanta/subscriber-only/2022/07/15/atlantas-25-largest-employers.html"
+        },
+        {
+          "name": "Emory Healthcare",
+          "source_url": "https://www.bizjournals.com/atlanta/subscriber-only/2025/10/17/metro-atlantas-largest-employers.html"
         },
         {
           "name": "Headquarters Company",
@@ -5416,12 +5412,16 @@
           "source_url": "https://en.wikipedia.org/wiki/Economy_of_Atlanta"
         },
         {
-          "name": "Atlanta Public Schools",
-          "source_url": null
+          "name": "Mohawk Industries",
+          "source_url": "https://www.selectgeorgia.com/discover-georgia/industries/fortune-500-list"
         },
         {
-          "name": "Financial Overview Archived October",
-          "source_url": "https://en.wikipedia.org/wiki/Economy_of_Atlanta"
+          "name": "Southern Company",
+          "source_url": "https://www.selectgeorgia.com/discover-georgia/industries/fortune-500-list"
+        },
+        {
+          "name": "Aerospace",
+          "source_url": "https://www.selectgeorgia.com/discover-georgia/industries/fortune-500-list"
         }
       ],
       "sources": [
@@ -5431,8 +5431,8 @@
         "https://en.wikipedia.org/wiki/Economy_of_Atlanta",
         "https://www.ajc.com/top-workplaces",
         "https://www.selectgeorgia.com/discover-georgia/industries/why-atlanta/top-companies",
-        "https://services.selectgeorgia.com/data/documents/Atlanta_Federal_OZ_Prospectus.pdf",
-        "https://www.selectgeorgia.com/sxsw/top-brands"
+        "https://www.selectgeorgia.com/sxsw/top-brands",
+        "https://www.selectgeorgia.com/discover-georgia/industries/fortune-500-list"
       ],
       "method": "Representative list auto-discovered via Tavily web search across chamber-of-commerce, development-authority and local-news sources. Not exhaustive; ordering approximates source frequency, not headcount."
     },

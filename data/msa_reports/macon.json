@@ -3,7 +3,7 @@
   "short_name": "Macon",
   "full_name": "Macon-Bibb County, GA",
   "population": 232000,
-  "as_of": "2026-08-10",
+  "as_of": "2026-08-11",
   "sections": {
     "ces_employment": {
       "series_id": "SMS13314200000000001",
@@ -5185,19 +5185,19 @@
       "source": "Census Business Dynamics Statistics (establishment entry rate, 2022); metro rate indexed to US=100"
     },
     "major_employers": {
-      "as_of": "2026-08-10",
+      "as_of": "2026-08-11",
       "employers": [
         {
           "name": "Mercer University",
           "source_url": "https://en.wikipedia.org/wiki/Macon,_Georgia"
         },
         {
-          "name": "Aerospace",
-          "source_url": "https://www.selectgeorgia.com/discover-georgia/industries/fortune-500-list"
-        },
-        {
           "name": "Atrium Health Navicent",
           "source_url": "https://en.wikipedia.org/wiki/Macon,_Georgia"
+        },
+        {
+          "name": "Jacuzzi Inc",
+          "source_url": "https://www.bizjournals.com/atlanta/news/2019/12/13/macon-bibb-county-industrial-sector-soars.html"
         },
         {
           "name": "Brazil's Group Guidoni",
@@ -5208,48 +5208,48 @@
           "source_url": null
         },
         {
-          "name": "Piedmont Healthcare Macon",
-          "source_url": "https://en.wikipedia.org/wiki/Macon,_Georgia"
-        },
-        {
-          "name": "The Medical Center of Central Georgia",
-          "source_url": "https://www.macon.com/living/living-here-guide/article39043491.html"
-        },
-        {
-          "name": "Defense Systems",
+          "name": "Aerospace",
           "source_url": "https://www.selectgeorgia.com/about-us/our-team/regional-development/ryan-waldrep-central"
+        },
+        {
+          "name": "Navicent Health",
+          "source_url": null
+        },
+        {
+          "name": "Piedmont Healthcare",
+          "source_url": null
+        },
+        {
+          "name": "Thomaston Industrial Park",
+          "source_url": "https://en.wikipedia.org/wiki/Central_Georgia"
+        },
+        {
+          "name": "Thomaston-Upson Industrial Development Authority",
+          "source_url": "https://en.wikipedia.org/wiki/Central_Georgia"
+        },
+        {
+          "name": "Blue Bird Corporation",
+          "source_url": "https://en.wikipedia.org/wiki/Central_Georgia"
+        },
+        {
+          "name": "Houston Healthcare Complex",
+          "source_url": "https://www.macon.com/news/business/article258547393.html"
         },
         {
           "name": "Manufacturing",
           "source_url": "https://www.bizjournals.com/atlanta/news/2019/12/13/macon-bibb-county-industrial-sector-soars.html"
         },
         {
-          "name": "Navicent Health Medical Center",
-          "source_url": "https://www.selectgeorgia.com/about-us/our-team/regional-development/ryan-waldrep-central"
-        },
-        {
-          "name": "Southern Company",
-          "source_url": "https://www.selectgeorgia.com/discover-georgia/industries/fortune-500-list"
-        },
-        {
-          "name": "Asbury Automotive",
-          "source_url": "https://www.selectgeorgia.com/discover-georgia/industries/fortune-500-list"
-        },
-        {
-          "name": "Electric",
-          "source_url": "https://www.selectgeorgia.com/discover-georgia/industries/fortune-500-list"
-        },
-        {
-          "name": "Food Manufacturers",
-          "source_url": "https://www.selectgeorgia.com/discover-georgia/industries/fortune-500-list"
+          "name": "Medical Center of Central Georgia",
+          "source_url": "https://en.wikipedia.org/wiki/Central_Georgia"
         }
       ],
       "sources": [
         "https://en.wikipedia.org/wiki/Macon,_Georgia",
+        "https://www.macon.com/news/business/article258547393.html",
         "https://en.wikipedia.org/wiki/Central_Georgia",
-        "https://www.macon.com/living/living-here-guide/article39043491.html",
         "https://www.bizjournals.com/atlanta/news/2019/12/13/macon-bibb-county-industrial-sector-soars.html",
-        "https://www.selectgeorgia.com/discover-georgia/industries/fortune-500-list",
+        "https://www.macon.com/living/living-here-guide/article39043491.html",
         "https://www.selectgeorgia.com/about-us/our-team/regional-development/ryan-waldrep-central",
         "https://www.bizjournals.com/atlanta/news/2019/12/15/health-care-companies-expand-in-macon-market.html",
         "https://amp.macon.com/news/business/article28562158.html"
