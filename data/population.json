@@ -17,7 +17,7 @@
       ]
     },
     "counties": {
-      "last_updated": "2026-07-12",
+      "last_updated": "2026-08-12",
       "source": "U.S. Census Bureau PEP \u2014 county totals",
       "vintage": 2025,
       "n_counties": 159,
@@ -27,34 +27,26 @@
       ]
     },
     "peer_states": {
-      "last_updated": "2026-07-12",
+      "last_updated": "2026-08-12",
       "source": "U.S. Census Bureau PEP \u2014 state totals",
       "vintage": 2025,
-      "states": [
-        "GA",
-        "FL",
-        "SC",
-        "TX",
-        "NC",
-        "TN",
-        "AL"
-      ]
+      "states": []
     },
     "age_structure": {
-      "last_updated": "2026-07-12",
+      "last_updated": "2026-08-12",
       "source": "U.S. Census Bureau PEP \u2014 state by single year of age + sex",
       "vintage": 2024
     },
     "race_composition": {
-      "last_updated": "2026-07-12",
+      "last_updated": "2026-08-12",
       "source": "U.S. Census Bureau PEP \u2014 state by race + Hispanic origin",
       "vintage": 2024,
       "has_hispanic": true
     }
   },
-  "fetched_at": "2026-07-12",
+  "fetched_at": "2026-08-12",
   "latest_year": 2025,
-  "source_summary": "Live sections updated 2026-07-12: state_trend, components, counties, peer_states, age_structure, race_composition. Stale or pending: none.",
+  "source_summary": "Live sections updated 2026-08-12: counties, peer_states, age_structure, race_composition. Stale or pending: state_trend, components.",
   "kpis": {
     "population_latest": 11302748,
     "population_base": 10732595,
@@ -146,113 +138,7 @@
       69912
     ]
   },
-  "peer_states": [
-    {
-      "abbr": "GA",
-      "state": "Georgia",
-      "fips": "13",
-      "pop": {
-        "2020": 10732595,
-        "2021": 10793038,
-        "2022": 10929992,
-        "2023": 11063669,
-        "2024": 11204208,
-        "2025": 11302748
-      },
-      "growth_pct": 5.31,
-      "latest_pop": 11302748
-    },
-    {
-      "abbr": "FL",
-      "state": "Florida",
-      "fips": "12",
-      "pop": {
-        "2020": 21591325,
-        "2021": 21836698,
-        "2022": 22413989,
-        "2023": 22929248,
-        "2024": 23265838,
-        "2025": 23462518
-      },
-      "growth_pct": 8.67,
-      "latest_pop": 23462518
-    },
-    {
-      "abbr": "SC",
-      "state": "South Carolina",
-      "fips": "45",
-      "pop": {
-        "2020": 5131992,
-        "2021": 5194346,
-        "2022": 5288957,
-        "2023": 5390798,
-        "2024": 5490316,
-        "2025": 5570274
-      },
-      "growth_pct": 8.54,
-      "latest_pop": 5570274
-    },
-    {
-      "abbr": "TX",
-      "state": "Texas",
-      "fips": "48",
-      "pop": {
-        "2020": 29237895,
-        "2021": 29572672,
-        "2022": 30118002,
-        "2023": 30719247,
-        "2024": 31318578,
-        "2025": 31709821
-      },
-      "growth_pct": 8.45,
-      "latest_pop": 31709821
-    },
-    {
-      "abbr": "NC",
-      "state": "North Carolina",
-      "fips": "37",
-      "pop": {
-        "2020": 10450215,
-        "2021": 10565503,
-        "2022": 10705768,
-        "2023": 10871849,
-        "2024": 11052061,
-        "2025": 11197968
-      },
-      "growth_pct": 7.16,
-      "latest_pop": 11197968
-    },
-    {
-      "abbr": "TN",
-      "state": "Tennessee",
-      "fips": "47",
-      "pop": {
-        "2020": 6927736,
-        "2021": 6966687,
-        "2022": 7063325,
-        "2023": 7153029,
-        "2024": 7251291,
-        "2025": 7315076
-      },
-      "growth_pct": 5.59,
-      "latest_pop": 7315076
-    },
-    {
-      "abbr": "AL",
-      "state": "Alabama",
-      "fips": "01",
-      "pop": {
-        "2020": 5032962,
-        "2021": 5050058,
-        "2022": 5076868,
-        "2023": 5117850,
-        "2024": 5163055,
-        "2025": 5193088
-      },
-      "growth_pct": 3.18,
-      "latest_pop": 5193088
-    }
-  ],
+  "peer_states": [],
   "counties": [
     {
       "fips": "13001",
