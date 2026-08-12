@@ -3,7 +3,7 @@
   "short_name": "Albany",
   "full_name": "Albany, GA",
   "population": 146000,
-  "as_of": "2026-08-11",
+  "as_of": "2026-08-12",
   "sections": {
     "ces_employment": {
       "series_id": "SMS13105000000000001",
@@ -4263,74 +4263,74 @@
       "source": "Census Business Dynamics Statistics (establishment entry rate, 2022); metro rate indexed to US=100"
     },
     "major_employers": {
-      "as_of": "2026-08-11",
+      "as_of": "2026-08-12",
       "employers": [
         {
           "name": "Northeast Grocery Inc",
           "source_url": "https://www.bizjournals.com/albany/subscriber-only/2026/07/02/albanys-365-largest-employers.html"
         },
         {
-          "name": "Health",
+          "name": "Albany Med Health",
           "source_url": "https://www.bizjournals.com/albany/subscriber-only/2026/07/02/albanys-365-largest-employers.html"
+        },
+        {
+          "name": "Albany State University",
+          "source_url": "https://albanyherald.com/news/local/business-leaders-get-economic-updates-at-uga-summit"
+        },
+        {
+          "name": "Marine Corps Logistics Command",
+          "source_url": "https://albanyherald.com/news/local/military-honored-at-annual-albany-area-chamber-of-commerce-breakfast"
+        },
+        {
+          "name": "MillerCoors Brewing Company",
+          "source_url": "https://albanyherald.com/news/local/business-leaders-get-economic-updates-at-uga-summit"
+        },
+        {
+          "name": "Phoebe Putney Health Systems",
+          "source_url": "https://albanyherald.com/news/local/business-leaders-get-economic-updates-at-uga-summit"
         },
         {
           "name": "Regeneron Pharmaceuticals Inc",
           "source_url": "https://www.bizjournals.com/albany/subscriber-only/2026/07/02/albanys-365-largest-employers.html"
         },
         {
-          "name": "Albany State University",
-          "source_url": null
+          "name": "St. Peter's Health",
+          "source_url": "https://www.bizjournals.com/albany/subscriber-only/2026/07/02/albanys-365-largest-employers.html"
         },
         {
-          "name": "Dougherty County School System",
-          "source_url": null
+          "name": "Alternative Energy Companies",
+          "source_url": "https://www.bizjournals.com/albany/datacenter/lists"
+        },
+        {
+          "name": "Emory Healthcare",
+          "source_url": "https://www.bizjournals.com/atlanta/subscriber-only/2025/10/17/metro-atlantas-largest-employers.html"
         },
         {
           "name": "Emory University",
           "source_url": "https://www.bizjournals.com/atlanta/subscriber-only/2025/10/17/metro-atlantas-largest-employers.html"
         },
         {
-          "name": "Manufacturing",
-          "source_url": "https://www.bizjournals.com/albany/news/2023/07/14/albany-region-largest-private-sector-employers.html"
+          "name": "Health Partners",
+          "source_url": null
+        },
+        {
+          "name": "Marine Corps Logistics Base",
+          "source_url": null
         },
         {
           "name": "Phoebe Putney Memorial Hospital",
           "source_url": null
-        },
-        {
-          "name": "West Georgia Technical College",
-          "source_url": null
-        },
-        {
-          "name": "Aflac Inc",
-          "source_url": "https://albanyherald.com/news/heritage-four-other-area-businesses-named-to-georgia-trends-top-100-public-businesses"
-        },
-        {
-          "name": "Albany Housefurnishing Company",
-          "source_url": "https://en.wikipedia.org/wiki/Albany,_Georgia"
-        },
-        {
-          "name": "Albany Medical Centerexpand",
-          "source_url": "https://www.bizjournals.com/albany/news/2025/10/17/new-employers-list-2025.html"
-        },
-        {
-          "name": "Albany Railroad Depot Historic District",
-          "source_url": "https://en.wikipedia.org/wiki/Albany,_Georgia"
-        },
-        {
-          "name": "Albany Technical College",
-          "source_url": "https://albanyherald.com/news/local/barbara-rivera-holmes-named-albany-area-chamber-of-commerce-ceo"
         }
       ],
       "sources": [
+        "https://albanyherald.com/news/local/business-leaders-get-economic-updates-at-uga-summit",
         "https://www.bizjournals.com/albany/subscriber-only/2026/07/02/albanys-365-largest-employers.html",
         "https://www.bizjournals.com/atlanta/subscriber-only/2025/10/17/metro-atlantas-largest-employers.html",
         "https://albanyherald.com/news/heritage-four-other-area-businesses-named-to-georgia-trends-top-100-public-businesses",
-        "https://albanyherald.com/uncategorized/slow-but-steady-growth-predicted-for-georgia-albanys-2025-economy",
         "https://albanyherald.com/news/local/military-honored-at-annual-albany-area-chamber-of-commerce-breakfast",
+        "https://en.wikipedia.org/wiki/Georgia_Chamber_of_Commerce",
         "https://albanyherald.com/news/local/barbara-rivera-holmes-named-albany-area-chamber-of-commerce-ceo",
-        "https://en.wikipedia.org/wiki/Albany,_Georgia",
-        "https://www.bizjournals.com/albany/news/2023/07/14/albany-region-largest-private-sector-employers.html"
+        "https://albanyherald.com/news/local/albany-area-chamber-of-commerce-awarded-four-star-accreditation-by-u-s-chamber"
       ],
       "method": "Representative list auto-discovered via Tavily web search across chamber-of-commerce, development-authority and local-news sources. Not exhaustive; ordering approximates source frequency, not headcount."
     },

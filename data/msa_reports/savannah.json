@@ -3,7 +3,7 @@
   "short_name": "Savannah",
   "full_name": "Savannah, GA",
   "population": 410000,
-  "as_of": "2026-08-11",
+  "as_of": "2026-08-12",
   "sections": {
     "ces_employment": {
       "series_id": "SMS13423400000000001",
@@ -5265,74 +5265,74 @@
       "source": "Census Business Dynamics Statistics (establishment entry rate, 2022); metro rate indexed to US=100"
     },
     "major_employers": {
-      "as_of": "2026-08-11",
+      "as_of": "2026-08-12",
       "employers": [
-        {
-          "name": "Distribution",
-          "source_url": "https://www.ernesthomes.com/blog/blogpost/live-where-the-work-is-%E2%80%93-savannah-gas-top-employers"
-        },
-        {
-          "name": "Gulfstream Aerospace",
-          "source_url": "https://en.wikipedia.org/wiki/Category:Companies_based_in_Savannah,_Georgia"
-        },
-        {
-          "name": "Hospital",
-          "source_url": "https://www.savannahchamber.com/economic-development/major-employers"
-        },
         {
           "name": "Savannah State University",
           "source_url": "https://en.wikipedia.org/wiki/Savannah_metropolitan_area"
         },
         {
-          "name": "Automotive",
-          "source_url": "https://seda.org/resources-and-data/data-center/regional-employers"
+          "name": "Gulfstream Aerospace Corporation",
+          "source_url": "https://en.wikipedia.org/wiki/Savannah,_Georgia"
         },
         {
-          "name": "Logistics",
-          "source_url": "https://dreamfindershomes.com/blog/top-industries-employers-savannah-georgia"
+          "name": "Chase Bank",
+          "source_url": "https://en.wikipedia.org/wiki/Savannah_metropolitan_area"
         },
         {
           "name": "Savannah College of Art",
           "source_url": "https://en.wikipedia.org/wiki/Savannah_metropolitan_area"
         },
         {
-          "name": "Colonial Group",
-          "source_url": "https://seda.org/resources-and-data/data-center/regional-employers"
+          "name": "Savannah Bee Co",
+          "source_url": "https://www.savannahnow.com/story/business/2012/12/10/five-savannah-area-firms-among-incs-fastest-growing/13774286007"
         },
         {
-          "name": "Georgia Ports Authority",
-          "source_url": "https://www.ernesthomes.com/blog/blogpost/live-where-the-work-is-%E2%80%93-savannah-gas-top-employers"
+          "name": "Edge Solutions",
+          "source_url": "https://www.savannahnow.com/story/business/2012/12/10/five-savannah-area-firms-among-incs-fastest-growing/13774286007"
         },
         {
-          "name": "The Port of Savannah",
-          "source_url": "https://dreamfindershomes.com/blog/top-industries-employers-savannah-georgia"
+          "name": "Georgia Power",
+          "source_url": "https://www.savannahnow.com/story/business/2013/10/14/business-savannah-news-summary/13965727007"
         },
         {
-          "name": "East Georgia Regional Medical Center",
-          "source_url": "https://www.savannahchamber.com/economic-development/major-employers"
+          "name": "Georgia Southern University's",
+          "source_url": "https://en.wikipedia.org/wiki/Savannah_metropolitan_area"
         },
         {
-          "name": "Georgia Southern University",
-          "source_url": "https://www.ernesthomes.com/blog/blogpost/live-where-the-work-is-%E2%80%93-savannah-gas-top-employers"
+          "name": "Metaplant",
+          "source_url": "https://www.savannahnow.com/story/news/local/2025/01/09/savannah-economy-bolstered-by-hyundai-expected-outpace-georgia-u-s/77579126007"
         },
         {
-          "name": "Memorial University Medical Center",
-          "source_url": "https://www.savannahchamber.com/economic-development/major-employers"
+          "name": "Savannah Technical College",
+          "source_url": "https://en.wikipedia.org/wiki/Savannah_metropolitan_area"
         },
         {
-          "name": "Optim Health System",
-          "source_url": "https://www.savannahchamber.com/economic-development/major-employers"
+          "name": "South University",
+          "source_url": "https://en.wikipedia.org/wiki/Savannah_metropolitan_area"
+        },
+        {
+          "name": "Chatham County School System",
+          "source_url": null
+        },
+        {
+          "name": "Colony Bank",
+          "source_url": "https://www.savannahnow.com/story/business/2013/02/19/understanding-purpose-savannah-chamber/13655438007"
+        },
+        {
+          "name": "Hyundai Motor Group",
+          "source_url": null
         }
       ],
       "sources": [
         "https://en.wikipedia.org/wiki/Savannah,_Georgia",
-        "https://www.savannahnow.com/story/news/local/2025/08/21/international-paper-to-close-long-operated-facilities-in-savannah-ga/85758790007",
-        "https://www.savannahnow.com/story/business/economy/2024/01/19/savannah-economy-resistant-to-recession/72271204007",
-        "https://en.wikipedia.org/wiki/Augusta,_Georgia",
+        "https://www.savannahnow.com/story/news/local/2025/01/09/savannah-economy-bolstered-by-hyundai-expected-outpace-georgia-u-s/77579126007",
         "https://en.wikipedia.org/wiki/Savannah_metropolitan_area",
-        "https://www.selectgeorgia.com/blog/welcome-seapoint-industrial-site-savannah-ga",
-        "https://www.savannahnow.com/story/news/2016/07/08/garden-city-police-department-savannah-firms-make-best-places-work-georgia-list/13921419007",
-        "https://www.savannahnow.com/story/business/2013/10/14/business-savannah-news-summary/13965727007"
+        "https://en.wikipedia.org/wiki/Savannah,_GA_MSA",
+        "https://www.savannahnow.com/story/opinion/columns/2023/03/11/savannah-economic-growth-reshape-coastal-georgia-over-next-30-years/69984277007",
+        "https://www.savannahnow.com/story/business/2013/02/19/understanding-purpose-savannah-chamber/13655438007",
+        "https://www.savannahnow.com/story/business/2012/12/10/five-savannah-area-firms-among-incs-fastest-growing/13774286007",
+        "https://www.savannahnow.com/story/business/2013/05/27/business-savannah-news-summary/13612244007"
       ],
       "method": "Representative list auto-discovered via Tavily web search across chamber-of-commerce, development-authority and local-news sources. Not exhaustive; ordering approximates source frequency, not headcount."
     },

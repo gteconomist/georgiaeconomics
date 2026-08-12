@@ -3,7 +3,7 @@
   "short_name": "Dalton",
   "full_name": "Dalton, GA",
   "population": 143000,
-  "as_of": "2026-08-11",
+  "as_of": "2026-08-12",
   "sections": {
     "ces_employment": {
       "series_id": "SMS13191400000000001",
@@ -4619,70 +4619,74 @@
       "source": "Census Business Dynamics Statistics (establishment entry rate, 2022); metro rate indexed to US=100"
     },
     "major_employers": {
-      "as_of": "2026-08-11",
+      "as_of": "2026-08-12",
       "employers": [
         {
           "name": "Shaw Industries",
-          "source_url": "https://www.ajc.com/business/employment/slow-carpet-sales-leads-dalton-plant-closing/i6IWYuTMhqDpy2SltAagkM"
+          "source_url": "https://valdostadailytimes.com/2017/09/11/questions-and-answers-with-shaw-industries-ceo-vance-bell"
         },
         {
           "name": "Mohawk Industries",
-          "source_url": "https://en.wikipedia.org/wiki/Dalton,_Georgia"
+          "source_url": "https://georgia.org/sites/default/files/2021-04/logistics_education_report.pdf"
+        },
+        {
+          "name": "Dalton Public Schools",
+          "source_url": "https://valdostadailytimes.com/2018/06/10/public-employers"
+        },
+        {
+          "name": "Arab Health",
+          "source_url": "https://georgia.org/sites/default/files/2019-08/gdecd_board_book-nov_2018.pdf"
         },
         {
           "name": "Carpet Capital",
           "source_url": "https://en.wikipedia.org/wiki/Dalton,_Georgia"
         },
         {
-          "name": "GEDIA Automotive Group",
-          "source_url": "https://valdostadailytimes.com/2020/07/27/german-firm-to-build-parts-for-electric-cars-in-whitfield-county-200-jobs-expected"
+          "name": "Whitfield County Schools",
+          "source_url": null
+        },
+        {
+          "name": "Archbold Medical Center",
+          "source_url": "https://valdostadailytimes.com/2018/06/10/public-employers"
+        },
+        {
+          "name": "Beaulieu Group",
+          "source_url": "https://valdostadailytimes.com/2018/01/01/engineered-floors-growth-varnell-drama-among-top-stories-in-dalton-area-in-2017"
         },
         {
           "name": "Dalton State College",
-          "source_url": null
-        },
-        {
-          "name": "Dixie Group",
-          "source_url": null
-        },
-        {
-          "name": "Emory University",
-          "source_url": "https://www.ajc.com/business/georgia-best-employers-for-2019-according-forbes/97QBCslwnyl3Ob4ujTmnLK"
-        },
-        {
-          "name": "HLGstudio LLC",
-          "source_url": "https://www.bizjournals.com/atlanta/news/2023/06/29/solar-workforce-qcells-dalton-georgia.html"
-        },
-        {
-          "name": "Sales Talent Group",
-          "source_url": "https://www.bizjournals.com/atlanta/news/2023/06/29/solar-workforce-qcells-dalton-georgia.html"
+          "source_url": "https://valdostadailytimes.com/2017/09/11/questions-and-answers-with-shaw-industries-ceo-vance-bell"
         },
         {
           "name": "Dalton-Whitfield Joint Development Authority",
-          "source_url": "https://valdostadailytimes.com/2020/07/27/german-firm-to-build-parts-for-electric-cars-in-whitfield-county-200-jobs-expected"
+          "source_url": "https://valdostadailytimes.com/2018/06/10/public-employers"
+        },
+        {
+          "name": "Flooring",
+          "source_url": "https://valdostadailytimes.com/2018/01/01/engineered-floors-growth-varnell-drama-among-top-stories-in-dalton-area-in-2017"
         },
         {
           "name": "Genuine Parts Co",
           "source_url": "https://georgia.org/sites/default/files/2021-04/logistics_education_report.pdf"
         },
         {
-          "name": "Health",
-          "source_url": "https://georgia.org/sites/default/files/2023-06/fy23_q3_board_book_-_23admin349.pdf"
+          "name": "Georgia Northwestern Technical College",
+          "source_url": "https://valdostadailytimes.com/2017/09/11/questions-and-answers-with-shaw-industries-ceo-vance-bell"
         },
         {
-          "name": "University of Tennessee",
-          "source_url": "https://www.ajc.com/business/georgia-best-employers-for-2019-according-forbes/97QBCslwnyl3Ob4ujTmnLK"
+          "name": "HLGstudio LLC",
+          "source_url": "https://www.bizjournals.com/atlanta/news/2023/06/29/solar-workforce-qcells-dalton-georgia.html"
         }
       ],
       "sources": [
+        "https://www.bizjournals.com/atlanta/news/2023/08/04/georgia-cities-wage-growth-salary.html",
         "https://en.wikipedia.org/wiki/Dalton,_Georgia",
         "https://www.bizjournals.com/atlanta/news/2023/06/29/solar-workforce-qcells-dalton-georgia.html",
-        "https://www.ajc.com/business/dalton-augusta-worst-for-job-losses-lately/qWPbpKazCnZFJtn1Kel1RM",
-        "https://www.ajc.com/business/georgia-best-employers-for-2019-according-forbes/97QBCslwnyl3Ob4ujTmnLK",
-        "https://georgia.org/sites/default/files/2023-06/fy23_q3_board_book_-_23admin349.pdf",
-        "https://valdostadailytimes.com/2020/07/27/german-firm-to-build-parts-for-electric-cars-in-whitfield-county-200-jobs-expected",
-        "https://georgia.org/sites/default/files/2021-04/logistics_education_report.pdf",
-        "https://www.ajc.com/business/employment/slow-carpet-sales-leads-dalton-plant-closing/i6IWYuTMhqDpy2SltAagkM"
+        "https://valdostadailytimes.com/2017/09/11/questions-and-answers-with-shaw-industries-ceo-vance-bell",
+        "https://www.ajc.com/video/news/2026/05/one-industry-polluted-this-town-now-the-city-is-betting-on-ai",
+        "https://valdostadailytimes.com/2018/06/10/public-employers",
+        "https://georgia.org/sites/default/files/2019-08/gdecd_board_book-nov_2018.pdf",
+        "https://valdostadailytimes.com/2018/01/01/engineered-floors-growth-varnell-drama-among-top-stories-in-dalton-area-in-2017"
       ],
       "method": "Representative list auto-discovered via Tavily web search across chamber-of-commerce, development-authority and local-news sources. Not exhaustive; ordering approximates source frequency, not headcount."
     },

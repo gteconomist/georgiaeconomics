@@ -3,7 +3,7 @@
   "short_name": "Athens",
   "full_name": "Athens-Clarke County, GA",
   "population": 217000,
-  "as_of": "2026-08-11",
+  "as_of": "2026-08-12",
   "sections": {
     "ces_employment": {
       "series_id": "SMS13120200000000001",
@@ -5194,46 +5194,54 @@
       "source": "Census Business Dynamics Statistics (establishment entry rate, 2022); metro rate indexed to US=100"
     },
     "major_employers": {
-      "as_of": "2026-08-11",
+      "as_of": "2026-08-12",
       "employers": [
         {
-          "name": "University of Georgia",
-          "source_url": "https://www.randstadusa.com/jobs/georgia/athens"
-        },
-        {
-          "name": "Children's Healthcare of Atlanta",
-          "source_url": "https://www.onlineathens.com/story/news/2026/03/04/georgias-best-employers-are-these-2-big-businesses-forbes-says/88982542007"
-        },
-        {
-          "name": "Clarke County School District",
+          "name": "The University of Georgia",
           "source_url": null
         },
         {
-          "name": "Caterpillar Athens Plant",
-          "source_url": "https://investathensga.com/site-selection/major-employers"
+          "name": "Alpha Bank",
+          "source_url": "https://en.wikipedia.org/wiki/Athens"
         },
         {
-          "name": "Health Care System",
-          "source_url": "https://investathensga.com/site-selection/major-employers"
+          "name": "Athens Regional Health System",
+          "source_url": "https://www.ajc.com/business/hospital-giants-reach-beyond-metro-area/vQS8gUaJsJVpj11tgaX5xJ"
         },
         {
-          "name": "New Christian Brothers Automotive",
-          "source_url": "https://www.onlineathens.com/business"
+          "name": "Athens Technical College",
+          "source_url": "https://www.onlineathens.com/story/business/2025/01/13/former-technical-college-leader-hired-for-new-athens-chamber-position/77582808007"
         },
         {
-          "name": "Power Partners",
-          "source_url": "https://investathensga.com/site-selection/major-employers"
+          "name": "Bank of Greece",
+          "source_url": "https://en.wikipedia.org/wiki/Athens"
         },
         {
-          "name": "Augusta University",
-          "source_url": "https://en.wikipedia.org/wiki/Augusta,_Georgia"
+          "name": "Emory Healthcare",
+          "source_url": "https://www.ajc.com/business/hospital-giants-reach-beyond-metro-area/vQS8gUaJsJVpj11tgaX5xJ"
         },
         {
-          "name": "BOS Medical Staffing",
-          "source_url": "https://www.athensga.com/featured-jobs"
+          "name": "Hellenic Aerospace Industry",
+          "source_url": "https://en.wikipedia.org/wiki/Athens"
         },
         {
-          "name": "Caterpillar Inc",
+          "name": "Mytilineos Holdings",
+          "source_url": "https://en.wikipedia.org/wiki/Athens"
+        },
+        {
+          "name": "Piedmont Healthcare",
+          "source_url": "https://www.ajc.com/business/hospital-giants-reach-beyond-metro-area/vQS8gUaJsJVpj11tgaX5xJ"
+        },
+        {
+          "name": "Piraeus Bank",
+          "source_url": "https://en.wikipedia.org/wiki/Athens"
+        },
+        {
+          "name": "Barberitos Creature Comforts Brewing Co. Fire",
+          "source_url": "https://en.wikipedia.org/wiki/Athens,_Georgia"
+        },
+        {
+          "name": "Clarke County Public Schools",
           "source_url": null
         },
         {
@@ -5241,27 +5249,19 @@
           "source_url": null
         },
         {
-          "name": "Doctors Hospital",
-          "source_url": "https://en.wikipedia.org/wiki/Augusta,_Georgia"
-        },
-        {
-          "name": "Piedmont Athens Regional Hospital",
-          "source_url": null
-        },
-        {
-          "name": "Piedmont Athens Regional Medical Center",
-          "source_url": null
+          "name": "Dress Boutique Terrapin Beer Company Wuxtry",
+          "source_url": "https://en.wikipedia.org/wiki/Athens,_Georgia"
         }
       ],
       "sources": [
-        "https://www.onlineathens.com/business",
+        "https://www.onlineathens.com/story/business/2015/11/14/gdol-host-seasonal-recruitment-athens-area-employers/15471064007",
+        "https://www.ajc.com/business/hospital-giants-reach-beyond-metro-area/vQS8gUaJsJVpj11tgaX5xJ",
         "https://en.wikipedia.org/wiki/Athens,_Georgia",
-        "https://www.onlineathens.com/story/news/2026/03/04/georgias-best-employers-are-these-2-big-businesses-forbes-says/88982542007",
-        "https://en.wikipedia.org/wiki/Augusta,_Georgia",
         "https://www.ajc.com/top-workplaces/rounding-out-the-top-5-large-businesses/5FF7QFEAMRGF3PLDXYSC4NOFWQ",
-        "https://www.augustachronicle.com/story/news/2025/06/04/fortune-500s-list-of-the-biggest-corporations-includes-17-in-georgia/84010835007",
-        "https://www.augustachronicle.com/story/news/2021/07/27/jobs-available-in-georgia-pay-requirements-wayfair-amazon-hanwha-q-cell-sk-battery-america/7963462002",
-        "https://www.onlineathens.com/story/news/state/2014/08/27/forecast-athens-area-jobs-grow-12-percent/15520915007"
+        "https://www.onlineathens.com/picture-gallery/entertainment/events/2020/02/04/photos-the-athens-chamber-of/68646805007",
+        "https://www.onlineathens.com/story/business/2025/01/13/former-technical-college-leader-hired-for-new-athens-chamber-position/77582808007",
+        "https://georgia.org/sites/default/files/2022-05/2022-2-23_gdecd_board_meeting_minutes.pdf",
+        "https://en.wikipedia.org/wiki/Athens_County%2C_Ohio"
       ],
       "method": "Representative list auto-discovered via Tavily web search across chamber-of-commerce, development-authority and local-news sources. Not exhaustive; ordering approximates source frequency, not headcount."
     },

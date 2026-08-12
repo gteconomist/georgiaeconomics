@@ -3,7 +3,7 @@
   "short_name": "Warner Robins",
   "full_name": "Warner Robins, GA",
   "population": 199000,
-  "as_of": "2026-08-11",
+  "as_of": "2026-08-12",
   "sections": {
     "ces_employment": {
       "series_id": "SMS13475800000000001",
@@ -4287,74 +4287,74 @@
       "source": "Census Business Dynamics Statistics (establishment entry rate, 2022); metro rate indexed to US=100"
     },
     "major_employers": {
-      "as_of": "2026-08-11",
+      "as_of": "2026-08-12",
       "employers": [
-        {
-          "name": "Robins International Industrial Park",
-          "source_url": "https://georgia.org/sites/default/files/2021-02/fy21_q2_board_book.pdf"
-        },
-        {
-          "name": "Aerospace",
-          "source_url": "https://georgia.org/why-georgia/regions-georgia"
-        },
-        {
-          "name": "Central Georgia Technical College",
-          "source_url": "https://georgia.org/sites/default/files/2021-04/logistics_education_report.pdf"
-        },
         {
           "name": "Houston Healthcare",
           "source_url": "https://en.wikipedia.org/wiki/Central_Georgia"
+        },
+        {
+          "name": "Pratt Industries",
+          "source_url": "https://www.bizjournals.com/atlanta/news/2026/04/27/pratt-industries-corrugated-box-warner-robins.html"
         },
         {
           "name": "Medical Center of Central Georgia",
           "source_url": "https://en.wikipedia.org/wiki/Central_Georgia"
         },
         {
-          "name": "Atlanta University Center",
-          "source_url": "https://georgia.org/sites/default/files/2021-04/logistics_education_report.pdf"
+          "name": "Manufacturing",
+          "source_url": "https://www.bizjournals.com/atlanta/news/2026/04/27/pratt-industries-corrugated-box-warner-robins.html"
         },
         {
-          "name": "Chattahoochee Technical College",
-          "source_url": "https://georgia.org/sites/default/files/2021-04/logistics_education_report.pdf"
+          "name": "Central Georgia Technical College",
+          "source_url": "https://en.wikipedia.org/wiki/Central_Georgia"
         },
         {
-          "name": "Clark Atlanta University",
-          "source_url": "https://georgia.org/sites/default/files/2021-04/logistics_education_report.pdf"
+          "name": "Aerospace",
+          "source_url": "https://georgia.org/why-georgia/regions-georgia"
+        },
+        {
+          "name": "Blue Bird Corporation",
+          "source_url": "https://en.wikipedia.org/wiki/Central_Georgia"
+        },
+        {
+          "name": "Coliseum Health System",
+          "source_url": "https://en.wikipedia.org/wiki/Central_Georgia"
+        },
+        {
+          "name": "Criterion Technologies",
+          "source_url": "https://en.wikipedia.org/wiki/Central_Georgia"
         },
         {
           "name": "Emory Healthcare",
           "source_url": "https://www.bizjournals.com/atlanta/news/2024/08/22/emory-healthcare-houston-healthcare-partnership.html"
         },
         {
-          "name": "Houston County School District",
-          "source_url": null
-        },
-        {
-          "name": "Logistics",
-          "source_url": "https://georgia.org/sites/default/files/2021-04/logistics_education_report.pdf"
-        },
-        {
-          "name": "Memorial Health System",
-          "source_url": null
-        },
-        {
-          "name": "Middle Georgia State University",
+          "name": "Fort Valley State University",
           "source_url": "https://en.wikipedia.org/wiki/Central_Georgia"
         },
         {
-          "name": "Warner Robins Medical Center",
-          "source_url": null
+          "name": "Georgia College",
+          "source_url": "https://en.wikipedia.org/wiki/Central_Georgia"
+        },
+        {
+          "name": "Georgia Military College",
+          "source_url": "https://en.wikipedia.org/wiki/Central_Georgia"
+        },
+        {
+          "name": "Mercer University",
+          "source_url": "https://en.wikipedia.org/wiki/Central_Georgia"
         }
       ],
       "sources": [
-        "https://en.wikipedia.org/wiki/Robins_Air_Force_Base",
-        "https://georgia.org/sites/default/files/2021-04/logistics_education_report.pdf",
-        "https://www.bizjournals.com/sitemap/atlanta/2017-05",
-        "https://georgia.org/sites/default/files/2021-02/fy21_q2_board_book.pdf",
-        "https://georgia.org/why-georgia/regions-georgia",
-        "https://www.bizjournals.com/atlanta/news/2024/08/22/emory-healthcare-houston-healthcare-partnership.html",
         "https://en.wikipedia.org/wiki/Central_Georgia",
-        "https://georgia.org/industries/aerospace"
+        "https://www.bizjournals.com/atlanta/news/2026/04/27/pratt-industries-corrugated-box-warner-robins.html",
+        "https://www.bizjournals.com/atlanta/news/2024/08/22/emory-healthcare-houston-healthcare-partnership.html",
+        "https://georgia.org/sites/default/files/2020-08/georgia_safety_promise-8-27.pdf",
+        "https://georgia.org/sites/default/files/2020-07/georgia_safety_promise-7-23.pdf",
+        "https://georgia.org/sites/default/files/2021-04/logistics_education_report.pdf",
+        "https://georgia.org/sites/default/files/2021-02/fy21_q2_board_book.pdf",
+        "https://georgia.org/why-georgia/regions-georgia"
       ],
       "method": "Representative list auto-discovered via Tavily web search across chamber-of-commerce, development-authority and local-news sources. Not exhaustive; ordering approximates source frequency, not headcount."
     },

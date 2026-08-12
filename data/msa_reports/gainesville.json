@@ -3,7 +3,7 @@
   "short_name": "Gainesville",
   "full_name": "Gainesville, GA",
   "population": 211000,
-  "as_of": "2026-08-11",
+  "as_of": "2026-08-12",
   "sections": {
     "ces_employment": {
       "series_id": "SMS13235800000000001",
@@ -5257,7 +5257,7 @@
       "source": "Census Business Dynamics Statistics (establishment entry rate, 2022); metro rate indexed to US=100"
     },
     "major_employers": {
-      "as_of": "2026-08-11",
+      "as_of": "2026-08-12",
       "employers": [
         {
           "name": "University of Florida",
@@ -5276,11 +5276,11 @@
           "source_url": "https://en.wikipedia.org/wiki/Gainesville,_Georgia"
         },
         {
-          "name": "Alachua County Public Schools",
-          "source_url": "https://en.wikipedia.org/wiki/Gainesville,_Florida"
+          "name": "The Jaeger Co",
+          "source_url": "https://www.gainesvilletimes.com/news/simpson-jaeger-companies-win-hall-chambers-top-awards"
         },
         {
-          "name": "Annual Comprehensive Financial Report",
+          "name": "Alachua County Public Schools",
           "source_url": "https://en.wikipedia.org/wiki/Gainesville,_Florida"
         },
         {
@@ -5290,10 +5290,6 @@
         {
           "name": "Comprehensive Annual Financial Report",
           "source_url": "https://en.wikipedia.org/wiki/Gainesville,_Georgia"
-        },
-        {
-          "name": "Distribution",
-          "source_url": "https://www.gainesvilletimes.com/news/business-archived/chamber-honors-3-companies-as-the-years-best-in-hall"
         },
         {
           "name": "Elan Drug Technologies",
@@ -5314,17 +5310,21 @@
         {
           "name": "Wrigley Manufacturing",
           "source_url": "https://www.gainesvilletimes.com/news/business-archived/chamber-honors-3-companies-as-the-years-best-in-hall"
+        },
+        {
+          "name": "Annual Comprehensive Financial Report",
+          "source_url": "https://en.wikipedia.org/wiki/Gainesville,_Florida"
         }
       ],
       "sources": [
         "https://en.wikipedia.org/wiki/Gainesville,_Georgia",
         "https://en.wikipedia.org/wiki/Gainesville,_Florida",
-        "https://www.ajc.com/top-workplaces/2025/08/15-newcomers-join-ranks-of-atlantas-top-large-workplaces",
         "https://www.savannahnow.com/story/news/2025/05/10/best-small-cities-in-georgia-hgtv-names-gainesville-ga-an-up-and-coming-gem/83533116007",
-        "https://www.bizjournals.com/atlanta/news/2022/06/06/kubota-to-build-new-facility.html",
+        "https://www.augustachronicle.com/story/news/2025/05/14/hgtv-up-and-coming-small-cities-why-this-georgia-town-made-the-list-gainesville-ga/83602820007",
         "https://www.gainesvilletimes.com/news/business-archived/chamber-honors-3-companies-as-the-years-best-in-hall",
-        "https://georgia.org/sites/default/files/2020-09/fy20_q4_board_book.pdf",
-        "https://www.bizjournals.com/atlanta/news/2024/03/22/blue-ridge-connector-georgia-manufacturers-trucks.html"
+        "https://www.gainesvilletimes.com/news/business-archived/hall-chamber-of-commerce-honors-2-local-businesses",
+        "https://www.gainesvilletimes.com/news/simpson-jaeger-companies-win-hall-chambers-top-awards",
+        "https://en.wikipedia.org/wiki/Georgia_Chamber_of_Commerce"
       ],
       "method": "Representative list auto-discovered via Tavily web search across chamber-of-commerce, development-authority and local-news sources. Not exhaustive; ordering approximates source frequency, not headcount."
     },

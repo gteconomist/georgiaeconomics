@@ -3,7 +3,7 @@
   "short_name": "Columbus",
   "full_name": "Columbus, GA-AL",
   "population": 329000,
-  "as_of": "2026-08-11",
+  "as_of": "2026-08-12",
   "sections": {
     "ces_employment": {
       "series_id": "SMS13179800000000001",
@@ -5183,74 +5183,74 @@
       "source": "Census Business Dynamics Statistics (establishment entry rate, 2022); metro rate indexed to US=100"
     },
     "major_employers": {
-      "as_of": "2026-08-11",
+      "as_of": "2026-08-12",
       "employers": [
         {
-          "name": "Health Care",
-          "source_url": "https://www.columbusstate.edu/turner/_docs/butler/research/economic-overview-columbus-area.pdf"
-        },
-        {
-          "name": "Bradley Co",
+          "name": "Columbus State University",
           "source_url": "https://en.wikipedia.org/wiki/Columbus,_Georgia"
         },
         {
-          "name": "Columbus State University",
-          "source_url": "https://www.georgiatrend.com/2023/10/31/columbus-advantage"
-        },
-        {
-          "name": "Financial Activities",
-          "source_url": "https://en.wikipedia.org/wiki/List_of_largest_Central_Ohio_employers"
-        },
-        {
-          "name": "Manufacturing",
-          "source_url": "https://www.columbusstate.edu/turner/_docs/butler/columbus-economic-forecast-2026.pdf"
+          "name": "Muscogee County School District",
+          "source_url": "https://en.wikipedia.org/wiki/Columbus,_Georgia"
         },
         {
           "name": "Piedmont Columbus Regional Hospital",
           "source_url": "https://en.wikipedia.org/wiki/Columbus,_Georgia"
         },
         {
-          "name": "Utilities",
-          "source_url": "https://www.choosecolumbusga.com/site-selectors/major-employers"
+          "name": "St. Francis Hospital",
+          "source_url": "https://en.wikipedia.org/wiki/Columbus,_Georgia"
         },
         {
-          "name": "American Electric Power",
+          "name": "Bradley Co",
+          "source_url": "https://en.wikipedia.org/wiki/Columbus,_Georgia"
+        },
+        {
+          "name": "Cardinal Health",
           "source_url": "https://en.wikipedia.org/wiki/Economy_of_Columbus,_Ohio"
         },
         {
-          "name": "Automotive",
-          "source_url": "https://www.choosecolumbusga.com/site-selectors/major-employers"
+          "name": "Financial",
+          "source_url": "https://www.bizjournals.com/columbus/subscriber-only/2024/07/05/largest-central-ohio-employers.html"
         },
         {
-          "name": "Corp. Mgt",
-          "source_url": "https://en.wikipedia.org/wiki/List_of_largest_Central_Ohio_employers"
+          "name": "Nationwide Insurance",
+          "source_url": "https://en.wikipedia.org/wiki/Economy_of_Columbus,_Ohio"
         },
         {
-          "name": "Nationwide Children's Hospital",
-          "source_url": "https://en.wikipedia.org/wiki/List_of_largest_Central_Ohio_employers"
+          "name": "OhioHealth Corp",
+          "source_url": "https://www.bizjournals.com/columbus/subscriber-only/2024/07/05/largest-central-ohio-employers.html"
+        },
+        {
+          "name": "Worthington Industries",
+          "source_url": "https://en.wikipedia.org/wiki/Economy_of_Columbus,_Ohio"
+        },
+        {
+          "name": "Food",
+          "source_url": "https://georgia.org/sites/default/files/2023-01/2022-8-24_gdecd_board_meeting_minutes.pdf"
         },
         {
           "name": "Ohio State University",
-          "source_url": "https://en.wikipedia.org/wiki/List_of_largest_Central_Ohio_employers"
+          "source_url": null
         },
         {
-          "name": "Columbus Public Schools",
-          "source_url": "https://en.wikipedia.org/wiki/List_of_largest_Central_Ohio_employers"
+          "name": "Advanced Manufacturing",
+          "source_url": "https://georgia.org/sites/default/files/2023-01/2022-8-24_gdecd_board_meeting_minutes.pdf"
         },
         {
-          "name": "Company",
-          "source_url": "https://www.choosecolumbusga.com/site-selectors/major-employers"
+          "name": "Aerospace",
+          "source_url": "https://georgia.org/sites/default/files/2018-11/gdecd_board_book_-_5-23-18.pdf"
         }
       ],
       "sources": [
-        "https://www.georgiatrend.com/2023/10/31/columbus-advantage",
-        "https://www.choosecolumbusga.com/site-selectors/major-employers",
-        "https://www.columbusstate.edu/turner/_docs/butler/columbus-economic-forecast-2025.pdf",
-        "https://www.columbusstate.edu/turner/_docs/butler/research/economic-overview-columbus-area.pdf",
-        "https://www.columbusstate.edu/turner/_docs/butler/columbus-economic-forecast-2026.pdf",
         "https://en.wikipedia.org/wiki/Columbus,_Georgia",
+        "https://www.bizjournals.com/columbus/subscriber-only/2024/07/05/largest-central-ohio-employers.html",
         "https://georgia.org/sites/default/files/2023-01/2022-8-24_gdecd_board_meeting_minutes.pdf",
-        "https://georgia.org/sites/default/files/2021-04/logistics_education_report.pdf"
+        "https://georgia.org/sites/default/files/2021-04/logistics_education_report.pdf",
+        "https://georgia.org/sites/default/files/2018-11/gdecd_board_book_-_5-23-18.pdf",
+        "https://en.wikipedia.org/wiki/Economy_of_Columbus,_Ohio",
+        "https://www.bizjournals.com/columbus/news/2024/07/05/ohiohealth-kroger-central-ohio-job-growth.html",
+        "https://www.bizjournals.com/columbus/news/2025/10/21/employers-2025-top-of-the-list.html"
       ],
       "method": "Representative list auto-discovered via Tavily web search across chamber-of-commerce, development-authority and local-news sources. Not exhaustive; ordering approximates source frequency, not headcount."
     },
