@@ -3,7 +3,7 @@
  "as_of": {
   "labor": "2026-06",
   "gdp": "2025",
-  "inflation": "Jun 2026"
+  "inflation": "Jul 2026"
  },
  "cards": [
   {
@@ -43,7 +43,7 @@
    "href": "/inflation/",
    "label": "Inflation (South)",
    "value": "+3.2%",
-   "delta": "U.S. 3.5%",
+   "delta": "U.S. 3.4%",
    "trend": "bad"
   },
   {
