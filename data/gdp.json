@@ -1,5 +1,5 @@
 {
- "fetched_at": "2026-08-17T09:53:20Z",
+ "fetched_at": "2026-08-18T09:42:17Z",
  "schema": "gdp/v1",
  "metros": [
   {
@@ -1508,28 +1508,28 @@
  },
  "_meta": {
   "metro_rollup": {
-   "last_updated": "2026-08-17T09:53:20Z",
+   "last_updated": "2026-08-18T09:42:17Z",
    "n_metros": 14,
    "stale": false
   },
   "ga_gdp": {
-   "last_updated": "2026-08-17T09:53:21Z",
+   "last_updated": "2026-08-18T09:42:18Z",
    "stale": false
   },
   "peers": {
-   "last_updated": "2026-08-17T09:53:22Z",
+   "last_updated": "2026-08-18T09:42:19Z",
    "stale": false
   },
   "sectors": {
-   "last_updated": "2026-08-17T09:53:28Z",
+   "last_updated": "2026-08-18T09:42:22Z",
    "stale": false
   },
   "county_gdp": {
-   "last_updated": "2026-08-17T09:53:28Z",
+   "last_updated": "2026-08-18T09:42:22Z",
    "stale": false
   },
   "non_metro": {
-   "last_updated": "2026-08-17T09:53:28Z",
+   "last_updated": "2026-08-18T09:42:22Z",
    "stale": false
   }
  },
