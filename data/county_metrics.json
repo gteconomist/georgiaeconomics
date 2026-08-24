@@ -1,6 +1,6 @@
 {
  "_note": "Static per-county metrics for the /counties/ map; built by scripts/build_county_metrics.py.",
- "fetched_at": "2026-08-23T09:39:03Z",
+ "fetched_at": "2026-08-24T09:55:59Z",
  "metrics": [
   {
    "key": "median_income",
