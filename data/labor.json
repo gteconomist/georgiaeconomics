@@ -1,17 +1,17 @@
 {
   "_fixture": false,
   "source": "BLS LAUS state-level + BLS CES state supersector breakdown",
-  "fetched_at": "2026-07-25",
-  "latest_label": "2026-06",
+  "fetched_at": "2026-08-25",
+  "latest_label": "2026-07",
   "kpis": {
-    "unemployment_rate_latest": 3.4,
-    "unemployment_rate_yoy_delta": 0.1,
-    "total_payrolls_k_latest": 4988.9,
-    "total_payrolls_yoy_pct": 0.1,
-    "labor_force_k_latest": 5478,
+    "unemployment_rate_latest": 3.3,
+    "unemployment_rate_yoy_delta": 0.0,
+    "total_payrolls_k_latest": 4977.5,
+    "total_payrolls_yoy_pct": -0.3,
+    "labor_force_k_latest": 5481,
     "fastest_growing_sector": "Education & Health Services",
-    "fastest_growing_sector_yoy_pct": 3.8,
-    "weakest_sector": "Construction",
+    "fastest_growing_sector_yoy_pct": 3.1,
+    "weakest_sector": "Professional & Business Services",
     "weakest_sector_yoy_pct": -1.7
   },
   "unemployment_rate": [
@@ -322,6 +322,10 @@
     [
       "2026-06",
       3.4
+    ],
+    [
+      "2026-07",
+      3.3
     ]
   ],
   "total_payrolls_k": [
@@ -635,7 +639,11 @@
     ],
     [
       "2026-06",
-      4988.9
+      4986.7
+    ],
+    [
+      "2026-07",
+      4977.5
     ]
   ],
   "labor_force_k": [
@@ -945,79 +953,83 @@
     ],
     [
       "2026-06",
-      5477859.0
+      5477849.0
+    ],
+    [
+      "2026-07",
+      5480790.0
     ]
   ],
   "sectors": [
     {
       "name": "Construction",
       "supersector": "20",
-      "latest_k": 230.7,
-      "yoy_pct": -1.7,
-      "yoy_delta_k": -4.1
+      "latest_k": 232.5,
+      "yoy_pct": -1.4,
+      "yoy_delta_k": -3.2
     },
     {
       "name": "Manufacturing",
       "supersector": "30",
       "latest_k": 426.3,
-      "yoy_pct": -0.4,
-      "yoy_delta_k": -1.6
+      "yoy_pct": 0.4,
+      "yoy_delta_k": 1.9
     },
     {
       "name": "Trade, Transportation & Utilities",
       "supersector": "40",
-      "latest_k": 1028.6,
-      "yoy_pct": -0.7,
-      "yoy_delta_k": -6.9
+      "latest_k": 1030.4,
+      "yoy_pct": -0.6,
+      "yoy_delta_k": -6.5
     },
     {
       "name": "Information",
       "supersector": "50",
-      "latest_k": 112.6,
-      "yoy_pct": -1.5,
-      "yoy_delta_k": -1.7
+      "latest_k": 113.9,
+      "yoy_pct": 0.1,
+      "yoy_delta_k": 0.1
     },
     {
       "name": "Financial Activities",
       "supersector": "55",
-      "latest_k": 282.0,
-      "yoy_pct": -0.5,
-      "yoy_delta_k": -1.5
+      "latest_k": 281.1,
+      "yoy_pct": -1.2,
+      "yoy_delta_k": -3.5
     },
     {
       "name": "Professional & Business Services",
       "supersector": "60",
-      "latest_k": 742.7,
-      "yoy_pct": -0.5,
-      "yoy_delta_k": -4.1
+      "latest_k": 737.9,
+      "yoy_pct": -1.7,
+      "yoy_delta_k": -13.0
     },
     {
       "name": "Education & Health Services",
       "supersector": "65",
-      "latest_k": 750.9,
-      "yoy_pct": 3.8,
-      "yoy_delta_k": 27.7
+      "latest_k": 751.6,
+      "yoy_pct": 3.1,
+      "yoy_delta_k": 22.6
     },
     {
       "name": "Leisure & Hospitality",
       "supersector": "70",
-      "latest_k": 522.6,
-      "yoy_pct": 0.8,
-      "yoy_delta_k": 4.1
+      "latest_k": 517.0,
+      "yoy_pct": -0.5,
+      "yoy_delta_k": -2.5
     },
     {
       "name": "Other Services",
       "supersector": "80",
-      "latest_k": 174.3,
-      "yoy_pct": 1.4,
-      "yoy_delta_k": 2.4
+      "latest_k": 172.3,
+      "yoy_pct": 0.1,
+      "yoy_delta_k": 0.1
     },
     {
       "name": "Government",
       "supersector": "90",
-      "latest_k": 708.8,
-      "yoy_pct": -1.1,
-      "yoy_delta_k": -8.2
+      "latest_k": 705.0,
+      "yoy_pct": -1.6,
+      "yoy_delta_k": -11.7
     }
   ],
   "metro_labor": [
@@ -1205,33 +1217,33 @@
     }
   ],
   "sector_diffusion": {
-    "statewide_pct": 30.0,
-    "n_growing": 3,
+    "statewide_pct": 40.0,
+    "n_growing": 4,
     "n_total": 10,
     "growing": [
+      "Manufacturing",
+      "Information",
       "Education & Health Services",
-      "Leisure & Hospitality",
       "Other Services"
     ],
     "shrinking": [
       "Construction",
-      "Manufacturing",
       "Trade, Transportation & Utilities",
-      "Information",
       "Financial Activities",
       "Professional & Business Services",
+      "Leisure & Hospitality",
       "Government"
     ],
-    "as_of": "2026-06"
+    "as_of": "2026-07"
   },
   "_meta": {
     "metro_labor": {
-      "last_updated": "2026-08-25T09:46:53Z",
+      "last_updated": "2026-08-25T17:24:08Z",
       "n_metros": 14,
       "stale": false
     },
     "sector_diffusion": {
-      "last_updated": "2026-08-25T09:46:53Z",
+      "last_updated": "2026-08-25T17:24:08Z",
       "stale": false
     }
   }
