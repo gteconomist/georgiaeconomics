@@ -1226,12 +1226,12 @@
   },
   "_meta": {
     "metro_labor": {
-      "last_updated": "2026-08-24T09:55:59Z",
+      "last_updated": "2026-08-25T09:46:53Z",
       "n_metros": 14,
       "stale": false
     },
     "sector_diffusion": {
-      "last_updated": "2026-08-24T09:55:59Z",
+      "last_updated": "2026-08-25T09:46:53Z",
       "stale": false
     }
   }
