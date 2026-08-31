@@ -3,7 +3,7 @@
   "short_name": "Dalton",
   "full_name": "Dalton, GA",
   "population": 143000,
-  "as_of": "2026-08-30",
+  "as_of": "2026-08-31",
   "sections": {
     "ces_employment": {
       "series_id": "SMS13191400000000001",
@@ -4202,32 +4202,32 @@
         },
         "ga": {
           "durable": {
-            "employment": 222712,
-            "avg_annual_wage": 79363,
-            "share_pct_of_mfg": 52.1
+            "employment": 222505,
+            "avg_annual_wage": 79420,
+            "share_pct_of_mfg": 52.0
           },
           "nondurable": {
-            "employment": 205110,
-            "avg_annual_wage": 65550,
-            "share_pct_of_mfg": 47.9
+            "employment": 205121,
+            "avg_annual_wage": 65553,
+            "share_pct_of_mfg": 48.0
           },
-          "total_employment": 427822,
-          "sector_total": 427822,
+          "total_employment": 427626,
+          "sector_total": 427626,
           "coverage_pct": 100.0
         },
         "us": {
           "durable": {
-            "employment": 7846804,
-            "avg_annual_wage": 91639,
+            "employment": 7846600,
+            "avg_annual_wage": 91645,
             "share_pct_of_mfg": 62.0
           },
           "nondurable": {
-            "employment": 4809364,
-            "avg_annual_wage": 74976,
+            "employment": 4809961,
+            "avg_annual_wage": 74987,
             "share_pct_of_mfg": 38.0
           },
-          "total_employment": 12656168,
-          "sector_total": 12656168,
+          "total_employment": 12656561,
+          "sector_total": 12656561,
           "coverage_pct": 100.0
         },
         "msa_reliable": true
@@ -4272,54 +4272,54 @@
     },
     "health_check": {
       "quarters": [
-        "2024 Q3",
         "2024 Q4",
         "2025 Q1",
         "2025 Q2",
         "2025 Q3",
-        "2025 Q4"
+        "2025 Q4",
+        "2026 Q1"
       ],
       "employment_000s": [
-        66.4,
         66.5,
         64.7,
         64.2,
         63.9,
-        63.8
+        63.9,
+        63.7
       ],
       "avg_weekly_wage": [
-        1011,
         1068,
         1076,
         1021,
         1044,
-        1117
+        1117,
+        1062
       ],
       "establishments": [
-        3271,
         3286,
-        3264,
-        3279,
+        3266,
+        3283,
         3271,
-        3263
+        3265,
+        3265
       ],
       "unemployment_rate": [
-        4.0,
         4.4,
         3.8,
         3.3,
         4.5,
-        3.8
+        3.8,
+        4.1
       ],
       "labor_force_000s": [
-        67.5,
         67.6,
         66.6,
         65.3,
         65.3,
-        66.1
+        66.1,
+        65.9
       ],
-      "as_of_label": "2025 Q4",
+      "as_of_label": "2026 Q1",
       "source": "BLS QCEW (MSA totals) + LAUS (quarterly-averaged); Georgia Economics-assembled"
     },
     "census_bps_permits": {
