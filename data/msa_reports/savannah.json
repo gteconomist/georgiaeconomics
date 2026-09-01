@@ -3,7 +3,7 @@
   "short_name": "Savannah",
   "full_name": "Savannah, GA",
   "population": 410000,
-  "as_of": "2026-08-31",
+  "as_of": "2026-09-01",
   "sections": {
     "ces_employment": {
       "series_id": "SMS13423400000000001",
@@ -5346,74 +5346,74 @@
       "source": "Census Business Dynamics Statistics (establishment entry rate, 2022); metro rate indexed to US=100"
     },
     "major_employers": {
-      "as_of": "2026-08-12",
+      "as_of": "2026-09-01",
       "employers": [
+        {
+          "name": "Gulfstream Aerospace",
+          "source_url": "https://en.wikipedia.org/wiki/Category:Companies_based_in_Savannah,_Georgia"
+        },
+        {
+          "name": "Port of Savannah",
+          "source_url": null
+        },
         {
           "name": "Savannah State University",
           "source_url": "https://en.wikipedia.org/wiki/Savannah_metropolitan_area"
         },
         {
-          "name": "Gulfstream Aerospace Corporation",
-          "source_url": "https://en.wikipedia.org/wiki/Savannah,_Georgia"
-        },
-        {
-          "name": "Chase Bank",
-          "source_url": "https://en.wikipedia.org/wiki/Savannah_metropolitan_area"
-        },
-        {
-          "name": "Savannah College of Art",
-          "source_url": "https://en.wikipedia.org/wiki/Savannah_metropolitan_area"
-        },
-        {
-          "name": "Savannah Bee Co",
-          "source_url": "https://www.savannahnow.com/story/business/2012/12/10/five-savannah-area-firms-among-incs-fastest-growing/13774286007"
-        },
-        {
-          "name": "Edge Solutions",
-          "source_url": "https://www.savannahnow.com/story/business/2012/12/10/five-savannah-area-firms-among-incs-fastest-growing/13774286007"
-        },
-        {
-          "name": "Georgia Power",
-          "source_url": "https://www.savannahnow.com/story/business/2013/10/14/business-savannah-news-summary/13965727007"
-        },
-        {
-          "name": "Georgia Southern University's",
-          "source_url": "https://en.wikipedia.org/wiki/Savannah_metropolitan_area"
-        },
-        {
-          "name": "Metaplant",
+          "name": "Bryan County Metaplant",
           "source_url": "https://www.savannahnow.com/story/news/local/2025/01/09/savannah-economy-bolstered-by-hyundai-expected-outpace-georgia-u-s/77579126007"
         },
         {
-          "name": "Savannah Technical College",
-          "source_url": "https://en.wikipedia.org/wiki/Savannah_metropolitan_area"
+          "name": "Derst Baking Company",
+          "source_url": "https://en.wikipedia.org/wiki/Category:Companies_based_in_Savannah,_Georgia"
         },
         {
-          "name": "South University",
-          "source_url": "https://en.wikipedia.org/wiki/Savannah_metropolitan_area"
+          "name": "Georgia Southern University",
+          "source_url": "https://www.savannahnow.com/story/news/local/2025/01/09/savannah-economy-bolstered-by-hyundai-expected-outpace-georgia-u-s/77579126007"
+        },
+        {
+          "name": "American Naval Stores Company",
+          "source_url": "https://en.wikipedia.org/wiki/Category:Companies_based_in_Savannah,_Georgia"
+        },
+        {
+          "name": "Candler Hospital",
+          "source_url": null
+        },
+        {
+          "name": "Chase Bank",
+          "source_url": "https://en.wikipedia.org/wiki/Savannah,_GA_MSA"
         },
         {
           "name": "Chatham County School System",
           "source_url": null
         },
         {
+          "name": "Co. Morris Multimedia",
+          "source_url": "https://en.wikipedia.org/wiki/Category:Companies_based_in_Savannah,_Georgia"
+        },
+        {
+          "name": "Coastal Empire Beer Co. Savannah Cotton",
+          "source_url": "https://en.wikipedia.org/wiki/Category:Companies_based_in_Savannah,_Georgia"
+        },
+        {
           "name": "Colony Bank",
           "source_url": "https://www.savannahnow.com/story/business/2013/02/19/understanding-purpose-savannah-chamber/13655438007"
         },
         {
-          "name": "Hyundai Motor Group",
+          "name": "Hyundai Motor Company",
           "source_url": null
         }
       ],
       "sources": [
         "https://en.wikipedia.org/wiki/Savannah,_Georgia",
-        "https://www.savannahnow.com/story/news/local/2025/01/09/savannah-economy-bolstered-by-hyundai-expected-outpace-georgia-u-s/77579126007",
-        "https://en.wikipedia.org/wiki/Savannah_metropolitan_area",
         "https://en.wikipedia.org/wiki/Savannah,_GA_MSA",
-        "https://www.savannahnow.com/story/opinion/columns/2023/03/11/savannah-economic-growth-reshape-coastal-georgia-over-next-30-years/69984277007",
+        "https://en.wikipedia.org/wiki/Savannah_metropolitan_area",
+        "https://en.wikipedia.org/wiki/Category:Companies_based_in_Savannah,_Georgia",
+        "https://www.savannahnow.com/story/news/local/2025/01/09/savannah-economy-bolstered-by-hyundai-expected-outpace-georgia-u-s/77579126007",
         "https://www.savannahnow.com/story/business/2013/02/19/understanding-purpose-savannah-chamber/13655438007",
-        "https://www.savannahnow.com/story/business/2012/12/10/five-savannah-area-firms-among-incs-fastest-growing/13774286007",
-        "https://www.savannahnow.com/story/business/2013/05/27/business-savannah-news-summary/13612244007"
+        "https://www.savannahnow.com/story/news/2016/07/08/garden-city-police-department-savannah-firms-make-best-places-work-georgia-list/13921419007",
+        "https://www.savannahnow.com/story/news/local/2026/07/19/savannah-career-fair-connects-job-seekers-to-employers/90935722007"
       ],
       "method": "Representative list auto-discovered via Tavily web search across chamber-of-commerce, development-authority and local-news sources. Not exhaustive; ordering approximates source frequency, not headcount."
     },
@@ -5969,7 +5969,7 @@
     "acs_housing_characteristics": "live",
     "acs_block_group_income": "live",
     "entrepreneurship": "live",
-    "major_employers": "stale",
+    "major_employers": "partial",
     "business_cycle_index": "live",
     "forecast_arima": "live",
     "vitality": "live",

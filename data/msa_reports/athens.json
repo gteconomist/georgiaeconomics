@@ -3,7 +3,7 @@
   "short_name": "Athens",
   "full_name": "Athens-Clarke County, GA",
   "population": 217000,
-  "as_of": "2026-08-31",
+  "as_of": "2026-09-01",
   "sections": {
     "ces_employment": {
       "series_id": "SMS13120200000000001",
@@ -5275,74 +5275,73 @@
       "source": "Census Business Dynamics Statistics (establishment entry rate, 2022); metro rate indexed to US=100"
     },
     "major_employers": {
-      "as_of": "2026-08-12",
+      "as_of": "2026-09-01",
       "employers": [
         {
-          "name": "The University of Georgia",
+          "name": "Children's Healthcare of Atlanta",
+          "source_url": "https://www.onlineathens.com/story/news/2026/03/04/georgias-best-employers-are-these-2-big-businesses-forbes-says/88982542007"
+        },
+        {
+          "name": "Clarke County School District",
           "source_url": null
+        },
+        {
+          "name": "University of Georgia",
+          "source_url": null
+        },
+        {
+          "name": "Certus Bank",
+          "source_url": "https://www.onlineathens.com/story/news/state/2013/01/14/new-athens-chamber-chair-aid-new-economic-development-dept/15585264007"
+        },
+        {
+          "name": "Eaton Corporation",
+          "source_url": "https://www.onlineathens.com/story/business/2018/06/25/athens-chamber-commerce-names-north/1772620007"
         },
         {
           "name": "Alpha Bank",
-          "source_url": "https://en.wikipedia.org/wiki/Athens"
-        },
-        {
-          "name": "Athens Regional Health System",
-          "source_url": "https://www.ajc.com/business/hospital-giants-reach-beyond-metro-area/vQS8gUaJsJVpj11tgaX5xJ"
-        },
-        {
-          "name": "Athens Technical College",
-          "source_url": "https://www.onlineathens.com/story/business/2025/01/13/former-technical-college-leader-hired-for-new-athens-chamber-position/77582808007"
-        },
-        {
-          "name": "Bank of Greece",
-          "source_url": "https://en.wikipedia.org/wiki/Athens"
-        },
-        {
-          "name": "Emory Healthcare",
-          "source_url": "https://www.ajc.com/business/hospital-giants-reach-beyond-metro-area/vQS8gUaJsJVpj11tgaX5xJ"
-        },
-        {
-          "name": "Hellenic Aerospace Industry",
-          "source_url": "https://en.wikipedia.org/wiki/Athens"
-        },
-        {
-          "name": "Mytilineos Holdings",
-          "source_url": "https://en.wikipedia.org/wiki/Athens"
-        },
-        {
-          "name": "Piedmont Healthcare",
-          "source_url": "https://www.ajc.com/business/hospital-giants-reach-beyond-metro-area/vQS8gUaJsJVpj11tgaX5xJ"
-        },
-        {
-          "name": "Piraeus Bank",
-          "source_url": "https://en.wikipedia.org/wiki/Athens"
-        },
-        {
-          "name": "Barberitos Creature Comforts Brewing Co. Fire",
-          "source_url": "https://en.wikipedia.org/wiki/Athens,_Georgia"
-        },
-        {
-          "name": "Clarke County Public Schools",
           "source_url": null
         },
         {
-          "name": "Clarke County School System",
+          "name": "Forsyth County School District",
+          "source_url": "https://www.augustachronicle.com/story/news/2025/08/26/forbes-ranked-americas-best-employers-by-state-what-is-georgias/85830225007"
+        },
+        {
+          "name": "General Motors",
+          "source_url": "https://www.augustachronicle.com/story/news/2025/08/26/forbes-ranked-americas-best-employers-by-state-what-is-georgias/85830225007"
+        },
+        {
+          "name": "National Bank of Greece",
           "source_url": null
         },
         {
-          "name": "Dress Boutique Terrapin Beer Company Wuxtry",
+          "name": "National Health System",
+          "source_url": null
+        },
+        {
+          "name": "Piedmont Athens Regional Hospital",
+          "source_url": null
+        },
+        {
+          "name": "University of Athens",
+          "source_url": null
+        },
+        {
+          "name": "University of Notre Dame",
+          "source_url": "https://www.augustachronicle.com/story/news/2025/08/26/forbes-ranked-americas-best-employers-by-state-what-is-georgias/85830225007"
+        },
+        {
+          "name": "Athens Technical College Augusta University Piedmont",
           "source_url": "https://en.wikipedia.org/wiki/Athens,_Georgia"
         }
       ],
       "sources": [
-        "https://www.onlineathens.com/story/business/2015/11/14/gdol-host-seasonal-recruitment-athens-area-employers/15471064007",
-        "https://www.ajc.com/business/hospital-giants-reach-beyond-metro-area/vQS8gUaJsJVpj11tgaX5xJ",
+        "https://www.onlineathens.com/story/news/2026/03/04/georgias-best-employers-are-these-2-big-businesses-forbes-says/88982542007",
+        "https://www.augustachronicle.com/story/news/2025/08/26/forbes-ranked-americas-best-employers-by-state-what-is-georgias/85830225007",
         "https://en.wikipedia.org/wiki/Athens,_Georgia",
-        "https://www.ajc.com/top-workplaces/rounding-out-the-top-5-large-businesses/5FF7QFEAMRGF3PLDXYSC4NOFWQ",
-        "https://www.onlineathens.com/picture-gallery/entertainment/events/2020/02/04/photos-the-athens-chamber-of/68646805007",
-        "https://www.onlineathens.com/story/business/2025/01/13/former-technical-college-leader-hired-for-new-athens-chamber-position/77582808007",
-        "https://georgia.org/sites/default/files/2022-05/2022-2-23_gdecd_board_meeting_minutes.pdf",
-        "https://en.wikipedia.org/wiki/Athens_County%2C_Ohio"
+        "https://www.onlineathens.com/story/news/state/2013/01/14/new-athens-chamber-chair-aid-new-economic-development-dept/15585264007",
+        "https://www.onlineathens.com/story/business/2018/06/25/athens-chamber-commerce-names-north/1772620007",
+        "https://www.onlineathens.com/story/news/state/2017/03/24/athens-area-chamber-commerce-honors-community-service/15430024007",
+        "https://en.wikipedia.org/wiki/Athens_Metropolitan_Area"
       ],
       "method": "Representative list auto-discovered via Tavily web search across chamber-of-commerce, development-authority and local-news sources. Not exhaustive; ordering approximates source frequency, not headcount."
     },
@@ -5893,7 +5892,7 @@
     "acs_housing_characteristics": "live",
     "acs_block_group_income": "live",
     "entrepreneurship": "live",
-    "major_employers": "stale",
+    "major_employers": "partial",
     "business_cycle_index": "live",
     "forecast_arima": "live",
     "vitality": "live",

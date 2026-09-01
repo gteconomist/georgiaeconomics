@@ -3,7 +3,7 @@
   "short_name": "Valdosta",
   "full_name": "Valdosta, GA",
   "population": 148000,
-  "as_of": "2026-08-31",
+  "as_of": "2026-09-01",
   "sections": {
     "ces_employment": {
       "series_id": "SMS13466600000000001",
@@ -4320,47 +4320,51 @@
       "source": "Census Business Dynamics Statistics (establishment entry rate, 2022); metro rate indexed to US=100"
     },
     "major_employers": {
-      "as_of": "2026-08-12",
+      "as_of": "2026-09-01",
       "employers": [
         {
           "name": "Valdosta State University",
-          "source_url": "https://en.wikipedia.org/wiki/Valdosta_Metropolitan_Statistical_Area"
+          "source_url": "https://valdostadailytimes.com/2026/02/23/gary-wisenbaker-data-centers-whats-good-for-the-goose-is-good-for-the-gander"
+        },
+        {
+          "name": "The Scruggs Company",
+          "source_url": "https://valdostadailytimes.com/2014/06/24/scruggs-named-leading-business-of-the-week"
         },
         {
           "name": "South Georgia Medical Center",
-          "source_url": "https://valdostadailytimes.com/2014/05/07/chamber-names-world-class-employees-2"
+          "source_url": "https://www.valdostacity.com/economic-development/top-20-employers"
+        },
+        {
+          "name": "Packaging Corporation of America",
+          "source_url": "https://business.valdostachamber.com/directory/Search/manufacturers-371427"
+        },
+        {
+          "name": "Georgia Gulf Sulfur Corp",
+          "source_url": "https://business.valdostachamber.com/directory/Search/manufacturers-371427"
+        },
+        {
+          "name": "Sunset Farm Foods",
+          "source_url": "https://business.valdostachamber.com/directory/Search/manufacturers-371427"
+        },
+        {
+          "name": "CJB Industries",
+          "source_url": "https://business.valdostachamber.com/directory/Search/manufacturers-371427"
+        },
+        {
+          "name": "Fresh Beginnings Inc",
+          "source_url": "https://www.valdostacity.com/economic-development/top-20-employers"
+        },
+        {
+          "name": "Inc. Drugs Don't Work",
+          "source_url": "https://business.valdostachamber.com/directory/Search/manufacturers-371427"
         },
         {
           "name": "ACE Electric",
           "source_url": "https://www.selectgeorgia.com/blog/rural-transformation/one-valdosta-lowndes-interview"
         },
         {
-          "name": "Rayonier Inc",
-          "source_url": "https://jobs.valdostadailytimes.com/employers"
-        },
-        {
-          "name": "Sunset Farm Foods",
-          "source_url": "https://valdostadailytimes.com/2021/03/05/chamber-presents-annual-awards"
-        },
-        {
-          "name": "Distribution",
-          "source_url": "https://valdostadailytimes.com/2014/05/07/chamber-names-world-class-employees-2"
-        },
-        {
-          "name": "Renasant Bank",
-          "source_url": "https://valdostadailytimes.com/2021/03/05/chamber-presents-annual-awards"
-        },
-        {
-          "name": "SGMC Health",
-          "source_url": "https://valdostadailytimes.com/2025/02/05/s-christie-moore-lawsuit-abuse-in-georgia-affects-everyone"
-        },
-        {
-          "name": "Smith Drug Company",
-          "source_url": "https://valdostadailytimes.com/2014/05/07/chamber-names-world-class-employees-2"
-        },
-        {
-          "name": "Azalea Health",
-          "source_url": "https://valdostadailytimes.com/2014/05/07/chamber-names-world-class-employees-2"
+          "name": "Archer Daniels Midland Co",
+          "source_url": "https://business.valdostachamber.com/directory/Search/manufacturers-371427"
         },
         {
           "name": "Berry Global Manufacturing",
@@ -4373,21 +4377,17 @@
         {
           "name": "College",
           "source_url": "https://www.selectgeorgia.com/blog/rural-transformation/one-valdosta-lowndes-interview"
-        },
-        {
-          "name": "Lowndes County School District",
-          "source_url": null
         }
       ],
       "sources": [
-        "https://en.wikipedia.org/wiki/Valdosta_Metropolitan_Statistical_Area",
-        "https://www.selectgeorgia.com/blog/rural-transformation/one-valdosta-lowndes-interview",
         "https://valdostadailytimes.com/2026/02/23/gary-wisenbaker-data-centers-whats-good-for-the-goose-is-good-for-the-gander",
-        "https://valdostadailytimes.com/2015/09/13/finding-the-competitive-edge",
-        "https://valdostadailytimes.com/2017/10/22/business-briefs-69",
-        "https://valdostadailytimes.com/2007/11/28/manufacturer-of-the-year",
-        "https://valdostadailytimes.com/2009/08/13/what-we-think-it-cant-be-done-without-them",
-        "https://valdostadailytimes.com/2021/03/05/chamber-presents-annual-awards"
+        "https://www.selectgeorgia.com/blog/rural-transformation/one-valdosta-lowndes-interview",
+        "https://www.selectgeorgia.com/blog/locations-and-expansions/georgia-2023-growth",
+        "https://valdostadailytimes.com/2014/06/24/scruggs-named-leading-business-of-the-week",
+        "https://business.valdostachamber.com/directory/Search/manufacturers-371427",
+        "https://business.valdostachamber.com/directory/FindStartsWith?term=G",
+        "https://www.valdostacity.com/economic-development/top-20-employers",
+        "https://www.ajc.com/politics/valdosta-site-of-trumps-saturday-rally-has-voted-republican-in-recent-presidential-races/ZHNLCDFTEFDGPDQYCN4EFDVWWY"
       ],
       "method": "Representative list auto-discovered via Tavily web search across chamber-of-commerce, development-authority and local-news sources. Not exhaustive; ordering approximates source frequency, not headcount."
     },
@@ -4938,7 +4938,7 @@
     "acs_housing_characteristics": "live",
     "acs_block_group_income": "live",
     "entrepreneurship": "live",
-    "major_employers": "stale",
+    "major_employers": "partial",
     "business_cycle_index": "live",
     "forecast_arima": "live",
     "vitality": "live",

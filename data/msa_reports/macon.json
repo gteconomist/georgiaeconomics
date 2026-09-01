@@ -3,7 +3,7 @@
   "short_name": "Macon",
   "full_name": "Macon-Bibb County, GA",
   "population": 232000,
-  "as_of": "2026-08-31",
+  "as_of": "2026-09-01",
   "sections": {
     "ces_employment": {
       "series_id": "SMS13314200000000001",
@@ -5266,23 +5266,43 @@
       "source": "Census Business Dynamics Statistics (establishment entry rate, 2022); metro rate indexed to US=100"
     },
     "major_employers": {
-      "as_of": "2026-08-12",
+      "as_of": "2026-09-01",
       "employers": [
-        {
-          "name": "Mercer University",
-          "source_url": "https://en.wikipedia.org/wiki/Macon,_Georgia"
-        },
         {
           "name": "Atrium Health Navicent",
           "source_url": "https://en.wikipedia.org/wiki/Macon,_Georgia"
         },
         {
-          "name": "Navicent Health",
-          "source_url": null
+          "name": "Mercer University",
+          "source_url": "https://en.wikipedia.org/wiki/Macon,_Georgia"
+        },
+        {
+          "name": "Blue Bird Corporation",
+          "source_url": "https://en.wikipedia.org/wiki/Central_Georgia"
+        },
+        {
+          "name": "Coliseum Health System",
+          "source_url": "https://en.wikipedia.org/wiki/Central_Georgia"
+        },
+        {
+          "name": "Houston Healthcare",
+          "source_url": "https://en.wikipedia.org/wiki/Central_Georgia"
+        },
+        {
+          "name": "Blue Bird Body Co",
+          "source_url": "https://www.macon.com/news/business/article258547393.html"
+        },
+        {
+          "name": "Fort Valley State University",
+          "source_url": "https://en.wikipedia.org/wiki/Central_Georgia"
         },
         {
           "name": "Norfolk Southern Railway",
           "source_url": null
+        },
+        {
+          "name": "Perdue Foods",
+          "source_url": "https://www.macon.com/news/business/article258547393.html"
         },
         {
           "name": "Piedmont Healthcare Macon",
@@ -5297,42 +5317,22 @@
           "source_url": "https://en.wikipedia.org/wiki/Central_Georgia"
         },
         {
-          "name": "Jacuzzi Inc",
-          "source_url": "https://www.bizjournals.com/atlanta/news/2019/12/13/macon-bibb-county-industrial-sector-soars.html"
+          "name": "Academy Sports",
+          "source_url": "https://www.macon.com/living/living-here-guide/article30143466.html"
         },
         {
-          "name": "Medical Center of Central Georgia",
-          "source_url": "https://en.wikipedia.org/wiki/Central_Georgia"
-        },
-        {
-          "name": "Ocmulgee East Industrial Park",
-          "source_url": "https://www.georgiaencyclopedia.org/articles/counties-cities-neighborhoods/macon"
-        },
-        {
-          "name": "Stevens Aerospace",
-          "source_url": "https://www.selectgeorgia.com/about-us/our-team/regional-development/ryan-waldrep-central"
-        },
-        {
-          "name": "Brazil's Group Guidoni",
-          "source_url": "https://www.bizjournals.com/atlanta/news/2019/12/13/macon-bibb-county-industrial-sector-soars.html"
-        },
-        {
-          "name": "Aerospace Industry",
-          "source_url": "https://www.selectgeorgia.com/about-us/our-team/regional-development/ryan-waldrep-central"
-        },
-        {
-          "name": "Atlanta Gas Light Co",
-          "source_url": "https://amp.macon.com/news/business/article28562158.html"
+          "name": "Medical Center",
+          "source_url": "https://www.macon.com/living/living-here-guide/article30143466.html"
         }
       ],
       "sources": [
         "https://en.wikipedia.org/wiki/Macon,_Georgia",
+        "https://www.macon.com/news/business/article258547393.html",
         "https://en.wikipedia.org/wiki/Central_Georgia",
-        "https://www.selectgeorgia.com/about-us/our-team/regional-development/ryan-waldrep-central",
-        "https://www.georgiaencyclopedia.org/articles/counties-cities-neighborhoods/macon",
-        "https://www.bizjournals.com/atlanta/news/2019/12/15/health-care-companies-expand-in-macon-market.html",
-        "https://amp.macon.com/news/business/article28562158.html",
-        "https://www.bizjournals.com/atlanta/news/2019/12/13/macon-bibb-county-industrial-sector-soars.html"
+        "https://www.macon.com/news/local/article312115475.html",
+        "https://www.macon.com/living/living-here-guide/article30143466.html",
+        "https://www.macon.com/living/article300278809.html",
+        "https://www.macon.com/news/business/article254311083.html"
       ],
       "method": "Representative list auto-discovered via Tavily web search across chamber-of-commerce, development-authority and local-news sources. Not exhaustive; ordering approximates source frequency, not headcount."
     },
@@ -5883,7 +5883,7 @@
     "acs_housing_characteristics": "live",
     "acs_block_group_income": "live",
     "entrepreneurship": "live",
-    "major_employers": "stale",
+    "major_employers": "partial",
     "business_cycle_index": "live",
     "forecast_arima": "live",
     "vitality": "live",

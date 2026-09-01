@@ -3,7 +3,7 @@
   "short_name": "Dalton",
   "full_name": "Dalton, GA",
   "population": 143000,
-  "as_of": "2026-08-31",
+  "as_of": "2026-09-01",
   "sections": {
     "ces_employment": {
       "series_id": "SMS13191400000000001",
@@ -4682,74 +4682,73 @@
       "source": "Census Business Dynamics Statistics (establishment entry rate, 2022); metro rate indexed to US=100"
     },
     "major_employers": {
-      "as_of": "2026-08-12",
+      "as_of": "2026-09-01",
       "employers": [
         {
-          "name": "Shaw Industries",
-          "source_url": "https://valdostadailytimes.com/2017/09/11/questions-and-answers-with-shaw-industries-ceo-vance-bell"
+          "name": "New Manufacturing",
+          "source_url": "https://www.selectgeorgia.com/georgiagrowth"
         },
         {
           "name": "Mohawk Industries",
-          "source_url": "https://georgia.org/sites/default/files/2021-04/logistics_education_report.pdf"
+          "source_url": "https://www.ajc.com/business/incentives-for-dalton-area-carpet-plants-could-top-100m/WyjeMcmYl1bQzW2R1B1hHJ"
         },
         {
-          "name": "Dalton Public Schools",
-          "source_url": "https://valdostadailytimes.com/2018/06/10/public-employers"
+          "name": "Distribution",
+          "source_url": "https://www.selectgeorgia.com/georgiagrowth"
         },
         {
-          "name": "Arab Health",
-          "source_url": "https://georgia.org/sites/default/files/2019-08/gdecd_board_book-nov_2018.pdf"
+          "name": "New Warehouse",
+          "source_url": "https://www.selectgeorgia.com/georgiagrowth"
         },
         {
-          "name": "Carpet Capital",
-          "source_url": "https://en.wikipedia.org/wiki/Dalton,_Georgia"
-        },
-        {
-          "name": "Whitfield County Schools",
-          "source_url": null
-        },
-        {
-          "name": "Archbold Medical Center",
-          "source_url": "https://valdostadailytimes.com/2018/06/10/public-employers"
-        },
-        {
-          "name": "Beaulieu Group",
-          "source_url": "https://valdostadailytimes.com/2018/01/01/engineered-floors-growth-varnell-drama-among-top-stories-in-dalton-area-in-2017"
+          "name": "Shaw Industries",
+          "source_url": "https://en.wikipedia.org/wiki/Shaw_Industries"
         },
         {
           "name": "Dalton State College",
-          "source_url": "https://valdostadailytimes.com/2017/09/11/questions-and-answers-with-shaw-industries-ceo-vance-bell"
+          "source_url": "https://valdostadailytimes.com/2018/01/29/local-contest-aims-to-help-grow-the-next-big-business"
         },
         {
-          "name": "Dalton-Whitfield Joint Development Authority",
-          "source_url": "https://valdostadailytimes.com/2018/06/10/public-employers"
+          "name": "Hamilton Health Care System",
+          "source_url": "https://valdostadailytimes.com/2017/03/31/junior-achievement-of-northwest-georgia-adds-to-its-business-hall-of-fame"
         },
         {
-          "name": "Flooring",
-          "source_url": "https://valdostadailytimes.com/2018/01/01/engineered-floors-growth-varnell-drama-among-top-stories-in-dalton-area-in-2017"
+          "name": "Manufacturing Expansion",
+          "source_url": "https://www.selectgeorgia.com/georgiagrowth"
         },
         {
-          "name": "Genuine Parts Co",
-          "source_url": "https://georgia.org/sites/default/files/2021-04/logistics_education_report.pdf"
+          "name": "Food Processing Expansion",
+          "source_url": "https://www.selectgeorgia.com/georgiagrowth"
         },
         {
-          "name": "Georgia Northwestern Technical College",
-          "source_url": "https://valdostadailytimes.com/2017/09/11/questions-and-answers-with-shaw-industries-ceo-vance-bell"
+          "name": "New Food Processing",
+          "source_url": "https://www.selectgeorgia.com/georgiagrowth"
         },
         {
-          "name": "HLGstudio LLC",
-          "source_url": "https://www.bizjournals.com/atlanta/news/2023/06/29/solar-workforce-qcells-dalton-georgia.html"
+          "name": "Elevator Corp",
+          "source_url": "https://www.selectgeorgia.com/georgiagrowth"
+        },
+        {
+          "name": "GATX Corp",
+          "source_url": "https://www.selectgeorgia.com/georgiagrowth"
+        },
+        {
+          "name": "Headed Reinforcement Corp",
+          "source_url": "https://www.selectgeorgia.com/georgiagrowth"
+        },
+        {
+          "name": "Margo State Line Inc",
+          "source_url": "https://www.selectgeorgia.com/georgiagrowth"
         }
       ],
       "sources": [
-        "https://www.bizjournals.com/atlanta/news/2023/08/04/georgia-cities-wage-growth-salary.html",
-        "https://en.wikipedia.org/wiki/Dalton,_Georgia",
+        "https://en.wikipedia.org/wiki/Shaw_Industries",
+        "https://www.ajc.com/business/incentives-for-dalton-area-carpet-plants-could-top-100m/WyjeMcmYl1bQzW2R1B1hHJ",
+        "https://valdostadailytimes.com/2017/03/31/junior-achievement-of-northwest-georgia-adds-to-its-business-hall-of-fame",
         "https://www.bizjournals.com/atlanta/news/2023/06/29/solar-workforce-qcells-dalton-georgia.html",
-        "https://valdostadailytimes.com/2017/09/11/questions-and-answers-with-shaw-industries-ceo-vance-bell",
-        "https://www.ajc.com/video/news/2026/05/one-industry-polluted-this-town-now-the-city-is-betting-on-ai",
-        "https://valdostadailytimes.com/2018/06/10/public-employers",
-        "https://georgia.org/sites/default/files/2019-08/gdecd_board_book-nov_2018.pdf",
-        "https://valdostadailytimes.com/2018/01/01/engineered-floors-growth-varnell-drama-among-top-stories-in-dalton-area-in-2017"
+        "https://valdostadailytimes.com/2018/01/29/local-contest-aims-to-help-grow-the-next-big-business",
+        "https://www.selectgeorgia.com/georgiagrowth",
+        "https://georgia.org/search?search=jobs&page=2"
       ],
       "method": "Representative list auto-discovered via Tavily web search across chamber-of-commerce, development-authority and local-news sources. Not exhaustive; ordering approximates source frequency, not headcount."
     },
@@ -5300,7 +5299,7 @@
     "acs_housing_characteristics": "live",
     "acs_block_group_income": "live",
     "entrepreneurship": "live",
-    "major_employers": "stale",
+    "major_employers": "partial",
     "business_cycle_index": "live",
     "forecast_arima": "live",
     "vitality": "live",
