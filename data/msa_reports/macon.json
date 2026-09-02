@@ -3,7 +3,7 @@
   "short_name": "Macon",
   "full_name": "Macon-Bibb County, GA",
   "population": 232000,
-  "as_of": "2026-09-01",
+  "as_of": "2026-09-02",
   "sections": {
     "ces_employment": {
       "series_id": "SMS13314200000000001",
@@ -5266,26 +5266,26 @@
       "source": "Census Business Dynamics Statistics (establishment entry rate, 2022); metro rate indexed to US=100"
     },
     "major_employers": {
-      "as_of": "2026-09-01",
+      "as_of": "2026-09-02",
       "employers": [
         {
           "name": "Atrium Health Navicent",
           "source_url": "https://en.wikipedia.org/wiki/Macon,_Georgia"
         },
         {
+          "name": "Houston Healthcare",
+          "source_url": "https://en.wikipedia.org/wiki/Central_Georgia"
+        },
+        {
           "name": "Mercer University",
           "source_url": "https://en.wikipedia.org/wiki/Macon,_Georgia"
         },
         {
-          "name": "Blue Bird Corporation",
+          "name": "Fort Valley State University",
           "source_url": "https://en.wikipedia.org/wiki/Central_Georgia"
         },
         {
-          "name": "Coliseum Health System",
-          "source_url": "https://en.wikipedia.org/wiki/Central_Georgia"
-        },
-        {
-          "name": "Houston Healthcare",
+          "name": "Medical Center of Central Georgia",
           "source_url": "https://en.wikipedia.org/wiki/Central_Georgia"
         },
         {
@@ -5293,45 +5293,46 @@
           "source_url": "https://www.macon.com/news/business/article258547393.html"
         },
         {
-          "name": "Fort Valley State University",
+          "name": "Coliseum Health System",
           "source_url": "https://en.wikipedia.org/wiki/Central_Georgia"
-        },
-        {
-          "name": "Norfolk Southern Railway",
-          "source_url": null
         },
         {
           "name": "Perdue Foods",
           "source_url": "https://www.macon.com/news/business/article258547393.html"
         },
         {
-          "name": "Piedmont Healthcare Macon",
-          "source_url": "https://en.wikipedia.org/wiki/Macon,_Georgia"
-        },
-        {
-          "name": "Thomaston Industrial Park",
-          "source_url": "https://en.wikipedia.org/wiki/Central_Georgia"
-        },
-        {
-          "name": "Thomaston-Upson Industrial Development Authority",
-          "source_url": "https://en.wikipedia.org/wiki/Central_Georgia"
-        },
-        {
           "name": "Academy Sports",
           "source_url": "https://www.macon.com/living/living-here-guide/article30143466.html"
         },
         {
-          "name": "Medical Center",
+          "name": "Blue Bird Corporation",
+          "source_url": "https://en.wikipedia.org/wiki/Central_Georgia"
+        },
+        {
+          "name": "Delta Airlines",
+          "source_url": "https://www.macon.com/news/local/article312115475.html"
+        },
+        {
+          "name": "Navicent Health",
           "source_url": "https://www.macon.com/living/living-here-guide/article30143466.html"
+        },
+        {
+          "name": "Oconee Regional Medical Center",
+          "source_url": "https://www.macon.com/living/living-here-guide/article30143466.html"
+        },
+        {
+          "name": "B&D Industrial",
+          "source_url": "http://www.macon.com/news/business/article169415742.html"
         }
       ],
       "sources": [
         "https://en.wikipedia.org/wiki/Macon,_Georgia",
+        "https://www.macon.com/living/living-here-guide/article39043491.html",
+        "https://www.macon.com/news/local/article312115475.html",
         "https://www.macon.com/news/business/article258547393.html",
         "https://en.wikipedia.org/wiki/Central_Georgia",
-        "https://www.macon.com/news/local/article312115475.html",
         "https://www.macon.com/living/living-here-guide/article30143466.html",
-        "https://www.macon.com/living/article300278809.html",
+        "http://www.macon.com/news/business/article169415742.html",
         "https://www.macon.com/news/business/article254311083.html"
       ],
       "method": "Representative list auto-discovered via Tavily web search across chamber-of-commerce, development-authority and local-news sources. Not exhaustive; ordering approximates source frequency, not headcount."

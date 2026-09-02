@@ -3,7 +3,7 @@
   "short_name": "Gainesville",
   "full_name": "Gainesville, GA",
   "population": 211000,
-  "as_of": "2026-09-01",
+  "as_of": "2026-09-02",
   "sections": {
     "ces_employment": {
       "series_id": "SMS13235800000000001",
@@ -5338,8 +5338,12 @@
       "source": "Census Business Dynamics Statistics (establishment entry rate, 2022); metro rate indexed to US=100"
     },
     "major_employers": {
-      "as_of": "2026-09-01",
+      "as_of": "2026-09-02",
       "employers": [
+        {
+          "name": "University of Florida",
+          "source_url": "https://en.wikipedia.org/wiki/Gainesville,_Florida"
+        },
         {
           "name": "Northeast Georgia Health System",
           "source_url": "https://en.wikipedia.org/wiki/Gainesville,_Georgia"
@@ -5353,7 +5357,11 @@
           "source_url": "https://en.wikipedia.org/wiki/Gainesville,_Georgia"
         },
         {
-          "name": "University of Florida",
+          "name": "Santa Fe College",
+          "source_url": "https://en.wikipedia.org/wiki/Gainesville,_Florida"
+        },
+        {
+          "name": "Alachua County Public Schools",
           "source_url": "https://en.wikipedia.org/wiki/Gainesville,_Florida"
         },
         {
@@ -5369,6 +5377,14 @@
           "source_url": "https://en.wikipedia.org/wiki/Gainesville,_Georgia"
         },
         {
+          "name": "Hollis Transport Agency Inc",
+          "source_url": "https://www.gainesvilletimes.com/news/business-archived/chamber-honors-3-companies-as-the-years-best-in-hall"
+        },
+        {
+          "name": "North Florida Regional Medical Center",
+          "source_url": "https://en.wikipedia.org/wiki/Gainesville,_Florida"
+        },
+        {
           "name": "Professional Company",
           "source_url": "https://en.wikipedia.org/wiki/Gainesville,_Georgia"
         },
@@ -5377,32 +5393,19 @@
           "source_url": "https://en.wikipedia.org/wiki/Gainesville,_Georgia"
         },
         {
-          "name": "Alachua County School District",
-          "source_url": null
-        },
-        {
-          "name": "Baptist Health",
-          "source_url": null
-        },
-        {
-          "name": "UF Health Shands Hospital",
-          "source_url": null
-        },
-        {
-          "name": "Atlanta-based Emory Healthcare",
-          "source_url": "https://www.ajc.com/pulse/6-health-care-systems-among-forbes-best-employers-in-georgia/ZHJC3IV7UBFOHH423Y4NIDQDPI"
-        },
-        {
-          "name": "CJ Foodville Corp",
+          "name": "American Airlines",
           "source_url": "https://www.bizjournals.com/atlanta/news/2023/09/05/cj-foodville-tous-les-jours-plant-food-processing.html"
         }
       ],
       "sources": [
         "https://en.wikipedia.org/wiki/Gainesville,_Georgia",
+        "https://www.bizjournals.com/atlanta/related_content.html?topic=Kubota+Industrial+Equipment+Corp",
         "https://en.wikipedia.org/wiki/Gainesville,_Florida",
         "https://www.bizjournals.com/atlanta/news/2023/09/05/cj-foodville-tous-les-jours-plant-food-processing.html",
-        "https://www.gainesvilletimes.com/news/business-archived/chamber-honors-3-companies-as-the-years-best-in-hall",
-        "https://www.ajc.com/pulse/6-health-care-systems-among-forbes-best-employers-in-georgia/ZHJC3IV7UBFOHH423Y4NIDQDPI"
+        "https://www.bizjournals.com/atlanta/news/2019/04/26/hall-county-focuses-on-growth-and-development.html",
+        "https://www.savannahnow.com/story/news/2025/05/10/best-small-cities-in-georgia-hgtv-names-gainesville-ga-an-up-and-coming-gem/83533116007",
+        "CAESagHrOzAVVenw_fr4FUkbpT8rPJKPbUIpAudqDkR_VxbSe-EjX9B0DOccV3OCO9VmDoBlGTfOXH2MC1bl66aPv9dbKHbJiall_2xpkBYHi9q6hm2uOKQ8mfsXBbao00nl2vUq_pOZ69z2bOA",
+        "https://www.gainesvilletimes.com/news/business-archived/chamber-honors-3-companies-as-the-years-best-in-hall"
       ],
       "method": "Representative list auto-discovered via Tavily web search across chamber-of-commerce, development-authority and local-news sources. Not exhaustive; ordering approximates source frequency, not headcount."
     },

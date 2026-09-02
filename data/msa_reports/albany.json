@@ -3,7 +3,7 @@
   "short_name": "Albany",
   "full_name": "Albany, GA",
   "population": 146000,
-  "as_of": "2026-09-01",
+  "as_of": "2026-09-02",
   "sections": {
     "ces_employment": {
       "series_id": "SMS13105000000000001",
@@ -3920,20 +3920,20 @@
         3829
       ],
       "unemployment_rate": [
-        3.8,
-        4.1,
-        4.0,
-        4.3,
-        4.2,
-        4.2
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
       ],
       "labor_force_000s": [
-        62.8,
-        62.0,
-        61.3,
-        60.7,
-        61.6,
-        61.0
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
       ],
       "as_of_label": "2026 Q1",
       "source": "BLS QCEW (MSA totals) + LAUS (quarterly-averaged); Georgia Economics-assembled"
@@ -4317,54 +4317,26 @@
       "source": "Census Business Dynamics Statistics (establishment entry rate, 2022); metro rate indexed to US=100"
     },
     "major_employers": {
-      "as_of": "2026-09-01",
+      "as_of": "2026-09-02",
       "employers": [
         {
-          "name": "Knolls Atomic Power Laboratory",
-          "source_url": "https://www.bizjournals.com/albany/subscriber-only/2026/07/02/albanys-365-largest-employers.html"
-        },
-        {
-          "name": "Albany Med Health System",
-          "source_url": "https://www.bizjournals.com/albany/news/2024/07/12/albany-metro-area-private-sector-jobs-employers.html"
-        },
-        {
-          "name": "Albany State University",
-          "source_url": "https://albanyherald.com/news/local/business-leaders-get-economic-updates-at-uga-summit"
-        },
-        {
-          "name": "Bank of America",
+          "name": "Manufacturing",
           "source_url": "https://www.bizjournals.com/albany/news/2025/10/17/new-employers-list-2025.html"
-        },
-        {
-          "name": "Fluor Marine Propulsion LLC",
-          "source_url": "https://www.bizjournals.com/albany/subscriber-only/2026/07/02/albanys-365-largest-employers.html"
         },
         {
           "name": "Northeast Grocery Inc",
           "source_url": "https://www.bizjournals.com/albany/subscriber-only/2026/07/02/albanys-365-largest-employers.html"
         },
         {
-          "name": "Northside Hospital Inc",
-          "source_url": "https://www.bizjournals.com/atlanta/subscriber-only/2026/07/03/metro-atlantas-largest-employers.html"
+          "name": "Regeneron Pharmaceuticals Inc",
+          "source_url": "https://www.bizjournals.com/albany/subscriber-only/2026/07/02/albanys-365-largest-employers.html"
         },
         {
-          "name": "Phoebe Putney Health Systems",
-          "source_url": "https://albanyherald.com/news/local/business-leaders-get-economic-updates-at-uga-summit"
+          "name": "Albany Med Health System",
+          "source_url": "https://www.bizjournals.com/albany/datacenter/lists/employers-and-whos-who"
         },
         {
-          "name": "Piedmont Healthcare",
-          "source_url": "https://www.bizjournals.com/atlanta/subscriber-only/2026/07/03/metro-atlantas-largest-employers.html"
-        },
-        {
-          "name": "Albany Municipal Utilities",
-          "source_url": null
-        },
-        {
-          "name": "Albany Regional Medical Center",
-          "source_url": null
-        },
-        {
-          "name": "Albany Technical College",
+          "name": "Albany State University",
           "source_url": null
         },
         {
@@ -4374,17 +4346,45 @@
         {
           "name": "Emory University",
           "source_url": "https://www.bizjournals.com/atlanta/subscriber-only/2026/07/03/metro-atlantas-largest-employers.html"
+        },
+        {
+          "name": "Phoebe Putney Memorial Hospital",
+          "source_url": null
+        },
+        {
+          "name": "Energy",
+          "source_url": "https://www.bizjournals.com/albany/subscriber-only/2023/07/14/albany-areas-largest-private-sector-employers.html"
+        },
+        {
+          "name": "Financial Services",
+          "source_url": "https://www.bizjournals.com/albany/subscriber-only/2023/07/14/albany-areas-largest-private-sector-employers.html"
+        },
+        {
+          "name": "Flowers Foods",
+          "source_url": "https://albanyherald.com/news/heritage-four-other-area-businesses-named-to-georgia-trends-top-100-public-businesses"
+        },
+        {
+          "name": "G&G Industrial Lighting",
+          "source_url": "https://www.bizjournals.com/albany/news/2024/07/12/albany-metro-area-private-sector-jobs-employers.html"
+        },
+        {
+          "name": "Health Care",
+          "source_url": "https://www.bizjournals.com/albany/subscriber-only/2023/07/14/albany-areas-largest-private-sector-employers.html"
+        },
+        {
+          "name": "Industries",
+          "source_url": "https://www.bizjournals.com/albany/subscriber-only/2023/07/14/albany-areas-largest-private-sector-employers.html"
         }
       ],
       "sources": [
         "https://www.bizjournals.com/albany/subscriber-only/2026/07/02/albanys-365-largest-employers.html",
+        "https://albanyherald.com/news/heritage-four-other-area-businesses-named-to-georgia-trends-top-100-public-businesses",
         "https://www.bizjournals.com/atlanta/subscriber-only/2026/07/03/metro-atlantas-largest-employers.html",
         "https://www.bizjournals.com/atlanta/subscriber-only/2025/10/17/metro-atlantas-largest-employers.html",
-        "https://www.bizjournals.com/atlanta/subscriber-only/2022/07/15/atlantas-25-largest-employers.html",
-        "https://albanyherald.com/news/local/business-leaders-get-economic-updates-at-uga-summit",
-        "https://albanyherald.com/news/georgia-chamber-endorses-david-perdue-in-senate-race",
-        "https://albanyherald.com/news/albany-chamber-recognizes-businesses-nonprofits-during-annual-business-awards-ceremony",
-        "https://www.bizjournals.com/albany/news/2023/07/14/albany-region-largest-private-sector-employers.html"
+        "https://www.bizjournals.com/albany/datacenter/lists/employers-and-whos-who",
+        "https://albanyherald.com/news/local/military-honored-at-annual-albany-area-chamber-of-commerce-breakfast",
+        "https://albanyherald.com/news/business-news-2/major-meat-producer-jbs-usa-hit-by-cyberattack",
+        "https://www.bizjournals.com/albany/news/2025/10/17/new-employers-list-2025.html"
       ],
       "method": "Representative list auto-discovered via Tavily web search across chamber-of-commerce, development-authority and local-news sources. Not exhaustive; ordering approximates source frequency, not headcount."
     },
@@ -4914,7 +4914,7 @@
   "section_status": {
     "ces_employment": "live",
     "ces_by_supersector": "live",
-    "laus_unemployment": "live",
+    "laus_unemployment": "stale",
     "fhfa_hpi": "live",
     "census_pep": "live",
     "census_acs_demographics": "live",

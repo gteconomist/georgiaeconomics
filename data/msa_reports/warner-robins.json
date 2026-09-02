@@ -3,7 +3,7 @@
   "short_name": "Warner Robins",
   "full_name": "Warner Robins, GA",
   "population": 199000,
-  "as_of": "2026-09-01",
+  "as_of": "2026-09-02",
   "sections": {
     "ces_employment": {
       "series_id": "SMS13475800000000001",
@@ -4341,10 +4341,14 @@
       "source": "Census Business Dynamics Statistics (establishment entry rate, 2022); metro rate indexed to US=100"
     },
     "major_employers": {
-      "as_of": "2026-09-01",
+      "as_of": "2026-09-02",
       "employers": [
         {
-          "name": "Houston Healthcare",
+          "name": "Pratt Industries",
+          "source_url": "https://www.macon.com/news/business/article279055784.html"
+        },
+        {
+          "name": "Medical Center of Central Georgia",
           "source_url": "https://en.wikipedia.org/wiki/Central_Georgia"
         },
         {
@@ -4352,39 +4356,39 @@
           "source_url": "https://www.selectgeorgia.com/georgiagrowth"
         },
         {
-          "name": "Pratt Industries",
-          "source_url": "https://www.bizjournals.com/atlanta/news/2026/04/27/pratt-industries-corrugated-box-warner-robins.html"
-        },
-        {
-          "name": "The Medical Center of Central Georgia",
-          "source_url": "https://www.macon.com/living/living-here-guide/article39043491.html"
-        },
-        {
-          "name": "Blue Bird Body Co",
+          "name": "Atrium Health Navicent The Medical Center",
           "source_url": "https://www.macon.com/news/business/article258547393.html"
-        },
-        {
-          "name": "Blue Bird Corporation",
-          "source_url": "https://en.wikipedia.org/wiki/Central_Georgia"
-        },
-        {
-          "name": "Perdue Foods",
-          "source_url": "https://www.macon.com/news/business/article258547393.html"
-        },
-        {
-          "name": "Warehouse",
-          "source_url": "https://www.selectgeorgia.com/georgiagrowth"
-        },
-        {
-          "name": "Distribution",
-          "source_url": "https://www.selectgeorgia.com/georgiagrowth"
         },
         {
           "name": "Central Georgia Technical College",
           "source_url": "https://en.wikipedia.org/wiki/Central_Georgia"
         },
         {
-          "name": "Chief Manufacturing",
+          "name": "Fort Valley State University",
+          "source_url": "https://en.wikipedia.org/wiki/Central_Georgia"
+        },
+        {
+          "name": "Georgia College",
+          "source_url": "https://en.wikipedia.org/wiki/Central_Georgia"
+        },
+        {
+          "name": "Georgia Military College",
+          "source_url": "https://en.wikipedia.org/wiki/Central_Georgia"
+        },
+        {
+          "name": "Mercer University",
+          "source_url": "https://en.wikipedia.org/wiki/Central_Georgia"
+        },
+        {
+          "name": "Middle Georgia State University",
+          "source_url": "https://en.wikipedia.org/wiki/Central_Georgia"
+        },
+        {
+          "name": "Universal Industrial Gases",
+          "source_url": "https://www.selectgeorgia.com/georgiagrowth"
+        },
+        {
+          "name": "Blue Bird Corporation",
           "source_url": "https://en.wikipedia.org/wiki/Central_Georgia"
         },
         {
@@ -4392,23 +4396,19 @@
           "source_url": "https://en.wikipedia.org/wiki/Central_Georgia"
         },
         {
-          "name": "Criterion Technologies",
-          "source_url": "https://en.wikipedia.org/wiki/Central_Georgia"
-        },
-        {
-          "name": "Fort Valley State University",
-          "source_url": "https://en.wikipedia.org/wiki/Central_Georgia"
+          "name": "Distribution Expansion",
+          "source_url": "https://www.selectgeorgia.com/georgiagrowth"
         }
       ],
       "sources": [
-        "https://www.macon.com/living/living-here-guide/article39043491.html",
         "https://en.wikipedia.org/wiki/Central_Georgia",
         "https://www.macon.com/news/business/article258547393.html",
-        "https://en.wikipedia.org/wiki/Metropolitan_statistical_area",
-        "https://www.savannahnow.com/story/news/2025/12/11/forbes-reveals-georgias-top-25-employers-from-chick-fil-a-to-delta-primerica/87700060007",
-        "https://www.macon.com/news/local/military/article214843570.html",
-        "https://www.bizjournals.com/atlanta/news/2026/04/27/pratt-industries-corrugated-box-warner-robins.html",
-        "https://www.macon.com/news/business/article279055784.html"
+        "https://www.macon.com/news/business/article279055784.html",
+        "https://www.macon.com/living/living-here-guide/article39043491.html",
+        "https://georgia.org/press-releases/2023/georgia-based-pratt-industries-plans-new-manufacturing-facility-peach-county",
+        "https://en.wikipedia.org/wiki/Warner_Robins,_Georgia",
+        "https://georgia.org/sites/default/files/2021-02/fy21_q2_board_book.pdf",
+        "https://georgia.org/blogs/longtime-investment-workforce-solutions-keeps-georgia-top-state-business"
       ],
       "method": "Representative list auto-discovered via Tavily web search across chamber-of-commerce, development-authority and local-news sources. Not exhaustive; ordering approximates source frequency, not headcount."
     },

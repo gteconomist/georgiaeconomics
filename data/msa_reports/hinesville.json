@@ -3,7 +3,7 @@
   "short_name": "Hinesville",
   "full_name": "Hinesville, GA",
   "population": 78000,
-  "as_of": "2026-09-01",
+  "as_of": "2026-09-02",
   "sections": {
     "ces_employment": {
       "series_id": "SMS13259800000000001",
@@ -3714,20 +3714,20 @@
         1272
       ],
       "unemployment_rate": [
-        3.5,
-        3.8,
-        3.7,
-        3.9,
-        3.8,
-        4.0
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
       ],
       "labor_force_000s": [
-        31.8,
-        31.9,
-        31.5,
-        31.6,
-        31.6,
-        31.5
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
       ],
       "as_of_label": "2026 Q1",
       "source": "BLS QCEW (MSA totals) + LAUS (quarterly-averaged); Georgia Economics-assembled"
@@ -4110,22 +4110,34 @@
       "source": "Census Business Dynamics Statistics (establishment entry rate, 2022); metro rate indexed to US=100"
     },
     "major_employers": {
-      "as_of": "2026-09-01",
+      "as_of": "2026-09-02",
       "employers": [
         {
-          "name": "Logistics USA Inc",
-          "source_url": null
+          "name": "Aerospace",
+          "source_url": "https://georgia.org"
         },
         {
-          "name": "Georgia Power",
-          "source_url": "https://www.savannahnow.com/story/business/2015/02/16/roundup/13960853007"
+          "name": "Liberty County School District",
+          "source_url": "https://en.wikipedia.org/wiki/Hinesville,_Georgia"
         },
         {
-          "name": "Gulfstream Aerospace",
-          "source_url": "https://www.savannahnow.com/story/business/2015/02/16/roundup/13960853007"
+          "name": "Automotive",
+          "source_url": "https://georgia.org"
         },
         {
-          "name": "Glynn County School System",
+          "name": "Hyundai Motor Group Metaplant America",
+          "source_url": "https://georgia.org"
+        },
+        {
+          "name": "Georgia Ports Authority",
+          "source_url": "https://www.savannahnow.com/story/news/2007/11/15/savannah-hinesville-fort-stewart-growing-faster-state-experts-say/13780691007"
+        },
+        {
+          "name": "Georgia State University",
+          "source_url": "https://www.savannahnow.com/story/news/2007/11/15/savannah-hinesville-fort-stewart-growing-faster-state-experts-say/13780691007"
+        },
+        {
+          "name": "Hinesville Hospital",
           "source_url": null
         },
         {
@@ -4133,35 +4145,39 @@
           "source_url": null
         },
         {
-          "name": "Jered Mitsubishi Power",
-          "source_url": "https://georgia.org/why-georgia/regions-georgia/coastal-georgia"
+          "name": "Liberty County High School",
+          "source_url": "https://en.wikipedia.org/wiki/Hinesville,_Georgia"
         },
         {
-          "name": "Liberty County School District",
+          "name": "Liberty County School System",
           "source_url": null
         },
         {
-          "name": "Mitsubishi Power Americas Inc",
-          "source_url": null
+          "name": "Arts Academy Fitness",
+          "source_url": "https://georgia.org/sites/default/files/2020-10/georgia_safety_promise-10-8.pdf"
         },
         {
-          "name": "Inc. Savannah Logistics",
-          "source_url": "https://georgia.org/why-georgia/regions-georgia/coastal-georgia"
+          "name": "Bermuda Lane Flowery Branch Wesco Distribution",
+          "source_url": "https://georgia.org/sites/default/files/2020-10/georgia_safety_promise-10-8.pdf"
         },
         {
-          "name": "Plant Vogtle",
-          "source_url": "https://www.augustachronicle.com/story/business/2010/11/21/working-our-way-augusta-area-sees-job-growth/14571763007"
+          "name": "Co Shopping",
+          "source_url": "https://georgia.org/sites/default/files/2020-10/georgia_safety_promise-10-8.pdf"
         },
         {
-          "name": "Port of Savannah",
-          "source_url": "https://www.savannahnow.com/story/news/2008/09/11/savannah-best-performing-cities-list-jobs/13766785007"
+          "name": "Crisp Co",
+          "source_url": "https://georgia.org"
         }
       ],
       "sources": [
+        "https://www.savannahnow.com/story/news/2007/11/15/savannah-hinesville-fort-stewart-growing-faster-state-experts-say/13780691007",
+        "https://georgia.org/sites/default/files/2020-10/georgia_safety_promise-10-8.pdf",
+        "https://en.wikipedia.org/wiki/Hinesville,_Georgia",
         "https://georgia.org/why-georgia/regions-georgia/coastal-georgia",
-        "https://www.savannahnow.com/story/news/2008/09/11/savannah-best-performing-cities-list-jobs/13766785007",
-        "https://www.savannahnow.com/story/business/2015/02/16/roundup/13960853007",
-        "https://www.augustachronicle.com/story/business/2010/11/21/working-our-way-augusta-area-sees-job-growth/14571763007"
+        "https://georgia.org",
+        "https://www.selectgeorgia.com/landing-pages/san-fran-to-atl/top-brands",
+        "https://georgia.org/hyundai-motor-group-metaplant-america",
+        "https://properties.selectgeorgia.com/target_industries_app/dist/index.html"
       ],
       "method": "Representative list auto-discovered via Tavily web search across chamber-of-commerce, development-authority and local-news sources. Not exhaustive; ordering approximates source frequency, not headcount."
     },
@@ -4686,7 +4702,7 @@
   "section_status": {
     "ces_employment": "live",
     "ces_by_supersector": "live",
-    "laus_unemployment": "live",
+    "laus_unemployment": "stale",
     "fhfa_hpi": "live",
     "census_pep": "live",
     "census_acs_demographics": "live",

@@ -3,7 +3,7 @@
   "short_name": "Brunswick",
   "full_name": "Brunswick, GA",
   "population": 120000,
-  "as_of": "2026-09-01",
+  "as_of": "2026-09-02",
   "sections": {
     "ces_employment": {
       "series_id": "SMS13152600000000001",
@@ -3916,20 +3916,20 @@
         3868
       ],
       "unemployment_rate": [
-        2.9,
-        3.1,
-        2.8,
-        3.1,
-        3.0,
-        3.2
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
       ],
       "labor_force_000s": [
-        55.5,
-        55.4,
-        56.7,
-        57.1,
-        56.8,
-        56.7
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
       ],
       "as_of_label": "2026 Q1",
       "source": "BLS QCEW (MSA totals) + LAUS (quarterly-averaged); Georgia Economics-assembled"
@@ -4271,7 +4271,7 @@
       "source": "Census Business Dynamics Statistics (establishment entry rate, 2022); metro rate indexed to US=100"
     },
     "major_employers": {
-      "as_of": "2026-09-01",
+      "as_of": "2026-09-02",
       "employers": [
         {
           "name": "Gulfstream Aerospace",
@@ -4282,8 +4282,12 @@
           "source_url": "https://en.wikipedia.org/wiki/Brunswick,_Georgia"
         },
         {
+          "name": "Digital Marketing Solutions",
+          "source_url": "https://www.savannahnow.com/story/business/2024/01/17/bucees-in-brunswick-ga-to-be-largest-in-state-bring-200-jobs/72255077007"
+        },
+        {
           "name": "Georgia Ports Authority",
-          "source_url": "https://en.wikipedia.org/wiki/Brunswick,_Georgia"
+          "source_url": "https://www.selectgeorgia.com/blog/wtc-sav-prosperity"
         },
         {
           "name": "Georgia Power Economic Development",
@@ -4291,54 +4295,50 @@
         },
         {
           "name": "Glynn County Development Authority",
-          "source_url": "https://en.wikipedia.org/wiki/Brunswick,_Georgia"
+          "source_url": "https://en.wikipedia.org/wiki/Golden_Isles_of_Georgia"
         },
         {
           "name": "The Port of Brunswick",
-          "source_url": "https://en.wikipedia.org/wiki/Golden_Isles_of_Georgia"
-        },
-        {
-          "name": "Georgia Power Regional Economic Development Manager",
-          "source_url": "https://www.selectgeorgia.com/blog/wtc-sav-prosperity"
-        },
-        {
-          "name": "Georgia Power Team",
-          "source_url": "https://www.selectgeorgia.com/blog/wtc-sav-prosperity"
-        },
-        {
-          "name": "Healthcare",
-          "source_url": "https://en.wikipedia.org/wiki/Golden_Isles_of_Georgia"
-        },
-        {
-          "name": "Leading E-commerce Company Expands In Glynn",
-          "source_url": "https://georgia.org/newsroom/press-releases/leading-e-commerce-company-expands-in-glynn-county"
-        },
-        {
-          "name": "Major Industries",
-          "source_url": "https://en.wikipedia.org/wiki/Golden_Isles_of_Georgia"
-        },
-        {
-          "name": "Ports of Savannah",
-          "source_url": "https://www.selectgeorgia.com/blog/wtc-sav-prosperity"
-        },
-        {
-          "name": "Sea Island Company",
-          "source_url": "https://en.wikipedia.org/wiki/Golden_Isles_of_Georgia"
+          "source_url": "https://en.wikipedia.org/wiki/Brunswick,_Georgia"
         },
         {
           "name": "College of Coastal Georgia",
           "source_url": "https://en.wikipedia.org/wiki/Brunswick,_Georgia"
+        },
+        {
+          "name": "Forward Logistics System",
+          "source_url": null
+        },
+        {
+          "name": "Aviation",
+          "source_url": "https://en.wikipedia.org/wiki/List_of_companies_in_the_Chicago_metropolitan_area#Media"
+        },
+        {
+          "name": "Brown Medline Industries Molex Morton Salt",
+          "source_url": "https://en.wikipedia.org/wiki/List_of_companies_in_the_Chicago_metropolitan_area#Media"
+        },
+        {
+          "name": "Co. Brunswick Corporation Calamos Career Education",
+          "source_url": "https://en.wikipedia.org/wiki/List_of_companies_in_the_Chicago_metropolitan_area#Media"
+        },
+        {
+          "name": "Cobb County School District",
+          "source_url": "https://www.macon.com/living/article300278809.html"
+        },
+        {
+          "name": "Corporation Century Aluminum CF Industries Cboe",
+          "source_url": "https://en.wikipedia.org/wiki/List_of_companies_in_the_Chicago_metropolitan_area#Media"
         }
       ],
       "sources": [
         "https://en.wikipedia.org/wiki/Brunswick,_Georgia",
-        "https://en.wikipedia.org/wiki/Golden_Isles_of_Georgia",
         "https://georgia.org/newsroom/press-releases/leading-e-commerce-company-expands-in-glynn-county",
-        "https://www.selectgeorgia.com/blog/wtc-sav-prosperity",
         "https://www.savannahnow.com/story/business/2024/01/17/bucees-in-brunswick-ga-to-be-largest-in-state-bring-200-jobs/72255077007",
+        "https://www.selectgeorgia.com/blog/wtc-sav-prosperity",
+        "https://en.wikipedia.org/wiki/Golden_Isles_of_Georgia",
+        "https://en.wikipedia.org/wiki/History_of_Brunswick,_Georgia",
         "https://georgia.org/press-releases?page=146",
-        "https://georgia.org/press-releases/2024/innovation-isles-aerospace-park-certified-ready-accelerated-development",
-        "https://www.savannahnow.com/story/news/2006/11/16/economist-savannahs-growth-among-strongest-state/13820435007"
+        "https://www.macon.com/living/article300278809.html"
       ],
       "method": "Representative list auto-discovered via Tavily web search across chamber-of-commerce, development-authority and local-news sources. Not exhaustive; ordering approximates source frequency, not headcount."
     },
@@ -4868,7 +4868,7 @@
   "section_status": {
     "ces_employment": "live",
     "ces_by_supersector": "live",
-    "laus_unemployment": "live",
+    "laus_unemployment": "stale",
     "fhfa_hpi": "live",
     "census_pep": "live",
     "census_acs_demographics": "live",

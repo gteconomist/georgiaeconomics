@@ -3,7 +3,7 @@
   "short_name": "Valdosta",
   "full_name": "Valdosta, GA",
   "population": 148000,
-  "as_of": "2026-09-01",
+  "as_of": "2026-09-02",
   "sections": {
     "ces_employment": {
       "series_id": "SMS13466600000000001",
@@ -3904,20 +3904,20 @@
         3836
       ],
       "unemployment_rate": [
-        3.7,
-        3.9,
-        3.7,
-        4.0,
-        3.8,
-        3.9
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
       ],
       "labor_force_000s": [
-        61.5,
-        61.5,
-        61.1,
-        60.9,
-        61.8,
-        61.6
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
       ],
       "as_of_label": "2026 Q1",
       "source": "BLS QCEW (MSA totals) + LAUS (quarterly-averaged); Georgia Economics-assembled"
@@ -4320,26 +4320,34 @@
       "source": "Census Business Dynamics Statistics (establishment entry rate, 2022); metro rate indexed to US=100"
     },
     "major_employers": {
-      "as_of": "2026-09-01",
+      "as_of": "2026-09-02",
       "employers": [
         {
           "name": "Valdosta State University",
           "source_url": "https://valdostadailytimes.com/2026/02/23/gary-wisenbaker-data-centers-whats-good-for-the-goose-is-good-for-the-gander"
         },
         {
-          "name": "The Scruggs Company",
-          "source_url": "https://valdostadailytimes.com/2014/06/24/scruggs-named-leading-business-of-the-week"
-        },
-        {
-          "name": "South Georgia Medical Center",
-          "source_url": "https://www.valdostacity.com/economic-development/top-20-employers"
-        },
-        {
-          "name": "Packaging Corporation of America",
+          "name": "Georgia Gulf Sulfur Corp",
           "source_url": "https://business.valdostachamber.com/directory/Search/manufacturers-371427"
         },
         {
-          "name": "Georgia Gulf Sulfur Corp",
+          "name": "Lowndes County Development Authority",
+          "source_url": "https://jobs.valdostadailytimes.com"
+        },
+        {
+          "name": "South Georgia Medical Center",
+          "source_url": "https://valdostadailytimes.com/2018/06/10/public-employers"
+        },
+        {
+          "name": "Blue Ops Inc",
+          "source_url": "https://jobs.valdostadailytimes.com"
+        },
+        {
+          "name": "Georgia Power Company",
+          "source_url": "https://business.valdostachamber.com/directory/FindStartsWith?term=G"
+        },
+        {
+          "name": "Packaging Corporation of America",
           "source_url": "https://business.valdostachamber.com/directory/Search/manufacturers-371427"
         },
         {
@@ -4347,47 +4355,39 @@
           "source_url": "https://business.valdostachamber.com/directory/Search/manufacturers-371427"
         },
         {
-          "name": "CJB Industries",
-          "source_url": "https://business.valdostachamber.com/directory/Search/manufacturers-371427"
-        },
-        {
-          "name": "Fresh Beginnings Inc",
-          "source_url": "https://www.valdostacity.com/economic-development/top-20-employers"
-        },
-        {
           "name": "Inc. Drugs Don't Work",
           "source_url": "https://business.valdostachamber.com/directory/Search/manufacturers-371427"
         },
         {
-          "name": "ACE Electric",
-          "source_url": "https://www.selectgeorgia.com/blog/rural-transformation/one-valdosta-lowndes-interview"
+          "name": "Lowndes County Schools",
+          "source_url": "https://valdostadailytimes.com/2018/05/24/summit-seeks-matching-jobs-with-workers"
+        },
+        {
+          "name": "Security Fire Equipment Company",
+          "source_url": "https://valdostadailytimes.com/2025/09/01/tm-polyfilm-inc-named-corporation-of-the-quarter-by-valdosta-lowndes-chamber-of-commerce"
+        },
+        {
+          "name": "The Scruggs Company",
+          "source_url": "https://business.valdostachamber.com/directory/Search/manufacturers-371427"
+        },
+        {
+          "name": "Wiregrass Georgia Technical College",
+          "source_url": "https://valdostadailytimes.com/2015/09/13/finding-the-competitive-edge"
         },
         {
           "name": "Archer Daniels Midland Co",
           "source_url": "https://business.valdostachamber.com/directory/Search/manufacturers-371427"
-        },
-        {
-          "name": "Berry Global Manufacturing",
-          "source_url": "https://www.selectgeorgia.com/blog/rural-transformation/one-valdosta-lowndes-interview"
-        },
-        {
-          "name": "Career Academy",
-          "source_url": "https://www.selectgeorgia.com/blog/rural-transformation/one-valdosta-lowndes-interview"
-        },
-        {
-          "name": "College",
-          "source_url": "https://www.selectgeorgia.com/blog/rural-transformation/one-valdosta-lowndes-interview"
         }
       ],
       "sources": [
-        "https://valdostadailytimes.com/2026/02/23/gary-wisenbaker-data-centers-whats-good-for-the-goose-is-good-for-the-gander",
+        "https://valdostadailytimes.com/2007/03/18/valdosta-ranked-as-a-leading-metro-area-for-expansion-recruiting",
         "https://www.selectgeorgia.com/blog/rural-transformation/one-valdosta-lowndes-interview",
-        "https://www.selectgeorgia.com/blog/locations-and-expansions/georgia-2023-growth",
-        "https://valdostadailytimes.com/2014/06/24/scruggs-named-leading-business-of-the-week",
+        "https://valdostadailytimes.com/2026/02/23/gary-wisenbaker-data-centers-whats-good-for-the-goose-is-good-for-the-gander",
+        "https://valdostadailytimes.com/2015/09/13/finding-the-competitive-edge",
         "https://business.valdostachamber.com/directory/Search/manufacturers-371427",
         "https://business.valdostachamber.com/directory/FindStartsWith?term=G",
-        "https://www.valdostacity.com/economic-development/top-20-employers",
-        "https://www.ajc.com/politics/valdosta-site-of-trumps-saturday-rally-has-voted-republican-in-recent-presidential-races/ZHNLCDFTEFDGPDQYCN4EFDVWWY"
+        "https://business.valdostachamber.com/directory",
+        "https://valdostadailytimes.com/2018/06/10/public-employers"
       ],
       "method": "Representative list auto-discovered via Tavily web search across chamber-of-commerce, development-authority and local-news sources. Not exhaustive; ordering approximates source frequency, not headcount."
     },
@@ -4917,7 +4917,7 @@
   "section_status": {
     "ces_employment": "live",
     "ces_by_supersector": "live",
-    "laus_unemployment": "live",
+    "laus_unemployment": "stale",
     "fhfa_hpi": "live",
     "census_pep": "live",
     "census_acs_demographics": "live",

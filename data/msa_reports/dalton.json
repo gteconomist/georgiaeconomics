@@ -3,7 +3,7 @@
   "short_name": "Dalton",
   "full_name": "Dalton, GA",
   "population": 143000,
-  "as_of": "2026-09-01",
+  "as_of": "2026-09-02",
   "sections": {
     "ces_employment": {
       "series_id": "SMS13191400000000001",
@@ -4304,20 +4304,20 @@
         3265
       ],
       "unemployment_rate": [
-        4.4,
-        3.8,
-        3.3,
-        4.5,
-        3.8,
-        4.1
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
       ],
       "labor_force_000s": [
-        67.6,
-        66.6,
-        65.3,
-        65.3,
-        66.1,
-        65.9
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
       ],
       "as_of_label": "2026 Q1",
       "source": "BLS QCEW (MSA totals) + LAUS (quarterly-averaged); Georgia Economics-assembled"
@@ -4682,15 +4682,15 @@
       "source": "Census Business Dynamics Statistics (establishment entry rate, 2022); metro rate indexed to US=100"
     },
     "major_employers": {
-      "as_of": "2026-09-01",
+      "as_of": "2026-09-02",
       "employers": [
         {
           "name": "New Manufacturing",
           "source_url": "https://www.selectgeorgia.com/georgiagrowth"
         },
         {
-          "name": "Mohawk Industries",
-          "source_url": "https://www.ajc.com/business/incentives-for-dalton-area-carpet-plants-could-top-100m/WyjeMcmYl1bQzW2R1B1hHJ"
+          "name": "Shaw Industries",
+          "source_url": "https://www.selectgeorgia.com/georgiagrowth"
         },
         {
           "name": "Distribution",
@@ -4701,54 +4701,55 @@
           "source_url": "https://www.selectgeorgia.com/georgiagrowth"
         },
         {
-          "name": "Shaw Industries",
-          "source_url": "https://en.wikipedia.org/wiki/Shaw_Industries"
-        },
-        {
-          "name": "Dalton State College",
-          "source_url": "https://valdostadailytimes.com/2018/01/29/local-contest-aims-to-help-grow-the-next-big-business"
-        },
-        {
-          "name": "Hamilton Health Care System",
-          "source_url": "https://valdostadailytimes.com/2017/03/31/junior-achievement-of-northwest-georgia-adds-to-its-business-hall-of-fame"
+          "name": "Dalton-Whitfield County Joint Development Authority",
+          "source_url": "https://georgia.org/newsroom/press-releases/global-flooring-company-expand-dalton-creating-200-jobs"
         },
         {
           "name": "Manufacturing Expansion",
           "source_url": "https://www.selectgeorgia.com/georgiagrowth"
         },
         {
+          "name": "Dalton Public Schools",
+          "source_url": "https://valdostadailytimes.com/2018/06/10/public-employers"
+        },
+        {
+          "name": "Electric Cities of Georgia",
+          "source_url": "https://georgia.org/newsroom/press-releases/mfg-chemical-opens-dalton-operation"
+        },
+        {
           "name": "Food Processing Expansion",
           "source_url": "https://www.selectgeorgia.com/georgiagrowth"
+        },
+        {
+          "name": "GEDIA Automotive Group",
+          "source_url": "https://valdostadailytimes.com/2020/07/27/german-firm-to-build-parts-for-electric-cars-in-whitfield-county-200-jobs-expected"
+        },
+        {
+          "name": "IVC Group",
+          "source_url": "https://georgia.org/newsroom/press-releases/global-flooring-company-expand-dalton-creating-200-jobs"
+        },
+        {
+          "name": "Mohawk Industries",
+          "source_url": "https://en.wikipedia.org/wiki/Dalton,_Georgia"
         },
         {
           "name": "New Food Processing",
           "source_url": "https://www.selectgeorgia.com/georgiagrowth"
         },
         {
-          "name": "Elevator Corp",
-          "source_url": "https://www.selectgeorgia.com/georgiagrowth"
-        },
-        {
-          "name": "GATX Corp",
-          "source_url": "https://www.selectgeorgia.com/georgiagrowth"
-        },
-        {
-          "name": "Headed Reinforcement Corp",
-          "source_url": "https://www.selectgeorgia.com/georgiagrowth"
-        },
-        {
-          "name": "Margo State Line Inc",
-          "source_url": "https://www.selectgeorgia.com/georgiagrowth"
+          "name": "Carpet",
+          "source_url": "https://en.wikipedia.org/wiki/Dalton,_Georgia"
         }
       ],
       "sources": [
-        "https://en.wikipedia.org/wiki/Shaw_Industries",
-        "https://www.ajc.com/business/incentives-for-dalton-area-carpet-plants-could-top-100m/WyjeMcmYl1bQzW2R1B1hHJ",
-        "https://valdostadailytimes.com/2017/03/31/junior-achievement-of-northwest-georgia-adds-to-its-business-hall-of-fame",
+        "https://en.wikipedia.org/wiki/Dalton,_Georgia",
         "https://www.bizjournals.com/atlanta/news/2023/06/29/solar-workforce-qcells-dalton-georgia.html",
-        "https://valdostadailytimes.com/2018/01/29/local-contest-aims-to-help-grow-the-next-big-business",
         "https://www.selectgeorgia.com/georgiagrowth",
-        "https://georgia.org/search?search=jobs&page=2"
+        "https://valdostadailytimes.com/2017/09/11/questions-and-answers-with-shaw-industries-ceo-vance-bell",
+        "https://www.ajc.com/news/business/manufacturers-target-future-workforce-combat-image-of-industry-as-dark-dirty/JPCEZMGJERAWTJ3OCXGMVAHPJQ",
+        "https://georgia.org/newsroom/press-releases/global-flooring-company-expand-dalton-creating-200-jobs",
+        "https://valdostadailytimes.com/2020/07/27/german-firm-to-build-parts-for-electric-cars-in-whitfield-county-200-jobs-expected",
+        "https://valdostadailytimes.com/2018/06/10/public-employers"
       ],
       "method": "Representative list auto-discovered via Tavily web search across chamber-of-commerce, development-authority and local-news sources. Not exhaustive; ordering approximates source frequency, not headcount."
     },
@@ -5278,7 +5279,7 @@
   "section_status": {
     "ces_employment": "live",
     "ces_by_supersector": "live",
-    "laus_unemployment": "live",
+    "laus_unemployment": "stale",
     "fhfa_hpi": "live",
     "census_pep": "live",
     "census_acs_demographics": "live",

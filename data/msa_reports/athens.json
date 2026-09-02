@@ -3,7 +3,7 @@
   "short_name": "Athens",
   "full_name": "Athens-Clarke County, GA",
   "population": 217000,
-  "as_of": "2026-09-01",
+  "as_of": "2026-09-02",
   "sections": {
     "ces_employment": {
       "series_id": "SMS13120200000000001",
@@ -5275,73 +5275,73 @@
       "source": "Census Business Dynamics Statistics (establishment entry rate, 2022); metro rate indexed to US=100"
     },
     "major_employers": {
-      "as_of": "2026-09-01",
+      "as_of": "2026-09-02",
       "employers": [
         {
           "name": "Children's Healthcare of Atlanta",
           "source_url": "https://www.onlineathens.com/story/news/2026/03/04/georgias-best-employers-are-these-2-big-businesses-forbes-says/88982542007"
         },
         {
-          "name": "Clarke County School District",
+          "name": "Athens Technical College",
           "source_url": null
         },
         {
-          "name": "University of Georgia",
+          "name": "Athens Regional Hospital",
           "source_url": null
         },
         {
-          "name": "Certus Bank",
-          "source_url": "https://www.onlineathens.com/story/news/state/2013/01/14/new-athens-chamber-chair-aid-new-economic-development-dept/15585264007"
+          "name": "Blue Bird Corporation",
+          "source_url": null
+        },
+        {
+          "name": "Clarke County School System",
+          "source_url": null
+        },
+        {
+          "name": "Clarke County Schools",
+          "source_url": null
         },
         {
           "name": "Eaton Corporation",
-          "source_url": "https://www.onlineathens.com/story/business/2018/06/25/athens-chamber-commerce-names-north/1772620007"
-        },
-        {
-          "name": "Alpha Bank",
           "source_url": null
         },
         {
-          "name": "Forsyth County School District",
-          "source_url": "https://www.augustachronicle.com/story/news/2025/08/26/forbes-ranked-americas-best-employers-by-state-what-is-georgias/85830225007"
-        },
-        {
-          "name": "General Motors",
-          "source_url": "https://www.augustachronicle.com/story/news/2025/08/26/forbes-ranked-americas-best-employers-by-state-what-is-georgias/85830225007"
-        },
-        {
-          "name": "National Bank of Greece",
+          "name": "Georgia Power",
           "source_url": null
         },
         {
-          "name": "National Health System",
+          "name": "Georgia State University",
           "source_url": null
         },
         {
-          "name": "Piedmont Athens Regional Hospital",
+          "name": "Piedmont Athens Regional Medical Center",
           "source_url": null
         },
         {
-          "name": "University of Athens",
+          "name": "Synovus Bank",
           "source_url": null
         },
         {
-          "name": "University of Notre Dame",
-          "source_url": "https://www.augustachronicle.com/story/news/2025/08/26/forbes-ranked-americas-best-employers-by-state-what-is-georgias/85830225007"
+          "name": "The University of Georgia",
+          "source_url": null
         },
         {
-          "name": "Athens Technical College Augusta University Piedmont",
-          "source_url": "https://en.wikipedia.org/wiki/Athens,_Georgia"
+          "name": "University of Georgia Health Care",
+          "source_url": null
+        },
+        {
+          "name": "Asbury Automotive Group",
+          "source_url": "https://www.augustachronicle.com/story/news/2025/06/04/fortune-500s-list-of-the-biggest-corporations-includes-17-in-georgia/84010835007"
         }
       ],
       "sources": [
-        "https://www.onlineathens.com/story/news/2026/03/04/georgias-best-employers-are-these-2-big-businesses-forbes-says/88982542007",
-        "https://www.augustachronicle.com/story/news/2025/08/26/forbes-ranked-americas-best-employers-by-state-what-is-georgias/85830225007",
+        "https://www.augustachronicle.com/story/news/2025/06/04/fortune-500s-list-of-the-biggest-corporations-includes-17-in-georgia/84010835007",
         "https://en.wikipedia.org/wiki/Athens,_Georgia",
-        "https://www.onlineathens.com/story/news/state/2013/01/14/new-athens-chamber-chair-aid-new-economic-development-dept/15585264007",
-        "https://www.onlineathens.com/story/business/2018/06/25/athens-chamber-commerce-names-north/1772620007",
-        "https://www.onlineathens.com/story/news/state/2017/03/24/athens-area-chamber-commerce-honors-community-service/15430024007",
-        "https://en.wikipedia.org/wiki/Athens_Metropolitan_Area"
+        "https://www.onlineathens.com/story/news/2026/03/04/georgias-best-employers-are-these-2-big-businesses-forbes-says/88982542007",
+        "https://en.wikipedia.org/wiki/Category:Companies_based_in_Athens,_Georgia",
+        "https://www.onlineathens.com/story/news/state/2017/02/11/athens-area-chamber-commerce-chairman-s-message-fostering-spirit-service/15436553007",
+        "https://www.augustachronicle.com/story/news/2025/08/26/forbes-ranked-americas-best-employers-by-state-what-is-georgias/85830225007",
+        "https://www.onlineathens.com/story/business/2018/06/25/athens-chamber-commerce-names-north/1772620007"
       ],
       "method": "Representative list auto-discovered via Tavily web search across chamber-of-commerce, development-authority and local-news sources. Not exhaustive; ordering approximates source frequency, not headcount."
     },

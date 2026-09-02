@@ -3,7 +3,7 @@
   "short_name": "Columbus",
   "full_name": "Columbus, GA-AL",
   "population": 329000,
-  "as_of": "2026-09-01",
+  "as_of": "2026-09-02",
   "sections": {
     "ces_employment": {
       "series_id": "SMS13179800000000001",
@@ -5264,11 +5264,11 @@
       "source": "Census Business Dynamics Statistics (establishment entry rate, 2022); metro rate indexed to US=100"
     },
     "major_employers": {
-      "as_of": "2026-09-01",
+      "as_of": "2026-09-02",
       "employers": [
         {
-          "name": "Health Care",
-          "source_url": "https://en.wikipedia.org/wiki/List_of_largest_Central_Ohio_employers"
+          "name": "Chairmans Foods",
+          "source_url": "https://www.ledger-enquirer.com/news/business/article244216802.html"
         },
         {
           "name": "Columbus State University",
@@ -5291,47 +5291,46 @@
           "source_url": "https://en.wikipedia.org/wiki/Columbus,_Georgia"
         },
         {
-          "name": "Financial Activities",
-          "source_url": "https://en.wikipedia.org/wiki/List_of_largest_Central_Ohio_employers"
+          "name": "OhioHealth Corp",
+          "source_url": "https://www.bizjournals.com/columbus/subscriber-only/2024/07/05/largest-central-ohio-employers.html"
+        },
+        {
+          "name": "BD&K Foods",
+          "source_url": "https://www.ledger-enquirer.com/news/business/article244216802.html"
+        },
+        {
+          "name": "Comprehensive Annual Financial Report",
+          "source_url": "https://en.wikipedia.org/wiki/Columbus,_Georgia"
         },
         {
           "name": "Ohio State University",
-          "source_url": "https://en.wikipedia.org/wiki/Columbus-Marion-Zanesville,_OH_Combined_Statistical_Area"
+          "source_url": null
         },
         {
-          "name": "Corp. Mgt",
-          "source_url": "https://en.wikipedia.org/wiki/List_of_largest_Central_Ohio_employers"
+          "name": "AFLAC Inc",
+          "source_url": "https://www.selectgeorgia.com/blog/columbus-georgia-a-home-for-headquarters"
         },
         {
-          "name": "Honda of America Manufacturing",
-          "source_url": "https://en.wikipedia.org/wiki/List_of_largest_Central_Ohio_employers"
+          "name": "Children's Healthcare of Atlanta",
+          "source_url": "https://www.augustachronicle.com/story/business/2024/08/27/georgia-top-companies-forbes-best-employers-by-state-list/74968857007"
         },
         {
-          "name": "Mount Carmel Health System",
-          "source_url": "https://en.wikipedia.org/wiki/List_of_largest_Central_Ohio_employers"
+          "name": "Delta Airlines",
+          "source_url": "https://www.ledger-enquirer.com/news/state/georgia/article312697701.html"
         },
         {
-          "name": "Nationwide Children's Hospital",
-          "source_url": "https://en.wikipedia.org/wiki/List_of_largest_Central_Ohio_employers"
-        },
-        {
-          "name": "American Electric Power",
-          "source_url": "https://en.wikipedia.org/wiki/Economy_of_Columbus,_Ohio"
-        },
-        {
-          "name": "Columbus Public Schools",
-          "source_url": "https://en.wikipedia.org/wiki/List_of_largest_Central_Ohio_employers"
+          "name": "Energy",
+          "source_url": "https://www.bizjournals.com/columbus/subscriber-only/2024/07/05/largest-central-ohio-employers.html"
         }
       ],
       "sources": [
         "https://en.wikipedia.org/wiki/Columbus,_Georgia",
         "https://www.selectgeorgia.com/blog/columbus-georgia-a-home-for-headquarters",
-        "https://www.ledger-enquirer.com/news/business/article244035037.html",
-        "https://www.bizjournals.com/atlanta/news/2026/02/10/choose-columbus-economic-development.html",
-        "https://www.ledger-enquirer.com/news/politics-government/article311841650.html",
-        "https://www.ledger-enquirer.com/news/business/article289530136.html",
-        "https://www.bizjournals.com/columbus/subscriber-only/2025/10/17/central-ohio-employers.html",
-        "https://en.wikipedia.org/wiki/Columbus_metropolitan_area,_Ohio"
+        "https://en.wikipedia.org/wiki/Category:Companies_based_in_Columbus,_Georgia",
+        "https://www.ledger-enquirer.com/news/state/georgia/article312697701.html",
+        "https://www.augustachronicle.com/story/business/2024/08/27/georgia-top-companies-forbes-best-employers-by-state-list/74968857007",
+        "https://www.ledger-enquirer.com/news/business/article244216802.html",
+        "https://www.bizjournals.com/columbus/subscriber-only/2024/07/05/largest-central-ohio-employers.html"
       ],
       "method": "Representative list auto-discovered via Tavily web search across chamber-of-commerce, development-authority and local-news sources. Not exhaustive; ordering approximates source frequency, not headcount."
     },
