@@ -3,7 +3,7 @@
   "short_name": "Warner Robins",
   "full_name": "Warner Robins, GA",
   "population": 199000,
-  "as_of": "2026-09-02",
+  "as_of": "2026-09-03",
   "sections": {
     "ces_employment": {
       "series_id": "SMS13475800000000001",
@@ -3228,7 +3228,8 @@
         "2026-03",
         "2026-04",
         "2026-05",
-        "2026-06"
+        "2026-06",
+        "2026-07"
       ],
       "values": [
         4.2,
@@ -3319,10 +3320,11 @@
         3.1,
         2.6,
         2.9,
-        3.5
+        3.5,
+        3.0
       ],
-      "latest_month": "2026-06",
-      "latest_value": 3.5
+      "latest_month": "2026-07",
+      "latest_value": 3.0
     },
     "fhfa_hpi": {
       "series_id": "ATNHPIUS47580Q",
@@ -4341,7 +4343,7 @@
       "source": "Census Business Dynamics Statistics (establishment entry rate, 2022); metro rate indexed to US=100"
     },
     "major_employers": {
-      "as_of": "2026-09-02",
+      "as_of": "2026-09-03",
       "employers": [
         {
           "name": "Pratt Industries",
@@ -4350,10 +4352,6 @@
         {
           "name": "Medical Center of Central Georgia",
           "source_url": "https://en.wikipedia.org/wiki/Central_Georgia"
-        },
-        {
-          "name": "New Manufacturing",
-          "source_url": "https://www.selectgeorgia.com/georgiagrowth"
         },
         {
           "name": "Atrium Health Navicent The Medical Center",
@@ -4376,6 +4374,14 @@
           "source_url": "https://en.wikipedia.org/wiki/Central_Georgia"
         },
         {
+          "name": "Houston County High School",
+          "source_url": "https://en.wikipedia.org/wiki/Warner_Robins,_Georgia"
+        },
+        {
+          "name": "McLane Co",
+          "source_url": null
+        },
+        {
           "name": "Mercer University",
           "source_url": "https://en.wikipedia.org/wiki/Central_Georgia"
         },
@@ -4384,31 +4390,27 @@
           "source_url": "https://en.wikipedia.org/wiki/Central_Georgia"
         },
         {
-          "name": "Universal Industrial Gases",
-          "source_url": "https://www.selectgeorgia.com/georgiagrowth"
+          "name": "Northside High School",
+          "source_url": "https://en.wikipedia.org/wiki/Warner_Robins,_Georgia"
         },
         {
-          "name": "Blue Bird Corporation",
-          "source_url": "https://en.wikipedia.org/wiki/Central_Georgia"
+          "name": "Robins International Industrial Park",
+          "source_url": "https://georgia.org/sites/default/files/2021-02/fy21_q2_board_book.pdf"
         },
         {
-          "name": "Coliseum Health System",
-          "source_url": "https://en.wikipedia.org/wiki/Central_Georgia"
-        },
-        {
-          "name": "Distribution Expansion",
-          "source_url": "https://www.selectgeorgia.com/georgiagrowth"
+          "name": "Adobe Amadeus IT Group Amazon",
+          "source_url": "https://en.wikipedia.org/wiki/Google"
         }
       ],
       "sources": [
+        "https://www.macon.com/news/business/article279055784.html",
         "https://en.wikipedia.org/wiki/Central_Georgia",
         "https://www.macon.com/news/business/article258547393.html",
-        "https://www.macon.com/news/business/article279055784.html",
+        "https://www.bizjournals.com/atlanta/news/2026/04/27/pratt-industries-corrugated-box-warner-robins.html",
         "https://www.macon.com/living/living-here-guide/article39043491.html",
         "https://georgia.org/press-releases/2023/georgia-based-pratt-industries-plans-new-manufacturing-facility-peach-county",
-        "https://en.wikipedia.org/wiki/Warner_Robins,_Georgia",
-        "https://georgia.org/sites/default/files/2021-02/fy21_q2_board_book.pdf",
-        "https://georgia.org/blogs/longtime-investment-workforce-solutions-keeps-georgia-top-state-business"
+        "https://en.wikipedia.org/wiki/Google",
+        "https://en.wikipedia.org/wiki/Warner_Robins,_Georgia"
       ],
       "method": "Representative list auto-discovered via Tavily web search across chamber-of-commerce, development-authority and local-news sources. Not exhaustive; ordering approximates source frequency, not headcount."
     },
@@ -4516,106 +4518,108 @@
         "2026-03",
         "2026-04",
         "2026-05",
-        "2026-06"
+        "2026-06",
+        "2026-07"
       ],
       "values": [
         100.0,
         101.19,
-        104.21,
-        105.53,
-        105.59,
-        105.93,
-        106.01,
-        108.58,
-        108.86,
-        111.07,
-        111.47,
-        111.39,
-        110.73,
-        108.76,
-        85.92,
-        70.79,
-        59.99,
-        73.54,
-        80.98,
-        86.9,
-        91.2,
-        94.49,
-        96.2,
-        96.56,
-        96.42,
-        96.9,
+        104.23,
+        105.55,
+        105.61,
+        105.96,
+        106.04,
+        108.62,
+        108.9,
+        111.12,
+        111.52,
+        111.44,
+        110.78,
+        108.8,
+        85.86,
+        70.66,
+        59.81,
+        73.43,
+        80.89,
+        86.84,
+        91.16,
+        94.46,
+        96.19,
+        96.55,
+        96.41,
+        96.89,
         99.49,
         101.19,
         101.39,
-        102.42,
-        103.12,
-        106.49,
-        106.81,
-        109.42,
-        110.93,
-        112.09,
-        111.81,
-        111.19,
-        113.7,
-        114.44,
-        113.84,
-        111.83,
-        110.06,
-        110.71,
-        110.38,
-        111.97,
-        113.01,
-        114.58,
-        115.58,
-        116.14,
-        118.39,
-        119.17,
-        118.99,
-        117.85,
-        117.05,
-        118.95,
-        119.21,
-        121.46,
-        121.54,
-        122.28,
-        121.72,
-        121.66,
-        122.71,
+        102.43,
+        103.13,
+        106.52,
+        106.84,
+        109.46,
+        110.98,
+        112.14,
+        111.86,
+        111.24,
+        113.76,
+        114.5,
+        113.91,
+        111.88,
+        110.1,
+        110.76,
+        110.42,
+        112.02,
+        113.07,
+        114.65,
+        115.65,
+        116.21,
+        118.47,
+        119.25,
+        119.07,
+        117.93,
+        117.13,
+        119.03,
+        119.3,
+        121.56,
+        121.64,
         122.38,
-        120.6,
-        117.18,
-        116.0,
-        118.55,
-        121.28,
-        123.53,
-        123.47,
-        122.93,
-        121.72,
-        120.03,
-        121.22,
-        122.1,
-        121.72,
-        120.34,
-        119.19,
-        120.34,
-        118.75,
-        118.85,
-        117.37,
-        117.23,
-        116.76,
-        118.19,
-        118.99,
-        117.73,
-        115.85
+        121.82,
+        121.76,
+        122.82,
+        122.48,
+        120.7,
+        117.26,
+        116.08,
+        118.64,
+        121.38,
+        123.64,
+        123.58,
+        123.04,
+        121.82,
+        120.12,
+        121.32,
+        122.2,
+        121.82,
+        120.44,
+        119.28,
+        120.44,
+        118.84,
+        118.93,
+        117.45,
+        117.31,
+        116.83,
+        118.27,
+        119.07,
+        117.81,
+        116.25,
+        115.41
       ],
-      "latest_month": "2026-06",
-      "latest_value": 115.85,
+      "latest_month": "2026-07",
+      "latest_value": 115.41,
       "peak_month": "2024-10",
-      "peak_value": 123.53,
+      "peak_value": 123.64,
       "trough_month": "2020-05",
-      "trough_value": 59.99,
-      "n_months": 89,
+      "trough_value": 59.81,
+      "n_months": 90,
       "source": "Georgia Economics composite \u2014 computed from BLS CES + LAUS"
     },
     "forecast_arima": {
@@ -4901,8 +4905,8 @@
       "source": "Georgia Economics composite \u2014 NAR-style affordability: ACS median household income (B19013) vs. income needed for the median home (ACS B25077 value scaled by FHFA HPI; Freddie Mac PMMS 30-yr rate via FRED). >100 = median household can afford the median home."
     },
     "credit_score": {
-      "score": 73,
-      "grade": "A+",
+      "score": 76,
+      "grade": "AA-",
       "outlook": "Stable",
       "components": {
         "vitality": {
@@ -4910,11 +4914,11 @@
           "weight": 0.25
         },
         "business_cycle": {
-          "score": 0.944,
+          "score": 0.938,
           "weight": 0.2
         },
         "labor_market": {
-          "score": 0.65,
+          "score": 0.779,
           "weight": 0.2
         },
         "quality_of_life": {

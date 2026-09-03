@@ -3,7 +3,7 @@
   "short_name": "Dalton",
   "full_name": "Dalton, GA",
   "population": 143000,
-  "as_of": "2026-09-02",
+  "as_of": "2026-09-03",
   "sections": {
     "ces_employment": {
       "series_id": "SMS13191400000000001",
@@ -3543,7 +3543,8 @@
         "2026-03",
         "2026-04",
         "2026-05",
-        "2026-06"
+        "2026-06",
+        "2026-07"
       ],
       "values": [
         5.5,
@@ -3634,10 +3635,11 @@
         4.0,
         3.1,
         3.3,
-        3.7
+        3.7,
+        3.6
       ],
-      "latest_month": "2026-06",
-      "latest_value": 3.7
+      "latest_month": "2026-07",
+      "latest_value": 3.6
     },
     "fhfa_hpi": {
       "series_id": "ATNHPIUS19140Q",
@@ -4304,20 +4306,20 @@
         3265
       ],
       "unemployment_rate": [
-        null,
-        null,
-        null,
-        null,
-        null,
-        null
+        4.4,
+        3.8,
+        3.3,
+        4.5,
+        3.8,
+        4.1
       ],
       "labor_force_000s": [
-        null,
-        null,
-        null,
-        null,
-        null,
-        null
+        67.6,
+        66.6,
+        65.3,
+        65.3,
+        66.1,
+        65.9
       ],
       "as_of_label": "2026 Q1",
       "source": "BLS QCEW (MSA totals) + LAUS (quarterly-averaged); Georgia Economics-assembled"
@@ -4682,74 +4684,74 @@
       "source": "Census Business Dynamics Statistics (establishment entry rate, 2022); metro rate indexed to US=100"
     },
     "major_employers": {
-      "as_of": "2026-09-02",
+      "as_of": "2026-09-03",
       "employers": [
         {
-          "name": "New Manufacturing",
-          "source_url": "https://www.selectgeorgia.com/georgiagrowth"
+          "name": "Mohawk Industries",
+          "source_url": "https://georgia.org/newsroom/press-releases/deal-mohawk-industries-to-create-200-jobs-in-dalton"
         },
         {
           "name": "Shaw Industries",
-          "source_url": "https://www.selectgeorgia.com/georgiagrowth"
-        },
-        {
-          "name": "Distribution",
-          "source_url": "https://www.selectgeorgia.com/georgiagrowth"
-        },
-        {
-          "name": "New Warehouse",
-          "source_url": "https://www.selectgeorgia.com/georgiagrowth"
-        },
-        {
-          "name": "Dalton-Whitfield County Joint Development Authority",
-          "source_url": "https://georgia.org/newsroom/press-releases/global-flooring-company-expand-dalton-creating-200-jobs"
-        },
-        {
-          "name": "Manufacturing Expansion",
-          "source_url": "https://www.selectgeorgia.com/georgiagrowth"
+          "source_url": "https://valdostadailytimes.com/2018/01/01/engineered-floors-growth-varnell-drama-among-top-stories-in-dalton-area-in-2017"
         },
         {
           "name": "Dalton Public Schools",
           "source_url": "https://valdostadailytimes.com/2018/06/10/public-employers"
         },
         {
-          "name": "Electric Cities of Georgia",
-          "source_url": "https://georgia.org/newsroom/press-releases/mfg-chemical-opens-dalton-operation"
+          "name": "Food City",
+          "source_url": "https://valdostadailytimes.com/2019/01/23/something-we-can-all-be-proud-of-food-city-opens-second-dalton-location"
         },
         {
-          "name": "Food Processing Expansion",
-          "source_url": "https://www.selectgeorgia.com/georgiagrowth"
-        },
-        {
-          "name": "GEDIA Automotive Group",
-          "source_url": "https://valdostadailytimes.com/2020/07/27/german-firm-to-build-parts-for-electric-cars-in-whitfield-county-200-jobs-expected"
-        },
-        {
-          "name": "IVC Group",
-          "source_url": "https://georgia.org/newsroom/press-releases/global-flooring-company-expand-dalton-creating-200-jobs"
-        },
-        {
-          "name": "Mohawk Industries",
+          "name": "Carpet Capital",
           "source_url": "https://en.wikipedia.org/wiki/Dalton,_Georgia"
         },
         {
-          "name": "New Food Processing",
-          "source_url": "https://www.selectgeorgia.com/georgiagrowth"
+          "name": "Flooring",
+          "source_url": "https://valdostadailytimes.com/2018/01/01/engineered-floors-growth-varnell-drama-among-top-stories-in-dalton-area-in-2017"
         },
         {
-          "name": "Carpet",
-          "source_url": "https://en.wikipedia.org/wiki/Dalton,_Georgia"
+          "name": "Archbold Medical Center",
+          "source_url": "https://valdostadailytimes.com/2018/06/10/public-employers"
+        },
+        {
+          "name": "Dalton-Whitfield Joint Development Authority",
+          "source_url": "https://valdostadailytimes.com/2018/06/10/public-employers"
+        },
+        {
+          "name": "Georgia Power",
+          "source_url": "https://valdostadailytimes.com/2018/01/29/local-contest-aims-to-help-grow-the-next-big-business"
+        },
+        {
+          "name": "Hospital Authority of Tift County",
+          "source_url": "https://valdostadailytimes.com/2018/06/10/public-employers"
+        },
+        {
+          "name": "The Tift Regional Health System",
+          "source_url": "https://valdostadailytimes.com/2018/06/10/public-employers"
+        },
+        {
+          "name": "Tift County Hospital Authority",
+          "source_url": "https://valdostadailytimes.com/2018/06/10/public-employers"
+        },
+        {
+          "name": "Wasserman Talent Solutions",
+          "source_url": "https://www.bizjournals.com/atlanta/news/2023/06/29/solar-workforce-qcells-dalton-georgia.html"
+        },
+        {
+          "name": "Whitfield County School System",
+          "source_url": null
         }
       ],
       "sources": [
+        "https://valdostadailytimes.com/2018/06/10/public-employers",
+        "https://georgia.org/newsroom/press-releases/deal-mohawk-industries-to-create-200-jobs-in-dalton",
         "https://en.wikipedia.org/wiki/Dalton,_Georgia",
+        "https://georgia.org/newsroom/press-releases/mohawk-industries-creates-420-jobs-dalton-rome",
         "https://www.bizjournals.com/atlanta/news/2023/06/29/solar-workforce-qcells-dalton-georgia.html",
-        "https://www.selectgeorgia.com/georgiagrowth",
-        "https://valdostadailytimes.com/2017/09/11/questions-and-answers-with-shaw-industries-ceo-vance-bell",
-        "https://www.ajc.com/news/business/manufacturers-target-future-workforce-combat-image-of-industry-as-dark-dirty/JPCEZMGJERAWTJ3OCXGMVAHPJQ",
-        "https://georgia.org/newsroom/press-releases/global-flooring-company-expand-dalton-creating-200-jobs",
-        "https://valdostadailytimes.com/2020/07/27/german-firm-to-build-parts-for-electric-cars-in-whitfield-county-200-jobs-expected",
-        "https://valdostadailytimes.com/2018/06/10/public-employers"
+        "https://valdostadailytimes.com/2018/01/29/local-contest-aims-to-help-grow-the-next-big-business",
+        "https://valdostadailytimes.com/2018/01/01/engineered-floors-growth-varnell-drama-among-top-stories-in-dalton-area-in-2017",
+        "https://valdostadailytimes.com/2019/01/23/something-we-can-all-be-proud-of-food-city-opens-second-dalton-location"
       ],
       "method": "Representative list auto-discovered via Tavily web search across chamber-of-commerce, development-authority and local-news sources. Not exhaustive; ordering approximates source frequency, not headcount."
     },
@@ -4763,7 +4765,7 @@
         "ces_employment": 0.707,
         "laus_unemployment_neg": 0.707
       },
-      "correlation": 0.755,
+      "correlation": 0.753,
       "rebase_month": "2019-01",
       "rebase_value": 100.0,
       "smoothing": "3-month centered MA",
@@ -4857,106 +4859,108 @@
         "2026-03",
         "2026-04",
         "2026-05",
-        "2026-06"
+        "2026-06",
+        "2026-07"
       ],
       "values": [
         100.0,
         101.2,
-        103.71,
-        105.53,
-        105.55,
-        104.4,
-        103.02,
-        103.68,
-        103.42,
-        104.42,
-        102.81,
-        101.73,
-        101.73,
-        103.17,
-        74.71,
-        59.21,
-        50.4,
-        71.45,
-        80.62,
-        84.91,
-        90.63,
-        93.43,
-        94.28,
-        93.48,
-        94.1,
-        95.5,
-        98.2,
+        103.73,
+        105.56,
+        105.58,
+        104.43,
+        103.03,
+        103.7,
+        103.43,
+        104.44,
+        102.82,
+        101.74,
+        101.74,
+        103.18,
+        74.58,
+        59.0,
+        50.15,
+        71.3,
+        80.52,
+        84.83,
+        90.59,
+        93.4,
+        94.25,
+        93.45,
+        94.07,
+        95.47,
+        98.19,
         99.48,
         99.72,
         100.05,
-        100.66,
-        102.21,
-        104.47,
-        106.71,
-        108.94,
-        108.62,
-        108.57,
-        108.26,
-        110.33,
-        110.41,
-        110.7,
-        109.59,
-        109.93,
-        110.24,
-        109.32,
-        109.45,
-        108.88,
-        109.35,
-        109.7,
-        110.2,
-        111.4,
-        112.31,
-        113.06,
-        113.04,
-        112.36,
-        113.09,
-        114.35,
-        116.01,
-        116.25,
-        115.44,
-        114.77,
-        114.87,
-        115.05,
-        114.57,
-        112.95,
-        111.52,
-        110.73,
-        110.86,
-        111.9,
-        111.83,
-        108.33,
-        106.58,
-        105.98,
-        108.56,
-        109.42,
-        109.7,
-        108.97,
-        103.33,
-        101.46,
+        100.67,
+        102.22,
+        104.5,
+        106.75,
+        108.98,
+        108.66,
+        108.61,
+        108.31,
+        110.38,
+        110.46,
+        110.76,
+        109.64,
+        109.99,
+        110.29,
+        109.37,
+        109.5,
+        108.93,
+        109.4,
+        109.75,
+        110.26,
+        111.46,
+        112.37,
+        113.13,
+        113.11,
+        112.42,
+        113.16,
+        114.42,
+        116.09,
+        116.33,
+        115.52,
+        114.85,
+        114.95,
+        115.13,
+        114.65,
+        113.01,
+        111.58,
+        110.78,
+        110.91,
+        111.96,
+        111.89,
+        108.37,
+        106.62,
+        106.01,
+        108.61,
+        109.47,
+        109.75,
+        109.02,
+        103.34,
+        101.47,
         100.61,
-        103.72,
-        103.99,
-        102.96,
-        103.21,
-        102.68,
-        104.75,
-        105.8,
-        105.96,
-        105.12
+        103.74,
+        104.01,
+        102.98,
+        103.23,
+        102.7,
+        104.77,
+        105.83,
+        105.99,
+        104.72,
+        104.01
       ],
-      "latest_month": "2026-06",
-      "latest_value": 105.12,
+      "latest_month": "2026-07",
+      "latest_value": 104.01,
       "peak_month": "2023-11",
-      "peak_value": 116.25,
+      "peak_value": 116.33,
       "trough_month": "2020-05",
-      "trough_value": 50.4,
-      "n_months": 89,
+      "trough_value": 50.15,
+      "n_months": 90,
       "source": "Georgia Economics composite \u2014 computed from BLS CES + LAUS"
     },
     "forecast_arima": {
@@ -5244,18 +5248,18 @@
     "credit_score": {
       "score": 64,
       "grade": "A-",
-      "outlook": "Positive",
+      "outlook": "Stable",
       "components": {
         "vitality": {
           "score": 0.5,
           "weight": 0.25
         },
         "business_cycle": {
-          "score": 0.696,
+          "score": 0.656,
           "weight": 0.2
         },
         "labor_market": {
-          "score": 0.591,
+          "score": 0.621,
           "weight": 0.2
         },
         "quality_of_life": {
@@ -5279,7 +5283,7 @@
   "section_status": {
     "ces_employment": "live",
     "ces_by_supersector": "live",
-    "laus_unemployment": "stale",
+    "laus_unemployment": "live",
     "fhfa_hpi": "live",
     "census_pep": "live",
     "census_acs_demographics": "live",

@@ -3,7 +3,7 @@
   "short_name": "Columbus",
   "full_name": "Columbus, GA-AL",
   "population": 329000,
-  "as_of": "2026-09-02",
+  "as_of": "2026-09-03",
   "sections": {
     "ces_employment": {
       "series_id": "SMS13179800000000001",
@@ -4173,7 +4173,8 @@
         "2026-03",
         "2026-04",
         "2026-05",
-        "2026-06"
+        "2026-06",
+        "2026-07"
       ],
       "values": [
         5.3,
@@ -4264,10 +4265,11 @@
         4.2,
         3.3,
         3.8,
-        4.2
+        4.3,
+        4.0
       ],
-      "latest_month": "2026-06",
-      "latest_value": 4.2
+      "latest_month": "2026-07",
+      "latest_value": 4.0
     },
     "fhfa_hpi": {
       "series_id": "ATNHPIUS17980Q",
@@ -5264,15 +5266,23 @@
       "source": "Census Business Dynamics Statistics (establishment entry rate, 2022); metro rate indexed to US=100"
     },
     "major_employers": {
-      "as_of": "2026-09-02",
+      "as_of": "2026-09-03",
       "employers": [
         {
           "name": "Chairmans Foods",
           "source_url": "https://www.ledger-enquirer.com/news/business/article244216802.html"
         },
         {
+          "name": "Health Care",
+          "source_url": "https://en.wikipedia.org/wiki/List_of_largest_Central_Ohio_employers"
+        },
+        {
           "name": "Columbus State University",
           "source_url": "https://en.wikipedia.org/wiki/Columbus,_Georgia"
+        },
+        {
+          "name": "Manufacturing",
+          "source_url": "https://georgia.org/press-releases/2026/rtxs-pratt-whitney-announces-new-200m-columbus-expansion-cuts-ribbon-prior-expansion"
         },
         {
           "name": "Muscogee County School District",
@@ -5291,46 +5301,39 @@
           "source_url": "https://en.wikipedia.org/wiki/Columbus,_Georgia"
         },
         {
-          "name": "OhioHealth Corp",
-          "source_url": "https://www.bizjournals.com/columbus/subscriber-only/2024/07/05/largest-central-ohio-employers.html"
+          "name": "Financial Activities",
+          "source_url": "https://en.wikipedia.org/wiki/List_of_largest_Central_Ohio_employers"
         },
         {
-          "name": "BD&K Foods",
-          "source_url": "https://www.ledger-enquirer.com/news/business/article244216802.html"
+          "name": "Corp. Mgt",
+          "source_url": "https://en.wikipedia.org/wiki/List_of_largest_Central_Ohio_employers"
         },
         {
-          "name": "Comprehensive Annual Financial Report",
-          "source_url": "https://en.wikipedia.org/wiki/Columbus,_Georgia"
+          "name": "Nationwide Children's Hospital",
+          "source_url": "https://en.wikipedia.org/wiki/List_of_largest_Central_Ohio_employers"
         },
         {
           "name": "Ohio State University",
-          "source_url": null
+          "source_url": "https://en.wikipedia.org/wiki/List_of_largest_Central_Ohio_employers"
         },
         {
-          "name": "AFLAC Inc",
-          "source_url": "https://www.selectgeorgia.com/blog/columbus-georgia-a-home-for-headquarters"
+          "name": "Columbus City Schools",
+          "source_url": "https://en.wikipedia.org/wiki/List_of_largest_Central_Ohio_employers"
         },
         {
-          "name": "Children's Healthcare of Atlanta",
-          "source_url": "https://www.augustachronicle.com/story/business/2024/08/27/georgia-top-companies-forbes-best-employers-by-state-list/74968857007"
-        },
-        {
-          "name": "Delta Airlines",
-          "source_url": "https://www.ledger-enquirer.com/news/state/georgia/article312697701.html"
-        },
-        {
-          "name": "Energy",
-          "source_url": "https://www.bizjournals.com/columbus/subscriber-only/2024/07/05/largest-central-ohio-employers.html"
+          "name": "Kroger Company",
+          "source_url": "https://en.wikipedia.org/wiki/List_of_largest_Central_Ohio_employers"
         }
       ],
       "sources": [
         "https://en.wikipedia.org/wiki/Columbus,_Georgia",
         "https://www.selectgeorgia.com/blog/columbus-georgia-a-home-for-headquarters",
         "https://en.wikipedia.org/wiki/Category:Companies_based_in_Columbus,_Georgia",
-        "https://www.ledger-enquirer.com/news/state/georgia/article312697701.html",
-        "https://www.augustachronicle.com/story/business/2024/08/27/georgia-top-companies-forbes-best-employers-by-state-list/74968857007",
+        "https://www.selectgeorgia.com/about-us/our-team/regional-development/andrew-camp-west",
         "https://www.ledger-enquirer.com/news/business/article244216802.html",
-        "https://www.bizjournals.com/columbus/subscriber-only/2024/07/05/largest-central-ohio-employers.html"
+        "https://georgia.org/press-releases/2026/rtxs-pratt-whitney-announces-new-200m-columbus-expansion-cuts-ribbon-prior-expansion",
+        "https://en.wikipedia.org/wiki/Economy_of_Columbus,_Ohio",
+        "https://en.wikipedia.org/wiki/List_of_largest_Central_Ohio_employers"
       ],
       "method": "Representative list auto-discovered via Tavily web search across chamber-of-commerce, development-authority and local-news sources. Not exhaustive; ordering approximates source frequency, not headcount."
     },
@@ -5344,7 +5347,7 @@
         "ces_employment": 0.707,
         "laus_unemployment_neg": 0.707
       },
-      "correlation": 0.793,
+      "correlation": 0.792,
       "rebase_month": "2019-01",
       "rebase_value": 100.0,
       "smoothing": "3-month centered MA",
@@ -5438,106 +5441,108 @@
         "2026-03",
         "2026-04",
         "2026-05",
-        "2026-06"
+        "2026-06",
+        "2026-07"
       ],
       "values": [
         100.0,
         101.13,
-        103.91,
-        104.32,
-        103.41,
+        103.93,
+        104.34,
+        103.43,
         101.75,
-        101.27,
-        102.72,
-        104.21,
-        106.22,
-        107.18,
-        107.66,
-        107.97,
-        106.92,
-        79.7,
-        56.81,
-        40.96,
-        52.53,
-        62.3,
-        67.88,
-        74.94,
-        79.75,
-        82.73,
-        82.84,
-        83.01,
-        83.5,
-        85.59,
-        86.18,
-        86.51,
-        87.34,
-        88.18,
-        91.61,
-        94.58,
-        98.51,
-        100.85,
-        99.71,
+        101.28,
+        102.73,
+        104.23,
+        106.26,
+        107.22,
+        107.7,
+        108.01,
+        106.95,
+        79.59,
+        56.58,
+        40.64,
+        52.27,
+        62.09,
+        67.71,
+        74.8,
+        79.65,
+        82.64,
+        82.75,
+        82.92,
+        83.41,
+        85.51,
+        86.11,
+        86.44,
+        87.28,
+        88.12,
+        91.57,
+        94.55,
+        98.5,
+        100.86,
+        99.7,
         99.02,
-        97.83,
+        97.81,
         99.79,
-        100.76,
+        100.77,
         100.79,
-        101.14,
-        98.95,
-        100.88,
+        101.15,
+        98.94,
+        100.89,
         99.36,
         100.92,
         99.18,
         99.62,
         99.94,
+        101.4,
+        103.49,
+        104.58,
+        103.71,
+        102.26,
         101.39,
-        103.47,
-        104.55,
-        103.69,
-        102.25,
-        101.38,
-        102.97,
-        103.59,
-        104.19,
-        103.02,
-        100.81,
-        99.0,
-        98.03,
+        102.99,
+        103.61,
+        104.21,
+        103.04,
+        100.82,
+        98.99,
+        98.02,
         99.63,
-        100.25,
-        99.55,
-        98.03,
-        96.92,
-        97.52,
-        97.65,
-        97.85,
-        97.58,
+        100.26,
+        99.54,
+        98.02,
+        96.91,
+        97.51,
+        97.64,
         97.84,
+        97.56,
+        97.83,
         98.56,
-        98.78,
-        100.34,
-        101.2,
+        98.77,
+        100.35,
+        101.21,
         101.02,
         100.02,
-        99.04,
+        99.03,
         98.65,
-        97.64,
-        97.62,
-        96.76,
-        96.18,
-        95.43,
-        97.73,
-        99.55,
-        99.99,
-        99.06
+        97.63,
+        97.6,
+        96.74,
+        96.16,
+        95.4,
+        97.72,
+        99.54,
+        99.82,
+        97.69,
+        96.23
       ],
-      "latest_month": "2026-06",
-      "latest_value": 99.06,
+      "latest_month": "2026-07",
+      "latest_value": 96.23,
       "peak_month": "2020-01",
-      "peak_value": 107.97,
+      "peak_value": 108.01,
       "trough_month": "2020-05",
-      "trough_value": 40.96,
-      "n_months": 89,
+      "trough_value": 40.64,
+      "n_months": 90,
       "source": "Georgia Economics composite \u2014 computed from BLS CES + LAUS"
     },
     "forecast_arima": {
@@ -5825,18 +5830,18 @@
     "credit_score": {
       "score": 53,
       "grade": "BBB",
-      "outlook": "Positive",
+      "outlook": "Stable",
       "components": {
         "vitality": {
           "score": 0.48,
           "weight": 0.25
         },
         "business_cycle": {
-          "score": 0.463,
+          "score": 0.353,
           "weight": 0.2
         },
         "labor_market": {
-          "score": 0.439,
+          "score": 0.5,
           "weight": 0.2
         },
         "quality_of_life": {

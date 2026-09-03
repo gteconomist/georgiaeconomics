@@ -3,7 +3,7 @@
   "short_name": "Gainesville",
   "full_name": "Gainesville, GA",
   "population": 211000,
-  "as_of": "2026-09-02",
+  "as_of": "2026-09-03",
   "sections": {
     "ces_employment": {
       "series_id": "SMS13235800000000001",
@@ -4173,7 +4173,8 @@
         "2026-03",
         "2026-04",
         "2026-05",
-        "2026-06"
+        "2026-06",
+        "2026-07"
       ],
       "values": [
         3.6,
@@ -4264,10 +4265,11 @@
         2.8,
         2.3,
         2.6,
-        3.0
+        3.0,
+        2.7
       ],
-      "latest_month": "2026-06",
-      "latest_value": 3.0
+      "latest_month": "2026-07",
+      "latest_value": 2.7
     },
     "fhfa_hpi": {
       "series_id": "ATNHPIUS23580Q",
@@ -5338,18 +5340,22 @@
       "source": "Census Business Dynamics Statistics (establishment entry rate, 2022); metro rate indexed to US=100"
     },
     "major_employers": {
-      "as_of": "2026-09-02",
+      "as_of": "2026-09-03",
       "employers": [
+        {
+          "name": "Big Creek Foods",
+          "source_url": "https://georgia.org/newsroom/press-releases/big-creek-foods-creates-25-jobs-new-pet-treat-processing-facility-gainesville-ga"
+        },
         {
           "name": "University of Florida",
           "source_url": "https://en.wikipedia.org/wiki/Gainesville,_Florida"
         },
         {
-          "name": "Northeast Georgia Health System",
+          "name": "Koch Foods",
           "source_url": "https://en.wikipedia.org/wiki/Gainesville,_Georgia"
         },
         {
-          "name": "Koch Foods",
+          "name": "Northeast Georgia Health System",
           "source_url": "https://en.wikipedia.org/wiki/Gainesville,_Georgia"
         },
         {
@@ -5357,16 +5363,8 @@
           "source_url": "https://en.wikipedia.org/wiki/Gainesville,_Georgia"
         },
         {
-          "name": "Santa Fe College",
-          "source_url": "https://en.wikipedia.org/wiki/Gainesville,_Florida"
-        },
-        {
-          "name": "Alachua County Public Schools",
-          "source_url": "https://en.wikipedia.org/wiki/Gainesville,_Florida"
-        },
-        {
-          "name": "Annual Comprehensive Financial Report",
-          "source_url": "https://en.wikipedia.org/wiki/Gainesville,_Florida"
+          "name": "Fox Factory",
+          "source_url": "https://www.gainesvilletimes.com/news/business-industry/fox-factory-in-gainesville-expects-a-hiring-boom-in-2021-heres-a-look-inside-the-new-plant"
         },
         {
           "name": "Brenau University",
@@ -5377,14 +5375,6 @@
           "source_url": "https://en.wikipedia.org/wiki/Gainesville,_Georgia"
         },
         {
-          "name": "Hollis Transport Agency Inc",
-          "source_url": "https://www.gainesvilletimes.com/news/business-archived/chamber-honors-3-companies-as-the-years-best-in-hall"
-        },
-        {
-          "name": "North Florida Regional Medical Center",
-          "source_url": "https://en.wikipedia.org/wiki/Gainesville,_Florida"
-        },
-        {
           "name": "Professional Company",
           "source_url": "https://en.wikipedia.org/wiki/Gainesville,_Georgia"
         },
@@ -5393,7 +5383,19 @@
           "source_url": "https://en.wikipedia.org/wiki/Gainesville,_Georgia"
         },
         {
+          "name": "Alachua County School Board",
+          "source_url": null
+        },
+        {
           "name": "American Airlines",
+          "source_url": "https://www.bizjournals.com/atlanta/news/2023/09/05/cj-foodville-tous-les-jours-plant-food-processing.html"
+        },
+        {
+          "name": "Annual Comprehensive Financial Report",
+          "source_url": "https://en.wikipedia.org/wiki/Gainesville,_Florida"
+        },
+        {
+          "name": "Children's Healthcare of Atlanta",
           "source_url": "https://www.bizjournals.com/atlanta/news/2023/09/05/cj-foodville-tous-les-jours-plant-food-processing.html"
         }
       ],
@@ -5402,10 +5404,10 @@
         "https://www.bizjournals.com/atlanta/related_content.html?topic=Kubota+Industrial+Equipment+Corp",
         "https://en.wikipedia.org/wiki/Gainesville,_Florida",
         "https://www.bizjournals.com/atlanta/news/2023/09/05/cj-foodville-tous-les-jours-plant-food-processing.html",
-        "https://www.bizjournals.com/atlanta/news/2019/04/26/hall-county-focuses-on-growth-and-development.html",
         "https://www.savannahnow.com/story/news/2025/05/10/best-small-cities-in-georgia-hgtv-names-gainesville-ga-an-up-and-coming-gem/83533116007",
-        "CAESagHrOzAVVenw_fr4FUkbpT8rPJKPbUIpAudqDkR_VxbSe-EjX9B0DOccV3OCO9VmDoBlGTfOXH2MC1bl66aPv9dbKHbJiall_2xpkBYHi9q6hm2uOKQ8mfsXBbao00nl2vUq_pOZ69z2bOA",
-        "https://www.gainesvilletimes.com/news/business-archived/chamber-honors-3-companies-as-the-years-best-in-hall"
+        "https://www.gainesvilletimes.com/news/chamber-lauds-companies-as-tops-in-area",
+        "https://www.gainesvilletimes.com/news/business-archived/chamber-honors-3-companies-as-the-years-best-in-hall",
+        "https://www.gainesvilletimes.com/news/business-archived/gainesville-approves-5m-bond-for-ims-gear-georgia"
       ],
       "method": "Representative list auto-discovered via Tavily web search across chamber-of-commerce, development-authority and local-news sources. Not exhaustive; ordering approximates source frequency, not headcount."
     },
@@ -5513,106 +5515,108 @@
         "2026-03",
         "2026-04",
         "2026-05",
-        "2026-06"
+        "2026-06",
+        "2026-07"
       ],
       "values": [
         100.0,
         100.55,
-        102.31,
-        102.74,
-        102.34,
-        101.51,
+        102.32,
+        102.76,
+        102.36,
+        101.52,
         101.55,
-        103.14,
-        104.24,
-        105.6,
-        105.9,
-        105.57,
-        105.44,
-        104.61,
-        86.25,
-        72.78,
-        64.8,
-        76.67,
-        85.55,
-        90.74,
-        95.93,
+        103.16,
+        104.26,
+        105.63,
+        105.93,
+        105.59,
+        105.46,
+        104.62,
+        86.18,
+        72.66,
+        64.64,
+        76.56,
+        85.48,
+        90.7,
+        95.91,
         99.15,
         101.05,
         101.15,
         101.28,
-        102.64,
-        104.64,
-        105.74,
-        105.07,
-        105.14,
-        105.47,
-        107.43,
-        108.17,
-        109.36,
-        109.86,
-        110.23,
-        110.6,
-        111.09,
-        113.19,
-        114.12,
+        102.65,
+        104.66,
+        105.76,
+        105.09,
+        105.16,
+        105.49,
+        107.46,
+        108.19,
+        109.4,
+        109.9,
+        110.26,
+        110.63,
+        111.12,
+        113.23,
         114.16,
-        113.59,
-        112.93,
-        114.39,
-        114.12,
-        115.59,
-        116.09,
-        116.75,
-        116.82,
-        116.75,
-        118.55,
-        119.05,
-        119.18,
-        118.58,
-        118.35,
-        119.28,
-        119.65,
-        121.24,
-        121.68,
-        121.61,
-        120.91,
-        120.28,
-        121.21,
-        121.05,
-        119.78,
-        117.82,
-        117.09,
-        118.82,
-        119.78,
-        120.98,
-        121.05,
-        120.91,
-        120.18,
-        119.38,
-        120.41,
-        120.98,
-        120.61,
-        119.18,
-        118.35,
-        118.98,
-        118.98,
-        120.38,
-        120.01,
-        120.25,
-        119.65,
+        114.19,
+        113.62,
+        112.95,
+        114.42,
+        114.15,
+        115.62,
+        116.12,
+        116.79,
+        116.85,
+        116.78,
+        118.59,
+        119.09,
+        119.22,
+        118.62,
+        118.38,
+        119.31,
+        119.68,
+        121.28,
+        121.72,
+        121.65,
+        120.95,
+        120.31,
+        121.25,
         121.08,
-        121.68,
-        121.01,
-        119.76
+        119.81,
+        117.84,
+        117.1,
+        118.84,
+        119.81,
+        121.02,
+        121.08,
+        120.95,
+        120.21,
+        119.41,
+        120.45,
+        121.02,
+        120.65,
+        119.21,
+        118.38,
+        119.01,
+        119.01,
+        120.41,
+        120.04,
+        120.28,
+        119.68,
+        121.11,
+        121.72,
+        121.05,
+        119.78,
+        119.1
       ],
-      "latest_month": "2026-06",
-      "latest_value": 119.76,
+      "latest_month": "2026-07",
+      "latest_value": 119.1,
       "peak_month": "2023-11",
-      "peak_value": 121.68,
+      "peak_value": 121.72,
       "trough_month": "2020-05",
-      "trough_value": 64.8,
-      "n_months": 89,
+      "trough_value": 64.64,
+      "n_months": 90,
       "source": "Georgia Economics composite \u2014 computed from BLS CES + LAUS"
     },
     "forecast_arima": {
@@ -5898,8 +5902,8 @@
       "source": "Georgia Economics composite \u2014 NAR-style affordability: ACS median household income (B19013) vs. income needed for the median home (ACS B25077 value scaled by FHFA HPI; Freddie Mac PMMS 30-yr rate via FRED). >100 = median household can afford the median home."
     },
     "credit_score": {
-      "score": 74,
-      "grade": "A+",
+      "score": 76,
+      "grade": "AA-",
       "outlook": "Stable",
       "components": {
         "vitality": {
@@ -5907,11 +5911,11 @@
           "weight": 0.25
         },
         "business_cycle": {
-          "score": 0.976,
+          "score": 0.972,
           "weight": 0.2
         },
         "labor_market": {
-          "score": 0.779,
+          "score": 0.841,
           "weight": 0.2
         },
         "quality_of_life": {

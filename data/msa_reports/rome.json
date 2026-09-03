@@ -3,7 +3,7 @@
   "short_name": "Rome",
   "full_name": "Rome, GA",
   "population": 99000,
-  "as_of": "2026-09-02",
+  "as_of": "2026-09-03",
   "sections": {
     "ces_employment": {
       "series_id": "SMS13406600000000001",
@@ -3438,7 +3438,8 @@
         "2026-03",
         "2026-04",
         "2026-05",
-        "2026-06"
+        "2026-06",
+        "2026-07"
       ],
       "values": [
         5.2,
@@ -3529,10 +3530,11 @@
         3.3,
         2.8,
         3.0,
-        3.6
+        3.6,
+        3.1
       ],
-      "latest_month": "2026-06",
-      "latest_value": 3.6
+      "latest_month": "2026-07",
+      "latest_value": 3.1
     },
     "fhfa_hpi": {
       "series_id": "ATNHPIUS40660Q",
@@ -4208,20 +4210,20 @@
         2451
       ],
       "unemployment_rate": [
-        null,
-        null,
-        null,
-        null,
-        null,
-        null
+        3.2,
+        3.4,
+        3.4,
+        3.7,
+        3.5,
+        3.5
       ],
       "labor_force_000s": [
-        null,
-        null,
-        null,
-        null,
-        null,
-        null
+        48.2,
+        48.3,
+        48.2,
+        47.5,
+        48.3,
+        48.1
       ],
       "as_of_label": "2026 Q1",
       "source": "BLS QCEW (MSA totals) + LAUS (quarterly-averaged); Georgia Economics-assembled"
@@ -4581,14 +4583,26 @@
       "source": "Census Business Dynamics Statistics (establishment entry rate, 2022); metro rate indexed to US=100"
     },
     "major_employers": {
-      "as_of": "2026-09-02",
+      "as_of": "2026-09-03",
       "employers": [
+        {
+          "name": "Atrium Health Floyd",
+          "source_url": "https://www.northwestgeorgianews.com/rome/business/stuenkel-named-to-ga-trends-most-influential-leaders-list/article_4d1dfe54-9b92-11ef-8929-e7a10f1bf7e5.html"
+        },
         {
           "name": "Harbin Clinic",
           "source_url": "https://en.wikipedia.org/wiki/Rome,_Georgia"
         },
         {
-          "name": "Redmond Regional Medical Center",
+          "name": "Kerry Group",
+          "source_url": "https://en.wikipedia.org/wiki/Rome,_Georgia"
+        },
+        {
+          "name": "Floyd Medical Center",
+          "source_url": "https://en.wikipedia.org/wiki/Rome,_Georgia"
+        },
+        {
+          "name": "Georgia Northwestern Technical College",
           "source_url": "https://en.wikipedia.org/wiki/Rome,_Georgia"
         },
         {
@@ -4600,55 +4614,43 @@
           "source_url": "https://en.wikipedia.org/wiki/Rome,_Georgia"
         },
         {
-          "name": "Floyd Medical Center",
-          "source_url": "https://en.wikipedia.org/wiki/Rome,_Georgia"
-        },
-        {
-          "name": "Atrium Health Floyd",
-          "source_url": "https://en.wikipedia.org/wiki/Atrium_Health_Floyd"
-        },
-        {
-          "name": "Kerry Group",
-          "source_url": "https://en.wikipedia.org/wiki/Rome,_Georgia"
-        },
-        {
-          "name": "Georgia Health Sciences University",
-          "source_url": "https://en.wikipedia.org/wiki/Rome,_Georgia"
-        },
-        {
-          "name": "Medical College of Georgia",
-          "source_url": "https://en.wikipedia.org/wiki/Rome,_Georgia"
-        },
-        {
           "name": "General Electric",
           "source_url": "https://en.wikipedia.org/wiki/Rome,_Georgia"
         },
         {
-          "name": "Lindale Manufacturing",
-          "source_url": "https://www.northwestgeorgianews.com/lindale-manufacturing-to-clos-local-new/article_5218fb5d-8383-526f-95ab-49a4f2c1c089.html"
+          "name": "Georgia Power",
+          "source_url": "https://georgia.org/newsroom/press-releases/candor-create-675-jobs-invest-39-million-rome"
+        },
+        {
+          "name": "Industries Growing Faster",
+          "source_url": "https://www.selectgeorgia.com/landing-pages/san-fran-to-atl/top-brands"
+        },
+        {
+          "name": "Rome City School District",
+          "source_url": null
         },
         {
           "name": "Rome Plow Company",
           "source_url": "https://en.wikipedia.org/wiki/Rome,_Georgia"
         },
         {
-          "name": "University of Rome",
+          "name": "Shaw Industries",
           "source_url": null
         },
         {
-          "name": "Augusta Economic Development Authority",
-          "source_url": "https://en.wikipedia.org/wiki/Augusta,_Georgia"
+          "name": "University of Rome",
+          "source_url": null
         }
       ],
       "sources": [
-        "https://en.wikipedia.org/wiki/Rome,_Georgia",
-        "https://en.wikipedia.org/wiki/Atrium_Health_Floyd",
-        "https://www.selectgeorgia.com/blog/team-researchers-provide-clear-employment-overview-community-partners",
+        "https://www.selectgeorgia.com/landing-pages/san-fran-to-atl/top-brands",
         "https://en.wikipedia.org/wiki/Augusta,_Georgia",
-        "https://www.bizjournals.com/atlanta/news/2025/09/26/georgia-largest-manufacturers-by-employment.html",
-        "https://www.northwestgeorgianews.com/lindale-manufacturing-to-clos-local-new/article_5218fb5d-8383-526f-95ab-49a4f2c1c089.html",
-        "https://www.northwestgeorgianews.com/county-loses-last-major-link-to-textile-local-new/article_5a94708d-ed20-549f-b911-9afae62f1842.html",
-        "https://www.northwestgeorgianews.com/rome/news/local/medical-field-a-top-local-employer/article_cd718016-8a2a-11e7-a5df-cbcef2e215bf.html"
+        "https://en.wikipedia.org/wiki/Rome,_Georgia",
+        "https://www.selectgeorgia.com/discover-georgia/industries/why-atlanta/top-companies",
+        "https://georgia.org/newsroom/press-releases/candor-create-675-jobs-invest-39-million-rome",
+        "http://www.bizjournals.com/atlanta/news/2014/03/31/which-big-georgia-companies-added-the-most-workers.html?page=all",
+        "https://www.northwestgeorgianews.com/rome/business/rome-floyd-chamber-hosts-student-engagement-opportunities-and-rhea-lana-s-ribbon-cutting/collection_8e265bb6-d88c-4ad6-8226-90d1262558bc.html",
+        "https://www.northwestgeorgianews.com/rome/business/stuenkel-named-to-ga-trends-most-influential-leaders-list/article_4d1dfe54-9b92-11ef-8929-e7a10f1bf7e5.html"
       ],
       "method": "Representative list auto-discovered via Tavily web search across chamber-of-commerce, development-authority and local-news sources. Not exhaustive; ordering approximates source frequency, not headcount."
     },
@@ -4662,7 +4664,7 @@
         "ces_employment": 0.707,
         "laus_unemployment_neg": 0.707
       },
-      "correlation": 0.613,
+      "correlation": 0.615,
       "rebase_month": "2019-01",
       "rebase_value": 100.0,
       "smoothing": "3-month centered MA",
@@ -4756,106 +4758,108 @@
         "2026-03",
         "2026-04",
         "2026-05",
-        "2026-06"
+        "2026-06",
+        "2026-07"
       ],
       "values": [
         100.0,
         101.18,
-        104.07,
-        104.61,
-        104.14,
-        102.03,
-        101.72,
-        102.82,
-        104.3,
-        104.68,
-        103.1,
-        102.16,
-        101.93,
-        102.16,
-        83.2,
-        70.28,
-        62.18,
-        74.37,
-        82.52,
-        87.49,
-        92.21,
-        94.8,
+        104.09,
+        104.63,
+        104.15,
+        102.04,
+        101.73,
+        102.83,
+        104.32,
+        104.7,
+        103.12,
+        102.18,
+        101.94,
+        102.17,
+        83.16,
+        70.19,
+        62.07,
+        74.3,
+        82.48,
+        87.47,
+        92.2,
+        94.81,
         96.0,
         95.86,
         96.28,
         97.79,
-        100.08,
-        101.18,
-        100.95,
-        101.45,
-        102.42,
-        104.57,
-        105.45,
-        106.88,
-        108.15,
-        108.32,
-        108.19,
-        108.21,
-        110.37,
-        111.1,
-        111.0,
-        110.81,
-        111.35,
-        113.26,
-        113.43,
-        114.22,
-        114.38,
-        114.97,
-        115.49,
-        116.58,
-        117.45,
-        116.05,
-        112.49,
-        109.72,
-        111.4,
-        116.19,
-        118.8,
-        121.02,
-        120.92,
-        121.21,
-        119.84,
-        118.73,
-        118.95,
-        118.47,
+        100.09,
+        101.2,
+        100.97,
+        101.46,
+        102.44,
+        104.59,
+        105.48,
+        106.91,
+        108.18,
+        108.36,
+        108.22,
+        108.24,
+        110.4,
+        111.14,
+        111.03,
+        110.84,
+        111.37,
+        113.29,
+        113.46,
+        114.25,
+        114.41,
+        115.0,
+        115.52,
+        116.6,
+        117.48,
+        116.07,
+        112.51,
+        109.74,
+        111.42,
+        116.21,
+        118.82,
+        121.05,
+        120.95,
+        121.24,
+        119.87,
+        118.75,
+        118.98,
+        118.5,
+        117.07,
+        115.74,
+        115.05,
         117.05,
-        115.73,
-        115.04,
-        117.04,
-        117.47,
-        119.38,
-        119.38,
-        120.62,
-        119.74,
-        119.1,
+        117.49,
+        119.4,
         119.41,
-        119.58,
-        119.36,
-        117.85,
-        116.91,
-        117.28,
-        117.91,
-        118.77,
-        118.13,
-        117.73,
-        117.73,
-        119.23,
-        120.57,
-        119.94,
-        118.99
+        120.64,
+        119.76,
+        119.12,
+        119.43,
+        119.6,
+        119.37,
+        117.87,
+        116.92,
+        117.3,
+        117.93,
+        118.79,
+        118.15,
+        117.74,
+        117.74,
+        119.25,
+        120.6,
+        119.96,
+        119.32,
+        118.65
       ],
-      "latest_month": "2026-06",
-      "latest_value": 118.99,
+      "latest_month": "2026-07",
+      "latest_value": 118.65,
       "peak_month": "2023-12",
-      "peak_value": 121.21,
+      "peak_value": 121.24,
       "trough_month": "2020-05",
-      "trough_value": 62.18,
-      "n_months": 89,
+      "trough_value": 62.07,
+      "n_months": 90,
       "source": "Georgia Economics composite \u2014 computed from BLS CES + LAUS"
     },
     "forecast_arima": null,
@@ -5034,8 +5038,8 @@
       "source": "Georgia Economics composite \u2014 NAR-style affordability: ACS median household income (B19013) vs. income needed for the median home (ACS B25077 value scaled by FHFA HPI; Freddie Mac PMMS 30-yr rate via FRED). >100 = median household can afford the median home."
     },
     "credit_score": {
-      "score": 64,
-      "grade": "A-",
+      "score": 67,
+      "grade": "A",
       "outlook": "Stable",
       "components": {
         "vitality": {
@@ -5043,11 +5047,11 @@
           "weight": 0.25
         },
         "business_cycle": {
-          "score": 0.971,
+          "score": 0.969,
           "weight": 0.2
         },
         "labor_market": {
-          "score": 0.621,
+          "score": 0.756,
           "weight": 0.2
         },
         "quality_of_life": {
@@ -5071,7 +5075,7 @@
   "section_status": {
     "ces_employment": "live",
     "ces_by_supersector": "live",
-    "laus_unemployment": "stale",
+    "laus_unemployment": "live",
     "fhfa_hpi": "live",
     "census_pep": "live",
     "census_acs_demographics": "live",

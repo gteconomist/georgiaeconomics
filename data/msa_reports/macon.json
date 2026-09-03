@@ -3,7 +3,7 @@
   "short_name": "Macon",
   "full_name": "Macon-Bibb County, GA",
   "population": 232000,
-  "as_of": "2026-09-02",
+  "as_of": "2026-09-03",
   "sections": {
     "ces_employment": {
       "series_id": "SMS13314200000000001",
@@ -4173,7 +4173,8 @@
         "2026-03",
         "2026-04",
         "2026-05",
-        "2026-06"
+        "2026-06",
+        "2026-07"
       ],
       "values": [
         4.8,
@@ -4264,10 +4265,11 @@
         3.9,
         3.4,
         3.8,
-        4.2
+        4.2,
+        3.8
       ],
-      "latest_month": "2026-06",
-      "latest_value": 4.2
+      "latest_month": "2026-07",
+      "latest_value": 3.8
     },
     "fhfa_hpi": {
       "series_id": "ATNHPIUS31420Q",
@@ -5266,14 +5268,14 @@
       "source": "Census Business Dynamics Statistics (establishment entry rate, 2022); metro rate indexed to US=100"
     },
     "major_employers": {
-      "as_of": "2026-09-02",
+      "as_of": "2026-09-03",
       "employers": [
         {
           "name": "Atrium Health Navicent",
           "source_url": "https://en.wikipedia.org/wiki/Macon,_Georgia"
         },
         {
-          "name": "Houston Healthcare",
+          "name": "Medical Center of Central Georgia",
           "source_url": "https://en.wikipedia.org/wiki/Central_Georgia"
         },
         {
@@ -5281,31 +5283,23 @@
           "source_url": "https://en.wikipedia.org/wiki/Macon,_Georgia"
         },
         {
-          "name": "Fort Valley State University",
-          "source_url": "https://en.wikipedia.org/wiki/Central_Georgia"
+          "name": "B&D Industrial",
+          "source_url": "http://www.macon.com/news/business/article169415742.html"
         },
         {
-          "name": "Medical Center of Central Georgia",
-          "source_url": "https://en.wikipedia.org/wiki/Central_Georgia"
+          "name": "Navicent Health",
+          "source_url": "http://www.macon.com/news/business/article169415742.html"
         },
         {
-          "name": "Blue Bird Body Co",
-          "source_url": "https://www.macon.com/news/business/article258547393.html"
+          "name": "Jackson Healthcare",
+          "source_url": "https://www.bizjournals.com/atlanta/news/2019/12/15/health-care-companies-expand-in-macon-market.html"
         },
         {
-          "name": "Coliseum Health System",
-          "source_url": "https://en.wikipedia.org/wiki/Central_Georgia"
+          "name": "Seacoast Bank",
+          "source_url": "https://www.bizjournals.com/atlanta/news/2019/12/15/health-care-companies-expand-in-macon-market.html"
         },
         {
-          "name": "Perdue Foods",
-          "source_url": "https://www.macon.com/news/business/article258547393.html"
-        },
-        {
-          "name": "Academy Sports",
-          "source_url": "https://www.macon.com/living/living-here-guide/article30143466.html"
-        },
-        {
-          "name": "Blue Bird Corporation",
+          "name": "Central Georgia Technical College",
           "source_url": "https://en.wikipedia.org/wiki/Central_Georgia"
         },
         {
@@ -5313,15 +5307,23 @@
           "source_url": "https://www.macon.com/news/local/article312115475.html"
         },
         {
-          "name": "Navicent Health",
-          "source_url": "https://www.macon.com/living/living-here-guide/article30143466.html"
+          "name": "Norfolk Southern Railway",
+          "source_url": null
         },
         {
-          "name": "Oconee Regional Medical Center",
-          "source_url": "https://www.macon.com/living/living-here-guide/article30143466.html"
+          "name": "The McLane Company",
+          "source_url": null
         },
         {
-          "name": "B&D Industrial",
+          "name": "Thomaston Industrial Park",
+          "source_url": "https://en.wikipedia.org/wiki/Central_Georgia"
+        },
+        {
+          "name": "Thomaston-Upson Industrial Development Authority",
+          "source_url": "https://en.wikipedia.org/wiki/Central_Georgia"
+        },
+        {
+          "name": "AlphaSkills Inc. She",
           "source_url": "http://www.macon.com/news/business/article169415742.html"
         }
       ],
@@ -5329,11 +5331,11 @@
         "https://en.wikipedia.org/wiki/Macon,_Georgia",
         "https://www.macon.com/living/living-here-guide/article39043491.html",
         "https://www.macon.com/news/local/article312115475.html",
-        "https://www.macon.com/news/business/article258547393.html",
         "https://en.wikipedia.org/wiki/Central_Georgia",
-        "https://www.macon.com/living/living-here-guide/article30143466.html",
+        "https://www.macon.com/news/business/article258547393.html",
+        "https://www.selectgeorgia.com/about-us/our-team/regional-development/ryan-waldrep-central",
         "http://www.macon.com/news/business/article169415742.html",
-        "https://www.macon.com/news/business/article254311083.html"
+        "https://www.bizjournals.com/atlanta/news/2019/12/15/health-care-companies-expand-in-macon-market.html"
       ],
       "method": "Representative list auto-discovered via Tavily web search across chamber-of-commerce, development-authority and local-news sources. Not exhaustive; ordering approximates source frequency, not headcount."
     },
@@ -5441,106 +5443,108 @@
         "2026-03",
         "2026-04",
         "2026-05",
-        "2026-06"
+        "2026-06",
+        "2026-07"
       ],
       "values": [
         100.0,
         100.7,
-        102.54,
-        102.83,
-        102.07,
+        102.55,
+        102.84,
+        102.08,
         100.98,
         101.13,
-        103.0,
-        104.46,
-        105.23,
-        105.41,
-        105.01,
-        104.62,
-        102.41,
-        76.03,
-        55.5,
-        41.28,
-        52.15,
-        59.98,
-        64.15,
-        69.64,
-        73.32,
-        75.66,
-        76.55,
-        77.5,
-        79.31,
-        81.69,
-        83.19,
-        83.79,
-        86.31,
-        88.75,
-        93.45,
-        95.68,
-        98.37,
-        99.96,
-        99.31,
-        98.48,
-        96.87,
-        99.88,
-        101.72,
+        103.01,
+        104.48,
+        105.26,
+        105.43,
+        105.03,
+        104.64,
         102.42,
+        75.92,
+        55.29,
+        41.0,
+        51.92,
+        59.79,
+        63.97,
+        69.5,
+        73.19,
+        75.54,
+        76.44,
+        77.39,
+        79.21,
+        81.6,
+        83.11,
+        83.71,
+        86.24,
+        88.7,
+        93.42,
+        95.65,
+        98.36,
+        99.96,
+        99.3,
+        98.47,
+        96.86,
+        99.88,
+        101.73,
+        102.43,
         100.5,
         98.75,
-        99.09,
+        99.08,
         98.72,
         99.64,
         99.99,
-        100.88,
+        100.89,
         100.66,
         100.09,
-        99.39,
-        98.13,
-        96.17,
-        96.26,
-        96.59,
+        99.38,
+        98.12,
+        96.15,
+        96.24,
+        96.57,
         98.6,
-        98.0,
-        98.67,
-        98.46,
-        98.27,
-        97.53,
-        96.3,
-        97.25,
-        97.44,
-        97.36,
-        94.98,
+        97.99,
+        98.66,
+        98.45,
+        98.26,
+        97.52,
+        96.28,
+        97.24,
+        97.42,
+        97.35,
+        94.95,
+        93.42,
         93.45,
-        93.48,
-        94.71,
-        95.74,
-        96.26,
-        96.97,
-        98.18,
+        94.68,
+        95.72,
+        96.24,
+        96.96,
+        98.17,
         98.91,
         100.74,
-        101.81,
-        101.77,
-        101.57,
+        101.82,
+        101.78,
+        101.58,
         100.52,
         100.92,
-        99.01,
+        99.0,
         99.34,
-        98.82,
+        98.81,
         99.06,
-        99.13,
+        99.12,
         100.64,
-        101.69,
+        101.7,
         101.05,
-        99.89
+        99.87,
+        99.16
       ],
-      "latest_month": "2026-06",
-      "latest_value": 99.89,
+      "latest_month": "2026-07",
+      "latest_value": 99.16,
       "peak_month": "2019-11",
-      "peak_value": 105.41,
+      "peak_value": 105.43,
       "trough_month": "2020-05",
-      "trough_value": 41.28,
-      "n_months": 89,
+      "trough_value": 41.0,
+      "n_months": 90,
       "source": "Georgia Economics composite \u2014 computed from BLS CES + LAUS"
     },
     "forecast_arima": {
@@ -5826,20 +5830,20 @@
       "source": "Georgia Economics composite \u2014 NAR-style affordability: ACS median household income (B19013) vs. income needed for the median home (ACS B25077 value scaled by FHFA HPI; Freddie Mac PMMS 30-yr rate via FRED). >100 = median household can afford the median home."
     },
     "credit_score": {
-      "score": 48,
-      "grade": "BBB-",
-      "outlook": "Positive",
+      "score": 50,
+      "grade": "BBB",
+      "outlook": "Stable",
       "components": {
         "vitality": {
           "score": 0.34,
           "weight": 0.25
         },
         "business_cycle": {
-          "score": 0.496,
+          "score": 0.467,
           "weight": 0.2
         },
         "labor_market": {
-          "score": 0.439,
+          "score": 0.561,
           "weight": 0.2
         },
         "quality_of_life": {

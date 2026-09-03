@@ -3,7 +3,7 @@
   "short_name": "Athens",
   "full_name": "Athens-Clarke County, GA",
   "population": 217000,
-  "as_of": "2026-09-02",
+  "as_of": "2026-09-03",
   "sections": {
     "ces_employment": {
       "series_id": "SMS13120200000000001",
@@ -4173,7 +4173,8 @@
         "2026-03",
         "2026-04",
         "2026-05",
-        "2026-06"
+        "2026-06",
+        "2026-07"
       ],
       "values": [
         3.9,
@@ -4264,10 +4265,11 @@
         2.9,
         2.4,
         2.7,
-        3.5
+        3.5,
+        3.0
       ],
-      "latest_month": "2026-06",
-      "latest_value": 3.5
+      "latest_month": "2026-07",
+      "latest_value": 3.0
     },
     "fhfa_hpi": {
       "series_id": "ATNHPIUS12020Q",
@@ -5275,42 +5277,18 @@
       "source": "Census Business Dynamics Statistics (establishment entry rate, 2022); metro rate indexed to US=100"
     },
     "major_employers": {
-      "as_of": "2026-09-02",
+      "as_of": "2026-09-03",
       "employers": [
         {
-          "name": "Children's Healthcare of Atlanta",
-          "source_url": "https://www.onlineathens.com/story/news/2026/03/04/georgias-best-employers-are-these-2-big-businesses-forbes-says/88982542007"
-        },
-        {
-          "name": "Athens Technical College",
+          "name": "University of Georgia",
           "source_url": null
         },
         {
-          "name": "Athens Regional Hospital",
-          "source_url": null
+          "name": "Athens Regional Health System",
+          "source_url": "https://www.ajc.com/business/hospital-giants-reach-beyond-metro-area/vQS8gUaJsJVpj11tgaX5xJ"
         },
         {
-          "name": "Blue Bird Corporation",
-          "source_url": null
-        },
-        {
-          "name": "Clarke County School System",
-          "source_url": null
-        },
-        {
-          "name": "Clarke County Schools",
-          "source_url": null
-        },
-        {
-          "name": "Eaton Corporation",
-          "source_url": null
-        },
-        {
-          "name": "Georgia Power",
-          "source_url": null
-        },
-        {
-          "name": "Georgia State University",
+          "name": "Clarke County School District",
           "source_url": null
         },
         {
@@ -5318,30 +5296,55 @@
           "source_url": null
         },
         {
-          "name": "Synovus Bank",
+          "name": "Certus Bank",
+          "source_url": "https://www.onlineathens.com/story/news/state/2013/01/14/new-athens-chamber-chair-aid-new-economic-development-dept/15585264007"
+        },
+        {
+          "name": "Leaven Group",
+          "source_url": "https://www.selectgeorgia.com/blog/locations-and-expansions/georgia-1q24-growth"
+        },
+        {
+          "name": "Apalachee High School",
+          "source_url": "http://onlineathens.com/local-news/2015-02-12/athens-gun-shop-owner-testifies-congress-asset-seizure"
+        },
+        {
+          "name": "Clarke County School System",
           "source_url": null
         },
         {
-          "name": "The University of Georgia",
-          "source_url": null
+          "name": "Homegoods Distribution Center",
+          "source_url": "https://www.onlineathens.com/story/business/2015/11/14/gdol-host-seasonal-recruitment-athens-area-employers/15471064007"
         },
         {
-          "name": "University of Georgia Health Care",
-          "source_url": null
+          "name": "Integrity Foods",
+          "source_url": "https://www.onlineathens.com/story/business/2015/11/14/gdol-host-seasonal-recruitment-athens-area-employers/15471064007"
         },
         {
-          "name": "Asbury Automotive Group",
-          "source_url": "https://www.augustachronicle.com/story/news/2025/06/04/fortune-500s-list-of-the-biggest-corporations-includes-17-in-georgia/84010835007"
+          "name": "Uber Technologies",
+          "source_url": "https://www.onlineathens.com/story/business/2015/11/14/gdol-host-seasonal-recruitment-athens-area-employers/15471064007"
+        },
+        {
+          "name": "Arglass Yamamura LLC",
+          "source_url": "https://www.selectgeorgia.com/blog/locations-and-expansions/georgia-1q24-growth"
+        },
+        {
+          "name": "Athens Area Health Plan",
+          "source_url": "https://www.ajc.com/business/hospital-giants-reach-beyond-metro-area/vQS8gUaJsJVpj11tgaX5xJ"
+        },
+        {
+          "name": "Athens Hardware Company",
+          "source_url": "https://en.wikipedia.org/wiki/Category:Companies_based_in_Athens,_Georgia"
         }
       ],
       "sources": [
-        "https://www.augustachronicle.com/story/news/2025/06/04/fortune-500s-list-of-the-biggest-corporations-includes-17-in-georgia/84010835007",
+        "https://www.onlineathens.com/story/business/2015/11/14/gdol-host-seasonal-recruitment-athens-area-employers/15471064007",
         "https://en.wikipedia.org/wiki/Athens,_Georgia",
-        "https://www.onlineathens.com/story/news/2026/03/04/georgias-best-employers-are-these-2-big-businesses-forbes-says/88982542007",
+        "https://www.ajc.com/business/hospital-giants-reach-beyond-metro-area/vQS8gUaJsJVpj11tgaX5xJ",
         "https://en.wikipedia.org/wiki/Category:Companies_based_in_Athens,_Georgia",
-        "https://www.onlineathens.com/story/news/state/2017/02/11/athens-area-chamber-commerce-chairman-s-message-fostering-spirit-service/15436553007",
-        "https://www.augustachronicle.com/story/news/2025/08/26/forbes-ranked-americas-best-employers-by-state-what-is-georgias/85830225007",
-        "https://www.onlineathens.com/story/business/2018/06/25/athens-chamber-commerce-names-north/1772620007"
+        "https://www.onlineathens.com/story/news/state/2013/01/14/new-athens-chamber-chair-aid-new-economic-development-dept/15585264007",
+        "https://www.ajc.com/top-workplaces/rounding-out-the-top-5-large-businesses/5FF7QFEAMRGF3PLDXYSC4NOFWQ",
+        "https://www.onlineathens.com/story/business/2018/06/25/athens-chamber-commerce-names-north/1772620007",
+        "http://onlineathens.com/local-news/2015-02-12/athens-gun-shop-owner-testifies-congress-asset-seizure"
       ],
       "method": "Representative list auto-discovered via Tavily web search across chamber-of-commerce, development-authority and local-news sources. Not exhaustive; ordering approximates source frequency, not headcount."
     },
@@ -5355,7 +5358,7 @@
         "ces_employment": 0.707,
         "laus_unemployment_neg": 0.707
       },
-      "correlation": 0.588,
+      "correlation": 0.587,
       "rebase_month": "2019-01",
       "rebase_value": 100.0,
       "smoothing": "3-month centered MA",
@@ -5449,106 +5452,108 @@
         "2026-03",
         "2026-04",
         "2026-05",
-        "2026-06"
+        "2026-06",
+        "2026-07"
       ],
       "values": [
         100.0,
-        100.19,
-        102.25,
-        102.78,
-        102.37,
-        101.23,
-        101.47,
+        100.2,
+        102.26,
+        102.79,
+        102.38,
+        101.24,
+        101.46,
         103.69,
-        104.9,
-        106.01,
-        106.25,
+        104.91,
+        106.02,
+        106.27,
         105.98,
-        105.38,
+        105.39,
         103.25,
-        82.77,
-        67.35,
-        57.88,
-        68.23,
-        76.11,
-        80.25,
-        85.53,
-        89.07,
-        91.81,
-        93.06,
-        93.95,
-        95.72,
-        97.82,
-        98.82,
-        98.45,
-        98.93,
-        99.42,
-        102.18,
-        102.99,
-        104.97,
-        105.03,
-        104.37,
-        103.27,
-        102.54,
-        104.61,
-        105.48,
-        104.78,
+        82.75,
+        67.31,
+        57.83,
+        68.2,
+        76.1,
+        80.26,
+        85.55,
+        89.1,
+        91.85,
+        93.09,
+        93.98,
+        95.74,
+        97.86,
+        98.85,
+        98.48,
+        98.95,
+        99.45,
+        102.2,
+        103.02,
+        105.01,
+        105.07,
+        104.41,
+        103.3,
+        102.57,
+        104.65,
+        105.52,
+        104.8,
         103.97,
         103.23,
-        105.48,
+        105.49,
         105.15,
-        106.38,
+        106.39,
         106.56,
-        107.05,
+        107.06,
         107.33,
-        107.52,
+        107.51,
+        109.92,
+        110.47,
         109.93,
+        108.66,
+        108.29,
         110.48,
-        109.95,
-        108.69,
-        108.33,
-        110.52,
-        111.57,
-        114.3,
-        114.48,
-        113.96,
-        112.68,
-        112.36,
-        114.07,
-        114.25,
-        112.43,
-        109.7,
-        108.01,
-        109.74,
-        111.22,
-        113.95,
-        115.43,
-        116.29,
-        115.64,
-        114.79,
-        116.06,
-        116.7,
-        115.76,
-        113.79,
-        113.12,
-        114.37,
-        115.91,
-        117.52,
-        118.19,
-        118.19,
-        118.28,
-        120.02,
-        121.23,
-        120.1,
-        118.58
+        111.53,
+        114.27,
+        114.45,
+        113.92,
+        112.64,
+        112.31,
+        114.03,
+        114.21,
+        112.38,
+        109.63,
+        107.94,
+        109.67,
+        111.15,
+        113.89,
+        115.37,
+        116.24,
+        115.58,
+        114.72,
+        116.0,
+        116.64,
+        115.69,
+        113.71,
+        113.03,
+        114.29,
+        115.82,
+        117.44,
+        118.11,
+        118.11,
+        118.2,
+        119.94,
+        121.15,
+        120.01,
+        118.51,
+        117.2
       ],
-      "latest_month": "2026-06",
-      "latest_value": 118.58,
+      "latest_month": "2026-07",
+      "latest_value": 117.2,
       "peak_month": "2026-04",
-      "peak_value": 121.23,
+      "peak_value": 121.15,
       "trough_month": "2020-05",
-      "trough_value": 57.88,
-      "n_months": 89,
+      "trough_value": 57.83,
+      "n_months": 90,
       "source": "Georgia Economics composite \u2014 computed from BLS CES + LAUS"
     },
     "forecast_arima": {
@@ -5834,7 +5839,7 @@
       "source": "Georgia Economics composite \u2014 NAR-style affordability: ACS median household income (B19013) vs. income needed for the median home (ACS B25077 value scaled by FHFA HPI; Freddie Mac PMMS 30-yr rate via FRED). >100 = median household can afford the median home."
     },
     "credit_score": {
-      "score": 67,
+      "score": 69,
       "grade": "A",
       "outlook": "Positive",
       "components": {
@@ -5843,11 +5848,11 @@
           "weight": 0.25
         },
         "business_cycle": {
-          "score": 0.968,
+          "score": 0.957,
           "weight": 0.2
         },
         "labor_market": {
-          "score": 0.65,
+          "score": 0.779,
           "weight": 0.2
         },
         "quality_of_life": {

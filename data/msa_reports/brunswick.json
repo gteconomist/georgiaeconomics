@@ -3,7 +3,7 @@
   "short_name": "Brunswick",
   "full_name": "Brunswick, GA",
   "population": 120000,
-  "as_of": "2026-09-02",
+  "as_of": "2026-09-03",
   "sections": {
     "ces_employment": {
       "series_id": "SMS13152600000000001",
@@ -3228,7 +3228,8 @@
         "2026-03",
         "2026-04",
         "2026-05",
-        "2026-06"
+        "2026-06",
+        "2026-07"
       ],
       "values": [
         4.4,
@@ -3319,10 +3320,11 @@
         3.1,
         2.5,
         2.8,
-        3.1
+        3.1,
+        2.8
       ],
-      "latest_month": "2026-06",
-      "latest_value": 3.1
+      "latest_month": "2026-07",
+      "latest_value": 2.8
     },
     "fhfa_hpi": {
       "series_id": "ATNHPIUS15260Q",
@@ -3916,20 +3918,20 @@
         3868
       ],
       "unemployment_rate": [
-        null,
-        null,
-        null,
-        null,
-        null,
-        null
+        2.9,
+        3.1,
+        2.8,
+        3.1,
+        3.0,
+        3.2
       ],
       "labor_force_000s": [
-        null,
-        null,
-        null,
-        null,
-        null,
-        null
+        55.5,
+        55.4,
+        56.7,
+        57.1,
+        56.8,
+        56.7
       ],
       "as_of_label": "2026 Q1",
       "source": "BLS QCEW (MSA totals) + LAUS (quarterly-averaged); Georgia Economics-assembled"
@@ -4271,7 +4273,7 @@
       "source": "Census Business Dynamics Statistics (establishment entry rate, 2022); metro rate indexed to US=100"
     },
     "major_employers": {
-      "as_of": "2026-09-02",
+      "as_of": "2026-09-03",
       "employers": [
         {
           "name": "Gulfstream Aerospace",
@@ -4282,63 +4284,63 @@
           "source_url": "https://en.wikipedia.org/wiki/Brunswick,_Georgia"
         },
         {
-          "name": "Digital Marketing Solutions",
-          "source_url": "https://www.savannahnow.com/story/business/2024/01/17/bucees-in-brunswick-ga-to-be-largest-in-state-bring-200-jobs/72255077007"
-        },
-        {
-          "name": "Georgia Ports Authority",
-          "source_url": "https://www.selectgeorgia.com/blog/wtc-sav-prosperity"
-        },
-        {
           "name": "Georgia Power Economic Development",
           "source_url": "https://www.selectgeorgia.com/blog/wtc-sav-prosperity"
-        },
-        {
-          "name": "Glynn County Development Authority",
-          "source_url": "https://en.wikipedia.org/wiki/Golden_Isles_of_Georgia"
-        },
-        {
-          "name": "The Port of Brunswick",
-          "source_url": "https://en.wikipedia.org/wiki/Brunswick,_Georgia"
         },
         {
           "name": "College of Coastal Georgia",
           "source_url": "https://en.wikipedia.org/wiki/Brunswick,_Georgia"
         },
         {
-          "name": "Forward Logistics System",
-          "source_url": null
+          "name": "Georgia Ports Authority",
+          "source_url": "https://www.selectgeorgia.com/blog/wtc-sav-prosperity"
         },
         {
-          "name": "Aviation",
-          "source_url": "https://en.wikipedia.org/wiki/List_of_companies_in_the_Chicago_metropolitan_area#Media"
+          "name": "Glynn County Development Authority",
+          "source_url": "https://georgia.org/newsroom/press-releases/leading-e-commerce-company-expands-in-glynn-county"
         },
         {
-          "name": "Brown Medline Industries Molex Morton Salt",
-          "source_url": "https://en.wikipedia.org/wiki/List_of_companies_in_the_Chicago_metropolitan_area#Media"
+          "name": "Leading E-commerce Company Expands In Glynn",
+          "source_url": "https://georgia.org/newsroom/press-releases/leading-e-commerce-company-expands-in-glynn-county"
         },
         {
-          "name": "Co. Brunswick Corporation Calamos Career Education",
-          "source_url": "https://en.wikipedia.org/wiki/List_of_companies_in_the_Chicago_metropolitan_area#Media"
+          "name": "The Port of Brunswick",
+          "source_url": "https://en.wikipedia.org/wiki/Brunswick,_Georgia"
         },
         {
-          "name": "Cobb County School District",
-          "source_url": "https://www.macon.com/living/article300278809.html"
+          "name": "Georgia Power Regional Economic Development Manager",
+          "source_url": "https://www.selectgeorgia.com/blog/wtc-sav-prosperity"
         },
         {
-          "name": "Corporation Century Aluminum CF Industries Cboe",
-          "source_url": "https://en.wikipedia.org/wiki/List_of_companies_in_the_Chicago_metropolitan_area#Media"
+          "name": "Georgia Power Team",
+          "source_url": "https://www.selectgeorgia.com/blog/wtc-sav-prosperity"
+        },
+        {
+          "name": "Ports of Savannah",
+          "source_url": "https://www.selectgeorgia.com/blog/wtc-sav-prosperity"
+        },
+        {
+          "name": "Coca-Cola Co",
+          "source_url": "https://www.ajc.com/blog/politics/many-georgia-biggest-firms-rally-behind-comprehensive-hate-crimes-law/PO47wWSlOT4r2P5GgDTD2H"
+        },
+        {
+          "name": "Digital Marketing Solutions",
+          "source_url": "https://www.savannahnow.com/story/business/2024/01/17/bucees-in-brunswick-ga-to-be-largest-in-state-bring-200-jobs/72255077007"
+        },
+        {
+          "name": "Georgia State University Economic Forecasting Center",
+          "source_url": "https://www.savannahnow.com/story/news/2006/11/16/economist-savannahs-growth-among-strongest-state/13820435007"
         }
       ],
       "sources": [
         "https://en.wikipedia.org/wiki/Brunswick,_Georgia",
         "https://georgia.org/newsroom/press-releases/leading-e-commerce-company-expands-in-glynn-county",
-        "https://www.savannahnow.com/story/business/2024/01/17/bucees-in-brunswick-ga-to-be-largest-in-state-bring-200-jobs/72255077007",
         "https://www.selectgeorgia.com/blog/wtc-sav-prosperity",
+        "https://georgia.org/blogs/global-local-international-businesses-grow-globally-georgia",
         "https://en.wikipedia.org/wiki/Golden_Isles_of_Georgia",
-        "https://en.wikipedia.org/wiki/History_of_Brunswick,_Georgia",
-        "https://georgia.org/press-releases?page=146",
-        "https://www.macon.com/living/article300278809.html"
+        "https://georgia.org/blogs/global-local-industries-put-georgia-map",
+        "https://www.ajc.com/blog/politics/many-georgia-biggest-firms-rally-behind-comprehensive-hate-crimes-law/PO47wWSlOT4r2P5GgDTD2H",
+        "https://www.savannahnow.com/story/business/2024/01/17/bucees-in-brunswick-ga-to-be-largest-in-state-bring-200-jobs/72255077007"
       ],
       "method": "Representative list auto-discovered via Tavily web search across chamber-of-commerce, development-authority and local-news sources. Not exhaustive; ordering approximates source frequency, not headcount."
     },
@@ -4352,7 +4354,7 @@
         "ces_employment": 0.707,
         "laus_unemployment_neg": 0.707
       },
-      "correlation": 0.702,
+      "correlation": 0.701,
       "rebase_month": "2019-01",
       "rebase_value": 100.0,
       "smoothing": "3-month centered MA",
@@ -4446,106 +4448,108 @@
         "2026-03",
         "2026-04",
         "2026-05",
-        "2026-06"
+        "2026-06",
+        "2026-07"
       ],
       "values": [
         100.0,
-        100.5,
+        100.51,
+        102.28,
+        102.76,
+        102.91,
+        102.45,
+        102.19,
         102.27,
-        102.75,
-        102.9,
-        102.44,
-        102.18,
-        102.26,
         102.78,
         104.04,
-        104.73,
-        104.4,
-        103.99,
-        103.1,
-        81.15,
-        66.53,
-        58.73,
-        73.26,
-        82.08,
-        85.7,
-        89.74,
+        104.74,
+        104.41,
+        104.0,
+        103.11,
+        81.11,
+        66.47,
+        58.66,
+        73.22,
+        82.06,
+        85.68,
+        89.73,
         92.0,
         93.99,
         94.66,
         95.39,
-        96.72,
+        96.73,
         98.16,
         99.01,
-        99.06,
+        99.07,
         100.3,
         101.11,
-        102.77,
-        103.48,
-        105.31,
-        106.7,
-        107.04,
+        102.78,
+        103.49,
+        105.33,
+        106.71,
+        107.05,
         107.31,
-        107.29,
+        107.28,
         108.6,
         109.18,
         108.91,
         108.82,
-        108.67,
-        109.98,
-        110.34,
-        111.49,
-        112.03,
-        112.32,
-        112.41,
-        112.37,
-        113.7,
-        114.28,
-        114.61,
-        114.43,
-        114.19,
-        114.91,
-        114.79,
-        115.74,
-        116.01,
-        116.37,
-        116.45,
+        108.66,
+        109.97,
+        110.32,
+        111.48,
+        112.01,
+        112.3,
+        112.39,
+        112.35,
+        113.68,
+        114.26,
+        114.58,
+        114.4,
+        114.16,
+        114.88,
+        114.76,
+        115.71,
+        115.98,
+        116.35,
+        116.41,
+        116.25,
+        117.04,
+        117.12,
+        116.86,
+        115.83,
+        115.38,
         116.29,
-        117.08,
-        117.15,
-        116.9,
-        115.88,
-        115.43,
-        116.34,
-        116.84,
-        117.67,
-        117.8,
-        117.36,
-        116.94,
-        116.47,
-        118.28,
-        118.99,
-        119.07,
-        118.47,
-        118.16,
-        118.74,
-        118.39,
-        119.14,
-        118.87,
-        118.74,
-        118.48,
-        119.76,
-        120.66,
-        120.74,
-        119.98
+        116.79,
+        117.62,
+        117.76,
+        117.32,
+        116.89,
+        116.43,
+        118.24,
+        118.95,
+        119.03,
+        118.42,
+        118.11,
+        118.68,
+        118.33,
+        119.09,
+        118.82,
+        118.68,
+        118.43,
+        119.7,
+        120.61,
+        120.69,
+        120.2,
+        120.04
       ],
-      "latest_month": "2026-06",
-      "latest_value": 119.98,
+      "latest_month": "2026-07",
+      "latest_value": 120.04,
       "peak_month": "2026-05",
-      "peak_value": 120.74,
+      "peak_value": 120.69,
       "trough_month": "2020-05",
-      "trough_value": 58.73,
-      "n_months": 89,
+      "trough_value": 58.66,
+      "n_months": 90,
       "source": "Georgia Economics composite \u2014 computed from BLS CES + LAUS"
     },
     "forecast_arima": {
@@ -4831,8 +4835,8 @@
       "source": "Georgia Economics composite \u2014 NAR-style affordability: ACS median household income (B19013) vs. income needed for the median home (ACS B25077 value scaled by FHFA HPI; Freddie Mac PMMS 30-yr rate via FRED). >100 = median household can afford the median home."
     },
     "credit_score": {
-      "score": 69,
-      "grade": "A",
+      "score": 70,
+      "grade": "A+",
       "outlook": "Positive",
       "components": {
         "vitality": {
@@ -4844,7 +4848,7 @@
           "weight": 0.2
         },
         "labor_market": {
-          "score": 0.756,
+          "score": 0.822,
           "weight": 0.2
         },
         "quality_of_life": {
@@ -4868,7 +4872,7 @@
   "section_status": {
     "ces_employment": "live",
     "ces_by_supersector": "live",
-    "laus_unemployment": "stale",
+    "laus_unemployment": "live",
     "fhfa_hpi": "live",
     "census_pep": "live",
     "census_acs_demographics": "live",

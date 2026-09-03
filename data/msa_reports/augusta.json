@@ -3,7 +3,7 @@
   "short_name": "Augusta",
   "full_name": "Augusta-Richmond County, GA-SC",
   "population": 611000,
-  "as_of": "2026-09-02",
+  "as_of": "2026-09-03",
   "sections": {
     "ces_employment": {
       "series_id": "SMS13122600000000001",
@@ -4173,7 +4173,8 @@
         "2026-03",
         "2026-04",
         "2026-05",
-        "2026-06"
+        "2026-06",
+        "2026-07"
       ],
       "values": [
         4.7,
@@ -4264,10 +4265,11 @@
         3.9,
         3.3,
         3.7,
-        4.2
+        4.2,
+        4.0
       ],
-      "latest_month": "2026-06",
-      "latest_value": 4.2
+      "latest_month": "2026-07",
+      "latest_value": 4.0
     },
     "fhfa_hpi": {
       "series_id": "ATNHPIUS12260Q",
@@ -5247,14 +5249,38 @@
       "source": "Census Business Dynamics Statistics (establishment entry rate, 2022); metro rate indexed to US=100"
     },
     "major_employers": {
-      "as_of": "2026-09-02",
+      "as_of": "2026-09-03",
       "employers": [
         {
           "name": "Augusta University",
           "source_url": "https://en.wikipedia.org/wiki/Augusta,_Georgia"
         },
         {
+          "name": "Department of Energy",
+          "source_url": "https://en.wikipedia.org/wiki/Augusta,_Georgia"
+        },
+        {
           "name": "Richmond County School System",
+          "source_url": "https://en.wikipedia.org/wiki/Augusta,_Georgia"
+        },
+        {
+          "name": "Doctors Hospital",
+          "source_url": "https://en.wikipedia.org/wiki/Augusta,_Georgia"
+        },
+        {
+          "name": "Encompass Health",
+          "source_url": "https://en.wikipedia.org/wiki/Augusta_metropolitan_area"
+        },
+        {
+          "name": "GF Casting Solutions",
+          "source_url": "https://www.augustachronicle.com/story/business/economy/2025/01/08/augustas-economic-development-in-2024-likely-will-set-up-strong-2025/77519554007"
+        },
+        {
+          "name": "Charlie Norwood VA Medical Center",
+          "source_url": "https://en.wikipedia.org/wiki/Augusta,_Georgia"
+        },
+        {
+          "name": "East Central Regional Hospital",
           "source_url": "https://en.wikipedia.org/wiki/Augusta,_Georgia"
         },
         {
@@ -5266,55 +5292,31 @@
           "source_url": "https://en.wikipedia.org/wiki/Augusta_metropolitan_area"
         },
         {
-          "name": "Cardinal Health",
-          "source_url": "https://augustaeda.org/business-industry/largest-employers"
+          "name": "Baptist Health",
+          "source_url": null
         },
         {
-          "name": "Doctors Hospital",
-          "source_url": "https://en.wikipedia.org/wiki/Augusta,_Georgia"
-        },
-        {
-          "name": "East Central Regional Hospital",
-          "source_url": "https://en.wikipedia.org/wiki/Augusta,_Georgia"
-        },
-        {
-          "name": "Paine College",
-          "source_url": "https://en.wikipedia.org/wiki/Augusta_metropolitan_area"
+          "name": "Children's Healthcare of Atlanta",
+          "source_url": "https://www.augustachronicle.com/story/news/2025/08/26/forbes-ranked-americas-best-employers-by-state-what-is-georgias/85830225007"
         },
         {
           "name": "East Georgia State College",
           "source_url": "https://en.wikipedia.org/wiki/Augusta_metropolitan_area"
         },
         {
-          "name": "Encompass Health Corporation",
-          "source_url": "https://en.wikipedia.org/wiki/Augusta_metropolitan_area"
-        },
-        {
-          "name": "FPL Food",
-          "source_url": "https://www.augustachronicle.com/story/business/2017/05/06/georgia-logistics-industry-will-be-crucial-coming-decades/14261716007"
-        },
-        {
           "name": "Georgia Military College",
           "source_url": "https://en.wikipedia.org/wiki/Augusta_metropolitan_area"
-        },
-        {
-          "name": "Department of Energy",
-          "source_url": "https://en.wikipedia.org/wiki/Augusta,_Georgia"
-        },
-        {
-          "name": "University Hospital",
-          "source_url": "https://www.augustaga.gov/DocumentView.asp?DID=335"
         }
       ],
       "sources": [
         "https://en.wikipedia.org/wiki/Augusta,_Georgia",
         "https://en.wikipedia.org/wiki/Augusta_metropolitan_area",
-        "https://en.wikipedia.org/wiki/Augusta-Richmond_County,_GA-SC_Metropolitan_Statistical_Area",
-        "https://www.augustachronicle.com/story/business/2017/05/06/georgia-logistics-industry-will-be-crucial-coming-decades/14261716007",
         "https://www.augustachronicle.com/story/business/economy/2025/01/08/augustas-economic-development-in-2024-likely-will-set-up-strong-2025/77519554007",
         "https://www.augustachronicle.com/story/business/2020/01/04/scuttlebiz-metro-area-economic-growth-outpaced-national-average-in-2018/1954353007",
-        "https://www.augustaga.gov/DocumentView.asp?DID=335",
-        "https://scoutcities.com/states/georgia/cities/augusta-ga"
+        "https://www.augustachronicle.com/story/news/2025/08/26/forbes-ranked-americas-best-employers-by-state-what-is-georgias/85830225007",
+        "https://www.augustachronicle.com/story/business/2024/08/27/georgia-top-companies-forbes-best-employers-by-state-list/74968857007",
+        "https://georgia.org/sites/default/files/2020-09/fy20_q4_board_book.pdf",
+        "https://www.augustachronicle.com/story/business/2022/11/01/chambers-programs-augusta-georgia-helps-black-businesses-grow-survive/10654466002"
       ],
       "method": "Representative list auto-discovered via Tavily web search across chamber-of-commerce, development-authority and local-news sources. Not exhaustive; ordering approximates source frequency, not headcount."
     },
@@ -5328,7 +5330,7 @@
         "ces_employment": 0.707,
         "laus_unemployment_neg": 0.707
       },
-      "correlation": 0.628,
+      "correlation": 0.625,
       "rebase_month": "2019-01",
       "rebase_value": 100.0,
       "smoothing": "3-month centered MA",
@@ -5422,106 +5424,108 @@
         "2026-03",
         "2026-04",
         "2026-05",
-        "2026-06"
+        "2026-06",
+        "2026-07"
       ],
       "values": [
         100.0,
         101.09,
-        104.76,
-        106.04,
-        106.38,
-        105.26,
-        105.36,
-        107.88,
-        109.7,
-        111.62,
-        111.55,
-        110.63,
-        109.86,
+        104.78,
+        106.06,
+        106.41,
+        105.28,
+        105.37,
+        107.9,
+        109.73,
+        111.65,
+        111.58,
+        110.65,
+        109.87,
         108.26,
-        84.26,
-        66.1,
-        54.14,
-        66.36,
-        75.71,
-        81.36,
-        88.42,
-        92.44,
-        94.61,
-        94.61,
-        94.67,
+        84.21,
+        66.01,
+        54.01,
+        66.26,
+        75.64,
+        81.31,
+        88.39,
+        92.42,
+        94.6,
+        94.6,
+        94.66,
         95.98,
-        97.71,
-        99.15,
-        98.41,
-        99.24,
-        99.71,
-        103.35,
-        105.46,
-        107.92,
-        109.33,
-        108.72,
-        108.08,
-        107.28,
-        109.83,
-        111.17,
-        110.66,
-        109.28,
-        108.45,
-        110.02,
-        110.33,
-        111.36,
-        111.87,
-        112.22,
-        111.9,
-        111.45,
-        112.86,
-        113.3,
-        112.41,
-        110.24,
+        97.72,
+        99.17,
+        98.43,
+        99.25,
+        99.72,
+        103.37,
+        105.49,
+        107.96,
+        109.36,
+        108.75,
+        108.11,
+        107.3,
+        109.87,
+        111.21,
+        110.69,
+        109.3,
+        108.46,
+        110.03,
+        110.35,
+        111.38,
+        111.89,
+        112.24,
+        111.91,
+        111.46,
+        112.87,
+        113.33,
+        112.43,
+        110.25,
         109.44,
-        110.24,
-        110.94,
-        111.96,
-        112.25,
-        112.47,
-        111.73,
-        111.76,
-        113.07,
-        113.9,
+        110.25,
+        110.95,
+        111.98,
+        112.27,
+        112.49,
+        111.74,
+        111.77,
+        113.08,
+        113.91,
         112.4,
-        109.84,
-        107.99,
-        109.07,
-        109.01,
-        110.73,
-        111.88,
-        113.42,
-        113.64,
-        113.83,
-        116.45,
+        109.82,
+        107.96,
+        109.05,
+        108.98,
+        110.71,
+        111.87,
+        113.4,
+        113.63,
+        113.82,
+        116.44,
         117.53,
         116.51,
-        113.86,
-        112.55,
-        112.93,
-        113.06,
-        113.7,
-        112.61,
-        112.13,
-        112.71,
-        116.06,
+        113.84,
+        112.53,
+        112.91,
+        113.04,
+        113.68,
+        112.58,
+        112.1,
+        112.68,
+        116.05,
         118.24,
         117.56,
-        116.06
+        115.83,
+        114.8
       ],
-      "latest_month": "2026-06",
-      "latest_value": 116.06,
+      "latest_month": "2026-07",
+      "latest_value": 114.8,
       "peak_month": "2026-04",
       "peak_value": 118.24,
       "trough_month": "2020-05",
-      "trough_value": 54.14,
-      "n_months": 89,
+      "trough_value": 54.01,
+      "n_months": 90,
       "source": "Georgia Economics composite \u2014 computed from BLS CES + LAUS"
     },
     "forecast_arima": {
@@ -5807,7 +5811,7 @@
       "source": "Georgia Economics composite \u2014 NAR-style affordability: ACS median household income (B19013) vs. income needed for the median home (ACS B25077 value scaled by FHFA HPI; Freddie Mac PMMS 30-yr rate via FRED). >100 = median household can afford the median home."
     },
     "credit_score": {
-      "score": 63,
+      "score": 64,
       "grade": "A-",
       "outlook": "Positive",
       "components": {
@@ -5816,11 +5820,11 @@
           "weight": 0.25
         },
         "business_cycle": {
-          "score": 0.946,
+          "score": 0.931,
           "weight": 0.2
         },
         "labor_market": {
-          "score": 0.439,
+          "score": 0.5,
           "weight": 0.2
         },
         "quality_of_life": {
