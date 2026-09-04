@@ -3,7 +3,7 @@
   "short_name": "Hinesville",
   "full_name": "Hinesville, GA",
   "population": 78000,
-  "as_of": "2026-09-03",
+  "as_of": "2026-09-04",
   "sections": {
     "ces_employment": {
       "series_id": "SMS13259800000000001",
@@ -1803,7 +1803,8 @@
               "2026-04",
               "2026-05",
               "2026-06",
-              "2026-07"
+              "2026-07",
+              "2026-08"
             ],
             "values": [
               633.0,
@@ -1836,7 +1837,8 @@
               608.0,
               611.0,
               609.0,
-              607.0
+              606.0,
+              609.0
             ],
             "yoy_pct": [
               null,
@@ -1869,9 +1871,10 @@
               -2.25,
               -1.13,
               -1.14,
-              -0.49
+              -0.66,
+              0.33
             ],
-            "latest_yoy": -0.49,
+            "latest_yoy": 0.33,
             "adjustment": "SA"
           },
           "Construction": {
@@ -1908,7 +1911,8 @@
               "2026-04",
               "2026-05",
               "2026-06",
-              "2026-07"
+              "2026-07",
+              "2026-08"
             ],
             "values": [
               8123.0,
@@ -1940,8 +1944,9 @@
               8311.0,
               8314.0,
               8316.0,
-              8321.0,
-              8343.0
+              8319.0,
+              8337.0,
+              8359.0
             ],
             "yoy_pct": [
               null,
@@ -1973,10 +1978,11 @@
               0.46,
               0.52,
               0.57,
-              0.65,
-              0.99
+              0.63,
+              0.92,
+              1.46
             ],
-            "latest_yoy": 0.99,
+            "latest_yoy": 1.46,
             "adjustment": "SA"
           },
           "Manufacturing": {
@@ -2013,7 +2019,8 @@
               "2026-04",
               "2026-05",
               "2026-06",
-              "2026-07"
+              "2026-07",
+              "2026-08"
             ],
             "values": [
               12875.0,
@@ -2045,8 +2052,9 @@
               12598.0,
               12597.0,
               12595.0,
-              12606.0,
-              12611.0
+              12608.0,
+              12622.0,
+              12638.0
             ],
             "yoy_pct": [
               null,
@@ -2078,10 +2086,11 @@
               -0.54,
               -0.51,
               -0.44,
-              -0.24,
-              -0.11
+              -0.22,
+              -0.02,
+              0.18
             ],
-            "latest_yoy": -0.11,
+            "latest_yoy": 0.18,
             "adjustment": "SA"
           },
           "Trade, transportation, and utilities": {
@@ -2118,7 +2127,8 @@
               "2026-04",
               "2026-05",
               "2026-06",
-              "2026-07"
+              "2026-07",
+              "2026-08"
             ],
             "values": [
               28799.0,
@@ -2150,8 +2160,9 @@
               28650.0,
               28715.0,
               28724.0,
-              28712.0,
-              28708.0
+              28728.0,
+              28762.0,
+              28778.0
             ],
             "yoy_pct": [
               null,
@@ -2183,10 +2194,11 @@
               -0.49,
               -0.24,
               -0.14,
-              -0.1,
-              -0.13
+              -0.05,
+              0.06,
+              0.12
             ],
-            "latest_yoy": -0.13,
+            "latest_yoy": 0.12,
             "adjustment": "SA"
           },
           "Information": {
@@ -2223,7 +2235,8 @@
               "2026-04",
               "2026-05",
               "2026-06",
-              "2026-07"
+              "2026-07",
+              "2026-08"
             ],
             "values": [
               2963.0,
@@ -2255,8 +2268,9 @@
               2793.0,
               2787.0,
               2782.0,
-              2769.0,
-              2780.0
+              2763.0,
+              2768.0,
+              2745.0
             ],
             "yoy_pct": [
               null,
@@ -2288,10 +2302,11 @@
               -2.58,
               -2.72,
               -2.86,
-              -3.28,
-              -2.83
+              -3.49,
+              -3.25,
+              -4.02
             ],
-            "latest_yoy": -2.83,
+            "latest_yoy": -4.02,
             "adjustment": "SA"
           },
           "Financial activities": {
@@ -2328,7 +2343,8 @@
               "2026-04",
               "2026-05",
               "2026-06",
-              "2026-07"
+              "2026-07",
+              "2026-08"
             ],
             "values": [
               9165.0,
@@ -2360,8 +2376,9 @@
               9132.0,
               9126.0,
               9106.0,
-              9104.0,
-              9090.0
+              9108.0,
+              9097.0,
+              9086.0
             ],
             "yoy_pct": [
               null,
@@ -2393,10 +2410,11 @@
               -0.75,
               -0.86,
               -1.14,
-              -1.09,
-              -1.24
+              -1.04,
+              -1.16,
+              -1.08
             ],
-            "latest_yoy": -1.24,
+            "latest_yoy": -1.08,
             "adjustment": "SA"
           },
           "Professional and business services": {
@@ -2433,7 +2451,8 @@
               "2026-04",
               "2026-05",
               "2026-06",
-              "2026-07"
+              "2026-07",
+              "2026-08"
             ],
             "values": [
               22668.0,
@@ -2465,8 +2484,9 @@
               22440.0,
               22460.0,
               22466.0,
-              22500.0,
-              22518.0
+              22502.0,
+              22517.0,
+              22527.0
             ],
             "yoy_pct": [
               null,
@@ -2498,10 +2518,11 @@
               -0.08,
               -0.04,
               0.07,
-              0.36,
-              0.51
+              0.37,
+              0.51,
+              0.68
             ],
-            "latest_yoy": 0.51,
+            "latest_yoy": 0.68,
             "adjustment": "SA"
           },
           "Education and health services": {
@@ -2538,7 +2559,8 @@
               "2026-04",
               "2026-05",
               "2026-06",
-              "2026-07"
+              "2026-07",
+              "2026-08"
             ],
             "values": [
               26033.0,
@@ -2570,8 +2592,9 @@
               27792.0,
               27859.0,
               27883.0,
-              27937.0,
-              27962.0
+              27933.0,
+              27945.0,
+              27974.0
             ],
             "yoy_pct": [
               null,
@@ -2603,10 +2626,11 @@
               2.43,
               2.36,
               2.23,
-              2.24,
-              2.01
+              2.23,
+              1.94,
+              1.96
             ],
-            "latest_yoy": 2.01,
+            "latest_yoy": 1.96,
             "adjustment": "SA"
           },
           "Leisure and hospitality": {
@@ -2643,7 +2667,8 @@
               "2026-04",
               "2026-05",
               "2026-06",
-              "2026-07"
+              "2026-07",
+              "2026-08"
             ],
             "values": [
               16716.0,
@@ -2675,8 +2700,9 @@
               16979.0,
               16972.0,
               17014.0,
-              16971.0,
-              16931.0
+              16960.0,
+              16939.0,
+              17001.0
             ],
             "yoy_pct": [
               null,
@@ -2708,10 +2734,11 @@
               0.93,
               0.81,
               1.04,
-              0.8,
-              0.49
+              0.73,
+              0.54,
+              0.78
             ],
-            "latest_yoy": 0.49,
+            "latest_yoy": 0.78,
             "adjustment": "SA"
           },
           "Other services": {
@@ -2748,7 +2775,8 @@
               "2026-04",
               "2026-05",
               "2026-06",
-              "2026-07"
+              "2026-07",
+              "2026-08"
             ],
             "values": [
               5917.0,
@@ -2780,8 +2808,9 @@
               6018.0,
               6029.0,
               6031.0,
-              6029.0,
-              6038.0
+              6024.0,
+              6032.0,
+              6035.0
             ],
             "yoy_pct": [
               null,
@@ -2813,10 +2842,11 @@
               0.52,
               0.7,
               0.62,
-              0.75,
-              0.82
+              0.67,
+              0.72,
+              0.45
             ],
-            "latest_yoy": 0.82,
+            "latest_yoy": 0.45,
             "adjustment": "SA"
           },
           "Government": {
@@ -2853,7 +2883,8 @@
               "2026-04",
               "2026-05",
               "2026-06",
-              "2026-07"
+              "2026-07",
+              "2026-08"
             ],
             "values": [
               23140.0,
@@ -2885,8 +2916,9 @@
               23333.0,
               23331.0,
               23333.0,
-              23323.0,
-              23270.0
+              23338.0,
+              23288.0,
+              23323.0
             ],
             "yoy_pct": [
               null,
@@ -2918,10 +2950,11 @@
               -0.96,
               -1.01,
               -0.97,
-              -1.12,
-              -1.34
+              -1.05,
+              -1.26,
+              -0.9
             ],
-            "latest_yoy": -1.34,
+            "latest_yoy": -0.9,
             "adjustment": "SA"
           }
         }
@@ -4112,72 +4145,72 @@
       "source": "Census Business Dynamics Statistics (establishment entry rate, 2022); metro rate indexed to US=100"
     },
     "major_employers": {
-      "as_of": "2026-09-03",
+      "as_of": "2026-09-04",
       "employers": [
         {
-          "name": "Southern Company",
-          "source_url": "https://www.augustachronicle.com/story/business/2024/08/27/georgia-top-companies-forbes-best-employers-by-state-list/74968857007"
-        },
-        {
-          "name": "Children's Healthcare of Atlanta",
-          "source_url": "https://www.augustachronicle.com/story/business/2024/08/27/georgia-top-companies-forbes-best-employers-by-state-list/74968857007"
-        },
-        {
-          "name": "Food Lion",
-          "source_url": null
-        },
-        {
-          "name": "Fort Stewart School District",
-          "source_url": null
-        },
-        {
-          "name": "Georgia Ports Authority",
-          "source_url": "https://www.savannahnow.com/story/news/2007/11/15/savannah-hinesville-fort-stewart-growing-faster-state-experts-say/13780691007"
-        },
-        {
-          "name": "Georgia State University",
-          "source_url": "https://www.savannahnow.com/story/news/2007/11/15/savannah-hinesville-fort-stewart-growing-faster-state-experts-say/13780691007"
-        },
-        {
-          "name": "Hinesville Hospital",
-          "source_url": null
-        },
-        {
-          "name": "Hinesville Medical Center",
-          "source_url": null
-        },
-        {
-          "name": "Liberty County School District",
-          "source_url": null
+          "name": "Liberty Regional Medical Center",
+          "source_url": "https://www.zippia.com/company/best-companies-in-hinesville-ga"
         },
         {
           "name": "Liberty County School System",
           "source_url": null
         },
         {
-          "name": "Long County School District",
+          "name": "Liberty County School District",
+          "source_url": "https://www.zippia.com/company/best-companies-in-hinesville-ga"
+        },
+        {
+          "name": "All Industries",
+          "source_url": "https://goldenislesdev.com/top-employers"
+        },
+        {
+          "name": "Authority Event",
+          "source_url": "https://www.investclayton.com/major-employers.php"
+        },
+        {
+          "name": "Food",
+          "source_url": "https://www.choosebarnesvillega.com/general/page/major-employers"
+        },
+        {
+          "name": "Hinesville City Schools",
           "source_url": null
         },
         {
-          "name": "Mohawk Industries",
-          "source_url": "https://www.selectgeorgia.com/discover-georgia/industries/fortune-500-list"
+          "name": "Logistics",
+          "source_url": "https://www.investclayton.com/major-employers.php"
         },
         {
-          "name": "Port of Hinesville",
-          "source_url": null
+          "name": "Manufacturing Companies",
+          "source_url": "https://www.indeed.com/companies/best-Manufacturing-companies-in-Hinesville,-GA"
         },
         {
-          "name": "Southeast Health",
-          "source_url": null
+          "name": "Rich Products Corporation",
+          "source_url": "https://goldenislesdev.com/top-employers"
+        },
+        {
+          "name": "Atlanta Motive Power Services",
+          "source_url": "https://www.choosebarnesvillega.com/general/page/major-employers"
+        },
+        {
+          "name": "Bankston Truss Company",
+          "source_url": "https://www.choosebarnesvillega.com/general/page/major-employers"
+        },
+        {
+          "name": "Coastal Academy",
+          "source_url": "https://www.zippia.com/company/best-companies-in-hinesville-ga"
+        },
+        {
+          "name": "Distribution",
+          "source_url": "https://www.choosebarnesvillega.com/general/page/major-employers"
         }
       ],
       "sources": [
-        "https://www.savannahnow.com/story/news/2007/11/15/savannah-hinesville-fort-stewart-growing-faster-state-experts-say/13780691007",
-        "https://www.augustachronicle.com/story/business/2024/08/27/georgia-top-companies-forbes-best-employers-by-state-list/74968857007",
-        "https://www.augustachronicle.com/story/news/2025/08/26/forbes-ranked-americas-best-employers-by-state-what-is-georgias/85830225007",
-        "https://en.wikipedia.org/wiki/List_of_Georgia_(U.S._state)_companies",
-        "https://georgia.org/sites/default/files/2020-10/georgia_safety_promise-10-8.pdf",
-        "https://www.selectgeorgia.com/discover-georgia/industries/fortune-500-list"
+        "https://www.investclayton.com/major-employers.php",
+        "https://en.wikipedia.org/wiki/Hinesville,_Georgia",
+        "https://goldenislesdev.com/top-employers",
+        "https://www.indeed.com/companies/best-Manufacturing-companies-in-Hinesville,-GA",
+        "https://www.zippia.com/company/best-companies-in-hinesville-ga",
+        "https://www.choosebarnesvillega.com/general/page/major-employers"
       ],
       "method": "Representative list auto-discovered via Tavily web search across chamber-of-commerce, development-authority and local-news sources. Not exhaustive; ordering approximates source frequency, not headcount."
     },

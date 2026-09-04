@@ -3,7 +3,7 @@
   "short_name": "Macon",
   "full_name": "Macon-Bibb County, GA",
   "population": 232000,
-  "as_of": "2026-09-03",
+  "as_of": "2026-09-04",
   "sections": {
     "ces_employment": {
       "series_id": "SMS13314200000000001",
@@ -2958,7 +2958,8 @@
               "2026-04",
               "2026-05",
               "2026-06",
-              "2026-07"
+              "2026-07",
+              "2026-08"
             ],
             "values": [
               633.0,
@@ -2991,7 +2992,8 @@
               608.0,
               611.0,
               609.0,
-              607.0
+              606.0,
+              609.0
             ],
             "yoy_pct": [
               null,
@@ -3024,9 +3026,10 @@
               -2.25,
               -1.13,
               -1.14,
-              -0.49
+              -0.66,
+              0.33
             ],
-            "latest_yoy": -0.49,
+            "latest_yoy": 0.33,
             "adjustment": "SA"
           },
           "Construction": {
@@ -3063,7 +3066,8 @@
               "2026-04",
               "2026-05",
               "2026-06",
-              "2026-07"
+              "2026-07",
+              "2026-08"
             ],
             "values": [
               8123.0,
@@ -3095,8 +3099,9 @@
               8311.0,
               8314.0,
               8316.0,
-              8321.0,
-              8343.0
+              8319.0,
+              8337.0,
+              8359.0
             ],
             "yoy_pct": [
               null,
@@ -3128,10 +3133,11 @@
               0.46,
               0.52,
               0.57,
-              0.65,
-              0.99
+              0.63,
+              0.92,
+              1.46
             ],
-            "latest_yoy": 0.99,
+            "latest_yoy": 1.46,
             "adjustment": "SA"
           },
           "Manufacturing": {
@@ -3168,7 +3174,8 @@
               "2026-04",
               "2026-05",
               "2026-06",
-              "2026-07"
+              "2026-07",
+              "2026-08"
             ],
             "values": [
               12875.0,
@@ -3200,8 +3207,9 @@
               12598.0,
               12597.0,
               12595.0,
-              12606.0,
-              12611.0
+              12608.0,
+              12622.0,
+              12638.0
             ],
             "yoy_pct": [
               null,
@@ -3233,10 +3241,11 @@
               -0.54,
               -0.51,
               -0.44,
-              -0.24,
-              -0.11
+              -0.22,
+              -0.02,
+              0.18
             ],
-            "latest_yoy": -0.11,
+            "latest_yoy": 0.18,
             "adjustment": "SA"
           },
           "Trade, transportation, and utilities": {
@@ -3273,7 +3282,8 @@
               "2026-04",
               "2026-05",
               "2026-06",
-              "2026-07"
+              "2026-07",
+              "2026-08"
             ],
             "values": [
               28799.0,
@@ -3305,8 +3315,9 @@
               28650.0,
               28715.0,
               28724.0,
-              28712.0,
-              28708.0
+              28728.0,
+              28762.0,
+              28778.0
             ],
             "yoy_pct": [
               null,
@@ -3338,10 +3349,11 @@
               -0.49,
               -0.24,
               -0.14,
-              -0.1,
-              -0.13
+              -0.05,
+              0.06,
+              0.12
             ],
-            "latest_yoy": -0.13,
+            "latest_yoy": 0.12,
             "adjustment": "SA"
           },
           "Information": {
@@ -3378,7 +3390,8 @@
               "2026-04",
               "2026-05",
               "2026-06",
-              "2026-07"
+              "2026-07",
+              "2026-08"
             ],
             "values": [
               2963.0,
@@ -3410,8 +3423,9 @@
               2793.0,
               2787.0,
               2782.0,
-              2769.0,
-              2780.0
+              2763.0,
+              2768.0,
+              2745.0
             ],
             "yoy_pct": [
               null,
@@ -3443,10 +3457,11 @@
               -2.58,
               -2.72,
               -2.86,
-              -3.28,
-              -2.83
+              -3.49,
+              -3.25,
+              -4.02
             ],
-            "latest_yoy": -2.83,
+            "latest_yoy": -4.02,
             "adjustment": "SA"
           },
           "Financial activities": {
@@ -3483,7 +3498,8 @@
               "2026-04",
               "2026-05",
               "2026-06",
-              "2026-07"
+              "2026-07",
+              "2026-08"
             ],
             "values": [
               9165.0,
@@ -3515,8 +3531,9 @@
               9132.0,
               9126.0,
               9106.0,
-              9104.0,
-              9090.0
+              9108.0,
+              9097.0,
+              9086.0
             ],
             "yoy_pct": [
               null,
@@ -3548,10 +3565,11 @@
               -0.75,
               -0.86,
               -1.14,
-              -1.09,
-              -1.24
+              -1.04,
+              -1.16,
+              -1.08
             ],
-            "latest_yoy": -1.24,
+            "latest_yoy": -1.08,
             "adjustment": "SA"
           },
           "Professional and business services": {
@@ -3588,7 +3606,8 @@
               "2026-04",
               "2026-05",
               "2026-06",
-              "2026-07"
+              "2026-07",
+              "2026-08"
             ],
             "values": [
               22668.0,
@@ -3620,8 +3639,9 @@
               22440.0,
               22460.0,
               22466.0,
-              22500.0,
-              22518.0
+              22502.0,
+              22517.0,
+              22527.0
             ],
             "yoy_pct": [
               null,
@@ -3653,10 +3673,11 @@
               -0.08,
               -0.04,
               0.07,
-              0.36,
-              0.51
+              0.37,
+              0.51,
+              0.68
             ],
-            "latest_yoy": 0.51,
+            "latest_yoy": 0.68,
             "adjustment": "SA"
           },
           "Education and health services": {
@@ -3693,7 +3714,8 @@
               "2026-04",
               "2026-05",
               "2026-06",
-              "2026-07"
+              "2026-07",
+              "2026-08"
             ],
             "values": [
               26033.0,
@@ -3725,8 +3747,9 @@
               27792.0,
               27859.0,
               27883.0,
-              27937.0,
-              27962.0
+              27933.0,
+              27945.0,
+              27974.0
             ],
             "yoy_pct": [
               null,
@@ -3758,10 +3781,11 @@
               2.43,
               2.36,
               2.23,
-              2.24,
-              2.01
+              2.23,
+              1.94,
+              1.96
             ],
-            "latest_yoy": 2.01,
+            "latest_yoy": 1.96,
             "adjustment": "SA"
           },
           "Leisure and hospitality": {
@@ -3798,7 +3822,8 @@
               "2026-04",
               "2026-05",
               "2026-06",
-              "2026-07"
+              "2026-07",
+              "2026-08"
             ],
             "values": [
               16716.0,
@@ -3830,8 +3855,9 @@
               16979.0,
               16972.0,
               17014.0,
-              16971.0,
-              16931.0
+              16960.0,
+              16939.0,
+              17001.0
             ],
             "yoy_pct": [
               null,
@@ -3863,10 +3889,11 @@
               0.93,
               0.81,
               1.04,
-              0.8,
-              0.49
+              0.73,
+              0.54,
+              0.78
             ],
-            "latest_yoy": 0.49,
+            "latest_yoy": 0.78,
             "adjustment": "SA"
           },
           "Other services": {
@@ -3903,7 +3930,8 @@
               "2026-04",
               "2026-05",
               "2026-06",
-              "2026-07"
+              "2026-07",
+              "2026-08"
             ],
             "values": [
               5917.0,
@@ -3935,8 +3963,9 @@
               6018.0,
               6029.0,
               6031.0,
-              6029.0,
-              6038.0
+              6024.0,
+              6032.0,
+              6035.0
             ],
             "yoy_pct": [
               null,
@@ -3968,10 +3997,11 @@
               0.52,
               0.7,
               0.62,
-              0.75,
-              0.82
+              0.67,
+              0.72,
+              0.45
             ],
-            "latest_yoy": 0.82,
+            "latest_yoy": 0.45,
             "adjustment": "SA"
           },
           "Government": {
@@ -4008,7 +4038,8 @@
               "2026-04",
               "2026-05",
               "2026-06",
-              "2026-07"
+              "2026-07",
+              "2026-08"
             ],
             "values": [
               23140.0,
@@ -4040,8 +4071,9 @@
               23333.0,
               23331.0,
               23333.0,
-              23323.0,
-              23270.0
+              23338.0,
+              23288.0,
+              23323.0
             ],
             "yoy_pct": [
               null,
@@ -4073,10 +4105,11 @@
               -0.96,
               -1.01,
               -0.97,
-              -1.12,
-              -1.34
+              -1.05,
+              -1.26,
+              -0.9
             ],
-            "latest_yoy": -1.34,
+            "latest_yoy": -0.9,
             "adjustment": "SA"
           }
         }
@@ -5268,74 +5301,74 @@
       "source": "Census Business Dynamics Statistics (establishment entry rate, 2022); metro rate indexed to US=100"
     },
     "major_employers": {
-      "as_of": "2026-09-03",
+      "as_of": "2026-09-04",
       "employers": [
         {
-          "name": "Atrium Health Navicent",
-          "source_url": "https://en.wikipedia.org/wiki/Macon,_Georgia"
-        },
-        {
-          "name": "Medical Center of Central Georgia",
-          "source_url": "https://en.wikipedia.org/wiki/Central_Georgia"
-        },
-        {
           "name": "Mercer University",
-          "source_url": "https://en.wikipedia.org/wiki/Macon,_Georgia"
+          "source_url": "https://choosemacon.com/work/major-employers"
         },
         {
-          "name": "B&D Industrial",
-          "source_url": "http://www.macon.com/news/business/article169415742.html"
+          "name": "Blue Bird Corporation",
+          "source_url": "https://choosemacon.com/work/major-employers"
         },
         {
-          "name": "Navicent Health",
-          "source_url": "http://www.macon.com/news/business/article169415742.html"
+          "name": "Atrium Health",
+          "source_url": "https://choosemacon.com/work/major-employers"
         },
         {
-          "name": "Jackson Healthcare",
-          "source_url": "https://www.bizjournals.com/atlanta/news/2019/12/15/health-care-companies-expand-in-macon-market.html"
+          "name": "Manufacturing",
+          "source_url": "https://choosemacon.com/work/major-employers"
         },
         {
-          "name": "Seacoast Bank",
-          "source_url": "https://www.bizjournals.com/atlanta/news/2019/12/15/health-care-companies-expand-in-macon-market.html"
+          "name": "Piedmont Healthcare",
+          "source_url": "https://choosemacon.com/work/major-employers"
         },
         {
-          "name": "Central Georgia Technical College",
-          "source_url": "https://en.wikipedia.org/wiki/Central_Georgia"
+          "name": "Academy Sports",
+          "source_url": "https://www.macon.com/living/living-here-guide/article30143466.html"
         },
         {
-          "name": "Delta Airlines",
-          "source_url": "https://www.macon.com/news/local/article312115475.html"
+          "name": "Coliseum Health System",
+          "source_url": "https://www.macon.com/living/living-here-guide/article30143466.html"
         },
         {
-          "name": "Norfolk Southern Railway",
-          "source_url": null
+          "name": "College",
+          "source_url": "https://choosemacon.com/work/major-employers"
         },
         {
-          "name": "The McLane Company",
-          "source_url": null
+          "name": "Company",
+          "source_url": "https://choosemacon.com/work/major-employers"
         },
         {
-          "name": "Thomaston Industrial Park",
-          "source_url": "https://en.wikipedia.org/wiki/Central_Georgia"
+          "name": "Houston County Development Authority",
+          "source_url": "https://houstoncountyga.net/industries/top-employers"
         },
         {
-          "name": "Thomaston-Upson Industrial Development Authority",
-          "source_url": "https://en.wikipedia.org/wiki/Central_Georgia"
+          "name": "Houston Healthcare",
+          "source_url": "https://www.macon.com/living/living-here-guide/article30143466.html"
         },
         {
-          "name": "AlphaSkills Inc. She",
-          "source_url": "http://www.macon.com/news/business/article169415742.html"
+          "name": "Industrial Authority",
+          "source_url": "https://choosemacon.com/work/major-employers"
+        },
+        {
+          "name": "Professional Systems Corporation",
+          "source_url": "https://www.zippia.com/company/best-biggest-companies-in-macon-ga"
+        },
+        {
+          "name": "Sara Lee Foods",
+          "source_url": "https://choosemacon.com/work/major-employers"
         }
       ],
       "sources": [
+        "https://choosemacon.com/work/major-employers",
+        "https://www.zippia.com/company/best-biggest-companies-in-macon-ga",
         "https://en.wikipedia.org/wiki/Macon,_Georgia",
+        "https://maconchamber.com/2019/12/19/atlanta-business-chronicle-2019-macon-market-report",
         "https://www.macon.com/living/living-here-guide/article39043491.html",
-        "https://www.macon.com/news/local/article312115475.html",
-        "https://en.wikipedia.org/wiki/Central_Georgia",
-        "https://www.macon.com/news/business/article258547393.html",
-        "https://www.selectgeorgia.com/about-us/our-team/regional-development/ryan-waldrep-central",
-        "http://www.macon.com/news/business/article169415742.html",
-        "https://www.bizjournals.com/atlanta/news/2019/12/15/health-care-companies-expand-in-macon-market.html"
+        "https://thekirklandco.com/market_reports/macon-warner-robins_aug2023",
+        "https://choosemacon.com/industries",
+        "https://maconchamber.com/who-we-are/cornerstone-investors"
       ],
       "method": "Representative list auto-discovered via Tavily web search across chamber-of-commerce, development-authority and local-news sources. Not exhaustive; ordering approximates source frequency, not headcount."
     },
