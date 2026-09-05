@@ -3,7 +3,7 @@
   "short_name": "Rome",
   "full_name": "Rome, GA",
   "population": 99000,
-  "as_of": "2026-09-04",
+  "as_of": "2026-09-05",
   "sections": {
     "ces_employment": {
       "series_id": "SMS13406600000000001",
@@ -4616,7 +4616,7 @@
       "source": "Census Business Dynamics Statistics (establishment entry rate, 2022); metro rate indexed to US=100"
     },
     "major_employers": {
-      "as_of": "2026-09-04",
+      "as_of": "2026-09-05",
       "employers": [
         {
           "name": "Company",
@@ -4624,66 +4624,66 @@
         },
         {
           "name": "Harbin Clinic",
-          "source_url": "https://www.georgiatrend.com/2023/06/27/continued-growth-for-rome"
-        },
-        {
-          "name": "Floyd Medical Center",
-          "source_url": "https://www.georgiatrend.com/2023/06/27/continued-growth-for-rome"
-        },
-        {
-          "name": "Atrium Health Floyd",
-          "source_url": "https://www.northwestgeorgianews.com/rome/business/stuenkel-named-to-ga-trends-most-influential-leaders-list/article_4d1dfe54-9b92-11ef-8929-e7a10f1bf7e5.html"
-        },
-        {
-          "name": "Redmond Regional Medical Center",
-          "source_url": "https://www.georgiatrend.com/2023/06/27/continued-growth-for-rome"
-        },
-        {
-          "name": "Suzuki Manufacturing of America",
-          "source_url": "https://en.wikipedia.org/wiki/Rome,_Georgia"
-        },
-        {
-          "name": "Healthcare",
-          "source_url": null
-        },
-        {
-          "name": "Regional Distribution Center",
-          "source_url": null
-        },
-        {
-          "name": "Sapienza University of Rome",
-          "source_url": null
+          "source_url": "https://www.romega.com/demographics"
         },
         {
           "name": "Berry College",
-          "source_url": "https://www.ziprecruiter.com/Jobs/Rome-Ga"
+          "source_url": "https://www.romega.com/demographics"
         },
         {
-          "name": "Cobb County School District",
-          "source_url": "https://www.macon.com/living/article300278809.html"
+          "name": "Floyd Healthcare Management",
+          "source_url": "https://www.romega.com/demographics"
         },
         {
-          "name": "Delta Airlines",
-          "source_url": "https://www.macon.com/news/local/article312115475.html"
+          "name": "Gordon Hospital",
+          "source_url": "https://www.romega.com/demographics"
         },
         {
-          "name": "Forsyth County School District",
-          "source_url": "https://www.macon.com/living/article300278809.html"
+          "name": "Rome Floyd Development Authority",
+          "source_url": "https://developromefloyd.com/community-data/major-manufacturers"
         },
         {
-          "name": "General Electric",
+          "name": "F&P America Manufacturing",
+          "source_url": null
+        },
+        {
+          "name": "Floyd Medical Center",
+          "source_url": "https://www.reddit.com/r/romega/comments/1jkqv08/rome_msa_ranked_number_one_in_the_state_for_job"
+        },
+        {
+          "name": "Ball Metal Container Corporation",
+          "source_url": "https://developromefloyd.com/community-data/major-manufacturers"
+        },
+        {
+          "name": "Integrated Fiber Solutions",
+          "source_url": "https://developromefloyd.com/community-data/major-manufacturers"
+        },
+        {
+          "name": "Kerry Foods",
+          "source_url": "https://developromefloyd.com/community-data/major-manufacturers"
+        },
+        {
+          "name": "Redmond Regional Medical Center",
           "source_url": "https://en.wikipedia.org/wiki/Rome,_Georgia"
+        },
+        {
+          "name": "Summit Hill Foods",
+          "source_url": "https://developromefloyd.com/community-data/major-manufacturers"
+        },
+        {
+          "name": "Syntec Industries",
+          "source_url": "https://developromefloyd.com/community-data/major-manufacturers"
         }
       ],
       "sources": [
-        "https://www.georgiatrend.com/2023/06/27/continued-growth-for-rome",
+        "https://www.romega.com/demographics",
         "https://www.zippia.com/company/best-biggest-companies-in-rome-ga",
+        "https://lensa.com/company/largest-companies-in-rome-ga-by-revenue",
         "https://www.reddit.com/r/romega/comments/1jkqv08/rome_msa_ranked_number_one_in_the_state_for_job",
         "https://en.wikipedia.org/wiki/Rome,_Georgia",
-        "https://georgia.org/newsroom/press-releases/candor-create-675-jobs-invest-39-million-rome",
-        "https://www.macon.com/living/article300278809.html",
-        "https://www.northwestgeorgianews.com/rome/business/rome-floyd-chamber-hosts-student-engagement-opportunities-and-rhea-lana-s-ribbon-cutting/collection_8e265bb6-d88c-4ad6-8226-90d1262558bc.html",
-        "https://www.northwestgeorgianews.com/rome/business/stuenkel-named-to-ga-trends-most-influential-leaders-list/article_4d1dfe54-9b92-11ef-8929-e7a10f1bf7e5.html"
+        "https://www.zippia.com/company/best-companies-in-rome-ga",
+        "https://developromefloyd.com/community-data/major-manufacturers",
+        "https://business.romega.com/jobs"
       ],
       "method": "Representative list auto-discovered via Tavily web search across chamber-of-commerce, development-authority and local-news sources. Not exhaustive; ordering approximates source frequency, not headcount."
     },

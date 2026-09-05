@@ -3,7 +3,7 @@
   "short_name": "Hinesville",
   "full_name": "Hinesville, GA",
   "population": 78000,
-  "as_of": "2026-09-04",
+  "as_of": "2026-09-05",
   "sections": {
     "ces_employment": {
       "series_id": "SMS13259800000000001",
@@ -4145,72 +4145,74 @@
       "source": "Census Business Dynamics Statistics (establishment entry rate, 2022); metro rate indexed to US=100"
     },
     "major_employers": {
-      "as_of": "2026-09-04",
+      "as_of": "2026-09-05",
       "employers": [
         {
-          "name": "Liberty Regional Medical Center",
-          "source_url": "https://www.zippia.com/company/best-companies-in-hinesville-ga"
+          "name": "Company",
+          "source_url": "https://lensa.com/company/largest-companies-in-hinesville-ga-by-revenue"
         },
         {
-          "name": "Liberty County School System",
-          "source_url": null
+          "name": "Hanwha Aerospace",
+          "source_url": "https://comegrow.global/major-industries"
+        },
+        {
+          "name": "Liberty County Development Authority",
+          "source_url": "https://comegrow.global/major-industries"
+        },
+        {
+          "name": "Major Industries",
+          "source_url": "https://comegrow.global/major-industries"
+        },
+        {
+          "name": "Warehouse Co-worker",
+          "source_url": "https://www.indeed.com/m/jobs?l=Hinesville%2C+GA"
+        },
+        {
+          "name": "Food Runner",
+          "source_url": "https://www.indeed.com/q-high-paying-l-hinesville,-ga-jobs.html"
         },
         {
           "name": "Liberty County School District",
           "source_url": "https://www.zippia.com/company/best-companies-in-hinesville-ga"
         },
         {
-          "name": "All Industries",
-          "source_url": "https://goldenislesdev.com/top-employers"
+          "name": "Manufacturing",
+          "source_url": "https://comegrow.global/major-industries"
         },
         {
-          "name": "Authority Event",
-          "source_url": "https://www.investclayton.com/major-employers.php"
+          "name": "Builders FirstSource Truss Plant",
+          "source_url": "https://comegrow.global/major-industries"
         },
         {
-          "name": "Food",
-          "source_url": "https://www.choosebarnesvillega.com/general/page/major-employers"
+          "name": "Clearwave Fiber LLC",
+          "source_url": "https://business.libertycounty.org/list/searchalpha/c"
         },
         {
-          "name": "Hinesville City Schools",
-          "source_url": null
+          "name": "Computer Sciences Corporation",
+          "source_url": "https://lensa.com/company/largest-companies-in-hinesville-ga-by-revenue"
         },
         {
-          "name": "Logistics",
-          "source_url": "https://www.investclayton.com/major-employers.php"
+          "name": "Day Shift GXO Logistics Midway",
+          "source_url": "https://www.indeed.com/m/jobs?l=Hinesville%2C+GA"
         },
         {
-          "name": "Manufacturing Companies",
-          "source_url": "https://www.indeed.com/companies/best-Manufacturing-companies-in-Hinesville,-GA"
-        },
-        {
-          "name": "Rich Products Corporation",
-          "source_url": "https://goldenislesdev.com/top-employers"
-        },
-        {
-          "name": "Atlanta Motive Power Services",
-          "source_url": "https://www.choosebarnesvillega.com/general/page/major-employers"
-        },
-        {
-          "name": "Bankston Truss Company",
-          "source_url": "https://www.choosebarnesvillega.com/general/page/major-employers"
-        },
-        {
-          "name": "Coastal Academy",
-          "source_url": "https://www.zippia.com/company/best-companies-in-hinesville-ga"
+          "name": "Delivery Station Warehouse Associate",
+          "source_url": "https://www.indeed.com/m/jobs?l=Hinesville%2C+GA"
         },
         {
           "name": "Distribution",
-          "source_url": "https://www.choosebarnesvillega.com/general/page/major-employers"
+          "source_url": "https://comegrow.global/major-industries"
         }
       ],
       "sources": [
-        "https://www.investclayton.com/major-employers.php",
-        "https://en.wikipedia.org/wiki/Hinesville,_Georgia",
-        "https://goldenislesdev.com/top-employers",
-        "https://www.indeed.com/companies/best-Manufacturing-companies-in-Hinesville,-GA",
+        "https://lensa.com/company/largest-companies-in-hinesville-ga-by-revenue",
         "https://www.zippia.com/company/best-companies-in-hinesville-ga",
-        "https://www.choosebarnesvillega.com/general/page/major-employers"
+        "https://comegrow.global/major-industries",
+        "https://comegrow.global/rankings",
+        "https://www.ziprecruiter.com/Jobs/-in-Hinesville,GA",
+        "https://business.libertycounty.org/list/searchalpha/c",
+        "https://www.indeed.com/companies/best-Manufacturing-companies-in-Hinesville,-GA",
+        "https://comegrow.global/2021/11/02/best-places-to-work-in-manufacturing"
       ],
       "method": "Representative list auto-discovered via Tavily web search across chamber-of-commerce, development-authority and local-news sources. Not exhaustive; ordering approximates source frequency, not headcount."
     },

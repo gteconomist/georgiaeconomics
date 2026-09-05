@@ -3,7 +3,7 @@
   "short_name": "Macon",
   "full_name": "Macon-Bibb County, GA",
   "population": 232000,
-  "as_of": "2026-09-04",
+  "as_of": "2026-09-05",
   "sections": {
     "ces_employment": {
       "series_id": "SMS13314200000000001",
@@ -5301,22 +5301,10 @@
       "source": "Census Business Dynamics Statistics (establishment entry rate, 2022); metro rate indexed to US=100"
     },
     "major_employers": {
-      "as_of": "2026-09-04",
+      "as_of": "2026-09-05",
       "employers": [
         {
           "name": "Mercer University",
-          "source_url": "https://choosemacon.com/work/major-employers"
-        },
-        {
-          "name": "Blue Bird Corporation",
-          "source_url": "https://choosemacon.com/work/major-employers"
-        },
-        {
-          "name": "Atrium Health",
-          "source_url": "https://choosemacon.com/work/major-employers"
-        },
-        {
-          "name": "Manufacturing",
           "source_url": "https://choosemacon.com/work/major-employers"
         },
         {
@@ -5324,11 +5312,19 @@
           "source_url": "https://choosemacon.com/work/major-employers"
         },
         {
-          "name": "Academy Sports",
-          "source_url": "https://www.macon.com/living/living-here-guide/article30143466.html"
+          "name": "Atrium Health",
+          "source_url": "https://choosemacon.com/work/major-employers"
         },
         {
-          "name": "Coliseum Health System",
+          "name": "Blue Bird Corporation",
+          "source_url": "https://choosemacon.com/work/major-employers"
+        },
+        {
+          "name": "Manufacturing",
+          "source_url": "https://choosemacon.com/work/major-employers"
+        },
+        {
+          "name": "Academy Sports",
           "source_url": "https://www.macon.com/living/living-here-guide/article30143466.html"
         },
         {
@@ -5340,16 +5336,16 @@
           "source_url": "https://choosemacon.com/work/major-employers"
         },
         {
-          "name": "Houston County Development Authority",
-          "source_url": "https://houstoncountyga.net/industries/top-employers"
+          "name": "Industrial Authority",
+          "source_url": "https://choosemacon.com/work/major-employers"
         },
         {
-          "name": "Houston Healthcare",
+          "name": "Medical Center",
           "source_url": "https://www.macon.com/living/living-here-guide/article30143466.html"
         },
         {
-          "name": "Industrial Authority",
-          "source_url": "https://choosemacon.com/work/major-employers"
+          "name": "Navicent Health",
+          "source_url": "https://www.macon.com/living/living-here-guide/article30143466.html"
         },
         {
           "name": "Professional Systems Corporation",
@@ -5358,17 +5354,21 @@
         {
           "name": "Sara Lee Foods",
           "source_url": "https://choosemacon.com/work/major-employers"
+        },
+        {
+          "name": "Synovus Bank",
+          "source_url": "https://maconchamber.com/who-we-are/cornerstone-investors"
         }
       ],
       "sources": [
         "https://choosemacon.com/work/major-employers",
         "https://www.zippia.com/company/best-biggest-companies-in-macon-ga",
-        "https://en.wikipedia.org/wiki/Macon,_Georgia",
+        "https://www.macon.com/living/living-here-guide/article30143466.html",
         "https://maconchamber.com/2019/12/19/atlanta-business-chronicle-2019-macon-market-report",
+        "https://en.wikipedia.org/wiki/Macon,_Georgia",
         "https://www.macon.com/living/living-here-guide/article39043491.html",
-        "https://thekirklandco.com/market_reports/macon-warner-robins_aug2023",
-        "https://choosemacon.com/industries",
-        "https://maconchamber.com/who-we-are/cornerstone-investors"
+        "https://maconchamber.com/who-we-are/cornerstone-investors",
+        "https://houstoncountyga.net/industries/top-employers"
       ],
       "method": "Representative list auto-discovered via Tavily web search across chamber-of-commerce, development-authority and local-news sources. Not exhaustive; ordering approximates source frequency, not headcount."
     },

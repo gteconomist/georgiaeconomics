@@ -3,7 +3,7 @@
   "short_name": "Valdosta",
   "full_name": "Valdosta, GA",
   "population": 148000,
-  "as_of": "2026-09-04",
+  "as_of": "2026-09-05",
   "sections": {
     "ces_employment": {
       "series_id": "SMS13466600000000001",
@@ -4355,14 +4355,26 @@
       "source": "Census Business Dynamics Statistics (establishment entry rate, 2022); metro rate indexed to US=100"
     },
     "major_employers": {
-      "as_of": "2026-09-04",
+      "as_of": "2026-09-05",
       "employers": [
         {
+          "name": "Company",
+          "source_url": "https://www.valdostacity.com/economic-development/top-20-employers"
+        },
+        {
           "name": "South Georgia Medical Center",
-          "source_url": "https://www.zippia.com/company/best-biggest-companies-in-valdosta-ga"
+          "source_url": "https://valdostadailytimes.com/2018/06/10/public-employers"
         },
         {
           "name": "Valdosta State University",
+          "source_url": "https://valdostadailytimes.com/2018/06/10/public-employers"
+        },
+        {
+          "name": "Archer Daniels Midland Co",
+          "source_url": "https://business.valdostachamber.com/directory/Search/manufacturers-371427"
+        },
+        {
+          "name": "Lowndes County Schools System",
           "source_url": "https://www.valdostacity.com/economic-development/top-20-employers"
         },
         {
@@ -4370,28 +4382,24 @@
           "source_url": "https://www.valdostacity.com/economic-development/top-20-employers"
         },
         {
-          "name": "The Scruggs Company",
-          "source_url": "https://www.valdostacity.com/economic-development/top-20-employers"
-        },
-        {
           "name": "Wiregrass Georgia Technical College",
           "source_url": "https://www.georgiatrend.com/2025/03/31/prospects-for-valdosta"
-        },
-        {
-          "name": "Fresh Beginnings Inc",
-          "source_url": "https://www.valdostacity.com/economic-development/top-20-employers"
         },
         {
           "name": "Distribution Center",
           "source_url": null
         },
         {
-          "name": "Lowndes County Schools System",
-          "source_url": "https://www.valdostacity.com/economic-development/top-20-employers"
+          "name": "Inc. Drugs Don't Work",
+          "source_url": "https://business.valdostachamber.com/directory/Search/manufacturers-371427"
         },
         {
-          "name": "Lowndes County School System",
-          "source_url": null
+          "name": "Langdale Forest Products Co",
+          "source_url": "https://business.valdostachamber.com/directory/Search/manufacturers-371427"
+        },
+        {
+          "name": "Precision Industries Inc",
+          "source_url": "https://business.valdostachamber.com/directory/Search/manufacturers-371427"
         },
         {
           "name": "Sunset Farm Foods",
@@ -4402,27 +4410,19 @@
           "source_url": null
         },
         {
-          "name": "Health",
-          "source_url": "https://www.valdostacity.com/economic-development/top-20-employers"
-        },
-        {
-          "name": "Inc. Drugs Don't Work",
-          "source_url": "https://business.valdostachamber.com/directory/Search/manufacturers-371427"
-        },
-        {
-          "name": "Archer Daniels Midland Co",
-          "source_url": "https://business.valdostachamber.com/directory/Search/manufacturers-371427"
+          "name": "Systems",
+          "source_url": "https://business.valdostachamber.com/directory/FindStartsWith?term=A"
         }
       ],
       "sources": [
+        "https://valdostadailytimes.com/2018/06/10/public-employers",
         "https://www.georgiatrend.com/2025/03/31/prospects-for-valdosta",
         "https://www.zippia.com/company/best-biggest-companies-in-valdosta-ga",
         "https://www.valdostacity.com/economic-development/top-20-employers",
+        "https://lensa.com/company/biggest-companies-in-valdosta-ga",
+        "http://www.georgia.org/regions/southeast-georgia",
         "https://business.valdostachamber.com/directory/Search/manufacturers-371427",
-        "https://valdostadailytimes.com/2018/06/10/public-employers",
-        "https://valdostadailytimes.com/2025/09/01/tm-polyfilm-inc-named-corporation-of-the-quarter-by-valdosta-lowndes-chamber-of-commerce",
-        "https://valdostadailytimes.com/2021/03/05/chamber-presents-annual-awards",
-        "https://jobs.valdostadailytimes.com"
+        "https://business.valdostachamber.com/directory/FindStartsWith?term=A"
       ],
       "method": "Representative list auto-discovered via Tavily web search across chamber-of-commerce, development-authority and local-news sources. Not exhaustive; ordering approximates source frequency, not headcount."
     },

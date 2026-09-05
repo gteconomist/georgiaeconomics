@@ -3,7 +3,7 @@
   "short_name": "Athens",
   "full_name": "Athens-Clarke County, GA",
   "population": 217000,
-  "as_of": "2026-09-04",
+  "as_of": "2026-09-05",
   "sections": {
     "ces_employment": {
       "series_id": "SMS13120200000000001",
@@ -5310,14 +5310,18 @@
       "source": "Census Business Dynamics Statistics (establishment entry rate, 2022); metro rate indexed to US=100"
     },
     "major_employers": {
-      "as_of": "2026-09-04",
+      "as_of": "2026-09-05",
       "employers": [
         {
-          "name": "Power Partners",
-          "source_url": "https://livability.com/ga/athens/education-careers-opportunity/8-top-employers-in-athens-ga"
+          "name": "Company",
+          "source_url": "https://lensa.com/company/largest-companies-in-athens-ga-by-revenue"
         },
         {
           "name": "Health Care System",
+          "source_url": "https://livability.com/ga/athens/education-careers-opportunity/8-top-employers-in-athens-ga"
+        },
+        {
+          "name": "Power Partners",
           "source_url": "https://livability.com/ga/athens/education-careers-opportunity/8-top-employers-in-athens-ga"
         },
         {
@@ -5341,6 +5345,10 @@
           "source_url": "https://business.athensga.com/list"
         },
         {
+          "name": "Athens Orthopedic Clinic",
+          "source_url": "https://business.athensga.com/list"
+        },
+        {
           "name": "Bank South",
           "source_url": "https://business.athensga.com/list"
         },
@@ -5349,35 +5357,27 @@
           "source_url": "https://business.athensga.com/list"
         },
         {
-          "name": "NEGA Physicians Group",
+          "name": "Georgia Power",
           "source_url": "https://business.athensga.com/list"
         },
         {
-          "name": "Northeast Georgia Medical Barrow",
+          "name": "Jackson Electric",
           "source_url": "https://business.athensga.com/list"
         },
         {
-          "name": "Vallant Bank",
-          "source_url": "https://business.athensga.com/list"
-        },
-        {
-          "name": "Athens Technical College",
-          "source_url": "https://business.athensga.com/list"
-        },
-        {
-          "name": "Athens Orthopedic Clinic",
-          "source_url": "https://business.athensga.com/list"
+          "name": "Janssen Pharmaceuticals",
+          "source_url": "https://business.athensga.com/list/category/manufacturing-production-236954"
         }
       ],
       "sources": [
         "https://livability.com/ga/athens/education-careers-opportunity/8-top-employers-in-athens-ga",
         "https://investathensga.com/site-selection/major-employers",
         "https://www.zippia.com/company/best-biggest-companies-in-athens-ga",
-        "https://www.accgov.com/DocumentCenter/View/535/Athens-Clarke-County-By-the-Numbers",
-        "https://fenceathensga.com/athens-georgia/economy",
-        "https://investathensga.com/target-sectors/advanced-manufacturing",
+        "https://lensa.com/company/largest-companies-in-athens-ga-by-revenue",
         "https://business.athensga.com/list/category/manufacturing-production-236954",
-        "https://business.athensga.com/list"
+        "https://business.athensga.com/list",
+        "https://www.athensga.com",
+        "https://www.ziprecruiter.com/Jobs/-in-Athens,GA"
       ],
       "method": "Representative list auto-discovered via Tavily web search across chamber-of-commerce, development-authority and local-news sources. Not exhaustive; ordering approximates source frequency, not headcount."
     },

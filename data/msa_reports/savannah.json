@@ -3,7 +3,7 @@
   "short_name": "Savannah",
   "full_name": "Savannah, GA",
   "population": 410000,
-  "as_of": "2026-09-04",
+  "as_of": "2026-09-05",
   "sections": {
     "ces_employment": {
       "series_id": "SMS13423400000000001",
@@ -5381,26 +5381,14 @@
       "source": "Census Business Dynamics Statistics (establishment entry rate, 2022); metro rate indexed to US=100"
     },
     "major_employers": {
-      "as_of": "2026-09-04",
+      "as_of": "2026-09-05",
       "employers": [
         {
-          "name": "Distribution",
-          "source_url": "https://www.savannahchamber.com/economic-development/major-employers"
-        },
-        {
-          "name": "Hospital",
-          "source_url": "https://www.savannahchamber.com/economic-development/major-employers"
+          "name": "Savannah College of Art",
+          "source_url": "https://www.thempc.org/docs/lit/compplan/2021/GC_ED.pdf"
         },
         {
           "name": "Gulfstream Aerospace",
-          "source_url": "https://dreamfindershomes.com/blog/top-industries-employers-savannah-georgia"
-        },
-        {
-          "name": "Metaplant",
-          "source_url": "https://www.savannahchamber.com/economic-development/manufacturers"
-        },
-        {
-          "name": "Savannah College of Art",
           "source_url": "https://dreamfindershomes.com/blog/top-industries-employers-savannah-georgia"
         },
         {
@@ -5408,47 +5396,59 @@
           "source_url": "https://dreamfindershomes.com/blog/top-industries-employers-savannah-georgia"
         },
         {
-          "name": "Memorial University Medical Center",
+          "name": "Manufacturing",
+          "source_url": "https://www.thempc.org/docs/lit/compplan/2021/GC_ED.pdf"
+        },
+        {
+          "name": "Distribution",
           "source_url": "https://www.savannahchamber.com/economic-development/major-employers"
         },
         {
-          "name": "Savannah State University",
+          "name": "Automotive",
+          "source_url": "https://seda.org/resources-and-data/data-center/regional-employers"
+        },
+        {
+          "name": "Georgia Ports Authority",
+          "source_url": "https://www.reddit.com/r/savannah/comments/1oxsvne/savannah_major_employers_and_their_job_boards"
+        },
+        {
+          "name": "The Port of Savannah",
           "source_url": "https://dreamfindershomes.com/blog/top-industries-employers-savannah-georgia"
         },
         {
-          "name": "Port of Savannah",
-          "source_url": "https://www.savannahnow.com/story/business/2017/09/21/three-savannah-area-firms-expand-logistics-footprints/13967831007"
+          "name": "Candler Hospital",
+          "source_url": null
         },
         {
-          "name": "Corporation",
-          "source_url": "https://www.savannahchamber.com/economic-development/major-employers"
+          "name": "Savannah State University",
+          "source_url": "https://www.thempc.org/docs/lit/compplan/2021/GC_ED.pdf"
+        },
+        {
+          "name": "Hyundai Metaplant",
+          "source_url": "https://www.savannahchamber.com/economic-development/manufacturers"
+        },
+        {
+          "name": "Chatham County Public School System",
+          "source_url": null
         },
         {
           "name": "Georgia-Pacific Savannah River Mill",
           "source_url": "https://dreamfindershomes.com/blog/top-industries-employers-savannah-georgia"
         },
         {
-          "name": "Healthcare",
-          "source_url": "https://www.savannahchamber.com/economic-development/major-employers"
-        },
-        {
-          "name": "Retail Food",
-          "source_url": "https://www.savannahchamber.com/economic-development/major-employers"
-        },
-        {
-          "name": "SouthCoast Health",
-          "source_url": "https://www.savannahchamber.com/economic-development/major-employers"
+          "name": "Daechang Seat Savannah Corp",
+          "source_url": "https://seda.org/resources-and-data/data-center/regional-employers"
         }
       ],
       "sources": [
+        "https://www.thempc.org/docs/lit/compplan/2021/GC_ED.pdf",
         "https://www.savannahchamber.com/economic-development/manufacturers",
         "https://dreamfindershomes.com/blog/top-industries-employers-savannah-georgia",
         "https://www.zippia.com/company/best-biggest-companies-in-savannah-ga",
         "https://www.reddit.com/r/savannah/comments/1oxsvne/savannah_major_employers_and_their_job_boards",
         "https://www.wtcsavannah.org/grow-here/key-industries",
         "https://www.savannahchamber.com/economic-development/major-employers",
-        "https://www.savannahchamber.com/membership/member-directory/business-and-professional-services/employment-services",
-        "https://www.savannahchamber.com/membership/member-directory/manufacturers"
+        "https://seda.org/resources-and-data/data-center/regional-employers"
       ],
       "method": "Representative list auto-discovered via Tavily web search across chamber-of-commerce, development-authority and local-news sources. Not exhaustive; ordering approximates source frequency, not headcount."
     },

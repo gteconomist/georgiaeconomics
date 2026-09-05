@@ -3,7 +3,7 @@
   "short_name": "Columbus",
   "full_name": "Columbus, GA-AL",
   "population": 329000,
-  "as_of": "2026-09-04",
+  "as_of": "2026-09-05",
   "sections": {
     "ces_employment": {
       "series_id": "SMS13179800000000001",
@@ -5299,15 +5299,15 @@
       "source": "Census Business Dynamics Statistics (establishment entry rate, 2022); metro rate indexed to US=100"
     },
     "major_employers": {
-      "as_of": "2026-09-04",
+      "as_of": "2026-09-05",
       "employers": [
         {
-          "name": "Automotive",
+          "name": "Company",
           "source_url": "https://www.choosecolumbusga.com/site-selectors/major-employers"
         },
         {
-          "name": "Manufacturing",
-          "source_url": "https://columbusregion.com/economy/top-employers"
+          "name": "Automotive",
+          "source_url": "https://www.choosecolumbusga.com/site-selectors/major-employers"
         },
         {
           "name": "Health Care",
@@ -5318,36 +5318,24 @@
           "source_url": "https://www.choosecolumbusga.com/site-selectors/major-employers"
         },
         {
-          "name": "American Electric Power",
-          "source_url": "https://columbusregion.com/economy/top-employers"
-        },
-        {
           "name": "Financial Activities",
           "source_url": "https://en.wikipedia.org/wiki/List_of_largest_Central_Ohio_employers"
         },
         {
-          "name": "McCauley Propeller Systems",
-          "source_url": "https://www.choosecolumbusga.com/site-selectors/major-employers"
-        },
-        {
-          "name": "Bread Financial",
-          "source_url": "https://columbusregion.com/economy/top-employers"
-        },
-        {
-          "name": "Cardinal Health",
-          "source_url": "https://columbusregion.com/economy/top-employers"
-        },
-        {
           "name": "Columbus State University",
-          "source_url": "https://www.choosecolumbusga.com/site-selectors/target-industries"
+          "source_url": "https://www.georgiatrend.com/2023/10/31/columbus-advantage"
         },
         {
           "name": "Corp. Mgt",
           "source_url": "https://en.wikipedia.org/wiki/List_of_largest_Central_Ohio_employers"
         },
         {
-          "name": "Mount Carmel Health System",
+          "name": "Honda of America Manufacturing",
           "source_url": "https://en.wikipedia.org/wiki/List_of_largest_Central_Ohio_employers"
+        },
+        {
+          "name": "McCauley Propeller Systems",
+          "source_url": "https://www.choosecolumbusga.com/site-selectors/major-employers"
         },
         {
           "name": "Nationwide Children's Hospital",
@@ -5356,16 +5344,26 @@
         {
           "name": "Ohio State University",
           "source_url": "https://en.wikipedia.org/wiki/List_of_largest_Central_Ohio_employers"
+        },
+        {
+          "name": "Bradley Co",
+          "source_url": "https://www.choosecolumbusga.com/site-selectors/major-employers"
+        },
+        {
+          "name": "Columbus City Schools",
+          "source_url": "https://en.wikipedia.org/wiki/List_of_largest_Central_Ohio_employers"
+        },
+        {
+          "name": "Emory Healthcare",
+          "source_url": "https://www.georgiatrend.com/2023/10/31/columbus-advantage"
         }
       ],
       "sources": [
         "https://www.georgiatrend.com/2023/10/31/columbus-advantage",
         "https://www.choosecolumbusga.com/site-selectors/major-employers",
-        "https://columbusregion.com/economy/top-employers",
-        "https://www.choosecolumbusga.com/site-selectors/target-industries",
-        "https://www.quora.com/Who-are-some-major-employers-around-Columbus-Georgia",
+        "https://lensa.com/company/biggest-companies-in-columbus-ga",
+        "https://www.ledger-enquirer.com/news/business/article293959859.html",
         "https://www.ziprecruiter.com/Jobs/-in-Columbus,OH",
-        "https://en.wikipedia.org/wiki/Economy_of_Columbus,_Ohio",
         "https://en.wikipedia.org/wiki/List_of_largest_Central_Ohio_employers"
       ],
       "method": "Representative list auto-discovered via Tavily web search across chamber-of-commerce, development-authority and local-news sources. Not exhaustive; ordering approximates source frequency, not headcount."

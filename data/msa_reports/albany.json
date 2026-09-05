@@ -3,7 +3,7 @@
   "short_name": "Albany",
   "full_name": "Albany, GA",
   "population": 146000,
-  "as_of": "2026-09-04",
+  "as_of": "2026-09-05",
   "sections": {
     "ces_employment": {
       "series_id": "SMS13105000000000001",
@@ -4352,34 +4352,34 @@
       "source": "Census Business Dynamics Statistics (establishment entry rate, 2022); metro rate indexed to US=100"
     },
     "major_employers": {
-      "as_of": "2026-09-04",
+      "as_of": "2026-09-05",
       "employers": [
+        {
+          "name": "Company",
+          "source_url": "https://lensa.com/company/largest-companies-in-albany-ga-by-revenue"
+        },
         {
           "name": "Albany State University",
           "source_url": "https://www.zippia.com/company/best-biggest-companies-in-albany-ga"
         },
         {
-          "name": "Marine Corps Logistics Base Albany",
-          "source_url": "https://www.georgiatrend.com/2022/07/29/albany-dougherty-county-our-state-capturing-opportunities"
+          "name": "Darton College",
+          "source_url": "https://thekirklandco.com/market_reports/albany-ga"
+        },
+        {
+          "name": "Dougherty County School System",
+          "source_url": "https://thekirklandco.com/market_reports/albany-ga"
         },
         {
           "name": "Phoebe Putney Health System",
-          "source_url": "https://www.georgiatrend.com/2022/07/29/albany-dougherty-county-our-state-capturing-opportunities"
+          "source_url": "https://thekirklandco.com/market_reports/albany-ga"
         },
         {
-          "name": "Phoebe Putney Memorial Hospital",
-          "source_url": "https://albanyga.com/albany"
-        },
-        {
-          "name": "Albany Technical College",
-          "source_url": "https://www.georgiatrend.com/2022/07/29/albany-dougherty-county-our-state-capturing-opportunities"
+          "name": "Springleaf Financial Holdings",
+          "source_url": "https://thekirklandco.com/market_reports/albany-ga"
         },
         {
           "name": "Manufacturing",
-          "source_url": "https://choosealbany.com/site-selection/area-industries"
-        },
-        {
-          "name": "Pratt Industries",
           "source_url": "https://choosealbany.com/site-selection/area-industries"
         },
         {
@@ -4391,35 +4391,35 @@
           "source_url": "https://www.bizjournals.com/albany/news/2023/07/14/albany-region-largest-private-sector-employers.html"
         },
         {
-          "name": "G&G Industrial Lighting",
-          "source_url": "https://www.bizjournals.com/albany/news/2024/07/12/albany-metro-area-private-sector-jobs-employers.html"
-        },
-        {
-          "name": "Northeast Grocery Inc",
-          "source_url": "https://www.bizjournals.com/albany/subscriber-only/2026/07/02/albanys-365-largest-employers.html"
+          "name": "GEA Industrial",
+          "source_url": "https://albanyga.com/category/businesses"
         },
         {
           "name": "Amadas Industries",
           "source_url": "https://choosealbany.com/site-selection/area-industries"
         },
         {
-          "name": "Health Partners",
-          "source_url": null
+          "name": "Behavioral Health",
+          "source_url": "https://business.albanyga.com/list/searchalpha/c"
         },
         {
-          "name": "Healthcare",
-          "source_url": "https://choosealbany.com/site-selection/area-industries"
+          "name": "Carpet World",
+          "source_url": "https://business.albanyga.com/list/searchalpha/c"
+        },
+        {
+          "name": "DISH Network L.L.C",
+          "source_url": "https://lensa.com/company/largest-companies-in-albany-ga-by-revenue"
         }
       ],
       "sources": [
         "https://www.zippia.com/company/best-biggest-companies-in-albany-ga",
+        "https://thekirklandco.com/market_reports/albany-ga",
+        "https://lensa.com/company/largest-companies-in-albany-ga-by-revenue",
         "https://choosealbany.com/site-selection/area-industries",
-        "https://www.georgiatrend.com/2022/07/29/albany-dougherty-county-our-state-capturing-opportunities",
         "https://lensa.com/company/top-companies-in-albany-ga",
-        "https://albanyga.com/albany",
-        "https://www.indeed.com/companies/best-Manufacturing-companies-in-Albany,-GA",
-        "https://www.bizjournals.com/albany/news/2023/07/14/albany-region-largest-private-sector-employers.html",
-        "https://www.ziprecruiter.com/Jobs/-in-Albany,NY"
+        "https://business.albanyga.com/list/searchalpha/c",
+        "https://albanyga.com/category/businesses",
+        "https://www.bizjournals.com/albany/news/2023/07/14/albany-region-largest-private-sector-employers.html"
       ],
       "method": "Representative list auto-discovered via Tavily web search across chamber-of-commerce, development-authority and local-news sources. Not exhaustive; ordering approximates source frequency, not headcount."
     },

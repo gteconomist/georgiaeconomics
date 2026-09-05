@@ -3,7 +3,7 @@
   "short_name": "Brunswick",
   "full_name": "Brunswick, GA",
   "population": 120000,
-  "as_of": "2026-09-04",
+  "as_of": "2026-09-05",
   "sections": {
     "ces_employment": {
       "series_id": "SMS13152600000000001",
@@ -4306,26 +4306,26 @@
       "source": "Census Business Dynamics Statistics (establishment entry rate, 2022); metro rate indexed to US=100"
     },
     "major_employers": {
-      "as_of": "2026-09-04",
+      "as_of": "2026-09-05",
       "employers": [
-        {
-          "name": "Gulfstream Aerospace",
-          "source_url": "https://en.wikipedia.org/wiki/Brunswick,_Georgia"
-        },
         {
           "name": "Southeast Georgia Health System",
           "source_url": "https://en.wikipedia.org/wiki/Brunswick,_Georgia"
         },
         {
-          "name": "Glynn County School System",
-          "source_url": "https://goldenislesdev.com/top-employers"
+          "name": "Company",
+          "source_url": "https://lensa.com/company/largest-companies-in-brunswick-ga-by-revenue"
+        },
+        {
+          "name": "Gulfstream Aerospace",
+          "source_url": "https://en.wikipedia.org/wiki/Brunswick,_Georgia"
         },
         {
           "name": "Rich Products Corporation",
           "source_url": "https://goldenislesdev.com/top-employers"
         },
         {
-          "name": "Sea Island Company",
+          "name": "Glynn County School System",
           "source_url": "https://goldenislesdev.com/top-employers"
         },
         {
@@ -4333,24 +4333,28 @@
           "source_url": "https://goldenislesdev.com/top-employers"
         },
         {
-          "name": "College of Coastal Georgia",
-          "source_url": "https://en.wikipedia.org/wiki/Brunswick,_Georgia"
-        },
-        {
-          "name": "Jekyll Island Authority",
+          "name": "Stambaugh Aviation",
           "source_url": "https://goldenislesdev.com/top-employers"
         },
         {
-          "name": "The Port of Brunswick",
-          "source_url": "https://en.wikipedia.org/wiki/Brunswick,_Georgia"
+          "name": "Jered LLC",
+          "source_url": "https://www.georgiatrend.com/2022/04/30/economy-brunswicks-strengths"
         },
         {
-          "name": "Georgia Ports Authority",
-          "source_url": "https://en.wikipedia.org/wiki/Brunswick,_Georgia"
+          "name": "Palmetto Aviation Repair",
+          "source_url": "https://www.georgiatrend.com/2022/04/30/economy-brunswicks-strengths"
         },
         {
-          "name": "Glynn County Development Authority",
-          "source_url": "https://en.wikipedia.org/wiki/Brunswick,_Georgia"
+          "name": "Sea Island Co",
+          "source_url": "https://www.georgiatrend.com/2022/04/30/economy-brunswicks-strengths"
+        },
+        {
+          "name": "Skycraft Aviation Specialties",
+          "source_url": "https://www.georgiatrend.com/2022/04/30/economy-brunswicks-strengths"
+        },
+        {
+          "name": "Starnbaugh Aviation",
+          "source_url": "https://www.georgiatrend.com/2022/04/30/economy-brunswicks-strengths"
         },
         {
           "name": "Golden Isles Development Authority",
@@ -4359,21 +4363,17 @@
         {
           "name": "Hospital",
           "source_url": "https://goldenislesdev.com/top-employers"
-        },
-        {
-          "name": "Isles Development Authority Logo",
-          "source_url": "https://goldenislesdev.com/top-employers"
         }
       ],
       "sources": [
         "https://en.wikipedia.org/wiki/Brunswick,_Georgia",
-        "https://www.zippia.com/company/best-biggest-companies-in-brunswick-ga",
         "https://www.georgiatrend.com/2022/04/30/economy-brunswicks-strengths",
         "https://www.facebook.com/groups/194430493950148/posts/8025727704153682",
+        "https://lensa.com/company/largest-companies-in-brunswick-ga-by-revenue",
+        "https://www.zippia.com/company/best-biggest-companies-in-brunswick-ga",
         "https://goldenislesdev.com/top-employers",
-        "https://lensa.com/company/highest-rated-companies-in-brunswick-ga",
-        "https://georgia.org/press-releases?page=146",
-        "https://www.savannahnow.com/story/business/2024/01/17/bucees-in-brunswick-ga-to-be-largest-in-state-bring-200-jobs/72255077007"
+        "https://www.indeed.com/companies/search?l=Brunswick%2C+GA",
+        "https://www.indeed.com/companies/best-Manufacturing-companies-in-Brunswick,-GA"
       ],
       "method": "Representative list auto-discovered via Tavily web search across chamber-of-commerce, development-authority and local-news sources. Not exhaustive; ordering approximates source frequency, not headcount."
     },

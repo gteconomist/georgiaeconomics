@@ -3,7 +3,7 @@
   "short_name": "Warner Robins",
   "full_name": "Warner Robins, GA",
   "population": 199000,
-  "as_of": "2026-09-04",
+  "as_of": "2026-09-05",
   "sections": {
     "ces_employment": {
       "series_id": "SMS13475800000000001",
@@ -4376,7 +4376,7 @@
       "source": "Census Business Dynamics Statistics (establishment entry rate, 2022); metro rate indexed to US=100"
     },
     "major_employers": {
-      "as_of": "2026-09-04",
+      "as_of": "2026-09-05",
       "employers": [
         {
           "name": "Company",
@@ -4384,66 +4384,66 @@
         },
         {
           "name": "Houston Healthcare",
-          "source_url": "https://thekirklandco.com/market_reports/macon-warner-robins_aug2023"
+          "source_url": "https://www.youtube.com/watch?v=3D-hSMZNq0g"
         },
         {
-          "name": "Food Manufacturing",
-          "source_url": "https://www.wrga.gov/article/2351392"
-        },
-        {
-          "name": "Mercer University",
-          "source_url": "https://thekirklandco.com/market_reports/macon-warner-robins_aug2023"
-        },
-        {
-          "name": "Pratt Industries",
-          "source_url": "https://georgia.org/press-releases/2023/georgia-based-pratt-industries-plans-new-manufacturing-facility-peach-county"
-        },
-        {
-          "name": "Atrium Health Navicent",
-          "source_url": "https://thekirklandco.com/market_reports/macon-warner-robins_aug2023"
-        },
-        {
-          "name": "CVS Health",
-          "source_url": "https://lensa.com/company/biggest-companies-in-warner-robins-ga"
-        },
-        {
-          "name": "Central Georgia Technical College",
+          "name": "Emory Healthcare",
           "source_url": "https://houstoncountyga.net/industries/top-employers"
-        },
-        {
-          "name": "Technologies",
-          "source_url": "https://lensa.com/company/biggest-companies-in-warner-robins-ga"
-        },
-        {
-          "name": "BAE Systems",
-          "source_url": null
-        },
-        {
-          "name": "Largest Manufacturing Employers",
-          "source_url": "https://houstoncountyga.net/industries/top-employers"
-        },
-        {
-          "name": "Sales Inc",
-          "source_url": "https://www.zippia.com/company/best-biggest-companies-in-warner-robins-ga"
         },
         {
           "name": "Advanced Drainage Systems",
           "source_url": "https://houstoncountyga.net/industries/top-employers"
         },
         {
-          "name": "Aerospace Manufacturers",
+          "name": "Gilmer Warehouse",
+          "source_url": "https://houstoncountyga.net/industries/top-employers"
+        },
+        {
+          "name": "Largest Manufacturing Employers",
+          "source_url": "https://houstoncountyga.net/industries/top-employers"
+        },
+        {
+          "name": "Logistics",
+          "source_url": "https://houstoncountyga.net/industries/top-employers"
+        },
+        {
+          "name": "Mercer University",
+          "source_url": "https://thekirklandco.com/market_reports/macon-warner-robins_aug2023"
+        },
+        {
+          "name": "Atrium Health Navicent",
+          "source_url": "https://thekirklandco.com/market_reports/macon-warner-robins_aug2023"
+        },
+        {
+          "name": "BAE Systems USA",
+          "source_url": "https://lensa.com/company/biggest-companies-in-warner-robins-ga"
+        },
+        {
+          "name": "CVS Health",
+          "source_url": "https://lensa.com/company/biggest-companies-in-warner-robins-ga"
+        },
+        {
+          "name": "Food Manufacturing",
+          "source_url": "https://www.wrga.gov/article/2351392"
+        },
+        {
+          "name": "Houston County Development Authority",
+          "source_url": "https://houstoncountyga.net/industries/top-employers"
+        },
+        {
+          "name": "Lockheed Martin Corporation",
           "source_url": "https://lensa.com/company/biggest-companies-in-warner-robins-ga"
         }
       ],
       "sources": [
+        "https://www.youtube.com/watch?v=3D-hSMZNq0g",
         "https://www.zippia.com/company/best-biggest-companies-in-warner-robins-ga",
         "https://houstoncountyga.net/industries/top-employers",
-        "https://thekirklandco.com/market_reports/macon-warner-robins_aug2023",
         "https://lensa.com/company/biggest-companies-in-warner-robins-ga",
         "https://www.wrga.gov/article/2351392",
-        "https://www.macon.com/news/local/community/houston-peach/article248306705.html",
-        "https://chamber.robinsregion.com/list/searchalpha/c",
-        "https://georgia.org/press-releases/2023/georgia-based-pratt-industries-plans-new-manufacturing-facility-peach-county"
+        "https://thekirklandco.com/market_reports/macon-warner-robins_aug2023",
+        "https://www.indeed.com/l-warner-robins,-ga-jobs.html",
+        "https://www.indeed.com/q-high-paying-l-warner-robins,-ga-jobs.html"
       ],
       "method": "Representative list auto-discovered via Tavily web search across chamber-of-commerce, development-authority and local-news sources. Not exhaustive; ordering approximates source frequency, not headcount."
     },

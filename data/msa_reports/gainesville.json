@@ -3,7 +3,7 @@
   "short_name": "Gainesville",
   "full_name": "Gainesville, GA",
   "population": 211000,
-  "as_of": "2026-09-04",
+  "as_of": "2026-09-05",
   "sections": {
     "ces_employment": {
       "series_id": "SMS13235800000000001",
@@ -5373,74 +5373,74 @@
       "source": "Census Business Dynamics Statistics (establishment entry rate, 2022); metro rate indexed to US=100"
     },
     "major_employers": {
-      "as_of": "2026-09-04",
+      "as_of": "2026-09-05",
       "employers": [
         {
           "name": "Company",
           "source_url": "https://lensa.com/company/biggest-companies-in-gainesville-ga"
         },
         {
-          "name": "University of Florida",
-          "source_url": "https://www.pepinerealty.com/blog/guide-employment-options-gainsville"
-        },
-        {
           "name": "Northeast Georgia Health System",
           "source_url": "https://www.zippia.com/company/best-biggest-companies-in-gainesville-ga"
         },
         {
-          "name": "UF Health Shands Hospital",
+          "name": "UF Health",
           "source_url": "https://www.pepinerealty.com/blog/guide-employment-options-gainsville"
+        },
+        {
+          "name": "University of Florida",
+          "source_url": "https://www.pepinerealty.com/blog/guide-employment-options-gainsville"
+        },
+        {
+          "name": "Kubota Manufacturing of America",
+          "source_url": null
+        },
+        {
+          "name": "North Florida Regional Medical Center",
+          "source_url": "https://www.pepinerealty.com/blog/guide-employment-options-gainsville"
+        },
+        {
+          "name": "University of North Georgia",
+          "source_url": "https://en.wikipedia.org/wiki/Gainesville,_Georgia"
+        },
+        {
+          "name": "Institute of Food",
+          "source_url": "https://guidetogreatergainesville.com/largest-employers"
         },
         {
           "name": "Koch Foods",
           "source_url": "https://en.wikipedia.org/wiki/Gainesville,_Georgia"
         },
         {
-          "name": "Nationwide Insurance",
-          "source_url": "https://guidetogreatergainesville.com/largest-employers"
+          "name": "PPG Industries",
+          "source_url": "https://www.ghcc.com/education/workforce-development/gainesville-hall-county-jobs"
+        },
+        {
+          "name": "Regions Bank",
+          "source_url": "https://www.ghcc.com/education/workforce-development/gainesville-hall-county-jobs"
+        },
+        {
+          "name": "Santa Fe College",
+          "source_url": "https://www.pepinerealty.com/blog/guide-employment-options-gainsville"
         },
         {
           "name": "The Longstreet Clinic",
           "source_url": "https://en.wikipedia.org/wiki/Gainesville,_Georgia"
         },
         {
-          "name": "Alachua County Public Schools",
-          "source_url": "https://en.wikipedia.org/wiki/Gainesville,_Florida"
-        },
-        {
-          "name": "Kubota Manufacturing of America",
-          "source_url": "https://hallcountyjobs.com/top-employers-in-hall-county"
-        },
-        {
-          "name": "Santa Fe College",
-          "source_url": "https://en.wikipedia.org/wiki/Gainesville,_Florida"
-        },
-        {
-          "name": "Alachua County School District",
-          "source_url": null
-        },
-        {
-          "name": "Brenau University",
-          "source_url": "https://en.wikipedia.org/wiki/Gainesville,_Georgia"
-        },
-        {
-          "name": "Comprehensive Annual Financial Report",
-          "source_url": "https://en.wikipedia.org/wiki/Gainesville,_Georgia"
-        },
-        {
-          "name": "North Florida Regional Medical Center",
-          "source_url": null
+          "name": "United Community Bank",
+          "source_url": "https://www.ghcc.com/education/workforce-development/gainesville-hall-county-jobs"
         }
       ],
       "sources": [
         "https://www.zippia.com/company/best-biggest-companies-in-gainesville-ga",
-        "https://en.wikipedia.org/wiki/Gainesville,_Georgia",
-        "https://rowenlife.com/the-rowen-region/major-employers",
-        "https://hallcountyjobs.com/top-employers-in-hall-county",
         "https://lensa.com/company/biggest-companies-in-gainesville-ga",
-        "https://www.pepinerealty.com/blog/guide-employment-options-gainsville",
+        "https://en.wikipedia.org/wiki/Gainesville,_Georgia",
+        "https://www.ghcc.com/education/workforce-development/gainesville-hall-county-jobs",
         "https://guidetogreatergainesville.com/largest-employers",
-        "https://www.ziprecruiter.com/Jobs/-in-Gainesville,GA"
+        "https://www.pepinerealty.com/blog/guide-employment-options-gainsville",
+        "https://www.ziprecruiter.com/Jobs/-in-Gainesville,GA",
+        "https://www.zippia.com/company/best-biggest-companies-in-gainesville-fl"
       ],
       "method": "Representative list auto-discovered via Tavily web search across chamber-of-commerce, development-authority and local-news sources. Not exhaustive; ordering approximates source frequency, not headcount."
     },

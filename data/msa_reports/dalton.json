@@ -3,7 +3,7 @@
   "short_name": "Dalton",
   "full_name": "Dalton, GA",
   "population": 143000,
-  "as_of": "2026-09-04",
+  "as_of": "2026-09-05",
   "sections": {
     "ces_employment": {
       "series_id": "SMS13191400000000001",
@@ -4717,18 +4717,26 @@
       "source": "Census Business Dynamics Statistics (establishment entry rate, 2022); metro rate indexed to US=100"
     },
     "major_employers": {
-      "as_of": "2026-09-04",
+      "as_of": "2026-09-05",
       "employers": [
         {
           "name": "Shaw Industries",
-          "source_url": "https://www.georgiatrend.com/2019/08/31/dalton-whitfield-county-reason-to-believe"
+          "source_url": "https://locationdalton.com/regional-data/major-employers"
         },
         {
           "name": "Mohawk Industries",
-          "source_url": "https://www.georgiatrend.com/2019/08/31/dalton-whitfield-county-reason-to-believe"
+          "source_url": "https://locationdalton.com/regional-data/major-employers"
         },
         {
           "name": "Dalton Public Schools",
+          "source_url": "https://locationdalton.com/regional-data/major-employers"
+        },
+        {
+          "name": "Company",
+          "source_url": "https://lensa.com/company/largest-companies-in-dalton-ga-by-revenue"
+        },
+        {
+          "name": "Dalton Utilities",
           "source_url": "https://locationdalton.com/regional-data/major-employers"
         },
         {
@@ -4744,47 +4752,38 @@
           "source_url": "https://locationdalton.com/regional-data/major-employers"
         },
         {
-          "name": "Dalton Utilities",
-          "source_url": "https://locationdalton.com/regional-data/major-employers"
-        },
-        {
           "name": "North Georgia Health District",
           "source_url": "https://locationdalton.com/regional-data/major-employers"
         },
         {
-          "name": "Beaulieu Group",
-          "source_url": "https://livability.com/ga/dalton/education-careers-opportunity/dalton-ga-area-top-employers"
+          "name": "Dalton-Whitfield County Joint Development Authority",
+          "source_url": "https://www.georgiatrend.com/2019/08/31/dalton-whitfield-county-reason-to-believe"
         },
         {
-          "name": "The Dixie Group",
-          "source_url": "https://www.zippia.com/company/best-biggest-companies-in-dalton-ga"
+          "name": "Essentia Protein Solutions",
+          "source_url": "https://believegreaterdalton.org/great-quality-of-life-meets-influx-of-new-jobs-in-dalton-ga"
         },
         {
-          "name": "Cherokee Carpet",
-          "source_url": "https://locationdalton.com/regional-data/major-employers"
+          "name": "GEDIA Automotive",
+          "source_url": "https://believegreaterdalton.org/great-quality-of-life-meets-influx-of-new-jobs-in-dalton-ga"
         },
         {
-          "name": "Dorsett Industries",
-          "source_url": "https://locationdalton.com/regional-data/major-employers"
+          "name": "Marketing Alliance Group",
+          "source_url": "https://www.linkedin.com/company/greater-dalton-chamber-of-commerce"
         },
         {
-          "name": "Hamilton Health Care System",
-          "source_url": "https://www.zippia.com/company/best-biggest-companies-in-dalton-ga"
-        },
-        {
-          "name": "Inc. QEP Co. Inc",
-          "source_url": "https://locationdalton.com/regional-data/major-employers"
+          "name": "Dalton-Whitfield Joint Development Authority",
+          "source_url": "https://believegreaterdalton.org/great-quality-of-life-meets-influx-of-new-jobs-in-dalton-ga"
         }
       ],
       "sources": [
-        "https://www.georgiatrend.com/2019/08/31/dalton-whitfield-county-reason-to-believe",
         "https://www.zippia.com/company/best-biggest-companies-in-dalton-ga",
         "https://locationdalton.com/regional-data/major-employers",
+        "https://www.georgiatrend.com/2019/08/31/dalton-whitfield-county-reason-to-believe",
+        "https://lensa.com/company/largest-companies-in-dalton-ga-by-revenue",
         "https://www.georgiatrend.com/2021/10/31/our-state-dalton-manufacturers-welcome",
         "https://believegreaterdalton.org/great-quality-of-life-meets-influx-of-new-jobs-in-dalton-ga",
-        "https://lensa.com/company/largest-companies-in-dalton-ga-by-revenue",
-        "https://www.linkedin.com/company/believe-greater-dalton",
-        "https://livability.com/ga/dalton/education-careers-opportunity/dalton-ga-area-top-employers"
+        "https://www.linkedin.com/company/greater-dalton-chamber-of-commerce"
       ],
       "method": "Representative list auto-discovered via Tavily web search across chamber-of-commerce, development-authority and local-news sources. Not exhaustive; ordering approximates source frequency, not headcount."
     },
