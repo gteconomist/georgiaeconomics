@@ -3,7 +3,7 @@
   "short_name": "Gainesville",
   "full_name": "Gainesville, GA",
   "population": 211000,
-  "as_of": "2026-09-05",
+  "as_of": "2026-09-06",
   "sections": {
     "ces_employment": {
       "series_id": "SMS13235800000000001",
@@ -5373,7 +5373,7 @@
       "source": "Census Business Dynamics Statistics (establishment entry rate, 2022); metro rate indexed to US=100"
     },
     "major_employers": {
-      "as_of": "2026-09-05",
+      "as_of": "2026-09-06",
       "employers": [
         {
           "name": "Company",
@@ -5384,32 +5384,44 @@
           "source_url": "https://www.zippia.com/company/best-biggest-companies-in-gainesville-ga"
         },
         {
-          "name": "UF Health",
-          "source_url": "https://www.pepinerealty.com/blog/guide-employment-options-gainsville"
-        },
-        {
-          "name": "University of Florida",
-          "source_url": "https://www.pepinerealty.com/blog/guide-employment-options-gainsville"
-        },
-        {
           "name": "Kubota Manufacturing of America",
-          "source_url": null
+          "source_url": "https://www.ghcc.com/wp-content/uploads/2018/09/2023-Top-Employers-Gainesvillle-Hall-County.pdf"
         },
         {
-          "name": "North Florida Regional Medical Center",
-          "source_url": "https://www.pepinerealty.com/blog/guide-employment-options-gainsville"
+          "name": "Fieldale Farms Corp",
+          "source_url": "https://www.gainesvilletimes.com/news/chamber-lauds-companies-as-tops-in-area"
+        },
+        {
+          "name": "Inc. Gainesville",
+          "source_url": "https://www.indeed.com/q-companies-l-gainesville,-ga-jobs.html"
         },
         {
           "name": "University of North Georgia",
           "source_url": "https://en.wikipedia.org/wiki/Gainesville,_Georgia"
         },
         {
-          "name": "Institute of Food",
-          "source_url": "https://guidetogreatergainesville.com/largest-employers"
+          "name": "Warehouse Operator",
+          "source_url": "https://www.indeed.com/q-companies-l-gainesville,-ga-jobs.html"
+        },
+        {
+          "name": "ABB Motors",
+          "source_url": "https://www.ghcc.com/education/workforce-development/gainesville-hall-county-jobs"
+        },
+        {
+          "name": "Fox Factory",
+          "source_url": "https://www.ziprecruiter.com/Jobs/-in-Gainesville,GA"
+        },
+        {
+          "name": "Gold Creek Foods",
+          "source_url": "https://www.ghcc.com/wp-content/uploads/2018/09/2023-Top-Employers-Gainesvillle-Hall-County.pdf"
         },
         {
           "name": "Koch Foods",
           "source_url": "https://en.wikipedia.org/wiki/Gainesville,_Georgia"
+        },
+        {
+          "name": "Mansfield Energy Corp",
+          "source_url": "https://www.gainesvilletimes.com/news/chamber-lauds-companies-as-tops-in-area"
         },
         {
           "name": "PPG Industries",
@@ -5418,29 +5430,17 @@
         {
           "name": "Regions Bank",
           "source_url": "https://www.ghcc.com/education/workforce-development/gainesville-hall-county-jobs"
-        },
-        {
-          "name": "Santa Fe College",
-          "source_url": "https://www.pepinerealty.com/blog/guide-employment-options-gainsville"
-        },
-        {
-          "name": "The Longstreet Clinic",
-          "source_url": "https://en.wikipedia.org/wiki/Gainesville,_Georgia"
-        },
-        {
-          "name": "United Community Bank",
-          "source_url": "https://www.ghcc.com/education/workforce-development/gainesville-hall-county-jobs"
         }
       ],
       "sources": [
         "https://www.zippia.com/company/best-biggest-companies-in-gainesville-ga",
-        "https://lensa.com/company/biggest-companies-in-gainesville-ga",
         "https://en.wikipedia.org/wiki/Gainesville,_Georgia",
+        "https://www.ghcc.com/wp-content/uploads/2018/09/2023-Top-Employers-Gainesvillle-Hall-County.pdf",
         "https://www.ghcc.com/education/workforce-development/gainesville-hall-county-jobs",
-        "https://guidetogreatergainesville.com/largest-employers",
-        "https://www.pepinerealty.com/blog/guide-employment-options-gainsville",
-        "https://www.ziprecruiter.com/Jobs/-in-Gainesville,GA",
-        "https://www.zippia.com/company/best-biggest-companies-in-gainesville-fl"
+        "https://www.instagram.com/greaterhallchamber",
+        "https://www.gainesvilletimes.com/news/business-archived/chamber-honors-3-companies-as-the-years-best-in-hall",
+        "https://lensa.com/company/biggest-companies-in-gainesville-ga",
+        "https://www.ziprecruiter.com/Jobs/-in-Gainesville,GA"
       ],
       "method": "Representative list auto-discovered via Tavily web search across chamber-of-commerce, development-authority and local-news sources. Not exhaustive; ordering approximates source frequency, not headcount."
     },

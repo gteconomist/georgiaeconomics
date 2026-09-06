@@ -3,7 +3,7 @@
   "short_name": "Albany",
   "full_name": "Albany, GA",
   "population": 146000,
-  "as_of": "2026-09-05",
+  "as_of": "2026-09-06",
   "sections": {
     "ces_employment": {
       "series_id": "SMS13105000000000001",
@@ -4352,7 +4352,7 @@
       "source": "Census Business Dynamics Statistics (establishment entry rate, 2022); metro rate indexed to US=100"
     },
     "major_employers": {
-      "as_of": "2026-09-05",
+      "as_of": "2026-09-06",
       "employers": [
         {
           "name": "Company",
@@ -4363,12 +4363,20 @@
           "source_url": "https://www.zippia.com/company/best-biggest-companies-in-albany-ga"
         },
         {
+          "name": "Albany Med Health System",
+          "source_url": "https://www.bizjournals.com/albany/news/2023/07/14/albany-region-largest-private-sector-employers.html"
+        },
+        {
           "name": "Darton College",
           "source_url": "https://thekirklandco.com/market_reports/albany-ga"
         },
         {
           "name": "Dougherty County School System",
           "source_url": "https://thekirklandco.com/market_reports/albany-ga"
+        },
+        {
+          "name": "Northeast Grocery Inc",
+          "source_url": "https://www.bizjournals.com/albany/subscriber-only/2025/10/17/albanys-330-largest-employers.html"
         },
         {
           "name": "Phoebe Putney Health System",
@@ -4379,47 +4387,39 @@
           "source_url": "https://thekirklandco.com/market_reports/albany-ga"
         },
         {
+          "name": "Alternative Energy Companies",
+          "source_url": "https://www.bizjournals.com/albany/datacenter/lists"
+        },
+        {
+          "name": "Bank of America's",
+          "source_url": "https://www.bizjournals.com/albany/news/2025/08/12/albany-companies-2025-inc-5000-list.html"
+        },
+        {
+          "name": "CareMarkPCS Health LLC",
+          "source_url": "https://www.bizjournals.com/albany/datacenter/lists"
+        },
+        {
+          "name": "Health Partners",
+          "source_url": null
+        },
+        {
+          "name": "Heating Co",
+          "source_url": null
+        },
+        {
           "name": "Manufacturing",
-          "source_url": "https://choosealbany.com/site-selection/area-industries"
-        },
-        {
-          "name": "Albany Green Energy",
-          "source_url": "https://choosealbany.com/site-selection/area-industries"
-        },
-        {
-          "name": "Albany Med Health System",
-          "source_url": "https://www.bizjournals.com/albany/news/2023/07/14/albany-region-largest-private-sector-employers.html"
-        },
-        {
-          "name": "GEA Industrial",
-          "source_url": "https://albanyga.com/category/businesses"
-        },
-        {
-          "name": "Amadas Industries",
-          "source_url": "https://choosealbany.com/site-selection/area-industries"
-        },
-        {
-          "name": "Behavioral Health",
-          "source_url": "https://business.albanyga.com/list/searchalpha/c"
-        },
-        {
-          "name": "Carpet World",
-          "source_url": "https://business.albanyga.com/list/searchalpha/c"
-        },
-        {
-          "name": "DISH Network L.L.C",
-          "source_url": "https://lensa.com/company/largest-companies-in-albany-ga-by-revenue"
+          "source_url": "https://www.bizjournals.com/albany/news/2022/08/17/albany-area-companies-inc-5000-growth-2022.html"
         }
       ],
       "sources": [
+        "https://www.forbes.com/places/ga/albany",
         "https://www.zippia.com/company/best-biggest-companies-in-albany-ga",
         "https://thekirklandco.com/market_reports/albany-ga",
+        "https://www.georgiatrend.com/2011/05/01/albany-dougherty-county-playing-to-its-strengths",
         "https://lensa.com/company/largest-companies-in-albany-ga-by-revenue",
-        "https://choosealbany.com/site-selection/area-industries",
-        "https://lensa.com/company/top-companies-in-albany-ga",
-        "https://business.albanyga.com/list/searchalpha/c",
-        "https://albanyga.com/category/businesses",
-        "https://www.bizjournals.com/albany/news/2023/07/14/albany-region-largest-private-sector-employers.html"
+        "https://www.bizjournals.com/albany/datacenter/lists",
+        "https://albanyherald.com/news/local/military-honored-at-annual-albany-area-chamber-of-commerce-breakfast",
+        "https://albanyherald.com/news/business-news-2/major-meat-producer-jbs-usa-hit-by-cyberattack"
       ],
       "method": "Representative list auto-discovered via Tavily web search across chamber-of-commerce, development-authority and local-news sources. Not exhaustive; ordering approximates source frequency, not headcount."
     },

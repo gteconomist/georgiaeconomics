@@ -3,7 +3,7 @@
   "short_name": "Valdosta",
   "full_name": "Valdosta, GA",
   "population": 148000,
-  "as_of": "2026-09-05",
+  "as_of": "2026-09-06",
   "sections": {
     "ces_employment": {
       "series_id": "SMS13466600000000001",
@@ -4355,7 +4355,7 @@
       "source": "Census Business Dynamics Statistics (establishment entry rate, 2022); metro rate indexed to US=100"
     },
     "major_employers": {
-      "as_of": "2026-09-05",
+      "as_of": "2026-09-06",
       "employers": [
         {
           "name": "Company",
@@ -4363,18 +4363,14 @@
         },
         {
           "name": "South Georgia Medical Center",
-          "source_url": "https://valdostadailytimes.com/2018/06/10/public-employers"
-        },
-        {
-          "name": "Valdosta State University",
-          "source_url": "https://valdostadailytimes.com/2018/06/10/public-employers"
+          "source_url": "https://www.valdostacity.com/economic-development/top-20-employers"
         },
         {
           "name": "Archer Daniels Midland Co",
           "source_url": "https://business.valdostachamber.com/directory/Search/manufacturers-371427"
         },
         {
-          "name": "Lowndes County Schools System",
+          "name": "Valdosta State University",
           "source_url": "https://www.valdostacity.com/economic-development/top-20-employers"
         },
         {
@@ -4386,19 +4382,23 @@
           "source_url": "https://www.georgiatrend.com/2025/03/31/prospects-for-valdosta"
         },
         {
+          "name": "CJB Industries",
+          "source_url": "https://business.valdostachamber.com/directory/Search/manufacturers-371427"
+        },
+        {
           "name": "Distribution Center",
           "source_url": null
         },
         {
+          "name": "Fresh Beginnings Inc",
+          "source_url": "https://www.valdostacity.com/economic-development/top-20-employers"
+        },
+        {
+          "name": "Georgia Gulf Sulfur Corp",
+          "source_url": "https://business.valdostachamber.com/directory/Search/manufacturers-371427"
+        },
+        {
           "name": "Inc. Drugs Don't Work",
-          "source_url": "https://business.valdostachamber.com/directory/Search/manufacturers-371427"
-        },
-        {
-          "name": "Langdale Forest Products Co",
-          "source_url": "https://business.valdostachamber.com/directory/Search/manufacturers-371427"
-        },
-        {
-          "name": "Precision Industries Inc",
           "source_url": "https://business.valdostachamber.com/directory/Search/manufacturers-371427"
         },
         {
@@ -4415,14 +4415,14 @@
         }
       ],
       "sources": [
-        "https://valdostadailytimes.com/2018/06/10/public-employers",
         "https://www.georgiatrend.com/2025/03/31/prospects-for-valdosta",
-        "https://www.zippia.com/company/best-biggest-companies-in-valdosta-ga",
         "https://www.valdostacity.com/economic-development/top-20-employers",
         "https://lensa.com/company/biggest-companies-in-valdosta-ga",
-        "http://www.georgia.org/regions/southeast-georgia",
+        "https://www.zippia.com/company/best-biggest-companies-in-valdosta-ga",
         "https://business.valdostachamber.com/directory/Search/manufacturers-371427",
-        "https://business.valdostachamber.com/directory/FindStartsWith?term=A"
+        "https://business.valdostachamber.com/directory/FindStartsWith?term=A",
+        "https://business.valdostachamber.com/directory",
+        "https://valdostadailytimes.com/2025/09/01/tm-polyfilm-inc-named-corporation-of-the-quarter-by-valdosta-lowndes-chamber-of-commerce"
       ],
       "method": "Representative list auto-discovered via Tavily web search across chamber-of-commerce, development-authority and local-news sources. Not exhaustive; ordering approximates source frequency, not headcount."
     },

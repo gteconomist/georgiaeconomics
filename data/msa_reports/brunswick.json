@@ -3,7 +3,7 @@
   "short_name": "Brunswick",
   "full_name": "Brunswick, GA",
   "population": 120000,
-  "as_of": "2026-09-05",
+  "as_of": "2026-09-06",
   "sections": {
     "ces_employment": {
       "series_id": "SMS13152600000000001",
@@ -4306,35 +4306,39 @@
       "source": "Census Business Dynamics Statistics (establishment entry rate, 2022); metro rate indexed to US=100"
     },
     "major_employers": {
-      "as_of": "2026-09-05",
+      "as_of": "2026-09-06",
       "employers": [
-        {
-          "name": "Southeast Georgia Health System",
-          "source_url": "https://en.wikipedia.org/wiki/Brunswick,_Georgia"
-        },
         {
           "name": "Company",
           "source_url": "https://lensa.com/company/largest-companies-in-brunswick-ga-by-revenue"
+        },
+        {
+          "name": "Southeast Georgia Health System",
+          "source_url": "https://en.wikipedia.org/wiki/Brunswick,_Georgia"
         },
         {
           "name": "Gulfstream Aerospace",
           "source_url": "https://en.wikipedia.org/wiki/Brunswick,_Georgia"
         },
         {
+          "name": "Glynn County School System",
+          "source_url": "https://goldenislesdev.com/top-employers"
+        },
+        {
           "name": "Rich Products Corporation",
           "source_url": "https://goldenislesdev.com/top-employers"
         },
         {
-          "name": "Glynn County School System",
-          "source_url": "https://goldenislesdev.com/top-employers"
+          "name": "Glynn County Schools",
+          "source_url": "https://www.zippia.com/company/best-biggest-companies-in-brunswick-ga"
         },
         {
           "name": "All Industries",
           "source_url": "https://goldenislesdev.com/top-employers"
         },
         {
-          "name": "Stambaugh Aviation",
-          "source_url": "https://goldenislesdev.com/top-employers"
+          "name": "Inc. Brunswick",
+          "source_url": "https://www.indeed.com/q-hiring-immediately-l-brunswick,-ga-jobs.html"
         },
         {
           "name": "Jered LLC",
@@ -4359,21 +4363,17 @@
         {
           "name": "Golden Isles Development Authority",
           "source_url": "https://goldenislesdev.com/top-employers"
-        },
-        {
-          "name": "Hospital",
-          "source_url": "https://goldenislesdev.com/top-employers"
         }
       ],
       "sources": [
         "https://en.wikipedia.org/wiki/Brunswick,_Georgia",
         "https://www.georgiatrend.com/2022/04/30/economy-brunswicks-strengths",
-        "https://www.facebook.com/groups/194430493950148/posts/8025727704153682",
-        "https://lensa.com/company/largest-companies-in-brunswick-ga-by-revenue",
         "https://www.zippia.com/company/best-biggest-companies-in-brunswick-ga",
+        "https://lensa.com/company/largest-companies-in-brunswick-ga-by-revenue",
         "https://goldenislesdev.com/top-employers",
-        "https://www.indeed.com/companies/search?l=Brunswick%2C+GA",
-        "https://www.indeed.com/companies/best-Manufacturing-companies-in-Brunswick,-GA"
+        "https://brunswickgoldenisleschamber.com/chamber-champions",
+        "https://lensa.com/company/highest-rated-companies-in-brunswick-ga",
+        "https://www.ziprecruiter.com/Jobs/-in-Brunswick,GA"
       ],
       "method": "Representative list auto-discovered via Tavily web search across chamber-of-commerce, development-authority and local-news sources. Not exhaustive; ordering approximates source frequency, not headcount."
     },

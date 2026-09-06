@@ -3,7 +3,7 @@
   "short_name": "Warner Robins",
   "full_name": "Warner Robins, GA",
   "population": 199000,
-  "as_of": "2026-09-05",
+  "as_of": "2026-09-06",
   "sections": {
     "ces_employment": {
       "series_id": "SMS13475800000000001",
@@ -4376,7 +4376,7 @@
       "source": "Census Business Dynamics Statistics (establishment entry rate, 2022); metro rate indexed to US=100"
     },
     "major_employers": {
-      "as_of": "2026-09-05",
+      "as_of": "2026-09-06",
       "employers": [
         {
           "name": "Company",
@@ -4384,27 +4384,7 @@
         },
         {
           "name": "Houston Healthcare",
-          "source_url": "https://www.youtube.com/watch?v=3D-hSMZNq0g"
-        },
-        {
-          "name": "Emory Healthcare",
-          "source_url": "https://houstoncountyga.net/industries/top-employers"
-        },
-        {
-          "name": "Advanced Drainage Systems",
-          "source_url": "https://houstoncountyga.net/industries/top-employers"
-        },
-        {
-          "name": "Gilmer Warehouse",
-          "source_url": "https://houstoncountyga.net/industries/top-employers"
-        },
-        {
-          "name": "Largest Manufacturing Employers",
-          "source_url": "https://houstoncountyga.net/industries/top-employers"
-        },
-        {
-          "name": "Logistics",
-          "source_url": "https://houstoncountyga.net/industries/top-employers"
+          "source_url": "https://thekirklandco.com/market_reports/macon-warner-robins_aug2023"
         },
         {
           "name": "Mercer University",
@@ -4415,12 +4395,12 @@
           "source_url": "https://thekirklandco.com/market_reports/macon-warner-robins_aug2023"
         },
         {
-          "name": "BAE Systems USA",
-          "source_url": "https://lensa.com/company/biggest-companies-in-warner-robins-ga"
+          "name": "Emory Healthcare",
+          "source_url": "https://houstoncountyga.net/industries/top-employers"
         },
         {
-          "name": "CVS Health",
-          "source_url": "https://lensa.com/company/biggest-companies-in-warner-robins-ga"
+          "name": "Central Georgia Technical College",
+          "source_url": "https://houstoncountyga.net/industries/top-employers"
         },
         {
           "name": "Food Manufacturing",
@@ -4431,19 +4411,39 @@
           "source_url": "https://houstoncountyga.net/industries/top-employers"
         },
         {
-          "name": "Lockheed Martin Corporation",
+          "name": "Largest Manufacturing Employers",
+          "source_url": "https://houstoncountyga.net/industries/top-employers"
+        },
+        {
+          "name": "Navicent Health",
+          "source_url": "https://thekirklandco.com/market_reports/macon-warner-robins_aug2023"
+        },
+        {
+          "name": "Advanced Drainage Systems",
+          "source_url": "https://houstoncountyga.net/industries/top-employers"
+        },
+        {
+          "name": "Armstrong World Industries",
+          "source_url": "https://houstoncountyga.net/industries/top-employers"
+        },
+        {
+          "name": "BAE Systems USA",
           "source_url": "https://lensa.com/company/biggest-companies-in-warner-robins-ga"
+        },
+        {
+          "name": "Birds Eye Foods",
+          "source_url": "https://houstoncountyga.net/industries/top-employers"
         }
       ],
       "sources": [
-        "https://www.youtube.com/watch?v=3D-hSMZNq0g",
         "https://www.zippia.com/company/best-biggest-companies-in-warner-robins-ga",
         "https://houstoncountyga.net/industries/top-employers",
-        "https://lensa.com/company/biggest-companies-in-warner-robins-ga",
-        "https://www.wrga.gov/article/2351392",
         "https://thekirklandco.com/market_reports/macon-warner-robins_aug2023",
-        "https://www.indeed.com/l-warner-robins,-ga-jobs.html",
-        "https://www.indeed.com/q-high-paying-l-warner-robins,-ga-jobs.html"
+        "https://www.wrga.gov/article/2351392",
+        "https://houstoncountyga.net/industries/key-industries",
+        "https://www.youtube.com/watch?v=3D-hSMZNq0g",
+        "https://lensa.com/company/biggest-companies-in-warner-robins-ga",
+        "https://livability.com/ga/warner-robins/education-careers-opportunity/why-are-businesses-investing-in-the-robins-region"
       ],
       "method": "Representative list auto-discovered via Tavily web search across chamber-of-commerce, development-authority and local-news sources. Not exhaustive; ordering approximates source frequency, not headcount."
     },

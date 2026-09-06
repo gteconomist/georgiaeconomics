@@ -3,7 +3,7 @@
   "short_name": "Augusta",
   "full_name": "Augusta-Richmond County, GA-SC",
   "population": 611000,
-  "as_of": "2026-09-05",
+  "as_of": "2026-09-06",
   "sections": {
     "ces_employment": {
       "series_id": "SMS13122600000000001",
@@ -5282,19 +5282,19 @@
       "source": "Census Business Dynamics Statistics (establishment entry rate, 2022); metro rate indexed to US=100"
     },
     "major_employers": {
-      "as_of": "2026-09-05",
+      "as_of": "2026-09-06",
       "employers": [
         {
           "name": "Augusta University",
           "source_url": "https://en.wikipedia.org/wiki/Augusta,_Georgia"
         },
         {
-          "name": "Richmond County School System",
-          "source_url": "https://en.wikipedia.org/wiki/Augusta,_Georgia"
-        },
-        {
           "name": "Cardinal Health",
           "source_url": "https://augustaeda.org/business-industry/largest-employers"
+        },
+        {
+          "name": "Richmond County School System",
+          "source_url": "https://en.wikipedia.org/wiki/Augusta,_Georgia"
         },
         {
           "name": "Augusta Economic Development Authority",
@@ -5309,47 +5309,47 @@
           "source_url": "https://en.wikipedia.org/wiki/Augusta,_Georgia"
         },
         {
-          "name": "Augusta Technical College",
-          "source_url": "https://en.wikipedia.org/wiki/Augusta-Richmond_County,_GA-SC_Metropolitan_Statistical_Area"
-        },
-        {
           "name": "Augusta's Largest Non-Manufacturing Employers",
           "source_url": "https://augustaeda.org/business-industry/largest-employers"
-        },
-        {
-          "name": "East Georgia State College",
-          "source_url": "https://en.wikipedia.org/wiki/Augusta-Richmond_County,_GA-SC_Metropolitan_Statistical_Area"
-        },
-        {
-          "name": "Encompass Health",
-          "source_url": "https://en.wikipedia.org/wiki/Augusta-Richmond_County,_GA-SC_Metropolitan_Statistical_Area"
         },
         {
           "name": "FPL Food",
           "source_url": "https://augustaeda.org/business-industry/largest-employers"
         },
         {
-          "name": "Georgia Military College",
+          "name": "Encompass Health Corporation",
           "source_url": "https://en.wikipedia.org/wiki/Augusta-Richmond_County,_GA-SC_Metropolitan_Statistical_Area"
         },
         {
-          "name": "Inpatient Rehabilitation Hospital Augusta",
-          "source_url": "https://en.wikipedia.org/wiki/Augusta-Richmond_County,_GA-SC_Metropolitan_Statistical_Area"
+          "name": "Olin Corporation",
+          "source_url": "https://en.wikipedia.org/wiki/Augusta,_Georgia"
         },
         {
-          "name": "Paine College",
+          "name": "Charlie Norwood VA Medical Center",
+          "source_url": "https://en.wikipedia.org/wiki/Augusta,_Georgia"
+        },
+        {
+          "name": "Greenfield Industries",
+          "source_url": "https://www.augustametrochamber.com/manufacturing"
+        },
+        {
+          "name": "Advanced Manufacturing",
+          "source_url": "https://augustavabusiness.com/facts-figures/major-employers"
+        },
+        {
+          "name": "Augusta Technical College",
           "source_url": "https://en.wikipedia.org/wiki/Augusta-Richmond_County,_GA-SC_Metropolitan_Statistical_Area"
         }
       ],
       "sources": [
         "https://en.wikipedia.org/wiki/Augusta,_Georgia",
         "https://augustaeda.org/business-industry/largest-employers",
-        "https://en.wikipedia.org/wiki/Augusta-Richmond_County,_GA-SC_Metropolitan_Statistical_Area",
         "https://www.zippia.com/company/best-biggest-companies-in-augusta-ga",
         "https://www.facebook.com/groups/1427092687647542/posts/2205705153119621",
         "https://www.augustametrochamber.com/manufacturing",
+        "https://augustavabusiness.com/facts-figures/major-employers",
         "https://www.northaugustachamber.org/economic-development/major-local-companies",
-        "https://augustavabusiness.com/facts-figures/major-employers"
+        "https://en.wikipedia.org/wiki/Augusta-Richmond_County,_GA-SC_Metropolitan_Statistical_Area"
       ],
       "method": "Representative list auto-discovered via Tavily web search across chamber-of-commerce, development-authority and local-news sources. Not exhaustive; ordering approximates source frequency, not headcount."
     },
