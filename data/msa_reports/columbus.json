@@ -3,7 +3,7 @@
   "short_name": "Columbus",
   "full_name": "Columbus, GA-AL",
   "population": 329000,
-  "as_of": "2026-09-06",
+  "as_of": "2026-09-07",
   "sections": {
     "ces_employment": {
       "series_id": "SMS13179800000000001",
@@ -5299,7 +5299,7 @@
       "source": "Census Business Dynamics Statistics (establishment entry rate, 2022); metro rate indexed to US=100"
     },
     "major_employers": {
-      "as_of": "2026-09-06",
+      "as_of": "2026-09-07",
       "employers": [
         {
           "name": "Company",
@@ -5311,11 +5311,11 @@
         },
         {
           "name": "Health Care",
-          "source_url": "https://en.wikipedia.org/wiki/List_of_largest_Central_Ohio_employers"
+          "source_url": "https://www.bizjournals.com/columbus/subscriber-only/2015/07/10/largest-employers.html"
         },
         {
-          "name": "Ohio State University",
-          "source_url": "https://en.wikipedia.org/wiki/Columbus-Marion-Zanesville,_OH_Combined_Statistical_Area"
+          "name": "Columbus State University",
+          "source_url": "https://www.georgiatrend.com/2023/10/31/columbus-advantage"
         },
         {
           "name": "Utilities",
@@ -5326,8 +5326,8 @@
           "source_url": "https://en.wikipedia.org/wiki/List_of_largest_Central_Ohio_employers"
         },
         {
-          "name": "Columbus State University",
-          "source_url": "https://www.georgiatrend.com/2023/10/31/columbus-advantage"
+          "name": "Ohio State University",
+          "source_url": "https://www.bizjournals.com/columbus/subscriber-only/2015/07/10/largest-employers.html"
         },
         {
           "name": "Corp. Mgt",
@@ -5336,10 +5336,6 @@
         {
           "name": "Honda of America Manufacturing",
           "source_url": "https://en.wikipedia.org/wiki/List_of_largest_Central_Ohio_employers"
-        },
-        {
-          "name": "McCauley Propeller Systems",
-          "source_url": "https://www.choosecolumbusga.com/site-selectors/major-employers"
         },
         {
           "name": "Mount Carmel Health System",
@@ -5354,16 +5350,19 @@
           "source_url": "https://www.choosecolumbusga.com/site-selectors/major-employers"
         },
         {
-          "name": "Cardinal Health",
-          "source_url": "https://lensa.com/company/biggest-companies-in-columbus-ga"
+          "name": "Columbus Public Schools",
+          "source_url": "https://en.wikipedia.org/wiki/List_of_largest_Central_Ohio_employers"
+        },
+        {
+          "name": "Emory Healthcare",
+          "source_url": "https://www.georgiatrend.com/2023/10/31/columbus-advantage"
         }
       ],
       "sources": [
         "https://www.georgiatrend.com/2023/10/31/columbus-advantage",
         "https://www.choosecolumbusga.com/site-selectors/major-employers",
         "https://lensa.com/company/biggest-companies-in-columbus-ga",
-        "https://columbusregion.com/economy/top-employers",
-        "https://en.wikipedia.org/wiki/Columbus-Marion-Zanesville,_OH_Combined_Statistical_Area",
+        "https://www.quora.com/Who-are-some-major-employers-around-Columbus-Georgia",
         "https://www.bizjournals.com/columbus/subscriber-only/2015/07/10/largest-employers.html",
         "https://en.wikipedia.org/wiki/List_of_largest_Central_Ohio_employers"
       ],

@@ -3,7 +3,7 @@
   "short_name": "Rome",
   "full_name": "Rome, GA",
   "population": 99000,
-  "as_of": "2026-09-06",
+  "as_of": "2026-09-07",
   "sections": {
     "ces_employment": {
       "series_id": "SMS13406600000000001",
@@ -4616,7 +4616,7 @@
       "source": "Census Business Dynamics Statistics (establishment entry rate, 2022); metro rate indexed to US=100"
     },
     "major_employers": {
-      "as_of": "2026-09-06",
+      "as_of": "2026-09-07",
       "employers": [
         {
           "name": "Company",
@@ -4639,6 +4639,10 @@
           "source_url": "https://www.romega.com/demographics"
         },
         {
+          "name": "Atrium Health Floyd",
+          "source_url": "https://www.zippia.com/company/best-companies-in-rome-ga"
+        },
+        {
           "name": "F&P America Manufacturing",
           "source_url": null
         },
@@ -4647,7 +4651,15 @@
           "source_url": "https://www.reddit.com/r/romega/comments/1jkqv08/rome_msa_ranked_number_one_in_the_state_for_job"
         },
         {
+          "name": "Carlsen Precision Manufacturing",
+          "source_url": "https://business.romega.com/jobs"
+        },
+        {
           "name": "Ball Corporation",
+          "source_url": "https://lensa.com/company/largest-companies-in-rome-ga-by-revenue"
+        },
+        {
+          "name": "Food Lion",
           "source_url": "https://lensa.com/company/largest-companies-in-rome-ga-by-revenue"
         },
         {
@@ -4659,20 +4671,8 @@
           "source_url": "https://lensa.com/company/largest-companies-in-rome-ga-by-revenue"
         },
         {
-          "name": "Redmond Regional Medical Center",
-          "source_url": "https://www.ziprecruiter.com/Jobs/Rome-Ga"
-        },
-        {
-          "name": "Tyson Foods",
+          "name": "Regions Bank",
           "source_url": "https://lensa.com/company/largest-companies-in-rome-ga-by-revenue"
-        },
-        {
-          "name": "Food Lion",
-          "source_url": "https://lensa.com/company/largest-companies-in-rome-ga-by-revenue"
-        },
-        {
-          "name": "Manufacturing Production Worker-Rome",
-          "source_url": "https://www.indeed.com/q-all-l-rome,-ga-jobs.html"
         }
       ],
       "sources": [
@@ -4680,10 +4680,10 @@
         "https://www.zippia.com/company/best-biggest-companies-in-rome-ga",
         "https://lensa.com/company/largest-companies-in-rome-ga-by-revenue",
         "https://www.reddit.com/r/romega/comments/1jkqv08/rome_msa_ranked_number_one_in_the_state_for_job",
-        "https://www.tradeandindustrydev.com/region/georgia/community-invested-you-rome-and-floyd-county-35063",
-        "https://www.ziprecruiter.com/Jobs/-in-Rome,GA",
         "https://www.zippia.com/company/best-companies-in-rome-ga",
-        "https://www.ziprecruiter.com/Jobs/Rome-Ga"
+        "https://www.ziprecruiter.com/Jobs/-in-Rome,GA",
+        "https://www.ziprecruiter.com/Jobs/Rome-Ga",
+        "https://www.indeed.com/l-rome,-ga-jobs.html"
       ],
       "method": "Representative list auto-discovered via Tavily web search across chamber-of-commerce, development-authority and local-news sources. Not exhaustive; ordering approximates source frequency, not headcount."
     },
