@@ -7,8 +7,8 @@
     "production_spend_latest_b": 0.0,
     "production_spend_yoy_pct": -100.0,
     "tax_credits_latest_b": 1.0,
-    "employment_latest_k": 15.1,
-    "employment_yoy_pct": -9.0,
+    "employment_latest_k": 15.0,
+    "employment_yoy_pct": -9.6,
     "national_rank": 11,
     "n_major_productions": 12,
     "n_major_studios": 6,
@@ -71,7 +71,7 @@
       21.3,
       15.4,
       16.6,
-      15.1
+      15.0
     ],
     "employment_k_years": [
       2014,
@@ -303,7 +303,7 @@
   ],
   "_meta": {
     "production_spend": {
-      "last_updated": "2026-08-08",
+      "last_updated": "2026-09-08",
       "source": "BEA Regional SAGDP2 \u2014 NAICS 512 (Motion picture and sound recording industries), GA",
       "metric_note": "Industry GDP (value-added). Distinct from DECD's gross production spend figure.",
       "coverage_years": [
@@ -312,13 +312,13 @@
       ]
     },
     "tax_credits": {
-      "last_updated": "2026-08-08",
+      "last_updated": "2026-09-08",
       "source": "Tavily \u2192 GA DOAA FY2026 report",
       "latest_year": 2026,
       "latest_value_b": 1.0
     },
     "employment": {
-      "last_updated": "2026-07-27",
+      "last_updated": "2026-09-08",
       "source": "BLS QCEW annual averages, NAICS 5121, GA (area_fips 13000)",
       "coverage_years": [
         2014,
@@ -326,7 +326,7 @@
       ]
     },
     "state_comparison": {
-      "last_updated": "2026-08-08",
+      "last_updated": "2026-09-08",
       "source": "BEA Regional SAGDP2 \u2014 NAICS 512 (Motion picture & sound recording industries) GDP by state",
       "metric_label": "Industry GDP (value-added, $B)",
       "year": 2025
@@ -341,12 +341,12 @@
       "source": null
     },
     "decd_headline": {
-      "last_updated": "2026-08-08",
+      "last_updated": "2026-09-08",
       "source": "Tavily \u2192 DECD FY2026 press release",
       "value_b": 2.0,
       "year": 2026
     }
   },
-  "fetched_at": "2026-08-08",
-  "source_summary": "Live sources updated 2026-08-08: production_spend, tax_credits, state_comparison, notable_productions, decd_headline. Stale or static: employment, major_studios."
+  "fetched_at": "2026-09-08",
+  "source_summary": "Live sources updated 2026-09-08: production_spend, tax_credits, employment, state_comparison, decd_headline. Stale or static: notable_productions, major_studios."
 }
