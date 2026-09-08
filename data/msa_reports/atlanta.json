@@ -3,7 +3,7 @@
   "short_name": "Atlanta",
   "full_name": "Atlanta-Sandy Springs-Alpharetta, GA",
   "population": 6307261,
-  "as_of": "2026-09-07",
+  "as_of": "2026-09-08",
   "sections": {
     "ces_employment": {
       "series_id": "SMS13120600000000001",
@@ -5484,7 +5484,7 @@
       "source": "Census Business Dynamics Statistics (establishment entry rate, 2022); metro rate indexed to US=100"
     },
     "major_employers": {
-      "as_of": "2026-09-07",
+      "as_of": "2026-09-08",
       "employers": [
         {
           "name": "View Company Profile",
@@ -5503,6 +5503,14 @@
           "source_url": "https://www.bizjournals.com/atlanta/subscriber-only/2022/07/15/atlantas-25-largest-employers.html"
         },
         {
+          "name": "Gwinnett County Public Schools",
+          "source_url": "https://www.bizjournals.com/atlanta/subscriber-only/2024/07/12/atlantas-20-largest-employers.html"
+        },
+        {
+          "name": "Northside Hospital",
+          "source_url": "https://www.developfultoncounty.com/major-employers.php"
+        },
+        {
           "name": "LexisNexis Risk Solutions",
           "source_url": "https://topworkplaces.com/award/atlanta/2024"
         },
@@ -5515,10 +5523,6 @@
           "source_url": "https://www.bizjournals.com/atlanta/subscriber-only/2022/07/15/atlantas-25-largest-employers.html"
         },
         {
-          "name": "Northside Hospital",
-          "source_url": "https://www.developfultoncounty.com/major-employers.php"
-        },
-        {
           "name": "Progressive Insurance",
           "source_url": "https://topworkplaces.com/award/atlanta/2024"
         },
@@ -5527,20 +5531,16 @@
           "source_url": null
         },
         {
-          "name": "The Home Depot Inc",
-          "source_url": "https://www.bizjournals.com/atlanta/subscriber-only/2022/07/15/atlantas-25-largest-employers.html"
-        },
-        {
-          "name": "AT&T Inc",
-          "source_url": "https://www.bizjournals.com/atlanta/subscriber-only/2017/07/21/atlantas-25-largest-employers.html"
-        },
-        {
-          "name": "Aprio Advisory Group",
-          "source_url": "https://topworkplaces.com/award/atlanta/2024"
-        },
-        {
           "name": "Axiall Company Page Archived",
           "source_url": "https://en.wikipedia.org/wiki/Economy_of_Atlanta"
+        },
+        {
+          "name": "Company Fact Sheet",
+          "source_url": "https://en.wikipedia.org/wiki/Economy_of_Atlanta"
+        },
+        {
+          "name": "Healthcare of Atlanta",
+          "source_url": "https://www.developfultoncounty.com/major-employers.php"
         }
       ],
       "sources": [
@@ -5550,8 +5550,8 @@
         "https://en.wikipedia.org/wiki/Economy_of_Atlanta",
         "https://topworkplaces.com/award/atlanta/2024",
         "https://www.developfultoncounty.com/major-employers.php",
-        "https://www.bizjournals.com/atlanta/subscriber-only/2025/07/04/georgias-top-40-public-companies.html",
-        "https://www.knowatlanta.com/jobs/big-business-in-atlanta"
+        "https://www.knowatlanta.com/jobs/big-business-in-atlanta",
+        "https://www.linkedin.com/pulse/linkedin-top-companies-2026-10-best-employers-grow-your-ypmge"
       ],
       "method": "Representative list auto-discovered via Tavily web search across chamber-of-commerce, development-authority and local-news sources. Not exhaustive; ordering approximates source frequency, not headcount."
     },

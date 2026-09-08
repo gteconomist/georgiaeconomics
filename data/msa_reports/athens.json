@@ -3,7 +3,7 @@
   "short_name": "Athens",
   "full_name": "Athens-Clarke County, GA",
   "population": 217000,
-  "as_of": "2026-09-07",
+  "as_of": "2026-09-08",
   "sections": {
     "ces_employment": {
       "series_id": "SMS13120200000000001",
@@ -5310,7 +5310,7 @@
       "source": "Census Business Dynamics Statistics (establishment entry rate, 2022); metro rate indexed to US=100"
     },
     "major_employers": {
-      "as_of": "2026-09-07",
+      "as_of": "2026-09-08",
       "employers": [
         {
           "name": "Health Care System",
@@ -5318,14 +5318,6 @@
         },
         {
           "name": "Power Partners",
-          "source_url": "https://livability.com/ga/athens/education-careers-opportunity/8-top-employers-in-athens-ga"
-        },
-        {
-          "name": "Company",
-          "source_url": "https://lensa.com/company/biggest-companies-in-athens-ga"
-        },
-        {
-          "name": "University of Georgia",
           "source_url": "https://livability.com/ga/athens/education-careers-opportunity/8-top-employers-in-athens-ga"
         },
         {
@@ -5337,8 +5329,20 @@
           "source_url": "https://business.athensga.com/list"
         },
         {
+          "name": "Company",
+          "source_url": "https://lensa.com/company/biggest-companies-in-athens-ga"
+        },
+        {
           "name": "Manufacturing",
           "source_url": "https://fenceathensga.com/athens-georgia/economy"
+        },
+        {
+          "name": "University of Georgia",
+          "source_url": "https://livability.com/ga/athens/education-careers-opportunity/8-top-employers-in-athens-ga"
+        },
+        {
+          "name": "Georgia Power",
+          "source_url": "https://business.athensga.com/list"
         },
         {
           "name": "ABB Motors",
@@ -5361,23 +5365,19 @@
           "source_url": "https://business.athensga.com/list"
         },
         {
-          "name": "Georgia Power",
-          "source_url": "https://business.athensga.com/list"
-        },
-        {
-          "name": "Jackson Electric",
-          "source_url": "https://business.athensga.com/list"
+          "name": "Integrity Foods",
+          "source_url": "https://www.onlineathens.com/story/business/2015/11/14/gdol-host-seasonal-recruitment-athens-area-employers/15471064007"
         }
       ],
       "sources": [
         "https://fenceathensga.com/athens-georgia/economy",
         "https://livability.com/ga/athens/education-careers-opportunity/8-top-employers-in-athens-ga",
         "https://investathensga.com/site-selection/major-employers",
+        "https://www.onlineathens.com/story/business/2015/11/14/gdol-host-seasonal-recruitment-athens-area-employers/15471064007",
         "https://www.zippia.com/company/best-biggest-companies-in-athens-ga",
         "https://www.accgov.com/DocumentCenter/View/535/Athens-Clarke-County-By-the-Numbers",
-        "https://business.athensga.com/list/category/manufacturing-production-236954",
         "https://business.athensga.com/list",
-        "https://www.athensga.com"
+        "https://business.athensga.com/list/category/manufacturing-production-236954"
       ],
       "method": "Representative list auto-discovered via Tavily web search across chamber-of-commerce, development-authority and local-news sources. Not exhaustive; ordering approximates source frequency, not headcount."
     },

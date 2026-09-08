@@ -3,7 +3,7 @@
   "short_name": "Macon",
   "full_name": "Macon-Bibb County, GA",
   "population": 232000,
-  "as_of": "2026-09-07",
+  "as_of": "2026-09-08",
   "sections": {
     "ces_employment": {
       "series_id": "SMS13314200000000001",
@@ -5301,15 +5301,19 @@
       "source": "Census Business Dynamics Statistics (establishment entry rate, 2022); metro rate indexed to US=100"
     },
     "major_employers": {
-      "as_of": "2026-09-07",
+      "as_of": "2026-09-08",
       "employers": [
+        {
+          "name": "Piedmont Healthcare",
+          "source_url": "https://choosemacon.com/work/major-employers"
+        },
         {
           "name": "Mercer University",
           "source_url": "https://choosemacon.com/work/major-employers"
         },
         {
-          "name": "Health",
-          "source_url": "https://www.indeed.com/q-highest-pay-l-macon,-ga-jobs.html"
+          "name": "Atrium Health",
+          "source_url": "https://choosemacon.com/work/major-employers"
         },
         {
           "name": "Blue Bird Corporation",
@@ -5320,20 +5324,8 @@
           "source_url": "https://choosemacon.com/work/major-employers"
         },
         {
-          "name": "The Medical Center of Central Georgia",
-          "source_url": "https://www.macon.com/living/living-here-guide/article39043491.html"
-        },
-        {
-          "name": "Academy Sports",
-          "source_url": "https://www.macon.com/living/living-here-guide/article30143466.html"
-        },
-        {
-          "name": "Asphalt Plant Loader Operator",
-          "source_url": "https://www.indeed.com/q-highest-pay-l-macon,-ga-jobs.html"
-        },
-        {
-          "name": "B&D Industrial",
-          "source_url": "http://www.macon.com/news/business/article169415742.html"
+          "name": "Professional Systems Corporation",
+          "source_url": "https://www.zippia.com/company/best-biggest-companies-in-macon-ga"
         },
         {
           "name": "College",
@@ -5344,20 +5336,28 @@
           "source_url": "https://choosemacon.com/work/major-employers"
         },
         {
-          "name": "Fort Valley State University",
-          "source_url": "https://www.macon.com/living/living-here-guide/article30143466.html"
+          "name": "Huber Corp",
+          "source_url": "https://houstoncountyga.net/industries/top-employers"
         },
         {
           "name": "Industrial Authority",
           "source_url": "https://choosemacon.com/work/major-employers"
         },
         {
-          "name": "Norfolk Southern Railway",
-          "source_url": null
+          "name": "Key Industries",
+          "source_url": "https://choosemacon.com/industries"
         },
         {
-          "name": "Professional Systems Corporation",
-          "source_url": "https://www.zippia.com/company/best-biggest-companies-in-macon-ga"
+          "name": "Pactiv Corp",
+          "source_url": "https://houstoncountyga.net/industries/top-employers"
+        },
+        {
+          "name": "Sara Lee Foods",
+          "source_url": "https://choosemacon.com/work/major-employers"
+        },
+        {
+          "name": "Aerospace",
+          "source_url": "https://choosemacon.com/industries"
         }
       ],
       "sources": [
@@ -5366,9 +5366,9 @@
         "https://en.wikipedia.org/wiki/Macon,_Georgia",
         "https://maconchamber.com/2019/12/19/atlanta-business-chronicle-2019-macon-market-report",
         "https://www.macon.com/living/living-here-guide/article39043491.html",
+        "https://houstoncountyga.net/industries/top-employers",
         "https://www.macon.com/living/living-here-guide/article30143466.html",
-        "http://www.macon.com/news/business/article169415742.html",
-        "https://www.macon.com/news/local/article312115475.html"
+        "https://choosemacon.com/industries"
       ],
       "method": "Representative list auto-discovered via Tavily web search across chamber-of-commerce, development-authority and local-news sources. Not exhaustive; ordering approximates source frequency, not headcount."
     },
