@@ -3,7 +3,7 @@
   "short_name": "Rome",
   "full_name": "Rome, GA",
   "population": 99000,
-  "as_of": "2026-09-08",
+  "as_of": "2026-09-09",
   "sections": {
     "ces_employment": {
       "series_id": "SMS13406600000000001",
@@ -4616,7 +4616,7 @@
       "source": "Census Business Dynamics Statistics (establishment entry rate, 2022); metro rate indexed to US=100"
     },
     "major_employers": {
-      "as_of": "2026-09-08",
+      "as_of": "2026-09-09",
       "employers": [
         {
           "name": "Company",
@@ -4631,20 +4631,16 @@
           "source_url": "https://www.romega.com/demographics"
         },
         {
+          "name": "Floyd Medical Center",
+          "source_url": "https://www.reddit.com/r/romega/comments/1jkqv08/rome_msa_ranked_number_one_in_the_state_for_job"
+        },
+        {
           "name": "Floyd Healthcare Management",
           "source_url": "https://www.romega.com/demographics"
         },
         {
           "name": "Gordon Hospital",
           "source_url": "https://www.romega.com/demographics"
-        },
-        {
-          "name": "Floyd Medical Center",
-          "source_url": "https://www.reddit.com/r/romega/comments/1jkqv08/rome_msa_ranked_number_one_in_the_state_for_job"
-        },
-        {
-          "name": "HCA Healthcare",
-          "source_url": "https://lensa.com/company/largest-companies-in-rome-ga-by-revenue"
         },
         {
           "name": "F&P America Manufacturing",
@@ -4655,24 +4651,28 @@
           "source_url": "https://en.wikipedia.org/wiki/Rome,_Georgia"
         },
         {
-          "name": "Atrium Health Floyd",
-          "source_url": "https://www.zippia.com/company/best-companies-in-rome-ga"
+          "name": "Integrated Fiber Solutions",
+          "source_url": "https://developromefloyd.com/community-data/major-manufacturers"
+        },
+        {
+          "name": "Kerry Foods",
+          "source_url": "https://developromefloyd.com/community-data/major-manufacturers"
+        },
+        {
+          "name": "Rome Floyd Development Authority",
+          "source_url": "https://developromefloyd.com/community-data/major-manufacturers"
+        },
+        {
+          "name": "Syntec Industries",
+          "source_url": "https://developromefloyd.com/community-data/major-manufacturers"
+        },
+        {
+          "name": "Atrium Health",
+          "source_url": null
         },
         {
           "name": "Ball Corporation",
           "source_url": "https://lensa.com/company/largest-companies-in-rome-ga-by-revenue"
-        },
-        {
-          "name": "Ball Metal Container Corporation",
-          "source_url": "https://developromefloyd.com/community-data/major-manufacturers"
-        },
-        {
-          "name": "ES Brown Heritage Corp",
-          "source_url": "https://business.romega.com/list/FindStartsWith?term=F"
-        },
-        {
-          "name": "Integrated Fiber Solutions",
-          "source_url": "https://developromefloyd.com/community-data/major-manufacturers"
         }
       ],
       "sources": [
@@ -4681,9 +4681,9 @@
         "https://lensa.com/company/largest-companies-in-rome-ga-by-revenue",
         "https://www.reddit.com/r/romega/comments/1jkqv08/rome_msa_ranked_number_one_in_the_state_for_job",
         "https://en.wikipedia.org/wiki/Rome,_Georgia",
-        "https://business.romega.com/list/FindStartsWith?term=F",
+        "https://www.zippia.com/company/best-companies-in-rome-ga",
         "https://developromefloyd.com/community-data/major-manufacturers",
-        "https://www.ziprecruiter.com/Jobs/Rome-Ga"
+        "https://business.romega.com/jobs"
       ],
       "method": "Representative list auto-discovered via Tavily web search across chamber-of-commerce, development-authority and local-news sources. Not exhaustive; ordering approximates source frequency, not headcount."
     },

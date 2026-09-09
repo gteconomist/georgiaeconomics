@@ -3,7 +3,7 @@
   "short_name": "Warner Robins",
   "full_name": "Warner Robins, GA",
   "population": 199000,
-  "as_of": "2026-09-08",
+  "as_of": "2026-09-09",
   "sections": {
     "ces_employment": {
       "series_id": "SMS13475800000000001",
@@ -4376,27 +4376,19 @@
       "source": "Census Business Dynamics Statistics (establishment entry rate, 2022); metro rate indexed to US=100"
     },
     "major_employers": {
-      "as_of": "2026-09-08",
+      "as_of": "2026-09-09",
       "employers": [
         {
-          "name": "Company",
-          "source_url": "https://lensa.com/company/biggest-companies-in-warner-robins-ga"
-        },
-        {
-          "name": "Houston Healthcare",
-          "source_url": "https://thekirklandco.com/market_reports/macon-warner-robins_aug2023"
+          "name": "Health",
+          "source_url": "https://www.indeed.com/q-full-time-l-warner-robins,-ga-jobs.html"
         },
         {
           "name": "Mercer University",
           "source_url": "https://thekirklandco.com/market_reports/macon-warner-robins_aug2023"
         },
         {
-          "name": "Atrium Health Navicent",
-          "source_url": "https://thekirklandco.com/market_reports/macon-warner-robins_aug2023"
-        },
-        {
-          "name": "Central Georgia Technical College",
-          "source_url": "https://houstoncountyga.net/industries/top-employers"
+          "name": "The Medical Center of Central Georgia",
+          "source_url": "https://www.macon.com/living/living-here-guide/article39043491.html"
         },
         {
           "name": "Houston County Development Authority",
@@ -4407,23 +4399,7 @@
           "source_url": "https://houstoncountyga.net/industries/top-employers"
         },
         {
-          "name": "Navicent Health",
-          "source_url": "https://thekirklandco.com/market_reports/macon-warner-robins_aug2023"
-        },
-        {
-          "name": "The Medical Center of Central Georgia",
-          "source_url": "https://www.macon.com/living/living-here-guide/article39043491.html"
-        },
-        {
-          "name": "BAE Systems USA",
-          "source_url": "https://lensa.com/company/biggest-companies-in-warner-robins-ga"
-        },
-        {
-          "name": "Blue Bird Body Co",
-          "source_url": "https://houstoncountyga.net/industries/top-employers"
-        },
-        {
-          "name": "CVS Health",
+          "name": "Aerospace Manufacturers",
           "source_url": "https://lensa.com/company/biggest-companies-in-warner-robins-ga"
         },
         {
@@ -4431,8 +4407,32 @@
           "source_url": "https://www.wrga.gov/article/2351392"
         },
         {
-          "name": "Lockheed Martin Corporation",
-          "source_url": "https://lensa.com/company/biggest-companies-in-warner-robins-ga"
+          "name": "Sales Inc",
+          "source_url": "https://www.zippia.com/company/best-biggest-companies-in-warner-robins-ga"
+        },
+        {
+          "name": "Academy Sports",
+          "source_url": "https://www.macon.com/living/living-here-guide/article39043491.html"
+        },
+        {
+          "name": "Advanced Drainage Systems",
+          "source_url": "https://houstoncountyga.net/industries/top-employers"
+        },
+        {
+          "name": "Armstrong World Industries",
+          "source_url": "https://houstoncountyga.net/industries/top-employers"
+        },
+        {
+          "name": "Birds Eye Foods",
+          "source_url": "https://houstoncountyga.net/industries/top-employers"
+        },
+        {
+          "name": "Blue Bird Body Co",
+          "source_url": "https://houstoncountyga.net/industries/top-employers"
+        },
+        {
+          "name": "Blue Bird Corp",
+          "source_url": "https://www.macon.com/living/living-here-guide/article39043491.html"
         }
       ],
       "sources": [
@@ -4441,9 +4441,9 @@
         "https://thekirklandco.com/market_reports/macon-warner-robins_aug2023",
         "https://www.macon.com/living/living-here-guide/article39043491.html",
         "https://lensa.com/company/biggest-companies-in-warner-robins-ga",
+        "https://www.macon.com/news/business/article258547393.html",
         "https://www.wrga.gov/article/2351392",
-        "https://lensa.com/company/most-diverse-companies-in-warner-robins-ga",
-        "https://www.youtube.com/watch?v=3D-hSMZNq0g"
+        "https://www.indeed.com/q-full-time-l-warner-robins,-ga-jobs.html"
       ],
       "method": "Representative list auto-discovered via Tavily web search across chamber-of-commerce, development-authority and local-news sources. Not exhaustive; ordering approximates source frequency, not headcount."
     },

@@ -3,7 +3,7 @@
   "short_name": "Augusta",
   "full_name": "Augusta-Richmond County, GA-SC",
   "population": 611000,
-  "as_of": "2026-09-08",
+  "as_of": "2026-09-09",
   "sections": {
     "ces_employment": {
       "series_id": "SMS13122600000000001",
@@ -5282,14 +5282,10 @@
       "source": "Census Business Dynamics Statistics (establishment entry rate, 2022); metro rate indexed to US=100"
     },
     "major_employers": {
-      "as_of": "2026-09-08",
+      "as_of": "2026-09-09",
       "employers": [
         {
           "name": "Augusta University",
-          "source_url": "https://en.wikipedia.org/wiki/Augusta,_Georgia"
-        },
-        {
-          "name": "Augusta Economic Development Authority",
           "source_url": "https://en.wikipedia.org/wiki/Augusta,_Georgia"
         },
         {
@@ -5301,6 +5297,14 @@
           "source_url": "https://en.wikipedia.org/wiki/Augusta,_Georgia"
         },
         {
+          "name": "Augusta Economic Development Authority",
+          "source_url": "https://en.wikipedia.org/wiki/Augusta,_Georgia"
+        },
+        {
+          "name": "Encompass Health",
+          "source_url": "https://en.wikipedia.org/wiki/Augusta-Richmond_County,_GA-SC_Metropolitan_Statistical_Area"
+        },
+        {
           "name": "Doctors Hospital",
           "source_url": "https://en.wikipedia.org/wiki/Augusta,_Georgia"
         },
@@ -5309,36 +5313,32 @@
           "source_url": "https://augustaeda.org/business-industry/largest-employers"
         },
         {
-          "name": "East Central Regional Hospital",
-          "source_url": "https://en.wikipedia.org/wiki/Augusta,_Georgia"
+          "name": "Augusta Technical College",
+          "source_url": "https://en.wikipedia.org/wiki/Augusta-Richmond_County,_GA-SC_Metropolitan_Statistical_Area"
         },
         {
           "name": "Augusta's Largest Non-Manufacturing Employers",
           "source_url": "https://augustaeda.org/business-industry/largest-employers"
         },
         {
-          "name": "Olin Corporation",
-          "source_url": "https://en.wikipedia.org/wiki/Augusta,_Georgia"
+          "name": "East Georgia State College",
+          "source_url": "https://en.wikipedia.org/wiki/Augusta-Richmond_County,_GA-SC_Metropolitan_Statistical_Area"
         },
         {
-          "name": "Department of Energy",
-          "source_url": "https://en.wikipedia.org/wiki/Augusta,_Georgia"
+          "name": "Georgia Military College",
+          "source_url": "https://en.wikipedia.org/wiki/Augusta-Richmond_County,_GA-SC_Metropolitan_Statistical_Area"
         },
         {
-          "name": "Charlie Norwood VA Medical Center",
-          "source_url": "https://en.wikipedia.org/wiki/Augusta,_Georgia"
+          "name": "Inpatient Rehabilitation Hospital Augusta",
+          "source_url": "https://en.wikipedia.org/wiki/Augusta-Richmond_County,_GA-SC_Metropolitan_Statistical_Area"
         },
         {
-          "name": "Augusta's Largest Manufacturing Employers",
-          "source_url": "https://augustaeda.org/business-industry/largest-employers"
+          "name": "Paine College",
+          "source_url": "https://en.wikipedia.org/wiki/Augusta-Richmond_County,_GA-SC_Metropolitan_Statistical_Area"
         },
         {
-          "name": "Historic Enterprise Mill",
-          "source_url": "https://augustaeda.org/business-industry/largest-employers"
-        },
-        {
-          "name": "KSB Company",
-          "source_url": "https://en.wikipedia.org/wiki/Augusta,_Georgia"
+          "name": "Walton Rehabilitation Hospital",
+          "source_url": "https://en.wikipedia.org/wiki/Augusta-Richmond_County,_GA-SC_Metropolitan_Statistical_Area"
         }
       ],
       "sources": [
@@ -5349,7 +5349,7 @@
         "https://www.augustachronicle.com/story/business/2017/05/06/georgia-logistics-industry-will-be-crucial-coming-decades/14261716007",
         "https://www.augustametrochamber.com/manufacturing",
         "https://www.northaugustachamber.org/economic-development/major-local-companies",
-        "https://augustavabusiness.com/facts-figures/major-employers"
+        "https://lensa.com/company/best-companies-in-augusta-ga"
       ],
       "method": "Representative list auto-discovered via Tavily web search across chamber-of-commerce, development-authority and local-news sources. Not exhaustive; ordering approximates source frequency, not headcount."
     },

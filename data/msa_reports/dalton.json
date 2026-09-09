@@ -3,7 +3,7 @@
   "short_name": "Dalton",
   "full_name": "Dalton, GA",
   "population": 143000,
-  "as_of": "2026-09-08",
+  "as_of": "2026-09-09",
   "sections": {
     "ces_employment": {
       "series_id": "SMS13191400000000001",
@@ -4717,74 +4717,74 @@
       "source": "Census Business Dynamics Statistics (establishment entry rate, 2022); metro rate indexed to US=100"
     },
     "major_employers": {
-      "as_of": "2026-09-08",
+      "as_of": "2026-09-09",
       "employers": [
         {
           "name": "Shaw Industries",
-          "source_url": "https://valdostadailytimes.com/2017/09/11/questions-and-answers-with-shaw-industries-ceo-vance-bell"
+          "source_url": "https://locationdalton.com/regional-data/major-employers"
+        },
+        {
+          "name": "Mohawk Industries",
+          "source_url": "https://locationdalton.com/regional-data/major-employers"
+        },
+        {
+          "name": "Dalton Public Schools",
+          "source_url": "https://locationdalton.com/regional-data/major-employers"
+        },
+        {
+          "name": "Hamilton Medical Center",
+          "source_url": "https://locationdalton.com/regional-data/major-employers"
+        },
+        {
+          "name": "Whitfield County Schools",
+          "source_url": "https://locationdalton.com/regional-data/major-employers"
         },
         {
           "name": "Company",
           "source_url": "https://lensa.com/company/largest-companies-in-dalton-ga-by-revenue"
         },
         {
-          "name": "Dalton Public Schools",
-          "source_url": "https://valdostadailytimes.com/2018/06/10/public-employers"
-        },
-        {
-          "name": "Hamilton Medical Center",
-          "source_url": "https://www.bizjournals.com/atlanta/news/2019/05/28/dalton-ga-s-hamilton-medical-center-plans-28m.html"
-        },
-        {
-          "name": "Mohawk Industries",
-          "source_url": "https://livability.com/ga/dalton/education-careers-opportunity/dalton-ga-area-top-employers"
-        },
-        {
-          "name": "Whitfield County Schools",
-          "source_url": "https://livability.com/ga/dalton/education-careers-opportunity/dalton-ga-area-top-employers"
-        },
-        {
           "name": "Dalton Utilities",
-          "source_url": "https://georgia.org/newsroom/press-releases/mfg-chemical-opens-dalton-operation"
+          "source_url": "https://locationdalton.com/regional-data/major-employers"
         },
         {
-          "name": "American Airlines",
-          "source_url": "https://www.bizjournals.com/atlanta/news/2019/05/28/dalton-ga-s-hamilton-medical-center-plans-28m.html"
+          "name": "Largest Manufacturing Employers",
+          "source_url": "https://locationdalton.com/regional-data/major-employers"
+        },
+        {
+          "name": "Marketing Alliance Group",
+          "source_url": "https://www.linkedin.com/company/greater-dalton-chamber-of-commerce"
+        },
+        {
+          "name": "Cherokee Carpet",
+          "source_url": "https://locationdalton.com/regional-data/major-employers"
         },
         {
           "name": "Dalton-Whitfield County Joint Development Authority",
-          "source_url": "https://georgia.org/newsroom/press-releases/global-flooring-company-expand-dalton-creating-200-jobs"
+          "source_url": "https://www.georgiatrend.com/2019/08/31/dalton-whitfield-county-reason-to-believe"
         },
         {
-          "name": "Aerospace",
-          "source_url": "https://georgia.org/newsroom/press-releases/global-textile-equipment-company-opens-dalton-ga-headquarters"
+          "name": "Dorsett Industries",
+          "source_url": "https://locationdalton.com/regional-data/major-employers"
         },
         {
-          "name": "Carpet Capital",
-          "source_url": "https://en.wikipedia.org/wiki/Dalton,_Georgia"
+          "name": "Hamilton Health Care System",
+          "source_url": "https://www.zippia.com/company/best-biggest-companies-in-dalton-ga"
         },
         {
-          "name": "Dalton-Whitfield Joint Development Authority",
-          "source_url": "https://valdostadailytimes.com/2018/06/10/public-employers"
-        },
-        {
-          "name": "Electric Cities of Georgia",
-          "source_url": "https://georgia.org/newsroom/press-releases/mfg-chemical-opens-dalton-operation"
-        },
-        {
-          "name": "IVC Group",
-          "source_url": "https://georgia.org/newsroom/press-releases/global-flooring-company-expand-dalton-creating-200-jobs"
+          "name": "Inc. QEP Co. Inc",
+          "source_url": "https://locationdalton.com/regional-data/major-employers"
         }
       ],
       "sources": [
-        "https://valdostadailytimes.com/2018/06/10/public-employers",
-        "https://en.wikipedia.org/wiki/Dalton,_Georgia",
-        "https://www.bizjournals.com/atlanta/news/2023/06/29/solar-workforce-qcells-dalton-georgia.html",
-        "https://www.selectgeorgia.com/landing-pages/san-fran-to-atl/top-brands",
-        "https://valdostadailytimes.com/2017/09/11/questions-and-answers-with-shaw-industries-ceo-vance-bell",
-        "https://georgia.org/newsroom/press-releases/global-flooring-company-expand-dalton-creating-200-jobs",
-        "https://georgia.org/newsroom/press-releases/mfg-chemical-opens-dalton-operation",
-        "https://www.bizjournals.com/atlanta/news/2019/05/28/dalton-ga-s-hamilton-medical-center-plans-28m.html"
+        "https://www.zippia.com/company/best-biggest-companies-in-dalton-ga",
+        "https://locationdalton.com/regional-data/major-employers",
+        "https://www.georgiatrend.com/2019/08/31/dalton-whitfield-county-reason-to-believe",
+        "https://lensa.com/company/largest-companies-in-dalton-ga-by-revenue",
+        "https://www.georgiatrend.com/2021/10/31/our-state-dalton-manufacturers-welcome",
+        "https://believegreaterdalton.org/great-quality-of-life-meets-influx-of-new-jobs-in-dalton-ga",
+        "https://livability.com/ga/dalton/education-careers-opportunity/dalton-ga-area-top-employers",
+        "https://www.linkedin.com/company/greater-dalton-chamber-of-commerce"
       ],
       "method": "Representative list auto-discovered via Tavily web search across chamber-of-commerce, development-authority and local-news sources. Not exhaustive; ordering approximates source frequency, not headcount."
     },

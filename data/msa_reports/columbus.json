@@ -3,7 +3,7 @@
   "short_name": "Columbus",
   "full_name": "Columbus, GA-AL",
   "population": 329000,
-  "as_of": "2026-09-08",
+  "as_of": "2026-09-09",
   "sections": {
     "ces_employment": {
       "series_id": "SMS13179800000000001",
@@ -5299,72 +5299,74 @@
       "source": "Census Business Dynamics Statistics (establishment entry rate, 2022); metro rate indexed to US=100"
     },
     "major_employers": {
-      "as_of": "2026-09-08",
+      "as_of": "2026-09-09",
       "employers": [
-        {
-          "name": "Company",
-          "source_url": "https://www.choosecolumbusga.com/site-selectors/major-employers"
-        },
         {
           "name": "Automotive",
           "source_url": "https://www.choosecolumbusga.com/site-selectors/major-employers"
         },
         {
-          "name": "Utilities",
-          "source_url": "https://www.choosecolumbusga.com/site-selectors/major-employers"
+          "name": "Manufacturing",
+          "source_url": "https://www.choosecolumbusga.com/site-selectors/target-industries"
         },
         {
           "name": "Columbus State University",
           "source_url": "https://www.georgiatrend.com/2023/10/31/columbus-advantage"
         },
         {
+          "name": "Health Care",
+          "source_url": "https://en.wikipedia.org/wiki/List_of_largest_Central_Ohio_employers"
+        },
+        {
+          "name": "Utilities",
+          "source_url": "https://www.choosecolumbusga.com/site-selectors/major-employers"
+        },
+        {
+          "name": "Financial Activities",
+          "source_url": "https://en.wikipedia.org/wiki/List_of_largest_Central_Ohio_employers"
+        },
+        {
           "name": "McCauley Propeller Systems",
           "source_url": "https://www.choosecolumbusga.com/site-selectors/major-employers"
         },
         {
-          "name": "Bradley Co",
-          "source_url": "https://www.choosecolumbusga.com/site-selectors/major-employers"
+          "name": "Corp. Mgt",
+          "source_url": "https://en.wikipedia.org/wiki/List_of_largest_Central_Ohio_employers"
         },
         {
-          "name": "Emory Healthcare",
-          "source_url": "https://www.georgiatrend.com/2023/10/31/columbus-advantage"
+          "name": "Mount Carmel Health System",
+          "source_url": "https://en.wikipedia.org/wiki/List_of_largest_Central_Ohio_employers"
         },
         {
-          "name": "Financial",
-          "source_url": "https://www.choosecolumbusga.com/site-selectors/major-employers"
-        },
-        {
-          "name": "Jack Hughston Memorial Hospital",
-          "source_url": "https://www.choosecolumbusga.com/site-selectors/major-employers"
+          "name": "Nationwide Children's Hospital",
+          "source_url": "https://en.wikipedia.org/wiki/List_of_largest_Central_Ohio_employers"
         },
         {
           "name": "Ohio State University",
-          "source_url": "https://www.bizjournals.com/columbus/subscriber-only/2015/07/10/largest-employers.html"
+          "source_url": "https://en.wikipedia.org/wiki/List_of_largest_Central_Ohio_employers"
         },
         {
-          "name": "Cardinal Health",
-          "source_url": "https://lensa.com/company/biggest-companies-in-columbus-ga"
+          "name": "Smucker Co",
+          "source_url": "https://www.choosecolumbusga.com/about/our-partners/p/item/7362/greater-columbus-georgia-chamber-of-commerce"
         },
         {
-          "name": "Chairman's Foods",
-          "source_url": "https://www.choosecolumbusga.com/site-selectors/major-employers"
+          "name": "American Electric Power",
+          "source_url": "https://en.wikipedia.org/wiki/Economy_of_Columbus,_Ohio"
         },
         {
-          "name": "Enterprise Holdings",
-          "source_url": "https://lensa.com/company/biggest-companies-in-columbus-ga"
-        },
-        {
-          "name": "Lockheed Martin Corporation",
-          "source_url": "https://lensa.com/company/biggest-companies-in-columbus-ga"
+          "name": "Columbus Public Schools",
+          "source_url": "https://en.wikipedia.org/wiki/List_of_largest_Central_Ohio_employers"
         }
       ],
       "sources": [
         "https://www.georgiatrend.com/2023/10/31/columbus-advantage",
         "https://www.choosecolumbusga.com/site-selectors/major-employers",
-        "https://lensa.com/company/biggest-companies-in-columbus-ga",
-        "https://www.ledger-enquirer.com/news/business/article293959859.html",
-        "https://www.zippia.com/company/best-biggest-companies-in-columbus-ga",
-        "https://www.bizjournals.com/columbus/subscriber-only/2015/07/10/largest-employers.html"
+        "https://en.wikipedia.org/wiki/Columbus,_Georgia",
+        "https://jobs.ledger-enquirer.com/employers",
+        "https://columbusgachamber.com/membership-directory",
+        "https://www.choosecolumbusga.com/about/our-partners/p/item/7362/greater-columbus-georgia-chamber-of-commerce",
+        "https://www.choosecolumbusga.com/site-selectors/target-industries",
+        "https://en.wikipedia.org/wiki/Economy_of_Columbus,_Ohio"
       ],
       "method": "Representative list auto-discovered via Tavily web search across chamber-of-commerce, development-authority and local-news sources. Not exhaustive; ordering approximates source frequency, not headcount."
     },
