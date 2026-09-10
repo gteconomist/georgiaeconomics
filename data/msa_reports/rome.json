@@ -3,7 +3,7 @@
   "short_name": "Rome",
   "full_name": "Rome, GA",
   "population": 99000,
-  "as_of": "2026-09-09",
+  "as_of": "2026-09-10",
   "sections": {
     "ces_employment": {
       "series_id": "SMS13406600000000001",
@@ -4616,74 +4616,30 @@
       "source": "Census Business Dynamics Statistics (establishment entry rate, 2022); metro rate indexed to US=100"
     },
     "major_employers": {
-      "as_of": "2026-09-09",
+      "as_of": "2026-09-10",
       "employers": [
         {
-          "name": "Company",
-          "source_url": "https://lensa.com/company/largest-companies-in-rome-ga-by-revenue"
+          "name": "Brigham Young University",
+          "source_url": "https://en.wikipedia.org/wiki/Rome_Italy_Temple"
         },
         {
-          "name": "Harbin Clinic",
-          "source_url": "https://www.romega.com/demographics"
-        },
-        {
-          "name": "Berry College",
-          "source_url": "https://www.romega.com/demographics"
-        },
-        {
-          "name": "Floyd Medical Center",
-          "source_url": "https://www.reddit.com/r/romega/comments/1jkqv08/rome_msa_ranked_number_one_in_the_state_for_job"
-        },
-        {
-          "name": "Floyd Healthcare Management",
-          "source_url": "https://www.romega.com/demographics"
-        },
-        {
-          "name": "Gordon Hospital",
-          "source_url": "https://www.romega.com/demographics"
-        },
-        {
-          "name": "F&P America Manufacturing",
+          "name": "Sapienza University of Rome",
           "source_url": null
         },
         {
-          "name": "Redmond Regional Medical Center",
-          "source_url": "https://en.wikipedia.org/wiki/Rome,_Georgia"
+          "name": "Financial",
+          "source_url": "https://www.bls.gov/news.release/jolts.t01.htm"
         },
         {
-          "name": "Integrated Fiber Solutions",
-          "source_url": "https://developromefloyd.com/community-data/major-manufacturers"
-        },
-        {
-          "name": "Kerry Foods",
-          "source_url": "https://developromefloyd.com/community-data/major-manufacturers"
-        },
-        {
-          "name": "Rome Floyd Development Authority",
-          "source_url": "https://developromefloyd.com/community-data/major-manufacturers"
-        },
-        {
-          "name": "Syntec Industries",
-          "source_url": "https://developromefloyd.com/community-data/major-manufacturers"
-        },
-        {
-          "name": "Atrium Health",
-          "source_url": null
-        },
-        {
-          "name": "Ball Corporation",
-          "source_url": "https://lensa.com/company/largest-companies-in-rome-ga-by-revenue"
+          "name": "Health",
+          "source_url": "https://www.bls.gov/news.release/jolts.t01.htm"
         }
       ],
       "sources": [
-        "https://www.romega.com/demographics",
-        "https://www.zippia.com/company/best-biggest-companies-in-rome-ga",
-        "https://lensa.com/company/largest-companies-in-rome-ga-by-revenue",
-        "https://www.reddit.com/r/romega/comments/1jkqv08/rome_msa_ranked_number_one_in_the_state_for_job",
-        "https://en.wikipedia.org/wiki/Rome,_Georgia",
-        "https://www.zippia.com/company/best-companies-in-rome-ga",
-        "https://developromefloyd.com/community-data/major-manufacturers",
-        "https://business.romega.com/jobs"
+        "https://www.bls.gov/news.release/jolts.t01.htm",
+        "https://en.wikipedia.org/wiki/Rome_Italy_Temple",
+        "https://en.wikipedia.org/w/index.php?title=Rome_Italy_Temple&oldid=1337706930",
+        "http://en.wikipedia.org/wiki/Rome_Italy_Temple"
       ],
       "method": "Representative list auto-discovered via Tavily web search across chamber-of-commerce, development-authority and local-news sources. Not exhaustive; ordering approximates source frequency, not headcount."
     },

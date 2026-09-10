@@ -3,7 +3,7 @@
   "short_name": "Columbus",
   "full_name": "Columbus, GA-AL",
   "population": 329000,
-  "as_of": "2026-09-09",
+  "as_of": "2026-09-10",
   "sections": {
     "ces_employment": {
       "series_id": "SMS13179800000000001",
@@ -5299,38 +5299,46 @@
       "source": "Census Business Dynamics Statistics (establishment entry rate, 2022); metro rate indexed to US=100"
     },
     "major_employers": {
-      "as_of": "2026-09-09",
+      "as_of": "2026-09-10",
       "employers": [
         {
-          "name": "Automotive",
+          "name": "Company",
           "source_url": "https://www.choosecolumbusga.com/site-selectors/major-employers"
         },
         {
-          "name": "Manufacturing",
-          "source_url": "https://www.choosecolumbusga.com/site-selectors/target-industries"
+          "name": "Chairmans Foods",
+          "source_url": "https://www.ledger-enquirer.com/news/business/article244216802.html"
+        },
+        {
+          "name": "Health Care",
+          "source_url": "https://www.ledger-enquirer.com/news/business/article293959859.html"
         },
         {
           "name": "Columbus State University",
           "source_url": "https://www.georgiatrend.com/2023/10/31/columbus-advantage"
         },
         {
-          "name": "Health Care",
-          "source_url": "https://en.wikipedia.org/wiki/List_of_largest_Central_Ohio_employers"
+          "name": "Huntington Bank",
+          "source_url": "https://www.bizjournals.com/columbus/news/2021/09/21/best-places-to-work-in-columbus-business-first-s.html?amp%3Bana=e_co_bn&amp%3Bj=25101975&amp%3Bsenddate=2021-09-21"
         },
         {
-          "name": "Utilities",
+          "name": "Ohio State University",
+          "source_url": "https://www.bizjournals.com/columbus/subscriber-only/2015/07/10/largest-employers.html"
+        },
+        {
+          "name": "Financial",
           "source_url": "https://www.choosecolumbusga.com/site-selectors/major-employers"
         },
         {
-          "name": "Financial Activities",
-          "source_url": "https://en.wikipedia.org/wiki/List_of_largest_Central_Ohio_employers"
-        },
-        {
-          "name": "McCauley Propeller Systems",
+          "name": "Automotive",
           "source_url": "https://www.choosecolumbusga.com/site-selectors/major-employers"
         },
         {
           "name": "Corp. Mgt",
+          "source_url": "https://en.wikipedia.org/wiki/List_of_largest_Central_Ohio_employers"
+        },
+        {
+          "name": "Honda of America Manufacturing",
           "source_url": "https://en.wikipedia.org/wiki/List_of_largest_Central_Ohio_employers"
         },
         {
@@ -5342,16 +5350,8 @@
           "source_url": "https://en.wikipedia.org/wiki/List_of_largest_Central_Ohio_employers"
         },
         {
-          "name": "Ohio State University",
-          "source_url": "https://en.wikipedia.org/wiki/List_of_largest_Central_Ohio_employers"
-        },
-        {
-          "name": "Smucker Co",
-          "source_url": "https://www.choosecolumbusga.com/about/our-partners/p/item/7362/greater-columbus-georgia-chamber-of-commerce"
-        },
-        {
-          "name": "American Electric Power",
-          "source_url": "https://en.wikipedia.org/wiki/Economy_of_Columbus,_Ohio"
+          "name": "Utilities",
+          "source_url": "https://www.choosecolumbusga.com/site-selectors/major-employers"
         },
         {
           "name": "Columbus Public Schools",
@@ -5361,12 +5361,12 @@
       "sources": [
         "https://www.georgiatrend.com/2023/10/31/columbus-advantage",
         "https://www.choosecolumbusga.com/site-selectors/major-employers",
-        "https://en.wikipedia.org/wiki/Columbus,_Georgia",
+        "https://lensa.com/company/biggest-companies-in-columbus-ga",
+        "https://www.ledger-enquirer.com/news/business/article293959859.html",
         "https://jobs.ledger-enquirer.com/employers",
-        "https://columbusgachamber.com/membership-directory",
-        "https://www.choosecolumbusga.com/about/our-partners/p/item/7362/greater-columbus-georgia-chamber-of-commerce",
-        "https://www.choosecolumbusga.com/site-selectors/target-industries",
-        "https://en.wikipedia.org/wiki/Economy_of_Columbus,_Ohio"
+        "https://www.ledger-enquirer.com/news/business/article244216802.html",
+        "https://www.bizjournals.com/columbus/news/2021/09/21/best-places-to-work-in-columbus-business-first-s.html?amp%3Bana=e_co_bn&amp%3Bj=25101975&amp%3Bsenddate=2021-09-21",
+        "https://www.bizjournals.com/columbus/news/2026/01/16/columbus-law-firms-list-top-employment-issues-2026.html"
       ],
       "method": "Representative list auto-discovered via Tavily web search across chamber-of-commerce, development-authority and local-news sources. Not exhaustive; ordering approximates source frequency, not headcount."
     },

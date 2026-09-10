@@ -3,7 +3,7 @@
   "short_name": "Athens",
   "full_name": "Athens-Clarke County, GA",
   "population": 217000,
-  "as_of": "2026-09-09",
+  "as_of": "2026-09-10",
   "sections": {
     "ces_employment": {
       "series_id": "SMS13120200000000001",
@@ -5310,11 +5310,11 @@
       "source": "Census Business Dynamics Statistics (establishment entry rate, 2022); metro rate indexed to US=100"
     },
     "major_employers": {
-      "as_of": "2026-09-09",
+      "as_of": "2026-09-10",
       "employers": [
         {
-          "name": "Company",
-          "source_url": "https://lensa.com/company/largest-companies-in-athens-ga-by-revenue"
+          "name": "University of Georgia",
+          "source_url": "https://livability.com/ga/athens/education-careers-opportunity/8-top-employers-in-athens-ga"
         },
         {
           "name": "Health Care System",
@@ -5329,55 +5329,55 @@
           "source_url": "https://livability.com/ga/athens/education-careers-opportunity/8-top-employers-in-athens-ga"
         },
         {
-          "name": "University of Georgia",
+          "name": "Apalachee High School",
+          "source_url": "http://onlineathens.com/local-news/2015-02-12/athens-gun-shop-owner-testifies-congress-asset-seizure"
+        },
+        {
+          "name": "Athens Medical Center",
+          "source_url": null
+        },
+        {
+          "name": "Caterpillar Athens Plant",
+          "source_url": "https://investathensga.com/site-selection/major-employers"
+        },
+        {
+          "name": "Courtesy of UGA College of AG",
           "source_url": "https://livability.com/ga/athens/education-careers-opportunity/8-top-employers-in-athens-ga"
         },
         {
-          "name": "Chase Bank",
-          "source_url": "https://business.athensga.com/list"
+          "name": "Food",
+          "source_url": "https://livability.com/ga/athens/education-careers-opportunity/8-top-employers-in-athens-ga"
+        },
+        {
+          "name": "Hollings Medical Center",
+          "source_url": null
+        },
+        {
+          "name": "Hospital",
+          "source_url": "https://www.ajc.com/business/hospital-giants-reach-beyond-metro-area/vQS8gUaJsJVpj11tgaX5xJ"
         },
         {
           "name": "Manufacturing",
           "source_url": "https://livability.com/ga/athens/education-careers-opportunity/8-top-employers-in-athens-ga"
         },
         {
-          "name": "Athens Housing Authority",
-          "source_url": "https://business.athensga.com/list"
+          "name": "Warehouse Worker",
+          "source_url": "https://www.indeed.com/q-companies-hiring-l-athens,-ga-jobs.html"
         },
         {
-          "name": "Athens Orthopedic Clinic",
-          "source_url": "https://business.athensga.com/list"
-        },
-        {
-          "name": "Bank South",
-          "source_url": "https://business.athensga.com/list"
-        },
-        {
-          "name": "Classic City Bank",
-          "source_url": "https://business.athensga.com/list"
-        },
-        {
-          "name": "Georgia Power",
-          "source_url": "https://business.athensga.com/list"
-        },
-        {
-          "name": "Jackson Electric",
-          "source_url": "https://business.athensga.com/list"
-        },
-        {
-          "name": "Janssen Pharmaceuticals",
-          "source_url": "https://business.athensga.com/list/category/manufacturing-production-236954"
+          "name": "Athens Regional Health System",
+          "source_url": "https://www.ajc.com/business/hospital-giants-reach-beyond-metro-area/vQS8gUaJsJVpj11tgaX5xJ"
         }
       ],
       "sources": [
         "https://livability.com/ga/athens/education-careers-opportunity/8-top-employers-in-athens-ga",
         "https://investathensga.com/site-selection/major-employers",
         "https://www.onlineathens.com/story/business/2015/11/14/gdol-host-seasonal-recruitment-athens-area-employers/15471064007",
-        "https://www.zippia.com/company/best-biggest-companies-in-athens-ga",
-        "https://lensa.com/company/largest-companies-in-athens-ga-by-revenue",
-        "https://business.athensga.com/list/category/manufacturing-production-236954",
-        "https://business.athensga.com/list",
-        "https://www.athensga.com"
+        "https://www.accgov.com/DocumentCenter/View/535/Athens-Clarke-County-By-the-Numbers",
+        "https://www.ajc.com/business/hospital-giants-reach-beyond-metro-area/vQS8gUaJsJVpj11tgaX5xJ",
+        "http://onlineathens.com/local-news/2015-02-12/athens-gun-shop-owner-testifies-congress-asset-seizure",
+        "http://www.onlineathens.com/local-news/2017-04-26/authorities-arrest-11-purported-street-gang-members-athens-sweep",
+        "https://www.indeed.com/q-companies-hiring-l-athens,-ga-jobs.html"
       ],
       "method": "Representative list auto-discovered via Tavily web search across chamber-of-commerce, development-authority and local-news sources. Not exhaustive; ordering approximates source frequency, not headcount."
     },

@@ -3,7 +3,7 @@
   "short_name": "Gainesville",
   "full_name": "Gainesville, GA",
   "population": 211000,
-  "as_of": "2026-09-09",
+  "as_of": "2026-09-10",
   "sections": {
     "ces_employment": {
       "series_id": "SMS13235800000000001",
@@ -5373,74 +5373,74 @@
       "source": "Census Business Dynamics Statistics (establishment entry rate, 2022); metro rate indexed to US=100"
     },
     "major_employers": {
-      "as_of": "2026-09-09",
+      "as_of": "2026-09-10",
       "employers": [
         {
-          "name": "Company",
-          "source_url": "https://lensa.com/company/biggest-companies-in-gainesville-ga"
-        },
-        {
-          "name": "University of Florida",
-          "source_url": "https://livability.com/fl/gainesville/education-careers-opportunity/gainesville-fl-region-top-employers"
-        },
-        {
-          "name": "Northeast Georgia Health System",
-          "source_url": "https://www.zippia.com/company/best-biggest-companies-in-gainesville-ga"
-        },
-        {
-          "name": "UF Health",
-          "source_url": "https://www.pepinerealty.com/blog/guide-employment-options-gainsville"
+          "name": "Hall County School System",
+          "source_url": "https://www.ghcc.com/wp-content/uploads/2018/09/2023-Top-Employers-Gainesvillle-Hall-County.pdf"
         },
         {
           "name": "Kubota Manufacturing of America",
-          "source_url": "https://www.ghcc.com/economic-development/existing-industry-program/industry-roundtable"
+          "source_url": "https://www.ghcc.com/wp-content/uploads/2018/09/2023-Top-Employers-Gainesvillle-Hall-County.pdf"
         },
         {
-          "name": "North Florida Regional Medical Center",
-          "source_url": "https://livability.com/fl/gainesville/education-careers-opportunity/gainesville-fl-region-top-employers"
+          "name": "Northeast Georgia Health System",
+          "source_url": "https://en.wikipedia.org/wiki/Gainesville,_Georgia"
         },
         {
-          "name": "Alachua County School Board",
-          "source_url": "https://livability.com/fl/gainesville/education-careers-opportunity/gainesville-fl-region-top-employers"
+          "name": "University of North Georgia",
+          "source_url": "https://en.wikipedia.org/wiki/Gainesville,_Georgia"
         },
         {
-          "name": "Institute of Food",
-          "source_url": "https://guidetogreatergainesville.com/largest-employers"
+          "name": "Gold Creek Foods",
+          "source_url": "https://www.ghcc.com/wp-content/uploads/2018/09/2023-Top-Employers-Gainesvillle-Hall-County.pdf"
+        },
+        {
+          "name": "Longstreet Clinic",
+          "source_url": "https://www.ghcc.com/wp-content/uploads/2018/09/2023-Top-Employers-Gainesvillle-Hall-County.pdf"
+        },
+        {
+          "name": "PPG Industries",
+          "source_url": "https://www.ghcc.com/education/workforce-development/gainesville-hall-county-jobs"
+        },
+        {
+          "name": "Brenau University",
+          "source_url": "https://en.wikipedia.org/wiki/Gainesville,_Georgia"
+        },
+        {
+          "name": "Fieldale Farms Corporation",
+          "source_url": "https://www.ghcc.com/wp-content/uploads/2018/09/2023-Top-Employers-Gainesvillle-Hall-County.pdf"
+        },
+        {
+          "name": "Fox Factory",
+          "source_url": "https://www.ghcc.com/wp-content/uploads/2018/09/2023-Top-Employers-Gainesvillle-Hall-County.pdf"
         },
         {
           "name": "Koch Foods",
           "source_url": "https://en.wikipedia.org/wiki/Gainesville,_Georgia"
         },
         {
-          "name": "South Georgia Veterans Health System",
-          "source_url": "https://livability.com/fl/gainesville/education-careers-opportunity/gainesville-fl-region-top-employers"
+          "name": "The Jaeger Co",
+          "source_url": "https://www.gainesvilletimes.com/news/simpson-jaeger-companies-win-hall-chambers-top-awards"
         },
         {
-          "name": "The Longstreet Clinic",
-          "source_url": "https://en.wikipedia.org/wiki/Gainesville,_Georgia"
+          "name": "ABB Motors",
+          "source_url": "https://www.ghcc.com/education/workforce-development/gainesville-hall-county-jobs"
         },
         {
-          "name": "Wrigley Manufacturing",
-          "source_url": "https://www.ghcc.com/economic-development/existing-industry-program/industry-roundtable"
-        },
-        {
-          "name": "ZF Group",
-          "source_url": "https://www.ghcc.com/economic-development/existing-industry-program/industry-roundtable"
-        },
-        {
-          "name": "Coleman Natural Foods",
-          "source_url": null
+          "name": "AIM Transportation Solutions",
+          "source_url": "https://www.ghcc.com/education/workforce-development/gainesville-hall-county-jobs"
         }
       ],
       "sources": [
-        "https://www.zippia.com/company/best-biggest-companies-in-gainesville-ga",
-        "https://lensa.com/company/biggest-companies-in-gainesville-ga",
         "https://en.wikipedia.org/wiki/Gainesville,_Georgia",
-        "https://www.ghcc.com/economic-development/existing-industry-program/industry-roundtable",
-        "https://guidetogreatergainesville.com/largest-employers",
-        "https://livability.com/fl/gainesville/education-careers-opportunity/gainesville-fl-region-top-employers",
-        "https://www.pepinerealty.com/blog/guide-employment-options-gainsville",
-        "https://www.zippia.com/company/best-biggest-companies-in-gainesville-fl"
+        "https://www.gainesvilletimes.com/news/chamber-lauds-companies-as-tops-in-area",
+        "https://www.gainesvilletimes.com/news/business-archived/chamber-honors-3-companies-as-the-years-best-in-hall",
+        "https://www.ajc.com/life/forbes-top-georgia-employer-is-a-school-district-thats-not-in-metro-atlanta/634GEYICVFAX3OGHGDLKS5CJOQ",
+        "https://www.gainesvilletimes.com/news/business-archived/gainesville-approves-5m-bond-for-ims-gear-georgia",
+        "https://www.ghcc.com/wp-content/uploads/2018/09/2023-Top-Employers-Gainesvillle-Hall-County.pdf",
+        "https://www.ghcc.com/education/workforce-development/gainesville-hall-county-jobs",
+        "https://www.ghcc.com/economic-development/existing-industry-program/industry-roundtable"
       ],
       "method": "Representative list auto-discovered via Tavily web search across chamber-of-commerce, development-authority and local-news sources. Not exhaustive; ordering approximates source frequency, not headcount."
     },
@@ -5970,9 +5970,9 @@
     }
   },
   "section_status": {
-    "ces_employment": "stale",
-    "ces_by_supersector": "stale",
-    "laus_unemployment": "stale",
+    "ces_employment": "live",
+    "ces_by_supersector": "live",
+    "laus_unemployment": "live",
     "fhfa_hpi": "live",
     "census_pep": "live",
     "census_acs_demographics": "live",

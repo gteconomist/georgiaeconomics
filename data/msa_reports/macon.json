@@ -3,7 +3,7 @@
   "short_name": "Macon",
   "full_name": "Macon-Bibb County, GA",
   "population": 232000,
-  "as_of": "2026-09-09",
+  "as_of": "2026-09-10",
   "sections": {
     "ces_employment": {
       "series_id": "SMS13314200000000001",
@@ -5301,10 +5301,14 @@
       "source": "Census Business Dynamics Statistics (establishment entry rate, 2022); metro rate indexed to US=100"
     },
     "major_employers": {
-      "as_of": "2026-09-09",
+      "as_of": "2026-09-10",
       "employers": [
         {
           "name": "Mercer University",
+          "source_url": "https://choosemacon.com/work/major-employers"
+        },
+        {
+          "name": "Atrium Health",
           "source_url": "https://choosemacon.com/work/major-employers"
         },
         {
@@ -5312,36 +5316,32 @@
           "source_url": "https://choosemacon.com/work/major-employers"
         },
         {
-          "name": "Academy Sports",
-          "source_url": "https://www.macon.com/living/living-here-guide/article39043491.html"
+          "name": "Piedmont Healthcare",
+          "source_url": "https://choosemacon.com/work/major-employers"
+        },
+        {
+          "name": "Coliseum Health System",
+          "source_url": "https://www.macon.com/living/living-here-guide/article30143466.html"
+        },
+        {
+          "name": "Houston Healthcare",
+          "source_url": "https://www.macon.com/living/living-here-guide/article30143466.html"
+        },
+        {
+          "name": "Fort Valley State University",
+          "source_url": "https://www.macon.com/living/living-here-guide/article30143466.html"
         },
         {
           "name": "Georgia College",
           "source_url": "https://www.macon.com/living/living-here-guide/article39043491.html"
         },
         {
-          "name": "Atrium Health",
-          "source_url": "https://choosemacon.com/work/major-employers"
+          "name": "Academy Sports",
+          "source_url": "https://www.macon.com/living/living-here-guide/article30143466.html"
         },
         {
           "name": "Manufacturing",
           "source_url": "https://choosemacon.com/work/major-employers"
-        },
-        {
-          "name": "Medical Center of Central Georgia",
-          "source_url": null
-        },
-        {
-          "name": "Piedmont Healthcare",
-          "source_url": "https://choosemacon.com/work/major-employers"
-        },
-        {
-          "name": "Coliseum Health System",
-          "source_url": "https://www.macon.com/living/living-here-guide/article39043491.html"
-        },
-        {
-          "name": "Fort Valley State University",
-          "source_url": "https://www.macon.com/living/living-here-guide/article39043491.html"
         },
         {
           "name": "Graphic Packaging Corp",
@@ -5349,26 +5349,26 @@
         },
         {
           "name": "Houston County Development Authority",
+          "source_url": "https://www.macon.com/living/living-here-guide/article30143466.html"
+        },
+        {
+          "name": "The Medical Center of Central Georgia",
           "source_url": "https://www.macon.com/living/living-here-guide/article39043491.html"
         },
         {
-          "name": "Houston Healthcare",
-          "source_url": "https://www.macon.com/living/living-here-guide/article39043491.html"
-        },
-        {
-          "name": "Sara Lee Foods",
+          "name": "Company",
           "source_url": "https://choosemacon.com/work/major-employers"
         }
       ],
       "sources": [
         "https://choosemacon.com/work/major-employers",
+        "https://www.macon.com/news/local/article28641151.html",
+        "https://www.macon.com/living/living-here-guide/article30143466.html",
         "https://www.zippia.com/company/best-biggest-companies-in-macon-ga",
         "https://www.macon.com/living/living-here-guide/article39043491.html",
-        "https://maconchamber.com/2019/12/19/atlanta-business-chronicle-2019-macon-market-report",
         "https://en.wikipedia.org/wiki/Macon,_Georgia",
         "https://houstoncountyga.net/industries/top-employers",
-        "https://choosemacon.com/industries",
-        "https://choosemacon.com/work/find-a-job"
+        "https://www.selectgeorgia.com/about-us/our-team/regional-development/ryan-waldrep-central"
       ],
       "method": "Representative list auto-discovered via Tavily web search across chamber-of-commerce, development-authority and local-news sources. Not exhaustive; ordering approximates source frequency, not headcount."
     },

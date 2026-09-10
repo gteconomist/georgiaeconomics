@@ -3,7 +3,7 @@
   "short_name": "Albany",
   "full_name": "Albany, GA",
   "population": 146000,
-  "as_of": "2026-09-09",
+  "as_of": "2026-09-10",
   "sections": {
     "ces_employment": {
       "series_id": "SMS13105000000000001",
@@ -4352,74 +4352,74 @@
       "source": "Census Business Dynamics Statistics (establishment entry rate, 2022); metro rate indexed to US=100"
     },
     "major_employers": {
-      "as_of": "2026-09-09",
+      "as_of": "2026-09-10",
       "employers": [
         {
-          "name": "Company",
-          "source_url": "https://lensa.com/company/largest-companies-in-albany-ga-by-revenue"
-        },
-        {
-          "name": "Outdoor Network Manufacturing",
-          "source_url": "https://choosealbany.com/site-selection/area-industries"
-        },
-        {
-          "name": "Pratt Industries",
-          "source_url": "https://choosealbany.com/site-selection/area-industries"
-        },
-        {
-          "name": "Albany Green Energy",
-          "source_url": "https://choosealbany.com/site-selection/area-industries"
-        },
-        {
-          "name": "Amadas Industries",
-          "source_url": "https://choosealbany.com/site-selection/area-industries"
+          "name": "Manufacturing",
+          "source_url": "https://www.bizjournals.com/albany/subscriber-only/2021/07/09/largest-private-sector-employers-in-the.html"
         },
         {
           "name": "Northeast Grocery Inc",
-          "source_url": "https://www.bizjournals.com/albany/subscriber-only/2025/10/17/albanys-330-largest-employers.html"
+          "source_url": "https://www.bizjournals.com/albany/subscriber-only/2024/07/12/albany-areas-largest-private-sector-employers.html"
+        },
+        {
+          "name": "Pratt Industries",
+          "source_url": "https://albanyherald.com/news/officials-hope-november-job-fair-has-regional-impact-for-job-seekers-employers"
         },
         {
           "name": "Albany Med Health System",
           "source_url": "https://www.bizjournals.com/albany/subscriber-only/2025/10/17/albanys-330-largest-employers.html"
         },
         {
-          "name": "Marine Corps Logistics Base",
-          "source_url": "https://www.georgiatrend.com/2011/05/01/albany-dougherty-county-playing-to-its-strengths"
+          "name": "Energy",
+          "source_url": "https://www.bizjournals.com/albany/subscriber-only/2021/07/09/largest-private-sector-employers-in-the.html"
         },
         {
-          "name": "Regeneron Pharmaceuticals Inc",
-          "source_url": "https://www.bizjournals.com/albany/subscriber-only/2025/10/17/albanys-330-largest-employers.html"
+          "name": "Financial Services",
+          "source_url": "https://www.bizjournals.com/albany/subscriber-only/2021/07/09/largest-private-sector-employers-in-the.html"
         },
         {
-          "name": "Tara Foods",
-          "source_url": "https://choosealbany.com/site-selection/area-industries"
+          "name": "Food",
+          "source_url": "https://www.bizjournals.com/albany/subscriber-only/2021/07/09/largest-private-sector-employers-in-the.html"
         },
         {
-          "name": "Albany State University",
-          "source_url": "https://www.zippia.com/company/best-biggest-companies-in-albany-ga"
+          "name": "Health Care",
+          "source_url": "https://www.bizjournals.com/albany/subscriber-only/2021/07/09/largest-private-sector-employers-in-the.html"
         },
         {
-          "name": "St. Peter's Health Partners",
-          "source_url": "https://www.bizjournals.com/albany/subscriber-only/2025/10/17/albanys-330-largest-employers.html"
+          "name": "Fluor Marine Propulsion LLC",
+          "source_url": "https://www.bizjournals.com/albany/subscriber-only/2024/07/12/albany-areas-largest-private-sector-employers.html"
+        },
+        {
+          "name": "Health Partners",
+          "source_url": "http://www.bizjournals.com/albany/search/results?q=St.+Peter&search__button="
+        },
+        {
+          "name": "Knolls Atomic Power Laboratory",
+          "source_url": "https://www.bizjournals.com/albany/subscriber-only/2024/07/12/albany-areas-largest-private-sector-employers.html"
         },
         {
           "name": "Albany Medical Center",
           "source_url": null
         },
         {
-          "name": "Area Industries",
-          "source_url": "https://choosealbany.com/site-selection/area-industries"
+          "name": "Dougherty County School District",
+          "source_url": null
+        },
+        {
+          "name": "Golub Corp. Rensselaer",
+          "source_url": "https://www.bizjournals.com/albany/subscriber-only/2024/07/12/albany-areas-largest-private-sector-employers.html"
         }
       ],
       "sources": [
-        "https://www.zippia.com/company/best-biggest-companies-in-albany-ga",
-        "https://lensa.com/company/largest-companies-in-albany-ga-by-revenue",
-        "https://www.georgiatrend.com/2011/05/01/albany-dougherty-county-playing-to-its-strengths",
-        "https://choosealbany.com/site-selection/area-industries",
-        "https://business.albanyga.com/list/searchalpha/c",
+        "https://www.bizjournals.com/albany/subscriber-only/2024/07/12/albany-areas-largest-private-sector-employers.html",
+        "https://www.bizjournals.com/albany/subscriber-only/2023/07/14/albany-areas-largest-private-sector-employers.html",
         "https://www.bizjournals.com/albany/subscriber-only/2025/10/17/albanys-330-largest-employers.html",
-        "https://www.bizjournals.com/albany/news/2025/10/17/new-employers-list-2025.html",
-        "https://www.bizjournals.com/albany/news/2023/07/14/albany-region-largest-private-sector-employers.html"
+        "https://www.bizjournals.com/albany/subscriber-only/2021/07/09/largest-private-sector-employers-in-the.html",
+        "http://assets-origin.bizjournals.com/albany/subscriber-only/2014/11/21/defense-contractors.html",
+        "https://www.bizjournals.com/albany/subscriber-only/2022/06/17/public-companies.html",
+        "https://albanyherald.com/news/on-the-job-with-steve-fink",
+        "https://albanyherald.com/news/officials-hope-november-job-fair-has-regional-impact-for-job-seekers-employers"
       ],
       "method": "Representative list auto-discovered via Tavily web search across chamber-of-commerce, development-authority and local-news sources. Not exhaustive; ordering approximates source frequency, not headcount."
     },
