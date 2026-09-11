@@ -3,7 +3,7 @@
   "short_name": "Valdosta",
   "full_name": "Valdosta, GA",
   "population": 148000,
-  "as_of": "2026-09-10",
+  "as_of": "2026-09-11",
   "sections": {
     "ces_employment": {
       "series_id": "SMS13466600000000001",
@@ -4355,74 +4355,74 @@
       "source": "Census Business Dynamics Statistics (establishment entry rate, 2022); metro rate indexed to US=100"
     },
     "major_employers": {
-      "as_of": "2026-09-10",
+      "as_of": "2026-09-11",
       "employers": [
         {
           "name": "South Georgia Medical Center",
           "source_url": "https://www.zippia.com/company/best-biggest-companies-in-valdosta-ga"
         },
         {
-          "name": "Valdosta State University",
+          "name": "Packaging Corporation of America",
           "source_url": "https://www.valdostacity.com/economic-development/top-20-employers"
         },
         {
-          "name": "Our Company",
-          "source_url": "https://valdostadailytimes.com/2026/04/03/valdosta-lowndes-county-chamber-of-commerce-recognizes-security-fire-equipment-company-inc-as-leading-business-of-the-week"
+          "name": "Company",
+          "source_url": "https://www.valdostacity.com/economic-development/top-20-employers"
         },
         {
-          "name": "Security Fire Equipment Company",
-          "source_url": "https://valdostadailytimes.com/2026/04/03/valdosta-lowndes-county-chamber-of-commerce-recognizes-security-fire-equipment-company-inc-as-leading-business-of-the-week"
-        },
-        {
-          "name": "Carpenter Financial",
-          "source_url": "https://valdostadailytimes.com/2026/05/01/valdosta-lowndes-chamber-of-commerce-celebrates-with-carpenter-financial-for-new-hahira-location"
-        },
-        {
-          "name": "Corporation",
-          "source_url": "https://valdostadailytimes.com/2025/09/01/tm-polyfilm-inc-named-corporation-of-the-quarter-by-valdosta-lowndes-chamber-of-commerce"
+          "name": "Valdosta State University",
+          "source_url": "https://www.valdostacity.com/economic-development/top-20-employers"
         },
         {
           "name": "Wiregrass Georgia Technical College",
           "source_url": "https://www.georgiatrend.com/2025/03/31/prospects-for-valdosta"
         },
         {
+          "name": "Fresh Beginnings Inc",
+          "source_url": "https://www.valdostacity.com/economic-development/top-20-employers"
+        },
+        {
+          "name": "Lowndes County Schools System",
+          "source_url": "https://www.valdostacity.com/economic-development/top-20-employers"
+        },
+        {
           "name": "Distribution Center",
           "source_url": null
         },
         {
-          "name": "Lowndes County School System",
-          "source_url": null
+          "name": "Inc. Drugs Don't Work",
+          "source_url": "https://business.valdostachamber.com/directory/Search/manufacturers-371427"
         },
         {
-          "name": "Lowndes County Schools",
-          "source_url": null
+          "name": "Archer Daniels Midland Co",
+          "source_url": "https://business.valdostachamber.com/directory/Search/manufacturers-371427"
         },
         {
-          "name": "REIT Rayonier Inc",
-          "source_url": null
+          "name": "Georgia Gulf Sulfur Corp",
+          "source_url": "https://business.valdostachamber.com/directory/Search/manufacturers-371427"
         },
         {
-          "name": "SGMC Health",
-          "source_url": "https://valdostadailytimes.com/2026/05/01/valdosta-lowndes-chamber-of-commerce-celebrates-with-carpenter-financial-for-new-hahira-location"
+          "name": "Langdale Forest Products Co",
+          "source_url": "https://business.valdostachamber.com/directory/Search/manufacturers-371427"
         },
         {
-          "name": "The Scruggs Company",
-          "source_url": "https://www.valdostacity.com/economic-development/top-20-employers"
+          "name": "Precision Industries Inc",
+          "source_url": "https://business.valdostachamber.com/directory/Search/manufacturers-371427"
         },
         {
-          "name": "Valdosta City Schools",
-          "source_url": null
+          "name": "Sunset Farm Foods",
+          "source_url": "https://business.valdostachamber.com/directory/Search/manufacturers-371427"
         }
       ],
       "sources": [
         "https://www.georgiatrend.com/2025/03/31/prospects-for-valdosta",
         "https://www.zippia.com/company/best-biggest-companies-in-valdosta-ga",
         "https://www.valdostacity.com/economic-development/top-20-employers",
-        "https://www.selectgeorgia.com/blog/rural-transformation/one-valdosta-lowndes-interview",
-        "https://www.valdostacity.com/economic-development/community-investments",
+        "https://business.valdostachamber.com/directory/Search/manufacturers-371427",
+        "https://www.glassdoor.com/Explore/top-companies-valdosta_IL.14,22_IM884.htm",
+        "https://business.valdostachamber.com/directory",
         "https://valdostadailytimes.com/2018/06/10/public-employers",
-        "https://valdostadailytimes.com/2026/04/03/valdosta-lowndes-county-chamber-of-commerce-recognizes-security-fire-equipment-company-inc-as-leading-business-of-the-week",
-        "https://valdostadailytimes.com/2025/09/01/tm-polyfilm-inc-named-corporation-of-the-quarter-by-valdosta-lowndes-chamber-of-commerce"
+        "https://lensa.com/company/biggest-companies-in-valdosta-ga"
       ],
       "method": "Representative list auto-discovered via Tavily web search across chamber-of-commerce, development-authority and local-news sources. Not exhaustive; ordering approximates source frequency, not headcount."
     },

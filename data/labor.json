@@ -1238,12 +1238,12 @@
   },
   "_meta": {
     "metro_labor": {
-      "last_updated": "2026-09-10T13:38:25Z",
+      "last_updated": "2026-09-11T13:33:23Z",
       "n_metros": 14,
       "stale": false
     },
     "sector_diffusion": {
-      "last_updated": "2026-09-10T13:38:25Z",
+      "last_updated": "2026-09-11T13:33:23Z",
       "stale": false
     }
   }

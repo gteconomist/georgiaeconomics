@@ -3,7 +3,7 @@
   "short_name": "Augusta",
   "full_name": "Augusta-Richmond County, GA-SC",
   "population": 611000,
-  "as_of": "2026-09-10",
+  "as_of": "2026-09-11",
   "sections": {
     "ces_employment": {
       "series_id": "SMS13122600000000001",
@@ -5282,14 +5282,10 @@
       "source": "Census Business Dynamics Statistics (establishment entry rate, 2022); metro rate indexed to US=100"
     },
     "major_employers": {
-      "as_of": "2026-09-10",
+      "as_of": "2026-09-11",
       "employers": [
         {
           "name": "Augusta University",
-          "source_url": "https://en.wikipedia.org/wiki/Augusta,_Georgia"
-        },
-        {
-          "name": "Richmond County School System",
           "source_url": "https://en.wikipedia.org/wiki/Augusta,_Georgia"
         },
         {
@@ -5301,20 +5297,32 @@
           "source_url": "https://augustaeda.org/business-industry/largest-employers"
         },
         {
+          "name": "Richmond County School System",
+          "source_url": "https://en.wikipedia.org/wiki/Augusta,_Georgia"
+        },
+        {
           "name": "Doctors Hospital",
           "source_url": "https://en.wikipedia.org/wiki/Augusta,_Georgia"
         },
         {
-          "name": "Augusta Technical College",
-          "source_url": "https://www.augustametrochamber.com/major-economic-sectors"
-        },
-        {
-          "name": "Paine College",
-          "source_url": "https://www.augustametrochamber.com/major-economic-sectors"
-        },
-        {
           "name": "East Central Regional Hospital",
           "source_url": "https://en.wikipedia.org/wiki/Augusta,_Georgia"
+        },
+        {
+          "name": "FPL Food",
+          "source_url": "https://augustaeda.org/business-industry/largest-employers"
+        },
+        {
+          "name": "Augusta's Largest Non-Manufacturing Employers",
+          "source_url": "https://augustaeda.org/business-industry/largest-employers"
+        },
+        {
+          "name": "Olin Corporation",
+          "source_url": "https://en.wikipedia.org/wiki/Augusta,_Georgia"
+        },
+        {
+          "name": "Augusta Technical College",
+          "source_url": "https://en.wikipedia.org/wiki/Augusta-Richmond_County,_GA-SC_Metropolitan_Statistical_Area"
         },
         {
           "name": "East Georgia State College",
@@ -5329,27 +5337,19 @@
           "source_url": "https://en.wikipedia.org/wiki/Augusta-Richmond_County,_GA-SC_Metropolitan_Statistical_Area"
         },
         {
-          "name": "FPL Food",
-          "source_url": "https://augustaeda.org/business-industry/largest-employers"
-        },
-        {
-          "name": "Augusta's Largest Non-Manufacturing Employers",
-          "source_url": "https://augustaeda.org/business-industry/largest-employers"
-        },
-        {
-          "name": "Charlie Norwood VA Medical Center",
-          "source_url": "https://en.wikipedia.org/wiki/Augusta,_Georgia"
+          "name": "Paine College",
+          "source_url": "https://en.wikipedia.org/wiki/Augusta-Richmond_County,_GA-SC_Metropolitan_Statistical_Area"
         }
       ],
       "sources": [
         "https://en.wikipedia.org/wiki/Augusta,_Georgia",
-        "https://www.augustaga.gov/DocumentView.asp?DID=335",
         "https://augustaeda.org/business-industry/largest-employers",
+        "https://en.wikipedia.org/wiki/Augusta-Richmond_County,_GA-SC_Metropolitan_Statistical_Area",
         "https://www.zippia.com/company/best-biggest-companies-in-augusta-ga",
         "https://www.augustametrochamber.com/manufacturing",
         "https://augustavabusiness.com/facts-figures/major-employers",
-        "https://www.augustametrochamber.com/major-economic-sectors",
-        "https://en.wikipedia.org/wiki/Augusta-Richmond_County,_GA-SC_Metropolitan_Statistical_Area"
+        "https://en.wikipedia.org/wiki/Augusta_metropolitan_area",
+        "https://en.wikipedia.org/wiki/Augusta-Richmond_County,_GA-SC_MSA"
       ],
       "method": "Representative list auto-discovered via Tavily web search across chamber-of-commerce, development-authority and local-news sources. Not exhaustive; ordering approximates source frequency, not headcount."
     },

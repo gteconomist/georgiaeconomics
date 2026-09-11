@@ -3,7 +3,7 @@
   "short_name": "Hinesville",
   "full_name": "Hinesville, GA",
   "population": 78000,
-  "as_of": "2026-09-10",
+  "as_of": "2026-09-11",
   "sections": {
     "ces_employment": {
       "series_id": "SMS13259800000000001",
@@ -4145,11 +4145,15 @@
       "source": "Census Business Dynamics Statistics (establishment entry rate, 2022); metro rate indexed to US=100"
     },
     "major_employers": {
-      "as_of": "2026-09-09",
+      "as_of": "2026-09-11",
       "employers": [
         {
-          "name": "Company",
-          "source_url": "https://lensa.com/company/largest-companies-in-hinesville-ga-by-revenue"
+          "name": "Company Website",
+          "source_url": "https://comegrow.global/major-industries"
+        },
+        {
+          "name": "Manufacturing",
+          "source_url": "https://comegrow.global/major-industries"
         },
         {
           "name": "Hanwha Aerospace",
@@ -4160,57 +4164,53 @@
           "source_url": "https://comegrow.global/major-industries"
         },
         {
-          "name": "Builders FirstSource Truss Plant",
-          "source_url": "https://comegrow.global/major-industries"
+          "name": "Liberty County School System",
+          "source_url": null
         },
         {
           "name": "Major Industries",
           "source_url": "https://comegrow.global/major-industries"
         },
         {
-          "name": "Computer Sciences Corporation",
-          "source_url": "https://lensa.com/company/largest-companies-in-hinesville-ga-by-revenue"
+          "name": "Veterans Health Administration",
+          "source_url": null
         },
         {
-          "name": "Liberty County School District",
-          "source_url": "https://www.zippia.com/company/best-companies-in-hinesville-ga"
+          "name": "Warehouse Publix Walmart Hobby Lobby Olive",
+          "source_url": "https://www.ziprecruiter.com/Jobs/-in-Hinesville,GA"
         },
         {
-          "name": "Liberty Regional Medical Center",
-          "source_url": "https://lensa.com/company/highest-rated-companies-in-hinesville-ga"
-        },
-        {
-          "name": "Clearwave Fiber LLC",
-          "source_url": "https://business.libertycounty.org/list/searchalpha/c"
+          "name": "Builders FirstSource Truss Plant",
+          "source_url": "https://comegrow.global/major-industries"
         },
         {
           "name": "Distribution",
           "source_url": "https://comegrow.global/major-industries"
         },
         {
-          "name": "Domino's Pizza LLC",
-          "source_url": "https://lensa.com/company/largest-companies-in-hinesville-ga-by-revenue"
+          "name": "Food Service Worker",
+          "source_url": "https://www.indeed.com/l-hinesville,-ga-jobs.html"
         },
         {
-          "name": "Food Lion",
-          "source_url": "https://lensa.com/company/largest-companies-in-hinesville-ga-by-revenue"
-        },
-        {
-          "name": "Georgia Power",
-          "source_url": "https://lensa.com/company/largest-companies-in-hinesville-ga-by-revenue"
+          "name": "Gulfstream Aerospace",
+          "source_url": "https://georgia.org/why-georgia/regions-georgia/coastal-georgia"
         },
         {
           "name": "Logistics",
           "source_url": "https://comegrow.global/major-industries"
+        },
+        {
+          "name": "Purdue University",
+          "source_url": "https://comegrow.global/2021/11/02/best-places-to-work-in-manufacturing"
         }
       ],
       "sources": [
-        "https://lensa.com/company/largest-companies-in-hinesville-ga-by-revenue",
-        "https://www.zippia.com/company/best-companies-in-hinesville-ga",
-        "https://comegrow.global/major-industries",
+        "https://georgia.org/why-georgia/regions-georgia/coastal-georgia",
+        "https://www.savannahnow.com/story/business/2016/05/18/bis-brief-va-clinic-hold-open-house-hinesville/13973918007",
         "https://www.ziprecruiter.com/Jobs/-in-Hinesville,GA",
-        "https://business.libertycounty.org/list/searchalpha/c",
-        "https://lensa.com/company/highest-rated-companies-in-hinesville-ga",
+        "https://comegrow.global/major-industries",
+        "https://www.indeed.com/companies/best-Manufacturing-companies-in-Hinesville,-GA",
+        "https://comegrow.global/2021/11/02/best-places-to-work-in-manufacturing",
         "https://www.indeed.com/l-hinesville,-ga-jobs.html"
       ],
       "method": "Representative list auto-discovered via Tavily web search across chamber-of-commerce, development-authority and local-news sources. Not exhaustive; ordering approximates source frequency, not headcount."
@@ -4759,7 +4759,7 @@
     "acs_housing_characteristics": "live",
     "acs_block_group_income": "live",
     "entrepreneurship": "live",
-    "major_employers": "stale",
+    "major_employers": "partial",
     "business_cycle_index": "live",
     "forecast_arima": "live",
     "vitality": "live",

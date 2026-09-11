@@ -3,7 +3,7 @@
   "short_name": "Rome",
   "full_name": "Rome, GA",
   "population": 99000,
-  "as_of": "2026-09-10",
+  "as_of": "2026-09-11",
   "sections": {
     "ces_employment": {
       "series_id": "SMS13406600000000001",
@@ -4616,30 +4616,74 @@
       "source": "Census Business Dynamics Statistics (establishment entry rate, 2022); metro rate indexed to US=100"
     },
     "major_employers": {
-      "as_of": "2026-09-10",
+      "as_of": "2026-09-11",
       "employers": [
         {
-          "name": "Brigham Young University",
-          "source_url": "https://en.wikipedia.org/wiki/Rome_Italy_Temple"
+          "name": "Harbin Clinic",
+          "source_url": "https://www.romega.com/demographics"
         },
         {
-          "name": "Sapienza University of Rome",
+          "name": "Berry College",
+          "source_url": "https://www.romega.com/demographics"
+        },
+        {
+          "name": "Floyd Healthcare Management",
+          "source_url": "https://www.romega.com/demographics"
+        },
+        {
+          "name": "Gordon Hospital",
+          "source_url": "https://www.romega.com/demographics"
+        },
+        {
+          "name": "International Paper Company",
+          "source_url": "https://www.romega.com/demographics"
+        },
+        {
+          "name": "Keebler Company",
+          "source_url": "https://www.romega.com/demographics"
+        },
+        {
+          "name": "Atrium Health Floyd",
+          "source_url": "https://www.zippia.com/company/best-companies-in-rome-ga"
+        },
+        {
+          "name": "F&P America Manufacturing",
           "source_url": null
         },
         {
-          "name": "Financial",
-          "source_url": "https://www.bls.gov/news.release/jolts.t01.htm"
+          "name": "Summit Hill Foods",
+          "source_url": "https://www.tradeandindustrydev.com/region/georgia/community-invested-you-rome-and-floyd-county-35063"
         },
         {
-          "name": "Health",
-          "source_url": "https://www.bls.gov/news.release/jolts.t01.htm"
+          "name": "Synthica Energy",
+          "source_url": "https://business.romega.com/list/Search/manufacturing-production-wholesale-506391"
+        },
+        {
+          "name": "Ball Container LLC",
+          "source_url": "https://business.romega.com/list/Search/manufacturing-production-wholesale-506391"
+        },
+        {
+          "name": "Floyd Medical Center",
+          "source_url": "https://en.wikipedia.org/wiki/Rome,_Georgia"
+        },
+        {
+          "name": "Redmond Regional Medical Center",
+          "source_url": "https://en.wikipedia.org/wiki/Rome,_Georgia"
+        },
+        {
+          "name": "Rome Health Authority",
+          "source_url": null
         }
       ],
       "sources": [
-        "https://www.bls.gov/news.release/jolts.t01.htm",
-        "https://en.wikipedia.org/wiki/Rome_Italy_Temple",
-        "https://en.wikipedia.org/w/index.php?title=Rome_Italy_Temple&oldid=1337706930",
-        "http://en.wikipedia.org/wiki/Rome_Italy_Temple"
+        "https://www.romega.com/demographics",
+        "https://www.zippia.com/company/best-biggest-companies-in-rome-ga",
+        "https://www.georgiatrend.com/2023/06/27/continued-growth-for-rome",
+        "https://www.tradeandindustrydev.com/region/georgia/community-invested-you-rome-and-floyd-county-35063",
+        "https://en.wikipedia.org/wiki/Rome,_Georgia",
+        "https://business.romega.com/list/Search/manufacturing-production-wholesale-506391",
+        "https://www.zippia.com/company/best-companies-in-rome-ga",
+        "https://business.romega.com/list/FindStartsWith?term=F"
       ],
       "method": "Representative list auto-discovered via Tavily web search across chamber-of-commerce, development-authority and local-news sources. Not exhaustive; ordering approximates source frequency, not headcount."
     },

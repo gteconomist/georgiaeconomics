@@ -3,7 +3,7 @@
   "short_name": "Atlanta",
   "full_name": "Atlanta-Sandy Springs-Alpharetta, GA",
   "population": 6307261,
-  "as_of": "2026-09-10",
+  "as_of": "2026-09-11",
   "sections": {
     "ces_employment": {
       "series_id": "SMS13120600000000001",
@@ -5484,10 +5484,14 @@
       "source": "Census Business Dynamics Statistics (establishment entry rate, 2022); metro rate indexed to US=100"
     },
     "major_employers": {
-      "as_of": "2026-09-10",
+      "as_of": "2026-09-11",
       "employers": [
         {
           "name": "Emory University",
+          "source_url": "https://www.bizjournals.com/atlanta/subscriber-only/2022/07/15/atlantas-25-largest-employers.html"
+        },
+        {
+          "name": "Emory Healthcare",
           "source_url": "https://www.bizjournals.com/atlanta/subscriber-only/2022/07/15/atlantas-25-largest-employers.html"
         },
         {
@@ -5495,11 +5499,11 @@
           "source_url": "https://topworkplaces.com/award/atlanta/2024"
         },
         {
-          "name": "Emory Healthcare",
+          "name": "Piedmont Healthcare",
           "source_url": "https://www.bizjournals.com/atlanta/subscriber-only/2022/07/15/atlantas-25-largest-employers.html"
         },
         {
-          "name": "Piedmont Healthcare",
+          "name": "Delta Air Lines Inc",
           "source_url": "https://www.bizjournals.com/atlanta/subscriber-only/2022/07/15/atlantas-25-largest-employers.html"
         },
         {
@@ -5507,39 +5511,35 @@
           "source_url": "https://www.developfultoncounty.com/major-employers.php"
         },
         {
-          "name": "Delta Air Lines Inc",
-          "source_url": "https://www.bizjournals.com/atlanta/subscriber-only/2022/07/15/atlantas-25-largest-employers.html"
-        },
-        {
-          "name": "Headquarters Company",
-          "source_url": "https://www.bizjournals.com/atlanta/subscriber-only/2022/07/15/atlantas-25-largest-employers.html"
-        },
-        {
-          "name": "LexisNexis Risk Solutions",
-          "source_url": "https://topworkplaces.com/award/atlanta/2024"
-        },
-        {
-          "name": "UnitedHealth Group",
-          "source_url": "https://www.indeed.com/career-advice/finding-a-job/companies-hiring-in-atlanta"
-        },
-        {
-          "name": "Wellstar Health System",
-          "source_url": "https://www.linkedin.com/pulse/linkedin-top-companies-2026-10-best-employers-grow-your-ypmge"
-        },
-        {
-          "name": "Axiall Company Page Archived",
-          "source_url": "https://en.wikipedia.org/wiki/Economy_of_Atlanta"
+          "name": "Southern Company",
+          "source_url": "https://jobs.coxenterprises.com/en/best-technology-companies-in-atlanta"
         },
         {
           "name": "Cola Company",
           "source_url": null
         },
         {
-          "name": "Company Fact Sheet",
-          "source_url": "https://en.wikipedia.org/wiki/Economy_of_Atlanta"
+          "name": "Gwinnett County Public Schools",
+          "source_url": "https://www.bizjournals.com/atlanta/subscriber-only/2024/07/12/atlantas-20-largest-employers.html"
         },
         {
-          "name": "Energy",
+          "name": "Headquarters Company",
+          "source_url": "https://www.bizjournals.com/atlanta/subscriber-only/2022/07/15/atlantas-25-largest-employers.html"
+        },
+        {
+          "name": "Healthcare of Atlanta",
+          "source_url": "https://www.developfultoncounty.com/major-employers.php"
+        },
+        {
+          "name": "LexisNexis Risk Solutions",
+          "source_url": "https://topworkplaces.com/award/atlanta/2024"
+        },
+        {
+          "name": "Part Time Whole Foods Market Atlanta",
+          "source_url": "https://www.indeed.com/l-atlanta,-ga-jobs.html"
+        },
+        {
+          "name": "State Farm Insurance",
           "source_url": "https://www.developfultoncounty.com/major-employers.php"
         }
       ],
@@ -5550,8 +5550,8 @@
         "https://en.wikipedia.org/wiki/Economy_of_Atlanta",
         "https://topworkplaces.com/award/atlanta/2024",
         "https://www.developfultoncounty.com/major-employers.php",
-        "https://www.bizjournals.com/atlanta/subscriber-only/2023/09/01/best-places-to-work-large-companies.html",
-        "https://www.bizjournals.com/atlanta/subscriber-only/2025/08/29/best-places-to-work-large-companies.html"
+        "https://www.ajc.com/top-workplaces/rounding-out-the-top-5-large-businesses/5FF7QFEAMRGF3PLDXYSC4NOFWQ",
+        "https://www.bizjournals.com/atlanta/subscriber-only/2024/07/12/atlantas-20-largest-employers.html"
       ],
       "method": "Representative list auto-discovered via Tavily web search across chamber-of-commerce, development-authority and local-news sources. Not exhaustive; ordering approximates source frequency, not headcount."
     },

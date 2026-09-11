@@ -3,7 +3,7 @@
   "short_name": "Columbus",
   "full_name": "Columbus, GA-AL",
   "population": 329000,
-  "as_of": "2026-09-10",
+  "as_of": "2026-09-11",
   "sections": {
     "ces_employment": {
       "series_id": "SMS13179800000000001",
@@ -5299,7 +5299,7 @@
       "source": "Census Business Dynamics Statistics (establishment entry rate, 2022); metro rate indexed to US=100"
     },
     "major_employers": {
-      "as_of": "2026-09-10",
+      "as_of": "2026-09-11",
       "employers": [
         {
           "name": "Company",
@@ -5318,16 +5318,16 @@
           "source_url": "https://www.georgiatrend.com/2023/10/31/columbus-advantage"
         },
         {
-          "name": "Huntington Bank",
-          "source_url": "https://www.bizjournals.com/columbus/news/2021/09/21/best-places-to-work-in-columbus-business-first-s.html?amp%3Bana=e_co_bn&amp%3Bj=25101975&amp%3Bsenddate=2021-09-21"
-        },
-        {
           "name": "Ohio State University",
           "source_url": "https://www.bizjournals.com/columbus/subscriber-only/2015/07/10/largest-employers.html"
         },
         {
           "name": "Financial",
           "source_url": "https://www.choosecolumbusga.com/site-selectors/major-employers"
+        },
+        {
+          "name": "American Electric Power",
+          "source_url": "https://en.wikipedia.org/wiki/Economy_of_Columbus,_Ohio"
         },
         {
           "name": "Automotive",
@@ -5365,8 +5365,8 @@
         "https://www.ledger-enquirer.com/news/business/article293959859.html",
         "https://jobs.ledger-enquirer.com/employers",
         "https://www.ledger-enquirer.com/news/business/article244216802.html",
-        "https://www.bizjournals.com/columbus/news/2021/09/21/best-places-to-work-in-columbus-business-first-s.html?amp%3Bana=e_co_bn&amp%3Bj=25101975&amp%3Bsenddate=2021-09-21",
-        "https://www.bizjournals.com/columbus/news/2026/01/16/columbus-law-firms-list-top-employment-issues-2026.html"
+        "https://www.bizjournals.com/columbus/news/2026/01/16/columbus-law-firms-list-top-employment-issues-2026.html",
+        "https://www.bizjournals.com/columbus/subscriber-only/2015/07/10/largest-employers.html"
       ],
       "method": "Representative list auto-discovered via Tavily web search across chamber-of-commerce, development-authority and local-news sources. Not exhaustive; ordering approximates source frequency, not headcount."
     },

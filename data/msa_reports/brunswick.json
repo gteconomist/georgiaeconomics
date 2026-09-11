@@ -3,7 +3,7 @@
   "short_name": "Brunswick",
   "full_name": "Brunswick, GA",
   "population": 120000,
-  "as_of": "2026-09-10",
+  "as_of": "2026-09-11",
   "sections": {
     "ces_employment": {
       "series_id": "SMS13152600000000001",
@@ -4306,7 +4306,7 @@
       "source": "Census Business Dynamics Statistics (establishment entry rate, 2022); metro rate indexed to US=100"
     },
     "major_employers": {
-      "as_of": "2026-09-10",
+      "as_of": "2026-09-11",
       "employers": [
         {
           "name": "Company",
@@ -4329,51 +4329,51 @@
           "source_url": "https://goldenislesdev.com/top-employers"
         },
         {
-          "name": "Port of Brunswick",
-          "source_url": "https://www.georgiatrend.com/2022/04/30/economy-brunswicks-strengths"
-        },
-        {
           "name": "All Industries",
           "source_url": "https://goldenislesdev.com/top-employers"
         },
         {
-          "name": "Amer Sports Corporation",
-          "source_url": "https://en.wikipedia.org/wiki/List_of_companies_in_the_Chicago_metropolitan_area#Media"
+          "name": "Jered LLC",
+          "source_url": "https://www.georgiatrend.com/2022/04/30/economy-brunswicks-strengths"
         },
         {
-          "name": "Brunswick Corporation",
-          "source_url": "https://en.wikipedia.org/wiki/List_of_companies_in_the_Chicago_metropolitan_area#Media"
+          "name": "Palmetto Aviation Repair",
+          "source_url": "https://www.georgiatrend.com/2022/04/30/economy-brunswicks-strengths"
         },
         {
-          "name": "CDW Conagra Brands Dover Corporation Exelon",
-          "source_url": "https://en.wikipedia.org/wiki/List_of_companies_in_the_Chicago_metropolitan_area#Media"
+          "name": "Sea Island Co",
+          "source_url": "https://www.georgiatrend.com/2022/04/30/economy-brunswicks-strengths"
         },
         {
-          "name": "Corporation Century Aluminum CF Industries Cboe",
-          "source_url": "https://en.wikipedia.org/wiki/List_of_companies_in_the_Chicago_metropolitan_area#Media"
+          "name": "Skycraft Aviation Specialties",
+          "source_url": "https://www.georgiatrend.com/2022/04/30/economy-brunswicks-strengths"
         },
         {
-          "name": "Data Systems Titan International TransUnion Tribune",
-          "source_url": "https://en.wikipedia.org/wiki/List_of_companies_in_the_Chicago_metropolitan_area#Media"
+          "name": "Starnbaugh Aviation",
+          "source_url": "https://www.georgiatrend.com/2022/04/30/economy-brunswicks-strengths"
         },
         {
-          "name": "Donnelley Financial Solutions Fortune Brands Home",
-          "source_url": "https://en.wikipedia.org/wiki/List_of_companies_in_the_Chicago_metropolitan_area#Media"
+          "name": "College of Coastal Georgia",
+          "source_url": "https://en.wikipedia.org/wiki/Brunswick,_Georgia"
         },
         {
-          "name": "Energy",
-          "source_url": "https://en.wikipedia.org/wiki/List_of_companies_in_the_Chicago_metropolitan_area#Media"
+          "name": "Georgia Ports Authority",
+          "source_url": "https://en.wikipedia.org/wiki/Brunswick,_Georgia"
+        },
+        {
+          "name": "Glynn County Schools",
+          "source_url": "https://www.zippia.com/company/best-biggest-companies-in-brunswick-ga"
         }
       ],
       "sources": [
         "https://en.wikipedia.org/wiki/Brunswick,_Georgia",
         "https://www.georgiatrend.com/2022/04/30/economy-brunswicks-strengths",
-        "https://lensa.com/company/largest-companies-in-brunswick-ga-by-revenue",
         "https://www.zippia.com/company/best-biggest-companies-in-brunswick-ga",
+        "https://www.facebook.com/groups/194430493950148/posts/8025727704153682",
+        "https://lensa.com/company/largest-companies-in-brunswick-ga-by-revenue",
         "https://goldenislesdev.com/top-employers",
-        "https://www.indeed.com/companies/search?l=Brunswick%2C+GA",
-        "https://en.wikipedia.org/wiki/List_of_companies_in_the_Chicago_metropolitan_area#Media",
-        "https://en.wikipedia.org/wiki/List_of_companies_in_the_Chicago_metropolitan_area#Services_2"
+        "https://lensa.com/company/highest-rated-companies-in-brunswick-ga",
+        "https://www.sega-alliance.com/top-employers.php"
       ],
       "method": "Representative list auto-discovered via Tavily web search across chamber-of-commerce, development-authority and local-news sources. Not exhaustive; ordering approximates source frequency, not headcount."
     },
