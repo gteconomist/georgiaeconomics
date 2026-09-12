@@ -3,7 +3,7 @@
   "short_name": "Columbus",
   "full_name": "Columbus, GA-AL",
   "population": 329000,
-  "as_of": "2026-09-11",
+  "as_of": "2026-09-12",
   "sections": {
     "ces_employment": {
       "series_id": "SMS13179800000000001",
@@ -5299,15 +5299,15 @@
       "source": "Census Business Dynamics Statistics (establishment entry rate, 2022); metro rate indexed to US=100"
     },
     "major_employers": {
-      "as_of": "2026-09-11",
+      "as_of": "2026-09-12",
       "employers": [
         {
           "name": "Company",
           "source_url": "https://www.choosecolumbusga.com/site-selectors/major-employers"
         },
         {
-          "name": "Chairmans Foods",
-          "source_url": "https://www.ledger-enquirer.com/news/business/article244216802.html"
+          "name": "Automotive",
+          "source_url": "https://www.choosecolumbusga.com/site-selectors/major-employers"
         },
         {
           "name": "Health Care",
@@ -5318,20 +5318,24 @@
           "source_url": "https://www.georgiatrend.com/2023/10/31/columbus-advantage"
         },
         {
+          "name": "Utilities",
+          "source_url": "https://www.choosecolumbusga.com/site-selectors/major-employers"
+        },
+        {
+          "name": "Financial Activities",
+          "source_url": "https://en.wikipedia.org/wiki/List_of_largest_Central_Ohio_employers"
+        },
+        {
           "name": "Ohio State University",
-          "source_url": "https://www.bizjournals.com/columbus/subscriber-only/2015/07/10/largest-employers.html"
+          "source_url": "https://en.wikipedia.org/wiki/Columbus-Marion-Zanesville,_OH_Combined_Statistical_Area"
         },
         {
-          "name": "Financial",
-          "source_url": "https://www.choosecolumbusga.com/site-selectors/major-employers"
+          "name": "Bradley Co",
+          "source_url": "https://en.wikipedia.org/wiki/Columbus,_Georgia"
         },
         {
-          "name": "American Electric Power",
-          "source_url": "https://en.wikipedia.org/wiki/Economy_of_Columbus,_Ohio"
-        },
-        {
-          "name": "Automotive",
-          "source_url": "https://www.choosecolumbusga.com/site-selectors/major-employers"
+          "name": "Columbus City Schools",
+          "source_url": "https://en.wikipedia.org/wiki/Columbus-Marion-Zanesville,_OH_Combined_Statistical_Area"
         },
         {
           "name": "Corp. Mgt",
@@ -5342,31 +5346,27 @@
           "source_url": "https://en.wikipedia.org/wiki/List_of_largest_Central_Ohio_employers"
         },
         {
-          "name": "Mount Carmel Health System",
-          "source_url": "https://en.wikipedia.org/wiki/List_of_largest_Central_Ohio_employers"
+          "name": "McCauley Propeller Systems",
+          "source_url": "https://www.choosecolumbusga.com/site-selectors/major-employers"
         },
         {
           "name": "Nationwide Children's Hospital",
           "source_url": "https://en.wikipedia.org/wiki/List_of_largest_Central_Ohio_employers"
         },
         {
-          "name": "Utilities",
-          "source_url": "https://www.choosecolumbusga.com/site-selectors/major-employers"
-        },
-        {
-          "name": "Columbus Public Schools",
-          "source_url": "https://en.wikipedia.org/wiki/List_of_largest_Central_Ohio_employers"
+          "name": "Emory Healthcare",
+          "source_url": "https://www.georgiatrend.com/2023/10/31/columbus-advantage"
         }
       ],
       "sources": [
         "https://www.georgiatrend.com/2023/10/31/columbus-advantage",
         "https://www.choosecolumbusga.com/site-selectors/major-employers",
         "https://lensa.com/company/biggest-companies-in-columbus-ga",
+        "https://en.wikipedia.org/wiki/Columbus,_Georgia",
+        "https://www.quora.com/Who-are-some-major-employers-around-Columbus-Georgia",
         "https://www.ledger-enquirer.com/news/business/article293959859.html",
-        "https://jobs.ledger-enquirer.com/employers",
-        "https://www.ledger-enquirer.com/news/business/article244216802.html",
-        "https://www.bizjournals.com/columbus/news/2026/01/16/columbus-law-firms-list-top-employment-issues-2026.html",
-        "https://www.bizjournals.com/columbus/subscriber-only/2015/07/10/largest-employers.html"
+        "https://www.choosecolumbusga.com",
+        "https://www.ziprecruiter.com/Jobs/-in-Columbus,OH"
       ],
       "method": "Representative list auto-discovered via Tavily web search across chamber-of-commerce, development-authority and local-news sources. Not exhaustive; ordering approximates source frequency, not headcount."
     },

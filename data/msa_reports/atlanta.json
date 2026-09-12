@@ -3,7 +3,7 @@
   "short_name": "Atlanta",
   "full_name": "Atlanta-Sandy Springs-Alpharetta, GA",
   "population": 6307261,
-  "as_of": "2026-09-11",
+  "as_of": "2026-09-12",
   "sections": {
     "ces_employment": {
       "series_id": "SMS13120600000000001",
@@ -5484,7 +5484,7 @@
       "source": "Census Business Dynamics Statistics (establishment entry rate, 2022); metro rate indexed to US=100"
     },
     "major_employers": {
-      "as_of": "2026-09-11",
+      "as_of": "2026-09-12",
       "employers": [
         {
           "name": "Emory University",
@@ -5503,55 +5503,55 @@
           "source_url": "https://www.bizjournals.com/atlanta/subscriber-only/2022/07/15/atlantas-25-largest-employers.html"
         },
         {
+          "name": "Manufacturing",
+          "source_url": "https://www.bizjournals.com/atlanta/subscriber-only/2017/07/21/atlantas-25-largest-employers.html"
+        },
+        {
           "name": "Delta Air Lines Inc",
           "source_url": "https://www.bizjournals.com/atlanta/subscriber-only/2022/07/15/atlantas-25-largest-employers.html"
-        },
-        {
-          "name": "Northside Hospital",
-          "source_url": "https://www.developfultoncounty.com/major-employers.php"
-        },
-        {
-          "name": "Southern Company",
-          "source_url": "https://jobs.coxenterprises.com/en/best-technology-companies-in-atlanta"
-        },
-        {
-          "name": "Cola Company",
-          "source_url": null
-        },
-        {
-          "name": "Gwinnett County Public Schools",
-          "source_url": "https://www.bizjournals.com/atlanta/subscriber-only/2024/07/12/atlantas-20-largest-employers.html"
         },
         {
           "name": "Headquarters Company",
           "source_url": "https://www.bizjournals.com/atlanta/subscriber-only/2022/07/15/atlantas-25-largest-employers.html"
         },
         {
-          "name": "Healthcare of Atlanta",
-          "source_url": "https://www.developfultoncounty.com/major-employers.php"
+          "name": "Northside Hospital",
+          "source_url": null
+        },
+        {
+          "name": "WellStar Health System",
+          "source_url": null
+        },
+        {
+          "name": "Energy",
+          "source_url": "https://www.bizjournals.com/atlanta/subscriber-only/2017/07/21/atlantas-25-largest-employers.html"
         },
         {
           "name": "LexisNexis Risk Solutions",
           "source_url": "https://topworkplaces.com/award/atlanta/2024"
         },
         {
-          "name": "Part Time Whole Foods Market Atlanta",
-          "source_url": "https://www.indeed.com/l-atlanta,-ga-jobs.html"
+          "name": "Logistics",
+          "source_url": "https://en.wikipedia.org/wiki/Economy_of_Atlanta"
         },
         {
-          "name": "State Farm Insurance",
-          "source_url": "https://www.developfultoncounty.com/major-employers.php"
+          "name": "AT&T Inc",
+          "source_url": "https://www.bizjournals.com/atlanta/subscriber-only/2017/07/21/atlantas-25-largest-employers.html"
+        },
+        {
+          "name": "Aerospace",
+          "source_url": "https://georgia.org/newsroom/press-releases/metro-atlanta-leaders-launch-metropolitan-export-plan"
         }
       ],
       "sources": [
         "https://www.bizjournals.com/atlanta/subscriber-only/2022/07/15/atlantas-25-largest-employers.html",
         "https://www.bizjournals.com/atlanta/subscriber-only/2025/10/17/metro-atlantas-largest-employers.html",
+        "https://www.bizjournals.com/atlanta/subscriber-only/2017/07/21/atlantas-25-largest-employers.html",
         "https://www.selectgeorgia.com/landing-pages/san-fran-to-atl/top-brands",
         "https://en.wikipedia.org/wiki/Economy_of_Atlanta",
         "https://topworkplaces.com/award/atlanta/2024",
-        "https://www.developfultoncounty.com/major-employers.php",
-        "https://www.ajc.com/top-workplaces/rounding-out-the-top-5-large-businesses/5FF7QFEAMRGF3PLDXYSC4NOFWQ",
-        "https://www.bizjournals.com/atlanta/subscriber-only/2024/07/12/atlantas-20-largest-employers.html"
+        "https://www.linkedin.com/pulse/linkedin-top-companies-2026-10-best-employers-grow-your-ypmge",
+        "https://www.zippia.com/company/best-biggest-companies-in-atlanta-ga"
       ],
       "method": "Representative list auto-discovered via Tavily web search across chamber-of-commerce, development-authority and local-news sources. Not exhaustive; ordering approximates source frequency, not headcount."
     },

@@ -3,7 +3,7 @@
   "short_name": "Albany",
   "full_name": "Albany, GA",
   "population": 146000,
-  "as_of": "2026-09-11",
+  "as_of": "2026-09-12",
   "sections": {
     "ces_employment": {
       "series_id": "SMS13105000000000001",
@@ -4352,19 +4352,31 @@
       "source": "Census Business Dynamics Statistics (establishment entry rate, 2022); metro rate indexed to US=100"
     },
     "major_employers": {
-      "as_of": "2026-09-11",
+      "as_of": "2026-09-12",
       "employers": [
         {
           "name": "Albany State University",
           "source_url": "https://www.zippia.com/company/best-biggest-companies-in-albany-ga"
         },
         {
-          "name": "Company",
-          "source_url": "https://lensa.com/company/largest-companies-in-albany-ga-by-revenue"
+          "name": "Manufacturing",
+          "source_url": "https://choosealbany.com/site-selection/area-industries"
         },
         {
-          "name": "Phoebe Putney Health System",
-          "source_url": "https://thekirklandco.com/market_reports/albany-ga"
+          "name": "Northeast Grocery Inc",
+          "source_url": "https://www.bizjournals.com/albany/subscriber-only/2025/10/17/albanys-330-largest-employers.html"
+        },
+        {
+          "name": "Albany Med Health System",
+          "source_url": "https://www.bizjournals.com/albany/subscriber-only/2025/10/17/albanys-330-largest-employers.html"
+        },
+        {
+          "name": "Regeneron Pharmaceuticals Inc",
+          "source_url": "https://www.bizjournals.com/albany/subscriber-only/2025/10/17/albanys-330-largest-employers.html"
+        },
+        {
+          "name": "Albany Green Energy",
+          "source_url": "https://choosealbany.com/site-selection/area-industries"
         },
         {
           "name": "Darton College",
@@ -4375,51 +4387,39 @@
           "source_url": "https://thekirklandco.com/market_reports/albany-ga"
         },
         {
-          "name": "Springleaf Financial Holdings",
-          "source_url": "https://thekirklandco.com/market_reports/albany-ga"
+          "name": "Financial Services",
+          "source_url": "https://www.bizjournals.com/albany/subscriber-only/2025/10/17/albanys-330-largest-employers.html"
+        },
+        {
+          "name": "Food",
+          "source_url": "https://www.bizjournals.com/albany/subscriber-only/2025/10/17/albanys-330-largest-employers.html"
+        },
+        {
+          "name": "Health Care",
+          "source_url": "https://www.bizjournals.com/albany/subscriber-only/2025/10/17/albanys-330-largest-employers.html"
+        },
+        {
+          "name": "Industries",
+          "source_url": "https://www.bizjournals.com/albany/subscriber-only/2025/10/17/albanys-330-largest-employers.html"
         },
         {
           "name": "Marine Corps Logistics Base",
           "source_url": "https://www.georgiatrend.com/2011/05/01/albany-dougherty-county-playing-to-its-strengths"
         },
         {
-          "name": "Manufacturing",
-          "source_url": "https://choosealbany.com/site-selection/area-industries"
-        },
-        {
-          "name": "Albany Green Energy",
-          "source_url": "https://choosealbany.com/site-selection/area-industries"
-        },
-        {
-          "name": "Albany Med Health System",
-          "source_url": "http://www.bizjournals.com/albany/search/results?q=St.+Peter&search__button="
-        },
-        {
-          "name": "Health Partners",
-          "source_url": "http://www.bizjournals.com/albany/search/results?q=St.+Peter&search__button="
-        },
-        {
-          "name": "Northeast Grocery Inc",
-          "source_url": "https://www.bizjournals.com/albany/subscriber-only/2024/07/12/albany-areas-largest-private-sector-employers.html"
-        },
-        {
-          "name": "Amadas Industries",
-          "source_url": "https://choosealbany.com/site-selection/area-industries"
-        },
-        {
-          "name": "Financial Services",
-          "source_url": "https://www.bizjournals.com/albany/subscriber-only/2021/07/09/largest-private-sector-employers-in-the.html"
+          "name": "Phoebe Putney Health System",
+          "source_url": "https://thekirklandco.com/market_reports/albany-ga"
         }
       ],
       "sources": [
         "https://www.zippia.com/company/best-biggest-companies-in-albany-ga",
-        "https://lensa.com/company/largest-companies-in-albany-ga-by-revenue",
         "https://thekirklandco.com/market_reports/albany-ga",
         "https://www.georgiatrend.com/2011/05/01/albany-dougherty-county-playing-to-its-strengths",
         "https://choosealbany.com/site-selection/area-industries",
-        "https://lensa.com/company/top-companies-in-albany-ga",
-        "https://albanyga.com/member-announcements/phoebe-included-in-forbes-americas-best-employers-2025-list",
-        "https://www.bizjournals.com/albany/news/2025/10/17/new-employers-list-2025.html"
+        "https://www.bizjournals.com/albany/subscriber-only/2025/10/17/albanys-330-largest-employers.html",
+        "https://albanyherald.com/news/business-news-2/major-meat-producer-jbs-usa-hit-by-cyberattack",
+        "https://www.bizjournals.com/albany/news/2025/10/17/new-employers-list-2025.html",
+        "https://www.bizjournals.com/albany/subscriber-only/2024/07/12/albany-areas-largest-private-sector-employers.html"
       ],
       "method": "Representative list auto-discovered via Tavily web search across chamber-of-commerce, development-authority and local-news sources. Not exhaustive; ordering approximates source frequency, not headcount."
     },

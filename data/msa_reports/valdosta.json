@@ -3,7 +3,7 @@
   "short_name": "Valdosta",
   "full_name": "Valdosta, GA",
   "population": 148000,
-  "as_of": "2026-09-11",
+  "as_of": "2026-09-12",
   "sections": {
     "ces_employment": {
       "series_id": "SMS13466600000000001",
@@ -4355,39 +4355,55 @@
       "source": "Census Business Dynamics Statistics (establishment entry rate, 2022); metro rate indexed to US=100"
     },
     "major_employers": {
-      "as_of": "2026-09-11",
+      "as_of": "2026-09-12",
       "employers": [
-        {
-          "name": "South Georgia Medical Center",
-          "source_url": "https://www.zippia.com/company/best-biggest-companies-in-valdosta-ga"
-        },
-        {
-          "name": "Packaging Corporation of America",
-          "source_url": "https://www.valdostacity.com/economic-development/top-20-employers"
-        },
         {
           "name": "Company",
           "source_url": "https://www.valdostacity.com/economic-development/top-20-employers"
         },
         {
           "name": "Valdosta State University",
+          "source_url": "https://en.wikipedia.org/wiki/Valdosta,_Georgia"
+        },
+        {
+          "name": "Packaging Corporation of America",
+          "source_url": "https://business.valdostachamber.com/directory/Search/manufacturers-371427"
+        },
+        {
+          "name": "South Georgia Medical Center",
           "source_url": "https://www.valdostacity.com/economic-development/top-20-employers"
+        },
+        {
+          "name": "Georgia Gulf Sulfur Corp",
+          "source_url": "https://business.valdostachamber.com/directory/Search/manufacturers-371427"
         },
         {
           "name": "Wiregrass Georgia Technical College",
-          "source_url": "https://www.georgiatrend.com/2025/03/31/prospects-for-valdosta"
+          "source_url": "https://www.valdostacity.com/economic-development/top-20-employers"
         },
         {
-          "name": "Fresh Beginnings Inc",
-          "source_url": "https://www.valdostacity.com/economic-development/top-20-employers"
+          "name": "Blue Ops Inc",
+          "source_url": "https://www.ajc.com/business/2026/04/maker-of-military-drone-boats-expands-in-georgia-plans-more-than-200-jobs"
+        },
+        {
+          "name": "CJB Industries",
+          "source_url": "https://business.valdostachamber.com/directory/Search/manufacturers-371427"
+        },
+        {
+          "name": "Distribution Center",
+          "source_url": null
         },
         {
           "name": "Lowndes County Schools System",
           "source_url": "https://www.valdostacity.com/economic-development/top-20-employers"
         },
         {
-          "name": "Distribution Center",
-          "source_url": null
+          "name": "Sunset Farm Foods",
+          "source_url": "https://business.valdostachamber.com/directory/Search/manufacturers-371427"
+        },
+        {
+          "name": "Valdosta City Schools System",
+          "source_url": "https://www.valdostacity.com/economic-development/top-20-employers"
         },
         {
           "name": "Inc. Drugs Don't Work",
@@ -4396,33 +4412,17 @@
         {
           "name": "Archer Daniels Midland Co",
           "source_url": "https://business.valdostachamber.com/directory/Search/manufacturers-371427"
-        },
-        {
-          "name": "Georgia Gulf Sulfur Corp",
-          "source_url": "https://business.valdostachamber.com/directory/Search/manufacturers-371427"
-        },
-        {
-          "name": "Langdale Forest Products Co",
-          "source_url": "https://business.valdostachamber.com/directory/Search/manufacturers-371427"
-        },
-        {
-          "name": "Precision Industries Inc",
-          "source_url": "https://business.valdostachamber.com/directory/Search/manufacturers-371427"
-        },
-        {
-          "name": "Sunset Farm Foods",
-          "source_url": "https://business.valdostachamber.com/directory/Search/manufacturers-371427"
         }
       ],
       "sources": [
-        "https://www.georgiatrend.com/2025/03/31/prospects-for-valdosta",
-        "https://www.zippia.com/company/best-biggest-companies-in-valdosta-ga",
-        "https://www.valdostacity.com/economic-development/top-20-employers",
+        "https://valdostadailytimes.com/2025/11/17/amazon-expands-in-georgia-with-new-valdosta-delivery-station",
+        "https://en.wikipedia.org/wiki/Valdosta,_Georgia",
+        "https://valdostadailytimes.com/2017/02/19/georgia-centers-of-innovation",
+        "https://www.ajc.com/business/2026/04/maker-of-military-drone-boats-expands-in-georgia-plans-more-than-200-jobs",
+        "https://en.wikipedia.org/wiki/List_of_Georgia_(U.S._state)_companies",
         "https://business.valdostachamber.com/directory/Search/manufacturers-371427",
-        "https://www.glassdoor.com/Explore/top-companies-valdosta_IL.14,22_IM884.htm",
-        "https://business.valdostachamber.com/directory",
-        "https://valdostadailytimes.com/2018/06/10/public-employers",
-        "https://lensa.com/company/biggest-companies-in-valdosta-ga"
+        "https://business.valdostachamber.com/directory/FindStartsWith?term=G",
+        "https://business.valdostachamber.com/directory"
       ],
       "method": "Representative list auto-discovered via Tavily web search across chamber-of-commerce, development-authority and local-news sources. Not exhaustive; ordering approximates source frequency, not headcount."
     },
