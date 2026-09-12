@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-08-12T16:58:37Z",
+  "fetched_at": "2026-09-12T18:13:00Z",
   "schema": "consumer/v1",
   "pce_trend": {
     "years": [
@@ -261,7 +261,8 @@
       "2026-02",
       "2026-03",
       "2026-04",
-      "2026-05"
+      "2026-05",
+      "2026-06"
     ],
     "sales_gwh": [
       5305.1,
@@ -352,7 +353,8 @@
       5271.6,
       4124.2,
       3961.0,
-      4623.3
+      4623.3,
+      5902.3
     ],
     "price_cents_kwh": [
       11.01,
@@ -443,11 +445,12 @@
       14.13,
       15.01,
       15.37,
-      15.84
+      15.84,
+      16.36
     ],
-    "latest_month": "2026-05",
-    "latest_price_cents_kwh": 15.84,
-    "price_yoy_pct": 5.7,
+    "latest_month": "2026-06",
+    "latest_price_cents_kwh": 16.36,
+    "price_yoy_pct": 2.5,
     "source": "EIA API v2 electricity/retail-sales \u2014 Georgia residential (sales in GWh, price in \u00a2/kWh)"
   },
   "sales_tax": {
@@ -481,7 +484,8 @@
       "2025-04-01",
       "2025-07-01",
       "2025-10-01",
-      "2026-01-01"
+      "2026-01-01",
+      "2026-04-01"
     ],
     "values_musd": [
       1546,
@@ -512,7 +516,8 @@
       2401,
       2359,
       2391,
-      2437
+      2437,
+      2561
     ],
     "source": "Census QTAX \u2014 GA general sales & gross-receipts tax (quarterly, $K)"
   },
@@ -593,7 +598,8 @@
       "2026-02",
       "2026-03",
       "2026-04",
-      "2026-05"
+      "2026-05",
+      "2026-06"
     ],
     "index": [
       924.6,
@@ -671,7 +677,8 @@
       997.28,
       984.21,
       947.04,
-      946.84
+      946.3,
+      942.4
     ],
     "yoy_pct": [
       null,
@@ -748,12 +755,13 @@
       6.48,
       5.23,
       4.6,
-      1.97,
-      1.09
+      1.95,
+      1.26,
+      1.94
     ],
     "unit": "2020 $/week",
-    "latest_real": 946.84,
-    "latest_real_yoy": 1.09,
+    "latest_real": 942.4,
+    "latest_real_yoy": 1.94,
     "base_label": "Jan 2020",
     "source": "BLS via data/inflation.json (real average weekly wage, 2020 $)"
   },
@@ -761,37 +769,37 @@
     "pce_total_bn": 590.4,
     "pce_per_capita": 52696,
     "pce_yoy_pct": 6.0,
-    "elec_price_cents_kwh": 15.84,
-    "elec_price_yoy_pct": 5.7,
-    "real_wage_yoy_pct": 1.09
+    "elec_price_cents_kwh": 16.36,
+    "elec_price_yoy_pct": 2.5,
+    "real_wage_yoy_pct": 1.94
   },
   "_meta": {
     "pce_trend": {
-      "last_updated": "2026-08-12T16:58:38Z",
+      "last_updated": "2026-09-12T18:13:01Z",
       "stale": false
     },
     "pce_composition": {
-      "last_updated": "2026-08-12T16:58:38Z",
+      "last_updated": "2026-09-12T18:13:03Z",
       "stale": false
     },
     "pce_by_function": {
-      "last_updated": "2026-08-12T16:58:40Z",
+      "last_updated": "2026-09-12T18:13:07Z",
       "stale": false
     },
     "pce_peers": {
-      "last_updated": "2026-08-12T16:58:40Z",
+      "last_updated": "2026-09-12T18:13:08Z",
       "stale": false
     },
     "electricity": {
-      "last_updated": "2026-08-12T16:58:41Z",
+      "last_updated": "2026-09-12T18:13:08Z",
       "stale": false
     },
     "sales_tax": {
-      "last_updated": "2026-08-12T16:58:42Z",
+      "last_updated": "2026-09-12T18:13:09Z",
       "stale": false
     },
     "real_wages": {
-      "last_updated": "2026-08-12T16:58:42Z",
+      "last_updated": "2026-09-12T18:13:09Z",
       "stale": false
     }
   },
