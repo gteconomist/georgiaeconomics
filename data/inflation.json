@@ -1,67 +1,67 @@
 {
-  "fetched_at": "2026-08-15",
+  "fetched_at": "2026-09-15",
   "_meta": {
     "south_headline": {
-      "last_updated": "2026-08-15",
+      "last_updated": "2026-09-15",
       "source": "BLS CPI-U, South region (CUUR0300SA0) + US City Avg (CUUR0000SA0), NSA",
-      "as_of": "Jul 2026",
+      "as_of": "Aug 2026",
       "coverage_months": [
         "2017-01",
-        "2026-07"
+        "2026-08"
       ]
     },
     "atlanta_cpi": {
-      "last_updated": "2026-08-15",
+      "last_updated": "2026-09-15",
       "source": "BLS CPI-U, Atlanta-Sandy Springs-Roswell GA (CUURS35CSA0), NSA",
-      "as_of": "Jun 2026",
+      "as_of": "Aug 2026",
       "cadence_note": "Bi-monthly since 2018: published for Feb, Apr, Jun, Aug, Oct, Dec.",
       "coverage_periods": [
         "2017-02",
-        "2026-06"
+        "2026-08"
       ]
     },
     "components": {
-      "last_updated": "2026-08-15",
+      "last_updated": "2026-09-15",
       "source": "BLS CPI-U, South region (CUUR0300* series), NSA \u2014 latest month YoY",
-      "as_of": "Jul 2026"
+      "as_of": "Aug 2026"
     },
     "cumulative": {
-      "last_updated": "2026-08-15",
+      "last_updated": "2026-09-15",
       "source": "Derived from headline CPI series \u2014 rebased to anchor month = 100.",
-      "as_of": "Jul 2026",
+      "as_of": "Aug 2026",
       "anchor_label": "Jan 2020"
     },
     "gasoline": {
-      "last_updated": "2026-08-15",
+      "last_updated": "2026-09-15",
       "source": "BLS Average Price data \u2014 Gasoline, unleaded regular ($/gal). South Urban (APUS37A74714) + US City Avg (APU000074714).",
-      "as_of": "Jul 2026",
+      "as_of": "Aug 2026",
       "note": "South Urban region is the closest BLS geography to Georgia \u2014 no GA-only monthly retail series."
     },
     "real_wages": {
-      "last_updated": "2026-08-15",
+      "last_updated": "2026-09-15",
       "source": "BLS State CES, GA Total Private Avg Weekly Earnings (SMU13000000500000011, NSA), deflated by South region CPI (CUUR0300SA0). 3-mo centered MA applied to YoY series.",
-      "as_of": "Jun 2026",
+      "as_of": "Jul 2026",
       "base_note": "Real wages expressed in Jan 2020 dollars."
     }
   },
   "kpis": {
-    "latest_month_south": "Jul 2026",
-    "headline_yoy_south": 3.154704240482641,
-    "headline_yoy_us": 3.3648250414799055,
-    "atlanta_yoy": 2.85,
-    "atlanta_period": "Jun 2026",
-    "gas_latest": 3.506,
-    "gas_yoy_pct": 23.06,
-    "gas_period": "Jul 2026",
-    "cum_growth_since_2020_south": 30.09,
-    "real_wages_yoy": 1.94,
-    "nominal_wages_yoy": 5.77,
-    "core_yoy": 2.2,
-    "food_yoy": 2.72,
-    "energy_yoy": 14.58,
-    "shelter_yoy": 2.66,
-    "transport_yoy": 5.26,
-    "medical_yoy": 1.63
+    "latest_month_south": "Aug 2026",
+    "headline_yoy_south": 3.1368997123339266,
+    "headline_yoy_us": 3.396547892436483,
+    "atlanta_yoy": 2.91,
+    "atlanta_period": "Aug 2026",
+    "gas_latest": 3.672,
+    "gas_yoy_pct": 29.62,
+    "gas_period": "Aug 2026",
+    "cum_growth_since_2020_south": 30.4,
+    "real_wages_yoy": -0.01,
+    "nominal_wages_yoy": 3.37,
+    "core_yoy": 2.14,
+    "food_yoy": 2.32,
+    "energy_yoy": 15.82,
+    "shelter_yoy": 2.15,
+    "transport_yoy": 5.86,
+    "medical_yoy": 1.65
   },
   "south_headline": {
     "months": [
@@ -178,7 +178,8 @@
       "2026-04",
       "2026-05",
       "2026-06",
-      "2026-07"
+      "2026-07",
+      "2026-08"
     ],
     "south_index": [
       235.492,
@@ -294,7 +295,8 @@
       322.17,
       323.705,
       322.28,
-      322.638
+      322.638,
+      323.394
     ],
     "us_index": [
       242.839,
@@ -410,7 +412,8 @@
       333.02,
       335.123,
       333.952,
-      333.918
+      333.918,
+      334.98
     ],
     "south_yoy": [
       null,
@@ -526,7 +529,8 @@
       3.56,
       3.91,
       3.19,
-      3.15
+      3.15,
+      3.14
     ],
     "us_yoy": [
       null,
@@ -642,14 +646,15 @@
       3.81,
       4.25,
       3.53,
-      3.36
+      3.36,
+      3.4
     ],
-    "latest_month": "2026-07",
-    "latest_south_label": "Jul 2026",
-    "latest_south_index": 322.638,
-    "latest_south_yoy": 3.154704240482641,
-    "latest_us_index": 333.918,
-    "latest_us_yoy": 3.3648250414799055
+    "latest_month": "2026-08",
+    "latest_south_label": "Aug 2026",
+    "latest_south_index": 323.394,
+    "latest_south_yoy": 3.1368997123339266,
+    "latest_us_index": 334.98,
+    "latest_us_yoy": 3.396547892436483
   },
   "atlanta_cpi": {
     "periods": [
@@ -708,7 +713,8 @@
       "2025-12",
       "2026-02",
       "2026-04",
-      "2026-06"
+      "2026-06",
+      "2026-08"
     ],
     "period_labels": [
       "Feb 2017",
@@ -766,7 +772,8 @@
       "Dec 2025",
       "Feb 2026",
       "Apr 2026",
-      "Jun 2026"
+      "Jun 2026",
+      "Aug 2026"
     ],
     "index": [
       229.493,
@@ -824,7 +831,8 @@
       316.769,
       323.537,
       325.962,
-      327.65
+      327.65,
+      328.15
     ],
     "yoy_pct": [
       null,
@@ -882,12 +890,13 @@
       0.85,
       2.27,
       2.89,
-      2.85
+      2.85,
+      2.91
     ],
-    "latest_period": "2026-06",
-    "latest_period_label": "Jun 2026",
-    "latest_index": 327.65,
-    "latest_yoy": 2.85
+    "latest_period": "2026-08",
+    "latest_period_label": "Aug 2026",
+    "latest_index": 328.15,
+    "latest_yoy": 2.91
   },
   "components": {
     "items": [
@@ -895,95 +904,95 @@
         "series_id": "CUUR0300SA0",
         "label": "All items",
         "group": "headline",
-        "latest": 322.638,
-        "yoy_pct": 3.15,
-        "cum5_pct": 22.67,
+        "latest": 323.394,
+        "yoy_pct": 3.14,
+        "cum5_pct": 22.62,
         "cum_label": "5-year"
       },
       {
         "series_id": "CUUR0300SA0L1E",
         "label": "Core (all less food + energy)",
         "group": "core",
-        "latest": 325.23,
-        "yoy_pct": 2.2,
-        "cum5_pct": 21.37,
+        "latest": 325.897,
+        "yoy_pct": 2.14,
+        "cum5_pct": 21.32,
         "cum_label": "5-year"
       },
       {
         "series_id": "CUUR0300SA0E",
         "label": "Energy",
         "group": "category",
-        "latest": 292.105,
-        "yoy_pct": 14.58,
-        "cum5_pct": 30.69,
+        "latest": 295.052,
+        "yoy_pct": 15.82,
+        "cum5_pct": 31.27,
         "cum_label": "5-year"
       },
       {
         "series_id": "CUUR0300SAT",
         "label": "Transportation",
         "group": "category",
-        "latest": 286.93,
-        "yoy_pct": 5.26,
-        "cum5_pct": 19.68,
+        "latest": 288.242,
+        "yoy_pct": 5.86,
+        "cum5_pct": 20.83,
         "cum_label": "5-year"
       },
       {
         "series_id": "CUUR0300SAA",
         "label": "Apparel",
         "group": "category",
-        "latest": 144.453,
-        "yoy_pct": 4.54,
-        "cum5_pct": 13.49,
+        "latest": 146.391,
+        "yoy_pct": 4.57,
+        "cum5_pct": 13.44,
         "cum_label": "5-year"
       },
       {
         "series_id": "CUUR0300SAF1",
         "label": "Food",
         "group": "category",
-        "latest": 344.962,
-        "yoy_pct": 2.72,
-        "cum5_pct": 25.87,
-        "cum_label": "5-year"
-      },
-      {
-        "series_id": "CUUR0300SAH1",
-        "label": "Shelter",
-        "group": "category",
-        "latest": 389.215,
-        "yoy_pct": 2.66,
-        "cum5_pct": 30.27,
+        "latest": 344.795,
+        "yoy_pct": 2.32,
+        "cum5_pct": 25.48,
         "cum_label": "5-year"
       },
       {
         "series_id": "CUUR0300SAR",
         "label": "Recreation",
         "group": "category",
-        "latest": 144.085,
-        "yoy_pct": 1.8,
-        "cum5_pct": 15.35,
+        "latest": 143.944,
+        "yoy_pct": 2.27,
+        "cum5_pct": 14.37,
+        "cum_label": "5-year"
+      },
+      {
+        "series_id": "CUUR0300SAH1",
+        "label": "Shelter",
+        "group": "category",
+        "latest": 389.729,
+        "yoy_pct": 2.15,
+        "cum5_pct": 30.1,
         "cum_label": "5-year"
       },
       {
         "series_id": "CUUR0300SAM",
         "label": "Medical care",
         "group": "category",
-        "latest": 556.571,
-        "yoy_pct": 1.63,
-        "cum5_pct": 11.79,
+        "latest": 555.384,
+        "yoy_pct": 1.65,
+        "cum5_pct": 11.38,
         "cum_label": "5-year"
       },
       {
         "series_id": "CUUR0300SAE",
         "label": "Education + communication",
         "group": "category",
-        "latest": 141.078,
-        "yoy_pct": -0.06,
-        "cum5_pct": 2.62,
+        "latest": 143.22,
+        "yoy_pct": 1.33,
+        "cum5_pct": 3.23,
         "cum_label": "5-year"
       }
     ],
-    "latest_month": "2026-07",
-    "latest_label": "Jul 2026"
+    "latest_month": "2026-08",
+    "latest_label": "Aug 2026"
   },
   "cumulative": {
     "months": [
@@ -1100,7 +1109,8 @@
       "2026-04",
       "2026-05",
       "2026-06",
-      "2026-07"
+      "2026-07",
+      "2026-08"
     ],
     "south": [
       94.95,
@@ -1216,7 +1226,8 @@
       129.9,
       130.52,
       129.95,
-      130.09
+      130.09,
+      130.4
     ],
     "us": [
       94.13,
@@ -1332,10 +1343,11 @@
       129.09,
       129.91,
       129.45,
-      129.44
+      129.44,
+      129.85
     ],
     "anchor_label": "Jan 2020",
-    "latest_cum_pct": 30.09
+    "latest_cum_pct": 30.4
   },
   "gasoline": {
     "months": [
@@ -1405,7 +1417,8 @@
       "2026-04",
       "2026-05",
       "2026-06",
-      "2026-07"
+      "2026-07",
+      "2026-08"
     ],
     "south_price": [
       2.021,
@@ -1474,7 +1487,8 @@
       3.63,
       4.012,
       3.394,
-      3.506
+      3.506,
+      3.672
     ],
     "us_price": [
       2.326,
@@ -1543,13 +1557,14 @@
       4.263,
       4.651,
       4.195,
-      4.094
+      4.094,
+      4.2
     ],
-    "latest_month": "2026-07",
-    "latest_label": "Jul 2026",
-    "latest_south": 3.506,
-    "latest_us": 4.094,
-    "south_yoy_pct": 23.06
+    "latest_month": "2026-08",
+    "latest_label": "Aug 2026",
+    "latest_south": 3.672,
+    "latest_us": 4.2,
+    "south_yoy_pct": 29.62
   },
   "real_wages": {
     "months": [
@@ -1629,7 +1644,8 @@
       "2026-03",
       "2026-04",
       "2026-05",
-      "2026-06"
+      "2026-06",
+      "2026-07"
     ],
     "nominal_weekly": [
       924.6,
@@ -1708,7 +1724,8 @@
       1268.51,
       1230.25,
       1235.15,
-      1224.64
+      1223.59,
+      1231.92
     ],
     "real_weekly_2020": [
       924.6,
@@ -1787,7 +1804,8 @@
       984.21,
       947.04,
       946.3,
-      942.4
+      941.59,
+      946.95
     ],
     "real_yoy_pct": [
       null,
@@ -1865,8 +1883,9 @@
       5.23,
       4.6,
       1.95,
-      1.26,
-      1.94
+      1.23,
+      0.74,
+      -0.01
     ],
     "nominal_yoy_pct": [
       null,
@@ -1944,16 +1963,17 @@
       7.97,
       7.77,
       5.69,
-      5.1,
-      5.77
+      5.07,
+      4.37,
+      3.37
     ],
     "base_period": "2020-01",
     "base_label": "Jan 2020",
-    "latest_month": "2026-06",
-    "latest_label": "Jun 2026",
-    "latest_nominal": 1224.64,
-    "latest_real": 942.4,
-    "latest_real_yoy": 1.94,
-    "latest_nominal_yoy": 5.77
+    "latest_month": "2026-07",
+    "latest_label": "Jul 2026",
+    "latest_nominal": 1231.92,
+    "latest_real": 946.95,
+    "latest_real_yoy": -0.01,
+    "latest_nominal_yoy": 3.37
   }
 }
