@@ -6,8 +6,8 @@
   "kpis": {
     "industry_gdp_latest_b": 0.0,
     "industry_gdp_yoy_pct": -100.0,
-    "employment_latest_k": 32.59,
-    "employment_yoy_pct": 2.5,
+    "employment_latest_k": 32.57,
+    "employment_yoy_pct": 2.4,
     "national_rank": 11,
     "ev_investment_total_b": 15.1,
     "establishments_latest": 225,
@@ -17,9 +17,9 @@
       "3363": 131
     },
     "employment_breakdown": {
-      "3361": 4420,
-      "3362": 7733,
-      "3363": 20439
+      "3361": 4397,
+      "3362": 7736,
+      "3363": 20440
     },
     "n_plants_total": 8,
     "n_plants_operating": 6,
@@ -80,7 +80,7 @@
       27.75,
       29.68,
       31.8,
-      32.59
+      32.57
     ]
   },
   "annotations": [
@@ -353,7 +353,7 @@
   ],
   "_meta": {
     "employment": {
-      "last_updated": "2026-08-15",
+      "last_updated": "2026-09-15",
       "source": "BLS QCEW annual averages, NAICS 3361+3362+3363 (motor vehicle mfg + bodies/trailers + parts), GA (area 13000)",
       "coverage_years": [
         2014,
@@ -361,7 +361,7 @@
       ]
     },
     "industry_gdp": {
-      "last_updated": "2026-08-15",
+      "last_updated": "2026-09-15",
       "source": "BEA Regional SAGDP2 \u2014 motor vehicles, bodies and trailers, and parts manufacturing, GA",
       "metric_note": "Industry value-added (GDP). NAICS 3361 + 3362 + 3363 rolled up.",
       "coverage_years": [
@@ -371,13 +371,13 @@
       "line_code": "21"
     },
     "state_comparison": {
-      "last_updated": "2026-08-15",
+      "last_updated": "2026-09-15",
       "source": "BEA Regional SAGDP2 \u2014 motor-vehicle manufacturing GDP by state",
       "metric_label": "Industry GDP (value-added, $B)",
       "year": 2025
     },
     "establishments": {
-      "last_updated": "2026-08-15",
+      "last_updated": "2026-09-15",
       "source": "Census CBP 2023 \u2014 NAICS 3361/3362/3363, GA",
       "year": 2023
     },
@@ -397,6 +397,6 @@
       "source": null
     }
   },
-  "fetched_at": "2026-08-15",
-  "source_summary": "Live sources updated 2026-08-15: employment, industry_gdp, state_comparison, establishments. Stale or static: ev_investment, plants, milestones."
+  "fetched_at": "2026-09-15",
+  "source_summary": "Live sources updated 2026-09-15: employment, industry_gdp, state_comparison, establishments. Stale or static: ev_investment, plants, milestones."
 }
