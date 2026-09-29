@@ -3,7 +3,7 @@
   "short_name": "Albany",
   "full_name": "Albany, GA",
   "population": 146000,
-  "as_of": "2026-09-28",
+  "as_of": "2026-09-29",
   "sections": {
     "ces_employment": {
       "series_id": "SMS13105000000000001",
@@ -5015,7 +5015,7 @@
     "census_bps_permits": "live",
     "ita_msa_exports": "live",
     "irs_soi_migration": "live",
-    "epa_air_quality": "stale",
+    "epa_air_quality": "live",
     "school_finance": "failed",
     "acs_age_structure": "live",
     "acs_affordability": "live",
