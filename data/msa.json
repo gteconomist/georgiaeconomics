@@ -290,7 +290,7 @@
         "wage_growth_yoy": 3.0,
         "job_growth_yoy": -0.33,
         "net_migration_per_1k": 0.35,
-        "cycle_index": 114.32,
+        "cycle_index": 114.41,
         "forecast_gmp_yoy": 2.7,
         "gmp_growth_yoy": 5.37,
         "per_capita_income": 72400,
@@ -308,7 +308,7 @@
         "cost_of_living_index": 109,
         "business_cost_index": 109,
         "industrial_diversity": 0.976,
-        "credit_score": 75
+        "credit_score": 74
       }
     },
     {
@@ -325,7 +325,7 @@
         "wage_growth_yoy": 3.4,
         "job_growth_yoy": 0.04,
         "net_migration_per_1k": 0.59,
-        "cycle_index": 114.8,
+        "cycle_index": 115.04,
         "forecast_gmp_yoy": 5.2,
         "gmp_growth_yoy": 5.9,
         "per_capita_income": 56387,
@@ -343,7 +343,7 @@
         "cost_of_living_index": 89,
         "business_cost_index": 87,
         "industrial_diversity": 0.83,
-        "credit_score": 64
+        "credit_score": 63
       }
     },
     {
@@ -360,7 +360,7 @@
         "wage_growth_yoy": 4.1,
         "job_growth_yoy": 0.32,
         "net_migration_per_1k": 0.7,
-        "cycle_index": 118.2,
+        "cycle_index": 118.39,
         "forecast_gmp_yoy": 7.0,
         "gmp_growth_yoy": 4.78,
         "per_capita_income": 64775,
@@ -378,7 +378,7 @@
         "cost_of_living_index": 100,
         "business_cost_index": 97,
         "industrial_diversity": 0.856,
-        "credit_score": 82
+        "credit_score": 81
       }
     },
     {
@@ -395,7 +395,7 @@
         "wage_growth_yoy": 3.1,
         "job_growth_yoy": -0.65,
         "net_migration_per_1k": -0.33,
-        "cycle_index": 96.91,
+        "cycle_index": 96.57,
         "forecast_gmp_yoy": 4.5,
         "gmp_growth_yoy": 6.29,
         "per_capita_income": 52558,
@@ -413,7 +413,7 @@
         "cost_of_living_index": 85,
         "business_cost_index": 82,
         "industrial_diversity": 0.985,
-        "credit_score": 53
+        "credit_score": 52
       }
     },
     {
@@ -430,7 +430,7 @@
         "wage_growth_yoy": 5.4,
         "job_growth_yoy": -0.49,
         "net_migration_per_1k": 0.78,
-        "cycle_index": 99.16,
+        "cycle_index": 99.14,
         "forecast_gmp_yoy": 2.0,
         "gmp_growth_yoy": 4.32,
         "per_capita_income": 52491,
@@ -448,7 +448,7 @@
         "cost_of_living_index": 84,
         "business_cost_index": 81,
         "industrial_diversity": 0.539,
-        "credit_score": 50
+        "credit_score": 49
       }
     },
     {
@@ -465,7 +465,7 @@
         "wage_growth_yoy": 5.0,
         "job_growth_yoy": 2.16,
         "net_migration_per_1k": -1.1,
-        "cycle_index": 117.13,
+        "cycle_index": 118.9,
         "forecast_gmp_yoy": 4.2,
         "gmp_growth_yoy": 6.64,
         "per_capita_income": 58346,
@@ -483,7 +483,7 @@
         "cost_of_living_index": 91,
         "business_cost_index": 89,
         "industrial_diversity": 0.771,
-        "credit_score": 69
+        "credit_score": 70
       }
     },
     {
@@ -500,7 +500,7 @@
         "wage_growth_yoy": 6.0,
         "job_growth_yoy": -0.46,
         "net_migration_per_1k": 3.27,
-        "cycle_index": 119.33,
+        "cycle_index": 119.81,
         "forecast_gmp_yoy": 7.6,
         "gmp_growth_yoy": 5.74,
         "per_capita_income": 65490,
@@ -518,7 +518,7 @@
         "cost_of_living_index": 95,
         "business_cost_index": 93,
         "industrial_diversity": 0.71,
-        "credit_score": 76
+        "credit_score": 75
       }
     },
     {
@@ -535,7 +535,7 @@
         "wage_growth_yoy": 4.2,
         "job_growth_yoy": -2.53,
         "net_migration_per_1k": 2.13,
-        "cycle_index": 115.11,
+        "cycle_index": 115.37,
         "forecast_gmp_yoy": 5.4,
         "gmp_growth_yoy": 5.62,
         "per_capita_income": 55775,
@@ -553,7 +553,7 @@
         "cost_of_living_index": 90,
         "business_cost_index": 88,
         "industrial_diversity": 0.83,
-        "credit_score": 76
+        "credit_score": 75
       }
     },
     {
@@ -570,7 +570,7 @@
         "wage_growth_yoy": 2.9,
         "job_growth_yoy": 0.53,
         "net_migration_per_1k": 1.65,
-        "cycle_index": 105.47,
+        "cycle_index": 107.17,
         "forecast_gmp_yoy": 5.1,
         "gmp_growth_yoy": 5.5,
         "per_capita_income": 47629,
@@ -605,7 +605,7 @@
         "wage_growth_yoy": 4.0,
         "job_growth_yoy": -1.16,
         "net_migration_per_1k": -0.32,
-        "cycle_index": 90.63,
+        "cycle_index": 92.19,
         "forecast_gmp_yoy": 4.9,
         "gmp_growth_yoy": 4.91,
         "per_capita_income": 51419,
@@ -623,7 +623,7 @@
         "cost_of_living_index": 79,
         "business_cost_index": 75,
         "industrial_diversity": 0.867,
-        "credit_score": 43
+        "credit_score": 42
       }
     },
     {
@@ -640,7 +640,7 @@
         "wage_growth_yoy": 2.4,
         "job_growth_yoy": -0.6,
         "net_migration_per_1k": 0.39,
-        "cycle_index": 103.83,
+        "cycle_index": 104.08,
         "forecast_gmp_yoy": 2.5,
         "gmp_growth_yoy": 5.78,
         "per_capita_income": 48417,
@@ -658,7 +658,7 @@
         "cost_of_living_index": 80,
         "business_cost_index": 77,
         "industrial_diversity": 0.462,
-        "credit_score": 64
+        "credit_score": 65
       }
     },
     {
@@ -675,7 +675,7 @@
         "wage_growth_yoy": 3.8,
         "job_growth_yoy": 0.6,
         "net_migration_per_1k": -0.17,
-        "cycle_index": 119.93,
+        "cycle_index": 120.19,
         "forecast_gmp_yoy": 6.2,
         "gmp_growth_yoy": 6.71,
         "per_capita_income": 60092,
@@ -710,7 +710,7 @@
         "wage_growth_yoy": 4.1,
         "job_growth_yoy": -0.21,
         "net_migration_per_1k": 1.86,
-        "cycle_index": 118.77,
+        "cycle_index": 119.75,
         "gmp_growth_yoy": 4.05,
         "per_capita_income": 49527,
         "income_growth_yoy": 4.49,
@@ -727,7 +727,7 @@
         "cost_of_living_index": 84,
         "business_cost_index": 82,
         "industrial_diversity": 0.858,
-        "credit_score": 67
+        "credit_score": 66
       }
     },
     {
@@ -744,7 +744,7 @@
         "wage_growth_yoy": 4.0,
         "job_growth_yoy": -2.25,
         "net_migration_per_1k": 4.14,
-        "cycle_index": 113.5,
+        "cycle_index": 113.58,
         "forecast_gmp_yoy": 5.5,
         "gmp_growth_yoy": 7.47,
         "per_capita_income": 51118,
@@ -761,7 +761,7 @@
         "cost_of_living_index": 85,
         "business_cost_index": 76,
         "industrial_diversity": 0.79,
-        "credit_score": 80
+        "credit_score": 79
       }
     }
   ],
@@ -799,7 +799,7 @@
       "value": 95697
     }
   },
-  "fetched_at": "2026-09-29",
+  "fetched_at": "2026-09-30",
   "theme_order": [
     "Labor",
     "Growth",
