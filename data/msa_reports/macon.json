@@ -3,7 +3,7 @@
   "short_name": "Macon",
   "full_name": "Macon-Bibb County, GA",
   "population": 232000,
-  "as_of": "2026-09-30",
+  "as_of": "2026-10-01",
   "sections": {
     "ces_employment": {
       "series_id": "SMS13314200000000001",
@@ -5381,74 +5381,74 @@
       "source": "Census Business Dynamics Statistics (establishment entry rate, 2022); metro rate indexed to US=100"
     },
     "major_employers": {
-      "as_of": "2026-09-12",
+      "as_of": "2026-10-01",
       "employers": [
         {
           "name": "Mercer University",
-          "source_url": "https://choosemacon.com/work/major-employers"
+          "source_url": "https://en.wikipedia.org/wiki/Macon,_Georgia"
         },
         {
-          "name": "Atrium Health",
-          "source_url": "https://choosemacon.com/work/major-employers"
+          "name": "Atrium Health Navicent",
+          "source_url": "https://en.wikipedia.org/wiki/Macon,_Georgia"
         },
         {
-          "name": "Piedmont Healthcare",
-          "source_url": "https://choosemacon.com/work/major-employers"
+          "name": "Blue Bird Body Co",
+          "source_url": "https://www.macon.com/news/business/article258547393.html"
         },
         {
-          "name": "Blue Bird Corporation",
-          "source_url": "https://choosemacon.com/work/major-employers"
+          "name": "Houston Healthcare Complex",
+          "source_url": "https://www.macon.com/news/business/article258547393.html"
         },
         {
-          "name": "Coliseum Health System",
-          "source_url": "https://www.macon.com/living/living-here-guide/article39043491.html"
+          "name": "Perdue Foods",
+          "source_url": "https://www.macon.com/news/business/article258547393.html"
         },
         {
-          "name": "Houston Healthcare",
-          "source_url": "https://www.macon.com/living/living-here-guide/article39043491.html"
+          "name": "Norfolk Southern Railway's Brosnan Yard",
+          "source_url": "https://en.wikipedia.org/wiki/Macon,_Georgia"
         },
         {
-          "name": "Manufacturing",
-          "source_url": "https://choosemacon.com/work/major-employers"
+          "name": "Cobb County School District",
+          "source_url": "https://www.macon.com/living/article300278809.html"
         },
         {
-          "name": "Georgia College",
-          "source_url": "https://www.macon.com/living/living-here-guide/article39043491.html"
+          "name": "Emory Healthcare",
+          "source_url": "https://www.macon.com/living/article300278809.html"
         },
         {
-          "name": "Sara Lee Foods",
-          "source_url": "https://choosemacon.com/work/major-employers"
+          "name": "Forsyth County School District",
+          "source_url": "https://www.macon.com/living/article300278809.html"
         },
         {
-          "name": "The Medical Center of Central Georgia",
-          "source_url": "https://www.macon.com/living/living-here-guide/article39043491.html"
+          "name": "Healthcare of Atlanta",
+          "source_url": "https://www.macon.com/living/article300278809.html"
         },
         {
-          "name": "Houston County Development Authority",
-          "source_url": "https://www.macon.com/living/living-here-guide/article39043491.html"
+          "name": "Innova Solutions",
+          "source_url": "https://www.macon.com/living/article300278809.html"
         },
         {
-          "name": "Academy Sports",
-          "source_url": "https://www.macon.com/living/living-here-guide/article39043491.html"
+          "name": "Medical Center of Central Georgia",
+          "source_url": "https://en.wikipedia.org/wiki/Central_Georgia"
         },
         {
-          "name": "Company",
-          "source_url": "https://choosemacon.com/work/major-employers"
+          "name": "Mohawk Industries",
+          "source_url": "https://www.macon.com/living/article300278809.html"
         },
         {
-          "name": "Fort Valley State University",
-          "source_url": "https://www.macon.com/living/living-here-guide/article39043491.html"
+          "name": "Navicent Health Medical Center",
+          "source_url": "https://www.selectgeorgia.com/about-us/our-team/regional-development/ryan-waldrep-central"
         }
       ],
       "sources": [
-        "https://choosemacon.com/work/major-employers",
-        "https://www.zippia.com/company/best-biggest-companies-in-macon-ga",
-        "https://www.macon.com/living/living-here-guide/article39043491.html",
         "https://en.wikipedia.org/wiki/Macon,_Georgia",
-        "https://maconchamber.com/2019/12/19/atlanta-business-chronicle-2019-macon-market-report",
-        "https://www.macon.com/news/local/article317126713.html",
-        "https://maconchamber.com/who-we-are/cornerstone-investors",
-        "https://houstoncountyga.net/industries/top-employers"
+        "https://www.macon.com/living/article300278809.html",
+        "https://www.macon.com/news/local/article280753115.html",
+        "https://www.macon.com/news/business/article258547393.html",
+        "https://en.wikipedia.org/wiki/Central_Georgia",
+        "https://www.selectgeorgia.com/about-us/our-team/regional-development/ryan-waldrep-central",
+        "https://www.bizjournals.com/atlanta/news/2019/12/15/health-care-companies-expand-in-macon-market.html",
+        "https://www.macon.com/news/local/article312115475.html"
       ],
       "method": "Representative list auto-discovered via Tavily web search across chamber-of-commerce, development-authority and local-news sources. Not exhaustive; ordering approximates source frequency, not headcount."
     },
@@ -6003,7 +6003,7 @@
     "acs_housing_characteristics": "live",
     "acs_block_group_income": "live",
     "entrepreneurship": "live",
-    "major_employers": "stale",
+    "major_employers": "partial",
     "business_cycle_index": "live",
     "forecast_arima": "live",
     "vitality": "live",

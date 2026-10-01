@@ -3,7 +3,7 @@
   "short_name": "Savannah",
   "full_name": "Savannah, GA",
   "population": 410000,
-  "as_of": "2026-09-30",
+  "as_of": "2026-10-01",
   "sections": {
     "ces_employment": {
       "series_id": "SMS13423400000000001",
@@ -5461,74 +5461,74 @@
       "source": "Census Business Dynamics Statistics (establishment entry rate, 2022); metro rate indexed to US=100"
     },
     "major_employers": {
-      "as_of": "2026-09-12",
+      "as_of": "2026-10-01",
       "employers": [
         {
-          "name": "Distribution",
-          "source_url": "https://www.savannahchamber.com/economic-development/major-employers"
-        },
-        {
-          "name": "Hospital",
-          "source_url": "https://www.savannahchamber.com/economic-development/major-employers"
-        },
-        {
           "name": "Gulfstream Aerospace Corporation",
-          "source_url": "https://www.thempc.org/docs/lit/compplan/2021/GC_ED.pdf"
+          "source_url": "https://en.wikipedia.org/wiki/Savannah,_Georgia"
         },
         {
-          "name": "Memorial University Medical Center",
-          "source_url": "https://www.savannahchamber.com/economic-development/major-employers"
+          "name": "Chase Bank",
+          "source_url": "https://en.wikipedia.org/wiki/Savannah_metropolitan_area"
         },
         {
-          "name": "Logistics",
-          "source_url": "https://dreamfindershomes.com/blog/top-industries-employers-savannah-georgia"
+          "name": "Port of Savannah",
+          "source_url": "https://en.wikipedia.org/wiki/Savannah_metropolitan_area"
         },
         {
           "name": "Savannah College of Art",
-          "source_url": "https://www.thempc.org/docs/lit/compplan/2021/GC_ED.pdf"
+          "source_url": "https://en.wikipedia.org/wiki/Savannah_metropolitan_area"
         },
         {
-          "name": "Georgia-Pacific Savannah River Mill",
-          "source_url": "https://dreamfindershomes.com/blog/top-industries-employers-savannah-georgia"
+          "name": "Savannah State University",
+          "source_url": "https://en.wikipedia.org/wiki/Savannah_metropolitan_area"
         },
         {
-          "name": "Healthcare",
-          "source_url": "https://www.savannahchamber.com/economic-development/major-employers"
+          "name": "American Naval Stores Company",
+          "source_url": "https://en.wikipedia.org/wiki/Category:Companies_based_in_Savannah,_Georgia"
+        },
+        {
+          "name": "Coastal Empire Beer Co. Savannah Cotton",
+          "source_url": "https://en.wikipedia.org/wiki/Category:Companies_based_in_Savannah,_Georgia"
+        },
+        {
+          "name": "Coastal Logistics Group LLC",
+          "source_url": "https://www.savannahnow.com/story/business/2012/10/30/business-savannah-business-roundup/13816314007"
+        },
+        {
+          "name": "Derst Baking Company",
+          "source_url": "https://en.wikipedia.org/wiki/Category:Companies_based_in_Savannah,_Georgia"
+        },
+        {
+          "name": "Food",
+          "source_url": "https://www.savannahnow.com/business"
+        },
+        {
+          "name": "Georgia Metaplant",
+          "source_url": "https://www.savannahnow.com/business"
+        },
+        {
+          "name": "Georgia Southern University",
+          "source_url": "https://www.selectgeorgia.com/yourgeorgia/why-savannah-HQ/innovation-resources"
         },
         {
           "name": "Hyundai Motor Group Metaplant America",
-          "source_url": "https://www.savannahchamber.com/economic-development/major-employers"
+          "source_url": "https://www.savannahnow.com/story/news/local/2026/07/19/savannah-career-fair-connects-job-seekers-to-employers/90935722007"
         },
         {
-          "name": "Retail Food",
-          "source_url": "https://www.savannahchamber.com/economic-development/major-employers"
-        },
-        {
-          "name": "East Georgia Regional Medical Center",
-          "source_url": "https://www.savannahchamber.com/economic-development/major-employers"
-        },
-        {
-          "name": "Hyundai Metaplant",
-          "source_url": "https://www.savannahchamber.com/economic-development/manufacturers"
-        },
-        {
-          "name": "Optim Health System",
-          "source_url": "https://www.savannahchamber.com/economic-development/major-employers"
-        },
-        {
-          "name": "The Port of Savannah",
-          "source_url": "https://dreamfindershomes.com/blog/top-industries-employers-savannah-georgia"
+          "name": "Hyundai Motor Group MetaplantKia Sportage Hybrid",
+          "source_url": "https://www.savannahnow.com/business"
         }
       ],
       "sources": [
-        "https://www.thempc.org/docs/lit/compplan/2021/GC_ED.pdf",
-        "https://www.savannahchamber.com/economic-development/manufacturers",
-        "https://dreamfindershomes.com/blog/top-industries-employers-savannah-georgia",
-        "https://www.quora.com/Who-are-the-largest-employers-in-the-Savannah-Georgia-area",
-        "https://www.zippia.com/company/best-biggest-companies-in-savannah-ga",
-        "https://www.savannahchamber.com/economic-development/major-employers",
-        "https://www.reddit.com/r/savannah/comments/1oxsvne/savannah_major_employers_and_their_job_boards",
-        "https://www.savannahchamber.com/membership/member-directory/manufacturers"
+        "https://en.wikipedia.org/wiki/Savannah,_Georgia",
+        "https://en.wikipedia.org/wiki/Savannah_metropolitan_area",
+        "https://www.savannahnow.com/business",
+        "https://en.wikipedia.org/wiki/Category:Companies_based_in_Savannah,_Georgia",
+        "https://www.selectgeorgia.com/yourgeorgia/why-savannah-HQ/innovation-resources",
+        "https://www.savannahnow.com/story/news/2016/07/08/garden-city-police-department-savannah-firms-make-best-places-work-georgia-list/13921419007",
+        "https://www.savannahnow.com/story/business/2023/10/19/savannah-chamber-of-commerce-holds-awards-banquet-at-hyatt-regency/71242380007",
+        "https://www.savannahnow.com/story/business/2012/10/30/business-savannah-business-roundup/13816314007"
       ],
       "method": "Representative list auto-discovered via Tavily web search across chamber-of-commerce, development-authority and local-news sources. Not exhaustive; ordering approximates source frequency, not headcount."
     },
@@ -6088,7 +6088,7 @@
     "acs_housing_characteristics": "live",
     "acs_block_group_income": "live",
     "entrepreneurship": "live",
-    "major_employers": "stale",
+    "major_employers": "partial",
     "business_cycle_index": "live",
     "forecast_arima": "live",
     "vitality": "live",

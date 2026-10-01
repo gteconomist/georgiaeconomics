@@ -3,7 +3,7 @@
   "short_name": "Athens",
   "full_name": "Athens-Clarke County, GA",
   "population": 217000,
-  "as_of": "2026-09-30",
+  "as_of": "2026-10-01",
   "sections": {
     "ces_employment": {
       "series_id": "SMS13120200000000001",
@@ -5390,74 +5390,74 @@
       "source": "Census Business Dynamics Statistics (establishment entry rate, 2022); metro rate indexed to US=100"
     },
     "major_employers": {
-      "as_of": "2026-09-12",
+      "as_of": "2026-10-01",
       "employers": [
         {
-          "name": "Health Care System",
-          "source_url": "https://livability.com/ga/athens/education-careers-opportunity/8-top-employers-in-athens-ga"
-        },
-        {
-          "name": "Power Partners",
-          "source_url": "https://livability.com/ga/athens/education-careers-opportunity/8-top-employers-in-athens-ga"
-        },
-        {
-          "name": "University of Georgia",
-          "source_url": "https://livability.com/ga/athens/education-careers-opportunity/8-top-employers-in-athens-ga"
-        },
-        {
-          "name": "Caterpillar Inc",
-          "source_url": "https://livability.com/ga/athens/education-careers-opportunity/8-top-employers-in-athens-ga"
-        },
-        {
-          "name": "Chase Bank",
-          "source_url": "https://business.athensga.com/list"
-        },
-        {
-          "name": "Georgia Power",
-          "source_url": "https://business.athensga.com/list"
+          "name": "Children's Healthcare of Atlanta",
+          "source_url": "https://www.onlineathens.com/story/news/2026/03/04/georgias-best-employers-are-these-2-big-businesses-forbes-says/88982542007"
         },
         {
           "name": "Manufacturing",
-          "source_url": "https://fenceathensga.com/athens-georgia/economy"
+          "source_url": "https://georgia.org/why-georgia/regions-georgia/east-central-georgia"
         },
         {
-          "name": "Athens Housing Authority",
-          "source_url": "https://business.athensga.com/list"
+          "name": "Absolics Inc",
+          "source_url": "https://georgia.org/why-georgia/regions-georgia/east-central-georgia"
         },
         {
-          "name": "Athens Orthopedic Clinic",
-          "source_url": "https://business.athensga.com/list"
+          "name": "Body Co",
+          "source_url": "https://georgia.org/why-georgia/regions-georgia/east-central-georgia"
         },
         {
-          "name": "Bank South",
-          "source_url": "https://business.athensga.com/list"
+          "name": "Health Care",
+          "source_url": "https://georgia.org/why-georgia/regions-georgia/east-central-georgia"
         },
         {
-          "name": "Classic City Bank",
-          "source_url": "https://business.athensga.com/list"
+          "name": "Eaton Corporation",
+          "source_url": "https://www.onlineathens.com/story/business/2018/06/25/athens-chamber-commerce-names-north/1772620007"
         },
         {
-          "name": "Integrity Foods",
-          "source_url": "https://www.onlineathens.com/story/business/2015/11/14/gdol-host-seasonal-recruitment-athens-area-employers/15471064007"
+          "name": "Forsyth County School District",
+          "source_url": "https://www.onlineathens.com/story/news/2026/03/04/georgias-best-employers-are-these-2-big-businesses-forbes-says/88982542007"
         },
         {
-          "name": "Jackson Electric",
-          "source_url": "https://business.athensga.com/list"
+          "name": "Meissner Corporation",
+          "source_url": "https://georgia.org/press-releases/2023/life-sciences-manufacturer-meissner-create-1700-jobs-athens-clarke-county"
         },
         {
-          "name": "Janssen Pharmaceuticals",
-          "source_url": "https://business.athensga.com/list/category/manufacturing-production-236954"
+          "name": "Athens Technical College Augusta University Piedmont",
+          "source_url": "https://en.wikipedia.org/wiki/Athens,_Georgia"
+        },
+        {
+          "name": "Automotive",
+          "source_url": "https://georgia.org/why-georgia/regions-georgia/east-central-georgia"
+        },
+        {
+          "name": "Barberitos Creature Comforts Brewing Co. Fire",
+          "source_url": "https://en.wikipedia.org/wiki/Athens,_Georgia"
+        },
+        {
+          "name": "Creature Comforts Brewing Company",
+          "source_url": "https://georgia.org/why-georgia/regions-georgia/east-central-georgia"
+        },
+        {
+          "name": "Dress Boutique Terrapin Beer Company Wuxtry",
+          "source_url": "https://en.wikipedia.org/wiki/Athens,_Georgia"
+        },
+        {
+          "name": "Enchem Co",
+          "source_url": "https://georgia.org/why-georgia/regions-georgia/east-central-georgia"
         }
       ],
       "sources": [
-        "https://fenceathensga.com/athens-georgia/economy",
-        "https://livability.com/ga/athens/education-careers-opportunity/8-top-employers-in-athens-ga",
-        "https://investathensga.com/site-selection/major-employers",
-        "https://www.onlineathens.com/story/business/2015/11/14/gdol-host-seasonal-recruitment-athens-area-employers/15471064007",
-        "https://www.accgov.com/DocumentCenter/View/535/Athens-Clarke-County-By-the-Numbers",
-        "https://business.athensga.com/list/category/manufacturing-production-236954",
-        "https://business.athensga.com/list",
-        "https://www.athensga.com"
+        "https://www.onlineathens.com/story/news/2026/03/04/georgias-best-employers-are-these-2-big-businesses-forbes-says/88982542007",
+        "https://georgia.org/why-georgia/regions-georgia/east-central-georgia",
+        "https://en.wikipedia.org/wiki/Athens,_Georgia",
+        "https://georgia.org/press-releases/2023/life-sciences-manufacturer-meissner-create-1700-jobs-athens-clarke-county",
+        "https://www.savannahnow.com/story/business/2026/08/24/best-place-to-work-forbes-names-top-10-employers-in-georgia/91439995007",
+        "https://www.onlineathens.com/story/business/2018/06/25/athens-chamber-commerce-names-north/1772620007",
+        "https://www.augustachronicle.com/story/news/2025/08/26/forbes-ranked-americas-best-employers-by-state-what-is-georgias/85830225007",
+        "https://www.ajc.com/top-workplaces/rounding-out-the-top-5-large-businesses/5FF7QFEAMRGF3PLDXYSC4NOFWQ"
       ],
       "method": "Representative list auto-discovered via Tavily web search across chamber-of-commerce, development-authority and local-news sources. Not exhaustive; ordering approximates source frequency, not headcount."
     },
@@ -6012,7 +6012,7 @@
     "acs_housing_characteristics": "live",
     "acs_block_group_income": "live",
     "entrepreneurship": "live",
-    "major_employers": "stale",
+    "major_employers": "partial",
     "business_cycle_index": "live",
     "forecast_arima": "live",
     "vitality": "live",

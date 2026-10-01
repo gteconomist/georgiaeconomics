@@ -3,7 +3,7 @@
   "short_name": "Rome",
   "full_name": "Rome, GA",
   "population": 99000,
-  "as_of": "2026-09-30",
+  "as_of": "2026-10-01",
   "sections": {
     "ces_employment": {
       "series_id": "SMS13406600000000001",
@@ -4675,54 +4675,26 @@
       "source": "Census Business Dynamics Statistics (establishment entry rate, 2022); metro rate indexed to US=100"
     },
     "major_employers": {
-      "as_of": "2026-09-11",
+      "as_of": "2026-10-01",
       "employers": [
         {
+          "name": "Floyd Medical Center",
+          "source_url": "https://en.wikipedia.org/wiki/Rome,_Georgia"
+        },
+        {
           "name": "Harbin Clinic",
-          "source_url": "https://www.romega.com/demographics"
+          "source_url": "https://en.wikipedia.org/wiki/Rome,_Georgia"
         },
         {
-          "name": "Berry College",
-          "source_url": "https://www.romega.com/demographics"
-        },
-        {
-          "name": "Floyd Healthcare Management",
-          "source_url": "https://www.romega.com/demographics"
-        },
-        {
-          "name": "Gordon Hospital",
-          "source_url": "https://www.romega.com/demographics"
-        },
-        {
-          "name": "International Paper Company",
-          "source_url": "https://www.romega.com/demographics"
-        },
-        {
-          "name": "Keebler Company",
-          "source_url": "https://www.romega.com/demographics"
+          "name": "Kerry Group",
+          "source_url": "https://en.wikipedia.org/wiki/Rome,_Georgia"
         },
         {
           "name": "Atrium Health Floyd",
-          "source_url": "https://www.zippia.com/company/best-companies-in-rome-ga"
+          "source_url": "https://en.wikipedia.org/wiki/Atrium_Health_Floyd"
         },
         {
-          "name": "F&P America Manufacturing",
-          "source_url": null
-        },
-        {
-          "name": "Summit Hill Foods",
-          "source_url": "https://www.tradeandindustrydev.com/region/georgia/community-invested-you-rome-and-floyd-county-35063"
-        },
-        {
-          "name": "Synthica Energy",
-          "source_url": "https://business.romega.com/list/Search/manufacturing-production-wholesale-506391"
-        },
-        {
-          "name": "Ball Container LLC",
-          "source_url": "https://business.romega.com/list/Search/manufacturing-production-wholesale-506391"
-        },
-        {
-          "name": "Floyd Medical Center",
+          "name": "General Electric",
           "source_url": "https://en.wikipedia.org/wiki/Rome,_Georgia"
         },
         {
@@ -4730,19 +4702,47 @@
           "source_url": "https://en.wikipedia.org/wiki/Rome,_Georgia"
         },
         {
-          "name": "Rome Health Authority",
-          "source_url": null
+          "name": "Rome Plow Company",
+          "source_url": "https://en.wikipedia.org/wiki/Rome,_Georgia"
+        },
+        {
+          "name": "State Mutual Insurance Company",
+          "source_url": "https://en.wikipedia.org/wiki/Rome,_Georgia"
+        },
+        {
+          "name": "Suzuki Manufacturing of America",
+          "source_url": "https://en.wikipedia.org/wiki/Rome,_Georgia"
+        },
+        {
+          "name": "Berry College",
+          "source_url": "https://www.northwestgeorgianews.com/primary-issue-for-local-employers-right-now-is-growth-of-the-workforce/article_27902aa4-f2f3-11eb-b2a1-6bb1c539a9f7.html"
+        },
+        {
+          "name": "Emory Healthcare",
+          "source_url": "https://www.bizjournals.com/atlanta/subscriber-only/2025/10/17/metro-atlantas-largest-employers.html"
+        },
+        {
+          "name": "Floyd Healthcare Management",
+          "source_url": "https://www.northwestgeorgianews.com/primary-issue-for-local-employers-right-now-is-growth-of-the-workforce/article_27902aa4-f2f3-11eb-b2a1-6bb1c539a9f7.html"
+        },
+        {
+          "name": "Floyd Hospital",
+          "source_url": "https://en.wikipedia.org/wiki/Atrium_Health_Floyd"
+        },
+        {
+          "name": "Foss Manufacturing Co",
+          "source_url": "http://www.bizjournals.com/atlanta/news/2012/09/25/foss-bringing-150-jobs-to-rome.html"
         }
       ],
       "sources": [
-        "https://www.romega.com/demographics",
-        "https://www.zippia.com/company/best-biggest-companies-in-rome-ga",
-        "https://www.georgiatrend.com/2023/06/27/continued-growth-for-rome",
-        "https://www.tradeandindustrydev.com/region/georgia/community-invested-you-rome-and-floyd-county-35063",
         "https://en.wikipedia.org/wiki/Rome,_Georgia",
-        "https://business.romega.com/list/Search/manufacturing-production-wholesale-506391",
-        "https://www.zippia.com/company/best-companies-in-rome-ga",
-        "https://business.romega.com/list/FindStartsWith?term=F"
+        "https://en.wikipedia.org/wiki/Atrium_Health_Floyd",
+        "https://georgia.org/sites/default/files/2023-01/lowes_4.pdf",
+        "https://www.bizjournals.com/atlanta/subscriber-only/2025/10/17/metro-atlantas-largest-employers.html",
+        "http://www.bizjournals.com/atlanta/news/2012/09/25/foss-bringing-150-jobs-to-rome.html",
+        "https://www.bizjournals.com/atlanta/news/2021/02/11/ball-corp-rome-ga-made-aluminum-cups-launch.html",
+        "https://www.macon.com/living/article300278809.html",
+        "https://www.northwestgeorgianews.com/primary-issue-for-local-employers-right-now-is-growth-of-the-workforce/article_27902aa4-f2f3-11eb-b2a1-6bb1c539a9f7.html"
       ],
       "method": "Representative list auto-discovered via Tavily web search across chamber-of-commerce, development-authority and local-news sources. Not exhaustive; ordering approximates source frequency, not headcount."
     },
@@ -5190,7 +5190,7 @@
     "acs_housing_characteristics": "live",
     "acs_block_group_income": "live",
     "entrepreneurship": "live",
-    "major_employers": "stale",
+    "major_employers": "partial",
     "business_cycle_index": "live",
     "forecast_arima": "failed",
     "vitality": "live",

@@ -3,7 +3,7 @@
   "short_name": "Warner Robins",
   "full_name": "Warner Robins, GA",
   "population": 199000,
-  "as_of": "2026-09-30",
+  "as_of": "2026-10-01",
   "sections": {
     "ces_employment": {
       "series_id": "SMS13475800000000001",
@@ -4429,73 +4429,73 @@
       "source": "Census Business Dynamics Statistics (establishment entry rate, 2022); metro rate indexed to US=100"
     },
     "major_employers": {
-      "as_of": "2026-09-12",
+      "as_of": "2026-10-01",
       "employers": [
         {
-          "name": "Company",
-          "source_url": "https://lensa.com/company/biggest-companies-in-warner-robins-ga"
+          "name": "Perdue Foods",
+          "source_url": "https://www.macon.com/news/business/article258547393.html"
         },
         {
           "name": "Houston Healthcare",
-          "source_url": "https://thekirklandco.com/market_reports/macon-warner-robins_aug2023"
-        },
-        {
-          "name": "Mercer University",
-          "source_url": "https://thekirklandco.com/market_reports/macon-warner-robins_aug2023"
+          "source_url": "https://en.wikipedia.org/wiki/Central_Georgia"
         },
         {
           "name": "Blue Bird Corp",
           "source_url": "https://www.macon.com/living/living-here-guide/article39043491.html"
         },
         {
-          "name": "Central Georgia Technical College",
-          "source_url": "https://houstoncountyga.net/industries/top-employers"
+          "name": "Blue Bird Body Co",
+          "source_url": "https://www.macon.com/news/business/article258547393.html"
         },
         {
-          "name": "Houston County Development Authority",
-          "source_url": "https://houstoncountyga.net/industries/top-employers"
+          "name": "Atrium Health Navicent The Medical Center",
+          "source_url": "https://www.macon.com/news/business/article258547393.html"
         },
         {
-          "name": "Largest Manufacturing Employers",
-          "source_url": "https://houstoncountyga.net/industries/top-employers"
-        },
-        {
-          "name": "Atrium Health Navicent",
-          "source_url": "https://thekirklandco.com/market_reports/macon-warner-robins_aug2023"
-        },
-        {
-          "name": "Food Manufacturing",
-          "source_url": "https://www.wrga.gov/article/2351392"
-        },
-        {
-          "name": "Insurance Agency",
-          "source_url": "https://lensa.com/company/biggest-companies-in-warner-robins-ga"
-        },
-        {
-          "name": "Retail Warehouse Associate",
-          "source_url": "https://www.indeed.com/l-warner-robins,-ga-jobs.html"
-        },
-        {
-          "name": "Sales Inc",
-          "source_url": "https://www.zippia.com/company/best-biggest-companies-in-warner-robins-ga"
-        },
-        {
-          "name": "Academy Sports",
+          "name": "Mercer University",
           "source_url": "https://www.macon.com/living/living-here-guide/article39043491.html"
         },
         {
-          "name": "Advanced Drainage Systems",
-          "source_url": "https://houstoncountyga.net/industries/top-employers"
+          "name": "Pratt Industries",
+          "source_url": "https://georgia.org/press-releases/2023/georgia-based-pratt-industries-plans-new-manufacturing-facility-peach-county"
+        },
+        {
+          "name": "The Medical Center of Central Georgia",
+          "source_url": "https://www.macon.com/living/living-here-guide/article39043491.html"
+        },
+        {
+          "name": "Coliseum Health System",
+          "source_url": "https://en.wikipedia.org/wiki/Central_Georgia"
+        },
+        {
+          "name": "Primary Industries",
+          "source_url": "https://www.macon.com/news/business/article258547393.html"
+        },
+        {
+          "name": "Houston County Development Authority",
+          "source_url": "https://www.macon.com/living/living-here-guide/article39043491.html"
+        },
+        {
+          "name": "Chief Manufacturing",
+          "source_url": "https://en.wikipedia.org/wiki/Central_Georgia"
+        },
+        {
+          "name": "Criterion Technologies",
+          "source_url": "https://en.wikipedia.org/wiki/Central_Georgia"
+        },
+        {
+          "name": "Georgia State University's Economic Forecasting Center's",
+          "source_url": "https://www.onlineathens.com/story/news/state/2014/08/27/forecast-athens-area-jobs-grow-12-percent/15520915007"
         }
       ],
       "sources": [
-        "https://lensa.com/company/biggest-companies-in-warner-robins-ga",
-        "https://houstoncountyga.net/industries/top-employers",
-        "https://thekirklandco.com/market_reports/macon-warner-robins_aug2023",
+        "https://en.wikipedia.org/wiki/Central_Georgia",
         "https://www.macon.com/living/living-here-guide/article39043491.html",
-        "https://www.zippia.com/company/best-biggest-companies-in-warner-robins-ga",
-        "https://www.indeed.com/l-warner-robins,-ga-jobs.html",
-        "https://www.wrga.gov/article/2351392"
+        "https://www.macon.com/news/business/article258547393.html",
+        "https://georgia.org/press-releases/2023/georgia-based-pratt-industries-plans-new-manufacturing-facility-peach-county",
+        "https://www.macon.com/news/local/military/article214843570.html",
+        "https://georgia.org/blogs/longtime-investment-workforce-solutions-keeps-georgia-top-state-business",
+        "https://www.onlineathens.com/story/news/state/2014/08/27/forecast-athens-area-jobs-grow-12-percent/15520915007"
       ],
       "method": "Representative list auto-discovered via Tavily web search across chamber-of-commerce, development-authority and local-news sources. Not exhaustive; ordering approximates source frequency, not headcount."
     },
@@ -5050,7 +5050,7 @@
     "acs_housing_characteristics": "live",
     "acs_block_group_income": "live",
     "entrepreneurship": "live",
-    "major_employers": "stale",
+    "major_employers": "partial",
     "business_cycle_index": "live",
     "forecast_arima": "live",
     "vitality": "live",

@@ -3,7 +3,7 @@
   "short_name": "Columbus",
   "full_name": "Columbus, GA-AL",
   "population": 329000,
-  "as_of": "2026-09-30",
+  "as_of": "2026-10-01",
   "sections": {
     "ces_employment": {
       "series_id": "SMS13179800000000001",
@@ -5379,74 +5379,74 @@
       "source": "Census Business Dynamics Statistics (establishment entry rate, 2022); metro rate indexed to US=100"
     },
     "major_employers": {
-      "as_of": "2026-09-12",
+      "as_of": "2026-10-01",
       "employers": [
         {
-          "name": "Company",
-          "source_url": "https://www.choosecolumbusga.com/site-selectors/major-employers"
-        },
-        {
-          "name": "Automotive",
-          "source_url": "https://www.choosecolumbusga.com/site-selectors/major-employers"
-        },
-        {
           "name": "Health Care",
-          "source_url": "https://www.ledger-enquirer.com/news/business/article293959859.html"
-        },
-        {
-          "name": "Columbus State University",
-          "source_url": "https://www.georgiatrend.com/2023/10/31/columbus-advantage"
-        },
-        {
-          "name": "Utilities",
-          "source_url": "https://www.choosecolumbusga.com/site-selectors/major-employers"
-        },
-        {
-          "name": "Financial Activities",
           "source_url": "https://en.wikipedia.org/wiki/List_of_largest_Central_Ohio_employers"
         },
         {
           "name": "Ohio State University",
-          "source_url": "https://en.wikipedia.org/wiki/Columbus-Marion-Zanesville,_OH_Combined_Statistical_Area"
+          "source_url": "https://en.wikipedia.org/wiki/Columbus_metropolitan_area,_Ohio"
         },
         {
           "name": "Bradley Co",
           "source_url": "https://en.wikipedia.org/wiki/Columbus,_Georgia"
         },
         {
-          "name": "Columbus City Schools",
-          "source_url": "https://en.wikipedia.org/wiki/Columbus-Marion-Zanesville,_OH_Combined_Statistical_Area"
+          "name": "Financial Activities",
+          "source_url": "https://en.wikipedia.org/wiki/List_of_largest_Central_Ohio_employers"
+        },
+        {
+          "name": "Manufacturing",
+          "source_url": "https://en.wikipedia.org/wiki/List_of_largest_Central_Ohio_employers"
+        },
+        {
+          "name": "Columbus State University",
+          "source_url": "https://www.selectgeorgia.com/blog/columbus-georgia-a-home-for-headquarters"
+        },
+        {
+          "name": "Company",
+          "source_url": "https://en.wikipedia.org/wiki/Columbus_metropolitan_area,_Ohio"
         },
         {
           "name": "Corp. Mgt",
           "source_url": "https://en.wikipedia.org/wiki/List_of_largest_Central_Ohio_employers"
         },
         {
-          "name": "Honda of America Manufacturing",
-          "source_url": "https://en.wikipedia.org/wiki/List_of_largest_Central_Ohio_employers"
-        },
-        {
-          "name": "McCauley Propeller Systems",
-          "source_url": "https://www.choosecolumbusga.com/site-selectors/major-employers"
-        },
-        {
           "name": "Nationwide Children's Hospital",
           "source_url": "https://en.wikipedia.org/wiki/List_of_largest_Central_Ohio_employers"
         },
         {
-          "name": "Emory Healthcare",
-          "source_url": "https://www.georgiatrend.com/2023/10/31/columbus-advantage"
+          "name": "Columbus City Schools",
+          "source_url": "https://en.wikipedia.org/wiki/Columbus_metropolitan_area,_Ohio"
+        },
+        {
+          "name": "Columbus Regional Healthcare System",
+          "source_url": "https://www.ledger-enquirer.com/news/business/article239791458.html"
+        },
+        {
+          "name": "Muscogee County School District",
+          "source_url": "https://en.wikipedia.org/wiki/Columbus,_Georgia"
+        },
+        {
+          "name": "Piedmont Columbus Regional Hospital",
+          "source_url": "https://en.wikipedia.org/wiki/Columbus,_Georgia"
+        },
+        {
+          "name": "St. Francis Hospital",
+          "source_url": "https://en.wikipedia.org/wiki/Columbus,_Georgia"
         }
       ],
       "sources": [
-        "https://www.georgiatrend.com/2023/10/31/columbus-advantage",
-        "https://www.choosecolumbusga.com/site-selectors/major-employers",
-        "https://lensa.com/company/biggest-companies-in-columbus-ga",
+        "https://www.ledger-enquirer.com/news/business/article239791458.html",
         "https://en.wikipedia.org/wiki/Columbus,_Georgia",
-        "https://www.quora.com/Who-are-some-major-employers-around-Columbus-Georgia",
-        "https://www.ledger-enquirer.com/news/business/article293959859.html",
-        "https://www.choosecolumbusga.com",
-        "https://www.ziprecruiter.com/Jobs/-in-Columbus,OH"
+        "https://www.selectgeorgia.com/blog/columbus-georgia-a-home-for-headquarters",
+        "https://en.wikipedia.org/wiki/Columbus_metropolitan_area,_Ohio",
+        "https://albanyherald.com/news/heritage-four-other-area-businesses-named-to-georgia-trends-top-100-public-businesses",
+        "https://www.ledger-enquirer.com/news/politics-government/article311841650.html",
+        "https://www.ledger-enquirer.com/news/business/article249778653.html",
+        "https://en.wikipedia.org/wiki/List_of_largest_Central_Ohio_employers"
       ],
       "method": "Representative list auto-discovered via Tavily web search across chamber-of-commerce, development-authority and local-news sources. Not exhaustive; ordering approximates source frequency, not headcount."
     },
@@ -6001,7 +6001,7 @@
     "acs_housing_characteristics": "live",
     "acs_block_group_income": "live",
     "entrepreneurship": "live",
-    "major_employers": "stale",
+    "major_employers": "partial",
     "business_cycle_index": "live",
     "forecast_arima": "live",
     "vitality": "live",
