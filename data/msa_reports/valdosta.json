@@ -3,7 +3,7 @@
   "short_name": "Valdosta",
   "full_name": "Valdosta, GA",
   "population": 148000,
-  "as_of": "2026-10-02",
+  "as_of": "2026-10-03",
   "sections": {
     "ces_employment": {
       "series_id": "SMS13466600000000001",
@@ -4441,7 +4441,7 @@
       "source": "Census Business Dynamics Statistics (establishment entry rate, 2022); metro rate indexed to US=100"
     },
     "major_employers": {
-      "as_of": "2026-10-02",
+      "as_of": "2026-10-03",
       "employers": [
         {
           "name": "Valdosta State University",
@@ -4468,10 +4468,6 @@
           "source_url": "https://www.selectgeorgia.com/blog/rural-transformation/one-valdosta-lowndes-interview"
         },
         {
-          "name": "Azalea Health",
-          "source_url": "https://valdostadailytimes.com/2014/05/07/chamber-names-world-class-employees-2"
-        },
-        {
           "name": "New Hire Solutions",
           "source_url": "https://valdostadailytimes.com/2014/05/07/chamber-names-world-class-employees-2"
         },
@@ -4484,31 +4480,35 @@
           "source_url": "https://valdostadailytimes.com/2021/03/05/chamber-presents-annual-awards"
         },
         {
-          "name": "The Valdosta-Lowndes County Industrial Authority",
-          "source_url": "https://valdostadailytimes.com/2007/03/18/valdosta-ranked-as-a-leading-metro-area-for-expansion-recruiting"
+          "name": "Distribution",
+          "source_url": "https://valdostadailytimes.com/2014/05/07/chamber-names-world-class-employees-2"
+        },
+        {
+          "name": "Azalea Health",
+          "source_url": "https://valdostadailytimes.com/2014/05/07/chamber-names-world-class-employees-2"
+        },
+        {
+          "name": "CCB Tech Group",
+          "source_url": "https://valdostadailytimes.com/2023/07/23/business-briefs-311"
+        },
+        {
+          "name": "Renasant Bank",
+          "source_url": "https://valdostadailytimes.com/2023/07/23/business-briefs-311"
         },
         {
           "name": "Business Solutions",
           "source_url": "https://valdostadailytimes.com/2017/10/22/business-briefs-69"
-        },
-        {
-          "name": "CBJ Industries",
-          "source_url": "https://valdostadailytimes.com/2014/05/07/chamber-names-world-class-employees-2"
-        },
-        {
-          "name": "Distribution",
-          "source_url": "https://valdostadailytimes.com/2014/05/07/chamber-names-world-class-employees-2"
         }
       ],
       "sources": [
-        "https://valdostadailytimes.com/2007/03/18/valdosta-ranked-as-a-leading-metro-area-for-expansion-recruiting",
         "https://www.selectgeorgia.com/blog/rural-transformation/one-valdosta-lowndes-interview",
         "https://valdostadailytimes.com/2018/05/24/summit-seeks-matching-jobs-with-workers",
         "https://valdostadailytimes.com/2026/02/23/gary-wisenbaker-data-centers-whats-good-for-the-goose-is-good-for-the-gander",
         "https://valdostadailytimes.com/2015/09/13/finding-the-competitive-edge",
+        "https://www.selectgeorgia.com/blog/locations-and-expansions/georgia-2023-growth",
         "https://valdostadailytimes.com/2017/10/22/business-briefs-69",
-        "https://valdostadailytimes.com/2014/05/07/chamber-names-world-class-employees-2",
-        "https://valdostadailytimes.com/2021/03/05/chamber-presents-annual-awards"
+        "https://valdostadailytimes.com/2023/07/23/business-briefs-311",
+        "https://valdostadailytimes.com/2014/05/07/chamber-names-world-class-employees-2"
       ],
       "method": "Representative list auto-discovered via Tavily web search across chamber-of-commerce, development-authority and local-news sources. Not exhaustive; ordering approximates source frequency, not headcount."
     },

@@ -3,7 +3,7 @@
   "short_name": "Dalton",
   "full_name": "Dalton, GA",
   "population": 143000,
-  "as_of": "2026-10-02",
+  "as_of": "2026-10-03",
   "sections": {
     "ces_employment": {
       "series_id": "SMS13191400000000001",
@@ -4812,7 +4812,7 @@
       "source": "Census Business Dynamics Statistics (establishment entry rate, 2022); metro rate indexed to US=100"
     },
     "major_employers": {
-      "as_of": "2026-10-02",
+      "as_of": "2026-10-03",
       "employers": [
         {
           "name": "CELLS America Inc",
@@ -4823,56 +4823,60 @@
           "source_url": "https://valdostadailytimes.com/2018/06/14/japanese-consul-says-dalton-is-welcoming-to-businesses-2"
         },
         {
-          "name": "Manufacturing",
-          "source_url": "https://www.bizjournals.com/atlanta/news/2023/06/29/solar-workforce-qcells-dalton-georgia.html"
+          "name": "Managing the Projects That Power Our Communities",
+          "source_url": "https://www.bizjournals.com/atlanta/news/2023/08/04/georgia-cities-wage-growth-salary.html"
         },
         {
-          "name": "Shaw Industries",
-          "source_url": "https://valdostadailytimes.com/2018/01/01/engineered-floors-growth-varnell-drama-among-top-stories-in-dalton-area-in-2017"
+          "name": "Manufacturing",
+          "source_url": "https://www.bizjournals.com/atlanta/news/2023/06/29/solar-workforce-qcells-dalton-georgia.html"
         },
         {
           "name": "Carpet",
           "source_url": "https://en.wikipedia.org/wiki/Dalton,_Georgia"
         },
         {
-          "name": "Gulfstream Aerospace Corp",
-          "source_url": "https://www.bizjournals.com/atlanta/research/lists/2026/georgia-manufacturers.html"
+          "name": "Advanced Insurance Strategies",
+          "source_url": "https://valdostadailytimes.com/2018/01/29/local-contest-aims-to-help-grow-the-next-big-business"
         },
         {
-          "name": "Hamilton Health Care",
-          "source_url": null
-        },
-        {
-          "name": "Company",
-          "source_url": "https://www.bizjournals.com/atlanta/research/lists/2026/georgia-manufacturers.html"
+          "name": "Dalton State College",
+          "source_url": "https://valdostadailytimes.com/2018/01/29/local-contest-aims-to-help-grow-the-next-big-business"
         },
         {
           "name": "Dalton-Whitfield Joint Development Authority",
           "source_url": "https://valdostadailytimes.com/2020/07/27/german-firm-to-build-parts-for-electric-cars-in-whitfield-county-200-jobs-expected"
         },
         {
-          "name": "Emory University",
-          "source_url": "https://www.ajc.com/business/georgia-best-employers-for-2019-according-forbes/97QBCslwnyl3Ob4ujTmnLK"
-        },
-        {
           "name": "GEDIA Automotive Group",
           "source_url": "https://valdostadailytimes.com/2020/07/27/german-firm-to-build-parts-for-electric-cars-in-whitfield-county-200-jobs-expected"
         },
         {
-          "name": "Lockheed Martin Aeronautics Co",
-          "source_url": "https://www.bizjournals.com/atlanta/research/lists/2026/georgia-manufacturers.html"
+          "name": "Georgia Power",
+          "source_url": "https://valdostadailytimes.com/2018/01/29/local-contest-aims-to-help-grow-the-next-big-business"
+        },
+        {
+          "name": "Hamilton Health Care System",
+          "source_url": "https://valdostadailytimes.com/2018/01/01/engineered-floors-growth-varnell-drama-among-top-stories-in-dalton-area-in-2017"
+        },
+        {
+          "name": "Meta Platforms Inc",
+          "source_url": "https://georgia.org/blogs/korea-connections-successful-business-built-strong-relationships"
         },
         {
           "name": "Mohawk Industries",
           "source_url": "https://en.wikipedia.org/wiki/Dalton,_Georgia"
+        },
+        {
+          "name": "Morehouse Group",
+          "source_url": "https://valdostadailytimes.com/2018/01/29/local-contest-aims-to-help-grow-the-next-big-business"
         }
       ],
       "sources": [
+        "https://www.bizjournals.com/atlanta/news/2023/08/04/georgia-cities-wage-growth-salary.html",
         "https://en.wikipedia.org/wiki/Dalton,_Georgia",
         "https://www.bizjournals.com/atlanta/news/2023/06/29/solar-workforce-qcells-dalton-georgia.html",
-        "https://www.bizjournals.com/atlanta/research/lists/2026/georgia-manufacturers.html",
-        "https://www.ajc.com/business/georgia-best-employers-for-2019-according-forbes/97QBCslwnyl3Ob4ujTmnLK",
-        "https://valdostadailytimes.com/2017/03/31/junior-achievement-of-northwest-georgia-adds-to-its-business-hall-of-fame",
+        "https://georgia.org/blogs/korea-connections-successful-business-built-strong-relationships",
+        "https://valdostadailytimes.com/2018/01/29/local-contest-aims-to-help-grow-the-next-big-business",
         "https://valdostadailytimes.com/2018/06/14/japanese-consul-says-dalton-is-welcoming-to-businesses-2",
         "https://valdostadailytimes.com/2020/07/27/german-firm-to-build-parts-for-electric-cars-in-whitfield-county-200-jobs-expected",
         "https://valdostadailytimes.com/2018/01/01/engineered-floors-growth-varnell-drama-among-top-stories-in-dalton-area-in-2017"

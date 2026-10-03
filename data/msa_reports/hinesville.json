@@ -3,7 +3,7 @@
   "short_name": "Hinesville",
   "full_name": "Hinesville, GA",
   "population": 78000,
-  "as_of": "2026-10-02",
+  "as_of": "2026-10-03",
   "sections": {
     "ces_employment": {
       "series_id": "SMS13259800000000001",
@@ -4225,7 +4225,7 @@
       "source": "Census Business Dynamics Statistics (establishment entry rate, 2022); metro rate indexed to US=100"
     },
     "major_employers": {
-      "as_of": "2026-10-02",
+      "as_of": "2026-10-03",
       "employers": [
         {
           "name": "Company",
@@ -4234,6 +4234,18 @@
         {
           "name": "Gulfstream Aerospace",
           "source_url": "https://georgia.org/why-georgia/regions-georgia/coastal-georgia"
+        },
+        {
+          "name": "The Coastal Bank",
+          "source_url": "https://www.savannahnow.com/story/business/2014/03/17/business-savannah-newsmakers/13964556007"
+        },
+        {
+          "name": "Georgia Ports Authority",
+          "source_url": "https://www.savannahnow.com/story/news/2007/11/15/savannah-hinesville-fort-stewart-growing-faster-state-experts-say/13780691007"
+        },
+        {
+          "name": "Georgia State University",
+          "source_url": "https://www.savannahnow.com/story/news/2007/11/15/savannah-hinesville-fort-stewart-growing-faster-state-experts-say/13780691007"
         },
         {
           "name": "Hyundai Motor Group Metaplant America",
@@ -4270,22 +4282,11 @@
         {
           "name": "Frankenmuth Insurance",
           "source_url": "https://www.savannahnow.com/story/business/2016/05/18/bis-brief-va-clinic-hold-open-house-hinesville/13973918007"
-        },
-        {
-          "name": "Garner Economics LLC",
-          "source_url": "https://www.savannahnow.com/story/news/2012/02/04/exchange-brief/13663454007"
-        },
-        {
-          "name": "Homerville Northeast Georgia Psychological Services Health",
-          "source_url": "https://georgia.org/sites/default/files/2020-09/georgia_safety_promise-9-14.pdf"
-        },
-        {
-          "name": "Hoschton Ila Restaurant LLC Food",
-          "source_url": "https://georgia.org/sites/default/files/2020-09/georgia_safety_promise-9-14.pdf"
         }
       ],
       "sources": [
         "https://georgia.org/why-georgia/regions-georgia/coastal-georgia",
+        "https://www.savannahnow.com/story/news/2007/11/15/savannah-hinesville-fort-stewart-growing-faster-state-experts-say/13780691007",
         "https://en.wikipedia.org/wiki/Savannah_metropolitan_area",
         "https://www.savannahnow.com/story/business/2016/05/18/bis-brief-va-clinic-hold-open-house-hinesville/13973918007",
         "https://georgia.org/sites/default/files/2020-09/georgia_safety_promise-9-14.pdf",

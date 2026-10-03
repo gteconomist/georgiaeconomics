@@ -3,7 +3,7 @@
   "short_name": "Albany",
   "full_name": "Albany, GA",
   "population": 146000,
-  "as_of": "2026-10-02",
+  "as_of": "2026-10-03",
   "sections": {
     "ces_employment": {
       "series_id": "SMS13105000000000001",
@@ -4438,7 +4438,7 @@
       "source": "Census Business Dynamics Statistics (establishment entry rate, 2022); metro rate indexed to US=100"
     },
     "major_employers": {
-      "as_of": "2026-10-02",
+      "as_of": "2026-10-03",
       "employers": [
         {
           "name": "Health",
@@ -4457,40 +4457,40 @@
           "source_url": "https://www.bizjournals.com/albany/subscriber-only/2026/07/02/albanys-365-largest-employers.html"
         },
         {
-          "name": "Regeneron Pharmaceuticals Inc",
-          "source_url": "https://www.bizjournals.com/albany/subscriber-only/2026/07/02/albanys-365-largest-employers.html"
+          "name": "AFLAC Inc",
+          "source_url": "https://albanyherald.com/news/new-growth-for-albany"
         },
         {
           "name": "Albany State University",
           "source_url": "https://albanyherald.com/news/local/business-leaders-get-economic-updates-at-uga-summit"
         },
         {
+          "name": "Dougherty County School System",
+          "source_url": "https://albanyherald.com/news/life-changing-opportunities-await-southwest-georgia-regional-job-fair-participants"
+        },
+        {
           "name": "Florida Railway",
           "source_url": "https://en.wikipedia.org/wiki/Albany,_Georgia"
         },
         {
-          "name": "Heritage Financial Corp",
-          "source_url": "https://albanyherald.com/news/heritage-four-other-area-businesses-named-to-georgia-trends-top-100-public-businesses"
+          "name": "Southern Co",
+          "source_url": "https://albanyherald.com/news/new-growth-for-albany"
         },
         {
           "name": "Albany Academy's",
           "source_url": "https://www.bizjournals.com/albany/news/2025/10/17/new-employers-list-2025.html"
         },
         {
-          "name": "Casualty Insurance Agencies",
-          "source_url": "http://assets-origin.bizjournals.com/albany/subscriber-only/2014/11/21/defense-contractors.html"
+          "name": "Alternative Energy Companies",
+          "source_url": "https://www.bizjournals.com/albany/datacenter/lists"
         },
         {
-          "name": "Colony Bankcorp Inc",
-          "source_url": "https://albanyherald.com/news/heritage-four-other-area-businesses-named-to-georgia-trends-top-100-public-businesses"
+          "name": "Cola Co",
+          "source_url": null
         },
         {
-          "name": "Logistics Companies",
-          "source_url": "http://assets-origin.bizjournals.com/albany/subscriber-only/2014/11/21/defense-contractors.html"
-        },
-        {
-          "name": "Aflac Inc",
-          "source_url": "https://albanyherald.com/news/heritage-four-other-area-businesses-named-to-georgia-trends-top-100-public-businesses"
+          "name": "Regeneron Pharmaceuticals",
+          "source_url": null
         },
         {
           "name": "Albany Medical Centerexpand",
@@ -4499,13 +4499,13 @@
       ],
       "sources": [
         "https://en.wikipedia.org/wiki/Albany,_Georgia",
-        "https://albanyherald.com/news/heritage-four-other-area-businesses-named-to-georgia-trends-top-100-public-businesses",
-        "http://assets-origin.bizjournals.com/albany/subscriber-only/2014/11/21/defense-contractors.html",
         "https://www.bizjournals.com/albany/subscriber-only/2026/07/02/albanys-365-largest-employers.html",
-        "https://www.bizjournals.com/albany/subscriber-only/2014/11/21/defense-contractors.html",
+        "https://albanyherald.com/news/life-changing-opportunities-await-southwest-georgia-regional-job-fair-participants",
+        "https://albanyherald.com/news/heritage-four-other-area-businesses-named-to-georgia-trends-top-100-public-businesses",
         "https://albanyherald.com/news/local/business-leaders-get-economic-updates-at-uga-summit",
         "https://albanyherald.com/news/heritage-financial-makes-georgia-trends-top-100-list",
-        "https://www.bizjournals.com/albany/datacenter/lists/employers-and-whos-who"
+        "https://albanyherald.com/news/new-growth-for-albany",
+        "https://www.bizjournals.com/albany/news/2023/07/14/albany-region-largest-private-sector-employers.html"
       ],
       "method": "Representative list auto-discovered via Tavily web search across chamber-of-commerce, development-authority and local-news sources. Not exhaustive; ordering approximates source frequency, not headcount."
     },

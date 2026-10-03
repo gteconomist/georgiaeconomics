@@ -3,7 +3,7 @@
   "short_name": "Gainesville",
   "full_name": "Gainesville, GA",
   "population": 211000,
-  "as_of": "2026-10-02",
+  "as_of": "2026-10-03",
   "sections": {
     "ces_employment": {
       "series_id": "SMS13235800000000001",
@@ -5486,18 +5486,10 @@
       "source": "Census Business Dynamics Statistics (establishment entry rate, 2022); metro rate indexed to US=100"
     },
     "major_employers": {
-      "as_of": "2026-10-02",
+      "as_of": "2026-10-03",
       "employers": [
         {
-          "name": "New Manufacturing",
-          "source_url": "https://www.selectgeorgia.com/georgiagrowth"
-        },
-        {
-          "name": "Distribution",
-          "source_url": "https://www.gainesvilletimes.com/news/business-archived/chamber-honors-3-companies-as-the-years-best-in-hall"
-        },
-        {
-          "name": "Comprehensive Annual Financial Report",
+          "name": "Northeast Georgia Health System",
           "source_url": "https://en.wikipedia.org/wiki/Gainesville,_Georgia"
         },
         {
@@ -5505,36 +5497,24 @@
           "source_url": "https://en.wikipedia.org/wiki/Gainesville,_Georgia"
         },
         {
-          "name": "New Warehouse",
-          "source_url": "https://www.selectgeorgia.com/georgiagrowth"
-        },
-        {
-          "name": "Northeast Georgia Health System",
-          "source_url": "https://en.wikipedia.org/wiki/Gainesville,_Georgia"
-        },
-        {
           "name": "The Longstreet Clinic",
           "source_url": "https://en.wikipedia.org/wiki/Gainesville,_Georgia"
         },
         {
-          "name": "AdEdge Water Technologies of Buford",
-          "source_url": "https://www.gainesvilletimes.com/news/chamber-lauds-companies-as-tops-in-area"
+          "name": "Advanced Manufacturing",
+          "source_url": "https://properties.selectgeorgia.com/target_industries_app/dist/index.html"
         },
         {
           "name": "Brenau University",
           "source_url": "https://en.wikipedia.org/wiki/Gainesville,_Georgia"
         },
         {
-          "name": "Fieldale Farms Corp",
-          "source_url": "https://www.gainesvilletimes.com/news/chamber-lauds-companies-as-tops-in-area"
+          "name": "Comprehensive Annual Financial Report",
+          "source_url": "https://en.wikipedia.org/wiki/Gainesville,_Georgia"
         },
         {
           "name": "Hollis Transport Agency Inc",
           "source_url": "https://www.gainesvilletimes.com/news/business-archived/chamber-honors-3-companies-as-the-years-best-in-hall"
-        },
-        {
-          "name": "Mansfield Energy Corp. of Gainesville",
-          "source_url": "https://www.gainesvilletimes.com/news/chamber-lauds-companies-as-tops-in-area"
         },
         {
           "name": "Manufacturing of America",
@@ -5543,17 +5523,37 @@
         {
           "name": "Professional Company",
           "source_url": "https://en.wikipedia.org/wiki/Gainesville,_Georgia"
+        },
+        {
+          "name": "University of Florida",
+          "source_url": "https://en.wikipedia.org/wiki/Gainesville,_Florida"
+        },
+        {
+          "name": "University of North Georgia",
+          "source_url": "https://en.wikipedia.org/wiki/Gainesville,_Georgia"
+        },
+        {
+          "name": "Wrigley Manufacturing",
+          "source_url": "https://www.gainesvilletimes.com/news/business-archived/chamber-honors-3-companies-as-the-years-best-in-hall"
+        },
+        {
+          "name": "Annual Comprehensive Financial Report",
+          "source_url": "https://en.wikipedia.org/wiki/Gainesville,_Florida"
+        },
+        {
+          "name": "Gainesville-Hall Co",
+          "source_url": "https://www.bizjournals.com/atlanta/news/2022/06/06/kubota-to-build-new-facility.html"
         }
       ],
       "sources": [
         "https://en.wikipedia.org/wiki/Gainesville,_Georgia",
         "https://www.bizjournals.com/atlanta/related_content.html?topic=Kubota+Industrial+Equipment+Corp",
+        "https://www.bizjournals.com/atlanta/news/2022/06/06/kubota-to-build-new-facility.html",
         "https://www.bizjournals.com/atlanta/research/lists/2026/georgia-manufacturers.html",
         "https://en.wikipedia.org/wiki/Gainesville,_Florida",
-        "https://www.selectgeorgia.com/discover-georgia/industries/automotive-in-georgia",
-        "https://www.gainesvilletimes.com/news/chamber-lauds-companies-as-tops-in-area",
         "https://www.gainesvilletimes.com/news/business-archived/chamber-honors-3-companies-as-the-years-best-in-hall",
-        "https://www.gainesvilletimes.com/news/business-archived/hall-chamber-of-commerce-honors-2-local-businesses"
+        "https://www.ajc.com/top-workplaces/2025/08/15-newcomers-join-ranks-of-atlantas-top-large-workplaces",
+        "https://www.ajc.com/pulse/6-health-care-systems-among-forbes-best-employers-in-georgia/ZHJC3IV7UBFOHH423Y4NIDQDPI"
       ],
       "method": "Representative list auto-discovered via Tavily web search across chamber-of-commerce, development-authority and local-news sources. Not exhaustive; ordering approximates source frequency, not headcount."
     },

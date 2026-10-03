@@ -3,7 +3,7 @@
   "short_name": "Warner Robins",
   "full_name": "Warner Robins, GA",
   "population": 199000,
-  "as_of": "2026-10-02",
+  "as_of": "2026-10-03",
   "sections": {
     "ces_employment": {
       "series_id": "SMS13475800000000001",
@@ -4462,19 +4462,23 @@
       "source": "Census Business Dynamics Statistics (establishment entry rate, 2022); metro rate indexed to US=100"
     },
     "major_employers": {
-      "as_of": "2026-10-02",
+      "as_of": "2026-10-03",
       "employers": [
         {
           "name": "Pratt Industries",
           "source_url": "https://www.macon.com/news/business/article279055784.html"
         },
         {
+          "name": "Houston Healthcare",
+          "source_url": "https://en.wikipedia.org/wiki/Central_Georgia"
+        },
+        {
           "name": "Perdue Foods",
           "source_url": "https://www.macon.com/news/business/article258547393.html"
         },
         {
-          "name": "Houston Healthcare",
-          "source_url": "https://en.wikipedia.org/wiki/Central_Georgia"
+          "name": "Blue Bird Corp",
+          "source_url": "https://www.macon.com/living/living-here-guide/article39043491.html"
         },
         {
           "name": "Atrium Health Navicent The Medical Center",
@@ -4497,10 +4501,6 @@
           "source_url": "https://www.macon.com/news/business/article279055784.html"
         },
         {
-          "name": "Blue Bird Corp",
-          "source_url": "https://www.macon.com/living/living-here-guide/article39043491.html"
-        },
-        {
           "name": "The Medical Center of Central Georgia",
           "source_url": "https://www.macon.com/living/living-here-guide/article39043491.html"
         },
@@ -4513,12 +4513,12 @@
           "source_url": "https://www.macon.com/living/living-here-guide/article39043491.html"
         },
         {
-          "name": "The McLane Co",
+          "name": "Boeing Co",
           "source_url": "https://www.macon.com/news/business/article278530009.html"
         },
         {
-          "name": "Boeing Co",
-          "source_url": "https://www.macon.com/news/business/article278530009.html"
+          "name": "Chief Manufacturing",
+          "source_url": "https://en.wikipedia.org/wiki/Central_Georgia"
         }
       ],
       "sources": [
