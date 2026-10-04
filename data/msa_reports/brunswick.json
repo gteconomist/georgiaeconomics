@@ -3,7 +3,7 @@
   "short_name": "Brunswick",
   "full_name": "Brunswick, GA",
   "population": 120000,
-  "as_of": "2026-10-03",
+  "as_of": "2026-10-04",
   "sections": {
     "ces_employment": {
       "series_id": "SMS13152600000000001",
@@ -4392,7 +4392,7 @@
       "source": "Census Business Dynamics Statistics (establishment entry rate, 2022); metro rate indexed to US=100"
     },
     "major_employers": {
-      "as_of": "2026-10-03",
+      "as_of": "2026-10-04",
       "employers": [
         {
           "name": "Gulfstream Aerospace",
@@ -4403,16 +4403,12 @@
           "source_url": "https://en.wikipedia.org/wiki/Brunswick,_Georgia"
         },
         {
-          "name": "Sea Island Company",
-          "source_url": "https://en.wikipedia.org/wiki/Golden_Isles_of_Georgia"
-        },
-        {
           "name": "Georgia Ports Authority",
           "source_url": "https://www.selectgeorgia.com/blog/wtc-sav-prosperity"
         },
         {
-          "name": "Georgia Power Economic Development",
-          "source_url": "https://www.selectgeorgia.com/blog/wtc-sav-prosperity"
+          "name": "Sea Island Company",
+          "source_url": "https://en.wikipedia.org/wiki/Golden_Isles_of_Georgia"
         },
         {
           "name": "The Port of Brunswick",
@@ -4423,7 +4419,15 @@
           "source_url": "https://en.wikipedia.org/wiki/Brunswick,_Georgia"
         },
         {
+          "name": "Georgia Power Economic Development",
+          "source_url": "https://www.selectgeorgia.com/blog/wtc-sav-prosperity"
+        },
+        {
           "name": "Glynn County Public Schools",
+          "source_url": "https://www.savannahnow.com/story/news/2021/10/20/ahmaud-arbery-murder-trial-brunswick-mcmichaels-bryan-business-demographics/5899609001"
+        },
+        {
+          "name": "Ports of Brunswick",
           "source_url": "https://www.savannahnow.com/story/news/2021/10/20/ahmaud-arbery-murder-trial-brunswick-mcmichaels-bryan-business-demographics/5899609001"
         },
         {
@@ -4443,21 +4447,17 @@
           "source_url": "https://georgia.org/blogs/global-local-industries-put-georgia-map"
         },
         {
-          "name": "Georgia Power Regional Economic Development Manager",
-          "source_url": "https://www.selectgeorgia.com/blog/wtc-sav-prosperity"
-        },
-        {
-          "name": "Georgia Power Team",
-          "source_url": "https://www.selectgeorgia.com/blog/wtc-sav-prosperity"
+          "name": "Brunswick Corporation",
+          "source_url": "https://en.wikipedia.org/wiki/Brunswick_Corporation"
         }
       ],
       "sources": [
         "https://en.wikipedia.org/wiki/Brunswick,_Georgia",
         "https://www.selectgeorgia.com/blog/wtc-sav-prosperity",
         "https://en.wikipedia.org/wiki/Golden_Isles_of_Georgia",
+        "https://en.wikipedia.org/wiki/Brunswick_Corporation",
         "https://www.savannahnow.com/story/news/2021/10/20/ahmaud-arbery-murder-trial-brunswick-mcmichaels-bryan-business-demographics/5899609001",
-        "https://georgia.org/blogs/global-local-industries-put-georgia-map",
-        "https://www.ajc.com/things-to-do/georgias-largest-buc-ees-to-bring-more-than-200-jobs-to-brunswick/N4HBINRUZJDEBAUSUZGL6QUOYA"
+        "https://georgia.org/blogs/global-local-industries-put-georgia-map"
       ],
       "method": "Representative list auto-discovered via Tavily web search across chamber-of-commerce, development-authority and local-news sources. Not exhaustive; ordering approximates source frequency, not headcount."
     },

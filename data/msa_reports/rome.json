@@ -3,7 +3,7 @@
   "short_name": "Rome",
   "full_name": "Rome, GA",
   "population": 99000,
-  "as_of": "2026-10-03",
+  "as_of": "2026-10-04",
   "sections": {
     "ces_employment": {
       "series_id": "SMS13406600000000001",
@@ -4708,30 +4708,10 @@
       "source": "Census Business Dynamics Statistics (establishment entry rate, 2022); metro rate indexed to US=100"
     },
     "major_employers": {
-      "as_of": "2026-10-03",
+      "as_of": "2026-10-04",
       "employers": [
         {
-          "name": "Utilities",
-          "source_url": "https://en.wikipedia.org/wiki/List_of_largest_Italian_companies"
-        },
-        {
-          "name": "Atrium Health Floyd",
-          "source_url": "https://en.wikipedia.org/wiki/Atrium_Health_Floyd"
-        },
-        {
           "name": "Floyd Medical Center",
-          "source_url": "https://en.wikipedia.org/wiki/Atrium_Health_Floyd"
-        },
-        {
-          "name": "General Electric",
-          "source_url": "https://en.wikipedia.org/wiki/Rome,_Georgia"
-        },
-        {
-          "name": "Kerry Group",
-          "source_url": "https://en.wikipedia.org/wiki/Rome,_Georgia"
-        },
-        {
-          "name": "Rome Plow Company",
           "source_url": "https://en.wikipedia.org/wiki/Rome,_Georgia"
         },
         {
@@ -4739,16 +4719,12 @@
           "source_url": "https://en.wikipedia.org/wiki/Rome,_Georgia"
         },
         {
-          "name": "Pirelli Tire Manufacturing",
-          "source_url": "https://en.wikipedia.org/wiki/Rome,_Georgia"
+          "name": "New Manufacturing",
+          "source_url": "https://www.selectgeorgia.com/georgiagrowth"
         },
         {
           "name": "Redmond Regional Medical Center",
           "source_url": "https://en.wikipedia.org/wiki/Rome,_Georgia"
-        },
-        {
-          "name": "Rome-Floyd Development Authority",
-          "source_url": "https://www.northwestgeorgianews.com/primary-issue-for-local-employers-right-now-is-growth-of-the-workforce/article_27902aa4-f2f3-11eb-b2a1-6bb1c539a9f7.html"
         },
         {
           "name": "State Mutual Insurance Company",
@@ -4759,22 +4735,46 @@
           "source_url": "https://en.wikipedia.org/wiki/Rome,_Georgia"
         },
         {
-          "name": "Aerospace",
+          "name": "Utilities",
           "source_url": "https://en.wikipedia.org/wiki/List_of_largest_Italian_companies"
         },
         {
+          "name": "Aerospace",
+          "source_url": "https://georgia.org/blogs/brewing-global-success"
+        },
+        {
+          "name": "Atrium Health Floyd",
+          "source_url": "https://en.wikipedia.org/wiki/Atrium_Health_Floyd"
+        },
+        {
           "name": "Energy",
-          "source_url": "https://en.wikipedia.org/wiki/List_of_largest_Italian_companies"
+          "source_url": "https://georgia.org/blogs/brewing-global-success"
+        },
+        {
+          "name": "Floyd Hospital",
+          "source_url": "https://en.wikipedia.org/wiki/Atrium_Health_Floyd"
+        },
+        {
+          "name": "Kerry Group",
+          "source_url": "https://en.wikipedia.org/wiki/Rome,_Georgia"
+        },
+        {
+          "name": "Rome-Floyd Development Authority",
+          "source_url": "https://www.northwestgeorgianews.com/primary-issue-for-local-employers-right-now-is-growth-of-the-workforce/article_27902aa4-f2f3-11eb-b2a1-6bb1c539a9f7.html"
+        },
+        {
+          "name": "Distribution Expansion",
+          "source_url": "https://www.selectgeorgia.com/georgiagrowth"
         }
       ],
       "sources": [
-        "https://en.wikipedia.org/wiki/Atrium_Health_Floyd",
         "https://en.wikipedia.org/wiki/Rome,_Georgia",
-        "http://en.wikipedia.org/wiki/Rome,_Georgia",
-        "https://www.selectgeorgia.com/landing-pages/san-fran-to-atl/top-brands",
+        "https://en.wikipedia.org/wiki/Atrium_Health_Floyd",
+        "https://www.selectgeorgia.com/blog/team-researchers-provide-clear-employment-overview-community-partners",
         "https://www.northwestgeorgianews.com/primary-issue-for-local-employers-right-now-is-growth-of-the-workforce/article_27902aa4-f2f3-11eb-b2a1-6bb1c539a9f7.html",
+        "https://georgia.org/blogs/brewing-global-success",
         "https://georgia.org/sites/default/files/2023-01/lowes_4.pdf",
-        "https://www.northwestgeorgianews.com/pressrelease/manco-logistics-relocates-rome-ga-operations-and-announces-strategic-growth-plans/article_ae70b09c-afe4-11ee-b798-5fec911a6a04.html",
+        "https://www.selectgeorgia.com/georgiagrowth",
         "https://en.wikipedia.org/wiki/List_of_largest_Italian_companies"
       ],
       "method": "Representative list auto-discovered via Tavily web search across chamber-of-commerce, development-authority and local-news sources. Not exhaustive; ordering approximates source frequency, not headcount."
