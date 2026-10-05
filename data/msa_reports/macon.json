@@ -3,7 +3,7 @@
   "short_name": "Macon",
   "full_name": "Macon-Bibb County, GA",
   "population": 232000,
-  "as_of": "2026-10-04",
+  "as_of": "2026-10-05",
   "sections": {
     "ces_employment": {
       "series_id": "SMS13314200000000001",
@@ -5414,11 +5414,19 @@
       "source": "Census Business Dynamics Statistics (establishment entry rate, 2022); metro rate indexed to US=100"
     },
     "major_employers": {
-      "as_of": "2026-10-04",
+      "as_of": "2026-10-05",
       "employers": [
         {
           "name": "Mercer University",
           "source_url": "https://en.wikipedia.org/wiki/Macon,_Georgia"
+        },
+        {
+          "name": "Blue Bird Corp",
+          "source_url": "https://www.macon.com/living/living-here-guide/article39043491.html"
+        },
+        {
+          "name": "Coliseum Health System",
+          "source_url": "https://www.macon.com/living/living-here-guide/article39043491.html"
         },
         {
           "name": "Houston Healthcare",
@@ -5431,14 +5439,6 @@
         {
           "name": "Atrium Health Navicent",
           "source_url": "https://en.wikipedia.org/wiki/Macon,_Georgia"
-        },
-        {
-          "name": "Blue Bird Corp",
-          "source_url": "https://www.macon.com/living/living-here-guide/article39043491.html"
-        },
-        {
-          "name": "Coliseum Health System",
-          "source_url": "https://www.macon.com/living/living-here-guide/article39043491.html"
         },
         {
           "name": "Company",
@@ -5457,31 +5457,31 @@
           "source_url": "https://www.macon.com/living/living-here-guide/article39043491.html"
         },
         {
-          "name": "Armstrong World Industries",
-          "source_url": "https://www.macon.com/news/local/article235905642.html"
-        },
-        {
-          "name": "Beasley Flooring Products",
-          "source_url": "https://www.macon.com/news/local/article235905642.html"
-        },
-        {
           "name": "Cobb County School District",
           "source_url": "https://www.macon.com/living/article300278809.html"
         },
         {
-          "name": "Coliseum Medical Hospital",
-          "source_url": "https://www.macon.com/news/local/article235905642.html"
+          "name": "Emory Healthcare",
+          "source_url": "https://www.macon.com/living/article300278809.html"
+        },
+        {
+          "name": "Fort Valley State University",
+          "source_url": "https://www.macon.com/living/living-here-guide/article39043491.html"
+        },
+        {
+          "name": "Georgia College",
+          "source_url": "https://www.macon.com/living/living-here-guide/article39043491.html"
         }
       ],
       "sources": [
         "https://en.wikipedia.org/wiki/Macon,_Georgia",
         "https://www.macon.com/living/article300278809.html",
         "https://www.macon.com/living/living-here-guide/article39043491.html",
+        "https://www.macon.com/news/local/article280753115.html",
         "https://www.macon.com/news/local/article314818813.html",
-        "https://www.macon.com/news/business/article258547393.html",
+        "https://www.macon.com/news/local/article317126713.html",
         "https://www.macon.com/news/local/article235905642.html",
-        "https://www.selectgeorgia.com/about-us/our-team/regional-development/ryan-waldrep-central",
-        "https://www.macon.com/news/local/article312115475.html"
+        "https://www.selectgeorgia.com/about-us/our-team/regional-development/ryan-waldrep-central"
       ],
       "method": "Representative list auto-discovered via Tavily web search across chamber-of-commerce, development-authority and local-news sources. Not exhaustive; ordering approximates source frequency, not headcount."
     },

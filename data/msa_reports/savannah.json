@@ -3,7 +3,7 @@
   "short_name": "Savannah",
   "full_name": "Savannah, GA",
   "population": 410000,
-  "as_of": "2026-10-04",
+  "as_of": "2026-10-05",
   "sections": {
     "ces_employment": {
       "series_id": "SMS13423400000000001",
@@ -5494,19 +5494,39 @@
       "source": "Census Business Dynamics Statistics (establishment entry rate, 2022); metro rate indexed to US=100"
     },
     "major_employers": {
-      "as_of": "2026-10-04",
+      "as_of": "2026-10-05",
       "employers": [
-        {
-          "name": "Gulfstream Aerospace Corp",
-          "source_url": "https://www.bizjournals.com/atlanta/research/lists/2026/georgia-manufacturers.html"
-        },
         {
           "name": "Pratt Industries",
           "source_url": "https://www.savannahnow.com/story/business/2023/10/19/savannah-chamber-of-commerce-holds-awards-banquet-at-hyatt-regency/71242380007"
         },
         {
+          "name": "Gulfstream Aerospace Corp",
+          "source_url": "https://www.bizjournals.com/atlanta/research/lists/2026/georgia-manufacturers.html"
+        },
+        {
+          "name": "Savannah Sauce Company",
+          "source_url": "https://www.savannahnow.com/story/business/2023/10/19/savannah-chamber-of-commerce-holds-awards-banquet-at-hyatt-regency/71242380007"
+        },
+        {
           "name": "Shaw Industries Inc",
           "source_url": "https://www.bizjournals.com/atlanta/research/lists/2026/georgia-manufacturers.html"
+        },
+        {
+          "name": "Hyundai Metaplant",
+          "source_url": null
+        },
+        {
+          "name": "Inc. President",
+          "source_url": "https://www.savannahnow.com/story/business/employment/2025/10/10/savannah-area-workforce-leaders-come-together-for-updates-at-downtown-business-association-luncheon/86563396007"
+        },
+        {
+          "name": "Savannah Economic Development Authority",
+          "source_url": "https://www.selectgeorgia.com/blog/welcome-seapoint-industrial-site-savannah-ga"
+        },
+        {
+          "name": "Savannah Technical College President Ryan Foley",
+          "source_url": "https://www.savannahnow.com/story/business/employment/2025/10/10/savannah-area-workforce-leaders-come-together-for-updates-at-downtown-business-association-luncheon/86563396007"
         },
         {
           "name": "American Naval Stores Company",
@@ -5521,46 +5541,27 @@
           "source_url": "https://en.wikipedia.org/wiki/Category:Companies_based_in_Savannah,_Georgia"
         },
         {
+          "name": "Coastal Logistics Group LLC",
+          "source_url": "https://www.savannahnow.com/story/business/2012/10/30/business-savannah-business-roundup/13816314007"
+        },
+        {
           "name": "Derst Baking Company",
           "source_url": "https://en.wikipedia.org/wiki/Category:Companies_based_in_Savannah,_Georgia"
         },
         {
-          "name": "Inc. President",
-          "source_url": "https://www.savannahnow.com/story/business/employment/2025/10/10/savannah-area-workforce-leaders-come-together-for-updates-at-downtown-business-association-luncheon/86563396007"
-        },
-        {
-          "name": "Savannah Bee Company",
-          "source_url": "https://en.wikipedia.org/wiki/Category:Companies_based_in_Savannah,_Georgia"
-        },
-        {
-          "name": "Savannah Technical College President Ryan Foley",
-          "source_url": "https://www.savannahnow.com/story/business/employment/2025/10/10/savannah-area-workforce-leaders-come-together-for-updates-at-downtown-business-association-luncheon/86563396007"
-        },
-        {
-          "name": "Southeastern Shipbuilding Corporation",
-          "source_url": "https://en.wikipedia.org/wiki/Category:Companies_based_in_Savannah,_Georgia"
-        },
-        {
-          "name": "CEO of Savannah Economic Development Authority",
-          "source_url": "https://www.savannahnow.com/story/business/2023/10/19/savannah-chamber-of-commerce-holds-awards-banquet-at-hyatt-regency/71242380007"
-        },
-        {
           "name": "Food",
           "source_url": "https://www.savannahnow.com/business"
-        },
-        {
-          "name": "Georgia Southern University's",
-          "source_url": "https://www.savannahnow.com/story/business/employment/2025/10/10/savannah-area-workforce-leaders-come-together-for-updates-at-downtown-business-association-luncheon/86563396007"
         }
       ],
       "sources": [
+        "https://en.wikipedia.org/wiki/Savannah,_Georgia",
         "https://www.bizjournals.com/atlanta/research/lists/2026/georgia-manufacturers.html",
+        "https://www.selectgeorgia.com/blog/welcome-seapoint-industrial-site-savannah-ga",
         "https://en.wikipedia.org/wiki/Category:Companies_based_in_Savannah,_Georgia",
         "https://www.savannahnow.com/business",
-        "https://www.savannahnow.com/story/news/2016/07/08/garden-city-police-department-savannah-firms-make-best-places-work-georgia-list/13921419007",
         "https://www.savannahnow.com/story/business/employment/2025/10/10/savannah-area-workforce-leaders-come-together-for-updates-at-downtown-business-association-luncheon/86563396007",
         "https://www.savannahnow.com/story/business/2023/10/19/savannah-chamber-of-commerce-holds-awards-banquet-at-hyatt-regency/71242380007",
-        "https://www.savannahnow.com/story/news/2018/11/29/online-retailer-wayfair-bringing-1000-jobs-45-million-to-savannah/7984338007"
+        "https://www.savannahnow.com/story/business/2012/10/30/business-savannah-business-roundup/13816314007"
       ],
       "method": "Representative list auto-discovered via Tavily web search across chamber-of-commerce, development-authority and local-news sources. Not exhaustive; ordering approximates source frequency, not headcount."
     },

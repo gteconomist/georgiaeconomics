@@ -3,7 +3,7 @@
   "short_name": "Gainesville",
   "full_name": "Gainesville, GA",
   "population": 211000,
-  "as_of": "2026-10-04",
+  "as_of": "2026-10-05",
   "sections": {
     "ces_employment": {
       "series_id": "SMS13235800000000001",
@@ -5486,14 +5486,14 @@
       "source": "Census Business Dynamics Statistics (establishment entry rate, 2022); metro rate indexed to US=100"
     },
     "major_employers": {
-      "as_of": "2026-10-04",
+      "as_of": "2026-10-05",
       "employers": [
         {
-          "name": "Northeast Georgia Health System",
-          "source_url": "https://en.wikipedia.org/wiki/Gainesville,_Georgia"
+          "name": "University of Florida",
+          "source_url": "https://en.wikipedia.org/wiki/Gainesville,_Florida"
         },
         {
-          "name": "The Longstreet Clinic",
+          "name": "Northeast Georgia Health System",
           "source_url": "https://en.wikipedia.org/wiki/Gainesville,_Georgia"
         },
         {
@@ -5501,11 +5501,15 @@
           "source_url": "https://en.wikipedia.org/wiki/Gainesville,_Georgia"
         },
         {
-          "name": "Comprehensive Annual Financial Report",
+          "name": "The Longstreet Clinic",
           "source_url": "https://en.wikipedia.org/wiki/Gainesville,_Georgia"
         },
         {
-          "name": "University of Florida",
+          "name": "City College",
+          "source_url": "https://en.wikipedia.org/wiki/Gainesville,_Florida_metropolitan_area"
+        },
+        {
+          "name": "Annual Comprehensive Financial Report",
           "source_url": "https://en.wikipedia.org/wiki/Gainesville,_Florida"
         },
         {
@@ -5513,47 +5517,43 @@
           "source_url": "https://en.wikipedia.org/wiki/Gainesville,_Georgia"
         },
         {
+          "name": "Comprehensive Annual Financial Report",
+          "source_url": "https://en.wikipedia.org/wiki/Gainesville,_Georgia"
+        },
+        {
+          "name": "Eastside High School",
+          "source_url": "https://en.wikipedia.org/wiki/Gainesville,_Florida_metropolitan_area"
+        },
+        {
+          "name": "Florida Gateway College",
+          "source_url": "https://en.wikipedia.org/wiki/Gainesville,_Florida_metropolitan_area"
+        },
+        {
+          "name": "Gainesville High School",
+          "source_url": "https://en.wikipedia.org/wiki/Gainesville,_Florida_metropolitan_area"
+        },
+        {
+          "name": "Hawthorne High School",
+          "source_url": "https://en.wikipedia.org/wiki/Gainesville,_Florida_metropolitan_area"
+        },
+        {
           "name": "Manufacturing of America",
           "source_url": "https://www.bizjournals.com/atlanta/related_content.html?topic=Kubota+Industrial+Equipment+Corp"
         },
         {
-          "name": "Professional Company",
-          "source_url": "https://en.wikipedia.org/wiki/Gainesville,_Georgia"
-        },
-        {
-          "name": "University of North Georgia",
-          "source_url": "https://en.wikipedia.org/wiki/Gainesville,_Georgia"
-        },
-        {
-          "name": "Annual Comprehensive Financial Report",
-          "source_url": "https://en.wikipedia.org/wiki/Gainesville,_Florida"
-        },
-        {
-          "name": "Gainesville-Hall Co",
-          "source_url": "https://www.bizjournals.com/atlanta/news/2022/06/06/kubota-to-build-new-facility.html"
-        },
-        {
-          "name": "Georgia Power",
-          "source_url": "https://www.gainesvilletimes.com/news/business-industry/nghs-named-top-15-employer-georgia"
-        },
-        {
-          "name": "Gold Creek Foods",
-          "source_url": "https://www.bizjournals.com/atlanta/related_content.html?topic=Kubota+Industrial+Equipment+Corp"
-        },
-        {
-          "name": "Hialeah Port St. Lucie Tallahassee Cape",
-          "source_url": "https://en.wikipedia.org/wiki/Gainesville,_Florida"
+          "name": "Newberry High School",
+          "source_url": "https://en.wikipedia.org/wiki/Gainesville,_Florida_metropolitan_area"
         }
       ],
       "sources": [
         "https://en.wikipedia.org/wiki/Gainesville,_Georgia",
         "https://www.bizjournals.com/atlanta/related_content.html?topic=Kubota+Industrial+Equipment+Corp",
-        "https://www.bizjournals.com/atlanta/news/2022/06/06/kubota-to-build-new-facility.html",
         "https://www.bizjournals.com/atlanta/research/lists/2026/georgia-manufacturers.html",
         "https://en.wikipedia.org/wiki/Gainesville,_Florida",
         "https://www.selectgeorgia.com/discover-georgia/industries/automotive-in-georgia",
         "https://www.gainesvilletimes.com/news/business-archived/chamber-honors-3-companies-as-the-years-best-in-hall",
-        "https://www.ajc.com/top-workplaces/2025/08/15-newcomers-join-ranks-of-atlantas-top-large-workplaces"
+        "https://www.ajc.com/pulse/6-health-care-systems-among-forbes-best-employers-in-georgia/ZHJC3IV7UBFOHH423Y4NIDQDPI",
+        "https://www.gainesvilletimes.com/news/business-industry/nghs-named-top-15-employer-georgia"
       ],
       "method": "Representative list auto-discovered via Tavily web search across chamber-of-commerce, development-authority and local-news sources. Not exhaustive; ordering approximates source frequency, not headcount."
     },
