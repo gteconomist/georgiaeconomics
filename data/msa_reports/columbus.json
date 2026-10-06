@@ -3,7 +3,7 @@
   "short_name": "Columbus",
   "full_name": "Columbus, GA-AL",
   "population": 329000,
-  "as_of": "2026-10-05",
+  "as_of": "2026-10-06",
   "sections": {
     "ces_employment": {
       "series_id": "SMS13179800000000001",
@@ -5412,19 +5412,23 @@
       "source": "Census Business Dynamics Statistics (establishment entry rate, 2022); metro rate indexed to US=100"
     },
     "major_employers": {
-      "as_of": "2026-10-05",
+      "as_of": "2026-10-06",
       "employers": [
-        {
-          "name": "Health Care",
-          "source_url": "https://www.ledger-enquirer.com/news/business/article293959859.html"
-        },
-        {
-          "name": "Ohio State University",
-          "source_url": "https://en.wikipedia.org/wiki/Columbus-Marion-Zanesville,_OH_Combined_Statistical_Area"
-        },
         {
           "name": "Bradley Co",
           "source_url": "https://en.wikipedia.org/wiki/Columbus,_Georgia"
+        },
+        {
+          "name": "Health Care",
+          "source_url": "https://en.wikipedia.org/wiki/List_of_largest_Central_Ohio_employers"
+        },
+        {
+          "name": "Comprehensive Annual Financial Report",
+          "source_url": "https://en.wikipedia.org/wiki/Columbus,_Georgia"
+        },
+        {
+          "name": "Ohio State University",
+          "source_url": "https://www.bizjournals.com/columbus/news/2022/07/08/largest-employers-central-ohio-local-employment.html"
         },
         {
           "name": "Financial Activities",
@@ -5435,8 +5439,16 @@
           "source_url": "https://www.bizjournals.com/columbus/news/2022/07/08/largest-employers-central-ohio-local-employment.html"
         },
         {
+          "name": "Muscogee County School District",
+          "source_url": "https://en.wikipedia.org/wiki/Columbus,_Georgia"
+        },
+        {
           "name": "Nationwide Children's Hospital",
           "source_url": "https://www.bizjournals.com/columbus/news/2022/07/08/largest-employers-central-ohio-local-employment.html"
+        },
+        {
+          "name": "Columbus State University",
+          "source_url": "https://www.selectgeorgia.com/blog/columbus-georgia-a-home-for-headquarters"
         },
         {
           "name": "Corp. Mgt",
@@ -5447,39 +5459,27 @@
           "source_url": "https://en.wikipedia.org/wiki/List_of_largest_Central_Ohio_employers"
         },
         {
-          "name": "Muscogee County School District",
-          "source_url": "https://www.ledger-enquirer.com/news/business/article293959859.html"
-        },
-        {
-          "name": "Columbus City Schools",
-          "source_url": "https://en.wikipedia.org/wiki/Columbus-Marion-Zanesville,_OH_Combined_Statistical_Area"
-        },
-        {
           "name": "Columbus Public Schools",
           "source_url": "https://en.wikipedia.org/wiki/List_of_largest_Central_Ohio_employers"
         },
         {
-          "name": "Columbus State University",
-          "source_url": "https://en.wikipedia.org/wiki/Columbus,_Georgia"
-        },
-        {
-          "name": "Comprehensive Annual Financial Report",
-          "source_url": "https://en.wikipedia.org/wiki/Columbus,_Georgia"
-        },
-        {
           "name": "Kroger Company",
           "source_url": "https://en.wikipedia.org/wiki/List_of_largest_Central_Ohio_employers"
+        },
+        {
+          "name": "Piedmont Columbus Regional Hospital",
+          "source_url": "https://en.wikipedia.org/wiki/Columbus,_Georgia"
         }
       ],
       "sources": [
-        "https://www.ledger-enquirer.com/news/business/article293959859.html",
         "https://www.ledger-enquirer.com/news/state/georgia/article312697701.html",
-        "https://en.wikipedia.org/wiki/Columbus,_Georgia?printable=yes",
-        "https://en.wikipedia.org/wiki/History_of_Columbus,_Georgia",
-        "https://en.wikipedia.org/wiki/Carter_Acres_(Columbus,_Georgia)",
         "https://en.wikipedia.org/wiki/Columbus,_Georgia",
-        "https://albanyherald.com/news/heritage-four-other-area-businesses-named-to-georgia-trends-top-100-public-businesses",
-        "https://www.selectgeorgia.com/about-us/our-team/regional-development/andrew-camp-west"
+        "https://www.selectgeorgia.com/blog/columbus-georgia-a-home-for-headquarters",
+        "https://en.wikipedia.org/wiki/Category:Companies_based_in_Columbus,_Georgia",
+        "https://www.bizjournals.com/atlanta/subscriber-only/2025/10/17/metro-atlantas-largest-employers.html",
+        "https://www.ledger-enquirer.com/news/business/article294790664.html",
+        "https://www.selectgeorgia.com/about-us/our-team/regional-development/andrew-camp-west",
+        "https://amp.ledger-enquirer.com/news/business/article294790664.html"
       ],
       "method": "Representative list auto-discovered via Tavily web search across chamber-of-commerce, development-authority and local-news sources. Not exhaustive; ordering approximates source frequency, not headcount."
     },

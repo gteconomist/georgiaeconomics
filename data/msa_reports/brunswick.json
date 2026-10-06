@@ -3,7 +3,7 @@
   "short_name": "Brunswick",
   "full_name": "Brunswick, GA",
   "population": 120000,
-  "as_of": "2026-10-05",
+  "as_of": "2026-10-06",
   "sections": {
     "ces_employment": {
       "series_id": "SMS13152600000000001",
@@ -4392,7 +4392,7 @@
       "source": "Census Business Dynamics Statistics (establishment entry rate, 2022); metro rate indexed to US=100"
     },
     "major_employers": {
-      "as_of": "2026-10-05",
+      "as_of": "2026-10-06",
       "employers": [
         {
           "name": "Gulfstream Aerospace",
@@ -4431,16 +4431,8 @@
           "source_url": "https://en.wikipedia.org/wiki/Golden_Isles_of_Georgia"
         },
         {
-          "name": "Ports of Brunswick",
-          "source_url": "https://www.savannahnow.com/story/news/2021/10/20/ahmaud-arbery-murder-trial-brunswick-mcmichaels-bryan-business-demographics/5899609001"
-        },
-        {
-          "name": "Canon Inc",
-          "source_url": "https://en.wikipedia.org/wiki/South_Brunswick,_New_Jersey"
-        },
-        {
-          "name": "Freeze Division-Central Mills",
-          "source_url": "https://en.wikipedia.org/wiki/South_Brunswick,_New_Jersey"
+          "name": "Food",
+          "source_url": "https://www.bizjournals.com/triangle/news/2025/02/07/brunswick-county-retirees-population-growth-jobs.html"
         },
         {
           "name": "Georgia Power Regional Economic Development Manager",
@@ -4449,17 +4441,24 @@
         {
           "name": "Georgia Power Team",
           "source_url": "https://www.selectgeorgia.com/blog/wtc-sav-prosperity"
+        },
+        {
+          "name": "Glynn County Development Authority",
+          "source_url": "https://en.wikipedia.org/wiki/Brunswick,_Georgia"
+        },
+        {
+          "name": "Industries",
+          "source_url": "https://georgia.org/blogs/global-local-industries-put-georgia-map"
         }
       ],
       "sources": [
         "https://en.wikipedia.org/wiki/Brunswick,_Georgia",
         "https://www.selectgeorgia.com/blog/wtc-sav-prosperity",
         "https://en.wikipedia.org/wiki/Golden_Isles_of_Georgia",
-        "https://en.wikipedia.org/wiki/History_of_Brunswick,_Georgia",
         "https://www.savannahnow.com/story/news/2021/10/20/ahmaud-arbery-murder-trial-brunswick-mcmichaels-bryan-business-demographics/5899609001",
         "https://georgia.org/blogs/global-local-industries-put-georgia-map",
-        "https://en.wikipedia.org/wiki/South_Brunswick,_New_Jersey",
-        "https://en.wikipedia.org/wiki/New_Brunswick,_New_Jersey"
+        "https://www.bizjournals.com/atlanta/news/2026/09/18/georgia-ports-economic-impact-savannah-brunswick.html",
+        "https://www.bizjournals.com/triangle/news/2025/02/07/brunswick-county-retirees-population-growth-jobs.html"
       ],
       "method": "Representative list auto-discovered via Tavily web search across chamber-of-commerce, development-authority and local-news sources. Not exhaustive; ordering approximates source frequency, not headcount."
     },
