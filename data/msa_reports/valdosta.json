@@ -3,7 +3,7 @@
   "short_name": "Valdosta",
   "full_name": "Valdosta, GA",
   "population": 148000,
-  "as_of": "2026-10-06",
+  "as_of": "2026-10-07",
   "sections": {
     "ces_employment": {
       "series_id": "SMS13466600000000001",
@@ -4441,12 +4441,8 @@
       "source": "Census Business Dynamics Statistics (establishment entry rate, 2022); metro rate indexed to US=100"
     },
     "major_employers": {
-      "as_of": "2026-10-06",
+      "as_of": "2026-10-07",
       "employers": [
-        {
-          "name": "South Georgia Medical Center",
-          "source_url": "https://valdostadailytimes.com/2018/06/10/public-employers"
-        },
         {
           "name": "Valdosta State University",
           "source_url": "https://valdostadailytimes.com/2018/05/24/summit-seeks-matching-jobs-with-workers"
@@ -4454,6 +4450,14 @@
         {
           "name": "Lowndes County Schools",
           "source_url": "https://valdostadailytimes.com/2018/05/24/summit-seeks-matching-jobs-with-workers"
+        },
+        {
+          "name": "South Georgia Medical Center",
+          "source_url": "https://valdostadailytimes.com/2018/06/10/public-employers"
+        },
+        {
+          "name": "Our Company",
+          "source_url": "https://valdostadailytimes.com/2025/08/30/valdosta-lowndes-chamber-of-commerce-names-hilton-garden-inn-valdosta-as-leading-business-of-the-week"
         },
         {
           "name": "ACE Electric",
@@ -4472,6 +4476,10 @@
           "source_url": "https://valdostadailytimes.com/2018/06/10/public-employers"
         },
         {
+          "name": "Wiregrass Georgia Technical College",
+          "source_url": "https://valdostadailytimes.com/2015/09/13/finding-the-competitive-edge"
+        },
+        {
           "name": "Azalea Health",
           "source_url": "https://valdostadailytimes.com/2014/05/07/chamber-names-world-class-employees-2"
         },
@@ -4484,28 +4492,20 @@
           "source_url": "https://valdostadailytimes.com/2014/05/07/chamber-names-world-class-employees-2"
         },
         {
+          "name": "SGMC Health",
+          "source_url": "https://valdostadailytimes.com/2025/08/30/valdosta-lowndes-chamber-of-commerce-names-hilton-garden-inn-valdosta-as-leading-business-of-the-week"
+        },
+        {
           "name": "Stratas Foods",
-          "source_url": "https://www.selectgeorgia.com/blog/rural-transformation/one-valdosta-lowndes-interview"
-        },
-        {
-          "name": "Business Solutions",
-          "source_url": "https://valdostadailytimes.com/2017/10/22/business-briefs-69"
-        },
-        {
-          "name": "CBJ Industries",
-          "source_url": "https://valdostadailytimes.com/2014/05/07/chamber-names-world-class-employees-2"
-        },
-        {
-          "name": "Career Academy",
           "source_url": "https://www.selectgeorgia.com/blog/rural-transformation/one-valdosta-lowndes-interview"
         }
       ],
       "sources": [
+        "https://valdostadailytimes.com/2007/03/18/valdosta-ranked-as-a-leading-metro-area-for-expansion-recruiting",
         "https://www.selectgeorgia.com/blog/rural-transformation/one-valdosta-lowndes-interview",
         "https://valdostadailytimes.com/2018/05/24/summit-seeks-matching-jobs-with-workers",
         "https://valdostadailytimes.com/2026/02/23/gary-wisenbaker-data-centers-whats-good-for-the-goose-is-good-for-the-gander",
         "https://valdostadailytimes.com/2015/09/13/finding-the-competitive-edge",
-        "https://www.selectgeorgia.com/blog/locations-and-expansions/georgia-2023-growth",
         "https://valdostadailytimes.com/2018/06/10/public-employers",
         "https://valdostadailytimes.com/2017/10/22/business-briefs-69",
         "https://valdostadailytimes.com/2014/05/07/chamber-names-world-class-employees-2"
