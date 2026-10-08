@@ -4,12 +4,12 @@
   "source": "FIXTURE (target: BLS QCEW NAICS 5121 + BEA SAGDP2N NAICS 512 + Tavily DECD/DOAA/Film Office)",
   "latest_year": 2026,
   "kpis": {
-    "production_spend_latest_b": 0.0,
-    "production_spend_yoy_pct": -100.0,
-    "tax_credits_latest_b": 1.0,
+    "production_spend_latest_b": 3.585,
+    "production_spend_yoy_pct": -21.2,
+    "tax_credits_latest_b": 0.05,
     "employment_latest_k": 15.0,
     "employment_yoy_pct": -9.6,
-    "national_rank": 11,
+    "national_rank": 3,
     "n_major_productions": 12,
     "n_major_studios": 6,
     "tax_credit_pct": 30,
@@ -39,11 +39,11 @@
       3.621,
       3.347,
       2.162,
-      3.915,
-      5.436,
-      3.711,
-      4.67,
-      0.0
+      3.906,
+      5.415,
+      3.633,
+      4.551,
+      3.585
     ],
     "tax_credits_b": [
       0.55,
@@ -99,6 +99,15 @@
     }
   ],
   "notable_productions": [
+    {
+      "title": "American Idol",
+      "year": 2026,
+      "studio": "\u2014",
+      "type": "Film",
+      "spend_m": 405,
+      "location": "Georgia",
+      "_source_url": "https://www.hollywoodreporter.com/business/business-news/american-idol-moving-production-georgia-1236702964"
+    },
     {
       "title": "War Machine",
       "year": 2026,
@@ -189,72 +198,64 @@
       "type": "Film",
       "spend_m": 270,
       "location": "Trilith + Atlanta"
-    },
-    {
-      "title": "Manifest",
-      "year": 2023,
-      "studio": "Netflix",
-      "type": "TV Series",
-      "spend_m": 110,
-      "location": "Atlanta"
     }
   ],
   "state_comparison": [
     {
-      "state": "Alabama",
-      "abbr": "AL",
-      "spend_b": 0.0,
+      "state": "California",
+      "abbr": "CA",
+      "spend_b": 57.63,
       "rank": 1,
       "color": "#231f20"
     },
     {
-      "state": "Alaska",
-      "abbr": "AK",
-      "spend_b": 0.0,
+      "state": "New York",
+      "abbr": "NY",
+      "spend_b": 21.39,
       "rank": 2,
       "color": "#3f7d52"
     },
     {
-      "state": "Arizona",
-      "abbr": "AZ",
-      "spend_b": 0.0,
+      "state": "Georgia",
+      "abbr": "GA",
+      "spend_b": 3.58,
       "rank": 3,
-      "color": "#9c867a"
+      "color": "#c9740f"
     },
     {
-      "state": "Arkansas",
-      "abbr": "AR",
-      "spend_b": 0.0,
+      "state": "Tennessee",
+      "abbr": "TN",
+      "spend_b": 3.54,
       "rank": 4,
       "color": "#9c867a"
     },
     {
-      "state": "California",
-      "abbr": "CA",
-      "spend_b": 0.0,
+      "state": "Texas",
+      "abbr": "TX",
+      "spend_b": 3.18,
       "rank": 5,
       "color": "#9c867a"
     },
     {
-      "state": "Colorado",
-      "abbr": "CO",
-      "spend_b": 0.0,
+      "state": "Florida",
+      "abbr": "FL",
+      "spend_b": 2.95,
       "rank": 6,
       "color": "#9c867a"
     },
     {
-      "state": "Connecticut",
-      "abbr": "CT",
-      "spend_b": 0.0,
+      "state": "New Jersey",
+      "abbr": "NJ",
+      "spend_b": 1.81,
       "rank": 7,
       "color": "#9c867a"
     },
     {
-      "state": "Georgia",
-      "abbr": "GA",
-      "spend_b": 0.0,
-      "rank": 11,
-      "color": "#c9740f"
+      "state": "Illinois",
+      "abbr": "IL",
+      "spend_b": 1.78,
+      "rank": 8,
+      "color": "#9c867a"
     }
   ],
   "major_studios": [
@@ -303,7 +304,7 @@
   ],
   "_meta": {
     "production_spend": {
-      "last_updated": "2026-09-08",
+      "last_updated": "2026-10-08",
       "source": "BEA Regional SAGDP2 \u2014 NAICS 512 (Motion picture and sound recording industries), GA",
       "metric_note": "Industry GDP (value-added). Distinct from DECD's gross production spend figure.",
       "coverage_years": [
@@ -312,13 +313,13 @@
       ]
     },
     "tax_credits": {
-      "last_updated": "2026-09-08",
+      "last_updated": "2026-10-08",
       "source": "Tavily \u2192 GA DOAA FY2026 report",
       "latest_year": 2026,
-      "latest_value_b": 1.0
+      "latest_value_b": 0.05
     },
     "employment": {
-      "last_updated": "2026-09-08",
+      "last_updated": "2026-10-08",
       "source": "BLS QCEW annual averages, NAICS 5121, GA (area_fips 13000)",
       "coverage_years": [
         2014,
@@ -326,27 +327,27 @@
       ]
     },
     "state_comparison": {
-      "last_updated": "2026-09-08",
+      "last_updated": "2026-10-08",
       "source": "BEA Regional SAGDP2 \u2014 NAICS 512 (Motion picture & sound recording industries) GDP by state",
       "metric_label": "Industry GDP (value-added, $B)",
       "year": 2025
     },
     "notable_productions": {
-      "last_updated": "2026-08-08",
+      "last_updated": "2026-10-08",
       "source": "Tavily \u2192 GA Film Office + trade press announcements",
-      "new_this_run": 2
+      "new_this_run": 1
     },
     "major_studios": {
       "last_updated": null,
       "source": null
     },
     "decd_headline": {
-      "last_updated": "2026-09-08",
+      "last_updated": "2026-10-08",
       "source": "Tavily \u2192 DECD FY2026 press release",
       "value_b": 2.0,
       "year": 2026
     }
   },
-  "fetched_at": "2026-09-08",
-  "source_summary": "Live sources updated 2026-09-08: production_spend, tax_credits, employment, state_comparison, decd_headline. Stale or static: notable_productions, major_studios."
+  "fetched_at": "2026-10-08",
+  "source_summary": "Live sources updated 2026-10-08: production_spend, tax_credits, employment, state_comparison, notable_productions, decd_headline. Stale or static: major_studios."
 }
