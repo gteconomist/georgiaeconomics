@@ -3,7 +3,7 @@
   "short_name": "Atlanta",
   "full_name": "Atlanta-Sandy Springs-Alpharetta, GA",
   "population": 6307261,
-  "as_of": "2026-10-07",
+  "as_of": "2026-10-08",
   "sections": {
     "ces_employment": {
       "series_id": "SMS13120600000000001",
@@ -5603,39 +5603,39 @@
       "source": "Census Business Dynamics Statistics (establishment entry rate, 2022); metro rate indexed to US=100"
     },
     "major_employers": {
-      "as_of": "2026-10-07",
+      "as_of": "2026-10-08",
       "employers": [
         {
           "name": "Emory University",
-          "source_url": "https://www.bizjournals.com/atlanta/subscriber-only/2022/07/15/atlantas-25-largest-employers.html"
-        },
-        {
-          "name": "Emory Healthcare",
-          "source_url": "https://www.bizjournals.com/atlanta/subscriber-only/2022/07/15/atlantas-25-largest-employers.html"
+          "source_url": "https://www.bizjournals.com/atlanta/subscriber-only/2025/10/17/metro-atlantas-largest-employers.html"
         },
         {
           "name": "Delta Air Lines Inc",
-          "source_url": "https://www.bizjournals.com/atlanta/subscriber-only/2022/07/15/atlantas-25-largest-employers.html"
+          "source_url": "https://www.bizjournals.com/atlanta/subscriber-only/2025/10/17/metro-atlantas-largest-employers.html"
+        },
+        {
+          "name": "Emory Healthcare",
+          "source_url": "https://www.bizjournals.com/atlanta/subscriber-only/2025/10/17/metro-atlantas-largest-employers.html"
         },
         {
           "name": "Northside Hospital Inc",
-          "source_url": "https://www.bizjournals.com/atlanta/subscriber-only/2022/07/15/atlantas-25-largest-employers.html"
+          "source_url": "https://www.bizjournals.com/atlanta/subscriber-only/2025/10/17/metro-atlantas-largest-employers.html"
         },
         {
           "name": "Piedmont Healthcare",
-          "source_url": "https://www.bizjournals.com/atlanta/subscriber-only/2022/07/15/atlantas-25-largest-employers.html"
-        },
-        {
-          "name": "Industries Growing Faster",
-          "source_url": "https://www.selectgeorgia.com/landing-pages/san-fran-to-atl/top-brands"
-        },
-        {
-          "name": "Headquarters Company",
-          "source_url": "https://www.bizjournals.com/atlanta/subscriber-only/2022/07/15/atlantas-25-largest-employers.html"
+          "source_url": "https://www.bizjournals.com/atlanta/subscriber-only/2025/10/17/metro-atlantas-largest-employers.html"
         },
         {
           "name": "WellStar Health System Inc",
           "source_url": "https://www.bizjournals.com/atlanta/subscriber-only/2025/10/17/metro-atlantas-largest-employers.html"
+        },
+        {
+          "name": "Cornerstone Christian Academy's",
+          "source_url": "https://www.ajc.com/top-workplaces"
+        },
+        {
+          "name": "Industries Growing Faster",
+          "source_url": "https://www.selectgeorgia.com/landing-pages/san-fran-to-atl/top-brands"
         },
         {
           "name": "Axiall Company Page Archived",
@@ -5646,10 +5646,6 @@
           "source_url": "https://en.wikipedia.org/wiki/Economy_of_Atlanta"
         },
         {
-          "name": "Cornerstone Christian Academy's",
-          "source_url": "https://www.ajc.com/top-workplaces"
-        },
-        {
           "name": "Logistics",
           "source_url": "https://en.wikipedia.org/wiki/Economy_of_Atlanta"
         },
@@ -5658,19 +5654,23 @@
           "source_url": "https://en.wikipedia.org/wiki/Economy_of_Atlanta"
         },
         {
+          "name": "Headquarters Company",
+          "source_url": "https://www.bizjournals.com/atlanta/subscriber-only/2025/10/17/metro-atlantas-largest-employers.html"
+        },
+        {
           "name": "Manufacturing Companies Ranked",
           "source_url": "https://www.bizjournals.com/atlanta/datacenter/lists"
         }
       ],
       "sources": [
-        "https://www.bizjournals.com/atlanta/subscriber-only/2022/07/15/atlantas-25-largest-employers.html",
         "https://www.bizjournals.com/atlanta/subscriber-only/2025/10/17/metro-atlantas-largest-employers.html",
         "https://www.selectgeorgia.com/landing-pages/san-fran-to-atl/top-brands",
         "https://en.wikipedia.org/wiki/Economy_of_Atlanta",
-        "https://www.selectgeorgia.com/sxsw/top-brands",
+        "https://georgia.org/why-georgia/regions-georgia/metro-atlanta",
         "https://www.bizjournals.com/atlanta/datacenter/lists",
         "https://www.ajc.com/top-workplaces",
-        "https://www.selectgeorgia.com/discover-georgia/industries/fortune-500-list"
+        "https://www.ajc.com/top-workplaces/rounding-out-the-top-5-large-businesses/5FF7QFEAMRGF3PLDXYSC4NOFWQ",
+        "https://services.selectgeorgia.com/data/documents/Atlanta_Federal_OZ_Prospectus.pdf"
       ],
       "method": "Representative list auto-discovered via Tavily web search across chamber-of-commerce, development-authority and local-news sources. Not exhaustive; ordering approximates source frequency, not headcount."
     },

@@ -3,7 +3,7 @@
   "short_name": "Albany",
   "full_name": "Albany, GA",
   "population": 146000,
-  "as_of": "2026-10-07",
+  "as_of": "2026-10-08",
   "sections": {
     "ces_employment": {
       "series_id": "SMS13105000000000001",
@@ -4438,38 +4438,34 @@
       "source": "Census Business Dynamics Statistics (establishment entry rate, 2022); metro rate indexed to US=100"
     },
     "major_employers": {
-      "as_of": "2026-10-07",
+      "as_of": "2026-10-08",
       "employers": [
         {
           "name": "Health",
           "source_url": "https://en.wikipedia.org/wiki/Albany,_Georgia"
         },
         {
+          "name": "Northeast Grocery Inc",
+          "source_url": "https://www.bizjournals.com/albany/subscriber-only/2026/07/02/albanys-365-largest-employers.html"
+        },
+        {
           "name": "Manufacturing",
           "source_url": "https://en.wikipedia.org/wiki/Albany,_Georgia"
         },
         {
-          "name": "Marine Corps Logistics Base Albany",
-          "source_url": "https://en.wikipedia.org/wiki/Albany,_Georgia"
+          "name": "Energy",
+          "source_url": "https://www.bizjournals.com/albany/subscriber-only/2026/07/02/albanys-365-largest-employers.html"
         },
         {
-          "name": "Albany State University",
-          "source_url": "https://albanyherald.com/news/local/business-leaders-get-economic-updates-at-uga-summit"
+          "name": "Financial Services",
+          "source_url": "https://www.bizjournals.com/albany/subscriber-only/2026/07/02/albanys-365-largest-employers.html"
         },
         {
-          "name": "Albany's Company Lists",
-          "source_url": "https://www.bizjournals.com/albany/datacenter/lists"
+          "name": "Food",
+          "source_url": "https://www.bizjournals.com/albany/subscriber-only/2026/07/02/albanys-365-largest-employers.html"
         },
         {
-          "name": "Florida Railway",
-          "source_url": "https://en.wikipedia.org/wiki/Albany,_Georgia"
-        },
-        {
-          "name": "Heritage Financial",
-          "source_url": "https://albanyherald.com/news/heritage-financial-makes-georgia-trends-top-100-list"
-        },
-        {
-          "name": "Northeast Grocery Inc",
+          "name": "Industries",
           "source_url": "https://www.bizjournals.com/albany/subscriber-only/2026/07/02/albanys-365-largest-employers.html"
         },
         {
@@ -4477,35 +4473,39 @@
           "source_url": "https://www.bizjournals.com/albany/subscriber-only/2026/07/02/albanys-365-largest-employers.html"
         },
         {
+          "name": "Marketing Solutions",
+          "source_url": "https://www.bizjournals.com/albany/subscriber-only/2023/07/14/albany-areas-largest-private-sector-employers.html"
+        },
+        {
+          "name": "The Company Hub",
+          "source_url": "https://www.bizjournals.com/albany/subscriber-only/2023/07/14/albany-areas-largest-private-sector-employers.html"
+        },
+        {
           "name": "Emory University",
           "source_url": "https://www.bizjournals.com/atlanta/subscriber-only/2026/07/03/metro-atlantas-largest-employers.html"
         },
         {
-          "name": "Albany Medical Center",
-          "source_url": "https://www.bizjournals.com/albany/news/2013/12/10/the-lists-of-2013-part-2.html"
+          "name": "Actute Solutions",
+          "source_url": "https://www.bizjournals.com/albany/news/2025/10/17/new-employers-list-2025.html"
         },
         {
-          "name": "Cola-Cola Co",
-          "source_url": "https://albanyherald.com/news/heritage-financial-makes-georgia-trends-top-100-list"
-        },
-        {
-          "name": "DCMC Construction LLC",
+          "name": "Albany's Company Lists",
           "source_url": "https://www.bizjournals.com/albany/datacenter/lists"
         },
         {
-          "name": "Flowers Foods",
-          "source_url": "https://albanyherald.com/news/heritage-four-other-area-businesses-named-to-georgia-trends-top-100-public-businesses"
+          "name": "Marine Corps Logistics Base Albany",
+          "source_url": "https://en.wikipedia.org/wiki/Albany,_Georgia"
         }
       ],
       "sources": [
         "https://en.wikipedia.org/wiki/Albany,_Georgia",
+        "https://www.bizjournals.com/albany/subscriber-only/2026/07/02/albanys-365-largest-employers.html",
         "https://albanyherald.com/news/heritage-four-other-area-businesses-named-to-georgia-trends-top-100-public-businesses",
         "https://www.bizjournals.com/atlanta/subscriber-only/2026/07/03/metro-atlantas-largest-employers.html",
-        "https://albanyherald.com/news/local/business-leaders-get-economic-updates-at-uga-summit",
-        "https://albanyherald.com/news/heritage-financial-makes-georgia-trends-top-100-list",
-        "https://www.bizjournals.com/albany/news/2024/07/12/albany-metro-area-private-sector-jobs-employers.html",
-        "https://www.bizjournals.com/albany/news/2013/12/10/the-lists-of-2013-part-2.html",
-        "https://www.bizjournals.com/albany/news/2023/07/14/albany-region-largest-private-sector-employers.html"
+        "https://www.bizjournals.com/atlanta/subscriber-only/2025/10/17/metro-atlantas-largest-employers.html",
+        "https://www.bizjournals.com/albany/subscriber-only/2023/07/14/albany-areas-largest-private-sector-employers.html",
+        "https://www.bizjournals.com/albany/subscriber-only/2024/07/12/albany-areas-largest-private-sector-employers.html",
+        "https://www.bizjournals.com/albany/news/2025/10/17/new-employers-list-2025.html"
       ],
       "method": "Representative list auto-discovered via Tavily web search across chamber-of-commerce, development-authority and local-news sources. Not exhaustive; ordering approximates source frequency, not headcount."
     },

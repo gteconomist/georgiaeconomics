@@ -3,7 +3,7 @@
   "short_name": "Athens",
   "full_name": "Athens-Clarke County, GA",
   "population": 217000,
-  "as_of": "2026-10-07",
+  "as_of": "2026-10-08",
   "sections": {
     "ces_employment": {
       "series_id": "SMS13120200000000001",
@@ -5423,31 +5423,15 @@
       "source": "Census Business Dynamics Statistics (establishment entry rate, 2022); metro rate indexed to US=100"
     },
     "major_employers": {
-      "as_of": "2026-10-07",
+      "as_of": "2026-10-08",
       "employers": [
         {
-          "name": "Children's Healthcare of Atlanta",
-          "source_url": "https://www.onlineathens.com/story/news/2026/03/04/georgias-best-employers-are-these-2-big-businesses-forbes-says/88982542007"
-        },
-        {
-          "name": "EDT Manufacturing",
-          "source_url": "https://www.bizjournals.com/columbus/topic/jobs"
-        },
-        {
-          "name": "TeleNet Marketing Solutions",
-          "source_url": "https://www.onlineathens.com/story/news/state/2014/08/27/forecast-athens-area-jobs-grow-12-percent/15520915007"
-        },
-        {
-          "name": "The University of Georgia",
-          "source_url": "https://www.onlineathens.com/story/opinion/letters/2018/06/04/letter-uga-partner-with-local-community/12069219007"
+          "name": "Certus Bank",
+          "source_url": "https://www.onlineathens.com/story/news/state/2013/01/14/new-athens-chamber-chair-aid-new-economic-development-dept/15585264007"
         },
         {
           "name": "Food",
           "source_url": "https://www.onlineathens.com/business"
-        },
-        {
-          "name": "Forsyth County School District",
-          "source_url": "https://www.onlineathens.com/story/news/2026/03/04/georgias-best-employers-are-these-2-big-businesses-forbes-says/88982542007"
         },
         {
           "name": "Georgia Power This",
@@ -5458,39 +5442,55 @@
           "source_url": "https://www.onlineathens.com/business"
         },
         {
-          "name": "Southern Company",
-          "source_url": "https://www.onlineathens.com/story/news/2026/03/04/georgias-best-employers-are-these-2-big-businesses-forbes-says/88982542007"
+          "name": "The University of Georgia",
+          "source_url": null
+        },
+        {
+          "name": "Warehouse Associate",
+          "source_url": "https://www.onlineathens.com/press-release/story/43979/instawork-wages-jump-12-as-u-s-jobs-market-cools"
         },
         {
           "name": "Asbury Automotive Group",
           "source_url": "https://www.augustachronicle.com/story/news/2025/06/04/fortune-500s-list-of-the-biggest-corporations-includes-17-in-georgia/84010835007"
         },
         {
-          "name": "Athens Technical College",
-          "source_url": "https://www.onlineathens.com/story/opinion/2017/04/15/eldridge-chamber-commerce-relevant-athens-area/15415860007"
+          "name": "Athens Hardware Company",
+          "source_url": "https://en.wikipedia.org/wiki/Category:Companies_based_in_Athens,_Georgia"
+        },
+        {
+          "name": "Athens Technical College Augusta University Piedmont",
+          "source_url": "https://en.wikipedia.org/wiki/Athens,_Georgia"
+        },
+        {
+          "name": "Barberitos Creature Comforts Brewing Co. Fire",
+          "source_url": "https://en.wikipedia.org/wiki/Athens,_Georgia"
+        },
+        {
+          "name": "Children's Healthcare of Atlanta",
+          "source_url": "https://www.augustachronicle.com/story/news/2025/08/26/forbes-ranked-americas-best-employers-by-state-what-is-georgias/85830225007"
         },
         {
           "name": "Christian Industrial Tract",
           "source_url": "https://www.onlineathens.com/story/business/2023/04/05/new-company-in-athens-expects-to-create-1700-new-jobs-in-coming-years/70085032007"
         },
         {
-          "name": "EDT Health Care",
-          "source_url": "https://www.bizjournals.com/columbus/topic/jobs"
+          "name": "Community Newspapers Inc. Coraid",
+          "source_url": "https://en.wikipedia.org/wiki/Category:Companies_based_in_Athens,_Georgia"
         },
         {
-          "name": "General Motors",
-          "source_url": "https://www.augustachronicle.com/story/news/2025/08/26/forbes-ranked-americas-best-employers-by-state-what-is-georgias/85830225007"
+          "name": "Dress Boutique Terrapin Beer Company Wuxtry",
+          "source_url": "https://en.wikipedia.org/wiki/Athens,_Georgia"
         }
       ],
       "sources": [
-        "https://www.onlineathens.com/story/news/2026/03/04/georgias-best-employers-are-these-2-big-businesses-forbes-says/88982542007",
         "https://www.augustachronicle.com/story/news/2025/06/04/fortune-500s-list-of-the-biggest-corporations-includes-17-in-georgia/84010835007",
         "https://www.onlineathens.com/business",
-        "https://www.onlineathens.com/story/opinion/letters/2018/06/04/letter-uga-partner-with-local-community/12069219007",
         "https://www.onlineathens.com/story/business/2023/04/05/new-company-in-athens-expects-to-create-1700-new-jobs-in-coming-years/70085032007",
+        "https://en.wikipedia.org/wiki/Athens,_Georgia",
+        "https://en.wikipedia.org/wiki/Category:Companies_based_in_Athens,_Georgia",
+        "https://www.selectgeorgia.com/about-us/our-team/regional-development/matthew-forshee-east",
         "https://www.augustachronicle.com/story/news/2025/08/26/forbes-ranked-americas-best-employers-by-state-what-is-georgias/85830225007",
-        "https://www.ajc.com/top-workplaces/rounding-out-the-top-5-large-businesses/5FF7QFEAMRGF3PLDXYSC4NOFWQ",
-        "https://www.onlineathens.com/story/opinion/2017/04/15/eldridge-chamber-commerce-relevant-athens-area/15415860007"
+        "https://www.ajc.com/top-workplaces/rounding-out-the-top-5-large-businesses/5FF7QFEAMRGF3PLDXYSC4NOFWQ"
       ],
       "method": "Representative list auto-discovered via Tavily web search across chamber-of-commerce, development-authority and local-news sources. Not exhaustive; ordering approximates source frequency, not headcount."
     },

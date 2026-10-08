@@ -3,7 +3,7 @@
   "short_name": "Warner Robins",
   "full_name": "Warner Robins, GA",
   "population": 199000,
-  "as_of": "2026-10-07",
+  "as_of": "2026-10-08",
   "sections": {
     "ces_employment": {
       "series_id": "SMS13475800000000001",
@@ -4462,19 +4462,23 @@
       "source": "Census Business Dynamics Statistics (establishment entry rate, 2022); metro rate indexed to US=100"
     },
     "major_employers": {
-      "as_of": "2026-10-07",
+      "as_of": "2026-10-08",
       "employers": [
         {
           "name": "Pratt Industries",
           "source_url": "https://www.macon.com/news/business/article279055784.html"
         },
         {
-          "name": "Blue Bird Body Co",
-          "source_url": "https://www.macon.com/news/business/article258547393.html"
-        },
-        {
           "name": "Houston Healthcare",
           "source_url": "https://en.wikipedia.org/wiki/Central_Georgia"
+        },
+        {
+          "name": "Coliseum Health System",
+          "source_url": "https://en.wikipedia.org/wiki/Central_Georgia"
+        },
+        {
+          "name": "Mercer University",
+          "source_url": "https://www.macon.com/living/living-here-guide/article39043491.html"
         },
         {
           "name": "Perdue Foods",
@@ -4489,12 +4493,8 @@
           "source_url": "https://www.macon.com/news/business/article258547393.html"
         },
         {
-          "name": "Coliseum Health System",
-          "source_url": "https://en.wikipedia.org/wiki/Central_Georgia"
-        },
-        {
-          "name": "Mercer University",
-          "source_url": "https://www.macon.com/living/living-here-guide/article39043491.html"
+          "name": "Blue Bird Body Co",
+          "source_url": "https://www.macon.com/news/business/article258547393.html"
         },
         {
           "name": "Robins Industrial Park",
@@ -4513,23 +4513,23 @@
           "source_url": "https://www.macon.com/living/living-here-guide/article39043491.html"
         },
         {
-          "name": "The McLane Co",
-          "source_url": "https://www.macon.com/news/business/article278530009.html"
+          "name": "International Logistics Group",
+          "source_url": "https://www.macon.com/news/local/military/article214843570.html"
         },
         {
-          "name": "AT&T Inc",
-          "source_url": "https://www.bizjournals.com/atlanta/related_content.html?topic=Time+Warner"
+          "name": "The McLane Co",
+          "source_url": "https://www.macon.com/news/business/article278530009.html"
         }
       ],
       "sources": [
         "https://en.wikipedia.org/wiki/Central_Georgia",
         "https://www.macon.com/living/living-here-guide/article39043491.html",
         "https://www.macon.com/news/business/article258547393.html",
-        "https://www.macon.com/news/local/community/houston-peach/article248306705.html",
         "https://www.macon.com/news/business/article279055784.html",
-        "https://georgia.org/press-releases/2023/georgia-based-pratt-industries-plans-new-manufacturing-facility-peach-county",
         "https://www.macon.com/news/local/military/article214843570.html",
-        "https://www.bizjournals.com/atlanta/related_content.html?topic=Time+Warner"
+        "https://www.bizjournals.com/atlanta/related_content.html?topic=Time+Warner",
+        "https://georgia.org/press-releases/2023/georgia-based-pratt-industries-plans-new-manufacturing-facility-peach-county",
+        "https://www.macon.com/news/business/article278530009.html"
       ],
       "method": "Representative list auto-discovered via Tavily web search across chamber-of-commerce, development-authority and local-news sources. Not exhaustive; ordering approximates source frequency, not headcount."
     },

@@ -3,7 +3,7 @@
   "short_name": "Dalton",
   "full_name": "Dalton, GA",
   "population": 143000,
-  "as_of": "2026-10-07",
+  "as_of": "2026-10-08",
   "sections": {
     "ces_employment": {
       "series_id": "SMS13191400000000001",
@@ -4812,14 +4812,38 @@
       "source": "Census Business Dynamics Statistics (establishment entry rate, 2022); metro rate indexed to US=100"
     },
     "major_employers": {
-      "as_of": "2026-10-07",
+      "as_of": "2026-10-08",
       "employers": [
         {
-          "name": "New Manufacturing",
-          "source_url": "https://www.selectgeorgia.com/georgiagrowth"
+          "name": "Manufacturing Companies",
+          "source_url": "https://www.bizjournals.com/atlanta/subscriber-only/2021/09/10/georgias-25-largest-manufacturing.html"
+        },
+        {
+          "name": "Company",
+          "source_url": "https://www.bizjournals.com/atlanta/subscriber-only/2021/09/10/georgias-25-largest-manufacturing.html"
+        },
+        {
+          "name": "Food City",
+          "source_url": "https://valdostadailytimes.com/2019/01/23/something-we-can-all-be-proud-of-food-city-opens-second-dalton-location"
+        },
+        {
+          "name": "Mohawk Industries Inc",
+          "source_url": "https://www.bizjournals.com/atlanta/subscriber-only/2021/09/10/georgias-25-largest-manufacturing.html"
+        },
+        {
+          "name": "Carpet Capital",
+          "source_url": "https://en.wikipedia.org/wiki/Dalton,_Georgia"
+        },
+        {
+          "name": "Dalton Public Schools",
+          "source_url": "https://valdostadailytimes.com/2018/06/10/public-employers"
         },
         {
           "name": "Distribution",
+          "source_url": "https://www.selectgeorgia.com/georgiagrowth"
+        },
+        {
+          "name": "New Manufacturing",
           "source_url": "https://www.selectgeorgia.com/georgiagrowth"
         },
         {
@@ -4827,59 +4851,35 @@
           "source_url": "https://www.selectgeorgia.com/georgiagrowth"
         },
         {
-          "name": "Food Processing Expansion",
-          "source_url": "https://www.selectgeorgia.com/georgiagrowth"
+          "name": "Howell Mill",
+          "source_url": "https://www.bizjournals.com/atlanta/news/2023/02/01/georgia-incentives-for-qcells-expansion.html"
         },
         {
-          "name": "Manufacturing Expansion",
-          "source_url": "https://www.selectgeorgia.com/georgiagrowth"
+          "name": "Industrial",
+          "source_url": "https://www.bizjournals.com/atlanta/subscriber-only/2021/09/10/georgias-25-largest-manufacturing.html"
         },
         {
-          "name": "Carpet Capital",
-          "source_url": "https://en.wikipedia.org/wiki/Dalton,_Georgia"
-        },
-        {
-          "name": "New Food Processing",
-          "source_url": "https://www.selectgeorgia.com/georgiagrowth"
+          "name": "Manufacturing Lists",
+          "source_url": "https://www.bizjournals.com/atlanta/subscriber-only/2021/09/10/georgias-25-largest-manufacturing.html"
         },
         {
           "name": "Shaw Industries",
-          "source_url": "https://www.selectgeorgia.com/georgiagrowth"
-        },
-        {
-          "name": "Dalton Public Schools",
-          "source_url": "https://valdostadailytimes.com/2018/06/10/public-employers"
-        },
-        {
-          "name": "Flooring",
           "source_url": "https://valdostadailytimes.com/2018/01/01/engineered-floors-growth-varnell-drama-among-top-stories-in-dalton-area-in-2017"
         },
         {
-          "name": "IVC Group",
-          "source_url": "https://georgia.org/newsroom/press-releases/global-flooring-company-expand-dalton-creating-200-jobs"
-        },
-        {
-          "name": "Managing the Projects That Power Our Communities",
-          "source_url": "https://www.bizjournals.com/atlanta/news/2023/08/04/georgia-cities-wage-growth-salary.html"
-        },
-        {
-          "name": "Birchwood Foods",
-          "source_url": "https://www.selectgeorgia.com/georgiagrowth"
-        },
-        {
-          "name": "Corvaglia Group",
-          "source_url": "https://www.selectgeorgia.com/georgiagrowth"
+          "name": "Tyson Foods Inc",
+          "source_url": "https://www.bizjournals.com/atlanta/subscriber-only/2023/09/08/georgias-top-25-manufacturing-companies.html"
         }
       ],
       "sources": [
-        "https://www.bizjournals.com/atlanta/news/2023/08/04/georgia-cities-wage-growth-salary.html",
         "https://en.wikipedia.org/wiki/Dalton,_Georgia",
-        "https://www.selectgeorgia.com/georgiagrowth",
-        "https://georgia.org/blogs/korea-connections-successful-business-built-strong-relationships",
-        "https://georgia.org/newsroom/press-releases/global-flooring-company-expand-dalton-creating-200-jobs",
+        "https://www.bizjournals.com/atlanta/subscriber-only/2021/09/10/georgias-25-largest-manufacturing.html",
+        "https://www.bizjournals.com/atlanta/subscriber-only/2023/09/08/georgias-top-25-manufacturing-companies.html",
+        "https://www.bizjournals.com/atlanta/subscriber-only/2018/08/24/georgias-top-25-manufacturing-companies.html",
+        "https://www.bizjournals.com/atlanta/news/2023/02/01/georgia-incentives-for-qcells-expansion.html",
         "https://valdostadailytimes.com/2018/06/10/public-employers",
         "https://valdostadailytimes.com/2018/01/01/engineered-floors-growth-varnell-drama-among-top-stories-in-dalton-area-in-2017",
-        "https://georgia.org/blogs/gdecd-shows-northwest-georgia-international-vips"
+        "https://valdostadailytimes.com/2019/01/23/something-we-can-all-be-proud-of-food-city-opens-second-dalton-location"
       ],
       "method": "Representative list auto-discovered via Tavily web search across chamber-of-commerce, development-authority and local-news sources. Not exhaustive; ordering approximates source frequency, not headcount."
     },
