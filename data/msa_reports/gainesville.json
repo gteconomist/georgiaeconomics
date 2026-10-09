@@ -3,7 +3,7 @@
   "short_name": "Gainesville",
   "full_name": "Gainesville, GA",
   "population": 211000,
-  "as_of": "2026-10-08",
+  "as_of": "2026-10-09",
   "sections": {
     "ces_employment": {
       "series_id": "SMS13235800000000001",
@@ -5486,14 +5486,14 @@
       "source": "Census Business Dynamics Statistics (establishment entry rate, 2022); metro rate indexed to US=100"
     },
     "major_employers": {
-      "as_of": "2026-10-08",
+      "as_of": "2026-10-09",
       "employers": [
         {
-          "name": "Koch Foods",
+          "name": "Northeast Georgia Health System",
           "source_url": "https://en.wikipedia.org/wiki/Gainesville,_Georgia"
         },
         {
-          "name": "Northeast Georgia Health System",
+          "name": "Koch Foods",
           "source_url": "https://en.wikipedia.org/wiki/Gainesville,_Georgia"
         },
         {
@@ -5505,20 +5505,36 @@
           "source_url": "https://en.wikipedia.org/wiki/Gainesville,_Florida"
         },
         {
-          "name": "Comprehensive Annual Financial Report",
-          "source_url": "https://en.wikipedia.org/wiki/Gainesville,_Georgia"
-        },
-        {
           "name": "The Jaeger Co",
           "source_url": "https://www.gainesvilletimes.com/news/simpson-jaeger-companies-win-hall-chambers-top-awards"
+        },
+        {
+          "name": "Annual Comprehensive Financial Report",
+          "source_url": "https://en.wikipedia.org/wiki/Gainesville,_Florida"
         },
         {
           "name": "Brenau University",
           "source_url": "https://en.wikipedia.org/wiki/Gainesville,_Georgia"
         },
         {
+          "name": "Comprehensive Annual Financial Report",
+          "source_url": "https://en.wikipedia.org/wiki/Gainesville,_Georgia"
+        },
+        {
+          "name": "Elan Drug Technologies",
+          "source_url": "https://www.gainesvilletimes.com/news/business-archived/chamber-honors-3-companies-as-the-years-best-in-hall"
+        },
+        {
+          "name": "Hialeah Port St. Lucie Tallahassee Cape",
+          "source_url": "https://en.wikipedia.org/wiki/Gainesville,_Florida"
+        },
+        {
           "name": "Kubota Manufacturing of America",
           "source_url": "https://www.gainesvilletimes.com/news/business-archived/chamber-honors-3-companies-as-the-years-best-in-hall"
+        },
+        {
+          "name": "Port St. Lucie Punta Gorda Sebastian-Vero",
+          "source_url": "https://en.wikipedia.org/wiki/Gainesville,_Florida"
         },
         {
           "name": "Professional Company",
@@ -5527,22 +5543,6 @@
         {
           "name": "University of North Georgia",
           "source_url": "https://en.wikipedia.org/wiki/Gainesville,_Georgia"
-        },
-        {
-          "name": "Annual Comprehensive Financial Report",
-          "source_url": "https://en.wikipedia.org/wiki/Gainesville,_Florida"
-        },
-        {
-          "name": "Georgia Power",
-          "source_url": "https://www.gainesvilletimes.com/news/business-industry/chamber-unveils-new-website-listing-employers-are-hiring"
-        },
-        {
-          "name": "Gold Creek Foods",
-          "source_url": "https://www.bizjournals.com/atlanta/related_content.html?topic=Kubota+Industrial+Equipment+Corp"
-        },
-        {
-          "name": "Hialeah Port St. Lucie Tallahassee Cape",
-          "source_url": "https://en.wikipedia.org/wiki/Gainesville,_Florida"
         }
       ],
       "sources": [
@@ -5552,8 +5552,8 @@
         "https://en.wikipedia.org/wiki/Gainesville,_Florida",
         "https://www.selectgeorgia.com/discover-georgia/industries/automotive-in-georgia",
         "https://www.gainesvilletimes.com/news/business-archived/chamber-honors-3-companies-as-the-years-best-in-hall",
-        "https://www.gainesvilletimes.com/news/business-industry/chamber-unveils-new-website-listing-employers-are-hiring",
-        "https://www.gainesvilletimes.com/news/simpson-jaeger-companies-win-hall-chambers-top-awards"
+        "https://www.gainesvilletimes.com/news/simpson-jaeger-companies-win-hall-chambers-top-awards",
+        "https://www.ajc.com/pulse/6-health-care-systems-among-forbes-best-employers-in-georgia/ZHJC3IV7UBFOHH423Y4NIDQDPI"
       ],
       "method": "Representative list auto-discovered via Tavily web search across chamber-of-commerce, development-authority and local-news sources. Not exhaustive; ordering approximates source frequency, not headcount."
     },

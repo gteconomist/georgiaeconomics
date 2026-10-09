@@ -3,7 +3,7 @@
   "short_name": "Dalton",
   "full_name": "Dalton, GA",
   "population": 143000,
-  "as_of": "2026-10-08",
+  "as_of": "2026-10-09",
   "sections": {
     "ces_employment": {
       "series_id": "SMS13191400000000001",
@@ -4812,74 +4812,74 @@
       "source": "Census Business Dynamics Statistics (establishment entry rate, 2022); metro rate indexed to US=100"
     },
     "major_employers": {
-      "as_of": "2026-10-08",
+      "as_of": "2026-10-09",
       "employers": [
         {
-          "name": "Manufacturing Companies",
-          "source_url": "https://www.bizjournals.com/atlanta/subscriber-only/2021/09/10/georgias-25-largest-manufacturing.html"
+          "name": "New Manufacturing",
+          "source_url": "https://www.selectgeorgia.com/georgiagrowth"
         },
         {
-          "name": "Company",
-          "source_url": "https://www.bizjournals.com/atlanta/subscriber-only/2021/09/10/georgias-25-largest-manufacturing.html"
-        },
-        {
-          "name": "Food City",
-          "source_url": "https://valdostadailytimes.com/2019/01/23/something-we-can-all-be-proud-of-food-city-opens-second-dalton-location"
-        },
-        {
-          "name": "Mohawk Industries Inc",
-          "source_url": "https://www.bizjournals.com/atlanta/subscriber-only/2021/09/10/georgias-25-largest-manufacturing.html"
+          "name": "Shaw Industries",
+          "source_url": "https://www.selectgeorgia.com/georgiagrowth"
         },
         {
           "name": "Carpet Capital",
           "source_url": "https://en.wikipedia.org/wiki/Dalton,_Georgia"
         },
         {
-          "name": "Dalton Public Schools",
-          "source_url": "https://valdostadailytimes.com/2018/06/10/public-employers"
+          "name": "Warehouse",
+          "source_url": "https://www.selectgeorgia.com/georgiagrowth"
         },
         {
           "name": "Distribution",
           "source_url": "https://www.selectgeorgia.com/georgiagrowth"
         },
         {
-          "name": "New Manufacturing",
-          "source_url": "https://www.selectgeorgia.com/georgiagrowth"
-        },
-        {
-          "name": "New Warehouse",
-          "source_url": "https://www.selectgeorgia.com/georgiagrowth"
-        },
-        {
-          "name": "Howell Mill",
-          "source_url": "https://www.bizjournals.com/atlanta/news/2023/02/01/georgia-incentives-for-qcells-expansion.html"
-        },
-        {
-          "name": "Industrial",
-          "source_url": "https://www.bizjournals.com/atlanta/subscriber-only/2021/09/10/georgias-25-largest-manufacturing.html"
-        },
-        {
-          "name": "Manufacturing Lists",
-          "source_url": "https://www.bizjournals.com/atlanta/subscriber-only/2021/09/10/georgias-25-largest-manufacturing.html"
-        },
-        {
-          "name": "Shaw Industries",
+          "name": "Flooring",
           "source_url": "https://valdostadailytimes.com/2018/01/01/engineered-floors-growth-varnell-drama-among-top-stories-in-dalton-area-in-2017"
         },
         {
-          "name": "Tyson Foods Inc",
-          "source_url": "https://www.bizjournals.com/atlanta/subscriber-only/2023/09/08/georgias-top-25-manufacturing-companies.html"
+          "name": "Food City",
+          "source_url": "https://valdostadailytimes.com/2019/01/23/something-we-can-all-be-proud-of-food-city-opens-second-dalton-location"
+        },
+        {
+          "name": "Georgia Power",
+          "source_url": "https://valdostadailytimes.com/2019/01/23/something-we-can-all-be-proud-of-food-city-opens-second-dalton-location"
+        },
+        {
+          "name": "Gulfstream Aerospace Corp",
+          "source_url": "https://www.bizjournals.com/atlanta/research/lists/2026/georgia-manufacturers.html"
+        },
+        {
+          "name": "Manufacturing Expansion",
+          "source_url": "https://www.selectgeorgia.com/georgiagrowth"
+        },
+        {
+          "name": "Peacock Technologies",
+          "source_url": "https://valdostadailytimes.com/2018/04/02/semifinalists-announced-in-contest-to-find-daltons-next-big-business-idea"
+        },
+        {
+          "name": "Advanced Insurance Strategies",
+          "source_url": "https://valdostadailytimes.com/2018/04/02/semifinalists-announced-in-contest-to-find-daltons-next-big-business-idea"
+        },
+        {
+          "name": "Company",
+          "source_url": "https://www.bizjournals.com/atlanta/research/lists/2026/georgia-manufacturers.html"
+        },
+        {
+          "name": "Dalton State College",
+          "source_url": "https://valdostadailytimes.com/2018/04/02/semifinalists-announced-in-contest-to-find-daltons-next-big-business-idea"
         }
       ],
       "sources": [
         "https://en.wikipedia.org/wiki/Dalton,_Georgia",
-        "https://www.bizjournals.com/atlanta/subscriber-only/2021/09/10/georgias-25-largest-manufacturing.html",
-        "https://www.bizjournals.com/atlanta/subscriber-only/2023/09/08/georgias-top-25-manufacturing-companies.html",
-        "https://www.bizjournals.com/atlanta/subscriber-only/2018/08/24/georgias-top-25-manufacturing-companies.html",
-        "https://www.bizjournals.com/atlanta/news/2023/02/01/georgia-incentives-for-qcells-expansion.html",
-        "https://valdostadailytimes.com/2018/06/10/public-employers",
+        "https://www.selectgeorgia.com/georgiagrowth",
+        "https://www.bizjournals.com/atlanta/research/lists/2026/georgia-manufacturers.html",
+        "https://www.ajc.com/business/dalton-augusta-worst-for-job-losses-lately/qWPbpKazCnZFJtn1Kel1RM",
         "https://valdostadailytimes.com/2018/01/01/engineered-floors-growth-varnell-drama-among-top-stories-in-dalton-area-in-2017",
-        "https://valdostadailytimes.com/2019/01/23/something-we-can-all-be-proud-of-food-city-opens-second-dalton-location"
+        "https://www.ajc.com/business/georgia-best-employers-for-2019-according-forbes/97QBCslwnyl3Ob4ujTmnLK",
+        "https://valdostadailytimes.com/2019/01/23/something-we-can-all-be-proud-of-food-city-opens-second-dalton-location",
+        "https://valdostadailytimes.com/2018/04/02/semifinalists-announced-in-contest-to-find-daltons-next-big-business-idea"
       ],
       "method": "Representative list auto-discovered via Tavily web search across chamber-of-commerce, development-authority and local-news sources. Not exhaustive; ordering approximates source frequency, not headcount."
     },

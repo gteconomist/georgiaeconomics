@@ -3,7 +3,7 @@
   "short_name": "Rome",
   "full_name": "Rome, GA",
   "population": 99000,
-  "as_of": "2026-10-08",
+  "as_of": "2026-10-09",
   "sections": {
     "ces_employment": {
       "series_id": "SMS13406600000000001",
@@ -4708,18 +4708,10 @@
       "source": "Census Business Dynamics Statistics (establishment entry rate, 2022); metro rate indexed to US=100"
     },
     "major_employers": {
-      "as_of": "2026-10-08",
+      "as_of": "2026-10-09",
       "employers": [
         {
           "name": "Floyd Medical Center",
-          "source_url": "https://en.wikipedia.org/wiki/Rome,_Georgia"
-        },
-        {
-          "name": "Harbin Clinic",
-          "source_url": "https://en.wikipedia.org/wiki/Rome,_Georgia"
-        },
-        {
-          "name": "Redmond Regional Medical Center",
           "source_url": "https://en.wikipedia.org/wiki/Rome,_Georgia"
         },
         {
@@ -4731,15 +4723,27 @@
           "source_url": "https://en.wikipedia.org/wiki/Rome,_Georgia"
         },
         {
-          "name": "Utilities",
-          "source_url": "https://en.wikipedia.org/wiki/List_of_largest_Italian_companies"
+          "name": "Rome-Floyd Development Authority",
+          "source_url": "https://www.northwestgeorgianews.com/primary-issue-for-local-employers-right-now-is-growth-of-the-workforce/article_27902aa4-f2f3-11eb-b2a1-6bb1c539a9f7.html"
         },
         {
           "name": "Atrium Health Floyd",
           "source_url": "https://en.wikipedia.org/wiki/Atrium_Health_Floyd"
         },
         {
+          "name": "Harbin Clinic",
+          "source_url": "https://en.wikipedia.org/wiki/Rome,_Georgia"
+        },
+        {
           "name": "Kerry Group",
+          "source_url": "https://en.wikipedia.org/wiki/Rome,_Georgia"
+        },
+        {
+          "name": "Medical College of Georgia",
+          "source_url": "https://en.wikipedia.org/wiki/Rome,_Georgia"
+        },
+        {
+          "name": "Redmond Regional Medical Center",
           "source_url": "https://en.wikipedia.org/wiki/Rome,_Georgia"
         },
         {
@@ -4747,24 +4751,20 @@
           "source_url": "https://en.wikipedia.org/wiki/Atrium_Health_Floyd"
         },
         {
-          "name": "Aerospace",
-          "source_url": "https://en.wikipedia.org/wiki/List_of_largest_Italian_companies"
-        },
-        {
-          "name": "Augusta University",
-          "source_url": "https://en.wikipedia.org/wiki/Augusta,_Georgia"
-        },
-        {
-          "name": "Berry College",
-          "source_url": "https://www.northwestgeorgianews.com/rome/business/celebrating-family-owned-small-businesses-in-rome/article_3039f5ec-0720-11ef-a969-db184510c062.html"
-        },
-        {
-          "name": "Energy",
-          "source_url": "https://en.wikipedia.org/wiki/List_of_largest_Italian_companies"
-        },
-        {
           "name": "Georgia Health Sciences University",
           "source_url": "https://en.wikipedia.org/wiki/Rome,_Georgia"
+        },
+        {
+          "name": "Lowe's Distribution Center",
+          "source_url": "https://georgia.org/sites/default/files/2023-01/lowes_4.pdf"
+        },
+        {
+          "name": "General Electric",
+          "source_url": "https://en.wikipedia.org/wiki/Rome,_Georgia"
+        },
+        {
+          "name": "Georgia Power's Economic Development",
+          "source_url": "https://www.selectgeorgia.com/blog/team-researchers-provide-clear-employment-overview-community-partners"
         }
       ],
       "sources": [
@@ -4773,9 +4773,8 @@
         "https://www.selectgeorgia.com/blog/team-researchers-provide-clear-employment-overview-community-partners",
         "https://www.northwestgeorgianews.com/primary-issue-for-local-employers-right-now-is-growth-of-the-workforce/article_27902aa4-f2f3-11eb-b2a1-6bb1c539a9f7.html",
         "https://georgia.org/sites/default/files/2023-01/lowes_4.pdf",
-        "https://en.wikipedia.org/wiki/Augusta,_Georgia",
-        "https://www.northwestgeorgianews.com/rome/business/celebrating-family-owned-small-businesses-in-rome/article_3039f5ec-0720-11ef-a969-db184510c062.html",
-        "https://www.ajc.com/news/powerful-family-puts-road-rome-doubt/7hTa4uJKHAfOSUffB4EUAL"
+        "https://www.ledger-enquirer.com/news/business/article315198836.html",
+        "https://www.bizjournals.com/organization/salesforce"
       ],
       "method": "Representative list auto-discovered via Tavily web search across chamber-of-commerce, development-authority and local-news sources. Not exhaustive; ordering approximates source frequency, not headcount."
     },
