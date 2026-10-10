@@ -3,7 +3,7 @@
   "short_name": "Warner Robins",
   "full_name": "Warner Robins, GA",
   "population": 199000,
-  "as_of": "2026-10-09",
+  "as_of": "2026-10-10",
   "sections": {
     "ces_employment": {
       "series_id": "SMS13475800000000001",
@@ -4462,14 +4462,18 @@
       "source": "Census Business Dynamics Statistics (establishment entry rate, 2022); metro rate indexed to US=100"
     },
     "major_employers": {
-      "as_of": "2026-10-09",
+      "as_of": "2026-10-10",
       "employers": [
+        {
+          "name": "Houston Healthcare",
+          "source_url": "https://en.wikipedia.org/wiki/Central_Georgia"
+        },
         {
           "name": "Blue Bird Body Co",
           "source_url": "https://www.macon.com/news/business/article258547393.html"
         },
         {
-          "name": "Houston Healthcare",
+          "name": "Coliseum Health System",
           "source_url": "https://en.wikipedia.org/wiki/Central_Georgia"
         },
         {
@@ -4477,8 +4481,12 @@
           "source_url": "https://www.macon.com/news/business/article258547393.html"
         },
         {
-          "name": "Pratt Industries",
-          "source_url": "https://www.macon.com/news/business/article279055784.html"
+          "name": "Blue Bird Corp",
+          "source_url": "https://www.macon.com/living/living-here-guide/article39043491.html"
+        },
+        {
+          "name": "The Medical Center of Central Georgia",
+          "source_url": "https://www.macon.com/living/living-here-guide/article39043491.html"
         },
         {
           "name": "Atrium Health Navicent The Medical Center",
@@ -4489,24 +4497,8 @@
           "source_url": "https://www.macon.com/living/living-here-guide/article39043491.html"
         },
         {
-          "name": "Robins Industrial Park",
-          "source_url": "https://www.macon.com/news/business/article279055784.html"
-        },
-        {
-          "name": "Coliseum Health System",
-          "source_url": "https://en.wikipedia.org/wiki/Central_Georgia"
-        },
-        {
-          "name": "Medical Center of Central Georgia",
-          "source_url": "https://en.wikipedia.org/wiki/Central_Georgia"
-        },
-        {
           "name": "Primary Industries",
           "source_url": "https://www.macon.com/news/business/article258547393.html"
-        },
-        {
-          "name": "Blue Bird Corp",
-          "source_url": "https://www.macon.com/living/living-here-guide/article39043491.html"
         },
         {
           "name": "Houston County Development Authority",
@@ -4517,19 +4509,27 @@
           "source_url": "https://www.macon.com/news/business/article278530009.html"
         },
         {
-          "name": "AT&T Inc",
-          "source_url": "https://www.bizjournals.com/atlanta/related_content.html?topic=Time+Warner"
+          "name": "Aerospace Industry Committee",
+          "source_url": "https://www.macon.com/news/local/military/article214843570.html"
+        },
+        {
+          "name": "Boeing Co",
+          "source_url": "https://www.macon.com/news/business/article278530009.html"
+        },
+        {
+          "name": "Chief Manufacturing",
+          "source_url": "https://en.wikipedia.org/wiki/Central_Georgia"
         }
       ],
       "sources": [
         "https://en.wikipedia.org/wiki/Central_Georgia",
         "https://www.macon.com/living/living-here-guide/article39043491.html",
         "https://www.macon.com/news/business/article258547393.html",
-        "https://www.macon.com/news/local/community/houston-peach/article248306705.html",
-        "https://www.macon.com/news/business/article279055784.html",
-        "https://www.bizjournals.com/atlanta/related_content.html?topic=Time+Warner",
         "https://www.macon.com/news/local/military/article214843570.html",
-        "https://georgia.org/blogs/longtime-investment-workforce-solutions-keeps-georgia-top-state-business"
+        "https://georgia.org/blogs/longtime-investment-workforce-solutions-keeps-georgia-top-state-business",
+        "https://valdostadailytimes.com/2012/11/29/georgia-launches-strategic-jobs-focused-defense-initiative",
+        "https://www.macon.com/news/business/article278530009.html",
+        "https://www.macon.com/news/local/community/houston-peach/article248306705.html"
       ],
       "method": "Representative list auto-discovered via Tavily web search across chamber-of-commerce, development-authority and local-news sources. Not exhaustive; ordering approximates source frequency, not headcount."
     },

@@ -3,7 +3,7 @@
   "short_name": "Gainesville",
   "full_name": "Gainesville, GA",
   "population": 211000,
-  "as_of": "2026-10-09",
+  "as_of": "2026-10-10",
   "sections": {
     "ces_employment": {
       "series_id": "SMS13235800000000001",
@@ -5486,8 +5486,12 @@
       "source": "Census Business Dynamics Statistics (establishment entry rate, 2022); metro rate indexed to US=100"
     },
     "major_employers": {
-      "as_of": "2026-10-09",
+      "as_of": "2026-10-10",
       "employers": [
+        {
+          "name": "University of Florida",
+          "source_url": "https://en.wikipedia.org/wiki/Gainesville,_Florida"
+        },
         {
           "name": "Northeast Georgia Health System",
           "source_url": "https://en.wikipedia.org/wiki/Gainesville,_Georgia"
@@ -5501,8 +5505,8 @@
           "source_url": "https://en.wikipedia.org/wiki/Gainesville,_Georgia"
         },
         {
-          "name": "University of Florida",
-          "source_url": "https://en.wikipedia.org/wiki/Gainesville,_Florida"
+          "name": "City College",
+          "source_url": "https://en.wikipedia.org/wiki/Gainesville,_Florida_metropolitan_area"
         },
         {
           "name": "The Jaeger Co",
@@ -5521,20 +5525,8 @@
           "source_url": "https://en.wikipedia.org/wiki/Gainesville,_Georgia"
         },
         {
-          "name": "Elan Drug Technologies",
-          "source_url": "https://www.gainesvilletimes.com/news/business-archived/chamber-honors-3-companies-as-the-years-best-in-hall"
-        },
-        {
-          "name": "Hialeah Port St. Lucie Tallahassee Cape",
-          "source_url": "https://en.wikipedia.org/wiki/Gainesville,_Florida"
-        },
-        {
           "name": "Kubota Manufacturing of America",
           "source_url": "https://www.gainesvilletimes.com/news/business-archived/chamber-honors-3-companies-as-the-years-best-in-hall"
-        },
-        {
-          "name": "Port St. Lucie Punta Gorda Sebastian-Vero",
-          "source_url": "https://en.wikipedia.org/wiki/Gainesville,_Florida"
         },
         {
           "name": "Professional Company",
@@ -5543,6 +5535,14 @@
         {
           "name": "University of North Georgia",
           "source_url": "https://en.wikipedia.org/wiki/Gainesville,_Georgia"
+        },
+        {
+          "name": "Eastside High School",
+          "source_url": "https://en.wikipedia.org/wiki/Gainesville,_Florida_metropolitan_area"
+        },
+        {
+          "name": "Florida Gateway College",
+          "source_url": "https://en.wikipedia.org/wiki/Gainesville,_Florida_metropolitan_area"
         }
       ],
       "sources": [

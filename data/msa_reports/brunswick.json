@@ -3,7 +3,7 @@
   "short_name": "Brunswick",
   "full_name": "Brunswick, GA",
   "population": 120000,
-  "as_of": "2026-10-09",
+  "as_of": "2026-10-10",
   "sections": {
     "ces_employment": {
       "series_id": "SMS13152600000000001",
@@ -4392,7 +4392,7 @@
       "source": "Census Business Dynamics Statistics (establishment entry rate, 2022); metro rate indexed to US=100"
     },
     "major_employers": {
-      "as_of": "2026-10-09",
+      "as_of": "2026-10-10",
       "employers": [
         {
           "name": "Gulfstream Aerospace",
@@ -4435,19 +4435,19 @@
           "source_url": "https://en.wikipedia.org/wiki/Golden_Isles_of_Georgia"
         },
         {
-          "name": "Automotive",
-          "source_url": "https://georgia.org/industries/tourism/foundation/dave-snyder"
+          "name": "Canon Inc",
+          "source_url": "https://en.wikipedia.org/wiki/South_Brunswick,_New_Jersey"
         },
         {
-          "name": "Energy",
-          "source_url": "https://georgia.org/industries/tourism/foundation/dave-snyder"
-        },
-        {
-          "name": "Food Processing",
-          "source_url": "https://georgia.org/industries/tourism/foundation/dave-snyder"
+          "name": "Freeze Division-Central Mills",
+          "source_url": "https://en.wikipedia.org/wiki/South_Brunswick,_New_Jersey"
         },
         {
           "name": "Georgia Power Regional Economic Development Manager",
+          "source_url": "https://www.selectgeorgia.com/blog/wtc-sav-prosperity"
+        },
+        {
+          "name": "Georgia Power Team",
           "source_url": "https://www.selectgeorgia.com/blog/wtc-sav-prosperity"
         }
       ],
@@ -4455,11 +4455,10 @@
         "https://en.wikipedia.org/wiki/Brunswick,_Georgia",
         "https://www.selectgeorgia.com/blog/wtc-sav-prosperity",
         "https://en.wikipedia.org/wiki/Golden_Isles_of_Georgia",
-        "https://en.wikipedia.org/wiki/History_of_Brunswick,_Georgia",
         "https://www.savannahnow.com/story/news/2021/10/20/ahmaud-arbery-murder-trial-brunswick-mcmichaels-bryan-business-demographics/5899609001",
         "https://georgia.org/blogs/global-local-industries-put-georgia-map",
-        "https://georgia.org/industries/tourism/foundation/dave-snyder",
-        "https://www.bizjournals.com/atlanta/news/2026/09/18/georgia-ports-economic-impact-savannah-brunswick.html"
+        "https://www.savannahnow.com/story/news/2016/07/08/garden-city-police-department-savannah-firms-make-best-places-work-georgia-list/13921419007",
+        "https://en.wikipedia.org/wiki/South_Brunswick,_New_Jersey"
       ],
       "method": "Representative list auto-discovered via Tavily web search across chamber-of-commerce, development-authority and local-news sources. Not exhaustive; ordering approximates source frequency, not headcount."
     },
