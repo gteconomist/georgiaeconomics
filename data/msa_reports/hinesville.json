@@ -3,7 +3,7 @@
   "short_name": "Hinesville",
   "full_name": "Hinesville, GA",
   "population": 78000,
-  "as_of": "2026-10-10",
+  "as_of": "2026-10-12",
   "sections": {
     "ces_employment": {
       "series_id": "SMS13259800000000001",
@@ -4225,22 +4225,50 @@
       "source": "Census Business Dynamics Statistics (establishment entry rate, 2022); metro rate indexed to US=100"
     },
     "major_employers": {
-      "as_of": "2026-10-10",
+      "as_of": "2026-10-12",
       "employers": [
+        {
+          "name": "BP Food Mart",
+          "source_url": "https://www.savannahnow.com/story/news/2008/05/19/hinesville-store-among-top-state-lottery-sales/13354966007"
+        },
+        {
+          "name": "Aerospace",
+          "source_url": "https://georgia.org"
+        },
+        {
+          "name": "Automotive",
+          "source_url": "https://georgia.org"
+        },
         {
           "name": "Company",
           "source_url": "https://www.savannahnow.com/story/business/2016/05/18/bis-brief-va-clinic-hold-open-house-hinesville/13973918007"
         },
         {
-          "name": "The Coastal Bank",
-          "source_url": "https://www.savannahnow.com/story/business/2014/03/17/business-savannah-newsmakers/13964556007"
+          "name": "InnoTek LLC",
+          "source_url": "https://georgia.org/business-support/small-business"
         },
         {
-          "name": "Logistics USA Inc",
+          "name": "Jered Mitsubishi Power Americas",
+          "source_url": "https://georgia.org/why-georgia/regions-georgia/coastal-georgia"
+        },
+        {
+          "name": "Johnson VA Medical Center",
+          "source_url": "https://www.savannahnow.com/story/business/2016/05/18/bis-brief-va-clinic-hold-open-house-hinesville/13973918007"
+        },
+        {
+          "name": "Georgia Southern University's Liberty",
+          "source_url": "https://en.wikipedia.org/wiki/Hinesville,_Georgia"
+        },
+        {
+          "name": "Hinesville VA Outpatient Clinic",
           "source_url": null
         },
         {
-          "name": "Mitsubishi Power",
+          "name": "Liberty County High School",
+          "source_url": "https://en.wikipedia.org/wiki/Hinesville,_Georgia"
+        },
+        {
+          "name": "Logistics USA Inc",
           "source_url": null
         },
         {
@@ -4248,50 +4276,23 @@
           "source_url": "https://en.wikipedia.org/wiki/Savannah_metropolitan_area"
         },
         {
-          "name": "Arts Academy Fitness",
-          "source_url": "https://georgia.org/sites/default/files/2020-09/georgia_safety_promise-9-28.pdf"
+          "name": "Savannah Logistics Group",
+          "source_url": null
         },
         {
-          "name": "Bermuda Lane Flowery Branch Wesco Distribution",
-          "source_url": "https://georgia.org/sites/default/files/2020-09/georgia_safety_promise-9-28.pdf"
-        },
-        {
-          "name": "Cedar Mill Mortgage",
-          "source_url": "https://www.savannahnow.com/story/business/2014/03/17/business-savannah-newsmakers/13964556007"
-        },
-        {
-          "name": "Co Shopping",
-          "source_url": "https://georgia.org/sites/default/files/2020-09/georgia_safety_promise-9-28.pdf"
-        },
-        {
-          "name": "DBA Englewood Electric Wholesale",
-          "source_url": "https://georgia.org/sites/default/files/2020-09/georgia_safety_promise-9-28.pdf"
-        },
-        {
-          "name": "Elkins College",
-          "source_url": "https://www.savannahnow.com/story/business/2014/03/17/business-savannah-newsmakers/13964556007"
-        },
-        {
-          "name": "Hinesville Downtown Development Authority",
-          "source_url": "https://www.savannahnow.com/story/news/2010/01/22/unemployment-still-rising/13707328007"
-        },
-        {
-          "name": "Homerville Northeast Georgia Psychological Services Health",
-          "source_url": "https://georgia.org/sites/default/files/2020-09/georgia_safety_promise-9-28.pdf"
-        },
-        {
-          "name": "Hoschton Ila Restaurant LLC Food",
-          "source_url": "https://georgia.org/sites/default/files/2020-09/georgia_safety_promise-9-28.pdf"
+          "name": "Savannah State University",
+          "source_url": "https://www.savannahnow.com/story/business/2014/08/25/bis-brief-hinesville-fort-stewart-msa-workforce-ranked-high/13962462007"
         }
       ],
       "sources": [
         "https://georgia.org/why-georgia/regions-georgia/coastal-georgia",
         "https://en.wikipedia.org/wiki/Savannah_metropolitan_area",
-        "https://www.savannahnow.com/story/news/2014/07/09/bis-brief-hinesville-named-state-s-no-2-city-rise/13629176007",
+        "https://www.savannahnow.com/story/business/2014/08/25/bis-brief-hinesville-fort-stewart-msa-workforce-ranked-high/13962462007",
         "https://www.savannahnow.com/story/business/2016/05/18/bis-brief-va-clinic-hold-open-house-hinesville/13973918007",
-        "https://georgia.org/sites/default/files/2020-09/georgia_safety_promise-9-28.pdf",
-        "https://www.savannahnow.com/story/business/2014/03/17/business-savannah-newsmakers/13964556007",
-        "https://www.savannahnow.com/story/news/2010/01/22/unemployment-still-rising/13707328007"
+        "https://en.wikipedia.org/wiki/Hinesville,_Georgia",
+        "https://georgia.org",
+        "https://www.savannahnow.com/story/news/2008/05/19/hinesville-store-among-top-state-lottery-sales/13354966007",
+        "https://en.wikipedia.org/wiki/Hinesville,_GA"
       ],
       "method": "Representative list auto-discovered via Tavily web search across chamber-of-commerce, development-authority and local-news sources. Not exhaustive; ordering approximates source frequency, not headcount."
     },

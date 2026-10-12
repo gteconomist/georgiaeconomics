@@ -3,7 +3,7 @@
   "short_name": "Columbus",
   "full_name": "Columbus, GA-AL",
   "population": 329000,
-  "as_of": "2026-10-10",
+  "as_of": "2026-10-12",
   "sections": {
     "ces_employment": {
       "series_id": "SMS13179800000000001",
@@ -5412,27 +5412,19 @@
       "source": "Census Business Dynamics Statistics (establishment entry rate, 2022); metro rate indexed to US=100"
     },
     "major_employers": {
-      "as_of": "2026-10-10",
+      "as_of": "2026-10-12",
       "employers": [
         {
           "name": "Health Care",
-          "source_url": "https://www.ledger-enquirer.com/news/business/article293959859.html"
+          "source_url": "https://en.wikipedia.org/wiki/List_of_largest_Central_Ohio_employers"
         },
         {
           "name": "Bradley Co",
           "source_url": "https://en.wikipedia.org/wiki/Columbus,_Georgia"
         },
         {
-          "name": "Nationwide Children's Hospital",
-          "source_url": "https://en.wikipedia.org/wiki/List_of_largest_Central_Ohio_employers"
-        },
-        {
           "name": "Financial Activities",
           "source_url": "https://en.wikipedia.org/wiki/List_of_largest_Central_Ohio_employers"
-        },
-        {
-          "name": "Muscogee County School District",
-          "source_url": "https://www.ledger-enquirer.com/news/business/article293959859.html"
         },
         {
           "name": "Ohio State University",
@@ -5451,15 +5443,11 @@
           "source_url": "https://en.wikipedia.org/wiki/List_of_largest_Central_Ohio_employers"
         },
         {
-          "name": "Honda of America Manufacturing",
-          "source_url": "https://en.wikipedia.org/wiki/List_of_largest_Central_Ohio_employers"
+          "name": "Muscogee County School District",
+          "source_url": "https://en.wikipedia.org/wiki/Columbus,_Georgia"
         },
         {
-          "name": "Mount Carmel Health System",
-          "source_url": "https://en.wikipedia.org/wiki/List_of_largest_Central_Ohio_employers"
-        },
-        {
-          "name": "Columbus Public Schools",
+          "name": "Nationwide Children's Hospital",
           "source_url": "https://en.wikipedia.org/wiki/List_of_largest_Central_Ohio_employers"
         },
         {
@@ -5469,6 +5457,18 @@
         {
           "name": "Company",
           "source_url": "https://en.wikipedia.org/wiki/Columbus_metropolitan_area,_Ohio"
+        },
+        {
+          "name": "Manufacturing",
+          "source_url": "https://en.wikipedia.org/wiki/List_of_largest_Central_Ohio_employers"
+        },
+        {
+          "name": "Piedmont Columbus Regional Hospital",
+          "source_url": "https://en.wikipedia.org/wiki/Columbus,_Georgia"
+        },
+        {
+          "name": "St. Francis Hospital",
+          "source_url": "https://en.wikipedia.org/wiki/Columbus,_Georgia"
         }
       ],
       "sources": [
@@ -5476,10 +5476,10 @@
         "https://www.ledger-enquirer.com/news/business/article293959859.html",
         "https://www.ledger-enquirer.com/news/state/georgia/article312697701.html",
         "https://en.wikipedia.org/wiki/Columbus,_Georgia",
-        "https://www.selectgeorgia.com/blog/columbus-georgia-a-home-for-headquarters",
-        "https://www.ledger-enquirer.com/news/business/article244035037.html",
+        "https://www.ledger-enquirer.com/news/business/article252449498.html",
+        "https://www.ledger-enquirer.com/news/business/article241969386.html",
         "https://albanyherald.com/news/heritage-four-other-area-businesses-named-to-georgia-trends-top-100-public-businesses",
-        "https://www.selectgeorgia.com/about-us/our-team/regional-development/andrew-camp-west"
+        "https://www.ledger-enquirer.com/news/business/article294790664.html"
       ],
       "method": "Representative list auto-discovered via Tavily web search across chamber-of-commerce, development-authority and local-news sources. Not exhaustive; ordering approximates source frequency, not headcount."
     },
