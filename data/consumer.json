@@ -1,9 +1,8 @@
 {
-  "fetched_at": "2026-09-12T18:13:00Z",
+  "fetched_at": "2026-10-12T22:47:57Z",
   "schema": "consumer/v1",
   "pce_trend": {
     "years": [
-      2012,
       2013,
       2014,
       2015,
@@ -15,10 +14,10 @@
       2021,
       2022,
       2023,
-      2024
+      2024,
+      2025
     ],
     "ga_total_musd": [
-      305937,
       317022,
       333433,
       346858,
@@ -27,13 +26,13 @@
       399888,
       416268,
       412860,
-      473352,
-      520945,
-      556787,
-      590419
+      473157,
+      521056,
+      555940,
+      590884,
+      623433
     ],
     "us_total_musd": [
-      11047363,
       11388233,
       11874450,
       12297438,
@@ -42,14 +41,14 @@
       13934442,
       14437543,
       14231353,
-      16119682,
-      17690013,
-      18833150,
-      19896009
+      16114831,
+      17670764,
+      18772629,
+      19822499,
+      20870150
     ],
     "yoy_pct": [
       null,
-      3.6,
       5.2,
       4.0,
       4.2,
@@ -57,23 +56,24 @@
       5.1,
       4.1,
       -0.8,
-      14.7,
+      14.6,
       10.1,
-      6.9,
-      6.0
+      6.7,
+      6.3,
+      5.5
     ],
-    "latest_year": 2024,
-    "latest_total_musd": 590419,
-    "latest_yoy_pct": 6.0,
+    "latest_year": 2025,
+    "latest_total_musd": 623433,
+    "latest_yoy_pct": 5.5,
     "source": "BEA SAPCE1 LineCode 1 (total personal consumption expenditures, current $M)"
   },
   "pce_composition": {
     "year": 2024,
-    "goods_musd": 205714,
-    "durable_musd": 68359,
-    "nondurable_musd": 137355,
-    "services_musd": 384705,
-    "total_musd": 590419,
+    "goods_musd": 205797,
+    "durable_musd": 68512,
+    "nondurable_musd": 137286,
+    "services_musd": 385087,
+    "total_musd": 590884,
     "source": "BEA SAPCE1 (PCE by major type of product), GA, current $M"
   },
   "pce_by_function": {
@@ -81,57 +81,57 @@
     "functions": [
       {
         "name": "Housing & utilities",
-        "value_musd": 106622,
-        "share_pct": 18.2
+        "value_musd": 108482,
+        "share_pct": 18.5
       },
       {
         "name": "Health care",
-        "value_musd": 97048,
-        "share_pct": 16.5
+        "value_musd": 97618,
+        "share_pct": 16.6
       },
       {
         "name": "Other nondurable goods",
-        "value_musd": 53770,
-        "share_pct": 9.2
+        "value_musd": 53716,
+        "share_pct": 9.1
       },
       {
         "name": "Groceries",
-        "value_musd": 50392,
+        "value_musd": 50388,
         "share_pct": 8.6
       },
       {
         "name": "Other services",
-        "value_musd": 46877,
-        "share_pct": 8.0
+        "value_musd": 46449,
+        "share_pct": 7.9
       },
       {
         "name": "Restaurants & hotels",
-        "value_musd": 44050,
+        "value_musd": 44186,
         "share_pct": 7.5
       },
       {
         "name": "Financial services & insurance",
-        "value_musd": 37717,
-        "share_pct": 6.4
-      },
-      {
-        "name": "Recreation services",
-        "value_musd": 25671,
-        "share_pct": 4.4
+        "value_musd": 36619,
+        "share_pct": 6.2
       },
       {
         "name": "Motor vehicles & parts",
-        "value_musd": 25530,
+        "value_musd": 25716,
         "share_pct": 4.4
       },
       {
+        "name": "Recreation services",
+        "value_musd": 25152,
+        "share_pct": 4.3
+      },
+      {
         "name": "Transportation services",
-        "value_musd": 22785,
+        "value_musd": 22837,
         "share_pct": 3.9
       }
     ],
-    "other_musd": 76021,
-    "total_musd": 586483,
+    "other_musd": 75978,
+    "total_musd": 587141,
     "source": "BEA SAPCE1 leaf spending categories, GA, current $M"
   },
   "pce_peers": {
@@ -140,35 +140,35 @@
       {
         "fips": "12000",
         "name": "Florida",
-        "per_capita": 62904
+        "per_capita": 62242
       },
       {
         "fips": "37000",
         "name": "North Carolina",
-        "per_capita": 53305
+        "per_capita": 53253
       },
       {
         "fips": "13000",
         "name": "Georgia",
-        "per_capita": 52696
+        "per_capita": 52738
       },
       {
         "fips": "47000",
         "name": "Tennessee",
-        "per_capita": 51340
+        "per_capita": 51250
       },
       {
         "fips": "45000",
         "name": "South Carolina",
-        "per_capita": 51315
+        "per_capita": 51232
       },
       {
         "fips": "01000",
         "name": "Alabama",
-        "per_capita": 47047
+        "per_capita": 46830
       }
     ],
-    "us_per_capita": 58517,
+    "us_per_capita": 58301,
     "source": "BEA SAPCE1 total PCE \u00f7 SAINC1 population (derived per-capita), current $"
   },
   "electricity": {
@@ -262,7 +262,8 @@
       "2026-03",
       "2026-04",
       "2026-05",
-      "2026-06"
+      "2026-06",
+      "2026-07"
     ],
     "sales_gwh": [
       5305.1,
@@ -354,7 +355,8 @@
       4124.2,
       3961.0,
       4623.3,
-      5902.3
+      5902.3,
+      7270.1
     ],
     "price_cents_kwh": [
       11.01,
@@ -446,11 +448,12 @@
       15.01,
       15.37,
       15.84,
-      16.36
+      16.36,
+      16.27
     ],
-    "latest_month": "2026-06",
-    "latest_price_cents_kwh": 16.36,
-    "price_yoy_pct": 2.5,
+    "latest_month": "2026-07",
+    "latest_price_cents_kwh": 16.27,
+    "price_yoy_pct": 4.6,
     "source": "EIA API v2 electricity/retail-sales \u2014 Georgia residential (sales in GWh, price in \u00a2/kWh)"
   },
   "sales_tax": {
@@ -599,7 +602,8 @@
       "2026-03",
       "2026-04",
       "2026-05",
-      "2026-06"
+      "2026-06",
+      "2026-07"
     ],
     "index": [
       924.6,
@@ -678,7 +682,8 @@
       984.21,
       947.04,
       946.3,
-      942.4
+      941.59,
+      946.95
     ],
     "yoy_pct": [
       null,
@@ -756,54 +761,55 @@
       5.23,
       4.6,
       1.95,
-      1.26,
-      1.94
+      1.23,
+      0.74,
+      -0.01
     ],
     "unit": "2020 $/week",
-    "latest_real": 942.4,
-    "latest_real_yoy": 1.94,
+    "latest_real": 946.95,
+    "latest_real_yoy": -0.01,
     "base_label": "Jan 2020",
     "source": "BLS via data/inflation.json (real average weekly wage, 2020 $)"
   },
   "kpis": {
-    "pce_total_bn": 590.4,
-    "pce_per_capita": 52696,
-    "pce_yoy_pct": 6.0,
-    "elec_price_cents_kwh": 16.36,
-    "elec_price_yoy_pct": 2.5,
-    "real_wage_yoy_pct": 1.94
+    "pce_total_bn": 623.4,
+    "pce_per_capita": 52738,
+    "pce_yoy_pct": 5.5,
+    "elec_price_cents_kwh": 16.27,
+    "elec_price_yoy_pct": 4.6,
+    "real_wage_yoy_pct": -0.01
   },
   "_meta": {
     "pce_trend": {
-      "last_updated": "2026-09-12T18:13:01Z",
+      "last_updated": "2026-10-12T22:47:58Z",
       "stale": false
     },
     "pce_composition": {
-      "last_updated": "2026-09-12T18:13:03Z",
+      "last_updated": "2026-10-12T22:48:00Z",
       "stale": false
     },
     "pce_by_function": {
-      "last_updated": "2026-09-12T18:13:07Z",
+      "last_updated": "2026-10-12T22:48:04Z",
       "stale": false
     },
     "pce_peers": {
-      "last_updated": "2026-09-12T18:13:08Z",
+      "last_updated": "2026-10-12T22:48:05Z",
       "stale": false
     },
     "electricity": {
-      "last_updated": "2026-09-12T18:13:08Z",
+      "last_updated": "2026-10-12T22:48:08Z",
       "stale": false
     },
     "sales_tax": {
-      "last_updated": "2026-09-12T18:13:09Z",
+      "last_updated": "2026-10-12T22:48:08Z",
       "stale": false
     },
     "real_wages": {
-      "last_updated": "2026-09-12T18:13:09Z",
+      "last_updated": "2026-10-12T22:48:08Z",
       "stale": false
     }
   },
-  "latest_label": "2024",
+  "latest_label": "2025",
   "coverage_note": "Consumer spending uses BEA state Personal Consumption Expenditures (annual, ~1-year lag). Georgia residential electricity (EIA) and the real-wage tracker (BLS) provide the most current monthly signals.",
   "source_summary": {
     "pce": "BEA SAPCE1/SAPCE2/SAPCE3 (state personal consumption expenditures)",
