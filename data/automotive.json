@@ -4,11 +4,11 @@
   "source": "FIXTURE (target: BLS QCEW NAICS 3361/3362/3363 + BEA SAGDP2N motor vehicle GDP + Census CBP + Tavily plant milestones)",
   "latest_year": 2025,
   "kpis": {
-    "industry_gdp_latest_b": 0.0,
-    "industry_gdp_yoy_pct": -100.0,
+    "industry_gdp_latest_b": 5.04,
+    "industry_gdp_yoy_pct": -0.7,
     "employment_latest_k": 32.57,
     "employment_yoy_pct": 2.4,
-    "national_rank": 11,
+    "national_rank": 10,
     "ev_investment_total_b": 15.1,
     "establishments_latest": 225,
     "establishments_breakdown": {
@@ -48,11 +48,11 @@
       3.307,
       3.797,
       3.343,
-      3.159,
-      3.83,
-      4.424,
-      4.731,
-      0.0
+      3.276,
+      3.951,
+      4.788,
+      5.074,
+      5.04
     ],
     "employment_k_years": [
       2014,
@@ -103,73 +103,73 @@
   ],
   "state_comparison": [
     {
-      "state": "Alabama",
-      "abbr": "AL",
-      "gdp_b": 0.0,
+      "state": "Michigan",
+      "abbr": "MI",
+      "gdp_b": 40.79,
       "rank": 1,
       "color": "#231f20"
     },
     {
-      "state": "Alaska",
-      "abbr": "AK",
-      "gdp_b": 0.0,
+      "state": "Texas",
+      "abbr": "TX",
+      "gdp_b": 28.44,
       "rank": 2,
       "color": "#3f7d52"
     },
     {
-      "state": "Arizona",
-      "abbr": "AZ",
-      "gdp_b": 0.0,
+      "state": "Indiana",
+      "abbr": "IN",
+      "gdp_b": 19.91,
       "rank": 3,
-      "color": "#9c867a"
-    },
-    {
-      "state": "Arkansas",
-      "abbr": "AR",
-      "gdp_b": 0.0,
-      "rank": 4,
       "color": "#9c867a"
     },
     {
       "state": "California",
       "abbr": "CA",
-      "gdp_b": 0.0,
+      "gdp_b": 11.35,
+      "rank": 4,
+      "color": "#9c867a"
+    },
+    {
+      "state": "Ohio",
+      "abbr": "OH",
+      "gdp_b": 10.35,
       "rank": 5,
       "color": "#9c867a"
     },
     {
-      "state": "Colorado",
-      "abbr": "CO",
-      "gdp_b": 0.0,
+      "state": "Kentucky",
+      "abbr": "KY",
+      "gdp_b": 10.09,
       "rank": 6,
       "color": "#9c867a"
     },
     {
-      "state": "Connecticut",
-      "abbr": "CT",
-      "gdp_b": 0.0,
+      "state": "Alabama",
+      "abbr": "AL",
+      "gdp_b": 8.34,
       "rank": 7,
       "color": "#9c867a"
     },
     {
-      "state": "Delaware",
-      "abbr": "DE",
-      "gdp_b": 0.0,
+      "state": "Tennessee",
+      "abbr": "TN",
+      "gdp_b": 8.15,
       "rank": 8,
       "color": "#9c867a"
     },
     {
-      "state": "DC",
-      "abbr": "DC",
-      "gdp_b": 0.0,
+      "state": "South Carolina",
+      "abbr": "SC",
+      "gdp_b": 6.16,
       "rank": 9,
       "color": "#9c867a"
     },
     {
       "state": "Georgia",
       "abbr": "GA",
-      "gdp_b": 0.0,
-      "rank": 11,
+      "gdp_b": 5.04,
+      "rank": 10,
       "color": "#c9740f"
     }
   ],
@@ -353,7 +353,7 @@
   ],
   "_meta": {
     "employment": {
-      "last_updated": "2026-09-15",
+      "last_updated": "2026-10-15",
       "source": "BLS QCEW annual averages, NAICS 3361+3362+3363 (motor vehicle mfg + bodies/trailers + parts), GA (area 13000)",
       "coverage_years": [
         2014,
@@ -361,7 +361,7 @@
       ]
     },
     "industry_gdp": {
-      "last_updated": "2026-09-15",
+      "last_updated": "2026-10-15",
       "source": "BEA Regional SAGDP2 \u2014 motor vehicles, bodies and trailers, and parts manufacturing, GA",
       "metric_note": "Industry value-added (GDP). NAICS 3361 + 3362 + 3363 rolled up.",
       "coverage_years": [
@@ -371,13 +371,13 @@
       "line_code": "21"
     },
     "state_comparison": {
-      "last_updated": "2026-09-15",
+      "last_updated": "2026-10-15",
       "source": "BEA Regional SAGDP2 \u2014 motor-vehicle manufacturing GDP by state",
       "metric_label": "Industry GDP (value-added, $B)",
       "year": 2025
     },
     "establishments": {
-      "last_updated": "2026-09-15",
+      "last_updated": "2026-10-15",
       "source": "Census CBP 2023 \u2014 NAICS 3361/3362/3363, GA",
       "year": 2023
     },
@@ -397,6 +397,6 @@
       "source": null
     }
   },
-  "fetched_at": "2026-09-15",
-  "source_summary": "Live sources updated 2026-09-15: employment, industry_gdp, state_comparison, establishments. Stale or static: ev_investment, plants, milestones."
+  "fetched_at": "2026-10-15",
+  "source_summary": "Live sources updated 2026-10-15: employment, industry_gdp, state_comparison, establishments. Stale or static: ev_investment, plants, milestones."
 }
