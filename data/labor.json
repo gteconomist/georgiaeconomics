@@ -1120,7 +1120,7 @@
       "nonfarm_k": 108.3,
       "nonfarm_yoy_pct": 1.69,
       "nonfarm_as_of": "2026-09",
-      "diffusion_pct": 42.0,
+      "diffusion_pct": 33.0,
       "n_sectors": 12
     },
     {
@@ -1133,7 +1133,7 @@
       "nonfarm_k": 108.7,
       "nonfarm_yoy_pct": -0.46,
       "nonfarm_as_of": "2026-09",
-      "diffusion_pct": 33.0,
+      "diffusion_pct": 17.0,
       "n_sectors": 12
     },
     {
@@ -1250,12 +1250,12 @@
   },
   "_meta": {
     "metro_labor": {
-      "last_updated": "2026-10-20T14:20:52Z",
+      "last_updated": "2026-10-21T14:33:33Z",
       "n_metros": 14,
       "stale": false
     },
     "sector_diffusion": {
-      "last_updated": "2026-10-20T14:20:52Z",
+      "last_updated": "2026-10-21T14:33:33Z",
       "stale": false
     }
   }
