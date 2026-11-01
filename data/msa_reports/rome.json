@@ -3,7 +3,7 @@
   "short_name": "Rome",
   "full_name": "Rome, GA",
   "population": 99000,
-  "as_of": "2026-10-31",
+  "as_of": "2026-11-01",
   "sections": {
     "ces_employment": {
       "series_id": "SMS13406600000000001",
@@ -4767,7 +4767,7 @@
       "source": "Census Business Dynamics Statistics (establishment entry rate, 2022); metro rate indexed to US=100"
     },
     "major_employers": {
-      "as_of": "2026-10-12",
+      "as_of": "2026-11-01",
       "employers": [
         {
           "name": "Floyd Medical Center",
@@ -4790,51 +4790,51 @@
           "source_url": "https://en.wikipedia.org/wiki/Rome,_Georgia"
         },
         {
+          "name": "Utilities",
+          "source_url": "https://en.wikipedia.org/wiki/List_of_largest_Italian_companies"
+        },
+        {
           "name": "Kerry Group",
           "source_url": "https://en.wikipedia.org/wiki/Rome,_Georgia"
         },
         {
-          "name": "Atrium Health Floyd",
-          "source_url": "https://en.wikipedia.org/wiki/Atrium_Health_Floyd"
+          "name": "Medical College of Georgia",
+          "source_url": "https://en.wikipedia.org/wiki/Rome,_Georgia"
         },
         {
           "name": "Aerospace",
-          "source_url": "https://georgia.org/blogs/brewing-global-success"
-        },
-        {
-          "name": "Augusta University",
-          "source_url": "https://en.wikipedia.org/wiki/Augusta,_Georgia"
-        },
-        {
-          "name": "Electric",
           "source_url": "https://www.selectgeorgia.com/discover-georgia/industries/fortune-500-list"
+        },
+        {
+          "name": "VT Industries",
+          "source_url": "https://albanyherald.com/news/business-news-2/42-million-expansion-of-rome-company-brings-42-new-jobs"
+        },
+        {
+          "name": "Energy",
+          "source_url": "https://en.wikipedia.org/wiki/List_of_largest_Italian_companies"
         },
         {
           "name": "Georgia Health Sciences University",
           "source_url": "https://en.wikipedia.org/wiki/Rome,_Georgia"
         },
         {
-          "name": "Georgia Power Economic Development",
-          "source_url": "https://www.selectgeorgia.com/blog/success-stories/Kerry"
-        },
-        {
           "name": "Lowe's Distribution Center",
           "source_url": "https://georgia.org/sites/default/files/2023-01/lowes_4.pdf"
         },
         {
-          "name": "Medical College of Georgia",
-          "source_url": "https://en.wikipedia.org/wiki/Rome,_Georgia"
+          "name": "Mohawk Industries",
+          "source_url": "https://www.selectgeorgia.com/discover-georgia/industries/fortune-500-list"
         }
       ],
       "sources": [
         "https://en.wikipedia.org/wiki/Rome,_Georgia",
-        "https://en.wikipedia.org/wiki/Atrium_Health_Floyd",
-        "https://en.wikipedia.org/wiki/Augusta,_Georgia",
-        "https://www.bizjournals.com/atlanta/news/2025/09/26/georgia-largest-manufacturers-by-employment.html",
-        "https://www.selectgeorgia.com/blog/success-stories/Kerry",
-        "https://georgia.org/blogs/brewing-global-success",
         "https://georgia.org/sites/default/files/2023-01/lowes_4.pdf",
-        "https://www.ajc.com/news/powerful-family-puts-road-rome-doubt/7hTa4uJKHAfOSUffB4EUAL"
+        "https://www.northwestgeorgianews.com/rome/news/local/survey-northwest-georgia-regional-commission-a-best-place-to-work-in-georgia/article_4923a6fd-c809-46f2-a3ac-12a423592b21.html",
+        "https://albanyherald.com/news/business-news-2/42-million-expansion-of-rome-company-brings-42-new-jobs",
+        "https://www.bizjournals.com/atlanta/news/2025/09/26/georgia-largest-manufacturers-by-employment.html",
+        "https://www.selectgeorgia.com/discover-georgia/industries/fortune-500-list",
+        "https://en.wikipedia.org/wiki/List_of_largest_Italian_companies",
+        "https://www.ledger-enquirer.com/news/business/article315198836.html"
       ],
       "method": "Representative list auto-discovered via Tavily web search across chamber-of-commerce, development-authority and local-news sources. Not exhaustive; ordering approximates source frequency, not headcount."
     },
@@ -5284,7 +5284,7 @@
     "acs_housing_characteristics": "live",
     "acs_block_group_income": "live",
     "entrepreneurship": "live",
-    "major_employers": "stale",
+    "major_employers": "partial",
     "business_cycle_index": "live",
     "forecast_arima": "failed",
     "vitality": "live",

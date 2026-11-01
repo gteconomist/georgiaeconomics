@@ -3,7 +3,7 @@
   "short_name": "Valdosta",
   "full_name": "Valdosta, GA",
   "population": 148000,
-  "as_of": "2026-10-31",
+  "as_of": "2026-11-01",
   "sections": {
     "ces_employment": {
       "series_id": "SMS13466600000000001",
@@ -4494,7 +4494,7 @@
       "source": "Census Business Dynamics Statistics (establishment entry rate, 2022); metro rate indexed to US=100"
     },
     "major_employers": {
-      "as_of": "2026-10-12",
+      "as_of": "2026-11-01",
       "employers": [
         {
           "name": "Valdosta State University",
@@ -4513,16 +4513,12 @@
           "source_url": "https://www.selectgeorgia.com/blog/rural-transformation/one-valdosta-lowndes-interview"
         },
         {
-          "name": "South Georgia Medical Center",
-          "source_url": null
-        },
-        {
           "name": "Stratas Foods",
           "source_url": "https://www.selectgeorgia.com/blog/rural-transformation/one-valdosta-lowndes-interview"
         },
         {
-          "name": "Sunset Farm Foods",
-          "source_url": "https://valdostadailytimes.com/2021/03/05/chamber-presents-annual-awards"
+          "name": "South Georgia Medical Center",
+          "source_url": "https://valdostadailytimes.com/2019/05/09/sgmc-reduces-financial-services-department"
         },
         {
           "name": "Career Academy",
@@ -4533,35 +4529,34 @@
           "source_url": "https://www.selectgeorgia.com/blog/rural-transformation/one-valdosta-lowndes-interview"
         },
         {
-          "name": "Hospital Authority of Tift County",
-          "source_url": "https://valdostadailytimes.com/2018/06/10/public-employers"
+          "name": "Distribution Center",
+          "source_url": "https://valdostadailytimes.com/2018/06/17/big-business"
         },
         {
-          "name": "The Authority",
-          "source_url": "https://valdostadailytimes.com/2007/03/18/valdosta-ranked-as-a-leading-metro-area-for-expansion-recruiting"
+          "name": "Georgia Beer Company",
+          "source_url": "https://georgia.org/press-releases/2026/georgia-recognizes-five-2026-small-business-rock-stars"
         },
         {
-          "name": "The Tift Regional Health System",
-          "source_url": "https://valdostadailytimes.com/2018/06/10/public-employers"
+          "name": "Greenfield LLC",
+          "source_url": "https://georgia.org/press-releases/2026/georgia-recognizes-five-2026-small-business-rock-stars"
         },
         {
-          "name": "The Valdosta-Lowndes County Industrial Authority",
-          "source_url": "https://valdostadailytimes.com/2007/03/18/valdosta-ranked-as-a-leading-metro-area-for-expansion-recruiting"
+          "name": "Innotek LLC",
+          "source_url": "https://georgia.org/press-releases/2026/georgia-recognizes-five-2026-small-business-rock-stars"
         },
         {
-          "name": "Tift County Hospital Authority",
-          "source_url": "https://valdostadailytimes.com/2018/06/10/public-employers"
+          "name": "TECT Power",
+          "source_url": "https://valdostadailytimes.com/2018/06/17/big-business"
         }
       ],
       "sources": [
         "https://valdostadailytimes.com/2018/05/24/summit-seeks-matching-jobs-with-workers",
         "https://www.selectgeorgia.com/blog/rural-transformation/one-valdosta-lowndes-interview",
         "https://valdostadailytimes.com/2026/02/23/gary-wisenbaker-data-centers-whats-good-for-the-goose-is-good-for-the-gander",
-        "https://valdostadailytimes.com/2015/09/13/finding-the-competitive-edge",
-        "https://valdostadailytimes.com/2026/09/17/existing-industry-growth-brings-26-2-million-investment-77-new-jobs",
-        "https://valdostadailytimes.com/2021/03/05/chamber-presents-annual-awards",
-        "https://valdostadailytimes.com/2018/06/10/public-employers",
-        "https://valdostadailytimes.com/2007/03/18/valdosta-ranked-as-a-leading-metro-area-for-expansion-recruiting"
+        "https://georgia.org/press-releases/2026/georgia-recognizes-five-2026-small-business-rock-stars",
+        "https://valdostadailytimes.com/2018/06/17/big-business",
+        "https://valdostadailytimes.com/2019/05/09/sgmc-reduces-financial-services-department",
+        "https://www.ajc.com/politics/valdosta-site-of-trumps-saturday-rally-has-voted-republican-in-recent-presidential-races/ZHNLCDFTEFDGPDQYCN4EFDVWWY"
       ],
       "method": "Representative list auto-discovered via Tavily web search across chamber-of-commerce, development-authority and local-news sources. Not exhaustive; ordering approximates source frequency, not headcount."
     },
@@ -5118,7 +5113,7 @@
     "acs_housing_characteristics": "live",
     "acs_block_group_income": "live",
     "entrepreneurship": "live",
-    "major_employers": "stale",
+    "major_employers": "partial",
     "business_cycle_index": "live",
     "forecast_arima": "live",
     "vitality": "live",
