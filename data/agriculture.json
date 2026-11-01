@@ -2,18 +2,17 @@
   "_fixture": false,
   "_note": "Live data: NASS Quick Stats for state production trends + share-of-US + county production. Cash receipts breakdown still on fixture (separate follow-up \u2014 NASS economics taxonomy is more complex).",
   "source": "USDA NASS Quick Stats API",
-  "latest_year": 2025,
+  "latest_year": 2026,
   "kpis": {
     "broilers_lbs_b": 8.167,
-    "peanuts_lbs_b": 3.706,
-    "pecans_lbs_m": 111.5,
+    "peanuts_lbs_b": 2.673,
+    "pecans_lbs_m": 110.0,
     "cotton_bales_k": 1514.908,
     "total_cash_receipts_b": 11.5,
     "n1_commodities": 4
   },
   "trends": {
     "years": [
-      2016,
       2017,
       2018,
       2019,
@@ -22,10 +21,10 @@
       2022,
       2023,
       2024,
-      2025
+      2025,
+      2026
     ],
     "broilers_lbs_b": [
-      8.066,
       8.044,
       8.168,
       8.298,
@@ -34,10 +33,10 @@
       7.85,
       8.157,
       8.189,
-      8.167
+      8.167,
+      null
     ],
     "peanuts_lbs_b": [
-      2.753,
       3.572,
       2.875,
       2.752,
@@ -46,10 +45,10 @@
       2.863,
       3.138,
       3.249,
-      3.706
+      3.667,
+      2.673
     ],
     "pecans_lbs_m": [
-      109.0,
       107.0,
       74.0,
       73.6,
@@ -58,16 +57,17 @@
       131.0,
       108.0,
       102.0,
-      111.5
+      111.5,
+      110.0
     ],
     "cotton_bales_k": [
-      null,
       969.948,
       null,
       null,
       null,
       null,
       1514.908,
+      null,
       null,
       null,
       null
@@ -95,15 +95,15 @@
     },
     {
       "commodity": "Peanuts",
-      "ga_value": "3.7 B lbs",
-      "ga_share_pct": 51.6,
+      "ga_value": "2.7 B lbs",
+      "ga_share_pct": 52.3,
       "national_rank": 1,
       "trend": "stable"
     },
     {
       "commodity": "Pecans",
-      "ga_value": "111.5 M lbs",
-      "ga_share_pct": 39.2,
+      "ga_value": "110.0 M lbs",
+      "ga_share_pct": 36.5,
       "national_rank": 1,
       "trend": "cyclical"
     },
@@ -3415,5 +3415,5 @@
       ]
     }
   },
-  "fetched_at": "2026-08-01"
+  "fetched_at": "2026-11-01"
 }
