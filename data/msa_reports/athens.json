@@ -3,7 +3,7 @@
   "short_name": "Athens",
   "full_name": "Athens-Clarke County, GA",
   "population": 217000,
-  "as_of": "2026-11-01",
+  "as_of": "2026-11-02",
   "sections": {
     "ces_employment": {
       "series_id": "SMS13120200000000001",
@@ -5503,18 +5503,10 @@
       "source": "Census Business Dynamics Statistics (establishment entry rate, 2022); metro rate indexed to US=100"
     },
     "major_employers": {
-      "as_of": "2026-11-01",
+      "as_of": "2026-11-02",
       "employers": [
         {
           "name": "Children's Healthcare of Atlanta",
-          "source_url": "https://www.onlineathens.com/story/news/2026/03/04/georgias-best-employers-are-these-2-big-businesses-forbes-says/88982542007"
-        },
-        {
-          "name": "Southern Company",
-          "source_url": "https://www.onlineathens.com/story/news/2026/03/04/georgias-best-employers-are-these-2-big-businesses-forbes-says/88982542007"
-        },
-        {
-          "name": "Forsyth County School District",
           "source_url": "https://www.onlineathens.com/story/news/2026/03/04/georgias-best-employers-are-these-2-big-businesses-forbes-says/88982542007"
         },
         {
@@ -5522,11 +5514,15 @@
           "source_url": "https://www.onlineathens.com/story/news/2026/03/04/georgias-best-employers-are-these-2-big-businesses-forbes-says/88982542007"
         },
         {
+          "name": "Forsyth County School District",
+          "source_url": "https://www.onlineathens.com/story/news/2026/03/04/georgias-best-employers-are-these-2-big-businesses-forbes-says/88982542007"
+        },
+        {
           "name": "Mohawk Industries",
           "source_url": "https://www.savannahnow.com/story/business/2026/09/05/delta-coca-cola-among-forbes-best-employers-in-georgia/91607458007"
         },
         {
-          "name": "Georgia Power",
+          "name": "Southern Company",
           "source_url": "https://www.onlineathens.com/story/news/2026/03/04/georgias-best-employers-are-these-2-big-businesses-forbes-says/88982542007"
         },
         {
@@ -5534,43 +5530,46 @@
           "source_url": "https://www.savannahnow.com/story/business/2026/09/05/delta-coca-cola-among-forbes-best-employers-in-georgia/91607458007"
         },
         {
+          "name": "Food",
+          "source_url": "https://www.onlineathens.com/business"
+        },
+        {
+          "name": "Ford Motor",
+          "source_url": "https://www.savannahnow.com/story/business/2026/08/24/best-place-to-work-forbes-names-top-10-employers-in-georgia/91439995007"
+        },
+        {
+          "name": "Georgia Power This",
+          "source_url": "https://www.onlineathens.com/business"
+        },
+        {
+          "name": "Plant Vogtle",
+          "source_url": "https://www.onlineathens.com/business"
+        },
+        {
+          "name": "University of Georgia",
+          "source_url": null
+        },
+        {
+          "name": "Georgia State University",
+          "source_url": "https://www.onlineathens.com/story/news/state/2016/02/24/athens-employment-grow-slightly-less-state/15467044007"
+        },
+        {
           "name": "St. Jude Children's Research Hospital",
           "source_url": "https://www.onlineathens.com/story/news/2026/03/04/georgias-best-employers-are-these-2-big-businesses-forbes-says/88982542007"
         },
         {
-          "name": "Athens Technical College Augusta University Piedmont",
-          "source_url": "https://en.wikipedia.org/wiki/Athens,_Georgia"
-        },
-        {
-          "name": "Barberitos Creature Comforts Brewing Co. Fire",
-          "source_url": "https://en.wikipedia.org/wiki/Athens,_Georgia"
-        },
-        {
-          "name": "Boxes Paper Manufacturing",
-          "source_url": "https://www.savannahnow.com/story/news/2025/12/11/forbes-reveals-georgias-top-25-employers-from-chick-fil-a-to-delta-primerica/87700060007"
-        },
-        {
-          "name": "Dress Boutique Terrapin Beer Company Wuxtry",
-          "source_url": "https://en.wikipedia.org/wiki/Athens,_Georgia"
-        },
-        {
-          "name": "Eaton Corporation",
-          "source_url": "https://www.onlineathens.com/story/business/2018/06/25/athens-chamber-commerce-names-north/1772620007"
-        },
-        {
-          "name": "Electric Companies",
-          "source_url": "https://www.savannahnow.com/story/news/2025/12/11/forbes-reveals-georgias-top-25-employers-from-chick-fil-a-to-delta-primerica/87700060007"
+          "name": "Stanford University",
+          "source_url": "https://www.onlineathens.com/story/news/2026/03/04/georgias-best-employers-are-these-2-big-businesses-forbes-says/88982542007"
         }
       ],
       "sources": [
         "https://www.onlineathens.com/story/news/2026/03/04/georgias-best-employers-are-these-2-big-businesses-forbes-says/88982542007",
         "https://www.savannahnow.com/story/business/2026/09/05/delta-coca-cola-among-forbes-best-employers-in-georgia/91607458007",
-        "https://www.augustachronicle.com/story/news/2025/06/04/fortune-500s-list-of-the-biggest-corporations-includes-17-in-georgia/84010835007",
-        "https://en.wikipedia.org/wiki/Athens,_Georgia",
+        "https://www.savannahnow.com/story/business/2026/08/24/best-place-to-work-forbes-names-top-10-employers-in-georgia/91439995007",
         "https://www.onlineathens.com/business",
-        "https://www.savannahnow.com/story/business/employment/2026/10/28/forbes-ranked-americas-dream-employers-including-2-in-georgia/92475848007",
-        "https://www.ajc.com/top-workplaces/rounding-out-the-top-5-large-businesses/5FF7QFEAMRGF3PLDXYSC4NOFWQ",
-        "https://www.onlineathens.com/story/business/2018/06/25/athens-chamber-commerce-names-north/1772620007"
+        "https://www.augustachronicle.com/story/news/2025/06/04/fortune-500s-list-of-the-biggest-corporations-includes-17-in-georgia/84010835007",
+        "https://www.onlineathens.com/story/opinion/letters/2018/06/04/letter-uga-partner-with-local-community/12069219007",
+        "https://www.onlineathens.com/story/news/state/2016/02/24/athens-employment-grow-slightly-less-state/15467044007"
       ],
       "method": "Representative list auto-discovered via Tavily web search across chamber-of-commerce, development-authority and local-news sources. Not exhaustive; ordering approximates source frequency, not headcount."
     },

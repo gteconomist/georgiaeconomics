@@ -3,7 +3,7 @@
   "short_name": "Brunswick",
   "full_name": "Brunswick, GA",
   "population": 120000,
-  "as_of": "2026-11-01",
+  "as_of": "2026-11-02",
   "sections": {
     "ces_employment": {
       "series_id": "SMS13152600000000001",
@@ -4445,7 +4445,7 @@
       "source": "Census Business Dynamics Statistics (establishment entry rate, 2022); metro rate indexed to US=100"
     },
     "major_employers": {
-      "as_of": "2026-11-01",
+      "as_of": "2026-11-02",
       "employers": [
         {
           "name": "Gulfstream Aerospace",
@@ -4456,63 +4456,62 @@
           "source_url": "https://en.wikipedia.org/wiki/Brunswick,_Georgia"
         },
         {
-          "name": "Georgia Ports Authority",
-          "source_url": "https://www.selectgeorgia.com/blog/wtc-sav-prosperity"
-        },
-        {
-          "name": "Georgia Power Economic Development",
-          "source_url": "https://www.selectgeorgia.com/blog/wtc-sav-prosperity"
-        },
-        {
           "name": "The Port of Brunswick",
           "source_url": "https://en.wikipedia.org/wiki/Brunswick,_Georgia"
         },
         {
-          "name": "College of Coastal Georgia",
-          "source_url": "https://en.wikipedia.org/wiki/Brunswick,_Georgia"
-        },
-        {
-          "name": "Georgia Port Authority",
-          "source_url": "https://www.ajc.com/business/2026/01/heavy-equipment-lifting-business-at-crucial-time-for-brunswick-port"
+          "name": "Georgia Ports Authority",
+          "source_url": "https://www.selectgeorgia.com/blog/wtc-sav-prosperity"
         },
         {
           "name": "Sea Island Company",
           "source_url": "https://en.wikipedia.org/wiki/Golden_Isles_of_Georgia"
         },
         {
-          "name": "Georgia Power Regional Economic Development Manager",
-          "source_url": "https://www.selectgeorgia.com/blog/wtc-sav-prosperity"
-        },
-        {
-          "name": "Georgia Power Team",
-          "source_url": "https://www.selectgeorgia.com/blog/wtc-sav-prosperity"
-        },
-        {
-          "name": "Glynn County Development Authority",
+          "name": "College of Coastal Georgia",
           "source_url": "https://en.wikipedia.org/wiki/Brunswick,_Georgia"
+        },
+        {
+          "name": "Georgia Power Economic Development",
+          "source_url": "https://www.selectgeorgia.com/blog/wtc-sav-prosperity"
         },
         {
           "name": "Healthcare",
           "source_url": "https://en.wikipedia.org/wiki/Golden_Isles_of_Georgia"
         },
         {
-          "name": "Industries",
-          "source_url": "https://georgia.org/blogs/global-local-industries-put-georgia-map"
+          "name": "Brunswick Corporation",
+          "source_url": "https://en.wikipedia.org/wiki/Brunswick_Corporation"
         },
         {
-          "name": "Pennsylvania-based Best Companies Group",
-          "source_url": "https://www.savannahnow.com/story/news/2016/07/08/garden-city-police-department-savannah-firms-make-best-places-work-georgia-list/13921419007"
+          "name": "Capri Holdings Cava Group Chewy",
+          "source_url": "https://en.wikipedia.org/wiki/Brunswick_Corporation"
+        },
+        {
+          "name": "Choice Hotels Churchill Downs Inc. Columbia",
+          "source_url": "https://en.wikipedia.org/wiki/Brunswick_Corporation"
+        },
+        {
+          "name": "Corporation Century Aluminum CF Industries Cboe",
+          "source_url": "https://en.wikipedia.org/wiki/Brunswick_Corporation"
+        },
+        {
+          "name": "Corporation Nalco Holding Company Nicor Northern",
+          "source_url": "https://en.wikipedia.org/wiki/Brunswick_Corporation"
+        },
+        {
+          "name": "Corporation Visteon Whirlpool Wingstop Wyndham Hotels",
+          "source_url": "https://en.wikipedia.org/wiki/Brunswick_Corporation"
         }
       ],
       "sources": [
         "https://en.wikipedia.org/wiki/Brunswick,_Georgia",
         "https://www.selectgeorgia.com/blog/wtc-sav-prosperity",
-        "https://en.wikipedia.org/wiki/History_of_Brunswick,_Georgia",
-        "https://www.ajc.com/business/2026/01/heavy-equipment-lifting-business-at-crucial-time-for-brunswick-port",
         "https://en.wikipedia.org/wiki/Golden_Isles_of_Georgia",
+        "https://en.wikipedia.org/wiki/Brunswick_Corporation",
         "https://georgia.org/blogs/global-local-industries-put-georgia-map",
-        "https://www.savannahnow.com/story/news/2016/07/08/garden-city-police-department-savannah-firms-make-best-places-work-georgia-list/13921419007",
-        "https://georgia.org/why-georgia/global-advantage"
+        "https://georgia.org/press-releases/2024/innovation-isles-aerospace-park-certified-ready-accelerated-development",
+        "https://www.savannahnow.com/story/news/2006/05/25/job-growth-makes-savannah-economy-one-states-best/13835748007"
       ],
       "method": "Representative list auto-discovered via Tavily web search across chamber-of-commerce, development-authority and local-news sources. Not exhaustive; ordering approximates source frequency, not headcount."
     },

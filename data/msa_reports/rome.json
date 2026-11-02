@@ -3,7 +3,7 @@
   "short_name": "Rome",
   "full_name": "Rome, GA",
   "population": 99000,
-  "as_of": "2026-11-01",
+  "as_of": "2026-11-02",
   "sections": {
     "ces_employment": {
       "series_id": "SMS13406600000000001",
@@ -4767,7 +4767,7 @@
       "source": "Census Business Dynamics Statistics (establishment entry rate, 2022); metro rate indexed to US=100"
     },
     "major_employers": {
-      "as_of": "2026-11-01",
+      "as_of": "2026-11-02",
       "employers": [
         {
           "name": "Floyd Medical Center",
@@ -4776,6 +4776,10 @@
         {
           "name": "Harbin Clinic",
           "source_url": "https://en.wikipedia.org/wiki/Rome,_Georgia"
+        },
+        {
+          "name": "New Manufacturing",
+          "source_url": "https://www.selectgeorgia.com/georgiagrowth"
         },
         {
           "name": "Redmond Regional Medical Center",
@@ -4790,31 +4794,7 @@
           "source_url": "https://en.wikipedia.org/wiki/Rome,_Georgia"
         },
         {
-          "name": "Utilities",
-          "source_url": "https://en.wikipedia.org/wiki/List_of_largest_Italian_companies"
-        },
-        {
           "name": "Kerry Group",
-          "source_url": "https://en.wikipedia.org/wiki/Rome,_Georgia"
-        },
-        {
-          "name": "Medical College of Georgia",
-          "source_url": "https://en.wikipedia.org/wiki/Rome,_Georgia"
-        },
-        {
-          "name": "Aerospace",
-          "source_url": "https://www.selectgeorgia.com/discover-georgia/industries/fortune-500-list"
-        },
-        {
-          "name": "VT Industries",
-          "source_url": "https://albanyherald.com/news/business-news-2/42-million-expansion-of-rome-company-brings-42-new-jobs"
-        },
-        {
-          "name": "Energy",
-          "source_url": "https://en.wikipedia.org/wiki/List_of_largest_Italian_companies"
-        },
-        {
-          "name": "Georgia Health Sciences University",
           "source_url": "https://en.wikipedia.org/wiki/Rome,_Georgia"
         },
         {
@@ -4822,19 +4802,39 @@
           "source_url": "https://georgia.org/sites/default/files/2023-01/lowes_4.pdf"
         },
         {
-          "name": "Mohawk Industries",
-          "source_url": "https://www.selectgeorgia.com/discover-georgia/industries/fortune-500-list"
+          "name": "Tennessee Valley Systems",
+          "source_url": "https://www.selectgeorgia.com/georgiagrowth"
+        },
+        {
+          "name": "Distribution Expansion",
+          "source_url": "https://www.selectgeorgia.com/georgiagrowth"
+        },
+        {
+          "name": "General Electric",
+          "source_url": "https://en.wikipedia.org/wiki/Rome,_Georgia"
+        },
+        {
+          "name": "Georgia Health Sciences University",
+          "source_url": "https://en.wikipedia.org/wiki/Rome,_Georgia"
+        },
+        {
+          "name": "Logistics What Georgia Offers Lowes",
+          "source_url": "https://georgia.org/sites/default/files/2023-01/lowes_4.pdf"
+        },
+        {
+          "name": "Medical College of Georgia",
+          "source_url": "https://en.wikipedia.org/wiki/Rome,_Georgia"
         }
       ],
       "sources": [
         "https://en.wikipedia.org/wiki/Rome,_Georgia",
+        "https://www.selectgeorgia.com/blog/team-researchers-provide-clear-employment-overview-community-partners",
         "https://georgia.org/sites/default/files/2023-01/lowes_4.pdf",
-        "https://www.northwestgeorgianews.com/rome/news/local/survey-northwest-georgia-regional-commission-a-best-place-to-work-in-georgia/article_4923a6fd-c809-46f2-a3ac-12a423592b21.html",
-        "https://albanyherald.com/news/business-news-2/42-million-expansion-of-rome-company-brings-42-new-jobs",
         "https://www.bizjournals.com/atlanta/news/2025/09/26/georgia-largest-manufacturers-by-employment.html",
         "https://www.selectgeorgia.com/discover-georgia/industries/fortune-500-list",
-        "https://en.wikipedia.org/wiki/List_of_largest_Italian_companies",
-        "https://www.ledger-enquirer.com/news/business/article315198836.html"
+        "https://georgia.org/sites/default/files/2020-04/fy20_q3_board_book.pdf",
+        "https://www.ledger-enquirer.com/news/business/article315198836.html",
+        "https://www.selectgeorgia.com/georgiagrowth"
       ],
       "method": "Representative list auto-discovered via Tavily web search across chamber-of-commerce, development-authority and local-news sources. Not exhaustive; ordering approximates source frequency, not headcount."
     },

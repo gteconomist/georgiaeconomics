@@ -3,7 +3,7 @@
   "short_name": "Warner Robins",
   "full_name": "Warner Robins, GA",
   "population": 199000,
-  "as_of": "2026-11-01",
+  "as_of": "2026-11-02",
   "sections": {
     "ces_employment": {
       "series_id": "SMS13475800000000001",
@@ -4515,26 +4515,26 @@
       "source": "Census Business Dynamics Statistics (establishment entry rate, 2022); metro rate indexed to US=100"
     },
     "major_employers": {
-      "as_of": "2026-11-01",
+      "as_of": "2026-11-02",
       "employers": [
         {
-          "name": "Blue Bird Body Co",
+          "name": "Perdue Foods",
           "source_url": "https://www.macon.com/news/business/article258547393.html"
         },
         {
-          "name": "Houston Healthcare Complex",
-          "source_url": "https://www.macon.com/news/business/article258547393.html"
+          "name": "Houston Healthcare",
+          "source_url": "https://www.macon.com/living/living-here-guide/article39043491.html"
         },
         {
           "name": "Mercer University",
           "source_url": "https://www.macon.com/living/living-here-guide/article39043491.html"
         },
         {
-          "name": "Perdue Foods",
-          "source_url": "https://www.macon.com/news/business/article258547393.html"
+          "name": "Pratt Industries",
+          "source_url": "https://www.macon.com/news/business/article279055784.html"
         },
         {
-          "name": "Coliseum Health System",
+          "name": "The Medical Center of Central Georgia",
           "source_url": "https://www.macon.com/living/living-here-guide/article39043491.html"
         },
         {
@@ -4542,11 +4542,19 @@
           "source_url": "https://www.macon.com/news/business/article258547393.html"
         },
         {
+          "name": "Blue Bird Body Co",
+          "source_url": "https://www.macon.com/news/business/article258547393.html"
+        },
+        {
+          "name": "Robins Industrial Park",
+          "source_url": "https://www.macon.com/news/business/article279055784.html"
+        },
+        {
           "name": "Blue Bird Corp",
           "source_url": "https://www.macon.com/living/living-here-guide/article39043491.html"
         },
         {
-          "name": "The Medical Center of Central Georgia",
+          "name": "Coliseum Health System",
           "source_url": "https://www.macon.com/living/living-here-guide/article39043491.html"
         },
         {
@@ -4554,7 +4562,7 @@
           "source_url": "https://www.macon.com/news/business/article258547393.html"
         },
         {
-          "name": "Wesleyan College",
+          "name": "Southern Company",
           "source_url": "https://en.wikipedia.org/wiki/Central_Georgia"
         },
         {
@@ -4564,14 +4572,6 @@
         {
           "name": "Chief Manufacturing",
           "source_url": "https://en.wikipedia.org/wiki/Central_Georgia"
-        },
-        {
-          "name": "Criterion Technologies",
-          "source_url": "https://en.wikipedia.org/wiki/Central_Georgia"
-        },
-        {
-          "name": "Fort Valley State University",
-          "source_url": "https://en.wikipedia.org/wiki/Central_Georgia"
         }
       ],
       "sources": [
@@ -4580,9 +4580,9 @@
         "https://en.wikipedia.org/wiki/Central_Georgia",
         "https://www.macon.com/news/business/article279055784.html",
         "https://www.macon.com/news/local/military/article214843570.html",
+        "https://www.savannahnow.com/story/business/2026/08/24/best-place-to-work-forbes-names-top-10-employers-in-georgia/91439995007",
         "https://www.macon.com/news/business/article278530009.html",
-        "https://www.macon.com/news/business/article286533725.html",
-        "https://www.macon.com/jobs/article276323166.html"
+        "https://www.macon.com/news/local/community/houston-peach/article248306705.html"
       ],
       "method": "Representative list auto-discovered via Tavily web search across chamber-of-commerce, development-authority and local-news sources. Not exhaustive; ordering approximates source frequency, not headcount."
     },
