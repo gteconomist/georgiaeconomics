@@ -3,7 +3,7 @@
   "short_name": "Dalton",
   "full_name": "Dalton, GA",
   "population": 143000,
-  "as_of": "2026-11-02",
+  "as_of": "2026-11-03",
   "sections": {
     "ces_employment": {
       "series_id": "SMS13191400000000001",
@@ -4874,74 +4874,74 @@
       "source": "Census Business Dynamics Statistics (establishment entry rate, 2022); metro rate indexed to US=100"
     },
     "major_employers": {
-      "as_of": "2026-11-02",
+      "as_of": "2026-11-03",
       "employers": [
-        {
-          "name": "Manufacturing",
-          "source_url": "https://www.bizjournals.com/atlanta/news/2023/06/29/solar-workforce-qcells-dalton-georgia.html"
-        },
         {
           "name": "Carpet Capital",
           "source_url": "https://en.wikipedia.org/wiki/Dalton,_Georgia"
         },
         {
-          "name": "Shaw Industries",
-          "source_url": "https://www.selectgeorgia.com/about-us/our-team/regional-development/tamara-brock-nw"
+          "name": "Beaulieu Group",
+          "source_url": "https://www.ledger-enquirer.com/news/business/article29444089.html"
+        },
+        {
+          "name": "Dalton Public Schools",
+          "source_url": "https://www.ledger-enquirer.com/news/business/article29444089.html"
+        },
+        {
+          "name": "Mohawk Industries",
+          "source_url": "https://www.ledger-enquirer.com/news/business/article29444089.html"
+        },
+        {
+          "name": "Hamilton Health Care System",
+          "source_url": "https://www.ledger-enquirer.com/news/business/article29444089.html"
+        },
+        {
+          "name": "IVC Group",
+          "source_url": "https://georgia.org/newsroom/press-releases/global-flooring-company-expand-dalton-creating-200-jobs"
+        },
+        {
+          "name": "J&J Flooring",
+          "source_url": "https://www.ledger-enquirer.com/news/business/article29444089.html"
+        },
+        {
+          "name": "Shaw Industries Group",
+          "source_url": "https://www.ledger-enquirer.com/news/business/article29444089.html"
+        },
+        {
+          "name": "Whitfield County Schools",
+          "source_url": "https://www.ledger-enquirer.com/news/business/article29444089.html"
+        },
+        {
+          "name": "Manufacturing",
+          "source_url": "https://www.bizjournals.com/atlanta/news/2023/06/29/solar-workforce-qcells-dalton-georgia.html"
+        },
+        {
+          "name": "Archbold Medical Center",
+          "source_url": "https://valdostadailytimes.com/2018/06/10/public-employers"
         },
         {
           "name": "CELLS America Inc",
           "source_url": "https://www.bizjournals.com/atlanta/news/2023/06/29/solar-workforce-qcells-dalton-georgia.html"
         },
         {
-          "name": "Distribution",
-          "source_url": "https://www.selectgeorgia.com/georgiagrowth"
+          "name": "Columbus Regional Health",
+          "source_url": "https://www.ledger-enquirer.com/news/business/article29444089.html"
         },
         {
-          "name": "New Warehouse",
-          "source_url": "https://www.selectgeorgia.com/georgiagrowth"
-        },
-        {
-          "name": "Beaulieu Group",
-          "source_url": "https://valdostadailytimes.com/2018/01/01/engineered-floors-growth-varnell-drama-among-top-stories-in-dalton-area-in-2017"
-        },
-        {
-          "name": "Emory University",
-          "source_url": "https://www.ajc.com/business/georgia-best-employers-for-2019-according-forbes/97QBCslwnyl3Ob4ujTmnLK"
-        },
-        {
-          "name": "Flooring",
-          "source_url": "https://valdostadailytimes.com/2018/01/01/engineered-floors-growth-varnell-drama-among-top-stories-in-dalton-area-in-2017"
-        },
-        {
-          "name": "Food City",
-          "source_url": "https://valdostadailytimes.com/2019/01/23/something-we-can-all-be-proud-of-food-city-opens-second-dalton-location"
-        },
-        {
-          "name": "GATX Corp",
-          "source_url": "https://www.selectgeorgia.com/georgiagrowth"
-        },
-        {
-          "name": "Headed Reinforcement Corp",
-          "source_url": "https://www.selectgeorgia.com/georgiagrowth"
-        },
-        {
-          "name": "Margo State Line Inc",
-          "source_url": "https://www.selectgeorgia.com/georgiagrowth"
-        },
-        {
-          "name": "New Food Processing",
-          "source_url": "https://www.selectgeorgia.com/georgiagrowth"
+          "name": "Dalton-Whitfield County Joint Development Authority",
+          "source_url": "https://georgia.org/newsroom/press-releases/global-flooring-company-expand-dalton-creating-200-jobs"
         }
       ],
       "sources": [
         "https://en.wikipedia.org/wiki/Dalton,_Georgia",
-        "https://www.bizjournals.com/atlanta/news/2023/06/29/solar-workforce-qcells-dalton-georgia.html",
-        "https://www.ajc.com/business/dalton-augusta-worst-for-job-losses-lately/qWPbpKazCnZFJtn1Kel1RM",
-        "https://www.selectgeorgia.com/about-us/our-team/regional-development/tamara-brock-nw",
-        "https://valdostadailytimes.com/2019/01/23/something-we-can-all-be-proud-of-food-city-opens-second-dalton-location",
-        "https://valdostadailytimes.com/2018/01/01/engineered-floors-growth-varnell-drama-among-top-stories-in-dalton-area-in-2017",
-        "https://www.ajc.com/business/georgia-best-employers-for-2019-according-forbes/97QBCslwnyl3Ob4ujTmnLK",
-        "https://www.selectgeorgia.com/georgiagrowth"
+        "https://en.wikipedia.org/w/index.php?title=Dalton%2C_Georgia&oldid=1370992859",
+        "https://en.wikipedia.org/w/index.php?title=Dalton%2C_Georgia&useparsoid=0",
+        "https://en.wikipedia.org/w/index.php?title=Dalton%2C_Georgia&printable=yes",
+        "https://www.ledger-enquirer.com/news/business/article29444089.html",
+        "https://georgia.org/newsroom/press-releases/global-flooring-company-expand-dalton-creating-200-jobs",
+        "https://valdostadailytimes.com/2018/06/10/public-employers",
+        "https://valdostadailytimes.com/2018/01/01/engineered-floors-growth-varnell-drama-among-top-stories-in-dalton-area-in-2017"
       ],
       "method": "Representative list auto-discovered via Tavily web search across chamber-of-commerce, development-authority and local-news sources. Not exhaustive; ordering approximates source frequency, not headcount."
     },

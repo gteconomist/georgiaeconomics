@@ -3,7 +3,7 @@
   "short_name": "Savannah",
   "full_name": "Savannah, GA",
   "population": 410000,
-  "as_of": "2026-11-02",
+  "as_of": "2026-11-03",
   "sections": {
     "ces_employment": {
       "series_id": "SMS13423400000000001",
@@ -5574,31 +5574,35 @@
       "source": "Census Business Dynamics Statistics (establishment entry rate, 2022); metro rate indexed to US=100"
     },
     "major_employers": {
-      "as_of": "2026-11-02",
+      "as_of": "2026-11-03",
       "employers": [
-        {
-          "name": "Gulfstream Aerospace Corporation",
-          "source_url": "https://en.wikipedia.org/wiki/Savannah,_Georgia"
-        },
         {
           "name": "Children's Healthcare of Atlanta",
           "source_url": "https://www.savannahnow.com/story/business/2026/09/05/delta-coca-cola-among-forbes-best-employers-in-georgia/91607458007"
         },
         {
+          "name": "Gulfstream Aerospace Corporation",
+          "source_url": "https://en.wikipedia.org/wiki/Savannah_metropolitan_area"
+        },
+        {
+          "name": "Port of Savannah",
+          "source_url": "https://en.wikipedia.org/wiki/Savannah_metropolitan_area"
+        },
+        {
           "name": "Chase Bank",
-          "source_url": "https://en.wikipedia.org/wiki/Savannah,_Georgia_Metropolitan_Statistical_Area"
+          "source_url": "https://en.wikipedia.org/wiki/Savannah_metropolitan_area"
         },
         {
-          "name": "Heartland Payment Systems",
-          "source_url": "https://www.savannahnow.com/story/business/2013/02/19/understanding-purpose-savannah-chamber/13655438007"
-        },
-        {
-          "name": "Liberty Mutual Insurance",
-          "source_url": "https://www.savannahnow.com/story/business/2013/02/19/understanding-purpose-savannah-chamber/13655438007"
+          "name": "Matson Logistics",
+          "source_url": "https://www.savannahnow.com/business/bis/2012-10-02/bis-business-roundup"
         },
         {
           "name": "Savannah State University",
-          "source_url": "https://en.wikipedia.org/wiki/Savannah,_Georgia_Metropolitan_Statistical_Area"
+          "source_url": "https://en.wikipedia.org/wiki/Savannah_metropolitan_area"
+        },
+        {
+          "name": "Wet Willie's Management Corp",
+          "source_url": "https://www.savannahnow.com/story/business/2013/02/19/understanding-purpose-savannah-chamber/13655438007"
         },
         {
           "name": "Colony Bank",
@@ -5609,39 +5613,35 @@
           "source_url": "https://www.savannahnow.com/story/business/2026/09/05/delta-coca-cola-among-forbes-best-employers-in-georgia/91607458007"
         },
         {
-          "name": "Georgia Southern University's",
-          "source_url": "https://en.wikipedia.org/wiki/Savannah,_Georgia_Metropolitan_Statistical_Area"
+          "name": "Georgia Southern University",
+          "source_url": "https://www.savannahnow.com/story/business/2026/09/05/delta-coca-cola-among-forbes-best-employers-in-georgia/91607458007"
         },
         {
-          "name": "Management Corp",
-          "source_url": null
+          "name": "Georgia State University Economic Forecasting Center",
+          "source_url": "https://www.savannahnow.com/story/news/2006/11/16/economist-savannahs-growth-among-strongest-state/13820435007"
         },
         {
-          "name": "Port of Savannah",
-          "source_url": "https://en.wikipedia.org/wiki/Savannah_metropolitan_area"
+          "name": "Inc. President",
+          "source_url": "https://www.savannahnow.com/story/business/employment/2025/10/10/savannah-area-workforce-leaders-come-together-for-updates-at-downtown-business-association-luncheon/86563396007"
         },
         {
           "name": "Savannah College of Art",
-          "source_url": "https://en.wikipedia.org/wiki/Savannah,_Georgia_Metropolitan_Statistical_Area"
+          "source_url": "https://en.wikipedia.org/wiki/Savannah_metropolitan_area"
         },
         {
           "name": "Savannah Technical College",
-          "source_url": "https://en.wikipedia.org/wiki/Savannah,_Georgia_Metropolitan_Statistical_Area"
-        },
-        {
-          "name": "South University",
-          "source_url": "https://en.wikipedia.org/wiki/Savannah,_Georgia_Metropolitan_Statistical_Area"
+          "source_url": "https://en.wikipedia.org/wiki/Savannah_metropolitan_area"
         }
       ],
       "sources": [
-        "https://en.wikipedia.org/wiki/Savannah,_Georgia",
-        "https://en.wikipedia.org/wiki/Savannah,_Georgia_(U.S._state)",
-        "https://en.wikipedia.org/wiki/en:Savannah,_Georgia",
-        "http://en.wikipedia.org/wiki/Savannah,_Georgia",
         "https://www.savannahnow.com/story/business/2026/09/05/delta-coca-cola-among-forbes-best-employers-in-georgia/91607458007",
-        "https://en.wikipedia.org/wiki/Savannah,_Georgia_Metropolitan_Statistical_Area",
+        "https://www.bizjournals.com/atlanta/research/lists/2026/georgia-manufacturers.html",
+        "https://en.wikipedia.org/wiki/Savannah_metropolitan_area",
+        "https://www.savannahnow.com/story/news/2026/02/24/forbes-ranked-2-georgia-businesses-among-top-50-large-employers-in-us/88828522007",
+        "https://www.savannahnow.com/business",
         "https://www.savannahnow.com/story/business/2013/02/19/understanding-purpose-savannah-chamber/13655438007",
-        "https://www.savannahnow.com/story/business/2014/10/10/savannah-chamber-recognizes-entrepreneurs-manufacturers-2014-business-awards/13961954007"
+        "https://www.savannahnow.com/story/news/2016/07/08/garden-city-police-department-savannah-firms-make-best-places-work-georgia-list/13921419007",
+        "https://www.savannahnow.com/story/business/2018/09/25/newsmakers-chamber-names-2018-19-leadership-savannah-class/10059008007"
       ],
       "method": "Representative list auto-discovered via Tavily web search across chamber-of-commerce, development-authority and local-news sources. Not exhaustive; ordering approximates source frequency, not headcount."
     },

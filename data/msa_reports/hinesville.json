@@ -3,7 +3,7 @@
   "short_name": "Hinesville",
   "full_name": "Hinesville, GA",
   "population": 78000,
-  "as_of": "2026-11-02",
+  "as_of": "2026-11-03",
   "sections": {
     "ces_employment": {
       "series_id": "SMS13259800000000001",
@@ -4272,8 +4272,24 @@
       "source": "Census Business Dynamics Statistics (establishment entry rate, 2022); metro rate indexed to US=100"
     },
     "major_employers": {
-      "as_of": "2026-11-02",
+      "as_of": "2026-11-03",
       "employers": [
+        {
+          "name": "Aerospace",
+          "source_url": "https://georgia.org"
+        },
+        {
+          "name": "Automotive",
+          "source_url": "https://georgia.org"
+        },
+        {
+          "name": "Company",
+          "source_url": "https://www.savannahnow.com/story/business/2016/05/18/bis-brief-va-clinic-hold-open-house-hinesville/13973918007"
+        },
+        {
+          "name": "Liberty County Development Authority CEO Ronald",
+          "source_url": "https://www.savannahnow.com/story/business/2014/07/09/bis-brief-hinesville-named-state-s-no-2-city-rise/13962994007"
+        },
         {
           "name": "Logistics USA Inc",
           "source_url": null
@@ -4283,63 +4299,47 @@
           "source_url": null
         },
         {
-          "name": "Hyundai Motor Group Metaplant",
-          "source_url": "https://www.savannahnow.com/story/business/economy/2024/09/19/succeed-in-savannah-campaign-aims-to-tackle-workforce-deficit/75189359007"
-        },
-        {
-          "name": "Liberty County High School",
-          "source_url": "https://en.wikipedia.org/wiki/Hinesville,_Georgia"
-        },
-        {
           "name": "Port of Savannah",
           "source_url": "https://en.wikipedia.org/wiki/Savannah_metropolitan_area"
         },
         {
-          "name": "Aerospace",
-          "source_url": "https://georgia.org/business-support/small-business"
-        },
-        {
-          "name": "Arts Academy Fitness",
-          "source_url": "https://georgia.org/sites/default/files/2020-10/georgia_safety_promise-10-27.pdf"
-        },
-        {
-          "name": "Bermuda Lane Flowery Branch Wesco Distribution",
-          "source_url": "https://georgia.org/sites/default/files/2020-10/georgia_safety_promise-10-27.pdf"
-        },
-        {
-          "name": "Co Shopping",
-          "source_url": "https://georgia.org/sites/default/files/2020-10/georgia_safety_promise-10-27.pdf"
-        },
-        {
-          "name": "College",
-          "source_url": "https://en.wikipedia.org/wiki/Metropolitan_statistical_area"
-        },
-        {
-          "name": "DBA Englewood Electric Wholesale",
-          "source_url": "https://georgia.org/sites/default/files/2020-10/georgia_safety_promise-10-27.pdf"
+          "name": "Energy",
+          "source_url": "https://georgia.org"
         },
         {
           "name": "Food Processing",
-          "source_url": "https://georgia.org/business-support/small-business"
+          "source_url": "https://georgia.org"
+        },
+        {
+          "name": "Frankenmuth Insurance",
+          "source_url": "https://www.savannahnow.com/story/business/2016/05/18/bis-brief-va-clinic-hold-open-house-hinesville/13973918007"
         },
         {
           "name": "Georgia Ports Authority",
           "source_url": "https://www.savannahnow.com/story/news/2007/11/15/savannah-hinesville-fort-stewart-growing-faster-state-experts-say/13780691007"
         },
         {
-          "name": "Georgia Southern University's Liberty",
-          "source_url": "https://en.wikipedia.org/wiki/Hinesville,_Georgia"
+          "name": "Georgia State University",
+          "source_url": "https://www.savannahnow.com/story/news/2007/11/15/savannah-hinesville-fort-stewart-growing-faster-state-experts-say/13780691007"
+        },
+        {
+          "name": "Georgia-Pacific Corp",
+          "source_url": "https://www.savannahnow.com/story/news/2007/04/20/keys-future/13805399007"
+        },
+        {
+          "name": "Greenfield LLC",
+          "source_url": "https://georgia.org/business-support/small-business"
         }
       ],
       "sources": [
-        "https://georgia.org/why-georgia/regions-georgia/coastal-georgia",
         "https://www.savannahnow.com/story/news/2007/11/15/savannah-hinesville-fort-stewart-growing-faster-state-experts-say/13780691007",
         "https://en.wikipedia.org/wiki/Savannah_metropolitan_area",
-        "https://en.wikipedia.org/wiki/Metropolitan_statistical_area",
-        "https://www.savannahnow.com/story/business/economy/2024/09/19/succeed-in-savannah-campaign-aims-to-tackle-workforce-deficit/75189359007",
-        "https://georgia.org/sites/default/files/2020-10/georgia_safety_promise-10-27.pdf",
-        "https://georgia.org/business-support/small-business",
-        "https://en.wikipedia.org/wiki/Hinesville,_Georgia"
+        "https://www.savannahnow.com/story/business/2014/07/09/bis-brief-hinesville-named-state-s-no-2-city-rise/13962994007",
+        "https://www.savannahnow.com/story/business/2016/05/18/bis-brief-va-clinic-hold-open-house-hinesville/13973918007",
+        "https://www.savannahnow.com/story/news/2007/04/20/keys-future/13805399007",
+        "https://georgia.org",
+        "https://www.savannahnow.com/story/business/2014/07/15/business-savannah-news-summary/13962793007",
+        "https://georgia.org/business-support/small-business"
       ],
       "method": "Representative list auto-discovered via Tavily web search across chamber-of-commerce, development-authority and local-news sources. Not exhaustive; ordering approximates source frequency, not headcount."
     },
