@@ -3,7 +3,7 @@
   "short_name": "Augusta",
   "full_name": "Augusta-Richmond County, GA-SC",
   "population": 611000,
-  "as_of": "2026-11-03",
+  "as_of": "2026-11-04",
   "sections": {
     "ces_employment": {
       "series_id": "SMS13122600000000001",
@@ -5475,7 +5475,7 @@
       "source": "Census Business Dynamics Statistics (establishment entry rate, 2022); metro rate indexed to US=100"
     },
     "major_employers": {
-      "as_of": "2026-11-03",
+      "as_of": "2026-11-04",
       "employers": [
         {
           "name": "Augusta University",
@@ -5486,19 +5486,27 @@
           "source_url": "https://en.wikipedia.org/wiki/Augusta,_Georgia"
         },
         {
-          "name": "Encompass Health Corporation",
-          "source_url": "https://en.wikipedia.org/wiki/Augusta_metropolitan_area"
-        },
-        {
-          "name": "Paine College",
-          "source_url": "https://en.wikipedia.org/wiki/Augusta_metropolitan_area"
-        },
-        {
           "name": "Augusta Technical College",
           "source_url": "https://en.wikipedia.org/wiki/Augusta_metropolitan_area"
         },
         {
+          "name": "Cardinal Health",
+          "source_url": "https://en.wikipedia.org/wiki/Augusta,_Georgia"
+        },
+        {
+          "name": "Doctors Hospital",
+          "source_url": "https://en.wikipedia.org/wiki/Augusta,_Georgia"
+        },
+        {
+          "name": "FPL Food",
+          "source_url": "https://en.wikipedia.org/wiki/Augusta,_Georgia"
+        },
+        {
           "name": "East Georgia State College",
+          "source_url": "https://en.wikipedia.org/wiki/Augusta_metropolitan_area"
+        },
+        {
+          "name": "Encompass Health Corporation",
           "source_url": "https://en.wikipedia.org/wiki/Augusta_metropolitan_area"
         },
         {
@@ -5506,15 +5514,15 @@
           "source_url": "https://en.wikipedia.org/wiki/Augusta_metropolitan_area"
         },
         {
-          "name": "Inpatient Rehabilitation Hospital Augusta",
+          "name": "Olin Corporation",
+          "source_url": "https://en.wikipedia.org/wiki/Augusta,_Georgia"
+        },
+        {
+          "name": "Paine College",
           "source_url": "https://en.wikipedia.org/wiki/Augusta_metropolitan_area"
         },
         {
-          "name": "Walton Rehabilitation Hospital",
-          "source_url": "https://en.wikipedia.org/wiki/Augusta_metropolitan_area"
-        },
-        {
-          "name": "Doctors Hospital",
+          "name": "Solo Cup Company",
           "source_url": "https://en.wikipedia.org/wiki/Augusta,_Georgia"
         },
         {
@@ -5522,15 +5530,7 @@
           "source_url": "https://en.wikipedia.org/wiki/Augusta,_Georgia"
         },
         {
-          "name": "East Central Regional Hospital",
-          "source_url": "https://en.wikipedia.org/wiki/Augusta,_Georgia"
-        },
-        {
-          "name": "KSB Company",
-          "source_url": "https://en.wikipedia.org/wiki/Augusta,_Georgia"
-        },
-        {
-          "name": "Olin Corporation",
+          "name": "Department of Energy",
           "source_url": "https://en.wikipedia.org/wiki/Augusta,_Georgia"
         }
       ],
@@ -5538,9 +5538,9 @@
         "https://en.wikipedia.org/wiki/Augusta,_Georgia",
         "https://en.wikipedia.org/wiki/Augusta_metropolitan_area",
         "https://www.augustachronicle.com/story/business/2024/08/27/georgia-top-companies-forbes-best-employers-by-state-list/74968857007",
-        "https://www.augustachronicle.com/story/news/2025/06/04/fortune-500s-list-of-the-biggest-corporations-includes-17-in-georgia/84010835007",
         "https://www.savannahnow.com/story/business/2026/09/05/delta-coca-cola-among-forbes-best-employers-in-georgia/91607458007",
         "https://www.selectgeorgia.com/about-us/our-team/regional-development/matthew-forshee-east",
+        "https://www.augustachronicle.com/story/news/2025/06/04/fortune-500s-list-of-the-biggest-corporations-includes-17-in-georgia/84010835007",
         "https://www.augustachronicle.com/story/news/local/the-people-sentinel/2019/10/16/chamber-of-commerce-recognizes-community-champions/2519701007",
         "https://www.augustachronicle.com/story/business/2020/11/07/scuttlebiz-south-carolina-leans-heavy-on-federal-funds-georgia-not-so-much/43014025"
       ],

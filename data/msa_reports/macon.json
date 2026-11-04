@@ -3,7 +3,7 @@
   "short_name": "Macon",
   "full_name": "Macon-Bibb County, GA",
   "population": 232000,
-  "as_of": "2026-11-03",
+  "as_of": "2026-11-04",
   "sections": {
     "ces_employment": {
       "series_id": "SMS13314200000000001",
@@ -5494,7 +5494,7 @@
       "source": "Census Business Dynamics Statistics (establishment entry rate, 2022); metro rate indexed to US=100"
     },
     "major_employers": {
-      "as_of": "2026-11-03",
+      "as_of": "2026-11-04",
       "employers": [
         {
           "name": "Mercer University",
@@ -5513,27 +5513,27 @@
           "source_url": "https://www.macon.com/living/living-here-guide/article39043491.html"
         },
         {
+          "name": "Atrium Health Navicent",
+          "source_url": "https://en.wikipedia.org/wiki/Macon,_Georgia"
+        },
+        {
           "name": "The Medical Center of Central Georgia",
           "source_url": "https://www.macon.com/living/living-here-guide/article39043491.html"
-        },
-        {
-          "name": "Atrium Health Navicent The Medical Center",
-          "source_url": "https://www.macon.com/news/business/article258547393.html"
-        },
-        {
-          "name": "Healthcare of Atlanta",
-          "source_url": "https://www.macon.com/living/article300278809.html"
         },
         {
           "name": "Forsyth County School District",
           "source_url": "https://www.macon.com/living/article300278809.html"
         },
         {
-          "name": "Southern Company",
+          "name": "Healthcare of Atlanta",
           "source_url": "https://www.macon.com/living/article300278809.html"
         },
         {
-          "name": "Wesleyan College",
+          "name": "Piedmont Healthcare Macon",
+          "source_url": "https://en.wikipedia.org/wiki/Macon,_Georgia"
+        },
+        {
+          "name": "Southern Company",
           "source_url": "https://www.macon.com/living/article300278809.html"
         },
         {
@@ -5557,9 +5557,9 @@
         "https://en.wikipedia.org/wiki/Macon,_Georgia",
         "https://www.macon.com/living/article300278809.html",
         "https://www.macon.com/living/living-here-guide/article39043491.html",
+        "https://www.macon.com/news/local/article280753115.html",
         "https://www.macon.com/news/local/article314818813.html",
-        "https://www.macon.com/news/business/article258547393.html",
-        "https://www.macon.com/news/local/article312115475.html",
+        "https://www.macon.com/news/local/article317126713.html",
         "https://www.macon.com/news/local/article235905642.html",
         "https://www.selectgeorgia.com/about-us/our-team/regional-development/ryan-waldrep-central"
       ],
