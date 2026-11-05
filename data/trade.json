@@ -2,11 +2,11 @@
   "_fixture": false,
   "_note": "Live data: Census USA Trade Online (GA exports), BLS CES (ATL MSA T&W employment), Savannah TEU (GPA), Brunswick autos (GPA). Calibrated estimate (latest GPA point may not have refreshed): ATL Hartsfield cargo.",
   "source": "FIXTURE (target: Census USA Trade Online + BLS CES + Tavily for ports)",
-  "latest_label": "2026-08",
+  "latest_label": "2026-09",
   "kpis": {
-    "savannah_teu_latest": 529.5,
+    "savannah_teu_latest": 200.0,
     "savannah_teu_yoy": 4.0,
-    "brunswick_autos_latest": 65.0,
+    "brunswick_autos_latest": 43.4,
     "brunswick_autos_yoy": 18.0,
     "atl_cargo_latest": 57.9,
     "atl_cargo_yoy": -3.5,
@@ -322,6 +322,10 @@
     [
       "2026-08",
       529.5
+    ],
+    [
+      "2026-10",
+      200.0
     ]
   ],
   "brunswick_autos_k": [
@@ -631,7 +635,7 @@
     ],
     [
       "2026-09",
-      65.0
+      43.4
     ]
   ],
   "atl_cargo_kt": [
@@ -941,10 +945,6 @@
     ]
   ],
   "atl_tw_employment_k": [
-    [
-      "2020-01",
-      177.4
-    ],
     [
       "2020-02",
       174.0
@@ -1260,6 +1260,10 @@
     [
       "2026-08",
       189.3
+    ],
+    [
+      "2026-09",
+      191.4
     ]
   ],
   "ga_exports_2025": [
@@ -1335,7 +1339,7 @@
     }
   ],
   "ga_exports_top10_total_musd": 35397.0,
-  "fetched_at": "2026-10-05",
+  "fetched_at": "2026-11-05",
   "ga_exports_latest": [
     {
       "country": "Canada",
@@ -1510,10 +1514,10 @@
   },
   "_meta": {
     "exports_annual": {
-      "last_updated": "2026-10-05T23:41:03Z"
+      "last_updated": "2026-11-05T23:13:28Z"
     },
     "exports_by_commodity": {
-      "last_updated": "2026-10-05T23:41:10Z"
+      "last_updated": "2026-11-05T23:13:45Z"
     }
   }
 }
