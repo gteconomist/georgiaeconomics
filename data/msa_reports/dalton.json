@@ -3,7 +3,7 @@
   "short_name": "Dalton",
   "full_name": "Dalton, GA",
   "population": 143000,
-  "as_of": "2026-11-04",
+  "as_of": "2026-11-05",
   "sections": {
     "ces_employment": {
       "series_id": "SMS13191400000000001",
@@ -4874,22 +4874,14 @@
       "source": "Census Business Dynamics Statistics (establishment entry rate, 2022); metro rate indexed to US=100"
     },
     "major_employers": {
-      "as_of": "2026-11-04",
+      "as_of": "2026-11-05",
       "employers": [
         {
-          "name": "New Manufacturing",
-          "source_url": "https://www.selectgeorgia.com/georgiagrowth"
-        },
-        {
           "name": "Shaw Industries",
-          "source_url": "https://www.selectgeorgia.com/georgiagrowth"
+          "source_url": "https://www.selectgeorgia.com/about-us/our-team/regional-development/tamara-brock-nw"
         },
         {
-          "name": "Warehouse",
-          "source_url": "https://www.selectgeorgia.com/georgiagrowth"
-        },
-        {
-          "name": "CELLS America Inc",
+          "name": "Manufacturing",
           "source_url": "https://www.bizjournals.com/atlanta/news/2023/06/29/solar-workforce-qcells-dalton-georgia.html"
         },
         {
@@ -4897,51 +4889,59 @@
           "source_url": "https://en.wikipedia.org/wiki/Dalton,_Georgia"
         },
         {
-          "name": "Distribution",
-          "source_url": "https://www.selectgeorgia.com/georgiagrowth"
+          "name": "Lockheed Martin Aeronautics Co",
+          "source_url": "https://www.bizjournals.com/atlanta/research/lists/2026/georgia-manufacturers.html"
         },
         {
-          "name": "Manufacturing Expansion",
-          "source_url": "https://www.selectgeorgia.com/georgiagrowth"
+          "name": "Appalachian Regional Port",
+          "source_url": "https://valdostadailytimes.com/2019/08/05/hanwha-plant-up-to-more-than-750-employees-2"
         },
         {
-          "name": "Beaulieu Group",
-          "source_url": "https://valdostadailytimes.com/2018/01/01/engineered-floors-growth-varnell-drama-among-top-stories-in-dalton-area-in-2017"
+          "name": "Authority",
+          "source_url": "https://en.wikipedia.org/wiki/Shaw_Industries"
         },
         {
-          "name": "Elevator Corp",
-          "source_url": "https://www.selectgeorgia.com/georgiagrowth"
+          "name": "CELLS America Inc",
+          "source_url": "https://www.bizjournals.com/atlanta/news/2023/06/29/solar-workforce-qcells-dalton-georgia.html"
+        },
+        {
+          "name": "Company",
+          "source_url": "https://www.bizjournals.com/atlanta/research/lists/2026/georgia-manufacturers.html"
         },
         {
           "name": "Flooring",
-          "source_url": "https://valdostadailytimes.com/2018/01/01/engineered-floors-growth-varnell-drama-among-top-stories-in-dalton-area-in-2017"
-        },
-        {
-          "name": "Food Processing Expansion",
-          "source_url": "https://www.selectgeorgia.com/georgiagrowth"
-        },
-        {
-          "name": "Food Processing Retention",
-          "source_url": "https://www.selectgeorgia.com/georgiagrowth"
-        },
-        {
-          "name": "GATX Corp",
-          "source_url": "https://www.selectgeorgia.com/georgiagrowth"
+          "source_url": "https://www.ajc.com/news/shaw-industries-plans-to-close-a-factory-in-georgia-and-lay-off-workers/7DDOWE4XGFHIPCACFXPMJ23EFY"
         },
         {
           "name": "Georgia Academy",
+          "source_url": "https://www.selectgeorgia.com/about-us/our-team/regional-development/tamara-brock-nw"
+        },
+        {
+          "name": "Gulfstream Aerospace Corp",
+          "source_url": "https://www.bizjournals.com/atlanta/research/lists/2026/georgia-manufacturers.html"
+        },
+        {
+          "name": "Mohawk Industries",
+          "source_url": "https://en.wikipedia.org/wiki/Dalton,_Georgia"
+        },
+        {
+          "name": "Plant",
+          "source_url": "https://www.ajc.com/news/shaw-industries-plans-to-close-a-factory-in-georgia-and-lay-off-workers/7DDOWE4XGFHIPCACFXPMJ23EFY"
+        },
+        {
+          "name": "University of Georgia",
           "source_url": "https://www.selectgeorgia.com/about-us/our-team/regional-development/tamara-brock-nw"
         }
       ],
       "sources": [
         "https://en.wikipedia.org/wiki/Dalton,_Georgia",
-        "https://www.selectgeorgia.com/georgiagrowth",
-        "https://www.ajc.com/business/employment/slow-carpet-sales-leads-dalton-plant-closing/i6IWYuTMhqDpy2SltAagkM",
         "https://www.bizjournals.com/atlanta/news/2023/06/29/solar-workforce-qcells-dalton-georgia.html",
+        "https://www.ajc.com/business/dalton-augusta-worst-for-job-losses-lately/qWPbpKazCnZFJtn1Kel1RM",
         "https://www.selectgeorgia.com/about-us/our-team/regional-development/tamara-brock-nw",
-        "https://valdostadailytimes.com/2018/01/01/engineered-floors-growth-varnell-drama-among-top-stories-in-dalton-area-in-2017",
-        "https://www.ajc.com/business/georgia-best-employers-for-2019-according-forbes/97QBCslwnyl3Ob4ujTmnLK",
-        "https://www.ajc.com/business/dalton-augusta-worst-for-job-losses-lately/qWPbpKazCnZFJtn1Kel1RM"
+        "https://www.bizjournals.com/atlanta/research/lists/2026/georgia-manufacturers.html",
+        "https://valdostadailytimes.com/2017/09/11/questions-and-answers-with-shaw-industries-ceo-vance-bell",
+        "https://www.ajc.com/news/shaw-industries-plans-to-close-a-factory-in-georgia-and-lay-off-workers/7DDOWE4XGFHIPCACFXPMJ23EFY",
+        "https://en.wikipedia.org/wiki/Shaw_Industries"
       ],
       "method": "Representative list auto-discovered via Tavily web search across chamber-of-commerce, development-authority and local-news sources. Not exhaustive; ordering approximates source frequency, not headcount."
     },

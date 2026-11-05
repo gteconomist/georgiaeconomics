@@ -3,7 +3,7 @@
   "short_name": "Savannah",
   "full_name": "Savannah, GA",
   "population": 410000,
-  "as_of": "2026-11-04",
+  "as_of": "2026-11-05",
   "sections": {
     "ces_employment": {
       "series_id": "SMS13423400000000001",
@@ -5574,31 +5574,43 @@
       "source": "Census Business Dynamics Statistics (establishment entry rate, 2022); metro rate indexed to US=100"
     },
     "major_employers": {
-      "as_of": "2026-11-04",
+      "as_of": "2026-11-05",
       "employers": [
         {
           "name": "Children's Healthcare of Atlanta",
           "source_url": "https://www.savannahnow.com/story/business/2026/09/05/delta-coca-cola-among-forbes-best-employers-in-georgia/91607458007"
         },
         {
-          "name": "Gulfstream Aerospace",
-          "source_url": "https://www.savannahnow.com/story/business/2012/11/28/savannah-chamber-asks-legislative-support-major-industries/13800705007"
+          "name": "Gulfstream Aerospace Corp",
+          "source_url": "https://www.bizjournals.com/atlanta/research/lists/2026/georgia-manufacturers.html"
         },
         {
-          "name": "Georgia Southern University",
-          "source_url": "https://www.savannahnow.com/story/business/2026/09/05/delta-coca-cola-among-forbes-best-employers-in-georgia/91607458007"
+          "name": "Pratt Industries",
+          "source_url": "https://www.savannahnow.com/story/business/2023/10/19/savannah-chamber-of-commerce-holds-awards-banquet-at-hyatt-regency/71242380007"
         },
         {
           "name": "Forsyth County School District",
           "source_url": "https://www.savannahnow.com/story/business/2026/09/05/delta-coca-cola-among-forbes-best-employers-in-georgia/91607458007"
         },
         {
+          "name": "Georgia Southern University",
+          "source_url": "https://www.savannahnow.com/story/business/2026/09/05/delta-coca-cola-among-forbes-best-employers-in-georgia/91607458007"
+        },
+        {
+          "name": "Savannah Sauce Company",
+          "source_url": "https://www.savannahnow.com/story/business/2023/10/19/savannah-chamber-of-commerce-holds-awards-banquet-at-hyatt-regency/71242380007"
+        },
+        {
           "name": "Southern Company",
           "source_url": "https://www.savannahnow.com/story/business/2026/09/05/delta-coca-cola-among-forbes-best-employers-in-georgia/91607458007"
         },
         {
-          "name": "Hyundai Motor Group Metaplant America",
-          "source_url": "https://www.savannahnow.com/story/opinion/columns/2024/02/08/city-talk-areas-job-growth-looks-strong-for-2024-and-beyond/72523453007"
+          "name": "American Naval Stores Company",
+          "source_url": "https://en.wikipedia.org/wiki/Category:Companies_based_in_Savannah,_Georgia"
+        },
+        {
+          "name": "Inc. President",
+          "source_url": "https://www.savannahnow.com/story/business/employment/2025/10/10/savannah-area-workforce-leaders-come-together-for-updates-at-downtown-business-association-luncheon/86563396007"
         },
         {
           "name": "Innova Solutions",
@@ -5609,39 +5621,27 @@
           "source_url": "https://www.savannahnow.com/story/business/2026/09/05/delta-coca-cola-among-forbes-best-employers-in-georgia/91607458007"
         },
         {
-          "name": "Colony Bank",
-          "source_url": "https://www.savannahnow.com/story/business/2013/02/19/understanding-purpose-savannah-chamber/13655438007"
-        },
-        {
           "name": "Port of Savannah",
           "source_url": "https://en.wikipedia.org/wiki/Savannah_metropolitan_area"
         },
         {
-          "name": "Savannah State University",
-          "source_url": "https://en.wikipedia.org/wiki/Savannah_metropolitan_area"
+          "name": "Savannah Technical College President Ryan Foley",
+          "source_url": "https://www.savannahnow.com/story/business/employment/2025/10/10/savannah-area-workforce-leaders-come-together-for-updates-at-downtown-business-association-luncheon/86563396007"
         },
         {
           "name": "Shaw Industries Inc",
           "source_url": "https://www.bizjournals.com/atlanta/research/lists/2026/georgia-manufacturers.html"
-        },
-        {
-          "name": "Alpha Financial Management",
-          "source_url": "https://www.savannahnow.com/story/business/2013/02/19/understanding-purpose-savannah-chamber/13655438007"
-        },
-        {
-          "name": "Chase Bank",
-          "source_url": "https://en.wikipedia.org/wiki/Savannah_metropolitan_area"
         }
       ],
       "sources": [
+        "https://en.wikipedia.org/wiki/Savannah,_Georgia",
         "https://www.savannahnow.com/story/business/2026/09/05/delta-coca-cola-among-forbes-best-employers-in-georgia/91607458007",
         "https://www.bizjournals.com/atlanta/research/lists/2026/georgia-manufacturers.html",
-        "https://en.wikipedia.org/wiki/Savannah_metropolitan_area",
         "https://www.savannahnow.com/story/business/2026/08/24/best-place-to-work-forbes-names-top-10-employers-in-georgia/91439995007",
         "https://www.savannahnow.com/story/news/2026/02/24/forbes-ranked-2-georgia-businesses-among-top-50-large-employers-in-us/88828522007",
-        "https://www.savannahnow.com/story/business/2012/11/28/savannah-chamber-asks-legislative-support-major-industries/13800705007",
-        "https://www.savannahnow.com/story/business/2013/02/19/understanding-purpose-savannah-chamber/13655438007",
-        "https://www.savannahnow.com/story/business/2014/10/10/savannah-chamber-recognizes-entrepreneurs-manufacturers-2014-business-awards/13961954007"
+        "https://www.savannahnow.com/story/news/2016/07/08/garden-city-police-department-savannah-firms-make-best-places-work-georgia-list/13921419007",
+        "https://en.wikipedia.org/wiki/Category:Companies_based_in_Savannah,_Georgia",
+        "https://www.savannahnow.com/story/business/employment/2025/10/10/savannah-area-workforce-leaders-come-together-for-updates-at-downtown-business-association-luncheon/86563396007"
       ],
       "method": "Representative list auto-discovered via Tavily web search across chamber-of-commerce, development-authority and local-news sources. Not exhaustive; ordering approximates source frequency, not headcount."
     },

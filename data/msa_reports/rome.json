@@ -3,7 +3,7 @@
   "short_name": "Rome",
   "full_name": "Rome, GA",
   "population": 99000,
-  "as_of": "2026-11-04",
+  "as_of": "2026-11-05",
   "sections": {
     "ces_employment": {
       "series_id": "SMS13406600000000001",
@@ -4767,7 +4767,7 @@
       "source": "Census Business Dynamics Statistics (establishment entry rate, 2022); metro rate indexed to US=100"
     },
     "major_employers": {
-      "as_of": "2026-11-04",
+      "as_of": "2026-11-05",
       "employers": [
         {
           "name": "Floyd Medical Center",
@@ -4790,51 +4790,50 @@
           "source_url": "https://en.wikipedia.org/wiki/Rome,_Georgia"
         },
         {
+          "name": "Utilities",
+          "source_url": "https://en.wikipedia.org/wiki/List_of_largest_Italian_companies"
+        },
+        {
           "name": "Ball Corp",
           "source_url": "https://www.ajc.com/business/can-maker-build-200-million-plant-rome-adding-180-jobs/XZJQKwuTFJo0phRZnZY6lJ"
-        },
-        {
-          "name": "Kerry Group",
-          "source_url": "https://en.wikipedia.org/wiki/Rome,_Georgia"
-        },
-        {
-          "name": "River City Bank",
-          "source_url": "https://www.northwestgeorgianews.com/rome/business"
         },
         {
           "name": "General Electric",
           "source_url": "https://en.wikipedia.org/wiki/Rome,_Georgia"
         },
         {
+          "name": "Kerry Group",
+          "source_url": "https://en.wikipedia.org/wiki/Rome,_Georgia"
+        },
+        {
+          "name": "Rome Plow Company",
+          "source_url": "https://en.wikipedia.org/wiki/Rome,_Georgia"
+        },
+        {
+          "name": "Aerospace",
+          "source_url": "https://en.wikipedia.org/wiki/List_of_largest_Italian_companies"
+        },
+        {
+          "name": "Energy",
+          "source_url": "https://en.wikipedia.org/wiki/List_of_largest_Italian_companies"
+        },
+        {
           "name": "Georgia Health Sciences University",
           "source_url": "https://en.wikipedia.org/wiki/Rome,_Georgia"
         },
         {
-          "name": "Lowe's Distribution Center",
-          "source_url": "https://georgia.org/sites/default/files/2023-01/lowes_4.pdf"
-        },
-        {
           "name": "Medical College of Georgia",
-          "source_url": "https://en.wikipedia.org/wiki/Rome,_Georgia"
-        },
-        {
-          "name": "Mohawk Industries",
-          "source_url": "https://www.selectgeorgia.com/discover-georgia/industries/fortune-500-list"
-        },
-        {
-          "name": "Pirelli Tire Manufacturing",
           "source_url": "https://en.wikipedia.org/wiki/Rome,_Georgia"
         }
       ],
       "sources": [
         "https://en.wikipedia.org/wiki/Rome,_Georgia",
-        "https://www.selectgeorgia.com/blog/team-researchers-provide-clear-employment-overview-community-partners",
-        "https://georgia.org/sites/default/files/2023-01/lowes_4.pdf",
         "https://www.ajc.com/business/can-maker-build-200-million-plant-rome-adding-180-jobs/XZJQKwuTFJo0phRZnZY6lJ",
         "https://www.bizjournals.com/atlanta/news/2025/09/26/georgia-largest-manufacturers-by-employment.html",
-        "https://www.northwestgeorgianews.com/rome/business",
-        "https://www.selectgeorgia.com/discover-georgia/industries/fortune-500-list",
-        "https://georgia.org/sites/default/files/2020-04/fy20_q3_board_book.pdf"
+        "https://georgia.org/sites/default/files/2023-01/lowes_4.pdf",
+        "https://en.wikipedia.org/wiki/Georgia_Chamber_of_Commerce",
+        "https://en.wikipedia.org/wiki/List_of_largest_Italian_companies",
+        "https://en.wikipedia.org/wiki/Category:Companies_based_in_Rome"
       ],
       "method": "Representative list auto-discovered via Tavily web search across chamber-of-commerce, development-authority and local-news sources. Not exhaustive; ordering approximates source frequency, not headcount."
     },

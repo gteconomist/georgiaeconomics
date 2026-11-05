@@ -3,7 +3,7 @@
   "short_name": "Augusta",
   "full_name": "Augusta-Richmond County, GA-SC",
   "population": 611000,
-  "as_of": "2026-11-04",
+  "as_of": "2026-11-05",
   "sections": {
     "ces_employment": {
       "series_id": "SMS13122600000000001",
@@ -5475,7 +5475,7 @@
       "source": "Census Business Dynamics Statistics (establishment entry rate, 2022); metro rate indexed to US=100"
     },
     "major_employers": {
-      "as_of": "2026-11-04",
+      "as_of": "2026-11-05",
       "employers": [
         {
           "name": "Augusta University",
@@ -5486,19 +5486,39 @@
           "source_url": "https://en.wikipedia.org/wiki/Augusta,_Georgia"
         },
         {
+          "name": "Doctors Hospital",
+          "source_url": "https://en.wikipedia.org/wiki/Augusta,_Georgia"
+        },
+        {
+          "name": "Augusta Economic Development Authority",
+          "source_url": "https://en.wikipedia.org/wiki/Augusta,_Georgia"
+        },
+        {
           "name": "Augusta Technical College",
           "source_url": "https://en.wikipedia.org/wiki/Augusta_metropolitan_area"
+        },
+        {
+          "name": "KSB Company",
+          "source_url": "https://en.wikipedia.org/wiki/Augusta,_Georgia"
+        },
+        {
+          "name": "Olin Corporation",
+          "source_url": "https://en.wikipedia.org/wiki/Augusta,_Georgia"
+        },
+        {
+          "name": "Solo Cup Company",
+          "source_url": "https://en.wikipedia.org/wiki/Augusta,_Georgia"
         },
         {
           "name": "Cardinal Health",
           "source_url": "https://en.wikipedia.org/wiki/Augusta,_Georgia"
         },
         {
-          "name": "Doctors Hospital",
+          "name": "Charlie Norwood VA Medical Center",
           "source_url": "https://en.wikipedia.org/wiki/Augusta,_Georgia"
         },
         {
-          "name": "FPL Food",
+          "name": "East Central Regional Hospital",
           "source_url": "https://en.wikipedia.org/wiki/Augusta,_Georgia"
         },
         {
@@ -5510,27 +5530,7 @@
           "source_url": "https://en.wikipedia.org/wiki/Augusta_metropolitan_area"
         },
         {
-          "name": "Georgia Military College",
-          "source_url": "https://en.wikipedia.org/wiki/Augusta_metropolitan_area"
-        },
-        {
-          "name": "Olin Corporation",
-          "source_url": "https://en.wikipedia.org/wiki/Augusta,_Georgia"
-        },
-        {
-          "name": "Paine College",
-          "source_url": "https://en.wikipedia.org/wiki/Augusta_metropolitan_area"
-        },
-        {
-          "name": "Solo Cup Company",
-          "source_url": "https://en.wikipedia.org/wiki/Augusta,_Georgia"
-        },
-        {
-          "name": "Charlie Norwood VA Medical Center",
-          "source_url": "https://en.wikipedia.org/wiki/Augusta,_Georgia"
-        },
-        {
-          "name": "Department of Energy",
+          "name": "FPL Food",
           "source_url": "https://en.wikipedia.org/wiki/Augusta,_Georgia"
         }
       ],
@@ -5542,7 +5542,7 @@
         "https://www.selectgeorgia.com/about-us/our-team/regional-development/matthew-forshee-east",
         "https://www.augustachronicle.com/story/news/2025/06/04/fortune-500s-list-of-the-biggest-corporations-includes-17-in-georgia/84010835007",
         "https://www.augustachronicle.com/story/news/local/the-people-sentinel/2019/10/16/chamber-of-commerce-recognizes-community-champions/2519701007",
-        "https://www.augustachronicle.com/story/business/2020/11/07/scuttlebiz-south-carolina-leans-heavy-on-federal-funds-georgia-not-so-much/43014025"
+        "https://www.bizjournals.com/bizjournals/on-numbers/scott-thomas/2013/04/pay-in-market-006.html"
       ],
       "method": "Representative list auto-discovered via Tavily web search across chamber-of-commerce, development-authority and local-news sources. Not exhaustive; ordering approximates source frequency, not headcount."
     },

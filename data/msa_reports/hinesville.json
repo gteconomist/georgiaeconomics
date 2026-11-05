@@ -3,7 +3,7 @@
   "short_name": "Hinesville",
   "full_name": "Hinesville, GA",
   "population": 78000,
-  "as_of": "2026-11-04",
+  "as_of": "2026-11-05",
   "sections": {
     "ces_employment": {
       "series_id": "SMS13259800000000001",
@@ -4272,19 +4272,23 @@
       "source": "Census Business Dynamics Statistics (establishment entry rate, 2022); metro rate indexed to US=100"
     },
     "major_employers": {
-      "as_of": "2026-11-04",
+      "as_of": "2026-11-05",
       "employers": [
         {
           "name": "Georgia Power",
           "source_url": "https://www.savannahnow.com/story/news/2007/04/20/keys-future/13805399007"
         },
         {
-          "name": "Aerospace",
-          "source_url": "https://georgia.org"
+          "name": "Company",
+          "source_url": "https://www.savannahnow.com/story/business/2016/05/18/bis-brief-va-clinic-hold-open-house-hinesville/13973918007"
         },
         {
-          "name": "Automotive",
-          "source_url": "https://georgia.org"
+          "name": "Gulfstream Aerospace",
+          "source_url": "https://www.savannahnow.com/story/news/2007/04/20/keys-future/13805399007"
+        },
+        {
+          "name": "Liberty County High School",
+          "source_url": "https://en.wikipedia.org/wiki/Hinesville,_Georgia"
         },
         {
           "name": "Logistics USA Inc",
@@ -4295,12 +4299,16 @@
           "source_url": null
         },
         {
-          "name": "Liberty County High School",
-          "source_url": "https://en.wikipedia.org/wiki/Hinesville,_Georgia"
+          "name": "Pacific Corp",
+          "source_url": null
         },
         {
           "name": "Arts Academy Fitness",
           "source_url": "https://georgia.org/sites/default/files/2020-10/georgia_safety_promise-10-27.pdf"
+        },
+        {
+          "name": "Authority",
+          "source_url": "https://en.wikipedia.org/wiki/Liberty_County,_Georgia"
         },
         {
           "name": "Bermuda Lane Flowery Branch Wesco Distribution",
@@ -4315,30 +4323,22 @@
           "source_url": "https://georgia.org/sites/default/files/2020-10/georgia_safety_promise-10-27.pdf"
         },
         {
-          "name": "Energy",
-          "source_url": "https://georgia.org"
+          "name": "Explore Georgia's Leading Industries",
+          "source_url": "https://georgia.org/sister-cities-international-alliances"
         },
         {
-          "name": "Food Processing",
-          "source_url": "https://georgia.org"
-        },
-        {
-          "name": "Georgia Southern University's Liberty",
-          "source_url": "https://en.wikipedia.org/wiki/Hinesville,_Georgia"
-        },
-        {
-          "name": "Georgia-Pacific Corp",
-          "source_url": "https://www.savannahnow.com/story/news/2007/04/20/keys-future/13805399007"
+          "name": "Frankenmuth Insurance",
+          "source_url": "https://www.savannahnow.com/story/business/2016/05/18/bis-brief-va-clinic-hold-open-house-hinesville/13973918007"
         }
       ],
       "sources": [
         "https://georgia.org/why-georgia/regions-georgia/coastal-georgia",
-        "https://www.savannahnow.com/story/business/2014/07/09/bis-brief-hinesville-named-state-s-no-2-city-rise/13962994007",
+        "https://en.wikipedia.org/wiki/Liberty_County,_Georgia",
+        "https://georgia.org/sister-cities-international-alliances",
+        "https://www.savannahnow.com/story/business/2016/05/18/bis-brief-va-clinic-hold-open-house-hinesville/13973918007",
         "https://georgia.org/sites/default/files/2020-10/georgia_safety_promise-10-27.pdf",
         "https://www.savannahnow.com/story/news/2007/04/20/keys-future/13805399007",
-        "https://en.wikipedia.org/wiki/Hinesville,_Georgia",
-        "https://georgia.org",
-        "https://www.savannahnow.com/story/news/2010/01/22/unemployment-still-rising/13707328007"
+        "https://en.wikipedia.org/wiki/Hinesville,_Georgia"
       ],
       "method": "Representative list auto-discovered via Tavily web search across chamber-of-commerce, development-authority and local-news sources. Not exhaustive; ordering approximates source frequency, not headcount."
     },
