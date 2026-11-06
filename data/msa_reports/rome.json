@@ -3,7 +3,7 @@
   "short_name": "Rome",
   "full_name": "Rome, GA",
   "population": 99000,
-  "as_of": "2026-11-05",
+  "as_of": "2026-11-06",
   "sections": {
     "ces_employment": {
       "series_id": "SMS13406600000000001",
@@ -2339,7 +2339,8 @@
               "2026-06",
               "2026-07",
               "2026-08",
-              "2026-09"
+              "2026-09",
+              "2026-10"
             ],
             "values": [
               633.0,
@@ -2373,8 +2374,9 @@
               611.0,
               609.0,
               606.0,
-              609.0,
-              607.0
+              608.0,
+              606.0,
+              605.0
             ],
             "yoy_pct": [
               null,
@@ -2408,10 +2410,11 @@
               -1.13,
               -1.14,
               -0.66,
-              0.33,
-              0.33
+              0.16,
+              0.17,
+              -0.17
             ],
-            "latest_yoy": 0.33,
+            "latest_yoy": -0.17,
             "adjustment": "SA"
           },
           "Construction": {
@@ -2450,7 +2453,8 @@
               "2026-06",
               "2026-07",
               "2026-08",
-              "2026-09"
+              "2026-09",
+              "2026-10"
             ],
             "values": [
               8123.0,
@@ -2484,8 +2488,9 @@
               8316.0,
               8319.0,
               8337.0,
-              8353.0,
-              8364.0
+              8354.0,
+              8370.0,
+              8367.0
             ],
             "yoy_pct": [
               null,
@@ -2519,10 +2524,11 @@
               0.57,
               0.63,
               0.92,
-              1.38,
-              1.32
+              1.4,
+              1.39,
+              1.5
             ],
-            "latest_yoy": 1.32,
+            "latest_yoy": 1.5,
             "adjustment": "SA"
           },
           "Manufacturing": {
@@ -2561,7 +2567,8 @@
               "2026-06",
               "2026-07",
               "2026-08",
-              "2026-09"
+              "2026-09",
+              "2026-10"
             ],
             "values": [
               12875.0,
@@ -2595,8 +2602,9 @@
               12595.0,
               12608.0,
               12628.0,
-              12643.0,
-              12652.0
+              12649.0,
+              12662.0,
+              12681.0
             ],
             "yoy_pct": [
               null,
@@ -2630,10 +2638,11 @@
               -0.44,
               -0.22,
               0.02,
-              0.22,
-              0.32
+              0.27,
+              0.4,
+              0.62
             ],
-            "latest_yoy": 0.32,
+            "latest_yoy": 0.62,
             "adjustment": "SA"
           },
           "Trade, transportation, and utilities": {
@@ -2672,7 +2681,8 @@
               "2026-06",
               "2026-07",
               "2026-08",
-              "2026-09"
+              "2026-09",
+              "2026-10"
             ],
             "values": [
               28799.0,
@@ -2706,8 +2716,9 @@
               28724.0,
               28728.0,
               28751.0,
-              28760.0,
-              28778.0
+              28767.0,
+              28796.0,
+              28818.0
             ],
             "yoy_pct": [
               null,
@@ -2741,10 +2752,11 @@
               -0.14,
               -0.05,
               0.02,
-              0.06,
-              0.18
+              0.08,
+              0.25,
+              0.36
             ],
-            "latest_yoy": 0.18,
+            "latest_yoy": 0.36,
             "adjustment": "SA"
           },
           "Information": {
@@ -2783,7 +2795,8 @@
               "2026-06",
               "2026-07",
               "2026-08",
-              "2026-09"
+              "2026-09",
+              "2026-10"
             ],
             "values": [
               2963.0,
@@ -2817,8 +2830,9 @@
               2782.0,
               2763.0,
               2767.0,
-              2749.0,
-              2739.0
+              2746.0,
+              2735.0,
+              2734.0
             ],
             "yoy_pct": [
               null,
@@ -2852,10 +2866,11 @@
               -2.86,
               -3.49,
               -3.29,
-              -3.88,
-              -4.2
+              -3.99,
+              -4.34,
+              -4.17
             ],
-            "latest_yoy": -4.2,
+            "latest_yoy": -4.17,
             "adjustment": "SA"
           },
           "Financial activities": {
@@ -2894,7 +2909,8 @@
               "2026-06",
               "2026-07",
               "2026-08",
-              "2026-09"
+              "2026-09",
+              "2026-10"
             ],
             "values": [
               9165.0,
@@ -2928,8 +2944,9 @@
               9106.0,
               9108.0,
               9098.0,
-              9089.0,
-              9082.0
+              9092.0,
+              9078.0,
+              9085.0
             ],
             "yoy_pct": [
               null,
@@ -2963,10 +2980,11 @@
               -1.14,
               -1.04,
               -1.15,
-              -1.05,
-              -1.16
+              -1.01,
+              -1.21,
+              -1.08
             ],
-            "latest_yoy": -1.16,
+            "latest_yoy": -1.08,
             "adjustment": "SA"
           },
           "Professional and business services": {
@@ -3005,7 +3023,8 @@
               "2026-06",
               "2026-07",
               "2026-08",
-              "2026-09"
+              "2026-09",
+              "2026-10"
             ],
             "values": [
               22668.0,
@@ -3039,8 +3058,9 @@
               22466.0,
               22502.0,
               22496.0,
-              22491.0,
-              22482.0
+              22526.0,
+              22534.0,
+              22604.0
             ],
             "yoy_pct": [
               null,
@@ -3074,10 +3094,11 @@
               0.07,
               0.37,
               0.42,
-              0.52,
-              0.55
+              0.67,
+              0.78,
+              1.2
             ],
-            "latest_yoy": 0.55,
+            "latest_yoy": 1.2,
             "adjustment": "SA"
           },
           "Education and health services": {
@@ -3116,7 +3137,8 @@
               "2026-06",
               "2026-07",
               "2026-08",
-              "2026-09"
+              "2026-09",
+              "2026-10"
             ],
             "values": [
               26033.0,
@@ -3150,8 +3172,9 @@
               27883.0,
               27933.0,
               27947.0,
-              27985.0,
-              28005.0
+              27984.0,
+              28005.0,
+              28058.0
             ],
             "yoy_pct": [
               null,
@@ -3186,9 +3209,10 @@
               2.23,
               1.95,
               2.0,
-              1.88
+              1.88,
+              1.91
             ],
-            "latest_yoy": 1.88,
+            "latest_yoy": 1.91,
             "adjustment": "SA"
           },
           "Leisure and hospitality": {
@@ -3227,7 +3251,8 @@
               "2026-06",
               "2026-07",
               "2026-08",
-              "2026-09"
+              "2026-09",
+              "2026-10"
             ],
             "values": [
               16716.0,
@@ -3261,8 +3286,9 @@
               17014.0,
               16960.0,
               16922.0,
-              16959.0,
-              16969.0
+              16964.0,
+              16977.0,
+              16964.0
             ],
             "yoy_pct": [
               null,
@@ -3296,10 +3322,11 @@
               1.04,
               0.73,
               0.44,
-              0.53,
-              0.37
+              0.56,
+              0.41,
+              0.09
             ],
-            "latest_yoy": 0.37,
+            "latest_yoy": 0.09,
             "adjustment": "SA"
           },
           "Other services": {
@@ -3338,7 +3365,8 @@
               "2026-06",
               "2026-07",
               "2026-08",
-              "2026-09"
+              "2026-09",
+              "2026-10"
             ],
             "values": [
               5917.0,
@@ -3372,8 +3400,9 @@
               6031.0,
               6024.0,
               6030.0,
-              6033.0,
-              6039.0
+              6034.0,
+              6039.0,
+              6045.0
             ],
             "yoy_pct": [
               null,
@@ -3407,10 +3436,11 @@
               0.62,
               0.67,
               0.68,
-              0.42,
-              0.57
+              0.43,
+              0.57,
+              0.77
             ],
-            "latest_yoy": 0.57,
+            "latest_yoy": 0.77,
             "adjustment": "SA"
           },
           "Government": {
@@ -3449,7 +3479,8 @@
               "2026-06",
               "2026-07",
               "2026-08",
-              "2026-09"
+              "2026-09",
+              "2026-10"
             ],
             "values": [
               23140.0,
@@ -3484,7 +3515,8 @@
               23338.0,
               23300.0,
               23344.0,
-              23327.0
+              23326.0,
+              23332.0
             ],
             "yoy_pct": [
               null,
@@ -3519,9 +3551,10 @@
               -1.05,
               -1.21,
               -0.81,
-              -0.92
+              -0.92,
+              -0.25
             ],
-            "latest_yoy": -0.92,
+            "latest_yoy": -0.25,
             "adjustment": "SA"
           }
         }
@@ -4767,7 +4800,7 @@
       "source": "Census Business Dynamics Statistics (establishment entry rate, 2022); metro rate indexed to US=100"
     },
     "major_employers": {
-      "as_of": "2026-11-05",
+      "as_of": "2026-11-06",
       "employers": [
         {
           "name": "Floyd Medical Center",
@@ -4794,15 +4827,11 @@
           "source_url": "https://en.wikipedia.org/wiki/List_of_largest_Italian_companies"
         },
         {
-          "name": "Ball Corp",
-          "source_url": "https://www.ajc.com/business/can-maker-build-200-million-plant-rome-adding-180-jobs/XZJQKwuTFJo0phRZnZY6lJ"
-        },
-        {
-          "name": "General Electric",
+          "name": "Kerry Group",
           "source_url": "https://en.wikipedia.org/wiki/Rome,_Georgia"
         },
         {
-          "name": "Kerry Group",
+          "name": "General Electric",
           "source_url": "https://en.wikipedia.org/wiki/Rome,_Georgia"
         },
         {
@@ -4822,18 +4851,23 @@
           "source_url": "https://en.wikipedia.org/wiki/Rome,_Georgia"
         },
         {
+          "name": "Healthcare",
+          "source_url": null
+        },
+        {
           "name": "Medical College of Georgia",
           "source_url": "https://en.wikipedia.org/wiki/Rome,_Georgia"
         }
       ],
       "sources": [
         "https://en.wikipedia.org/wiki/Rome,_Georgia",
-        "https://www.ajc.com/business/can-maker-build-200-million-plant-rome-adding-180-jobs/XZJQKwuTFJo0phRZnZY6lJ",
+        "https://en.wikipedia.org/wiki/Augusta,_Georgia",
         "https://www.bizjournals.com/atlanta/news/2025/09/26/georgia-largest-manufacturers-by-employment.html",
         "https://georgia.org/sites/default/files/2023-01/lowes_4.pdf",
+        "https://www.northwestgeorgianews.com/elaina-beeman/article_f84a6e67-bbc1-4f9c-b010-175e673e5947.html",
         "https://en.wikipedia.org/wiki/Georgia_Chamber_of_Commerce",
-        "https://en.wikipedia.org/wiki/List_of_largest_Italian_companies",
-        "https://en.wikipedia.org/wiki/Category:Companies_based_in_Rome"
+        "https://www.northwestgeorgianews.com/rome/business/rome-floyd-chamber-celebrates-rome-industries/article_34aae01c-d8ff-11ef-b2a8-a38613426472.html",
+        "https://en.wikipedia.org/wiki/List_of_largest_Italian_companies"
       ],
       "method": "Representative list auto-discovered via Tavily web search across chamber-of-commerce, development-authority and local-news sources. Not exhaustive; ordering approximates source frequency, not headcount."
     },
