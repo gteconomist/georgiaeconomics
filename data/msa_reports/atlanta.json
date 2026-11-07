@@ -3,7 +3,7 @@
   "short_name": "Atlanta",
   "full_name": "Atlanta-Sandy Springs-Alpharetta, GA",
   "population": 6307261,
-  "as_of": "2026-11-06",
+  "as_of": "2026-11-07",
   "sections": {
     "ces_employment": {
       "series_id": "SMS13120600000000001",
@@ -5722,18 +5722,18 @@
       "source": "Census Business Dynamics Statistics (establishment entry rate, 2022); metro rate indexed to US=100"
     },
     "major_employers": {
-      "as_of": "2026-11-06",
+      "as_of": "2026-11-07",
       "employers": [
+        {
+          "name": "Emory Healthcare",
+          "source_url": "https://www.bizjournals.com/atlanta/subscriber-only/2022/07/15/atlantas-25-largest-employers.html"
+        },
         {
           "name": "Emory University",
           "source_url": "https://www.bizjournals.com/atlanta/subscriber-only/2022/07/15/atlantas-25-largest-employers.html"
         },
         {
           "name": "Delta Air Lines Inc",
-          "source_url": "https://www.bizjournals.com/atlanta/subscriber-only/2022/07/15/atlantas-25-largest-employers.html"
-        },
-        {
-          "name": "Emory Healthcare",
           "source_url": "https://www.bizjournals.com/atlanta/subscriber-only/2022/07/15/atlantas-25-largest-employers.html"
         },
         {
@@ -5753,32 +5753,32 @@
           "source_url": "https://www.bizjournals.com/atlanta/subscriber-only/2025/10/17/metro-atlantas-largest-employers.html"
         },
         {
-          "name": "Company",
-          "source_url": "https://www.bizjournals.com/atlanta/subscriber-only/2024/04/26/10-largest-companies-with-headquarters-in-sandy-springs.html"
+          "name": "Headquarters Company",
+          "source_url": "https://www.bizjournals.com/atlanta/subscriber-only/2022/07/15/atlantas-25-largest-employers.html"
+        },
+        {
+          "name": "Axiall Company Page Archived",
+          "source_url": "https://en.wikipedia.org/wiki/Economy_of_Atlanta"
+        },
+        {
+          "name": "Company Fact Sheet",
+          "source_url": "https://en.wikipedia.org/wiki/Economy_of_Atlanta"
         },
         {
           "name": "Logistics",
           "source_url": "https://en.wikipedia.org/wiki/Economy_of_Atlanta"
         },
         {
-          "name": "Financial Overview Archived October",
-          "source_url": "https://en.wikipedia.org/wiki/Economy_of_Atlanta"
-        },
-        {
-          "name": "Manufacturing Companies Ranked",
-          "source_url": "https://www.bizjournals.com/atlanta/datacenter/lists"
-        },
-        {
           "name": "The Home Depot Inc",
           "source_url": "https://www.bizjournals.com/atlanta/subscriber-only/2022/07/15/atlantas-25-largest-employers.html"
         },
         {
-          "name": "Associated Industries of Georgia",
-          "source_url": "https://en.wikipedia.org/wiki/Georgia_Chamber_of_Commerce"
+          "name": "Financial Overview Archived October",
+          "source_url": "https://en.wikipedia.org/wiki/Economy_of_Atlanta"
         },
         {
-          "name": "Cox Enterprises Inc",
-          "source_url": "https://www.bizjournals.com/atlanta/subscriber-only/2024/04/26/10-largest-companies-with-headquarters-in-sandy-springs.html"
+          "name": "Georgia Power Economic Development",
+          "source_url": "https://www.selectgeorgia.com/discover-georgia/industries/fortune-500-list"
         }
       ],
       "sources": [
@@ -5788,8 +5788,8 @@
         "https://services.selectgeorgia.com/data/documents/Atlanta_Federal_OZ_Prospectus.pdf",
         "https://en.wikipedia.org/wiki/Economy_of_Atlanta",
         "https://www.selectgeorgia.com/sxsw/top-brands",
-        "https://www.selectgeorgia.com/discover-georgia/industries/why-atlanta/top-companies",
-        "https://en.wikipedia.org/wiki/Georgia_Chamber_of_Commerce"
+        "https://www.selectgeorgia.com/discover-georgia/industries/fortune-500-list",
+        "https://www.selectgeorgia.com/discover-georgia/industries/why-atlanta/top-companies"
       ],
       "method": "Representative list auto-discovered via Tavily web search across chamber-of-commerce, development-authority and local-news sources. Not exhaustive; ordering approximates source frequency, not headcount."
     },

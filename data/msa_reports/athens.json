@@ -3,7 +3,7 @@
   "short_name": "Athens",
   "full_name": "Athens-Clarke County, GA",
   "population": 217000,
-  "as_of": "2026-11-06",
+  "as_of": "2026-11-07",
   "sections": {
     "ces_employment": {
       "series_id": "SMS13120200000000001",
@@ -5536,10 +5536,14 @@
       "source": "Census Business Dynamics Statistics (establishment entry rate, 2022); metro rate indexed to US=100"
     },
     "major_employers": {
-      "as_of": "2026-11-06",
+      "as_of": "2026-11-07",
       "employers": [
         {
           "name": "Children's Healthcare of Atlanta",
+          "source_url": "https://www.onlineathens.com/story/news/2026/03/04/georgias-best-employers-are-these-2-big-businesses-forbes-says/88982542007"
+        },
+        {
+          "name": "Georgia Power",
           "source_url": "https://www.onlineathens.com/story/news/2026/03/04/georgias-best-employers-are-these-2-big-businesses-forbes-says/88982542007"
         },
         {
@@ -5547,8 +5551,16 @@
           "source_url": "https://en.wikipedia.org/wiki/Athens"
         },
         {
+          "name": "Athena Industrial Park",
+          "source_url": "https://www.onlineathens.com/story/business/2013/01/05/brodrick-remarkable-year-athens/15586276007"
+        },
+        {
           "name": "Bank of Greece",
           "source_url": "https://en.wikipedia.org/wiki/Athens"
+        },
+        {
+          "name": "Georgia Southern University",
+          "source_url": "https://www.onlineathens.com/story/news/2026/03/04/georgias-best-employers-are-these-2-big-businesses-forbes-says/88982542007"
         },
         {
           "name": "Hellenic Aerospace Industry",
@@ -5563,47 +5575,35 @@
           "source_url": "https://en.wikipedia.org/wiki/Athens"
         },
         {
-          "name": "The University of Georgia",
-          "source_url": "https://www.onlineathens.com/story/opinion/letters/2018/06/04/letter-uga-partner-with-local-community/12069219007"
+          "name": "TeleNet Marketing Solutions",
+          "source_url": "https://www.onlineathens.com/story/news/state/2014/08/27/forecast-athens-area-jobs-grow-12-percent/15520915007"
         },
         {
-          "name": "Georgia Power",
-          "source_url": "https://www.onlineathens.com/story/news/2026/03/04/georgias-best-employers-are-these-2-big-businesses-forbes-says/88982542007"
+          "name": "Houston County Schools",
+          "source_url": "https://www.ajc.com/life/forbes-top-georgia-employer-is-a-school-district-thats-not-in-metro-atlanta/634GEYICVFAX3OGHGDLKS5CJOQ"
         },
         {
           "name": "Associated Industries of Georgia",
           "source_url": "https://en.wikipedia.org/wiki/Georgia_Chamber_of_Commerce"
         },
         {
-          "name": "Athens Technical College Augusta University Piedmont",
-          "source_url": "https://en.wikipedia.org/wiki/Athens,_Georgia"
-        },
-        {
-          "name": "Barberitos Creature Comforts Brewing Co. Fire",
-          "source_url": "https://en.wikipedia.org/wiki/Athens,_Georgia"
-        },
-        {
           "name": "Clarke Middle School",
           "source_url": "https://www.onlineathens.com/story/business/2014/07/26/terrell-athens-chamber-focusing-members-and-partnerships-2014/15524196007"
         },
         {
-          "name": "Dress Boutique Terrapin Beer Company Wuxtry",
-          "source_url": "https://en.wikipedia.org/wiki/Athens,_Georgia"
-        },
-        {
-          "name": "Food Bank of Northeast Georgia",
-          "source_url": "https://www.onlineathens.com/story/opinion/letters/2018/06/04/letter-uga-partner-with-local-community/12069219007"
+          "name": "Emory University",
+          "source_url": "https://www.ajc.com/life/forbes-top-georgia-employer-is-a-school-district-thats-not-in-metro-atlanta/634GEYICVFAX3OGHGDLKS5CJOQ"
         }
       ],
       "sources": [
+        "https://www.onlineathens.com/story/news/state/2014/08/27/forecast-athens-area-jobs-grow-12-percent/15520915007",
         "https://www.onlineathens.com/story/news/2026/03/04/georgias-best-employers-are-these-2-big-businesses-forbes-says/88982542007",
-        "https://www.onlineathens.com/story/opinion/letters/2018/06/04/letter-uga-partner-with-local-community/12069219007",
-        "https://en.wikipedia.org/wiki/Athens,_Georgia",
+        "https://www.onlineathens.com/story/business/2015/11/14/gdol-host-seasonal-recruitment-athens-area-employers/15471064007",
+        "https://www.onlineathens.com/story/news/local/the-oconee-leader/2015/11/02/metro-athens-agriculture-powerhouse-and-madison-countys-no-1/15477728007",
+        "https://www.ajc.com/life/forbes-top-georgia-employer-is-a-school-district-thats-not-in-metro-atlanta/634GEYICVFAX3OGHGDLKS5CJOQ",
         "https://www.ajc.com/top-workplaces/rounding-out-the-top-5-large-businesses/5FF7QFEAMRGF3PLDXYSC4NOFWQ",
         "https://www.onlineathens.com/picture-gallery/entertainment/events/2020/02/04/photos-the-athens-chamber-of/68646805007",
-        "https://en.wikipedia.org/wiki/Georgia_Chamber_of_Commerce",
-        "https://www.onlineathens.com/story/business/2014/07/26/terrell-athens-chamber-focusing-members-and-partnerships-2014/15524196007",
-        "https://en.wikipedia.org/wiki/Athens"
+        "https://www.onlineathens.com/story/business/2013/01/05/brodrick-remarkable-year-athens/15586276007"
       ],
       "method": "Representative list auto-discovered via Tavily web search across chamber-of-commerce, development-authority and local-news sources. Not exhaustive; ordering approximates source frequency, not headcount."
     },

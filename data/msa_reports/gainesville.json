@@ -3,7 +3,7 @@
   "short_name": "Gainesville",
   "full_name": "Gainesville, GA",
   "population": 211000,
-  "as_of": "2026-11-06",
+  "as_of": "2026-11-07",
   "sections": {
     "ces_employment": {
       "series_id": "SMS13235800000000001",
@@ -5599,72 +5599,72 @@
       "source": "Census Business Dynamics Statistics (establishment entry rate, 2022); metro rate indexed to US=100"
     },
     "major_employers": {
-      "as_of": "2026-11-06",
+      "as_of": "2026-11-07",
       "employers": [
         {
-          "name": "University of Florida",
-          "source_url": "https://en.wikipedia.org/wiki/Gainesville,_Florida"
+          "name": "VDL Industries Gainesville",
+          "source_url": "https://georgia.org/press-releases/2026/vdl-groep-adds-120-new-jobs-hall-county"
+        },
+        {
+          "name": "Koch Foods",
+          "source_url": "https://en.wikipedia.org/wiki/Gainesville,_Georgia"
         },
         {
           "name": "Northeast Georgia Health System",
           "source_url": "https://en.wikipedia.org/wiki/Gainesville,_Georgia"
         },
         {
-          "name": "Ave Food Park Archer Historical Society",
-          "source_url": "https://en.wikipedia.org/wiki/Gainesville_metropolitan_area,_Florida"
+          "name": "The Longstreet Clinic",
+          "source_url": "https://en.wikipedia.org/wiki/Gainesville,_Georgia"
         },
         {
-          "name": "Hialeah Port St. Lucie Tallahassee Cape",
-          "source_url": "https://en.wikipedia.org/wiki/Gainesville_metropolitan_area,_Florida"
+          "name": "University of Florida",
+          "source_url": "https://en.wikipedia.org/wiki/Gainesville,_Florida"
         },
         {
-          "name": "Mildred's Big City Food O'Connell Center",
-          "source_url": "https://en.wikipedia.org/wiki/Gainesville_metropolitan_area,_Florida"
+          "name": "Brenau University",
+          "source_url": "https://en.wikipedia.org/wiki/Gainesville,_Georgia"
         },
         {
-          "name": "Port St. Lucie Punta Gorda Sebastian-Vero",
-          "source_url": "https://en.wikipedia.org/wiki/Gainesville_metropolitan_area,_Florida"
-        },
-        {
-          "name": "The Jaeger Co",
-          "source_url": "https://www.gainesvilletimes.com/news/simpson-jaeger-companies-win-hall-chambers-top-awards"
-        },
-        {
-          "name": "AdEdge Water Technologies of Buford",
-          "source_url": "https://www.gainesvilletimes.com/news/chamber-lauds-companies-as-tops-in-area"
-        },
-        {
-          "name": "Fieldale Farms Corp",
-          "source_url": "https://www.gainesvilletimes.com/news/chamber-lauds-companies-as-tops-in-area"
-        },
-        {
-          "name": "Hollis Transport Agency Inc",
-          "source_url": "https://www.gainesvilletimes.com/news/business-archived/chamber-honors-3-companies-as-the-years-best-in-hall"
-        },
-        {
-          "name": "Kubota Manufacturing of America",
-          "source_url": "https://www.gainesvilletimes.com/news/business-archived/chamber-honors-3-companies-as-the-years-best-in-hall"
-        },
-        {
-          "name": "Wrigley Manufacturing",
-          "source_url": "https://www.gainesvilletimes.com/news/business-archived/chamber-honors-3-companies-as-the-years-best-in-hall"
+          "name": "University of North Georgia",
+          "source_url": "https://en.wikipedia.org/wiki/Gainesville,_Georgia"
         },
         {
           "name": "Annual Comprehensive Financial Report",
           "source_url": "https://en.wikipedia.org/wiki/Gainesville,_Florida"
         },
         {
-          "name": "Brenau University",
+          "name": "Gainesville City Schools",
+          "source_url": "https://georgia.org/press-releases/2026/vdl-groep-adds-120-new-jobs-hall-county"
+        },
+        {
+          "name": "Lanier Technical College",
+          "source_url": "https://georgia.org/press-releases/2026/vdl-groep-adds-120-new-jobs-hall-county"
+        },
+        {
+          "name": "Lockheed Martin Aeronautics Co",
+          "source_url": "https://www.bizjournals.com/atlanta/research/lists/2026/georgia-manufacturers.html"
+        },
+        {
+          "name": "Shaw Industries Inc",
+          "source_url": "https://www.bizjournals.com/atlanta/research/lists/2026/georgia-manufacturers.html"
+        },
+        {
+          "name": "Cleveland Electric Co",
+          "source_url": "https://www.bizjournals.com/atlanta/news/2023/09/05/cj-foodville-tous-les-jours-plant-food-processing.html"
+        },
+        {
+          "name": "Comprehensive Annual Financial Report",
           "source_url": "https://en.wikipedia.org/wiki/Gainesville,_Georgia"
         }
       ],
       "sources": [
         "https://en.wikipedia.org/wiki/Gainesville,_Georgia",
+        "https://www.bizjournals.com/atlanta/related_content.html?topic=Kubota+Industrial+Equipment+Corp",
         "https://www.bizjournals.com/atlanta/research/lists/2026/georgia-manufacturers.html",
         "https://en.wikipedia.org/wiki/Gainesville,_Florida",
-        "https://georgia.org/why-georgia/regions-georgia/northeast-georgia",
-        "https://www.selectgeorgia.com/discover-georgia/industries/fortune-500-list",
-        "https://www.gainesvilletimes.com/news/chamber-lauds-companies-as-tops-in-area",
+        "https://www.bizjournals.com/atlanta/news/2023/09/05/cj-foodville-tous-les-jours-plant-food-processing.html",
+        "https://georgia.org/press-releases/2026/vdl-groep-adds-120-new-jobs-hall-county",
         "https://www.gainesvilletimes.com/news/business-archived/chamber-honors-3-companies-as-the-years-best-in-hall",
         "https://www.gainesvilletimes.com/news/business-archived/hall-chamber-of-commerce-honors-2-local-businesses"
       ],

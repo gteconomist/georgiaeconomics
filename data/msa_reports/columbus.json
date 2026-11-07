@@ -3,7 +3,7 @@
   "short_name": "Columbus",
   "full_name": "Columbus, GA-AL",
   "population": 329000,
-  "as_of": "2026-11-06",
+  "as_of": "2026-11-07",
   "sections": {
     "ces_employment": {
       "series_id": "SMS13179800000000001",
@@ -5525,11 +5525,15 @@
       "source": "Census Business Dynamics Statistics (establishment entry rate, 2022); metro rate indexed to US=100"
     },
     "major_employers": {
-      "as_of": "2026-11-06",
+      "as_of": "2026-11-07",
       "employers": [
         {
           "name": "Health Care",
           "source_url": "https://www.ledger-enquirer.com/news/business/article293959859.html"
+        },
+        {
+          "name": "St. Francis Hospital",
+          "source_url": "https://en.wikipedia.org/wiki/Columbus,_Georgia"
         },
         {
           "name": "Columbus State University",
@@ -5545,10 +5549,6 @@
         },
         {
           "name": "Piedmont Columbus Regional Hospital",
-          "source_url": "https://en.wikipedia.org/wiki/Columbus,_Georgia"
-        },
-        {
-          "name": "St. Francis Hospital",
           "source_url": "https://en.wikipedia.org/wiki/Columbus,_Georgia"
         },
         {
@@ -5591,8 +5591,8 @@
         "https://www.ledger-enquirer.com/news/state/georgia/article312697701.html",
         "https://www.ledger-enquirer.com/news/business/article289530136.html",
         "https://www.selectgeorgia.com/about-us/our-team/regional-development/andrew-camp-west",
-        "https://www.ledger-enquirer.com/news/local/article312324782.html",
-        "https://www.ledger-enquirer.com/news/politics-government/article311841650.html"
+        "https://www.ledger-enquirer.com/news/politics-government/article311841650.html",
+        "https://www.ledger-enquirer.com/latest-news/article317340442.html"
       ],
       "method": "Representative list auto-discovered via Tavily web search across chamber-of-commerce, development-authority and local-news sources. Not exhaustive; ordering approximates source frequency, not headcount."
     },

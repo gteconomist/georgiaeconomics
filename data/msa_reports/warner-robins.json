@@ -3,7 +3,7 @@
   "short_name": "Warner Robins",
   "full_name": "Warner Robins, GA",
   "population": 199000,
-  "as_of": "2026-11-06",
+  "as_of": "2026-11-07",
   "sections": {
     "ces_employment": {
       "series_id": "SMS13475800000000001",
@@ -4548,18 +4548,10 @@
       "source": "Census Business Dynamics Statistics (establishment entry rate, 2022); metro rate indexed to US=100"
     },
     "major_employers": {
-      "as_of": "2026-11-06",
+      "as_of": "2026-11-07",
       "employers": [
         {
-          "name": "Blue Bird Corp",
-          "source_url": "https://www.macon.com/living/living-here-guide/article30131733.html"
-        },
-        {
           "name": "The Medical Center of Central Georgia",
-          "source_url": "https://www.macon.com/living/living-here-guide/article30131733.html"
-        },
-        {
-          "name": "Houston Healthcare",
           "source_url": "https://www.macon.com/living/living-here-guide/article30131733.html"
         },
         {
@@ -4567,15 +4559,15 @@
           "source_url": "https://www.macon.com/living/living-here-guide/article30131733.html"
         },
         {
+          "name": "Houston Healthcare",
+          "source_url": "https://www.macon.com/living/living-here-guide/article30131733.html"
+        },
+        {
           "name": "Mercer University",
           "source_url": "https://www.macon.com/living/living-here-guide/article30131733.html"
         },
         {
-          "name": "Georgia College",
-          "source_url": "https://www.macon.com/living/living-here-guide/article30131733.html"
-        },
-        {
-          "name": "Academy Sports",
+          "name": "Blue Bird Corp",
           "source_url": "https://www.macon.com/living/living-here-guide/article30131733.html"
         },
         {
@@ -4587,7 +4579,15 @@
           "source_url": "https://www.macon.com/news/business/article258547393.html"
         },
         {
+          "name": "Blue Bird Body Co",
+          "source_url": "https://www.macon.com/news/business/article258547393.html"
+        },
+        {
           "name": "Fort Valley State University",
+          "source_url": "https://www.macon.com/living/living-here-guide/article30131733.html"
+        },
+        {
+          "name": "Georgia College",
           "source_url": "https://www.macon.com/living/living-here-guide/article30131733.html"
         },
         {
@@ -4595,12 +4595,12 @@
           "source_url": "https://www.macon.com/news/business/article258547393.html"
         },
         {
-          "name": "Northrop Grumman Corp",
+          "name": "Academy Sports",
           "source_url": "https://www.macon.com/living/living-here-guide/article30131733.html"
         },
         {
-          "name": "Blue Bird Body Co",
-          "source_url": "https://www.macon.com/news/business/article258547393.html"
+          "name": "Northrop Grumman Corp",
+          "source_url": "https://www.macon.com/living/living-here-guide/article30131733.html"
         },
         {
           "name": "Children's Healthcare of Atlanta",
