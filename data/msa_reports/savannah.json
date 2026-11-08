@@ -3,7 +3,7 @@
   "short_name": "Savannah",
   "full_name": "Savannah, GA",
   "population": 410000,
-  "as_of": "2026-11-07",
+  "as_of": "2026-11-08",
   "sections": {
     "ces_employment": {
       "series_id": "SMS13423400000000001",
@@ -5607,7 +5607,7 @@
       "source": "Census Business Dynamics Statistics (establishment entry rate, 2022); metro rate indexed to US=100"
     },
     "major_employers": {
-      "as_of": "2026-11-07",
+      "as_of": "2026-11-08",
       "employers": [
         {
           "name": "Children's Healthcare of Atlanta",
@@ -5618,28 +5618,28 @@
           "source_url": "https://en.wikipedia.org/wiki/Savannah,_Georgia"
         },
         {
+          "name": "Riceboro Paper Mill",
+          "source_url": "https://www.savannahnow.com/in-depth/news/2022/04/26/savannah-paper-mill-industry-economic-development-georgia/7247478001"
+        },
+        {
+          "name": "Savannah River Mill",
+          "source_url": "https://www.savannahnow.com/in-depth/news/2022/04/26/savannah-paper-mill-industry-economic-development-georgia/7247478001"
+        },
+        {
           "name": "Pratt Industries",
           "source_url": "https://www.savannahnow.com/story/business/2023/10/19/savannah-chamber-of-commerce-holds-awards-banquet-at-hyatt-regency/71242380007"
         },
         {
-          "name": "American Naval Stores Company",
-          "source_url": "https://en.wikipedia.org/wiki/Category:Companies_based_in_Savannah,_Georgia"
+          "name": "Foundry Company",
+          "source_url": "https://en.wikipedia.org/wiki/Savannah,_Georgia"
         },
         {
-          "name": "Derst Baking Company",
-          "source_url": "https://en.wikipedia.org/wiki/Category:Companies_based_in_Savannah,_Georgia"
+          "name": "General Motors",
+          "source_url": "https://www.savannahnow.com/story/news/2025/09/05/forbes-ranked-georgias-best-employers-highlighting-these-companies/85987718007"
         },
         {
-          "name": "Savannah Sauce Company",
-          "source_url": "https://www.savannahnow.com/story/business/2023/10/19/savannah-chamber-of-commerce-holds-awards-banquet-at-hyatt-regency/71242380007"
-        },
-        {
-          "name": "Co. Morris Multimedia",
-          "source_url": "https://en.wikipedia.org/wiki/Category:Companies_based_in_Savannah,_Georgia"
-        },
-        {
-          "name": "Coastal Empire Beer Co. Savannah Cotton",
-          "source_url": "https://en.wikipedia.org/wiki/Category:Companies_based_in_Savannah,_Georgia"
+          "name": "Port Wentworth",
+          "source_url": "https://www.savannahnow.com/in-depth/news/2022/04/26/savannah-paper-mill-industry-economic-development-georgia/7247478001"
         },
         {
           "name": "Colony Bank",
@@ -5650,31 +5650,31 @@
           "source_url": "https://www.savannahnow.com/story/news/2025/09/05/forbes-ranked-georgias-best-employers-highlighting-these-companies/85987718007"
         },
         {
+          "name": "Georgia Power",
+          "source_url": "https://www.savannahnow.com/story/news/2026/02/24/forbes-ranked-2-georgia-businesses-among-top-50-large-employers-in-us/88828522007"
+        },
+        {
+          "name": "Georgia Southern University",
+          "source_url": "https://www.savannahnow.com/story/news/2026/02/24/forbes-ranked-2-georgia-businesses-among-top-50-large-employers-in-us/88828522007"
+        },
+        {
           "name": "Inc. President",
           "source_url": "https://www.savannahnow.com/story/business/employment/2025/10/10/savannah-area-workforce-leaders-come-together-for-updates-at-downtown-business-association-luncheon/86563396007"
         },
         {
           "name": "Port of Savannah",
           "source_url": "https://en.wikipedia.org/wiki/Savannah_metropolitan_area"
-        },
-        {
-          "name": "Savannah Bee Company",
-          "source_url": "https://en.wikipedia.org/wiki/Category:Companies_based_in_Savannah,_Georgia"
-        },
-        {
-          "name": "Savannah State University",
-          "source_url": "https://www.savannahnow.com/story/business/2013/02/19/understanding-purpose-savannah-chamber/13655438007"
         }
       ],
       "sources": [
         "https://en.wikipedia.org/wiki/Savannah,_Georgia",
         "https://www.savannahnow.com/story/news/2025/09/05/forbes-ranked-georgias-best-employers-highlighting-these-companies/85987718007",
         "https://www.savannahnow.com/story/news/2026/02/24/forbes-ranked-2-georgia-businesses-among-top-50-large-employers-in-us/88828522007",
-        "https://en.wikipedia.org/wiki/Category:Companies_based_in_Savannah,_Georgia",
-        "https://www.selectgeorgia.com/yourgeorgia/why-savannah-HQ/set-shop",
+        "https://www.selectgeorgia.com/blog/welcome-seapoint-industrial-site-savannah-ga",
         "https://www.savannahnow.com/story/business/2013/02/19/understanding-purpose-savannah-chamber/13655438007",
         "https://www.savannahnow.com/story/news/2016/07/08/garden-city-police-department-savannah-firms-make-best-places-work-georgia-list/13921419007",
-        "https://www.selectgeorgia.com/yourgeorgia/why-savannah-HQ/top-brands"
+        "https://www.savannahnow.com/story/business/employment/2025/10/10/savannah-area-workforce-leaders-come-together-for-updates-at-downtown-business-association-luncheon/86563396007",
+        "https://www.savannahnow.com/story/business/2023/10/19/savannah-chamber-of-commerce-holds-awards-banquet-at-hyatt-regency/71242380007"
       ],
       "method": "Representative list auto-discovered via Tavily web search across chamber-of-commerce, development-authority and local-news sources. Not exhaustive; ordering approximates source frequency, not headcount."
     },

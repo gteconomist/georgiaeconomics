@@ -3,7 +3,7 @@
   "short_name": "Brunswick",
   "full_name": "Brunswick, GA",
   "population": 120000,
-  "as_of": "2026-11-07",
+  "as_of": "2026-11-08",
   "sections": {
     "ces_employment": {
       "series_id": "SMS13152600000000001",
@@ -4478,7 +4478,7 @@
       "source": "Census Business Dynamics Statistics (establishment entry rate, 2022); metro rate indexed to US=100"
     },
     "major_employers": {
-      "as_of": "2026-11-07",
+      "as_of": "2026-11-08",
       "employers": [
         {
           "name": "Gulfstream Aerospace",
@@ -4489,27 +4489,19 @@
           "source_url": "https://en.wikipedia.org/wiki/Brunswick,_Georgia"
         },
         {
-          "name": "Sea Island Company",
-          "source_url": "https://en.wikipedia.org/wiki/Golden_Isles_of_Georgia"
+          "name": "Georgia Ports Authority",
+          "source_url": "https://www.selectgeorgia.com/blog/wtc-sav-prosperity"
         },
         {
           "name": "The Port of Brunswick",
           "source_url": "https://en.wikipedia.org/wiki/Brunswick,_Georgia"
         },
         {
-          "name": "Georgia Ports Authority",
-          "source_url": "https://www.selectgeorgia.com/blog/wtc-sav-prosperity"
-        },
-        {
           "name": "Georgia Power Economic Development",
           "source_url": "https://www.selectgeorgia.com/blog/wtc-sav-prosperity"
         },
         {
-          "name": "Glynn County Development Authority",
-          "source_url": "https://en.wikipedia.org/wiki/Golden_Isles_of_Georgia"
-        },
-        {
-          "name": "Healthcare",
+          "name": "Sea Island Company",
           "source_url": "https://en.wikipedia.org/wiki/Golden_Isles_of_Georgia"
         },
         {
@@ -4517,12 +4509,12 @@
           "source_url": "https://en.wikipedia.org/wiki/Brunswick,_Georgia"
         },
         {
-          "name": "Glynn County Public Schools",
-          "source_url": "https://www.savannahnow.com/story/news/2021/10/20/ahmaud-arbery-murder-trial-brunswick-mcmichaels-bryan-business-demographics/5899609001"
+          "name": "Georgia Port Authority",
+          "source_url": "https://www.ajc.com/business/2026/01/heavy-equipment-lifting-business-at-crucial-time-for-brunswick-port"
         },
         {
-          "name": "Major Industries",
-          "source_url": "https://en.wikipedia.org/wiki/Golden_Isles_of_Georgia"
+          "name": "Glynn County Development Authority",
+          "source_url": "https://en.wikipedia.org/wiki/Brunswick,_Georgia"
         },
         {
           "name": "Brunswick Corporation",
@@ -4535,17 +4527,25 @@
         {
           "name": "Corporation Nalco Holding Company Nicor Northern",
           "source_url": "https://en.wikipedia.org/wiki/Brunswick_Corporation"
+        },
+        {
+          "name": "Data Systems Titan International TransUnion Tribune",
+          "source_url": "https://en.wikipedia.org/wiki/Brunswick_Corporation"
+        },
+        {
+          "name": "Donnelley Financial Solutions Fortune Brands Home",
+          "source_url": "https://en.wikipedia.org/wiki/Brunswick_Corporation"
         }
       ],
       "sources": [
         "https://en.wikipedia.org/wiki/Brunswick,_Georgia",
         "https://www.selectgeorgia.com/blog/wtc-sav-prosperity",
-        "https://en.wikipedia.org/wiki/Golden_Isles_of_Georgia",
         "https://en.wikipedia.org/wiki/Brunswick_Corporation",
-        "https://georgia.org/blogs/corporations-consistently-choose-georgia-heres-why",
+        "https://en.wikipedia.org/wiki/History_of_Brunswick,_Georgia",
+        "https://www.ajc.com/business/2026/01/heavy-equipment-lifting-business-at-crucial-time-for-brunswick-port",
+        "https://en.wikipedia.org/wiki/Golden_Isles_of_Georgia",
         "https://www.savannahnow.com/story/business/2024/01/17/bucees-in-brunswick-ga-to-be-largest-in-state-bring-200-jobs/72255077007",
-        "https://georgia.org/sites/default/files/2021-07/georgia-highlights_4th_edition_25th_anniversary_2021.pdf",
-        "https://www.savannahnow.com/story/news/2021/10/20/ahmaud-arbery-murder-trial-brunswick-mcmichaels-bryan-business-demographics/5899609001"
+        "https://georgia.org/sites/default/files/2021-07/georgia-highlights_4th_edition_25th_anniversary_2021.pdf"
       ],
       "method": "Representative list auto-discovered via Tavily web search across chamber-of-commerce, development-authority and local-news sources. Not exhaustive; ordering approximates source frequency, not headcount."
     },
