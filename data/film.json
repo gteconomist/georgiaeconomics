@@ -6,7 +6,7 @@
   "kpis": {
     "production_spend_latest_b": 3.585,
     "production_spend_yoy_pct": -21.2,
-    "tax_credits_latest_b": 0.05,
+    "tax_credits_latest_b": 0.28,
     "employment_latest_k": 15.0,
     "employment_yoy_pct": -9.6,
     "national_rank": 3,
@@ -100,15 +100,6 @@
   ],
   "notable_productions": [
     {
-      "title": "American Idol",
-      "year": 2026,
-      "studio": "\u2014",
-      "type": "Film",
-      "spend_m": 405,
-      "location": "Georgia",
-      "_source_url": "https://www.hollywoodreporter.com/business/business-news/american-idol-moving-production-georgia-1236702964"
-    },
-    {
       "title": "War Machine",
       "year": 2026,
       "studio": "\u2014",
@@ -125,6 +116,15 @@
       "spend_m": 0,
       "location": "Georgia",
       "_source_url": "https://deadline.com/2026/01/wednesday-ginny-georgia-untamed-ransom-canyon-delayed-2027-1236664789"
+    },
+    {
+      "title": "American Idol",
+      "year": 2026,
+      "studio": "\u2014",
+      "type": "Film",
+      "spend_m": 405,
+      "location": "Georgia",
+      "_source_url": "https://www.hollywoodreporter.com/business/business-news/american-idol-moving-production-georgia-1236702964"
     },
     {
       "title": "Chad Powers",
@@ -304,7 +304,7 @@
   ],
   "_meta": {
     "production_spend": {
-      "last_updated": "2026-10-08",
+      "last_updated": "2026-11-08",
       "source": "BEA Regional SAGDP2 \u2014 NAICS 512 (Motion picture and sound recording industries), GA",
       "metric_note": "Industry GDP (value-added). Distinct from DECD's gross production spend figure.",
       "coverage_years": [
@@ -313,13 +313,13 @@
       ]
     },
     "tax_credits": {
-      "last_updated": "2026-10-08",
+      "last_updated": "2026-11-08",
       "source": "Tavily \u2192 GA DOAA FY2026 report",
       "latest_year": 2026,
-      "latest_value_b": 0.05
+      "latest_value_b": 0.28
     },
     "employment": {
-      "last_updated": "2026-10-08",
+      "last_updated": "2026-11-08",
       "source": "BLS QCEW annual averages, NAICS 5121, GA (area_fips 13000)",
       "coverage_years": [
         2014,
@@ -327,27 +327,27 @@
       ]
     },
     "state_comparison": {
-      "last_updated": "2026-10-08",
+      "last_updated": "2026-11-08",
       "source": "BEA Regional SAGDP2 \u2014 NAICS 512 (Motion picture & sound recording industries) GDP by state",
       "metric_label": "Industry GDP (value-added, $B)",
       "year": 2025
     },
     "notable_productions": {
-      "last_updated": "2026-10-08",
+      "last_updated": "2026-11-08",
       "source": "Tavily \u2192 GA Film Office + trade press announcements",
-      "new_this_run": 1
+      "new_this_run": 3
     },
     "major_studios": {
       "last_updated": null,
       "source": null
     },
     "decd_headline": {
-      "last_updated": "2026-10-08",
+      "last_updated": "2026-11-08",
       "source": "Tavily \u2192 DECD FY2026 press release",
       "value_b": 2.0,
       "year": 2026
     }
   },
-  "fetched_at": "2026-10-08",
-  "source_summary": "Live sources updated 2026-10-08: production_spend, tax_credits, employment, state_comparison, notable_productions, decd_headline. Stale or static: major_studios."
+  "fetched_at": "2026-11-08",
+  "source_summary": "Live sources updated 2026-11-08: production_spend, tax_credits, employment, state_comparison, notable_productions, decd_headline. Stale or static: major_studios."
 }
