@@ -3,7 +3,7 @@
   "short_name": "Dalton",
   "full_name": "Dalton, GA",
   "population": 143000,
-  "as_of": "2026-11-08",
+  "as_of": "2026-11-09",
   "sections": {
     "ces_employment": {
       "series_id": "SMS13191400000000001",
@@ -4907,27 +4907,47 @@
       "source": "Census Business Dynamics Statistics (establishment entry rate, 2022); metro rate indexed to US=100"
     },
     "major_employers": {
-      "as_of": "2026-11-08",
+      "as_of": "2026-11-09",
       "employers": [
         {
           "name": "Shaw Industries",
-          "source_url": "https://www.ajc.com/business/employment/slow-carpet-sales-leads-dalton-plant-closing/i6IWYuTMhqDpy2SltAagkM"
+          "source_url": "https://www.selectgeorgia.com/about-us/our-team/regional-development/tamara-brock-nw"
         },
         {
-          "name": "Carpet",
+          "name": "Beaulieu Group",
+          "source_url": "https://valdostadailytimes.com/2018/01/01/engineered-floors-growth-varnell-drama-among-top-stories-in-dalton-area-in-2017"
+        },
+        {
+          "name": "Carpet Capital",
           "source_url": "https://en.wikipedia.org/wiki/Dalton,_Georgia"
+        },
+        {
+          "name": "Kobayashi Healthcare",
+          "source_url": "https://valdostadailytimes.com/2018/06/14/japanese-consul-says-dalton-is-welcoming-to-businesses"
+        },
+        {
+          "name": "Flooring",
+          "source_url": "https://valdostadailytimes.com/2018/01/01/engineered-floors-growth-varnell-drama-among-top-stories-in-dalton-area-in-2017"
+        },
+        {
+          "name": "Georgia Academy",
+          "source_url": "https://www.selectgeorgia.com/about-us/our-team/regional-development/tamara-brock-nw"
+        },
+        {
+          "name": "Lockheed Martin Aeronautics Co",
+          "source_url": "https://www.bizjournals.com/atlanta/research/lists/2026/georgia-manufacturers.html"
         },
         {
           "name": "Manufacturing",
           "source_url": "https://www.bizjournals.com/atlanta/news/2023/06/29/solar-workforce-qcells-dalton-georgia.html"
         },
         {
-          "name": "Kobayashi Healthcare",
-          "source_url": "https://valdostadailytimes.com/2018/06/14/japanese-consul-says-dalton-is-welcoming-to-businesses-2"
+          "name": "University of Georgia",
+          "source_url": "https://www.selectgeorgia.com/about-us/our-team/regional-development/tamara-brock-nw"
         },
         {
-          "name": "Lockheed Martin Aeronautics Co",
-          "source_url": "https://www.bizjournals.com/atlanta/research/lists/2026/georgia-manufacturers.html"
+          "name": "World's Carpet Made",
+          "source_url": "https://www.selectgeorgia.com/about-us/our-team/regional-development/tamara-brock-nw"
         },
         {
           "name": "Appalachian Regional Port",
@@ -4938,43 +4958,23 @@
           "source_url": "https://en.wikipedia.org/wiki/Georgia_Chamber_of_Commerce"
         },
         {
-          "name": "Authority",
-          "source_url": "https://en.wikipedia.org/wiki/Shaw_Industries"
-        },
-        {
           "name": "CELLS America Inc",
           "source_url": "https://www.bizjournals.com/atlanta/news/2023/06/29/solar-workforce-qcells-dalton-georgia.html"
         },
         {
           "name": "Company",
           "source_url": "https://www.bizjournals.com/atlanta/research/lists/2026/georgia-manufacturers.html"
-        },
-        {
-          "name": "Georgia Academy",
-          "source_url": "https://www.selectgeorgia.com/about-us/our-team/regional-development/tamara-brock-nw"
-        },
-        {
-          "name": "Gulfstream Aerospace Corp",
-          "source_url": "https://www.bizjournals.com/atlanta/research/lists/2026/georgia-manufacturers.html"
-        },
-        {
-          "name": "Mohawk Industries",
-          "source_url": "https://en.wikipedia.org/wiki/Dalton,_Georgia"
-        },
-        {
-          "name": "Resilient Flooring",
-          "source_url": "https://en.wikipedia.org/wiki/Shaw_Industries"
         }
       ],
       "sources": [
+        "https://www.selectgeorgia.com/about-us/our-team/regional-development/tamara-brock-nw",
         "https://en.wikipedia.org/wiki/Dalton,_Georgia",
+        "https://valdostadailytimes.com/2018/01/01/engineered-floors-growth-varnell-drama-among-top-stories-in-dalton-area-in-2017",
         "https://www.ajc.com/business/employment/slow-carpet-sales-leads-dalton-plant-closing/i6IWYuTMhqDpy2SltAagkM",
         "https://www.bizjournals.com/atlanta/news/2023/06/29/solar-workforce-qcells-dalton-georgia.html",
-        "https://valdostadailytimes.com/2018/06/14/japanese-consul-says-dalton-is-welcoming-to-businesses-2",
-        "https://www.ajc.com/business/dalton-augusta-worst-for-job-losses-lately/qWPbpKazCnZFJtn1Kel1RM",
-        "https://www.selectgeorgia.com/about-us/our-team/regional-development/tamara-brock-nw",
+        "https://valdostadailytimes.com/2018/06/14/japanese-consul-says-dalton-is-welcoming-to-businesses",
         "https://www.bizjournals.com/atlanta/research/lists/2026/georgia-manufacturers.html",
-        "https://en.wikipedia.org/wiki/Shaw_Industries"
+        "https://en.wikipedia.org/wiki/Georgia_Chamber_of_Commerce"
       ],
       "method": "Representative list auto-discovered via Tavily web search across chamber-of-commerce, development-authority and local-news sources. Not exhaustive; ordering approximates source frequency, not headcount."
     },

@@ -3,7 +3,7 @@
   "short_name": "Athens",
   "full_name": "Athens-Clarke County, GA",
   "population": 217000,
-  "as_of": "2026-11-08",
+  "as_of": "2026-11-09",
   "sections": {
     "ces_employment": {
       "series_id": "SMS13120200000000001",
@@ -5536,23 +5536,27 @@
       "source": "Census Business Dynamics Statistics (establishment entry rate, 2022); metro rate indexed to US=100"
     },
     "major_employers": {
-      "as_of": "2026-11-08",
+      "as_of": "2026-11-09",
       "employers": [
         {
           "name": "Children's Healthcare of Atlanta",
           "source_url": "https://www.onlineathens.com/story/news/2026/03/04/georgias-best-employers-are-these-2-big-businesses-forbes-says/88982542007"
         },
         {
-          "name": "Athena Industrial Park",
-          "source_url": "https://www.onlineathens.com/story/business/2013/01/05/brodrick-remarkable-year-athens/15586276007"
+          "name": "Georgia Power",
+          "source_url": "https://www.onlineathens.com/story/news/2026/03/04/georgias-best-employers-are-these-2-big-businesses-forbes-says/88982542007"
+        },
+        {
+          "name": "Georgia Southern University",
+          "source_url": "https://www.onlineathens.com/story/news/2026/03/04/georgias-best-employers-are-these-2-big-businesses-forbes-says/88982542007"
         },
         {
           "name": "Alpha Bank",
           "source_url": "https://en.wikipedia.org/wiki/Athens"
         },
         {
-          "name": "Georgia Power",
-          "source_url": "https://www.onlineathens.com/story/news/2026/03/04/georgias-best-employers-are-these-2-big-businesses-forbes-says/88982542007"
+          "name": "Bank of Greece",
+          "source_url": "https://en.wikipedia.org/wiki/Athens"
         },
         {
           "name": "Hellenic Aerospace Industry",
@@ -5563,28 +5567,24 @@
           "source_url": "https://en.wikipedia.org/wiki/Athens"
         },
         {
-          "name": "National Bank of Greece",
-          "source_url": "https://en.wikipedia.org/wiki/Athens"
-        },
-        {
           "name": "Piraeus Bank",
           "source_url": "https://en.wikipedia.org/wiki/Athens"
         },
         {
-          "name": "University of Georgia",
-          "source_url": "https://www.onlineathens.com/story/business/2013/01/05/brodrick-remarkable-year-athens/15586276007"
+          "name": "Forsyth County School District",
+          "source_url": "https://www.onlineathens.com/story/news/2026/03/04/georgias-best-employers-are-these-2-big-businesses-forbes-says/88982542007"
+        },
+        {
+          "name": "Southern Company",
+          "source_url": "https://www.onlineathens.com/story/news/2026/03/04/georgias-best-employers-are-these-2-big-businesses-forbes-says/88982542007"
         },
         {
           "name": "Associated Industries of Georgia",
           "source_url": "https://en.wikipedia.org/wiki/Georgia_Chamber_of_Commerce"
         },
         {
-          "name": "Athens Downtown Development Authority",
-          "source_url": "https://www.onlineathens.com/story/news/state/2015/09/20/advantages-being-chamber-member/15482474007"
-        },
-        {
-          "name": "Athens Industrial Development Authority",
-          "source_url": "https://www.onlineathens.com/story/news/state/2015/09/20/advantages-being-chamber-member/15482474007"
+          "name": "Athena Industrial Park",
+          "source_url": "https://www.onlineathens.com/story/business/2013/01/05/brodrick-remarkable-year-athens/15586276007"
         },
         {
           "name": "Athens Technical College Augusta University Piedmont",
@@ -5597,13 +5597,13 @@
       ],
       "sources": [
         "https://www.onlineathens.com/story/news/2026/03/04/georgias-best-employers-are-these-2-big-businesses-forbes-says/88982542007",
-        "https://www.onlineathens.com/story/business/2013/01/05/brodrick-remarkable-year-athens/15586276007",
+        "https://www.savannahnow.com/story/business/2026/08/24/best-place-to-work-forbes-names-top-10-employers-in-georgia/91439995007",
         "https://en.wikipedia.org/wiki/Athens,_Georgia",
         "https://www.ajc.com/top-workplaces/rounding-out-the-top-5-large-businesses/5FF7QFEAMRGF3PLDXYSC4NOFWQ",
+        "https://www.onlineathens.com/picture-gallery/entertainment/events/2020/02/04/photos-the-athens-chamber-of/68646805007",
+        "https://www.onlineathens.com/story/business/2013/01/05/brodrick-remarkable-year-athens/15586276007",
         "https://en.wikipedia.org/wiki/Georgia_Chamber_of_Commerce",
-        "https://www.onlineathens.com/story/news/state/2015/09/20/advantages-being-chamber-member/15482474007",
-        "https://www.onlineathens.com/story/business/2014/07/26/terrell-athens-chamber-focusing-members-and-partnerships-2014/15524196007",
-        "https://www.onlineathens.com/story/news/state/2014/08/27/forecast-athens-area-jobs-grow-12-percent/15520915007"
+        "https://en.wikipedia.org/wiki/Athens"
       ],
       "method": "Representative list auto-discovered via Tavily web search across chamber-of-commerce, development-authority and local-news sources. Not exhaustive; ordering approximates source frequency, not headcount."
     },

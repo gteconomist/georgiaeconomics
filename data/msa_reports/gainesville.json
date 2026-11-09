@@ -3,7 +3,7 @@
   "short_name": "Gainesville",
   "full_name": "Gainesville, GA",
   "population": 211000,
-  "as_of": "2026-11-08",
+  "as_of": "2026-11-09",
   "sections": {
     "ces_employment": {
       "series_id": "SMS13235800000000001",
@@ -5599,14 +5599,14 @@
       "source": "Census Business Dynamics Statistics (establishment entry rate, 2022); metro rate indexed to US=100"
     },
     "major_employers": {
-      "as_of": "2026-11-08",
+      "as_of": "2026-11-09",
       "employers": [
         {
-          "name": "Northeast Georgia Health System",
+          "name": "Koch Foods",
           "source_url": "https://en.wikipedia.org/wiki/Gainesville,_Georgia"
         },
         {
-          "name": "Koch Foods",
+          "name": "Northeast Georgia Health System",
           "source_url": "https://en.wikipedia.org/wiki/Gainesville,_Georgia"
         },
         {
@@ -5614,7 +5614,7 @@
           "source_url": "https://en.wikipedia.org/wiki/Gainesville,_Georgia"
         },
         {
-          "name": "Annual Comprehensive Financial Report",
+          "name": "University of Florida",
           "source_url": "https://en.wikipedia.org/wiki/Gainesville,_Florida"
         },
         {
@@ -5626,7 +5626,7 @@
           "source_url": "https://www.bizjournals.com/atlanta/research/lists/2026/georgia-manufacturers.html"
         },
         {
-          "name": "University of Florida",
+          "name": "Annual Comprehensive Financial Report",
           "source_url": "https://en.wikipedia.org/wiki/Gainesville,_Florida"
         },
         {
@@ -5634,16 +5634,8 @@
           "source_url": "https://en.wikipedia.org/wiki/Gainesville,_Georgia"
         },
         {
-          "name": "Cleveland Electric Co",
-          "source_url": "https://www.bizjournals.com/atlanta/news/2023/09/05/cj-foodville-tous-les-jours-plant-food-processing.html"
-        },
-        {
           "name": "Comprehensive Annual Financial Report",
           "source_url": "https://en.wikipedia.org/wiki/Gainesville,_Georgia"
-        },
-        {
-          "name": "Emory Healthcare",
-          "source_url": "https://www.bizjournals.com/atlanta/news/2023/09/05/cj-foodville-tous-les-jours-plant-food-processing.html"
         },
         {
           "name": "Kubota Manufacturing of America",
@@ -5656,6 +5648,14 @@
         {
           "name": "University of North Georgia",
           "source_url": "https://en.wikipedia.org/wiki/Gainesville,_Georgia"
+        },
+        {
+          "name": "Wrigley Manufacturing",
+          "source_url": "https://www.gainesvilletimes.com/news/business-archived/chamber-honors-3-companies-as-the-years-best-in-hall"
+        },
+        {
+          "name": "Gold Creek Foods",
+          "source_url": "https://www.bizjournals.com/atlanta/related_content.html?topic=Kubota+Industrial+Equipment+Corp"
         }
       ],
       "sources": [
@@ -5663,10 +5663,10 @@
         "https://www.bizjournals.com/atlanta/related_content.html?topic=Kubota+Industrial+Equipment+Corp",
         "https://www.bizjournals.com/atlanta/research/lists/2026/georgia-manufacturers.html",
         "https://en.wikipedia.org/wiki/Gainesville,_Florida",
-        "https://www.bizjournals.com/atlanta/news/2023/09/05/cj-foodville-tous-les-jours-plant-food-processing.html",
-        "https://www.ajc.com/top-workplaces/2025/08/15-newcomers-join-ranks-of-atlantas-top-large-workplaces",
+        "https://www.savannahnow.com/story/news/2025/05/10/best-small-cities-in-georgia-hgtv-names-gainesville-ga-an-up-and-coming-gem/83533116007",
         "https://www.gainesvilletimes.com/news/business-archived/chamber-honors-3-companies-as-the-years-best-in-hall",
-        "https://www.gainesvilletimes.com/news/business-archived/hall-chamber-of-commerce-honors-2-local-businesses"
+        "https://www.gainesvilletimes.com/news/business-archived/hall-chamber-of-commerce-honors-2-local-businesses",
+        "https://en.wikipedia.org/wiki/Gainesville_metropolitan_area,_Florida"
       ],
       "method": "Representative list auto-discovered via Tavily web search across chamber-of-commerce, development-authority and local-news sources. Not exhaustive; ordering approximates source frequency, not headcount."
     },

@@ -3,7 +3,7 @@
   "short_name": "Macon",
   "full_name": "Macon-Bibb County, GA",
   "population": 232000,
-  "as_of": "2026-11-08",
+  "as_of": "2026-11-09",
   "sections": {
     "ces_employment": {
       "series_id": "SMS13314200000000001",
@@ -5527,11 +5527,15 @@
       "source": "Census Business Dynamics Statistics (establishment entry rate, 2022); metro rate indexed to US=100"
     },
     "major_employers": {
-      "as_of": "2026-11-08",
+      "as_of": "2026-11-09",
       "employers": [
         {
           "name": "Mercer University",
           "source_url": "https://en.wikipedia.org/wiki/Macon,_Georgia"
+        },
+        {
+          "name": "The Medical Center of Central Georgia",
+          "source_url": "https://www.macon.com/living/living-here-guide/article30131733.html"
         },
         {
           "name": "Blue Bird Corp",
@@ -5542,19 +5546,11 @@
           "source_url": "https://www.macon.com/living/living-here-guide/article30131733.html"
         },
         {
-          "name": "Houston Healthcare",
-          "source_url": "https://www.macon.com/living/living-here-guide/article30131733.html"
-        },
-        {
-          "name": "The Medical Center of Central Georgia",
-          "source_url": "https://www.macon.com/living/living-here-guide/article30131733.html"
-        },
-        {
           "name": "Georgia College",
           "source_url": "https://www.macon.com/living/living-here-guide/article30131733.html"
         },
         {
-          "name": "Academy Sports",
+          "name": "Houston Healthcare",
           "source_url": "https://www.macon.com/living/living-here-guide/article30131733.html"
         },
         {
@@ -5562,8 +5558,16 @@
           "source_url": "https://en.wikipedia.org/wiki/Macon,_Georgia"
         },
         {
+          "name": "Academy Sports",
+          "source_url": "https://www.macon.com/living/living-here-guide/article30131733.html"
+        },
+        {
           "name": "Fort Valley State University",
           "source_url": "https://www.macon.com/living/living-here-guide/article30131733.html"
+        },
+        {
+          "name": "Graphic Packaging Corp",
+          "source_url": "https://www.macon.com/living/living-here-guide/article39043491.html"
         },
         {
           "name": "Forsyth County School District",
@@ -5580,10 +5584,6 @@
         {
           "name": "Southern Company",
           "source_url": "https://www.macon.com/living/article300278809.html"
-        },
-        {
-          "name": "Cobb County School District",
-          "source_url": "https://www.macon.com/living/article300278809.html"
         }
       ],
       "sources": [
@@ -5591,8 +5591,8 @@
         "https://www.macon.com/living/living-here-guide/article30131733.html",
         "https://www.macon.com/living/article300278809.html",
         "https://www.macon.com/living/living-here-guide/article39043491.html",
-        "https://www.macon.com/news/local/article280753115.html",
         "https://www.macon.com/news/local/article314818813.html",
+        "https://www.macon.com/news/business/article258547393.html",
         "https://www.macon.com/news/local/article235905642.html",
         "https://www.selectgeorgia.com/about-us/our-team/regional-development/ryan-waldrep-central"
       ],

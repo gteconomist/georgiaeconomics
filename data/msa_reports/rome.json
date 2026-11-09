@@ -3,7 +3,7 @@
   "short_name": "Rome",
   "full_name": "Rome, GA",
   "population": 99000,
-  "as_of": "2026-11-08",
+  "as_of": "2026-11-09",
   "sections": {
     "ces_employment": {
       "series_id": "SMS13406600000000001",
@@ -4800,18 +4800,10 @@
       "source": "Census Business Dynamics Statistics (establishment entry rate, 2022); metro rate indexed to US=100"
     },
     "major_employers": {
-      "as_of": "2026-11-08",
+      "as_of": "2026-11-09",
       "employers": [
         {
           "name": "Floyd Medical Center",
-          "source_url": "https://en.wikipedia.org/wiki/Rome,_Georgia"
-        },
-        {
-          "name": "Harbin Clinic",
-          "source_url": "https://en.wikipedia.org/wiki/Rome,_Georgia"
-        },
-        {
-          "name": "Redmond Regional Medical Center",
           "source_url": "https://en.wikipedia.org/wiki/Rome,_Georgia"
         },
         {
@@ -4827,8 +4819,24 @@
           "source_url": "https://en.wikipedia.org/wiki/List_of_largest_Italian_companies"
         },
         {
-          "name": "Kerry Group",
+          "name": "Redmond Regional Medical Center",
           "source_url": "https://en.wikipedia.org/wiki/Rome,_Georgia"
+        },
+        {
+          "name": "Atrium Health Floyd",
+          "source_url": "https://en.wikipedia.org/wiki/Atrium_Health_Floyd"
+        },
+        {
+          "name": "Harbin Clinic",
+          "source_url": "https://en.wikipedia.org/wiki/Rome,_Georgia"
+        },
+        {
+          "name": "Carlsen Precision Manufacturing",
+          "source_url": "https://www.northwestgeorgianews.com/rome/business/rome-floyd-existing-industries-group-reaffirms-commitment-to-use-chamber-as-liaison/article_e0915212-c9d3-11e9-80b0-f3c5d431fa36.html"
+        },
+        {
+          "name": "Floyd Hospital",
+          "source_url": "https://en.wikipedia.org/wiki/Atrium_Health_Floyd"
         },
         {
           "name": "Aerospace",
@@ -4847,24 +4855,17 @@
           "source_url": "https://en.wikipedia.org/wiki/Rome,_Georgia"
         },
         {
-          "name": "Lowe's Distribution Center",
-          "source_url": "https://georgia.org/sites/default/files/2023-01/lowes_4.pdf"
-        },
-        {
-          "name": "Medical College of Georgia",
-          "source_url": "https://en.wikipedia.org/wiki/Rome,_Georgia"
-        },
-        {
-          "name": "Pirelli Tire Manufacturing",
+          "name": "Kerry Group",
           "source_url": "https://en.wikipedia.org/wiki/Rome,_Georgia"
         }
       ],
       "sources": [
         "https://en.wikipedia.org/wiki/Rome,_Georgia",
+        "https://en.wikipedia.org/wiki/Atrium_Health_Floyd",
         "https://en.wikipedia.org/wiki/Augusta,_Georgia",
         "https://www.bizjournals.com/atlanta/news/2025/09/26/georgia-largest-manufacturers-by-employment.html",
+        "https://www.northwestgeorgianews.com/rome/business/rome-floyd-existing-industries-group-reaffirms-commitment-to-use-chamber-as-liaison/article_e0915212-c9d3-11e9-80b0-f3c5d431fa36.html",
         "https://georgia.org/sites/default/files/2023-01/lowes_4.pdf",
-        "https://www.northwestgeorgianews.com/elaina-beeman/article_f84a6e67-bbc1-4f9c-b010-175e673e5947.html",
         "https://en.wikipedia.org/wiki/Georgia_Chamber_of_Commerce",
         "https://en.wikipedia.org/wiki/List_of_largest_Italian_companies"
       ],
