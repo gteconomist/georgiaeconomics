@@ -3,7 +3,7 @@
   "short_name": "Valdosta",
   "full_name": "Valdosta, GA",
   "population": 148000,
-  "as_of": "2026-11-09",
+  "as_of": "2026-11-10",
   "sections": {
     "ces_employment": {
       "series_id": "SMS13466600000000001",
@@ -4527,15 +4527,15 @@
       "source": "Census Business Dynamics Statistics (establishment entry rate, 2022); metro rate indexed to US=100"
     },
     "major_employers": {
-      "as_of": "2026-11-09",
+      "as_of": "2026-11-10",
       "employers": [
         {
-          "name": "Valdosta State University",
-          "source_url": "https://valdostadailytimes.com/2018/05/24/summit-seeks-matching-jobs-with-workers"
+          "name": "South Georgia Medical Center",
+          "source_url": "https://valdostadailytimes.com/2019/05/09/sgmc-reduces-financial-services-department"
         },
         {
-          "name": "South Georgia Medical Center",
-          "source_url": "https://valdostadailytimes.com/2014/05/07/chamber-names-world-class-employees-2"
+          "name": "Valdosta State University",
+          "source_url": "https://valdostadailytimes.com/2018/06/10/public-employers"
         },
         {
           "name": "Smith Drug Company",
@@ -4546,55 +4546,55 @@
           "source_url": "https://valdostadailytimes.com/2012/09/09/authority-analyzes-valdosta-business"
         },
         {
-          "name": "Lowndes County Schools",
-          "source_url": "https://valdostadailytimes.com/2018/05/24/summit-seeks-matching-jobs-with-workers"
+          "name": "Berry Global Manufacturing",
+          "source_url": "https://www.selectgeorgia.com/blog/rural-transformation/one-valdosta-lowndes-interview"
         },
         {
           "name": "New Hire Solutions",
           "source_url": "https://valdostadailytimes.com/2014/05/07/chamber-names-world-class-employees-2"
         },
         {
-          "name": "ACE Electric",
+          "name": "Stratas Foods",
           "source_url": "https://www.selectgeorgia.com/blog/rural-transformation/one-valdosta-lowndes-interview"
+        },
+        {
+          "name": "Sunset Farm Foods",
+          "source_url": "https://valdostadailytimes.com/2021/03/05/chamber-presents-annual-awards"
+        },
+        {
+          "name": "CBJ Industries",
+          "source_url": "https://valdostadailytimes.com/2014/05/07/chamber-names-world-class-employees-2"
         },
         {
           "name": "Distribution",
           "source_url": "https://valdostadailytimes.com/2014/05/07/chamber-names-world-class-employees-2"
         },
         {
-          "name": "Azalea Health",
-          "source_url": "https://valdostadailytimes.com/2014/05/07/chamber-names-world-class-employees-2"
+          "name": "The Herndon Company",
+          "source_url": "https://valdostadailytimes.com/2019/09/29/business-briefs-155"
         },
         {
-          "name": "Berry Global Manufacturing",
-          "source_url": "https://www.selectgeorgia.com/blog/rural-transformation/one-valdosta-lowndes-interview"
-        },
-        {
-          "name": "Embry Riddle Aeronautical University",
+          "name": "Whitehead Industrial Hardware",
           "source_url": "https://valdostadailytimes.com/2019/03/10/meet-the-winners-chamber-names-2019-award-winners"
         },
         {
-          "name": "Herndon Company",
-          "source_url": null
-        },
-        {
-          "name": "Rayonier Inc",
-          "source_url": "https://jobs.valdostadailytimes.com/employers"
-        },
-        {
-          "name": "Stratas Foods",
+          "name": "ACE Electric",
           "source_url": "https://www.selectgeorgia.com/blog/rural-transformation/one-valdosta-lowndes-interview"
+        },
+        {
+          "name": "Azalea Health",
+          "source_url": "https://valdostadailytimes.com/2014/05/07/chamber-names-world-class-employees-2"
         }
       ],
       "sources": [
+        "https://valdostadailytimes.com/2019/05/09/sgmc-reduces-financial-services-department",
         "https://www.selectgeorgia.com/blog/rural-transformation/one-valdosta-lowndes-interview",
-        "https://valdostadailytimes.com/2018/05/24/summit-seeks-matching-jobs-with-workers",
-        "https://valdostadailytimes.com/2026/02/23/gary-wisenbaker-data-centers-whats-good-for-the-goose-is-good-for-the-gander",
-        "https://jobs.valdostadailytimes.com/employers",
-        "https://valdostadailytimes.com/2015/09/13/finding-the-competitive-edge",
+        "https://valdostadailytimes.com/2019/08/05/hanwha-plant-up-to-more-than-750-employees-2",
         "https://valdostadailytimes.com/2019/09/29/business-briefs-155",
         "https://valdostadailytimes.com/2014/05/07/chamber-names-world-class-employees-2",
-        "https://valdostadailytimes.com/2021/03/05/chamber-presents-annual-awards"
+        "https://valdostadailytimes.com/2021/03/05/chamber-presents-annual-awards",
+        "https://valdostadailytimes.com/2019/03/10/meet-the-winners-chamber-names-2019-award-winners",
+        "https://valdostadailytimes.com/2018/06/10/public-employers"
       ],
       "method": "Representative list auto-discovered via Tavily web search across chamber-of-commerce, development-authority and local-news sources. Not exhaustive; ordering approximates source frequency, not headcount."
     },
