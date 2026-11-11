@@ -3,7 +3,7 @@
   "short_name": "Gainesville",
   "full_name": "Gainesville, GA",
   "population": 211000,
-  "as_of": "2026-11-10",
+  "as_of": "2026-11-11",
   "sections": {
     "ces_employment": {
       "series_id": "SMS13235800000000001",
@@ -5599,14 +5599,18 @@
       "source": "Census Business Dynamics Statistics (establishment entry rate, 2022); metro rate indexed to US=100"
     },
     "major_employers": {
-      "as_of": "2026-11-10",
+      "as_of": "2026-11-11",
       "employers": [
         {
-          "name": "Koch Foods",
+          "name": "Northeast Georgia Health System",
           "source_url": "https://en.wikipedia.org/wiki/Gainesville,_Georgia"
         },
         {
-          "name": "Northeast Georgia Health System",
+          "name": "Comprehensive Annual Financial Report",
+          "source_url": "https://en.wikipedia.org/wiki/Gainesville,_Georgia"
+        },
+        {
+          "name": "Koch Foods",
           "source_url": "https://en.wikipedia.org/wiki/Gainesville,_Georgia"
         },
         {
@@ -5618,24 +5622,12 @@
           "source_url": "https://en.wikipedia.org/wiki/Gainesville,_Florida"
         },
         {
-          "name": "Lockheed Martin Aeronautics Co",
-          "source_url": "https://www.bizjournals.com/atlanta/research/lists/2026/georgia-manufacturers.html"
-        },
-        {
-          "name": "Shaw Industries Inc",
-          "source_url": "https://www.bizjournals.com/atlanta/research/lists/2026/georgia-manufacturers.html"
-        },
-        {
-          "name": "Annual Comprehensive Financial Report",
-          "source_url": "https://en.wikipedia.org/wiki/Gainesville,_Florida"
-        },
-        {
           "name": "Brenau University",
           "source_url": "https://en.wikipedia.org/wiki/Gainesville,_Georgia"
         },
         {
-          "name": "Comprehensive Annual Financial Report",
-          "source_url": "https://en.wikipedia.org/wiki/Gainesville,_Georgia"
+          "name": "Elan Drug Technologies",
+          "source_url": "https://www.gainesvilletimes.com/news/business-archived/chamber-honors-3-companies-as-the-years-best-in-hall"
         },
         {
           "name": "Kubota Manufacturing of America",
@@ -5650,8 +5642,16 @@
           "source_url": "https://en.wikipedia.org/wiki/Gainesville,_Georgia"
         },
         {
-          "name": "Wrigley Manufacturing",
-          "source_url": "https://www.gainesvilletimes.com/news/business-archived/chamber-honors-3-companies-as-the-years-best-in-hall"
+          "name": "Annual Comprehensive Financial Report",
+          "source_url": "https://en.wikipedia.org/wiki/Gainesville,_Florida"
+        },
+        {
+          "name": "Ave Food Park Archer Historical Society",
+          "source_url": "https://en.wikipedia.org/wiki/University_of_Florida"
+        },
+        {
+          "name": "Cola Bottling Co. of Gainesville",
+          "source_url": null
         },
         {
           "name": "Gold Creek Foods",
@@ -5662,10 +5662,11 @@
         "https://en.wikipedia.org/wiki/Gainesville,_Georgia",
         "https://www.bizjournals.com/atlanta/related_content.html?topic=Kubota+Industrial+Equipment+Corp",
         "https://www.bizjournals.com/atlanta/research/lists/2026/georgia-manufacturers.html",
+        "https://www.ajc.com/pulse/6-health-care-systems-among-forbes-best-employers-in-georgia/ZHJC3IV7UBFOHH423Y4NIDQDPI",
         "https://en.wikipedia.org/wiki/Gainesville,_Florida",
         "https://www.gainesvilletimes.com/news/business-archived/chamber-honors-3-companies-as-the-years-best-in-hall",
         "https://www.gainesvilletimes.com/news/business-archived/hall-chamber-of-commerce-honors-2-local-businesses",
-        "https://en.wikipedia.org/wiki/University_of_Florida"
+        "https://en.wikipedia.org/wiki/Georgia_Chamber_of_Commerce"
       ],
       "method": "Representative list auto-discovered via Tavily web search across chamber-of-commerce, development-authority and local-news sources. Not exhaustive; ordering approximates source frequency, not headcount."
     },

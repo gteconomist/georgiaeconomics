@@ -3,7 +3,7 @@
   "short_name": "Albany",
   "full_name": "Albany, GA",
   "population": 146000,
-  "as_of": "2026-11-10",
+  "as_of": "2026-11-11",
   "sections": {
     "ces_employment": {
       "series_id": "SMS13105000000000001",
@@ -4524,23 +4524,23 @@
       "source": "Census Business Dynamics Statistics (establishment entry rate, 2022); metro rate indexed to US=100"
     },
     "major_employers": {
-      "as_of": "2026-11-10",
+      "as_of": "2026-11-11",
       "employers": [
         {
+          "name": "Fluor Marine Propulsion LLC",
+          "source_url": "https://www.bizjournals.com/albany/subscriber-only/2026/07/02/albanys-365-largest-employers.html"
+        },
+        {
+          "name": "Knolls Atomic Power Laboratory",
+          "source_url": "https://www.bizjournals.com/albany/subscriber-only/2026/07/02/albanys-365-largest-employers.html"
+        },
+        {
           "name": "Health",
-          "source_url": "https://www.bizjournals.com/albany/subscriber-only/2026/07/02/albanys-365-largest-employers.html"
+          "source_url": "https://www.bizjournals.com/albany/news/2023/07/14/albany-region-largest-private-sector-employers.html"
         },
         {
-          "name": "Marine Corps Logistics Base",
-          "source_url": null
-        },
-        {
-          "name": "Northeast Grocery Inc",
-          "source_url": "https://www.bizjournals.com/albany/subscriber-only/2026/07/02/albanys-365-largest-employers.html"
-        },
-        {
-          "name": "Regeneron Pharmaceuticals Inc",
-          "source_url": "https://www.bizjournals.com/albany/subscriber-only/2026/07/02/albanys-365-largest-employers.html"
+          "name": "Mill Road",
+          "source_url": "https://www.bizjournals.com/albany/news/2024/07/12/albany-metro-area-private-sector-jobs-employers.html"
         },
         {
           "name": "Emory University",
@@ -4548,46 +4548,34 @@
         },
         {
           "name": "Manufacturing",
-          "source_url": "https://www.bizjournals.com/albany/news/2025/10/17/new-employers-list-2025.html"
+          "source_url": "https://www.bizjournals.com/albany/news/2024/07/12/albany-metro-area-private-sector-jobs-employers.html"
         },
         {
-          "name": "Northside Hospital Inc",
-          "source_url": "https://www.bizjournals.com/atlanta/subscriber-only/2025/10/17/metro-atlantas-largest-employers.html"
+          "name": "Marine Corps Logistics Base",
+          "source_url": null
         },
         {
           "name": "Albany Medical Centerexpand",
           "source_url": "https://www.bizjournals.com/albany/news/2025/10/17/new-employers-list-2025.html"
         },
         {
-          "name": "Delta Air Lines Inc",
-          "source_url": "https://www.bizjournals.com/atlanta/subscriber-only/2022/07/15/atlantas-25-largest-employers.html"
+          "name": "Albany State University",
+          "source_url": "https://albanyherald.com/news/local/georgia-chamber-of-commerce-hosts-event-in-albany"
         },
         {
-          "name": "Fluor Marine Propulsion LLC",
-          "source_url": "https://www.bizjournals.com/albany/subscriber-only/2025/10/17/albanys-330-largest-employers.html"
-        },
-        {
-          "name": "Headquarters Company",
-          "source_url": "https://www.bizjournals.com/atlanta/subscriber-only/2022/07/15/atlantas-25-largest-employers.html"
-        },
-        {
-          "name": "Knolls Atomic Power Laboratory",
-          "source_url": "https://www.bizjournals.com/albany/subscriber-only/2025/10/17/albanys-330-largest-employers.html"
-        },
-        {
-          "name": "The Home Depot Inc",
-          "source_url": "https://www.bizjournals.com/atlanta/subscriber-only/2022/07/15/atlantas-25-largest-employers.html"
+          "name": "Northside Hospital Inc",
+          "source_url": "https://www.bizjournals.com/atlanta/subscriber-only/2025/10/17/metro-atlantas-largest-employers.html"
         }
       ],
       "sources": [
+        "https://www.bizjournals.com/albany/subscriber-only/2026/07/02/albanys-365-largest-employers.html",
         "https://albanyherald.com/news/albany-tech-could-turn-out-more-mechanics-truck-drivers-with-proposed-project",
         "https://albanyherald.com/news/phoebe-generates-816m-into-area",
-        "https://www.bizjournals.com/albany/subscriber-only/2026/07/02/albanys-365-largest-employers.html",
         "https://www.bizjournals.com/atlanta/subscriber-only/2025/10/17/metro-atlantas-largest-employers.html",
-        "https://www.bizjournals.com/atlanta/subscriber-only/2022/07/15/atlantas-25-largest-employers.html",
-        "https://www.onlineathens.com/story/news/state/2013/07/12/local-businesses-help-furloughed-base-employees/15564683007",
+        "https://albanyherald.com/news/local/georgia-chamber-of-commerce-hosts-event-in-albany",
         "https://www.bizjournals.com/albany/news/2023/07/14/albany-region-largest-private-sector-employers.html",
-        "https://www.bizjournals.com/albany/news/2020/07/10/albany-largest-employers-health-care.html"
+        "https://www.bizjournals.com/albany/news/2020/07/10/albany-largest-employers-health-care.html",
+        "https://www.bizjournals.com/albany/news/2024/07/12/albany-metro-area-private-sector-jobs-employers.html"
       ],
       "method": "Representative list auto-discovered via Tavily web search across chamber-of-commerce, development-authority and local-news sources. Not exhaustive; ordering approximates source frequency, not headcount."
     },

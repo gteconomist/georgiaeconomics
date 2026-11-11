@@ -3,7 +3,7 @@
   "short_name": "Hinesville",
   "full_name": "Hinesville, GA",
   "population": 78000,
-  "as_of": "2026-11-10",
+  "as_of": "2026-11-11",
   "sections": {
     "ces_employment": {
       "series_id": "SMS13259800000000001",
@@ -4305,38 +4305,69 @@
       "source": "Census Business Dynamics Statistics (establishment entry rate, 2022); metro rate indexed to US=100"
     },
     "major_employers": {
-      "as_of": "2026-11-10",
+      "as_of": "2026-11-11",
       "employers": [
         {
-          "name": "Logistics USA Inc",
-          "source_url": null
+          "name": "Aerospace",
+          "source_url": "https://georgia.org"
         },
         {
-          "name": "Mitsubishi Power",
-          "source_url": null
+          "name": "Automotive",
+          "source_url": "https://georgia.org"
         },
         {
-          "name": "At the Imprint Warehouse",
-          "source_url": "https://www.savannahnow.com/story/news/2013/02/02/report-army-cutbacks-could-be-painful-ga/13516801007"
+          "name": "Liberty County High School",
+          "source_url": "https://en.wikipedia.org/wiki/Hinesville,_Georgia"
         },
         {
-          "name": "College",
-          "source_url": "https://en.wikipedia.org/wiki/Metropolitan_statistical_area"
+          "name": "Arts Academy Fitness",
+          "source_url": "https://georgia.org/sites/default/files/2020-10/georgia_safety_promise-10-27.pdf"
         },
         {
-          "name": "Port Lavaca",
-          "source_url": "https://en.wikipedia.org/wiki/Metropolitan_statistical_area"
+          "name": "Bermuda Lane Flowery Branch Wesco Distribution",
+          "source_url": "https://georgia.org/sites/default/files/2020-10/georgia_safety_promise-10-27.pdf"
         },
         {
-          "name": "Target Industries",
-          "source_url": "https://properties.selectgeorgia.com/target_industries_app/dist/index.html"
+          "name": "Co Shopping",
+          "source_url": "https://georgia.org/sites/default/files/2020-10/georgia_safety_promise-10-27.pdf"
+        },
+        {
+          "name": "DBA Englewood Electric Wholesale",
+          "source_url": "https://georgia.org/sites/default/files/2020-10/georgia_safety_promise-10-27.pdf"
+        },
+        {
+          "name": "Energy",
+          "source_url": "https://georgia.org"
+        },
+        {
+          "name": "Food Processing",
+          "source_url": "https://georgia.org"
+        },
+        {
+          "name": "Georgia Southern University's Liberty",
+          "source_url": "https://en.wikipedia.org/wiki/Hinesville,_Georgia"
+        },
+        {
+          "name": "Hyundai Motor Group Metaplant America",
+          "source_url": "https://georgia.org"
+        },
+        {
+          "name": "Inc Construction",
+          "source_url": "https://georgia.org/sites/default/files/2020-10/georgia_safety_promise-10-27.pdf"
+        },
+        {
+          "name": "LLC Fitness",
+          "source_url": "https://georgia.org/sites/default/files/2020-10/georgia_safety_promise-10-27.pdf"
+        },
+        {
+          "name": "Liberty County School District",
+          "source_url": "https://en.wikipedia.org/wiki/Hinesville,_Georgia"
         }
       ],
       "sources": [
-        "https://georgia.org/why-georgia/regions-georgia/coastal-georgia",
-        "https://en.wikipedia.org/wiki/Metropolitan_statistical_area",
-        "https://www.savannahnow.com/story/news/2013/02/02/report-army-cutbacks-could-be-painful-ga/13516801007",
-        "https://properties.selectgeorgia.com/target_industries_app/dist/index.html"
+        "https://georgia.org/sites/default/files/2020-10/georgia_safety_promise-10-27.pdf",
+        "https://en.wikipedia.org/wiki/Hinesville,_Georgia",
+        "https://georgia.org"
       ],
       "method": "Representative list auto-discovered via Tavily web search across chamber-of-commerce, development-authority and local-news sources. Not exhaustive; ordering approximates source frequency, not headcount."
     },
