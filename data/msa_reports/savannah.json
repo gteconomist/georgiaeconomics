@@ -3,7 +3,7 @@
   "short_name": "Savannah",
   "full_name": "Savannah, GA",
   "population": 410000,
-  "as_of": "2026-11-11",
+  "as_of": "2026-11-12",
   "sections": {
     "ces_employment": {
       "series_id": "SMS13423400000000001",
@@ -5607,11 +5607,11 @@
       "source": "Census Business Dynamics Statistics (establishment entry rate, 2022); metro rate indexed to US=100"
     },
     "major_employers": {
-      "as_of": "2026-11-11",
+      "as_of": "2026-11-12",
       "employers": [
         {
-          "name": "Gulfstream Aerospace",
-          "source_url": "https://en.wikipedia.org/wiki/Category:Companies_based_in_Savannah,_Georgia"
+          "name": "Gulfstream Aerospace Corporation",
+          "source_url": "https://en.wikipedia.org/wiki/Savannah,_Georgia"
         },
         {
           "name": "Savannah River Mill",
@@ -5622,36 +5622,20 @@
           "source_url": "https://en.wikipedia.org/wiki/Category:Companies_based_in_Savannah,_Georgia"
         },
         {
-          "name": "Colony Bank",
-          "source_url": "https://www.savannahnow.com/story/business/2013/02/19/understanding-purpose-savannah-chamber/13655438007"
+          "name": "Pratt Industries",
+          "source_url": "https://www.savannahnow.com/story/business/2023/10/19/savannah-chamber-of-commerce-holds-awards-banquet-at-hyatt-regency/71242380007"
         },
         {
-          "name": "Alpha Financial Management",
-          "source_url": "https://www.savannahnow.com/story/business/2013/02/19/understanding-purpose-savannah-chamber/13655438007"
+          "name": "Savannah Economic Development Authority",
+          "source_url": "https://www.savannahnow.com/story/business/2023/10/19/savannah-chamber-of-commerce-holds-awards-banquet-at-hyatt-regency/71242380007"
         },
         {
           "name": "Chase Bank",
-          "source_url": "https://en.wikipedia.org/wiki/Savannah_metropolitan_area"
+          "source_url": "https://en.wikipedia.org/wiki/Savannah,_Georgia_Metropolitan_Statistical_Area"
         },
         {
           "name": "Derst Baking Company",
           "source_url": "https://en.wikipedia.org/wiki/Category:Companies_based_in_Savannah,_Georgia"
-        },
-        {
-          "name": "Heartland Payment Systems",
-          "source_url": "https://www.savannahnow.com/story/business/2013/02/19/understanding-purpose-savannah-chamber/13655438007"
-        },
-        {
-          "name": "Liberty Mutual Insurance",
-          "source_url": "https://www.savannahnow.com/story/business/2013/02/19/understanding-purpose-savannah-chamber/13655438007"
-        },
-        {
-          "name": "Riceboro Paper Mill",
-          "source_url": "https://www.savannahnow.com/in-depth/news/2022/04/26/savannah-paper-mill-industry-economic-development-georgia/7247478001"
-        },
-        {
-          "name": "Co-Working Spaces",
-          "source_url": "https://www.selectgeorgia.com/yourgeorgia/why-savannah-HQ/set-shop"
         },
         {
           "name": "Co. Morris Multimedia",
@@ -5662,19 +5646,35 @@
           "source_url": "https://en.wikipedia.org/wiki/Category:Companies_based_in_Savannah,_Georgia"
         },
         {
-          "name": "Management Corp",
-          "source_url": null
+          "name": "Colony Bank",
+          "source_url": "https://www.savannahnow.com/story/business/2013/02/19/understanding-purpose-savannah-chamber/13655438007"
+        },
+        {
+          "name": "Savannah Bee Company",
+          "source_url": "https://en.wikipedia.org/wiki/Category:Companies_based_in_Savannah,_Georgia"
+        },
+        {
+          "name": "Southeastern Shipbuilding Corporation",
+          "source_url": "https://en.wikipedia.org/wiki/Category:Companies_based_in_Savannah,_Georgia"
+        },
+        {
+          "name": "Alpha Financial Management",
+          "source_url": "https://www.savannahnow.com/story/business/2013/02/19/understanding-purpose-savannah-chamber/13655438007"
+        },
+        {
+          "name": "Arboris LLC",
+          "source_url": "https://www.savannahnow.com/story/news/2006/09/03/number-high-paying-jobs-savannah/13828107007"
         }
       ],
       "sources": [
         "https://en.wikipedia.org/wiki/Savannah,_Georgia",
+        "http://en.wikipedia.org/wiki/Savannah,_Georgia",
         "https://en.wikipedia.org/wiki/Category:Companies_based_in_Savannah,_Georgia",
-        "https://www.savannahnow.com/business",
-        "https://www.selectgeorgia.com/yourgeorgia/why-savannah-HQ",
-        "https://www.selectgeorgia.com/yourgeorgia/why-savannah-HQ/set-shop",
+        "https://en.wikipedia.org/wiki/Savannah,_Georgia_Metropolitan_Statistical_Area",
+        "https://en.wikipedia.org/wiki/Savannah_Metropolitan_Statistical_Area",
+        "https://en.wikipedia.org/wiki/Savannah_metropolitan_area",
         "https://www.savannahnow.com/story/business/2013/02/19/understanding-purpose-savannah-chamber/13655438007",
-        "https://www.savannahnow.com/story/news/2016/07/08/garden-city-police-department-savannah-firms-make-best-places-work-georgia-list/13921419007",
-        "https://www.selectgeorgia.com/yourgeorgia/why-savannah-HQ/culture-in-atlanta"
+        "https://www.savannahnow.com/story/news/2016/07/08/garden-city-police-department-savannah-firms-make-best-places-work-georgia-list/13921419007"
       ],
       "method": "Representative list auto-discovered via Tavily web search across chamber-of-commerce, development-authority and local-news sources. Not exhaustive; ordering approximates source frequency, not headcount."
     },

@@ -3,7 +3,7 @@
   "short_name": "Augusta",
   "full_name": "Augusta-Richmond County, GA-SC",
   "population": 611000,
-  "as_of": "2026-11-11",
+  "as_of": "2026-11-12",
   "sections": {
     "ces_employment": {
       "series_id": "SMS13122600000000001",
@@ -5508,10 +5508,18 @@
       "source": "Census Business Dynamics Statistics (establishment entry rate, 2022); metro rate indexed to US=100"
     },
     "major_employers": {
-      "as_of": "2026-11-11",
+      "as_of": "2026-11-12",
       "employers": [
         {
           "name": "Augusta University",
+          "source_url": "https://en.wikipedia.org/wiki/Augusta,_Georgia"
+        },
+        {
+          "name": "FPL Food",
+          "source_url": "https://en.wikipedia.org/wiki/Augusta,_Georgia"
+        },
+        {
+          "name": "Cardinal Health",
           "source_url": "https://en.wikipedia.org/wiki/Augusta,_Georgia"
         },
         {
@@ -5523,7 +5531,15 @@
           "source_url": "https://en.wikipedia.org/wiki/Augusta_metropolitan_area"
         },
         {
+          "name": "Augusta Economic Development Authority",
+          "source_url": "https://en.wikipedia.org/wiki/Augusta,_Georgia"
+        },
+        {
           "name": "KSB Company",
+          "source_url": "https://en.wikipedia.org/wiki/Augusta,_Georgia"
+        },
+        {
+          "name": "Kimberly Clark Corporation",
           "source_url": "https://en.wikipedia.org/wiki/Augusta,_Georgia"
         },
         {
@@ -5531,15 +5547,11 @@
           "source_url": "https://en.wikipedia.org/wiki/Augusta,_Georgia"
         },
         {
-          "name": "Richmond County School System",
-          "source_url": "https://en.wikipedia.org/wiki/Augusta,_Georgia"
+          "name": "Paine College",
+          "source_url": "https://en.wikipedia.org/wiki/Augusta_metropolitan_area"
         },
         {
           "name": "Solo Cup Company",
-          "source_url": "https://en.wikipedia.org/wiki/Augusta,_Georgia"
-        },
-        {
-          "name": "Cardinal Health",
           "source_url": "https://en.wikipedia.org/wiki/Augusta,_Georgia"
         },
         {
@@ -5547,35 +5559,23 @@
           "source_url": "https://en.wikipedia.org/wiki/Augusta_metropolitan_area"
         },
         {
-          "name": "Encompass Health Corporation",
+          "name": "Encompass Health",
           "source_url": "https://en.wikipedia.org/wiki/Augusta_metropolitan_area"
-        },
-        {
-          "name": "FPL Food",
-          "source_url": "https://en.wikipedia.org/wiki/Augusta,_Georgia"
         },
         {
           "name": "Georgia Military College",
           "source_url": "https://en.wikipedia.org/wiki/Augusta_metropolitan_area"
-        },
-        {
-          "name": "Paine College",
-          "source_url": "https://en.wikipedia.org/wiki/Augusta_metropolitan_area"
-        },
-        {
-          "name": "Augusta Economic Development Authority",
-          "source_url": "https://en.wikipedia.org/wiki/Augusta,_Georgia"
         }
       ],
       "sources": [
         "https://en.wikipedia.org/wiki/Augusta,_Georgia",
         "https://en.wikipedia.org/wiki/Augusta_metropolitan_area",
         "https://www.augustachronicle.com/story/business/2024/08/27/georgia-top-companies-forbes-best-employers-by-state-list/74968857007",
-        "https://www.selectgeorgia.com/about-us/our-team/regional-development/matthew-forshee-east",
-        "https://www.savannahnow.com/story/business/2026/08/24/best-place-to-work-forbes-names-top-10-employers-in-georgia/91439995007",
+        "https://www.augustachronicle.com/story/business/2017/12/31/2017-year-growth-change-local-economy/14240441007",
+        "https://en.wikipedia.org/wiki/Category:Companies_based_in_Augusta,_Georgia",
         "https://www.augustachronicle.com/story/business/2014/12/04/it-firm-edts-ceo-charles-johnson-named-augusta-metro-chamber/14387108007",
         "https://www.augustachronicle.com/story/business/2021/01/23/news-augusta-area-chambers-commerce/4233078001",
-        "https://www.augustachronicle.com/story/business/2007/08/27/yrb-141286-shtml/14701354007"
+        "https://en.wikipedia.org/wiki/William_Crapon_Sibley"
       ],
       "method": "Representative list auto-discovered via Tavily web search across chamber-of-commerce, development-authority and local-news sources. Not exhaustive; ordering approximates source frequency, not headcount."
     },

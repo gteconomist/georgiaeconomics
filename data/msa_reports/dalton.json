@@ -3,7 +3,7 @@
   "short_name": "Dalton",
   "full_name": "Dalton, GA",
   "population": 143000,
-  "as_of": "2026-11-11",
+  "as_of": "2026-11-12",
   "sections": {
     "ces_employment": {
       "series_id": "SMS13191400000000001",
@@ -4907,23 +4907,43 @@
       "source": "Census Business Dynamics Statistics (establishment entry rate, 2022); metro rate indexed to US=100"
     },
     "major_employers": {
-      "as_of": "2026-11-11",
+      "as_of": "2026-11-12",
       "employers": [
         {
           "name": "Shaw Industries",
-          "source_url": "https://www.selectgeorgia.com/about-us/our-team/regional-development/tamara-brock-nw"
+          "source_url": "https://valdostadailytimes.com/2017/09/11/questions-and-answers-with-shaw-industries-ceo-vance-bell"
         },
         {
-          "name": "Beaulieu Group",
-          "source_url": "https://valdostadailytimes.com/2018/01/01/engineered-floors-growth-varnell-drama-among-top-stories-in-dalton-area-in-2017"
+          "name": "Kobayashi Healthcare",
+          "source_url": "https://valdostadailytimes.com/2018/06/14/japanese-consul-says-dalton-is-welcoming-to-businesses-2"
         },
         {
           "name": "Mohawk Industries",
           "source_url": "https://www.bizjournals.com/atlanta/news/2023/06/29/solar-workforce-qcells-dalton-georgia.html"
         },
         {
-          "name": "Carpet Capital",
+          "name": "Dalton Utilities",
+          "source_url": "https://valdostadailytimes.com/2019/08/16/chamber-event-includes-discussion-of-need-for-another-splost-in-whitfield-2"
+        },
+        {
+          "name": "Appalachian Regional Port",
+          "source_url": "https://valdostadailytimes.com/2019/08/05/hanwha-plant-up-to-more-than-750-employees-2"
+        },
+        {
+          "name": "Carpet",
           "source_url": "https://en.wikipedia.org/wiki/Dalton,_Georgia"
+        },
+        {
+          "name": "Coca-Cola Bottling Co. United",
+          "source_url": "https://www.bizjournals.com/atlanta/research/lists/2026/georgia-manufacturers.html"
+        },
+        {
+          "name": "Dalton-Whitfield Joint Development Authority",
+          "source_url": "https://valdostadailytimes.com/2019/08/05/hanwha-plant-up-to-more-than-750-employees-2"
+        },
+        {
+          "name": "Georgia Academy",
+          "source_url": "https://www.selectgeorgia.com/about-us/our-team/regional-development/tamara-brock-nw"
         },
         {
           "name": "Georgia Power",
@@ -4934,47 +4954,27 @@
           "source_url": "https://www.bizjournals.com/atlanta/research/lists/2026/georgia-manufacturers.html"
         },
         {
-          "name": "Kobayashi Healthcare",
-          "source_url": "https://valdostadailytimes.com/2018/06/14/japanese-consul-says-dalton-is-welcoming-to-businesses"
-        },
-        {
-          "name": "Appalachian Regional Port",
-          "source_url": "https://valdostadailytimes.com/2019/08/05/hanwha-plant-up-to-more-than-750-employees-2"
-        },
-        {
-          "name": "Archer Aviation",
-          "source_url": "https://www.ledger-enquirer.com/news/business/article289530136.html"
-        },
-        {
-          "name": "Company",
+          "name": "Lockheed Martin Aeronautics Co. Rd",
           "source_url": "https://www.bizjournals.com/atlanta/research/lists/2026/georgia-manufacturers.html"
         },
         {
-          "name": "Dalton-Whitfield Joint Development Authority",
+          "name": "U.S. Department of Energy",
           "source_url": "https://valdostadailytimes.com/2019/08/05/hanwha-plant-up-to-more-than-750-employees-2"
         },
         {
-          "name": "Flooring",
-          "source_url": "https://valdostadailytimes.com/2018/01/01/engineered-floors-growth-varnell-drama-among-top-stories-in-dalton-area-in-2017"
-        },
-        {
-          "name": "Georgia Academy",
+          "name": "University of Georgia",
           "source_url": "https://www.selectgeorgia.com/about-us/our-team/regional-development/tamara-brock-nw"
-        },
-        {
-          "name": "Manufacturing",
-          "source_url": "https://www.bizjournals.com/atlanta/research/lists/2026/georgia-manufacturers.html"
         }
       ],
       "sources": [
         "https://www.bizjournals.com/atlanta/news/2023/06/29/solar-workforce-qcells-dalton-georgia.html",
         "https://en.wikipedia.org/wiki/Dalton,_Georgia",
-        "https://valdostadailytimes.com/2018/06/14/japanese-consul-says-dalton-is-welcoming-to-businesses",
-        "https://www.bizjournals.com/atlanta/research/lists/2026/georgia-manufacturers.html",
-        "https://www.selectgeorgia.com/about-us/our-team/regional-development/tamara-brock-nw",
         "https://valdostadailytimes.com/2017/09/11/questions-and-answers-with-shaw-industries-ceo-vance-bell",
-        "https://valdostadailytimes.com/2018/01/01/engineered-floors-growth-varnell-drama-among-top-stories-in-dalton-area-in-2017",
-        "https://www.ledger-enquirer.com/news/business/article289530136.html"
+        "https://valdostadailytimes.com/2018/06/14/japanese-consul-says-dalton-is-welcoming-to-businesses-2",
+        "https://valdostadailytimes.com/2019/08/05/hanwha-plant-up-to-more-than-750-employees-2",
+        "https://www.selectgeorgia.com/about-us/our-team/regional-development/tamara-brock-nw",
+        "https://valdostadailytimes.com/2019/08/16/chamber-event-includes-discussion-of-need-for-another-splost-in-whitfield-2",
+        "https://www.bizjournals.com/atlanta/research/lists/2026/georgia-manufacturers.html"
       ],
       "method": "Representative list auto-discovered via Tavily web search across chamber-of-commerce, development-authority and local-news sources. Not exhaustive; ordering approximates source frequency, not headcount."
     },

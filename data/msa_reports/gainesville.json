@@ -3,7 +3,7 @@
   "short_name": "Gainesville",
   "full_name": "Gainesville, GA",
   "population": 211000,
-  "as_of": "2026-11-11",
+  "as_of": "2026-11-12",
   "sections": {
     "ces_employment": {
       "series_id": "SMS13235800000000001",
@@ -5599,7 +5599,7 @@
       "source": "Census Business Dynamics Statistics (establishment entry rate, 2022); metro rate indexed to US=100"
     },
     "major_employers": {
-      "as_of": "2026-11-11",
+      "as_of": "2026-11-12",
       "employers": [
         {
           "name": "Northeast Georgia Health System",
@@ -5630,6 +5630,22 @@
           "source_url": "https://www.gainesvilletimes.com/news/business-archived/chamber-honors-3-companies-as-the-years-best-in-hall"
         },
         {
+          "name": "Gainesville City School District",
+          "source_url": "https://en.wikipedia.org/wiki/Gainesville,_Georgia"
+        },
+        {
+          "name": "Gulfstream Aerospace Corp",
+          "source_url": "https://www.bizjournals.com/atlanta/research/lists/2026/georgia-manufacturers.html"
+        },
+        {
+          "name": "Hall County School District",
+          "source_url": "https://en.wikipedia.org/wiki/Gainesville,_Georgia"
+        },
+        {
+          "name": "Healthcare",
+          "source_url": "https://en.wikipedia.org/wiki/Gainesville,_Georgia"
+        },
+        {
           "name": "Kubota Manufacturing of America",
           "source_url": "https://www.gainesvilletimes.com/news/business-archived/chamber-honors-3-companies-as-the-years-best-in-hall"
         },
@@ -5638,35 +5654,19 @@
           "source_url": "https://en.wikipedia.org/wiki/Gainesville,_Georgia"
         },
         {
-          "name": "University of North Georgia",
-          "source_url": "https://en.wikipedia.org/wiki/Gainesville,_Georgia"
-        },
-        {
-          "name": "Annual Comprehensive Financial Report",
+          "name": "Santa Fe College",
           "source_url": "https://en.wikipedia.org/wiki/Gainesville,_Florida"
-        },
-        {
-          "name": "Ave Food Park Archer Historical Society",
-          "source_url": "https://en.wikipedia.org/wiki/University_of_Florida"
-        },
-        {
-          "name": "Cola Bottling Co. of Gainesville",
-          "source_url": null
-        },
-        {
-          "name": "Gold Creek Foods",
-          "source_url": "https://www.bizjournals.com/atlanta/related_content.html?topic=Kubota+Industrial+Equipment+Corp"
         }
       ],
       "sources": [
         "https://en.wikipedia.org/wiki/Gainesville,_Georgia",
-        "https://www.bizjournals.com/atlanta/related_content.html?topic=Kubota+Industrial+Equipment+Corp",
+        "https://www.savannahnow.com/story/news/2025/05/10/best-small-cities-in-georgia-hgtv-names-gainesville-ga-an-up-and-coming-gem/83533116007",
         "https://www.bizjournals.com/atlanta/research/lists/2026/georgia-manufacturers.html",
-        "https://www.ajc.com/pulse/6-health-care-systems-among-forbes-best-employers-in-georgia/ZHJC3IV7UBFOHH423Y4NIDQDPI",
+        "https://www.bizjournals.com/atlanta/related_content.html?topic=Kubota+Industrial+Equipment+Corp",
         "https://en.wikipedia.org/wiki/Gainesville,_Florida",
         "https://www.gainesvilletimes.com/news/business-archived/chamber-honors-3-companies-as-the-years-best-in-hall",
-        "https://www.gainesvilletimes.com/news/business-archived/hall-chamber-of-commerce-honors-2-local-businesses",
-        "https://en.wikipedia.org/wiki/Georgia_Chamber_of_Commerce"
+        "https://www.gainesvilletimes.com/news/business-archived/gainesville-approves-5m-bond-for-ims-gear-georgia",
+        "https://www.gainesvilletimes.com/news/business-archived/hall-chamber-of-commerce-honors-2-local-businesses"
       ],
       "method": "Representative list auto-discovered via Tavily web search across chamber-of-commerce, development-authority and local-news sources. Not exhaustive; ordering approximates source frequency, not headcount."
     },
