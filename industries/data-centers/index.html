@@ -433,7 +433,7 @@
       <span class="count" id="map-count">—</span>
     </div>
     <div class="dc-map-wrap"><div id="dc-map"></div></div>
-    <div class="source-note">Facility locations from our internal facility database. Map tiles &copy; <a href="https://carto.com/attributions" target="_blank" rel="noopener">CARTO</a>, &copy; <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap</a> contributors. Coverage skews toward commercially marketed sites; smaller enterprise rooms are likely undercounted.</div>
+    <div class="source-note">Facility locations from our internal facility database. Map tiles &copy; <a href="https://www.esri.com/" target="_blank" rel="noopener">Esri</a>, &copy; <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap</a> contributors. Coverage skews toward commercially marketed sites; smaller enterprise rooms are likely undercounted.</div>
   </div>
 
   <div class="chart-panel" style="margin-top: 22px;">
@@ -935,10 +935,16 @@ function renderFacilityMap(facilities) {
     minZoom: 6, maxZoom: 16,
   }).setView([33.75, -83.9], 7);
 
-  L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
-    subdomains: 'abcd',
-    attribution: '&copy; OpenStreetMap, &copy; CARTO',
-    maxZoom: 19,
+  // Basemap: Esri World Light Gray (base + labels). Keyless. CARTO's
+  // basemaps.cartocdn.com began requiring an API key in Nov 2026 and served
+  // "API KEY REQUIRED" watermark tiles, so we moved off it.
+  const ESRI = 'https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/';
+  L.tileLayer(ESRI + 'World_Light_Gray_Base/MapServer/tile/{z}/{y}/{x}', {
+    attribution: 'Tiles &copy; Esri &mdash; Esri, HERE, Garmin, &copy; OpenStreetMap contributors',
+    maxZoom: 16,
+  }).addTo(_dcMap);
+  L.tileLayer(ESRI + 'World_Light_Gray_Reference/MapServer/tile/{z}/{y}/{x}', {
+    maxZoom: 16,
   }).addTo(_dcMap);
 
   _dcMarkerLayer = L.layerGroup().addTo(_dcMap);
@@ -957,7 +963,7 @@ function renderFacilityMap(facilities) {
   }
 
   // Legend
-  const legend = L.control({ position: 'bottomright' });
+  const legend = L.control({ position: 'topright' });
   legend.onAdd = function() {
     const div = L.DomUtil.create('div', 'dc-map-legend');
     div.innerHTML = `

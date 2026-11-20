@@ -21,9 +21,9 @@
       "3362": 7736,
       "3363": 20440
     },
-    "n_plants_total": 8,
+    "n_plants_total": 9,
     "n_plants_operating": 6,
-    "n_plants_announced": 1
+    "n_plants_announced": 2
   },
   "trends": {
     "years": [
@@ -99,6 +99,10 @@
     {
       "year": 2025,
       "label": "HL-GA Battery (Cartersville) operational"
+    },
+    {
+      "year": 2026,
+      "label": "Audi announces Peach County plant"
     }
   ],
   "state_comparison": [
@@ -302,6 +306,18 @@
         "source_url": "https://thepostsearchlight.com/2025/07/16/anovion-still-aiming-for-2026-construction",
         "snippet": "Anovion Technologies' auto plant in Bainbridge, Georgia, is still in fundraising mode for construction, with no confirmed start date. Full p"
       }
+    },
+    {
+      "name": "Audi \u2014 Middle Georgia Megasite",
+      "city": "Peach County (GA-96 near I-75)",
+      "company": "Audi AG (Volkswagen Group)",
+      "status": "announced",
+      "year_status": 2026,
+      "investment_b": 4.0,
+      "jobs": 4500,
+      "product": "Premium SUVs for North America (models not yet confirmed)",
+      "capacity_units_k": 200,
+      "note": "Announced Oct 24, 2026 \u2014 Audi's first U.S. plant, on the 1,474-acre Middle Georgia Megasite (GA-96 near I-75). Grading 2027, construction 2028, full production 2031. Recruited through the Mid-Georgia Gateway JDA (Peach, Houston, Macon-Bibb)."
     }
   ],
   "milestones": [
@@ -349,6 +365,11 @@
       "year": 2025,
       "label": "HL-GA Battery operational",
       "detail": "Hyundai/LG joint-venture battery plant in Cartersville reaches commercial production \u2014 30 GWh annual capacity supplies HMGMA and Kia."
+    },
+    {
+      "year": 2026,
+      "label": "Audi picks Peach County",
+      "detail": "October 2026: Audi AG announces a ~$4B, 4,500-job SUV assembly plant at the Middle Georgia Megasite \u2014 its first U.S. factory. Full production targeted for 2031."
     }
   ],
   "_meta": {

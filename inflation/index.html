@@ -393,6 +393,18 @@ async function init() {
     document.getElementById('hero-south-yoy').textContent = fmtSignedPct(k.headline_yoy_south, 1);
     document.getElementById('hero-south-yoy-lbl').textContent = 'South CPI YoY, ' + (k.latest_month_south || '—');
   }
+  else if (d.south_headline && d.south_headline.months) {
+    // Latest month has no YoY (year-ago month missing) — show the most recent
+    // month that does, labelled with its own month.
+    const sh = d.south_headline;
+    for (let i = sh.months.length - 1; i >= 0; i--) {
+      if (sh.south_yoy[i] != null) {
+        document.getElementById('hero-south-yoy').textContent = fmtSignedPct(sh.south_yoy[i], 1);
+        document.getElementById('hero-south-yoy-lbl').textContent = 'South CPI YoY, ' + ymToLabel(sh.months[i]);
+        break;
+      }
+    }
+  }
   if (k.atlanta_yoy != null) {
     document.getElementById('hero-atlanta-yoy').textContent = fmtSignedPct(k.atlanta_yoy, 1);
     document.getElementById('hero-atlanta-yoy-lbl').textContent = 'Atlanta MSA CPI YoY, ' + (k.atlanta_period || '—');
@@ -471,7 +483,13 @@ async function init() {
 }
 
 function setKpi(valId, deltaId, value, suffix) {
-  if (value == null) return;
+  if (value == null) {
+    // BLS never published Oct 2025 CPI (federal shutdown), so Oct 2026 has no
+    // year-ago comparison. Say so instead of leaving a bare dash.
+    const el = document.getElementById(deltaId);
+    if (el) el.textContent = 'n/a — year-ago month not published by BLS';
+    return;
+  }
   document.getElementById(valId).textContent = fmtSignedPct(value, 1);
   const el = document.getElementById(deltaId);
   el.textContent = (suffix || '').trimStart();
