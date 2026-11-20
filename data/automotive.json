@@ -9,7 +9,7 @@
     "employment_latest_k": 32.57,
     "employment_yoy_pct": 2.4,
     "national_rank": 10,
-    "ev_investment_total_b": 15.1,
+    "ev_investment_total_b": 26.9,
     "establishments_latest": 225,
     "establishments_breakdown": {
       "3361": 10,
@@ -23,7 +23,7 @@
     },
     "n_plants_total": 9,
     "n_plants_operating": 6,
-    "n_plants_announced": 2
+    "n_plants_announced": 3
   },
   "trends": {
     "years": [
@@ -276,19 +276,13 @@
       "name": "Rivian \u2014 Stanton Springs",
       "city": "Social Circle (Morgan/Walton County)",
       "company": "Rivian Automotive",
-      "status": "paused",
-      "year_status": 2024,
+      "status": "under-construction",
+      "year_status": 2026,
       "investment_b": 5.0,
       "jobs": 7500,
       "product": "R2 / R3 EVs (announced)",
       "capacity_units_k": 400,
-      "note": "Announced Dec 2021 at $5B / 7,500 jobs. Site preparation paused in March 2024 \u2014 Rivian shifted R2 launch to its existing Illinois plant. Future of site uncertain.",
-      "_hint": {
-        "status_hint": "under-construction",
-        "jobs_hint": null,
-        "source_url": "https://georgia.org/rivian",
-        "snippet": "Rivian's Georgia plant construction resumes in 2026, with production starting in 2028. The facility aims for an annual capacity of 300,000 v"
-      }
+      "note": "Announced Dec 2021 at $5B / 7,500 jobs. Paused March 2024; ceremonial groundbreaking Sept 16, 2025; construction under way in 2026, with vehicle production targeted for 2028 (R2 / R3). Up to 400K units/yr after phase two."
     },
     {
       "name": "Anovion Technologies",
@@ -367,6 +361,11 @@
       "detail": "Hyundai/LG joint-venture battery plant in Cartersville reaches commercial production \u2014 30 GWh annual capacity supplies HMGMA and Kia."
     },
     {
+      "year": 2025,
+      "label": "Rivian restarts Georgia plant",
+      "detail": "September 2025: Rivian holds a groundbreaking at Stanton Springs North and resets the $5B, 7,500-job plant on a 2026 construction start and 2028 production."
+    },
+    {
       "year": 2026,
       "label": "Audi picks Peach County",
       "detail": "October 2026: Audi AG announces a ~$4B, 4,500-job SUV assembly plant at the Middle Georgia Megasite \u2014 its first U.S. factory. Full production targeted for 2031."
@@ -403,10 +402,10 @@
       "year": 2023
     },
     "ev_investment": {
-      "last_updated": "2026-06-02",
-      "source": "Tavily \u2192 DECD / Gov. office / AJC cumulative EV investment figure",
-      "value_b": 15.1,
-      "source_url": "https://www.ajc.com/politics/2025/09/how-a-raid-turned-hyundai-kemps-biggest-jobs-push-into-a-political-thicket"
+      "last_updated": "2026-11-20",
+      "source": "Sum of announced investment across the plant scorecard below (excludes paused or cancelled projects)",
+      "value_b": 26.9,
+      "n_plants": 9
     },
     "plants": {
       "last_updated": "2026-06-02",

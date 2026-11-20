@@ -636,6 +636,60 @@ def load_costar_seed():
 
 
 # ---------------------------------------------------------------------------
+# Costar cleanup — the raw export double-lists some sites. Applied every run so
+# a re-parsed export can't reintroduce them.
+# ---------------------------------------------------------------------------
+# Name/operator fills for unnamed Costar records we've identified, keyed by
+# (address, city). CleanSpark's Washington, GA campus is a bitcoin-mining site
+# (~86 MW after its 2023 phase-two expansion).
+COSTAR_OVERRIDES = {
+    ("197 Dixiewood Rd", "Washington"): {
+        "property_name": "CleanSpark Washington (bitcoin mining campus)",
+        "operator": "CleanSpark",
+    },
+}
+
+
+def _clean_costar(facilities):
+    """Return (cleaned_list, notes).
+    1. Exact duplicates — same address, name, size, power, status and hall
+       count (Costar sometimes carries a second record with only year_built
+       or a geocode nudge changed, e.g. FTY-01 at 1601 Riverside Pky).
+    2. Campus split into numbered sub-buildings — when an address has an
+       unnamed parent record, drop the sibling records whose name is just a
+       building number ("1".."11" at 197 Dixiewood Rd). The parent carries the
+       campus power figure; the sub-buildings carry none, so this only fixes
+       the facility counts.
+    3. Fill names/operators from COSTAR_OVERRIDES."""
+    notes = []
+    seen, out = set(), []
+    for f in facilities:
+        key = tuple(f.get(k) for k in ("address", "city", "property_name", "rba_sf",
+                                       "capacity_total_utility_kw", "status", "data_hall_count"))
+        if key in seen:
+            notes.append(f"dropped duplicate: {f.get('property_name') or f.get('address')}")
+            continue
+        seen.add(key)
+        out.append(f)
+
+    parents = {(f.get("address"), f.get("city")) for f in out if not f.get("property_name")}
+    kept = []
+    for f in out:
+        name = str(f.get("property_name") or "").strip()
+        if name.isdigit() and (f.get("address"), f.get("city")) in parents:
+            continue
+        kept.append(f)
+    if len(kept) != len(out):
+        notes.append(f"folded {len(out) - len(kept)} numbered sub-buildings into their campus record")
+
+    for f in kept:
+        fix = COSTAR_OVERRIDES.get((f.get("address"), f.get("city")))
+        if fix and not f.get("property_name"):
+            f.update(fix)
+    return kept, notes
+
+
+# ---------------------------------------------------------------------------
 # Main — orchestrate all sections with graceful degradation
 # ---------------------------------------------------------------------------
 def main():
@@ -787,6 +841,9 @@ def main():
     print(f"\n[5/7] Costar facilities + counties — read parsed seed:")
     fac, fac_meta = load_costar_seed()
     if fac is not None:
+        fac, clean_notes = _clean_costar(fac)
+        for n in clean_notes:
+            print(f"      [Costar cleanup] {n}")
         out["facilities"] = fac
         # Recompute county aggregates from the seed so they stay in sync
         try:

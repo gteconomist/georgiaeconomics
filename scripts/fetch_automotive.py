@@ -707,19 +707,10 @@ def main():
     else:
         print(f"\n[5/5] Tavily — cumulative EV $ investment + plant milestone hints:")
 
-        try:
-            ev = fetch_total_ev_investment()
-            if ev:
-                val_b, src = ev
-                out["kpis"]["ev_investment_total_b"] = val_b
-                meta["ev_investment"] = {
-                    "last_updated": TODAY_ISO,
-                    "source": "Tavily → DECD / Gov. office / AJC cumulative EV investment figure",
-                    "value_b": val_b,
-                    "source_url": src,
-                }
-        except Exception as e:
-            print(f"      EV $ scrape error: {e}", file=sys.stderr)
+        # Headline investment $ is now derived from the plant scorecard (below),
+        # not scraped: the Tavily figure picked up whatever "$NB" appeared in a
+        # news answer and sat stale for months. fetch_total_ev_investment() is
+        # kept for reference but no longer called.
 
         try:
             existing_plants = out.get("plants", existing.get("plants", []))
@@ -750,6 +741,17 @@ def main():
     out["kpis"]["n_plants_operating"] = operating
     out["kpis"]["n_plants_announced"] = announced
     out["kpis"]["n_plants_total"]     = len(out["plants"])
+    # Announced investment across the scorecard, excluding paused/cancelled
+    # projects — moves automatically when a plant is added or changes status.
+    active = [p for p in out["plants"]
+              if (p.get("status") or "").lower() not in ("paused", "cancelled")]
+    out["kpis"]["ev_investment_total_b"] = round(sum(p.get("investment_b") or 0 for p in active), 1)
+    meta["ev_investment"] = {
+        "last_updated": TODAY_ISO,
+        "source": "Sum of announced investment across the plant scorecard below (excludes paused or cancelled projects)",
+        "value_b": out["kpis"]["ev_investment_total_b"],
+        "n_plants": len(active),
+    }
 
     # ----- Finalize -----
     out["_meta"]       = meta
