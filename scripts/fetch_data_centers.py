@@ -73,6 +73,7 @@ ROOT = Path(__file__).parent.parent
 OUT_PATH = ROOT / "data" / "data_centers.json"
 SEED_DIR = ROOT / "data" / "seeds"
 SEED_JSON = SEED_DIR / "costar_data_centers_ga_parsed.json"
+DRI_SEED_JSON = SEED_DIR / "dri_data_centers.json"   # hand-reviewed DCA DRI filings not in CoStar
 
 # NAICS code: Data Processing, Hosting, and Related Services
 # This is the closest BLS/Census NAICS line to "data center industry" — broader
@@ -643,6 +644,10 @@ def load_costar_seed():
 # (address, city). CleanSpark's Washington, GA campus is a bitcoin-mining site
 # (~86 MW after its 2023 phase-two expansion).
 COSTAR_OVERRIDES = {
+    # Same site as DCA DRI #4860 "ATL80" (Microsoft, 0 Huffaker Rd, filed Oct 2026).
+    ("Huffaker Rd Rd SW", "Rome"): {
+        "operator": "Microsoft (DRI #4860, ATL80)",
+    },
     ("197 Dixiewood Rd", "Washington"): {
         "property_name": "CleanSpark Washington (bitcoin mining campus)",
         "operator": "CleanSpark",
@@ -684,9 +689,96 @@ def _clean_costar(facilities):
 
     for f in kept:
         fix = COSTAR_OVERRIDES.get((f.get("address"), f.get("city")))
-        if fix and not f.get("property_name"):
-            f.update(fix)
+        if fix:
+            # only fill blanks — never overwrite what CoStar supplied
+            f.update({k: v for k, v in fix.items() if not f.get(k)})
     return kept, notes
+
+
+def load_dri_additions():
+    """Hand-reviewed DCA DRI data-center filings that CoStar doesn't carry.
+    Returns a list in the facilities schema (plus dri_* fields), or []."""
+    if not DRI_SEED_JSON.exists():
+        return []
+    try:
+        with open(DRI_SEED_JSON) as f:
+            seed = json.load(f)
+    except (json.JSONDecodeError, OSError) as e:
+        print(f"      [DRI] seed unreadable ({e}) — skipping additions.", file=sys.stderr)
+        return []
+    out = []
+    for r in seed.get("facilities", []):
+        if r.get("lat") is None or r.get("lng") is None:
+            continue
+        out.append({**r, "source": "DCA DRI filing"})
+    return out
+
+
+def apply_facility_layer(out, meta):
+    """CoStar seed (cleaned) + hand-reviewed DRI additions -> out["facilities"],
+    out["counties"] and the facility KPIs. No network; safe to run offline:
+        python3 -c "import sys; sys.path.insert(0,'scripts'); import fetch_data_centers as m; m.rebuild_facilities_only()"
+    """
+    fac, fac_meta = load_costar_seed()
+    if fac is not None:
+        fac, clean_notes = _clean_costar(fac)
+        for n in clean_notes:
+            print(f"      [Costar cleanup] {n}")
+        dri = load_dri_additions()
+        if dri:
+            print(f"      [DRI] merged {len(dri)} hand-reviewed DRI filings "
+                  f"({sum(1 for f in dri if f.get('status') == 'proposed')} proposed)")
+        fac = fac + dri
+        out["facilities"] = fac
+        # Recompute county aggregates from the seed so they stay in sync
+        try:
+            counties_list = _recompute_counties(fac)
+            out["counties"] = counties_list
+            out["kpis"]["n_facilities_existing"] = sum(1 for f in fac if f.get("status") == "operating")
+            out["kpis"]["n_facilities_pipeline"] = sum(1 for f in fac if f.get("status") in ("under-construction", "announced"))
+            # "proposed" = DRI filing only; kept out of the tracked total and the
+            # pipeline MW (filings request peak load, not committed capacity).
+            out["kpis"]["n_facilities_total"]    = sum(1 for f in fac if f.get("status") != "proposed")
+            out["kpis"]["n_facilities_proposed"] = sum(1 for f in fac if f.get("status") == "proposed")
+            out["kpis"]["proposed_mw"] = round(sum(f.get("capacity_total_utility_kw") or 0 for f in fac if f.get("status") == "proposed") / 1000, 1)
+            mw_existing = round(sum(f.get("capacity_total_utility_kw") or 0 for f in fac if f.get("status") == "operating") / 1000, 1)
+            mw_pipeline = round(sum(f.get("capacity_total_utility_kw") or 0 for f in fac if f.get("status") in ("under-construction", "announced")) / 1000, 1)
+            out["kpis"]["operating_mw"] = mw_existing
+            out["kpis"]["pipeline_mw"]  = mw_pipeline
+            if counties_list:
+                out["kpis"]["top_county_existing"] = counties_list[0]["name"]
+                out["kpis"]["top_county_pipeline"] = max(counties_list, key=lambda c: c["mw_pipeline"])["name"]
+            meta["facilities"] = {
+                "last_updated": fac_meta.get("exported_at"),
+                "source": "Georgia Economics internal facility database (manual refresh) + hand-reviewed Georgia DCA DRI filings",
+                "dri_reviewed_at": (json.load(open(DRI_SEED_JSON)).get("_reviewed_at") if DRI_SEED_JSON.exists() else None),
+                "exported_at": fac_meta.get("exported_at"),
+                "n_records": fac_meta.get("n_records"),
+                "source_file": fac_meta.get("source_file"),
+            }
+            meta["counties"] = {
+                "last_updated": fac_meta.get("exported_at"),
+                "source": "Derived from internal facility database",
+            }
+            print(f"      OK: {len(fac)} facilities, {len(counties_list)} counties, "
+                  f"{mw_existing} MW existing / {mw_pipeline} MW pipeline")
+        except Exception as e:
+            print(f"      ERROR: county aggregation failed ({e}) — preserving existing.", file=sys.stderr)
+    else:
+        print(f"      Costar seed not found — preserving prior facilities.", file=sys.stderr)
+
+
+def rebuild_facilities_only():
+    """Re-apply the facility layer to data/data_centers.json without touching
+    any API-backed section (used after editing a seed file)."""
+    with open(OUT_PATH) as f:
+        out = json.load(f)
+    meta = dict(out.get("_meta", {}))
+    apply_facility_layer(out, meta)
+    out["_meta"] = meta
+    with open(OUT_PATH, "w") as f:
+        json.dump(out, f, indent=2)
+    print(f"Rewrote {OUT_PATH} (facility layer only)")
 
 
 # ---------------------------------------------------------------------------
@@ -839,43 +931,7 @@ def main():
 
     # ----- 5) Costar facilities + counties (manual seed) -----
     print(f"\n[5/7] Costar facilities + counties — read parsed seed:")
-    fac, fac_meta = load_costar_seed()
-    if fac is not None:
-        fac, clean_notes = _clean_costar(fac)
-        for n in clean_notes:
-            print(f"      [Costar cleanup] {n}")
-        out["facilities"] = fac
-        # Recompute county aggregates from the seed so they stay in sync
-        try:
-            counties_list = _recompute_counties(fac)
-            out["counties"] = counties_list
-            out["kpis"]["n_facilities_existing"] = sum(1 for f in fac if f.get("status") == "operating")
-            out["kpis"]["n_facilities_pipeline"] = sum(1 for f in fac if f.get("status") in ("under-construction", "announced"))
-            out["kpis"]["n_facilities_total"]    = len(fac)
-            mw_existing = round(sum(f.get("capacity_total_utility_kw") or 0 for f in fac if f.get("status") == "operating") / 1000, 1)
-            mw_pipeline = round(sum(f.get("capacity_total_utility_kw") or 0 for f in fac if f.get("status") in ("under-construction", "announced")) / 1000, 1)
-            out["kpis"]["operating_mw"] = mw_existing
-            out["kpis"]["pipeline_mw"]  = mw_pipeline
-            if counties_list:
-                out["kpis"]["top_county_existing"] = counties_list[0]["name"]
-                out["kpis"]["top_county_pipeline"] = max(counties_list, key=lambda c: c["mw_pipeline"])["name"]
-            meta["facilities"] = {
-                "last_updated": fac_meta.get("exported_at"),
-                "source": "Georgia Economics internal facility database (manual refresh)",
-                "exported_at": fac_meta.get("exported_at"),
-                "n_records": fac_meta.get("n_records"),
-                "source_file": fac_meta.get("source_file"),
-            }
-            meta["counties"] = {
-                "last_updated": fac_meta.get("exported_at"),
-                "source": "Derived from internal facility database",
-            }
-            print(f"      OK: {len(fac)} facilities, {len(counties_list)} counties, "
-                  f"{mw_existing} MW existing / {mw_pipeline} MW pipeline")
-        except Exception as e:
-            print(f"      ERROR: county aggregation failed ({e}) — preserving existing.", file=sys.stderr)
-    else:
-        print(f"      Costar seed not found — preserving prior facilities.", file=sys.stderr)
+    apply_facility_layer(out, meta)
 
     # ----- 6) Tavily — DECD new announcements + EPD water permits + PSC headline + policy bills -----
     if not TAVILY_API_KEY:
@@ -1005,6 +1061,7 @@ COUNTY_FIPS = {
     "Morgan":"13211","Whitfield":"13313","Clayton":"13063","Coweta":"13077","Lamar":"13171",
     "Richmond":"13245","Floyd":"13115","Forsyth":"13117","Henry":"13151","DeKalb":"13089",
     "Cherokee":"13057","Paulding":"13223","Spalding":"13255","Carroll":"13045","Hall":"13139",
+    "Columbia":"13073", "Putnam":"13237", "Candler":"13043", "Effingham":"13103", "Troup":"13285", "Irwin":"13155", "Early":"13099", "McDuffie":"13189",
 }
 
 
@@ -1012,8 +1069,8 @@ def _recompute_counties(facilities):
     """Aggregate facilities by county. Returns sorted list of dicts."""
     from collections import defaultdict
     agg = defaultdict(lambda: {
-        "existing": 0, "under_construction": 0, "announced": 0, "deferred": 0,
-        "kw_existing": 0, "kw_pipeline": 0, "sf_existing": 0, "sf_pipeline": 0,
+        "existing": 0, "under_construction": 0, "announced": 0, "deferred": 0, "proposed": 0,
+        "kw_existing": 0, "kw_pipeline": 0, "kw_proposed": 0, "sf_existing": 0, "sf_pipeline": 0,
     })
     for f in facilities:
         c = f.get("county")
@@ -1036,6 +1093,9 @@ def _recompute_counties(facilities):
             agg[c]["sf_pipeline"] += sf
         elif s == "deferred":
             agg[c]["deferred"] += 1
+        elif s == "proposed":
+            agg[c]["proposed"] += 1
+            agg[c]["kw_proposed"] += kw
 
     out = []
     for c, st in agg.items():
@@ -1048,6 +1108,8 @@ def _recompute_counties(facilities):
             "under_construction": st["under_construction"],
             "announced": st["announced"],
             "deferred": st["deferred"],
+            "proposed": st["proposed"],
+            "mw_proposed": round(st["kw_proposed"] / 1000, 1),
             "mw_existing": round(st["kw_existing"] / 1000, 1),
             "mw_pipeline": round(st["kw_pipeline"] / 1000, 1),
             "sf_existing": st["sf_existing"],

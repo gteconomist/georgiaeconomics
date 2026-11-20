@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <title>Georgia Data Centers | Georgia Economics</title>
-<meta name="description" content="Live Georgia data center data: 126 facilities including Microsoft Lithia Springs, Meta Newton, Google Atlanta. Operating + pipeline MW capacity, jobs, GDP, county rankings, Georgia Power load forecast, sales-tax exemption tracker, water use.">
+<meta name="description" content="Live Georgia data center data: operating, under-construction and proposed facilities including Microsoft Lithia Springs, Meta Newton, Google Atlanta. Operating + pipeline MW capacity, jobs, GDP, county rankings, Georgia Power load forecast, sales-tax exemption tracker, water use.">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <!-- GEN:HEAD -->
 <link rel="stylesheet" href="/styles.css">
@@ -99,6 +99,9 @@
   .dc-map-popup .pop-status.under-construction { background: rgba(247,148,30,0.18); color: var(--mustard); }
   .dc-map-popup .pop-status.announced          { background: rgba(63,125,82,0.18); color: var(--teal); }
   .dc-map-popup .pop-status.deferred           { background: rgba(168,67,47,0.18);  color: var(--coral); }
+  .dc-map-popup .pop-status.proposed           { background: #fff; color: var(--navy); border: 1px dashed var(--navy); }
+  .dc-map-popup .pop-dri { margin-top: 6px; font-size: 12px; }
+  .dc-map-controls .swatch.hollow, .dc-map-legend .swatch.hollow { background: #fff !important; border: 2px dashed #231f20; box-sizing: border-box; }
   .dc-map-popup .pop-meta { color: var(--ink-soft); margin-top: 6px; font-size: 12px; }
   .dc-map-popup .pop-stats {
     margin-top: 8px; padding-top: 8px; border-top: 1px dotted var(--border);
@@ -212,6 +215,7 @@
   table.fac-table .status-cell.under-construction .pill { background: rgba(247,148,30,0.18); color: var(--mustard); }
   table.fac-table .status-cell.announced .pill { background: rgba(63,125,82,0.18); color: var(--teal); }
   table.fac-table .status-cell.deferred  .pill { background: rgba(168,67,47,0.18);  color: var(--coral); }
+  table.fac-table .status-cell.proposed  .pill { background: #fff; color: var(--navy); border: 1px dashed var(--navy); }
 
   /* County rankings table */
   .county-table { width: 100%; border-collapse: collapse; margin-top: 12px; font-size: 13px; }
@@ -369,7 +373,7 @@
   <!-- Hero -->
   <section class="dc-hero">
     <h2>Power, land, fiber — Georgia has all three.</h2>
-    <p>We track <strong id="hero-fac-count">—</strong> data-center facilities across Georgia: <strong id="hero-existing-count">—</strong> operating today and <strong id="hero-pipeline-count">—</strong> in active construction or announced pipeline. Combined operating capacity exceeds <strong id="hero-mw-existing">—</strong>, with another <strong id="hero-mw-pipeline">—</strong> committed. Metro Atlanta dominates — but Douglas, Walton, and Bartow counties hold the largest concentration of new build.</p>
+    <p>We track <strong id="hero-fac-count">—</strong> data-center facilities across Georgia: <strong id="hero-existing-count">—</strong> operating today and <strong id="hero-pipeline-count">—</strong> in active construction or announced pipeline. Combined operating capacity exceeds <strong id="hero-mw-existing">—</strong>, with another <strong id="hero-mw-pipeline">—</strong> committed. Beyond that, <strong id="hero-proposed-count">—</strong> more projects have filed for state regional review, requesting about <strong id="hero-proposed-mw">—</strong> of peak load. Metro Atlanta dominates — but Douglas, Walton, and Bartow counties hold the largest concentration of new build.</p>
     <div class="stat-strip">
       <div class="stat"><span class="num" id="hero-stat-mw">—</span><span class="lbl">Operating capacity (utility MW)</span></div>
       <div class="stat"><span class="num" id="hero-stat-pipe">—</span><span class="lbl">Pipeline capacity (MW)</span></div>
@@ -423,17 +427,18 @@
   <!-- =========================== SECTION B — COUNTY =========================== -->
   <div class="chart-panel" style="margin-top: 22px;">
     <h2>Where the Data Centers Are <span class="costar-badge" id="costar-badge-b"></span></h2>
-    <p class="sub">Every tracked facility, mapped. Pin color shows status; pin size scales with utility-power capacity. Use the toggles to filter by status, or click any pin for facility details. Most sites cluster in Douglas County's Lithia Springs corridor, central Fulton, and the Bartow/Walton/Newton band along the I-20/I-75 exurbs.</p>
+    <p class="sub">Every tracked facility, mapped. Pin color shows status; pin size scales with power capacity, or floor area where no power figure is available. Hollow dashed pins are <strong>proposed</strong> projects: filed for state regional review (Georgia DCA Developments of Regional Impact) but not yet confirmed as under construction — their size reflects the peak power load the filing requests. Use the toggles to filter by status, or click any pin for facility details. Most sites cluster in Douglas County's Lithia Springs corridor, central Fulton, and the Bartow/Walton/Newton band along the I-20/I-75 exurbs.</p>
 
     <div class="dc-map-controls">
       <label><input type="checkbox" id="layer-operating" checked> <span class="swatch" style="background: #6f8f4a;"></span> Operating</label>
       <label><input type="checkbox" id="layer-under-construction" checked> <span class="swatch" style="background: #f7941e;"></span> Under construction</label>
       <label><input type="checkbox" id="layer-announced" checked> <span class="swatch" style="background: #3f7d52;"></span> Announced</label>
       <label><input type="checkbox" id="layer-deferred" checked> <span class="swatch" style="background: #a8432f;"></span> Deferred</label>
+      <label><input type="checkbox" id="layer-proposed" checked> <span class="swatch hollow"></span> Proposed (DRI filing)</label>
       <span class="count" id="map-count">—</span>
     </div>
     <div class="dc-map-wrap"><div id="dc-map"></div></div>
-    <div class="source-note">Facility locations from our internal facility database. Map tiles &copy; <a href="https://www.esri.com/" target="_blank" rel="noopener">Esri</a>, &copy; <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap</a> contributors. Coverage skews toward commercially marketed sites; smaller enterprise rooms are likely undercounted.</div>
+    <div class="source-note">Facility locations from our internal facility database, plus data-center filings in Georgia DCA's <a href="https://apps.dca.ga.gov/DRI/Submissions.aspx" target="_blank" rel="noopener">Developments of Regional Impact</a> list (reviewed <span id="dri-reviewed">—</span>; pins marked "approximate" are placed at the nearest town or road the filing names). Map tiles &copy; <a href="https://www.esri.com/" target="_blank" rel="noopener">Esri</a>, &copy; <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap</a> contributors. Coverage skews toward commercially marketed sites; smaller enterprise rooms are likely undercounted.</div>
   </div>
 
   <div class="chart-panel" style="margin-top: 22px;">
@@ -455,6 +460,7 @@
             <th class="num-cell">UC</th>
             <th class="num-cell">Announced</th>
             <th class="num-cell">Total</th>
+            <th class="num-cell">Proposed (DRI)</th>
             <th class="num-cell">Operating MW</th>
             <th class="num-cell">Pipeline MW</th>
             <th class="num-cell">Operating sq ft</th>
@@ -527,6 +533,7 @@
           <option value="under-construction">Under construction</option>
           <option value="announced">Announced</option>
           <option value="deferred">Deferred</option>
+          <option value="proposed">Proposed (DRI filing)</option>
         </select>
       </label>
       <label>Type:
@@ -703,6 +710,9 @@ async function init() {
   setText('hero-pipeline-count', fmtInt(k.n_facilities_pipeline));
   setText('hero-mw-existing', fmtMW(k.operating_mw));
   setText('hero-mw-pipeline', fmtMW(k.pipeline_mw));
+  setText('hero-proposed-count', fmtInt(k.n_facilities_proposed));
+  setText('hero-proposed-mw', k.proposed_mw != null ? (k.proposed_mw >= 1000 ? (k.proposed_mw/1000).toFixed(1) + ' GW' : fmtMW(k.proposed_mw)) : '—');
+  setText('dri-reviewed', (meta.facilities && meta.facilities.dri_reviewed_at) || '—');
   setText('hero-stat-mw', k.operating_mw != null ? Math.round(k.operating_mw).toLocaleString() : '—');
   setText('hero-stat-pipe', k.pipeline_mw != null ? Math.round(k.pipeline_mw).toLocaleString() : '—');
   setText('hero-stat-jobs', k.employment_latest_k != null ? Math.round(k.employment_latest_k * 1000).toLocaleString() : '—');
@@ -900,6 +910,7 @@ function renderCountyTable(counties) {
       <td class="num-cell">${fmtInt(c.under_construction)}</td>
       <td class="num-cell">${fmtInt(c.announced)}</td>
       <td class="num-cell"><strong>${fmtInt(c.total)}</strong></td>
+      <td class="num-cell">${c.proposed ? fmtInt(c.proposed) : '—'}</td>
       <td class="num-cell">${c.mw_existing ? c.mw_existing.toFixed(0) : '—'}</td>
       <td class="num-cell">${c.mw_pipeline ? c.mw_pipeline.toFixed(0) : '—'}</td>
       <td class="num-cell">${c.sf_existing ? Number(c.sf_existing).toLocaleString() : '—'}</td>
@@ -914,7 +925,9 @@ const STATUS_COLORS = {
   'under-construction': '#f7941e',
   'announced':          '#3f7d52',
   'deferred':           '#a8432f',
+  'proposed':           '#231f20',
 };
+const MAP_STATUSES = ['operating', 'under-construction', 'announced', 'deferred', 'proposed'];
 
 // Module-level cache so layer toggles can re-filter without re-creating the map
 let _dcMap = null;
@@ -972,13 +985,14 @@ function renderFacilityMap(facilities) {
       <div class="row"><span class="swatch" style="background:${STATUS_COLORS['under-construction']}"></span> Under construction</div>
       <div class="row"><span class="swatch" style="background:${STATUS_COLORS['announced']}"></span> Announced</div>
       <div class="row"><span class="swatch" style="background:${STATUS_COLORS['deferred']}"></span> Deferred</div>
-      <div class="size-note">Pin size scales with utility kW capacity.</div>`;
+      <div class="row"><span class="swatch hollow"></span> Proposed (DRI filing)</div>
+      <div class="size-note">Pin size scales with power capacity (floor area where no power figure is filed).</div>`;
     return div;
   };
   legend.addTo(_dcMap);
 
   // Layer toggle wiring
-  ['operating', 'under-construction', 'announced', 'deferred'].forEach(s => {
+  MAP_STATUSES.forEach(s => {
     const cb = document.getElementById('layer-' + s);
     if (cb) cb.addEventListener('change', refreshMapMarkers);
   });
@@ -988,7 +1002,7 @@ function refreshMapMarkers() {
   if (!_dcMarkerLayer) return;
   _dcMarkerLayer.clearLayers();
   const enabled = new Set(
-    ['operating', 'under-construction', 'announced', 'deferred']
+    MAP_STATUSES
       .filter(s => {
         const cb = document.getElementById('layer-' + s);
         return !cb || cb.checked;
@@ -1002,8 +1016,18 @@ function refreshMapMarkers() {
     // Radius: sqrt(kW/1000) * 2, clamped 4..18 — so a 1 MW site is ~4px and 200 MW is ~18px
     const kW = f.capacity_total_utility_kw || f.capacity_critical_it_kw || 0;
     const mw = kW / 1000;
-    const r = Math.max(4, Math.min(18, Math.sqrt(mw) * 2));
-    const marker = L.circleMarker([f.lat, f.lng], {
+    // No power figure? Fall back to floor area (~1M sq ft ≈ a 6px pin, 8M ≈ max)
+    // so big campuses filed without a MW number (e.g. Google, Columbia County)
+    // don't render as the smallest dot on the map.
+    const r = kW
+      ? Math.max(4, Math.min(18, Math.sqrt(mw) * 2))
+      : Math.max(4, Math.min(18, Math.sqrt((f.rba_sf || 0) / 100000) * 2));
+    const proposed = f.status === 'proposed';
+    const marker = L.circleMarker([f.lat, f.lng], proposed ? {
+      // hollow + dashed: a filing, not a confirmed project
+      radius: r, fillColor: '#ffffff', fillOpacity: 0.55,
+      color: color, weight: 2, opacity: 0.9, dashArray: '4,3',
+    } : {
       radius: r,
       fillColor: color,
       color: '#fff',
@@ -1021,23 +1045,28 @@ function refreshMapMarkers() {
 function buildFacilityPopup(f) {
   const name = f.operator || f.property_name || f.address || 'Unnamed facility';
   const stats = [];
-  if (f.capacity_total_utility_kw) stats.push(`<span><strong>${(f.capacity_total_utility_kw/1000).toFixed(1)}</strong> MW utility</span>`);
+  const isDri = !!f.dri_id;
+  if (f.capacity_total_utility_kw) stats.push(`<span><strong>${(f.capacity_total_utility_kw/1000).toFixed(f.capacity_total_utility_kw >= 100000 ? 0 : 1)}</strong> ${isDri ? 'MW peak load requested' : 'MW utility'}</span>`);
+  if (f.value_b)                   stats.push(`<span><strong>$${Number(f.value_b) >= 10 ? Number(f.value_b).toFixed(0) : Number(f.value_b).toFixed(1)}B</strong> value at build-out</span>`);
   if (f.capacity_critical_it_kw)   stats.push(`<span><strong>${(f.capacity_critical_it_kw/1000).toFixed(1)}</strong> MW IT</span>`);
   if (f.rba_sf)                    stats.push(`<span><strong>${(f.rba_sf/1000).toFixed(0)}K</strong> sq ft</span>`);
   if (f.year_built)                stats.push(`<span>built <strong>${f.year_built}</strong></span>`);
+  if (f.land_acres && isDri)       stats.push(`<span><strong>${Math.round(f.land_acres).toLocaleString()}</strong> acres</span>`);
   const typeBits = [];
   if (f.type) typeBits.push(f.type.charAt(0).toUpperCase() + f.type.slice(1));
   if (f.tier) typeBits.push('Tier ' + f.tier);
   return `
     <div class="dc-map-popup">
-      <div class="pop-name">${escape(name)}</div>
+      <div class="pop-name">${escape(isDri && f.operator ? f.operator + ' — ' + (f.property_name || '') : name)}</div>
       <span class="pop-status ${f.status || ''}">${(f.status || 'unknown').replace(/-/g, ' ')}</span>
       <div class="pop-meta">
-        ${escape(f.address || '')}<br>
+        ${f.address ? escape(f.address) + '<br>' : ''}
         ${escape(f.city || '')}, ${escape(f.county || '')} County
         ${typeBits.length ? ' · ' + escape(typeBits.join(' · ')) : ''}
       </div>
       ${stats.length ? `<div class="pop-stats">${stats.join('')}</div>` : ''}
+      ${f.note ? `<div class="pop-meta">${escape(f.note)}</div>` : ''}
+      ${isDri ? `<div class="pop-dri"><a href="${f.dri_url}" target="_blank" rel="noopener">DRI #${f.dri_id}</a> filed ${escape(f.dri_filed || '')}${f.developer ? ' · ' + escape(f.developer) : ''}${f.location_approx ? ' · <em>approximate location</em>' : ''}</div>` : ''}
     </div>`;
 }
 
@@ -1205,7 +1234,7 @@ function renderFilteredFacilities() {
   rows.forEach(f => {
     const tr = document.createElement('tr');
     tr.innerHTML = `
-      <td>${escape(f.address || '')}</td>
+      <td>${f.dri_id ? `<a href="${f.dri_url}" target="_blank" rel="noopener">DRI #${f.dri_id}</a> · ${escape(f.property_name || '')}` : escape(f.address || '')}</td>
       <td>${escape(f.operator || f.property_name || '—')}</td>
       <td>${escape(f.county || '—')}</td>
       <td class="status-cell ${f.status || ''}"><span class="pill">${(f.status || '—').replace(/-/g, ' ')}</span></td>
