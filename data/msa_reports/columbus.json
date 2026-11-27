@@ -3,7 +3,7 @@
   "short_name": "Columbus",
   "full_name": "Columbus, GA-AL",
   "population": 329000,
-  "as_of": "2026-11-26",
+  "as_of": "2026-11-27",
   "sections": {
     "ces_employment": {
       "series_id": "SMS13179800000000001",
@@ -4834,6 +4834,7 @@
     "bea_gmp": {
       "source": "BEA CAGDP2 (county sum, current $)",
       "years": [
+        2019,
         2020,
         2021,
         2022,
@@ -4841,6 +4842,7 @@
         2024
       ],
       "gmp_billions_usd": [
+        15.65,
         15.74,
         16.61,
         17.38,
@@ -4849,12 +4851,14 @@
       ],
       "yoy_pct": [
         null,
+        0.55,
         5.58,
         4.63,
         7.66,
         6.29
       ],
       "gdp_per_capita": [
+        47573,
         47833,
         50500,
         52837,
@@ -5887,18 +5891,18 @@
     },
     "forecast_arima": {
       "gmp": [
-        22.2,
-        23.4,
+        21.6,
+        22.6,
+        23.6,
         24.6,
-        25.9,
-        27.2
+        25.6
       ],
       "gmp_yoy": [
-        5.6,
-        5.5,
-        5.4,
-        5.3,
-        5.1
+        4.5,
+        4.5,
+        4.4,
+        4.3,
+        4.2
       ],
       "personal_income_yoy": [
         3.7,

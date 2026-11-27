@@ -3,7 +3,7 @@
   "short_name": "Athens",
   "full_name": "Athens-Clarke County, GA",
   "population": 217000,
-  "as_of": "2026-11-26",
+  "as_of": "2026-11-27",
   "sections": {
     "ces_employment": {
       "series_id": "SMS13120200000000001",
@@ -4873,7 +4873,6 @@
     "bea_personal_income": {
       "source": "BEA CAINC1 (county sum, current $)",
       "years": [
-        2019,
         2020,
         2021,
         2022,
@@ -4881,7 +4880,6 @@
         2024
       ],
       "personal_income_billions_usd": [
-        8.92,
         9.6,
         10.57,
         11.37,
@@ -4890,14 +4888,12 @@
       ],
       "yoy_pct": [
         null,
-        7.55,
         10.1,
         7.55,
         4.84,
         6.26
       ],
       "per_capita_income": [
-        41126,
         44231,
         48697,
         52374,
@@ -5916,25 +5912,25 @@
         2.8
       ],
       "personal_income_yoy": [
-        6.6,
-        6.5,
-        6.3,
-        6.2,
-        6.1
+        5.2,
+        4.6,
+        4.2,
+        3.7,
+        3.4
       ],
       "median_hh_income": [
-        69.9,
-        74.5,
-        79.2,
-        84.1,
-        89.2
+        69.0,
+        72.2,
+        75.2,
+        78.0,
+        80.7
       ],
       "median_hh_income_yoy": [
-        6.6,
-        6.5,
-        6.3,
-        6.2,
-        6.1
+        5.2,
+        4.6,
+        4.2,
+        3.7,
+        3.4
       ],
       "population": [
         224.7,
@@ -6075,7 +6071,6 @@
     },
     "housing_valuation": {
       "years": [
-        2019,
         2020,
         2021,
         2022,
@@ -6083,15 +6078,13 @@
         2024
       ],
       "valuation_pct": [
-        3.1,
-        -2.5,
-        -4.3,
+        0.3,
+        -2.9,
+        2.9,
         2.5,
-        2.8,
-        -1.4
+        -2.6
       ],
       "hpi_index": [
-        226.72,
         242.87,
         281.41,
         341.71,
@@ -6099,22 +6092,21 @@
         396.02
       ],
       "fair_value_index": [
-        219.87,
-        249.21,
-        294.09,
-        333.35,
-        361.62,
-        401.45
+        242.15,
+        289.88,
+        332.17,
+        362.88,
+        406.51
       ],
       "latest_year": 2024,
-      "latest_valuation_pct": -1.4,
-      "income_elasticity": 1.721,
-      "r_squared": 0.981,
-      "n_obs": 6,
+      "latest_valuation_pct": -2.6,
+      "income_elasticity": 1.87,
+      "r_squared": 0.982,
+      "n_obs": 5,
       "price_to_income_ratio": 4.73,
       "price_to_rent_ratio": 21.5,
       "method": "Log-log fair-value regression (Dallas Fed / IMF house-price-gap method): log(FHFA HPI) on log(per-capita income) by OLS over overlapping years; valuation = % deviation of actual HPI from the income-implied fair value.",
-      "note": "Fitted on 6 overlapping years (2019-2024); residuals are mean-zero over this window, so values read relative to the local income trend. Price-to-income / price-to-rent are current ACS-vintage cross-checks, not part of the fitted series.",
+      "note": "Fitted on 5 overlapping years (2020-2024); residuals are mean-zero over this window, so values read relative to the local income trend. Price-to-income / price-to-rent are current ACS-vintage cross-checks, not part of the fitted series.",
       "source": "Georgia Economics valuation model \u2014 FHFA HPI vs. BEA per-capita income (log-log OLS)"
     },
     "business_costs": {
@@ -6208,7 +6200,7 @@
           "weight": 0.1
         },
         "valuation_stability": {
-          "score": 0.953,
+          "score": 0.913,
           "weight": 0.1
         }
       },

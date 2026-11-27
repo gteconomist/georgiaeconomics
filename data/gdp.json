@@ -1,5 +1,5 @@
 {
- "fetched_at": "2026-11-26T19:02:07Z",
+ "fetched_at": "2026-11-27T18:57:12Z",
  "schema": "gdp/v1",
  "metros": [
   {
@@ -78,7 +78,6 @@
      2019,
      2020,
      2021,
-     2022,
      2023,
      2024
     ],
@@ -86,7 +85,6 @@
      446.66,
      437.83,
      483.98,
-     538.95,
      572.8,
      603.59
     ]
@@ -107,17 +105,13 @@
    "gmp_series": {
     "years": [
      2019,
-     2020,
      2021,
-     2022,
      2023,
      2024
     ],
     "gmp_billions_usd": [
      29.41,
-     29.9,
      32.15,
-     35.04,
      37.1,
      39.29
     ]
@@ -168,6 +162,7 @@
    "gdp_per_capita": 60464,
    "gmp_series": {
     "years": [
+     2019,
      2020,
      2021,
      2022,
@@ -175,6 +170,7 @@
      2024
     ],
     "gmp_billions_usd": [
+     15.65,
      15.74,
      16.61,
      17.38,
@@ -254,21 +250,25 @@
    "full_name": "Hinesville, GA",
    "cbsa": "25980",
    "population": 78000,
-   "gmp_bn": 5.21,
-   "gmp_yoy": 6.4,
-   "gdp_per_capita": 66778,
+   "gmp_bn": 5.6,
+   "gmp_yoy": 7.47,
+   "gdp_per_capita": 71767,
    "gmp_series": {
     "years": [
      2019,
+     2020,
      2021,
      2022,
-     2023
+     2023,
+     2024
     ],
     "gmp_billions_usd": [
      4.06,
+     4.04,
      4.59,
      4.9,
-     5.21
+     5.21,
+     5.6
     ]
    },
    "pi_bn": 3.99,
@@ -350,7 +350,6 @@
     "years": [
      2019,
      2020,
-     2021,
      2022,
      2023,
      2024
@@ -358,7 +357,6 @@
     "gmp_billions_usd": [
      23.44,
      23.64,
-     26.91,
      29.75,
      33.3,
      34.89
@@ -478,19 +476,19 @@
    936.09
   ],
   "us_real_bn": [
-   null,
-   null,
-   null,
-   null,
-   null,
-   null,
-   null,
-   null,
-   null,
-   null,
-   null,
-   null,
-   null
+   17812.17,
+   18261.71,
+   18799.62,
+   19141.67,
+   19612.1,
+   20193.9,
+   20715.67,
+   20284.5,
+   21556.0,
+   22079.73,
+   22724.13,
+   23394.89,
+   23943.31
   ],
   "per_capita": [
    null,
@@ -533,51 +531,51 @@
   {
    "state": "Georgia",
    "fips": "13000",
-   "real_bn": 699.54,
-   "real_yoy": 2.34,
-   "per_capita": 62436
+   "real_bn": 719.74,
+   "real_yoy": 2.89,
+   "per_capita": 63678
   },
   {
    "state": "Florida",
    "fips": "12000",
-   "real_bn": 1338.79,
-   "real_yoy": 2.98,
-   "per_capita": 57543
+   "real_bn": 1376.66,
+   "real_yoy": 2.83,
+   "per_capita": 58675
   },
   {
    "state": "North Carolina",
    "fips": "37000",
-   "real_bn": 670.59,
-   "real_yoy": 3.73,
-   "per_capita": 60675
+   "real_bn": 682.83,
+   "real_yoy": 1.83,
+   "per_capita": 60978
   },
   {
    "state": "South Carolina",
    "fips": "45000",
-   "real_bn": 277.96,
-   "real_yoy": 4.91,
-   "per_capita": 50627
+   "real_bn": 287.16,
+   "real_yoy": 3.31,
+   "per_capita": 51551
   },
   {
    "state": "Tennessee",
    "fips": "47000",
-   "real_bn": 438.65,
-   "real_yoy": 2.88,
-   "per_capita": 60493
+   "real_bn": 447.66,
+   "real_yoy": 2.05,
+   "per_capita": 61197
   },
   {
    "state": "Alabama",
    "fips": "01000",
-   "real_bn": 254.42,
-   "real_yoy": 2.64,
-   "per_capita": 49277
+   "real_bn": 259.46,
+   "real_yoy": 1.98,
+   "per_capita": 49962
   },
   {
    "state": "United States",
    "fips": "00000",
-   "real_bn": 23394.89,
-   "real_yoy": 2.95,
-   "per_capita": 68808
+   "real_bn": 23943.31,
+   "real_yoy": 2.34,
+   "per_capita": 70054
   }
  ],
  "sectors": {
@@ -1502,28 +1500,28 @@
  },
  "_meta": {
   "metro_rollup": {
-   "last_updated": "2026-11-26T19:02:07Z",
+   "last_updated": "2026-11-27T18:57:12Z",
    "n_metros": 14,
    "stale": false
   },
   "ga_gdp": {
-   "last_updated": "2026-11-26T19:02:19Z",
+   "last_updated": "2026-11-27T18:57:18Z",
    "stale": false
   },
   "peers": {
-   "last_updated": "2026-11-26T19:02:26Z",
+   "last_updated": "2026-11-27T18:57:40Z",
    "stale": false
   },
   "sectors": {
-   "last_updated": "2026-11-26T19:02:43Z",
+   "last_updated": "2026-11-27T18:57:52Z",
    "stale": false
   },
   "county_gdp": {
-   "last_updated": "2026-11-26T19:02:44Z",
+   "last_updated": "2026-11-27T18:57:53Z",
    "stale": false
   },
   "non_metro": {
-   "last_updated": "2026-11-26T19:02:44Z",
+   "last_updated": "2026-11-27T18:57:53Z",
    "stale": false
   }
  },

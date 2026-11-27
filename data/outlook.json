@@ -1,5 +1,5 @@
 {
- "fetched_at": "2026-11-26T19:02:45Z",
+ "fetched_at": "2026-11-27T18:57:54Z",
  "schema": "outlook/v1",
  "disclaimer": "The 5-year figures are model extrapolations from historical trends (damped-Holt / ARIMA-family) \u2014 not official forecasts, predictions, or investment advice. They assume recent trends persist and do not account for policy changes, shocks, or expert judgment.",
  "metros": [
@@ -34,9 +34,9 @@
    "cycle_peak": 115.98,
    "cycle_latest_month": "2026-09",
    "pct_from_peak": -1.9,
-   "fc_gmp_cagr": 1.6,
+   "fc_gmp_cagr": 2.07,
    "fc_emp_cagr": null,
-   "fc_gmp_2030": 679.7,
+   "fc_gmp_2030": 701.8,
    "fc_emp_2030": null
   },
   {
@@ -46,9 +46,9 @@
    "cycle_peak": 118.22,
    "cycle_latest_month": "2026-09",
    "pct_from_peak": -2.1,
-   "fc_gmp_cagr": 4.97,
+   "fc_gmp_cagr": 8.1,
    "fc_emp_cagr": null,
-   "fc_gmp_2030": 52.7,
+   "fc_gmp_2030": 63.5,
    "fc_emp_2030": null
   },
   {
@@ -70,9 +70,9 @@
    "cycle_peak": 108.1,
    "cycle_latest_month": "2026-09",
    "pct_from_peak": -10.0,
-   "fc_gmp_cagr": 5.21,
+   "fc_gmp_cagr": 4.34,
    "fc_emp_cagr": null,
-   "fc_gmp_2030": 27.2,
+   "fc_gmp_2030": 25.6,
    "fc_emp_2030": null
   },
   {
@@ -106,9 +106,9 @@
    "cycle_peak": 121.95,
    "cycle_latest_month": "2026-09",
    "pct_from_peak": -8.0,
-   "fc_gmp_cagr": 2.05,
+   "fc_gmp_cagr": 5.22,
    "fc_emp_cagr": null,
-   "fc_gmp_2030": 6.4,
+   "fc_gmp_2030": 7.6,
    "fc_emp_2030": null
   },
   {
@@ -138,9 +138,9 @@
    "cycle_peak": 118.89,
    "cycle_latest_month": "2026-09",
    "pct_from_peak": -0.8,
-   "fc_gmp_cagr": 6.56,
+   "fc_gmp_cagr": 7.37,
    "fc_emp_cagr": null,
-   "fc_gmp_2030": 51.7,
+   "fc_gmp_2030": 54.1,
    "fc_emp_2030": null
   },
   {
@@ -421,16 +421,16 @@
  },
  "_meta": {
   "metro_rollup": {
-   "last_updated": "2026-11-26T19:02:45Z",
+   "last_updated": "2026-11-27T18:57:54Z",
    "n_metros": 14,
    "stale": false
   },
   "ga_cycle": {
-   "last_updated": "2026-11-26T19:02:45Z",
+   "last_updated": "2026-11-27T18:57:54Z",
    "stale": false
   },
   "ga_forecast": {
-   "last_updated": "2026-11-26T19:02:45Z",
+   "last_updated": "2026-11-27T18:57:54Z",
    "stale": false
   }
  },

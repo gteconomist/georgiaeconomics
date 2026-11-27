@@ -3,7 +3,7 @@
   "short_name": "Augusta",
   "full_name": "Augusta-Richmond County, GA-SC",
   "population": 611000,
-  "as_of": "2026-11-26",
+  "as_of": "2026-11-27",
   "sections": {
     "ces_employment": {
       "series_id": "SMS13122600000000001",
@@ -4835,33 +4835,25 @@
       "source": "BEA CAGDP2 (county sum, current $)",
       "years": [
         2019,
-        2020,
         2021,
-        2022,
         2023,
         2024
       ],
       "gmp_billions_usd": [
         29.41,
-        29.9,
         32.15,
-        35.04,
         37.1,
         39.29
       ],
       "yoy_pct": [
         null,
-        1.66,
-        7.52,
-        8.99,
-        5.88,
+        9.31,
+        15.4,
         5.9
       ],
       "gdp_per_capita": [
         48140,
-        48941,
         52619,
-        57352,
         60724,
         64307
       ],
@@ -5874,18 +5866,18 @@
     },
     "forecast_arima": {
       "gmp": [
-        43.4,
-        45.6,
-        47.9,
-        50.3,
-        52.7
+        46.5,
+        50.4,
+        54.5,
+        58.9,
+        63.5
       ],
       "gmp_yoy": [
-        5.2,
-        5.1,
-        5.0,
-        4.9,
-        4.8
+        8.6,
+        8.4,
+        8.2,
+        8.0,
+        7.9
       ],
       "personal_income_yoy": [
         2.0,

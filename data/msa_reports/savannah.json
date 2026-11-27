@@ -3,7 +3,7 @@
   "short_name": "Savannah",
   "full_name": "Savannah, GA",
   "population": 410000,
-  "as_of": "2026-11-26",
+  "as_of": "2026-11-27",
   "sections": {
     "ces_employment": {
       "series_id": "SMS13423400000000001",
@@ -4836,7 +4836,6 @@
       "years": [
         2019,
         2020,
-        2021,
         2022,
         2023,
         2024
@@ -4844,7 +4843,6 @@
       "gmp_billions_usd": [
         23.44,
         23.64,
-        26.91,
         29.75,
         33.3,
         34.89
@@ -4852,15 +4850,13 @@
       "yoy_pct": [
         null,
         0.88,
-        13.8,
-        10.58,
+        25.85,
         11.92,
         4.78
       ],
       "gdp_per_capita": [
         57162,
         57665,
-        65624,
         72569,
         81223,
         85103
@@ -4876,7 +4872,6 @@
         2019,
         2020,
         2021,
-        2022,
         2023,
         2024
       ],
@@ -4884,7 +4879,6 @@
         18.7,
         20.45,
         22.65,
-        23.35,
         24.9,
         26.56
       ],
@@ -4892,15 +4886,13 @@
         null,
         9.35,
         10.78,
-        3.07,
-        6.64,
+        9.92,
         6.65
       ],
       "per_capita_income": [
         45613,
         49877,
         55255,
-        56953,
         60734,
         64775
       ],
@@ -5973,39 +5965,39 @@
     },
     "forecast_arima": {
       "gmp": [
-        40.1,
-        42.8,
-        45.6,
-        48.6,
-        51.7
+        40.7,
+        43.8,
+        47.1,
+        50.5,
+        54.1
       ],
       "gmp_yoy": [
-        7.0,
-        6.8,
-        6.7,
-        6.5,
-        6.4
+        7.8,
+        7.6,
+        7.5,
+        7.3,
+        7.2
       ],
       "personal_income_yoy": [
-        4.5,
-        4.1,
-        3.7,
-        3.3,
-        3.0
+        8.3,
+        8.1,
+        8.0,
+        7.8,
+        7.6
       ],
       "median_hh_income": [
-        80.7,
-        84.0,
-        87.1,
-        89.9,
-        92.6
+        83.6,
+        90.4,
+        97.6,
+        105.2,
+        113.2
       ],
       "median_hh_income_yoy": [
-        4.5,
-        4.1,
-        3.7,
-        3.3,
-        3.0
+        8.3,
+        8.1,
+        8.0,
+        7.8,
+        7.6
       ],
       "population": [
         430.0,
@@ -6154,43 +6146,39 @@
         2019,
         2020,
         2021,
-        2022,
         2023,
         2024
       ],
       "valuation_pct": [
-        6.1,
-        -5.0,
-        -10.2,
-        5.0,
-        5.2,
-        -0.0
+        6.7,
+        -4.2,
+        -9.4,
+        6.5,
+        1.4
       ],
       "hpi_index": [
         247.53,
         260.64,
         296.34,
-        366.21,
         412.28,
         440.46
       ],
       "fair_value_index": [
-        233.19,
-        274.22,
-        330.18,
-        348.81,
-        391.93,
-        440.5
+        231.91,
+        272.15,
+        326.92,
+        387.22,
+        434.56
       ],
       "latest_year": 2024,
-      "latest_valuation_pct": -0.0,
-      "income_elasticity": 1.814,
-      "r_squared": 0.922,
-      "n_obs": 6,
+      "latest_valuation_pct": 1.4,
+      "income_elasticity": 1.791,
+      "r_squared": 0.929,
+      "n_obs": 5,
       "price_to_income_ratio": 3.91,
       "price_to_rent_ratio": 17.3,
       "method": "Log-log fair-value regression (Dallas Fed / IMF house-price-gap method): log(FHFA HPI) on log(per-capita income) by OLS over overlapping years; valuation = % deviation of actual HPI from the income-implied fair value.",
-      "note": "Fitted on 6 overlapping years (2019-2024); residuals are mean-zero over this window, so values read relative to the local income trend. Price-to-income / price-to-rent are current ACS-vintage cross-checks, not part of the fitted series.",
+      "note": "Fitted on 5 overlapping years (2019-2024); residuals are mean-zero over this window, so values read relative to the local income trend. Price-to-income / price-to-rent are current ACS-vintage cross-checks, not part of the fitted series.",
       "source": "Georgia Economics valuation model \u2014 FHFA HPI vs. BEA per-capita income (log-log OLS)"
     },
     "business_costs": {
@@ -6259,8 +6247,8 @@
       "source": "Georgia Economics composite \u2014 NAR-style affordability: ACS median household income (B19013) vs. income needed for the median home (ACS B25077 value scaled by FHFA HPI; Freddie Mac PMMS 30-yr rate via FRED). >100 = median household can afford the median home."
     },
     "credit_score": {
-      "score": 80,
-      "grade": "AA",
+      "score": 79,
+      "grade": "AA-",
       "outlook": "Positive",
       "components": {
         "vitality": {
@@ -6284,7 +6272,7 @@
           "weight": 0.1
         },
         "valuation_stability": {
-          "score": 1.0,
+          "score": 0.953,
           "weight": 0.1
         }
       },

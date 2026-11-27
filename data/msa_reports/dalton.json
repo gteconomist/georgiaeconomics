@@ -3,7 +3,7 @@
   "short_name": "Dalton",
   "full_name": "Dalton, GA",
   "population": 143000,
-  "as_of": "2026-11-26",
+  "as_of": "2026-11-27",
   "sections": {
     "ces_employment": {
       "series_id": "SMS13191400000000001",
@@ -4190,7 +4190,6 @@
       "source": "BEA CAINC1 (county sum, current $)",
       "years": [
         2019,
-        2020,
         2021,
         2022,
         2023,
@@ -4198,7 +4197,6 @@
       ],
       "personal_income_billions_usd": [
         5.4,
-        5.77,
         6.33,
         6.31,
         6.56,
@@ -4206,15 +4204,13 @@
       ],
       "yoy_pct": [
         null,
-        6.86,
-        9.73,
+        17.25,
         -0.28,
         3.95,
         5.54
       ],
       "per_capita_income": [
         37743,
-        40332,
         44255,
         44131,
         45874,
@@ -5269,25 +5265,25 @@
         1.0
       ],
       "personal_income_yoy": [
-        3.2,
-        2.9,
-        2.6,
+        2.8,
         2.3,
-        2.1
+        1.8,
+        1.4,
+        1.2
       ],
       "median_hh_income": [
-        70.0,
-        72.0,
-        73.9,
-        75.6,
-        77.2
+        69.7,
+        71.3,
+        72.6,
+        73.7,
+        74.5
       ],
       "median_hh_income_yoy": [
-        3.2,
-        2.9,
-        2.6,
+        2.8,
         2.3,
-        2.1
+        1.8,
+        1.4,
+        1.2
       ],
       "population": [
         143.6,
@@ -5429,45 +5425,41 @@
     "housing_valuation": {
       "years": [
         2019,
-        2020,
         2021,
         2022,
         2023,
         2024
       ],
       "valuation_pct": [
-        3.7,
-        -4.2,
-        -11.2,
-        6.7,
-        6.3,
-        -0.1
+        1.2,
+        -11.9,
+        5.9,
+        5.9,
+        0.0
       ],
       "hpi_index": [
         191.09,
-        205.39,
         235.13,
         280.81,
         305.59,
         324.63
       ],
       "fair_value_index": [
-        184.21,
-        214.3,
-        264.83,
-        263.14,
-        287.45,
-        325.09
+        188.79,
+        266.89,
+        265.26,
+        288.58,
+        324.52
       ],
       "latest_year": 2024,
-      "latest_valuation_pct": -0.1,
-      "income_elasticity": 2.281,
-      "r_squared": 0.893,
-      "n_obs": 6,
+      "latest_valuation_pct": 0.0,
+      "income_elasticity": 2.175,
+      "r_squared": 0.878,
+      "n_obs": 5,
       "price_to_income_ratio": 3.08,
       "price_to_rent_ratio": 18.6,
       "method": "Log-log fair-value regression (Dallas Fed / IMF house-price-gap method): log(FHFA HPI) on log(per-capita income) by OLS over overlapping years; valuation = % deviation of actual HPI from the income-implied fair value.",
-      "note": "Fitted on 6 overlapping years (2019-2024); residuals are mean-zero over this window, so values read relative to the local income trend. Price-to-income / price-to-rent are current ACS-vintage cross-checks, not part of the fitted series.",
+      "note": "Fitted on 5 overlapping years (2019-2024); residuals are mean-zero over this window, so values read relative to the local income trend. Price-to-income / price-to-rent are current ACS-vintage cross-checks, not part of the fitted series.",
       "source": "Georgia Economics valuation model \u2014 FHFA HPI vs. BEA per-capita income (log-log OLS)"
     },
     "business_costs": {
@@ -5561,7 +5553,7 @@
           "weight": 0.1
         },
         "valuation_stability": {
-          "score": 0.997,
+          "score": 1.0,
           "weight": 0.1
         }
       },
